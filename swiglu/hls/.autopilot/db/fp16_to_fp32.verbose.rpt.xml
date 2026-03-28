@@ -1,0 +1,145 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'fp16_to_fp32'" level="0">
+<item name = "Date">Sat Mar 28 22:37:31 2026
+</item>
+<item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
+<item name = "Project">swiglu</item>
+<item name = "Solution">hls (Vivado IP Flow Target)</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xck26-sfvc784-2LV-c</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">3.33 ns, 2.344 ns, 0.90 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 255, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, 0, 26, -</column>
+<column name="Register">-, -, 50, -, -</column>
+<specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="e_17_fu_147_p2">+, 0, 0, 13, 6, 2</column>
+<column name="e_19_fu_181_p2">+, 0, 0, 13, 6, 2</column>
+<column name="e_21_fu_216_p2">+, 0, 0, 13, 6, 2</column>
+<column name="e_23_fu_241_p2">+, 0, 0, 13, 6, 2</column>
+<column name="e_25_fu_280_p2">+, 0, 0, 13, 6, 2</column>
+<column name="e_27_fu_320_p2">+, 0, 0, 13, 6, 2</column>
+<column name="icmp_ln33_fu_48_p2">icmp, 0, 0, 15, 8, 1</column>
+<column name="e_15_fu_106_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_16_fu_114_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_18_fu_160_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_20_fu_195_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_22_fu_227_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_24_fu_247_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_26_fu_293_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_28_fu_326_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_fu_90_p3">select, 0, 0, 6, 1, 6</column>
+<column name="f32_4_fu_356_p3">select, 0, 0, 29, 1, 1</column>
+<column name="m_16_fu_127_p3">select, 0, 0, 10, 1, 10</column>
+<column name="m_18_fu_152_p3">select, 0, 0, 10, 1, 10</column>
+<column name="m_20_fu_187_p3">select, 0, 0, 10, 1, 10</column>
+<column name="m_22_fu_221_p3">select, 0, 0, 10, 1, 10</column>
+<column name="m_24_fu_260_p3">select, 0, 0, 10, 1, 10</column>
+<column name="m_26_fu_285_p3">select, 0, 0, 10, 1, 10</column>
+<column name="m_fu_82_p3">select, 0, 0, 10, 1, 10</column>
+<column name="select_ln39_fu_338_p3">select, 0, 0, 9, 1, 9</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">26, 5, 1, 5</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">4, 0, 4, 0</column>
+<column name="e_16_reg_391">2, 0, 6, 4</column>
+<column name="e_20_reg_403">6, 0, 6, 0</column>
+<column name="e_24_reg_426">6, 0, 6, 0</column>
+<column name="icmp_ln33_reg_375">1, 0, 1, 0</column>
+<column name="m_20_reg_397">10, 0, 10, 0</column>
+<column name="m_22_reg_415">10, 0, 10, 0</column>
+<column name="m_reg_380">8, 0, 10, 2</column>
+<column name="tmp_146_reg_386">1, 0, 1, 0</column>
+<column name="tmp_149_reg_409">1, 0, 1, 0</column>
+<column name="tmp_150_reg_421">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, fp16_to_fp32, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, fp16_to_fp32, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, fp16_to_fp32, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, fp16_to_fp32, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, fp16_to_fp32, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, fp16_to_fp32, return value</column>
+<column name="ap_return">out, 32, ap_ctrl_hs, fp16_to_fp32, return value</column>
+<column name="h">in, 8, ap_none, h, scalar</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,112 @@
+  **** HLS Build v2025.1 6135595
+INFO: [HLS 200-2005] Using work_dir C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu 
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./swiglu.cpp' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./swiglu.h' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(13)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./sigmoid_lut.h' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(14)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/sigmoid_lut.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./swiglu_tb.cpp' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu_tb.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=swiglu' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xck26-sfvc784-2LV-c' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1465] Applying config ini 'clock=3.33ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(7)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.33ns.
+INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=0.8ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(8)
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.8ns.
+INFO: [HLS 200-1465] Applying config ini 'cosim.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(11)
+INFO: [HLS 200-1465] Applying config ini 'package.ip.version=2.5' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(15)
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/vitis-comp.json
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../swiglu.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../swiglu.cpp:5:
+In file included from C:/Xilinx/2025.1/Vitis/include/ap_int.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/include/etc/ap_common.h:677:
+In file included from C:/Xilinx/2025.1/Vitis/include/etc/ap_private.h:68:
+In file included from C:/Xilinx/2025.1/Vitis/include/hls_half.h:26:
+In file included from C:/Xilinx/2025.1/Vitis/include/etc/hls_half_fpo.h:19:
+In file included from C:/Xilinx/2025.1/Vitis/include/hls_fpo.h:140:
+In file included from C:/Xilinx/2025.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/Xilinx/2025.1/Vitis/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/Xilinx/2025.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+=== T1: Q4_K down, batch=1, normal fp16 ===
+T1 [token 0 out[0]]  exp=-1.91334e+14  got=4.78175e+14  diff=6.69509e+14
+T1 [token 0 out[1]]  exp=-1.91334e+14  got=4.78175e+14  diff=6.69509e+14
+T1 [token 0 out[2]]  exp=-1.91334e+14  got=4.78175e+14  diff=6.69509e+14
+T1 [token 0 out[3]]  exp=-1.91334e+14  got=4.78175e+14  diff=6.69509e+14
+T1 [token 0 out[4]]  exp=-1.91334e+14  got=4.78175e+14  diff=6.69509e+14
+T1 [token 0 out[5]]  exp=-1.91334e+14  got=4.78175e+14  diff=6.69509e+14
+T1 [token 0 out[6]]  exp=-1.91334e+14  got=4.78175e+14  diff=6.69509e+14
+T1 [token 0 out[7]]  exp=-1.91334e+14  got=4.78175e+14  diff=6.69509e+14
+T1 [token 0 out[8]]  exp=-1.91334e+14  got=4.78175e+14  diff=6.69509e+14
+T1 [token 0 out[9]]  exp=-1.91334e+14  got=4.78175e+14  diff=6.69509e+14
+  (further errors suppressed)
+T1: FAILED  (batch=1, 10 error(s))
+=== T2: Q4_K down, batch=1, subnormal d in W (0x00A4 ~9.8e-6) ===
+T2 [token 0 out[0]]  exp=-2.36659e+11  got=-1.58728e+08  diff=2.36501e+11
+T2 [token 0 out[1]]  exp=-2.36659e+11  got=-1.58728e+08  diff=2.36501e+11
+T2 [token 0 out[2]]  exp=-2.36659e+11  got=-1.58728e+08  diff=2.36501e+11
+T2 [token 0 out[3]]  exp=-2.36659e+11  got=-1.58728e+08  diff=2.36501e+11
+T2 [token 0 out[4]]  exp=-2.36659e+11  got=-1.58728e+08  diff=2.36501e+11
+T2 [token 0 out[5]]  exp=-2.36659e+11  got=-1.58728e+08  diff=2.36501e+11
+T2 [token 0 out[6]]  exp=-2.36659e+11  got=-1.58728e+08  diff=2.36501e+11
+T2 [token 0 out[7]]  exp=-2.36659e+11  got=-1.58728e+08  diff=2.36501e+11
+T2 [token 0 out[8]]  exp=-2.36659e+11  got=-1.58728e+08  diff=2.36501e+11
+T2 [token 0 out[9]]  exp=-2.36659e+11  got=-1.58728e+08  diff=2.36501e+11
+  (further errors suppressed)
+T2: FAILED  (batch=1, 10 error(s))
+=== T3: Q4_K down, batch=1, subnormal dmin in V (0x817E) ===
+T3 [token 0 out[0]]  exp=-1.91528e+14  got=4.78659e+14  diff=6.70187e+14
+T3 [token 0 out[1]]  exp=-1.91528e+14  got=4.78659e+14  diff=6.70187e+14
+T3 [token 0 out[2]]  exp=-1.91528e+14  got=4.78659e+14  diff=6.70187e+14
+T3 [token 0 out[3]]  exp=-1.91528e+14  got=4.78659e+14  diff=6.70187e+14
+T3 [token 0 out[4]]  exp=-1.91528e+14  got=4.78659e+14  diff=6.70187e+14
+T3 [token 0 out[5]]  exp=-1.91528e+14  got=4.78659e+14  diff=6.70187e+14
+T3 [token 0 out[6]]  exp=-1.91528e+14  got=4.78659e+14  diff=6.70187e+14
+T3 [token 0 out[7]]  exp=-1.91528e+14  got=4.78659e+14  diff=6.70187e+14
+T3 [token 0 out[8]]  exp=-1.91528e+14  got=4.78659e+14  diff=6.70187e+14
+T3 [token 0 out[9]]  exp=-1.91528e+14  got=4.78659e+14  diff=6.70187e+14
+  (further errors suppressed)
+T3: FAILED  (batch=1, 10 error(s))
+=== T4: Q6_K down, batch=1, normal fp16 (mode=1) ===
+T4 [token 0 out[0]]  exp=2.57448e+10  got=-6.434e+10  diff=9.00847e+10
+T4 [token 0 out[1]]  exp=2.57448e+10  got=-6.434e+10  diff=9.00847e+10
+T4 [token 0 out[2]]  exp=2.57448e+10  got=-6.434e+10  diff=9.00847e+10
+T4 [token 0 out[3]]  exp=2.57448e+10  got=-6.434e+10  diff=9.00847e+10
+T4 [token 0 out[4]]  exp=2.57448e+10  got=-6.434e+10  diff=9.00847e+10
+T4 [token 0 out[5]]  exp=2.57448e+10  got=-6.434e+10  diff=9.00847e+10
+T4 [token 0 out[6]]  exp=2.57448e+10  got=-6.434e+10  diff=9.00847e+10
+T4 [token 0 out[7]]  exp=2.57448e+10  got=-6.434e+10  diff=9.00847e+10
+T4 [token 0 out[8]]  exp=2.57448e+10  got=-6.434e+10  diff=9.00847e+10
+T4 [token 0 out[9]]  exp=2.57448e+10  got=-6.434e+10  diff=9.00847e+10
+  (further errors suppressed)
+T4: FAILED  (batch=1, 10 error(s))
+=== T5: Q6_K down, batch=1, subnormal d in W_down (0x00A4) ===
+T5 [token 0 out[0]]  exp=503316  got=-1.25787e+06  diff=1.76118e+06
+T5 [token 0 out[1]]  exp=503316  got=-1.25787e+06  diff=1.76118e+06
+T5 [token 0 out[2]]  exp=503316  got=-1.25787e+06  diff=1.76118e+06
+T5 [token 0 out[3]]  exp=503316  got=-1.25787e+06  diff=1.76118e+06
+T5 [token 0 out[4]]  exp=503316  got=-1.25787e+06  diff=1.76118e+06
+T5 [token 0 out[5]]  exp=503316  got=-1.25787e+06  diff=1.76118e+06
+T5 [token 0 out[6]]  exp=503316  got=-1.25787e+06  diff=1.76118e+06
+T5 [token 0 out[7]]  exp=503316  got=-1.25787e+06  diff=1.76118e+06
+T5 [token 0 out[8]]  exp=503316  got=-1.25787e+06  diff=1.76118e+06
+T5 [token 0 out[9]]  exp=50

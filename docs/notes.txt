@@ -1,0 +1,400 @@
+================================================================================
+FPGA HARDWARE OFFLOAD IMPLEMENTATION NOTES
+Block: Linear Projection (MatVec, Q6_K weights x F32 vector -> F32 logits)
+Target: Kria KV260 / Zynq UltraScale+ MPSoC (ZU5EV)
+================================================================================
+
+--------------------------------------------------------------------------------
+1. SYSTEM OVERVIEW
+--------------------------------------------------------------------------------
+
+The offload path replaces a single ggml op in llama.cpp:
+  src0 (weights): 65536 x 2048, GGML_TYPE_Q6_K  (110,100,480 bytes)
+  src1 (vector):  2048 x 1,     GGML_TYPE_F32    (8,192 bytes)
+  dst  (logits):  65536 x 1,    GGML_TYPE_F32    (262,144 bytes)
+
+Hardware blocks (all in PL fabric):
+  - AXI DMA (PG021), SG mode       @ 0xA0000000  (confirmed from working C code)
+  - HLS IP core (linear_projection) @ 0xA0010000  (confirmed from working C code)
+  - Concat IP (xlconcat): routes PL->PS interrupts
+  - Zynq UltraScale+ PS: CPU, GIC, AXI interconnect
+
+NOTE: The XSCT-generated pl.dtsi showed these addresses swapped.
+      Always verify addresses from the working C code or Vivado Address Editor,
+      not from auto-generated output if the project was not yet re-synthesised.
+
+PL Fabric Clock: ~100 MHz (configure in Zynq UltraScale+ IP -> Clock Config ->
+  PL Fabric Clocks tab; Vivado programs PLL M/D dividers automatically --
+  no external Clock Wizard needed).
+
+--------------------------------------------------------------------------------
+2. MEMORY LAYOUT (udmabuf)
+--------------------------------------------------------------------------------
+
+udmabuf0 provides a physically contiguous DMA-capable buffer.
+  Physical base: ~0x56200000 (below 4 GB; read from sysfs each boot)
+  Total size:    ~128 MB (configured in device tree / udmabuf module param)
+
+  Offset      Size        Contents
+  0x000000    6,400 B     SG Descriptor area
+                            [  0.. 31]: RX (S2MM) descriptors  -- 32 x 64 B
+                            [100..13540]: TX (MM2S) descriptors -- 13441 x 64 B
+  0x100000    8,192 B     Input F32 vector (src1)
+  0x200000    262,144 B   Output F32 logits (dst)
+  0x300000    ~110 MB     Q6_K weight matrix (src0)
+
+AXI SG Descriptor layout (64 bytes each, PG021 section 2.3):
+  Offset  Field
+  0x00    NXTDESC     (lower 32 bits of next descriptor physical address)
+  0x04    NXTDESC_MSB (upper 32 bits)
+  0x08    BUFFER_ADDR (lower 32 bits of data buffer physical address)
+  0x0C    BUFFER_ADDR_MSB
+  0x10-1B Reserved
+  0x1C    CONTROL     (buffer length, RXSOF/RXEOF bits)
+  0x20    STATUS      (written by DMA on completion; bit31=Completed)
+
+  CRITICAL: Before each reuse, clear STATUS field of every descriptor to 0.
+  If Completed bit (STATUS[31]) is set from a previous run, the SG engine
+  skips the descriptor and generates SGSlvErr on subsequent calls.
+
+Cache management (via udmabuf sysfs):
+  Before DMA read (MM2S): write "1" to sync_for_device  -> flushes CPU cache
+  After  DMA write (S2MM): write "1" to sync_for_cpu   -> invalidates CPU cache
+  Open both fds at init; write at the appropriate point each call.
+
+--------------------------------------------------------------------------------
+3. AXI DMA PROGRAMMING SEQUENCE (CRITICAL ORDER)
+--------------------------------------------------------------------------------
+
+The order matters because MM2S TAILDESC immediately starts streaming data.
+If the IP's in_stream.TREADY = 0 (IP not started), MM2S stalls permanently.
+
+  1.  Soft-reset MM2S:    DMACR = 0x4; wait until DMACR[2] clears
+  2.  Soft-reset S2MM:    DMACR = 0x4; wait until DMACR[2] clears
+      (Soft-reset required every call after the first; without it the channel
+       stays Idle/RS=1 and silently ignores CURDESC writes.)
+  3.  Write S2MM CURDESC (lower + upper)
+  4.  Write S2MM DMACR = 0x00011001
+        bit  0: RS=1 (run)
+        bit 12: IOC_IrqEn=1 (enable interrupt-on-complete)
+        bits [23:16]: IRQThreshold=1  <- MUST BE >= 1
+        IRQThreshold=0 is INVALID per PG021: hardware sets DMASR bit 12 for
+        SW polling visibility but the interrupt OUTPUT PIN never asserts.
+        This means UIO poll() never wakes even though DMASR shows completion.
+  5.  Start IP core: ip_ctrl_regs[0] = 0x01  (ap_start)
+      Do NOT write 0x00 to clear ap_start afterwards -- hardware auto-clears it.
+      Writing 0x00 while the kernel is consuming the start signal can abort it.
+  6.  Arm UIO interrupt: write(uio_fd, &1, 4)   <- BEFORE TAILDESC
+      Must arm before TAILDESC so the interrupt cannot fire and be missed.
+  7.  Write S2MM TAILDESC (lower + upper)  -> triggers S2MM (safe: waits for IP)
+  8.  Write MM2S CURDESC (lower + upper)
+  9.  Write MM2S DMACR = 0x1001  (RS | no MM2S interrupt needed)
+  10. Write MM2S TAILDESC (lower + upper)  -> data flow begins, IP consumes it
+
+TAILDESC must point to the LAST valid descriptor (index N-1), not one past it.
+Off-by-one causes the DMA to wait forever for a descriptor that never completes.
+
+AXI DMA register offsets (from base address):
+  MM2S_DMACR   0x00    MM2S_DMASR   0x04
+  MM2S_CURDESC 0x08    MM2S_CURDESC_MSB 0x0C
+  MM2S_TAILDESC 0x10   MM2S_TAILDESC_MSB 0x14
+  S2MM_DMACR   0x30    S2MM_DMASR   0x34
+  S2MM_CURDESC 0x38    S2MM_CURDESC_MSB 0x3C
+  S2MM_TAILDESC 0x40   S2MM_TAILDESC_MSB 0x44
+
+--------------------------------------------------------------------------------
+4. INTERRUPT SYSTEM
+--------------------------------------------------------------------------------
+
+Concat IP (xlconcat, 3 inputs):
+  in0[0:0] = axi_dma_0.mm2s_introut    -> pl_ps_irq0[0] -> GIC SPI 121 -> DT offset 89
+  in1[0:0] = axi_dma_0.s2mm_introut    -> pl_ps_irq0[1] -> GIC SPI 122 -> DT offset 90
+  in2[0:0] = linear_projection.interrupt -> pl_ps_irq0[2] -> GIC SPI 123 -> DT offset 91
+
+GIC SPI N -> Linux IRQ number = N + 32.
+DT interrupt spec: <0 offset 4>  where offset = GIC_SPI_N - 32.
+  e.g. GIC SPI 122: <0 90 4>   (122 - 32 = 90)
+
+generic-uio driver (compatible = "generic-uio" in device tree):
+  - Prevents kernel xilinx_dma driver from claiming axi_dma_0 (which would
+    conflict with userspace /dev/mem register access).
+  - Creates /dev/uioN for each device; N is assigned in probe order.
+  - The FIRST listed interrupt in the DT node is used for the blocking read().
+  - UIO arm:        write(uio_fd, &1, 4)   -> enable_irq() in kernel
+  - UIO wait:       poll(uio_fd, POLLIN, timeout_ms)  -> 0% CPU
+  - UIO consume:    read(uio_fd, &count, 4)
+  - HW acknowledge: dma_regs[S2MM_DMASR/4] = 0x00001000  (W1C bit 12)
+
+IMPORTANT: Do NOT assume /dev/uio0 is the DMA device.
+  The KV260 base system has axi-pmon devices at uio0..uio3.
+  After the PL overlay loads, the DMA will be uio4 (or higher).
+  Find the correct device by physical address:
+    Iterate /sys/class/uio/uio*/maps/map0/addr until addr == 0xa0000000.
+  The open_uio_by_addr() helper in ggml-cpu.c implements this lookup.
+
+DT overlay (pl.dtsi / pl.dtbo) notes:
+  - Must be compiled and applied: dtc -@ -I dts -O dtb -o pl.dtbo pl.dtsi
+  - Apply via configfs:
+      mkdir -p /configfs/device-tree/overlays/pl
+      cp pl.dtbo /lib/firmware/pl.dtbo
+      echo pl.dtbo > /configfs/device-tree/overlays/pl/path
+  - Or via xmutil loadapp (packages bitstream + dtbo together)
+  - XSCT auto-generates pl.dtsi from the Vivado project; verify reg addresses
+    match the deployed bitstream using Vivado Address Editor or confirmed C code.
+
+S2MM interrupt acknowledgement after UIO read:
+  Write 0x00001000 to S2MM_DMASR (clears IOC_Irq, bit 12, write-1-to-clear).
+  Without this, re-arming UIO with enable_irq() immediately re-fires the ISR
+  (level-triggered interrupt stays asserted at the GIC).
+
+--------------------------------------------------------------------------------
+5. HLS IP CORE: linear_projection.cpp
+--------------------------------------------------------------------------------
+
+Interfaces:
+  in_stream:  ap_axiu<32,0,0,0>  -- receives F32 vector then Q6_K blocks
+  out_stream: ap_axiu<32,0,0,0>  -- emits F32 logits, one per token
+  s_axilite (CTRL): ap_start, ap_done, ap_idle, ap_ready
+
+Stream data order:
+  1. 2048 x F32 words (8,192 bytes) -- input vector
+  2. 65536 rows x 8 blocks x 210 bytes -- Q6_K weight matrix
+     Blocks arrive in pairs (420 bytes = 105 x 32-bit words) to eliminate
+     conditional stream reads (which cause loop-carried dependencies -> II > 1)
+  Output: 65536 x F32 words (262,144 bytes)
+
+Q6_K block layout (210 bytes, 256 weights):
+  Bytes [0..127]:   ql  -- 4-bit quantized values, 2 per byte (lo nibble = even idx)
+  Bytes [128..191]: qh  -- 2-bit high bits, 4 per byte
+  Bytes [192..207]: scales -- 16 x int8, one per group of 16 weights
+  Bytes [208..209]: d  -- fp16 delta (scale factor for the block)
+
+  Dequantize weight n:
+    ql_val  = (n%2==0) ? (ql[n/2] & 0x0F) : (ql[n/2] >> 4)
+    qh_val  = (qh[n/4] >> ((n%4)*2)) & 0x03
+    q       = (int8_t)((qh_val<<4)|ql_val) - 32     // range: [-32, 31]
+    scale   = (int8_t)scales[n/16]
+    weight  = (float)q * (float)scale * d
+
+CRITICAL -- fp16 DAZ bug in HLS synthesis:
+  hls_half (Vitis HLS half-precision type) flushes subnormal fp16 values to
+  zero at synthesis time (Denormals-As-Zero). For this model, nearly all Q6_K
+  delta values are subnormal fp16 -> ALL WEIGHTS BECOME ZERO -> zero output.
+  Fix: implement fp16->fp32 conversion manually via bit manipulation (no casts
+  to hls_half or ap_fixed). The current implementation in fp16_to_fp32() is
+  correct and handles subnormals, inf, NaN, and zero properly.
+
+FP accumulator recurrence (critical for II=1):
+  A single accumulator `acc += x` creates a loop-carried dependency through
+  the ~5-cycle FP adder -> DECODE_MAC achieves II~5 instead of II=1.
+  Fix: 8 partial accumulators, acc[n & 7] += ..., with ARRAY_PARTITION complete.
+  Each accumulator is accessed every 8 cycles (> 5-cycle latency) -> II=1.
+  Reduce at loop end with binary-tree pattern: ((a0+a1)+(a2+a3))+((a4+a5)+(a6+a7))
+
+Pair-processing for READ_BLOCK II=1:
+  Old: read 1 word, conditionally distribute bytes to current block buffer.
+       if (bytes_in_word == 0) read -> loop-carried dependency on bytes_in_word.
+  New: process 2 blocks at a time (2 x 210 = 420 = 105 x 4 bytes exactly).
+       READ_PAIR reads 105 words unconditionally; UNPACK (4 iters, fully unrolled)
+       routes each byte to block_buf_a or block_buf_b based on abs_byte < 210.
+       No conditional branches on loop state -> II=1 achievable.
+
+ap_ctrl_hs handshake:
+  ap_start (bit 0): write 1 to start; hardware clears it automatically.
+                    Never write 0x00 to clear it -- may abort a running kernel.
+  ap_done  (bit 1): set when kernel finishes; auto-clears on next ap_start.
+  ap_idle  (bit 2): 1 when kernel is idle (between runs).
+  ap_ready (bit 3): 1 when kernel can accept a new ap_start.
+  DO NOT use AP_CTRL as general-purpose RAM. Reading it returns real HW state,
+  not a test pattern (e.g., 0x81 = auto_restart | ap_start, not 0xDEADBEEF).
+
+--------------------------------------------------------------------------------
+6. DEVICE TREE OVERLAY (pl.dtsi) TEMPLATE
+--------------------------------------------------------------------------------
+
+Key nodes for this design (addresses verified against deployed bitstream):
+
+  axi_dma_0: dma@a0000000 {
+      compatible = "generic-uio";
+      reg = <0x0 0xa0000000 0x0 0x10000>;
+      interrupt-parent = <&gic>;
+      interrupts = <0 90 4>, <0 89 4>;      // s2mm first, mm2s second
+      interrupt-names = "s2mm_introut", "mm2s_introut";
+      clocks = <&zynqmp_clk 71>;
+  };
+
+  linear_projection_0: linear_projection@a0010000 {
+      compatible = "generic-uio";
+      reg = <0x0 0xa0010000 0x0 0x10000>;
+      interrupt-parent = <&gic>;
+      interrupts = <0 91 4>;
+      interrupt-names = "interrupt";
+      clocks = <&zynqmp_clk 71>;
+  };
+
+Interrupt type field: 4 = IRQ_TYPE_LEVEL_HIGH (all PL->PS interrupts use this).
+zynqmp_clk 71 = PL0 fabric clock (FCLK0), zynqmp_clk 72 = FCLK1.
+
+--------------------------------------------------------------------------------
+7. DRIVER / SOFTWARE PATTERNS
+--------------------------------------------------------------------------------
+
+Register access via /dev/mem:
+  int mem_fd = open("/dev/mem", O_RDWR | O_SYNC);
+  volatile uint32_t *regs = mmap(NULL, 0x10000, PROT_READ|PROT_WRITE,
+                                  MAP_SHARED, mem_fd, base_addr);
+  // ... use regs[offset/4] ...
+  munmap(regs, 0x10000);
+  close(mem_fd);
+  Map and unmap per call to avoid leaking mappings.
+
+Memory barriers:
+  __asm__ __volatile__("" ::: "memory")  -- compiler barrier (prevents reorder)
+  For ARM, dsb/dmb are needed for true hardware ordering, but in practice the
+  mmap(MAP_SHARED) + sysfs sync_for_device/cpu is sufficient with udmabuf.
+
+Soft-reset pattern:
+  regs[DMACR/4] = 0x4;           // assert soft-reset
+  while (regs[DMACR/4] & 0x4);   // wait for HW to clear (typically < 10 cycles)
+
+Finding UIO device by physical address:
+  Iterate /sys/class/uio/uio0..15/maps/map0/addr until match found.
+  Do not hardcode /dev/uio0 -- the index shifts with pre-existing platform devices.
+
+Useful diagnostic commands on the board:
+  # List all UIO devices and their addresses
+  for d in /sys/class/uio/uio*; do
+    echo "$(basename $d): name=$(cat $d/name) addr=$(cat $d/maps/map0/addr 2>/dev/null)"
+  done
+
+  # Check interrupt registration and counts (run before and after inference)
+  cat /proc/interrupts | grep -E "uio|dma|122|123"
+
+  # Verify overlay was applied
+  ls /proc/device-tree/amba/dma@a0000000/ 2>/dev/null
+
+--------------------------------------------------------------------------------
+8. VIVADO BLOCK DESIGN NOTES
+--------------------------------------------------------------------------------
+
+AXI DMA configuration for this design:
+  - Scatter-Gather mode enabled
+  - Width of buffer length register: 26 bits (fits max 67 MB transfers)
+  - Memory map data width: 64 bits (AXI HP port)
+  - Stream data width: 32 bits (matches ap_axiu<32,...> HLS interface)
+
+Interrupt connection:
+  - Add xlconcat IP, set to N inputs (1 bit wide each); N = number of IP cores
+  - Connect dma.mm2s_introut -> In0, dma.s2mm_introut -> In1, ip.interrupt -> In2
+  - In Zynq UltraScale+ IP: PS-PL Configuration -> General -> Interrupts ->
+    PL to PS -> IRQ0[0-7]: enable, set width to match concat output width
+  - Connect xlconcat.dout[N-1:0] -> zynq_ultra_ps_e_0.pl_ps_irq0[N-1:0]
+  Without this connection, DTG generates warnings and Tcl get_property errors.
+
+PL clock: set in Zynq UltraScale+ IP -> Clock Configuration -> PL Fabric Clocks.
+  No external Clock Wizard needed. Vivado calculates PLL dividers automatically.
+
+--------------------------------------------------------------------------------
+9. PERFORMANCE SUMMARY (linear_projection, ~100 MHz PL clock)
+--------------------------------------------------------------------------------
+
+  Total data in:   ~110 MB (weights) + 8 KB (vector) = ~110 MB
+  Total data out:  256 KB (logits)
+  Computation:     65536 tokens x 8 blocks x 256 MACs = ~134M FP operations
+  Wall time:       ~5 seconds end-to-end
+  CPU usage:       ~0% during computation (UIO interrupt-driven wait)
+
+  Output accuracy: +-1 to 3 ULP vs CPU reference
+    Example: logit[0] = 0xBF3A49BE (HW) vs 0xBF3A49BB (CPU ref)
+    Difference is due to FP accumulation order (not a bug).
+
+--------------------------------------------------------------------------------
+10. BUGS ENCOUNTERED AND FIXES
+--------------------------------------------------------------------------------
+
+BUG: All output logits were exactly zero.
+  CAUSE: hls_half DAZ -- subnormal fp16 delta values flushed to zero at synthesis.
+  FIX:   Manual fp16_to_fp32() via uint32_t bit manipulation; never use hls_half.
+
+BUG: DMA deadlock -- MM2S stalled, IP never started processing.
+  CAUSE: MM2S TAILDESC written before ap_start; IP TREADY=0; MM2S backpressure.
+  FIX:   Write ap_start before MM2S TAILDESC.
+
+BUG: SGSlvErr on second and subsequent calls.
+  CAUSE: SG engine skips descriptors with Completed bit (STATUS[31]) still set.
+  FIX:   Clear STATUS field of all descriptors before each call.
+
+BUG: S2MM DMAIntErr on second call.
+  CAUSE: Channel stayed Idle/RS=1, silently ignoring CURDESC write.
+  FIX:   Soft-reset both channels before programming CURDESC each call.
+
+BUG: TAILDESC off-by-one -> DMA waits forever.
+  CAUSE: TAILDESC pointed one past the last valid descriptor.
+  FIX:   TAILDESC = phys_base + (last_idx x 64), not (last_idx+1 x 64).
+
+BUG: Infinite loop during soft-reset wait.
+  CAUSE: dma_regs pointed to IP AXI-Lite space (addresses were swapped).
+         IP AP_CTRL bit 2 = ap_idle = 1 permanently -> while (reg & 0x4) spun.
+  FIX:   Verify addresses from working code, not from XSCT auto-generated dtsi.
+         DMA = 0xA0000000, IP = 0xA0010000 for this bitstream.
+
+BUG: Register write "FAILED" diagnostic tripped at startup.
+  CAUSE: 0xDEADBEEF test written to AP_CTRL; readback returned 0x81 (real HW state).
+  FIX:   Remove the test. AP_CTRL is not RAM; reads return live hardware state.
+
+BUG: UIO poll() timed out despite DMASR showing IOC_Irq=1.
+  CAUSE 1: S2MM_DMACR IRQThreshold field = 0 (invalid per PG021). Hardware sets
+           DMASR bit for SW polling visibility but does NOT assert interrupt pin.
+  FIX 1:   S2MM_DMACR = 0x00011001 (IRQThreshold=1 in bits [23:16]).
+
+  CAUSE 2: DT overlay not applied -> no generic-uio for DMA -> /dev/uio0 was an
+           unrelated axi-pmon device -> poll() never woke.
+  FIX 2:   Apply pl.dtbo overlay; find UIO device by physical address lookup,
+           not hardcoded path (/dev/uio0 is NOT guaranteed to be the DMA).
+
+BUG: DECODE_MAC II > 1 (reported as II=5 in csynth.rpt).
+  CAUSE: Single FP accumulator creates loop-carried recurrence through ~5-cycle adder.
+  FIX:   8 partial accumulators (acc[n&7]) + ARRAY_PARTITION complete -> II=1.
+
+BUG: READ_BLOCK II > 1.
+  CAUSE: Conditional stream read (if bytes_in_word == 0) -> loop-carried dependency.
+  FIX:   Pair-processing (2 blocks = 105 words exact, no carry-over).
+
+BUG: Memory leak in init_hardware_offload.
+  CAUSE: mmap of dma_regs (global, overwritten each call) and ip_ctrl_regs
+         (local pointer, discarded) -- both leaked on every call.
+  FIX:   Map and munmap registers per call in the compute function.
+
+--------------------------------------------------------------------------------
+11. CHECKLIST FOR NEXT BLOCK (MatMul + SwiGLU)
+--------------------------------------------------------------------------------
+
+Hardware:
+  [ ] Decide on data types: F32 x F32, or quantized input?
+  [ ] Determine SwiGLU dimensions (hidden_dim = int(8/3 * model_dim), rounded up)
+  [ ] Allocate new address range in Vivado Address Editor (e.g., 0xA0020000)
+  [ ] Add new interrupt to Concat IP (add In3[0:0]; expand pl_ps_irq0 to [3:0])
+  [ ] Verify new IP address in Vivado Address Editor after implementation
+
+HLS:
+  [ ] Use ap_axiu<32,0,0,0> for all AXI Stream ports
+  [ ] Do NOT use hls_half -- use manual fp16_to_fp32() if fp16 weights are needed
+  [ ] Use partial accumulators for all FP MAC loops (acc[n&7], ARRAY_PARTITION complete)
+  [ ] Verify II=1 for all pipelined loops in csynth.rpt before synthesis
+  [ ] Run C simulation against CPU reference before synthesis
+
+Software:
+  [ ] Add new UIO lookup: open_uio_by_addr(new_ip_base_addr) or reuse DMA UIO
+  [ ] Add new mmap entry for new IP AXI-Lite space
+  [ ] Add ap_start / ap_done handling for new IP
+  [ ] Update pl.dtsi with new device node and interrupt entry; recompile dtbo
+  [ ] Clear descriptor STATUS before each call
+  [ ] Soft-reset DMA channels before each call
+
+Verification:
+  [ ] Cross-check first output element vs CPU reference (should be within +-3 ULP)
+  [ ] Check /proc/interrupts counts increment during inference
+  [ ] Confirm uio_fd points to correct device (log addr at init)
+  [ ] Run at least 2 consecutive inferences to catch descriptor reuse bugs
+
+================================================================================

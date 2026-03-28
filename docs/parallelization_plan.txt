@@ -1,0 +1,715 @@
+# SwiGLU FPGA Performance Analysis and Parallelization Plan
+# Last updated: 2026-03-26
+
+================================================================================
+## PROGRESS LOG
+================================================================================
+
+[DONE] Fix serial decode_mac execution (block_sums pattern) — previous session
+[DONE] HLS DATAFLOW restructure — compute_X1 || compute_X2 → compute_gate → compute_output
+[DONE] Fix x_local storage type: ram_2p → ram_t2p (concurrent read bug)
+[DONE] Fix stale comment in compute_X1 header (cyclic description removed)
+[DONE] Fix BRAM over-utilization: MAX_BATCH 8→1, remove x_local dim=1 complete
+[DONE] Fix AXI bus width: add DATA_WIDTH=128 to W, V, W_down interface pragmas
+
+[INVALID] DATAFLOW restructure claimed done — board test (output.txt 2026-03-26) shows
+          Block_entry_x_local_0_rd_proc takes 18.99M cycles = 2× compute_X1 alone.
+          Compute_X1 and compute_X2 are still running SEQUENTIALLY. See Root Cause 6.
+
+[TODO] Fix DATAFLOW serialization: duplicate x_local into x_local_1 / x_local_2
+[TODO] Fix Phase 2/3 compute bottleneck: unroll 4 decode_mac calls per row in
+       compute_X1 and compute_X2 (4× parallel, matching Phase 5's 32× approach)
+[TODO] Increase PL clock to 200+ MHz (target 300 MHz) for competitive compute rate
+[TODO] Vitis HLS: re-synthesize after all three fixes above; confirm II=1, parallelism
+[TODO] Vivado: update swiglu_0 IP, add HP1/HP2 for gmem_W and gmem_V
+[TODO] Generate new bitstream and deploy
+[TODO] Board test: measure per-layer time (revised target: ~12 ms at 300 MHz)
+[TODO] Board test: confirm >4 t/s whole-model throughput
+
+================================================================================
+## WHY THE FPGA IS SLOWER THAN CPU (diagnosis)
+================================================================================
+
+### Observed Performance (from board output.txt, before fixes)
+  Q4_K layers (mode=0): ~1000 ms/layer
+  Q6_K layers (mode=1): ~1050 ms/layer
+  Effective throughput:  ~0.06 t/s
+  CPU-only baseline:     ~4 t/s  (~9.4 ms/layer for SwiGLU FFN, 68% of CPU load)
+
+### Root Cause 1: Serial decode_mac Execution  [FIXED]
+
+The Q6K/Q4K differential of 50 ms is the key diagnostic:
+  Phase 5 Q6K reads 4.31 MB more than Q4K per token.
+  50 ms / 4.31 MB = 86 MB/s effective AXI bandwidth  (theoretical HP0: 1.6 GB/s)
+  → 94.6% of time was wasted on sequential MAC execution, not memory transfer.
+
+The old code: `acc += decode_mac_q4k(...)`
+After UNROLL, HLS still saw a carried dependency through `acc` and scheduled all
+N decode_mac calls sequentially (N×256 cycles instead of 256 cycles per row).
+
+Fix: block_sums pattern — store each decode_mac result in an independent
+block_sums[b] element (complete-partitioned array), then sum separately.
+All N calls are now explicitly independent; HLS schedules them in parallel.
+Applied to: BATCH_X1, BATCH_X2, BATCH_DOWN_Q4K, BATCH_DOWN_Q6K.
+
+### Root Cause 2: AXI Sub-Burst Fragmentation  [not a separate fix]
+
+Initial hypothesis: block partition on row_buf might cause N sub-bursts per memcpy.
+The cyclic partition proposed as a fix was analysed and found to introduce fatal
+bank conflicts (see correctness review below). Block partition is retained unchanged.
+
+### Root Cause 3: Phases 2 and 3 Run Sequentially  [FIXED by DATAFLOW]
+
+The old code ran compute_X1 (W, 9 MB) then compute_X2 (V, 9 MB) back to back
+on the same HP0 port: 18 MB sequential → 11.25 ms minimum at 1.6 GB/s.
+
+Fix: DATAFLOW restructure — compute_X1 and compute_X2 run in parallel on
+separate HP ports (HP1 and HP2). Each reads 9 MB, taking 5.6 ms in parallel
+instead of 11.25 ms sequentially.
+
+### Root Cause 4: Fundamental HP0 Bandwidth Ceiling  [PARTIALLY FIXED by multi-port DATAFLOW]
+
+  HP0 bandwidth:   128-bit @ 100 MHz = 1.6 GB/s theoretical (per port)
+  CPU DDR (PS):    ~8.5 GB/s (LPDDR4)
+  Ratio:            5.3× disadvantage with single HP0
+
+Per-layer memory reads:
+  Phase 2 (W,  Q4_K): 9.0 MB
+  Phase 3 (V,  Q4_K): 9.0 MB
+  Phase 5 (Wd, Q6_K): 13.7 MB  (or 9.4 MB Q4_K)
+  Total:              27–32 MB/layer
+
+Using HP0+HP1+HP2 together provides 4.8 GB/s combined bandwidth.
+IF DATAFLOW were truly parallel AND AXI bus were 128-bit, bottleneck would be
+Phase 5 alone: 13.7 MB / 1.6 GB/s = 8.6 ms/layer.
+HOWEVER: Root Causes 5 and 6 prevent this from being achieved.
+
+### Root Cause 5: 8-bit AXI Bus Width for W, V, W_down  [FIXED by DATA_WIDTH=128]
+
+Discovered 2026-03-26 from synthesis report. Confirmed by counting bytes:
+  compute_X1_Pipeline_1 interval = 1153 cycles for 1152 bytes → 1 byte/cycle
+  compute_output_Pipeline_1 interval = 4609 cycles for 4608 bytes → 1 byte/cycle
+  compute_output_Pipeline_2 interval = 6721 cycles for 6720 bytes → 1 byte/cycle
+
+Cause: W, V, W_down are declared const uint8_t*.  HLS infers AXI data bus width
+from the pointer's base type: uint8_t → 8-bit bus = 100 MB/s at 100 MHz.
+The HP ports are capable of 128-bit = 1.6 GB/s, but the IP only used 1/16th of
+that bandwidth.  The plan's assumption of "HP0 = 1.6 GB/s" was only achievable
+with 128-bit bus; the actual bandwidth was 100 MB/s.
+
+Effect on observed latency:
+  Phase 2 per-row burst read: 1152 bytes / 1 B/cycle = 1152 cycles (vs 72 at 128-bit)
+  Phase 5 Q4K per-row burst:  4608 bytes / 1 B/cycle = 4608 cycles (vs 288 at 128-bit)
+  These burst times happened to roughly MATCH the decode_mac MAC times, so the
+  MAC was partially hidden. Net measured: 1000ms ≈ synthesis report max 1058ms.
+
+Fix applied (2026-03-26): DATA_WIDTH=128 on W, V, W_down interface pragmas:
+  #pragma HLS INTERFACE mode=m_axi port=W   ... DATA_WIDTH=128
+  #pragma HLS INTERFACE mode=m_axi port=V   ... DATA_WIDTH=128
+  #pragma HLS INTERFACE mode=m_axi port=W_down ... DATA_WIDTH=128
+
+Effect of fix in isolation (DATA_WIDTH=128 alone):
+  Phase 5 burst per row: 4608 → 288 cycles. compute_output: 94ms → ~8ms. Large win.
+  Phase 2/3 burst per row: 1152 → 72 cycles. Burst time now << MAC time (1400 cycles).
+  Phase 2/3 no longer AXI-limited; MAC becomes exposed as bottleneck (Root Cause 7).
+  Per-call estimate: ~123ms (Phase 2/3 MAC bottleneck) + ~8ms (Phase 5) = ~131ms.
+  16 layers: ~2100ms/token = ~0.5 t/s. WORSE than current if Root Cause 6 not fixed.
+
+### Root Cause 6: DATAFLOW Parallelism Failure — X1 and X2 Run Sequentially  [NOT FIXED]
+
+Discovered 2026-03-26 from synthesis report (swiglu_csynth.rpt instance table):
+  Block_entry_x_local_0_rd_proc_U0: 18,989,201–68,534,417 cycles
+  compute_X1 alone:                  9,494,599–34,267,207 cycles
+  Ratio: exactly 2.000× → X1 and X2 run back-to-back, not in parallel.
+
+Cause: HLS DATAFLOW with a shared stable BRAM (x_local) read by two processes
+creates a serializing "reader entry block" (Block_entry_x_local_0_rd_proc).
+Despite ram_t2p providing two physical ports and #pragma HLS stable declaring
+x_local read-only, HLS generates a single process that reads x_local once for X1
+and once for X2 in sequence. The DATAFLOW code structure fix (ram_2p → ram_t2p,
+stable pragma) was a necessary precondition but NOT sufficient.
+
+This means the [DONE] item "HLS DATAFLOW restructure" in the progress log was
+incorrect — the parallelism was not actually achieved. X1+X2 sequential is still
+18.99M cycles vs the 9.5M cycles that true parallel DATAFLOW would give.
+
+Fix: Eliminate the shared BRAM access. Duplicate x_local into two separate
+variables: x_local_1 (for compute_X1) and x_local_2 (for compute_X2).
+LOAD_X writes the same x data to both. With no shared array, DATAFLOW can
+schedule compute_X1 and compute_X2 in parallel with no broadcast reader block.
+
+Code change required in swiglu():
+
+  // Before:
+  float x_local[MAX_BATCH][VECTOR_DIM];
+  // ... pragmas ...
+  LOAD_X: for (int n = 0; n < MAX_BATCH; n++)
+      memcpy(x_local[n], ...);
+  #pragma HLS DATAFLOW
+  compute_X1(W, x_local, X1_cache, ...);
+  compute_X2(V, x_local, X2_cache, ...);
+
+  // After:
+  float x_local_1[MAX_BATCH][VECTOR_DIM];   // for compute_X1 only
+  float x_local_2[MAX_BATCH][VECTOR_DIM];   // for compute_X2 only
+  // ... same pragmas on each ...
+  LOAD_X: for (int n = 0; n < MAX_BATCH; n++) {
+      memcpy(x_local_1[n], ...);
+      memcpy(x_local_2[n], ...);   // same data, different BRAM
+  }
+  #pragma HLS DATAFLOW
+  compute_X1(W, x_local_1, X1_cache, ...);
+  compute_X2(V, x_local_2, X2_cache, ...);
+
+BRAM cost: x_local_1 + x_local_2 = 2 × 8 BRAM_18K = 16 BRAM_18K (vs current 8).
+Trivial cost. With MAX_BATCH=1, x_local is [1][2048] = 8KB — duplicating is 16KB.
+No BRAM budget risk.
+
+compute_X1 and compute_X2 function signatures change: x_local → x_local_1 / x_local_2.
+ram_t2p pragma on x_local_1 and x_local_2 is no longer required (each has only one
+reader). Use ram_1p or ram_2p (either is fine; no concurrent access to same variable).
+
+Effect: Block_entry_x_local_0_rd_proc disappears. compute_X1 (9.5M min) and
+compute_X2 (9.5M min) become the two DATAFLOW critical path branches. True interval
+= max(9.5M, 9.5M) = 9.5M (vs current 18.99M). 2× speedup on Phase 2/3.
+But 9.5M cycles = 95ms at 100 MHz — still compute-limited (Root Cause 7).
+
+### Root Cause 7: Compute Bottleneck — 4 Sequential decode_mac Calls per Row  [NOT FIXED]
+
+Discovered 2026-03-26 from synthesis analysis. After fixing Root Causes 5 and 6,
+Phase 2/3 is still bottlenecked by compute throughput, not AXI bandwidth.
+
+Structure of compute_X1 outer loop (COMPUTE_X1, 8192 rows):
+  For each row j = 0..8191:
+    1. Burst read W row into row_buf: [72 cycles with DATA_WIDTH=128]
+    2. Call decode_mac_q4k × 4 (one per pair of Q4_K blocks): 4 × ~350 = 1400 cycles
+    3. Write X1_cache[j] = sum(block_sums)
+  Per-row time: max(72, 1400) + overhead ≈ 1400 cycles (MAC dominates at 128-bit)
+  Total compute_X1: 8192 × 1400 = 11.5M cycles = 115ms at 100 MHz.
+
+The 4 decode_mac calls are sequential (one shared grp_decode_mac_q4k_fu_211
+instance, called 4 times per row via FSM state machine). With 8-bit AXI (old),
+this was hidden: burst took 1153 cycles, masking the 1400-cycle MAC time across
+two rows. With 128-bit AXI, the burst drops to 72 cycles and MAC is fully exposed.
+
+Contrast with compute_output, which already uses UNROLL on all 32 blocks in parallel:
+  Phase 5 per row: 32× decode_mac simultaneously → one call time (~375 cycles)
+  × 2048 rows = 768K cycles = 7.7ms at 100 MHz  ← already acceptable
+
+compute_X1 and compute_X2 need the same treatment. The pair loop (4 iterations)
+must be UNROLLED so all 4 decode_mac calls run simultaneously.
+
+Fix: add #pragma HLS UNROLL to the inner pair loop in compute_X1 and compute_X2.
+Apply the block_sums pattern (already used for compute_output) to hold 4 results.
+
+Code change in compute_X1 inner loop (matching existing compute_output structure):
+  // Current structure (schematic — exact loop names may differ):
+  for (int pair = 0; pair < 4; pair++) {
+      // HLS FSM calls decode_mac_q4k sequentially
+      float s = decode_mac_q4k(row_buf + pair*Q4K_PAIR_BYTES,
+                                x_local, pair * 512);
+      acc += s;
+  }
+
+  // Fix:
+  float pair_sums[4];
+  #pragma HLS ARRAY_PARTITION variable=pair_sums complete
+  for (int pair = 0; pair < 4; pair++) {
+      #pragma HLS UNROLL
+      pair_sums[pair] = decode_mac_q4k(row_buf + pair*Q4K_PAIR_BYTES,
+                                        x_local, pair * 512);
+  }
+  float acc = pair_sums[0] + pair_sums[1] + pair_sums[2] + pair_sums[3];
+
+NOTE: Row_buf in compute_X1 already has BLOCK partition factor=8, one bank per
+Q4_K block. With 4× unroll, 4 decode_mac calls each access separate banks — no
+bank conflicts (same logic as compute_output's 32× unroll).
+
+Resource cost: 4 parallel decode_mac instances in compute_X1 = 4 × 30 DSP = 120 DSP.
+Same for compute_X2. Total new DSP: ~240 (was 60). Still well within 1248 limit.
+BRAM for row_buf in compute_X1: already 8 banks, each independently accessible.
+No additional BRAM needed beyond what the current partition factor=8 provides.
+
+Effect after fix (DATA_WIDTH=128 + Root Cause 6 fix + this fix):
+  compute_X1 per-row: max(72 burst, 350 MAC in parallel) ≈ 350 cycles
+  × 8192 rows = 2.87M cycles = 28.7ms at 100 MHz (was 115ms)
+  Total per call: max(28.7, 28.7) + 7.7 = 36.4ms
+  16 layers: 582ms → ~1.7 t/s (significant improvement, but not yet >4 t/s)
+
+### Root Cause 8: Clock at 100 MHz — Insufficient Compute Rate  [NOT FIXED]
+
+Even with Root Causes 5, 6, 7 all fixed, the hardware does:
+  8 MACs/cycle × 100 MHz × 4 parallel = 3.2 GMAC/s (compute_X1 with 4× unroll)
+
+The CPU (4× Cortex-A53 @ 1.3 GHz with NEON) does approximately:
+  16 MACs/cycle × 1.3 GHz × 4 cores = 83.2 GMAC/s theoretical
+  Effective for Q4_K (decode overhead): estimated 4–8 GMAC/s
+  Observed: 4 t/s × 805M MACs/token = 3.22 GMAC/s effective
+
+At 100 MHz, hardware effective rate = 3.2 GMAC/s ≈ CPU effective rate.
+No reliable speedup is achievable at 100 MHz.
+
+At 300 MHz:
+  3.2 GMAC/s × (300/100) = 9.6 GMAC/s → 3× the CPU's effective Q4_K rate.
+  Phase 2/3: 2.87M cycles / 300 MHz = 9.6ms per computation
+  Phase 5: 768K cycles / 300 MHz = 2.6ms
+  Per call: 9.6 + 2.6 = 12.2ms. 16 layers = 195ms SwiGLU.
+  Total token (+ ~50ms CPU attention/other): ~245ms = ~4.1 t/s. Marginal win.
+
+At 200 MHz:
+  Phase 2/3: 28.7ms → 14.4ms; Phase 5: 7.7ms → 3.85ms; per call: 18.2ms
+  16 layers = 292ms SwiGLU + 50ms CPU = 342ms/token = 2.9 t/s. Not enough.
+
+HLS synthesis target is already 10 ns (100 MHz). The IP timing estimate shows
+8 ns for the critical path, meaning 125 MHz is achievable without changes.
+For 300 MHz, the critical path (FP multiply-add chain) must close at 3.33 ns.
+This likely requires retiming and may need DSP cascade adjustments in HLS.
+
+Fix: in Vivado, increase the PL clock (pl_clk0) from 100 MHz to 300 MHz:
+  Double-click zynq_ultra_ps_e_0 → Clock Configuration → PL Fabric Clocks
+  Set PL CLK0 Frequency (MHz) = 300.
+  Timing closure may require minor HLS constraint adjustment (target = 3.33 ns).
+  If 300 MHz fails timing, try 250 MHz (4.0 ns) or 200 MHz (5.0 ns).
+
+================================================================================
+## CORRECTNESS REVIEW LOG (bugs found and fixed)
+================================================================================
+
+### Review 1 (2026-03-25, pass 1)
+
+BUG: cyclic partition introduced on all three row_buf arrays.
+     Caused complete bank conflicts for all unrolled decode_mac calls.
+     Math: Q4K row_buf, cyclic factor=8 — address = b*144 + 16 + n/2.
+     Since 144 mod 8 = 0 and 16 mod 8 = 0, bank = (n/2) mod 8 for ALL b.
+     All 8 unrolled calls map to the same bank every cycle — complete conflict.
+     Similarly for Phase 5: Q4K factor=32: 144 mod 32 = 16 → b=0 and b=2 collide.
+     Q6K factor=32: 210 mod 32 = 18, gcd=2, period=16 → b=0 and b=16 collide.
+FIX: Reverted all three partitions to block (unchanged from original).
+     Block is correct: bank b = [b*Q_BYTES .. b*Q_BYTES + Q_BYTES - 1],
+     each unrolled call b stays entirely within bank b.
+
+### Review 2 (2026-03-25, pass 2)  — TWO bugs fixed
+
+BUG 1: Stale comment in compute_X1 header (lines 153-158) still described the
+       cyclic partition that had been removed. Contradicted the actual code.
+FIX:   Updated comment to correctly describe block partition and the cyclic rejection.
+
+BUG 2 (functional): x_local declared type=ram_2p (one read port, one write port).
+       Two DATAFLOW processes (compute_X1 and compute_X2) read x_local
+       concurrently for the same batch token n. ram_2p has only one read
+       port (port A) — two concurrent reads from the same physical BRAM
+       block conflict, serializing the reads and destroying DATAFLOW parallelism.
+       (#pragma HLS stable prevents ping-pong buffering but does NOT add a
+       read port — it is a separate concern.)
+FIX:   Changed to type=ram_t2p (true dual-port). Both ports can independently
+       read or write in the same cycle. compute_X1 uses port A, compute_X2
+       uses port B — no conflict, full parallelism preserved.
+
+### Review 3 (2026-03-25, pass 3)  — ONE bug fixed
+
+BUG (pragma ordering): #pragma HLS stable variable=x_local was placed BEFORE
+     #pragma HLS DATAFLOW. Xilinx documentation and all reference examples
+     place stable AFTER DATAFLOW. With the wrong order, some HLS versions do
+     not associate the stable pragma with the DATAFLOW region, causing HLS to
+     attempt ping-pong buffering on x_local (wasting BRAM) or flag a
+     multi-reader violation.
+FIX: Swapped order — #pragma HLS DATAFLOW now comes first, followed by
+     #pragma HLS stable variable=x_local.
+
+================================================================================
+## WHAT WAS CHANGED IN swiglu.cpp  (2026-03-25)
+================================================================================
+
+### Change 1: DATAFLOW restructure
+
+Phases 2-5 extracted into four static sub-functions:
+  compute_X1(W, x_local, X1_cache, batch_size)       — reads gmem_W → HP1
+  compute_X2(V, x_local, X2_cache, batch_size)       — reads gmem_V → HP2
+  compute_gate(X1_cache, X2_cache, gate_cache, ...)  — pure on-chip
+  compute_output(W_down, gate_cache, out_batch, ...) — reads gmem_Wd → HP0
+
+All four are marked `#pragma HLS INLINE off` to prevent HLS from folding them
+back into swiglu() and losing the DATAFLOW process boundaries.
+
+Top-level swiglu():
+  1. Runs LOAD_X (Phase 0) sequentially — fills x_local before DATAFLOW starts.
+  2. Marks x_local stable (`#pragma HLS stable variable=x_local`) — prevents
+     ping-pong buffering; declares that x_local is read-only during DATAFLOW.
+  3. Enters `#pragma HLS DATAFLOW` region — calls all four sub-functions.
+
+Dependency graph (HLS infers this from argument write/read pattern):
+  compute_X1 writes X1_cache ─┐
+                               ├─→ compute_gate writes gate_cache → compute_output
+  compute_X2 writes X2_cache ─┘
+
+compute_X1 and compute_X2 start simultaneously; compute_gate joins after both.
+
+### Change 2: x_local storage type
+
+  Before: #pragma HLS BIND_STORAGE variable=x_local type=ram_2p impl=bram
+  After:  #pragma HLS BIND_STORAGE variable=x_local type=ram_t2p impl=bram
+
+Reason: two DATAFLOW processes read x_local concurrently; ram_t2p provides
+two independent read ports (see correctness review, bug 2).
+
+### What did NOT change
+  - fp16_to_fp32, decode_mac_q4k, decode_mac_q6k (all unchanged)
+  - All AXI m_axi and s_axilite interface pragmas
+  - BIND_STORAGE on X1_cache (uram), X2_cache (uram), gate_cache (bram)
+  - block_sums pattern in all four BATCH loops
+  - row_buf BLOCK partition factor=8 (Phase 2/3) and factor=32 (Phase 5)
+  - swiglu.h interface — hardware register map unaffected
+
+================================================================================
+## VIVADO BLOCK DESIGN MODIFICATIONS
+================================================================================
+
+### Actual current block design (from connections&addresses.txt)
+
+  zynq_ultra_ps_e_0:
+    M_AXI_HPM0_FPD → axi_smc S00_AXI       (PS master → PL control, AXI-Lite)
+    S_AXI_HP0_FPD  → smartconnect_0 M00_AXI (PL data → PS DDR, AXI4)
+    pl_ps_irq      → xlconcat dout
+
+  axi_smc (3 masters):
+    M00_AXI → linear_projection_0 s_axi_CTRL
+    M01_AXI → axi_dma_0 S_AXI_LITE
+    M02_AXI → swiglu_0 s_axi_CTRL
+
+  axi_dma_0 (linear_projection DMA — only DMA in the design):
+    M_AXI_SG  → smartconnect_0 S00_AXI
+    M_AXI_MM2S → smartconnect_0 S01_AXI
+    M_AXI_S2MM → smartconnect_0 S02_AXI
+    S_AXIS_S2MM ← linear_projection_0 out_stream
+    mm2s_introut → xlconcat In0
+    s2mm_introut → xlconcat In1
+
+  linear_projection_0:
+    in_stream → axi_dma_0 M_AXIS_MM2S
+    interrupt → xlconcat In2
+
+  swiglu_0 (m_axi interface already in design — NOT AXI-Stream):
+    M_AXI_gmem_out → smartconnect_0 S03_AXI
+    M_AXI_gmem_V   → smartconnect_0 S04_AXI
+    M_AXI_gmem_W   → smartconnect_0 S05_AXI
+    M_AXI_gmem_Wd  → smartconnect_0 S06_AXI
+    M_AXI_gmem_x   → smartconnect_0 S07_AXI
+    s_axi_CTRL     → axi_smc M02_AXI
+    interrupt      → xlconcat In3          (GIC SPI 124 = pl_ps_irq[3])
+
+  smartconnect_0 (8 slaves, 3 masters — M01 and M02 currently unconnected):
+    S00–S02_AXI ← axi_dma_0 M_AXI_SG/MM2S/S2MM
+    S03–S07_AXI ← swiglu_0 five m_axi ports
+    M00_AXI → S_AXI_HP0_FPD
+    M01_AXI → zynq_ultra_ps_e_0 S_AXI_HP1_FPD
+    M02_AXI →zynq_ultra_ps_e_0 S_AXI_HP2_FPD
+
+  xlconcat (4 inputs → pl_ps_irq):
+    In0 → axi_dma_0 mm2s_introut  (GIC SPI 121)
+    In1 → axi_dma_0 s2mm_introut  (GIC SPI 122)
+    In2 → linear_projection_0 interrupt (GIC SPI 123)
+    In3 → swiglu_0 interrupt       (GIC SPI 124)
+
+  Addresses:
+    /axi_dma_0/S_AXI_LITE           0xA000_0000
+    /linear_projection_0/s_axi_CTRL 0xA001_0000
+    /swiglu_0/s_axi_CTRL            0xA002_0000
+    /axi_dma_0/Data_*               0x0  (HP0 DDR LOW — 64-bit)
+
+### What the DATAFLOW restructure requires
+
+The five m_axi ports are ALREADY connected to smartconnect_0 (S03–S07) and
+smartconnect_0 ALREADY has M01_AXI and M02_AXI configured but unconnected.
+No slaves need to be added or removed.
+
+The only Vivado changes needed are:
+  1. Re-export HLS IP (internal DATAFLOW RTL changed; interface identical)
+  2. Upgrade swiglu_0 IP in block design (interface unchanged, internal logic updated)
+  3. Enable S_AXI_HP1_FPD and S_AXI_HP2_FPD on Zynq PS (Slave Interface section)
+  4. Connect smartconnect_0 M01_AXI → S_AXI_HP1_FPD
+  5. Connect smartconnect_0 M02_AXI → S_AXI_HP2_FPD
+  6. Assign DDR address ranges for M01 and M02 in Address Editor
+  7. Validate → Implement → Generate Bitstream
+
+### Step 1: Re-synthesize and re-export the HLS IP
+
+  The swiglu.cpp changes (DATAFLOW sub-functions, ram_t2p, pragma order) change
+  the internal RTL but NOT the external interface (same 5 m_axi ports, same CTRL
+  register map). Re-synthesis is required to generate the parallel DATAFLOW RTL.
+
+  In Vitis HLS: Solution → Run C Synthesis → then Solution → Export RTL → IP Catalog.
+  This creates a new IP version in the IP repository.
+
+### Step 2: Open the Vivado block design
+
+  File → Open Block Design (or click the .bd file in the sources panel).
+
+### Step 3: Upgrade swiglu_0
+
+  Right-click swiglu_0 → Report IP Status.
+  If an upgrade is available: right-click → Upgrade IP.
+  The interface is identical (same 5 m_axi ports, same CTRL map), so all existing
+  connections (S03–S07 on smartconnect_0, CTRL → axi_smc, interrupt → xlconcat)
+  are preserved. Only the internal RTL changes.
+
+### Step 4: Enable HP1 and HP2 in the Zynq PS
+
+  IMPORTANT: HP1 and HP2 are AXI SLAVE ports on the PS side (PL initiates, PS
+  accepts into the DDR controller). They are in the SLAVE INTERFACE section —
+  NOT the Master Interface section.
+
+  What you see in Master Interface (DO NOT enable these):
+    HPM0 FPD — already on (used by axi_smc for AXI-Lite control)
+    HPM1 FPD — PS→PL master, not relevant
+    HPM0 LPD — PS→PL master, not relevant
+
+  Where to find HP1 and HP2:
+    Double-click zynq_ultra_ps_e_0
+    Go to: PS-PL Configuration → PS-PL Interfaces → Slave Interface → AXI HP Slave FPD
+    Enable: S AXI HP1 FPD  (tick checkbox — this is S_AXI_HP1_FPD)
+    Enable: S AXI HP2 FPD  (tick checkbox — this is S_AXI_HP2_FPD)
+    Set Data Width = 128 for each (match HP0).
+    Click OK.
+
+  The PS block will show two new AXI slave ports: S_AXI_HP1_FPD, S_AXI_HP2_FPD.
+
+### Step 5: Connect M01 and M02 to HP1 and HP2
+
+  smartconnect_0 already has M01_AXI and M02_AXI configured and unconnected.
+  No new SmartConnect IPs are needed.
+
+  Connect:
+    smartconnect_0 M01_AXI → zynq_ultra_ps_e_0 S_AXI_HP1_FPD
+    smartconnect_0 M02_AXI → zynq_ultra_ps_e_0 S_AXI_HP2_FPD
+
+  Routing note: SmartConnect with 3 master ports pointing to the same DDR address
+  range acts as a load-balancing crossbar — any slave can use any HP port. Under
+  DATAFLOW, gmem_W and gmem_V generate simultaneous transactions; SmartConnect will
+  naturally route them to different masters (HP ports) to maximize throughput.
+  gmem_Wd, gmem_x, gmem_out (HP0-class) and axi_dma_0 traffic remain on HP0 when
+  HP1 and HP2 are occupied by compute_X1 and compute_X2.
+
+  Tip: use "Run Connection Automation" to auto-wire clock and reset to the new
+  HP1/HP2 ports. Review proposals before accepting (confirm pl_clk0 and correct
+  reset net).
+
+### Step 6: Assign address ranges
+
+  Open the Address Editor (Window → Address Editor).
+  New master segments appear for M01_AXI and M02_AXI (they had no target before).
+  Assign both the same DDR range as M00_AXI:
+    Offset: 0x0000_0000_0000_0000   Range: 2G (match existing HP0 DDR range)
+
+### Step 7: Validate and implement
+
+  Click Validate Design. Resolve any DRC errors.
+  Common issues:
+    - Clock/reset not connected to HP1/HP2 PS ports — auto-resolved if you used
+      Connection Automation; otherwise wire to pl_clk0 / proc_sys_reset peripheral_aresetn
+    - Address range unassigned for M01/M02 — fix in Address Editor (Step 6)
+    - Timing violations on new AXI paths — start at same clock frequency as HP0;
+      may need to reduce if timing fails
+
+  Run Synthesis → Implementation → Generate Bitstream.
+  Deploy new bitstream (.bit) and device tree overlay (.dtbo) to the board.
+
+### What is UNCHANGED in the block design
+  - axi_dma_0 and linear_projection_0 — no changes
+  - axi_smc — unchanged (M00→LP, M01→DMA0, M02→swiglu CTRL)
+  - smartconnect_0 slave ports S00–S07 — all connections unchanged
+  - smartconnect_0 M00_AXI → HP0 — unchanged
+  - xlconcat interrupt wiring — unchanged (In0–In3)
+  - SWIGLU_IP_BASE = 0xA002_0000 (swiglu_0 s_axi_CTRL — unchanged)
+
+================================================================================
+## ggml-cpu.c CHANGES REQUIRED (not yet done)
+================================================================================
+
+### Critical: Complete driver model change — AXI-Stream → m_axi
+
+The original driver used axi_dma_1 (MM2S/S2MM) to stream data through swiglu_0.
+The new swiglu_0 has no AXI-Stream ports. It reads and writes DDR directly via
+its five m_axi HP ports. The driver must be rewritten accordingly.
+
+OLD model (AXI-Stream / axi_dma_1):
+  Program MM2S descriptor chain → write TAILDESC → wait s2mm_introut (GIC 124)
+  → copy output from S2MM region
+
+NEW model (m_axi / ap_ctrl):
+  1. Write weight pointers into udmabuf (once per layer, W+V+W_down = 27–32 MB).
+     Physical base: udmabuf_phys + SWG_W_OFF, SWG_V_OFF, SWG_WDOWN_OFF.
+  2. Copy x_batch rows to udmabuf + SWG_VEC_OFF.
+  3. Write five base address registers to swiglu_0 CTRL (base = 0xA002_0000).
+     Register offsets are confirmed from xswiglu_hw.h (synthesized IP):
+       0x10/0x14  W_base[31:0]  / W_base[63:32]      = udmabuf_phys + SWG_W_OFF
+       0x1C/0x20  V_base[31:0]  / V_base[63:32]      = udmabuf_phys + SWG_V_OFF
+       0x28/0x2C  Wd_base[31:0] / Wd_base[63:32]     = udmabuf_phys + SWG_WDOWN_OFF
+       0x34/0x38  x_base[31:0]  / x_base[63:32]      = udmabuf_phys + SWG_VEC_OFF
+       0x40/0x44  out_base[31:0]/ out_base[63:32]     = udmabuf_phys + SWG_OUT_OFF
+     All pointers are 64-bit (two 32-bit registers). udmabuf is < 4 GB so high = 0.
+  4. Write scalar registers:
+       0x4C  batch_size      (uint32)
+       0x54  down_quant_mode (0 = Q4_K, 1 = Q6_K)
+  5. Enable global interrupt: write 0x1 to CTRL+0x04 (GIE).
+  6. Enable ap_done interrupt: write 0x1 to CTRL+0x08 (IER bit 0).
+  7. Start IP: write 0x1 to CTRL+0x00 (AP_CTRL ap_start).
+  8. Wait for swiglu_0 interrupt (GIC SPI 124 — xlconcat In3).
+     Use open_uio_by_addr(SWIGLU_IP_BASE) to get the UIO fd.
+  9. Clear ISR: write 0x1 to CTRL+0x0C.
+  10. Copy output: memcpy(dst->data, udmabuf_virt + SWG_OUT_OFF,
+                          batch_size * 2048 * sizeof(float)).
+
+Weight caching optimisation (recommended):
+  memcpy of 27–32 MB per call at ~8.5 GB/s PS DDR ≈ 3.5 ms — significant
+  compared to the ~9 ms compute target. Cache strategy: track the source pointer
+  (src0->data for each of W/V/W_down per layer) and skip the copy if the pointer
+  is unchanged from the previous call. Weights are static after model load, so
+  this reduces weight copies to 16 × 3 = 48 copies at startup only.
+
+### Batch guard change
+
+  Old: if (src1->ne[1] != 1) goto cpu_compute_fallback;
+  New: if (src1->ne[1] > MAX_BATCH) goto cpu_compute_fallback;
+
+  For batch > 1, copy all ne[1] rows of x to SWG_VEC_OFF and pass
+  batch_size = src1->ne[1] in step 4 above. Output at SWG_OUT_OFF will
+  contain ne[1] rows of 2048 floats; copy all to dst->data.
+
+Note: llama.cpp decode path typically uses batch=1 (one token at a time).
+Batch > 1 occurs during speculative decoding or prompt re-evaluation.
+Verify that llama.cpp actually calls the FFN with batch > 1 before enabling.
+
+================================================================================
+## PERFORMANCE ROADMAP  (revised 2026-03-26)
+================================================================================
+
+All latencies below are HLS synthesis estimates at the stated clock frequency.
+"Per call" = one token through one transformer layer.
+
+Step 0 — Baseline (board-measured, before any code fixes):
+  1000 ms/call, ~16 t/s total (16 layers × 1000ms = 16s/token = 0.06 t/s)
+  Root cause: 8-bit AXI bus + serial decode_mac in DATAFLOW entry block.
+
+Step 1 — DATA_WIDTH=128 alone (applied 2026-03-26, pending re-synthesis):
+  Phase 5 (compute_output): 94ms → ~8ms (16× bus improvement, 32× unroll absorbs it)
+  Phase 2/3 (compute_X1/X2): WORSE — 8-bit burst was masking MAC time.
+    With 128-bit: burst=72 cycles << MAC=1400 cycles. MAC exposed as bottleneck.
+    Block_entry still sequential (Root Cause 6 not fixed): 2 × 11.5M = 23M cycles = 230ms
+  Per call: ~238ms. 16 layers: ~3800ms/token = ~0.26 t/s. Net REGRESSION.
+  ⚠ DATA_WIDTH=128 alone is not deployable — must be combined with Step 2.
+
+Step 2 — DATA_WIDTH=128 + Fix DATAFLOW serialization (x_local duplication):
+  Block_entry eliminated. compute_X1 and compute_X2 run in true parallel.
+  Phase 2/3: max(11.5M, 11.5M) = 11.5M cycles = 115ms at 100 MHz (MAC bottleneck)
+  Phase 5: ~8ms
+  Per call: ~123ms. 16 layers: ~1968ms/token = ~0.5 t/s.
+  Still not competitive (Root Cause 7 not fixed).
+
+Step 3 — + Unroll 4× decode_mac in compute_X1/X2 (pair loop UNROLL):
+  Phase 2/3: 4× parallel decode_mac per row → 350 cycles/row × 8192 = 2.87M = 28.7ms
+  Phase 5: ~8ms unchanged.
+  Per call: ~36.4ms. 16 layers: ~582ms SwiGLU.
+  + ~50ms CPU (attention, other) = ~632ms/token = ~1.6 t/s. Not enough.
+
+Step 4 — + 300 MHz clock:
+  All cycle counts ÷3:
+  Phase 2/3: 2.87M / 300MHz = 9.6ms
+  Phase 5: 768K / 300MHz = 2.6ms
+  Per call: ~12.2ms. 16 layers: ~195ms SwiGLU.
+  + ~50ms CPU = ~245ms/token = ~4.1 t/s. Marginal win over 4 t/s CPU baseline.
+
+Step 5 — + Weight caching (skip memcpy after first call per layer):
+  Driver: on second+ token, weights already in udmabuf → skip 27–32 MB memcpy.
+  Saves ~3.5ms per call (27MB / 8.5 GB/s PS DDR). Minor at 12ms compute.
+  Per call: ~12ms. 16 layers: ~192ms. + 50ms CPU = ~242ms/token = ~4.1 t/s.
+
+Summary — minimum fix set to beat 4 t/s:
+  Steps 2 + 3 + 4 all required. Steps 1 and 5 are necessary but insufficient alone.
+  DATA_WIDTH=128 without DATAFLOW fix and unroll is a regression.
+
+Note on batch processing:
+  MAX_BATCH reduced to 1 (2026-03-26) to fix BRAM budget (474→~194 BRAM_18K).
+  Batch > 1 would require MAX_BATCH increase, bringing back BRAM pressure.
+  At 300 MHz, single-token decode achieves the target; batch processing not needed.
+
+================================================================================
+## BRAM / URAM BUDGET  (updated 2026-03-26)
+================================================================================
+
+After MAX_BATCH=1 fix (2026-03-26):
+
+  Array        | Config                   | Per bank  | Banks | Total
+  -------------|--------------------------|-----------|-------|--------
+  gate_cache   | ram_2p, factor=32, [1×8192] | 1 BRAM_18K | 32  | 32
+  x_local      | ram_t2p, factor=8, [1×2048] | 1 BRAM_18K |  8  |  8
+  Instance (AXI interfaces, etc.)           |           |       | ~154
+  TOTAL HLS estimate:                       |           |       | ~194
+  ZU5EV available:                          |           |       |  288
+  Headroom: ~94 BRAM_18K
+
+  After x_local duplication (Step 2 DATAFLOW fix):
+    x_local_1 + x_local_2 = 2 × 8 = 16 BRAM_18K (was 8). Net +8. Still fine.
+    gate_cache stays at 32.  Total: ~202 BRAM_18K. Headroom: ~86.
+
+  After 4× decode_mac unroll in compute_X1/X2 (Step 3):
+    No new BRAM required. row_buf in compute_X1 already has 8 banks.
+    DSP increases: compute_X1 +90 DSP, compute_X2 +90 DSP → ~120+90+90=300 total.
+    Still well within 1248 DSP limit.
+
+  URAM:
+    With MAX_BATCH=1: X1_cache [1][8192] × factor=8 → 1 partition × 4 URAM = 4 URAM
+    X2_cache same: 4 URAM. Total: ~8 URAM / 64 available. Ample headroom.
+    (Was 64/64 with MAX_BATCH=8 — now 8/64.)
+
+================================================================================
+## SYNTHESIS CHECKLIST (next re-synthesis target: Steps 2+3+4 all applied)
+================================================================================
+
+### Expected resource counts after all fixes (Steps 2+3+4):
+
+  BRAM_18K:
+    gate_cache  (ram_2p,  factor=32, MAX_BATCH=1): 32 banks × 1 = 32
+    x_local_1   (ram_1p,  factor=8,  MAX_BATCH=1):  8 banks × 1 =  8
+    x_local_2   (ram_1p,  factor=8,  MAX_BATCH=1):  8 banks × 1 =  8
+    Instances (AXI FIFOs, interfaces):             ~154
+    TOTAL:                                          ~202   (well under 288)
+
+  URAM:
+    X1_cache ([1][8192], factor=8): 8 banks × 1 URAM = 8
+    X2_cache ([1][8192], factor=8): 8 banks × 1 URAM = 8
+    TOTAL: ~16 / 64 available.  Ample headroom.
+
+  DSP (estimated):
+    compute_X1 with 4× unrolled decode_mac: ~120 DSP
+    compute_X2 with 4× unrolled decode_mac: ~120 DSP
+    compute_output (32× unrolled):           ~45 DSP
+    Other:                                   ~10 DSP
+    TOTAL: ~295 / 1248 available.
+
+Confirm in HLS synthesis report:
+  [ ] BRAM_18K total (Memory row) ≤ 50 (gate_cache=32, x_local_1=8, x_local_2=8)
+  [ ] URAM total = ~16 (X1+X2 caches only, 4 URAM each with MAX_BATCH=1)
+  [ ] II=1 on MAC_Q4K and MAC_Q6K inner loops (inside decode_mac functions)
+  [ ] DATAFLOW: Block_entry_x_local_0_rd_proc ABSENT (or latency = 1 × compute_X1,
+      not 2×). This confirms X1 and X2 are truly parallel.
+  [ ] compute_X1 instance table: 4 parallel decode_mac_q4k instances (not 1)
+  [ ] compute_X2 instance table: 4 parallel decode_mac_q4k instances (not 1)
+  [ ] compute_X1 outer loop: iteration latency ≈ 350–400 cycles (not 1400+)
+  [ ] URAM: X1_cache and X2_cache mapped to URAM288
+  [ ] BRAM: gate_cache (ram_2p), x_local_1, x_local_2 (ram_1p) mapped to BRAM
+  [ ] DSP count ≈ 300 (within 1248 limit)
+  [ ] AXI bus width: m_axi_gmem_W_0_RDATA = 128 bits (was 8 bits)
+      confirm from Interface section of compute_X1_csynth.rpt
+  [ ] Five distinct m_axi ports: M_AXI_gmem_W, M_AXI_gmem_V, M_AXI_gmem_Wd,
+      M_AXI_gmem_x, M_AXI_gmem_out
+  [ ] xswiglu_hw.h CTRL register offsets unchanged:
+        0x10/0x14 = W,  0x1C/0x20 = V,  0x28/0x2C = W_down
+        0x34/0x38 = x_batch,  0x40/0x44 = out_batch
+        0x4C = batch_size,  0x54 = down_quant_mode
+  [ ] Timing: estimated critical path ≤ 3.33 ns (for 300 MHz target)
+      If > 3.33 ns: try 250 MHz (4.0 ns) or 200 MHz (5.0 ns) as fallback
+
+### Historical BRAM failures (do not repeat):
+  MAX_BATCH=8 + dim=1 complete on x_local: HLS 538, Vivado 302 → DRC UTLZ-1 error
+  MAX_BATCH=8 without dim=1 complete: HLS 474, Vivado ~302 → still over budget
+  MAX_BATCH=1 (current): HLS ~194. Fixed.

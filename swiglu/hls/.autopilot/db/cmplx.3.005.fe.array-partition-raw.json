@@ -1,0 +1,219 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "7 6 2 1 3",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "swiglu.cpp",
+    "fileloc": 527,
+    "instructions": 262,
+    "memory_accesses": 0,
+    "name": "swiglu",
+    "total_instructions": 48888
+  },
+  "1": {
+    "basicblocks": 61,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 24,
+    "file": "swiglu.cpp",
+    "fileloc": 255,
+    "instructions": 323,
+    "loads": {
+      "G": 1,
+      "L": 17
+    },
+    "memory_accesses": 63,
+    "name": "compute_gate",
+    "stores": {
+      "L": 50
+    },
+    "total_instructions": 323
+  },
+  "10": {
+    "basicblocks": 219,
+    "calls": "9 9 9 9 9 9 9 9",
+    "control_depth": 2,
+    "def_use_depth": 33,
+    "file": "swiglu.cpp",
+    "fileloc": 438,
+    "instructions": 14444,
+    "loads": {
+      "L": 12800
+    },
+    "memory_accesses": 10320,
+    "name": "mac_blocks_down_q6k",
+    "stores": {
+      "L": 161
+    },
+    "total_instructions": 15172
+  },
+  "11": {
+    "basicblocks": 38,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 3,
+    "file": "swiglu.cpp",
+    "fileloc": 310,
+    "instructions": 181,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 34,
+    "name": "load_row_down_q4k",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 181
+  },
+  "12": {
+    "basicblocks": 14,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 3,
+    "file": "swiglu.cpp",
+    "fileloc": 94,
+    "instructions": 61,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 10,
+    "name": "load_row_wv",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 61
+  },
+  "2": {
+    "basicblocks": 3,
+    "calls": "12 4",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "swiglu.cpp",
+    "fileloc": 233,
+    "instructions": 57,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 0,
+    "name": "compute_X2",
+    "total_instructions": 4424
+  },
+  "3": {
+    "basicblocks": 8,
+    "calls": "8 10 11 5",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "swiglu.cpp",
+    "fileloc": 461,
+    "instructions": 1874,
+    "loads": {
+      "L": 2
+    },
+    "memory_accesses": 2,
+    "name": "compute_output",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 38547
+  },
+  "4": {
+    "basicblocks": 147,
+    "calls": "9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9",
+    "control_depth": 4,
+    "def_use_depth": 19,
+    "file": "swiglu.cpp",
+    "fileloc": 111,
+    "instructions": 2850,
+    "loads": {
+      "L": 410
+    },
+    "memory_accesses": 416,
+    "name": "mac_blocks_wv",
+    "stores": {
+      "L": 401
+    },
+    "total_instructions": 4306
+  },
+  "5": {
+    "basicblocks": 581,
+    "calls": "9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9",
+    "control_depth": 4,
+    "def_use_depth": 43,
+    "file": "swiglu.cpp",
+    "fileloc": 326,
+    "instructions": 14222,
+    "loads": {
+      "L": 1696
+    },
+    "memory_accesses": 1664,
+    "name": "mac_blocks_down_q4k",
+    "stores": {
+      "L": 1601
+    },
+    "total_instructions": 20046
+  },
+  "6": {
+    "basicblocks": 3,
+    "calls": "12 4",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "swiglu.cpp",
+    "fileloc": 214,
+    "instructions": 57,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 0,
+    "name": "compute_X1",
+    "total_instructions": 4424
+  },
+  "7": {
+    "basicblocks": 323,
+    "calls": "",
+    "control_depth": 4,
+    "def_use_depth": 4,
+    "file": "swiglu.cpp",
+    "fileloc": 497,
+    "instructions": 908,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 257,
+    "name": "load_x_local",
+    "stores": {
+      "L": 256
+    },
+    "total_instructions": 908
+  },
+  "8": {
+    "basicblocks": 424,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 3,
+    "file": "swiglu.cpp",
+    "fileloc": 428,
+    "instructions": 1274,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 422,
+    "name": "load_row_down_q6k",
+    "stores": {
+      "L": 420
+    },
+    "total_instructions": 1274
+  },
+  "9": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 32,
+    "file": "swiglu.cpp",
+    "fileloc": 28,
+    "instructions": 91,
+    "memory_accesses": 0,
+    "name": "fp16_to_fp32",
+    "total_instructions": 91
+  }
+}

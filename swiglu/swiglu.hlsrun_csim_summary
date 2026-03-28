@@ -1,0 +1,158 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\Jacob\\Desktop\\Vitis_projects\\swiglu\\swiglu\\swiglu.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "03/28/26 19:42:02",
+ "timestampMillis": "1774723322878",
+ "buildStep": {
+  "cmdId": "62b0a5c8-e767-438f-bff0-3c4fcf71b801",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\Jacob\\Desktop\\Vitis_projects\\swiglu\\swiglu\\logs\\swiglu.steps.log",
+  "commandLine": "C:/Xilinx/2025.1/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --csim --config C:\\Users\\Jacob\\Desktop\\Vitis_projects\\swiglu\\hls_config.cfg --work_dir swiglu ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "C:\\Users\\Jacob\\Desktop\\Vitis_projects\\swiglu\\hls_config.cfg",
+   "--work_dir",
+   "swiglu"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\Jacob\\Desktop\\Vitis_projects\\swiglu"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "03/28/26 19:42:02",
+ "timestampMillis": "1774723322878",
+ "status": {
+  "cmdId": "62b0a5c8-e767-438f-bff0-3c4fcf71b801",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "03/28/26 19:42:05",
+ "timestampMillis": "1774723325396",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "swiglu",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\Jacob\\Desktop\\Vitis_projects\\swiglu\\swiglu.cpp",
+     "C:/Users\\Jacob\\Desktop\\Vitis_projects\\swiglu\\swiglu.h",
+     "C:/Users\\Jacob\\Desktop\\Vitis_projects\\swiglu\\sigmoid_lut.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "03/28/26 19:42:05",
+ "timestampMillis": "1774723325397",
+ "buildStep": {
+  "cmdId": "4045c523-add0-471a-9630-74c4ef00b70c",
+  "name": "",
+  "logFile": "C:/Users\\Jacob\\Desktop\\Vitis_projects\\swiglu\\swiglu\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\Jacob\\Desktop\\Vitis_projects\\swiglu"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "03/28/26 19:42:05",
+ "timestampMillis": "1774723325397",
+ "status": {
+  "cmdId": "4045c523-add0-471a-9630-74c4ef00b70c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "03/28/26 19:46:03",
+ "timestampMillis": "1774723563971",
+ "status": {
+  "cmdId": "4045c523-add0-471a-9630-74c4ef00b70c",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "03/28/26 19:46:04",
+ "timestampMillis": "1774723564121",
+ "status": {
+  "cmdId": "62b0a5c8-e767-438f-bff0-3c4fcf71b801",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "03/28/26 19:46:04",
+ "timestampMillis": "1774723564122",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "03/28/26 19:46:04",
+ "timestampMillis": "1774723564122",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

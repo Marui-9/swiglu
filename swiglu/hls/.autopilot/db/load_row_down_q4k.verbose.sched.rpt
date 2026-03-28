@@ -1,0 +1,263 @@
+
+
+================================================================
+== Vitis HLS Report for 'load_row_down_q4k'
+================================================================
+* Date:           Sat Mar 28 22:37:15 2026
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        swiglu
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.412 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |      291|      291|  0.969 us|  0.969 us|  289|  289|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                  |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |             Loop Name            |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- LOAD_DOWN_Q4K_VITIS_LOOP_315_1  |      289|      289|         3|          1|          1|   288|       yes|
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.63>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%w = alloca i32 1" [swiglu.cpp:315]   --->   Operation 6 'alloca' 'w' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%b = alloca i32 1" [swiglu.cpp:314]   --->   Operation 7 'alloca' 'b' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 8 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%W_down_wide_read_2 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %W_down_wide_read" [swiglu.cpp:310]   --->   Operation 9 'read' 'W_down_wide_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.42ns)   --->   "%store_ln0 = store i9 0, i9 %indvar_flatten"   --->   Operation 10 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 11 [1/1] (0.42ns)   --->   "%store_ln314 = store i6 0, i6 %b" [swiglu.cpp:314]   --->   Operation 11 'store' 'store_ln314' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 12 [1/1] (0.42ns)   --->   "%store_ln315 = store i4 0, i4 %w" [swiglu.cpp:315]   --->   Operation 12 'store' 'store_ln315' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%br_ln314 = br void %for.inc" [swiglu.cpp:314]   --->   Operation 13 'br' 'br_ln314' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i9 %indvar_flatten" [swiglu.cpp:314]   --->   Operation 14 'load' 'indvar_flatten_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.77ns)   --->   "%icmp_ln314 = icmp_eq  i9 %indvar_flatten_load, i9 288" [swiglu.cpp:314]   --->   Operation 15 'icmp' 'icmp_ln314' <Predicate = true> <Delay = 0.77> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.77ns)   --->   "%add_ln314 = add i9 %indvar_flatten_load, i9 1" [swiglu.cpp:314]   --->   Operation 16 'add' 'add_ln314' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln314 = br i1 %icmp_ln314, void %for.inc10, void %for.end12" [swiglu.cpp:314]   --->   Operation 17 'br' 'br_ln314' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.42ns)   --->   "%store_ln314 = store i9 %add_ln314, i9 %indvar_flatten" [swiglu.cpp:314]   --->   Operation 18 'store' 'store_ln314' <Predicate = (!icmp_ln314)> <Delay = 0.42>
+
+State 2 <SV = 1> <Delay = 2.41>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%w_load = load i4 %w" [swiglu.cpp:315]   --->   Operation 19 'load' 'w_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%b_load = load i6 %b" [swiglu.cpp:314]   --->   Operation 20 'load' 'b_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.79ns)   --->   "%icmp_ln315 = icmp_eq  i4 %w_load, i4 9" [swiglu.cpp:315]   --->   Operation 21 'icmp' 'icmp_ln315' <Predicate = true> <Delay = 0.79> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.79> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (0.39ns)   --->   "%select_ln314 = select i1 %icmp_ln315, i4 0, i4 %w_load" [swiglu.cpp:314]   --->   Operation 22 'select' 'select_ln314' <Predicate = true> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (0.78ns)   --->   "%add_ln314_1 = add i6 %b_load, i6 1" [swiglu.cpp:314]   --->   Operation 23 'add' 'add_ln314_1' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 24 [1/1] (0.38ns)   --->   "%select_ln314_1 = select i1 %icmp_ln315, i6 %add_ln314_1, i6 %b_load" [swiglu.cpp:314]   --->   Operation 24 'select' 'select_ln314_1' <Predicate = true> <Delay = 0.38> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%trunc_ln314 = trunc i6 %select_ln314_1" [swiglu.cpp:314]   --->   Operation 25 'trunc' 'trunc_ln314' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.78ns)   --->   "%switch_ln317 = switch i5 %trunc_ln314, void %arrayidx911.case.31, i5 0, void %arrayidx911.case.0, i5 1, void %arrayidx911.case.1, i5 2, void %arrayidx911.case.2, i5 3, void %arrayidx911.case.3, i5 4, void %arrayidx911.case.4, i5 5, void %arrayidx911.case.5, i5 6, void %arrayidx911.case.6, i5 7, void %arrayidx911.case.7, i5 8, void %arrayidx911.case.8, i5 9, void %arrayidx911.case.9, i5 10, void %arrayidx911.case.10, i5 11, void %arrayidx911.case.11, i5 12, void %arrayidx911.case.12, i5 13, void %arrayidx911.case.13, i5 14, void %arrayidx911.case.14, i5 15, void %arrayidx911.case.15, i5 16, void %arrayidx911.case.16, i5 17, void %arrayidx911.case.17, i5 18, void %arrayidx911.case.18, i5 19, void %arrayidx911.case.19, i5 20, void %arrayidx911.case.20, i5 21, void %arrayidx911.case.21, i5 22, void %arrayidx911.case.22, i5 23, void %arrayidx911.case.23, i5 24, void %arrayidx911.case.24, i5 25, void %arrayidx911.case.25, i5 26, void %arrayidx911.case.26, i5 27, void %arrayidx911.case.27, i5 28, void %arrayidx911.case.28, i5 29, void %arrayidx911.case.29, i5 30, void %arrayidx911.case.30" [swiglu.cpp:317]   --->   Operation 26 'switch' 'switch_ln317' <Predicate = true> <Delay = 0.78>
+ST_2 : Operation 27 [1/1] (0.79ns)   --->   "%add_ln315 = add i4 %select_ln314, i4 1" [swiglu.cpp:315]   --->   Operation 27 'add' 'add_ln315' <Predicate = true> <Delay = 0.79> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.79> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.42ns)   --->   "%store_ln314 = store i6 %select_ln314_1, i6 %b" [swiglu.cpp:314]   --->   Operation 28 'store' 'store_ln314' <Predicate = true> <Delay = 0.42>
+ST_2 : Operation 29 [1/1] (0.42ns)   --->   "%store_ln315 = store i4 %add_ln315, i4 %w" [swiglu.cpp:315]   --->   Operation 29 'store' 'store_ln315' <Predicate = true> <Delay = 0.42>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%br_ln315 = br void %for.inc" [swiglu.cpp:315]   --->   Operation 30 'br' 'br_ln315' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 131 [1/1] (0.42ns)   --->   "%ret_ln320 = ret" [swiglu.cpp:320]   --->   Operation 131 'ret' 'ret_ln320' <Predicate = (icmp_ln314)> <Delay = 0.42>
+
+State 3 <SV = 2> <Delay = 0.67>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @LOAD_DOWN_Q4K_VITIS_LOOP_315_1_str"   --->   Operation 31 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 288, i64 288, i64 288"   --->   Operation 32 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%zext_ln315 = zext i4 %select_ln314" [swiglu.cpp:315]   --->   Operation 33 'zext' 'zext_ln315' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%specpipeline_ln316 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_15" [swiglu.cpp:316]   --->   Operation 34 'specpipeline' 'specpipeline_ln316' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%rb_0_addr = getelementptr i8 %rb_0, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 35 'getelementptr' 'rb_0_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%rb_1_addr = getelementptr i8 %rb_1, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 36 'getelementptr' 'rb_1_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%rb_2_addr = getelementptr i8 %rb_2, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 37 'getelementptr' 'rb_2_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%rb_3_addr = getelementptr i8 %rb_3, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 38 'getelementptr' 'rb_3_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%rb_4_addr = getelementptr i8 %rb_4, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 39 'getelementptr' 'rb_4_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%rb_5_addr = getelementptr i8 %rb_5, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 40 'getelementptr' 'rb_5_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%rb_6_addr = getelementptr i8 %rb_6, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 41 'getelementptr' 'rb_6_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%rb_7_addr = getelementptr i8 %rb_7, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 42 'getelementptr' 'rb_7_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%rb_8_addr = getelementptr i8 %rb_8, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 43 'getelementptr' 'rb_8_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%rb_9_addr = getelementptr i8 %rb_9, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 44 'getelementptr' 'rb_9_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%rb_10_addr = getelementptr i8 %rb_10, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 45 'getelementptr' 'rb_10_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%rb_11_addr = getelementptr i8 %rb_11, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 46 'getelementptr' 'rb_11_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%rb_12_addr = getelementptr i8 %rb_12, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 47 'getelementptr' 'rb_12_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%rb_13_addr = getelementptr i8 %rb_13, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 48 'getelementptr' 'rb_13_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%rb_14_addr = getelementptr i8 %rb_14, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 49 'getelementptr' 'rb_14_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%rb_15_addr = getelementptr i8 %rb_15, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 50 'getelementptr' 'rb_15_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%rb_16_addr = getelementptr i8 %rb_16, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 51 'getelementptr' 'rb_16_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%rb_17_addr = getelementptr i8 %rb_17, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 52 'getelementptr' 'rb_17_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%rb_18_addr = getelementptr i8 %rb_18, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 53 'getelementptr' 'rb_18_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%rb_19_addr = getelementptr i8 %rb_19, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 54 'getelementptr' 'rb_19_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%rb_20_addr = getelementptr i8 %rb_20, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 55 'getelementptr' 'rb_20_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%rb_21_addr = getelementptr i8 %rb_21, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 56 'getelementptr' 'rb_21_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%rb_22_addr = getelementptr i8 %rb_22, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 57 'getelementptr' 'rb_22_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%rb_23_addr = getelementptr i8 %rb_23, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 58 'getelementptr' 'rb_23_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 59 [1/1] (0.00ns)   --->   "%rb_24_addr = getelementptr i8 %rb_24, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 59 'getelementptr' 'rb_24_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%rb_25_addr = getelementptr i8 %rb_25, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 60 'getelementptr' 'rb_25_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%rb_26_addr = getelementptr i8 %rb_26, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 61 'getelementptr' 'rb_26_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%rb_27_addr = getelementptr i8 %rb_27, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 62 'getelementptr' 'rb_27_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%rb_28_addr = getelementptr i8 %rb_28, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 63 'getelementptr' 'rb_28_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 64 [1/1] (0.00ns)   --->   "%rb_29_addr = getelementptr i8 %rb_29, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 64 'getelementptr' 'rb_29_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 65 [1/1] (0.00ns)   --->   "%rb_30_addr = getelementptr i8 %rb_30, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 65 'getelementptr' 'rb_30_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%rb_31_addr = getelementptr i8 %rb_31, i64 0, i64 %zext_ln315" [swiglu.cpp:317]   --->   Operation 66 'getelementptr' 'rb_31_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 67 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_30_addr" [swiglu.cpp:317]   --->   Operation 67 'store' 'store_ln317' <Predicate = (trunc_ln314 == 30)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 68 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 68 'br' 'br_ln317' <Predicate = (trunc_ln314 == 30)> <Delay = 0.00>
+ST_3 : Operation 69 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_29_addr" [swiglu.cpp:317]   --->   Operation 69 'store' 'store_ln317' <Predicate = (trunc_ln314 == 29)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 70 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 70 'br' 'br_ln317' <Predicate = (trunc_ln314 == 29)> <Delay = 0.00>
+ST_3 : Operation 71 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_28_addr" [swiglu.cpp:317]   --->   Operation 71 'store' 'store_ln317' <Predicate = (trunc_ln314 == 28)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 72 'br' 'br_ln317' <Predicate = (trunc_ln314 == 28)> <Delay = 0.00>
+ST_3 : Operation 73 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_27_addr" [swiglu.cpp:317]   --->   Operation 73 'store' 'store_ln317' <Predicate = (trunc_ln314 == 27)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 74 'br' 'br_ln317' <Predicate = (trunc_ln314 == 27)> <Delay = 0.00>
+ST_3 : Operation 75 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_26_addr" [swiglu.cpp:317]   --->   Operation 75 'store' 'store_ln317' <Predicate = (trunc_ln314 == 26)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 76 'br' 'br_ln317' <Predicate = (trunc_ln314 == 26)> <Delay = 0.00>
+ST_3 : Operation 77 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_25_addr" [swiglu.cpp:317]   --->   Operation 77 'store' 'store_ln317' <Predicate = (trunc_ln314 == 25)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 78 'br' 'br_ln317' <Predicate = (trunc_ln314 == 25)> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_24_addr" [swiglu.cpp:317]   --->   Operation 79 'store' 'store_ln317' <Predicate = (trunc_ln314 == 24)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 80 'br' 'br_ln317' <Predicate = (trunc_ln314 == 24)> <Delay = 0.00>
+ST_3 : Operation 81 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_23_addr" [swiglu.cpp:317]   --->   Operation 81 'store' 'store_ln317' <Predicate = (trunc_ln314 == 23)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 82 'br' 'br_ln317' <Predicate = (trunc_ln314 == 23)> <Delay = 0.00>
+ST_3 : Operation 83 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_22_addr" [swiglu.cpp:317]   --->   Operation 83 'store' 'store_ln317' <Predicate = (trunc_ln314 == 22)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 84 'br' 'br_ln317' <Predicate = (trunc_ln314 == 22)> <Delay = 0.00>
+ST_3 : Operation 85 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_21_addr" [swiglu.cpp:317]   --->   Operation 85 'store' 'store_ln317' <Predicate = (trunc_ln314 == 21)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 86 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 86 'br' 'br_ln317' <Predicate = (trunc_ln314 == 21)> <Delay = 0.00>
+ST_3 : Operation 87 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_20_addr" [swiglu.cpp:317]   --->   Operation 87 'store' 'store_ln317' <Predicate = (trunc_ln314 == 20)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 88 'br' 'br_ln317' <Predicate = (trunc_ln314 == 20)> <Delay = 0.00>
+ST_3 : Operation 89 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_19_addr" [swiglu.cpp:317]   --->   Operation 89 'store' 'store_ln317' <Predicate = (trunc_ln314 == 19)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 90 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 90 'br' 'br_ln317' <Predicate = (trunc_ln314 == 19)> <Delay = 0.00>
+ST_3 : Operation 91 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_18_addr" [swiglu.cpp:317]   --->   Operation 91 'store' 'store_ln317' <Predicate = (trunc_ln314 == 18)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 92 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 92 'br' 'br_ln317' <Predicate = (trunc_ln314 == 18)> <Delay = 0.00>
+ST_3 : Operation 93 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_17_addr" [swiglu.cpp:317]   --->   Operation 93 'store' 'store_ln317' <Predicate = (trunc_ln314 == 17)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 94 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 94 'br' 'br_ln317' <Predicate = (trunc_ln314 == 17)> <Delay = 0.00>
+ST_3 : Operation 95 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_16_addr" [swiglu.cpp:317]   --->   Operation 95 'store' 'store_ln317' <Predicate = (trunc_ln314 == 16)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 96 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 96 'br' 'br_ln317' <Predicate = (trunc_ln314 == 16)> <Delay = 0.00>
+ST_3 : Operation 97 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_15_addr" [swiglu.cpp:317]   --->   Operation 97 'store' 'store_ln317' <Predicate = (trunc_ln314 == 15)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 98 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 98 'br' 'br_ln317' <Predicate = (trunc_ln314 == 15)> <Delay = 0.00>
+ST_3 : Operation 99 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_14_addr" [swiglu.cpp:317]   --->   Operation 99 'store' 'store_ln317' <Predicate = (trunc_ln314 == 14)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 100 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 100 'br' 'br_ln317' <Predicate = (trunc_ln314 == 14)> <Delay = 0.00>
+ST_3 : Operation 101 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_13_addr" [swiglu.cpp:317]   --->   Operation 101 'store' 'store_ln317' <Predicate = (trunc_ln314 == 13)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 102 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 102 'br' 'br_ln317' <Predicate = (trunc_ln314 == 13)> <Delay = 0.00>
+ST_3 : Operation 103 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_12_addr" [swiglu.cpp:317]   --->   Operation 103 'store' 'store_ln317' <Predicate = (trunc_ln314 == 12)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 104 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 104 'br' 'br_ln317' <Predicate = (trunc_ln314 == 12)> <Delay = 0.00>
+ST_3 : Operation 105 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_11_addr" [swiglu.cpp:317]   --->   Operation 105 'store' 'store_ln317' <Predicate = (trunc_ln314 == 11)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 106 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 106 'br' 'br_ln317' <Predicate = (trunc_ln314 == 11)> <Delay = 0.00>
+ST_3 : Operation 107 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_10_addr" [swiglu.cpp:317]   --->   Operation 107 'store' 'store_ln317' <Predicate = (trunc_ln314 == 10)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 108 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 108 'br' 'br_ln317' <Predicate = (trunc_ln314 == 10)> <Delay = 0.00>
+ST_3 : Operation 109 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_9_addr" [swiglu.cpp:317]   --->   Operation 109 'store' 'store_ln317' <Predicate = (trunc_ln314 == 9)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 110 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 110 'br' 'br_ln317' <Predicate = (trunc_ln314 == 9)> <Delay = 0.00>
+ST_3 : Operation 111 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_8_addr" [swiglu.cpp:317]   --->   Operation 111 'store' 'store_ln317' <Predicate = (trunc_ln314 == 8)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 112 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 112 'br' 'br_ln317' <Predicate = (trunc_ln314 == 8)> <Delay = 0.00>
+ST_3 : Operation 113 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_7_addr" [swiglu.cpp:317]   --->   Operation 113 'store' 'store_ln317' <Predicate = (trunc_ln314 == 7)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 114 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 114 'br' 'br_ln317' <Predicate = (trunc_ln314 == 7)> <Delay = 0.00>
+ST_3 : Operation 115 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_6_addr" [swiglu.cpp:317]   --->   Operation 115 'store' 'store_ln317' <Predicate = (trunc_ln314 == 6)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 116 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 116 'br' 'br_ln317' <Predicate = (trunc_ln314 == 6)> <Delay = 0.00>
+ST_3 : Operation 117 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_5_addr" [swiglu.cpp:317]   --->   Operation 117 'store' 'store_ln317' <Predicate = (trunc_ln314 == 5)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 118 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 118 'br' 'br_ln317' <Predicate = (trunc_ln314 == 5)> <Delay = 0.00>
+ST_3 : Operation 119 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_4_addr" [swiglu.cpp:317]   --->   Operation 119 'store' 'store_ln317' <Predicate = (trunc_ln314 == 4)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 120 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 120 'br' 'br_ln317' <Predicate = (trunc_ln314 == 4)> <Delay = 0.00>
+ST_3 : Operation 121 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_3_addr" [swiglu.cpp:317]   --->   Operation 121 'store' 'store_ln317' <Predicate = (trunc_ln314 == 3)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 122 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 122 'br' 'br_ln317' <Predicate = (trunc_ln314 == 3)> <Delay = 0.00>
+ST_3 : Operation 123 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_2_addr" [swiglu.cpp:317]   --->   Operation 123 'store' 'store_ln317' <Predicate = (trunc_ln314 == 2)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 124 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 124 'br' 'br_ln317' <Predicate = (trunc_ln314 == 2)> <Delay = 0.00>
+ST_3 : Operation 125 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_1_addr" [swiglu.cpp:317]   --->   Operation 125 'store' 'store_ln317' <Predicate = (trunc_ln314 == 1)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 126 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 126 'br' 'br_ln317' <Predicate = (trunc_ln314 == 1)> <Delay = 0.00>
+ST_3 : Operation 127 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_0_addr" [swiglu.cpp:317]   --->   Operation 127 'store' 'store_ln317' <Predicate = (trunc_ln314 == 0)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 128 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 128 'br' 'br_ln317' <Predicate = (trunc_ln314 == 0)> <Delay = 0.00>
+ST_3 : Operation 129 [1/1] ( I:0.67ns O:0.67ns )   --->   "%store_ln317 = store i8 %W_down_wide_read_2, i4 %rb_31_addr" [swiglu.cpp:317]   --->   Operation 129 'store' 'store_ln317' <Predicate = (trunc_ln314 == 31)> <Delay = 0.67> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 130 [1/1] (0.00ns)   --->   "%br_ln317 = br void %arrayidx911.exit" [swiglu.cpp:317]   --->   Operation 130 'br' 'br_ln317' <Predicate = (trunc_ln314 == 31)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.330ns, clock uncertainty: 0.900ns.
+
+ <State 1>: 1.630ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln0') of constant 0 on local variable 'indvar_flatten' [38]  (0.427 ns)
+	'load' operation 9 bit ('indvar_flatten_load', swiglu.cpp:314) on local variable 'indvar_flatten' [43]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln314', swiglu.cpp:314) [44]  (0.776 ns)
+	'store' operation 0 bit ('store_ln314', swiglu.cpp:314) of variable 'add_ln314', swiglu.cpp:314 on local variable 'indvar_flatten' [190]  (0.427 ns)
+
+ <State 2>: 2.412ns
+The critical path consists of the following:
+	'load' operation 4 bit ('w_load', swiglu.cpp:315) on local variable 'w', swiglu.cpp:315 [48]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln315', swiglu.cpp:315) [52]  (0.797 ns)
+	'select' operation 4 bit ('select_ln314', swiglu.cpp:314) [53]  (0.391 ns)
+	'add' operation 4 bit ('add_ln315', swiglu.cpp:315) [189]  (0.797 ns)
+	'store' operation 0 bit ('store_ln315', swiglu.cpp:315) of variable 'add_ln315', swiglu.cpp:315 on local variable 'w', swiglu.cpp:315 [192]  (0.427 ns)
+
+ <State 3>: 0.677ns
+The critical path consists of the following:
+	'getelementptr' operation 4 bit ('rb_28_addr', swiglu.cpp:317) [87]  (0.000 ns)
+	'store' operation 0 bit ('store_ln317', swiglu.cpp:317) of variable 'W_down_wide', swiglu.cpp:310 on array 'rb_28' [99]  (0.677 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

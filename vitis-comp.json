@@ -1,0 +1,13 @@
+{
+  "name": "swiglu",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": [
+      "hls_config.cfg"
+    ],
+    "work_dir": "swiglu"
+  },
+  "useSysrootToolchain": false,
+  "template": "empty_hls_component"
+}

@@ -1,0 +1,155 @@
+Root Cause of Sequential MACs (Confirmed from Code + Report)
+The infrastructure is correct: row_buf block factor=8, x_local_1 block factor=8 dim=2, gate_cache block factor=32 dim=2, UNROLL on the block loop. All resource conflicts are already eliminated.
+
+The single blocker is fp16_to_fp32, line 45:
+
+
+for (int i = 0; i < 10; i++) { if (!(m & 0x200)) { m <<= 1; e--; } }
+HLS reports fp16_to_fp32 latency as 1–14 cycles (1 for normal fp16, 14 for subnormal). Because d and dmin in real LFM2 weights are often subnormal, HLS takes the conservative 14-cycle path in scheduling. The FSM for the outer row loop must therefore wait a variable number of cycles for each fp16 decode before it knows when to start the MAC pipeline. This makes the FSM visit the 8 decode_mac instances one at a time (sequential), because it can't determine all their start times simultaneously. The synthesis confirms: 8 × ~290 = 2320 cycles/row, and the 14-cycle fp16 latency accounts for most of the overhead above 2056 cycles.
+
+Restructuring Plan
+Step 1 — Fix fp16_to_fp32 to fixed 1-cycle latency (minimal code change, large impact)
+Add #pragma HLS UNROLL to the subnormal normalization loop:
+
+
+uint32_t m = mant, e = 112;
+for (int i = 0; i < 10; i++) {
+    #pragma HLS UNROLL          // ← add this
+    if (!(m & 0x200)) { m <<= 1; e--; }
+}
+HLS unrolls 10 iterations into a chain of 10 mux-pairs (each if becomes a 2:1 mux on m and e). This is a pure combinational priority chain — no flip-flops, ~0.3–0.5 ns total logic depth at the target gate delay. Fixed 1-cycle latency on all paths (normal, subnormal, zero, inf/NaN).
+
+Effect: decode_mac_q4k now has fixed latency = fp16 decode (1 cycle) + scale extraction (1 cycle combinational) + MAC pipeline (256 + 5 drain = 261 cycles) + reduce (1 cycle) ≈ 264 cycles, always. HLS can now determine all 8 unrolled instances' start and end times at compile time → schedules all 8 to start at the same FSM state → truly parallel.
+
+Per-row time after Step 1 only (no structural changes):
+
+Burst read: 72 cycles
+8 parallel MACs: 264 cycles
+Total: 336 cycles/row
+Metric	Before	After Step 1
+compute_X1	73.5 ms	9.2 ms
+compute_output Q4K	93.9 ms	9.1 ms
+Top-level latency	167 ms	~18 ms
+Projected t/s	0.37	~3.6
+Step 2 — Unroll the BATCH loops (prevents HLS from fixing Step 1's gains)
+The BATCH_X1, BATCH_X2, BATCH_DOWN_Q4K, BATCH_DOWN_Q6K loops all have if (n >= batch_size) break inside. Even though MAX_BATCH=1 means they always execute once, HLS sees a variable-trip-count loop and hedges — it may serialize the block loop inside, undoing Step 1.
+
+Add #pragma HLS UNROLL to each batch loop:
+
+
+BATCH_X1: for (int n = 0; n < MAX_BATCH; n++) {
+    #pragma HLS UNROLL      // ← add this; MAX_BATCH=1 → single body with n=0
+    if (n >= batch_size) break;
+    ...
+}
+With MAX_BATCH=1 and UNROLL, the batch loop collapses to n=0 inline. The if (0 >= batch_size) break is dead code (batch_size is always 1 at this point due to the driver guard). HLS eliminates it. The 8-way block UNROLL is now directly visible in the row loop body with no intermediate variable-trip wrapper.
+
+Step 3 — Add ping-pong DATAFLOW inside the row loops (closes gap to 4+ t/s)
+After Step 1+2, each row takes 336 cycles: 72 (burst) + 264 (MAC). The burst and MAC are sequential — burst first, then compute. The 72-cycle burst is 22% of the 336 total; overlapping it with the previous row's MAC reduces per-row time from 336 to max(72, 264) = 264 cycles (1.27× speedup).
+
+Approach: extract burst-read and compute into two INLINE off sub-functions per compute phase, then add #pragma HLS DATAFLOW to the row loop body. HLS automatically creates a ping-pong channel for any array passed between the two sub-functions.
+
+For compute_X1, the refactoring is:
+
+
+// New: burst-read sub-function (called as first DATAFLOW stage)
+static void load_row_q4k(const uint8_t *W, int row,
+                          ap_uint<128> rb[WV_ROW_WORDS]) {
+    #pragma HLS INLINE off
+    #pragma HLS ARRAY_PARTITION variable=rb block factor=8
+    #ifdef __SYNTHESIS__
+    memcpy(rb, (const ap_uint<128>*)W + (ap_uint<64>)row * WV_ROW_WORDS,
+           WV_ROW_BYTES);
+    #else
+    // ... csim byte-pack loop unchanged ...
+    #endif
+}
+
+// New: compute-all-blocks sub-function (called as second DATAFLOW stage)
+static void mac_blocks_q4k(const ap_uint<128> rb[WV_ROW_WORDS],
+                             const float x[VECTOR_DIM],
+                             float *result) {
+    #pragma HLS INLINE off
+    #pragma HLS ARRAY_PARTITION variable=rb block factor=8
+    float block_sums[WV_BLOCKS_PER_ROW];
+    #pragma HLS ARRAY_PARTITION variable=block_sums complete
+    for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
+        #pragma HLS UNROLL
+        block_sums[b] = decode_mac_q4k(rb, b * Q4_K_BYTES, x, b * 256);
+    }
+    float acc = 0.f;
+    for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
+        #pragma HLS UNROLL
+        acc += block_sums[b];
+    }
+    *result = acc;
+}
+
+// Modified compute_X1:
+static void compute_X1(const uint8_t *W,
+                        const float x_local_1[MAX_BATCH][VECTOR_DIM],
+                        float X1_cache[MAX_BATCH][FFN_DIM],
+                        int batch_size)
+{
+    #pragma HLS INLINE off
+    if (batch_size == 0) return;   // guard replaces the BATCH loop
+
+    COMPUTE_X1: for (int row = 0; row < FFN_DIM; row++) {
+        #pragma HLS DATAFLOW        // ← the key pragma
+        ap_uint<128> row_buf[WV_ROW_WORDS];
+
+        load_row_q4k(W, row, row_buf);              // stage 1
+        float result;
+        mac_blocks_q4k(row_buf, x_local_1[0], &result);  // stage 2 (parallel)
+        X1_cache[0][row] = result;                   // stage 3
+    }
+}
+HLS converts row_buf between load_row_q4k and mac_blocks_q4k into a ping-pong BRAM pair automatically. This overlaps the AXI burst for row N+1 with the MAC computation for row N.
+
+Apply the same pattern to compute_X2 and both branches of compute_output.
+
+Per-row time after Step 3:
+
+Phase	Burst (cycles)	MAC (cycles)	II = max(B,M)
+X1/X2	72	264	264
+output Q4K	288	4×264=1056	1056
+output Q6K	421	4×264=1056 (+ bank-conflict penalty)	~1100
+Final projected performance:
+
+Phase	Cycles	Time @ 300 MHz
+compute_X1 ‖ X2	8192 × 264 = 2.16M	7.2 ms
+compute_gate	8192	0.03 ms
+compute_output Q4K	2048 × 1056 = 2.16M	7.2 ms
+compute_output Q6K	2048 × 1100 = 2.25M	7.5 ms
+DATAFLOW critical path	X1 + output = 4.32M	14.4–14.7 ms
+16 layers/token		230–235 ms → ~4.3 t/s ✓
+Summary of Changes
+Change	File location	Lines of code	Impact
+Add #pragma HLS UNROLL in fp16_to_fp32 subnormal loop	swiglu.cpp:45	+1 pragma	8× speedup on compute_X1/X2/output
+Add #pragma HLS UNROLL to 4 BATCH loops	swiglu.cpp:232,280,365,406	+4 pragmas	Unlocks Step 1 in output phases
+Add load_row_q4k() + mac_blocks_q4k() functions + DATAFLOW in compute_X1	swiglu.cpp:202–251	~30 lines	Overlaps I/O + compute: 336→264 cycles/row
+Same refactor for compute_X2	swiglu.cpp:253–297	~30 lines	Same gain
+Same refactor for compute_output Q4K/Q6K	swiglu.cpp:346–423	~50 lines	1332→1056 cycles/row
+Steps 1 and 2 (fix fp16_to_fp32 + UNROLL batch loops) are the highest-ROI changes — they require ~5 lines of pragmas and are expected to push from 0.37 t/s to ~3.6 t/s. Step 3 (DATAFLOW ping-pong) takes it to ~4.3 t/s and is a moderate structural refactor.
+
+Note: after Step 3, re-check the Block_entry_proc_U0 does not reappear (the DATAFLOW inside the row loop must not create new shared-array issues). If it does, the load_row_q4k and mac_blocks_q4k functions need stable or no_rw_check pragmas on the ping-pong channel.
+
+
+Here's a summary of every change made and the expected synthesis outcome:
+
+Changes applied:
+
+Location	What changed
+Added #define Q4_K_WORDS 9	Eliminates magic number 9 throughout
+x_local_1/2 in top-level	[1][2048] → [1][8][256] with dim=2 complete
+LOAD_X_VEC	x_local[n][i] → x_local[n][i>>8][i&255] (power-of-2, no dividers)
+load_row_wv	rb[72] → rb[8][9] with dim=1 complete; memcpy → nested loop (no non-power-of-2 divide in synthesis)
+mac_blocks_wv	Removed 8 sequential decode_mac_q4k calls. Header unpack + Loop Inversion: single PIPELINE II=1 / inner UNROLL over 8 blocks
+compute_X1/X2 signatures	x_local[1][2048] → x_local[1][8][256]; row_buf to 2D
+load_row_down_q4k	Same 2D reshape as load_row_wv for 32-block case
+mac_blocks_down_q4k	Loop Inversion with UNROLL factor=8 (8 blocks concurrent, 4 groups)
+execute_dataflow_region	Signature updated to 3D x arrays
+Q6K path	Unchanged (non-integer stride problem)
+Expected synthesis result for mac_blocks_wv: ~256 cycles (down from 2611). 8 dedicated FP pipelines, cannot share. compute_X1/X2 outer loop: 8192 × 256 = 2.1M cycles ≈ 7ms at 300 MHz (down from 71ms).
+
+DSP concern: 8 parallel blocks × ~3-4 DSPs per FP unit ≈ 100-120 DSPs per mac_blocks_wv instance. compute_X1 + compute_X2 ≈ 200-240 DSPs combined. Should remain under 1248.

@@ -1,0 +1,13 @@
+swiglu.cpp:536:143: warning: unexpected pragma parameter 'DATA_WIDTH' [-Winvalid-hls-pragmas]
+#pragma HLS INTERFACE mode=m_axi port=W bundle=gmem_W offset=slave depth=9437184 max_read_burst_length=256 latency=64 num_read_outstanding=16 DATA_WIDTH=128
+                                                                                                                                              ^
+swiglu.cpp:537:143: warning: unexpected pragma parameter 'DATA_WIDTH' [-Winvalid-hls-pragmas]
+#pragma HLS INTERFACE mode=m_axi port=V bundle=gmem_V offset=slave depth=9437184 max_read_burst_length=256 latency=64 num_read_outstanding=16 DATA_WIDTH=128
+                                                                                                                                              ^
+swiglu.cpp:538:150: warning: unexpected pragma parameter 'DATA_WIDTH' [-Winvalid-hls-pragmas]
+#pragma HLS INTERFACE mode=m_axi port=W_down bundle=gmem_Wd offset=slave depth=13762560 max_read_burst_length=256 latency=64 num_read_outstanding=16 DATA_WIDTH=128
+                                                                                                                                                     ^
+swiglu.cpp:539:146: warning: unexpected pragma parameter 'DATA_WIDTH' [-Winvalid-hls-pragmas]
+#pragma HLS INTERFACE mode=m_axi port=x_batch bundle=gmem_x offset=slave depth=2048 max_read_burst_length=256 latency=64 num_read_outstanding=16 DATA_WIDTH=128
+                                                                                                                                                 ^
+4 warnings generated.

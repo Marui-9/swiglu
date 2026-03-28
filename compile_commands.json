@@ -1,0 +1,27 @@
+[
+  {
+    "directory": "C:\\Users\\Jacob\\Desktop\\Vitis_projects\\swiglu",
+    "arguments": [
+      "C:\\Xilinx\\2025.1\\Vitis\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=C:\\Xilinx\\2025.1\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\Xilinx\\2025.1\\Vitis\\common\\technology\\autopilot",
+      "-fhlstoplevel=swiglu",
+      "-c",
+      "C:\\Users\\Jacob\\Desktop\\Vitis_projects\\swiglu\\.\\swiglu.cpp"
+    ],
+    "file": "C:\\Users\\Jacob\\Desktop\\Vitis_projects\\swiglu\\.\\swiglu.cpp"
+  },
+  {
+    "directory": "C:\\Users\\Jacob\\Desktop\\Vitis_projects\\swiglu",
+    "arguments": [
+      "C:\\Xilinx\\2025.1\\Vitis\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=C:\\Xilinx\\2025.1\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=C:\\Xilinx\\2025.1\\Vitis\\include",
+      "-c",
+      "C:\\Users\\Jacob\\Desktop\\Vitis_projects\\swiglu\\.\\swiglu_tb.cpp"
+    ],
+    "file": "C:\\Users\\Jacob\\Desktop\\Vitis_projects\\swiglu\\.\\swiglu_tb.cpp"
+  }
+]

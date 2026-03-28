@@ -1,0 +1,4635 @@
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: swiglu.cpp, Line: 130, Column: 32 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'get_byte(ap_uint<128> const*, int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 52, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mac_blocks_wv(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 132, Column: 19 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - Callee:          'fp16_to_fp32(unsigned short)'
+    DebugLoc:        { File: swiglu.cpp, Line: 28, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mac_blocks_wv(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 225, Column: 9 }
+Function:        _ZL10compute_X1PKhPA8_A256_KafPA8192_f
+Args:            
+  - Callee:          'load_row_wv(ap_uint<128> const*, int, ap_uint<128> (*) [9])'
+    DebugLoc:        { File: swiglu.cpp, Line: 95, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_X1(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192])'
+    DebugLoc:        { File: swiglu.cpp, Line: 219, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 227, Column: 9 }
+Function:        _ZL10compute_X1PKhPA8_A256_KafPA8192_f
+Args:            
+  - Callee:          'mac_blocks_wv(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_X1(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192])'
+    DebugLoc:        { File: swiglu.cpp, Line: 219, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 244, Column: 9 }
+Function:        _ZL10compute_X2PKhPA8_A256_KafPA8192_f
+Args:            
+  - Callee:          'load_row_wv(ap_uint<128> const*, int, ap_uint<128> (*) [9])'
+    DebugLoc:        { File: swiglu.cpp, Line: 95, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_X2(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192])'
+    DebugLoc:        { File: swiglu.cpp, Line: 238, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 246, Column: 9 }
+Function:        _ZL10compute_X2PKhPA8_A256_KafPA8192_f
+Args:            
+  - Callee:          'mac_blocks_wv(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_X2(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192])'
+    DebugLoc:        { File: swiglu.cpp, Line: 238, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 13, Column: 17 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - Callee:          'fp_struct<float>::fp_struct(float)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 283, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 15, Column: 57 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - Callee:          'fp_struct<float>::mantissa() const'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 340, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 59, Column: 8 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - Callee:          'fp_struct<float>::__signbit() const'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 349, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 18, Column: 79 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - Callee:          'fp_struct<float>::expv() const'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 316, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 117, Column: 10 }
+Function:        _Z20generic_cast_IEEE754IifET_T0_b
+Args:            
+  - Callee:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'int generic_cast_IEEE754<int, float>(float, bool)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 116, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp', 
+                   Line: 51, Column: 54 }
+Function:        __hls_fptosi_float_i32
+Args:            
+  - Callee:          'int generic_cast_IEEE754<int, float>(float, bool)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 116, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          __hls_fptosi_float_i32
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp', 
+                       Line: 51, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 276, Column: 28 }
+Function:        _ZL12compute_gatePA8192_KfS1_PA32_A256_aPf
+Args:            
+  - Callee:          __hls_fptosi_float_i32
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp', 
+                       Line: 51, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_gate(float const (*) [8192], float const (*) [8192], signed char (*) [32][256], float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 260, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: swiglu.cpp, Line: 345, Column: 32 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'get_byte(ap_uint<128> const*, int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 52, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mac_blocks_down_q4k(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 346, Column: 19 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - Callee:          'fp16_to_fp32(unsigned short)'
+    DebugLoc:        { File: swiglu.cpp, Line: 28, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mac_blocks_down_q4k(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: swiglu.cpp, Line: 63, Column: 35 }
+Function:        _ZL14decode_mac_q6kPK7ap_uintILi128EEiPKafi
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'get_byte(ap_uint<128> const*, int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 52, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'decode_mac_q6k(ap_uint<128> const*, int, signed char const*, float, int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 61, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 63, Column: 12 }
+Function:        _ZL14decode_mac_q6kPK7ap_uintILi128EEiPKafi
+Args:            
+  - Callee:          'fp16_to_fp32(unsigned short)'
+    DebugLoc:        { File: swiglu.cpp, Line: 28, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'decode_mac_q6k(ap_uint<128> const*, int, signed char const*, float, int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 61, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: swiglu.cpp, Line: 450, Column: 18 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'decode_mac_q6k(ap_uint<128> const*, int, signed char const*, float, int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 61, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mac_blocks_down_q6k(ap_uint<128> const*, signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 63, Column: 12 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - Callee:          'fp16_to_fp32(unsigned short)'
+    DebugLoc:        { File: swiglu.cpp, Line: 28, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mac_blocks_down_q6k(ap_uint<128> const*, signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 478, Column: 13 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj
+Args:            
+  - Callee:          'load_row_down_q4k(ap_uint<128> const*, int, ap_uint<128> (*) [9])'
+    DebugLoc:        { File: swiglu.cpp, Line: 311, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 479, Column: 13 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj
+Args:            
+  - Callee:          'mac_blocks_down_q4k(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 485, Column: 2 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj
+Args:            
+  - Callee:          'load_row_down_q6k(ap_uint<128> const*, int, ap_uint<128>*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 429, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 486, Column: 13 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj
+Args:            
+  - Callee:          'mac_blocks_down_q6k(ap_uint<128> const*, signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 581, Column: 2 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'load_x_local(signed char const*, signed char (*) [8][256], signed char (*) [8][256])'
+    DebugLoc:        { File: swiglu.cpp, Line: 501, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 582, Column: 5 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'compute_X1(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192])'
+    DebugLoc:        { File: swiglu.cpp, Line: 219, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 583, Column: 5 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'compute_X2(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192])'
+    DebugLoc:        { File: swiglu.cpp, Line: 238, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 584, Column: 5 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'compute_gate(float const (*) [8192], float const (*) [8192], signed char (*) [32][256], float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 260, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 585, Column: 5 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 399, Column: 20 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_399_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 387, Column: 20 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_387_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 186, Column: 20 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_186_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 510, Column: 31 }
+Function:        _ZL12load_x_localPKaPA8_A256_aS3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_510_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_453_2
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:453:23'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q6k
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_447_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:447:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q6k
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        REDUCE_Q6K
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:82:17'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q6k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        REDUCE_Q6K
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:82:17'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q6k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        REDUCE_Q6K
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:82:17'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q6k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        REDUCE_Q6K
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:82:17'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q6k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        REDUCE_Q6K
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:82:17'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q6k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        REDUCE_Q6K
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:82:17'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q6k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        REDUCE_Q6K
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:82:17'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q6k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        REDUCE_Q6K
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:82:17'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q6k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        REDUCE_DOWN_Q4K
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:412:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_415_4
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:415:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_399_3
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:399:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_387_2
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:387:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        INIT_ACC_DOWN
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:369:17'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_371_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:371:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        UNPACK_HDR_DOWN
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:343:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_down_q4k
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 260, Column: 0 }
+Function:        _ZL12compute_gatePA8192_KfS1_PA32_A256_aPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        SWISH_GATE
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:262:14'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          compute_gate
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 260, Column: 0 }
+Function:        _ZL12compute_gatePA8192_KfS1_PA32_A256_aPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_286_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:286:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          compute_gate
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        REDUCE_WV
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:200:16'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_203_3
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:203:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_203_3
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:203:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_203_3
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:203:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_203_3
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:203:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_203_3
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:203:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_203_3
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:203:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_203_3
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:203:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_203_3
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:203:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_186_2
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:186:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        INIT_ACC_WV
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:165:15'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_167_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:167:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_167_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:167:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_167_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:167:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_167_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:167:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_167_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:167:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_167_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:167:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_167_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:167:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_167_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:167:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        UNPACK_HDR_WV
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:128:17'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mac_blocks_wv
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 28, Column: 0 }
+Function:        _ZL12fp16_to_fp32t
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_37_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:37:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          fp16_to_fp32
+  - String:          ''' completely with a factor of '
+  - Factor:          '10'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: swiglu.cpp, Line: 501, Column: 0 }
+Function:        _ZL12load_x_localPKaPA8_A256_aS3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_510_1
+  - String:          ''' ('
+  - LoopLoc:         'swiglu.cpp:510:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          load_x_local
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 130, Column: 9 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - Callee:          'fp16_to_fp32(unsigned short)'
+    DebugLoc:        { File: swiglu.cpp, Line: 28, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mac_blocks_wv(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 225, Column: 9 }
+Function:        _ZL10compute_X1PKhPA8_A256_KafPA8192_f
+Args:            
+  - Callee:          'load_row_wv(ap_uint<128> const*, int, ap_uint<128> (*) [9])'
+    DebugLoc:        { File: swiglu.cpp, Line: 95, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_X1(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192])'
+    DebugLoc:        { File: swiglu.cpp, Line: 219, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 227, Column: 9 }
+Function:        _ZL10compute_X1PKhPA8_A256_KafPA8192_f
+Args:            
+  - Callee:          'mac_blocks_wv(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_X1(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192])'
+    DebugLoc:        { File: swiglu.cpp, Line: 219, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 244, Column: 9 }
+Function:        _ZL10compute_X2PKhPA8_A256_KafPA8192_f
+Args:            
+  - Callee:          'load_row_wv(ap_uint<128> const*, int, ap_uint<128> (*) [9])'
+    DebugLoc:        { File: swiglu.cpp, Line: 95, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_X2(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192])'
+    DebugLoc:        { File: swiglu.cpp, Line: 238, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 246, Column: 9 }
+Function:        _ZL10compute_X2PKhPA8_A256_KafPA8192_f
+Args:            
+  - Callee:          'mac_blocks_wv(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_X2(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192])'
+    DebugLoc:        { File: swiglu.cpp, Line: 238, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 13, Column: 17 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - Callee:          'fp_struct<float>::fp_struct(float)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 283, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 15, Column: 57 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - Callee:          'fp_struct<float>::mantissa() const'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 340, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 18, Column: 79 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - Callee:          'fp_struct<float>::expv() const'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 316, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 59, Column: 8 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - Callee:          'fp_struct<float>::__signbit() const'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 349, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 117, Column: 10 }
+Function:        _Z20generic_cast_IEEE754IifET_T0_b
+Args:            
+  - Callee:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'int generic_cast_IEEE754<int, float>(float, bool)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 116, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp', 
+                   Line: 51, Column: 54 }
+Function:        __hls_fptosi_float_i32
+Args:            
+  - Callee:          'int generic_cast_IEEE754<int, float>(float, bool)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 116, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          __hls_fptosi_float_i32
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp', 
+                       Line: 51, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 276, Column: 28 }
+Function:        _ZL12compute_gatePA8192_KfS1_PA32_A256_aPf
+Args:            
+  - Callee:          __hls_fptosi_float_i32
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp', 
+                       Line: 51, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_gate(float const (*) [8192], float const (*) [8192], signed char (*) [32][256], float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 260, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 345, Column: 9 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - Callee:          'fp16_to_fp32(unsigned short)'
+    DebugLoc:        { File: swiglu.cpp, Line: 28, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mac_blocks_down_q4k(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 63, Column: 12 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - Callee:          'fp16_to_fp32(unsigned short)'
+    DebugLoc:        { File: swiglu.cpp, Line: 28, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mac_blocks_down_q6k(ap_uint<128> const*, signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 478, Column: 13 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj
+Args:            
+  - Callee:          'load_row_down_q4k(ap_uint<128> const*, int, ap_uint<128> (*) [9])'
+    DebugLoc:        { File: swiglu.cpp, Line: 311, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 479, Column: 13 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj
+Args:            
+  - Callee:          'mac_blocks_down_q4k(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 485, Column: 2 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj
+Args:            
+  - Callee:          'load_row_down_q6k(ap_uint<128> const*, int, ap_uint<128>*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 429, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 486, Column: 13 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj
+Args:            
+  - Callee:          'mac_blocks_down_q6k(ap_uint<128> const*, signed char const (*) [256], float, float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 581, Column: 2 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'load_x_local(signed char const*, signed char (*) [8][256], signed char (*) [8][256])'
+    DebugLoc:        { File: swiglu.cpp, Line: 501, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 582, Column: 5 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'compute_X1(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192])'
+    DebugLoc:        { File: swiglu.cpp, Line: 219, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 583, Column: 5 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'compute_X2(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192])'
+    DebugLoc:        { File: swiglu.cpp, Line: 238, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 584, Column: 5 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'compute_gate(float const (*) [8192], float const (*) [8192], signed char (*) [32][256], float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 260, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 585, Column: 5 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_swiglu_ir
+Args:            
+  - Callee:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_swiglu_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 12, Column: 0 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<float>::fp_struct(float)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 283, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 12, Column: 0 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<float>::mantissa() const'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 340, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 12, Column: 0 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<float>::expv() const'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 316, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 12, Column: 0 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<float>::__signbit() const'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 349, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 116, Column: 0 }
+Function:        _Z20generic_cast_IEEE754IifET_T0_b
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'int generic_cast_IEEE754<int, float>(float, bool)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 116, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp', 
+                   Line: 51, Column: 0 }
+Function:        __hls_fptosi_float_i32
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'int generic_cast_IEEE754<int, float>(float, bool)'
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 116, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          __hls_fptosi_float_i32
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp', 
+                       Line: 51, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: swiglu.cpp, Line: 260, Column: 0 }
+Function:        _ZL12compute_gatePA8192_KfS1_PA32_A256_aPf
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          __hls_fptosi_float_i32
+    DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp', 
+                       Line: 51, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'compute_gate(float const (*) [8192], float const (*) [8192], signed char (*) [32][256], float*)'
+    DebugLoc:        { File: swiglu.cpp, Line: 260, Column: 0 }
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: swiglu.cpp, Line: 509, Column: 26 }
+Function:        _ZL12load_x_localPKaPA8_A256_aS3_
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          x_batch
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: swiglu.cpp, Line: 102, Column: 11 }
+Function:        _ZL11load_row_wvPK7ap_uintILi128EEiPA9_S0_
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          W_wide
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: swiglu.cpp, Line: 317, Column: 11 }
+Function:        _ZL17load_row_down_q4kPK7ap_uintILi128EEiPA9_S0_
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          W_down_wide
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: swiglu.cpp, Line: 434, Column: 8 }
+Function:        _ZL17load_row_down_q6kPK7ap_uintILi128EEiPS0_
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          W_down_wide
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-array-undecay
+Name:            WarnOnUnsupportedVLAUnDecay
+DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Skipping array undecay on variable length array '''
+  - ArrayName:       x_batch
+  - String:          '''.'
+...
+--- !Failure
+Pass:            reflow-array-undecay
+Name:            WarnOnUnsupportedVLAUnDecay
+DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Skipping array undecay on variable length array '''
+  - ArrayName:       W
+  - String:          '''.'
+...
+--- !Failure
+Pass:            reflow-array-undecay
+Name:            WarnOnUnsupportedVLAUnDecay
+DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Skipping array undecay on variable length array '''
+  - ArrayName:       V
+  - String:          '''.'
+...
+--- !Failure
+Pass:            reflow-array-undecay
+Name:            WarnOnUnsupportedVLAUnDecay
+DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Skipping array undecay on variable length array '''
+  - ArrayName:       W_down
+  - String:          '''.'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 119, Column: 8 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          d
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 120, Column: 11 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          dmin
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 121, Column: 13 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          sc6
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 122, Column: 13 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          mn6
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 161, Column: 13 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          int_acc_w
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 162, Column: 13 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          int_acc_m
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 224, Column: 22 }
+Function:        _ZL10compute_X1PKhPA8_A256_KafPA8192_f
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          row_buf
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 243, Column: 22 }
+Function:        _ZL10compute_X2PKhPA8_A256_KafPA8192_f
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          row_buf
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 267, Column: 8 }
+Function:        _ZL12compute_gatePA8192_KfS1_PA32_A256_aPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          pmax
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 334, Column: 8 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          d
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 335, Column: 11 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          dmin
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 336, Column: 13 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          sc6
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 337, Column: 13 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          mn6
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 364, Column: 13 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          int_acc_w
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 365, Column: 13 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          int_acc_m
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 66, Column: 11 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          acc.i
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 445, Column: 8 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          block_sums
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 477, Column: 26 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          row_buf
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 483, Column: 26 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          row_buf11
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_2
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 568, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          gate_cache
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: swiglu.cpp, Line: 490, Column: 5 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '2048'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        out_batch3seq
+  - ArrayName:       out_batch
+  - String:          ' '
+  - BundleName:      gmem_out
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'swiglu.cpp:490:5'
+  - String:          ' '
+  - Function:        'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+  - OrigDirection:   write
+  - OrigID:          load-store-loop.store.5
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: swiglu.cpp, Line: 490, Column: 5 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: swiglu.cpp, Line: 490, Column: 5 }
+  - OrigDirection:   write
+  - OrigID:          out_batch3seq
+  - ArrayName:       out_batch
+  - String:          ' '
+  - BundleName:      gmem_out
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'swiglu.cpp:490:5'
+  - String:          ' '
+  - Function:        'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: swiglu.cpp, Line: 509, Column: 26 }
+Function:        _ZL12load_x_localPKaPA8_A256_aS3_
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          x_batch
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: swiglu.cpp, Line: 102, Column: 11 }
+Function:        _ZL11load_row_wvPK7ap_uintILi128EEiPA9_S0_
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          W_wide
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: swiglu.cpp, Line: 317, Column: 11 }
+Function:        _ZL17load_row_down_q4kPK7ap_uintILi128EEiPA9_S0_
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          W_down_wide
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: swiglu.cpp, Line: 434, Column: 8 }
+Function:        _ZL17load_row_down_q6kPK7ap_uintILi128EEiPS0_
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          W_down_wide
+  - String:          ''''
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         ''
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         ''
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         ''
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         ''
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         ''
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         ''
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         ''
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         ''
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         'swiglu.cpp:490:5'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         ''
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayPromotion
+DebugLoc:        { File: swiglu.cpp, Line: 572, Column: 8 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Automatically partitioning array '''
+  - Value:           gate_scale
+  - String:          ''' dimension '
+  - Dim:             '1'
+  - String:          ' completely based on constant index.'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_1_0'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:553:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_1_0
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_1_0
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_1_1'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:553:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_1_1
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_1_1
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_1_2'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:553:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_1_2
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_1_2
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_1_3'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:553:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_1_3
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_1_3
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_1_4'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:553:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_1_4
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_1_4
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_1_5'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:553:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_1_5
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_1_5
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_1_6'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:553:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_1_6
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_1_6
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_1_7'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:553:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_1_7
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_1_7
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_2_0'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:557:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_2_0
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_2_0
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_2_1'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:557:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_2_1
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_2_1
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_2_2'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:557:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_2_2
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_2_2
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_2_3'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:557:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_2_3
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_2_3
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_2_4'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:557:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_2_4
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_2_4
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_2_5'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:557:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_2_5
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_2_5
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_2_6'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:557:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_2_6
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_2_6
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=16 variable=x_local_2_7'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:557:9'
+  - String:          ' '
+  - PragmaSrcLoc:    'swiglu.cpp:508:9'
+    DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+  - VarName:         x_local_2_7
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 508, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '16'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            x_local_2_7
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: swiglu.cpp, Line: 572, Column: 8 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=gate_scale'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  swiglu
+  - String:          ' '
+  - varLoc:          'swiglu.cpp:572:8'
+  - String:          ' '
+  - VarName:         gate_scale
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 572, Column: 8 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            gate_scale
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Failure
+Pass:            reflow-array-undecay
+Name:            WarnOnUnsupportedVLAUnDecay
+DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Skipping array undecay on variable length array '''
+  - ArrayName:       W
+  - String:          '''.'
+...
+--- !Failure
+Pass:            reflow-array-undecay
+Name:            WarnOnUnsupportedVLAUnDecay
+DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Skipping array undecay on variable length array '''
+  - ArrayName:       V
+  - String:          '''.'
+...
+--- !Failure
+Pass:            reflow-array-undecay
+Name:            WarnOnUnsupportedVLAUnDecay
+DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Skipping array undecay on variable length array '''
+  - ArrayName:       W_down
+  - String:          '''.'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_1_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_1_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_1_2
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_1_3
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_1_4
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_1_5
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_1_6
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 553, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_1_7
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_2_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_2_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_2_2
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_2_3
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_2_4
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_2_5
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_2_6
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 557, Column: 9 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          x_local_2_7
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: swiglu.cpp, Line: 572, Column: 8 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          gate_scale
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Missed
+Pass:            pasta-interface-builder
+Name:            UnsupportArrayToStream
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
+  - Name:            X1_cache
+  - String:          ''''
+...
+--- !Missed
+Pass:            pasta-interface-builder
+Name:            UnsupportArrayToStream
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
+  - Name:            X2_cache
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: swiglu.cpp, Line: 490, Column: 5 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '2048'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_out
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'swiglu.cpp:490:5'
+  - String:          ' '
+  - Function:        'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 467, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: swiglu.cpp, Line: 490, Column: 5 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '2048'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        anonymous
+  - String:          '''('
+  - LoopLoc:         'swiglu.cpp:490:5'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_out
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 130, Column: 9 }
+Function:        _ZL13mac_blocks_wvPA9_K7ap_uintILi128EEPA256_KafPf.72.73.90.91
+Args:            
+  - Callee:          'fp16_to_fp32(unsigned short)'
+    DebugLoc:        { File: swiglu.cpp, Line: 28, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mac_blocks_wv(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*) (.72.73.90.91)'
+    DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 225, Column: 9 }
+Function:        _ZL10compute_X1PKhPA8_A256_KafPA8192_f.1
+Args:            
+  - Callee:          'load_row_wv(ap_uint<128> const*, int, ap_uint<128> (*) [9]) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 95, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_X1(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192]) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 219, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 227, Column: 9 }
+Function:        _ZL10compute_X1PKhPA8_A256_KafPA8192_f.1
+Args:            
+  - Callee:          'mac_blocks_wv(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*) (.72.73.90.91)'
+    DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_X1(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192]) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 219, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 244, Column: 9 }
+Function:        _ZL10compute_X2PKhPA8_A256_KafPA8192_f.1
+Args:            
+  - Callee:          'load_row_wv(ap_uint<128> const*, int, ap_uint<128> (*) [9]) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 95, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_X2(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192]) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 238, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 246, Column: 9 }
+Function:        _ZL10compute_X2PKhPA8_A256_KafPA8192_f.1
+Args:            
+  - Callee:          'mac_blocks_wv(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*) (.72.73.90.91)'
+    DebugLoc:        { File: swiglu.cpp, Line: 114, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_X2(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192]) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 238, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 345, Column: 9 }
+Function:        _ZL19mac_blocks_down_q4kPA9_K7ap_uintILi128EEPA256_KafPf.82.83
+Args:            
+  - Callee:          'fp16_to_fp32(unsigned short)'
+    DebugLoc:        { File: swiglu.cpp, Line: 28, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mac_blocks_down_q4k(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*) (.82.83)'
+    DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 63, Column: 12 }
+Function:        _ZL19mac_blocks_down_q6kPK7ap_uintILi128EEPA256_KafPf.80.81
+Args:            
+  - Callee:          'fp16_to_fp32(unsigned short)'
+    DebugLoc:        { File: swiglu.cpp, Line: 28, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mac_blocks_down_q6k(ap_uint<128> const*, signed char const (*) [256], float, float*) (.80.81)'
+    DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 478, Column: 13 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj.1
+Args:            
+  - Callee:          'load_row_down_q4k(ap_uint<128> const*, int, ap_uint<128> (*) [9]) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 311, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 479, Column: 13 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj.1
+Args:            
+  - Callee:          'mac_blocks_down_q4k(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*) (.82.83)'
+    DebugLoc:        { File: swiglu.cpp, Line: 329, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 485, Column: 2 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj.1
+Args:            
+  - Callee:          'load_row_down_q6k(ap_uint<128> const*, int, ap_uint<128>*) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 429, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 486, Column: 13 }
+Function:        _ZL14compute_outputPKhPA32_A256_KaPKfPfj.1
+Args:            
+  - Callee:          'mac_blocks_down_q6k(ap_uint<128> const*, signed char const (*) [256], float, float*) (.80.81)'
+    DebugLoc:        { File: swiglu.cpp, Line: 441, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 581, Column: 2 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'load_x_local(signed char const*, signed char (*) [8][256], signed char (*) [8][256])'
+    DebugLoc:        { File: swiglu.cpp, Line: 501, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 582, Column: 5 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'compute_X1(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192]) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 219, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 583, Column: 5 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'compute_X2(unsigned char const*, signed char const (*) [8][256], float, float (*) [8192]) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 238, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 584, Column: 5 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'compute_gate(float const (*) [8192], float const (*) [8192], signed char (*) [32][256], float*) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 260, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: swiglu.cpp, Line: 585, Column: 5 }
+Function:        _Z6swigluPKhS0_S0_PKaPfjf
+Args:            
+  - Callee:          'compute_output(unsigned char const*, signed char const (*) [32][256], float const*, float*, unsigned int) (.1)'
+    DebugLoc:        { File: swiglu.cpp, Line: 0, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'
+    DebugLoc:        { File: swiglu.cpp, Line: 535, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...

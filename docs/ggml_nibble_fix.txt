@@ -1,0 +1,79 @@
+GGML Q4_K Nibble Layout — Detailed Explanation
+The qs field
+A Q4_K block encodes 256 weights as 4-bit values ("nibbles") packed into 128 bytes (qs[0..127]), located at byte offset 16 in the block. Two nibbles fit in one byte, so naively you'd expect:
+
+
+byte 0 → weight 0 (low nibble), weight 1 (high nibble)
+byte 1 → weight 2 (low nibble), weight 3 (high nibble)
+...
+That is the simple interleaved layout — what the old code implemented.
+
+What GGML actually does
+GGML's Q4_K encoder processes 256 weights in four 64-element chunks. Within each chunk it stores 64 elements in 32 bytes, but NOT interleaved — first all 32 low nibbles, then all 32 high nibbles (planar):
+
+
+// From ggml-quants.c (dequantize_row_q4_K reference decoder):
+for (int j = 0; j < 256; j += 64) {           // 4 chunks
+    for (int l = 0; l < 32; l++)
+        *y++ = d1 * (q[l] & 0xF) - m1;        // weights j+0  .. j+31  → LOW  nibbles
+    for (int l = 0; l < 32; l++)
+        *y++ = d2 * (q[l] >> 4)  - m2;        // weights j+32 .. j+63  → HIGH nibbles
+    q += 32;                                   // advance to next chunk's 32 bytes
+}
+So for 256 elements, the byte-to-element mapping is:
+
+Weight index n	qs byte used	Nibble
+0	qs[0] (byte 16)	low
+1	qs[1] (byte 17)	low
+31	qs[31] (byte 47)	low
+32	qs[0] (byte 16)	high ← same byte as n=0
+33	qs[1] (byte 17)	high
+63	qs[31] (byte 47)	high
+64	qs[32] (byte 48)	low
+96	qs[32] (byte 48)	high
+...	...	...
+Why the old formula was wrong
+The old code:
+
+
+int byte_idx = 16 + (n >> 1);      // = 16 + n/2
+int shift    = (n & 1) << 2;       // 0 if even, 4 if odd
+Applied to a few specific values:
+
+n	Old byte_idx	Old shift	Actual GGML byte	Actual shift
+0	16	0	16	0 ✓
+1	16	4	17	0 ✗
+2	17	0	18	0 ✗
+32	32	0	16	4 ✗
+n=0 is accidentally correct. Everything else is wrong. The code was reading a completely different permutation of the 256 nibbles from each block.
+
+Why outputs still looked "correct"
+The board test only checked that outputs were non-zero and in a plausible magnitude range (±0.002–0.008). It never compared specific values against a CPU reference.
+
+With the wrong nibble permutation, all 256 nibbles are still in range [0, 15]. The scale factors (d, dmin, sc, mn) are decoded correctly. So the dot product produces a value with roughly the right statistical magnitude — just the wrong actual value. The model would generate incoherent text, but the activations wouldn't be NaN or zero.
+
+The testbench was also internally inconsistent: fill_q4k_block and dot_q4k_ref both used the same wrong formula, so they agreed with each other and with the HLS code. All tests passed despite the bug.
+
+The correct formula
+
+int q_byte = 16 + (n & 31) + ((n & 0xC0) >> 1);
+int shift   = (n & 32) ? 4 : 0;
+Breaking it down:
+
+n & 31 → position within the 32-byte sub-group (0..31). Selects which byte within the chunk.
+(n & 0xC0) >> 1 → which 32-byte chunk (0, 32, 64, or 96). n & 0xC0 extracts bits 7:6 (the chunk number × 64), then >> 1 converts it to a byte offset (× 32).
+n & 32 → whether we're in the second half of the 64-element chunk (elements 32..63 within the chunk). If so, use the high nibble.
+Every operation is a power-of-2 shift or mask — no division, no modulo, no conditional memory access. HLS handles this with zero overhead.
+
+Verification of key values:
+
+n	n&31	(n&0xC0)>>1	q_byte	shift	Meaning
+0	0	0	16	0	chunk 0, byte 0, low ✓
+1	1	0	17	0	chunk 0, byte 1, low ✓
+31	31	0	47	0	chunk 0, byte 31, low ✓
+32	0	0	16	4	chunk 0, byte 0, high ✓
+63	31	0	47	4	chunk 0, byte 31, high ✓
+64	0	32	48	0	chunk 1, byte 0, low ✓
+96	0	32	48	4	chunk 1, byte 0, high ✓
+192	0	96	112	0	chunk 3, byte 0, low ✓
+255	31	96	143	4	chunk 3, byte 31, high ✓
