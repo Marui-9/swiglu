@@ -109,7 +109,7 @@ memset.loop:2 %empty_90 = add i4 %p_load, i4 1
 
 <Node id="16" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-memset.loop:3 %br_ln0 = br i1 %exitcond33, void %memset.loop.split, void %for.body.i.preheader.exitStub
+memset.loop:3 %br_ln0 = br i1 %exitcond33, void %memset.loop.split, void %split.exitStub
 
 ]]></Node>
 <StgValue><ssdm name="br_ln0"/></StgValue>
@@ -493,7 +493,7 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_91, void %.case.7, i3 0, void
 
 <Node id="50" bw="0">
 <![CDATA[
-for.body.i.preheader.exitStub:0 %ret_ln0 = ret
+split.exitStub:0 %ret_ln0 = ret
 
 ]]></Node>
 <StgValue><ssdm name="ret_ln0"/></StgValue>

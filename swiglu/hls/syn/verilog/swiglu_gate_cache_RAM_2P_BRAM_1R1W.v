@@ -8,8 +8,8 @@
 module swiglu_gate_cache_RAM_2P_BRAM_1R1W
 #(parameter
     DataWidth    = 8,
-    AddressRange = 256,
-    AddressWidth = 8,
+    AddressRange = 1024,
+    AddressWidth = 10,
     BufferCount  = 2,
     MemLatency   = 1,
     IndexWidth   = 1

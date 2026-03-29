@@ -38,197 +38,182 @@ Diagnostics:
         Length:          0
         ReplacementText: 'VITIS_LOOP_1248_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_38_1:  '
-    FileOffset:      38
+    Message:         'Added loop label VITIS_LOOP_37_1:  '
+    FileOffset:      37
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1031141
+        Offset:          1031121
         Length:          0
-        ReplacementText: 'VITIS_LOOP_38_1: '
+        ReplacementText: 'VITIS_LOOP_37_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_101_1:  '
-    FileOffset:      101
+    Message:         'Added loop label VITIS_LOOP_100_1:  '
+    FileOffset:      100
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1033147
+        Offset:          1033127
         Length:          0
-        ReplacementText: 'VITIS_LOOP_101_1: '
+        ReplacementText: 'VITIS_LOOP_100_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_167_1:  '
-    FileOffset:      167
+    Message:         'Added loop label VITIS_LOOP_166_1:  '
+    FileOffset:      166
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1035759
+        Offset:          1035739
         Length:          0
-        ReplacementText: 'VITIS_LOOP_167_1: '
+        ReplacementText: 'VITIS_LOOP_166_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_186_2:  '
-    FileOffset:      186
+    Message:         'Added loop label VITIS_LOOP_185_2:  '
+    FileOffset:      185
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1035977
+        Offset:          1035957
         Length:          0
-        ReplacementText: 'VITIS_LOOP_186_2: '
+        ReplacementText: 'VITIS_LOOP_185_2: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_203_3:  '
-    FileOffset:      203
+    Message:         'Added loop label VITIS_LOOP_202_3:  '
+    FileOffset:      202
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1036532
+        Offset:          1036512
         Length:          0
-        ReplacementText: 'VITIS_LOOP_203_3: '
+        ReplacementText: 'VITIS_LOOP_202_3: '
   - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_2p + lutram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      226
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_2p + lutram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      247
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      269
+    Message:         'Invalid Directive: for current device, ram_2p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      266
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_289_1:  '
-    FileOffset:      289
+    Message:         'Added loop label VITIS_LOOP_287_1:  '
+    FileOffset:      287
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1039065
+        Offset:          1038914
         Length:          0
-        ReplacementText: 'VITIS_LOOP_289_1: '
+        ReplacementText: 'VITIS_LOOP_287_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_318_1:  '
-    FileOffset:      318
+    Message:         'Added loop label VITIS_LOOP_316_1:  '
+    FileOffset:      316
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1039860
+        Offset:          1039716
         Length:          0
-        ReplacementText: 'VITIS_LOOP_318_1: '
+        ReplacementText: 'VITIS_LOOP_316_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_373_1:  '
-    FileOffset:      373
+    Message:         'Added loop label VITIS_LOOP_371_1:  '
+    FileOffset:      371
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1042276
+        Offset:          1042146
         Length:          0
-        ReplacementText: 'VITIS_LOOP_373_1: '
+        ReplacementText: 'VITIS_LOOP_371_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_384_2:  '
-    FileOffset:      384
+    Message:         'Added loop label VITIS_LOOP_382_2:  '
+    FileOffset:      382
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1042477
+        Offset:          1042347
         Length:          0
-        ReplacementText: 'VITIS_LOOP_384_2: '
+        ReplacementText: 'VITIS_LOOP_382_2: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_396_3:  '
-    FileOffset:      396
+    Message:         'Added loop label VITIS_LOOP_394_3:  '
+    FileOffset:      394
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1042978
+        Offset:          1042857
         Length:          0
-        ReplacementText: 'VITIS_LOOP_396_3: '
+        ReplacementText: 'VITIS_LOOP_394_3: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_408_4:  '
-    FileOffset:      408
+    Message:         'Added loop label VITIS_LOOP_406_4:  '
+    FileOffset:      406
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1043503
+        Offset:          1043391
         Length:          0
-        ReplacementText: 'VITIS_LOOP_408_4: '
+        ReplacementText: 'VITIS_LOOP_406_4: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_420_5:  '
-    FileOffset:      420
+    Message:         'Added loop label VITIS_LOOP_418_5:  '
+    FileOffset:      418
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1044034
+        Offset:          1043931
         Length:          0
-        ReplacementText: 'VITIS_LOOP_420_5: '
+        ReplacementText: 'VITIS_LOOP_418_5: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_436_6:  '
-    FileOffset:      436
+    Message:         'Added loop label VITIS_LOOP_433_6:  '
+    FileOffset:      433
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1044616
+        Offset:          1044521
         Length:          0
-        ReplacementText: 'VITIS_LOOP_436_6: '
+        ReplacementText: 'VITIS_LOOP_433_6: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_468_1:  '
-    FileOffset:      468
+    Message:         'Added loop label VITIS_LOOP_465_1:  '
+    FileOffset:      465
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1045698
+        Offset:          1045603
         Length:          0
-        ReplacementText: 'VITIS_LOOP_468_1: '
+        ReplacementText: 'VITIS_LOOP_465_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_474_2:  '
-    FileOffset:      474
+    Message:         'Added loop label VITIS_LOOP_471_2:  '
+    FileOffset:      471
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1045860
+        Offset:          1045765
         Length:          0
-        ReplacementText: 'VITIS_LOOP_474_2: '
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_2p + lutram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      500
-    FilePath:        swiglu.cpp
-    Replacements:    
+        ReplacementText: 'VITIS_LOOP_471_2: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_533_1:  '
-    FileOffset:      533
+    Message:         'Added loop label VITIS_LOOP_529_1:  '
+    FileOffset:      529
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1047715
+        Offset:          1047568
         Length:          0
-        ReplacementText: 'VITIS_LOOP_533_1: '
+        ReplacementText: 'VITIS_LOOP_529_1: '
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      577
+    FileOffset:      572
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      581
+    FileOffset:      576
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_2p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      588
+    FileOffset:      583
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_2p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      592
+    FileOffset:      587
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      595
+    FileOffset:      590
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, rom_1p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      600
+    FileOffset:      595
     FilePath:        swiglu.cpp
     Replacements:    
 ...

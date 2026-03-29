@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'load_x_local'
 ================================================================
-* Date:           Sun Mar 29 14:22:37 2026
+* Date:           Sun Mar 29 14:53:26 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -85,11 +85,11 @@
     +--------------------------------+----------+----+---+----+------------+------------+
     |          Variable Name         | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +--------------------------------+----------+----+---+----+------------+------------+
-    |i_fu_4004_p2                    |         +|   0|  0|  14|           7|           1|
+    |i_fu_4002_p2                    |         +|   0|  0|  14|           7|           1|
     |ap_block_state2_io_grp1         |       and|   0|  0|   2|           1|           1|
     |ap_condition_2571               |       and|   0|  0|   2|           1|           1|
-    |first_iter_0_fu_3984_p2         |      icmp|   0|  0|  14|           7|           1|
-    |icmp_ln530_fu_4028_p2           |      icmp|   0|  0|  14|           7|           2|
+    |first_iter_0_fu_3982_p2         |      icmp|   0|  0|  14|           7|           1|
+    |icmp_ln526_fu_4026_p2           |      icmp|   0|  0|  14|           7|           2|
     |ap_block_pp0_stage0_11001       |        or|   0|  0|   2|           1|           1|
     |ap_block_pp0_stage0_11001_grp0  |        or|   0|  0|   2|           1|           1|
     |ap_enable_pp0                   |       xor|   0|  0|   2|           1|           2|
@@ -106,7 +106,7 @@
     |ap_sig_allocacmp_i1536_load        |   9|          2|    7|         14|
     |gmem_x_blk_n_AR                    |   9|          2|    1|          2|
     |gmem_x_blk_n_R                     |   9|          2|    1|          2|
-    |i1536_fu_626                       |   9|          2|    7|         14|
+    |i1536_fu_624                       |   9|          2|    7|         14|
     +-----------------------------------+----+-----------+-----+-----------+
     |Total                              |  54|         12|   18|         36|
     +-----------------------------------+----+-----------+-----+-----------+
@@ -264,29 +264,29 @@
     |ap_loop_exit_ready_pp0_iter7_reg           |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter8_reg           |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter9_reg           |   1|   0|    1|          0|
-    |first_iter_0_reg_4505                      |   1|   0|    1|          0|
-    |i1536_fu_626                               |   7|   0|    7|          0|
-    |trunc_ln537_2_reg_4514                     |   3|   0|    3|          0|
-    |trunc_ln537_reg_4509                       |   4|   0|    4|          0|
-    |val_10_reg_4731                            |   8|   0|    8|          0|
-    |val_11_reg_4751                            |   8|   0|    8|          0|
-    |val_12_reg_4771                            |   8|   0|    8|          0|
-    |val_13_reg_4791                            |   8|   0|    8|          0|
-    |val_14_reg_4811                            |   8|   0|    8|          0|
-    |val_15_reg_4831                            |   8|   0|    8|          0|
-    |val_1_reg_4551                             |   8|   0|    8|          0|
-    |val_2_reg_4571                             |   8|   0|    8|          0|
-    |val_3_reg_4591                             |   8|   0|    8|          0|
-    |val_4_reg_4611                             |   8|   0|    8|          0|
-    |val_5_reg_4631                             |   8|   0|    8|          0|
-    |val_6_reg_4651                             |   8|   0|    8|          0|
-    |val_7_reg_4671                             |   8|   0|    8|          0|
-    |val_8_reg_4691                             |   8|   0|    8|          0|
-    |val_9_reg_4711                             |   8|   0|    8|          0|
-    |val_reg_4531                               |   8|   0|    8|          0|
-    |x_batch_read_reg_4500                      |  64|   0|   64|          0|
-    |trunc_ln537_2_reg_4514                     |  64|  32|    3|          0|
-    |trunc_ln537_reg_4509                       |  64|  32|    4|          0|
+    |first_iter_0_reg_4503                      |   1|   0|    1|          0|
+    |i1536_fu_624                               |   7|   0|    7|          0|
+    |trunc_ln533_2_reg_4512                     |   3|   0|    3|          0|
+    |trunc_ln533_reg_4507                       |   4|   0|    4|          0|
+    |val_10_reg_4729                            |   8|   0|    8|          0|
+    |val_11_reg_4749                            |   8|   0|    8|          0|
+    |val_12_reg_4769                            |   8|   0|    8|          0|
+    |val_13_reg_4789                            |   8|   0|    8|          0|
+    |val_14_reg_4809                            |   8|   0|    8|          0|
+    |val_15_reg_4829                            |   8|   0|    8|          0|
+    |val_1_reg_4549                             |   8|   0|    8|          0|
+    |val_2_reg_4569                             |   8|   0|    8|          0|
+    |val_3_reg_4589                             |   8|   0|    8|          0|
+    |val_4_reg_4609                             |   8|   0|    8|          0|
+    |val_5_reg_4629                             |   8|   0|    8|          0|
+    |val_6_reg_4649                             |   8|   0|    8|          0|
+    |val_7_reg_4669                             |   8|   0|    8|          0|
+    |val_8_reg_4689                             |   8|   0|    8|          0|
+    |val_9_reg_4709                             |   8|   0|    8|          0|
+    |val_reg_4529                               |   8|   0|    8|          0|
+    |x_batch_read_reg_4498                      |  64|   0|   64|          0|
+    |trunc_ln533_2_reg_4512                     |  64|  32|    3|          0|
+    |trunc_ln533_reg_4507                       |  64|  32|    4|          0|
     +-------------------------------------------+----+----+-----+-----------+
     |Total                                      | 484|  64|  363|          0|
     +-------------------------------------------+----+----+-----+-----------+
@@ -345,7 +345,7 @@
 |m_axi_gmem_x_0_RDATA     |   in|  128|       m_axi|          gmem_x|       pointer|
 |m_axi_gmem_x_0_RLAST     |   in|    1|       m_axi|          gmem_x|       pointer|
 |m_axi_gmem_x_0_RID       |   in|    1|       m_axi|          gmem_x|       pointer|
-|m_axi_gmem_x_0_RFIFONUM  |   in|   10|       m_axi|          gmem_x|       pointer|
+|m_axi_gmem_x_0_RFIFONUM  |   in|   13|       m_axi|          gmem_x|       pointer|
 |m_axi_gmem_x_0_RUSER     |   in|    1|       m_axi|          gmem_x|       pointer|
 |m_axi_gmem_x_0_RRESP     |   in|    2|       m_axi|          gmem_x|       pointer|
 |m_axi_gmem_x_0_BVALID    |   in|    1|       m_axi|          gmem_x|       pointer|

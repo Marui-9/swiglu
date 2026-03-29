@@ -574,10 +574,10 @@ entry:7 %trunc_ln = partselect i60 @_ssdm_op_PartSelect.i60.i64.i32.i32, i64 %em
 
 <Node id="28" bw="64" op_0_bw="60">
 <![CDATA[
-entry:8 %sext_ln453 = sext i60 %trunc_ln
+entry:8 %sext_ln450 = sext i60 %trunc_ln
 
 ]]></Node>
-<StgValue><ssdm name="sext_ln453"/></StgValue>
+<StgValue><ssdm name="sext_ln450"/></StgValue>
 </operation>
 
 <operation id="84" st_id="3" stage="1" lat="1">
@@ -589,7 +589,7 @@ entry:8 %sext_ln453 = sext i60 %trunc_ln
 
 <Node id="29" bw="128" op_0_bw="128" op_1_bw="64">
 <![CDATA[
-entry:9 %gmem_Wd_addr = getelementptr i128 %gmem_Wd, i64 %sext_ln453
+entry:9 %gmem_Wd_addr = getelementptr i128 %gmem_Wd, i64 %sext_ln450
 
 ]]></Node>
 <StgValue><ssdm name="gmem_Wd_addr"/></StgValue>
@@ -1882,10 +1882,10 @@ entry:10 %empty_135 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i128, i128 %gmem_Wd_a
 
 <Node id="31" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="60" op_3_bw="128" op_4_bw="128" op_5_bw="128" op_6_bw="128" op_7_bw="128" op_8_bw="128" op_9_bw="128" op_10_bw="128" op_11_bw="128" op_12_bw="128" op_13_bw="128" op_14_bw="128" op_15_bw="128" op_16_bw="128" op_17_bw="128" op_18_bw="128" op_19_bw="0">
 <![CDATA[
-entry:11 %call_ln453 = call void @load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, i128 %gmem_Wd, i60 %trunc_ln, i128 %rb_15, i128 %rb_14, i128 %rb_13, i128 %rb_12, i128 %rb_11, i128 %rb_10, i128 %rb_9, i128 %rb_8, i128 %rb_7, i128 %rb_6, i128 %rb_5, i128 %rb_4, i128 %rb_3, i128 %rb_2, i128 %rb_1, i128 %rb_0
+entry:11 %call_ln450 = call void @load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, i128 %gmem_Wd, i60 %trunc_ln, i128 %rb_15, i128 %rb_14, i128 %rb_13, i128 %rb_12, i128 %rb_11, i128 %rb_10, i128 %rb_9, i128 %rb_8, i128 %rb_7, i128 %rb_6, i128 %rb_5, i128 %rb_4, i128 %rb_3, i128 %rb_2, i128 %rb_1, i128 %rb_0
 
 ]]></Node>
-<StgValue><ssdm name="call_ln453"/></StgValue>
+<StgValue><ssdm name="call_ln450"/></StgValue>
 </operation>
 </state>
 
@@ -1900,7 +1900,7 @@ entry:11 %call_ln453 = call void @load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, i128
 
 <Node id="22" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-entry:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %gmem_Wd, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 860160, void @empty_0, void @empty_35, void @empty_32, i32 2, i32 16, i32 256, i32 16, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0
+entry:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %gmem_Wd, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 860160, void @empty_0, void @empty_35, void @empty_32, i32 16, i32 16, i32 256, i32 16, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -1915,10 +1915,10 @@ entry:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %g
 
 <Node id="31" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="60" op_3_bw="128" op_4_bw="128" op_5_bw="128" op_6_bw="128" op_7_bw="128" op_8_bw="128" op_9_bw="128" op_10_bw="128" op_11_bw="128" op_12_bw="128" op_13_bw="128" op_14_bw="128" op_15_bw="128" op_16_bw="128" op_17_bw="128" op_18_bw="128" op_19_bw="0">
 <![CDATA[
-entry:11 %call_ln453 = call void @load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, i128 %gmem_Wd, i60 %trunc_ln, i128 %rb_15, i128 %rb_14, i128 %rb_13, i128 %rb_12, i128 %rb_11, i128 %rb_10, i128 %rb_9, i128 %rb_8, i128 %rb_7, i128 %rb_6, i128 %rb_5, i128 %rb_4, i128 %rb_3, i128 %rb_2, i128 %rb_1, i128 %rb_0
+entry:11 %call_ln450 = call void @load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, i128 %gmem_Wd, i60 %trunc_ln, i128 %rb_15, i128 %rb_14, i128 %rb_13, i128 %rb_12, i128 %rb_11, i128 %rb_10, i128 %rb_9, i128 %rb_8, i128 %rb_7, i128 %rb_6, i128 %rb_5, i128 %rb_4, i128 %rb_3, i128 %rb_2, i128 %rb_1, i128 %rb_0
 
 ]]></Node>
-<StgValue><ssdm name="call_ln453"/></StgValue>
+<StgValue><ssdm name="call_ln450"/></StgValue>
 </operation>
 
 <operation id="159" st_id="75" stage="1" lat="1">
@@ -1930,10 +1930,10 @@ entry:11 %call_ln453 = call void @load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, i128
 
 <Node id="32" bw="0">
 <![CDATA[
-entry:12 %ret_ln457 = ret
+entry:12 %ret_ln454 = ret
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln457"/></StgValue>
+<StgValue><ssdm name="ret_ln454"/></StgValue>
 </operation>
 </state>
 </state_list>
@@ -2046,11 +2046,11 @@ entry:12 %ret_ln457 = ret
 </dataflow>
 <dataflow id="272" from="StgValue_271" to="trunc_ln" fromId="271" toId="82">
 </dataflow>
-<dataflow id="273" from="trunc_ln" to="sext_ln453" fromId="82" toId="83">
+<dataflow id="273" from="trunc_ln" to="sext_ln450" fromId="82" toId="83">
 </dataflow>
 <dataflow id="274" from="gmem_Wd" to="gmem_Wd_addr" fromId="234" toId="84">
 </dataflow>
-<dataflow id="275" from="sext_ln453" to="gmem_Wd_addr" fromId="83" toId="84">
+<dataflow id="275" from="sext_ln450" to="gmem_Wd_addr" fromId="83" toId="84">
 </dataflow>
 <dataflow id="277" from="_ssdm_op_ReadReq.m_axi.p1i128" to="empty_135" fromId="276" toId="85">
 </dataflow>
@@ -2478,43 +2478,43 @@ entry:12 %ret_ln457 = ret
 </dataflow>
 <dataflow id="490" from="StgValue_279" to="empty_135" fromId="279" toId="155">
 </dataflow>
-<dataflow id="492" from="load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K" to="call_ln453" fromId="491" toId="156">
+<dataflow id="492" from="load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K" to="call_ln450" fromId="491" toId="156">
 </dataflow>
-<dataflow id="493" from="gmem_Wd" to="call_ln453" fromId="234" toId="156">
+<dataflow id="493" from="gmem_Wd" to="call_ln450" fromId="234" toId="156">
 </dataflow>
-<dataflow id="494" from="trunc_ln" to="call_ln453" fromId="82" toId="156">
+<dataflow id="494" from="trunc_ln" to="call_ln450" fromId="82" toId="156">
 </dataflow>
-<dataflow id="495" from="rb_15" to="call_ln453" fromId="252" toId="156">
+<dataflow id="495" from="rb_15" to="call_ln450" fromId="252" toId="156">
 </dataflow>
-<dataflow id="496" from="rb_14" to="call_ln453" fromId="251" toId="156">
+<dataflow id="496" from="rb_14" to="call_ln450" fromId="251" toId="156">
 </dataflow>
-<dataflow id="497" from="rb_13" to="call_ln453" fromId="250" toId="156">
+<dataflow id="497" from="rb_13" to="call_ln450" fromId="250" toId="156">
 </dataflow>
-<dataflow id="498" from="rb_12" to="call_ln453" fromId="249" toId="156">
+<dataflow id="498" from="rb_12" to="call_ln450" fromId="249" toId="156">
 </dataflow>
-<dataflow id="499" from="rb_11" to="call_ln453" fromId="248" toId="156">
+<dataflow id="499" from="rb_11" to="call_ln450" fromId="248" toId="156">
 </dataflow>
-<dataflow id="500" from="rb_10" to="call_ln453" fromId="247" toId="156">
+<dataflow id="500" from="rb_10" to="call_ln450" fromId="247" toId="156">
 </dataflow>
-<dataflow id="501" from="rb_9" to="call_ln453" fromId="246" toId="156">
+<dataflow id="501" from="rb_9" to="call_ln450" fromId="246" toId="156">
 </dataflow>
-<dataflow id="502" from="rb_8" to="call_ln453" fromId="245" toId="156">
+<dataflow id="502" from="rb_8" to="call_ln450" fromId="245" toId="156">
 </dataflow>
-<dataflow id="503" from="rb_7" to="call_ln453" fromId="244" toId="156">
+<dataflow id="503" from="rb_7" to="call_ln450" fromId="244" toId="156">
 </dataflow>
-<dataflow id="504" from="rb_6" to="call_ln453" fromId="243" toId="156">
+<dataflow id="504" from="rb_6" to="call_ln450" fromId="243" toId="156">
 </dataflow>
-<dataflow id="505" from="rb_5" to="call_ln453" fromId="242" toId="156">
+<dataflow id="505" from="rb_5" to="call_ln450" fromId="242" toId="156">
 </dataflow>
-<dataflow id="506" from="rb_4" to="call_ln453" fromId="241" toId="156">
+<dataflow id="506" from="rb_4" to="call_ln450" fromId="241" toId="156">
 </dataflow>
-<dataflow id="507" from="rb_3" to="call_ln453" fromId="240" toId="156">
+<dataflow id="507" from="rb_3" to="call_ln450" fromId="240" toId="156">
 </dataflow>
-<dataflow id="508" from="rb_2" to="call_ln453" fromId="239" toId="156">
+<dataflow id="508" from="rb_2" to="call_ln450" fromId="239" toId="156">
 </dataflow>
-<dataflow id="509" from="rb_1" to="call_ln453" fromId="238" toId="156">
+<dataflow id="509" from="rb_1" to="call_ln450" fromId="238" toId="156">
 </dataflow>
-<dataflow id="510" from="rb_0" to="call_ln453" fromId="237" toId="156">
+<dataflow id="510" from="rb_0" to="call_ln450" fromId="237" toId="156">
 </dataflow>
 <dataflow id="512" from="_ssdm_op_SpecInterface" to="specinterface_ln0" fromId="511" toId="157">
 </dataflow>
@@ -2540,59 +2540,59 @@ entry:12 %ret_ln457 = ret
 </dataflow>
 <dataflow id="531" from="StgValue_530" to="specinterface_ln0" fromId="530" toId="157">
 </dataflow>
-<dataflow id="533" from="StgValue_532" to="specinterface_ln0" fromId="532" toId="157">
+<dataflow id="532" from="StgValue_530" to="specinterface_ln0" fromId="530" toId="157">
 </dataflow>
-<dataflow id="535" from="StgValue_534" to="specinterface_ln0" fromId="534" toId="157">
+<dataflow id="534" from="StgValue_533" to="specinterface_ln0" fromId="533" toId="157">
 </dataflow>
-<dataflow id="536" from="StgValue_532" to="specinterface_ln0" fromId="532" toId="157">
+<dataflow id="535" from="StgValue_530" to="specinterface_ln0" fromId="530" toId="157">
+</dataflow>
+<dataflow id="536" from="empty_32" to="specinterface_ln0" fromId="519" toId="157">
 </dataflow>
 <dataflow id="537" from="empty_32" to="specinterface_ln0" fromId="519" toId="157">
 </dataflow>
-<dataflow id="538" from="empty_32" to="specinterface_ln0" fromId="519" toId="157">
+<dataflow id="539" from="StgValue_538" to="specinterface_ln0" fromId="538" toId="157">
 </dataflow>
-<dataflow id="540" from="StgValue_539" to="specinterface_ln0" fromId="539" toId="157">
+<dataflow id="540" from="StgValue_516" to="specinterface_ln0" fromId="516" toId="157">
 </dataflow>
 <dataflow id="541" from="StgValue_516" to="specinterface_ln0" fromId="516" toId="157">
 </dataflow>
-<dataflow id="542" from="StgValue_516" to="specinterface_ln0" fromId="516" toId="157">
+<dataflow id="542" from="load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K" to="call_ln450" fromId="491" toId="158">
 </dataflow>
-<dataflow id="543" from="load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K" to="call_ln453" fromId="491" toId="158">
+<dataflow id="543" from="gmem_Wd" to="call_ln450" fromId="234" toId="158">
 </dataflow>
-<dataflow id="544" from="gmem_Wd" to="call_ln453" fromId="234" toId="158">
+<dataflow id="544" from="trunc_ln" to="call_ln450" fromId="82" toId="158">
 </dataflow>
-<dataflow id="545" from="trunc_ln" to="call_ln453" fromId="82" toId="158">
+<dataflow id="545" from="rb_15" to="call_ln450" fromId="252" toId="158">
 </dataflow>
-<dataflow id="546" from="rb_15" to="call_ln453" fromId="252" toId="158">
+<dataflow id="546" from="rb_14" to="call_ln450" fromId="251" toId="158">
 </dataflow>
-<dataflow id="547" from="rb_14" to="call_ln453" fromId="251" toId="158">
+<dataflow id="547" from="rb_13" to="call_ln450" fromId="250" toId="158">
 </dataflow>
-<dataflow id="548" from="rb_13" to="call_ln453" fromId="250" toId="158">
+<dataflow id="548" from="rb_12" to="call_ln450" fromId="249" toId="158">
 </dataflow>
-<dataflow id="549" from="rb_12" to="call_ln453" fromId="249" toId="158">
+<dataflow id="549" from="rb_11" to="call_ln450" fromId="248" toId="158">
 </dataflow>
-<dataflow id="550" from="rb_11" to="call_ln453" fromId="248" toId="158">
+<dataflow id="550" from="rb_10" to="call_ln450" fromId="247" toId="158">
 </dataflow>
-<dataflow id="551" from="rb_10" to="call_ln453" fromId="247" toId="158">
+<dataflow id="551" from="rb_9" to="call_ln450" fromId="246" toId="158">
 </dataflow>
-<dataflow id="552" from="rb_9" to="call_ln453" fromId="246" toId="158">
+<dataflow id="552" from="rb_8" to="call_ln450" fromId="245" toId="158">
 </dataflow>
-<dataflow id="553" from="rb_8" to="call_ln453" fromId="245" toId="158">
+<dataflow id="553" from="rb_7" to="call_ln450" fromId="244" toId="158">
 </dataflow>
-<dataflow id="554" from="rb_7" to="call_ln453" fromId="244" toId="158">
+<dataflow id="554" from="rb_6" to="call_ln450" fromId="243" toId="158">
 </dataflow>
-<dataflow id="555" from="rb_6" to="call_ln453" fromId="243" toId="158">
+<dataflow id="555" from="rb_5" to="call_ln450" fromId="242" toId="158">
 </dataflow>
-<dataflow id="556" from="rb_5" to="call_ln453" fromId="242" toId="158">
+<dataflow id="556" from="rb_4" to="call_ln450" fromId="241" toId="158">
 </dataflow>
-<dataflow id="557" from="rb_4" to="call_ln453" fromId="241" toId="158">
+<dataflow id="557" from="rb_3" to="call_ln450" fromId="240" toId="158">
 </dataflow>
-<dataflow id="558" from="rb_3" to="call_ln453" fromId="240" toId="158">
+<dataflow id="558" from="rb_2" to="call_ln450" fromId="239" toId="158">
 </dataflow>
-<dataflow id="559" from="rb_2" to="call_ln453" fromId="239" toId="158">
+<dataflow id="559" from="rb_1" to="call_ln450" fromId="238" toId="158">
 </dataflow>
-<dataflow id="560" from="rb_1" to="call_ln453" fromId="238" toId="158">
-</dataflow>
-<dataflow id="561" from="rb_0" to="call_ln453" fromId="237" toId="158">
+<dataflow id="560" from="rb_0" to="call_ln450" fromId="237" toId="158">
 </dataflow>
 </dataflows>
 

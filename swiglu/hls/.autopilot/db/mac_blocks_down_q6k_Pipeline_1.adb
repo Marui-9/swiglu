@@ -2289,7 +2289,7 @@
           <Obj>
             <type>3</type>
             <id>51</id>
-            <name>for.body.i.preheader.exitStub</name>
+            <name>split.exitStub</name>
             <fileName></fileName>
             <fileDirectory></fileDirectory>
             <lineNumber>0</lineNumber>

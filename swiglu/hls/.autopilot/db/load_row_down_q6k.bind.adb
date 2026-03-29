@@ -963,7 +963,7 @@
 						<name>trunc_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>453</lineNumber>
+						<lineNumber>450</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -979,7 +979,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>453</second>
+										<second>450</second>
 									</item>
 								</second>
 							</item>
@@ -1019,10 +1019,10 @@
 					<Obj>
 						<type>0</type>
 						<id>28</id>
-						<name>sext_ln453</name>
+						<name>sext_ln450</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>453</lineNumber>
+						<lineNumber>450</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1038,7 +1038,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>453</second>
+										<second>450</second>
 									</item>
 								</second>
 							</item>
@@ -1078,7 +1078,7 @@
 						<name>gmem_Wd_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>453</lineNumber>
+						<lineNumber>450</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1094,7 +1094,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>453</second>
+										<second>450</second>
 									</item>
 								</second>
 							</item>
@@ -1135,7 +1135,7 @@
 						<name>empty_135</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>453</lineNumber>
+						<lineNumber>450</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1151,7 +1151,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>453</second>
+										<second>450</second>
 									</item>
 								</second>
 							</item>
@@ -1190,10 +1190,10 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>_ln453</name>
+						<name>_ln450</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>453</lineNumber>
+						<lineNumber>450</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1209,7 +1209,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>453</second>
+										<second>450</second>
 									</item>
 								</second>
 							</item>
@@ -1249,7 +1249,7 @@
 					<item>79</item>
 					<item>80</item>
 					<item>81</item>
-					<item>114</item>
+					<item>113</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
@@ -1265,10 +1265,10 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>_ln457</name>
+						<name>_ln454</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>457</lineNumber>
+						<lineNumber>454</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1284,7 +1284,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>457</second>
+										<second>454</second>
 									</item>
 								</second>
 							</item>
@@ -1770,7 +1770,7 @@
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_73">
-				<id>114</id>
+				<id>113</id>
 				<edge_type>4</edge_type>
 				<source_obj>30</source_obj>
 				<sink_obj>31</sink_obj>
@@ -3978,7 +3978,7 @@
 		<count>11</count>
 		<item_version>0</item_version>
 		<item class_id="43" tracking_level="0" version="0">
-			<first>80</first>
+			<first>78</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3986,7 +3986,7 @@
 			</second>
 		</item>
 		<item>
-			<first>86</first>
+			<first>84</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3994,7 +3994,7 @@
 			</second>
 		</item>
 		<item>
-			<first>92</first>
+			<first>90</first>
 			<second>
 				<count>71</count>
 				<item_version>0</item_version>
@@ -4072,7 +4072,7 @@
 			</second>
 		</item>
 		<item>
-			<first>99</first>
+			<first>97</first>
 			<second>
 				<count>2</count>
 				<item_version>0</item_version>
@@ -4081,7 +4081,7 @@
 			</second>
 		</item>
 		<item>
-			<first>138</first>
+			<first>136</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4089,7 +4089,7 @@
 			</second>
 		</item>
 		<item>
-			<first>142</first>
+			<first>140</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4097,7 +4097,7 @@
 			</second>
 		</item>
 		<item>
-			<first>148</first>
+			<first>146</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4105,7 +4105,7 @@
 			</second>
 		</item>
 		<item>
-			<first>151</first>
+			<first>149</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4113,7 +4113,7 @@
 			</second>
 		</item>
 		<item>
-			<first>157</first>
+			<first>155</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4121,7 +4121,7 @@
 			</second>
 		</item>
 		<item>
-			<first>167</first>
+			<first>165</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4129,7 +4129,7 @@
 			</second>
 		</item>
 		<item>
-			<first>170</first>
+			<first>168</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4141,7 +4141,7 @@
 		<count>7</count>
 		<item_version>0</item_version>
 		<item class_id="46" tracking_level="0" version="0">
-			<first>empty_134_fu_151</first>
+			<first>empty_134_fu_149</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4149,7 +4149,7 @@
 			</second>
 		</item>
 		<item>
-			<first>empty_fu_142</first>
+			<first>empty_fu_140</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4157,7 +4157,7 @@
 			</second>
 		</item>
 		<item>
-			<first>gmem_Wd_addr_fu_170</first>
+			<first>gmem_Wd_addr_fu_168</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4165,7 +4165,7 @@
 			</second>
 		</item>
 		<item>
-			<first>out_i_cast1_fu_138</first>
+			<first>out_i_cast1_fu_136</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4173,7 +4173,7 @@
 			</second>
 		</item>
 		<item>
-			<first>p_cast_fu_148</first>
+			<first>p_cast_fu_146</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4181,7 +4181,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln453_fu_167</first>
+			<first>sext_ln450_fu_165</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4189,7 +4189,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln_fu_157</first>
+			<first>trunc_ln_fu_155</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4201,7 +4201,7 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item>
-			<first>grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_99</first>
+			<first>grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_97</first>
 			<second>
 				<count>2</count>
 				<item_version>0</item_version>
@@ -4214,7 +4214,7 @@
 		<count>3</count>
 		<item_version>0</item_version>
 		<item>
-			<first>W_down_wide_read_read_fu_86</first>
+			<first>W_down_wide_read_read_fu_84</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4222,7 +4222,7 @@
 			</second>
 		</item>
 		<item>
-			<first>grp_readreq_fu_92</first>
+			<first>grp_readreq_fu_90</first>
 			<second>
 				<count>71</count>
 				<item_version>0</item_version>
@@ -4300,7 +4300,7 @@
 			</second>
 		</item>
 		<item>
-			<first>out_i_read_read_fu_80</first>
+			<first>out_i_read_read_fu_78</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4320,7 +4320,7 @@
 		<count>3</count>
 		<item_version>0</item_version>
 		<item>
-			<first>177</first>
+			<first>175</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4328,7 +4328,7 @@
 			</second>
 		</item>
 		<item>
-			<first>182</first>
+			<first>180</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4336,7 +4336,7 @@
 			</second>
 		</item>
 		<item>
-			<first>188</first>
+			<first>186</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4348,7 +4348,7 @@
 		<count>3</count>
 		<item_version>0</item_version>
 		<item>
-			<first>empty_reg_177</first>
+			<first>empty_reg_175</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4356,7 +4356,7 @@
 			</second>
 		</item>
 		<item>
-			<first>gmem_Wd_addr_reg_188</first>
+			<first>gmem_Wd_addr_reg_186</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4364,7 +4364,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln_reg_182</first>
+			<first>trunc_ln_reg_180</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

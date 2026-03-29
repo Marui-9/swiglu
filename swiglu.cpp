@@ -26,7 +26,6 @@
 
 // ─── fp16_to_fp32 ─────────────────────────────────────────────────────────────
 static float fp16_to_fp32(uint16_t h) {
-#pragma HLS INLINE off
     uint32_t sign = ((uint32_t)(h >> 15)) << 31;
     uint32_t exp  = (h >> 10) & 0x1F;
     uint32_t mant = (uint32_t)(h & 0x3FF);
@@ -223,7 +222,6 @@ static void compute_X1(
     COMPUTE_X1: for (int row = 0; row < FFN_DIM; row++) {
         ap_uint<128> row_buf[WV_BLOCKS_PER_ROW][Q4_K_WORDS];
         #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 complete
-        #pragma HLS BIND_STORAGE variable=row_buf type=ram_2p impl=lutram
         load_row_wv(W_wide, row, row_buf);
         float row_result;
         mac_blocks_wv(row_buf, x_local_1[0], x_scale, &row_result);
@@ -243,6 +241,7 @@ static void compute_X2(
     const ap_uint<128> *V_wide = (const ap_uint<128>*)V;
     COMPUTE_X2: for (int row = 0; row < FFN_DIM; row++) {
         ap_uint<128> row_buf[WV_BLOCKS_PER_ROW][Q4_K_WORDS];
+        #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 complete
         load_row_wv(V_wide, row, row_buf);
         float row_result;
         mac_blocks_wv(row_buf, x_local_2[0], x_scale, &row_result);
@@ -557,6 +556,7 @@ void swiglu(
     #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V   offset=slave depth=9437184  max_read_burst_length=256  latency=64 num_read_outstanding=16 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd  offset=slave depth=13762560 max_read_burst_length=256  latency=64 num_read_outstanding=16 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x   offset=slave depth=2048     max_read_burst_length=256  latency=64 num_read_outstanding=16 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out offset=slave depth=2048     max_write_burst_length=256 latency=64 num_write_outstanding=16
     #pragma HLS INTERFACE mode=s_axilite port=W               bundle=CTRL
     #pragma HLS INTERFACE mode=s_axilite port=V               bundle=CTRL
     #pragma HLS INTERFACE mode=s_axilite port=W_down          bundle=CTRL

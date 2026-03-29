@@ -35,14 +35,14 @@
 <SummaryOfViolations>
 <IssueType>Timing Violation</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:205</SourceLocation>
+<SourceLocation>swiglu.cpp:204</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <DSP>26</DSP>
-<FF>10321</FF>
+<FF>10360</FF>
 <LUT>11944</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>

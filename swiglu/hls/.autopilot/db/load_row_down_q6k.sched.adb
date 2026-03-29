@@ -963,7 +963,7 @@
 						<name>trunc_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>453</lineNumber>
+						<lineNumber>450</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -979,7 +979,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>453</second>
+										<second>450</second>
 									</item>
 								</second>
 							</item>
@@ -1019,10 +1019,10 @@
 					<Obj>
 						<type>0</type>
 						<id>28</id>
-						<name>sext_ln453</name>
+						<name>sext_ln450</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>453</lineNumber>
+						<lineNumber>450</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1038,7 +1038,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>453</second>
+										<second>450</second>
 									</item>
 								</second>
 							</item>
@@ -1078,7 +1078,7 @@
 						<name>gmem_Wd_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>453</lineNumber>
+						<lineNumber>450</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1094,7 +1094,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>453</second>
+										<second>450</second>
 									</item>
 								</second>
 							</item>
@@ -1135,7 +1135,7 @@
 						<name>empty_135</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>453</lineNumber>
+						<lineNumber>450</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1151,7 +1151,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>453</second>
+										<second>450</second>
 									</item>
 								</second>
 							</item>
@@ -1190,10 +1190,10 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>_ln453</name>
+						<name>_ln450</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>453</lineNumber>
+						<lineNumber>450</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1209,7 +1209,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>453</second>
+										<second>450</second>
 									</item>
 								</second>
 							</item>
@@ -1249,7 +1249,7 @@
 					<item>79</item>
 					<item>80</item>
 					<item>81</item>
-					<item>114</item>
+					<item>113</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
@@ -1265,10 +1265,10 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>_ln457</name>
+						<name>_ln454</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>457</lineNumber>
+						<lineNumber>454</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1284,7 +1284,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>457</second>
+										<second>454</second>
 									</item>
 								</second>
 							</item>
@@ -1770,7 +1770,7 @@
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_73">
-				<id>114</id>
+				<id>113</id>
 				<edge_type>4</edge_type>
 				<source_obj>30</source_obj>
 				<sink_obj>31</sink_obj>

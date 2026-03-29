@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q6k_Pipeline_MAC_Q6K'" level="0">
-<item name = "Date">Sun Mar 29 14:22:12 2026
+<item name = "Date">Sun Mar 29 14:53:01 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>

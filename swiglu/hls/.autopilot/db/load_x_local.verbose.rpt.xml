@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_x_local'" level="0">
-<item name = "Date">Sun Mar 29 14:22:37 2026
+<item name = "Date">Sun Mar 29 14:53:27 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -78,11 +78,11 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_fu_4004_p2">+, 0, 0, 14, 7, 1</column>
+<column name="i_fu_4002_p2">+, 0, 0, 14, 7, 1</column>
 <column name="ap_block_state2_io_grp1">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_2571">and, 0, 0, 2, 1, 1</column>
-<column name="first_iter_0_fu_3984_p2">icmp, 0, 0, 14, 7, 1</column>
-<column name="icmp_ln530_fu_4028_p2">icmp, 0, 0, 14, 7, 2</column>
+<column name="first_iter_0_fu_3982_p2">icmp, 0, 0, 14, 7, 1</column>
+<column name="icmp_ln526_fu_4026_p2">icmp, 0, 0, 14, 7, 2</column>
 <column name="ap_block_pp0_stage0_11001">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage0_11001_grp0">or, 0, 0, 2, 1, 1</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
@@ -95,7 +95,7 @@
 <column name="ap_sig_allocacmp_i1536_load">9, 2, 7, 14</column>
 <column name="gmem_x_blk_n_AR">9, 2, 1, 2</column>
 <column name="gmem_x_blk_n_R">9, 2, 1, 2</column>
-<column name="i1536_fu_626">9, 2, 7, 14</column>
+<column name="i1536_fu_624">9, 2, 7, 14</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -249,29 +249,29 @@
 <column name="ap_loop_exit_ready_pp0_iter7_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter8_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter9_reg">1, 0, 1, 0</column>
-<column name="first_iter_0_reg_4505">1, 0, 1, 0</column>
-<column name="i1536_fu_626">7, 0, 7, 0</column>
-<column name="trunc_ln537_2_reg_4514">3, 0, 3, 0</column>
-<column name="trunc_ln537_reg_4509">4, 0, 4, 0</column>
-<column name="val_10_reg_4731">8, 0, 8, 0</column>
-<column name="val_11_reg_4751">8, 0, 8, 0</column>
-<column name="val_12_reg_4771">8, 0, 8, 0</column>
-<column name="val_13_reg_4791">8, 0, 8, 0</column>
-<column name="val_14_reg_4811">8, 0, 8, 0</column>
-<column name="val_15_reg_4831">8, 0, 8, 0</column>
-<column name="val_1_reg_4551">8, 0, 8, 0</column>
-<column name="val_2_reg_4571">8, 0, 8, 0</column>
-<column name="val_3_reg_4591">8, 0, 8, 0</column>
-<column name="val_4_reg_4611">8, 0, 8, 0</column>
-<column name="val_5_reg_4631">8, 0, 8, 0</column>
-<column name="val_6_reg_4651">8, 0, 8, 0</column>
-<column name="val_7_reg_4671">8, 0, 8, 0</column>
-<column name="val_8_reg_4691">8, 0, 8, 0</column>
-<column name="val_9_reg_4711">8, 0, 8, 0</column>
-<column name="val_reg_4531">8, 0, 8, 0</column>
-<column name="x_batch_read_reg_4500">64, 0, 64, 0</column>
-<column name="trunc_ln537_2_reg_4514">64, 32, 3, 0</column>
-<column name="trunc_ln537_reg_4509">64, 32, 4, 0</column>
+<column name="first_iter_0_reg_4503">1, 0, 1, 0</column>
+<column name="i1536_fu_624">7, 0, 7, 0</column>
+<column name="trunc_ln533_2_reg_4512">3, 0, 3, 0</column>
+<column name="trunc_ln533_reg_4507">4, 0, 4, 0</column>
+<column name="val_10_reg_4729">8, 0, 8, 0</column>
+<column name="val_11_reg_4749">8, 0, 8, 0</column>
+<column name="val_12_reg_4769">8, 0, 8, 0</column>
+<column name="val_13_reg_4789">8, 0, 8, 0</column>
+<column name="val_14_reg_4809">8, 0, 8, 0</column>
+<column name="val_15_reg_4829">8, 0, 8, 0</column>
+<column name="val_1_reg_4549">8, 0, 8, 0</column>
+<column name="val_2_reg_4569">8, 0, 8, 0</column>
+<column name="val_3_reg_4589">8, 0, 8, 0</column>
+<column name="val_4_reg_4609">8, 0, 8, 0</column>
+<column name="val_5_reg_4629">8, 0, 8, 0</column>
+<column name="val_6_reg_4649">8, 0, 8, 0</column>
+<column name="val_7_reg_4669">8, 0, 8, 0</column>
+<column name="val_8_reg_4689">8, 0, 8, 0</column>
+<column name="val_9_reg_4709">8, 0, 8, 0</column>
+<column name="val_reg_4529">8, 0, 8, 0</column>
+<column name="x_batch_read_reg_4498">64, 0, 64, 0</column>
+<column name="trunc_ln533_2_reg_4512">64, 32, 3, 0</column>
+<column name="trunc_ln533_reg_4507">64, 32, 4, 0</column>
 </table>
 </item>
 </section>
@@ -326,7 +326,7 @@
 <column name="m_axi_gmem_x_0_RDATA">in, 128, m_axi, gmem_x, pointer</column>
 <column name="m_axi_gmem_x_0_RLAST">in, 1, m_axi, gmem_x, pointer</column>
 <column name="m_axi_gmem_x_0_RID">in, 1, m_axi, gmem_x, pointer</column>
-<column name="m_axi_gmem_x_0_RFIFONUM">in, 10, m_axi, gmem_x, pointer</column>
+<column name="m_axi_gmem_x_0_RFIFONUM">in, 13, m_axi, gmem_x, pointer</column>
 <column name="m_axi_gmem_x_0_RUSER">in, 1, m_axi, gmem_x, pointer</column>
 <column name="m_axi_gmem_x_0_RRESP">in, 2, m_axi, gmem_x, pointer</column>
 <column name="m_axi_gmem_x_0_BVALID">in, 1, m_axi, gmem_x, pointer</column>

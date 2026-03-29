@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'mac_blocks_down_q6k_Pipeline_5'
 ================================================================
-* Date:           Sun Mar 29 14:22:15 2026
+* Date:           Sun Mar 29 14:53:05 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -125,7 +125,7 @@ Target clock period: 3.330ns, clock uncertainty: 0.900ns.
 The critical path consists of the following:
 	'store' operation 0 bit ('store_ln0') of constant 0 on local variable 'empty' [10]  (0.427 ns)
 	'load' operation 4 bit ('p_load') on local variable 'empty' [13]  (0.000 ns)
-	'add' operation 4 bit ('empty_84') [15]  (0.797 ns)
+	'icmp' operation 1 bit ('exitcond3637') [14]  (0.797 ns)
 	'store' operation 0 bit ('store_ln0') of variable 'empty_84' on local variable 'empty' [47]  (0.427 ns)
 
 

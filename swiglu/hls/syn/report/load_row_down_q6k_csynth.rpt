@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'load_row_down_q6k'
 ================================================================
-* Date:           Sun Mar 29 14:22:45 2026
+* Date:           Sun Mar 29 14:53:35 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -38,7 +38,7 @@
         |                                                    |                                          |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
         |                      Instance                      |                  Module                  |   min   |   max   |    min   |    max   | min | max |                      Type                      |
         +----------------------------------------------------+------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------------+
-        |grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_99  |load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K  |      423|      423|  1.409 us|  1.409 us|  421|  421|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_97  |load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K  |      423|      423|  1.409 us|  1.409 us|  421|  421|  loop auto-rewind stp (delay=0 clock cycles(s))|
         +----------------------------------------------------+------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------------+
 
         * Loop: 
@@ -73,8 +73,8 @@
     +----------------------------------------------------+------------------------------------------+---------+----+-----+----+-----+
     |                      Instance                      |                  Module                  | BRAM_18K| DSP|  FF | LUT| URAM|
     +----------------------------------------------------+------------------------------------------+---------+----+-----+----+-----+
-    |grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_99  |load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K  |        0|   0|  161|  81|    0|
-    |mul_11ns_14ns_24_1_1_U1436                          |mul_11ns_14ns_24_1_1                      |        0|   1|    0|   5|    0|
+    |grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_97  |load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K  |        0|   0|  161|  81|    0|
+    |mul_11ns_14ns_24_1_1_U1389                          |mul_11ns_14ns_24_1_1                      |        0|   1|    0|   5|    0|
     +----------------------------------------------------+------------------------------------------+---------+----+-----+----+-----+
     |Total                                               |                                          |        0|   1|  161|  86|    0|
     +----------------------------------------------------+------------------------------------------+---------+----+-----+----+-----+
@@ -92,7 +92,7 @@
     +---------------------+----------+----+---+----+------------+------------+
     |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------+----------+----+---+----+------------+------------+
-    |empty_134_fu_151_p2  |         +|   0|  0|  71|          64|          64|
+    |empty_134_fu_149_p2  |         +|   0|  0|  71|          64|          64|
     +---------------------+----------+----+---+----+------------+------------+
     |Total                |          |   0|  0|  71|          64|          64|
     +---------------------+----------+----+---+----+------------+------------+
@@ -125,9 +125,9 @@
     |                               Name                              | FF | LUT| Bits| Const Bits|
     +-----------------------------------------------------------------+----+----+-----+-----------+
     |ap_CS_fsm                                                        |  75|   0|   75|          0|
-    |empty_reg_177                                                    |  24|   0|   24|          0|
-    |grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_99_ap_start_reg  |   1|   0|    1|          0|
-    |trunc_ln_reg_182                                                 |  60|   0|   60|          0|
+    |empty_reg_175                                                    |  24|   0|   24|          0|
+    |grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_97_ap_start_reg  |   1|   0|    1|          0|
+    |trunc_ln_reg_180                                                 |  60|   0|   60|          0|
     +-----------------------------------------------------------------+----+----+-----+-----------+
     |Total                                                            | 160|   0|  160|          0|
     +-----------------------------------------------------------------+----+----+-----+-----------+
@@ -185,7 +185,7 @@
 |m_axi_gmem_Wd_0_RDATA     |   in|  128|       m_axi|            gmem_Wd|       pointer|
 |m_axi_gmem_Wd_0_RLAST     |   in|    1|       m_axi|            gmem_Wd|       pointer|
 |m_axi_gmem_Wd_0_RID       |   in|    1|       m_axi|            gmem_Wd|       pointer|
-|m_axi_gmem_Wd_0_RFIFONUM  |   in|   10|       m_axi|            gmem_Wd|       pointer|
+|m_axi_gmem_Wd_0_RFIFONUM  |   in|   13|       m_axi|            gmem_Wd|       pointer|
 |m_axi_gmem_Wd_0_RUSER     |   in|    1|       m_axi|            gmem_Wd|       pointer|
 |m_axi_gmem_Wd_0_RRESP     |   in|    2|       m_axi|            gmem_Wd|       pointer|
 |m_axi_gmem_Wd_0_BVALID    |   in|    1|       m_axi|            gmem_Wd|       pointer|

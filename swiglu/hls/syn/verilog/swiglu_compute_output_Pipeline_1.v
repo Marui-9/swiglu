@@ -59,7 +59,7 @@ module swiglu_compute_output_Pipeline_1 (
         m_axi_gmem_out_0_BRESP,
         m_axi_gmem_out_0_BID,
         m_axi_gmem_out_0_BUSER,
-        sext_ln513,
+        sext_ln509,
         out_local_address0,
         out_local_ce0,
         out_local_q0
@@ -119,7 +119,7 @@ output   m_axi_gmem_out_0_BREADY;
 input  [1:0] m_axi_gmem_out_0_BRESP;
 input  [0:0] m_axi_gmem_out_0_BID;
 input  [0:0] m_axi_gmem_out_0_BUSER;
-input  [61:0] sext_ln513;
+input  [61:0] sext_ln509;
 output  [10:0] out_local_address0;
 output   out_local_ce0;
 input  [31:0] out_local_q0;
@@ -134,7 +134,7 @@ reg    ap_enable_reg_pp0_iter1;
 reg    ap_enable_reg_pp0_iter2;
 reg    ap_idle_pp0;
 reg    ap_block_pp0_stage0_subdone;
-wire   [0:0] exitcond4_i_fu_95_p2;
+wire   [0:0] exitcond4_i_fu_93_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
@@ -142,12 +142,12 @@ reg    gmem_out_blk_n_W;
 wire    ap_block_pp0_stage0_grp1;
 reg    ap_block_pp0_stage0_11001_grp1;
 reg    ap_block_pp0_stage0_11001;
-reg   [31:0] out_local_load_reg_148;
-wire   [63:0] loop_index_i_cast_fu_107_p1;
+reg   [31:0] out_local_load_reg_146;
+wire   [63:0] loop_index_i_cast_fu_105_p1;
 wire    ap_block_pp0_stage0;
 wire    ap_block_pp0_stage0_01001_grp1;
-reg   [11:0] loop_index_i_fu_52;
-wire   [11:0] empty_fu_101_p2;
+reg   [11:0] loop_index_i_fu_50;
+wire   [11:0] empty_fu_99_p2;
 wire    ap_loop_init;
 reg   [11:0] ap_sig_allocacmp_loop_index_i_load;
 reg    out_local_ce0_local;
@@ -167,7 +167,7 @@ initial begin
 #0 ap_CS_fsm = 1'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 ap_enable_reg_pp0_iter2 = 1'b0;
-#0 loop_index_i_fu_52 = 12'd0;
+#0 loop_index_i_fu_50 = 12'd0;
 #0 ap_done_reg = 1'b0;
 end
 
@@ -230,10 +230,10 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((exitcond4_i_fu_95_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            loop_index_i_fu_52 <= empty_fu_101_p2;
+        if (((exitcond4_i_fu_93_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
+            loop_index_i_fu_50 <= empty_fu_99_p2;
         end else if ((ap_loop_init == 1'b1)) begin
-            loop_index_i_fu_52 <= 12'd0;
+            loop_index_i_fu_50 <= 12'd0;
         end
     end
 end
@@ -241,12 +241,12 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_loop_exit_ready_pp0_iter1_reg <= ap_loop_exit_ready;
-        out_local_load_reg_148 <= out_local_q0;
+        out_local_load_reg_146 <= out_local_q0;
     end
 end
 
 always @ (*) begin
-    if (((exitcond4_i_fu_95_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((exitcond4_i_fu_93_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -289,7 +289,7 @@ always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1))) begin
         ap_sig_allocacmp_loop_index_i_load = 12'd0;
     end else begin
-        ap_sig_allocacmp_loop_index_i_load = loop_index_i_fu_52;
+        ap_sig_allocacmp_loop_index_i_load = loop_index_i_fu_50;
     end
 end
 
@@ -358,11 +358,11 @@ assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
 assign ap_ready = ap_ready_sig;
 
-assign empty_fu_101_p2 = (ap_sig_allocacmp_loop_index_i_load + 12'd1);
+assign empty_fu_99_p2 = (ap_sig_allocacmp_loop_index_i_load + 12'd1);
 
-assign exitcond4_i_fu_95_p2 = ((ap_sig_allocacmp_loop_index_i_load == 12'd2048) ? 1'b1 : 1'b0);
+assign exitcond4_i_fu_93_p2 = ((ap_sig_allocacmp_loop_index_i_load == 12'd2048) ? 1'b1 : 1'b0);
 
-assign loop_index_i_cast_fu_107_p1 = ap_sig_allocacmp_loop_index_i_load;
+assign loop_index_i_cast_fu_105_p1 = ap_sig_allocacmp_loop_index_i_load;
 
 assign m_axi_gmem_out_0_ARADDR = 64'd0;
 
@@ -416,7 +416,7 @@ assign m_axi_gmem_out_0_BREADY = 1'b0;
 
 assign m_axi_gmem_out_0_RREADY = 1'b0;
 
-assign m_axi_gmem_out_0_WDATA = out_local_load_reg_148;
+assign m_axi_gmem_out_0_WDATA = out_local_load_reg_146;
 
 assign m_axi_gmem_out_0_WID = 1'd0;
 
@@ -426,7 +426,7 @@ assign m_axi_gmem_out_0_WSTRB = 4'd15;
 
 assign m_axi_gmem_out_0_WUSER = 1'd0;
 
-assign out_local_address0 = loop_index_i_cast_fu_107_p1;
+assign out_local_address0 = loop_index_i_cast_fu_105_p1;
 
 assign out_local_ce0 = out_local_ce0_local;
 

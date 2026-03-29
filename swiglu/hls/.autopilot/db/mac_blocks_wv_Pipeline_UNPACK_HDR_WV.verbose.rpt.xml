@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_wv_Pipeline_UNPACK_HDR_WV'" level="0">
-<item name = "Date">Sun Mar 29 14:22:39 2026
+<item name = "Date">Sun Mar 29 14:53:28 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -83,8 +83,8 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln129_fu_2126_p2">+, 0, 0, 12, 4, 1</column>
-<column name="icmp_ln129_fu_2120_p2">icmp, 0, 0, 12, 4, 5</column>
+<column name="add_ln128_fu_2126_p2">+, 0, 0, 12, 4, 1</column>
+<column name="icmp_ln128_fu_2120_p2">icmp, 0, 0, 12, 4, 5</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -128,7 +128,7 @@
 <column name="empty_77_fu_526">32, 0, 32, 0</column>
 <column name="empty_78_fu_530">32, 0, 32, 0</column>
 <column name="empty_fu_470">32, 0, 32, 0</column>
-<column name="icmp_ln129_reg_4748">1, 0, 1, 0</column>
+<column name="icmp_ln128_reg_4748">1, 0, 1, 0</column>
 <column name="mn6_10_fu_830">6, 0, 8, 2</column>
 <column name="mn6_11_fu_834">6, 0, 8, 2</column>
 <column name="mn6_12_fu_838">6, 0, 8, 2</column>
@@ -258,10 +258,10 @@
 <column name="sc6_8_fu_566">6, 0, 8, 2</column>
 <column name="sc6_9_fu_570">6, 0, 8, 2</column>
 <column name="sc6_fu_534">6, 0, 8, 2</column>
-<column name="trunc_ln129_reg_4752">3, 0, 3, 0</column>
-<column name="trunc_ln130_reg_4756">16, 0, 16, 0</column>
-<column name="icmp_ln129_reg_4748">64, 32, 1, 0</column>
-<column name="trunc_ln129_reg_4752">64, 32, 3, 0</column>
+<column name="trunc_ln128_reg_4752">3, 0, 3, 0</column>
+<column name="trunc_ln129_reg_4756">16, 0, 16, 0</column>
+<column name="icmp_ln128_reg_4748">64, 32, 1, 0</column>
+<column name="trunc_ln128_reg_4752">64, 32, 3, 0</column>
 </table>
 </item>
 </section>

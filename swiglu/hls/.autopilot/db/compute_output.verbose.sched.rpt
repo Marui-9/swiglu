@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'compute_output'
 ================================================================
-* Date:           Sun Mar 29 14:22:35 2026
+* Date:           Sun Mar 29 14:53:25 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -25,12 +25,12 @@
 
 + Latency: 
     * Summary: 
-    +---------+----------+----------+-----------+---------+----------+---------+
-    |  Latency (cycles)  |  Latency (absolute)  |      Interval      | Pipeline|
-    |   min   |    max   |    min   |    max    |   min   |    max   |   Type  |
-    +---------+----------+----------+-----------+---------+----------+---------+
-    |  2179146|  28131402|  7.257 ms|  93.678 ms|  2179146|  28131402|       no|
-    +---------+----------+----------+-----------+---------+----------+---------+
+    +---------+----------+-----------+-----------+---------+----------+---------+
+    |  Latency (cycles)  |   Latency (absolute)  |      Interval      | Pipeline|
+    |   min   |    max   |    min    |    max    |   min   |    max   |   Type  |
+    +---------+----------+-----------+-----------+---------+----------+---------+
+    |  3801162|  28131402|  12.658 ms|  93.678 ms|  3801162|  28131402|       no|
+    +---------+----------+-----------+-----------+---------+----------+---------+
 
     + Detail: 
         * Instance: 
@@ -41,7 +41,7 @@
         |            |   Latency (cycles)  | Iteration|  Initiation Interval  | Trip |          |
         |  Loop Name |    min   |    max   |  Latency |  achieved |   target  | Count| Pipelined|
         +------------+----------+----------+----------+-----------+-----------+------+----------+
-        |- DOWN_Q4K  |   2177024|   2177024|      1063|          -|          -|  2048|        no|
+        |- DOWN_Q4K  |   3799040|   3799040|      1855|          -|          -|  2048|        no|
         |- DOWN_Q6K  |  28129280|  28129280|     13735|          -|          -|  2048|        no|
         +------------+----------+----------+----------+-----------+-----------+------+----------+
 
@@ -161,7 +161,7 @@ IsGatedGlobalClock: 0
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 1.49>
+State 1 <SV = 0> <Delay = 1.21>
 ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_0, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 83 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_1, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 84 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_2, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 85 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
@@ -170,395 +170,314 @@ ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void
 ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_5, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 88 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 89 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_6, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 89 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_7, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 90 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_8, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 91 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_9, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 92 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_10, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 93 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_11, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 94 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_12, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 95 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 96 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_13, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 96 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_14, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 97 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_15, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 98 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_16, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 99 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_17, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 100 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_18, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 101 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_19, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 102 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_20, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 103 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_21, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 104 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 105 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_22, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 105 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 106 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_23, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 106 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 107 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_24, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 107 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 108 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_25, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 108 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_26, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 109 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 110 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_27, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 110 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_28, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 111 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 112 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_29, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 112 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 113 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_30, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 113 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 114 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_31, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 114 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 115 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 2048, void @empty_2, void @empty_35, void @empty_32, i32 16, i32 2, i32 16, i32 256, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0"   --->   Operation 115 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %gmem_Wd, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 860160, void @empty_0, void @empty_35, void @empty_32, i32 2, i32 16, i32 256, i32 16, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0"   --->   Operation 116 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 117 [1/1] (0.00ns)   --->   "%down_quant_mode_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %down_quant_mode"   --->   Operation 117 'read' 'down_quant_mode_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 118 [1/1] (0.00ns)   --->   "%out_batch_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %out_batch"   --->   Operation 118 'read' 'out_batch_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 119 [1/1] (0.00ns)   --->   "%W_down_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %W_down"   --->   Operation 119 'read' 'W_down_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 120 [1/1] (1.21ns)   --->   "%p_read_1 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read"   --->   Operation 120 'read' 'p_read_1' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 121 [1/1] (0.00ns)   --->   "%out_local = alloca i64 1" [swiglu.cpp:493->swiglu.cpp:611]   --->   Operation 121 'alloca' 'out_local' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2048> <RAM>
-ST_1 : Operation 122 [1/1] (0.00ns)   --->   "%row_buf = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 122 'alloca' 'row_buf' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 123 [1/1] (0.00ns)   --->   "%row_buf_1 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 123 'alloca' 'row_buf_1' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 124 [1/1] (0.00ns)   --->   "%row_buf_2 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 124 'alloca' 'row_buf_2' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 125 [1/1] (0.00ns)   --->   "%row_buf_3 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 125 'alloca' 'row_buf_3' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 126 [1/1] (0.00ns)   --->   "%row_buf_4 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 126 'alloca' 'row_buf_4' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 127 [1/1] (0.00ns)   --->   "%row_buf_5 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 127 'alloca' 'row_buf_5' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 128 [1/1] (0.00ns)   --->   "%row_buf_6 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 128 'alloca' 'row_buf_6' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 129 [1/1] (0.00ns)   --->   "%row_buf_7 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 129 'alloca' 'row_buf_7' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 130 [1/1] (0.00ns)   --->   "%row_buf_8 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 130 'alloca' 'row_buf_8' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 131 [1/1] (0.00ns)   --->   "%row_buf_9 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 131 'alloca' 'row_buf_9' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 132 [1/1] (0.00ns)   --->   "%row_buf_10 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 132 'alloca' 'row_buf_10' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 133 [1/1] (0.00ns)   --->   "%row_buf_11 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 133 'alloca' 'row_buf_11' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 134 [1/1] (0.00ns)   --->   "%row_buf_12 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 134 'alloca' 'row_buf_12' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 135 [1/1] (0.00ns)   --->   "%row_buf_13 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 135 'alloca' 'row_buf_13' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 136 [1/1] (0.00ns)   --->   "%row_buf_14 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 136 'alloca' 'row_buf_14' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 137 [1/1] (0.00ns)   --->   "%row_buf_15 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 137 'alloca' 'row_buf_15' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 138 [1/1] (0.00ns)   --->   "%row_buf_16 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 138 'alloca' 'row_buf_16' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 139 [1/1] (0.00ns)   --->   "%row_buf_17 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 139 'alloca' 'row_buf_17' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 140 [1/1] (0.00ns)   --->   "%row_buf_18 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 140 'alloca' 'row_buf_18' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 141 [1/1] (0.00ns)   --->   "%row_buf_19 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 141 'alloca' 'row_buf_19' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 142 [1/1] (0.00ns)   --->   "%row_buf_20 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 142 'alloca' 'row_buf_20' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 143 [1/1] (0.00ns)   --->   "%row_buf_21 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 143 'alloca' 'row_buf_21' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 144 [1/1] (0.00ns)   --->   "%row_buf_22 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 144 'alloca' 'row_buf_22' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 145 [1/1] (0.00ns)   --->   "%row_buf_23 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 145 'alloca' 'row_buf_23' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 146 [1/1] (0.00ns)   --->   "%row_buf_24 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 146 'alloca' 'row_buf_24' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 147 [1/1] (0.00ns)   --->   "%row_buf_25 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 147 'alloca' 'row_buf_25' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 148 [1/1] (0.00ns)   --->   "%row_buf_26 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 148 'alloca' 'row_buf_26' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 149 [1/1] (0.00ns)   --->   "%row_buf_27 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 149 'alloca' 'row_buf_27' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 150 [1/1] (0.00ns)   --->   "%row_buf_28 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 150 'alloca' 'row_buf_28' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 151 [1/1] (0.00ns)   --->   "%row_buf_29 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 151 'alloca' 'row_buf_29' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 152 [1/1] (0.00ns)   --->   "%row_buf_30 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 152 'alloca' 'row_buf_30' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 153 [1/1] (0.00ns)   --->   "%row_buf_31 = alloca i64 1" [swiglu.cpp:498->swiglu.cpp:611]   --->   Operation 153 'alloca' 'row_buf_31' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_LUTRAM">   --->   Core 92 'RAM_2P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 9> <RAM>
-ST_1 : Operation 154 [1/1] (0.00ns)   --->   "%row_buf_32 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 154 'alloca' 'row_buf_32' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 155 [1/1] (0.00ns)   --->   "%row_buf_33 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 155 'alloca' 'row_buf_33' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 156 [1/1] (0.00ns)   --->   "%row_buf_34 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 156 'alloca' 'row_buf_34' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 157 [1/1] (0.00ns)   --->   "%row_buf_35 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 157 'alloca' 'row_buf_35' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 158 [1/1] (0.00ns)   --->   "%row_buf_36 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 158 'alloca' 'row_buf_36' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 159 [1/1] (0.00ns)   --->   "%row_buf_37 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 159 'alloca' 'row_buf_37' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 160 [1/1] (0.00ns)   --->   "%row_buf_38 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 160 'alloca' 'row_buf_38' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 161 [1/1] (0.00ns)   --->   "%row_buf_39 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 161 'alloca' 'row_buf_39' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 162 [1/1] (0.00ns)   --->   "%row_buf_40 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 162 'alloca' 'row_buf_40' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 163 [1/1] (0.00ns)   --->   "%row_buf_41 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 163 'alloca' 'row_buf_41' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 164 [1/1] (0.00ns)   --->   "%row_buf_42 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 164 'alloca' 'row_buf_42' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 165 [1/1] (0.00ns)   --->   "%row_buf_43 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 165 'alloca' 'row_buf_43' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 166 [1/1] (0.00ns)   --->   "%row_buf_44 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 166 'alloca' 'row_buf_44' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 167 [1/1] (0.00ns)   --->   "%row_buf_45 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 167 'alloca' 'row_buf_45' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 168 [1/1] (0.00ns)   --->   "%row_buf_46 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 168 'alloca' 'row_buf_46' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 169 [1/1] (0.00ns)   --->   "%row_buf_47 = alloca i64 1" [swiglu.cpp:506->swiglu.cpp:611]   --->   Operation 169 'alloca' 'row_buf_47' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 170 [1/1] (1.01ns)   --->   "%icmp_ln496 = icmp_eq  i32 %down_quant_mode_read, i32 0" [swiglu.cpp:496->swiglu.cpp:611]   --->   Operation 170 'icmp' 'icmp_ln496' <Predicate = true> <Delay = 1.01> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 171 [1/1] (0.00ns)   --->   "%out_i = alloca i32 1" [swiglu.cpp:505->swiglu.cpp:611]   --->   Operation 171 'alloca' 'out_i' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 172 [1/1] (0.00ns)   --->   "%br_ln496 = br i1 %icmp_ln496, void %for.inc18.i.preheader, void %DOWN_Q4K.i" [swiglu.cpp:496->swiglu.cpp:611]   --->   Operation 172 'br' 'br_ln496' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 173 [1/1] (0.47ns)   --->   "%store_ln505 = store i12 0, i12 %out_i" [swiglu.cpp:505->swiglu.cpp:611]   --->   Operation 173 'store' 'store_ln505' <Predicate = (!icmp_ln496)> <Delay = 0.47>
-ST_1 : Operation 174 [1/1] (0.00ns)   --->   "%br_ln505 = br void %for.inc18.i" [swiglu.cpp:505->swiglu.cpp:611]   --->   Operation 174 'br' 'br_ln505' <Predicate = (!icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 175 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_31, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 175 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 176 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_30, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 176 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 177 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_29, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 177 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 178 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_28, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 178 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 179 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_27, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 179 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 180 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_26, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 180 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 181 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_25, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 181 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 182 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_24, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 182 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 183 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_23, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 183 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 184 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_22, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 184 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 185 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_21, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 185 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 186 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_20, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 186 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 187 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_19, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 187 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 188 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_18, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 188 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 189 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_17, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 189 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 190 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_16, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 190 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 191 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_15, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 191 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 192 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_14, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 192 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 193 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_13, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 193 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 194 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_12, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 194 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 195 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_11, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 195 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 196 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_10, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 196 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 197 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_9, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 197 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 198 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_8, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 198 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 199 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_7, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 199 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 200 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_6, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 200 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 201 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_5, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 201 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 202 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_4, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 202 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 203 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_3, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 203 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 204 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_2, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 204 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 205 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf_1, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 205 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 206 [1/1] (0.00ns)   --->   "%specmemcore_ln500 = specmemcore void @_ssdm_op_SpecMemCore, i128 %row_buf, i64 666, i64 23, i64 18446744073709551615" [swiglu.cpp:500->swiglu.cpp:611]   --->   Operation 206 'specmemcore' 'specmemcore_ln500' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_1 : Operation 207 [1/1] (0.47ns)   --->   "%store_ln497 = store i12 0, i12 %out_i" [swiglu.cpp:497->swiglu.cpp:611]   --->   Operation 207 'store' 'store_ln497' <Predicate = (icmp_ln496)> <Delay = 0.47>
-ST_1 : Operation 208 [1/1] (0.00ns)   --->   "%br_ln497 = br void %for.inc.i" [swiglu.cpp:497->swiglu.cpp:611]   --->   Operation 208 'br' 'br_ln497' <Predicate = (icmp_ln496)> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 2048, void @empty_2, void @empty_35, void @empty_32, i32 16, i32 16, i32 16, i32 256, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0"   --->   Operation 91 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %gmem_Wd, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 860160, void @empty_0, void @empty_35, void @empty_32, i32 16, i32 16, i32 256, i32 16, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0"   --->   Operation 92 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%down_quant_mode_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %down_quant_mode"   --->   Operation 93 'read' 'down_quant_mode_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%out_batch_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %out_batch"   --->   Operation 94 'read' 'out_batch_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%W_down_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %W_down"   --->   Operation 95 'read' 'W_down_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 96 [1/1] (1.21ns)   --->   "%p_read_1 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read"   --->   Operation 96 'read' 'p_read_1' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%out_local = alloca i64 1" [swiglu.cpp:490->swiglu.cpp:606]   --->   Operation 97 'alloca' 'out_local' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2048> <RAM>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%row_buf = alloca i64 1" [swiglu.cpp:495->swiglu.cpp:606]   --->   Operation 98 'alloca' 'row_buf' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%row_buf_1 = alloca i64 1" [swiglu.cpp:495->swiglu.cpp:606]   --->   Operation 99 'alloca' 'row_buf_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%row_buf_2 = alloca i64 1" [swiglu.cpp:495->swiglu.cpp:606]   --->   Operation 100 'alloca' 'row_buf_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%row_buf_3 = alloca i64 1" [swiglu.cpp:495->swiglu.cpp:606]   --->   Operation 101 'alloca' 'row_buf_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%row_buf_4 = alloca i64 1" [swiglu.cpp:495->swiglu.cpp:606]   --->   Operation 102 'alloca' 'row_buf_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%row_buf_5 = alloca i64 1" [swiglu.cpp:495->swiglu.cpp:606]   --->   Operation 103 'alloca' 'row_buf_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%row_buf_6 = alloca i64 1" [swiglu.cpp:495->swiglu.cpp:606]   --->   Operation 104 'alloca' 'row_buf_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 105 [1/1] (0.00ns)   --->   "%row_buf_7 = alloca i64 1" [swiglu.cpp:495->swiglu.cpp:606]   --->   Operation 105 'alloca' 'row_buf_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 106 [1/1] (0.00ns)   --->   "%row_buf_8 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 106 'alloca' 'row_buf_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 107 [1/1] (0.00ns)   --->   "%row_buf_9 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 107 'alloca' 'row_buf_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 108 [1/1] (0.00ns)   --->   "%row_buf_10 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 108 'alloca' 'row_buf_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%row_buf_11 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 109 'alloca' 'row_buf_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 110 [1/1] (0.00ns)   --->   "%row_buf_12 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 110 'alloca' 'row_buf_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%row_buf_13 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 111 'alloca' 'row_buf_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 112 [1/1] (0.00ns)   --->   "%row_buf_14 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 112 'alloca' 'row_buf_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 113 [1/1] (0.00ns)   --->   "%row_buf_15 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 113 'alloca' 'row_buf_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 114 [1/1] (0.00ns)   --->   "%row_buf_16 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 114 'alloca' 'row_buf_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 115 [1/1] (0.00ns)   --->   "%row_buf_17 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 115 'alloca' 'row_buf_17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%row_buf_18 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 116 'alloca' 'row_buf_18' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 117 [1/1] (0.00ns)   --->   "%row_buf_19 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 117 'alloca' 'row_buf_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 118 [1/1] (0.00ns)   --->   "%row_buf_20 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 118 'alloca' 'row_buf_20' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 119 [1/1] (0.00ns)   --->   "%row_buf_21 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 119 'alloca' 'row_buf_21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 120 [1/1] (0.00ns)   --->   "%row_buf_22 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 120 'alloca' 'row_buf_22' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 121 [1/1] (0.00ns)   --->   "%row_buf_23 = alloca i64 1" [swiglu.cpp:502->swiglu.cpp:606]   --->   Operation 121 'alloca' 'row_buf_23' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 122 [1/1] (1.01ns)   --->   "%icmp_ln493 = icmp_eq  i32 %down_quant_mode_read, i32 0" [swiglu.cpp:493->swiglu.cpp:606]   --->   Operation 122 'icmp' 'icmp_ln493' <Predicate = true> <Delay = 1.01> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 123 [1/1] (0.00ns)   --->   "%out_i = alloca i32 1" [swiglu.cpp:501->swiglu.cpp:606]   --->   Operation 123 'alloca' 'out_i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 124 [1/1] (0.47ns)   --->   "%store_ln494 = store i12 0, i12 %out_i" [swiglu.cpp:494->swiglu.cpp:606]   --->   Operation 124 'store' 'store_ln494' <Predicate = true> <Delay = 0.47>
+ST_1 : Operation 125 [1/1] (0.00ns)   --->   "%br_ln493 = br i1 %icmp_ln493, void %for.inc18.i.preheader, void %for.inc.i.preheader" [swiglu.cpp:493->swiglu.cpp:606]   --->   Operation 125 'br' 'br_ln493' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 126 [1/1] (0.00ns)   --->   "%br_ln501 = br void %for.inc18.i" [swiglu.cpp:501->swiglu.cpp:606]   --->   Operation 126 'br' 'br_ln501' <Predicate = (!icmp_ln493)> <Delay = 0.00>
+ST_1 : Operation 127 [1/1] (0.00ns)   --->   "%br_ln494 = br void %for.inc.i" [swiglu.cpp:494->swiglu.cpp:606]   --->   Operation 127 'br' 'br_ln494' <Predicate = (icmp_ln493)> <Delay = 0.00>
 
 State 2 <SV = 1> <Delay = 2.43>
-ST_2 : Operation 209 [1/1] (0.00ns)   --->   "%out_i_2 = load i12 %out_i" [swiglu.cpp:505->swiglu.cpp:611]   --->   Operation 209 'load' 'out_i_2' <Predicate = (!icmp_ln496)> <Delay = 0.00>
-ST_2 : Operation 210 [1/1] (0.80ns)   --->   "%icmp_ln505 = icmp_eq  i12 %out_i_2, i12 2048" [swiglu.cpp:505->swiglu.cpp:611]   --->   Operation 210 'icmp' 'icmp_ln505' <Predicate = (!icmp_ln496)> <Delay = 0.80> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 211 [1/1] (0.80ns)   --->   "%add_ln505 = add i12 %out_i_2, i12 1" [swiglu.cpp:505->swiglu.cpp:611]   --->   Operation 211 'add' 'add_ln505' <Predicate = (!icmp_ln496)> <Delay = 0.80> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 212 [1/1] (0.00ns)   --->   "%br_ln505 = br i1 %icmp_ln505, void %for.inc18.split.i, void %if.end.i.loopexit" [swiglu.cpp:505->swiglu.cpp:611]   --->   Operation 212 'br' 'br_ln505' <Predicate = (!icmp_ln496)> <Delay = 0.00>
-ST_2 : Operation 213 [1/1] (0.00ns)   --->   "%br_ln0 = br void %if.end.i"   --->   Operation 213 'br' 'br_ln0' <Predicate = (!icmp_ln496 & icmp_ln505)> <Delay = 0.00>
-ST_2 : Operation 214 [1/1] (0.00ns)   --->   "%out_i_1 = load i12 %out_i" [swiglu.cpp:497->swiglu.cpp:611]   --->   Operation 214 'load' 'out_i_1' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_2 : Operation 215 [1/1] (0.80ns)   --->   "%icmp_ln497 = icmp_eq  i12 %out_i_1, i12 2048" [swiglu.cpp:497->swiglu.cpp:611]   --->   Operation 215 'icmp' 'icmp_ln497' <Predicate = (icmp_ln496)> <Delay = 0.80> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 216 [1/1] (0.80ns)   --->   "%add_ln497 = add i12 %out_i_1, i12 1" [swiglu.cpp:497->swiglu.cpp:611]   --->   Operation 216 'add' 'add_ln497' <Predicate = (icmp_ln496)> <Delay = 0.80> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 217 [1/1] (0.00ns)   --->   "%br_ln497 = br i1 %icmp_ln497, void %for.inc.split.i, void %if.end.i.loopexit31" [swiglu.cpp:497->swiglu.cpp:611]   --->   Operation 217 'br' 'br_ln497' <Predicate = (icmp_ln496)> <Delay = 0.00>
-ST_2 : Operation 218 [1/1] (0.00ns)   --->   "%br_ln0 = br void %if.end.i"   --->   Operation 218 'br' 'br_ln0' <Predicate = (icmp_ln496 & icmp_ln497)> <Delay = 0.00>
-ST_2 : Operation 219 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %out_batch_read, i32 2, i32 63" [swiglu.cpp:513->swiglu.cpp:611]   --->   Operation 219 'partselect' 'trunc_ln' <Predicate = (icmp_ln496 & icmp_ln497) | (!icmp_ln496 & icmp_ln505)> <Delay = 0.00>
-ST_2 : Operation 220 [1/1] (0.00ns)   --->   "%sext_ln513 = sext i62 %trunc_ln" [swiglu.cpp:513->swiglu.cpp:611]   --->   Operation 220 'sext' 'sext_ln513' <Predicate = (icmp_ln496 & icmp_ln497) | (!icmp_ln496 & icmp_ln505)> <Delay = 0.00>
-ST_2 : Operation 221 [1/1] (0.00ns)   --->   "%gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln513" [swiglu.cpp:513->swiglu.cpp:611]   --->   Operation 221 'getelementptr' 'gmem_out_addr' <Predicate = (icmp_ln496 & icmp_ln497) | (!icmp_ln496 & icmp_ln505)> <Delay = 0.00>
-ST_2 : Operation 222 [1/1] (2.43ns)   --->   "%empty = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i32, i32 %gmem_out_addr, i64 2048" [swiglu.cpp:513->swiglu.cpp:611]   --->   Operation 222 'writereq' 'empty' <Predicate = (icmp_ln496 & icmp_ln497) | (!icmp_ln496 & icmp_ln505)> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 9> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 128 [1/1] (0.00ns)   --->   "%out_i_2 = load i12 %out_i" [swiglu.cpp:501->swiglu.cpp:606]   --->   Operation 128 'load' 'out_i_2' <Predicate = (!icmp_ln493)> <Delay = 0.00>
+ST_2 : Operation 129 [1/1] (0.80ns)   --->   "%icmp_ln501 = icmp_eq  i12 %out_i_2, i12 2048" [swiglu.cpp:501->swiglu.cpp:606]   --->   Operation 129 'icmp' 'icmp_ln501' <Predicate = (!icmp_ln493)> <Delay = 0.80> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 130 [1/1] (0.80ns)   --->   "%add_ln501 = add i12 %out_i_2, i12 1" [swiglu.cpp:501->swiglu.cpp:606]   --->   Operation 130 'add' 'add_ln501' <Predicate = (!icmp_ln493)> <Delay = 0.80> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 131 [1/1] (0.00ns)   --->   "%br_ln501 = br i1 %icmp_ln501, void %for.inc18.split.i, void %if.end.i.loopexit" [swiglu.cpp:501->swiglu.cpp:606]   --->   Operation 131 'br' 'br_ln501' <Predicate = (!icmp_ln493)> <Delay = 0.00>
+ST_2 : Operation 132 [1/1] (0.00ns)   --->   "%br_ln0 = br void %if.end.i"   --->   Operation 132 'br' 'br_ln0' <Predicate = (!icmp_ln493 & icmp_ln501)> <Delay = 0.00>
+ST_2 : Operation 133 [1/1] (0.00ns)   --->   "%out_i_1 = load i12 %out_i" [swiglu.cpp:494->swiglu.cpp:606]   --->   Operation 133 'load' 'out_i_1' <Predicate = (icmp_ln493)> <Delay = 0.00>
+ST_2 : Operation 134 [1/1] (0.80ns)   --->   "%icmp_ln494 = icmp_eq  i12 %out_i_1, i12 2048" [swiglu.cpp:494->swiglu.cpp:606]   --->   Operation 134 'icmp' 'icmp_ln494' <Predicate = (icmp_ln493)> <Delay = 0.80> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 135 [1/1] (0.80ns)   --->   "%add_ln494 = add i12 %out_i_1, i12 1" [swiglu.cpp:494->swiglu.cpp:606]   --->   Operation 135 'add' 'add_ln494' <Predicate = (icmp_ln493)> <Delay = 0.80> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 136 [1/1] (0.00ns)   --->   "%br_ln494 = br i1 %icmp_ln494, void %for.inc.split.i, void %if.end.i.loopexit33" [swiglu.cpp:494->swiglu.cpp:606]   --->   Operation 136 'br' 'br_ln494' <Predicate = (icmp_ln493)> <Delay = 0.00>
+ST_2 : Operation 137 [1/1] (0.00ns)   --->   "%br_ln0 = br void %if.end.i"   --->   Operation 137 'br' 'br_ln0' <Predicate = (icmp_ln493 & icmp_ln494)> <Delay = 0.00>
+ST_2 : Operation 138 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %out_batch_read, i32 2, i32 63" [swiglu.cpp:509->swiglu.cpp:606]   --->   Operation 138 'partselect' 'trunc_ln' <Predicate = (icmp_ln493 & icmp_ln494) | (!icmp_ln493 & icmp_ln501)> <Delay = 0.00>
+ST_2 : Operation 139 [1/1] (0.00ns)   --->   "%sext_ln509 = sext i62 %trunc_ln" [swiglu.cpp:509->swiglu.cpp:606]   --->   Operation 139 'sext' 'sext_ln509' <Predicate = (icmp_ln493 & icmp_ln494) | (!icmp_ln493 & icmp_ln501)> <Delay = 0.00>
+ST_2 : Operation 140 [1/1] (0.00ns)   --->   "%gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln509" [swiglu.cpp:509->swiglu.cpp:606]   --->   Operation 140 'getelementptr' 'gmem_out_addr' <Predicate = (icmp_ln493 & icmp_ln494) | (!icmp_ln493 & icmp_ln501)> <Delay = 0.00>
+ST_2 : Operation 141 [1/1] (2.43ns)   --->   "%empty = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i32, i32 %gmem_out_addr, i64 2048" [swiglu.cpp:509->swiglu.cpp:606]   --->   Operation 141 'writereq' 'empty' <Predicate = (icmp_ln493 & icmp_ln494) | (!icmp_ln493 & icmp_ln501)> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 9> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 3 <SV = 2> <Delay = 2.28>
-ST_3 : Operation 223 [1/1] (0.00ns)   --->   "%trunc_ln508 = trunc i12 %out_i_2" [swiglu.cpp:508->swiglu.cpp:611]   --->   Operation 223 'trunc' 'trunc_ln508' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 224 [2/2] (2.28ns)   --->   "%call_ln508 = call void @load_row_down_q6k, i128 %gmem_Wd, i64 %W_down_read, i11 %trunc_ln508, i128 %row_buf_32, i128 %row_buf_33, i128 %row_buf_34, i128 %row_buf_35, i128 %row_buf_36, i128 %row_buf_37, i128 %row_buf_38, i128 %row_buf_39, i128 %row_buf_40, i128 %row_buf_41, i128 %row_buf_42, i128 %row_buf_43, i128 %row_buf_44, i128 %row_buf_45, i128 %row_buf_46, i128 %row_buf_47" [swiglu.cpp:508->swiglu.cpp:611]   --->   Operation 224 'call' 'call_ln508' <Predicate = true> <Delay = 2.28> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 142 [1/1] (0.00ns)   --->   "%trunc_ln504 = trunc i12 %out_i_2" [swiglu.cpp:504->swiglu.cpp:606]   --->   Operation 142 'trunc' 'trunc_ln504' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 143 [2/2] (2.28ns)   --->   "%call_ln504 = call void @load_row_down_q6k, i128 %gmem_Wd, i64 %W_down_read, i11 %trunc_ln504, i128 %row_buf_8, i128 %row_buf_9, i128 %row_buf_10, i128 %row_buf_11, i128 %row_buf_12, i128 %row_buf_13, i128 %row_buf_14, i128 %row_buf_15, i128 %row_buf_16, i128 %row_buf_17, i128 %row_buf_18, i128 %row_buf_19, i128 %row_buf_20, i128 %row_buf_21, i128 %row_buf_22, i128 %row_buf_23" [swiglu.cpp:504->swiglu.cpp:606]   --->   Operation 143 'call' 'call_ln504' <Predicate = true> <Delay = 2.28> <CoreType = "Generic">   --->   Generic Core
 
 State 4 <SV = 3> <Delay = 0.00>
-ST_4 : Operation 225 [1/2] (0.00ns)   --->   "%call_ln508 = call void @load_row_down_q6k, i128 %gmem_Wd, i64 %W_down_read, i11 %trunc_ln508, i128 %row_buf_32, i128 %row_buf_33, i128 %row_buf_34, i128 %row_buf_35, i128 %row_buf_36, i128 %row_buf_37, i128 %row_buf_38, i128 %row_buf_39, i128 %row_buf_40, i128 %row_buf_41, i128 %row_buf_42, i128 %row_buf_43, i128 %row_buf_44, i128 %row_buf_45, i128 %row_buf_46, i128 %row_buf_47" [swiglu.cpp:508->swiglu.cpp:611]   --->   Operation 225 'call' 'call_ln508' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_4 : Operation 144 [1/2] (0.00ns)   --->   "%call_ln504 = call void @load_row_down_q6k, i128 %gmem_Wd, i64 %W_down_read, i11 %trunc_ln504, i128 %row_buf_8, i128 %row_buf_9, i128 %row_buf_10, i128 %row_buf_11, i128 %row_buf_12, i128 %row_buf_13, i128 %row_buf_14, i128 %row_buf_15, i128 %row_buf_16, i128 %row_buf_17, i128 %row_buf_18, i128 %row_buf_19, i128 %row_buf_20, i128 %row_buf_21, i128 %row_buf_22, i128 %row_buf_23" [swiglu.cpp:504->swiglu.cpp:606]   --->   Operation 144 'call' 'call_ln504' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
 
 State 5 <SV = 4> <Delay = 0.00>
-ST_5 : Operation 226 [2/2] (0.00ns)   --->   "%call_ret = call i32 @mac_blocks_down_q6k, i128 %row_buf_32, i128 %row_buf_33, i128 %row_buf_34, i128 %row_buf_35, i128 %row_buf_36, i128 %row_buf_37, i128 %row_buf_38, i128 %row_buf_39, i128 %row_buf_40, i128 %row_buf_41, i128 %row_buf_42, i128 %row_buf_43, i128 %row_buf_44, i128 %row_buf_45, i128 %row_buf_46, i128 %row_buf_47, i8 %gate_cache_0, i8 %gate_cache_1, i8 %gate_cache_2, i8 %gate_cache_3, i8 %gate_cache_4, i8 %gate_cache_5, i8 %gate_cache_6, i8 %gate_cache_7, i8 %gate_cache_8, i8 %gate_cache_9, i8 %gate_cache_10, i8 %gate_cache_11, i8 %gate_cache_12, i8 %gate_cache_13, i8 %gate_cache_14, i8 %gate_cache_15, i8 %gate_cache_16, i8 %gate_cache_17, i8 %gate_cache_18, i8 %gate_cache_19, i8 %gate_cache_20, i8 %gate_cache_21, i8 %gate_cache_22, i8 %gate_cache_23, i8 %gate_cache_24, i8 %gate_cache_25, i8 %gate_cache_26, i8 %gate_cache_27, i8 %gate_cache_28, i8 %gate_cache_29, i8 %gate_cache_30, i8 %gate_cache_31, i32 %p_read_1" [swiglu.cpp:509->swiglu.cpp:611]   --->   Operation 226 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_5 : Operation 145 [2/2] (0.00ns)   --->   "%call_ret2 = call i32 @mac_blocks_down_q6k, i128 %row_buf_8, i128 %row_buf_9, i128 %row_buf_10, i128 %row_buf_11, i128 %row_buf_12, i128 %row_buf_13, i128 %row_buf_14, i128 %row_buf_15, i128 %row_buf_16, i128 %row_buf_17, i128 %row_buf_18, i128 %row_buf_19, i128 %row_buf_20, i128 %row_buf_21, i128 %row_buf_22, i128 %row_buf_23, i8 %gate_cache_0, i8 %gate_cache_1, i8 %gate_cache_2, i8 %gate_cache_3, i8 %gate_cache_4, i8 %gate_cache_5, i8 %gate_cache_6, i8 %gate_cache_7, i32 %p_read_1" [swiglu.cpp:505->swiglu.cpp:606]   --->   Operation 145 'call' 'call_ret2' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
 
 State 6 <SV = 5> <Delay = 2.26>
-ST_6 : Operation 227 [1/2] (2.26ns)   --->   "%call_ret = call i32 @mac_blocks_down_q6k, i128 %row_buf_32, i128 %row_buf_33, i128 %row_buf_34, i128 %row_buf_35, i128 %row_buf_36, i128 %row_buf_37, i128 %row_buf_38, i128 %row_buf_39, i128 %row_buf_40, i128 %row_buf_41, i128 %row_buf_42, i128 %row_buf_43, i128 %row_buf_44, i128 %row_buf_45, i128 %row_buf_46, i128 %row_buf_47, i8 %gate_cache_0, i8 %gate_cache_1, i8 %gate_cache_2, i8 %gate_cache_3, i8 %gate_cache_4, i8 %gate_cache_5, i8 %gate_cache_6, i8 %gate_cache_7, i8 %gate_cache_8, i8 %gate_cache_9, i8 %gate_cache_10, i8 %gate_cache_11, i8 %gate_cache_12, i8 %gate_cache_13, i8 %gate_cache_14, i8 %gate_cache_15, i8 %gate_cache_16, i8 %gate_cache_17, i8 %gate_cache_18, i8 %gate_cache_19, i8 %gate_cache_20, i8 %gate_cache_21, i8 %gate_cache_22, i8 %gate_cache_23, i8 %gate_cache_24, i8 %gate_cache_25, i8 %gate_cache_26, i8 %gate_cache_27, i8 %gate_cache_28, i8 %gate_cache_29, i8 %gate_cache_30, i8 %gate_cache_31, i32 %p_read_1" [swiglu.cpp:509->swiglu.cpp:611]   --->   Operation 227 'call' 'call_ret' <Predicate = true> <Delay = 2.26> <CoreType = "Generic">   --->   Generic Core
+ST_6 : Operation 146 [1/2] (2.26ns)   --->   "%call_ret2 = call i32 @mac_blocks_down_q6k, i128 %row_buf_8, i128 %row_buf_9, i128 %row_buf_10, i128 %row_buf_11, i128 %row_buf_12, i128 %row_buf_13, i128 %row_buf_14, i128 %row_buf_15, i128 %row_buf_16, i128 %row_buf_17, i128 %row_buf_18, i128 %row_buf_19, i128 %row_buf_20, i128 %row_buf_21, i128 %row_buf_22, i128 %row_buf_23, i8 %gate_cache_0, i8 %gate_cache_1, i8 %gate_cache_2, i8 %gate_cache_3, i8 %gate_cache_4, i8 %gate_cache_5, i8 %gate_cache_6, i8 %gate_cache_7, i32 %p_read_1" [swiglu.cpp:505->swiglu.cpp:606]   --->   Operation 146 'call' 'call_ret2' <Predicate = true> <Delay = 2.26> <CoreType = "Generic">   --->   Generic Core
 
 State 7 <SV = 6> <Delay = 1.23>
-ST_7 : Operation 228 [1/1] (0.00ns)   --->   "%zext_ln505 = zext i12 %out_i_2" [swiglu.cpp:505->swiglu.cpp:611]   --->   Operation 228 'zext' 'zext_ln505' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 229 [1/1] (0.00ns)   --->   "%speclooptripcount_ln505 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2048, i64 2048, i64 2048" [swiglu.cpp:505->swiglu.cpp:611]   --->   Operation 229 'speclooptripcount' 'speclooptripcount_ln505' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 230 [1/1] (0.00ns)   --->   "%specloopname_ln505 = specloopname void @_ssdm_op_SpecLoopName, void @empty_24" [swiglu.cpp:505->swiglu.cpp:611]   --->   Operation 230 'specloopname' 'specloopname_ln505' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 231 [1/1] (0.00ns)   --->   "%out_local_addr_1 = getelementptr i32 %out_local, i64 0, i64 %zext_ln505" [swiglu.cpp:509->swiglu.cpp:611]   --->   Operation 231 'getelementptr' 'out_local_addr_1' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 232 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln509 = store i32 %call_ret, i11 %out_local_addr_1" [swiglu.cpp:509->swiglu.cpp:611]   --->   Operation 232 'store' 'store_ln509' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2048> <RAM>
-ST_7 : Operation 233 [1/1] (0.47ns)   --->   "%store_ln505 = store i12 %add_ln505, i12 %out_i" [swiglu.cpp:505->swiglu.cpp:611]   --->   Operation 233 'store' 'store_ln505' <Predicate = true> <Delay = 0.47>
-ST_7 : Operation 234 [1/1] (0.00ns)   --->   "%br_ln505 = br void %for.inc18.i" [swiglu.cpp:505->swiglu.cpp:611]   --->   Operation 234 'br' 'br_ln505' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 147 [1/1] (0.00ns)   --->   "%zext_ln501 = zext i12 %out_i_2" [swiglu.cpp:501->swiglu.cpp:606]   --->   Operation 147 'zext' 'zext_ln501' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 148 [1/1] (0.00ns)   --->   "%speclooptripcount_ln501 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2048, i64 2048, i64 2048" [swiglu.cpp:501->swiglu.cpp:606]   --->   Operation 148 'speclooptripcount' 'speclooptripcount_ln501' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 149 [1/1] (0.00ns)   --->   "%specloopname_ln501 = specloopname void @_ssdm_op_SpecLoopName, void @empty_24" [swiglu.cpp:501->swiglu.cpp:606]   --->   Operation 149 'specloopname' 'specloopname_ln501' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 150 [1/1] (0.00ns)   --->   "%out_local_addr_1 = getelementptr i32 %out_local, i64 0, i64 %zext_ln501" [swiglu.cpp:505->swiglu.cpp:606]   --->   Operation 150 'getelementptr' 'out_local_addr_1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 151 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln505 = store i32 %call_ret2, i11 %out_local_addr_1" [swiglu.cpp:505->swiglu.cpp:606]   --->   Operation 151 'store' 'store_ln505' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2048> <RAM>
+ST_7 : Operation 152 [1/1] (0.47ns)   --->   "%store_ln501 = store i12 %add_ln501, i12 %out_i" [swiglu.cpp:501->swiglu.cpp:606]   --->   Operation 152 'store' 'store_ln501' <Predicate = true> <Delay = 0.47>
+ST_7 : Operation 153 [1/1] (0.00ns)   --->   "%br_ln501 = br void %for.inc18.i" [swiglu.cpp:501->swiglu.cpp:606]   --->   Operation 153 'br' 'br_ln501' <Predicate = true> <Delay = 0.00>
 
 State 8 <SV = 2> <Delay = 2.00>
-ST_8 : Operation 235 [1/1] (0.00ns)   --->   "%trunc_ln501 = trunc i12 %out_i_1" [swiglu.cpp:501->swiglu.cpp:611]   --->   Operation 235 'trunc' 'trunc_ln501' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 236 [2/2] (2.00ns)   --->   "%call_ln501 = call void @load_row_down_q4k, i128 %gmem_Wd, i64 %W_down_read, i11 %trunc_ln501, i128 %row_buf, i128 %row_buf_1, i128 %row_buf_2, i128 %row_buf_3, i128 %row_buf_4, i128 %row_buf_5, i128 %row_buf_6, i128 %row_buf_7, i128 %row_buf_8, i128 %row_buf_9, i128 %row_buf_10, i128 %row_buf_11, i128 %row_buf_12, i128 %row_buf_13, i128 %row_buf_14, i128 %row_buf_15, i128 %row_buf_16, i128 %row_buf_17, i128 %row_buf_18, i128 %row_buf_19, i128 %row_buf_20, i128 %row_buf_21, i128 %row_buf_22, i128 %row_buf_23, i128 %row_buf_24, i128 %row_buf_25, i128 %row_buf_26, i128 %row_buf_27, i128 %row_buf_28, i128 %row_buf_29, i128 %row_buf_30, i128 %row_buf_31" [swiglu.cpp:501->swiglu.cpp:611]   --->   Operation 236 'call' 'call_ln501' <Predicate = true> <Delay = 2.00> <CoreType = "Generic">   --->   Generic Core
+ST_8 : Operation 154 [1/1] (0.00ns)   --->   "%trunc_ln497 = trunc i12 %out_i_1" [swiglu.cpp:497->swiglu.cpp:606]   --->   Operation 154 'trunc' 'trunc_ln497' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 155 [2/2] (2.00ns)   --->   "%call_ln497 = call void @load_row_down_q4k, i128 %gmem_Wd, i64 %W_down_read, i11 %trunc_ln497, i128 %row_buf, i128 %row_buf_1, i128 %row_buf_2, i128 %row_buf_3, i128 %row_buf_4, i128 %row_buf_5, i128 %row_buf_6, i128 %row_buf_7" [swiglu.cpp:497->swiglu.cpp:606]   --->   Operation 155 'call' 'call_ln497' <Predicate = true> <Delay = 2.00> <CoreType = "Generic">   --->   Generic Core
 
 State 9 <SV = 3> <Delay = 0.00>
-ST_9 : Operation 237 [1/2] (0.00ns)   --->   "%call_ln501 = call void @load_row_down_q4k, i128 %gmem_Wd, i64 %W_down_read, i11 %trunc_ln501, i128 %row_buf, i128 %row_buf_1, i128 %row_buf_2, i128 %row_buf_3, i128 %row_buf_4, i128 %row_buf_5, i128 %row_buf_6, i128 %row_buf_7, i128 %row_buf_8, i128 %row_buf_9, i128 %row_buf_10, i128 %row_buf_11, i128 %row_buf_12, i128 %row_buf_13, i128 %row_buf_14, i128 %row_buf_15, i128 %row_buf_16, i128 %row_buf_17, i128 %row_buf_18, i128 %row_buf_19, i128 %row_buf_20, i128 %row_buf_21, i128 %row_buf_22, i128 %row_buf_23, i128 %row_buf_24, i128 %row_buf_25, i128 %row_buf_26, i128 %row_buf_27, i128 %row_buf_28, i128 %row_buf_29, i128 %row_buf_30, i128 %row_buf_31" [swiglu.cpp:501->swiglu.cpp:611]   --->   Operation 237 'call' 'call_ln501' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_9 : Operation 156 [1/2] (0.00ns)   --->   "%call_ln497 = call void @load_row_down_q4k, i128 %gmem_Wd, i64 %W_down_read, i11 %trunc_ln497, i128 %row_buf, i128 %row_buf_1, i128 %row_buf_2, i128 %row_buf_3, i128 %row_buf_4, i128 %row_buf_5, i128 %row_buf_6, i128 %row_buf_7" [swiglu.cpp:497->swiglu.cpp:606]   --->   Operation 156 'call' 'call_ln497' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
 
 State 10 <SV = 4> <Delay = 2.41>
-ST_10 : Operation 238 [2/2] (2.41ns)   --->   "%call_ret1 = call i32 @mac_blocks_down_q4k, i128 %row_buf, i128 %row_buf_1, i128 %row_buf_2, i128 %row_buf_3, i128 %row_buf_4, i128 %row_buf_5, i128 %row_buf_6, i128 %row_buf_7, i128 %row_buf_8, i128 %row_buf_9, i128 %row_buf_10, i128 %row_buf_11, i128 %row_buf_12, i128 %row_buf_13, i128 %row_buf_14, i128 %row_buf_15, i128 %row_buf_16, i128 %row_buf_17, i128 %row_buf_18, i128 %row_buf_19, i128 %row_buf_20, i128 %row_buf_21, i128 %row_buf_22, i128 %row_buf_23, i128 %row_buf_24, i128 %row_buf_25, i128 %row_buf_26, i128 %row_buf_27, i128 %row_buf_28, i128 %row_buf_29, i128 %row_buf_30, i128 %row_buf_31, i8 %gate_cache_0, i8 %gate_cache_1, i8 %gate_cache_2, i8 %gate_cache_3, i8 %gate_cache_4, i8 %gate_cache_5, i8 %gate_cache_6, i8 %gate_cache_7, i8 %gate_cache_8, i8 %gate_cache_9, i8 %gate_cache_10, i8 %gate_cache_11, i8 %gate_cache_12, i8 %gate_cache_13, i8 %gate_cache_14, i8 %gate_cache_15, i8 %gate_cache_16, i8 %gate_cache_17, i8 %gate_cache_18, i8 %gate_cache_19, i8 %gate_cache_20, i8 %gate_cache_21, i8 %gate_cache_22, i8 %gate_cache_23, i8 %gate_cache_24, i8 %gate_cache_25, i8 %gate_cache_26, i8 %gate_cache_27, i8 %gate_cache_28, i8 %gate_cache_29, i8 %gate_cache_30, i8 %gate_cache_31, i32 %p_read_1" [swiglu.cpp:502->swiglu.cpp:611]   --->   Operation 238 'call' 'call_ret1' <Predicate = true> <Delay = 2.41> <CoreType = "Generic">   --->   Generic Core
+ST_10 : Operation 157 [2/2] (2.41ns)   --->   "%call_ret = call i32 @mac_blocks_down_q4k3, i128 %row_buf, i128 %row_buf_1, i128 %row_buf_2, i128 %row_buf_3, i128 %row_buf_4, i128 %row_buf_5, i128 %row_buf_6, i128 %row_buf_7, i8 %gate_cache_0, i8 %gate_cache_1, i8 %gate_cache_2, i8 %gate_cache_3, i8 %gate_cache_4, i8 %gate_cache_5, i8 %gate_cache_6, i8 %gate_cache_7, i32 %p_read_1" [swiglu.cpp:498->swiglu.cpp:606]   --->   Operation 157 'call' 'call_ret' <Predicate = true> <Delay = 2.41> <CoreType = "Generic">   --->   Generic Core
 
 State 11 <SV = 5> <Delay = 2.26>
-ST_11 : Operation 239 [1/2] (2.26ns)   --->   "%call_ret1 = call i32 @mac_blocks_down_q4k, i128 %row_buf, i128 %row_buf_1, i128 %row_buf_2, i128 %row_buf_3, i128 %row_buf_4, i128 %row_buf_5, i128 %row_buf_6, i128 %row_buf_7, i128 %row_buf_8, i128 %row_buf_9, i128 %row_buf_10, i128 %row_buf_11, i128 %row_buf_12, i128 %row_buf_13, i128 %row_buf_14, i128 %row_buf_15, i128 %row_buf_16, i128 %row_buf_17, i128 %row_buf_18, i128 %row_buf_19, i128 %row_buf_20, i128 %row_buf_21, i128 %row_buf_22, i128 %row_buf_23, i128 %row_buf_24, i128 %row_buf_25, i128 %row_buf_26, i128 %row_buf_27, i128 %row_buf_28, i128 %row_buf_29, i128 %row_buf_30, i128 %row_buf_31, i8 %gate_cache_0, i8 %gate_cache_1, i8 %gate_cache_2, i8 %gate_cache_3, i8 %gate_cache_4, i8 %gate_cache_5, i8 %gate_cache_6, i8 %gate_cache_7, i8 %gate_cache_8, i8 %gate_cache_9, i8 %gate_cache_10, i8 %gate_cache_11, i8 %gate_cache_12, i8 %gate_cache_13, i8 %gate_cache_14, i8 %gate_cache_15, i8 %gate_cache_16, i8 %gate_cache_17, i8 %gate_cache_18, i8 %gate_cache_19, i8 %gate_cache_20, i8 %gate_cache_21, i8 %gate_cache_22, i8 %gate_cache_23, i8 %gate_cache_24, i8 %gate_cache_25, i8 %gate_cache_26, i8 %gate_cache_27, i8 %gate_cache_28, i8 %gate_cache_29, i8 %gate_cache_30, i8 %gate_cache_31, i32 %p_read_1" [swiglu.cpp:502->swiglu.cpp:611]   --->   Operation 239 'call' 'call_ret1' <Predicate = true> <Delay = 2.26> <CoreType = "Generic">   --->   Generic Core
+ST_11 : Operation 158 [1/2] (2.26ns)   --->   "%call_ret = call i32 @mac_blocks_down_q4k3, i128 %row_buf, i128 %row_buf_1, i128 %row_buf_2, i128 %row_buf_3, i128 %row_buf_4, i128 %row_buf_5, i128 %row_buf_6, i128 %row_buf_7, i8 %gate_cache_0, i8 %gate_cache_1, i8 %gate_cache_2, i8 %gate_cache_3, i8 %gate_cache_4, i8 %gate_cache_5, i8 %gate_cache_6, i8 %gate_cache_7, i32 %p_read_1" [swiglu.cpp:498->swiglu.cpp:606]   --->   Operation 158 'call' 'call_ret' <Predicate = true> <Delay = 2.26> <CoreType = "Generic">   --->   Generic Core
 
 State 12 <SV = 6> <Delay = 1.23>
-ST_12 : Operation 240 [1/1] (0.00ns)   --->   "%zext_ln497 = zext i12 %out_i_1" [swiglu.cpp:497->swiglu.cpp:611]   --->   Operation 240 'zext' 'zext_ln497' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 241 [1/1] (0.00ns)   --->   "%speclooptripcount_ln497 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2048, i64 2048, i64 2048" [swiglu.cpp:497->swiglu.cpp:611]   --->   Operation 241 'speclooptripcount' 'speclooptripcount_ln497' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 242 [1/1] (0.00ns)   --->   "%specloopname_ln497 = specloopname void @_ssdm_op_SpecLoopName, void @empty_30" [swiglu.cpp:497->swiglu.cpp:611]   --->   Operation 242 'specloopname' 'specloopname_ln497' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 243 [1/1] (0.00ns)   --->   "%out_local_addr = getelementptr i32 %out_local, i64 0, i64 %zext_ln497" [swiglu.cpp:502->swiglu.cpp:611]   --->   Operation 243 'getelementptr' 'out_local_addr' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 244 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln502 = store i32 %call_ret1, i11 %out_local_addr" [swiglu.cpp:502->swiglu.cpp:611]   --->   Operation 244 'store' 'store_ln502' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2048> <RAM>
-ST_12 : Operation 245 [1/1] (0.47ns)   --->   "%store_ln497 = store i12 %add_ln497, i12 %out_i" [swiglu.cpp:497->swiglu.cpp:611]   --->   Operation 245 'store' 'store_ln497' <Predicate = true> <Delay = 0.47>
-ST_12 : Operation 246 [1/1] (0.00ns)   --->   "%br_ln497 = br void %for.inc.i" [swiglu.cpp:497->swiglu.cpp:611]   --->   Operation 246 'br' 'br_ln497' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 159 [1/1] (0.00ns)   --->   "%zext_ln494 = zext i12 %out_i_1" [swiglu.cpp:494->swiglu.cpp:606]   --->   Operation 159 'zext' 'zext_ln494' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 160 [1/1] (0.00ns)   --->   "%speclooptripcount_ln494 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2048, i64 2048, i64 2048" [swiglu.cpp:494->swiglu.cpp:606]   --->   Operation 160 'speclooptripcount' 'speclooptripcount_ln494' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 161 [1/1] (0.00ns)   --->   "%specloopname_ln494 = specloopname void @_ssdm_op_SpecLoopName, void @empty_30" [swiglu.cpp:494->swiglu.cpp:606]   --->   Operation 161 'specloopname' 'specloopname_ln494' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 162 [1/1] (0.00ns)   --->   "%out_local_addr = getelementptr i32 %out_local, i64 0, i64 %zext_ln494" [swiglu.cpp:498->swiglu.cpp:606]   --->   Operation 162 'getelementptr' 'out_local_addr' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 163 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln498 = store i32 %call_ret, i11 %out_local_addr" [swiglu.cpp:498->swiglu.cpp:606]   --->   Operation 163 'store' 'store_ln498' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2048> <RAM>
+ST_12 : Operation 164 [1/1] (0.47ns)   --->   "%store_ln494 = store i12 %add_ln494, i12 %out_i" [swiglu.cpp:494->swiglu.cpp:606]   --->   Operation 164 'store' 'store_ln494' <Predicate = true> <Delay = 0.47>
+ST_12 : Operation 165 [1/1] (0.00ns)   --->   "%br_ln494 = br void %for.inc.i" [swiglu.cpp:494->swiglu.cpp:606]   --->   Operation 165 'br' 'br_ln494' <Predicate = true> <Delay = 0.00>
 
 State 13 <SV = 2> <Delay = 0.00>
-ST_13 : Operation 247 [2/2] (0.00ns)   --->   "%call_ln513 = call void @compute_output_Pipeline_1, i32 %gmem_out, i62 %trunc_ln, i32 %out_local" [swiglu.cpp:513->swiglu.cpp:611]   --->   Operation 247 'call' 'call_ln513' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_13 : Operation 166 [2/2] (0.00ns)   --->   "%call_ln509 = call void @compute_output_Pipeline_1, i32 %gmem_out, i62 %trunc_ln, i32 %out_local" [swiglu.cpp:509->swiglu.cpp:606]   --->   Operation 166 'call' 'call_ln509' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
 
 State 14 <SV = 3> <Delay = 0.00>
-ST_14 : Operation 248 [1/2] (0.00ns)   --->   "%call_ln513 = call void @compute_output_Pipeline_1, i32 %gmem_out, i62 %trunc_ln, i32 %out_local" [swiglu.cpp:513->swiglu.cpp:611]   --->   Operation 248 'call' 'call_ln513' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_14 : Operation 167 [1/2] (0.00ns)   --->   "%call_ln509 = call void @compute_output_Pipeline_1, i32 %gmem_out, i62 %trunc_ln, i32 %out_local" [swiglu.cpp:509->swiglu.cpp:606]   --->   Operation 167 'call' 'call_ln509' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
 
 State 15 <SV = 4> <Delay = 2.43>
-ST_15 : Operation 249 [68/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 249 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 168 [68/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 168 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 16 <SV = 5> <Delay = 2.43>
-ST_16 : Operation 250 [67/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 250 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 169 [67/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 169 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 17 <SV = 6> <Delay = 2.43>
-ST_17 : Operation 251 [66/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 251 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 170 [66/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 170 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 18 <SV = 7> <Delay = 2.43>
-ST_18 : Operation 252 [65/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 252 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 171 [65/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 171 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 19 <SV = 8> <Delay = 2.43>
-ST_19 : Operation 253 [64/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 253 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 172 [64/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 172 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 20 <SV = 9> <Delay = 2.43>
-ST_20 : Operation 254 [63/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 254 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 173 [63/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 173 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 21 <SV = 10> <Delay = 2.43>
-ST_21 : Operation 255 [62/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 255 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 174 [62/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 174 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 22 <SV = 11> <Delay = 2.43>
-ST_22 : Operation 256 [61/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 256 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 175 [61/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 175 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 23 <SV = 12> <Delay = 2.43>
-ST_23 : Operation 257 [60/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 257 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_23 : Operation 176 [60/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 176 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 24 <SV = 13> <Delay = 2.43>
-ST_24 : Operation 258 [59/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 258 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_24 : Operation 177 [59/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 177 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 25 <SV = 14> <Delay = 2.43>
-ST_25 : Operation 259 [58/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 259 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_25 : Operation 178 [58/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 178 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 26 <SV = 15> <Delay = 2.43>
-ST_26 : Operation 260 [57/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 260 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_26 : Operation 179 [57/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 179 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 27 <SV = 16> <Delay = 2.43>
-ST_27 : Operation 261 [56/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 261 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_27 : Operation 180 [56/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 180 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 28 <SV = 17> <Delay = 2.43>
-ST_28 : Operation 262 [55/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 262 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_28 : Operation 181 [55/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 181 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 29 <SV = 18> <Delay = 2.43>
-ST_29 : Operation 263 [54/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 263 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_29 : Operation 182 [54/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 182 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 30 <SV = 19> <Delay = 2.43>
-ST_30 : Operation 264 [53/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 264 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_30 : Operation 183 [53/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 183 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 31 <SV = 20> <Delay = 2.43>
-ST_31 : Operation 265 [52/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 265 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_31 : Operation 184 [52/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 184 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 32 <SV = 21> <Delay = 2.43>
-ST_32 : Operation 266 [51/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 266 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_32 : Operation 185 [51/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 185 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 33 <SV = 22> <Delay = 2.43>
-ST_33 : Operation 267 [50/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 267 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_33 : Operation 186 [50/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 186 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 34 <SV = 23> <Delay = 2.43>
-ST_34 : Operation 268 [49/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 268 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_34 : Operation 187 [49/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 187 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 35 <SV = 24> <Delay = 2.43>
-ST_35 : Operation 269 [48/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 269 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_35 : Operation 188 [48/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 188 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 36 <SV = 25> <Delay = 2.43>
-ST_36 : Operation 270 [47/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 270 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_36 : Operation 189 [47/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 189 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 37 <SV = 26> <Delay = 2.43>
-ST_37 : Operation 271 [46/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 271 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_37 : Operation 190 [46/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 190 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 38 <SV = 27> <Delay = 2.43>
-ST_38 : Operation 272 [45/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 272 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_38 : Operation 191 [45/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 191 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 39 <SV = 28> <Delay = 2.43>
-ST_39 : Operation 273 [44/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 273 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_39 : Operation 192 [44/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 192 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 40 <SV = 29> <Delay = 2.43>
-ST_40 : Operation 274 [43/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 274 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_40 : Operation 193 [43/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 193 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 41 <SV = 30> <Delay = 2.43>
-ST_41 : Operation 275 [42/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 275 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_41 : Operation 194 [42/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 194 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 42 <SV = 31> <Delay = 2.43>
-ST_42 : Operation 276 [41/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 276 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_42 : Operation 195 [41/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 195 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 43 <SV = 32> <Delay = 2.43>
-ST_43 : Operation 277 [40/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 277 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_43 : Operation 196 [40/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 196 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 44 <SV = 33> <Delay = 2.43>
-ST_44 : Operation 278 [39/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 278 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_44 : Operation 197 [39/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 197 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 45 <SV = 34> <Delay = 2.43>
-ST_45 : Operation 279 [38/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 279 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_45 : Operation 198 [38/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 198 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 46 <SV = 35> <Delay = 2.43>
-ST_46 : Operation 280 [37/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 280 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_46 : Operation 199 [37/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 199 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 47 <SV = 36> <Delay = 2.43>
-ST_47 : Operation 281 [36/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 281 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_47 : Operation 200 [36/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 200 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 48 <SV = 37> <Delay = 2.43>
-ST_48 : Operation 282 [35/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 282 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_48 : Operation 201 [35/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 201 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 49 <SV = 38> <Delay = 2.43>
-ST_49 : Operation 283 [34/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 283 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_49 : Operation 202 [34/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 202 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 50 <SV = 39> <Delay = 2.43>
-ST_50 : Operation 284 [33/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 284 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_50 : Operation 203 [33/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 203 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 51 <SV = 40> <Delay = 2.43>
-ST_51 : Operation 285 [32/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 285 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_51 : Operation 204 [32/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 204 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 52 <SV = 41> <Delay = 2.43>
-ST_52 : Operation 286 [31/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 286 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_52 : Operation 205 [31/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 205 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 53 <SV = 42> <Delay = 2.43>
-ST_53 : Operation 287 [30/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 287 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_53 : Operation 206 [30/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 206 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 54 <SV = 43> <Delay = 2.43>
-ST_54 : Operation 288 [29/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 288 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_54 : Operation 207 [29/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 207 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 55 <SV = 44> <Delay = 2.43>
-ST_55 : Operation 289 [28/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 289 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_55 : Operation 208 [28/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 208 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 56 <SV = 45> <Delay = 2.43>
-ST_56 : Operation 290 [27/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 290 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_56 : Operation 209 [27/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 209 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 57 <SV = 46> <Delay = 2.43>
-ST_57 : Operation 291 [26/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 291 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_57 : Operation 210 [26/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 210 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 58 <SV = 47> <Delay = 2.43>
-ST_58 : Operation 292 [25/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 292 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_58 : Operation 211 [25/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 211 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 59 <SV = 48> <Delay = 2.43>
-ST_59 : Operation 293 [24/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 293 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_59 : Operation 212 [24/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 212 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 60 <SV = 49> <Delay = 2.43>
-ST_60 : Operation 294 [23/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 294 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_60 : Operation 213 [23/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 213 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 61 <SV = 50> <Delay = 2.43>
-ST_61 : Operation 295 [22/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 295 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_61 : Operation 214 [22/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 214 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 62 <SV = 51> <Delay = 2.43>
-ST_62 : Operation 296 [21/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 296 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_62 : Operation 215 [21/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 215 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 63 <SV = 52> <Delay = 2.43>
-ST_63 : Operation 297 [20/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 297 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_63 : Operation 216 [20/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 216 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 64 <SV = 53> <Delay = 2.43>
-ST_64 : Operation 298 [19/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 298 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_64 : Operation 217 [19/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 217 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 65 <SV = 54> <Delay = 2.43>
-ST_65 : Operation 299 [18/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 299 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_65 : Operation 218 [18/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 218 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 66 <SV = 55> <Delay = 2.43>
-ST_66 : Operation 300 [17/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 300 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_66 : Operation 219 [17/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 219 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 67 <SV = 56> <Delay = 2.43>
-ST_67 : Operation 301 [16/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 301 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_67 : Operation 220 [16/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 220 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 68 <SV = 57> <Delay = 2.43>
-ST_68 : Operation 302 [15/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 302 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_68 : Operation 221 [15/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 221 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 69 <SV = 58> <Delay = 2.43>
-ST_69 : Operation 303 [14/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 303 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_69 : Operation 222 [14/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 222 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 70 <SV = 59> <Delay = 2.43>
-ST_70 : Operation 304 [13/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 304 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_70 : Operation 223 [13/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 223 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 71 <SV = 60> <Delay = 2.43>
-ST_71 : Operation 305 [12/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 305 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_71 : Operation 224 [12/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 224 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 72 <SV = 61> <Delay = 2.43>
-ST_72 : Operation 306 [11/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 306 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_72 : Operation 225 [11/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 225 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 73 <SV = 62> <Delay = 2.43>
-ST_73 : Operation 307 [10/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 307 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_73 : Operation 226 [10/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 226 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 74 <SV = 63> <Delay = 2.43>
-ST_74 : Operation 308 [9/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 308 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_74 : Operation 227 [9/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 227 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 75 <SV = 64> <Delay = 2.43>
-ST_75 : Operation 309 [8/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 309 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_75 : Operation 228 [8/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 228 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 76 <SV = 65> <Delay = 2.43>
-ST_76 : Operation 310 [7/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 310 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_76 : Operation 229 [7/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 229 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 77 <SV = 66> <Delay = 2.43>
-ST_77 : Operation 311 [6/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 311 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_77 : Operation 230 [6/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 230 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 78 <SV = 67> <Delay = 2.43>
-ST_78 : Operation 312 [5/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 312 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_78 : Operation 231 [5/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 231 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 79 <SV = 68> <Delay = 2.43>
-ST_79 : Operation 313 [4/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 313 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_79 : Operation 232 [4/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 232 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 80 <SV = 69> <Delay = 2.43>
-ST_80 : Operation 314 [3/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 314 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_80 : Operation 233 [3/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 233 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 81 <SV = 70> <Delay = 2.43>
-ST_81 : Operation 315 [2/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 315 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_81 : Operation 234 [2/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 234 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 82 <SV = 71> <Delay = 2.43>
-ST_82 : Operation 316 [1/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:514->swiglu.cpp:611]   --->   Operation 316 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_82 : Operation 317 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 317 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+ST_82 : Operation 235 [1/68] (2.43ns)   --->   "%empty_139 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_out_addr" [swiglu.cpp:510->swiglu.cpp:606]   --->   Operation 235 'writeresp' 'empty_139' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_82 : Operation 236 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 236 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -566,20 +485,18 @@ ST_82 : Operation 317 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operatio
 ============================================================
 Target clock period: 3.330ns, clock uncertainty: 0.900ns.
 
- <State 1>: 1.492ns
+ <State 1>: 1.215ns
 The critical path consists of the following:
-	wire read operation ('down_quant_mode_read') on port 'down_quant_mode' [73]  (0.000 ns)
-	'icmp' operation 1 bit ('icmp_ln496', swiglu.cpp:496->swiglu.cpp:611) [126]  (1.016 ns)
-	'store' operation 0 bit ('store_ln505', swiglu.cpp:505->swiglu.cpp:611) of constant 0 on local variable 'out_i', swiglu.cpp:505->swiglu.cpp:611 [130]  (0.476 ns)
+	wire read operation ('p_read_1') on port 'p_read' [28]  (1.215 ns)
 
  <State 2>: 2.430ns
 The critical path consists of the following:
-	'getelementptr' operation 32 bit ('gmem_out_addr', swiglu.cpp:513->swiglu.cpp:611) [206]  (0.000 ns)
-	bus request operation ('empty', swiglu.cpp:513->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:513->swiglu.cpp:611) [207]  (2.430 ns)
+	'getelementptr' operation 32 bit ('gmem_out_addr', swiglu.cpp:509->swiglu.cpp:606) [101]  (0.000 ns)
+	bus request operation ('empty', swiglu.cpp:509->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:509->swiglu.cpp:606) [102]  (2.430 ns)
 
  <State 3>: 2.284ns
 The critical path consists of the following:
-	'call' operation 0 bit ('call_ln508', swiglu.cpp:508->swiglu.cpp:611) to 'load_row_down_q6k' [142]  (2.284 ns)
+	'call' operation 0 bit ('call_ln504', swiglu.cpp:504->swiglu.cpp:606) to 'load_row_down_q6k' [70]  (2.284 ns)
 
  <State 4>: 0.000ns
 The critical path consists of the following:
@@ -589,32 +506,32 @@ The critical path consists of the following:
 
  <State 6>: 2.262ns
 The critical path consists of the following:
-	'call' operation 32 bit ('call_ret', swiglu.cpp:509->swiglu.cpp:611) to 'mac_blocks_down_q6k' [144]  (2.262 ns)
+	'call' operation 32 bit ('call_ret2', swiglu.cpp:505->swiglu.cpp:606) to 'mac_blocks_down_q6k' [72]  (2.262 ns)
 
  <State 7>: 1.237ns
 The critical path consists of the following:
-	'getelementptr' operation 11 bit ('out_local_addr_1', swiglu.cpp:509->swiglu.cpp:611) [143]  (0.000 ns)
-	'store' operation 0 bit ('store_ln509', swiglu.cpp:509->swiglu.cpp:611) of variable 'call_ret', swiglu.cpp:509->swiglu.cpp:611 on array 'out_local', swiglu.cpp:493->swiglu.cpp:611 [145]  (1.237 ns)
+	'getelementptr' operation 11 bit ('out_local_addr_1', swiglu.cpp:505->swiglu.cpp:606) [71]  (0.000 ns)
+	'store' operation 0 bit ('store_ln505', swiglu.cpp:505->swiglu.cpp:606) of variable 'call_ret2', swiglu.cpp:505->swiglu.cpp:606 on array 'out_local', swiglu.cpp:490->swiglu.cpp:606 [73]  (1.237 ns)
 
  <State 8>: 2.009ns
 The critical path consists of the following:
-	'call' operation 0 bit ('call_ln501', swiglu.cpp:501->swiglu.cpp:611) to 'load_row_down_q4k' [195]  (2.009 ns)
+	'call' operation 0 bit ('call_ln497', swiglu.cpp:497->swiglu.cpp:606) to 'load_row_down_q4k' [90]  (2.009 ns)
 
  <State 9>: 0.000ns
 The critical path consists of the following:
 
  <State 10>: 2.416ns
 The critical path consists of the following:
-	'call' operation 32 bit ('call_ret1', swiglu.cpp:502->swiglu.cpp:611) to 'mac_blocks_down_q4k' [197]  (2.416 ns)
+	'call' operation 32 bit ('call_ret', swiglu.cpp:498->swiglu.cpp:606) to 'mac_blocks_down_q4k3' [92]  (2.416 ns)
 
  <State 11>: 2.262ns
 The critical path consists of the following:
-	'call' operation 32 bit ('call_ret1', swiglu.cpp:502->swiglu.cpp:611) to 'mac_blocks_down_q4k' [197]  (2.262 ns)
+	'call' operation 32 bit ('call_ret', swiglu.cpp:498->swiglu.cpp:606) to 'mac_blocks_down_q4k3' [92]  (2.262 ns)
 
  <State 12>: 1.237ns
 The critical path consists of the following:
-	'getelementptr' operation 11 bit ('out_local_addr', swiglu.cpp:502->swiglu.cpp:611) [196]  (0.000 ns)
-	'store' operation 0 bit ('store_ln502', swiglu.cpp:502->swiglu.cpp:611) of variable 'call_ret1', swiglu.cpp:502->swiglu.cpp:611 on array 'out_local', swiglu.cpp:493->swiglu.cpp:611 [198]  (1.237 ns)
+	'getelementptr' operation 11 bit ('out_local_addr', swiglu.cpp:498->swiglu.cpp:606) [91]  (0.000 ns)
+	'store' operation 0 bit ('store_ln498', swiglu.cpp:498->swiglu.cpp:606) of variable 'call_ret', swiglu.cpp:498->swiglu.cpp:606 on array 'out_local', swiglu.cpp:490->swiglu.cpp:606 [93]  (1.237 ns)
 
  <State 13>: 0.000ns
 The critical path consists of the following:
@@ -624,275 +541,275 @@ The critical path consists of the following:
 
  <State 15>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 16>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 17>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 18>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 19>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 20>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 21>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 22>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 23>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 24>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 25>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 26>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 27>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 28>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 29>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 30>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 31>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 32>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 33>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 34>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 35>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 36>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 37>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 38>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 39>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 40>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 41>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 42>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 43>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 44>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 45>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 46>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 47>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 48>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 49>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 50>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 51>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 52>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 53>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 54>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 55>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 56>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 57>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 58>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 59>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 60>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 61>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 62>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 63>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 64>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 65>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 66>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 67>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 68>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 69>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 70>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 71>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 72>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 73>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 74>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 75>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 76>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 77>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 78>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 79>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 80>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 81>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
  <State 82>: 2.430ns
 The critical path consists of the following:
-	bus response operation ('empty_139', swiglu.cpp:514->swiglu.cpp:611) on port 'gmem_out' (swiglu.cpp:514->swiglu.cpp:611) [209]  (2.430 ns)
+	bus response operation ('empty_139', swiglu.cpp:510->swiglu.cpp:606) on port 'gmem_out' (swiglu.cpp:510->swiglu.cpp:606) [104]  (2.430 ns)
 
 
 ============================================================

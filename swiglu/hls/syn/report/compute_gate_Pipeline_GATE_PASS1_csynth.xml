@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:274</SourceLocation>
+<SourceLocation>swiglu.cpp:272</SourceLocation>
 <SummaryOfLoopViolations>
 <GATE_PASS1>
 <Name>GATE_PASS1</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:274</SourceLocation>
+<SourceLocation>swiglu.cpp:272</SourceLocation>
 </GATE_PASS1>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -146,7 +146,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1171_p_din0</name>
+<name>grp_fu_1073_p_din0</name>
 <Object>compute_gate_Pipeline_GATE_PASS1</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -157,7 +157,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1171_p_din1</name>
+<name>grp_fu_1073_p_din1</name>
 <Object>compute_gate_Pipeline_GATE_PASS1</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -168,7 +168,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1171_p_dout0</name>
+<name>grp_fu_1073_p_dout0</name>
 <Object>compute_gate_Pipeline_GATE_PASS1</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -179,7 +179,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1171_p_ce</name>
+<name>grp_fu_1073_p_ce</name>
 <Object>compute_gate_Pipeline_GATE_PASS1</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -190,7 +190,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_239_p_din0</name>
+<name>grp_fu_141_p_din0</name>
 <Object>compute_gate_Pipeline_GATE_PASS1</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -201,7 +201,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_239_p_din1</name>
+<name>grp_fu_141_p_din1</name>
 <Object>compute_gate_Pipeline_GATE_PASS1</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -212,7 +212,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_239_p_opcode</name>
+<name>grp_fu_141_p_opcode</name>
 <Object>compute_gate_Pipeline_GATE_PASS1</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -223,7 +223,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_239_p_dout0</name>
+<name>grp_fu_141_p_dout0</name>
 <Object>compute_gate_Pipeline_GATE_PASS1</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -234,7 +234,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_239_p_ce</name>
+<name>grp_fu_141_p_ce</name>
 <Object>compute_gate_Pipeline_GATE_PASS1</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -311,7 +311,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>gate_fp_address0</name>
+<name>gate_fp_address1</name>
 <Object>gate_fp</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -322,7 +322,7 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>gate_fp_ce0</name>
+<name>gate_fp_ce1</name>
 <Object>gate_fp</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -333,7 +333,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>gate_fp_we0</name>
+<name>gate_fp_we1</name>
 <Object>gate_fp</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -344,7 +344,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>gate_fp_d0</name>
+<name>gate_fp_d1</name>
 <Object>gate_fp</Object>
 <Type>array</Type>
 <Scope></Scope>

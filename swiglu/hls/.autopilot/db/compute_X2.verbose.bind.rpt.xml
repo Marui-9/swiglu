@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_X2'" level="0">
-<item name = "Date">Sun Mar 29 14:22:06 2026
+<item name = "Date">Sun Mar 29 14:52:55 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -31,8 +31,8 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_row_wv_fu_393">load_row_wv, 148, 148, 0.493 us, 0.493 us, 148, 148, no</column>
-<column name="grp_mac_blocks_wv_fu_409">mac_blocks_wv, 405, 405, 1.349 us, 1.349 us, 405, 405, no</column>
+<column name="grp_load_row_wv_fu_389">load_row_wv, 148, 148, 0.493 us, 0.493 us, 148, 148, no</column>
+<column name="grp_mac_blocks_wv_fu_405">mac_blocks_wv, 405, 405, 1.349 us, 1.349 us, 405, 405, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

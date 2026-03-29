@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:513~swiglu.cpp:611</SourceLocation>
+<SourceLocation>swiglu.cpp:509~swiglu.cpp:606</SourceLocation>
 <SummaryOfLoopViolations>
 <Loop1>
 <Name>Loop 1</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:513~swiglu.cpp:611</SourceLocation>
+<SourceLocation>swiglu.cpp:509~swiglu.cpp:606</SourceLocation>
 </Loop1>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -652,8 +652,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sext_ln513</name>
-<Object>sext_ln513</Object>
+<name>sext_ln509</name>
+<Object>sext_ln509</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

@@ -46,10 +46,10 @@ newFuncRoot:0 %loop_index_i = alloca i32 1
 
 <Node id="5" bw="62" op_0_bw="62" op_1_bw="62">
 <![CDATA[
-newFuncRoot:1 %sext_ln513_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln513
+newFuncRoot:1 %sext_ln509_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln509
 
 ]]></Node>
-<StgValue><ssdm name="sext_ln513_read"/></StgValue>
+<StgValue><ssdm name="sext_ln509_read"/></StgValue>
 </operation>
 
 <operation id="8" st_id="1" stage="1" lat="1">
@@ -61,10 +61,10 @@ newFuncRoot:1 %sext_ln513_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_
 
 <Node id="6" bw="64" op_0_bw="62">
 <![CDATA[
-newFuncRoot:2 %sext_ln513_cast = sext i62 %sext_ln513_read
+newFuncRoot:2 %sext_ln509_cast = sext i62 %sext_ln509_read
 
 ]]></Node>
-<StgValue><ssdm name="sext_ln513_cast"/></StgValue>
+<StgValue><ssdm name="sext_ln509_cast"/></StgValue>
 </operation>
 
 <operation id="9" st_id="1" stage="1" lat="1">
@@ -76,7 +76,7 @@ newFuncRoot:2 %sext_ln513_cast = sext i62 %sext_ln513_read
 
 <Node id="7" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-newFuncRoot:3 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 2048, void @empty_2, void @empty_35, void @empty_32, i32 16, i32 2, i32 16, i32 256, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0
+newFuncRoot:3 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 2048, void @empty_2, void @empty_35, void @empty_32, i32 16, i32 16, i32 16, i32 256, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -282,7 +282,7 @@ _ZL14compute_outputPKhPA32_A256_KaPKfPfj.1.1.exit.exitStub:0 %ret_ln0 = ret
 
 <Node id="16" bw="32" op_0_bw="32" op_1_bw="64">
 <![CDATA[
-load-store-loop.split.i:0 %gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln513_cast
+load-store-loop.split.i:0 %gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln509_cast
 
 ]]></Node>
 <StgValue><ssdm name="gmem_out_addr"/></StgValue>
@@ -342,10 +342,10 @@ load-store-loop.split.i:6 %empty_138 = bitcast i32 %out_local_load
 
 <Node id="23" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="4">
 <![CDATA[
-load-store-loop.split.i:7 %write_ln513 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_out_addr, i32 %empty_138, i4 15
+load-store-loop.split.i:7 %write_ln509 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_out_addr, i32 %empty_138, i4 15
 
 ]]></Node>
-<StgValue><ssdm name="write_ln513"/></StgValue>
+<StgValue><ssdm name="write_ln509"/></StgValue>
 </operation>
 
 <operation id="26" st_id="3" stage="1" lat="1">
@@ -371,8 +371,8 @@ load-store-loop.split.i:9 %br_ln0 = br void %load-store-loop.i
 <core>NULL</core><StgValue><ssdm name="gmem_out"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </port>
-<port id="40" name="sext_ln513" dir="0" iftype="0">
-<core>NULL</core><StgValue><ssdm name="sext_ln513"/></StgValue>
+<port id="40" name="sext_ln509" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="sext_ln509"/></StgValue>
 </port>
 <port id="41" name="out_local" dir="0" iftype="1">
 <core>RAM</core><StgValue><ssdm name="out_local"/><MemPortTyVec>1 3 </MemPortTyVec>
@@ -384,11 +384,11 @@ load-store-loop.split.i:9 %br_ln0 = br void %load-store-loop.i
 <dataflows>
 <dataflow id="43" from="StgValue_42" to="loop_index_i" fromId="42" toId="6">
 </dataflow>
-<dataflow id="45" from="_ssdm_op_Read.ap_auto.i62" to="sext_ln513_read" fromId="44" toId="7">
+<dataflow id="45" from="_ssdm_op_Read.ap_auto.i62" to="sext_ln509_read" fromId="44" toId="7">
 </dataflow>
-<dataflow id="46" from="sext_ln513" to="sext_ln513_read" fromId="40" toId="7">
+<dataflow id="46" from="sext_ln509" to="sext_ln509_read" fromId="40" toId="7">
 </dataflow>
-<dataflow id="47" from="sext_ln513_read" to="sext_ln513_cast" fromId="7" toId="8">
+<dataflow id="47" from="sext_ln509_read" to="sext_ln509_cast" fromId="7" toId="8">
 </dataflow>
 <dataflow id="49" from="_ssdm_op_SpecInterface" to="specinterface_ln0" fromId="48" toId="9">
 </dataflow>
@@ -414,91 +414,91 @@ load-store-loop.split.i:9 %br_ln0 = br void %load-store-loop.i
 </dataflow>
 <dataflow id="68" from="StgValue_67" to="specinterface_ln0" fromId="67" toId="9">
 </dataflow>
-<dataflow id="70" from="StgValue_69" to="specinterface_ln0" fromId="69" toId="9">
+<dataflow id="69" from="StgValue_67" to="specinterface_ln0" fromId="67" toId="9">
 </dataflow>
-<dataflow id="71" from="StgValue_67" to="specinterface_ln0" fromId="67" toId="9">
+<dataflow id="70" from="StgValue_67" to="specinterface_ln0" fromId="67" toId="9">
 </dataflow>
-<dataflow id="73" from="StgValue_72" to="specinterface_ln0" fromId="72" toId="9">
+<dataflow id="72" from="StgValue_71" to="specinterface_ln0" fromId="71" toId="9">
+</dataflow>
+<dataflow id="73" from="empty_32" to="specinterface_ln0" fromId="56" toId="9">
 </dataflow>
 <dataflow id="74" from="empty_32" to="specinterface_ln0" fromId="56" toId="9">
 </dataflow>
-<dataflow id="75" from="empty_32" to="specinterface_ln0" fromId="56" toId="9">
+<dataflow id="76" from="StgValue_75" to="specinterface_ln0" fromId="75" toId="9">
 </dataflow>
-<dataflow id="77" from="StgValue_76" to="specinterface_ln0" fromId="76" toId="9">
+<dataflow id="77" from="StgValue_53" to="specinterface_ln0" fromId="53" toId="9">
 </dataflow>
 <dataflow id="78" from="StgValue_53" to="specinterface_ln0" fromId="53" toId="9">
 </dataflow>
-<dataflow id="79" from="StgValue_53" to="specinterface_ln0" fromId="53" toId="9">
+<dataflow id="80" from="StgValue_79" to="store_ln0" fromId="79" toId="10">
 </dataflow>
-<dataflow id="81" from="StgValue_80" to="store_ln0" fromId="80" toId="10">
+<dataflow id="81" from="loop_index_i" to="store_ln0" fromId="6" toId="10">
 </dataflow>
-<dataflow id="82" from="loop_index_i" to="store_ln0" fromId="6" toId="10">
+<dataflow id="82" from="loop_index_i" to="loop_index_i_load" fromId="6" toId="12">
 </dataflow>
-<dataflow id="83" from="loop_index_i" to="loop_index_i_load" fromId="6" toId="12">
+<dataflow id="83" from="loop_index_i_load" to="exitcond4_i" fromId="12" toId="13">
 </dataflow>
-<dataflow id="84" from="loop_index_i_load" to="exitcond4_i" fromId="12" toId="13">
+<dataflow id="85" from="StgValue_84" to="exitcond4_i" fromId="84" toId="13">
 </dataflow>
-<dataflow id="86" from="StgValue_85" to="exitcond4_i" fromId="85" toId="13">
+<dataflow id="86" from="loop_index_i_load" to="empty" fromId="12" toId="14">
 </dataflow>
-<dataflow id="87" from="loop_index_i_load" to="empty" fromId="12" toId="14">
+<dataflow id="88" from="StgValue_87" to="empty" fromId="87" toId="14">
 </dataflow>
-<dataflow id="89" from="StgValue_88" to="empty" fromId="88" toId="14">
+<dataflow id="89" from="exitcond4_i" to="br_ln0" fromId="13" toId="15">
 </dataflow>
-<dataflow id="90" from="exitcond4_i" to="br_ln0" fromId="13" toId="15">
+<dataflow id="90" from="loop_index_i_load" to="loop_index_i_cast" fromId="12" toId="16">
 </dataflow>
-<dataflow id="91" from="loop_index_i_load" to="loop_index_i_cast" fromId="12" toId="16">
+<dataflow id="91" from="out_local" to="out_local_addr" fromId="41" toId="17">
 </dataflow>
-<dataflow id="92" from="out_local" to="out_local_addr" fromId="41" toId="17">
+<dataflow id="93" from="StgValue_92" to="out_local_addr" fromId="92" toId="17">
 </dataflow>
-<dataflow id="94" from="StgValue_93" to="out_local_addr" fromId="93" toId="17">
+<dataflow id="94" from="loop_index_i_cast" to="out_local_addr" fromId="16" toId="17">
 </dataflow>
-<dataflow id="95" from="loop_index_i_cast" to="out_local_addr" fromId="16" toId="17">
+<dataflow id="95" from="out_local_addr" to="out_local_load" fromId="17" toId="18">
 </dataflow>
-<dataflow id="96" from="out_local_addr" to="out_local_load" fromId="17" toId="18">
+<dataflow id="96" from="empty" to="store_ln0" fromId="14" toId="19">
 </dataflow>
-<dataflow id="97" from="empty" to="store_ln0" fromId="14" toId="19">
+<dataflow id="97" from="loop_index_i" to="store_ln0" fromId="6" toId="19">
 </dataflow>
-<dataflow id="98" from="loop_index_i" to="store_ln0" fromId="6" toId="19">
+<dataflow id="98" from="out_local_addr" to="out_local_load" fromId="17" toId="20">
 </dataflow>
-<dataflow id="99" from="out_local_addr" to="out_local_load" fromId="17" toId="20">
+<dataflow id="99" from="gmem_out" to="gmem_out_addr" fromId="39" toId="21">
 </dataflow>
-<dataflow id="100" from="gmem_out" to="gmem_out_addr" fromId="39" toId="21">
+<dataflow id="100" from="sext_ln509_cast" to="gmem_out_addr" fromId="8" toId="21">
 </dataflow>
-<dataflow id="101" from="sext_ln513_cast" to="gmem_out_addr" fromId="8" toId="21">
+<dataflow id="102" from="_ssdm_op_SpecPipeline" to="specpipeline_ln0" fromId="101" toId="22">
 </dataflow>
-<dataflow id="103" from="_ssdm_op_SpecPipeline" to="specpipeline_ln0" fromId="102" toId="22">
+<dataflow id="103" from="StgValue_75" to="specpipeline_ln0" fromId="75" toId="22">
 </dataflow>
-<dataflow id="104" from="StgValue_76" to="specpipeline_ln0" fromId="76" toId="22">
+<dataflow id="104" from="StgValue_53" to="specpipeline_ln0" fromId="53" toId="22">
 </dataflow>
 <dataflow id="105" from="StgValue_53" to="specpipeline_ln0" fromId="53" toId="22">
 </dataflow>
 <dataflow id="106" from="StgValue_53" to="specpipeline_ln0" fromId="53" toId="22">
 </dataflow>
-<dataflow id="107" from="StgValue_53" to="specpipeline_ln0" fromId="53" toId="22">
+<dataflow id="107" from="empty_32" to="specpipeline_ln0" fromId="56" toId="22">
 </dataflow>
-<dataflow id="108" from="empty_32" to="specpipeline_ln0" fromId="56" toId="22">
+<dataflow id="109" from="_ssdm_op_SpecLoopTripCount" to="speclooptripcount_ln0" fromId="108" toId="23">
 </dataflow>
-<dataflow id="110" from="_ssdm_op_SpecLoopTripCount" to="speclooptripcount_ln0" fromId="109" toId="23">
+<dataflow id="111" from="StgValue_110" to="speclooptripcount_ln0" fromId="110" toId="23">
 </dataflow>
-<dataflow id="112" from="StgValue_111" to="speclooptripcount_ln0" fromId="111" toId="23">
+<dataflow id="112" from="StgValue_110" to="speclooptripcount_ln0" fromId="110" toId="23">
 </dataflow>
-<dataflow id="113" from="StgValue_111" to="speclooptripcount_ln0" fromId="111" toId="23">
+<dataflow id="113" from="StgValue_110" to="speclooptripcount_ln0" fromId="110" toId="23">
 </dataflow>
-<dataflow id="114" from="StgValue_111" to="speclooptripcount_ln0" fromId="111" toId="23">
+<dataflow id="114" from="out_local_load" to="empty_138" fromId="20" toId="24">
 </dataflow>
-<dataflow id="115" from="out_local_load" to="empty_138" fromId="20" toId="24">
+<dataflow id="116" from="_ssdm_op_Write.m_axi.p1i32" to="write_ln509" fromId="115" toId="25">
 </dataflow>
-<dataflow id="117" from="_ssdm_op_Write.m_axi.p1i32" to="write_ln513" fromId="116" toId="25">
+<dataflow id="117" from="gmem_out_addr" to="write_ln509" fromId="21" toId="25">
 </dataflow>
-<dataflow id="118" from="gmem_out_addr" to="write_ln513" fromId="21" toId="25">
+<dataflow id="118" from="empty_138" to="write_ln509" fromId="24" toId="25">
 </dataflow>
-<dataflow id="119" from="empty_138" to="write_ln513" fromId="24" toId="25">
+<dataflow id="120" from="StgValue_119" to="write_ln509" fromId="119" toId="25">
 </dataflow>
-<dataflow id="121" from="StgValue_120" to="write_ln513" fromId="120" toId="25">
+<dataflow id="121" from="exitcond4_i" to="StgValue_2" fromId="13" toId="2">
 </dataflow>
-<dataflow id="122" from="exitcond4_i" to="StgValue_2" fromId="13" toId="2">
-</dataflow>
-<dataflow id="123" from="exitcond4_i" to="StgValue_3" fromId="13" toId="3">
+<dataflow id="122" from="exitcond4_i" to="StgValue_3" fromId="13" toId="3">
 </dataflow>
 </dataflows>
 

@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:184</SourceLocation>
+<SourceLocation>swiglu.cpp:183</SourceLocation>
 <SummaryOfLoopViolations>
 <MAC_ALL_BLOCKS>
 <Name>MAC_ALL_BLOCKS</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:184</SourceLocation>
+<SourceLocation>swiglu.cpp:183</SourceLocation>
 </MAC_ALL_BLOCKS>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -64,7 +64,7 @@
 <AreaEstimates>
 <Resources>
 <DSP>16</DSP>
-<FF>4485</FF>
+<FF>4524</FF>
 <LUT>4987</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>

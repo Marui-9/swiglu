@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=3.330000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=19751350,HLS_SYN_TPT=15155275,HLS_SYN_MEM=622,HLS_SYN_DSP=0,HLS_SYN_FF=109516,HLS_SYN_LUT=92507,HLS_VERSION=2025_1}" *)
+(* CORE_GENERATION_INFO="swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=3.330000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=20562358,HLS_SYN_TPT=15966283,HLS_SYN_MEM=758,HLS_SYN_DSP=0,HLS_SYN_FF=93677,HLS_SYN_LUT=90978,HLS_VERSION=2025_1}" *)
 
 module swiglu (
         ap_clk,
@@ -1104,54 +1104,6 @@ wire   [7:0] gate_cache_6_i_q0;
 wire   [7:0] gate_cache_6_t_q0;
 wire   [7:0] gate_cache_7_i_q0;
 wire   [7:0] gate_cache_7_t_q0;
-wire   [7:0] gate_cache_8_i_q0;
-wire   [7:0] gate_cache_8_t_q0;
-wire   [7:0] gate_cache_9_i_q0;
-wire   [7:0] gate_cache_9_t_q0;
-wire   [7:0] gate_cache_10_i_q0;
-wire   [7:0] gate_cache_10_t_q0;
-wire   [7:0] gate_cache_11_i_q0;
-wire   [7:0] gate_cache_11_t_q0;
-wire   [7:0] gate_cache_12_i_q0;
-wire   [7:0] gate_cache_12_t_q0;
-wire   [7:0] gate_cache_13_i_q0;
-wire   [7:0] gate_cache_13_t_q0;
-wire   [7:0] gate_cache_14_i_q0;
-wire   [7:0] gate_cache_14_t_q0;
-wire   [7:0] gate_cache_15_i_q0;
-wire   [7:0] gate_cache_15_t_q0;
-wire   [7:0] gate_cache_16_i_q0;
-wire   [7:0] gate_cache_16_t_q0;
-wire   [7:0] gate_cache_17_i_q0;
-wire   [7:0] gate_cache_17_t_q0;
-wire   [7:0] gate_cache_18_i_q0;
-wire   [7:0] gate_cache_18_t_q0;
-wire   [7:0] gate_cache_19_i_q0;
-wire   [7:0] gate_cache_19_t_q0;
-wire   [7:0] gate_cache_20_i_q0;
-wire   [7:0] gate_cache_20_t_q0;
-wire   [7:0] gate_cache_21_i_q0;
-wire   [7:0] gate_cache_21_t_q0;
-wire   [7:0] gate_cache_22_i_q0;
-wire   [7:0] gate_cache_22_t_q0;
-wire   [7:0] gate_cache_23_i_q0;
-wire   [7:0] gate_cache_23_t_q0;
-wire   [7:0] gate_cache_24_i_q0;
-wire   [7:0] gate_cache_24_t_q0;
-wire   [7:0] gate_cache_25_i_q0;
-wire   [7:0] gate_cache_25_t_q0;
-wire   [7:0] gate_cache_26_i_q0;
-wire   [7:0] gate_cache_26_t_q0;
-wire   [7:0] gate_cache_27_i_q0;
-wire   [7:0] gate_cache_27_t_q0;
-wire   [7:0] gate_cache_28_i_q0;
-wire   [7:0] gate_cache_28_t_q0;
-wire   [7:0] gate_cache_29_i_q0;
-wire   [7:0] gate_cache_29_t_q0;
-wire   [7:0] gate_cache_30_i_q0;
-wire   [7:0] gate_cache_30_t_q0;
-wire   [7:0] gate_cache_31_i_q0;
-wire   [7:0] gate_cache_31_t_q0;
 wire   [63:0] W;
 wire   [63:0] V;
 wire   [63:0] W_down;
@@ -1170,7 +1122,7 @@ wire    gmem_V_0_RVALID;
 wire   [127:0] gmem_V_0_RDATA;
 wire    gmem_V_0_RLAST;
 wire   [0:0] gmem_V_0_RID;
-wire   [9:0] gmem_V_0_RFIFONUM;
+wire   [12:0] gmem_V_0_RFIFONUM;
 wire   [0:0] gmem_V_0_RUSER;
 wire   [1:0] gmem_V_0_RRESP;
 wire    gmem_V_0_BVALID;
@@ -1181,7 +1133,7 @@ wire    gmem_W_0_RVALID;
 wire   [127:0] gmem_W_0_RDATA;
 wire    gmem_W_0_RLAST;
 wire   [0:0] gmem_W_0_RID;
-wire   [9:0] gmem_W_0_RFIFONUM;
+wire   [12:0] gmem_W_0_RFIFONUM;
 wire   [0:0] gmem_W_0_RUSER;
 wire   [1:0] gmem_W_0_RRESP;
 wire    gmem_W_0_BVALID;
@@ -1192,7 +1144,7 @@ wire    gmem_Wd_0_RVALID;
 wire   [127:0] gmem_Wd_0_RDATA;
 wire    gmem_Wd_0_RLAST;
 wire   [0:0] gmem_Wd_0_RID;
-wire   [9:0] gmem_Wd_0_RFIFONUM;
+wire   [12:0] gmem_Wd_0_RFIFONUM;
 wire   [0:0] gmem_Wd_0_RUSER;
 wire   [1:0] gmem_Wd_0_RRESP;
 wire    gmem_Wd_0_BVALID;
@@ -1213,7 +1165,7 @@ wire    gmem_x_0_RVALID;
 wire   [127:0] gmem_x_0_RDATA;
 wire    gmem_x_0_RLAST;
 wire   [0:0] gmem_x_0_RID;
-wire   [9:0] gmem_x_0_RFIFONUM;
+wire   [12:0] gmem_x_0_RFIFONUM;
 wire   [0:0] gmem_x_0_RUSER;
 wire   [1:0] gmem_x_0_RRESP;
 wire    gmem_x_0_BVALID;
@@ -2889,143 +2841,47 @@ wire   [12:0] compute_gate_U0_X1_cache_address0;
 wire    compute_gate_U0_X1_cache_ce0;
 wire   [12:0] compute_gate_U0_X2_cache_address0;
 wire    compute_gate_U0_X2_cache_ce0;
-wire   [7:0] compute_gate_U0_gate_cache_0_address1;
+wire   [9:0] compute_gate_U0_gate_cache_0_address1;
 wire    compute_gate_U0_gate_cache_0_ce1;
 wire    compute_gate_U0_gate_cache_0_we1;
 wire   [7:0] compute_gate_U0_gate_cache_0_d1;
-wire   [7:0] compute_gate_U0_gate_cache_1_address1;
+wire   [9:0] compute_gate_U0_gate_cache_1_address1;
 wire    compute_gate_U0_gate_cache_1_ce1;
 wire    compute_gate_U0_gate_cache_1_we1;
 wire   [7:0] compute_gate_U0_gate_cache_1_d1;
-wire   [7:0] compute_gate_U0_gate_cache_2_address1;
+wire   [9:0] compute_gate_U0_gate_cache_2_address1;
 wire    compute_gate_U0_gate_cache_2_ce1;
 wire    compute_gate_U0_gate_cache_2_we1;
 wire   [7:0] compute_gate_U0_gate_cache_2_d1;
-wire   [7:0] compute_gate_U0_gate_cache_3_address1;
+wire   [9:0] compute_gate_U0_gate_cache_3_address1;
 wire    compute_gate_U0_gate_cache_3_ce1;
 wire    compute_gate_U0_gate_cache_3_we1;
 wire   [7:0] compute_gate_U0_gate_cache_3_d1;
-wire   [7:0] compute_gate_U0_gate_cache_4_address1;
+wire   [9:0] compute_gate_U0_gate_cache_4_address1;
 wire    compute_gate_U0_gate_cache_4_ce1;
 wire    compute_gate_U0_gate_cache_4_we1;
 wire   [7:0] compute_gate_U0_gate_cache_4_d1;
-wire   [7:0] compute_gate_U0_gate_cache_5_address1;
+wire   [9:0] compute_gate_U0_gate_cache_5_address1;
 wire    compute_gate_U0_gate_cache_5_ce1;
 wire    compute_gate_U0_gate_cache_5_we1;
 wire   [7:0] compute_gate_U0_gate_cache_5_d1;
-wire   [7:0] compute_gate_U0_gate_cache_6_address1;
+wire   [9:0] compute_gate_U0_gate_cache_6_address1;
 wire    compute_gate_U0_gate_cache_6_ce1;
 wire    compute_gate_U0_gate_cache_6_we1;
 wire   [7:0] compute_gate_U0_gate_cache_6_d1;
-wire   [7:0] compute_gate_U0_gate_cache_7_address1;
+wire   [9:0] compute_gate_U0_gate_cache_7_address1;
 wire    compute_gate_U0_gate_cache_7_ce1;
 wire    compute_gate_U0_gate_cache_7_we1;
 wire   [7:0] compute_gate_U0_gate_cache_7_d1;
-wire   [7:0] compute_gate_U0_gate_cache_8_address1;
-wire    compute_gate_U0_gate_cache_8_ce1;
-wire    compute_gate_U0_gate_cache_8_we1;
-wire   [7:0] compute_gate_U0_gate_cache_8_d1;
-wire   [7:0] compute_gate_U0_gate_cache_9_address1;
-wire    compute_gate_U0_gate_cache_9_ce1;
-wire    compute_gate_U0_gate_cache_9_we1;
-wire   [7:0] compute_gate_U0_gate_cache_9_d1;
-wire   [7:0] compute_gate_U0_gate_cache_10_address1;
-wire    compute_gate_U0_gate_cache_10_ce1;
-wire    compute_gate_U0_gate_cache_10_we1;
-wire   [7:0] compute_gate_U0_gate_cache_10_d1;
-wire   [7:0] compute_gate_U0_gate_cache_11_address1;
-wire    compute_gate_U0_gate_cache_11_ce1;
-wire    compute_gate_U0_gate_cache_11_we1;
-wire   [7:0] compute_gate_U0_gate_cache_11_d1;
-wire   [7:0] compute_gate_U0_gate_cache_12_address1;
-wire    compute_gate_U0_gate_cache_12_ce1;
-wire    compute_gate_U0_gate_cache_12_we1;
-wire   [7:0] compute_gate_U0_gate_cache_12_d1;
-wire   [7:0] compute_gate_U0_gate_cache_13_address1;
-wire    compute_gate_U0_gate_cache_13_ce1;
-wire    compute_gate_U0_gate_cache_13_we1;
-wire   [7:0] compute_gate_U0_gate_cache_13_d1;
-wire   [7:0] compute_gate_U0_gate_cache_14_address1;
-wire    compute_gate_U0_gate_cache_14_ce1;
-wire    compute_gate_U0_gate_cache_14_we1;
-wire   [7:0] compute_gate_U0_gate_cache_14_d1;
-wire   [7:0] compute_gate_U0_gate_cache_15_address1;
-wire    compute_gate_U0_gate_cache_15_ce1;
-wire    compute_gate_U0_gate_cache_15_we1;
-wire   [7:0] compute_gate_U0_gate_cache_15_d1;
-wire   [7:0] compute_gate_U0_gate_cache_16_address1;
-wire    compute_gate_U0_gate_cache_16_ce1;
-wire    compute_gate_U0_gate_cache_16_we1;
-wire   [7:0] compute_gate_U0_gate_cache_16_d1;
-wire   [7:0] compute_gate_U0_gate_cache_17_address1;
-wire    compute_gate_U0_gate_cache_17_ce1;
-wire    compute_gate_U0_gate_cache_17_we1;
-wire   [7:0] compute_gate_U0_gate_cache_17_d1;
-wire   [7:0] compute_gate_U0_gate_cache_18_address1;
-wire    compute_gate_U0_gate_cache_18_ce1;
-wire    compute_gate_U0_gate_cache_18_we1;
-wire   [7:0] compute_gate_U0_gate_cache_18_d1;
-wire   [7:0] compute_gate_U0_gate_cache_19_address1;
-wire    compute_gate_U0_gate_cache_19_ce1;
-wire    compute_gate_U0_gate_cache_19_we1;
-wire   [7:0] compute_gate_U0_gate_cache_19_d1;
-wire   [7:0] compute_gate_U0_gate_cache_20_address1;
-wire    compute_gate_U0_gate_cache_20_ce1;
-wire    compute_gate_U0_gate_cache_20_we1;
-wire   [7:0] compute_gate_U0_gate_cache_20_d1;
-wire   [7:0] compute_gate_U0_gate_cache_21_address1;
-wire    compute_gate_U0_gate_cache_21_ce1;
-wire    compute_gate_U0_gate_cache_21_we1;
-wire   [7:0] compute_gate_U0_gate_cache_21_d1;
-wire   [7:0] compute_gate_U0_gate_cache_22_address1;
-wire    compute_gate_U0_gate_cache_22_ce1;
-wire    compute_gate_U0_gate_cache_22_we1;
-wire   [7:0] compute_gate_U0_gate_cache_22_d1;
-wire   [7:0] compute_gate_U0_gate_cache_23_address1;
-wire    compute_gate_U0_gate_cache_23_ce1;
-wire    compute_gate_U0_gate_cache_23_we1;
-wire   [7:0] compute_gate_U0_gate_cache_23_d1;
-wire   [7:0] compute_gate_U0_gate_cache_24_address1;
-wire    compute_gate_U0_gate_cache_24_ce1;
-wire    compute_gate_U0_gate_cache_24_we1;
-wire   [7:0] compute_gate_U0_gate_cache_24_d1;
-wire   [7:0] compute_gate_U0_gate_cache_25_address1;
-wire    compute_gate_U0_gate_cache_25_ce1;
-wire    compute_gate_U0_gate_cache_25_we1;
-wire   [7:0] compute_gate_U0_gate_cache_25_d1;
-wire   [7:0] compute_gate_U0_gate_cache_26_address1;
-wire    compute_gate_U0_gate_cache_26_ce1;
-wire    compute_gate_U0_gate_cache_26_we1;
-wire   [7:0] compute_gate_U0_gate_cache_26_d1;
-wire   [7:0] compute_gate_U0_gate_cache_27_address1;
-wire    compute_gate_U0_gate_cache_27_ce1;
-wire    compute_gate_U0_gate_cache_27_we1;
-wire   [7:0] compute_gate_U0_gate_cache_27_d1;
-wire   [7:0] compute_gate_U0_gate_cache_28_address1;
-wire    compute_gate_U0_gate_cache_28_ce1;
-wire    compute_gate_U0_gate_cache_28_we1;
-wire   [7:0] compute_gate_U0_gate_cache_28_d1;
-wire   [7:0] compute_gate_U0_gate_cache_29_address1;
-wire    compute_gate_U0_gate_cache_29_ce1;
-wire    compute_gate_U0_gate_cache_29_we1;
-wire   [7:0] compute_gate_U0_gate_cache_29_d1;
-wire   [7:0] compute_gate_U0_gate_cache_30_address1;
-wire    compute_gate_U0_gate_cache_30_ce1;
-wire    compute_gate_U0_gate_cache_30_we1;
-wire   [7:0] compute_gate_U0_gate_cache_30_d1;
-wire   [7:0] compute_gate_U0_gate_cache_31_address1;
-wire    compute_gate_U0_gate_cache_31_ce1;
-wire    compute_gate_U0_gate_cache_31_we1;
-wire   [7:0] compute_gate_U0_gate_cache_31_d1;
 wire   [31:0] compute_gate_U0_ap_return;
 wire    ap_channel_done_gate_scale;
 wire    gate_scale_full_n;
 reg    ap_sync_reg_channel_write_gate_scale;
 wire    ap_sync_channel_write_gate_scale;
-wire    ap_channel_done_gate_cache_31;
-wire    compute_gate_U0_gate_cache_31_full_n;
-reg    ap_sync_reg_channel_write_gate_cache_31;
-wire    ap_sync_channel_write_gate_cache_31;
+wire    ap_channel_done_gate_cache_7;
+wire    compute_gate_U0_gate_cache_7_full_n;
+reg    ap_sync_reg_channel_write_gate_cache_7;
+wire    ap_sync_channel_write_gate_cache_7;
 wire    compute_output_U0_ap_start;
 wire    compute_output_U0_ap_done;
 wire    compute_output_U0_ap_continue;
@@ -3063,70 +2919,22 @@ wire   [3:0] compute_output_U0_m_axi_gmem_Wd_0_ARREGION;
 wire   [0:0] compute_output_U0_m_axi_gmem_Wd_0_ARUSER;
 wire    compute_output_U0_m_axi_gmem_Wd_0_RREADY;
 wire    compute_output_U0_m_axi_gmem_Wd_0_BREADY;
-wire   [7:0] compute_output_U0_gate_cache_0_address0;
+wire   [9:0] compute_output_U0_gate_cache_0_address0;
 wire    compute_output_U0_gate_cache_0_ce0;
-wire   [7:0] compute_output_U0_gate_cache_1_address0;
+wire   [9:0] compute_output_U0_gate_cache_1_address0;
 wire    compute_output_U0_gate_cache_1_ce0;
-wire   [7:0] compute_output_U0_gate_cache_2_address0;
+wire   [9:0] compute_output_U0_gate_cache_2_address0;
 wire    compute_output_U0_gate_cache_2_ce0;
-wire   [7:0] compute_output_U0_gate_cache_3_address0;
+wire   [9:0] compute_output_U0_gate_cache_3_address0;
 wire    compute_output_U0_gate_cache_3_ce0;
-wire   [7:0] compute_output_U0_gate_cache_4_address0;
+wire   [9:0] compute_output_U0_gate_cache_4_address0;
 wire    compute_output_U0_gate_cache_4_ce0;
-wire   [7:0] compute_output_U0_gate_cache_5_address0;
+wire   [9:0] compute_output_U0_gate_cache_5_address0;
 wire    compute_output_U0_gate_cache_5_ce0;
-wire   [7:0] compute_output_U0_gate_cache_6_address0;
+wire   [9:0] compute_output_U0_gate_cache_6_address0;
 wire    compute_output_U0_gate_cache_6_ce0;
-wire   [7:0] compute_output_U0_gate_cache_7_address0;
+wire   [9:0] compute_output_U0_gate_cache_7_address0;
 wire    compute_output_U0_gate_cache_7_ce0;
-wire   [7:0] compute_output_U0_gate_cache_8_address0;
-wire    compute_output_U0_gate_cache_8_ce0;
-wire   [7:0] compute_output_U0_gate_cache_9_address0;
-wire    compute_output_U0_gate_cache_9_ce0;
-wire   [7:0] compute_output_U0_gate_cache_10_address0;
-wire    compute_output_U0_gate_cache_10_ce0;
-wire   [7:0] compute_output_U0_gate_cache_11_address0;
-wire    compute_output_U0_gate_cache_11_ce0;
-wire   [7:0] compute_output_U0_gate_cache_12_address0;
-wire    compute_output_U0_gate_cache_12_ce0;
-wire   [7:0] compute_output_U0_gate_cache_13_address0;
-wire    compute_output_U0_gate_cache_13_ce0;
-wire   [7:0] compute_output_U0_gate_cache_14_address0;
-wire    compute_output_U0_gate_cache_14_ce0;
-wire   [7:0] compute_output_U0_gate_cache_15_address0;
-wire    compute_output_U0_gate_cache_15_ce0;
-wire   [7:0] compute_output_U0_gate_cache_16_address0;
-wire    compute_output_U0_gate_cache_16_ce0;
-wire   [7:0] compute_output_U0_gate_cache_17_address0;
-wire    compute_output_U0_gate_cache_17_ce0;
-wire   [7:0] compute_output_U0_gate_cache_18_address0;
-wire    compute_output_U0_gate_cache_18_ce0;
-wire   [7:0] compute_output_U0_gate_cache_19_address0;
-wire    compute_output_U0_gate_cache_19_ce0;
-wire   [7:0] compute_output_U0_gate_cache_20_address0;
-wire    compute_output_U0_gate_cache_20_ce0;
-wire   [7:0] compute_output_U0_gate_cache_21_address0;
-wire    compute_output_U0_gate_cache_21_ce0;
-wire   [7:0] compute_output_U0_gate_cache_22_address0;
-wire    compute_output_U0_gate_cache_22_ce0;
-wire   [7:0] compute_output_U0_gate_cache_23_address0;
-wire    compute_output_U0_gate_cache_23_ce0;
-wire   [7:0] compute_output_U0_gate_cache_24_address0;
-wire    compute_output_U0_gate_cache_24_ce0;
-wire   [7:0] compute_output_U0_gate_cache_25_address0;
-wire    compute_output_U0_gate_cache_25_ce0;
-wire   [7:0] compute_output_U0_gate_cache_26_address0;
-wire    compute_output_U0_gate_cache_26_ce0;
-wire   [7:0] compute_output_U0_gate_cache_27_address0;
-wire    compute_output_U0_gate_cache_27_ce0;
-wire   [7:0] compute_output_U0_gate_cache_28_address0;
-wire    compute_output_U0_gate_cache_28_ce0;
-wire   [7:0] compute_output_U0_gate_cache_29_address0;
-wire    compute_output_U0_gate_cache_29_ce0;
-wire   [7:0] compute_output_U0_gate_cache_30_address0;
-wire    compute_output_U0_gate_cache_30_ce0;
-wire   [7:0] compute_output_U0_gate_cache_31_address0;
-wire    compute_output_U0_gate_cache_31_ce0;
 wire    compute_output_U0_m_axi_gmem_out_0_AWVALID;
 wire   [63:0] compute_output_U0_m_axi_gmem_out_0_AWADDR;
 wire   [0:0] compute_output_U0_m_axi_gmem_out_0_AWID;
@@ -3691,54 +3499,6 @@ wire    gate_cache_6_i_full_n;
 wire    gate_cache_6_t_empty_n;
 wire    gate_cache_7_i_full_n;
 wire    gate_cache_7_t_empty_n;
-wire    gate_cache_8_i_full_n;
-wire    gate_cache_8_t_empty_n;
-wire    gate_cache_9_i_full_n;
-wire    gate_cache_9_t_empty_n;
-wire    gate_cache_10_i_full_n;
-wire    gate_cache_10_t_empty_n;
-wire    gate_cache_11_i_full_n;
-wire    gate_cache_11_t_empty_n;
-wire    gate_cache_12_i_full_n;
-wire    gate_cache_12_t_empty_n;
-wire    gate_cache_13_i_full_n;
-wire    gate_cache_13_t_empty_n;
-wire    gate_cache_14_i_full_n;
-wire    gate_cache_14_t_empty_n;
-wire    gate_cache_15_i_full_n;
-wire    gate_cache_15_t_empty_n;
-wire    gate_cache_16_i_full_n;
-wire    gate_cache_16_t_empty_n;
-wire    gate_cache_17_i_full_n;
-wire    gate_cache_17_t_empty_n;
-wire    gate_cache_18_i_full_n;
-wire    gate_cache_18_t_empty_n;
-wire    gate_cache_19_i_full_n;
-wire    gate_cache_19_t_empty_n;
-wire    gate_cache_20_i_full_n;
-wire    gate_cache_20_t_empty_n;
-wire    gate_cache_21_i_full_n;
-wire    gate_cache_21_t_empty_n;
-wire    gate_cache_22_i_full_n;
-wire    gate_cache_22_t_empty_n;
-wire    gate_cache_23_i_full_n;
-wire    gate_cache_23_t_empty_n;
-wire    gate_cache_24_i_full_n;
-wire    gate_cache_24_t_empty_n;
-wire    gate_cache_25_i_full_n;
-wire    gate_cache_25_t_empty_n;
-wire    gate_cache_26_i_full_n;
-wire    gate_cache_26_t_empty_n;
-wire    gate_cache_27_i_full_n;
-wire    gate_cache_27_t_empty_n;
-wire    gate_cache_28_i_full_n;
-wire    gate_cache_28_t_empty_n;
-wire    gate_cache_29_i_full_n;
-wire    gate_cache_29_t_empty_n;
-wire    gate_cache_30_i_full_n;
-wire    gate_cache_30_t_empty_n;
-wire    gate_cache_31_i_full_n;
-wire    gate_cache_31_t_empty_n;
 wire   [31:0] gate_scale_dout;
 wire    gate_scale_empty_n;
 wire   [2:0] gate_scale_num_data_valid;
@@ -3759,7 +3519,7 @@ initial begin
 #0 ap_sync_reg_channel_write_x_local_2_127 = 1'b0;
 #0 ap_sync_reg_channel_write_x_local_1_127 = 1'b0;
 #0 ap_sync_reg_channel_write_gate_scale = 1'b0;
-#0 ap_sync_reg_channel_write_gate_cache_31 = 1'b0;
+#0 ap_sync_reg_channel_write_gate_cache_7 = 1'b0;
 #0 ap_sync_reg_load_x_local_U0_ap_ready = 1'b0;
 #0 ap_sync_reg_compute_X1_U0_ap_ready = 1'b0;
 #0 ap_sync_reg_compute_X2_U0_ap_ready = 1'b0;
@@ -10226,12 +9986,12 @@ X2_cache_U(
 
 swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
     .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
+    .AddressRange( 1024 ),
+    .AddressWidth( 10 ))
 gate_cache_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
+    .i_address0(10'd0),
     .i_ce0(1'b0),
     .i_q0(gate_cache_i_q0),
     .i_address1(compute_gate_U0_gate_cache_0_address1),
@@ -10241,26 +10001,26 @@ gate_cache_U(
     .t_address0(compute_output_U0_gate_cache_0_address0),
     .t_ce0(compute_output_U0_gate_cache_0_ce0),
     .t_q0(gate_cache_t_q0),
-    .t_address1(8'd0),
+    .t_address1(10'd0),
     .t_ce1(1'b0),
     .t_we1(1'b0),
     .t_d1(8'd0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(gate_cache_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
+    .i_write(ap_channel_done_gate_cache_7),
     .t_empty_n(gate_cache_t_empty_n),
     .t_read(compute_output_U0_ap_ready)
 );
 
 swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
     .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
+    .AddressRange( 1024 ),
+    .AddressWidth( 10 ))
 gate_cache_1_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
+    .i_address0(10'd0),
     .i_ce0(1'b0),
     .i_q0(gate_cache_1_i_q0),
     .i_address1(compute_gate_U0_gate_cache_1_address1),
@@ -10270,26 +10030,26 @@ gate_cache_1_U(
     .t_address0(compute_output_U0_gate_cache_1_address0),
     .t_ce0(compute_output_U0_gate_cache_1_ce0),
     .t_q0(gate_cache_1_t_q0),
-    .t_address1(8'd0),
+    .t_address1(10'd0),
     .t_ce1(1'b0),
     .t_we1(1'b0),
     .t_d1(8'd0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(gate_cache_1_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
+    .i_write(ap_channel_done_gate_cache_7),
     .t_empty_n(gate_cache_1_t_empty_n),
     .t_read(compute_output_U0_ap_ready)
 );
 
 swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
     .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
+    .AddressRange( 1024 ),
+    .AddressWidth( 10 ))
 gate_cache_2_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
+    .i_address0(10'd0),
     .i_ce0(1'b0),
     .i_q0(gate_cache_2_i_q0),
     .i_address1(compute_gate_U0_gate_cache_2_address1),
@@ -10299,26 +10059,26 @@ gate_cache_2_U(
     .t_address0(compute_output_U0_gate_cache_2_address0),
     .t_ce0(compute_output_U0_gate_cache_2_ce0),
     .t_q0(gate_cache_2_t_q0),
-    .t_address1(8'd0),
+    .t_address1(10'd0),
     .t_ce1(1'b0),
     .t_we1(1'b0),
     .t_d1(8'd0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(gate_cache_2_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
+    .i_write(ap_channel_done_gate_cache_7),
     .t_empty_n(gate_cache_2_t_empty_n),
     .t_read(compute_output_U0_ap_ready)
 );
 
 swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
     .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
+    .AddressRange( 1024 ),
+    .AddressWidth( 10 ))
 gate_cache_3_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
+    .i_address0(10'd0),
     .i_ce0(1'b0),
     .i_q0(gate_cache_3_i_q0),
     .i_address1(compute_gate_U0_gate_cache_3_address1),
@@ -10328,26 +10088,26 @@ gate_cache_3_U(
     .t_address0(compute_output_U0_gate_cache_3_address0),
     .t_ce0(compute_output_U0_gate_cache_3_ce0),
     .t_q0(gate_cache_3_t_q0),
-    .t_address1(8'd0),
+    .t_address1(10'd0),
     .t_ce1(1'b0),
     .t_we1(1'b0),
     .t_d1(8'd0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(gate_cache_3_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
+    .i_write(ap_channel_done_gate_cache_7),
     .t_empty_n(gate_cache_3_t_empty_n),
     .t_read(compute_output_U0_ap_ready)
 );
 
 swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
     .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
+    .AddressRange( 1024 ),
+    .AddressWidth( 10 ))
 gate_cache_4_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
+    .i_address0(10'd0),
     .i_ce0(1'b0),
     .i_q0(gate_cache_4_i_q0),
     .i_address1(compute_gate_U0_gate_cache_4_address1),
@@ -10357,26 +10117,26 @@ gate_cache_4_U(
     .t_address0(compute_output_U0_gate_cache_4_address0),
     .t_ce0(compute_output_U0_gate_cache_4_ce0),
     .t_q0(gate_cache_4_t_q0),
-    .t_address1(8'd0),
+    .t_address1(10'd0),
     .t_ce1(1'b0),
     .t_we1(1'b0),
     .t_d1(8'd0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(gate_cache_4_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
+    .i_write(ap_channel_done_gate_cache_7),
     .t_empty_n(gate_cache_4_t_empty_n),
     .t_read(compute_output_U0_ap_ready)
 );
 
 swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
     .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
+    .AddressRange( 1024 ),
+    .AddressWidth( 10 ))
 gate_cache_5_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
+    .i_address0(10'd0),
     .i_ce0(1'b0),
     .i_q0(gate_cache_5_i_q0),
     .i_address1(compute_gate_U0_gate_cache_5_address1),
@@ -10386,26 +10146,26 @@ gate_cache_5_U(
     .t_address0(compute_output_U0_gate_cache_5_address0),
     .t_ce0(compute_output_U0_gate_cache_5_ce0),
     .t_q0(gate_cache_5_t_q0),
-    .t_address1(8'd0),
+    .t_address1(10'd0),
     .t_ce1(1'b0),
     .t_we1(1'b0),
     .t_d1(8'd0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(gate_cache_5_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
+    .i_write(ap_channel_done_gate_cache_7),
     .t_empty_n(gate_cache_5_t_empty_n),
     .t_read(compute_output_U0_ap_ready)
 );
 
 swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
     .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
+    .AddressRange( 1024 ),
+    .AddressWidth( 10 ))
 gate_cache_6_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
+    .i_address0(10'd0),
     .i_ce0(1'b0),
     .i_q0(gate_cache_6_i_q0),
     .i_address1(compute_gate_U0_gate_cache_6_address1),
@@ -10415,26 +10175,26 @@ gate_cache_6_U(
     .t_address0(compute_output_U0_gate_cache_6_address0),
     .t_ce0(compute_output_U0_gate_cache_6_ce0),
     .t_q0(gate_cache_6_t_q0),
-    .t_address1(8'd0),
+    .t_address1(10'd0),
     .t_ce1(1'b0),
     .t_we1(1'b0),
     .t_d1(8'd0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(gate_cache_6_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
+    .i_write(ap_channel_done_gate_cache_7),
     .t_empty_n(gate_cache_6_t_empty_n),
     .t_read(compute_output_U0_ap_ready)
 );
 
 swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
     .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
+    .AddressRange( 1024 ),
+    .AddressWidth( 10 ))
 gate_cache_7_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
+    .i_address0(10'd0),
     .i_ce0(1'b0),
     .i_q0(gate_cache_7_i_q0),
     .i_address1(compute_gate_U0_gate_cache_7_address1),
@@ -10444,711 +10204,15 @@ gate_cache_7_U(
     .t_address0(compute_output_U0_gate_cache_7_address0),
     .t_ce0(compute_output_U0_gate_cache_7_ce0),
     .t_q0(gate_cache_7_t_q0),
-    .t_address1(8'd0),
+    .t_address1(10'd0),
     .t_ce1(1'b0),
     .t_we1(1'b0),
     .t_d1(8'd0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(gate_cache_7_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
+    .i_write(ap_channel_done_gate_cache_7),
     .t_empty_n(gate_cache_7_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_8_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_8_address1),
-    .i_ce1(compute_gate_U0_gate_cache_8_ce1),
-    .i_we1(compute_gate_U0_gate_cache_8_we1),
-    .i_d1(compute_gate_U0_gate_cache_8_d1),
-    .t_address0(compute_output_U0_gate_cache_8_address0),
-    .t_ce0(compute_output_U0_gate_cache_8_ce0),
-    .t_q0(gate_cache_8_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_8_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_8_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_9_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_9_address1),
-    .i_ce1(compute_gate_U0_gate_cache_9_ce1),
-    .i_we1(compute_gate_U0_gate_cache_9_we1),
-    .i_d1(compute_gate_U0_gate_cache_9_d1),
-    .t_address0(compute_output_U0_gate_cache_9_address0),
-    .t_ce0(compute_output_U0_gate_cache_9_ce0),
-    .t_q0(gate_cache_9_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_9_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_9_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_10_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_10_address1),
-    .i_ce1(compute_gate_U0_gate_cache_10_ce1),
-    .i_we1(compute_gate_U0_gate_cache_10_we1),
-    .i_d1(compute_gate_U0_gate_cache_10_d1),
-    .t_address0(compute_output_U0_gate_cache_10_address0),
-    .t_ce0(compute_output_U0_gate_cache_10_ce0),
-    .t_q0(gate_cache_10_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_10_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_10_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_11_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_11_address1),
-    .i_ce1(compute_gate_U0_gate_cache_11_ce1),
-    .i_we1(compute_gate_U0_gate_cache_11_we1),
-    .i_d1(compute_gate_U0_gate_cache_11_d1),
-    .t_address0(compute_output_U0_gate_cache_11_address0),
-    .t_ce0(compute_output_U0_gate_cache_11_ce0),
-    .t_q0(gate_cache_11_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_11_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_11_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_12_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_12_address1),
-    .i_ce1(compute_gate_U0_gate_cache_12_ce1),
-    .i_we1(compute_gate_U0_gate_cache_12_we1),
-    .i_d1(compute_gate_U0_gate_cache_12_d1),
-    .t_address0(compute_output_U0_gate_cache_12_address0),
-    .t_ce0(compute_output_U0_gate_cache_12_ce0),
-    .t_q0(gate_cache_12_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_12_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_12_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_13_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_13_address1),
-    .i_ce1(compute_gate_U0_gate_cache_13_ce1),
-    .i_we1(compute_gate_U0_gate_cache_13_we1),
-    .i_d1(compute_gate_U0_gate_cache_13_d1),
-    .t_address0(compute_output_U0_gate_cache_13_address0),
-    .t_ce0(compute_output_U0_gate_cache_13_ce0),
-    .t_q0(gate_cache_13_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_13_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_13_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_14_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_14_address1),
-    .i_ce1(compute_gate_U0_gate_cache_14_ce1),
-    .i_we1(compute_gate_U0_gate_cache_14_we1),
-    .i_d1(compute_gate_U0_gate_cache_14_d1),
-    .t_address0(compute_output_U0_gate_cache_14_address0),
-    .t_ce0(compute_output_U0_gate_cache_14_ce0),
-    .t_q0(gate_cache_14_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_14_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_14_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_15_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_15_address1),
-    .i_ce1(compute_gate_U0_gate_cache_15_ce1),
-    .i_we1(compute_gate_U0_gate_cache_15_we1),
-    .i_d1(compute_gate_U0_gate_cache_15_d1),
-    .t_address0(compute_output_U0_gate_cache_15_address0),
-    .t_ce0(compute_output_U0_gate_cache_15_ce0),
-    .t_q0(gate_cache_15_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_15_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_15_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_16_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_16_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_16_address1),
-    .i_ce1(compute_gate_U0_gate_cache_16_ce1),
-    .i_we1(compute_gate_U0_gate_cache_16_we1),
-    .i_d1(compute_gate_U0_gate_cache_16_d1),
-    .t_address0(compute_output_U0_gate_cache_16_address0),
-    .t_ce0(compute_output_U0_gate_cache_16_ce0),
-    .t_q0(gate_cache_16_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_16_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_16_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_17_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_17_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_17_address1),
-    .i_ce1(compute_gate_U0_gate_cache_17_ce1),
-    .i_we1(compute_gate_U0_gate_cache_17_we1),
-    .i_d1(compute_gate_U0_gate_cache_17_d1),
-    .t_address0(compute_output_U0_gate_cache_17_address0),
-    .t_ce0(compute_output_U0_gate_cache_17_ce0),
-    .t_q0(gate_cache_17_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_17_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_17_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_18_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_18_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_18_address1),
-    .i_ce1(compute_gate_U0_gate_cache_18_ce1),
-    .i_we1(compute_gate_U0_gate_cache_18_we1),
-    .i_d1(compute_gate_U0_gate_cache_18_d1),
-    .t_address0(compute_output_U0_gate_cache_18_address0),
-    .t_ce0(compute_output_U0_gate_cache_18_ce0),
-    .t_q0(gate_cache_18_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_18_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_18_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_19_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_19_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_19_address1),
-    .i_ce1(compute_gate_U0_gate_cache_19_ce1),
-    .i_we1(compute_gate_U0_gate_cache_19_we1),
-    .i_d1(compute_gate_U0_gate_cache_19_d1),
-    .t_address0(compute_output_U0_gate_cache_19_address0),
-    .t_ce0(compute_output_U0_gate_cache_19_ce0),
-    .t_q0(gate_cache_19_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_19_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_19_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_20_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_20_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_20_address1),
-    .i_ce1(compute_gate_U0_gate_cache_20_ce1),
-    .i_we1(compute_gate_U0_gate_cache_20_we1),
-    .i_d1(compute_gate_U0_gate_cache_20_d1),
-    .t_address0(compute_output_U0_gate_cache_20_address0),
-    .t_ce0(compute_output_U0_gate_cache_20_ce0),
-    .t_q0(gate_cache_20_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_20_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_20_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_21_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_21_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_21_address1),
-    .i_ce1(compute_gate_U0_gate_cache_21_ce1),
-    .i_we1(compute_gate_U0_gate_cache_21_we1),
-    .i_d1(compute_gate_U0_gate_cache_21_d1),
-    .t_address0(compute_output_U0_gate_cache_21_address0),
-    .t_ce0(compute_output_U0_gate_cache_21_ce0),
-    .t_q0(gate_cache_21_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_21_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_21_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_22_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_22_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_22_address1),
-    .i_ce1(compute_gate_U0_gate_cache_22_ce1),
-    .i_we1(compute_gate_U0_gate_cache_22_we1),
-    .i_d1(compute_gate_U0_gate_cache_22_d1),
-    .t_address0(compute_output_U0_gate_cache_22_address0),
-    .t_ce0(compute_output_U0_gate_cache_22_ce0),
-    .t_q0(gate_cache_22_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_22_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_22_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_23_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_23_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_23_address1),
-    .i_ce1(compute_gate_U0_gate_cache_23_ce1),
-    .i_we1(compute_gate_U0_gate_cache_23_we1),
-    .i_d1(compute_gate_U0_gate_cache_23_d1),
-    .t_address0(compute_output_U0_gate_cache_23_address0),
-    .t_ce0(compute_output_U0_gate_cache_23_ce0),
-    .t_q0(gate_cache_23_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_23_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_23_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_24_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_24_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_24_address1),
-    .i_ce1(compute_gate_U0_gate_cache_24_ce1),
-    .i_we1(compute_gate_U0_gate_cache_24_we1),
-    .i_d1(compute_gate_U0_gate_cache_24_d1),
-    .t_address0(compute_output_U0_gate_cache_24_address0),
-    .t_ce0(compute_output_U0_gate_cache_24_ce0),
-    .t_q0(gate_cache_24_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_24_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_24_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_25_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_25_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_25_address1),
-    .i_ce1(compute_gate_U0_gate_cache_25_ce1),
-    .i_we1(compute_gate_U0_gate_cache_25_we1),
-    .i_d1(compute_gate_U0_gate_cache_25_d1),
-    .t_address0(compute_output_U0_gate_cache_25_address0),
-    .t_ce0(compute_output_U0_gate_cache_25_ce0),
-    .t_q0(gate_cache_25_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_25_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_25_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_26_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_26_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_26_address1),
-    .i_ce1(compute_gate_U0_gate_cache_26_ce1),
-    .i_we1(compute_gate_U0_gate_cache_26_we1),
-    .i_d1(compute_gate_U0_gate_cache_26_d1),
-    .t_address0(compute_output_U0_gate_cache_26_address0),
-    .t_ce0(compute_output_U0_gate_cache_26_ce0),
-    .t_q0(gate_cache_26_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_26_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_26_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_27_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_27_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_27_address1),
-    .i_ce1(compute_gate_U0_gate_cache_27_ce1),
-    .i_we1(compute_gate_U0_gate_cache_27_we1),
-    .i_d1(compute_gate_U0_gate_cache_27_d1),
-    .t_address0(compute_output_U0_gate_cache_27_address0),
-    .t_ce0(compute_output_U0_gate_cache_27_ce0),
-    .t_q0(gate_cache_27_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_27_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_27_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_28_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_28_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_28_address1),
-    .i_ce1(compute_gate_U0_gate_cache_28_ce1),
-    .i_we1(compute_gate_U0_gate_cache_28_we1),
-    .i_d1(compute_gate_U0_gate_cache_28_d1),
-    .t_address0(compute_output_U0_gate_cache_28_address0),
-    .t_ce0(compute_output_U0_gate_cache_28_ce0),
-    .t_q0(gate_cache_28_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_28_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_28_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_29_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_29_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_29_address1),
-    .i_ce1(compute_gate_U0_gate_cache_29_ce1),
-    .i_we1(compute_gate_U0_gate_cache_29_we1),
-    .i_d1(compute_gate_U0_gate_cache_29_d1),
-    .t_address0(compute_output_U0_gate_cache_29_address0),
-    .t_ce0(compute_output_U0_gate_cache_29_ce0),
-    .t_q0(gate_cache_29_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_29_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_29_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_30_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_30_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_30_address1),
-    .i_ce1(compute_gate_U0_gate_cache_30_ce1),
-    .i_we1(compute_gate_U0_gate_cache_30_we1),
-    .i_d1(compute_gate_U0_gate_cache_30_d1),
-    .t_address0(compute_output_U0_gate_cache_30_address0),
-    .t_ce0(compute_output_U0_gate_cache_30_ce0),
-    .t_q0(gate_cache_30_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_30_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_30_t_empty_n),
-    .t_read(compute_output_U0_ap_ready)
-);
-
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
-    .DataWidth( 8 ),
-    .AddressRange( 256 ),
-    .AddressWidth( 8 ))
-gate_cache_31_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(8'd0),
-    .i_ce0(1'b0),
-    .i_q0(gate_cache_31_i_q0),
-    .i_address1(compute_gate_U0_gate_cache_31_address1),
-    .i_ce1(compute_gate_U0_gate_cache_31_ce1),
-    .i_we1(compute_gate_U0_gate_cache_31_we1),
-    .i_d1(compute_gate_U0_gate_cache_31_d1),
-    .t_address0(compute_output_U0_gate_cache_31_address0),
-    .t_ce0(compute_output_U0_gate_cache_31_ce0),
-    .t_q0(gate_cache_31_t_q0),
-    .t_address1(8'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(8'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(gate_cache_31_i_full_n),
-    .i_write(ap_channel_done_gate_cache_31),
-    .t_empty_n(gate_cache_31_t_empty_n),
     .t_read(compute_output_U0_ap_ready)
 );
 
@@ -11206,12 +10270,12 @@ swiglu_gmem_V_m_axi #(
     .C_USER_VALUE( C_M_AXI_GMEM_V_USER_VALUE ),
     .C_PROT_VALUE( C_M_AXI_GMEM_V_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_GMEM_V_CACHE_VALUE ),
-    .CH0_NUM_READ_OUTSTANDING( 2 ),
+    .CH0_NUM_READ_OUTSTANDING( 16 ),
     .CH0_NUM_WRITE_OUTSTANDING( 16 ),
-    .CH0_USER_RFIFONUM_WIDTH( 10 ),
+    .CH0_USER_RFIFONUM_WIDTH( 13 ),
     .CH0_USER_DW( 128 ),
     .CH0_USER_AW( 64 ),
-    .NUM_READ_OUTSTANDING( 2 ),
+    .NUM_READ_OUTSTANDING( 16 ),
     .NUM_WRITE_OUTSTANDING( 0 ))
 gmem_V_m_axi_U(
     .AWVALID(m_axi_gmem_V_AWVALID),
@@ -11298,12 +10362,12 @@ swiglu_gmem_W_m_axi #(
     .C_USER_VALUE( C_M_AXI_GMEM_W_USER_VALUE ),
     .C_PROT_VALUE( C_M_AXI_GMEM_W_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_GMEM_W_CACHE_VALUE ),
-    .CH0_NUM_READ_OUTSTANDING( 2 ),
+    .CH0_NUM_READ_OUTSTANDING( 16 ),
     .CH0_NUM_WRITE_OUTSTANDING( 16 ),
-    .CH0_USER_RFIFONUM_WIDTH( 10 ),
+    .CH0_USER_RFIFONUM_WIDTH( 13 ),
     .CH0_USER_DW( 128 ),
     .CH0_USER_AW( 64 ),
-    .NUM_READ_OUTSTANDING( 2 ),
+    .NUM_READ_OUTSTANDING( 16 ),
     .NUM_WRITE_OUTSTANDING( 0 ))
 gmem_W_m_axi_U(
     .AWVALID(m_axi_gmem_W_AWVALID),
@@ -11390,12 +10454,12 @@ swiglu_gmem_Wd_m_axi #(
     .C_USER_VALUE( C_M_AXI_GMEM_WD_USER_VALUE ),
     .C_PROT_VALUE( C_M_AXI_GMEM_WD_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_GMEM_WD_CACHE_VALUE ),
-    .CH0_NUM_READ_OUTSTANDING( 2 ),
+    .CH0_NUM_READ_OUTSTANDING( 16 ),
     .CH0_NUM_WRITE_OUTSTANDING( 16 ),
-    .CH0_USER_RFIFONUM_WIDTH( 10 ),
+    .CH0_USER_RFIFONUM_WIDTH( 13 ),
     .CH0_USER_DW( 128 ),
     .CH0_USER_AW( 64 ),
-    .NUM_READ_OUTSTANDING( 2 ),
+    .NUM_READ_OUTSTANDING( 16 ),
     .NUM_WRITE_OUTSTANDING( 0 ))
 gmem_Wd_m_axi_U(
     .AWVALID(m_axi_gmem_Wd_AWVALID),
@@ -11483,12 +10547,12 @@ swiglu_gmem_out_m_axi #(
     .C_PROT_VALUE( C_M_AXI_GMEM_OUT_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_GMEM_OUT_CACHE_VALUE ),
     .CH0_NUM_READ_OUTSTANDING( 16 ),
-    .CH0_NUM_WRITE_OUTSTANDING( 2 ),
+    .CH0_NUM_WRITE_OUTSTANDING( 16 ),
     .CH0_USER_RFIFONUM_WIDTH( 9 ),
     .CH0_USER_DW( 32 ),
     .CH0_USER_AW( 64 ),
     .NUM_READ_OUTSTANDING( 0 ),
-    .NUM_WRITE_OUTSTANDING( 2 ))
+    .NUM_WRITE_OUTSTANDING( 16 ))
 gmem_out_m_axi_U(
     .AWVALID(m_axi_gmem_out_AWVALID),
     .AWREADY(m_axi_gmem_out_AWREADY),
@@ -11574,12 +10638,12 @@ swiglu_gmem_x_m_axi #(
     .C_USER_VALUE( C_M_AXI_GMEM_X_USER_VALUE ),
     .C_PROT_VALUE( C_M_AXI_GMEM_X_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_GMEM_X_CACHE_VALUE ),
-    .CH0_NUM_READ_OUTSTANDING( 2 ),
+    .CH0_NUM_READ_OUTSTANDING( 16 ),
     .CH0_NUM_WRITE_OUTSTANDING( 16 ),
-    .CH0_USER_RFIFONUM_WIDTH( 10 ),
+    .CH0_USER_RFIFONUM_WIDTH( 13 ),
     .CH0_USER_DW( 128 ),
     .CH0_USER_AW( 64 ),
-    .NUM_READ_OUTSTANDING( 2 ),
+    .NUM_READ_OUTSTANDING( 16 ),
     .NUM_WRITE_OUTSTANDING( 0 ))
 gmem_x_m_axi_U(
     .AWVALID(m_axi_gmem_x_AWVALID),
@@ -13669,102 +12733,6 @@ swiglu_compute_gate compute_gate_U0(
     .gate_cache_7_ce1(compute_gate_U0_gate_cache_7_ce1),
     .gate_cache_7_we1(compute_gate_U0_gate_cache_7_we1),
     .gate_cache_7_d1(compute_gate_U0_gate_cache_7_d1),
-    .gate_cache_8_address1(compute_gate_U0_gate_cache_8_address1),
-    .gate_cache_8_ce1(compute_gate_U0_gate_cache_8_ce1),
-    .gate_cache_8_we1(compute_gate_U0_gate_cache_8_we1),
-    .gate_cache_8_d1(compute_gate_U0_gate_cache_8_d1),
-    .gate_cache_9_address1(compute_gate_U0_gate_cache_9_address1),
-    .gate_cache_9_ce1(compute_gate_U0_gate_cache_9_ce1),
-    .gate_cache_9_we1(compute_gate_U0_gate_cache_9_we1),
-    .gate_cache_9_d1(compute_gate_U0_gate_cache_9_d1),
-    .gate_cache_10_address1(compute_gate_U0_gate_cache_10_address1),
-    .gate_cache_10_ce1(compute_gate_U0_gate_cache_10_ce1),
-    .gate_cache_10_we1(compute_gate_U0_gate_cache_10_we1),
-    .gate_cache_10_d1(compute_gate_U0_gate_cache_10_d1),
-    .gate_cache_11_address1(compute_gate_U0_gate_cache_11_address1),
-    .gate_cache_11_ce1(compute_gate_U0_gate_cache_11_ce1),
-    .gate_cache_11_we1(compute_gate_U0_gate_cache_11_we1),
-    .gate_cache_11_d1(compute_gate_U0_gate_cache_11_d1),
-    .gate_cache_12_address1(compute_gate_U0_gate_cache_12_address1),
-    .gate_cache_12_ce1(compute_gate_U0_gate_cache_12_ce1),
-    .gate_cache_12_we1(compute_gate_U0_gate_cache_12_we1),
-    .gate_cache_12_d1(compute_gate_U0_gate_cache_12_d1),
-    .gate_cache_13_address1(compute_gate_U0_gate_cache_13_address1),
-    .gate_cache_13_ce1(compute_gate_U0_gate_cache_13_ce1),
-    .gate_cache_13_we1(compute_gate_U0_gate_cache_13_we1),
-    .gate_cache_13_d1(compute_gate_U0_gate_cache_13_d1),
-    .gate_cache_14_address1(compute_gate_U0_gate_cache_14_address1),
-    .gate_cache_14_ce1(compute_gate_U0_gate_cache_14_ce1),
-    .gate_cache_14_we1(compute_gate_U0_gate_cache_14_we1),
-    .gate_cache_14_d1(compute_gate_U0_gate_cache_14_d1),
-    .gate_cache_15_address1(compute_gate_U0_gate_cache_15_address1),
-    .gate_cache_15_ce1(compute_gate_U0_gate_cache_15_ce1),
-    .gate_cache_15_we1(compute_gate_U0_gate_cache_15_we1),
-    .gate_cache_15_d1(compute_gate_U0_gate_cache_15_d1),
-    .gate_cache_16_address1(compute_gate_U0_gate_cache_16_address1),
-    .gate_cache_16_ce1(compute_gate_U0_gate_cache_16_ce1),
-    .gate_cache_16_we1(compute_gate_U0_gate_cache_16_we1),
-    .gate_cache_16_d1(compute_gate_U0_gate_cache_16_d1),
-    .gate_cache_17_address1(compute_gate_U0_gate_cache_17_address1),
-    .gate_cache_17_ce1(compute_gate_U0_gate_cache_17_ce1),
-    .gate_cache_17_we1(compute_gate_U0_gate_cache_17_we1),
-    .gate_cache_17_d1(compute_gate_U0_gate_cache_17_d1),
-    .gate_cache_18_address1(compute_gate_U0_gate_cache_18_address1),
-    .gate_cache_18_ce1(compute_gate_U0_gate_cache_18_ce1),
-    .gate_cache_18_we1(compute_gate_U0_gate_cache_18_we1),
-    .gate_cache_18_d1(compute_gate_U0_gate_cache_18_d1),
-    .gate_cache_19_address1(compute_gate_U0_gate_cache_19_address1),
-    .gate_cache_19_ce1(compute_gate_U0_gate_cache_19_ce1),
-    .gate_cache_19_we1(compute_gate_U0_gate_cache_19_we1),
-    .gate_cache_19_d1(compute_gate_U0_gate_cache_19_d1),
-    .gate_cache_20_address1(compute_gate_U0_gate_cache_20_address1),
-    .gate_cache_20_ce1(compute_gate_U0_gate_cache_20_ce1),
-    .gate_cache_20_we1(compute_gate_U0_gate_cache_20_we1),
-    .gate_cache_20_d1(compute_gate_U0_gate_cache_20_d1),
-    .gate_cache_21_address1(compute_gate_U0_gate_cache_21_address1),
-    .gate_cache_21_ce1(compute_gate_U0_gate_cache_21_ce1),
-    .gate_cache_21_we1(compute_gate_U0_gate_cache_21_we1),
-    .gate_cache_21_d1(compute_gate_U0_gate_cache_21_d1),
-    .gate_cache_22_address1(compute_gate_U0_gate_cache_22_address1),
-    .gate_cache_22_ce1(compute_gate_U0_gate_cache_22_ce1),
-    .gate_cache_22_we1(compute_gate_U0_gate_cache_22_we1),
-    .gate_cache_22_d1(compute_gate_U0_gate_cache_22_d1),
-    .gate_cache_23_address1(compute_gate_U0_gate_cache_23_address1),
-    .gate_cache_23_ce1(compute_gate_U0_gate_cache_23_ce1),
-    .gate_cache_23_we1(compute_gate_U0_gate_cache_23_we1),
-    .gate_cache_23_d1(compute_gate_U0_gate_cache_23_d1),
-    .gate_cache_24_address1(compute_gate_U0_gate_cache_24_address1),
-    .gate_cache_24_ce1(compute_gate_U0_gate_cache_24_ce1),
-    .gate_cache_24_we1(compute_gate_U0_gate_cache_24_we1),
-    .gate_cache_24_d1(compute_gate_U0_gate_cache_24_d1),
-    .gate_cache_25_address1(compute_gate_U0_gate_cache_25_address1),
-    .gate_cache_25_ce1(compute_gate_U0_gate_cache_25_ce1),
-    .gate_cache_25_we1(compute_gate_U0_gate_cache_25_we1),
-    .gate_cache_25_d1(compute_gate_U0_gate_cache_25_d1),
-    .gate_cache_26_address1(compute_gate_U0_gate_cache_26_address1),
-    .gate_cache_26_ce1(compute_gate_U0_gate_cache_26_ce1),
-    .gate_cache_26_we1(compute_gate_U0_gate_cache_26_we1),
-    .gate_cache_26_d1(compute_gate_U0_gate_cache_26_d1),
-    .gate_cache_27_address1(compute_gate_U0_gate_cache_27_address1),
-    .gate_cache_27_ce1(compute_gate_U0_gate_cache_27_ce1),
-    .gate_cache_27_we1(compute_gate_U0_gate_cache_27_we1),
-    .gate_cache_27_d1(compute_gate_U0_gate_cache_27_d1),
-    .gate_cache_28_address1(compute_gate_U0_gate_cache_28_address1),
-    .gate_cache_28_ce1(compute_gate_U0_gate_cache_28_ce1),
-    .gate_cache_28_we1(compute_gate_U0_gate_cache_28_we1),
-    .gate_cache_28_d1(compute_gate_U0_gate_cache_28_d1),
-    .gate_cache_29_address1(compute_gate_U0_gate_cache_29_address1),
-    .gate_cache_29_ce1(compute_gate_U0_gate_cache_29_ce1),
-    .gate_cache_29_we1(compute_gate_U0_gate_cache_29_we1),
-    .gate_cache_29_d1(compute_gate_U0_gate_cache_29_d1),
-    .gate_cache_30_address1(compute_gate_U0_gate_cache_30_address1),
-    .gate_cache_30_ce1(compute_gate_U0_gate_cache_30_ce1),
-    .gate_cache_30_we1(compute_gate_U0_gate_cache_30_we1),
-    .gate_cache_30_d1(compute_gate_U0_gate_cache_30_d1),
-    .gate_cache_31_address1(compute_gate_U0_gate_cache_31_address1),
-    .gate_cache_31_ce1(compute_gate_U0_gate_cache_31_ce1),
-    .gate_cache_31_we1(compute_gate_U0_gate_cache_31_we1),
-    .gate_cache_31_d1(compute_gate_U0_gate_cache_31_d1),
     .ap_return(compute_gate_U0_ap_return)
 );
 
@@ -13848,78 +12816,6 @@ swiglu_compute_output compute_output_U0(
     .gate_cache_7_address0(compute_output_U0_gate_cache_7_address0),
     .gate_cache_7_ce0(compute_output_U0_gate_cache_7_ce0),
     .gate_cache_7_q0(gate_cache_7_t_q0),
-    .gate_cache_8_address0(compute_output_U0_gate_cache_8_address0),
-    .gate_cache_8_ce0(compute_output_U0_gate_cache_8_ce0),
-    .gate_cache_8_q0(gate_cache_8_t_q0),
-    .gate_cache_9_address0(compute_output_U0_gate_cache_9_address0),
-    .gate_cache_9_ce0(compute_output_U0_gate_cache_9_ce0),
-    .gate_cache_9_q0(gate_cache_9_t_q0),
-    .gate_cache_10_address0(compute_output_U0_gate_cache_10_address0),
-    .gate_cache_10_ce0(compute_output_U0_gate_cache_10_ce0),
-    .gate_cache_10_q0(gate_cache_10_t_q0),
-    .gate_cache_11_address0(compute_output_U0_gate_cache_11_address0),
-    .gate_cache_11_ce0(compute_output_U0_gate_cache_11_ce0),
-    .gate_cache_11_q0(gate_cache_11_t_q0),
-    .gate_cache_12_address0(compute_output_U0_gate_cache_12_address0),
-    .gate_cache_12_ce0(compute_output_U0_gate_cache_12_ce0),
-    .gate_cache_12_q0(gate_cache_12_t_q0),
-    .gate_cache_13_address0(compute_output_U0_gate_cache_13_address0),
-    .gate_cache_13_ce0(compute_output_U0_gate_cache_13_ce0),
-    .gate_cache_13_q0(gate_cache_13_t_q0),
-    .gate_cache_14_address0(compute_output_U0_gate_cache_14_address0),
-    .gate_cache_14_ce0(compute_output_U0_gate_cache_14_ce0),
-    .gate_cache_14_q0(gate_cache_14_t_q0),
-    .gate_cache_15_address0(compute_output_U0_gate_cache_15_address0),
-    .gate_cache_15_ce0(compute_output_U0_gate_cache_15_ce0),
-    .gate_cache_15_q0(gate_cache_15_t_q0),
-    .gate_cache_16_address0(compute_output_U0_gate_cache_16_address0),
-    .gate_cache_16_ce0(compute_output_U0_gate_cache_16_ce0),
-    .gate_cache_16_q0(gate_cache_16_t_q0),
-    .gate_cache_17_address0(compute_output_U0_gate_cache_17_address0),
-    .gate_cache_17_ce0(compute_output_U0_gate_cache_17_ce0),
-    .gate_cache_17_q0(gate_cache_17_t_q0),
-    .gate_cache_18_address0(compute_output_U0_gate_cache_18_address0),
-    .gate_cache_18_ce0(compute_output_U0_gate_cache_18_ce0),
-    .gate_cache_18_q0(gate_cache_18_t_q0),
-    .gate_cache_19_address0(compute_output_U0_gate_cache_19_address0),
-    .gate_cache_19_ce0(compute_output_U0_gate_cache_19_ce0),
-    .gate_cache_19_q0(gate_cache_19_t_q0),
-    .gate_cache_20_address0(compute_output_U0_gate_cache_20_address0),
-    .gate_cache_20_ce0(compute_output_U0_gate_cache_20_ce0),
-    .gate_cache_20_q0(gate_cache_20_t_q0),
-    .gate_cache_21_address0(compute_output_U0_gate_cache_21_address0),
-    .gate_cache_21_ce0(compute_output_U0_gate_cache_21_ce0),
-    .gate_cache_21_q0(gate_cache_21_t_q0),
-    .gate_cache_22_address0(compute_output_U0_gate_cache_22_address0),
-    .gate_cache_22_ce0(compute_output_U0_gate_cache_22_ce0),
-    .gate_cache_22_q0(gate_cache_22_t_q0),
-    .gate_cache_23_address0(compute_output_U0_gate_cache_23_address0),
-    .gate_cache_23_ce0(compute_output_U0_gate_cache_23_ce0),
-    .gate_cache_23_q0(gate_cache_23_t_q0),
-    .gate_cache_24_address0(compute_output_U0_gate_cache_24_address0),
-    .gate_cache_24_ce0(compute_output_U0_gate_cache_24_ce0),
-    .gate_cache_24_q0(gate_cache_24_t_q0),
-    .gate_cache_25_address0(compute_output_U0_gate_cache_25_address0),
-    .gate_cache_25_ce0(compute_output_U0_gate_cache_25_ce0),
-    .gate_cache_25_q0(gate_cache_25_t_q0),
-    .gate_cache_26_address0(compute_output_U0_gate_cache_26_address0),
-    .gate_cache_26_ce0(compute_output_U0_gate_cache_26_ce0),
-    .gate_cache_26_q0(gate_cache_26_t_q0),
-    .gate_cache_27_address0(compute_output_U0_gate_cache_27_address0),
-    .gate_cache_27_ce0(compute_output_U0_gate_cache_27_ce0),
-    .gate_cache_27_q0(gate_cache_27_t_q0),
-    .gate_cache_28_address0(compute_output_U0_gate_cache_28_address0),
-    .gate_cache_28_ce0(compute_output_U0_gate_cache_28_ce0),
-    .gate_cache_28_q0(gate_cache_28_t_q0),
-    .gate_cache_29_address0(compute_output_U0_gate_cache_29_address0),
-    .gate_cache_29_ce0(compute_output_U0_gate_cache_29_ce0),
-    .gate_cache_29_q0(gate_cache_29_t_q0),
-    .gate_cache_30_address0(compute_output_U0_gate_cache_30_address0),
-    .gate_cache_30_ce0(compute_output_U0_gate_cache_30_ce0),
-    .gate_cache_30_q0(gate_cache_30_t_q0),
-    .gate_cache_31_address0(compute_output_U0_gate_cache_31_address0),
-    .gate_cache_31_ce0(compute_output_U0_gate_cache_31_ce0),
-    .gate_cache_31_q0(gate_cache_31_t_q0),
     .m_axi_gmem_out_0_AWVALID(compute_output_U0_m_axi_gmem_out_0_AWVALID),
     .m_axi_gmem_out_0_AWREADY(gmem_out_0_AWREADY),
     .m_axi_gmem_out_0_AWADDR(compute_output_U0_m_axi_gmem_out_0_AWADDR),
@@ -13987,12 +12883,12 @@ swiglu_fifo_w32_d2_S gate_scale_U(
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_gate_cache_31 <= 1'b0;
+        ap_sync_reg_channel_write_gate_cache_7 <= 1'b0;
     end else begin
         if (((compute_gate_U0_ap_done & compute_gate_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_gate_cache_31 <= 1'b0;
+            ap_sync_reg_channel_write_gate_cache_7 <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_gate_cache_31 <= ap_sync_channel_write_gate_cache_31;
+            ap_sync_reg_channel_write_gate_cache_7 <= ap_sync_channel_write_gate_cache_7;
         end
     end
 end
@@ -14081,7 +12977,7 @@ always @ (posedge ap_clk) begin
     end
 end
 
-assign ap_channel_done_gate_cache_31 = ((ap_sync_reg_channel_write_gate_cache_31 ^ 1'b1) & compute_gate_U0_ap_done);
+assign ap_channel_done_gate_cache_7 = ((ap_sync_reg_channel_write_gate_cache_7 ^ 1'b1) & compute_gate_U0_ap_done);
 
 assign ap_channel_done_gate_scale = ((ap_sync_reg_channel_write_gate_scale ^ 1'b1) & compute_gate_U0_ap_done);
 
@@ -14091,7 +12987,7 @@ assign ap_channel_done_x_local_2_127 = (load_x_local_U0_ap_done & (ap_sync_reg_c
 
 assign ap_done = compute_output_U0_ap_done;
 
-assign ap_idle = (load_x_local_U0_ap_idle & (x_local_2_127_t_empty_n ^ 1'b1) & (x_local_1_127_t_empty_n ^ 1'b1) & (1'b1 ^ X2_cache_t_empty_n) & (1'b1 ^ X1_cache_t_empty_n) & (gate_scale_empty_n ^ 1'b1) & compute_output_U0_ap_idle & compute_gate_U0_ap_idle & compute_X2_U0_ap_idle & compute_X1_U0_ap_idle);
+assign ap_idle = (load_x_local_U0_ap_idle & (gate_scale_empty_n ^ 1'b1) & (x_local_2_127_t_empty_n ^ 1'b1) & (x_local_1_127_t_empty_n ^ 1'b1) & (1'b1 ^ X2_cache_t_empty_n) & (1'b1 ^ X1_cache_t_empty_n) & compute_output_U0_ap_idle & compute_gate_U0_ap_idle & compute_X2_U0_ap_idle & compute_X1_U0_ap_idle);
 
 assign ap_ready = ap_sync_ready;
 
@@ -14099,7 +12995,7 @@ always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign ap_sync_channel_write_gate_cache_31 = ((compute_gate_U0_gate_cache_31_full_n & ap_channel_done_gate_cache_31) | ap_sync_reg_channel_write_gate_cache_31);
+assign ap_sync_channel_write_gate_cache_7 = ((compute_gate_U0_gate_cache_7_full_n & ap_channel_done_gate_cache_7) | ap_sync_reg_channel_write_gate_cache_7);
 
 assign ap_sync_channel_write_gate_scale = ((gate_scale_full_n & ap_channel_done_gate_scale) | ap_sync_reg_channel_write_gate_scale);
 
@@ -14125,11 +13021,11 @@ assign compute_X2_U0_ap_continue = X2_cache_i_full_n;
 
 assign compute_X2_U0_ap_start = (x_local_2_127_t_empty_n & (ap_sync_reg_compute_X2_U0_ap_ready ^ 1'b1) & ap_start & 1'b1);
 
-assign compute_gate_U0_ap_continue = ap_sync_channel_write_gate_cache_31;
+assign compute_gate_U0_ap_continue = ap_sync_channel_write_gate_cache_7;
 
 assign compute_gate_U0_ap_start = (X2_cache_t_empty_n & X1_cache_t_empty_n);
 
-assign compute_gate_U0_gate_cache_31_full_n = gate_cache_31_i_full_n;
+assign compute_gate_U0_gate_cache_7_full_n = gate_cache_7_i_full_n;
 
 assign compute_output_U0_ap_continue = 1'b1;
 

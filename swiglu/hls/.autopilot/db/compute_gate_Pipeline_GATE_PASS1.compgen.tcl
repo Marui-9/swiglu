@@ -28,7 +28,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1332 \
+    id 1333 \
     name X1_cache \
     reset_level 1 \
     sync_rst true \
@@ -47,7 +47,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1333 \
+    id 1334 \
     name X2_cache \
     reset_level 1 \
     sync_rst true \
@@ -66,14 +66,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1334 \
+    id 1335 \
     name gate_fp \
     reset_level 1 \
     sync_rst true \
     dir O \
     corename gate_fp \
     op interface \
-    ports { gate_fp_address0 { O 13 vector } gate_fp_ce0 { O 1 bit } gate_fp_we0 { O 1 bit } gate_fp_d0 { O 32 vector } } \
+    ports { gate_fp_address1 { O 13 vector } gate_fp_ce1 { O 1 bit } gate_fp_we1 { O 1 bit } gate_fp_d1 { O 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'gate_fp'"
@@ -84,7 +84,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1335 \
+    id 1336 \
     name max_abs_out \
     type other \
     dir O \
@@ -99,7 +99,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1336 \
+    id 1337 \
     name max_abs_2_out \
     type other \
     dir O \
@@ -114,7 +114,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1337 \
+    id 1338 \
     name max_abs_4_out \
     type other \
     dir O \
@@ -129,7 +129,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1338 \
+    id 1339 \
     name max_abs_6_out \
     type other \
     dir O \
@@ -144,7 +144,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1339 \
+    id 1340 \
     name max_abs_8_out \
     type other \
     dir O \
@@ -159,7 +159,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1340 \
+    id 1341 \
     name max_abs_10_out \
     type other \
     dir O \
@@ -174,7 +174,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1341 \
+    id 1342 \
     name max_abs_12_out \
     type other \
     dir O \
@@ -189,7 +189,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1342 \
+    id 1343 \
     name max_abs_14_out \
     type other \
     dir O \

@@ -4,7 +4,7 @@ set SynModuleInfo {
       {MODELNAME swiglu_flow_control_loop_pipe RTLNAME swiglu_flow_control_loop_pipe BINDTYPE interface TYPE internal_upc_flow_control INSTNAME swiglu_flow_control_loop_pipe_U}
     }
   }
-  {SRCNAME load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_101_1 MODELNAME load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_101_1 RTLNAME swiglu_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_101_1
+  {SRCNAME load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1 MODELNAME load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1 RTLNAME swiglu_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1
     SUBMODULES {
       {MODELNAME swiglu_flow_control_loop_pipe_sequential_init RTLNAME swiglu_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME swiglu_flow_control_loop_pipe_sequential_init_U}
     }
@@ -43,10 +43,14 @@ set SynModuleInfo {
   }
   {SRCNAME compute_X1 MODELNAME compute_X1 RTLNAME swiglu_compute_X1
     SUBMODULES {
-      {MODELNAME swiglu_compute_X1_row_buf_RAM_2P_LUTRAM_1R1W RTLNAME swiglu_compute_X1_row_buf_RAM_2P_LUTRAM_1R1W BINDTYPE storage TYPE ram_2p IMPL lutram LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME swiglu_compute_X1_row_buf_RAM_AUTO_1R1W RTLNAME swiglu_compute_X1_row_buf_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
     }
   }
-  {SRCNAME compute_X2 MODELNAME compute_X2 RTLNAME swiglu_compute_X2}
+  {SRCNAME compute_X2 MODELNAME compute_X2 RTLNAME swiglu_compute_X2
+    SUBMODULES {
+      {MODELNAME swiglu_compute_X2_row_buf_RAM_AUTO_1R1W RTLNAME swiglu_compute_X2_row_buf_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+    }
+  }
   {SRCNAME compute_gate_Pipeline_GATE_PASS1 MODELNAME compute_gate_Pipeline_GATE_PASS1 RTLNAME swiglu_compute_gate_Pipeline_GATE_PASS1
     SUBMODULES {
       {MODELNAME swiglu_fadd_32ns_32ns_32_11_full_dsp_1 RTLNAME swiglu_fadd_32ns_32ns_32_11_full_dsp_1 BINDTYPE op TYPE fadd IMPL fulldsp LATENCY 10 ALLOW_PRAGMA 1}
@@ -58,7 +62,7 @@ set SynModuleInfo {
   {SRCNAME compute_gate MODELNAME compute_gate RTLNAME swiglu_compute_gate
     SUBMODULES {
       {MODELNAME swiglu_fdiv_32ns_32ns_32_30_no_dsp_1 RTLNAME swiglu_fdiv_32ns_32ns_32_30_no_dsp_1 BINDTYPE op TYPE fdiv IMPL fabric LATENCY 29 ALLOW_PRAGMA 1}
-      {MODELNAME swiglu_compute_gate_gate_fp_RAM_1P_URAM_1R1W RTLNAME swiglu_compute_gate_gate_fp_RAM_1P_URAM_1R1W BINDTYPE storage TYPE ram_1p IMPL uram LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME swiglu_compute_gate_gate_fp_RAM_2P_URAM_1R1W RTLNAME swiglu_compute_gate_gate_fp_RAM_2P_URAM_1R1W BINDTYPE storage TYPE ram_2p IMPL uram LATENCY 2 ALLOW_PRAGMA 1}
     }
   }
   {SRCNAME load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K MODELNAME load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K RTLNAME swiglu_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K}
@@ -70,16 +74,15 @@ set SynModuleInfo {
   {SRCNAME mac_blocks_down_q6k_Pipeline_1 MODELNAME mac_blocks_down_q6k_Pipeline_1 RTLNAME swiglu_mac_blocks_down_q6k_Pipeline_1}
   {SRCNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K MODELNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K RTLNAME swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K
     SUBMODULES {
-      {MODELNAME swiglu_sparsemux_17_5_8_1_1 RTLNAME swiglu_sparsemux_17_5_8_1_1 BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
       {MODELNAME swiglu_sparsemux_33_4_128_1_1 RTLNAME swiglu_sparsemux_33_4_128_1_1 BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
     }
   }
   {SRCNAME mac_blocks_down_q6k_Pipeline_3 MODELNAME mac_blocks_down_q6k_Pipeline_3 RTLNAME swiglu_mac_blocks_down_q6k_Pipeline_3}
-  {SRCNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K1 MODELNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K1 RTLNAME swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K1}
+  {SRCNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K7 MODELNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K7 RTLNAME swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K7}
   {SRCNAME mac_blocks_down_q6k_Pipeline_5 MODELNAME mac_blocks_down_q6k_Pipeline_5 RTLNAME swiglu_mac_blocks_down_q6k_Pipeline_5}
-  {SRCNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K2 MODELNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K2 RTLNAME swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K2}
+  {SRCNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K8 MODELNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K8 RTLNAME swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K8}
   {SRCNAME mac_blocks_down_q6k_Pipeline_7 MODELNAME mac_blocks_down_q6k_Pipeline_7 RTLNAME swiglu_mac_blocks_down_q6k_Pipeline_7}
-  {SRCNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K3 MODELNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K3 RTLNAME swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K3}
+  {SRCNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K9 MODELNAME mac_blocks_down_q6k_Pipeline_MAC_Q6K9 RTLNAME swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K9}
   {SRCNAME mac_blocks_down_q6k MODELNAME mac_blocks_down_q6k RTLNAME swiglu_mac_blocks_down_q6k
     SUBMODULES {
       {MODELNAME swiglu_mul_5ns_9ns_13_1_1 RTLNAME swiglu_mul_5ns_9ns_13_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
@@ -87,23 +90,20 @@ set SynModuleInfo {
       {MODELNAME swiglu_sitofp_32s_32_7_no_dsp_1 RTLNAME swiglu_sitofp_32s_32_7_no_dsp_1 BINDTYPE op TYPE sitofp IMPL auto LATENCY 6 ALLOW_PRAGMA 1}
     }
   }
-  {SRCNAME load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_318_1 MODELNAME load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_318_1 RTLNAME swiglu_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_318_1}
+  {SRCNAME load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_316_1 MODELNAME load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_316_1 RTLNAME swiglu_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_316_1}
   {SRCNAME load_row_down_q4k MODELNAME load_row_down_q4k RTLNAME swiglu_load_row_down_q4k}
-  {SRCNAME mac_blocks_down_q4k_Pipeline_UNPACK_HDR_DOWN MODELNAME mac_blocks_down_q4k_Pipeline_UNPACK_HDR_DOWN RTLNAME swiglu_mac_blocks_down_q4k_Pipeline_UNPACK_HDR_DOWN
-    SUBMODULES {
-      {MODELNAME swiglu_sparsemux_65_5_128_1_1 RTLNAME swiglu_sparsemux_65_5_128_1_1 BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
-    }
-  }
-  {SRCNAME mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0 MODELNAME mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0 RTLNAME swiglu_mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0}
-  {SRCNAME mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G1 MODELNAME mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G1 RTLNAME swiglu_mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G1}
-  {SRCNAME mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G2 MODELNAME mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G2 RTLNAME swiglu_mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G2}
-  {SRCNAME mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G3 MODELNAME mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G3 RTLNAME swiglu_mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G3}
-  {SRCNAME mac_blocks_down_q4k MODELNAME mac_blocks_down_q4k RTLNAME swiglu_mac_blocks_down_q4k}
+  {SRCNAME mac_blocks_down_q4k3_Pipeline_UNPACK_HDR_DOWN MODELNAME mac_blocks_down_q4k3_Pipeline_UNPACK_HDR_DOWN RTLNAME swiglu_mac_blocks_down_q4k3_Pipeline_UNPACK_HDR_DOWN}
+  {SRCNAME mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G0 MODELNAME mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G0 RTLNAME swiglu_mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G0}
+  {SRCNAME mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G1 MODELNAME mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G1 RTLNAME swiglu_mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G1}
+  {SRCNAME mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G2 MODELNAME mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G2 RTLNAME swiglu_mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G2}
+  {SRCNAME mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G3 MODELNAME mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G3 RTLNAME swiglu_mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G3}
+  {SRCNAME mac_blocks_down_q4k3 MODELNAME mac_blocks_down_q4k3 RTLNAME swiglu_mac_blocks_down_q4k3}
   {SRCNAME compute_output_Pipeline_1 MODELNAME compute_output_Pipeline_1 RTLNAME swiglu_compute_output_Pipeline_1}
   {SRCNAME compute_output MODELNAME compute_output RTLNAME swiglu_compute_output
     SUBMODULES {
       {MODELNAME swiglu_compute_output_out_local_RAM_AUTO_1R1W RTLNAME swiglu_compute_output_out_local_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
-      {MODELNAME swiglu_compute_output_row_buf_32_RAM_1WNR_AUTO_1R1W RTLNAME swiglu_compute_output_row_buf_32_RAM_1WNR_AUTO_1R1W BINDTYPE storage TYPE ram_1wnr IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME swiglu_compute_output_row_buf_RAM_AUTO_1R1W RTLNAME swiglu_compute_output_row_buf_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME swiglu_compute_output_row_buf_8_RAM_1WNR_AUTO_1R1W RTLNAME swiglu_compute_output_row_buf_8_RAM_1WNR_AUTO_1R1W BINDTYPE storage TYPE ram_1wnr IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
     }
   }
   {SRCNAME swiglu MODELNAME swiglu RTLNAME swiglu IS_TOP 1

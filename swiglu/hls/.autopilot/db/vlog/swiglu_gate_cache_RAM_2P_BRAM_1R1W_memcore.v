@@ -17,8 +17,8 @@ module swiglu_gate_cache_RAM_2P_BRAM_1R1W_memcore (
     reset, clk);
 
 parameter DataWidth = 8;
-parameter AddressWidth = 8;
-parameter AddressRange = 256;
+parameter AddressWidth = 10;
+parameter AddressRange = 1024;
  
 input[AddressWidth-1:0] address0;
 input ce0;

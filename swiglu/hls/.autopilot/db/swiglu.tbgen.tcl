@@ -963,9 +963,9 @@ set ArgLastReadFirstWriteLatency {
 		rb_5 {Type O LastRead -1 FirstWrite 2}
 		rb_6 {Type O LastRead -1 FirstWrite 2}
 		rb_7 {Type O LastRead -1 FirstWrite 2}}
-	load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_101_1 {
+	load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1 {
 		gmem_V {Type I LastRead 1 FirstWrite -1}
-		sext_ln100 {Type I LastRead 0 FirstWrite -1}
+		sext_ln99 {Type I LastRead 0 FirstWrite -1}
 		rb_7 {Type O LastRead -1 FirstWrite 2}
 		rb_6 {Type O LastRead -1 FirstWrite 2}
 		rb_5 {Type O LastRead -1 FirstWrite 2}
@@ -1807,9 +1807,9 @@ set ArgLastReadFirstWriteLatency {
 		rb_5 {Type O LastRead -1 FirstWrite 2}
 		rb_6 {Type O LastRead -1 FirstWrite 2}
 		rb_7 {Type O LastRead -1 FirstWrite 2}}
-	load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_101_1 {
+	load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1 {
 		gmem_V {Type I LastRead 1 FirstWrite -1}
-		sext_ln100 {Type I LastRead 0 FirstWrite -1}
+		sext_ln99 {Type I LastRead 0 FirstWrite -1}
 		rb_7 {Type O LastRead -1 FirstWrite 2}
 		rb_6 {Type O LastRead -1 FirstWrite 2}
 		rb_5 {Type O LastRead -1 FirstWrite 2}
@@ -2517,30 +2517,6 @@ set ArgLastReadFirstWriteLatency {
 		gate_cache_5 {Type O LastRead -1 FirstWrite 13}
 		gate_cache_6 {Type O LastRead -1 FirstWrite 13}
 		gate_cache_7 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_8 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_9 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_10 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_11 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_12 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_13 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_14 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_15 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_16 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_17 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_18 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_19 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_20 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_21 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_22 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_23 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_24 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_25 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_26 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_27 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_28 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_29 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_30 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_31 {Type O LastRead -1 FirstWrite 13}
 		sigmoid_lut {Type I LastRead -1 FirstWrite -1}}
 	compute_gate_Pipeline_GATE_PASS1 {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
@@ -2556,38 +2532,14 @@ set ArgLastReadFirstWriteLatency {
 		max_abs_14_out {Type O LastRead -1 FirstWrite 46}
 		sigmoid_lut {Type I LastRead -1 FirstWrite -1}}
 	compute_gate_Pipeline_GATE_PASS2 {
-		gate_cache_0 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_1 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_2 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_3 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_4 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_5 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_6 {Type O LastRead -1 FirstWrite 13}
 		gate_cache_7 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_8 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_9 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_10 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_11 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_12 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_13 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_14 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_15 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_16 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_17 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_18 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_19 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_20 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_21 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_22 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_23 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_24 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_25 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_26 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_27 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_28 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_29 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_30 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_31 {Type O LastRead -1 FirstWrite 13}
+		gate_cache_6 {Type O LastRead -1 FirstWrite 13}
+		gate_cache_5 {Type O LastRead -1 FirstWrite 13}
+		gate_cache_4 {Type O LastRead -1 FirstWrite 13}
+		gate_cache_3 {Type O LastRead -1 FirstWrite 13}
+		gate_cache_2 {Type O LastRead -1 FirstWrite 13}
+		gate_cache_1 {Type O LastRead -1 FirstWrite 13}
+		gate_cache_0 {Type O LastRead -1 FirstWrite 13}
 		gate_fp {Type I LastRead 0 FirstWrite -1}
 		inv_gs {Type I LastRead 0 FirstWrite -1}}
 	compute_output {
@@ -2602,30 +2554,6 @@ set ArgLastReadFirstWriteLatency {
 		gate_cache_5 {Type I LastRead 1 FirstWrite -1}
 		gate_cache_6 {Type I LastRead 1 FirstWrite -1}
 		gate_cache_7 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_8 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_9 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_10 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_11 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_12 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_13 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_14 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_15 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_16 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_17 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_18 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_19 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_20 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_21 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_22 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_23 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_24 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_25 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_26 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_27 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_28 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_29 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_30 {Type I LastRead 1 FirstWrite -1}
-		gate_cache_31 {Type I LastRead 1 FirstWrite -1}
 		gmem_out {Type O LastRead 4 FirstWrite 2}
 		out_batch {Type I LastRead 0 FirstWrite -1}
 		down_quant_mode {Type I LastRead 0 FirstWrite -1}}
@@ -2651,7 +2579,7 @@ set ArgLastReadFirstWriteLatency {
 		rb_15 {Type O LastRead -1 FirstWrite 2}}
 	load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K {
 		gmem_Wd {Type I LastRead 1 FirstWrite -1}
-		sext_ln453 {Type I LastRead 0 FirstWrite -1}
+		sext_ln450 {Type I LastRead 0 FirstWrite -1}
 		rb_15 {Type O LastRead -1 FirstWrite 2}
 		rb_14 {Type O LastRead -1 FirstWrite 2}
 		rb_13 {Type O LastRead -1 FirstWrite 2}
@@ -2693,30 +2621,6 @@ set ArgLastReadFirstWriteLatency {
 		gate_5 {Type I LastRead 0 FirstWrite -1}
 		gate_6 {Type I LastRead 0 FirstWrite -1}
 		gate_7 {Type I LastRead 0 FirstWrite -1}
-		gate_8 {Type I LastRead 0 FirstWrite -1}
-		gate_9 {Type I LastRead 0 FirstWrite -1}
-		gate_10 {Type I LastRead 0 FirstWrite -1}
-		gate_11 {Type I LastRead 0 FirstWrite -1}
-		gate_12 {Type I LastRead 0 FirstWrite -1}
-		gate_13 {Type I LastRead 0 FirstWrite -1}
-		gate_14 {Type I LastRead 0 FirstWrite -1}
-		gate_15 {Type I LastRead 0 FirstWrite -1}
-		gate_16 {Type I LastRead 0 FirstWrite -1}
-		gate_17 {Type I LastRead 0 FirstWrite -1}
-		gate_18 {Type I LastRead 0 FirstWrite -1}
-		gate_19 {Type I LastRead 0 FirstWrite -1}
-		gate_20 {Type I LastRead 0 FirstWrite -1}
-		gate_21 {Type I LastRead 0 FirstWrite -1}
-		gate_22 {Type I LastRead 0 FirstWrite -1}
-		gate_23 {Type I LastRead 0 FirstWrite -1}
-		gate_24 {Type I LastRead 0 FirstWrite -1}
-		gate_25 {Type I LastRead 0 FirstWrite -1}
-		gate_26 {Type I LastRead 0 FirstWrite -1}
-		gate_27 {Type I LastRead 0 FirstWrite -1}
-		gate_28 {Type I LastRead 0 FirstWrite -1}
-		gate_29 {Type I LastRead 0 FirstWrite -1}
-		gate_30 {Type I LastRead 0 FirstWrite -1}
-		gate_31 {Type I LastRead 0 FirstWrite -1}
 		gate_scale {Type I LastRead 0 FirstWrite -1}}
 	mac_blocks_down_q6k_Pipeline_1 {
 		acc {Type O LastRead -1 FirstWrite 0}
@@ -2728,7 +2632,11 @@ set ArgLastReadFirstWriteLatency {
 		acc_6 {Type O LastRead -1 FirstWrite 0}
 		acc_7 {Type O LastRead -1 FirstWrite 0}}
 	mac_blocks_down_q6k_Pipeline_MAC_Q6K {
+		empty {Type I LastRead 0 FirstWrite -1}
 		acc {Type IO LastRead 30 FirstWrite 37}
+		zext_ln77 {Type I LastRead 0 FirstWrite -1}
+		gate_0 {Type I LastRead 0 FirstWrite -1}
+		gate_4 {Type I LastRead 0 FirstWrite -1}
 		acc_7 {Type IO LastRead 30 FirstWrite 37}
 		acc_6 {Type IO LastRead 30 FirstWrite 37}
 		acc_5 {Type IO LastRead 30 FirstWrite 37}
@@ -2736,7 +2644,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_3 {Type IO LastRead 30 FirstWrite 37}
 		acc_2 {Type IO LastRead 30 FirstWrite 37}
 		acc_1 {Type IO LastRead 30 FirstWrite 37}
-		mul_ln55 {Type I LastRead 0 FirstWrite -1}
+		mul_ln54 {Type I LastRead 0 FirstWrite -1}
 		rb_0 {Type I LastRead 1 FirstWrite -1}
 		rb_1 {Type I LastRead 1 FirstWrite -1}
 		rb_2 {Type I LastRead 1 FirstWrite -1}
@@ -2753,15 +2661,6 @@ set ArgLastReadFirstWriteLatency {
 		rb_13 {Type I LastRead 1 FirstWrite -1}
 		rb_14 {Type I LastRead 1 FirstWrite -1}
 		rb_15 {Type I LastRead 1 FirstWrite -1}
-		gate_0 {Type I LastRead 0 FirstWrite -1}
-		gate_4 {Type I LastRead 0 FirstWrite -1}
-		gate_8 {Type I LastRead 0 FirstWrite -1}
-		gate_12 {Type I LastRead 0 FirstWrite -1}
-		gate_16 {Type I LastRead 0 FirstWrite -1}
-		gate_20 {Type I LastRead 0 FirstWrite -1}
-		gate_24 {Type I LastRead 0 FirstWrite -1}
-		gate_28 {Type I LastRead 0 FirstWrite -1}
-		empty {Type I LastRead 0 FirstWrite -1}
 		gate_scale {Type I LastRead 0 FirstWrite -1}}
 	mac_blocks_down_q6k_Pipeline_3 {
 		acc {Type O LastRead -1 FirstWrite 0}
@@ -2772,8 +2671,12 @@ set ArgLastReadFirstWriteLatency {
 		acc_5 {Type O LastRead -1 FirstWrite 0}
 		acc_6 {Type O LastRead -1 FirstWrite 0}
 		acc_7 {Type O LastRead -1 FirstWrite 0}}
-	mac_blocks_down_q6k_Pipeline_MAC_Q6K1 {
+	mac_blocks_down_q6k_Pipeline_MAC_Q6K7 {
+		empty {Type I LastRead 0 FirstWrite -1}
 		acc {Type IO LastRead 30 FirstWrite 37}
+		zext_ln77 {Type I LastRead 0 FirstWrite -1}
+		gate_1 {Type I LastRead 0 FirstWrite -1}
+		gate_5 {Type I LastRead 0 FirstWrite -1}
 		acc_7 {Type IO LastRead 30 FirstWrite 37}
 		acc_6 {Type IO LastRead 30 FirstWrite 37}
 		acc_5 {Type IO LastRead 30 FirstWrite 37}
@@ -2781,7 +2684,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_3 {Type IO LastRead 30 FirstWrite 37}
 		acc_2 {Type IO LastRead 30 FirstWrite 37}
 		acc_1 {Type IO LastRead 30 FirstWrite 37}
-		mul_ln55 {Type I LastRead 0 FirstWrite -1}
+		mul_ln54 {Type I LastRead 0 FirstWrite -1}
 		rb_0 {Type I LastRead 2 FirstWrite -1}
 		rb_1 {Type I LastRead 2 FirstWrite -1}
 		rb_2 {Type I LastRead 2 FirstWrite -1}
@@ -2798,15 +2701,6 @@ set ArgLastReadFirstWriteLatency {
 		rb_13 {Type I LastRead 2 FirstWrite -1}
 		rb_14 {Type I LastRead 2 FirstWrite -1}
 		rb_15 {Type I LastRead 2 FirstWrite -1}
-		gate_1 {Type I LastRead 0 FirstWrite -1}
-		gate_5 {Type I LastRead 0 FirstWrite -1}
-		gate_9 {Type I LastRead 0 FirstWrite -1}
-		gate_13 {Type I LastRead 0 FirstWrite -1}
-		gate_17 {Type I LastRead 0 FirstWrite -1}
-		gate_21 {Type I LastRead 0 FirstWrite -1}
-		gate_25 {Type I LastRead 0 FirstWrite -1}
-		gate_29 {Type I LastRead 0 FirstWrite -1}
-		empty {Type I LastRead 0 FirstWrite -1}
 		gate_scale {Type I LastRead 0 FirstWrite -1}}
 	mac_blocks_down_q6k_Pipeline_5 {
 		acc {Type O LastRead -1 FirstWrite 0}
@@ -2817,8 +2711,12 @@ set ArgLastReadFirstWriteLatency {
 		acc_5 {Type O LastRead -1 FirstWrite 0}
 		acc_6 {Type O LastRead -1 FirstWrite 0}
 		acc_7 {Type O LastRead -1 FirstWrite 0}}
-	mac_blocks_down_q6k_Pipeline_MAC_Q6K2 {
+	mac_blocks_down_q6k_Pipeline_MAC_Q6K8 {
+		empty {Type I LastRead 0 FirstWrite -1}
 		acc {Type IO LastRead 30 FirstWrite 37}
+		zext_ln77 {Type I LastRead 0 FirstWrite -1}
+		gate_2 {Type I LastRead 0 FirstWrite -1}
+		gate_6 {Type I LastRead 0 FirstWrite -1}
 		acc_7 {Type IO LastRead 30 FirstWrite 37}
 		acc_6 {Type IO LastRead 30 FirstWrite 37}
 		acc_5 {Type IO LastRead 30 FirstWrite 37}
@@ -2826,7 +2724,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_3 {Type IO LastRead 30 FirstWrite 37}
 		acc_2 {Type IO LastRead 30 FirstWrite 37}
 		acc_1 {Type IO LastRead 30 FirstWrite 37}
-		mul_ln55 {Type I LastRead 0 FirstWrite -1}
+		mul_ln54 {Type I LastRead 0 FirstWrite -1}
 		rb_0 {Type I LastRead 2 FirstWrite -1}
 		rb_1 {Type I LastRead 2 FirstWrite -1}
 		rb_2 {Type I LastRead 2 FirstWrite -1}
@@ -2843,15 +2741,6 @@ set ArgLastReadFirstWriteLatency {
 		rb_13 {Type I LastRead 2 FirstWrite -1}
 		rb_14 {Type I LastRead 2 FirstWrite -1}
 		rb_15 {Type I LastRead 2 FirstWrite -1}
-		gate_2 {Type I LastRead 0 FirstWrite -1}
-		gate_6 {Type I LastRead 0 FirstWrite -1}
-		gate_10 {Type I LastRead 0 FirstWrite -1}
-		gate_14 {Type I LastRead 0 FirstWrite -1}
-		gate_18 {Type I LastRead 0 FirstWrite -1}
-		gate_22 {Type I LastRead 0 FirstWrite -1}
-		gate_26 {Type I LastRead 0 FirstWrite -1}
-		gate_30 {Type I LastRead 0 FirstWrite -1}
-		empty {Type I LastRead 0 FirstWrite -1}
 		gate_scale {Type I LastRead 0 FirstWrite -1}}
 	mac_blocks_down_q6k_Pipeline_7 {
 		acc {Type O LastRead -1 FirstWrite 0}
@@ -2862,8 +2751,12 @@ set ArgLastReadFirstWriteLatency {
 		acc_5 {Type O LastRead -1 FirstWrite 0}
 		acc_6 {Type O LastRead -1 FirstWrite 0}
 		acc_7 {Type O LastRead -1 FirstWrite 0}}
-	mac_blocks_down_q6k_Pipeline_MAC_Q6K3 {
+	mac_blocks_down_q6k_Pipeline_MAC_Q6K9 {
+		empty {Type I LastRead 0 FirstWrite -1}
 		acc {Type IO LastRead 30 FirstWrite 37}
+		zext_ln77 {Type I LastRead 0 FirstWrite -1}
+		gate_3 {Type I LastRead 0 FirstWrite -1}
+		gate_7 {Type I LastRead 0 FirstWrite -1}
 		acc_7 {Type IO LastRead 30 FirstWrite 37}
 		acc_6 {Type IO LastRead 30 FirstWrite 37}
 		acc_5 {Type IO LastRead 30 FirstWrite 37}
@@ -2871,7 +2764,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_3 {Type IO LastRead 30 FirstWrite 37}
 		acc_2 {Type IO LastRead 30 FirstWrite 37}
 		acc_1 {Type IO LastRead 30 FirstWrite 37}
-		mul_ln55 {Type I LastRead 0 FirstWrite -1}
+		mul_ln54 {Type I LastRead 0 FirstWrite -1}
 		rb_0 {Type I LastRead 2 FirstWrite -1}
 		rb_1 {Type I LastRead 2 FirstWrite -1}
 		rb_2 {Type I LastRead 2 FirstWrite -1}
@@ -2888,15 +2781,6 @@ set ArgLastReadFirstWriteLatency {
 		rb_13 {Type I LastRead 2 FirstWrite -1}
 		rb_14 {Type I LastRead 2 FirstWrite -1}
 		rb_15 {Type I LastRead 2 FirstWrite -1}
-		gate_3 {Type I LastRead 0 FirstWrite -1}
-		gate_7 {Type I LastRead 0 FirstWrite -1}
-		gate_11 {Type I LastRead 0 FirstWrite -1}
-		gate_15 {Type I LastRead 0 FirstWrite -1}
-		gate_19 {Type I LastRead 0 FirstWrite -1}
-		gate_23 {Type I LastRead 0 FirstWrite -1}
-		gate_27 {Type I LastRead 0 FirstWrite -1}
-		gate_31 {Type I LastRead 0 FirstWrite -1}
-		empty {Type I LastRead 0 FirstWrite -1}
 		gate_scale {Type I LastRead 0 FirstWrite -1}}
 	load_row_down_q4k {
 		gmem_Wd {Type I LastRead 1 FirstWrite -1}
@@ -2909,67 +2793,19 @@ set ArgLastReadFirstWriteLatency {
 		rb_4 {Type O LastRead -1 FirstWrite 2}
 		rb_5 {Type O LastRead -1 FirstWrite 2}
 		rb_6 {Type O LastRead -1 FirstWrite 2}
-		rb_7 {Type O LastRead -1 FirstWrite 2}
-		rb_8 {Type O LastRead -1 FirstWrite 2}
-		rb_9 {Type O LastRead -1 FirstWrite 2}
-		rb_10 {Type O LastRead -1 FirstWrite 2}
-		rb_11 {Type O LastRead -1 FirstWrite 2}
-		rb_12 {Type O LastRead -1 FirstWrite 2}
-		rb_13 {Type O LastRead -1 FirstWrite 2}
-		rb_14 {Type O LastRead -1 FirstWrite 2}
-		rb_15 {Type O LastRead -1 FirstWrite 2}
-		rb_16 {Type O LastRead -1 FirstWrite 2}
-		rb_17 {Type O LastRead -1 FirstWrite 2}
-		rb_18 {Type O LastRead -1 FirstWrite 2}
-		rb_19 {Type O LastRead -1 FirstWrite 2}
-		rb_20 {Type O LastRead -1 FirstWrite 2}
-		rb_21 {Type O LastRead -1 FirstWrite 2}
-		rb_22 {Type O LastRead -1 FirstWrite 2}
-		rb_23 {Type O LastRead -1 FirstWrite 2}
-		rb_24 {Type O LastRead -1 FirstWrite 2}
-		rb_25 {Type O LastRead -1 FirstWrite 2}
-		rb_26 {Type O LastRead -1 FirstWrite 2}
-		rb_27 {Type O LastRead -1 FirstWrite 2}
-		rb_28 {Type O LastRead -1 FirstWrite 2}
-		rb_29 {Type O LastRead -1 FirstWrite 2}
-		rb_30 {Type O LastRead -1 FirstWrite 2}
-		rb_31 {Type O LastRead -1 FirstWrite 2}}
-	load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_318_1 {
+		rb_7 {Type O LastRead -1 FirstWrite 2}}
+	load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_316_1 {
 		gmem_Wd {Type I LastRead 1 FirstWrite -1}
-		sext_ln317 {Type I LastRead 0 FirstWrite -1}
-		rb_31 {Type O LastRead -1 FirstWrite 2}
-		rb_30 {Type O LastRead -1 FirstWrite 2}
-		rb_29 {Type O LastRead -1 FirstWrite 2}
-		rb_28 {Type O LastRead -1 FirstWrite 2}
-		rb_27 {Type O LastRead -1 FirstWrite 2}
-		rb_26 {Type O LastRead -1 FirstWrite 2}
-		rb_25 {Type O LastRead -1 FirstWrite 2}
-		rb_24 {Type O LastRead -1 FirstWrite 2}
-		rb_23 {Type O LastRead -1 FirstWrite 2}
-		rb_22 {Type O LastRead -1 FirstWrite 2}
-		rb_21 {Type O LastRead -1 FirstWrite 2}
-		rb_20 {Type O LastRead -1 FirstWrite 2}
-		rb_19 {Type O LastRead -1 FirstWrite 2}
-		rb_18 {Type O LastRead -1 FirstWrite 2}
-		rb_17 {Type O LastRead -1 FirstWrite 2}
-		rb_16 {Type O LastRead -1 FirstWrite 2}
-		rb_15 {Type O LastRead -1 FirstWrite 2}
-		rb_14 {Type O LastRead -1 FirstWrite 2}
-		rb_13 {Type O LastRead -1 FirstWrite 2}
-		rb_12 {Type O LastRead -1 FirstWrite 2}
-		rb_11 {Type O LastRead -1 FirstWrite 2}
-		rb_10 {Type O LastRead -1 FirstWrite 2}
-		rb_9 {Type O LastRead -1 FirstWrite 2}
-		rb_8 {Type O LastRead -1 FirstWrite 2}
-		rb_7 {Type O LastRead -1 FirstWrite 2}
-		rb_6 {Type O LastRead -1 FirstWrite 2}
-		rb_5 {Type O LastRead -1 FirstWrite 2}
-		rb_4 {Type O LastRead -1 FirstWrite 2}
-		rb_3 {Type O LastRead -1 FirstWrite 2}
-		rb_2 {Type O LastRead -1 FirstWrite 2}
+		sext_ln315 {Type I LastRead 0 FirstWrite -1}
+		rb_0 {Type O LastRead -1 FirstWrite 2}
 		rb_1 {Type O LastRead -1 FirstWrite 2}
-		rb_0 {Type O LastRead -1 FirstWrite 2}}
-	mac_blocks_down_q4k {
+		rb_2 {Type O LastRead -1 FirstWrite 2}
+		rb_3 {Type O LastRead -1 FirstWrite 2}
+		rb_4 {Type O LastRead -1 FirstWrite 2}
+		rb_5 {Type O LastRead -1 FirstWrite 2}
+		rb_6 {Type O LastRead -1 FirstWrite 2}
+		rb_7 {Type O LastRead -1 FirstWrite 2}}
+	mac_blocks_down_q4k3 {
 		rb_0 {Type I LastRead 2 FirstWrite -1}
 		rb_1 {Type I LastRead 1 FirstWrite -1}
 		rb_2 {Type I LastRead 1 FirstWrite -1}
@@ -2978,30 +2814,6 @@ set ArgLastReadFirstWriteLatency {
 		rb_5 {Type I LastRead 1 FirstWrite -1}
 		rb_6 {Type I LastRead 1 FirstWrite -1}
 		rb_7 {Type I LastRead 1 FirstWrite -1}
-		rb_8 {Type I LastRead 2 FirstWrite -1}
-		rb_9 {Type I LastRead 1 FirstWrite -1}
-		rb_10 {Type I LastRead 1 FirstWrite -1}
-		rb_11 {Type I LastRead 1 FirstWrite -1}
-		rb_12 {Type I LastRead 1 FirstWrite -1}
-		rb_13 {Type I LastRead 1 FirstWrite -1}
-		rb_14 {Type I LastRead 1 FirstWrite -1}
-		rb_15 {Type I LastRead 1 FirstWrite -1}
-		rb_16 {Type I LastRead 2 FirstWrite -1}
-		rb_17 {Type I LastRead 1 FirstWrite -1}
-		rb_18 {Type I LastRead 1 FirstWrite -1}
-		rb_19 {Type I LastRead 1 FirstWrite -1}
-		rb_20 {Type I LastRead 1 FirstWrite -1}
-		rb_21 {Type I LastRead 1 FirstWrite -1}
-		rb_22 {Type I LastRead 1 FirstWrite -1}
-		rb_23 {Type I LastRead 1 FirstWrite -1}
-		rb_24 {Type I LastRead 2 FirstWrite -1}
-		rb_25 {Type I LastRead 1 FirstWrite -1}
-		rb_26 {Type I LastRead 1 FirstWrite -1}
-		rb_27 {Type I LastRead 1 FirstWrite -1}
-		rb_28 {Type I LastRead 1 FirstWrite -1}
-		rb_29 {Type I LastRead 1 FirstWrite -1}
-		rb_30 {Type I LastRead 1 FirstWrite -1}
-		rb_31 {Type I LastRead 1 FirstWrite -1}
 		gate_0 {Type I LastRead 1 FirstWrite -1}
 		gate_1 {Type I LastRead 1 FirstWrite -1}
 		gate_2 {Type I LastRead 1 FirstWrite -1}
@@ -3010,645 +2822,611 @@ set ArgLastReadFirstWriteLatency {
 		gate_5 {Type I LastRead 1 FirstWrite -1}
 		gate_6 {Type I LastRead 1 FirstWrite -1}
 		gate_7 {Type I LastRead 1 FirstWrite -1}
-		gate_8 {Type I LastRead 1 FirstWrite -1}
-		gate_9 {Type I LastRead 1 FirstWrite -1}
-		gate_10 {Type I LastRead 1 FirstWrite -1}
-		gate_11 {Type I LastRead 1 FirstWrite -1}
-		gate_12 {Type I LastRead 1 FirstWrite -1}
-		gate_13 {Type I LastRead 1 FirstWrite -1}
-		gate_14 {Type I LastRead 1 FirstWrite -1}
-		gate_15 {Type I LastRead 1 FirstWrite -1}
-		gate_16 {Type I LastRead 1 FirstWrite -1}
-		gate_17 {Type I LastRead 1 FirstWrite -1}
-		gate_18 {Type I LastRead 1 FirstWrite -1}
-		gate_19 {Type I LastRead 1 FirstWrite -1}
-		gate_20 {Type I LastRead 1 FirstWrite -1}
-		gate_21 {Type I LastRead 1 FirstWrite -1}
-		gate_22 {Type I LastRead 1 FirstWrite -1}
-		gate_23 {Type I LastRead 1 FirstWrite -1}
-		gate_24 {Type I LastRead 1 FirstWrite -1}
-		gate_25 {Type I LastRead 1 FirstWrite -1}
-		gate_26 {Type I LastRead 1 FirstWrite -1}
-		gate_27 {Type I LastRead 1 FirstWrite -1}
-		gate_28 {Type I LastRead 1 FirstWrite -1}
-		gate_29 {Type I LastRead 1 FirstWrite -1}
-		gate_30 {Type I LastRead 1 FirstWrite -1}
-		gate_31 {Type I LastRead 1 FirstWrite -1}
-		gate_scale {Type I LastRead 14 FirstWrite -1}}
-	mac_blocks_down_q4k_Pipeline_UNPACK_HDR_DOWN {
-		rb_0_load {Type I LastRead 0 FirstWrite -1}
-		rb_1_load {Type I LastRead 0 FirstWrite -1}
-		rb_2_load {Type I LastRead 0 FirstWrite -1}
-		rb_3_load {Type I LastRead 0 FirstWrite -1}
-		rb_4_load {Type I LastRead 0 FirstWrite -1}
-		rb_5_load {Type I LastRead 0 FirstWrite -1}
-		rb_6_load {Type I LastRead 0 FirstWrite -1}
-		rb_7_load {Type I LastRead 0 FirstWrite -1}
-		rb_8_load {Type I LastRead 0 FirstWrite -1}
-		rb_9_load {Type I LastRead 0 FirstWrite -1}
-		rb_10_load {Type I LastRead 0 FirstWrite -1}
-		rb_11_load {Type I LastRead 0 FirstWrite -1}
-		rb_12_load {Type I LastRead 0 FirstWrite -1}
-		rb_13_load {Type I LastRead 0 FirstWrite -1}
-		rb_14_load {Type I LastRead 0 FirstWrite -1}
-		rb_15_load {Type I LastRead 0 FirstWrite -1}
-		rb_16_load {Type I LastRead 0 FirstWrite -1}
-		rb_17_load {Type I LastRead 0 FirstWrite -1}
-		rb_18_load {Type I LastRead 0 FirstWrite -1}
-		rb_19_load {Type I LastRead 0 FirstWrite -1}
-		rb_20_load {Type I LastRead 0 FirstWrite -1}
-		rb_21_load {Type I LastRead 0 FirstWrite -1}
-		rb_22_load {Type I LastRead 0 FirstWrite -1}
-		rb_23_load {Type I LastRead 0 FirstWrite -1}
-		rb_24_load {Type I LastRead 0 FirstWrite -1}
-		rb_25_load {Type I LastRead 0 FirstWrite -1}
-		rb_26_load {Type I LastRead 0 FirstWrite -1}
-		rb_27_load {Type I LastRead 0 FirstWrite -1}
-		rb_28_load {Type I LastRead 0 FirstWrite -1}
-		rb_29_load {Type I LastRead 0 FirstWrite -1}
-		rb_30_load {Type I LastRead 0 FirstWrite -1}
-		rb_31_load {Type I LastRead 0 FirstWrite -1}
-		mn6_390_out {Type O LastRead -1 FirstWrite 5}
-		mn6_389_out {Type O LastRead -1 FirstWrite 5}
-		mn6_388_out {Type O LastRead -1 FirstWrite 5}
-		mn6_387_out {Type O LastRead -1 FirstWrite 5}
-		mn6_386_out {Type O LastRead -1 FirstWrite 5}
-		mn6_385_out {Type O LastRead -1 FirstWrite 5}
-		mn6_384_out {Type O LastRead -1 FirstWrite 5}
-		mn6_383_out {Type O LastRead -1 FirstWrite 5}
-		mn6_382_out {Type O LastRead -1 FirstWrite 5}
-		mn6_381_out {Type O LastRead -1 FirstWrite 5}
-		mn6_380_out {Type O LastRead -1 FirstWrite 5}
-		mn6_379_out {Type O LastRead -1 FirstWrite 5}
-		mn6_378_out {Type O LastRead -1 FirstWrite 5}
-		mn6_377_out {Type O LastRead -1 FirstWrite 5}
-		mn6_376_out {Type O LastRead -1 FirstWrite 5}
-		mn6_375_out {Type O LastRead -1 FirstWrite 5}
-		mn6_374_out {Type O LastRead -1 FirstWrite 5}
-		mn6_373_out {Type O LastRead -1 FirstWrite 5}
-		mn6_372_out {Type O LastRead -1 FirstWrite 5}
-		mn6_371_out {Type O LastRead -1 FirstWrite 5}
-		mn6_370_out {Type O LastRead -1 FirstWrite 5}
-		mn6_369_out {Type O LastRead -1 FirstWrite 5}
-		mn6_368_out {Type O LastRead -1 FirstWrite 5}
-		mn6_367_out {Type O LastRead -1 FirstWrite 5}
-		mn6_366_out {Type O LastRead -1 FirstWrite 5}
-		mn6_365_out {Type O LastRead -1 FirstWrite 5}
-		mn6_364_out {Type O LastRead -1 FirstWrite 5}
-		mn6_363_out {Type O LastRead -1 FirstWrite 5}
-		mn6_362_out {Type O LastRead -1 FirstWrite 5}
-		mn6_361_out {Type O LastRead -1 FirstWrite 5}
-		mn6_360_out {Type O LastRead -1 FirstWrite 5}
-		mn6_359_out {Type O LastRead -1 FirstWrite 5}
-		mn6_358_out {Type O LastRead -1 FirstWrite 5}
-		mn6_357_out {Type O LastRead -1 FirstWrite 5}
-		mn6_356_out {Type O LastRead -1 FirstWrite 5}
-		mn6_355_out {Type O LastRead -1 FirstWrite 5}
-		mn6_354_out {Type O LastRead -1 FirstWrite 5}
-		mn6_353_out {Type O LastRead -1 FirstWrite 5}
-		mn6_352_out {Type O LastRead -1 FirstWrite 5}
-		mn6_351_out {Type O LastRead -1 FirstWrite 5}
-		mn6_350_out {Type O LastRead -1 FirstWrite 5}
-		mn6_349_out {Type O LastRead -1 FirstWrite 5}
-		mn6_348_out {Type O LastRead -1 FirstWrite 5}
-		mn6_347_out {Type O LastRead -1 FirstWrite 5}
-		mn6_346_out {Type O LastRead -1 FirstWrite 5}
-		mn6_345_out {Type O LastRead -1 FirstWrite 5}
-		mn6_344_out {Type O LastRead -1 FirstWrite 5}
-		mn6_343_out {Type O LastRead -1 FirstWrite 5}
-		mn6_342_out {Type O LastRead -1 FirstWrite 5}
-		mn6_341_out {Type O LastRead -1 FirstWrite 5}
-		mn6_340_out {Type O LastRead -1 FirstWrite 5}
-		mn6_339_out {Type O LastRead -1 FirstWrite 5}
-		mn6_338_out {Type O LastRead -1 FirstWrite 5}
-		mn6_337_out {Type O LastRead -1 FirstWrite 5}
-		mn6_336_out {Type O LastRead -1 FirstWrite 5}
-		mn6_335_out {Type O LastRead -1 FirstWrite 5}
-		mn6_334_out {Type O LastRead -1 FirstWrite 5}
-		mn6_333_out {Type O LastRead -1 FirstWrite 5}
-		mn6_332_out {Type O LastRead -1 FirstWrite 5}
-		mn6_331_out {Type O LastRead -1 FirstWrite 5}
-		mn6_330_out {Type O LastRead -1 FirstWrite 5}
-		mn6_329_out {Type O LastRead -1 FirstWrite 5}
-		mn6_328_out {Type O LastRead -1 FirstWrite 5}
-		mn6_327_out {Type O LastRead -1 FirstWrite 5}
-		mn6_326_out {Type O LastRead -1 FirstWrite 5}
-		mn6_325_out {Type O LastRead -1 FirstWrite 5}
-		mn6_324_out {Type O LastRead -1 FirstWrite 5}
-		mn6_323_out {Type O LastRead -1 FirstWrite 5}
-		mn6_322_out {Type O LastRead -1 FirstWrite 5}
-		mn6_321_out {Type O LastRead -1 FirstWrite 5}
-		mn6_320_out {Type O LastRead -1 FirstWrite 5}
-		mn6_319_out {Type O LastRead -1 FirstWrite 5}
-		mn6_318_out {Type O LastRead -1 FirstWrite 5}
-		mn6_317_out {Type O LastRead -1 FirstWrite 5}
-		mn6_316_out {Type O LastRead -1 FirstWrite 5}
-		mn6_315_out {Type O LastRead -1 FirstWrite 5}
-		mn6_314_out {Type O LastRead -1 FirstWrite 5}
-		mn6_313_out {Type O LastRead -1 FirstWrite 5}
-		mn6_312_out {Type O LastRead -1 FirstWrite 5}
-		mn6_311_out {Type O LastRead -1 FirstWrite 5}
-		mn6_310_out {Type O LastRead -1 FirstWrite 5}
-		mn6_309_out {Type O LastRead -1 FirstWrite 5}
-		mn6_308_out {Type O LastRead -1 FirstWrite 5}
-		mn6_307_out {Type O LastRead -1 FirstWrite 5}
-		mn6_306_out {Type O LastRead -1 FirstWrite 5}
-		mn6_305_out {Type O LastRead -1 FirstWrite 5}
-		mn6_304_out {Type O LastRead -1 FirstWrite 5}
-		mn6_303_out {Type O LastRead -1 FirstWrite 5}
-		mn6_302_out {Type O LastRead -1 FirstWrite 5}
-		mn6_301_out {Type O LastRead -1 FirstWrite 5}
-		mn6_300_out {Type O LastRead -1 FirstWrite 5}
-		mn6_299_out {Type O LastRead -1 FirstWrite 5}
-		mn6_298_out {Type O LastRead -1 FirstWrite 5}
-		mn6_297_out {Type O LastRead -1 FirstWrite 5}
-		mn6_296_out {Type O LastRead -1 FirstWrite 5}
-		mn6_295_out {Type O LastRead -1 FirstWrite 5}
-		mn6_294_out {Type O LastRead -1 FirstWrite 5}
-		mn6_293_out {Type O LastRead -1 FirstWrite 5}
-		mn6_292_out {Type O LastRead -1 FirstWrite 5}
-		mn6_291_out {Type O LastRead -1 FirstWrite 5}
-		mn6_290_out {Type O LastRead -1 FirstWrite 5}
-		mn6_289_out {Type O LastRead -1 FirstWrite 5}
-		mn6_288_out {Type O LastRead -1 FirstWrite 5}
-		mn6_287_out {Type O LastRead -1 FirstWrite 5}
-		mn6_286_out {Type O LastRead -1 FirstWrite 5}
-		mn6_285_out {Type O LastRead -1 FirstWrite 5}
-		mn6_284_out {Type O LastRead -1 FirstWrite 5}
-		mn6_283_out {Type O LastRead -1 FirstWrite 5}
-		mn6_282_out {Type O LastRead -1 FirstWrite 5}
-		mn6_281_out {Type O LastRead -1 FirstWrite 5}
-		mn6_280_out {Type O LastRead -1 FirstWrite 5}
-		mn6_279_out {Type O LastRead -1 FirstWrite 5}
-		mn6_278_out {Type O LastRead -1 FirstWrite 5}
-		mn6_277_out {Type O LastRead -1 FirstWrite 5}
-		mn6_276_out {Type O LastRead -1 FirstWrite 5}
-		mn6_275_out {Type O LastRead -1 FirstWrite 5}
-		mn6_274_out {Type O LastRead -1 FirstWrite 5}
-		mn6_273_out {Type O LastRead -1 FirstWrite 5}
-		mn6_272_out {Type O LastRead -1 FirstWrite 5}
-		mn6_271_out {Type O LastRead -1 FirstWrite 5}
-		mn6_270_out {Type O LastRead -1 FirstWrite 5}
-		mn6_269_out {Type O LastRead -1 FirstWrite 5}
-		mn6_268_out {Type O LastRead -1 FirstWrite 5}
-		mn6_267_out {Type O LastRead -1 FirstWrite 5}
-		mn6_266_out {Type O LastRead -1 FirstWrite 5}
-		mn6_265_out {Type O LastRead -1 FirstWrite 5}
-		mn6_264_out {Type O LastRead -1 FirstWrite 5}
-		mn6_263_out {Type O LastRead -1 FirstWrite 5}
-		mn6_262_out {Type O LastRead -1 FirstWrite 5}
-		mn6_261_out {Type O LastRead -1 FirstWrite 5}
-		mn6_260_out {Type O LastRead -1 FirstWrite 5}
-		mn6_259_out {Type O LastRead -1 FirstWrite 5}
-		mn6_258_out {Type O LastRead -1 FirstWrite 5}
-		mn6_257_out {Type O LastRead -1 FirstWrite 5}
-		mn6_256_out {Type O LastRead -1 FirstWrite 5}
-		mn6_255_out {Type O LastRead -1 FirstWrite 5}
-		mn6_254_out {Type O LastRead -1 FirstWrite 5}
-		mn6_253_out {Type O LastRead -1 FirstWrite 5}
-		mn6_252_out {Type O LastRead -1 FirstWrite 5}
-		mn6_251_out {Type O LastRead -1 FirstWrite 5}
-		mn6_250_out {Type O LastRead -1 FirstWrite 5}
-		mn6_249_out {Type O LastRead -1 FirstWrite 5}
-		mn6_248_out {Type O LastRead -1 FirstWrite 5}
-		mn6_247_out {Type O LastRead -1 FirstWrite 5}
-		mn6_246_out {Type O LastRead -1 FirstWrite 5}
-		mn6_245_out {Type O LastRead -1 FirstWrite 5}
-		mn6_244_out {Type O LastRead -1 FirstWrite 5}
-		mn6_243_out {Type O LastRead -1 FirstWrite 5}
-		mn6_242_out {Type O LastRead -1 FirstWrite 5}
-		mn6_241_out {Type O LastRead -1 FirstWrite 5}
-		mn6_240_out {Type O LastRead -1 FirstWrite 5}
-		mn6_239_out {Type O LastRead -1 FirstWrite 5}
-		mn6_238_out {Type O LastRead -1 FirstWrite 5}
-		mn6_237_out {Type O LastRead -1 FirstWrite 5}
-		mn6_236_out {Type O LastRead -1 FirstWrite 5}
-		mn6_235_out {Type O LastRead -1 FirstWrite 5}
-		mn6_234_out {Type O LastRead -1 FirstWrite 5}
-		mn6_233_out {Type O LastRead -1 FirstWrite 5}
-		mn6_232_out {Type O LastRead -1 FirstWrite 5}
-		mn6_231_out {Type O LastRead -1 FirstWrite 5}
-		mn6_230_out {Type O LastRead -1 FirstWrite 5}
-		mn6_229_out {Type O LastRead -1 FirstWrite 5}
-		mn6_228_out {Type O LastRead -1 FirstWrite 5}
-		mn6_227_out {Type O LastRead -1 FirstWrite 5}
-		mn6_226_out {Type O LastRead -1 FirstWrite 5}
-		mn6_225_out {Type O LastRead -1 FirstWrite 5}
-		mn6_224_out {Type O LastRead -1 FirstWrite 5}
-		mn6_223_out {Type O LastRead -1 FirstWrite 5}
-		mn6_222_out {Type O LastRead -1 FirstWrite 5}
-		mn6_221_out {Type O LastRead -1 FirstWrite 5}
-		mn6_220_out {Type O LastRead -1 FirstWrite 5}
-		mn6_219_out {Type O LastRead -1 FirstWrite 5}
-		mn6_218_out {Type O LastRead -1 FirstWrite 5}
-		mn6_217_out {Type O LastRead -1 FirstWrite 5}
-		mn6_216_out {Type O LastRead -1 FirstWrite 5}
-		mn6_215_out {Type O LastRead -1 FirstWrite 5}
-		mn6_214_out {Type O LastRead -1 FirstWrite 5}
-		mn6_213_out {Type O LastRead -1 FirstWrite 5}
-		mn6_212_out {Type O LastRead -1 FirstWrite 5}
-		mn6_211_out {Type O LastRead -1 FirstWrite 5}
-		mn6_210_out {Type O LastRead -1 FirstWrite 5}
-		mn6_209_out {Type O LastRead -1 FirstWrite 5}
-		mn6_208_out {Type O LastRead -1 FirstWrite 5}
-		mn6_207_out {Type O LastRead -1 FirstWrite 5}
-		mn6_206_out {Type O LastRead -1 FirstWrite 5}
-		mn6_205_out {Type O LastRead -1 FirstWrite 5}
-		mn6_204_out {Type O LastRead -1 FirstWrite 5}
-		mn6_203_out {Type O LastRead -1 FirstWrite 5}
-		mn6_202_out {Type O LastRead -1 FirstWrite 5}
-		mn6_201_out {Type O LastRead -1 FirstWrite 5}
-		mn6_200_out {Type O LastRead -1 FirstWrite 5}
-		mn6_199_out {Type O LastRead -1 FirstWrite 5}
-		mn6_198_out {Type O LastRead -1 FirstWrite 5}
-		mn6_197_out {Type O LastRead -1 FirstWrite 5}
-		mn6_196_out {Type O LastRead -1 FirstWrite 5}
-		mn6_195_out {Type O LastRead -1 FirstWrite 5}
-		mn6_194_out {Type O LastRead -1 FirstWrite 5}
-		mn6_193_out {Type O LastRead -1 FirstWrite 5}
-		mn6_192_out {Type O LastRead -1 FirstWrite 5}
-		mn6_191_out {Type O LastRead -1 FirstWrite 5}
-		mn6_190_out {Type O LastRead -1 FirstWrite 5}
-		mn6_189_out {Type O LastRead -1 FirstWrite 5}
-		mn6_188_out {Type O LastRead -1 FirstWrite 5}
-		mn6_187_out {Type O LastRead -1 FirstWrite 5}
-		mn6_186_out {Type O LastRead -1 FirstWrite 5}
-		mn6_185_out {Type O LastRead -1 FirstWrite 5}
-		mn6_184_out {Type O LastRead -1 FirstWrite 5}
-		mn6_183_out {Type O LastRead -1 FirstWrite 5}
-		mn6_182_out {Type O LastRead -1 FirstWrite 5}
-		mn6_181_out {Type O LastRead -1 FirstWrite 5}
-		mn6_180_out {Type O LastRead -1 FirstWrite 5}
-		mn6_179_out {Type O LastRead -1 FirstWrite 5}
-		mn6_178_out {Type O LastRead -1 FirstWrite 5}
-		mn6_177_out {Type O LastRead -1 FirstWrite 5}
-		mn6_176_out {Type O LastRead -1 FirstWrite 5}
-		mn6_175_out {Type O LastRead -1 FirstWrite 5}
-		mn6_174_out {Type O LastRead -1 FirstWrite 5}
-		mn6_173_out {Type O LastRead -1 FirstWrite 5}
-		mn6_172_out {Type O LastRead -1 FirstWrite 5}
-		mn6_171_out {Type O LastRead -1 FirstWrite 5}
-		mn6_170_out {Type O LastRead -1 FirstWrite 5}
-		mn6_169_out {Type O LastRead -1 FirstWrite 5}
-		mn6_168_out {Type O LastRead -1 FirstWrite 5}
-		mn6_167_out {Type O LastRead -1 FirstWrite 5}
-		mn6_166_out {Type O LastRead -1 FirstWrite 5}
-		mn6_165_out {Type O LastRead -1 FirstWrite 5}
-		mn6_164_out {Type O LastRead -1 FirstWrite 5}
-		mn6_163_out {Type O LastRead -1 FirstWrite 5}
-		mn6_162_out {Type O LastRead -1 FirstWrite 5}
-		mn6_161_out {Type O LastRead -1 FirstWrite 5}
-		mn6_160_out {Type O LastRead -1 FirstWrite 5}
-		mn6_159_out {Type O LastRead -1 FirstWrite 5}
-		mn6_158_out {Type O LastRead -1 FirstWrite 5}
-		mn6_157_out {Type O LastRead -1 FirstWrite 5}
-		mn6_156_out {Type O LastRead -1 FirstWrite 5}
-		mn6_155_out {Type O LastRead -1 FirstWrite 5}
-		mn6_154_out {Type O LastRead -1 FirstWrite 5}
-		mn6_153_out {Type O LastRead -1 FirstWrite 5}
-		mn6_152_out {Type O LastRead -1 FirstWrite 5}
-		mn6_151_out {Type O LastRead -1 FirstWrite 5}
-		mn6_150_out {Type O LastRead -1 FirstWrite 5}
-		mn6_149_out {Type O LastRead -1 FirstWrite 5}
-		mn6_148_out {Type O LastRead -1 FirstWrite 5}
-		mn6_147_out {Type O LastRead -1 FirstWrite 5}
-		mn6_146_out {Type O LastRead -1 FirstWrite 5}
-		mn6_145_out {Type O LastRead -1 FirstWrite 5}
-		mn6_144_out {Type O LastRead -1 FirstWrite 5}
-		mn6_143_out {Type O LastRead -1 FirstWrite 5}
-		mn6_142_out {Type O LastRead -1 FirstWrite 5}
-		mn6_141_out {Type O LastRead -1 FirstWrite 5}
-		mn6_140_out {Type O LastRead -1 FirstWrite 5}
-		mn6_139_out {Type O LastRead -1 FirstWrite 5}
-		mn6_138_out {Type O LastRead -1 FirstWrite 5}
-		mn6_137_out {Type O LastRead -1 FirstWrite 5}
-		mn6_136_out {Type O LastRead -1 FirstWrite 5}
-		mn6_out {Type O LastRead -1 FirstWrite 5}
-		sc6_390_out {Type O LastRead -1 FirstWrite 5}
-		sc6_389_out {Type O LastRead -1 FirstWrite 5}
-		sc6_388_out {Type O LastRead -1 FirstWrite 5}
-		sc6_387_out {Type O LastRead -1 FirstWrite 5}
-		sc6_386_out {Type O LastRead -1 FirstWrite 5}
-		sc6_385_out {Type O LastRead -1 FirstWrite 5}
-		sc6_384_out {Type O LastRead -1 FirstWrite 5}
-		sc6_383_out {Type O LastRead -1 FirstWrite 5}
-		sc6_382_out {Type O LastRead -1 FirstWrite 5}
-		sc6_381_out {Type O LastRead -1 FirstWrite 5}
-		sc6_380_out {Type O LastRead -1 FirstWrite 5}
-		sc6_379_out {Type O LastRead -1 FirstWrite 5}
-		sc6_378_out {Type O LastRead -1 FirstWrite 5}
-		sc6_377_out {Type O LastRead -1 FirstWrite 5}
-		sc6_376_out {Type O LastRead -1 FirstWrite 5}
-		sc6_375_out {Type O LastRead -1 FirstWrite 5}
-		sc6_374_out {Type O LastRead -1 FirstWrite 5}
-		sc6_373_out {Type O LastRead -1 FirstWrite 5}
-		sc6_372_out {Type O LastRead -1 FirstWrite 5}
-		sc6_371_out {Type O LastRead -1 FirstWrite 5}
-		sc6_370_out {Type O LastRead -1 FirstWrite 5}
-		sc6_369_out {Type O LastRead -1 FirstWrite 5}
-		sc6_368_out {Type O LastRead -1 FirstWrite 5}
-		sc6_367_out {Type O LastRead -1 FirstWrite 5}
-		sc6_366_out {Type O LastRead -1 FirstWrite 5}
-		sc6_365_out {Type O LastRead -1 FirstWrite 5}
-		sc6_364_out {Type O LastRead -1 FirstWrite 5}
-		sc6_363_out {Type O LastRead -1 FirstWrite 5}
-		sc6_362_out {Type O LastRead -1 FirstWrite 5}
-		sc6_361_out {Type O LastRead -1 FirstWrite 5}
-		sc6_360_out {Type O LastRead -1 FirstWrite 5}
-		sc6_359_out {Type O LastRead -1 FirstWrite 5}
-		sc6_358_out {Type O LastRead -1 FirstWrite 5}
-		sc6_357_out {Type O LastRead -1 FirstWrite 5}
-		sc6_356_out {Type O LastRead -1 FirstWrite 5}
-		sc6_355_out {Type O LastRead -1 FirstWrite 5}
-		sc6_354_out {Type O LastRead -1 FirstWrite 5}
-		sc6_353_out {Type O LastRead -1 FirstWrite 5}
-		sc6_352_out {Type O LastRead -1 FirstWrite 5}
-		sc6_351_out {Type O LastRead -1 FirstWrite 5}
-		sc6_350_out {Type O LastRead -1 FirstWrite 5}
-		sc6_349_out {Type O LastRead -1 FirstWrite 5}
-		sc6_348_out {Type O LastRead -1 FirstWrite 5}
-		sc6_347_out {Type O LastRead -1 FirstWrite 5}
-		sc6_346_out {Type O LastRead -1 FirstWrite 5}
-		sc6_345_out {Type O LastRead -1 FirstWrite 5}
-		sc6_344_out {Type O LastRead -1 FirstWrite 5}
-		sc6_343_out {Type O LastRead -1 FirstWrite 5}
-		sc6_342_out {Type O LastRead -1 FirstWrite 5}
-		sc6_341_out {Type O LastRead -1 FirstWrite 5}
-		sc6_340_out {Type O LastRead -1 FirstWrite 5}
-		sc6_339_out {Type O LastRead -1 FirstWrite 5}
-		sc6_338_out {Type O LastRead -1 FirstWrite 5}
-		sc6_337_out {Type O LastRead -1 FirstWrite 5}
-		sc6_336_out {Type O LastRead -1 FirstWrite 5}
-		sc6_335_out {Type O LastRead -1 FirstWrite 5}
-		sc6_334_out {Type O LastRead -1 FirstWrite 5}
-		sc6_333_out {Type O LastRead -1 FirstWrite 5}
-		sc6_332_out {Type O LastRead -1 FirstWrite 5}
-		sc6_331_out {Type O LastRead -1 FirstWrite 5}
-		sc6_330_out {Type O LastRead -1 FirstWrite 5}
-		sc6_329_out {Type O LastRead -1 FirstWrite 5}
-		sc6_328_out {Type O LastRead -1 FirstWrite 5}
-		sc6_327_out {Type O LastRead -1 FirstWrite 5}
-		sc6_326_out {Type O LastRead -1 FirstWrite 5}
-		sc6_325_out {Type O LastRead -1 FirstWrite 5}
-		sc6_324_out {Type O LastRead -1 FirstWrite 5}
-		sc6_323_out {Type O LastRead -1 FirstWrite 5}
-		sc6_322_out {Type O LastRead -1 FirstWrite 5}
-		sc6_321_out {Type O LastRead -1 FirstWrite 5}
-		sc6_320_out {Type O LastRead -1 FirstWrite 5}
-		sc6_319_out {Type O LastRead -1 FirstWrite 5}
-		sc6_318_out {Type O LastRead -1 FirstWrite 5}
-		sc6_317_out {Type O LastRead -1 FirstWrite 5}
-		sc6_316_out {Type O LastRead -1 FirstWrite 5}
-		sc6_315_out {Type O LastRead -1 FirstWrite 5}
-		sc6_314_out {Type O LastRead -1 FirstWrite 5}
-		sc6_313_out {Type O LastRead -1 FirstWrite 5}
-		sc6_312_out {Type O LastRead -1 FirstWrite 5}
-		sc6_311_out {Type O LastRead -1 FirstWrite 5}
-		sc6_310_out {Type O LastRead -1 FirstWrite 5}
-		sc6_309_out {Type O LastRead -1 FirstWrite 5}
-		sc6_308_out {Type O LastRead -1 FirstWrite 5}
-		sc6_307_out {Type O LastRead -1 FirstWrite 5}
-		sc6_306_out {Type O LastRead -1 FirstWrite 5}
-		sc6_305_out {Type O LastRead -1 FirstWrite 5}
-		sc6_304_out {Type O LastRead -1 FirstWrite 5}
-		sc6_303_out {Type O LastRead -1 FirstWrite 5}
-		sc6_302_out {Type O LastRead -1 FirstWrite 5}
-		sc6_301_out {Type O LastRead -1 FirstWrite 5}
-		sc6_300_out {Type O LastRead -1 FirstWrite 5}
-		sc6_299_out {Type O LastRead -1 FirstWrite 5}
-		sc6_298_out {Type O LastRead -1 FirstWrite 5}
-		sc6_297_out {Type O LastRead -1 FirstWrite 5}
-		sc6_296_out {Type O LastRead -1 FirstWrite 5}
-		sc6_295_out {Type O LastRead -1 FirstWrite 5}
-		sc6_294_out {Type O LastRead -1 FirstWrite 5}
-		sc6_293_out {Type O LastRead -1 FirstWrite 5}
-		sc6_292_out {Type O LastRead -1 FirstWrite 5}
-		sc6_291_out {Type O LastRead -1 FirstWrite 5}
-		sc6_290_out {Type O LastRead -1 FirstWrite 5}
-		sc6_289_out {Type O LastRead -1 FirstWrite 5}
-		sc6_288_out {Type O LastRead -1 FirstWrite 5}
-		sc6_287_out {Type O LastRead -1 FirstWrite 5}
-		sc6_286_out {Type O LastRead -1 FirstWrite 5}
-		sc6_285_out {Type O LastRead -1 FirstWrite 5}
-		sc6_284_out {Type O LastRead -1 FirstWrite 5}
-		sc6_283_out {Type O LastRead -1 FirstWrite 5}
-		sc6_282_out {Type O LastRead -1 FirstWrite 5}
-		sc6_281_out {Type O LastRead -1 FirstWrite 5}
-		sc6_280_out {Type O LastRead -1 FirstWrite 5}
-		sc6_279_out {Type O LastRead -1 FirstWrite 5}
-		sc6_278_out {Type O LastRead -1 FirstWrite 5}
-		sc6_277_out {Type O LastRead -1 FirstWrite 5}
-		sc6_276_out {Type O LastRead -1 FirstWrite 5}
-		sc6_275_out {Type O LastRead -1 FirstWrite 5}
-		sc6_274_out {Type O LastRead -1 FirstWrite 5}
-		sc6_273_out {Type O LastRead -1 FirstWrite 5}
-		sc6_272_out {Type O LastRead -1 FirstWrite 5}
-		sc6_271_out {Type O LastRead -1 FirstWrite 5}
-		sc6_270_out {Type O LastRead -1 FirstWrite 5}
-		sc6_269_out {Type O LastRead -1 FirstWrite 5}
-		sc6_268_out {Type O LastRead -1 FirstWrite 5}
-		sc6_267_out {Type O LastRead -1 FirstWrite 5}
-		sc6_266_out {Type O LastRead -1 FirstWrite 5}
-		sc6_265_out {Type O LastRead -1 FirstWrite 5}
-		sc6_264_out {Type O LastRead -1 FirstWrite 5}
-		sc6_263_out {Type O LastRead -1 FirstWrite 5}
-		sc6_262_out {Type O LastRead -1 FirstWrite 5}
-		sc6_261_out {Type O LastRead -1 FirstWrite 5}
-		sc6_260_out {Type O LastRead -1 FirstWrite 5}
-		sc6_259_out {Type O LastRead -1 FirstWrite 5}
-		sc6_258_out {Type O LastRead -1 FirstWrite 5}
-		sc6_257_out {Type O LastRead -1 FirstWrite 5}
-		sc6_256_out {Type O LastRead -1 FirstWrite 5}
-		sc6_255_out {Type O LastRead -1 FirstWrite 5}
-		sc6_254_out {Type O LastRead -1 FirstWrite 5}
-		sc6_253_out {Type O LastRead -1 FirstWrite 5}
-		sc6_252_out {Type O LastRead -1 FirstWrite 5}
-		sc6_251_out {Type O LastRead -1 FirstWrite 5}
-		sc6_250_out {Type O LastRead -1 FirstWrite 5}
-		sc6_249_out {Type O LastRead -1 FirstWrite 5}
-		sc6_248_out {Type O LastRead -1 FirstWrite 5}
-		sc6_247_out {Type O LastRead -1 FirstWrite 5}
-		sc6_246_out {Type O LastRead -1 FirstWrite 5}
-		sc6_245_out {Type O LastRead -1 FirstWrite 5}
-		sc6_244_out {Type O LastRead -1 FirstWrite 5}
-		sc6_243_out {Type O LastRead -1 FirstWrite 5}
-		sc6_242_out {Type O LastRead -1 FirstWrite 5}
-		sc6_241_out {Type O LastRead -1 FirstWrite 5}
-		sc6_240_out {Type O LastRead -1 FirstWrite 5}
-		sc6_239_out {Type O LastRead -1 FirstWrite 5}
-		sc6_238_out {Type O LastRead -1 FirstWrite 5}
-		sc6_237_out {Type O LastRead -1 FirstWrite 5}
-		sc6_236_out {Type O LastRead -1 FirstWrite 5}
-		sc6_235_out {Type O LastRead -1 FirstWrite 5}
-		sc6_234_out {Type O LastRead -1 FirstWrite 5}
-		sc6_233_out {Type O LastRead -1 FirstWrite 5}
-		sc6_232_out {Type O LastRead -1 FirstWrite 5}
-		sc6_231_out {Type O LastRead -1 FirstWrite 5}
-		sc6_230_out {Type O LastRead -1 FirstWrite 5}
-		sc6_229_out {Type O LastRead -1 FirstWrite 5}
-		sc6_228_out {Type O LastRead -1 FirstWrite 5}
-		sc6_227_out {Type O LastRead -1 FirstWrite 5}
-		sc6_226_out {Type O LastRead -1 FirstWrite 5}
-		sc6_225_out {Type O LastRead -1 FirstWrite 5}
-		sc6_224_out {Type O LastRead -1 FirstWrite 5}
-		sc6_223_out {Type O LastRead -1 FirstWrite 5}
-		sc6_222_out {Type O LastRead -1 FirstWrite 5}
-		sc6_221_out {Type O LastRead -1 FirstWrite 5}
-		sc6_220_out {Type O LastRead -1 FirstWrite 5}
-		sc6_219_out {Type O LastRead -1 FirstWrite 5}
-		sc6_218_out {Type O LastRead -1 FirstWrite 5}
-		sc6_217_out {Type O LastRead -1 FirstWrite 5}
-		sc6_216_out {Type O LastRead -1 FirstWrite 5}
-		sc6_215_out {Type O LastRead -1 FirstWrite 5}
-		sc6_214_out {Type O LastRead -1 FirstWrite 5}
-		sc6_213_out {Type O LastRead -1 FirstWrite 5}
-		sc6_212_out {Type O LastRead -1 FirstWrite 5}
-		sc6_211_out {Type O LastRead -1 FirstWrite 5}
-		sc6_210_out {Type O LastRead -1 FirstWrite 5}
-		sc6_209_out {Type O LastRead -1 FirstWrite 5}
-		sc6_208_out {Type O LastRead -1 FirstWrite 5}
-		sc6_207_out {Type O LastRead -1 FirstWrite 5}
-		sc6_206_out {Type O LastRead -1 FirstWrite 5}
-		sc6_205_out {Type O LastRead -1 FirstWrite 5}
-		sc6_204_out {Type O LastRead -1 FirstWrite 5}
-		sc6_203_out {Type O LastRead -1 FirstWrite 5}
-		sc6_202_out {Type O LastRead -1 FirstWrite 5}
-		sc6_201_out {Type O LastRead -1 FirstWrite 5}
-		sc6_200_out {Type O LastRead -1 FirstWrite 5}
-		sc6_199_out {Type O LastRead -1 FirstWrite 5}
-		sc6_198_out {Type O LastRead -1 FirstWrite 5}
-		sc6_197_out {Type O LastRead -1 FirstWrite 5}
-		sc6_196_out {Type O LastRead -1 FirstWrite 5}
-		sc6_195_out {Type O LastRead -1 FirstWrite 5}
-		sc6_194_out {Type O LastRead -1 FirstWrite 5}
-		sc6_193_out {Type O LastRead -1 FirstWrite 5}
-		sc6_192_out {Type O LastRead -1 FirstWrite 5}
-		sc6_191_out {Type O LastRead -1 FirstWrite 5}
-		sc6_190_out {Type O LastRead -1 FirstWrite 5}
-		sc6_189_out {Type O LastRead -1 FirstWrite 5}
-		sc6_188_out {Type O LastRead -1 FirstWrite 5}
-		sc6_187_out {Type O LastRead -1 FirstWrite 5}
-		sc6_186_out {Type O LastRead -1 FirstWrite 5}
-		sc6_185_out {Type O LastRead -1 FirstWrite 5}
-		sc6_184_out {Type O LastRead -1 FirstWrite 5}
-		sc6_183_out {Type O LastRead -1 FirstWrite 5}
-		sc6_182_out {Type O LastRead -1 FirstWrite 5}
-		sc6_181_out {Type O LastRead -1 FirstWrite 5}
-		sc6_180_out {Type O LastRead -1 FirstWrite 5}
-		sc6_179_out {Type O LastRead -1 FirstWrite 5}
-		sc6_178_out {Type O LastRead -1 FirstWrite 5}
-		sc6_177_out {Type O LastRead -1 FirstWrite 5}
-		sc6_176_out {Type O LastRead -1 FirstWrite 5}
-		sc6_175_out {Type O LastRead -1 FirstWrite 5}
-		sc6_174_out {Type O LastRead -1 FirstWrite 5}
-		sc6_173_out {Type O LastRead -1 FirstWrite 5}
-		sc6_172_out {Type O LastRead -1 FirstWrite 5}
-		sc6_171_out {Type O LastRead -1 FirstWrite 5}
-		sc6_170_out {Type O LastRead -1 FirstWrite 5}
-		sc6_169_out {Type O LastRead -1 FirstWrite 5}
-		sc6_168_out {Type O LastRead -1 FirstWrite 5}
-		sc6_167_out {Type O LastRead -1 FirstWrite 5}
-		sc6_166_out {Type O LastRead -1 FirstWrite 5}
-		sc6_165_out {Type O LastRead -1 FirstWrite 5}
-		sc6_164_out {Type O LastRead -1 FirstWrite 5}
-		sc6_163_out {Type O LastRead -1 FirstWrite 5}
-		sc6_162_out {Type O LastRead -1 FirstWrite 5}
-		sc6_161_out {Type O LastRead -1 FirstWrite 5}
-		sc6_160_out {Type O LastRead -1 FirstWrite 5}
-		sc6_159_out {Type O LastRead -1 FirstWrite 5}
-		sc6_158_out {Type O LastRead -1 FirstWrite 5}
-		sc6_157_out {Type O LastRead -1 FirstWrite 5}
-		sc6_156_out {Type O LastRead -1 FirstWrite 5}
-		sc6_155_out {Type O LastRead -1 FirstWrite 5}
-		sc6_154_out {Type O LastRead -1 FirstWrite 5}
-		sc6_153_out {Type O LastRead -1 FirstWrite 5}
-		sc6_152_out {Type O LastRead -1 FirstWrite 5}
-		sc6_151_out {Type O LastRead -1 FirstWrite 5}
-		sc6_150_out {Type O LastRead -1 FirstWrite 5}
-		sc6_149_out {Type O LastRead -1 FirstWrite 5}
-		sc6_148_out {Type O LastRead -1 FirstWrite 5}
-		sc6_147_out {Type O LastRead -1 FirstWrite 5}
-		sc6_146_out {Type O LastRead -1 FirstWrite 5}
-		sc6_145_out {Type O LastRead -1 FirstWrite 5}
-		sc6_144_out {Type O LastRead -1 FirstWrite 5}
-		sc6_143_out {Type O LastRead -1 FirstWrite 5}
-		sc6_142_out {Type O LastRead -1 FirstWrite 5}
-		sc6_141_out {Type O LastRead -1 FirstWrite 5}
-		sc6_140_out {Type O LastRead -1 FirstWrite 5}
-		sc6_139_out {Type O LastRead -1 FirstWrite 5}
-		sc6_138_out {Type O LastRead -1 FirstWrite 5}
-		sc6_137_out {Type O LastRead -1 FirstWrite 5}
-		sc6_136_out {Type O LastRead -1 FirstWrite 5}
-		sc6_out {Type O LastRead -1 FirstWrite 5}
-		dmin_31_out {Type O LastRead -1 FirstWrite 5}
-		dmin_30_out {Type O LastRead -1 FirstWrite 5}
-		dmin_29_out {Type O LastRead -1 FirstWrite 5}
-		dmin_28_out {Type O LastRead -1 FirstWrite 5}
-		dmin_27_out {Type O LastRead -1 FirstWrite 5}
-		dmin_26_out {Type O LastRead -1 FirstWrite 5}
-		dmin_25_out {Type O LastRead -1 FirstWrite 5}
-		dmin_24_out {Type O LastRead -1 FirstWrite 5}
-		dmin_23_out {Type O LastRead -1 FirstWrite 5}
-		dmin_22_out {Type O LastRead -1 FirstWrite 5}
-		dmin_21_out {Type O LastRead -1 FirstWrite 5}
-		dmin_20_out {Type O LastRead -1 FirstWrite 5}
-		dmin_19_out {Type O LastRead -1 FirstWrite 5}
-		dmin_18_out {Type O LastRead -1 FirstWrite 5}
-		dmin_17_out {Type O LastRead -1 FirstWrite 5}
-		dmin_16_out {Type O LastRead -1 FirstWrite 5}
-		dmin_15_out {Type O LastRead -1 FirstWrite 5}
-		dmin_14_out {Type O LastRead -1 FirstWrite 5}
-		dmin_13_out {Type O LastRead -1 FirstWrite 5}
-		dmin_12_out {Type O LastRead -1 FirstWrite 5}
-		dmin_11_out {Type O LastRead -1 FirstWrite 5}
-		dmin_10_out {Type O LastRead -1 FirstWrite 5}
-		dmin_9_out {Type O LastRead -1 FirstWrite 5}
-		dmin_8_out {Type O LastRead -1 FirstWrite 5}
-		dmin_7_out {Type O LastRead -1 FirstWrite 5}
-		dmin_6_out {Type O LastRead -1 FirstWrite 5}
-		dmin_5_out {Type O LastRead -1 FirstWrite 5}
-		dmin_4_out {Type O LastRead -1 FirstWrite 5}
-		dmin_3_out {Type O LastRead -1 FirstWrite 5}
-		dmin_2_out {Type O LastRead -1 FirstWrite 5}
-		dmin_1_out {Type O LastRead -1 FirstWrite 5}
-		dmin_out {Type O LastRead -1 FirstWrite 5}
-		d_34_out {Type O LastRead -1 FirstWrite 5}
-		d_33_out {Type O LastRead -1 FirstWrite 5}
-		d_32_out {Type O LastRead -1 FirstWrite 5}
-		d_31_out {Type O LastRead -1 FirstWrite 5}
-		d_30_out {Type O LastRead -1 FirstWrite 5}
-		d_29_out {Type O LastRead -1 FirstWrite 5}
-		d_28_out {Type O LastRead -1 FirstWrite 5}
-		d_27_out {Type O LastRead -1 FirstWrite 5}
-		d_26_out {Type O LastRead -1 FirstWrite 5}
-		d_25_out {Type O LastRead -1 FirstWrite 5}
-		d_24_out {Type O LastRead -1 FirstWrite 5}
-		d_23_out {Type O LastRead -1 FirstWrite 5}
-		d_22_out {Type O LastRead -1 FirstWrite 5}
-		d_21_out {Type O LastRead -1 FirstWrite 5}
-		d_20_out {Type O LastRead -1 FirstWrite 5}
-		d_19_out {Type O LastRead -1 FirstWrite 5}
-		d_18_out {Type O LastRead -1 FirstWrite 5}
-		d_17_out {Type O LastRead -1 FirstWrite 5}
-		d_16_out {Type O LastRead -1 FirstWrite 5}
-		d_15_out {Type O LastRead -1 FirstWrite 5}
-		d_14_out {Type O LastRead -1 FirstWrite 5}
-		d_13_out {Type O LastRead -1 FirstWrite 5}
-		d_12_out {Type O LastRead -1 FirstWrite 5}
-		d_11_out {Type O LastRead -1 FirstWrite 5}
-		d_10_out {Type O LastRead -1 FirstWrite 5}
-		d_9_out {Type O LastRead -1 FirstWrite 5}
-		d_8_out {Type O LastRead -1 FirstWrite 5}
-		d_7_out {Type O LastRead -1 FirstWrite 5}
-		d_6_out {Type O LastRead -1 FirstWrite 5}
-		d_5_out {Type O LastRead -1 FirstWrite 5}
-		d_4_out {Type O LastRead -1 FirstWrite 5}
-		d_out {Type O LastRead -1 FirstWrite 5}}
+		gate_scale {Type I LastRead 13 FirstWrite -1}}
+	mac_blocks_down_q4k3_Pipeline_UNPACK_HDR_DOWN {
+		rb_0 {Type I LastRead 0 FirstWrite -1}
+		rb_1 {Type I LastRead 0 FirstWrite -1}
+		rb_2 {Type I LastRead 0 FirstWrite -1}
+		rb_3 {Type I LastRead 0 FirstWrite -1}
+		rb_4 {Type I LastRead 0 FirstWrite -1}
+		rb_5 {Type I LastRead 0 FirstWrite -1}
+		rb_6 {Type I LastRead 0 FirstWrite -1}
+		rb_7 {Type I LastRead 0 FirstWrite -1}
+		mn6_390_out {Type O LastRead -1 FirstWrite 6}
+		mn6_389_out {Type O LastRead -1 FirstWrite 6}
+		mn6_388_out {Type O LastRead -1 FirstWrite 6}
+		mn6_387_out {Type O LastRead -1 FirstWrite 6}
+		mn6_386_out {Type O LastRead -1 FirstWrite 6}
+		mn6_385_out {Type O LastRead -1 FirstWrite 6}
+		mn6_384_out {Type O LastRead -1 FirstWrite 6}
+		mn6_383_out {Type O LastRead -1 FirstWrite 6}
+		mn6_382_out {Type O LastRead -1 FirstWrite 6}
+		mn6_381_out {Type O LastRead -1 FirstWrite 6}
+		mn6_380_out {Type O LastRead -1 FirstWrite 6}
+		mn6_379_out {Type O LastRead -1 FirstWrite 6}
+		mn6_378_out {Type O LastRead -1 FirstWrite 6}
+		mn6_377_out {Type O LastRead -1 FirstWrite 6}
+		mn6_376_out {Type O LastRead -1 FirstWrite 6}
+		mn6_375_out {Type O LastRead -1 FirstWrite 6}
+		mn6_374_out {Type O LastRead -1 FirstWrite 6}
+		mn6_373_out {Type O LastRead -1 FirstWrite 6}
+		mn6_372_out {Type O LastRead -1 FirstWrite 6}
+		mn6_371_out {Type O LastRead -1 FirstWrite 6}
+		mn6_370_out {Type O LastRead -1 FirstWrite 6}
+		mn6_369_out {Type O LastRead -1 FirstWrite 6}
+		mn6_368_out {Type O LastRead -1 FirstWrite 6}
+		mn6_367_out {Type O LastRead -1 FirstWrite 6}
+		mn6_366_out {Type O LastRead -1 FirstWrite 6}
+		mn6_365_out {Type O LastRead -1 FirstWrite 6}
+		mn6_364_out {Type O LastRead -1 FirstWrite 6}
+		mn6_363_out {Type O LastRead -1 FirstWrite 6}
+		mn6_362_out {Type O LastRead -1 FirstWrite 6}
+		mn6_361_out {Type O LastRead -1 FirstWrite 6}
+		mn6_360_out {Type O LastRead -1 FirstWrite 6}
+		mn6_359_out {Type O LastRead -1 FirstWrite 6}
+		mn6_358_out {Type O LastRead -1 FirstWrite 6}
+		mn6_357_out {Type O LastRead -1 FirstWrite 6}
+		mn6_356_out {Type O LastRead -1 FirstWrite 6}
+		mn6_355_out {Type O LastRead -1 FirstWrite 6}
+		mn6_354_out {Type O LastRead -1 FirstWrite 6}
+		mn6_353_out {Type O LastRead -1 FirstWrite 6}
+		mn6_352_out {Type O LastRead -1 FirstWrite 6}
+		mn6_351_out {Type O LastRead -1 FirstWrite 6}
+		mn6_350_out {Type O LastRead -1 FirstWrite 6}
+		mn6_349_out {Type O LastRead -1 FirstWrite 6}
+		mn6_348_out {Type O LastRead -1 FirstWrite 6}
+		mn6_347_out {Type O LastRead -1 FirstWrite 6}
+		mn6_346_out {Type O LastRead -1 FirstWrite 6}
+		mn6_345_out {Type O LastRead -1 FirstWrite 6}
+		mn6_344_out {Type O LastRead -1 FirstWrite 6}
+		mn6_343_out {Type O LastRead -1 FirstWrite 6}
+		mn6_342_out {Type O LastRead -1 FirstWrite 6}
+		mn6_341_out {Type O LastRead -1 FirstWrite 6}
+		mn6_340_out {Type O LastRead -1 FirstWrite 6}
+		mn6_339_out {Type O LastRead -1 FirstWrite 6}
+		mn6_338_out {Type O LastRead -1 FirstWrite 6}
+		mn6_337_out {Type O LastRead -1 FirstWrite 6}
+		mn6_336_out {Type O LastRead -1 FirstWrite 6}
+		mn6_335_out {Type O LastRead -1 FirstWrite 6}
+		mn6_334_out {Type O LastRead -1 FirstWrite 6}
+		mn6_333_out {Type O LastRead -1 FirstWrite 6}
+		mn6_332_out {Type O LastRead -1 FirstWrite 6}
+		mn6_331_out {Type O LastRead -1 FirstWrite 6}
+		mn6_330_out {Type O LastRead -1 FirstWrite 6}
+		mn6_329_out {Type O LastRead -1 FirstWrite 6}
+		mn6_328_out {Type O LastRead -1 FirstWrite 6}
+		mn6_327_out {Type O LastRead -1 FirstWrite 6}
+		mn6_326_out {Type O LastRead -1 FirstWrite 6}
+		mn6_325_out {Type O LastRead -1 FirstWrite 6}
+		mn6_324_out {Type O LastRead -1 FirstWrite 6}
+		mn6_323_out {Type O LastRead -1 FirstWrite 6}
+		mn6_322_out {Type O LastRead -1 FirstWrite 6}
+		mn6_321_out {Type O LastRead -1 FirstWrite 6}
+		mn6_320_out {Type O LastRead -1 FirstWrite 6}
+		mn6_319_out {Type O LastRead -1 FirstWrite 6}
+		mn6_318_out {Type O LastRead -1 FirstWrite 6}
+		mn6_317_out {Type O LastRead -1 FirstWrite 6}
+		mn6_316_out {Type O LastRead -1 FirstWrite 6}
+		mn6_315_out {Type O LastRead -1 FirstWrite 6}
+		mn6_314_out {Type O LastRead -1 FirstWrite 6}
+		mn6_313_out {Type O LastRead -1 FirstWrite 6}
+		mn6_312_out {Type O LastRead -1 FirstWrite 6}
+		mn6_311_out {Type O LastRead -1 FirstWrite 6}
+		mn6_310_out {Type O LastRead -1 FirstWrite 6}
+		mn6_309_out {Type O LastRead -1 FirstWrite 6}
+		mn6_308_out {Type O LastRead -1 FirstWrite 6}
+		mn6_307_out {Type O LastRead -1 FirstWrite 6}
+		mn6_306_out {Type O LastRead -1 FirstWrite 6}
+		mn6_305_out {Type O LastRead -1 FirstWrite 6}
+		mn6_304_out {Type O LastRead -1 FirstWrite 6}
+		mn6_303_out {Type O LastRead -1 FirstWrite 6}
+		mn6_302_out {Type O LastRead -1 FirstWrite 6}
+		mn6_301_out {Type O LastRead -1 FirstWrite 6}
+		mn6_300_out {Type O LastRead -1 FirstWrite 6}
+		mn6_299_out {Type O LastRead -1 FirstWrite 6}
+		mn6_298_out {Type O LastRead -1 FirstWrite 6}
+		mn6_297_out {Type O LastRead -1 FirstWrite 6}
+		mn6_296_out {Type O LastRead -1 FirstWrite 6}
+		mn6_295_out {Type O LastRead -1 FirstWrite 6}
+		mn6_294_out {Type O LastRead -1 FirstWrite 6}
+		mn6_293_out {Type O LastRead -1 FirstWrite 6}
+		mn6_292_out {Type O LastRead -1 FirstWrite 6}
+		mn6_291_out {Type O LastRead -1 FirstWrite 6}
+		mn6_290_out {Type O LastRead -1 FirstWrite 6}
+		mn6_289_out {Type O LastRead -1 FirstWrite 6}
+		mn6_288_out {Type O LastRead -1 FirstWrite 6}
+		mn6_287_out {Type O LastRead -1 FirstWrite 6}
+		mn6_286_out {Type O LastRead -1 FirstWrite 6}
+		mn6_285_out {Type O LastRead -1 FirstWrite 6}
+		mn6_284_out {Type O LastRead -1 FirstWrite 6}
+		mn6_283_out {Type O LastRead -1 FirstWrite 6}
+		mn6_282_out {Type O LastRead -1 FirstWrite 6}
+		mn6_281_out {Type O LastRead -1 FirstWrite 6}
+		mn6_280_out {Type O LastRead -1 FirstWrite 6}
+		mn6_279_out {Type O LastRead -1 FirstWrite 6}
+		mn6_278_out {Type O LastRead -1 FirstWrite 6}
+		mn6_277_out {Type O LastRead -1 FirstWrite 6}
+		mn6_276_out {Type O LastRead -1 FirstWrite 6}
+		mn6_275_out {Type O LastRead -1 FirstWrite 6}
+		mn6_274_out {Type O LastRead -1 FirstWrite 6}
+		mn6_273_out {Type O LastRead -1 FirstWrite 6}
+		mn6_272_out {Type O LastRead -1 FirstWrite 6}
+		mn6_271_out {Type O LastRead -1 FirstWrite 6}
+		mn6_270_out {Type O LastRead -1 FirstWrite 6}
+		mn6_269_out {Type O LastRead -1 FirstWrite 6}
+		mn6_268_out {Type O LastRead -1 FirstWrite 6}
+		mn6_267_out {Type O LastRead -1 FirstWrite 6}
+		mn6_266_out {Type O LastRead -1 FirstWrite 6}
+		mn6_265_out {Type O LastRead -1 FirstWrite 6}
+		mn6_264_out {Type O LastRead -1 FirstWrite 6}
+		mn6_263_out {Type O LastRead -1 FirstWrite 6}
+		mn6_262_out {Type O LastRead -1 FirstWrite 6}
+		mn6_261_out {Type O LastRead -1 FirstWrite 6}
+		mn6_260_out {Type O LastRead -1 FirstWrite 6}
+		mn6_259_out {Type O LastRead -1 FirstWrite 6}
+		mn6_258_out {Type O LastRead -1 FirstWrite 6}
+		mn6_257_out {Type O LastRead -1 FirstWrite 6}
+		mn6_256_out {Type O LastRead -1 FirstWrite 6}
+		mn6_255_out {Type O LastRead -1 FirstWrite 6}
+		mn6_254_out {Type O LastRead -1 FirstWrite 6}
+		mn6_253_out {Type O LastRead -1 FirstWrite 6}
+		mn6_252_out {Type O LastRead -1 FirstWrite 6}
+		mn6_251_out {Type O LastRead -1 FirstWrite 6}
+		mn6_250_out {Type O LastRead -1 FirstWrite 6}
+		mn6_249_out {Type O LastRead -1 FirstWrite 6}
+		mn6_248_out {Type O LastRead -1 FirstWrite 6}
+		mn6_247_out {Type O LastRead -1 FirstWrite 6}
+		mn6_246_out {Type O LastRead -1 FirstWrite 6}
+		mn6_245_out {Type O LastRead -1 FirstWrite 6}
+		mn6_244_out {Type O LastRead -1 FirstWrite 6}
+		mn6_243_out {Type O LastRead -1 FirstWrite 6}
+		mn6_242_out {Type O LastRead -1 FirstWrite 6}
+		mn6_241_out {Type O LastRead -1 FirstWrite 6}
+		mn6_240_out {Type O LastRead -1 FirstWrite 6}
+		mn6_239_out {Type O LastRead -1 FirstWrite 6}
+		mn6_238_out {Type O LastRead -1 FirstWrite 6}
+		mn6_237_out {Type O LastRead -1 FirstWrite 6}
+		mn6_236_out {Type O LastRead -1 FirstWrite 6}
+		mn6_235_out {Type O LastRead -1 FirstWrite 6}
+		mn6_234_out {Type O LastRead -1 FirstWrite 6}
+		mn6_233_out {Type O LastRead -1 FirstWrite 6}
+		mn6_232_out {Type O LastRead -1 FirstWrite 6}
+		mn6_231_out {Type O LastRead -1 FirstWrite 6}
+		mn6_230_out {Type O LastRead -1 FirstWrite 6}
+		mn6_229_out {Type O LastRead -1 FirstWrite 6}
+		mn6_228_out {Type O LastRead -1 FirstWrite 6}
+		mn6_227_out {Type O LastRead -1 FirstWrite 6}
+		mn6_226_out {Type O LastRead -1 FirstWrite 6}
+		mn6_225_out {Type O LastRead -1 FirstWrite 6}
+		mn6_224_out {Type O LastRead -1 FirstWrite 6}
+		mn6_223_out {Type O LastRead -1 FirstWrite 6}
+		mn6_222_out {Type O LastRead -1 FirstWrite 6}
+		mn6_221_out {Type O LastRead -1 FirstWrite 6}
+		mn6_220_out {Type O LastRead -1 FirstWrite 6}
+		mn6_219_out {Type O LastRead -1 FirstWrite 6}
+		mn6_218_out {Type O LastRead -1 FirstWrite 6}
+		mn6_217_out {Type O LastRead -1 FirstWrite 6}
+		mn6_216_out {Type O LastRead -1 FirstWrite 6}
+		mn6_215_out {Type O LastRead -1 FirstWrite 6}
+		mn6_214_out {Type O LastRead -1 FirstWrite 6}
+		mn6_213_out {Type O LastRead -1 FirstWrite 6}
+		mn6_212_out {Type O LastRead -1 FirstWrite 6}
+		mn6_211_out {Type O LastRead -1 FirstWrite 6}
+		mn6_210_out {Type O LastRead -1 FirstWrite 6}
+		mn6_209_out {Type O LastRead -1 FirstWrite 6}
+		mn6_208_out {Type O LastRead -1 FirstWrite 6}
+		mn6_207_out {Type O LastRead -1 FirstWrite 6}
+		mn6_206_out {Type O LastRead -1 FirstWrite 6}
+		mn6_205_out {Type O LastRead -1 FirstWrite 6}
+		mn6_204_out {Type O LastRead -1 FirstWrite 6}
+		mn6_203_out {Type O LastRead -1 FirstWrite 6}
+		mn6_202_out {Type O LastRead -1 FirstWrite 6}
+		mn6_201_out {Type O LastRead -1 FirstWrite 6}
+		mn6_200_out {Type O LastRead -1 FirstWrite 6}
+		mn6_199_out {Type O LastRead -1 FirstWrite 6}
+		mn6_198_out {Type O LastRead -1 FirstWrite 6}
+		mn6_197_out {Type O LastRead -1 FirstWrite 6}
+		mn6_196_out {Type O LastRead -1 FirstWrite 6}
+		mn6_195_out {Type O LastRead -1 FirstWrite 6}
+		mn6_194_out {Type O LastRead -1 FirstWrite 6}
+		mn6_193_out {Type O LastRead -1 FirstWrite 6}
+		mn6_192_out {Type O LastRead -1 FirstWrite 6}
+		mn6_191_out {Type O LastRead -1 FirstWrite 6}
+		mn6_190_out {Type O LastRead -1 FirstWrite 6}
+		mn6_189_out {Type O LastRead -1 FirstWrite 6}
+		mn6_188_out {Type O LastRead -1 FirstWrite 6}
+		mn6_187_out {Type O LastRead -1 FirstWrite 6}
+		mn6_186_out {Type O LastRead -1 FirstWrite 6}
+		mn6_185_out {Type O LastRead -1 FirstWrite 6}
+		mn6_184_out {Type O LastRead -1 FirstWrite 6}
+		mn6_183_out {Type O LastRead -1 FirstWrite 6}
+		mn6_182_out {Type O LastRead -1 FirstWrite 6}
+		mn6_181_out {Type O LastRead -1 FirstWrite 6}
+		mn6_180_out {Type O LastRead -1 FirstWrite 6}
+		mn6_179_out {Type O LastRead -1 FirstWrite 6}
+		mn6_178_out {Type O LastRead -1 FirstWrite 6}
+		mn6_177_out {Type O LastRead -1 FirstWrite 6}
+		mn6_176_out {Type O LastRead -1 FirstWrite 6}
+		mn6_175_out {Type O LastRead -1 FirstWrite 6}
+		mn6_174_out {Type O LastRead -1 FirstWrite 6}
+		mn6_173_out {Type O LastRead -1 FirstWrite 6}
+		mn6_172_out {Type O LastRead -1 FirstWrite 6}
+		mn6_171_out {Type O LastRead -1 FirstWrite 6}
+		mn6_170_out {Type O LastRead -1 FirstWrite 6}
+		mn6_169_out {Type O LastRead -1 FirstWrite 6}
+		mn6_168_out {Type O LastRead -1 FirstWrite 6}
+		mn6_167_out {Type O LastRead -1 FirstWrite 6}
+		mn6_166_out {Type O LastRead -1 FirstWrite 6}
+		mn6_165_out {Type O LastRead -1 FirstWrite 6}
+		mn6_164_out {Type O LastRead -1 FirstWrite 6}
+		mn6_163_out {Type O LastRead -1 FirstWrite 6}
+		mn6_162_out {Type O LastRead -1 FirstWrite 6}
+		mn6_161_out {Type O LastRead -1 FirstWrite 6}
+		mn6_160_out {Type O LastRead -1 FirstWrite 6}
+		mn6_159_out {Type O LastRead -1 FirstWrite 6}
+		mn6_158_out {Type O LastRead -1 FirstWrite 6}
+		mn6_157_out {Type O LastRead -1 FirstWrite 6}
+		mn6_156_out {Type O LastRead -1 FirstWrite 6}
+		mn6_155_out {Type O LastRead -1 FirstWrite 6}
+		mn6_154_out {Type O LastRead -1 FirstWrite 6}
+		mn6_153_out {Type O LastRead -1 FirstWrite 6}
+		mn6_152_out {Type O LastRead -1 FirstWrite 6}
+		mn6_151_out {Type O LastRead -1 FirstWrite 6}
+		mn6_150_out {Type O LastRead -1 FirstWrite 6}
+		mn6_149_out {Type O LastRead -1 FirstWrite 6}
+		mn6_148_out {Type O LastRead -1 FirstWrite 6}
+		mn6_147_out {Type O LastRead -1 FirstWrite 6}
+		mn6_146_out {Type O LastRead -1 FirstWrite 6}
+		mn6_145_out {Type O LastRead -1 FirstWrite 6}
+		mn6_144_out {Type O LastRead -1 FirstWrite 6}
+		mn6_143_out {Type O LastRead -1 FirstWrite 6}
+		mn6_142_out {Type O LastRead -1 FirstWrite 6}
+		mn6_141_out {Type O LastRead -1 FirstWrite 6}
+		mn6_140_out {Type O LastRead -1 FirstWrite 6}
+		mn6_139_out {Type O LastRead -1 FirstWrite 6}
+		mn6_138_out {Type O LastRead -1 FirstWrite 6}
+		mn6_137_out {Type O LastRead -1 FirstWrite 6}
+		mn6_136_out {Type O LastRead -1 FirstWrite 6}
+		mn6_out {Type O LastRead -1 FirstWrite 6}
+		sc6_390_out {Type O LastRead -1 FirstWrite 6}
+		sc6_389_out {Type O LastRead -1 FirstWrite 6}
+		sc6_388_out {Type O LastRead -1 FirstWrite 6}
+		sc6_387_out {Type O LastRead -1 FirstWrite 6}
+		sc6_386_out {Type O LastRead -1 FirstWrite 6}
+		sc6_385_out {Type O LastRead -1 FirstWrite 6}
+		sc6_384_out {Type O LastRead -1 FirstWrite 6}
+		sc6_383_out {Type O LastRead -1 FirstWrite 6}
+		sc6_382_out {Type O LastRead -1 FirstWrite 6}
+		sc6_381_out {Type O LastRead -1 FirstWrite 6}
+		sc6_380_out {Type O LastRead -1 FirstWrite 6}
+		sc6_379_out {Type O LastRead -1 FirstWrite 6}
+		sc6_378_out {Type O LastRead -1 FirstWrite 6}
+		sc6_377_out {Type O LastRead -1 FirstWrite 6}
+		sc6_376_out {Type O LastRead -1 FirstWrite 6}
+		sc6_375_out {Type O LastRead -1 FirstWrite 6}
+		sc6_374_out {Type O LastRead -1 FirstWrite 6}
+		sc6_373_out {Type O LastRead -1 FirstWrite 6}
+		sc6_372_out {Type O LastRead -1 FirstWrite 6}
+		sc6_371_out {Type O LastRead -1 FirstWrite 6}
+		sc6_370_out {Type O LastRead -1 FirstWrite 6}
+		sc6_369_out {Type O LastRead -1 FirstWrite 6}
+		sc6_368_out {Type O LastRead -1 FirstWrite 6}
+		sc6_367_out {Type O LastRead -1 FirstWrite 6}
+		sc6_366_out {Type O LastRead -1 FirstWrite 6}
+		sc6_365_out {Type O LastRead -1 FirstWrite 6}
+		sc6_364_out {Type O LastRead -1 FirstWrite 6}
+		sc6_363_out {Type O LastRead -1 FirstWrite 6}
+		sc6_362_out {Type O LastRead -1 FirstWrite 6}
+		sc6_361_out {Type O LastRead -1 FirstWrite 6}
+		sc6_360_out {Type O LastRead -1 FirstWrite 6}
+		sc6_359_out {Type O LastRead -1 FirstWrite 6}
+		sc6_358_out {Type O LastRead -1 FirstWrite 6}
+		sc6_357_out {Type O LastRead -1 FirstWrite 6}
+		sc6_356_out {Type O LastRead -1 FirstWrite 6}
+		sc6_355_out {Type O LastRead -1 FirstWrite 6}
+		sc6_354_out {Type O LastRead -1 FirstWrite 6}
+		sc6_353_out {Type O LastRead -1 FirstWrite 6}
+		sc6_352_out {Type O LastRead -1 FirstWrite 6}
+		sc6_351_out {Type O LastRead -1 FirstWrite 6}
+		sc6_350_out {Type O LastRead -1 FirstWrite 6}
+		sc6_349_out {Type O LastRead -1 FirstWrite 6}
+		sc6_348_out {Type O LastRead -1 FirstWrite 6}
+		sc6_347_out {Type O LastRead -1 FirstWrite 6}
+		sc6_346_out {Type O LastRead -1 FirstWrite 6}
+		sc6_345_out {Type O LastRead -1 FirstWrite 6}
+		sc6_344_out {Type O LastRead -1 FirstWrite 6}
+		sc6_343_out {Type O LastRead -1 FirstWrite 6}
+		sc6_342_out {Type O LastRead -1 FirstWrite 6}
+		sc6_341_out {Type O LastRead -1 FirstWrite 6}
+		sc6_340_out {Type O LastRead -1 FirstWrite 6}
+		sc6_339_out {Type O LastRead -1 FirstWrite 6}
+		sc6_338_out {Type O LastRead -1 FirstWrite 6}
+		sc6_337_out {Type O LastRead -1 FirstWrite 6}
+		sc6_336_out {Type O LastRead -1 FirstWrite 6}
+		sc6_335_out {Type O LastRead -1 FirstWrite 6}
+		sc6_334_out {Type O LastRead -1 FirstWrite 6}
+		sc6_333_out {Type O LastRead -1 FirstWrite 6}
+		sc6_332_out {Type O LastRead -1 FirstWrite 6}
+		sc6_331_out {Type O LastRead -1 FirstWrite 6}
+		sc6_330_out {Type O LastRead -1 FirstWrite 6}
+		sc6_329_out {Type O LastRead -1 FirstWrite 6}
+		sc6_328_out {Type O LastRead -1 FirstWrite 6}
+		sc6_327_out {Type O LastRead -1 FirstWrite 6}
+		sc6_326_out {Type O LastRead -1 FirstWrite 6}
+		sc6_325_out {Type O LastRead -1 FirstWrite 6}
+		sc6_324_out {Type O LastRead -1 FirstWrite 6}
+		sc6_323_out {Type O LastRead -1 FirstWrite 6}
+		sc6_322_out {Type O LastRead -1 FirstWrite 6}
+		sc6_321_out {Type O LastRead -1 FirstWrite 6}
+		sc6_320_out {Type O LastRead -1 FirstWrite 6}
+		sc6_319_out {Type O LastRead -1 FirstWrite 6}
+		sc6_318_out {Type O LastRead -1 FirstWrite 6}
+		sc6_317_out {Type O LastRead -1 FirstWrite 6}
+		sc6_316_out {Type O LastRead -1 FirstWrite 6}
+		sc6_315_out {Type O LastRead -1 FirstWrite 6}
+		sc6_314_out {Type O LastRead -1 FirstWrite 6}
+		sc6_313_out {Type O LastRead -1 FirstWrite 6}
+		sc6_312_out {Type O LastRead -1 FirstWrite 6}
+		sc6_311_out {Type O LastRead -1 FirstWrite 6}
+		sc6_310_out {Type O LastRead -1 FirstWrite 6}
+		sc6_309_out {Type O LastRead -1 FirstWrite 6}
+		sc6_308_out {Type O LastRead -1 FirstWrite 6}
+		sc6_307_out {Type O LastRead -1 FirstWrite 6}
+		sc6_306_out {Type O LastRead -1 FirstWrite 6}
+		sc6_305_out {Type O LastRead -1 FirstWrite 6}
+		sc6_304_out {Type O LastRead -1 FirstWrite 6}
+		sc6_303_out {Type O LastRead -1 FirstWrite 6}
+		sc6_302_out {Type O LastRead -1 FirstWrite 6}
+		sc6_301_out {Type O LastRead -1 FirstWrite 6}
+		sc6_300_out {Type O LastRead -1 FirstWrite 6}
+		sc6_299_out {Type O LastRead -1 FirstWrite 6}
+		sc6_298_out {Type O LastRead -1 FirstWrite 6}
+		sc6_297_out {Type O LastRead -1 FirstWrite 6}
+		sc6_296_out {Type O LastRead -1 FirstWrite 6}
+		sc6_295_out {Type O LastRead -1 FirstWrite 6}
+		sc6_294_out {Type O LastRead -1 FirstWrite 6}
+		sc6_293_out {Type O LastRead -1 FirstWrite 6}
+		sc6_292_out {Type O LastRead -1 FirstWrite 6}
+		sc6_291_out {Type O LastRead -1 FirstWrite 6}
+		sc6_290_out {Type O LastRead -1 FirstWrite 6}
+		sc6_289_out {Type O LastRead -1 FirstWrite 6}
+		sc6_288_out {Type O LastRead -1 FirstWrite 6}
+		sc6_287_out {Type O LastRead -1 FirstWrite 6}
+		sc6_286_out {Type O LastRead -1 FirstWrite 6}
+		sc6_285_out {Type O LastRead -1 FirstWrite 6}
+		sc6_284_out {Type O LastRead -1 FirstWrite 6}
+		sc6_283_out {Type O LastRead -1 FirstWrite 6}
+		sc6_282_out {Type O LastRead -1 FirstWrite 6}
+		sc6_281_out {Type O LastRead -1 FirstWrite 6}
+		sc6_280_out {Type O LastRead -1 FirstWrite 6}
+		sc6_279_out {Type O LastRead -1 FirstWrite 6}
+		sc6_278_out {Type O LastRead -1 FirstWrite 6}
+		sc6_277_out {Type O LastRead -1 FirstWrite 6}
+		sc6_276_out {Type O LastRead -1 FirstWrite 6}
+		sc6_275_out {Type O LastRead -1 FirstWrite 6}
+		sc6_274_out {Type O LastRead -1 FirstWrite 6}
+		sc6_273_out {Type O LastRead -1 FirstWrite 6}
+		sc6_272_out {Type O LastRead -1 FirstWrite 6}
+		sc6_271_out {Type O LastRead -1 FirstWrite 6}
+		sc6_270_out {Type O LastRead -1 FirstWrite 6}
+		sc6_269_out {Type O LastRead -1 FirstWrite 6}
+		sc6_268_out {Type O LastRead -1 FirstWrite 6}
+		sc6_267_out {Type O LastRead -1 FirstWrite 6}
+		sc6_266_out {Type O LastRead -1 FirstWrite 6}
+		sc6_265_out {Type O LastRead -1 FirstWrite 6}
+		sc6_264_out {Type O LastRead -1 FirstWrite 6}
+		sc6_263_out {Type O LastRead -1 FirstWrite 6}
+		sc6_262_out {Type O LastRead -1 FirstWrite 6}
+		sc6_261_out {Type O LastRead -1 FirstWrite 6}
+		sc6_260_out {Type O LastRead -1 FirstWrite 6}
+		sc6_259_out {Type O LastRead -1 FirstWrite 6}
+		sc6_258_out {Type O LastRead -1 FirstWrite 6}
+		sc6_257_out {Type O LastRead -1 FirstWrite 6}
+		sc6_256_out {Type O LastRead -1 FirstWrite 6}
+		sc6_255_out {Type O LastRead -1 FirstWrite 6}
+		sc6_254_out {Type O LastRead -1 FirstWrite 6}
+		sc6_253_out {Type O LastRead -1 FirstWrite 6}
+		sc6_252_out {Type O LastRead -1 FirstWrite 6}
+		sc6_251_out {Type O LastRead -1 FirstWrite 6}
+		sc6_250_out {Type O LastRead -1 FirstWrite 6}
+		sc6_249_out {Type O LastRead -1 FirstWrite 6}
+		sc6_248_out {Type O LastRead -1 FirstWrite 6}
+		sc6_247_out {Type O LastRead -1 FirstWrite 6}
+		sc6_246_out {Type O LastRead -1 FirstWrite 6}
+		sc6_245_out {Type O LastRead -1 FirstWrite 6}
+		sc6_244_out {Type O LastRead -1 FirstWrite 6}
+		sc6_243_out {Type O LastRead -1 FirstWrite 6}
+		sc6_242_out {Type O LastRead -1 FirstWrite 6}
+		sc6_241_out {Type O LastRead -1 FirstWrite 6}
+		sc6_240_out {Type O LastRead -1 FirstWrite 6}
+		sc6_239_out {Type O LastRead -1 FirstWrite 6}
+		sc6_238_out {Type O LastRead -1 FirstWrite 6}
+		sc6_237_out {Type O LastRead -1 FirstWrite 6}
+		sc6_236_out {Type O LastRead -1 FirstWrite 6}
+		sc6_235_out {Type O LastRead -1 FirstWrite 6}
+		sc6_234_out {Type O LastRead -1 FirstWrite 6}
+		sc6_233_out {Type O LastRead -1 FirstWrite 6}
+		sc6_232_out {Type O LastRead -1 FirstWrite 6}
+		sc6_231_out {Type O LastRead -1 FirstWrite 6}
+		sc6_230_out {Type O LastRead -1 FirstWrite 6}
+		sc6_229_out {Type O LastRead -1 FirstWrite 6}
+		sc6_228_out {Type O LastRead -1 FirstWrite 6}
+		sc6_227_out {Type O LastRead -1 FirstWrite 6}
+		sc6_226_out {Type O LastRead -1 FirstWrite 6}
+		sc6_225_out {Type O LastRead -1 FirstWrite 6}
+		sc6_224_out {Type O LastRead -1 FirstWrite 6}
+		sc6_223_out {Type O LastRead -1 FirstWrite 6}
+		sc6_222_out {Type O LastRead -1 FirstWrite 6}
+		sc6_221_out {Type O LastRead -1 FirstWrite 6}
+		sc6_220_out {Type O LastRead -1 FirstWrite 6}
+		sc6_219_out {Type O LastRead -1 FirstWrite 6}
+		sc6_218_out {Type O LastRead -1 FirstWrite 6}
+		sc6_217_out {Type O LastRead -1 FirstWrite 6}
+		sc6_216_out {Type O LastRead -1 FirstWrite 6}
+		sc6_215_out {Type O LastRead -1 FirstWrite 6}
+		sc6_214_out {Type O LastRead -1 FirstWrite 6}
+		sc6_213_out {Type O LastRead -1 FirstWrite 6}
+		sc6_212_out {Type O LastRead -1 FirstWrite 6}
+		sc6_211_out {Type O LastRead -1 FirstWrite 6}
+		sc6_210_out {Type O LastRead -1 FirstWrite 6}
+		sc6_209_out {Type O LastRead -1 FirstWrite 6}
+		sc6_208_out {Type O LastRead -1 FirstWrite 6}
+		sc6_207_out {Type O LastRead -1 FirstWrite 6}
+		sc6_206_out {Type O LastRead -1 FirstWrite 6}
+		sc6_205_out {Type O LastRead -1 FirstWrite 6}
+		sc6_204_out {Type O LastRead -1 FirstWrite 6}
+		sc6_203_out {Type O LastRead -1 FirstWrite 6}
+		sc6_202_out {Type O LastRead -1 FirstWrite 6}
+		sc6_201_out {Type O LastRead -1 FirstWrite 6}
+		sc6_200_out {Type O LastRead -1 FirstWrite 6}
+		sc6_199_out {Type O LastRead -1 FirstWrite 6}
+		sc6_198_out {Type O LastRead -1 FirstWrite 6}
+		sc6_197_out {Type O LastRead -1 FirstWrite 6}
+		sc6_196_out {Type O LastRead -1 FirstWrite 6}
+		sc6_195_out {Type O LastRead -1 FirstWrite 6}
+		sc6_194_out {Type O LastRead -1 FirstWrite 6}
+		sc6_193_out {Type O LastRead -1 FirstWrite 6}
+		sc6_192_out {Type O LastRead -1 FirstWrite 6}
+		sc6_191_out {Type O LastRead -1 FirstWrite 6}
+		sc6_190_out {Type O LastRead -1 FirstWrite 6}
+		sc6_189_out {Type O LastRead -1 FirstWrite 6}
+		sc6_188_out {Type O LastRead -1 FirstWrite 6}
+		sc6_187_out {Type O LastRead -1 FirstWrite 6}
+		sc6_186_out {Type O LastRead -1 FirstWrite 6}
+		sc6_185_out {Type O LastRead -1 FirstWrite 6}
+		sc6_184_out {Type O LastRead -1 FirstWrite 6}
+		sc6_183_out {Type O LastRead -1 FirstWrite 6}
+		sc6_182_out {Type O LastRead -1 FirstWrite 6}
+		sc6_181_out {Type O LastRead -1 FirstWrite 6}
+		sc6_180_out {Type O LastRead -1 FirstWrite 6}
+		sc6_179_out {Type O LastRead -1 FirstWrite 6}
+		sc6_178_out {Type O LastRead -1 FirstWrite 6}
+		sc6_177_out {Type O LastRead -1 FirstWrite 6}
+		sc6_176_out {Type O LastRead -1 FirstWrite 6}
+		sc6_175_out {Type O LastRead -1 FirstWrite 6}
+		sc6_174_out {Type O LastRead -1 FirstWrite 6}
+		sc6_173_out {Type O LastRead -1 FirstWrite 6}
+		sc6_172_out {Type O LastRead -1 FirstWrite 6}
+		sc6_171_out {Type O LastRead -1 FirstWrite 6}
+		sc6_170_out {Type O LastRead -1 FirstWrite 6}
+		sc6_169_out {Type O LastRead -1 FirstWrite 6}
+		sc6_168_out {Type O LastRead -1 FirstWrite 6}
+		sc6_167_out {Type O LastRead -1 FirstWrite 6}
+		sc6_166_out {Type O LastRead -1 FirstWrite 6}
+		sc6_165_out {Type O LastRead -1 FirstWrite 6}
+		sc6_164_out {Type O LastRead -1 FirstWrite 6}
+		sc6_163_out {Type O LastRead -1 FirstWrite 6}
+		sc6_162_out {Type O LastRead -1 FirstWrite 6}
+		sc6_161_out {Type O LastRead -1 FirstWrite 6}
+		sc6_160_out {Type O LastRead -1 FirstWrite 6}
+		sc6_159_out {Type O LastRead -1 FirstWrite 6}
+		sc6_158_out {Type O LastRead -1 FirstWrite 6}
+		sc6_157_out {Type O LastRead -1 FirstWrite 6}
+		sc6_156_out {Type O LastRead -1 FirstWrite 6}
+		sc6_155_out {Type O LastRead -1 FirstWrite 6}
+		sc6_154_out {Type O LastRead -1 FirstWrite 6}
+		sc6_153_out {Type O LastRead -1 FirstWrite 6}
+		sc6_152_out {Type O LastRead -1 FirstWrite 6}
+		sc6_151_out {Type O LastRead -1 FirstWrite 6}
+		sc6_150_out {Type O LastRead -1 FirstWrite 6}
+		sc6_149_out {Type O LastRead -1 FirstWrite 6}
+		sc6_148_out {Type O LastRead -1 FirstWrite 6}
+		sc6_147_out {Type O LastRead -1 FirstWrite 6}
+		sc6_146_out {Type O LastRead -1 FirstWrite 6}
+		sc6_145_out {Type O LastRead -1 FirstWrite 6}
+		sc6_144_out {Type O LastRead -1 FirstWrite 6}
+		sc6_143_out {Type O LastRead -1 FirstWrite 6}
+		sc6_142_out {Type O LastRead -1 FirstWrite 6}
+		sc6_141_out {Type O LastRead -1 FirstWrite 6}
+		sc6_140_out {Type O LastRead -1 FirstWrite 6}
+		sc6_139_out {Type O LastRead -1 FirstWrite 6}
+		sc6_138_out {Type O LastRead -1 FirstWrite 6}
+		sc6_137_out {Type O LastRead -1 FirstWrite 6}
+		sc6_136_out {Type O LastRead -1 FirstWrite 6}
+		sc6_out {Type O LastRead -1 FirstWrite 6}
+		dmin_31_out {Type O LastRead -1 FirstWrite 6}
+		dmin_30_out {Type O LastRead -1 FirstWrite 6}
+		dmin_29_out {Type O LastRead -1 FirstWrite 6}
+		dmin_28_out {Type O LastRead -1 FirstWrite 6}
+		dmin_27_out {Type O LastRead -1 FirstWrite 6}
+		dmin_26_out {Type O LastRead -1 FirstWrite 6}
+		dmin_25_out {Type O LastRead -1 FirstWrite 6}
+		dmin_24_out {Type O LastRead -1 FirstWrite 6}
+		dmin_23_out {Type O LastRead -1 FirstWrite 6}
+		dmin_22_out {Type O LastRead -1 FirstWrite 6}
+		dmin_21_out {Type O LastRead -1 FirstWrite 6}
+		dmin_20_out {Type O LastRead -1 FirstWrite 6}
+		dmin_19_out {Type O LastRead -1 FirstWrite 6}
+		dmin_18_out {Type O LastRead -1 FirstWrite 6}
+		dmin_17_out {Type O LastRead -1 FirstWrite 6}
+		dmin_16_out {Type O LastRead -1 FirstWrite 6}
+		dmin_15_out {Type O LastRead -1 FirstWrite 6}
+		dmin_14_out {Type O LastRead -1 FirstWrite 6}
+		dmin_13_out {Type O LastRead -1 FirstWrite 6}
+		dmin_12_out {Type O LastRead -1 FirstWrite 6}
+		dmin_11_out {Type O LastRead -1 FirstWrite 6}
+		dmin_10_out {Type O LastRead -1 FirstWrite 6}
+		dmin_9_out {Type O LastRead -1 FirstWrite 6}
+		dmin_8_out {Type O LastRead -1 FirstWrite 6}
+		dmin_7_out {Type O LastRead -1 FirstWrite 6}
+		dmin_6_out {Type O LastRead -1 FirstWrite 6}
+		dmin_5_out {Type O LastRead -1 FirstWrite 6}
+		dmin_4_out {Type O LastRead -1 FirstWrite 6}
+		dmin_3_out {Type O LastRead -1 FirstWrite 6}
+		dmin_2_out {Type O LastRead -1 FirstWrite 6}
+		dmin_1_out {Type O LastRead -1 FirstWrite 6}
+		dmin_out {Type O LastRead -1 FirstWrite 6}
+		d_34_out {Type O LastRead -1 FirstWrite 6}
+		d_33_out {Type O LastRead -1 FirstWrite 6}
+		d_32_out {Type O LastRead -1 FirstWrite 6}
+		d_31_out {Type O LastRead -1 FirstWrite 6}
+		d_30_out {Type O LastRead -1 FirstWrite 6}
+		d_29_out {Type O LastRead -1 FirstWrite 6}
+		d_28_out {Type O LastRead -1 FirstWrite 6}
+		d_27_out {Type O LastRead -1 FirstWrite 6}
+		d_26_out {Type O LastRead -1 FirstWrite 6}
+		d_25_out {Type O LastRead -1 FirstWrite 6}
+		d_24_out {Type O LastRead -1 FirstWrite 6}
+		d_23_out {Type O LastRead -1 FirstWrite 6}
+		d_22_out {Type O LastRead -1 FirstWrite 6}
+		d_21_out {Type O LastRead -1 FirstWrite 6}
+		d_20_out {Type O LastRead -1 FirstWrite 6}
+		d_19_out {Type O LastRead -1 FirstWrite 6}
+		d_18_out {Type O LastRead -1 FirstWrite 6}
+		d_17_out {Type O LastRead -1 FirstWrite 6}
+		d_16_out {Type O LastRead -1 FirstWrite 6}
+		d_15_out {Type O LastRead -1 FirstWrite 6}
+		d_14_out {Type O LastRead -1 FirstWrite 6}
+		d_13_out {Type O LastRead -1 FirstWrite 6}
+		d_12_out {Type O LastRead -1 FirstWrite 6}
+		d_11_out {Type O LastRead -1 FirstWrite 6}
+		d_10_out {Type O LastRead -1 FirstWrite 6}
+		d_9_out {Type O LastRead -1 FirstWrite 6}
+		d_8_out {Type O LastRead -1 FirstWrite 6}
+		d_7_out {Type O LastRead -1 FirstWrite 6}
+		d_6_out {Type O LastRead -1 FirstWrite 6}
+		d_5_out {Type O LastRead -1 FirstWrite 6}
+		d_4_out {Type O LastRead -1 FirstWrite 6}
+		d_out {Type O LastRead -1 FirstWrite 6}}
 	fp16_to_fp32 {
 		h {Type I LastRead 0 FirstWrite -1}}
-	mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0 {
+	mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G0 {
 		gate_0 {Type I LastRead 1 FirstWrite -1}
+		gate_1 {Type I LastRead 1 FirstWrite -1}
+		gate_2 {Type I LastRead 1 FirstWrite -1}
+		gate_3 {Type I LastRead 1 FirstWrite -1}
+		gate_4 {Type I LastRead 1 FirstWrite -1}
+		gate_5 {Type I LastRead 1 FirstWrite -1}
+		gate_6 {Type I LastRead 1 FirstWrite -1}
+		gate_7 {Type I LastRead 1 FirstWrite -1}
 		rb_0 {Type I LastRead 2 FirstWrite -1}
+		rb_1 {Type I LastRead 1 FirstWrite -1}
+		rb_2 {Type I LastRead 1 FirstWrite -1}
+		rb_3 {Type I LastRead 1 FirstWrite -1}
+		rb_4 {Type I LastRead 1 FirstWrite -1}
+		rb_5 {Type I LastRead 1 FirstWrite -1}
+		rb_6 {Type I LastRead 1 FirstWrite -1}
+		rb_7 {Type I LastRead 1 FirstWrite -1}
 		sc6_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_136_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_137_reload {Type I LastRead 0 FirstWrite -1}
@@ -3657,20 +3435,6 @@ set ArgLastReadFirstWriteLatency {
 		sc6_140_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_141_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_142_reload {Type I LastRead 0 FirstWrite -1}
-		gate_1 {Type I LastRead 1 FirstWrite -1}
-		rb_1 {Type I LastRead 1 FirstWrite -1}
-		gate_2 {Type I LastRead 1 FirstWrite -1}
-		rb_2 {Type I LastRead 1 FirstWrite -1}
-		gate_3 {Type I LastRead 1 FirstWrite -1}
-		rb_3 {Type I LastRead 1 FirstWrite -1}
-		gate_4 {Type I LastRead 1 FirstWrite -1}
-		rb_4 {Type I LastRead 1 FirstWrite -1}
-		gate_5 {Type I LastRead 1 FirstWrite -1}
-		rb_5 {Type I LastRead 1 FirstWrite -1}
-		gate_6 {Type I LastRead 1 FirstWrite -1}
-		rb_6 {Type I LastRead 1 FirstWrite -1}
-		gate_7 {Type I LastRead 1 FirstWrite -1}
-		rb_7 {Type I LastRead 1 FirstWrite -1}
 		sc6_143_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_144_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_145_reload {Type I LastRead 0 FirstWrite -1}
@@ -3919,7 +3683,7 @@ set ArgLastReadFirstWriteLatency {
 		int_acc_m_132_load_1_out {Type O LastRead -1 FirstWrite 6}
 		int_acc_m_133_load_1_out {Type O LastRead -1 FirstWrite 6}
 		int_acc_m_134_load_1_out {Type O LastRead -1 FirstWrite 6}}
-	mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G1 {
+	mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G1 {
 		int_acc_w_135 {Type IO LastRead 6 FirstWrite 7}
 		int_acc_w_143 {Type IO LastRead 6 FirstWrite 7}
 		int_acc_w_151 {Type IO LastRead 6 FirstWrite 7}
@@ -3936,6 +3700,14 @@ set ArgLastReadFirstWriteLatency {
 		int_acc_m_175 {Type IO LastRead 4 FirstWrite 5}
 		int_acc_m_183 {Type IO LastRead 4 FirstWrite 5}
 		int_acc_m_191 {Type IO LastRead 4 FirstWrite 5}
+		gate_0 {Type I LastRead 1 FirstWrite -1}
+		gate_1 {Type I LastRead 1 FirstWrite -1}
+		gate_2 {Type I LastRead 1 FirstWrite -1}
+		gate_3 {Type I LastRead 1 FirstWrite -1}
+		gate_4 {Type I LastRead 1 FirstWrite -1}
+		gate_5 {Type I LastRead 1 FirstWrite -1}
+		gate_6 {Type I LastRead 1 FirstWrite -1}
+		gate_7 {Type I LastRead 1 FirstWrite -1}
 		int_acc_m_198 {Type IO LastRead 4 FirstWrite 5}
 		int_acc_m_197 {Type IO LastRead 4 FirstWrite 5}
 		int_acc_m_196 {Type IO LastRead 4 FirstWrite 5}
@@ -4048,8 +3820,14 @@ set ArgLastReadFirstWriteLatency {
 		int_acc_w_138 {Type IO LastRead 6 FirstWrite 7}
 		int_acc_w_137 {Type IO LastRead 6 FirstWrite 7}
 		int_acc_w_136 {Type IO LastRead 6 FirstWrite 7}
-		gate_8 {Type I LastRead 1 FirstWrite -1}
-		rb_8 {Type I LastRead 2 FirstWrite -1}
+		rb_0 {Type I LastRead 2 FirstWrite -1}
+		rb_1 {Type I LastRead 1 FirstWrite -1}
+		rb_2 {Type I LastRead 1 FirstWrite -1}
+		rb_3 {Type I LastRead 1 FirstWrite -1}
+		rb_4 {Type I LastRead 1 FirstWrite -1}
+		rb_5 {Type I LastRead 1 FirstWrite -1}
+		rb_6 {Type I LastRead 1 FirstWrite -1}
+		rb_7 {Type I LastRead 1 FirstWrite -1}
 		sc6_199_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_200_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_201_reload {Type I LastRead 0 FirstWrite -1}
@@ -4058,20 +3836,6 @@ set ArgLastReadFirstWriteLatency {
 		sc6_204_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_205_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_206_reload {Type I LastRead 0 FirstWrite -1}
-		gate_9 {Type I LastRead 1 FirstWrite -1}
-		rb_9 {Type I LastRead 1 FirstWrite -1}
-		gate_10 {Type I LastRead 1 FirstWrite -1}
-		rb_10 {Type I LastRead 1 FirstWrite -1}
-		gate_11 {Type I LastRead 1 FirstWrite -1}
-		rb_11 {Type I LastRead 1 FirstWrite -1}
-		gate_12 {Type I LastRead 1 FirstWrite -1}
-		rb_12 {Type I LastRead 1 FirstWrite -1}
-		gate_13 {Type I LastRead 1 FirstWrite -1}
-		rb_13 {Type I LastRead 1 FirstWrite -1}
-		gate_14 {Type I LastRead 1 FirstWrite -1}
-		rb_14 {Type I LastRead 1 FirstWrite -1}
-		gate_15 {Type I LastRead 1 FirstWrite -1}
-		rb_15 {Type I LastRead 1 FirstWrite -1}
 		sc6_207_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_208_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_209_reload {Type I LastRead 0 FirstWrite -1}
@@ -4192,7 +3956,7 @@ set ArgLastReadFirstWriteLatency {
 		mn6_260_reload {Type I LastRead 0 FirstWrite -1}
 		mn6_261_reload {Type I LastRead 0 FirstWrite -1}
 		mn6_262_reload {Type I LastRead 0 FirstWrite -1}}
-	mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G2 {
+	mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G2 {
 		int_acc_w_199 {Type IO LastRead 6 FirstWrite 7}
 		int_acc_w_207 {Type IO LastRead 6 FirstWrite 7}
 		int_acc_w_215 {Type IO LastRead 6 FirstWrite 7}
@@ -4209,6 +3973,14 @@ set ArgLastReadFirstWriteLatency {
 		int_acc_m_239 {Type IO LastRead 4 FirstWrite 5}
 		int_acc_m_247 {Type IO LastRead 4 FirstWrite 5}
 		int_acc_m_255 {Type IO LastRead 4 FirstWrite 5}
+		gate_0 {Type I LastRead 1 FirstWrite -1}
+		gate_1 {Type I LastRead 1 FirstWrite -1}
+		gate_2 {Type I LastRead 1 FirstWrite -1}
+		gate_3 {Type I LastRead 1 FirstWrite -1}
+		gate_4 {Type I LastRead 1 FirstWrite -1}
+		gate_5 {Type I LastRead 1 FirstWrite -1}
+		gate_6 {Type I LastRead 1 FirstWrite -1}
+		gate_7 {Type I LastRead 1 FirstWrite -1}
 		int_acc_m_262 {Type IO LastRead 4 FirstWrite 5}
 		int_acc_m_261 {Type IO LastRead 4 FirstWrite 5}
 		int_acc_m_260 {Type IO LastRead 4 FirstWrite 5}
@@ -4321,8 +4093,14 @@ set ArgLastReadFirstWriteLatency {
 		int_acc_w_202 {Type IO LastRead 6 FirstWrite 7}
 		int_acc_w_201 {Type IO LastRead 6 FirstWrite 7}
 		int_acc_w_200 {Type IO LastRead 6 FirstWrite 7}
-		gate_16 {Type I LastRead 1 FirstWrite -1}
-		rb_16 {Type I LastRead 2 FirstWrite -1}
+		rb_0 {Type I LastRead 2 FirstWrite -1}
+		rb_1 {Type I LastRead 1 FirstWrite -1}
+		rb_2 {Type I LastRead 1 FirstWrite -1}
+		rb_3 {Type I LastRead 1 FirstWrite -1}
+		rb_4 {Type I LastRead 1 FirstWrite -1}
+		rb_5 {Type I LastRead 1 FirstWrite -1}
+		rb_6 {Type I LastRead 1 FirstWrite -1}
+		rb_7 {Type I LastRead 1 FirstWrite -1}
 		sc6_263_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_264_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_265_reload {Type I LastRead 0 FirstWrite -1}
@@ -4331,20 +4109,6 @@ set ArgLastReadFirstWriteLatency {
 		sc6_268_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_269_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_270_reload {Type I LastRead 0 FirstWrite -1}
-		gate_17 {Type I LastRead 1 FirstWrite -1}
-		rb_17 {Type I LastRead 1 FirstWrite -1}
-		gate_18 {Type I LastRead 1 FirstWrite -1}
-		rb_18 {Type I LastRead 1 FirstWrite -1}
-		gate_19 {Type I LastRead 1 FirstWrite -1}
-		rb_19 {Type I LastRead 1 FirstWrite -1}
-		gate_20 {Type I LastRead 1 FirstWrite -1}
-		rb_20 {Type I LastRead 1 FirstWrite -1}
-		gate_21 {Type I LastRead 1 FirstWrite -1}
-		rb_21 {Type I LastRead 1 FirstWrite -1}
-		gate_22 {Type I LastRead 1 FirstWrite -1}
-		rb_22 {Type I LastRead 1 FirstWrite -1}
-		gate_23 {Type I LastRead 1 FirstWrite -1}
-		rb_23 {Type I LastRead 1 FirstWrite -1}
 		sc6_271_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_272_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_273_reload {Type I LastRead 0 FirstWrite -1}
@@ -4465,7 +4229,7 @@ set ArgLastReadFirstWriteLatency {
 		mn6_324_reload {Type I LastRead 0 FirstWrite -1}
 		mn6_325_reload {Type I LastRead 0 FirstWrite -1}
 		mn6_326_reload {Type I LastRead 0 FirstWrite -1}}
-	mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G3 {
+	mac_blocks_down_q4k3_Pipeline_MAC_BLOCKS_G3 {
 		int_acc_w_263 {Type IO LastRead 6 FirstWrite 7}
 		int_acc_w_271 {Type IO LastRead 6 FirstWrite 7}
 		int_acc_w_279 {Type IO LastRead 6 FirstWrite 7}
@@ -4482,6 +4246,14 @@ set ArgLastReadFirstWriteLatency {
 		int_acc_m_303 {Type IO LastRead 4 FirstWrite 5}
 		int_acc_m_311 {Type IO LastRead 4 FirstWrite 5}
 		int_acc_m_319 {Type IO LastRead 4 FirstWrite 5}
+		gate_0 {Type I LastRead 1 FirstWrite -1}
+		gate_1 {Type I LastRead 1 FirstWrite -1}
+		gate_2 {Type I LastRead 1 FirstWrite -1}
+		gate_3 {Type I LastRead 1 FirstWrite -1}
+		gate_4 {Type I LastRead 1 FirstWrite -1}
+		gate_5 {Type I LastRead 1 FirstWrite -1}
+		gate_6 {Type I LastRead 1 FirstWrite -1}
+		gate_7 {Type I LastRead 1 FirstWrite -1}
 		int_acc_m_326 {Type IO LastRead 4 FirstWrite 5}
 		int_acc_m_325 {Type IO LastRead 4 FirstWrite 5}
 		int_acc_m_324 {Type IO LastRead 4 FirstWrite 5}
@@ -4594,8 +4366,14 @@ set ArgLastReadFirstWriteLatency {
 		int_acc_w_266 {Type IO LastRead 6 FirstWrite 7}
 		int_acc_w_265 {Type IO LastRead 6 FirstWrite 7}
 		int_acc_w_264 {Type IO LastRead 6 FirstWrite 7}
-		gate_24 {Type I LastRead 1 FirstWrite -1}
-		rb_24 {Type I LastRead 2 FirstWrite -1}
+		rb_0 {Type I LastRead 2 FirstWrite -1}
+		rb_1 {Type I LastRead 1 FirstWrite -1}
+		rb_2 {Type I LastRead 1 FirstWrite -1}
+		rb_3 {Type I LastRead 1 FirstWrite -1}
+		rb_4 {Type I LastRead 1 FirstWrite -1}
+		rb_5 {Type I LastRead 1 FirstWrite -1}
+		rb_6 {Type I LastRead 1 FirstWrite -1}
+		rb_7 {Type I LastRead 1 FirstWrite -1}
 		sc6_327_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_328_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_329_reload {Type I LastRead 0 FirstWrite -1}
@@ -4604,20 +4382,6 @@ set ArgLastReadFirstWriteLatency {
 		sc6_332_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_333_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_334_reload {Type I LastRead 0 FirstWrite -1}
-		gate_25 {Type I LastRead 1 FirstWrite -1}
-		rb_25 {Type I LastRead 1 FirstWrite -1}
-		gate_26 {Type I LastRead 1 FirstWrite -1}
-		rb_26 {Type I LastRead 1 FirstWrite -1}
-		gate_27 {Type I LastRead 1 FirstWrite -1}
-		rb_27 {Type I LastRead 1 FirstWrite -1}
-		gate_28 {Type I LastRead 1 FirstWrite -1}
-		rb_28 {Type I LastRead 1 FirstWrite -1}
-		gate_29 {Type I LastRead 1 FirstWrite -1}
-		rb_29 {Type I LastRead 1 FirstWrite -1}
-		gate_30 {Type I LastRead 1 FirstWrite -1}
-		rb_30 {Type I LastRead 1 FirstWrite -1}
-		gate_31 {Type I LastRead 1 FirstWrite -1}
-		rb_31 {Type I LastRead 1 FirstWrite -1}
 		sc6_335_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_336_reload {Type I LastRead 0 FirstWrite -1}
 		sc6_337_reload {Type I LastRead 0 FirstWrite -1}
@@ -4740,7 +4504,7 @@ set ArgLastReadFirstWriteLatency {
 		mn6_390_reload {Type I LastRead 0 FirstWrite -1}}
 	compute_output_Pipeline_1 {
 		gmem_out {Type O LastRead -1 FirstWrite 2}
-		sext_ln513 {Type I LastRead 0 FirstWrite -1}
+		sext_ln509 {Type I LastRead 0 FirstWrite -1}
 		out_local {Type I LastRead 0 FirstWrite -1}}
 	fp16_to_fp32 {
 		h {Type I LastRead 0 FirstWrite -1}}}
@@ -4748,7 +4512,7 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "6775222", "Max" : "32727478"}
+	{"Name" : "Latency", "Min" : "8397238", "Max" : "32727478"}
 	, {"Name" : "Interval", "Min" : "4579331", "Max" : "28131403"}
 ]}
 
@@ -4764,11 +4528,11 @@ set Spec2ImplPortList {
 }
 
 set maxi_interface_dict [dict create]
-dict set maxi_interface_dict gmem_V { CHANNEL_NUM 0 BUNDLE gmem_V NUM_READ_OUTSTANDING 2 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 256 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY}
-dict set maxi_interface_dict gmem_W { CHANNEL_NUM 0 BUNDLE gmem_W NUM_READ_OUTSTANDING 2 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 256 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY}
-dict set maxi_interface_dict gmem_Wd { CHANNEL_NUM 0 BUNDLE gmem_Wd NUM_READ_OUTSTANDING 2 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 256 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY}
-dict set maxi_interface_dict gmem_out { CHANNEL_NUM 0 BUNDLE gmem_out NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 2 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 256 READ_WRITE_MODE WRITE_ONLY}
-dict set maxi_interface_dict gmem_x { CHANNEL_NUM 0 BUNDLE gmem_x NUM_READ_OUTSTANDING 2 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 256 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY}
+dict set maxi_interface_dict gmem_V { CHANNEL_NUM 0 BUNDLE gmem_V NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 256 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY}
+dict set maxi_interface_dict gmem_W { CHANNEL_NUM 0 BUNDLE gmem_W NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 256 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY}
+dict set maxi_interface_dict gmem_Wd { CHANNEL_NUM 0 BUNDLE gmem_Wd NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 256 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY}
+dict set maxi_interface_dict gmem_out { CHANNEL_NUM 0 BUNDLE gmem_out NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 256 READ_WRITE_MODE WRITE_ONLY}
+dict set maxi_interface_dict gmem_x { CHANNEL_NUM 0 BUNDLE gmem_x NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 256 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY}
 
 # RTL port scheduling information:
 set fifoSchedulingInfoList { 

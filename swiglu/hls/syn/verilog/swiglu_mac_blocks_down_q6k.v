@@ -181,96 +181,24 @@ module swiglu_mac_blocks_down_q6k (
         gate_7_address0,
         gate_7_ce0,
         gate_7_q0,
-        gate_8_address0,
-        gate_8_ce0,
-        gate_8_q0,
-        gate_9_address0,
-        gate_9_ce0,
-        gate_9_q0,
-        gate_10_address0,
-        gate_10_ce0,
-        gate_10_q0,
-        gate_11_address0,
-        gate_11_ce0,
-        gate_11_q0,
-        gate_12_address0,
-        gate_12_ce0,
-        gate_12_q0,
-        gate_13_address0,
-        gate_13_ce0,
-        gate_13_q0,
-        gate_14_address0,
-        gate_14_ce0,
-        gate_14_q0,
-        gate_15_address0,
-        gate_15_ce0,
-        gate_15_q0,
-        gate_16_address0,
-        gate_16_ce0,
-        gate_16_q0,
-        gate_17_address0,
-        gate_17_ce0,
-        gate_17_q0,
-        gate_18_address0,
-        gate_18_ce0,
-        gate_18_q0,
-        gate_19_address0,
-        gate_19_ce0,
-        gate_19_q0,
-        gate_20_address0,
-        gate_20_ce0,
-        gate_20_q0,
-        gate_21_address0,
-        gate_21_ce0,
-        gate_21_q0,
-        gate_22_address0,
-        gate_22_ce0,
-        gate_22_q0,
-        gate_23_address0,
-        gate_23_ce0,
-        gate_23_q0,
-        gate_24_address0,
-        gate_24_ce0,
-        gate_24_q0,
-        gate_25_address0,
-        gate_25_ce0,
-        gate_25_q0,
-        gate_26_address0,
-        gate_26_ce0,
-        gate_26_q0,
-        gate_27_address0,
-        gate_27_ce0,
-        gate_27_q0,
-        gate_28_address0,
-        gate_28_ce0,
-        gate_28_q0,
-        gate_29_address0,
-        gate_29_ce0,
-        gate_29_q0,
-        gate_30_address0,
-        gate_30_ce0,
-        gate_30_q0,
-        gate_31_address0,
-        gate_31_ce0,
-        gate_31_q0,
         gate_scale,
         ap_return,
-        grp_fp16_to_fp32_fu_828_p_din1,
-        grp_fp16_to_fp32_fu_828_p_dout0,
-        grp_fp16_to_fp32_fu_828_p_ce,
-        grp_fu_832_p_din0,
-        grp_fu_832_p_din1,
-        grp_fu_832_p_opcode,
-        grp_fu_832_p_dout0,
-        grp_fu_832_p_ce,
-        grp_fu_836_p_din0,
-        grp_fu_836_p_din1,
-        grp_fu_836_p_dout0,
-        grp_fu_836_p_ce,
-        grp_fu_840_p_din0,
-        grp_fu_840_p_din1,
-        grp_fu_840_p_dout0,
-        grp_fu_840_p_ce
+        grp_fp16_to_fp32_fu_532_p_din1,
+        grp_fp16_to_fp32_fu_532_p_dout0,
+        grp_fp16_to_fp32_fu_532_p_ce,
+        grp_fu_536_p_din0,
+        grp_fu_536_p_din1,
+        grp_fu_536_p_opcode,
+        grp_fu_536_p_dout0,
+        grp_fu_536_p_ce,
+        grp_fu_540_p_din0,
+        grp_fu_540_p_din1,
+        grp_fu_540_p_dout0,
+        grp_fu_540_p_ce,
+        grp_fu_544_p_din0,
+        grp_fu_544_p_din1,
+        grp_fu_544_p_dout0,
+        grp_fu_544_p_ce
 );
 
 parameter    ap_ST_fsm_state1 = 746'd1;
@@ -1170,120 +1098,48 @@ input  [127:0] rb_15_q1;
 output  [4:0] rb_15_address2;
 output   rb_15_ce2;
 input  [127:0] rb_15_q2;
-output  [7:0] gate_0_address0;
+output  [9:0] gate_0_address0;
 output   gate_0_ce0;
 input  [7:0] gate_0_q0;
-output  [7:0] gate_1_address0;
+output  [9:0] gate_1_address0;
 output   gate_1_ce0;
 input  [7:0] gate_1_q0;
-output  [7:0] gate_2_address0;
+output  [9:0] gate_2_address0;
 output   gate_2_ce0;
 input  [7:0] gate_2_q0;
-output  [7:0] gate_3_address0;
+output  [9:0] gate_3_address0;
 output   gate_3_ce0;
 input  [7:0] gate_3_q0;
-output  [7:0] gate_4_address0;
+output  [9:0] gate_4_address0;
 output   gate_4_ce0;
 input  [7:0] gate_4_q0;
-output  [7:0] gate_5_address0;
+output  [9:0] gate_5_address0;
 output   gate_5_ce0;
 input  [7:0] gate_5_q0;
-output  [7:0] gate_6_address0;
+output  [9:0] gate_6_address0;
 output   gate_6_ce0;
 input  [7:0] gate_6_q0;
-output  [7:0] gate_7_address0;
+output  [9:0] gate_7_address0;
 output   gate_7_ce0;
 input  [7:0] gate_7_q0;
-output  [7:0] gate_8_address0;
-output   gate_8_ce0;
-input  [7:0] gate_8_q0;
-output  [7:0] gate_9_address0;
-output   gate_9_ce0;
-input  [7:0] gate_9_q0;
-output  [7:0] gate_10_address0;
-output   gate_10_ce0;
-input  [7:0] gate_10_q0;
-output  [7:0] gate_11_address0;
-output   gate_11_ce0;
-input  [7:0] gate_11_q0;
-output  [7:0] gate_12_address0;
-output   gate_12_ce0;
-input  [7:0] gate_12_q0;
-output  [7:0] gate_13_address0;
-output   gate_13_ce0;
-input  [7:0] gate_13_q0;
-output  [7:0] gate_14_address0;
-output   gate_14_ce0;
-input  [7:0] gate_14_q0;
-output  [7:0] gate_15_address0;
-output   gate_15_ce0;
-input  [7:0] gate_15_q0;
-output  [7:0] gate_16_address0;
-output   gate_16_ce0;
-input  [7:0] gate_16_q0;
-output  [7:0] gate_17_address0;
-output   gate_17_ce0;
-input  [7:0] gate_17_q0;
-output  [7:0] gate_18_address0;
-output   gate_18_ce0;
-input  [7:0] gate_18_q0;
-output  [7:0] gate_19_address0;
-output   gate_19_ce0;
-input  [7:0] gate_19_q0;
-output  [7:0] gate_20_address0;
-output   gate_20_ce0;
-input  [7:0] gate_20_q0;
-output  [7:0] gate_21_address0;
-output   gate_21_ce0;
-input  [7:0] gate_21_q0;
-output  [7:0] gate_22_address0;
-output   gate_22_ce0;
-input  [7:0] gate_22_q0;
-output  [7:0] gate_23_address0;
-output   gate_23_ce0;
-input  [7:0] gate_23_q0;
-output  [7:0] gate_24_address0;
-output   gate_24_ce0;
-input  [7:0] gate_24_q0;
-output  [7:0] gate_25_address0;
-output   gate_25_ce0;
-input  [7:0] gate_25_q0;
-output  [7:0] gate_26_address0;
-output   gate_26_ce0;
-input  [7:0] gate_26_q0;
-output  [7:0] gate_27_address0;
-output   gate_27_ce0;
-input  [7:0] gate_27_q0;
-output  [7:0] gate_28_address0;
-output   gate_28_ce0;
-input  [7:0] gate_28_q0;
-output  [7:0] gate_29_address0;
-output   gate_29_ce0;
-input  [7:0] gate_29_q0;
-output  [7:0] gate_30_address0;
-output   gate_30_ce0;
-input  [7:0] gate_30_q0;
-output  [7:0] gate_31_address0;
-output   gate_31_ce0;
-input  [7:0] gate_31_q0;
 input  [31:0] gate_scale;
 output  [31:0] ap_return;
-output  [15:0] grp_fp16_to_fp32_fu_828_p_din1;
-input  [31:0] grp_fp16_to_fp32_fu_828_p_dout0;
-output   grp_fp16_to_fp32_fu_828_p_ce;
-output  [31:0] grp_fu_832_p_din0;
-output  [31:0] grp_fu_832_p_din1;
-output  [0:0] grp_fu_832_p_opcode;
-input  [31:0] grp_fu_832_p_dout0;
-output   grp_fu_832_p_ce;
-output  [31:0] grp_fu_836_p_din0;
-output  [31:0] grp_fu_836_p_din1;
-input  [31:0] grp_fu_836_p_dout0;
-output   grp_fu_836_p_ce;
-output  [31:0] grp_fu_840_p_din0;
-output  [31:0] grp_fu_840_p_din1;
-input  [31:0] grp_fu_840_p_dout0;
-output   grp_fu_840_p_ce;
+output  [15:0] grp_fp16_to_fp32_fu_532_p_din1;
+input  [31:0] grp_fp16_to_fp32_fu_532_p_dout0;
+output   grp_fp16_to_fp32_fu_532_p_ce;
+output  [31:0] grp_fu_536_p_din0;
+output  [31:0] grp_fu_536_p_din1;
+output  [0:0] grp_fu_536_p_opcode;
+input  [31:0] grp_fu_536_p_dout0;
+output   grp_fu_536_p_ce;
+output  [31:0] grp_fu_540_p_din0;
+output  [31:0] grp_fu_540_p_din1;
+input  [31:0] grp_fu_540_p_dout0;
+output   grp_fu_540_p_ce;
+output  [31:0] grp_fu_544_p_din0;
+output  [31:0] grp_fu_544_p_din1;
+input  [31:0] grp_fu_544_p_dout0;
+output   grp_fu_544_p_ce;
 
 reg ap_done;
 reg ap_idle;
@@ -1388,31 +1244,31 @@ reg[31:0] ap_return;
 
 (* fsm_encoding = "none" *) reg   [745:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-reg   [127:0] reg_1379;
+reg   [127:0] reg_1291;
 wire    ap_CS_fsm_state4;
 wire    ap_CS_fsm_state102;
 wire    ap_CS_fsm_state200;
 wire    ap_CS_fsm_state298;
-reg   [127:0] reg_1383;
-reg   [127:0] reg_1387;
-reg   [127:0] reg_1391;
-reg   [127:0] reg_1395;
-reg   [127:0] reg_1399;
-reg   [127:0] reg_1403;
-reg   [127:0] reg_1407;
-reg   [127:0] reg_1411;
-reg   [127:0] reg_1415;
-reg   [127:0] reg_1419;
-reg   [127:0] reg_1423;
-reg   [127:0] reg_1427;
-reg   [127:0] reg_1431;
-reg   [127:0] reg_1435;
-reg   [127:0] reg_1439;
+reg   [127:0] reg_1295;
+reg   [127:0] reg_1299;
+reg   [127:0] reg_1303;
+reg   [127:0] reg_1307;
+reg   [127:0] reg_1311;
+reg   [127:0] reg_1315;
+reg   [127:0] reg_1319;
+reg   [127:0] reg_1323;
+reg   [127:0] reg_1327;
+reg   [127:0] reg_1331;
+reg   [127:0] reg_1335;
+reg   [127:0] reg_1339;
+reg   [127:0] reg_1343;
+reg   [127:0] reg_1347;
+reg   [127:0] reg_1351;
 wire    ap_CS_fsm_state7;
 wire    ap_CS_fsm_state105;
 wire    ap_CS_fsm_state203;
 wire    ap_CS_fsm_state301;
-reg   [31:0] reg_1448;
+reg   [31:0] reg_1360;
 wire    ap_CS_fsm_state17;
 wire    ap_CS_fsm_state28;
 wire    ap_CS_fsm_state39;
@@ -1504,229 +1360,221 @@ wire    ap_CS_fsm_state84;
 wire    ap_CS_fsm_state182;
 wire    ap_CS_fsm_state280;
 wire    ap_CS_fsm_state378;
-reg   [31:0] reg_1489;
-wire   [4:0] trunc_ln468_fu_1510_p1;
-reg   [4:0] trunc_ln468_reg_2814;
+reg   [31:0] reg_1401;
+wire   [4:0] trunc_ln465_1_fu_1422_p1;
+reg   [4:0] trunc_ln465_1_reg_2745;
 wire    ap_CS_fsm_state2;
-wire   [12:0] mul_ln55_fu_1518_p2;
-reg   [12:0] mul_ln55_reg_2823;
-reg   [3:0] trunc_ln55_2_reg_2840;
+wire   [12:0] mul_ln54_fu_1430_p2;
+reg   [12:0] mul_ln54_reg_2750;
+reg   [3:0] trunc_ln54_2_reg_2767;
 wire    ap_CS_fsm_state3;
-reg   [0:0] tmp_2_reg_2925;
-wire   [7:0] tmp_s_fu_1663_p3;
-reg   [7:0] tmp_s_reg_2930;
+reg   [0:0] tmp_2_reg_2852;
+wire   [2:0] trunc_ln465_fu_1493_p1;
+reg   [2:0] trunc_ln465_reg_2857;
 wire    ap_CS_fsm_state5;
-wire   [7:0] tmp_53_fu_1678_p3;
-reg   [7:0] tmp_53_reg_2935;
-wire   [15:0] or_i_fu_1686_p3;
+wire   [9:0] tmp_75_fu_1506_p3;
+reg   [9:0] tmp_75_reg_2865;
+wire   [7:0] tmp_s_fu_1594_p3;
+reg   [7:0] tmp_s_reg_2873;
+wire   [7:0] tmp_53_fu_1609_p3;
+reg   [7:0] tmp_53_reg_2878;
+wire   [15:0] or_i_fu_1617_p3;
 wire    ap_CS_fsm_state89;
-reg   [3:0] trunc_ln55_s_reg_2945;
+reg   [3:0] trunc_ln54_s_reg_2888;
 wire    ap_CS_fsm_state101;
-reg   [0:0] tmp_3_reg_3030;
-reg   [0:0] tmp_4_reg_3035;
-wire   [7:0] tmp_62_fu_1882_p3;
-reg   [7:0] tmp_62_reg_3040;
+reg   [0:0] tmp_3_reg_2973;
+reg   [0:0] tmp_4_reg_2978;
+wire   [7:0] tmp_61_fu_1813_p3;
+reg   [7:0] tmp_61_reg_2983;
 wire    ap_CS_fsm_state103;
-wire   [7:0] tmp_63_fu_1900_p3;
-reg   [7:0] tmp_63_reg_3045;
-wire   [15:0] or_i_1_fu_1908_p3;
+wire   [7:0] tmp_62_fu_1831_p3;
+reg   [7:0] tmp_62_reg_2988;
+wire   [15:0] or_i_1_fu_1839_p3;
 wire    ap_CS_fsm_state187;
-reg   [3:0] trunc_ln55_8_reg_3055;
+reg   [3:0] trunc_ln54_8_reg_2998;
 wire    ap_CS_fsm_state199;
-reg   [1:0] tmp_78_reg_3140;
-wire   [0:0] tmp_5_fu_2081_p3;
-reg   [0:0] tmp_5_reg_3145;
+reg   [1:0] tmp_77_reg_3083;
+wire   [0:0] tmp_5_fu_2012_p3;
+reg   [0:0] tmp_5_reg_3088;
 wire    ap_CS_fsm_state201;
-wire   [7:0] tmp_72_fu_2096_p3;
-reg   [7:0] tmp_72_reg_3150;
-wire   [7:0] tmp_73_fu_2111_p3;
-reg   [7:0] tmp_73_reg_3155;
-wire   [15:0] or_i_2_fu_2119_p3;
+wire   [7:0] tmp_70_fu_2027_p3;
+reg   [7:0] tmp_70_reg_3093;
+wire   [7:0] tmp_71_fu_2042_p3;
+reg   [7:0] tmp_71_reg_3098;
+wire   [15:0] or_i_2_fu_2050_p3;
 wire    ap_CS_fsm_state285;
-reg   [3:0] trunc_ln55_5_reg_3165;
+reg   [3:0] trunc_ln54_5_reg_3108;
 wire    ap_CS_fsm_state297;
-wire   [3:0] trunc_ln55_11_fu_2211_p1;
-reg   [3:0] trunc_ln55_11_reg_3250;
-wire   [7:0] tmp_80_fu_2293_p3;
-reg   [7:0] tmp_80_reg_3255;
+wire   [3:0] trunc_ln54_fu_2142_p1;
+reg   [3:0] trunc_ln54_reg_3193;
+wire   [7:0] tmp_79_fu_2224_p3;
+reg   [7:0] tmp_79_reg_3198;
 wire    ap_CS_fsm_state299;
-wire   [7:0] tmp_81_fu_2308_p3;
-reg   [7:0] tmp_81_reg_3260;
-wire   [15:0] or_i_3_fu_2316_p3;
+wire   [7:0] tmp_80_fu_2239_p3;
+reg   [7:0] tmp_80_reg_3203;
+wire   [15:0] or_i_3_fu_2247_p3;
 wire    ap_CS_fsm_state383;
-wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_start;
-wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done;
-wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_idle;
-wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_ready;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc;
-wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_1;
-wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_1_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_2;
-wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_2_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_3;
-wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_3_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_4;
-wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_4_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_5;
-wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_5_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_6;
-wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_6_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_7;
-wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_7_ap_vld;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_start;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_done;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_idle;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_ready;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_7_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_7_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_6_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_6_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_5_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_5_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_4_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_4_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_3_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_3_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_2_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_2_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_1_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_1_o_ap_vld;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_ce2;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_0_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_0_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_4_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_4_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_8_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_8_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_12_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_12_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_16_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_16_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_20_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_20_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_24_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_24_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_28_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_28_ce0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3363_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3363_p_din1;
-wire   [1:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3363_p_opcode;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3363_p_ce;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_1326_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_1326_p_din1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_1326_p_ce;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3367_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3367_p_din1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3367_p_ce;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3371_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3371_p_din1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3371_p_ce;
-wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3375_p_din0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3375_p_ce;
-wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3378_p_din0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3378_p_ce;
-wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3381_p_din0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3381_p_ce;
-reg   [15:0] grp_fp16_to_fp32_fu_1091_h;
-reg    grp_fp16_to_fp32_fu_1091_ap_ce;
+wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_start;
+wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done;
+wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_idle;
+wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_ready;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc;
+wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_1;
+wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_1_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_2;
+wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_2_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_3;
+wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_3_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_4;
+wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_4_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_5;
+wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_5_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_6;
+wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_6_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_7;
+wire    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_7_ap_vld;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_start;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_done;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_idle;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_ready;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_o_ap_vld;
+wire   [9:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_gate_0_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_gate_0_ce0;
+wire   [9:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_gate_4_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_gate_4_ce0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_7_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_7_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_6_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_6_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_5_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_5_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_4_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_4_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_3_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_3_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_2_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_2_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_1_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_1_o_ap_vld;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_ce2;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3306_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3306_p_din1;
+wire   [1:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3306_p_opcode;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3306_p_ce;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_1238_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_1238_p_din1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_1238_p_ce;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3310_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3310_p_din1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3310_p_ce;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3314_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3314_p_din1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3314_p_ce;
+wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3318_p_din0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3318_p_ce;
+wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3321_p_din0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3321_p_ce;
+wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3324_p_din0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3324_p_ce;
+reg   [15:0] grp_fp16_to_fp32_fu_1036_h;
+reg    grp_fp16_to_fp32_fu_1036_ap_ce;
 wire    ap_CS_fsm_state90;
 wire    ap_CS_fsm_state91;
 wire    ap_CS_fsm_state92;
@@ -1743,645 +1591,609 @@ wire    ap_CS_fsm_state384;
 wire    ap_CS_fsm_state385;
 wire    ap_CS_fsm_state386;
 wire    ap_CS_fsm_state387;
-wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_start;
-wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_done;
-wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_idle;
-wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_ready;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc;
-wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_1;
-wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_1_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_2;
-wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_2_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_3;
-wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_3_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_4;
-wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_4_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_5;
-wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_5_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_6;
-wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_6_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_7;
-wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_7_ap_vld;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_start;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_done;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_idle;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_ready;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_7_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_7_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_6_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_6_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_5_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_5_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_4_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_4_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_3_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_3_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_2_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_2_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_1_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_1_o_ap_vld;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_ce2;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_1_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_1_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_5_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_5_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_9_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_9_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_13_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_13_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_17_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_17_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_21_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_21_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_25_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_25_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_29_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_29_ce0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3363_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3363_p_din1;
-wire   [1:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3363_p_opcode;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3363_p_ce;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_1326_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_1326_p_din1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_1326_p_ce;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3367_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3367_p_din1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3367_p_ce;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3371_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3371_p_din1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3371_p_ce;
-wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3375_p_din0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3375_p_ce;
-wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3378_p_din0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3378_p_ce;
-wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3381_p_din0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3381_p_ce;
-wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_start;
-wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_done;
-wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_idle;
-wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_ready;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc;
-wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_1;
-wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_1_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_2;
-wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_2_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_3;
-wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_3_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_4;
-wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_4_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_5;
-wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_5_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_6;
-wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_6_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_7;
-wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_7_ap_vld;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_start;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_done;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_idle;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_ready;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_7_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_7_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_6_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_6_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_5_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_5_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_4_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_4_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_3_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_3_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_2_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_2_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_1_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_1_o_ap_vld;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_ce2;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_2_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_2_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_6_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_6_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_10_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_10_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_14_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_14_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_18_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_18_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_22_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_22_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_26_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_26_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_30_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_30_ce0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3363_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3363_p_din1;
-wire   [1:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3363_p_opcode;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3363_p_ce;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_1326_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_1326_p_din1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_1326_p_ce;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3367_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3367_p_din1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3367_p_ce;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3371_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3371_p_din1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3371_p_ce;
-wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3375_p_din0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3375_p_ce;
-wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3378_p_din0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3378_p_ce;
-wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3381_p_din0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3381_p_ce;
-wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_start;
-wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_done;
-wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_idle;
-wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_ready;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc;
-wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_1;
-wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_1_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_2;
-wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_2_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_3;
-wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_3_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_4;
-wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_4_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_5;
-wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_5_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_6;
-wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_6_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_7;
-wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_7_ap_vld;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_start;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_done;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_idle;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_ready;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_7_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_7_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_6_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_6_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_5_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_5_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_4_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_4_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_3_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_3_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_2_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_2_o_ap_vld;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_1_o;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_1_o_ap_vld;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_ce2;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_ce0;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_address1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_ce1;
-wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_address2;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_ce2;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_3_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_3_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_7_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_7_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_11_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_11_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_15_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_15_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_19_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_19_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_23_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_23_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_27_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_27_ce0;
-wire   [7:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_31_address0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_31_ce0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3363_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3363_p_din1;
-wire   [1:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3363_p_opcode;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3363_p_ce;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_1326_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_1326_p_din1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_1326_p_ce;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3367_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3367_p_din1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3367_p_ce;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3371_p_din0;
-wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3371_p_din1;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3371_p_ce;
-wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3375_p_din0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3375_p_ce;
-wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3378_p_din0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3378_p_ce;
-wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3381_p_din0;
-wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3381_p_ce;
-reg    grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_start_reg;
-wire   [0:0] tmp_1_fu_1502_p3;
-reg   [31:0] acc_fu_386;
-reg   [31:0] acc_1_fu_390;
-reg   [31:0] acc_2_fu_394;
-reg   [31:0] acc_3_fu_398;
-reg   [31:0] acc_4_fu_402;
-reg   [31:0] acc_5_fu_406;
-reg   [31:0] acc_6_fu_410;
-reg   [31:0] acc_7_fu_414;
-reg    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_start_reg;
+wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_start;
+wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_done;
+wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_idle;
+wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_ready;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc;
+wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_1;
+wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_1_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_2;
+wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_2_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_3;
+wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_3_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_4;
+wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_4_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_5;
+wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_5_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_6;
+wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_6_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_7;
+wire    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_7_ap_vld;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_start;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_done;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_idle;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_ready;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_o_ap_vld;
+wire   [9:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_gate_1_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_gate_1_ce0;
+wire   [9:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_gate_5_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_gate_5_ce0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_7_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_7_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_6_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_6_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_5_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_5_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_4_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_4_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_3_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_3_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_2_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_2_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_1_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_1_o_ap_vld;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_ce2;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3306_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3306_p_din1;
+wire   [1:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3306_p_opcode;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3306_p_ce;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_1238_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_1238_p_din1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_1238_p_ce;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3310_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3310_p_din1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3310_p_ce;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3314_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3314_p_din1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3314_p_ce;
+wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3318_p_din0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3318_p_ce;
+wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3321_p_din0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3321_p_ce;
+wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3324_p_din0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3324_p_ce;
+wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_start;
+wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_done;
+wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_idle;
+wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_ready;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc;
+wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_1;
+wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_1_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_2;
+wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_2_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_3;
+wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_3_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_4;
+wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_4_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_5;
+wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_5_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_6;
+wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_6_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_7;
+wire    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_7_ap_vld;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_start;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_done;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_idle;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_ready;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_o_ap_vld;
+wire   [9:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_gate_2_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_gate_2_ce0;
+wire   [9:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_gate_6_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_gate_6_ce0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_7_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_7_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_6_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_6_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_5_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_5_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_4_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_4_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_3_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_3_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_2_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_2_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_1_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_1_o_ap_vld;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_ce2;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3306_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3306_p_din1;
+wire   [1:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3306_p_opcode;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3306_p_ce;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_1238_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_1238_p_din1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_1238_p_ce;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3310_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3310_p_din1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3310_p_ce;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3314_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3314_p_din1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3314_p_ce;
+wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3318_p_din0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3318_p_ce;
+wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3321_p_din0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3321_p_ce;
+wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3324_p_din0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3324_p_ce;
+wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_start;
+wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_done;
+wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_idle;
+wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_ready;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc;
+wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_1;
+wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_1_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_2;
+wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_2_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_3;
+wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_3_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_4;
+wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_4_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_5;
+wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_5_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_6;
+wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_6_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_7;
+wire    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_7_ap_vld;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_start;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_done;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_idle;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_ready;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_o_ap_vld;
+wire   [9:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_gate_3_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_gate_3_ce0;
+wire   [9:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_gate_7_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_gate_7_ce0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_7_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_7_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_6_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_6_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_5_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_5_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_4_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_4_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_3_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_3_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_2_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_2_o_ap_vld;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_1_o;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_1_o_ap_vld;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_ce2;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_address0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_ce0;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_address1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_ce1;
+wire   [4:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_address2;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_ce2;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3306_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3306_p_din1;
+wire   [1:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3306_p_opcode;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3306_p_ce;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_1238_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_1238_p_din1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_1238_p_ce;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3310_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3310_p_din1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3310_p_ce;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3314_p_din0;
+wire   [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3314_p_din1;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3314_p_ce;
+wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3318_p_din0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3318_p_ce;
+wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3321_p_din0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3321_p_ce;
+wire  signed [31:0] grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3324_p_din0;
+wire    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3324_p_ce;
+reg    grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_start_reg;
+wire   [0:0] tmp_1_fu_1414_p3;
+reg   [31:0] acc_fu_342;
+reg   [31:0] acc_1_fu_346;
+reg   [31:0] acc_2_fu_350;
+reg   [31:0] acc_3_fu_354;
+reg   [31:0] acc_4_fu_358;
+reg   [31:0] acc_5_fu_362;
+reg   [31:0] acc_6_fu_366;
+reg   [31:0] acc_7_fu_370;
+reg    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_start_reg;
 wire    ap_CS_fsm_state6;
-reg    grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_start_reg;
-reg    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_start_reg;
+reg    grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_start_reg;
+reg    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_start_reg;
 wire    ap_CS_fsm_state104;
-reg    grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_start_reg;
-reg    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_start_reg;
+reg    grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_start_reg;
+reg    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_start_reg;
 wire    ap_CS_fsm_state202;
-reg    grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_start_reg;
-reg    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_start_reg;
+reg    grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_start_reg;
+reg    grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_start_reg;
 wire    ap_CS_fsm_state300;
-wire   [63:0] zext_ln55_fu_1553_p1;
-wire   [63:0] zext_ln55_4_fu_1758_p1;
-wire   [63:0] zext_ln55_8_fu_1980_p1;
-wire   [63:0] zext_ln55_12_fu_2191_p1;
-reg   [5:0] b_fu_254;
-wire   [5:0] add_ln468_fu_2363_p2;
+wire   [63:0] zext_ln54_fu_1465_p1;
+wire   [63:0] zext_ln54_4_fu_1689_p1;
+wire   [63:0] zext_ln54_8_fu_1911_p1;
+wire   [63:0] zext_ln54_12_fu_2122_p1;
+reg   [5:0] b_fu_210;
+wire   [5:0] add_ln465_fu_2294_p2;
 wire    ap_CS_fsm_state395;
-reg   [31:0] empty_fu_258;
+reg   [31:0] empty_fu_214;
 wire    ap_CS_fsm_state100;
-reg    ap_predicate_pred3816_state101;
-reg   [31:0] empty_93_fu_262;
+reg    ap_predicate_pred3537_state101;
+reg   [31:0] empty_93_fu_218;
 wire    ap_CS_fsm_state198;
-reg    ap_predicate_pred3816_state199;
+reg    ap_predicate_pred3537_state199;
 wire    ap_CS_fsm_state406;
-reg   [31:0] empty_94_fu_266;
+reg   [31:0] empty_94_fu_222;
 wire    ap_CS_fsm_state296;
-reg    ap_predicate_pred3816_state297;
+reg    ap_predicate_pred3537_state297;
 wire    ap_CS_fsm_state417;
-reg   [31:0] empty_95_fu_270;
+reg   [31:0] empty_95_fu_226;
 wire    ap_CS_fsm_state394;
-reg    ap_predicate_pred3816_state395;
+reg    ap_predicate_pred3537_state395;
 wire    ap_CS_fsm_state428;
-reg   [31:0] empty_96_fu_274;
-reg    ap_predicate_pred3879_state101;
+reg   [31:0] empty_96_fu_230;
+reg    ap_predicate_pred3600_state101;
 wire    ap_CS_fsm_state439;
-reg   [31:0] empty_97_fu_278;
-reg    ap_predicate_pred3879_state199;
+reg   [31:0] empty_97_fu_234;
+reg    ap_predicate_pred3600_state199;
 wire    ap_CS_fsm_state450;
-reg   [31:0] empty_98_fu_282;
-reg    ap_predicate_pred3879_state297;
+reg   [31:0] empty_98_fu_238;
+reg    ap_predicate_pred3600_state297;
 wire    ap_CS_fsm_state461;
-reg   [31:0] empty_99_fu_286;
-reg    ap_predicate_pred3879_state395;
+reg   [31:0] empty_99_fu_242;
+reg    ap_predicate_pred3600_state395;
 wire    ap_CS_fsm_state472;
-reg   [31:0] empty_100_fu_290;
-reg    ap_predicate_pred3925_state101;
+reg   [31:0] empty_100_fu_246;
+reg    ap_predicate_pred3646_state101;
 wire    ap_CS_fsm_state483;
-reg   [31:0] empty_101_fu_294;
-reg    ap_predicate_pred3925_state199;
+reg   [31:0] empty_101_fu_250;
+reg    ap_predicate_pred3646_state199;
 wire    ap_CS_fsm_state494;
-reg   [31:0] empty_102_fu_298;
-reg    ap_predicate_pred3925_state297;
+reg   [31:0] empty_102_fu_254;
+reg    ap_predicate_pred3646_state297;
 wire    ap_CS_fsm_state505;
-reg   [31:0] empty_103_fu_302;
-reg    ap_predicate_pred3925_state395;
+reg   [31:0] empty_103_fu_258;
+reg    ap_predicate_pred3646_state395;
 wire    ap_CS_fsm_state516;
-reg   [31:0] empty_104_fu_306;
-reg    ap_predicate_pred3971_state101;
+reg   [31:0] empty_104_fu_262;
+reg    ap_predicate_pred3692_state101;
 wire    ap_CS_fsm_state527;
-reg   [31:0] empty_105_fu_310;
-reg    ap_predicate_pred3971_state199;
+reg   [31:0] empty_105_fu_266;
+reg    ap_predicate_pred3692_state199;
 wire    ap_CS_fsm_state538;
-reg   [31:0] empty_106_fu_314;
-reg    ap_predicate_pred3971_state297;
+reg   [31:0] empty_106_fu_270;
+reg    ap_predicate_pred3692_state297;
 wire    ap_CS_fsm_state549;
-reg   [31:0] empty_107_fu_318;
-reg    ap_predicate_pred3971_state395;
+reg   [31:0] empty_107_fu_274;
+reg    ap_predicate_pred3692_state395;
 wire    ap_CS_fsm_state560;
-reg   [31:0] empty_108_fu_322;
-reg    ap_predicate_pred4017_state101;
+reg   [31:0] empty_108_fu_278;
+reg    ap_predicate_pred3738_state101;
 wire    ap_CS_fsm_state571;
-reg   [31:0] empty_109_fu_326;
-reg    ap_predicate_pred4017_state199;
+reg   [31:0] empty_109_fu_282;
+reg    ap_predicate_pred3738_state199;
 wire    ap_CS_fsm_state582;
-reg   [31:0] empty_110_fu_330;
-reg    ap_predicate_pred4017_state297;
+reg   [31:0] empty_110_fu_286;
+reg    ap_predicate_pred3738_state297;
 wire    ap_CS_fsm_state593;
-reg   [31:0] empty_111_fu_334;
-reg    ap_predicate_pred4017_state395;
+reg   [31:0] empty_111_fu_290;
+reg    ap_predicate_pred3738_state395;
 wire    ap_CS_fsm_state604;
-reg   [31:0] empty_112_fu_338;
-reg    ap_predicate_pred4063_state101;
+reg   [31:0] empty_112_fu_294;
+reg    ap_predicate_pred3784_state101;
 wire    ap_CS_fsm_state615;
-reg   [31:0] empty_113_fu_342;
-reg    ap_predicate_pred4063_state199;
+reg   [31:0] empty_113_fu_298;
+reg    ap_predicate_pred3784_state199;
 wire    ap_CS_fsm_state626;
-reg   [31:0] empty_114_fu_346;
-reg    ap_predicate_pred4063_state297;
+reg   [31:0] empty_114_fu_302;
+reg    ap_predicate_pred3784_state297;
 wire    ap_CS_fsm_state637;
-reg   [31:0] empty_115_fu_350;
-reg    ap_predicate_pred4063_state395;
+reg   [31:0] empty_115_fu_306;
+reg    ap_predicate_pred3784_state395;
 wire    ap_CS_fsm_state648;
-reg   [31:0] empty_116_fu_354;
-reg    ap_predicate_pred4109_state101;
+reg   [31:0] empty_116_fu_310;
+reg    ap_predicate_pred3830_state101;
 wire    ap_CS_fsm_state659;
-reg   [31:0] empty_117_fu_358;
-reg    ap_predicate_pred4109_state199;
+reg   [31:0] empty_117_fu_314;
+reg    ap_predicate_pred3830_state199;
 wire    ap_CS_fsm_state670;
-reg   [31:0] empty_118_fu_362;
-reg    ap_predicate_pred4109_state297;
+reg   [31:0] empty_118_fu_318;
+reg    ap_predicate_pred3830_state297;
 wire    ap_CS_fsm_state681;
-reg   [31:0] empty_119_fu_366;
-reg    ap_predicate_pred4109_state395;
+reg   [31:0] empty_119_fu_322;
+reg    ap_predicate_pred3830_state395;
 wire    ap_CS_fsm_state692;
-reg   [31:0] empty_120_fu_370;
-reg    ap_predicate_pred4166_state101;
+reg   [31:0] empty_120_fu_326;
+reg    ap_predicate_pred3887_state101;
 wire    ap_CS_fsm_state703;
-reg   [31:0] empty_121_fu_374;
-reg    ap_predicate_pred4166_state199;
+reg   [31:0] empty_121_fu_330;
+reg    ap_predicate_pred3887_state199;
 wire    ap_CS_fsm_state714;
-reg   [31:0] empty_122_fu_378;
-reg    ap_predicate_pred4166_state297;
+reg   [31:0] empty_122_fu_334;
+reg    ap_predicate_pred3887_state297;
 wire    ap_CS_fsm_state725;
-reg   [31:0] empty_123_fu_382;
-reg    ap_predicate_pred4166_state395;
+reg   [31:0] empty_123_fu_338;
+reg    ap_predicate_pred3887_state395;
 wire    ap_CS_fsm_state736;
 reg    rb_0_ce0_local;
 reg   [4:0] rb_0_address0_local;
@@ -2415,63 +2227,63 @@ reg    rb_14_ce0_local;
 reg   [4:0] rb_14_address0_local;
 reg    rb_15_ce0_local;
 reg   [4:0] rb_15_address0_local;
-reg   [31:0] grp_fu_1321_p0;
-reg   [31:0] grp_fu_1321_p1;
-reg   [31:0] grp_fu_1326_p0;
-reg   [31:0] grp_fu_1326_p1;
+reg   [31:0] grp_fu_1233_p0;
+reg   [31:0] grp_fu_1233_p1;
+reg   [31:0] grp_fu_1238_p0;
+reg   [31:0] grp_fu_1238_p1;
 wire    ap_CS_fsm_state95;
 wire    ap_CS_fsm_state193;
 wire    ap_CS_fsm_state291;
 wire    ap_CS_fsm_state389;
-wire   [4:0] mul_ln55_fu_1518_p0;
-wire   [8:0] mul_ln55_fu_1518_p1;
-wire   [12:0] add_ln55_fu_1528_p2;
-wire   [4:0] lshr_ln55_1_fu_1543_p4;
-wire   [127:0] tmp_fu_1581_p33;
-wire   [2:0] trunc_ln55_fu_1652_p1;
-wire   [127:0] tmp_fu_1581_p35;
-wire   [6:0] tmp_s_fu_1663_p2;
-wire   [6:0] tmp_53_fu_1678_p2;
-wire   [12:0] add_ln55_1_fu_1733_p2;
-wire   [4:0] lshr_ln55_9_fu_1748_p4;
-wire   [127:0] tmp_61_fu_1794_p33;
-wire   [1:0] tmp_77_fu_1865_p4;
-wire   [127:0] tmp_61_fu_1794_p35;
-wire   [6:0] tmp_62_fu_1882_p2;
-wire   [6:0] tmp_63_fu_1900_p2;
-wire   [12:0] add_ln55_2_fu_1955_p2;
-wire   [4:0] lshr_ln55_6_fu_1970_p4;
-wire   [127:0] tmp_71_fu_2010_p33;
-wire   [127:0] tmp_71_fu_2010_p35;
-wire   [6:0] tmp_72_fu_2096_p2;
-wire   [6:0] tmp_73_fu_2111_p2;
-wire   [12:0] add_ln55_3_fu_2166_p2;
-wire   [4:0] lshr_ln55_s_fu_2181_p4;
-wire   [127:0] tmp_79_fu_2215_p33;
-wire   [127:0] tmp_79_fu_2215_p35;
-wire   [6:0] tmp_80_fu_2293_p2;
-wire   [6:0] tmp_81_fu_2308_p2;
-reg    grp_fu_1326_ce;
-wire   [31:0] grp_fu_3363_p2;
-reg   [31:0] grp_fu_3363_p0;
-reg   [31:0] grp_fu_3363_p1;
-reg    grp_fu_3363_ce;
-reg   [31:0] grp_fu_3367_p0;
-reg   [31:0] grp_fu_3367_p1;
-reg    grp_fu_3367_ce;
-wire   [31:0] grp_fu_3371_p2;
-reg   [31:0] grp_fu_3371_p0;
-reg   [31:0] grp_fu_3371_p1;
-reg    grp_fu_3371_ce;
-wire   [31:0] grp_fu_3375_p1;
-reg  signed [31:0] grp_fu_3375_p0;
-reg    grp_fu_3375_ce;
-wire   [31:0] grp_fu_3378_p1;
-reg  signed [31:0] grp_fu_3378_p0;
-reg    grp_fu_3378_ce;
-wire   [31:0] grp_fu_3381_p1;
-reg  signed [31:0] grp_fu_3381_p0;
-reg    grp_fu_3381_ce;
+wire   [4:0] mul_ln54_fu_1430_p0;
+wire   [8:0] mul_ln54_fu_1430_p1;
+wire   [12:0] add_ln54_fu_1440_p2;
+wire   [4:0] lshr_ln54_1_fu_1455_p4;
+wire   [1:0] lshr_ln_fu_1497_p4;
+wire   [127:0] tmp_fu_1523_p33;
+wire   [127:0] tmp_fu_1523_p35;
+wire   [6:0] tmp_s_fu_1594_p2;
+wire   [6:0] tmp_53_fu_1609_p2;
+wire   [12:0] add_ln54_1_fu_1664_p2;
+wire   [4:0] lshr_ln54_9_fu_1679_p4;
+wire   [127:0] tmp_60_fu_1725_p33;
+wire   [1:0] tmp_76_fu_1796_p4;
+wire   [127:0] tmp_60_fu_1725_p35;
+wire   [6:0] tmp_61_fu_1813_p2;
+wire   [6:0] tmp_62_fu_1831_p2;
+wire   [12:0] add_ln54_2_fu_1886_p2;
+wire   [4:0] lshr_ln54_6_fu_1901_p4;
+wire   [127:0] tmp_69_fu_1941_p33;
+wire   [127:0] tmp_69_fu_1941_p35;
+wire   [6:0] tmp_70_fu_2027_p2;
+wire   [6:0] tmp_71_fu_2042_p2;
+wire   [12:0] add_ln54_3_fu_2097_p2;
+wire   [4:0] lshr_ln54_s_fu_2112_p4;
+wire   [127:0] tmp_78_fu_2146_p33;
+wire   [127:0] tmp_78_fu_2146_p35;
+wire   [6:0] tmp_79_fu_2224_p2;
+wire   [6:0] tmp_80_fu_2239_p2;
+reg    grp_fu_1238_ce;
+wire   [31:0] grp_fu_3306_p2;
+reg   [31:0] grp_fu_3306_p0;
+reg   [31:0] grp_fu_3306_p1;
+reg    grp_fu_3306_ce;
+reg   [31:0] grp_fu_3310_p0;
+reg   [31:0] grp_fu_3310_p1;
+reg    grp_fu_3310_ce;
+wire   [31:0] grp_fu_3314_p2;
+reg   [31:0] grp_fu_3314_p0;
+reg   [31:0] grp_fu_3314_p1;
+reg    grp_fu_3314_ce;
+wire   [31:0] grp_fu_3318_p1;
+reg  signed [31:0] grp_fu_3318_p0;
+reg    grp_fu_3318_ce;
+wire   [31:0] grp_fu_3321_p1;
+reg  signed [31:0] grp_fu_3321_p0;
+reg    grp_fu_3321_ce;
+wire   [31:0] grp_fu_3324_p1;
+reg  signed [31:0] grp_fu_3324_p0;
+reg    grp_fu_3324_ce;
 reg   [31:0] ap_return_preg;
 wire    ap_CS_fsm_state746;
 reg   [745:0] ap_NS_fsm;
@@ -3221,1146 +3033,1078 @@ wire    ap_ST_fsm_state743_blk;
 wire    ap_ST_fsm_state744_blk;
 wire    ap_ST_fsm_state745_blk;
 wire    ap_ST_fsm_state746_blk;
-wire   [12:0] mul_ln55_fu_1518_p00;
-wire   [3:0] tmp_fu_1581_p1;
-wire   [3:0] tmp_fu_1581_p3;
-wire   [3:0] tmp_fu_1581_p5;
-wire   [3:0] tmp_fu_1581_p7;
-wire   [3:0] tmp_fu_1581_p9;
-wire   [3:0] tmp_fu_1581_p11;
-wire   [3:0] tmp_fu_1581_p13;
-wire   [3:0] tmp_fu_1581_p15;
-wire  signed [3:0] tmp_fu_1581_p17;
-wire  signed [3:0] tmp_fu_1581_p19;
-wire  signed [3:0] tmp_fu_1581_p21;
-wire  signed [3:0] tmp_fu_1581_p23;
-wire  signed [3:0] tmp_fu_1581_p25;
-wire  signed [3:0] tmp_fu_1581_p27;
-wire  signed [3:0] tmp_fu_1581_p29;
-wire  signed [3:0] tmp_fu_1581_p31;
-wire   [7:0] tmp_s_fu_1663_p0;
-wire   [7:0] tmp_53_fu_1678_p0;
-wire   [3:0] tmp_61_fu_1794_p1;
-wire   [3:0] tmp_61_fu_1794_p3;
-wire   [3:0] tmp_61_fu_1794_p5;
-wire   [3:0] tmp_61_fu_1794_p7;
-wire   [3:0] tmp_61_fu_1794_p9;
-wire   [3:0] tmp_61_fu_1794_p11;
-wire   [3:0] tmp_61_fu_1794_p13;
-wire   [3:0] tmp_61_fu_1794_p15;
-wire  signed [3:0] tmp_61_fu_1794_p17;
-wire  signed [3:0] tmp_61_fu_1794_p19;
-wire  signed [3:0] tmp_61_fu_1794_p21;
-wire  signed [3:0] tmp_61_fu_1794_p23;
-wire  signed [3:0] tmp_61_fu_1794_p25;
-wire  signed [3:0] tmp_61_fu_1794_p27;
-wire  signed [3:0] tmp_61_fu_1794_p29;
-wire  signed [3:0] tmp_61_fu_1794_p31;
-wire   [7:0] tmp_62_fu_1882_p0;
-wire   [7:0] tmp_63_fu_1900_p0;
-wire   [3:0] tmp_71_fu_2010_p1;
-wire   [3:0] tmp_71_fu_2010_p3;
-wire   [3:0] tmp_71_fu_2010_p5;
-wire   [3:0] tmp_71_fu_2010_p7;
-wire   [3:0] tmp_71_fu_2010_p9;
-wire   [3:0] tmp_71_fu_2010_p11;
-wire   [3:0] tmp_71_fu_2010_p13;
-wire   [3:0] tmp_71_fu_2010_p15;
-wire  signed [3:0] tmp_71_fu_2010_p17;
-wire  signed [3:0] tmp_71_fu_2010_p19;
-wire  signed [3:0] tmp_71_fu_2010_p21;
-wire  signed [3:0] tmp_71_fu_2010_p23;
-wire  signed [3:0] tmp_71_fu_2010_p25;
-wire  signed [3:0] tmp_71_fu_2010_p27;
-wire  signed [3:0] tmp_71_fu_2010_p29;
-wire  signed [3:0] tmp_71_fu_2010_p31;
-wire   [7:0] tmp_72_fu_2096_p0;
-wire   [7:0] tmp_73_fu_2111_p0;
-wire   [3:0] tmp_79_fu_2215_p1;
-wire   [3:0] tmp_79_fu_2215_p3;
-wire   [3:0] tmp_79_fu_2215_p5;
-wire   [3:0] tmp_79_fu_2215_p7;
-wire   [3:0] tmp_79_fu_2215_p9;
-wire   [3:0] tmp_79_fu_2215_p11;
-wire   [3:0] tmp_79_fu_2215_p13;
-wire   [3:0] tmp_79_fu_2215_p15;
-wire  signed [3:0] tmp_79_fu_2215_p17;
-wire  signed [3:0] tmp_79_fu_2215_p19;
-wire  signed [3:0] tmp_79_fu_2215_p21;
-wire  signed [3:0] tmp_79_fu_2215_p23;
-wire  signed [3:0] tmp_79_fu_2215_p25;
-wire  signed [3:0] tmp_79_fu_2215_p27;
-wire  signed [3:0] tmp_79_fu_2215_p29;
-wire  signed [3:0] tmp_79_fu_2215_p31;
-wire   [7:0] tmp_80_fu_2293_p0;
-wire   [7:0] tmp_81_fu_2308_p0;
+wire   [12:0] mul_ln54_fu_1430_p00;
+wire   [3:0] tmp_fu_1523_p1;
+wire   [3:0] tmp_fu_1523_p3;
+wire   [3:0] tmp_fu_1523_p5;
+wire   [3:0] tmp_fu_1523_p7;
+wire   [3:0] tmp_fu_1523_p9;
+wire   [3:0] tmp_fu_1523_p11;
+wire   [3:0] tmp_fu_1523_p13;
+wire   [3:0] tmp_fu_1523_p15;
+wire  signed [3:0] tmp_fu_1523_p17;
+wire  signed [3:0] tmp_fu_1523_p19;
+wire  signed [3:0] tmp_fu_1523_p21;
+wire  signed [3:0] tmp_fu_1523_p23;
+wire  signed [3:0] tmp_fu_1523_p25;
+wire  signed [3:0] tmp_fu_1523_p27;
+wire  signed [3:0] tmp_fu_1523_p29;
+wire  signed [3:0] tmp_fu_1523_p31;
+wire   [7:0] tmp_s_fu_1594_p0;
+wire   [7:0] tmp_53_fu_1609_p0;
+wire   [3:0] tmp_60_fu_1725_p1;
+wire   [3:0] tmp_60_fu_1725_p3;
+wire   [3:0] tmp_60_fu_1725_p5;
+wire   [3:0] tmp_60_fu_1725_p7;
+wire   [3:0] tmp_60_fu_1725_p9;
+wire   [3:0] tmp_60_fu_1725_p11;
+wire   [3:0] tmp_60_fu_1725_p13;
+wire   [3:0] tmp_60_fu_1725_p15;
+wire  signed [3:0] tmp_60_fu_1725_p17;
+wire  signed [3:0] tmp_60_fu_1725_p19;
+wire  signed [3:0] tmp_60_fu_1725_p21;
+wire  signed [3:0] tmp_60_fu_1725_p23;
+wire  signed [3:0] tmp_60_fu_1725_p25;
+wire  signed [3:0] tmp_60_fu_1725_p27;
+wire  signed [3:0] tmp_60_fu_1725_p29;
+wire  signed [3:0] tmp_60_fu_1725_p31;
+wire   [7:0] tmp_61_fu_1813_p0;
+wire   [7:0] tmp_62_fu_1831_p0;
+wire   [3:0] tmp_69_fu_1941_p1;
+wire   [3:0] tmp_69_fu_1941_p3;
+wire   [3:0] tmp_69_fu_1941_p5;
+wire   [3:0] tmp_69_fu_1941_p7;
+wire   [3:0] tmp_69_fu_1941_p9;
+wire   [3:0] tmp_69_fu_1941_p11;
+wire   [3:0] tmp_69_fu_1941_p13;
+wire   [3:0] tmp_69_fu_1941_p15;
+wire  signed [3:0] tmp_69_fu_1941_p17;
+wire  signed [3:0] tmp_69_fu_1941_p19;
+wire  signed [3:0] tmp_69_fu_1941_p21;
+wire  signed [3:0] tmp_69_fu_1941_p23;
+wire  signed [3:0] tmp_69_fu_1941_p25;
+wire  signed [3:0] tmp_69_fu_1941_p27;
+wire  signed [3:0] tmp_69_fu_1941_p29;
+wire  signed [3:0] tmp_69_fu_1941_p31;
+wire   [7:0] tmp_70_fu_2027_p0;
+wire   [7:0] tmp_71_fu_2042_p0;
+wire   [3:0] tmp_78_fu_2146_p1;
+wire   [3:0] tmp_78_fu_2146_p3;
+wire   [3:0] tmp_78_fu_2146_p5;
+wire   [3:0] tmp_78_fu_2146_p7;
+wire   [3:0] tmp_78_fu_2146_p9;
+wire   [3:0] tmp_78_fu_2146_p11;
+wire   [3:0] tmp_78_fu_2146_p13;
+wire   [3:0] tmp_78_fu_2146_p15;
+wire  signed [3:0] tmp_78_fu_2146_p17;
+wire  signed [3:0] tmp_78_fu_2146_p19;
+wire  signed [3:0] tmp_78_fu_2146_p21;
+wire  signed [3:0] tmp_78_fu_2146_p23;
+wire  signed [3:0] tmp_78_fu_2146_p25;
+wire  signed [3:0] tmp_78_fu_2146_p27;
+wire  signed [3:0] tmp_78_fu_2146_p29;
+wire  signed [3:0] tmp_78_fu_2146_p31;
+wire   [7:0] tmp_79_fu_2224_p0;
+wire   [7:0] tmp_80_fu_2239_p0;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
 #0 ap_CS_fsm = 746'd1;
-#0 grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_start_reg = 1'b0;
-#0 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_start_reg = 1'b0;
-#0 grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_start_reg = 1'b0;
-#0 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_start_reg = 1'b0;
-#0 grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_start_reg = 1'b0;
-#0 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_start_reg = 1'b0;
-#0 grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_start_reg = 1'b0;
-#0 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_start_reg = 1'b0;
-#0 b_fu_254 = 6'd0;
-#0 empty_fu_258 = 32'd0;
-#0 empty_93_fu_262 = 32'd0;
-#0 empty_94_fu_266 = 32'd0;
-#0 empty_95_fu_270 = 32'd0;
-#0 empty_96_fu_274 = 32'd0;
-#0 empty_97_fu_278 = 32'd0;
-#0 empty_98_fu_282 = 32'd0;
-#0 empty_99_fu_286 = 32'd0;
-#0 empty_100_fu_290 = 32'd0;
-#0 empty_101_fu_294 = 32'd0;
-#0 empty_102_fu_298 = 32'd0;
-#0 empty_103_fu_302 = 32'd0;
-#0 empty_104_fu_306 = 32'd0;
-#0 empty_105_fu_310 = 32'd0;
-#0 empty_106_fu_314 = 32'd0;
-#0 empty_107_fu_318 = 32'd0;
-#0 empty_108_fu_322 = 32'd0;
-#0 empty_109_fu_326 = 32'd0;
-#0 empty_110_fu_330 = 32'd0;
-#0 empty_111_fu_334 = 32'd0;
-#0 empty_112_fu_338 = 32'd0;
-#0 empty_113_fu_342 = 32'd0;
-#0 empty_114_fu_346 = 32'd0;
-#0 empty_115_fu_350 = 32'd0;
-#0 empty_116_fu_354 = 32'd0;
-#0 empty_117_fu_358 = 32'd0;
-#0 empty_118_fu_362 = 32'd0;
-#0 empty_119_fu_366 = 32'd0;
-#0 empty_120_fu_370 = 32'd0;
-#0 empty_121_fu_374 = 32'd0;
-#0 empty_122_fu_378 = 32'd0;
-#0 empty_123_fu_382 = 32'd0;
+#0 grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_start_reg = 1'b0;
+#0 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_start_reg = 1'b0;
+#0 grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_start_reg = 1'b0;
+#0 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_start_reg = 1'b0;
+#0 grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_start_reg = 1'b0;
+#0 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_start_reg = 1'b0;
+#0 grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_start_reg = 1'b0;
+#0 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_start_reg = 1'b0;
+#0 b_fu_210 = 6'd0;
+#0 empty_fu_214 = 32'd0;
+#0 empty_93_fu_218 = 32'd0;
+#0 empty_94_fu_222 = 32'd0;
+#0 empty_95_fu_226 = 32'd0;
+#0 empty_96_fu_230 = 32'd0;
+#0 empty_97_fu_234 = 32'd0;
+#0 empty_98_fu_238 = 32'd0;
+#0 empty_99_fu_242 = 32'd0;
+#0 empty_100_fu_246 = 32'd0;
+#0 empty_101_fu_250 = 32'd0;
+#0 empty_102_fu_254 = 32'd0;
+#0 empty_103_fu_258 = 32'd0;
+#0 empty_104_fu_262 = 32'd0;
+#0 empty_105_fu_266 = 32'd0;
+#0 empty_106_fu_270 = 32'd0;
+#0 empty_107_fu_274 = 32'd0;
+#0 empty_108_fu_278 = 32'd0;
+#0 empty_109_fu_282 = 32'd0;
+#0 empty_110_fu_286 = 32'd0;
+#0 empty_111_fu_290 = 32'd0;
+#0 empty_112_fu_294 = 32'd0;
+#0 empty_113_fu_298 = 32'd0;
+#0 empty_114_fu_302 = 32'd0;
+#0 empty_115_fu_306 = 32'd0;
+#0 empty_116_fu_310 = 32'd0;
+#0 empty_117_fu_314 = 32'd0;
+#0 empty_118_fu_318 = 32'd0;
+#0 empty_119_fu_322 = 32'd0;
+#0 empty_120_fu_326 = 32'd0;
+#0 empty_121_fu_330 = 32'd0;
+#0 empty_122_fu_334 = 32'd0;
+#0 empty_123_fu_338 = 32'd0;
 #0 ap_return_preg = 32'd0;
 end
 
-swiglu_mac_blocks_down_q6k_Pipeline_1 grp_mac_blocks_down_q6k_Pipeline_1_fu_1016(
+swiglu_mac_blocks_down_q6k_Pipeline_1 grp_mac_blocks_down_q6k_Pipeline_1_fu_972(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_start),
-    .ap_done(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done),
-    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_idle),
-    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_ready),
-    .acc(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc),
-    .acc_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_ap_vld),
-    .acc_1(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_1),
-    .acc_1_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_1_ap_vld),
-    .acc_2(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_2),
-    .acc_2_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_2_ap_vld),
-    .acc_3(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_3),
-    .acc_3_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_3_ap_vld),
-    .acc_4(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_4),
-    .acc_4_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_4_ap_vld),
-    .acc_5(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_5),
-    .acc_5_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_5_ap_vld),
-    .acc_6(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_6),
-    .acc_6_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_6_ap_vld),
-    .acc_7(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_7),
-    .acc_7_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_7_ap_vld)
+    .ap_start(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_start),
+    .ap_done(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done),
+    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_idle),
+    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_ready),
+    .acc(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc),
+    .acc_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_ap_vld),
+    .acc_1(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_1),
+    .acc_1_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_1_ap_vld),
+    .acc_2(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_2),
+    .acc_2_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_2_ap_vld),
+    .acc_3(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_3),
+    .acc_3_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_3_ap_vld),
+    .acc_4(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_4),
+    .acc_4_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_4_ap_vld),
+    .acc_5(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_5),
+    .acc_5_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_5_ap_vld),
+    .acc_6(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_6),
+    .acc_6_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_6_ap_vld),
+    .acc_7(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_7),
+    .acc_7_ap_vld(grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_7_ap_vld)
 );
 
-swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028(
+swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_start),
-    .ap_done(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_done),
-    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_idle),
-    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_ready),
-    .acc_i(acc_fu_386),
-    .acc_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_o),
-    .acc_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_o_ap_vld),
-    .acc_7_i(acc_7_fu_414),
-    .acc_7_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_7_o),
-    .acc_7_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_7_o_ap_vld),
-    .acc_6_i(acc_6_fu_410),
-    .acc_6_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_6_o),
-    .acc_6_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_6_o_ap_vld),
-    .acc_5_i(acc_5_fu_406),
-    .acc_5_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_5_o),
-    .acc_5_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_5_o_ap_vld),
-    .acc_4_i(acc_4_fu_402),
-    .acc_4_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_4_o),
-    .acc_4_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_4_o_ap_vld),
-    .acc_3_i(acc_3_fu_398),
-    .acc_3_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_3_o),
-    .acc_3_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_3_o_ap_vld),
-    .acc_2_i(acc_2_fu_394),
-    .acc_2_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_2_o),
-    .acc_2_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_2_o_ap_vld),
-    .acc_1_i(acc_1_fu_390),
-    .acc_1_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_1_o),
-    .acc_1_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_1_o_ap_vld),
-    .mul_ln55(mul_ln55_reg_2823),
-    .rb_0_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_address0),
-    .rb_0_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_ce0),
-    .rb_0_q0(rb_0_q0),
-    .rb_0_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_address1),
-    .rb_0_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_ce1),
-    .rb_0_q1(rb_0_q1),
-    .rb_0_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_address2),
-    .rb_0_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_ce2),
-    .rb_0_q2(rb_0_q2),
-    .rb_1_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_address0),
-    .rb_1_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_ce0),
-    .rb_1_q0(rb_1_q0),
-    .rb_1_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_address1),
-    .rb_1_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_ce1),
-    .rb_1_q1(rb_1_q1),
-    .rb_1_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_address2),
-    .rb_1_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_ce2),
-    .rb_1_q2(rb_1_q2),
-    .rb_2_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_address0),
-    .rb_2_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_ce0),
-    .rb_2_q0(rb_2_q0),
-    .rb_2_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_address1),
-    .rb_2_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_ce1),
-    .rb_2_q1(rb_2_q1),
-    .rb_2_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_address2),
-    .rb_2_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_ce2),
-    .rb_2_q2(rb_2_q2),
-    .rb_3_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_address0),
-    .rb_3_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_ce0),
-    .rb_3_q0(rb_3_q0),
-    .rb_3_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_address1),
-    .rb_3_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_ce1),
-    .rb_3_q1(rb_3_q1),
-    .rb_3_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_address2),
-    .rb_3_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_ce2),
-    .rb_3_q2(rb_3_q2),
-    .rb_4_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_address0),
-    .rb_4_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_ce0),
-    .rb_4_q0(rb_4_q0),
-    .rb_4_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_address1),
-    .rb_4_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_ce1),
-    .rb_4_q1(rb_4_q1),
-    .rb_4_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_address2),
-    .rb_4_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_ce2),
-    .rb_4_q2(rb_4_q2),
-    .rb_5_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_address0),
-    .rb_5_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_ce0),
-    .rb_5_q0(rb_5_q0),
-    .rb_5_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_address1),
-    .rb_5_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_ce1),
-    .rb_5_q1(rb_5_q1),
-    .rb_5_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_address2),
-    .rb_5_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_ce2),
-    .rb_5_q2(rb_5_q2),
-    .rb_6_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_address0),
-    .rb_6_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_ce0),
-    .rb_6_q0(rb_6_q0),
-    .rb_6_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_address1),
-    .rb_6_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_ce1),
-    .rb_6_q1(rb_6_q1),
-    .rb_6_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_address2),
-    .rb_6_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_ce2),
-    .rb_6_q2(rb_6_q2),
-    .rb_7_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_address0),
-    .rb_7_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_ce0),
-    .rb_7_q0(rb_7_q0),
-    .rb_7_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_address1),
-    .rb_7_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_ce1),
-    .rb_7_q1(rb_7_q1),
-    .rb_7_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_address2),
-    .rb_7_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_ce2),
-    .rb_7_q2(rb_7_q2),
-    .rb_8_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_address0),
-    .rb_8_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_ce0),
-    .rb_8_q0(rb_8_q0),
-    .rb_8_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_address1),
-    .rb_8_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_ce1),
-    .rb_8_q1(rb_8_q1),
-    .rb_8_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_address2),
-    .rb_8_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_ce2),
-    .rb_8_q2(rb_8_q2),
-    .rb_9_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_address0),
-    .rb_9_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_ce0),
-    .rb_9_q0(rb_9_q0),
-    .rb_9_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_address1),
-    .rb_9_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_ce1),
-    .rb_9_q1(rb_9_q1),
-    .rb_9_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_address2),
-    .rb_9_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_ce2),
-    .rb_9_q2(rb_9_q2),
-    .rb_10_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_address0),
-    .rb_10_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_ce0),
-    .rb_10_q0(rb_10_q0),
-    .rb_10_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_address1),
-    .rb_10_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_ce1),
-    .rb_10_q1(rb_10_q1),
-    .rb_10_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_address2),
-    .rb_10_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_ce2),
-    .rb_10_q2(rb_10_q2),
-    .rb_11_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_address0),
-    .rb_11_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_ce0),
-    .rb_11_q0(rb_11_q0),
-    .rb_11_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_address1),
-    .rb_11_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_ce1),
-    .rb_11_q1(rb_11_q1),
-    .rb_11_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_address2),
-    .rb_11_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_ce2),
-    .rb_11_q2(rb_11_q2),
-    .rb_12_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_address0),
-    .rb_12_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_ce0),
-    .rb_12_q0(rb_12_q0),
-    .rb_12_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_address1),
-    .rb_12_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_ce1),
-    .rb_12_q1(rb_12_q1),
-    .rb_12_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_address2),
-    .rb_12_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_ce2),
-    .rb_12_q2(rb_12_q2),
-    .rb_13_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_address0),
-    .rb_13_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_ce0),
-    .rb_13_q0(rb_13_q0),
-    .rb_13_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_address1),
-    .rb_13_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_ce1),
-    .rb_13_q1(rb_13_q1),
-    .rb_13_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_address2),
-    .rb_13_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_ce2),
-    .rb_13_q2(rb_13_q2),
-    .rb_14_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_address0),
-    .rb_14_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_ce0),
-    .rb_14_q0(rb_14_q0),
-    .rb_14_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_address1),
-    .rb_14_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_ce1),
-    .rb_14_q1(rb_14_q1),
-    .rb_14_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_address2),
-    .rb_14_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_ce2),
-    .rb_14_q2(rb_14_q2),
-    .rb_15_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_address0),
-    .rb_15_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_ce0),
-    .rb_15_q0(rb_15_q0),
-    .rb_15_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_address1),
-    .rb_15_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_ce1),
-    .rb_15_q1(rb_15_q1),
-    .rb_15_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_address2),
-    .rb_15_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_ce2),
-    .rb_15_q2(rb_15_q2),
-    .gate_0_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_0_address0),
-    .gate_0_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_0_ce0),
+    .ap_start(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_start),
+    .ap_done(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_done),
+    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_idle),
+    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_ready),
+    .empty(trunc_ln465_reg_2857),
+    .acc_i(acc_fu_342),
+    .acc_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_o),
+    .acc_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_o_ap_vld),
+    .zext_ln77(tmp_75_reg_2865),
+    .gate_0_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_gate_0_address0),
+    .gate_0_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_gate_0_ce0),
     .gate_0_q0(gate_0_q0),
-    .gate_4_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_4_address0),
-    .gate_4_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_4_ce0),
+    .gate_4_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_gate_4_address0),
+    .gate_4_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_gate_4_ce0),
     .gate_4_q0(gate_4_q0),
-    .gate_8_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_8_address0),
-    .gate_8_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_8_ce0),
-    .gate_8_q0(gate_8_q0),
-    .gate_12_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_12_address0),
-    .gate_12_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_12_ce0),
-    .gate_12_q0(gate_12_q0),
-    .gate_16_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_16_address0),
-    .gate_16_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_16_ce0),
-    .gate_16_q0(gate_16_q0),
-    .gate_20_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_20_address0),
-    .gate_20_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_20_ce0),
-    .gate_20_q0(gate_20_q0),
-    .gate_24_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_24_address0),
-    .gate_24_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_24_ce0),
-    .gate_24_q0(gate_24_q0),
-    .gate_28_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_28_address0),
-    .gate_28_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_28_ce0),
-    .gate_28_q0(gate_28_q0),
-    .empty(trunc_ln468_reg_2814),
-    .gate_scale(gate_scale),
-    .grp_fu_3363_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3363_p_din0),
-    .grp_fu_3363_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3363_p_din1),
-    .grp_fu_3363_p_opcode(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3363_p_opcode),
-    .grp_fu_3363_p_dout0(grp_fu_3363_p2),
-    .grp_fu_3363_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3363_p_ce),
-    .grp_fu_1326_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_1326_p_din0),
-    .grp_fu_1326_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_1326_p_din1),
-    .grp_fu_1326_p_dout0(grp_fu_836_p_dout0),
-    .grp_fu_1326_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_1326_p_ce),
-    .grp_fu_3367_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3367_p_din0),
-    .grp_fu_3367_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3367_p_din1),
-    .grp_fu_3367_p_dout0(grp_fu_840_p_dout0),
-    .grp_fu_3367_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3367_p_ce),
-    .grp_fu_3371_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3371_p_din0),
-    .grp_fu_3371_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3371_p_din1),
-    .grp_fu_3371_p_dout0(grp_fu_3371_p2),
-    .grp_fu_3371_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3371_p_ce),
-    .grp_fu_3375_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3375_p_din0),
-    .grp_fu_3375_p_dout0(grp_fu_3375_p1),
-    .grp_fu_3375_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3375_p_ce),
-    .grp_fu_3378_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3378_p_din0),
-    .grp_fu_3378_p_dout0(grp_fu_3378_p1),
-    .grp_fu_3378_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3378_p_ce),
-    .grp_fu_3381_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3381_p_din0),
-    .grp_fu_3381_p_dout0(grp_fu_3381_p1),
-    .grp_fu_3381_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3381_p_ce)
-);
-
-swiglu_mac_blocks_down_q6k_Pipeline_3 grp_mac_blocks_down_q6k_Pipeline_3_fu_1096(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_start),
-    .ap_done(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_done),
-    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_idle),
-    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_ready),
-    .acc(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc),
-    .acc_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_ap_vld),
-    .acc_1(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_1),
-    .acc_1_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_1_ap_vld),
-    .acc_2(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_2),
-    .acc_2_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_2_ap_vld),
-    .acc_3(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_3),
-    .acc_3_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_3_ap_vld),
-    .acc_4(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_4),
-    .acc_4_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_4_ap_vld),
-    .acc_5(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_5),
-    .acc_5_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_5_ap_vld),
-    .acc_6(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_6),
-    .acc_6_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_6_ap_vld),
-    .acc_7(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_7),
-    .acc_7_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_7_ap_vld)
-);
-
-swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K1 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_start),
-    .ap_done(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_done),
-    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_idle),
-    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_ready),
-    .acc_i(acc_fu_386),
-    .acc_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_o),
-    .acc_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_o_ap_vld),
-    .acc_7_i(acc_7_fu_414),
-    .acc_7_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_7_o),
-    .acc_7_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_7_o_ap_vld),
-    .acc_6_i(acc_6_fu_410),
-    .acc_6_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_6_o),
-    .acc_6_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_6_o_ap_vld),
-    .acc_5_i(acc_5_fu_406),
-    .acc_5_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_5_o),
-    .acc_5_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_5_o_ap_vld),
-    .acc_4_i(acc_4_fu_402),
-    .acc_4_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_4_o),
-    .acc_4_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_4_o_ap_vld),
-    .acc_3_i(acc_3_fu_398),
-    .acc_3_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_3_o),
-    .acc_3_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_3_o_ap_vld),
-    .acc_2_i(acc_2_fu_394),
-    .acc_2_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_2_o),
-    .acc_2_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_2_o_ap_vld),
-    .acc_1_i(acc_1_fu_390),
-    .acc_1_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_1_o),
-    .acc_1_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_1_o_ap_vld),
-    .mul_ln55(mul_ln55_reg_2823),
-    .rb_0_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_address0),
-    .rb_0_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_ce0),
+    .acc_7_i(acc_7_fu_370),
+    .acc_7_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_7_o),
+    .acc_7_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_7_o_ap_vld),
+    .acc_6_i(acc_6_fu_366),
+    .acc_6_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_6_o),
+    .acc_6_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_6_o_ap_vld),
+    .acc_5_i(acc_5_fu_362),
+    .acc_5_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_5_o),
+    .acc_5_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_5_o_ap_vld),
+    .acc_4_i(acc_4_fu_358),
+    .acc_4_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_4_o),
+    .acc_4_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_4_o_ap_vld),
+    .acc_3_i(acc_3_fu_354),
+    .acc_3_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_3_o),
+    .acc_3_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_3_o_ap_vld),
+    .acc_2_i(acc_2_fu_350),
+    .acc_2_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_2_o),
+    .acc_2_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_2_o_ap_vld),
+    .acc_1_i(acc_1_fu_346),
+    .acc_1_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_1_o),
+    .acc_1_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_1_o_ap_vld),
+    .mul_ln54(mul_ln54_reg_2750),
+    .rb_0_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_address0),
+    .rb_0_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_ce0),
     .rb_0_q0(rb_0_q0),
-    .rb_0_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_address1),
-    .rb_0_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_ce1),
+    .rb_0_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_address1),
+    .rb_0_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_ce1),
     .rb_0_q1(rb_0_q1),
-    .rb_0_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_address2),
-    .rb_0_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_ce2),
+    .rb_0_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_address2),
+    .rb_0_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_ce2),
     .rb_0_q2(rb_0_q2),
-    .rb_1_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_address0),
-    .rb_1_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_ce0),
+    .rb_1_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_address0),
+    .rb_1_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_ce0),
     .rb_1_q0(rb_1_q0),
-    .rb_1_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_address1),
-    .rb_1_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_ce1),
+    .rb_1_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_address1),
+    .rb_1_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_ce1),
     .rb_1_q1(rb_1_q1),
-    .rb_1_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_address2),
-    .rb_1_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_ce2),
+    .rb_1_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_address2),
+    .rb_1_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_ce2),
     .rb_1_q2(rb_1_q2),
-    .rb_2_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_address0),
-    .rb_2_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_ce0),
+    .rb_2_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_address0),
+    .rb_2_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_ce0),
     .rb_2_q0(rb_2_q0),
-    .rb_2_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_address1),
-    .rb_2_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_ce1),
+    .rb_2_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_address1),
+    .rb_2_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_ce1),
     .rb_2_q1(rb_2_q1),
-    .rb_2_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_address2),
-    .rb_2_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_ce2),
+    .rb_2_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_address2),
+    .rb_2_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_ce2),
     .rb_2_q2(rb_2_q2),
-    .rb_3_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_address0),
-    .rb_3_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_ce0),
+    .rb_3_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_address0),
+    .rb_3_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_ce0),
     .rb_3_q0(rb_3_q0),
-    .rb_3_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_address1),
-    .rb_3_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_ce1),
+    .rb_3_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_address1),
+    .rb_3_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_ce1),
     .rb_3_q1(rb_3_q1),
-    .rb_3_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_address2),
-    .rb_3_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_ce2),
+    .rb_3_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_address2),
+    .rb_3_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_ce2),
     .rb_3_q2(rb_3_q2),
-    .rb_4_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_address0),
-    .rb_4_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_ce0),
+    .rb_4_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_address0),
+    .rb_4_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_ce0),
     .rb_4_q0(rb_4_q0),
-    .rb_4_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_address1),
-    .rb_4_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_ce1),
+    .rb_4_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_address1),
+    .rb_4_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_ce1),
     .rb_4_q1(rb_4_q1),
-    .rb_4_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_address2),
-    .rb_4_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_ce2),
+    .rb_4_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_address2),
+    .rb_4_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_ce2),
     .rb_4_q2(rb_4_q2),
-    .rb_5_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_address0),
-    .rb_5_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_ce0),
+    .rb_5_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_address0),
+    .rb_5_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_ce0),
     .rb_5_q0(rb_5_q0),
-    .rb_5_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_address1),
-    .rb_5_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_ce1),
+    .rb_5_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_address1),
+    .rb_5_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_ce1),
     .rb_5_q1(rb_5_q1),
-    .rb_5_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_address2),
-    .rb_5_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_ce2),
+    .rb_5_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_address2),
+    .rb_5_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_ce2),
     .rb_5_q2(rb_5_q2),
-    .rb_6_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_address0),
-    .rb_6_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_ce0),
+    .rb_6_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_address0),
+    .rb_6_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_ce0),
     .rb_6_q0(rb_6_q0),
-    .rb_6_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_address1),
-    .rb_6_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_ce1),
+    .rb_6_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_address1),
+    .rb_6_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_ce1),
     .rb_6_q1(rb_6_q1),
-    .rb_6_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_address2),
-    .rb_6_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_ce2),
+    .rb_6_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_address2),
+    .rb_6_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_ce2),
     .rb_6_q2(rb_6_q2),
-    .rb_7_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_address0),
-    .rb_7_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_ce0),
+    .rb_7_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_address0),
+    .rb_7_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_ce0),
     .rb_7_q0(rb_7_q0),
-    .rb_7_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_address1),
-    .rb_7_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_ce1),
+    .rb_7_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_address1),
+    .rb_7_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_ce1),
     .rb_7_q1(rb_7_q1),
-    .rb_7_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_address2),
-    .rb_7_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_ce2),
+    .rb_7_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_address2),
+    .rb_7_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_ce2),
     .rb_7_q2(rb_7_q2),
-    .rb_8_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_address0),
-    .rb_8_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_ce0),
+    .rb_8_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_address0),
+    .rb_8_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_ce0),
     .rb_8_q0(rb_8_q0),
-    .rb_8_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_address1),
-    .rb_8_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_ce1),
+    .rb_8_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_address1),
+    .rb_8_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_ce1),
     .rb_8_q1(rb_8_q1),
-    .rb_8_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_address2),
-    .rb_8_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_ce2),
+    .rb_8_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_address2),
+    .rb_8_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_ce2),
     .rb_8_q2(rb_8_q2),
-    .rb_9_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_address0),
-    .rb_9_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_ce0),
+    .rb_9_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_address0),
+    .rb_9_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_ce0),
     .rb_9_q0(rb_9_q0),
-    .rb_9_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_address1),
-    .rb_9_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_ce1),
+    .rb_9_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_address1),
+    .rb_9_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_ce1),
     .rb_9_q1(rb_9_q1),
-    .rb_9_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_address2),
-    .rb_9_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_ce2),
+    .rb_9_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_address2),
+    .rb_9_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_ce2),
     .rb_9_q2(rb_9_q2),
-    .rb_10_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_address0),
-    .rb_10_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_ce0),
+    .rb_10_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_address0),
+    .rb_10_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_ce0),
     .rb_10_q0(rb_10_q0),
-    .rb_10_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_address1),
-    .rb_10_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_ce1),
+    .rb_10_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_address1),
+    .rb_10_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_ce1),
     .rb_10_q1(rb_10_q1),
-    .rb_10_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_address2),
-    .rb_10_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_ce2),
+    .rb_10_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_address2),
+    .rb_10_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_ce2),
     .rb_10_q2(rb_10_q2),
-    .rb_11_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_address0),
-    .rb_11_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_ce0),
+    .rb_11_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_address0),
+    .rb_11_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_ce0),
     .rb_11_q0(rb_11_q0),
-    .rb_11_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_address1),
-    .rb_11_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_ce1),
+    .rb_11_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_address1),
+    .rb_11_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_ce1),
     .rb_11_q1(rb_11_q1),
-    .rb_11_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_address2),
-    .rb_11_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_ce2),
+    .rb_11_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_address2),
+    .rb_11_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_ce2),
     .rb_11_q2(rb_11_q2),
-    .rb_12_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_address0),
-    .rb_12_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_ce0),
+    .rb_12_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_address0),
+    .rb_12_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_ce0),
     .rb_12_q0(rb_12_q0),
-    .rb_12_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_address1),
-    .rb_12_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_ce1),
+    .rb_12_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_address1),
+    .rb_12_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_ce1),
     .rb_12_q1(rb_12_q1),
-    .rb_12_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_address2),
-    .rb_12_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_ce2),
+    .rb_12_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_address2),
+    .rb_12_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_ce2),
     .rb_12_q2(rb_12_q2),
-    .rb_13_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_address0),
-    .rb_13_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_ce0),
+    .rb_13_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_address0),
+    .rb_13_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_ce0),
     .rb_13_q0(rb_13_q0),
-    .rb_13_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_address1),
-    .rb_13_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_ce1),
+    .rb_13_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_address1),
+    .rb_13_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_ce1),
     .rb_13_q1(rb_13_q1),
-    .rb_13_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_address2),
-    .rb_13_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_ce2),
+    .rb_13_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_address2),
+    .rb_13_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_ce2),
     .rb_13_q2(rb_13_q2),
-    .rb_14_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_address0),
-    .rb_14_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_ce0),
+    .rb_14_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_address0),
+    .rb_14_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_ce0),
     .rb_14_q0(rb_14_q0),
-    .rb_14_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_address1),
-    .rb_14_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_ce1),
+    .rb_14_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_address1),
+    .rb_14_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_ce1),
     .rb_14_q1(rb_14_q1),
-    .rb_14_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_address2),
-    .rb_14_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_ce2),
+    .rb_14_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_address2),
+    .rb_14_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_ce2),
     .rb_14_q2(rb_14_q2),
-    .rb_15_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_address0),
-    .rb_15_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_ce0),
+    .rb_15_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_address0),
+    .rb_15_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_ce0),
     .rb_15_q0(rb_15_q0),
-    .rb_15_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_address1),
-    .rb_15_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_ce1),
+    .rb_15_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_address1),
+    .rb_15_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_ce1),
     .rb_15_q1(rb_15_q1),
-    .rb_15_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_address2),
-    .rb_15_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_ce2),
+    .rb_15_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_address2),
+    .rb_15_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_ce2),
     .rb_15_q2(rb_15_q2),
-    .gate_1_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_1_address0),
-    .gate_1_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_1_ce0),
+    .gate_scale(gate_scale),
+    .grp_fu_3306_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3306_p_din0),
+    .grp_fu_3306_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3306_p_din1),
+    .grp_fu_3306_p_opcode(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3306_p_opcode),
+    .grp_fu_3306_p_dout0(grp_fu_3306_p2),
+    .grp_fu_3306_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3306_p_ce),
+    .grp_fu_1238_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_1238_p_din0),
+    .grp_fu_1238_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_1238_p_din1),
+    .grp_fu_1238_p_dout0(grp_fu_540_p_dout0),
+    .grp_fu_1238_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_1238_p_ce),
+    .grp_fu_3310_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3310_p_din0),
+    .grp_fu_3310_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3310_p_din1),
+    .grp_fu_3310_p_dout0(grp_fu_544_p_dout0),
+    .grp_fu_3310_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3310_p_ce),
+    .grp_fu_3314_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3314_p_din0),
+    .grp_fu_3314_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3314_p_din1),
+    .grp_fu_3314_p_dout0(grp_fu_3314_p2),
+    .grp_fu_3314_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3314_p_ce),
+    .grp_fu_3318_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3318_p_din0),
+    .grp_fu_3318_p_dout0(grp_fu_3318_p1),
+    .grp_fu_3318_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3318_p_ce),
+    .grp_fu_3321_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3321_p_din0),
+    .grp_fu_3321_p_dout0(grp_fu_3321_p1),
+    .grp_fu_3321_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3321_p_ce),
+    .grp_fu_3324_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3324_p_din0),
+    .grp_fu_3324_p_dout0(grp_fu_3324_p1),
+    .grp_fu_3324_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3324_p_ce)
+);
+
+swiglu_mac_blocks_down_q6k_Pipeline_3 grp_mac_blocks_down_q6k_Pipeline_3_fu_1041(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_start),
+    .ap_done(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_done),
+    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_idle),
+    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_ready),
+    .acc(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc),
+    .acc_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_ap_vld),
+    .acc_1(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_1),
+    .acc_1_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_1_ap_vld),
+    .acc_2(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_2),
+    .acc_2_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_2_ap_vld),
+    .acc_3(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_3),
+    .acc_3_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_3_ap_vld),
+    .acc_4(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_4),
+    .acc_4_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_4_ap_vld),
+    .acc_5(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_5),
+    .acc_5_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_5_ap_vld),
+    .acc_6(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_6),
+    .acc_6_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_6_ap_vld),
+    .acc_7(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_7),
+    .acc_7_ap_vld(grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_7_ap_vld)
+);
+
+swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K7 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_start),
+    .ap_done(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_done),
+    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_idle),
+    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_ready),
+    .empty(trunc_ln465_reg_2857),
+    .acc_i(acc_fu_342),
+    .acc_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_o),
+    .acc_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_o_ap_vld),
+    .zext_ln77(tmp_75_reg_2865),
+    .gate_1_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_gate_1_address0),
+    .gate_1_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_gate_1_ce0),
     .gate_1_q0(gate_1_q0),
-    .gate_5_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_5_address0),
-    .gate_5_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_5_ce0),
+    .gate_5_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_gate_5_address0),
+    .gate_5_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_gate_5_ce0),
     .gate_5_q0(gate_5_q0),
-    .gate_9_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_9_address0),
-    .gate_9_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_9_ce0),
-    .gate_9_q0(gate_9_q0),
-    .gate_13_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_13_address0),
-    .gate_13_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_13_ce0),
-    .gate_13_q0(gate_13_q0),
-    .gate_17_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_17_address0),
-    .gate_17_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_17_ce0),
-    .gate_17_q0(gate_17_q0),
-    .gate_21_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_21_address0),
-    .gate_21_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_21_ce0),
-    .gate_21_q0(gate_21_q0),
-    .gate_25_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_25_address0),
-    .gate_25_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_25_ce0),
-    .gate_25_q0(gate_25_q0),
-    .gate_29_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_29_address0),
-    .gate_29_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_29_ce0),
-    .gate_29_q0(gate_29_q0),
-    .empty(trunc_ln468_reg_2814),
-    .gate_scale(gate_scale),
-    .grp_fu_3363_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3363_p_din0),
-    .grp_fu_3363_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3363_p_din1),
-    .grp_fu_3363_p_opcode(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3363_p_opcode),
-    .grp_fu_3363_p_dout0(grp_fu_3363_p2),
-    .grp_fu_3363_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3363_p_ce),
-    .grp_fu_1326_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_1326_p_din0),
-    .grp_fu_1326_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_1326_p_din1),
-    .grp_fu_1326_p_dout0(grp_fu_836_p_dout0),
-    .grp_fu_1326_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_1326_p_ce),
-    .grp_fu_3367_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3367_p_din0),
-    .grp_fu_3367_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3367_p_din1),
-    .grp_fu_3367_p_dout0(grp_fu_840_p_dout0),
-    .grp_fu_3367_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3367_p_ce),
-    .grp_fu_3371_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3371_p_din0),
-    .grp_fu_3371_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3371_p_din1),
-    .grp_fu_3371_p_dout0(grp_fu_3371_p2),
-    .grp_fu_3371_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3371_p_ce),
-    .grp_fu_3375_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3375_p_din0),
-    .grp_fu_3375_p_dout0(grp_fu_3375_p1),
-    .grp_fu_3375_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3375_p_ce),
-    .grp_fu_3378_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3378_p_din0),
-    .grp_fu_3378_p_dout0(grp_fu_3378_p1),
-    .grp_fu_3378_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3378_p_ce),
-    .grp_fu_3381_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3381_p_din0),
-    .grp_fu_3381_p_dout0(grp_fu_3381_p1),
-    .grp_fu_3381_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3381_p_ce)
-);
-
-swiglu_mac_blocks_down_q6k_Pipeline_5 grp_mac_blocks_down_q6k_Pipeline_5_fu_1171(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_start),
-    .ap_done(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_done),
-    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_idle),
-    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_ready),
-    .acc(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc),
-    .acc_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_ap_vld),
-    .acc_1(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_1),
-    .acc_1_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_1_ap_vld),
-    .acc_2(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_2),
-    .acc_2_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_2_ap_vld),
-    .acc_3(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_3),
-    .acc_3_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_3_ap_vld),
-    .acc_4(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_4),
-    .acc_4_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_4_ap_vld),
-    .acc_5(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_5),
-    .acc_5_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_5_ap_vld),
-    .acc_6(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_6),
-    .acc_6_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_6_ap_vld),
-    .acc_7(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_7),
-    .acc_7_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_7_ap_vld)
-);
-
-swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K2 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_start),
-    .ap_done(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_done),
-    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_idle),
-    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_ready),
-    .acc_i(acc_fu_386),
-    .acc_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_o),
-    .acc_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_o_ap_vld),
-    .acc_7_i(acc_7_fu_414),
-    .acc_7_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_7_o),
-    .acc_7_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_7_o_ap_vld),
-    .acc_6_i(acc_6_fu_410),
-    .acc_6_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_6_o),
-    .acc_6_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_6_o_ap_vld),
-    .acc_5_i(acc_5_fu_406),
-    .acc_5_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_5_o),
-    .acc_5_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_5_o_ap_vld),
-    .acc_4_i(acc_4_fu_402),
-    .acc_4_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_4_o),
-    .acc_4_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_4_o_ap_vld),
-    .acc_3_i(acc_3_fu_398),
-    .acc_3_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_3_o),
-    .acc_3_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_3_o_ap_vld),
-    .acc_2_i(acc_2_fu_394),
-    .acc_2_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_2_o),
-    .acc_2_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_2_o_ap_vld),
-    .acc_1_i(acc_1_fu_390),
-    .acc_1_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_1_o),
-    .acc_1_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_1_o_ap_vld),
-    .mul_ln55(mul_ln55_reg_2823),
-    .rb_0_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_address0),
-    .rb_0_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_ce0),
+    .acc_7_i(acc_7_fu_370),
+    .acc_7_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_7_o),
+    .acc_7_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_7_o_ap_vld),
+    .acc_6_i(acc_6_fu_366),
+    .acc_6_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_6_o),
+    .acc_6_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_6_o_ap_vld),
+    .acc_5_i(acc_5_fu_362),
+    .acc_5_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_5_o),
+    .acc_5_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_5_o_ap_vld),
+    .acc_4_i(acc_4_fu_358),
+    .acc_4_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_4_o),
+    .acc_4_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_4_o_ap_vld),
+    .acc_3_i(acc_3_fu_354),
+    .acc_3_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_3_o),
+    .acc_3_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_3_o_ap_vld),
+    .acc_2_i(acc_2_fu_350),
+    .acc_2_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_2_o),
+    .acc_2_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_2_o_ap_vld),
+    .acc_1_i(acc_1_fu_346),
+    .acc_1_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_1_o),
+    .acc_1_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_1_o_ap_vld),
+    .mul_ln54(mul_ln54_reg_2750),
+    .rb_0_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_address0),
+    .rb_0_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_ce0),
     .rb_0_q0(rb_0_q0),
-    .rb_0_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_address1),
-    .rb_0_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_ce1),
+    .rb_0_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_address1),
+    .rb_0_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_ce1),
     .rb_0_q1(rb_0_q1),
-    .rb_0_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_address2),
-    .rb_0_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_ce2),
+    .rb_0_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_address2),
+    .rb_0_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_ce2),
     .rb_0_q2(rb_0_q2),
-    .rb_1_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_address0),
-    .rb_1_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_ce0),
+    .rb_1_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_address0),
+    .rb_1_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_ce0),
     .rb_1_q0(rb_1_q0),
-    .rb_1_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_address1),
-    .rb_1_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_ce1),
+    .rb_1_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_address1),
+    .rb_1_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_ce1),
     .rb_1_q1(rb_1_q1),
-    .rb_1_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_address2),
-    .rb_1_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_ce2),
+    .rb_1_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_address2),
+    .rb_1_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_ce2),
     .rb_1_q2(rb_1_q2),
-    .rb_2_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_address0),
-    .rb_2_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_ce0),
+    .rb_2_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_address0),
+    .rb_2_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_ce0),
     .rb_2_q0(rb_2_q0),
-    .rb_2_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_address1),
-    .rb_2_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_ce1),
+    .rb_2_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_address1),
+    .rb_2_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_ce1),
     .rb_2_q1(rb_2_q1),
-    .rb_2_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_address2),
-    .rb_2_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_ce2),
+    .rb_2_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_address2),
+    .rb_2_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_ce2),
     .rb_2_q2(rb_2_q2),
-    .rb_3_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_address0),
-    .rb_3_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_ce0),
+    .rb_3_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_address0),
+    .rb_3_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_ce0),
     .rb_3_q0(rb_3_q0),
-    .rb_3_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_address1),
-    .rb_3_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_ce1),
+    .rb_3_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_address1),
+    .rb_3_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_ce1),
     .rb_3_q1(rb_3_q1),
-    .rb_3_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_address2),
-    .rb_3_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_ce2),
+    .rb_3_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_address2),
+    .rb_3_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_ce2),
     .rb_3_q2(rb_3_q2),
-    .rb_4_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_address0),
-    .rb_4_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_ce0),
+    .rb_4_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_address0),
+    .rb_4_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_ce0),
     .rb_4_q0(rb_4_q0),
-    .rb_4_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_address1),
-    .rb_4_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_ce1),
+    .rb_4_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_address1),
+    .rb_4_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_ce1),
     .rb_4_q1(rb_4_q1),
-    .rb_4_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_address2),
-    .rb_4_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_ce2),
+    .rb_4_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_address2),
+    .rb_4_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_ce2),
     .rb_4_q2(rb_4_q2),
-    .rb_5_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_address0),
-    .rb_5_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_ce0),
+    .rb_5_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_address0),
+    .rb_5_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_ce0),
     .rb_5_q0(rb_5_q0),
-    .rb_5_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_address1),
-    .rb_5_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_ce1),
+    .rb_5_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_address1),
+    .rb_5_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_ce1),
     .rb_5_q1(rb_5_q1),
-    .rb_5_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_address2),
-    .rb_5_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_ce2),
+    .rb_5_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_address2),
+    .rb_5_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_ce2),
     .rb_5_q2(rb_5_q2),
-    .rb_6_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_address0),
-    .rb_6_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_ce0),
+    .rb_6_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_address0),
+    .rb_6_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_ce0),
     .rb_6_q0(rb_6_q0),
-    .rb_6_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_address1),
-    .rb_6_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_ce1),
+    .rb_6_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_address1),
+    .rb_6_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_ce1),
     .rb_6_q1(rb_6_q1),
-    .rb_6_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_address2),
-    .rb_6_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_ce2),
+    .rb_6_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_address2),
+    .rb_6_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_ce2),
     .rb_6_q2(rb_6_q2),
-    .rb_7_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_address0),
-    .rb_7_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_ce0),
+    .rb_7_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_address0),
+    .rb_7_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_ce0),
     .rb_7_q0(rb_7_q0),
-    .rb_7_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_address1),
-    .rb_7_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_ce1),
+    .rb_7_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_address1),
+    .rb_7_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_ce1),
     .rb_7_q1(rb_7_q1),
-    .rb_7_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_address2),
-    .rb_7_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_ce2),
+    .rb_7_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_address2),
+    .rb_7_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_ce2),
     .rb_7_q2(rb_7_q2),
-    .rb_8_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_address0),
-    .rb_8_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_ce0),
+    .rb_8_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_address0),
+    .rb_8_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_ce0),
     .rb_8_q0(rb_8_q0),
-    .rb_8_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_address1),
-    .rb_8_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_ce1),
+    .rb_8_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_address1),
+    .rb_8_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_ce1),
     .rb_8_q1(rb_8_q1),
-    .rb_8_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_address2),
-    .rb_8_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_ce2),
+    .rb_8_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_address2),
+    .rb_8_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_ce2),
     .rb_8_q2(rb_8_q2),
-    .rb_9_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_address0),
-    .rb_9_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_ce0),
+    .rb_9_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_address0),
+    .rb_9_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_ce0),
     .rb_9_q0(rb_9_q0),
-    .rb_9_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_address1),
-    .rb_9_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_ce1),
+    .rb_9_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_address1),
+    .rb_9_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_ce1),
     .rb_9_q1(rb_9_q1),
-    .rb_9_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_address2),
-    .rb_9_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_ce2),
+    .rb_9_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_address2),
+    .rb_9_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_ce2),
     .rb_9_q2(rb_9_q2),
-    .rb_10_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_address0),
-    .rb_10_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_ce0),
+    .rb_10_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_address0),
+    .rb_10_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_ce0),
     .rb_10_q0(rb_10_q0),
-    .rb_10_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_address1),
-    .rb_10_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_ce1),
+    .rb_10_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_address1),
+    .rb_10_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_ce1),
     .rb_10_q1(rb_10_q1),
-    .rb_10_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_address2),
-    .rb_10_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_ce2),
+    .rb_10_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_address2),
+    .rb_10_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_ce2),
     .rb_10_q2(rb_10_q2),
-    .rb_11_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_address0),
-    .rb_11_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_ce0),
+    .rb_11_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_address0),
+    .rb_11_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_ce0),
     .rb_11_q0(rb_11_q0),
-    .rb_11_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_address1),
-    .rb_11_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_ce1),
+    .rb_11_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_address1),
+    .rb_11_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_ce1),
     .rb_11_q1(rb_11_q1),
-    .rb_11_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_address2),
-    .rb_11_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_ce2),
+    .rb_11_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_address2),
+    .rb_11_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_ce2),
     .rb_11_q2(rb_11_q2),
-    .rb_12_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_address0),
-    .rb_12_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_ce0),
+    .rb_12_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_address0),
+    .rb_12_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_ce0),
     .rb_12_q0(rb_12_q0),
-    .rb_12_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_address1),
-    .rb_12_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_ce1),
+    .rb_12_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_address1),
+    .rb_12_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_ce1),
     .rb_12_q1(rb_12_q1),
-    .rb_12_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_address2),
-    .rb_12_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_ce2),
+    .rb_12_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_address2),
+    .rb_12_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_ce2),
     .rb_12_q2(rb_12_q2),
-    .rb_13_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_address0),
-    .rb_13_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_ce0),
+    .rb_13_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_address0),
+    .rb_13_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_ce0),
     .rb_13_q0(rb_13_q0),
-    .rb_13_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_address1),
-    .rb_13_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_ce1),
+    .rb_13_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_address1),
+    .rb_13_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_ce1),
     .rb_13_q1(rb_13_q1),
-    .rb_13_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_address2),
-    .rb_13_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_ce2),
+    .rb_13_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_address2),
+    .rb_13_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_ce2),
     .rb_13_q2(rb_13_q2),
-    .rb_14_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_address0),
-    .rb_14_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_ce0),
+    .rb_14_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_address0),
+    .rb_14_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_ce0),
     .rb_14_q0(rb_14_q0),
-    .rb_14_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_address1),
-    .rb_14_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_ce1),
+    .rb_14_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_address1),
+    .rb_14_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_ce1),
     .rb_14_q1(rb_14_q1),
-    .rb_14_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_address2),
-    .rb_14_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_ce2),
+    .rb_14_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_address2),
+    .rb_14_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_ce2),
     .rb_14_q2(rb_14_q2),
-    .rb_15_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_address0),
-    .rb_15_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_ce0),
+    .rb_15_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_address0),
+    .rb_15_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_ce0),
     .rb_15_q0(rb_15_q0),
-    .rb_15_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_address1),
-    .rb_15_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_ce1),
+    .rb_15_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_address1),
+    .rb_15_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_ce1),
     .rb_15_q1(rb_15_q1),
-    .rb_15_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_address2),
-    .rb_15_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_ce2),
+    .rb_15_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_address2),
+    .rb_15_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_ce2),
     .rb_15_q2(rb_15_q2),
-    .gate_2_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_2_address0),
-    .gate_2_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_2_ce0),
+    .gate_scale(gate_scale),
+    .grp_fu_3306_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3306_p_din0),
+    .grp_fu_3306_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3306_p_din1),
+    .grp_fu_3306_p_opcode(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3306_p_opcode),
+    .grp_fu_3306_p_dout0(grp_fu_3306_p2),
+    .grp_fu_3306_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3306_p_ce),
+    .grp_fu_1238_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_1238_p_din0),
+    .grp_fu_1238_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_1238_p_din1),
+    .grp_fu_1238_p_dout0(grp_fu_540_p_dout0),
+    .grp_fu_1238_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_1238_p_ce),
+    .grp_fu_3310_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3310_p_din0),
+    .grp_fu_3310_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3310_p_din1),
+    .grp_fu_3310_p_dout0(grp_fu_544_p_dout0),
+    .grp_fu_3310_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3310_p_ce),
+    .grp_fu_3314_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3314_p_din0),
+    .grp_fu_3314_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3314_p_din1),
+    .grp_fu_3314_p_dout0(grp_fu_3314_p2),
+    .grp_fu_3314_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3314_p_ce),
+    .grp_fu_3318_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3318_p_din0),
+    .grp_fu_3318_p_dout0(grp_fu_3318_p1),
+    .grp_fu_3318_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3318_p_ce),
+    .grp_fu_3321_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3321_p_din0),
+    .grp_fu_3321_p_dout0(grp_fu_3321_p1),
+    .grp_fu_3321_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3321_p_ce),
+    .grp_fu_3324_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3324_p_din0),
+    .grp_fu_3324_p_dout0(grp_fu_3324_p1),
+    .grp_fu_3324_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3324_p_ce)
+);
+
+swiglu_mac_blocks_down_q6k_Pipeline_5 grp_mac_blocks_down_q6k_Pipeline_5_fu_1105(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_start),
+    .ap_done(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_done),
+    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_idle),
+    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_ready),
+    .acc(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc),
+    .acc_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_ap_vld),
+    .acc_1(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_1),
+    .acc_1_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_1_ap_vld),
+    .acc_2(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_2),
+    .acc_2_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_2_ap_vld),
+    .acc_3(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_3),
+    .acc_3_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_3_ap_vld),
+    .acc_4(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_4),
+    .acc_4_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_4_ap_vld),
+    .acc_5(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_5),
+    .acc_5_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_5_ap_vld),
+    .acc_6(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_6),
+    .acc_6_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_6_ap_vld),
+    .acc_7(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_7),
+    .acc_7_ap_vld(grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_7_ap_vld)
+);
+
+swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K8 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_start),
+    .ap_done(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_done),
+    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_idle),
+    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_ready),
+    .empty(trunc_ln465_reg_2857),
+    .acc_i(acc_fu_342),
+    .acc_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_o),
+    .acc_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_o_ap_vld),
+    .zext_ln77(tmp_75_reg_2865),
+    .gate_2_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_gate_2_address0),
+    .gate_2_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_gate_2_ce0),
     .gate_2_q0(gate_2_q0),
-    .gate_6_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_6_address0),
-    .gate_6_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_6_ce0),
+    .gate_6_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_gate_6_address0),
+    .gate_6_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_gate_6_ce0),
     .gate_6_q0(gate_6_q0),
-    .gate_10_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_10_address0),
-    .gate_10_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_10_ce0),
-    .gate_10_q0(gate_10_q0),
-    .gate_14_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_14_address0),
-    .gate_14_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_14_ce0),
-    .gate_14_q0(gate_14_q0),
-    .gate_18_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_18_address0),
-    .gate_18_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_18_ce0),
-    .gate_18_q0(gate_18_q0),
-    .gate_22_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_22_address0),
-    .gate_22_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_22_ce0),
-    .gate_22_q0(gate_22_q0),
-    .gate_26_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_26_address0),
-    .gate_26_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_26_ce0),
-    .gate_26_q0(gate_26_q0),
-    .gate_30_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_30_address0),
-    .gate_30_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_30_ce0),
-    .gate_30_q0(gate_30_q0),
-    .empty(trunc_ln468_reg_2814),
-    .gate_scale(gate_scale),
-    .grp_fu_3363_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3363_p_din0),
-    .grp_fu_3363_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3363_p_din1),
-    .grp_fu_3363_p_opcode(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3363_p_opcode),
-    .grp_fu_3363_p_dout0(grp_fu_3363_p2),
-    .grp_fu_3363_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3363_p_ce),
-    .grp_fu_1326_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_1326_p_din0),
-    .grp_fu_1326_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_1326_p_din1),
-    .grp_fu_1326_p_dout0(grp_fu_836_p_dout0),
-    .grp_fu_1326_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_1326_p_ce),
-    .grp_fu_3367_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3367_p_din0),
-    .grp_fu_3367_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3367_p_din1),
-    .grp_fu_3367_p_dout0(grp_fu_840_p_dout0),
-    .grp_fu_3367_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3367_p_ce),
-    .grp_fu_3371_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3371_p_din0),
-    .grp_fu_3371_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3371_p_din1),
-    .grp_fu_3371_p_dout0(grp_fu_3371_p2),
-    .grp_fu_3371_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3371_p_ce),
-    .grp_fu_3375_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3375_p_din0),
-    .grp_fu_3375_p_dout0(grp_fu_3375_p1),
-    .grp_fu_3375_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3375_p_ce),
-    .grp_fu_3378_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3378_p_din0),
-    .grp_fu_3378_p_dout0(grp_fu_3378_p1),
-    .grp_fu_3378_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3378_p_ce),
-    .grp_fu_3381_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3381_p_din0),
-    .grp_fu_3381_p_dout0(grp_fu_3381_p1),
-    .grp_fu_3381_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3381_p_ce)
-);
-
-swiglu_mac_blocks_down_q6k_Pipeline_7 grp_mac_blocks_down_q6k_Pipeline_7_fu_1246(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_start),
-    .ap_done(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_done),
-    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_idle),
-    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_ready),
-    .acc(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc),
-    .acc_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_ap_vld),
-    .acc_1(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_1),
-    .acc_1_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_1_ap_vld),
-    .acc_2(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_2),
-    .acc_2_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_2_ap_vld),
-    .acc_3(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_3),
-    .acc_3_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_3_ap_vld),
-    .acc_4(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_4),
-    .acc_4_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_4_ap_vld),
-    .acc_5(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_5),
-    .acc_5_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_5_ap_vld),
-    .acc_6(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_6),
-    .acc_6_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_6_ap_vld),
-    .acc_7(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_7),
-    .acc_7_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_7_ap_vld)
-);
-
-swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K3 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_start),
-    .ap_done(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_done),
-    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_idle),
-    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_ready),
-    .acc_i(acc_fu_386),
-    .acc_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_o),
-    .acc_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_o_ap_vld),
-    .acc_7_i(acc_7_fu_414),
-    .acc_7_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_7_o),
-    .acc_7_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_7_o_ap_vld),
-    .acc_6_i(acc_6_fu_410),
-    .acc_6_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_6_o),
-    .acc_6_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_6_o_ap_vld),
-    .acc_5_i(acc_5_fu_406),
-    .acc_5_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_5_o),
-    .acc_5_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_5_o_ap_vld),
-    .acc_4_i(acc_4_fu_402),
-    .acc_4_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_4_o),
-    .acc_4_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_4_o_ap_vld),
-    .acc_3_i(acc_3_fu_398),
-    .acc_3_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_3_o),
-    .acc_3_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_3_o_ap_vld),
-    .acc_2_i(acc_2_fu_394),
-    .acc_2_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_2_o),
-    .acc_2_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_2_o_ap_vld),
-    .acc_1_i(acc_1_fu_390),
-    .acc_1_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_1_o),
-    .acc_1_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_1_o_ap_vld),
-    .mul_ln55(mul_ln55_reg_2823),
-    .rb_0_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_address0),
-    .rb_0_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_ce0),
+    .acc_7_i(acc_7_fu_370),
+    .acc_7_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_7_o),
+    .acc_7_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_7_o_ap_vld),
+    .acc_6_i(acc_6_fu_366),
+    .acc_6_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_6_o),
+    .acc_6_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_6_o_ap_vld),
+    .acc_5_i(acc_5_fu_362),
+    .acc_5_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_5_o),
+    .acc_5_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_5_o_ap_vld),
+    .acc_4_i(acc_4_fu_358),
+    .acc_4_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_4_o),
+    .acc_4_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_4_o_ap_vld),
+    .acc_3_i(acc_3_fu_354),
+    .acc_3_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_3_o),
+    .acc_3_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_3_o_ap_vld),
+    .acc_2_i(acc_2_fu_350),
+    .acc_2_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_2_o),
+    .acc_2_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_2_o_ap_vld),
+    .acc_1_i(acc_1_fu_346),
+    .acc_1_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_1_o),
+    .acc_1_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_1_o_ap_vld),
+    .mul_ln54(mul_ln54_reg_2750),
+    .rb_0_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_address0),
+    .rb_0_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_ce0),
     .rb_0_q0(rb_0_q0),
-    .rb_0_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_address1),
-    .rb_0_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_ce1),
+    .rb_0_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_address1),
+    .rb_0_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_ce1),
     .rb_0_q1(rb_0_q1),
-    .rb_0_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_address2),
-    .rb_0_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_ce2),
+    .rb_0_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_address2),
+    .rb_0_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_ce2),
     .rb_0_q2(rb_0_q2),
-    .rb_1_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_address0),
-    .rb_1_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_ce0),
+    .rb_1_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_address0),
+    .rb_1_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_ce0),
     .rb_1_q0(rb_1_q0),
-    .rb_1_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_address1),
-    .rb_1_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_ce1),
+    .rb_1_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_address1),
+    .rb_1_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_ce1),
     .rb_1_q1(rb_1_q1),
-    .rb_1_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_address2),
-    .rb_1_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_ce2),
+    .rb_1_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_address2),
+    .rb_1_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_ce2),
     .rb_1_q2(rb_1_q2),
-    .rb_2_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_address0),
-    .rb_2_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_ce0),
+    .rb_2_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_address0),
+    .rb_2_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_ce0),
     .rb_2_q0(rb_2_q0),
-    .rb_2_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_address1),
-    .rb_2_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_ce1),
+    .rb_2_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_address1),
+    .rb_2_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_ce1),
     .rb_2_q1(rb_2_q1),
-    .rb_2_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_address2),
-    .rb_2_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_ce2),
+    .rb_2_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_address2),
+    .rb_2_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_ce2),
     .rb_2_q2(rb_2_q2),
-    .rb_3_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_address0),
-    .rb_3_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_ce0),
+    .rb_3_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_address0),
+    .rb_3_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_ce0),
     .rb_3_q0(rb_3_q0),
-    .rb_3_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_address1),
-    .rb_3_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_ce1),
+    .rb_3_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_address1),
+    .rb_3_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_ce1),
     .rb_3_q1(rb_3_q1),
-    .rb_3_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_address2),
-    .rb_3_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_ce2),
+    .rb_3_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_address2),
+    .rb_3_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_ce2),
     .rb_3_q2(rb_3_q2),
-    .rb_4_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_address0),
-    .rb_4_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_ce0),
+    .rb_4_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_address0),
+    .rb_4_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_ce0),
     .rb_4_q0(rb_4_q0),
-    .rb_4_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_address1),
-    .rb_4_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_ce1),
+    .rb_4_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_address1),
+    .rb_4_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_ce1),
     .rb_4_q1(rb_4_q1),
-    .rb_4_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_address2),
-    .rb_4_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_ce2),
+    .rb_4_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_address2),
+    .rb_4_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_ce2),
     .rb_4_q2(rb_4_q2),
-    .rb_5_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_address0),
-    .rb_5_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_ce0),
+    .rb_5_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_address0),
+    .rb_5_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_ce0),
     .rb_5_q0(rb_5_q0),
-    .rb_5_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_address1),
-    .rb_5_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_ce1),
+    .rb_5_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_address1),
+    .rb_5_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_ce1),
     .rb_5_q1(rb_5_q1),
-    .rb_5_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_address2),
-    .rb_5_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_ce2),
+    .rb_5_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_address2),
+    .rb_5_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_ce2),
     .rb_5_q2(rb_5_q2),
-    .rb_6_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_address0),
-    .rb_6_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_ce0),
+    .rb_6_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_address0),
+    .rb_6_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_ce0),
     .rb_6_q0(rb_6_q0),
-    .rb_6_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_address1),
-    .rb_6_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_ce1),
+    .rb_6_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_address1),
+    .rb_6_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_ce1),
     .rb_6_q1(rb_6_q1),
-    .rb_6_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_address2),
-    .rb_6_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_ce2),
+    .rb_6_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_address2),
+    .rb_6_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_ce2),
     .rb_6_q2(rb_6_q2),
-    .rb_7_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_address0),
-    .rb_7_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_ce0),
+    .rb_7_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_address0),
+    .rb_7_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_ce0),
     .rb_7_q0(rb_7_q0),
-    .rb_7_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_address1),
-    .rb_7_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_ce1),
+    .rb_7_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_address1),
+    .rb_7_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_ce1),
     .rb_7_q1(rb_7_q1),
-    .rb_7_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_address2),
-    .rb_7_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_ce2),
+    .rb_7_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_address2),
+    .rb_7_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_ce2),
     .rb_7_q2(rb_7_q2),
-    .rb_8_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_address0),
-    .rb_8_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_ce0),
+    .rb_8_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_address0),
+    .rb_8_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_ce0),
     .rb_8_q0(rb_8_q0),
-    .rb_8_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_address1),
-    .rb_8_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_ce1),
+    .rb_8_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_address1),
+    .rb_8_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_ce1),
     .rb_8_q1(rb_8_q1),
-    .rb_8_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_address2),
-    .rb_8_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_ce2),
+    .rb_8_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_address2),
+    .rb_8_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_ce2),
     .rb_8_q2(rb_8_q2),
-    .rb_9_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_address0),
-    .rb_9_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_ce0),
+    .rb_9_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_address0),
+    .rb_9_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_ce0),
     .rb_9_q0(rb_9_q0),
-    .rb_9_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_address1),
-    .rb_9_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_ce1),
+    .rb_9_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_address1),
+    .rb_9_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_ce1),
     .rb_9_q1(rb_9_q1),
-    .rb_9_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_address2),
-    .rb_9_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_ce2),
+    .rb_9_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_address2),
+    .rb_9_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_ce2),
     .rb_9_q2(rb_9_q2),
-    .rb_10_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_address0),
-    .rb_10_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_ce0),
+    .rb_10_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_address0),
+    .rb_10_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_ce0),
     .rb_10_q0(rb_10_q0),
-    .rb_10_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_address1),
-    .rb_10_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_ce1),
+    .rb_10_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_address1),
+    .rb_10_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_ce1),
     .rb_10_q1(rb_10_q1),
-    .rb_10_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_address2),
-    .rb_10_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_ce2),
+    .rb_10_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_address2),
+    .rb_10_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_ce2),
     .rb_10_q2(rb_10_q2),
-    .rb_11_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_address0),
-    .rb_11_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_ce0),
+    .rb_11_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_address0),
+    .rb_11_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_ce0),
     .rb_11_q0(rb_11_q0),
-    .rb_11_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_address1),
-    .rb_11_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_ce1),
+    .rb_11_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_address1),
+    .rb_11_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_ce1),
     .rb_11_q1(rb_11_q1),
-    .rb_11_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_address2),
-    .rb_11_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_ce2),
+    .rb_11_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_address2),
+    .rb_11_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_ce2),
     .rb_11_q2(rb_11_q2),
-    .rb_12_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_address0),
-    .rb_12_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_ce0),
+    .rb_12_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_address0),
+    .rb_12_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_ce0),
     .rb_12_q0(rb_12_q0),
-    .rb_12_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_address1),
-    .rb_12_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_ce1),
+    .rb_12_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_address1),
+    .rb_12_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_ce1),
     .rb_12_q1(rb_12_q1),
-    .rb_12_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_address2),
-    .rb_12_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_ce2),
+    .rb_12_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_address2),
+    .rb_12_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_ce2),
     .rb_12_q2(rb_12_q2),
-    .rb_13_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_address0),
-    .rb_13_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_ce0),
+    .rb_13_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_address0),
+    .rb_13_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_ce0),
     .rb_13_q0(rb_13_q0),
-    .rb_13_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_address1),
-    .rb_13_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_ce1),
+    .rb_13_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_address1),
+    .rb_13_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_ce1),
     .rb_13_q1(rb_13_q1),
-    .rb_13_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_address2),
-    .rb_13_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_ce2),
+    .rb_13_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_address2),
+    .rb_13_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_ce2),
     .rb_13_q2(rb_13_q2),
-    .rb_14_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_address0),
-    .rb_14_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_ce0),
+    .rb_14_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_address0),
+    .rb_14_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_ce0),
     .rb_14_q0(rb_14_q0),
-    .rb_14_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_address1),
-    .rb_14_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_ce1),
+    .rb_14_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_address1),
+    .rb_14_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_ce1),
     .rb_14_q1(rb_14_q1),
-    .rb_14_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_address2),
-    .rb_14_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_ce2),
+    .rb_14_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_address2),
+    .rb_14_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_ce2),
     .rb_14_q2(rb_14_q2),
-    .rb_15_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_address0),
-    .rb_15_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_ce0),
+    .rb_15_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_address0),
+    .rb_15_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_ce0),
     .rb_15_q0(rb_15_q0),
-    .rb_15_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_address1),
-    .rb_15_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_ce1),
+    .rb_15_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_address1),
+    .rb_15_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_ce1),
     .rb_15_q1(rb_15_q1),
-    .rb_15_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_address2),
-    .rb_15_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_ce2),
+    .rb_15_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_address2),
+    .rb_15_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_ce2),
     .rb_15_q2(rb_15_q2),
-    .gate_3_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_3_address0),
-    .gate_3_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_3_ce0),
-    .gate_3_q0(gate_3_q0),
-    .gate_7_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_7_address0),
-    .gate_7_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_7_ce0),
-    .gate_7_q0(gate_7_q0),
-    .gate_11_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_11_address0),
-    .gate_11_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_11_ce0),
-    .gate_11_q0(gate_11_q0),
-    .gate_15_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_15_address0),
-    .gate_15_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_15_ce0),
-    .gate_15_q0(gate_15_q0),
-    .gate_19_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_19_address0),
-    .gate_19_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_19_ce0),
-    .gate_19_q0(gate_19_q0),
-    .gate_23_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_23_address0),
-    .gate_23_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_23_ce0),
-    .gate_23_q0(gate_23_q0),
-    .gate_27_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_27_address0),
-    .gate_27_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_27_ce0),
-    .gate_27_q0(gate_27_q0),
-    .gate_31_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_31_address0),
-    .gate_31_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_31_ce0),
-    .gate_31_q0(gate_31_q0),
-    .empty(trunc_ln468_reg_2814),
     .gate_scale(gate_scale),
-    .grp_fu_3363_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3363_p_din0),
-    .grp_fu_3363_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3363_p_din1),
-    .grp_fu_3363_p_opcode(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3363_p_opcode),
-    .grp_fu_3363_p_dout0(grp_fu_3363_p2),
-    .grp_fu_3363_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3363_p_ce),
-    .grp_fu_1326_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_1326_p_din0),
-    .grp_fu_1326_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_1326_p_din1),
-    .grp_fu_1326_p_dout0(grp_fu_836_p_dout0),
-    .grp_fu_1326_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_1326_p_ce),
-    .grp_fu_3367_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3367_p_din0),
-    .grp_fu_3367_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3367_p_din1),
-    .grp_fu_3367_p_dout0(grp_fu_840_p_dout0),
-    .grp_fu_3367_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3367_p_ce),
-    .grp_fu_3371_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3371_p_din0),
-    .grp_fu_3371_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3371_p_din1),
-    .grp_fu_3371_p_dout0(grp_fu_3371_p2),
-    .grp_fu_3371_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3371_p_ce),
-    .grp_fu_3375_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3375_p_din0),
-    .grp_fu_3375_p_dout0(grp_fu_3375_p1),
-    .grp_fu_3375_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3375_p_ce),
-    .grp_fu_3378_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3378_p_din0),
-    .grp_fu_3378_p_dout0(grp_fu_3378_p1),
-    .grp_fu_3378_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3378_p_ce),
-    .grp_fu_3381_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3381_p_din0),
-    .grp_fu_3381_p_dout0(grp_fu_3381_p1),
-    .grp_fu_3381_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3381_p_ce)
+    .grp_fu_3306_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3306_p_din0),
+    .grp_fu_3306_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3306_p_din1),
+    .grp_fu_3306_p_opcode(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3306_p_opcode),
+    .grp_fu_3306_p_dout0(grp_fu_3306_p2),
+    .grp_fu_3306_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3306_p_ce),
+    .grp_fu_1238_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_1238_p_din0),
+    .grp_fu_1238_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_1238_p_din1),
+    .grp_fu_1238_p_dout0(grp_fu_540_p_dout0),
+    .grp_fu_1238_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_1238_p_ce),
+    .grp_fu_3310_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3310_p_din0),
+    .grp_fu_3310_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3310_p_din1),
+    .grp_fu_3310_p_dout0(grp_fu_544_p_dout0),
+    .grp_fu_3310_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3310_p_ce),
+    .grp_fu_3314_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3314_p_din0),
+    .grp_fu_3314_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3314_p_din1),
+    .grp_fu_3314_p_dout0(grp_fu_3314_p2),
+    .grp_fu_3314_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3314_p_ce),
+    .grp_fu_3318_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3318_p_din0),
+    .grp_fu_3318_p_dout0(grp_fu_3318_p1),
+    .grp_fu_3318_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3318_p_ce),
+    .grp_fu_3321_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3321_p_din0),
+    .grp_fu_3321_p_dout0(grp_fu_3321_p1),
+    .grp_fu_3321_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3321_p_ce),
+    .grp_fu_3324_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3324_p_din0),
+    .grp_fu_3324_p_dout0(grp_fu_3324_p1),
+    .grp_fu_3324_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3324_p_ce)
+);
+
+swiglu_mac_blocks_down_q6k_Pipeline_7 grp_mac_blocks_down_q6k_Pipeline_7_fu_1169(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_start),
+    .ap_done(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_done),
+    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_idle),
+    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_ready),
+    .acc(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc),
+    .acc_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_ap_vld),
+    .acc_1(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_1),
+    .acc_1_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_1_ap_vld),
+    .acc_2(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_2),
+    .acc_2_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_2_ap_vld),
+    .acc_3(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_3),
+    .acc_3_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_3_ap_vld),
+    .acc_4(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_4),
+    .acc_4_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_4_ap_vld),
+    .acc_5(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_5),
+    .acc_5_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_5_ap_vld),
+    .acc_6(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_6),
+    .acc_6_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_6_ap_vld),
+    .acc_7(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_7),
+    .acc_7_ap_vld(grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_7_ap_vld)
+);
+
+swiglu_mac_blocks_down_q6k_Pipeline_MAC_Q6K9 grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
+    .ap_start(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_start),
+    .ap_done(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_done),
+    .ap_idle(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_idle),
+    .ap_ready(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_ready),
+    .empty(trunc_ln465_reg_2857),
+    .acc_i(acc_fu_342),
+    .acc_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_o),
+    .acc_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_o_ap_vld),
+    .zext_ln77(tmp_75_reg_2865),
+    .gate_3_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_gate_3_address0),
+    .gate_3_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_gate_3_ce0),
+    .gate_3_q0(gate_3_q0),
+    .gate_7_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_gate_7_address0),
+    .gate_7_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_gate_7_ce0),
+    .gate_7_q0(gate_7_q0),
+    .acc_7_i(acc_7_fu_370),
+    .acc_7_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_7_o),
+    .acc_7_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_7_o_ap_vld),
+    .acc_6_i(acc_6_fu_366),
+    .acc_6_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_6_o),
+    .acc_6_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_6_o_ap_vld),
+    .acc_5_i(acc_5_fu_362),
+    .acc_5_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_5_o),
+    .acc_5_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_5_o_ap_vld),
+    .acc_4_i(acc_4_fu_358),
+    .acc_4_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_4_o),
+    .acc_4_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_4_o_ap_vld),
+    .acc_3_i(acc_3_fu_354),
+    .acc_3_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_3_o),
+    .acc_3_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_3_o_ap_vld),
+    .acc_2_i(acc_2_fu_350),
+    .acc_2_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_2_o),
+    .acc_2_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_2_o_ap_vld),
+    .acc_1_i(acc_1_fu_346),
+    .acc_1_o(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_1_o),
+    .acc_1_o_ap_vld(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_1_o_ap_vld),
+    .mul_ln54(mul_ln54_reg_2750),
+    .rb_0_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_address0),
+    .rb_0_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_ce0),
+    .rb_0_q0(rb_0_q0),
+    .rb_0_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_address1),
+    .rb_0_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_ce1),
+    .rb_0_q1(rb_0_q1),
+    .rb_0_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_address2),
+    .rb_0_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_ce2),
+    .rb_0_q2(rb_0_q2),
+    .rb_1_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_address0),
+    .rb_1_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_ce0),
+    .rb_1_q0(rb_1_q0),
+    .rb_1_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_address1),
+    .rb_1_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_ce1),
+    .rb_1_q1(rb_1_q1),
+    .rb_1_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_address2),
+    .rb_1_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_ce2),
+    .rb_1_q2(rb_1_q2),
+    .rb_2_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_address0),
+    .rb_2_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_ce0),
+    .rb_2_q0(rb_2_q0),
+    .rb_2_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_address1),
+    .rb_2_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_ce1),
+    .rb_2_q1(rb_2_q1),
+    .rb_2_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_address2),
+    .rb_2_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_ce2),
+    .rb_2_q2(rb_2_q2),
+    .rb_3_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_address0),
+    .rb_3_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_ce0),
+    .rb_3_q0(rb_3_q0),
+    .rb_3_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_address1),
+    .rb_3_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_ce1),
+    .rb_3_q1(rb_3_q1),
+    .rb_3_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_address2),
+    .rb_3_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_ce2),
+    .rb_3_q2(rb_3_q2),
+    .rb_4_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_address0),
+    .rb_4_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_ce0),
+    .rb_4_q0(rb_4_q0),
+    .rb_4_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_address1),
+    .rb_4_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_ce1),
+    .rb_4_q1(rb_4_q1),
+    .rb_4_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_address2),
+    .rb_4_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_ce2),
+    .rb_4_q2(rb_4_q2),
+    .rb_5_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_address0),
+    .rb_5_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_ce0),
+    .rb_5_q0(rb_5_q0),
+    .rb_5_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_address1),
+    .rb_5_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_ce1),
+    .rb_5_q1(rb_5_q1),
+    .rb_5_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_address2),
+    .rb_5_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_ce2),
+    .rb_5_q2(rb_5_q2),
+    .rb_6_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_address0),
+    .rb_6_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_ce0),
+    .rb_6_q0(rb_6_q0),
+    .rb_6_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_address1),
+    .rb_6_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_ce1),
+    .rb_6_q1(rb_6_q1),
+    .rb_6_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_address2),
+    .rb_6_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_ce2),
+    .rb_6_q2(rb_6_q2),
+    .rb_7_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_address0),
+    .rb_7_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_ce0),
+    .rb_7_q0(rb_7_q0),
+    .rb_7_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_address1),
+    .rb_7_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_ce1),
+    .rb_7_q1(rb_7_q1),
+    .rb_7_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_address2),
+    .rb_7_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_ce2),
+    .rb_7_q2(rb_7_q2),
+    .rb_8_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_address0),
+    .rb_8_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_ce0),
+    .rb_8_q0(rb_8_q0),
+    .rb_8_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_address1),
+    .rb_8_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_ce1),
+    .rb_8_q1(rb_8_q1),
+    .rb_8_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_address2),
+    .rb_8_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_ce2),
+    .rb_8_q2(rb_8_q2),
+    .rb_9_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_address0),
+    .rb_9_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_ce0),
+    .rb_9_q0(rb_9_q0),
+    .rb_9_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_address1),
+    .rb_9_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_ce1),
+    .rb_9_q1(rb_9_q1),
+    .rb_9_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_address2),
+    .rb_9_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_ce2),
+    .rb_9_q2(rb_9_q2),
+    .rb_10_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_address0),
+    .rb_10_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_ce0),
+    .rb_10_q0(rb_10_q0),
+    .rb_10_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_address1),
+    .rb_10_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_ce1),
+    .rb_10_q1(rb_10_q1),
+    .rb_10_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_address2),
+    .rb_10_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_ce2),
+    .rb_10_q2(rb_10_q2),
+    .rb_11_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_address0),
+    .rb_11_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_ce0),
+    .rb_11_q0(rb_11_q0),
+    .rb_11_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_address1),
+    .rb_11_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_ce1),
+    .rb_11_q1(rb_11_q1),
+    .rb_11_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_address2),
+    .rb_11_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_ce2),
+    .rb_11_q2(rb_11_q2),
+    .rb_12_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_address0),
+    .rb_12_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_ce0),
+    .rb_12_q0(rb_12_q0),
+    .rb_12_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_address1),
+    .rb_12_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_ce1),
+    .rb_12_q1(rb_12_q1),
+    .rb_12_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_address2),
+    .rb_12_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_ce2),
+    .rb_12_q2(rb_12_q2),
+    .rb_13_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_address0),
+    .rb_13_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_ce0),
+    .rb_13_q0(rb_13_q0),
+    .rb_13_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_address1),
+    .rb_13_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_ce1),
+    .rb_13_q1(rb_13_q1),
+    .rb_13_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_address2),
+    .rb_13_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_ce2),
+    .rb_13_q2(rb_13_q2),
+    .rb_14_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_address0),
+    .rb_14_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_ce0),
+    .rb_14_q0(rb_14_q0),
+    .rb_14_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_address1),
+    .rb_14_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_ce1),
+    .rb_14_q1(rb_14_q1),
+    .rb_14_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_address2),
+    .rb_14_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_ce2),
+    .rb_14_q2(rb_14_q2),
+    .rb_15_address0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_address0),
+    .rb_15_ce0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_ce0),
+    .rb_15_q0(rb_15_q0),
+    .rb_15_address1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_address1),
+    .rb_15_ce1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_ce1),
+    .rb_15_q1(rb_15_q1),
+    .rb_15_address2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_address2),
+    .rb_15_ce2(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_ce2),
+    .rb_15_q2(rb_15_q2),
+    .gate_scale(gate_scale),
+    .grp_fu_3306_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3306_p_din0),
+    .grp_fu_3306_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3306_p_din1),
+    .grp_fu_3306_p_opcode(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3306_p_opcode),
+    .grp_fu_3306_p_dout0(grp_fu_3306_p2),
+    .grp_fu_3306_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3306_p_ce),
+    .grp_fu_1238_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_1238_p_din0),
+    .grp_fu_1238_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_1238_p_din1),
+    .grp_fu_1238_p_dout0(grp_fu_540_p_dout0),
+    .grp_fu_1238_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_1238_p_ce),
+    .grp_fu_3310_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3310_p_din0),
+    .grp_fu_3310_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3310_p_din1),
+    .grp_fu_3310_p_dout0(grp_fu_544_p_dout0),
+    .grp_fu_3310_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3310_p_ce),
+    .grp_fu_3314_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3314_p_din0),
+    .grp_fu_3314_p_din1(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3314_p_din1),
+    .grp_fu_3314_p_dout0(grp_fu_3314_p2),
+    .grp_fu_3314_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3314_p_ce),
+    .grp_fu_3318_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3318_p_din0),
+    .grp_fu_3318_p_dout0(grp_fu_3318_p1),
+    .grp_fu_3318_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3318_p_ce),
+    .grp_fu_3321_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3321_p_din0),
+    .grp_fu_3321_p_dout0(grp_fu_3321_p1),
+    .grp_fu_3321_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3321_p_ce),
+    .grp_fu_3324_p_din0(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3324_p_din0),
+    .grp_fu_3324_p_dout0(grp_fu_3324_p1),
+    .grp_fu_3324_p_ce(grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3324_p_ce)
 );
 
 swiglu_mul_5ns_9ns_13_1_1 #(
@@ -4369,10 +4113,10 @@ swiglu_mul_5ns_9ns_13_1_1 #(
     .din0_WIDTH( 5 ),
     .din1_WIDTH( 9 ),
     .dout_WIDTH( 13 ))
-mul_5ns_9ns_13_1_1_U1693(
-    .din0(mul_ln55_fu_1518_p0),
-    .din1(mul_ln55_fu_1518_p1),
-    .dout(mul_ln55_fu_1518_p2)
+mul_5ns_9ns_13_1_1_U1621(
+    .din0(mul_ln54_fu_1430_p0),
+    .din1(mul_ln54_fu_1430_p1),
+    .dout(mul_ln54_fu_1430_p2)
 );
 
 (* dissolve_hierarchy = "yes" *) swiglu_sparsemux_33_4_128_1_1 #(
@@ -4413,46 +4157,46 @@ mul_5ns_9ns_13_1_1_U1693(
     .def_WIDTH( 128 ),
     .sel_WIDTH( 4 ),
     .dout_WIDTH( 128 ))
-sparsemux_33_4_128_1_1_U1694(
-    .din0(reg_1379),
-    .din1(reg_1383),
-    .din2(reg_1387),
-    .din3(reg_1391),
-    .din4(reg_1395),
-    .din5(reg_1399),
-    .din6(reg_1403),
-    .din7(reg_1407),
-    .din8(reg_1411),
-    .din9(reg_1415),
-    .din10(reg_1419),
-    .din11(reg_1423),
-    .din12(reg_1427),
-    .din13(reg_1431),
-    .din14(reg_1435),
-    .din15(reg_1439),
-    .def(tmp_fu_1581_p33),
-    .sel(trunc_ln55_2_reg_2840),
-    .dout(tmp_fu_1581_p35)
+sparsemux_33_4_128_1_1_U1622(
+    .din0(reg_1291),
+    .din1(reg_1295),
+    .din2(reg_1299),
+    .din3(reg_1303),
+    .din4(reg_1307),
+    .din5(reg_1311),
+    .din6(reg_1315),
+    .din7(reg_1319),
+    .din8(reg_1323),
+    .din9(reg_1327),
+    .din10(reg_1331),
+    .din11(reg_1335),
+    .din12(reg_1339),
+    .din13(reg_1343),
+    .din14(reg_1347),
+    .din15(reg_1351),
+    .def(tmp_fu_1523_p33),
+    .sel(trunc_ln54_2_reg_2767),
+    .dout(tmp_fu_1523_p35)
 );
 
 swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
     .DATAWIDTH( 128 ),
     .ADDRWIDTH( 7 ),
     .DATA1WIDTH( 8 ))
-partselect_8ns_128ns_7ns_8_1_1_U1695(
-    .din(tmp_fu_1581_p35),
-    .sel(tmp_s_fu_1663_p2),
-    .dout(tmp_s_fu_1663_p3)
+partselect_8ns_128ns_7ns_8_1_1_U1623(
+    .din(tmp_fu_1523_p35),
+    .sel(tmp_s_fu_1594_p2),
+    .dout(tmp_s_fu_1594_p3)
 );
 
 swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
     .DATAWIDTH( 128 ),
     .ADDRWIDTH( 7 ),
     .DATA1WIDTH( 8 ))
-partselect_8ns_128ns_7ns_8_1_1_U1696(
-    .din(tmp_fu_1581_p35),
-    .sel(tmp_53_fu_1678_p2),
-    .dout(tmp_53_fu_1678_p3)
+partselect_8ns_128ns_7ns_8_1_1_U1624(
+    .din(tmp_fu_1523_p35),
+    .sel(tmp_53_fu_1609_p2),
+    .dout(tmp_53_fu_1609_p3)
 );
 
 (* dissolve_hierarchy = "yes" *) swiglu_sparsemux_33_4_128_1_1 #(
@@ -4493,46 +4237,46 @@ partselect_8ns_128ns_7ns_8_1_1_U1696(
     .def_WIDTH( 128 ),
     .sel_WIDTH( 4 ),
     .dout_WIDTH( 128 ))
-sparsemux_33_4_128_1_1_U1697(
-    .din0(reg_1379),
-    .din1(reg_1383),
-    .din2(reg_1387),
-    .din3(reg_1391),
-    .din4(reg_1395),
-    .din5(reg_1399),
-    .din6(reg_1403),
-    .din7(reg_1407),
-    .din8(reg_1411),
-    .din9(reg_1415),
-    .din10(reg_1419),
-    .din11(reg_1423),
-    .din12(reg_1427),
-    .din13(reg_1431),
-    .din14(reg_1435),
-    .din15(reg_1439),
-    .def(tmp_61_fu_1794_p33),
-    .sel(trunc_ln55_s_reg_2945),
-    .dout(tmp_61_fu_1794_p35)
+sparsemux_33_4_128_1_1_U1625(
+    .din0(reg_1291),
+    .din1(reg_1295),
+    .din2(reg_1299),
+    .din3(reg_1303),
+    .din4(reg_1307),
+    .din5(reg_1311),
+    .din6(reg_1315),
+    .din7(reg_1319),
+    .din8(reg_1323),
+    .din9(reg_1327),
+    .din10(reg_1331),
+    .din11(reg_1335),
+    .din12(reg_1339),
+    .din13(reg_1343),
+    .din14(reg_1347),
+    .din15(reg_1351),
+    .def(tmp_60_fu_1725_p33),
+    .sel(trunc_ln54_s_reg_2888),
+    .dout(tmp_60_fu_1725_p35)
 );
 
 swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
     .DATAWIDTH( 128 ),
     .ADDRWIDTH( 7 ),
     .DATA1WIDTH( 8 ))
-partselect_8ns_128ns_7ns_8_1_1_U1698(
-    .din(tmp_61_fu_1794_p35),
-    .sel(tmp_62_fu_1882_p2),
-    .dout(tmp_62_fu_1882_p3)
+partselect_8ns_128ns_7ns_8_1_1_U1626(
+    .din(tmp_60_fu_1725_p35),
+    .sel(tmp_61_fu_1813_p2),
+    .dout(tmp_61_fu_1813_p3)
 );
 
 swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
     .DATAWIDTH( 128 ),
     .ADDRWIDTH( 7 ),
     .DATA1WIDTH( 8 ))
-partselect_8ns_128ns_7ns_8_1_1_U1699(
-    .din(tmp_61_fu_1794_p35),
-    .sel(tmp_63_fu_1900_p2),
-    .dout(tmp_63_fu_1900_p3)
+partselect_8ns_128ns_7ns_8_1_1_U1627(
+    .din(tmp_60_fu_1725_p35),
+    .sel(tmp_62_fu_1831_p2),
+    .dout(tmp_62_fu_1831_p3)
 );
 
 (* dissolve_hierarchy = "yes" *) swiglu_sparsemux_33_4_128_1_1 #(
@@ -4573,46 +4317,46 @@ partselect_8ns_128ns_7ns_8_1_1_U1699(
     .def_WIDTH( 128 ),
     .sel_WIDTH( 4 ),
     .dout_WIDTH( 128 ))
-sparsemux_33_4_128_1_1_U1700(
-    .din0(reg_1379),
-    .din1(reg_1383),
-    .din2(reg_1387),
-    .din3(reg_1391),
-    .din4(reg_1395),
-    .din5(reg_1399),
-    .din6(reg_1403),
-    .din7(reg_1407),
-    .din8(reg_1411),
-    .din9(reg_1415),
-    .din10(reg_1419),
-    .din11(reg_1423),
-    .din12(reg_1427),
-    .din13(reg_1431),
-    .din14(reg_1435),
-    .din15(reg_1439),
-    .def(tmp_71_fu_2010_p33),
-    .sel(trunc_ln55_8_reg_3055),
-    .dout(tmp_71_fu_2010_p35)
+sparsemux_33_4_128_1_1_U1628(
+    .din0(reg_1291),
+    .din1(reg_1295),
+    .din2(reg_1299),
+    .din3(reg_1303),
+    .din4(reg_1307),
+    .din5(reg_1311),
+    .din6(reg_1315),
+    .din7(reg_1319),
+    .din8(reg_1323),
+    .din9(reg_1327),
+    .din10(reg_1331),
+    .din11(reg_1335),
+    .din12(reg_1339),
+    .din13(reg_1343),
+    .din14(reg_1347),
+    .din15(reg_1351),
+    .def(tmp_69_fu_1941_p33),
+    .sel(trunc_ln54_8_reg_2998),
+    .dout(tmp_69_fu_1941_p35)
 );
 
 swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
     .DATAWIDTH( 128 ),
     .ADDRWIDTH( 7 ),
     .DATA1WIDTH( 8 ))
-partselect_8ns_128ns_7ns_8_1_1_U1701(
-    .din(tmp_71_fu_2010_p35),
-    .sel(tmp_72_fu_2096_p2),
-    .dout(tmp_72_fu_2096_p3)
+partselect_8ns_128ns_7ns_8_1_1_U1629(
+    .din(tmp_69_fu_1941_p35),
+    .sel(tmp_70_fu_2027_p2),
+    .dout(tmp_70_fu_2027_p3)
 );
 
 swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
     .DATAWIDTH( 128 ),
     .ADDRWIDTH( 7 ),
     .DATA1WIDTH( 8 ))
-partselect_8ns_128ns_7ns_8_1_1_U1702(
-    .din(tmp_71_fu_2010_p35),
-    .sel(tmp_73_fu_2111_p2),
-    .dout(tmp_73_fu_2111_p3)
+partselect_8ns_128ns_7ns_8_1_1_U1630(
+    .din(tmp_69_fu_1941_p35),
+    .sel(tmp_71_fu_2042_p2),
+    .dout(tmp_71_fu_2042_p3)
 );
 
 (* dissolve_hierarchy = "yes" *) swiglu_sparsemux_33_4_128_1_1 #(
@@ -4653,46 +4397,46 @@ partselect_8ns_128ns_7ns_8_1_1_U1702(
     .def_WIDTH( 128 ),
     .sel_WIDTH( 4 ),
     .dout_WIDTH( 128 ))
-sparsemux_33_4_128_1_1_U1703(
-    .din0(reg_1379),
-    .din1(reg_1383),
-    .din2(reg_1387),
-    .din3(reg_1391),
-    .din4(reg_1395),
-    .din5(reg_1399),
-    .din6(reg_1403),
-    .din7(reg_1407),
-    .din8(reg_1411),
-    .din9(reg_1415),
-    .din10(reg_1419),
-    .din11(reg_1423),
-    .din12(reg_1427),
-    .din13(reg_1431),
-    .din14(reg_1435),
-    .din15(reg_1439),
-    .def(tmp_79_fu_2215_p33),
-    .sel(trunc_ln55_5_reg_3165),
-    .dout(tmp_79_fu_2215_p35)
+sparsemux_33_4_128_1_1_U1631(
+    .din0(reg_1291),
+    .din1(reg_1295),
+    .din2(reg_1299),
+    .din3(reg_1303),
+    .din4(reg_1307),
+    .din5(reg_1311),
+    .din6(reg_1315),
+    .din7(reg_1319),
+    .din8(reg_1323),
+    .din9(reg_1327),
+    .din10(reg_1331),
+    .din11(reg_1335),
+    .din12(reg_1339),
+    .din13(reg_1343),
+    .din14(reg_1347),
+    .din15(reg_1351),
+    .def(tmp_78_fu_2146_p33),
+    .sel(trunc_ln54_5_reg_3108),
+    .dout(tmp_78_fu_2146_p35)
 );
 
 swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
     .DATAWIDTH( 128 ),
     .ADDRWIDTH( 7 ),
     .DATA1WIDTH( 8 ))
-partselect_8ns_128ns_7ns_8_1_1_U1704(
-    .din(tmp_79_fu_2215_p35),
-    .sel(tmp_80_fu_2293_p2),
-    .dout(tmp_80_fu_2293_p3)
+partselect_8ns_128ns_7ns_8_1_1_U1632(
+    .din(tmp_78_fu_2146_p35),
+    .sel(tmp_79_fu_2224_p2),
+    .dout(tmp_79_fu_2224_p3)
 );
 
 swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
     .DATAWIDTH( 128 ),
     .ADDRWIDTH( 7 ),
     .DATA1WIDTH( 8 ))
-partselect_8ns_128ns_7ns_8_1_1_U1705(
-    .din(tmp_79_fu_2215_p35),
-    .sel(tmp_81_fu_2308_p2),
-    .dout(tmp_81_fu_2308_p3)
+partselect_8ns_128ns_7ns_8_1_1_U1633(
+    .din(tmp_78_fu_2146_p35),
+    .sel(tmp_80_fu_2239_p2),
+    .dout(tmp_80_fu_2239_p3)
 );
 
 swiglu_fadd_32ns_32ns_32_8_no_dsp_1 #(
@@ -4701,13 +4445,13 @@ swiglu_fadd_32ns_32ns_32_8_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fadd_32ns_32ns_32_8_no_dsp_1_U1706(
+fadd_32ns_32ns_32_8_no_dsp_1_U1634(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(grp_fu_3363_p0),
-    .din1(grp_fu_3363_p1),
-    .ce(grp_fu_3363_ce),
-    .dout(grp_fu_3363_p2)
+    .din0(grp_fu_3306_p0),
+    .din1(grp_fu_3306_p1),
+    .ce(grp_fu_3306_ce),
+    .dout(grp_fu_3306_p2)
 );
 
 swiglu_fmul_32ns_32ns_32_7_max_dsp_1 #(
@@ -4716,13 +4460,13 @@ swiglu_fmul_32ns_32ns_32_7_max_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fmul_32ns_32ns_32_7_max_dsp_1_U1708(
+fmul_32ns_32ns_32_7_max_dsp_1_U1636(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(grp_fu_3371_p0),
-    .din1(grp_fu_3371_p1),
-    .ce(grp_fu_3371_ce),
-    .dout(grp_fu_3371_p2)
+    .din0(grp_fu_3314_p0),
+    .din1(grp_fu_3314_p1),
+    .ce(grp_fu_3314_ce),
+    .dout(grp_fu_3314_p2)
 );
 
 swiglu_sitofp_32s_32_7_no_dsp_1 #(
@@ -4730,12 +4474,12 @@ swiglu_sitofp_32s_32_7_no_dsp_1 #(
     .NUM_STAGE( 7 ),
     .din0_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-sitofp_32s_32_7_no_dsp_1_U1709(
+sitofp_32s_32_7_no_dsp_1_U1637(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(grp_fu_3375_p0),
-    .ce(grp_fu_3375_ce),
-    .dout(grp_fu_3375_p1)
+    .din0(grp_fu_3318_p0),
+    .ce(grp_fu_3318_ce),
+    .dout(grp_fu_3318_p1)
 );
 
 swiglu_sitofp_32s_32_7_no_dsp_1 #(
@@ -4743,12 +4487,12 @@ swiglu_sitofp_32s_32_7_no_dsp_1 #(
     .NUM_STAGE( 7 ),
     .din0_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-sitofp_32s_32_7_no_dsp_1_U1710(
+sitofp_32s_32_7_no_dsp_1_U1638(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(grp_fu_3378_p0),
-    .ce(grp_fu_3378_ce),
-    .dout(grp_fu_3378_p1)
+    .din0(grp_fu_3321_p0),
+    .ce(grp_fu_3321_ce),
+    .dout(grp_fu_3321_p1)
 );
 
 swiglu_sitofp_32s_32_7_no_dsp_1 #(
@@ -4756,12 +4500,12 @@ swiglu_sitofp_32s_32_7_no_dsp_1 #(
     .NUM_STAGE( 7 ),
     .din0_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-sitofp_32s_32_7_no_dsp_1_U1711(
+sitofp_32s_32_7_no_dsp_1_U1639(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(grp_fu_3381_p0),
-    .ce(grp_fu_3381_ce),
-    .dout(grp_fu_3381_p1)
+    .din0(grp_fu_3324_p0),
+    .ce(grp_fu_3324_ce),
+    .dout(grp_fu_3324_p1)
 );
 
 always @ (posedge ap_clk) begin
@@ -4777,615 +4521,617 @@ always @ (posedge ap_clk) begin
         ap_return_preg <= 32'd0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state746)) begin
-            ap_return_preg <= grp_fu_832_p_dout0;
+            ap_return_preg <= grp_fu_536_p_dout0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_start_reg <= 1'b0;
+        grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_start_reg <= 1'b0;
     end else begin
-        if (((tmp_1_fu_1502_p3 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
-            grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_start_reg <= 1'b1;
-        end else if ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_ready == 1'b1)) begin
-            grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_start_reg <= 1'b0;
+        if (((tmp_1_fu_1414_p3 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+            grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_start_reg <= 1'b1;
+        end else if ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_ready == 1'b1)) begin
+            grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_start_reg <= 1'b0;
+        grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state101)) begin
-            grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_start_reg <= 1'b1;
-        end else if ((grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_ready == 1'b1)) begin
-            grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_start_reg <= 1'b0;
+            grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_start_reg <= 1'b1;
+        end else if ((grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_ready == 1'b1)) begin
+            grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_start_reg <= 1'b0;
+        grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state199)) begin
-            grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_start_reg <= 1'b1;
-        end else if ((grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_ready == 1'b1)) begin
-            grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_start_reg <= 1'b0;
+            grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_start_reg <= 1'b1;
+        end else if ((grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_ready == 1'b1)) begin
+            grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_start_reg <= 1'b0;
+        grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state297)) begin
-            grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_start_reg <= 1'b1;
-        end else if ((grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_ready == 1'b1)) begin
-            grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_start_reg <= 1'b0;
+            grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_start_reg <= 1'b1;
+        end else if ((grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_ready == 1'b1)) begin
+            grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_start_reg <= 1'b0;
+        grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state103)) begin
-            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_start_reg <= 1'b1;
-        end else if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_ready == 1'b1)) begin
-            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_start_reg <= 1'b0;
+            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_start_reg <= 1'b1;
+        end else if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_ready == 1'b1)) begin
+            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_start_reg <= 1'b0;
+        grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state201)) begin
-            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_start_reg <= 1'b1;
-        end else if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_ready == 1'b1)) begin
-            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_start_reg <= 1'b0;
+            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_start_reg <= 1'b1;
+        end else if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_ready == 1'b1)) begin
+            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_start_reg <= 1'b0;
+        grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state299)) begin
-            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_start_reg <= 1'b1;
-        end else if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_ready == 1'b1)) begin
-            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_start_reg <= 1'b0;
+            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_start_reg <= 1'b1;
+        end else if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_ready == 1'b1)) begin
+            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_start_reg <= 1'b0;
+        grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state5)) begin
-            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_start_reg <= 1'b1;
-        end else if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_ready == 1'b1)) begin
-            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_start_reg <= 1'b0;
+            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_start_reg <= 1'b1;
+        end else if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_ready == 1'b1)) begin
+            grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_1_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
-        acc_1_fu_390 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_1_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_1_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
-        acc_1_fu_390 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_1;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_1_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
-        acc_1_fu_390 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_1_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_1_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
-        acc_1_fu_390 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_1;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_1_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
-        acc_1_fu_390 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_1_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_1_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
-        acc_1_fu_390 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_1;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_1_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        acc_1_fu_390 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_1_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_1_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
-        acc_1_fu_390 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_1;
+    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_1_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
+        acc_1_fu_346 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_1_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_1_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
+        acc_1_fu_346 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_1;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_1_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
+        acc_1_fu_346 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_1_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_1_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
+        acc_1_fu_346 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_1;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_1_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
+        acc_1_fu_346 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_1_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_1_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
+        acc_1_fu_346 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_1;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_1_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+        acc_1_fu_346 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_1_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_1_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+        acc_1_fu_346 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_1;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_2_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
-        acc_2_fu_394 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_2_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_2_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
-        acc_2_fu_394 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_2;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_2_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
-        acc_2_fu_394 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_2_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_2_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
-        acc_2_fu_394 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_2;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_2_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
-        acc_2_fu_394 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_2_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_2_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
-        acc_2_fu_394 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_2;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_2_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        acc_2_fu_394 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_2_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_2_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
-        acc_2_fu_394 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_2;
+    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_2_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
+        acc_2_fu_350 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_2_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_2_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
+        acc_2_fu_350 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_2;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_2_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
+        acc_2_fu_350 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_2_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_2_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
+        acc_2_fu_350 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_2;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_2_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
+        acc_2_fu_350 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_2_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_2_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
+        acc_2_fu_350 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_2;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_2_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+        acc_2_fu_350 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_2_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_2_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+        acc_2_fu_350 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_3_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
-        acc_3_fu_398 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_3_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_3_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
-        acc_3_fu_398 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_3;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_3_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
-        acc_3_fu_398 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_3_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_3_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
-        acc_3_fu_398 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_3;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_3_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
-        acc_3_fu_398 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_3_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_3_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
-        acc_3_fu_398 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_3;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_3_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        acc_3_fu_398 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_3_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_3_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
-        acc_3_fu_398 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_3;
+    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_3_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
+        acc_3_fu_354 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_3_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_3_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
+        acc_3_fu_354 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_3;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_3_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
+        acc_3_fu_354 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_3_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_3_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
+        acc_3_fu_354 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_3;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_3_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
+        acc_3_fu_354 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_3_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_3_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
+        acc_3_fu_354 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_3;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_3_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+        acc_3_fu_354 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_3_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_3_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+        acc_3_fu_354 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_3;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_4_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
-        acc_4_fu_402 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_4_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_4_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
-        acc_4_fu_402 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_4;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_4_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
-        acc_4_fu_402 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_4_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_4_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
-        acc_4_fu_402 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_4;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_4_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
-        acc_4_fu_402 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_4_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_4_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
-        acc_4_fu_402 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_4;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_4_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        acc_4_fu_402 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_4_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_4_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
-        acc_4_fu_402 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_4;
+    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_4_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
+        acc_4_fu_358 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_4_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_4_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
+        acc_4_fu_358 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_4;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_4_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
+        acc_4_fu_358 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_4_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_4_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
+        acc_4_fu_358 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_4;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_4_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
+        acc_4_fu_358 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_4_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_4_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
+        acc_4_fu_358 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_4;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_4_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+        acc_4_fu_358 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_4_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_4_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+        acc_4_fu_358 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_4;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_5_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
-        acc_5_fu_406 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_5_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_5_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
-        acc_5_fu_406 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_5;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_5_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
-        acc_5_fu_406 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_5_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_5_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
-        acc_5_fu_406 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_5;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_5_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
-        acc_5_fu_406 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_5_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_5_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
-        acc_5_fu_406 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_5;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_5_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        acc_5_fu_406 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_5_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_5_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
-        acc_5_fu_406 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_5;
+    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_5_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
+        acc_5_fu_362 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_5_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_5_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
+        acc_5_fu_362 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_5;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_5_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
+        acc_5_fu_362 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_5_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_5_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
+        acc_5_fu_362 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_5;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_5_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
+        acc_5_fu_362 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_5_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_5_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
+        acc_5_fu_362 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_5;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_5_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+        acc_5_fu_362 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_5_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_5_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+        acc_5_fu_362 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_5;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_6_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
-        acc_6_fu_410 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_6_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_6_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
-        acc_6_fu_410 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_6;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_6_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
-        acc_6_fu_410 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_6_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_6_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
-        acc_6_fu_410 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_6;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_6_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
-        acc_6_fu_410 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_6_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_6_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
-        acc_6_fu_410 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_6;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_6_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        acc_6_fu_410 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_6_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_6_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
-        acc_6_fu_410 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_6;
+    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_6_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
+        acc_6_fu_366 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_6_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_6_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
+        acc_6_fu_366 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_6;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_6_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
+        acc_6_fu_366 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_6_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_6_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
+        acc_6_fu_366 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_6;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_6_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
+        acc_6_fu_366 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_6_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_6_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
+        acc_6_fu_366 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_6;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_6_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+        acc_6_fu_366 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_6_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_6_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+        acc_6_fu_366 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_6;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_7_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
-        acc_7_fu_414 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_7_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_7_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
-        acc_7_fu_414 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_7;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_7_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
-        acc_7_fu_414 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_7_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_7_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
-        acc_7_fu_414 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_7;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_7_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
-        acc_7_fu_414 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_7_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_7_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
-        acc_7_fu_414 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_7;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_7_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        acc_7_fu_414 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_7_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_7_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
-        acc_7_fu_414 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_7;
+    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_7_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
+        acc_7_fu_370 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_7_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_7_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
+        acc_7_fu_370 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_7;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_7_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
+        acc_7_fu_370 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_7_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_7_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
+        acc_7_fu_370 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_7;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_7_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
+        acc_7_fu_370 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_7_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_7_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
+        acc_7_fu_370 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_7;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_7_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+        acc_7_fu_370 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_7_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_7_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+        acc_7_fu_370 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_7;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
-        acc_fu_386 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_acc_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
-        acc_fu_386 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_acc;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
-        acc_fu_386 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_acc_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
-        acc_fu_386 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_acc;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
-        acc_fu_386 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_acc_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
-        acc_fu_386 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_acc;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        acc_fu_386 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_acc_o;
-    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
-        acc_fu_386 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_acc;
+    if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
+        acc_fu_342 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_acc_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
+        acc_fu_342 <= grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_acc;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
+        acc_fu_342 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_acc_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
+        acc_fu_342 <= grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_acc;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
+        acc_fu_342 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_acc_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
+        acc_fu_342 <= grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_acc;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+        acc_fu_342 <= grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_acc_o;
+    end else if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+        acc_fu_342 <= grp_mac_blocks_down_q6k_Pipeline_1_fu_972_acc;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        b_fu_254 <= 6'd0;
+        b_fu_210 <= 6'd0;
     end else if ((1'b1 == ap_CS_fsm_state395)) begin
-        b_fu_254 <= add_ln468_fu_2363_p2;
+        b_fu_210 <= add_ln465_fu_2294_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state100)) begin
-        ap_predicate_pred3816_state101 <= (trunc_ln468_reg_2814 == 5'd0);
-        ap_predicate_pred3879_state101 <= (trunc_ln468_reg_2814 == 5'd4);
-        ap_predicate_pred3925_state101 <= (trunc_ln468_reg_2814 == 5'd8);
-        ap_predicate_pred3971_state101 <= (trunc_ln468_reg_2814 == 5'd12);
-        ap_predicate_pred4017_state101 <= (trunc_ln468_reg_2814 == 5'd16);
-        ap_predicate_pred4063_state101 <= (trunc_ln468_reg_2814 == 5'd20);
-        ap_predicate_pred4109_state101 <= (trunc_ln468_reg_2814 == 5'd24);
-        ap_predicate_pred4166_state101 <= (~(trunc_ln468_reg_2814 == 5'd24) & ~(trunc_ln468_reg_2814 == 5'd20) & ~(trunc_ln468_reg_2814 == 5'd16) & ~(trunc_ln468_reg_2814 == 5'd12) & ~(trunc_ln468_reg_2814 == 5'd8) & ~(trunc_ln468_reg_2814 == 5'd4) & ~(trunc_ln468_reg_2814 == 5'd0));
+        ap_predicate_pred3537_state101 <= (trunc_ln465_1_reg_2745 == 5'd0);
+        ap_predicate_pred3600_state101 <= (trunc_ln465_1_reg_2745 == 5'd4);
+        ap_predicate_pred3646_state101 <= (trunc_ln465_1_reg_2745 == 5'd8);
+        ap_predicate_pred3692_state101 <= (trunc_ln465_1_reg_2745 == 5'd12);
+        ap_predicate_pred3738_state101 <= (trunc_ln465_1_reg_2745 == 5'd16);
+        ap_predicate_pred3784_state101 <= (trunc_ln465_1_reg_2745 == 5'd20);
+        ap_predicate_pred3830_state101 <= (trunc_ln465_1_reg_2745 == 5'd24);
+        ap_predicate_pred3887_state101 <= (~(trunc_ln465_1_reg_2745 == 5'd24) & ~(trunc_ln465_1_reg_2745 == 5'd20) & ~(trunc_ln465_1_reg_2745 == 5'd16) & ~(trunc_ln465_1_reg_2745 == 5'd12) & ~(trunc_ln465_1_reg_2745 == 5'd8) & ~(trunc_ln465_1_reg_2745 == 5'd4) & ~(trunc_ln465_1_reg_2745 == 5'd0));
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state198)) begin
-        ap_predicate_pred3816_state199 <= (trunc_ln468_reg_2814 == 5'd0);
-        ap_predicate_pred3879_state199 <= (trunc_ln468_reg_2814 == 5'd4);
-        ap_predicate_pred3925_state199 <= (trunc_ln468_reg_2814 == 5'd8);
-        ap_predicate_pred3971_state199 <= (trunc_ln468_reg_2814 == 5'd12);
-        ap_predicate_pred4017_state199 <= (trunc_ln468_reg_2814 == 5'd16);
-        ap_predicate_pred4063_state199 <= (trunc_ln468_reg_2814 == 5'd20);
-        ap_predicate_pred4109_state199 <= (trunc_ln468_reg_2814 == 5'd24);
-        ap_predicate_pred4166_state199 <= (~(trunc_ln468_reg_2814 == 5'd24) & ~(trunc_ln468_reg_2814 == 5'd20) & ~(trunc_ln468_reg_2814 == 5'd16) & ~(trunc_ln468_reg_2814 == 5'd12) & ~(trunc_ln468_reg_2814 == 5'd8) & ~(trunc_ln468_reg_2814 == 5'd4) & ~(trunc_ln468_reg_2814 == 5'd0));
+        ap_predicate_pred3537_state199 <= (trunc_ln465_1_reg_2745 == 5'd0);
+        ap_predicate_pred3600_state199 <= (trunc_ln465_1_reg_2745 == 5'd4);
+        ap_predicate_pred3646_state199 <= (trunc_ln465_1_reg_2745 == 5'd8);
+        ap_predicate_pred3692_state199 <= (trunc_ln465_1_reg_2745 == 5'd12);
+        ap_predicate_pred3738_state199 <= (trunc_ln465_1_reg_2745 == 5'd16);
+        ap_predicate_pred3784_state199 <= (trunc_ln465_1_reg_2745 == 5'd20);
+        ap_predicate_pred3830_state199 <= (trunc_ln465_1_reg_2745 == 5'd24);
+        ap_predicate_pred3887_state199 <= (~(trunc_ln465_1_reg_2745 == 5'd24) & ~(trunc_ln465_1_reg_2745 == 5'd20) & ~(trunc_ln465_1_reg_2745 == 5'd16) & ~(trunc_ln465_1_reg_2745 == 5'd12) & ~(trunc_ln465_1_reg_2745 == 5'd8) & ~(trunc_ln465_1_reg_2745 == 5'd4) & ~(trunc_ln465_1_reg_2745 == 5'd0));
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state296)) begin
-        ap_predicate_pred3816_state297 <= (trunc_ln468_reg_2814 == 5'd0);
-        ap_predicate_pred3879_state297 <= (trunc_ln468_reg_2814 == 5'd4);
-        ap_predicate_pred3925_state297 <= (trunc_ln468_reg_2814 == 5'd8);
-        ap_predicate_pred3971_state297 <= (trunc_ln468_reg_2814 == 5'd12);
-        ap_predicate_pred4017_state297 <= (trunc_ln468_reg_2814 == 5'd16);
-        ap_predicate_pred4063_state297 <= (trunc_ln468_reg_2814 == 5'd20);
-        ap_predicate_pred4109_state297 <= (trunc_ln468_reg_2814 == 5'd24);
-        ap_predicate_pred4166_state297 <= (~(trunc_ln468_reg_2814 == 5'd24) & ~(trunc_ln468_reg_2814 == 5'd20) & ~(trunc_ln468_reg_2814 == 5'd16) & ~(trunc_ln468_reg_2814 == 5'd12) & ~(trunc_ln468_reg_2814 == 5'd8) & ~(trunc_ln468_reg_2814 == 5'd4) & ~(trunc_ln468_reg_2814 == 5'd0));
+        ap_predicate_pred3537_state297 <= (trunc_ln465_1_reg_2745 == 5'd0);
+        ap_predicate_pred3600_state297 <= (trunc_ln465_1_reg_2745 == 5'd4);
+        ap_predicate_pred3646_state297 <= (trunc_ln465_1_reg_2745 == 5'd8);
+        ap_predicate_pred3692_state297 <= (trunc_ln465_1_reg_2745 == 5'd12);
+        ap_predicate_pred3738_state297 <= (trunc_ln465_1_reg_2745 == 5'd16);
+        ap_predicate_pred3784_state297 <= (trunc_ln465_1_reg_2745 == 5'd20);
+        ap_predicate_pred3830_state297 <= (trunc_ln465_1_reg_2745 == 5'd24);
+        ap_predicate_pred3887_state297 <= (~(trunc_ln465_1_reg_2745 == 5'd24) & ~(trunc_ln465_1_reg_2745 == 5'd20) & ~(trunc_ln465_1_reg_2745 == 5'd16) & ~(trunc_ln465_1_reg_2745 == 5'd12) & ~(trunc_ln465_1_reg_2745 == 5'd8) & ~(trunc_ln465_1_reg_2745 == 5'd4) & ~(trunc_ln465_1_reg_2745 == 5'd0));
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state394)) begin
-        ap_predicate_pred3816_state395 <= (trunc_ln468_reg_2814 == 5'd0);
-        ap_predicate_pred3879_state395 <= (trunc_ln468_reg_2814 == 5'd4);
-        ap_predicate_pred3925_state395 <= (trunc_ln468_reg_2814 == 5'd8);
-        ap_predicate_pred3971_state395 <= (trunc_ln468_reg_2814 == 5'd12);
-        ap_predicate_pred4017_state395 <= (trunc_ln468_reg_2814 == 5'd16);
-        ap_predicate_pred4063_state395 <= (trunc_ln468_reg_2814 == 5'd20);
-        ap_predicate_pred4109_state395 <= (trunc_ln468_reg_2814 == 5'd24);
-        ap_predicate_pred4166_state395 <= (~(trunc_ln468_reg_2814 == 5'd24) & ~(trunc_ln468_reg_2814 == 5'd20) & ~(trunc_ln468_reg_2814 == 5'd16) & ~(trunc_ln468_reg_2814 == 5'd12) & ~(trunc_ln468_reg_2814 == 5'd8) & ~(trunc_ln468_reg_2814 == 5'd4) & ~(trunc_ln468_reg_2814 == 5'd0));
+        ap_predicate_pred3537_state395 <= (trunc_ln465_1_reg_2745 == 5'd0);
+        ap_predicate_pred3600_state395 <= (trunc_ln465_1_reg_2745 == 5'd4);
+        ap_predicate_pred3646_state395 <= (trunc_ln465_1_reg_2745 == 5'd8);
+        ap_predicate_pred3692_state395 <= (trunc_ln465_1_reg_2745 == 5'd12);
+        ap_predicate_pred3738_state395 <= (trunc_ln465_1_reg_2745 == 5'd16);
+        ap_predicate_pred3784_state395 <= (trunc_ln465_1_reg_2745 == 5'd20);
+        ap_predicate_pred3830_state395 <= (trunc_ln465_1_reg_2745 == 5'd24);
+        ap_predicate_pred3887_state395 <= (~(trunc_ln465_1_reg_2745 == 5'd24) & ~(trunc_ln465_1_reg_2745 == 5'd20) & ~(trunc_ln465_1_reg_2745 == 5'd16) & ~(trunc_ln465_1_reg_2745 == 5'd12) & ~(trunc_ln465_1_reg_2745 == 5'd8) & ~(trunc_ln465_1_reg_2745 == 5'd4) & ~(trunc_ln465_1_reg_2745 == 5'd0));
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3925_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
-        empty_100_fu_290 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3646_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
+        empty_100_fu_246 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3925_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
-        empty_101_fu_294 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3646_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
+        empty_101_fu_250 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3925_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
-        empty_102_fu_298 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3646_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
+        empty_102_fu_254 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3925_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
-        empty_103_fu_302 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3646_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
+        empty_103_fu_258 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3971_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
-        empty_104_fu_306 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3692_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
+        empty_104_fu_262 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3971_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
-        empty_105_fu_310 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3692_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
+        empty_105_fu_266 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3971_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
-        empty_106_fu_314 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3692_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
+        empty_106_fu_270 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3971_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
-        empty_107_fu_318 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3692_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
+        empty_107_fu_274 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4017_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
-        empty_108_fu_322 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3738_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
+        empty_108_fu_278 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4017_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
-        empty_109_fu_326 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3738_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
+        empty_109_fu_282 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4017_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
-        empty_110_fu_330 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3738_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
+        empty_110_fu_286 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4017_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
-        empty_111_fu_334 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3738_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
+        empty_111_fu_290 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4063_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
-        empty_112_fu_338 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3784_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
+        empty_112_fu_294 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4063_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
-        empty_113_fu_342 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3784_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
+        empty_113_fu_298 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4063_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
-        empty_114_fu_346 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3784_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
+        empty_114_fu_302 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4063_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
-        empty_115_fu_350 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3784_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
+        empty_115_fu_306 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4109_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
-        empty_116_fu_354 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3830_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
+        empty_116_fu_310 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4109_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
-        empty_117_fu_358 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3830_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
+        empty_117_fu_314 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4109_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
-        empty_118_fu_362 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3830_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
+        empty_118_fu_318 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4109_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
-        empty_119_fu_366 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3830_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
+        empty_119_fu_322 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4166_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
-        empty_120_fu_370 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3887_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
+        empty_120_fu_326 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4166_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
-        empty_121_fu_374 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3887_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
+        empty_121_fu_330 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4166_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
-        empty_122_fu_378 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3887_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
+        empty_122_fu_334 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred4166_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
-        empty_123_fu_382 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3887_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
+        empty_123_fu_338 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3816_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
-        empty_93_fu_262 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3537_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
+        empty_93_fu_218 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3816_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
-        empty_94_fu_266 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3537_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
+        empty_94_fu_222 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3816_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
-        empty_95_fu_270 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3537_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
+        empty_95_fu_226 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3879_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
-        empty_96_fu_274 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3600_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
+        empty_96_fu_230 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3879_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
-        empty_97_fu_278 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3600_state199 == 1'b1) & (1'b1 == ap_CS_fsm_state199))) begin
+        empty_97_fu_234 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3879_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
-        empty_98_fu_282 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3600_state297 == 1'b1) & (1'b1 == ap_CS_fsm_state297))) begin
+        empty_98_fu_238 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3879_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
-        empty_99_fu_286 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3600_state395 == 1'b1) & (1'b1 == ap_CS_fsm_state395))) begin
+        empty_99_fu_242 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_predicate_pred3816_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
-        empty_fu_258 <= grp_fu_836_p_dout0;
+    if (((ap_predicate_pred3537_state101 == 1'b1) & (1'b1 == ap_CS_fsm_state101))) begin
+        empty_fu_214 <= grp_fu_540_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        mul_ln55_reg_2823 <= mul_ln55_fu_1518_p2;
-        trunc_ln468_reg_2814 <= trunc_ln468_fu_1510_p1;
+        mul_ln54_reg_2750 <= mul_ln54_fu_1430_p2;
+        trunc_ln465_1_reg_2745 <= trunc_ln465_1_fu_1422_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_CS_fsm_state298) | (1'b1 == ap_CS_fsm_state200) | (1'b1 == ap_CS_fsm_state102) | (1'b1 == ap_CS_fsm_state4))) begin
-        reg_1379 <= rb_0_q0;
-        reg_1383 <= rb_1_q0;
-        reg_1387 <= rb_2_q0;
-        reg_1391 <= rb_3_q0;
-        reg_1395 <= rb_4_q0;
-        reg_1399 <= rb_5_q0;
-        reg_1403 <= rb_6_q0;
-        reg_1407 <= rb_7_q0;
-        reg_1411 <= rb_8_q0;
-        reg_1415 <= rb_9_q0;
-        reg_1419 <= rb_10_q0;
-        reg_1423 <= rb_11_q0;
-        reg_1427 <= rb_12_q0;
-        reg_1431 <= rb_13_q0;
-        reg_1435 <= rb_14_q0;
-        reg_1439 <= rb_15_q0;
+        reg_1291 <= rb_0_q0;
+        reg_1295 <= rb_1_q0;
+        reg_1299 <= rb_2_q0;
+        reg_1303 <= rb_3_q0;
+        reg_1307 <= rb_4_q0;
+        reg_1311 <= rb_5_q0;
+        reg_1315 <= rb_6_q0;
+        reg_1319 <= rb_7_q0;
+        reg_1323 <= rb_8_q0;
+        reg_1327 <= rb_9_q0;
+        reg_1331 <= rb_10_q0;
+        reg_1335 <= rb_11_q0;
+        reg_1339 <= rb_12_q0;
+        reg_1343 <= rb_13_q0;
+        reg_1347 <= rb_14_q0;
+        reg_1351 <= rb_15_q0;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_CS_fsm_state735) | (1'b1 == ap_CS_fsm_state724) | (1'b1 == ap_CS_fsm_state713) | (1'b1 == ap_CS_fsm_state702) | (1'b1 == ap_CS_fsm_state691) | (1'b1 == ap_CS_fsm_state680) | (1'b1 == ap_CS_fsm_state669) | (1'b1 == ap_CS_fsm_state658) | (1'b1 == ap_CS_fsm_state647) | (1'b1 == ap_CS_fsm_state636) | (1'b1 == ap_CS_fsm_state625) | (1'b1 == ap_CS_fsm_state614) | (1'b1 == ap_CS_fsm_state603) | (1'b1 == ap_CS_fsm_state592) | (1'b1 == ap_CS_fsm_state581) | (1'b1 == ap_CS_fsm_state570) | (1'b1 == ap_CS_fsm_state559) | (1'b1 == ap_CS_fsm_state548) | (1'b1 == ap_CS_fsm_state537) | (1'b1 == ap_CS_fsm_state526) | (1'b1 == ap_CS_fsm_state515) | (1'b1 == ap_CS_fsm_state504) | (1'b1 == ap_CS_fsm_state493) | (1'b1 == ap_CS_fsm_state482) | (1'b1 == ap_CS_fsm_state471) | (1'b1 == ap_CS_fsm_state460) | (1'b1 == ap_CS_fsm_state449) | (1'b1 == ap_CS_fsm_state438) | (1'b1 == ap_CS_fsm_state427) | (1'b1 == ap_CS_fsm_state416) | (1'b1 == ap_CS_fsm_state405) | (1'b1 == ap_CS_fsm_state388) | (1'b1 == ap_CS_fsm_state377) | (1'b1 
     == ap_CS_fsm_state366) | (1'b1 == ap_CS_fsm_state355) | (1'b1 == ap_CS_fsm_state344) | (1'b1 == ap_CS_fsm_state333) | (1'b1 == ap_CS_fsm_state322) | (1'b1 == ap_CS_fsm_state311) | (1'b1 == ap_CS_fsm_state290) | (1'b1 == ap_CS_fsm_state279) | (1'b1 == ap_CS_fsm_state268) | (1'b1 == ap_CS_fsm_state257) | (1'b1 == ap_CS_fsm_state246) | (1'b1 == ap_CS_fsm_state235) | (1'b1 == ap_CS_fsm_state224) | (1'b1 == ap_CS_fsm_state213) | (1'b1 == ap_CS_fsm_state192) | (1'b1 == ap_CS_fsm_state181) | (1'b1 == ap_CS_fsm_state170) | (1'b1 == ap_CS_fsm_state159) | (1'b1 == ap_CS_fsm_state148) | (1'b1 == ap_CS_fsm_state137) | (1'b1 == ap_CS_fsm_state126) | (1'b1 == ap_CS_fsm_state115) | (1'b1 == ap_CS_fsm_state94) | (1'b1 == ap_CS_fsm_state83) | (1'b1 == ap_CS_fsm_state72) | (1'b1 == ap_CS_fsm_state61) | (1'b1 == ap_CS_fsm_state50) | (1'b1 == ap_CS_fsm_state39) | (1'b1 == ap_CS_fsm_state28) | (1'b1 == ap_CS_fsm_state17))) begin
-        reg_1448 <= grp_fu_832_p_dout0;
+        reg_1360 <= grp_fu_536_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_CS_fsm_state388) | (1'b1 == ap_CS_fsm_state290) | (1'b1 == ap_CS_fsm_state192) | (1'b1 == ap_CS_fsm_state94))) begin
-        reg_1489 <= grp_fp16_to_fp32_fu_828_p_dout0;
+        reg_1401 <= grp_fp16_to_fp32_fu_532_p_dout0;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        tmp_2_reg_2925 <= add_ln55_fu_1528_p2[32'd3];
-        trunc_ln55_2_reg_2840 <= {{add_ln55_fu_1528_p2[7:4]}};
+        tmp_2_reg_2852 <= add_ln54_fu_1440_p2[32'd3];
+        trunc_ln54_2_reg_2767 <= {{add_ln54_fu_1440_p2[7:4]}};
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state101)) begin
-        tmp_3_reg_3030 <= add_ln55_1_fu_1733_p2[32'd3];
-        tmp_4_reg_3035 <= add_ln55_1_fu_1733_p2[32'd1];
-        trunc_ln55_s_reg_2945 <= {{add_ln55_1_fu_1733_p2[7:4]}};
+        tmp_3_reg_2973 <= add_ln54_1_fu_1664_p2[32'd3];
+        tmp_4_reg_2978 <= add_ln54_1_fu_1664_p2[32'd1];
+        trunc_ln54_s_reg_2888 <= {{add_ln54_1_fu_1664_p2[7:4]}};
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
-        tmp_53_reg_2935 <= tmp_53_fu_1678_p3;
-        tmp_s_reg_2930 <= tmp_s_fu_1663_p3;
+        tmp_53_reg_2878 <= tmp_53_fu_1609_p3;
+        tmp_75_reg_2865[9 : 8] <= tmp_75_fu_1506_p3[9 : 8];
+        tmp_s_reg_2873 <= tmp_s_fu_1594_p3;
+        trunc_ln465_reg_2857 <= trunc_ln465_fu_1493_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state201)) begin
-        tmp_5_reg_3145 <= b_fu_254[32'd2];
-        tmp_72_reg_3150 <= tmp_72_fu_2096_p3;
-        tmp_73_reg_3155 <= tmp_73_fu_2111_p3;
+        tmp_5_reg_3088 <= b_fu_210[32'd2];
+        tmp_70_reg_3093 <= tmp_70_fu_2027_p3;
+        tmp_71_reg_3098 <= tmp_71_fu_2042_p3;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state103)) begin
-        tmp_62_reg_3040 <= tmp_62_fu_1882_p3;
-        tmp_63_reg_3045 <= tmp_63_fu_1900_p3;
+        tmp_61_reg_2983 <= tmp_61_fu_1813_p3;
+        tmp_62_reg_2988 <= tmp_62_fu_1831_p3;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state199)) begin
-        tmp_78_reg_3140 <= {{add_ln55_2_fu_1955_p2[3:2]}};
-        trunc_ln55_8_reg_3055 <= {{add_ln55_2_fu_1955_p2[7:4]}};
+        tmp_77_reg_3083 <= {{add_ln54_2_fu_1886_p2[3:2]}};
+        trunc_ln54_8_reg_2998 <= {{add_ln54_2_fu_1886_p2[7:4]}};
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state299)) begin
-        tmp_80_reg_3255 <= tmp_80_fu_2293_p3;
-        tmp_81_reg_3260 <= tmp_81_fu_2308_p3;
+        tmp_79_reg_3198 <= tmp_79_fu_2224_p3;
+        tmp_80_reg_3203 <= tmp_80_fu_2239_p3;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        trunc_ln55_11_reg_3250 <= trunc_ln55_11_fu_2211_p1;
-        trunc_ln55_5_reg_3165 <= {{add_ln55_3_fu_2166_p2[7:4]}};
+        trunc_ln54_5_reg_3108 <= {{add_ln54_3_fu_2097_p2[7:4]}};
+        trunc_ln54_reg_3193 <= trunc_ln54_fu_2142_p1;
     end
 end
 
@@ -5394,7 +5140,7 @@ assign ap_ST_fsm_state100_blk = 1'b0;
 assign ap_ST_fsm_state101_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_done == 1'b0)) begin
+    if ((grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_done == 1'b0)) begin
         ap_ST_fsm_state102_blk = 1'b1;
     end else begin
         ap_ST_fsm_state102_blk = 1'b0;
@@ -5404,7 +5150,7 @@ end
 assign ap_ST_fsm_state103_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_done == 1'b0)) begin
+    if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_done == 1'b0)) begin
         ap_ST_fsm_state104_blk = 1'b1;
     end else begin
         ap_ST_fsm_state104_blk = 1'b0;
@@ -5630,7 +5376,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_done == 1'b0)) begin
+    if ((grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_done == 1'b0)) begin
         ap_ST_fsm_state200_blk = 1'b1;
     end else begin
         ap_ST_fsm_state200_blk = 1'b0;
@@ -5640,7 +5386,7 @@ end
 assign ap_ST_fsm_state201_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_done == 1'b0)) begin
+    if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_done == 1'b0)) begin
         ap_ST_fsm_state202_blk = 1'b1;
     end else begin
         ap_ST_fsm_state202_blk = 1'b0;
@@ -5856,7 +5602,7 @@ assign ap_ST_fsm_state296_blk = 1'b0;
 assign ap_ST_fsm_state297_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_done == 1'b0)) begin
+    if ((grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_done == 1'b0)) begin
         ap_ST_fsm_state298_blk = 1'b1;
     end else begin
         ap_ST_fsm_state298_blk = 1'b0;
@@ -5870,7 +5616,7 @@ assign ap_ST_fsm_state29_blk = 1'b0;
 assign ap_ST_fsm_state2_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_done == 1'b0)) begin
+    if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_done == 1'b0)) begin
         ap_ST_fsm_state300_blk = 1'b1;
     end else begin
         ap_ST_fsm_state300_blk = 1'b0;
@@ -6096,7 +5842,7 @@ assign ap_ST_fsm_state399_blk = 1'b0;
 assign ap_ST_fsm_state39_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b0)) begin
+    if ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b0)) begin
         ap_ST_fsm_state3_blk = 1'b1;
     end else begin
         ap_ST_fsm_state3_blk = 1'b0;
@@ -6768,7 +6514,7 @@ assign ap_ST_fsm_state699_blk = 1'b0;
 assign ap_ST_fsm_state69_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_done == 1'b0)) begin
+    if ((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_done == 1'b0)) begin
         ap_ST_fsm_state6_blk = 1'b1;
     end else begin
         ap_ST_fsm_state6_blk = 1'b0;
@@ -6961,7 +6707,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state746)) begin
-        ap_return = grp_fu_832_p_dout0;
+        ap_return = grp_fu_536_p_dout0;
     end else begin
         ap_return = ap_return_preg;
     end
@@ -6969,388 +6715,388 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state387) | (1'b1 == ap_CS_fsm_state386) | (1'b1 == ap_CS_fsm_state385) | (1'b1 == ap_CS_fsm_state384) | (1'b1 == ap_CS_fsm_state289) | (1'b1 == ap_CS_fsm_state288) | (1'b1 == ap_CS_fsm_state287) | (1'b1 == ap_CS_fsm_state286) | (1'b1 == ap_CS_fsm_state191) | (1'b1 == ap_CS_fsm_state190) | (1'b1 == ap_CS_fsm_state189) | (1'b1 == ap_CS_fsm_state188) | (1'b1 == ap_CS_fsm_state93) | (1'b1 == ap_CS_fsm_state92) | (1'b1 == ap_CS_fsm_state91) | (1'b1 == ap_CS_fsm_state90) | (1'b1 == ap_CS_fsm_state383) | (1'b1 == ap_CS_fsm_state285) | (1'b1 == ap_CS_fsm_state187) | (1'b1 == ap_CS_fsm_state89) | (1'b1 == ap_CS_fsm_state388) | (1'b1 == ap_CS_fsm_state290) | (1'b1 == ap_CS_fsm_state192) | (1'b1 == ap_CS_fsm_state94))) begin
-        grp_fp16_to_fp32_fu_1091_ap_ce = 1'b1;
+        grp_fp16_to_fp32_fu_1036_ap_ce = 1'b1;
     end else begin
-        grp_fp16_to_fp32_fu_1091_ap_ce = 1'b0;
+        grp_fp16_to_fp32_fu_1036_ap_ce = 1'b0;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state383)) begin
-        grp_fp16_to_fp32_fu_1091_h = or_i_3_fu_2316_p3;
+        grp_fp16_to_fp32_fu_1036_h = or_i_3_fu_2247_p3;
     end else if ((1'b1 == ap_CS_fsm_state285)) begin
-        grp_fp16_to_fp32_fu_1091_h = or_i_2_fu_2119_p3;
+        grp_fp16_to_fp32_fu_1036_h = or_i_2_fu_2050_p3;
     end else if ((1'b1 == ap_CS_fsm_state187)) begin
-        grp_fp16_to_fp32_fu_1091_h = or_i_1_fu_1908_p3;
+        grp_fp16_to_fp32_fu_1036_h = or_i_1_fu_1839_p3;
     end else if ((1'b1 == ap_CS_fsm_state89)) begin
-        grp_fp16_to_fp32_fu_1091_h = or_i_fu_1686_p3;
+        grp_fp16_to_fp32_fu_1036_h = or_i_fu_1617_p3;
     end else begin
-        grp_fp16_to_fp32_fu_1091_h = 'bx;
+        grp_fp16_to_fp32_fu_1036_h = 'bx;
     end
 end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state736) | (1'b1 == ap_CS_fsm_state725) | (1'b1 == ap_CS_fsm_state714) | (1'b1 == ap_CS_fsm_state703) | (1'b1 == ap_CS_fsm_state692) | (1'b1 == ap_CS_fsm_state681) | (1'b1 == ap_CS_fsm_state670) | (1'b1 == ap_CS_fsm_state659) | (1'b1 == ap_CS_fsm_state648) | (1'b1 == ap_CS_fsm_state637) | (1'b1 == ap_CS_fsm_state626) | (1'b1 == ap_CS_fsm_state615) | (1'b1 == ap_CS_fsm_state604) | (1'b1 == ap_CS_fsm_state593) | (1'b1 == ap_CS_fsm_state582) | (1'b1 == ap_CS_fsm_state571) | (1'b1 == ap_CS_fsm_state560) | (1'b1 == ap_CS_fsm_state549) | (1'b1 == ap_CS_fsm_state538) | (1'b1 == ap_CS_fsm_state527) | (1'b1 == ap_CS_fsm_state516) | (1'b1 == ap_CS_fsm_state505) | (1'b1 == ap_CS_fsm_state494) | (1'b1 == ap_CS_fsm_state483) | (1'b1 == ap_CS_fsm_state472) | (1'b1 == ap_CS_fsm_state461) | (1'b1 == ap_CS_fsm_state450) | (1'b1 == ap_CS_fsm_state439) | (1'b1 == ap_CS_fsm_state428) | (1'b1 == ap_CS_fsm_state417) | (1'b1 == ap_CS_fsm_state406) | (1'b1 == ap_CS_fsm_state378) | (1'b1 == ap_CS_fsm_state280) | (1'b1 
     == ap_CS_fsm_state182) | (1'b1 == ap_CS_fsm_state84) | (1'b1 == ap_CS_fsm_state367) | (1'b1 == ap_CS_fsm_state269) | (1'b1 == ap_CS_fsm_state171) | (1'b1 == ap_CS_fsm_state73) | (1'b1 == ap_CS_fsm_state356) | (1'b1 == ap_CS_fsm_state258) | (1'b1 == ap_CS_fsm_state160) | (1'b1 == ap_CS_fsm_state62) | (1'b1 == ap_CS_fsm_state345) | (1'b1 == ap_CS_fsm_state247) | (1'b1 == ap_CS_fsm_state149) | (1'b1 == ap_CS_fsm_state51) | (1'b1 == ap_CS_fsm_state334) | (1'b1 == ap_CS_fsm_state236) | (1'b1 == ap_CS_fsm_state138) | (1'b1 == ap_CS_fsm_state40) | (1'b1 == ap_CS_fsm_state323) | (1'b1 == ap_CS_fsm_state225) | (1'b1 == ap_CS_fsm_state127) | (1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state312) | (1'b1 == ap_CS_fsm_state214) | (1'b1 == ap_CS_fsm_state116) | (1'b1 == ap_CS_fsm_state18))) begin
-        grp_fu_1321_p0 = reg_1448;
+        grp_fu_1233_p0 = reg_1360;
     end else if (((1'b1 == ap_CS_fsm_state301) | (1'b1 == ap_CS_fsm_state203) | (1'b1 == ap_CS_fsm_state105) | (1'b1 == ap_CS_fsm_state7))) begin
-        grp_fu_1321_p0 = acc_fu_386;
+        grp_fu_1233_p0 = acc_fu_342;
     end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        grp_fu_1321_p0 = empty_fu_258;
+        grp_fu_1233_p0 = empty_fu_214;
     end else begin
-        grp_fu_1321_p0 = 'bx;
+        grp_fu_1233_p0 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state736)) begin
-        grp_fu_1321_p1 = empty_123_fu_382;
+        grp_fu_1233_p1 = empty_123_fu_338;
     end else if ((1'b1 == ap_CS_fsm_state725)) begin
-        grp_fu_1321_p1 = empty_122_fu_378;
+        grp_fu_1233_p1 = empty_122_fu_334;
     end else if ((1'b1 == ap_CS_fsm_state714)) begin
-        grp_fu_1321_p1 = empty_121_fu_374;
+        grp_fu_1233_p1 = empty_121_fu_330;
     end else if ((1'b1 == ap_CS_fsm_state703)) begin
-        grp_fu_1321_p1 = empty_120_fu_370;
+        grp_fu_1233_p1 = empty_120_fu_326;
     end else if ((1'b1 == ap_CS_fsm_state692)) begin
-        grp_fu_1321_p1 = empty_119_fu_366;
+        grp_fu_1233_p1 = empty_119_fu_322;
     end else if ((1'b1 == ap_CS_fsm_state681)) begin
-        grp_fu_1321_p1 = empty_118_fu_362;
+        grp_fu_1233_p1 = empty_118_fu_318;
     end else if ((1'b1 == ap_CS_fsm_state670)) begin
-        grp_fu_1321_p1 = empty_117_fu_358;
+        grp_fu_1233_p1 = empty_117_fu_314;
     end else if ((1'b1 == ap_CS_fsm_state659)) begin
-        grp_fu_1321_p1 = empty_116_fu_354;
+        grp_fu_1233_p1 = empty_116_fu_310;
     end else if ((1'b1 == ap_CS_fsm_state648)) begin
-        grp_fu_1321_p1 = empty_115_fu_350;
+        grp_fu_1233_p1 = empty_115_fu_306;
     end else if ((1'b1 == ap_CS_fsm_state637)) begin
-        grp_fu_1321_p1 = empty_114_fu_346;
+        grp_fu_1233_p1 = empty_114_fu_302;
     end else if ((1'b1 == ap_CS_fsm_state626)) begin
-        grp_fu_1321_p1 = empty_113_fu_342;
+        grp_fu_1233_p1 = empty_113_fu_298;
     end else if ((1'b1 == ap_CS_fsm_state615)) begin
-        grp_fu_1321_p1 = empty_112_fu_338;
+        grp_fu_1233_p1 = empty_112_fu_294;
     end else if ((1'b1 == ap_CS_fsm_state604)) begin
-        grp_fu_1321_p1 = empty_111_fu_334;
+        grp_fu_1233_p1 = empty_111_fu_290;
     end else if ((1'b1 == ap_CS_fsm_state593)) begin
-        grp_fu_1321_p1 = empty_110_fu_330;
+        grp_fu_1233_p1 = empty_110_fu_286;
     end else if ((1'b1 == ap_CS_fsm_state582)) begin
-        grp_fu_1321_p1 = empty_109_fu_326;
+        grp_fu_1233_p1 = empty_109_fu_282;
     end else if ((1'b1 == ap_CS_fsm_state571)) begin
-        grp_fu_1321_p1 = empty_108_fu_322;
+        grp_fu_1233_p1 = empty_108_fu_278;
     end else if ((1'b1 == ap_CS_fsm_state560)) begin
-        grp_fu_1321_p1 = empty_107_fu_318;
+        grp_fu_1233_p1 = empty_107_fu_274;
     end else if ((1'b1 == ap_CS_fsm_state549)) begin
-        grp_fu_1321_p1 = empty_106_fu_314;
+        grp_fu_1233_p1 = empty_106_fu_270;
     end else if ((1'b1 == ap_CS_fsm_state538)) begin
-        grp_fu_1321_p1 = empty_105_fu_310;
+        grp_fu_1233_p1 = empty_105_fu_266;
     end else if ((1'b1 == ap_CS_fsm_state527)) begin
-        grp_fu_1321_p1 = empty_104_fu_306;
+        grp_fu_1233_p1 = empty_104_fu_262;
     end else if ((1'b1 == ap_CS_fsm_state516)) begin
-        grp_fu_1321_p1 = empty_103_fu_302;
+        grp_fu_1233_p1 = empty_103_fu_258;
     end else if ((1'b1 == ap_CS_fsm_state505)) begin
-        grp_fu_1321_p1 = empty_102_fu_298;
+        grp_fu_1233_p1 = empty_102_fu_254;
     end else if ((1'b1 == ap_CS_fsm_state494)) begin
-        grp_fu_1321_p1 = empty_101_fu_294;
+        grp_fu_1233_p1 = empty_101_fu_250;
     end else if ((1'b1 == ap_CS_fsm_state483)) begin
-        grp_fu_1321_p1 = empty_100_fu_290;
+        grp_fu_1233_p1 = empty_100_fu_246;
     end else if ((1'b1 == ap_CS_fsm_state472)) begin
-        grp_fu_1321_p1 = empty_99_fu_286;
+        grp_fu_1233_p1 = empty_99_fu_242;
     end else if ((1'b1 == ap_CS_fsm_state461)) begin
-        grp_fu_1321_p1 = empty_98_fu_282;
+        grp_fu_1233_p1 = empty_98_fu_238;
     end else if ((1'b1 == ap_CS_fsm_state450)) begin
-        grp_fu_1321_p1 = empty_97_fu_278;
+        grp_fu_1233_p1 = empty_97_fu_234;
     end else if ((1'b1 == ap_CS_fsm_state439)) begin
-        grp_fu_1321_p1 = empty_96_fu_274;
+        grp_fu_1233_p1 = empty_96_fu_230;
     end else if ((1'b1 == ap_CS_fsm_state428)) begin
-        grp_fu_1321_p1 = empty_95_fu_270;
+        grp_fu_1233_p1 = empty_95_fu_226;
     end else if ((1'b1 == ap_CS_fsm_state417)) begin
-        grp_fu_1321_p1 = empty_94_fu_266;
+        grp_fu_1233_p1 = empty_94_fu_222;
     end else if ((1'b1 == ap_CS_fsm_state406)) begin
-        grp_fu_1321_p1 = empty_93_fu_262;
+        grp_fu_1233_p1 = empty_93_fu_218;
     end else if (((1'b1 == ap_CS_fsm_state378) | (1'b1 == ap_CS_fsm_state280) | (1'b1 == ap_CS_fsm_state182) | (1'b1 == ap_CS_fsm_state84))) begin
-        grp_fu_1321_p1 = acc_7_fu_414;
+        grp_fu_1233_p1 = acc_7_fu_370;
     end else if (((1'b1 == ap_CS_fsm_state367) | (1'b1 == ap_CS_fsm_state269) | (1'b1 == ap_CS_fsm_state171) | (1'b1 == ap_CS_fsm_state73))) begin
-        grp_fu_1321_p1 = acc_6_fu_410;
+        grp_fu_1233_p1 = acc_6_fu_366;
     end else if (((1'b1 == ap_CS_fsm_state356) | (1'b1 == ap_CS_fsm_state258) | (1'b1 == ap_CS_fsm_state160) | (1'b1 == ap_CS_fsm_state62))) begin
-        grp_fu_1321_p1 = acc_5_fu_406;
+        grp_fu_1233_p1 = acc_5_fu_362;
     end else if (((1'b1 == ap_CS_fsm_state345) | (1'b1 == ap_CS_fsm_state247) | (1'b1 == ap_CS_fsm_state149) | (1'b1 == ap_CS_fsm_state51))) begin
-        grp_fu_1321_p1 = acc_4_fu_402;
+        grp_fu_1233_p1 = acc_4_fu_358;
     end else if (((1'b1 == ap_CS_fsm_state334) | (1'b1 == ap_CS_fsm_state236) | (1'b1 == ap_CS_fsm_state138) | (1'b1 == ap_CS_fsm_state40))) begin
-        grp_fu_1321_p1 = acc_3_fu_398;
+        grp_fu_1233_p1 = acc_3_fu_354;
     end else if (((1'b1 == ap_CS_fsm_state323) | (1'b1 == ap_CS_fsm_state225) | (1'b1 == ap_CS_fsm_state127) | (1'b1 == ap_CS_fsm_state29))) begin
-        grp_fu_1321_p1 = acc_2_fu_394;
+        grp_fu_1233_p1 = acc_2_fu_350;
     end else if (((1'b1 == ap_CS_fsm_state312) | (1'b1 == ap_CS_fsm_state214) | (1'b1 == ap_CS_fsm_state116) | (1'b1 == ap_CS_fsm_state18))) begin
-        grp_fu_1321_p1 = acc_1_fu_390;
+        grp_fu_1233_p1 = acc_1_fu_346;
     end else if (((1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state301) | (1'b1 == ap_CS_fsm_state203) | (1'b1 == ap_CS_fsm_state105) | (1'b1 == ap_CS_fsm_state7))) begin
-        grp_fu_1321_p1 = 32'd0;
+        grp_fu_1233_p1 = 32'd0;
     end else begin
-        grp_fu_1321_p1 = 'bx;
+        grp_fu_1233_p1 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_1326_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_1326_p_ce;
+        grp_fu_1238_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_1238_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_1326_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_1326_p_ce;
+        grp_fu_1238_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_1238_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_1326_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_1326_p_ce;
+        grp_fu_1238_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_1238_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_1326_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_1326_p_ce;
+        grp_fu_1238_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_1238_p_ce;
     end else begin
-        grp_fu_1326_ce = 1'b1;
+        grp_fu_1238_ce = 1'b1;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_1326_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_1326_p_din0;
+        grp_fu_1238_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_1238_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_1326_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_1326_p_din0;
+        grp_fu_1238_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_1238_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_1326_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_1326_p_din0;
+        grp_fu_1238_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_1238_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_1326_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_1326_p_din0;
+        grp_fu_1238_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_1238_p_din0;
     end else if (((1'b1 == ap_CS_fsm_state389) | (1'b1 == ap_CS_fsm_state291) | (1'b1 == ap_CS_fsm_state193) | (1'b1 == ap_CS_fsm_state95))) begin
-        grp_fu_1326_p0 = reg_1489;
+        grp_fu_1238_p0 = reg_1401;
     end else begin
-        grp_fu_1326_p0 = 'bx;
+        grp_fu_1238_p0 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_1326_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_1326_p_din1;
+        grp_fu_1238_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_1238_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_1326_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_1326_p_din1;
+        grp_fu_1238_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_1238_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_1326_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_1326_p_din1;
+        grp_fu_1238_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_1238_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_1326_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_1326_p_din1;
+        grp_fu_1238_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_1238_p_din1;
     end else if (((1'b1 == ap_CS_fsm_state389) | (1'b1 == ap_CS_fsm_state291) | (1'b1 == ap_CS_fsm_state193) | (1'b1 == ap_CS_fsm_state95))) begin
-        grp_fu_1326_p1 = reg_1448;
+        grp_fu_1238_p1 = reg_1360;
     end else begin
-        grp_fu_1326_p1 = 'bx;
+        grp_fu_1238_p1 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3363_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3363_p_ce;
+        grp_fu_3306_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3306_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3363_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3363_p_ce;
+        grp_fu_3306_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3306_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3363_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3363_p_ce;
+        grp_fu_3306_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3306_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3363_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3363_p_ce;
+        grp_fu_3306_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3306_p_ce;
     end else begin
-        grp_fu_3363_ce = 1'b1;
+        grp_fu_3306_ce = 1'b1;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3363_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3363_p_din0;
+        grp_fu_3306_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3306_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3363_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3363_p_din0;
+        grp_fu_3306_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3306_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3363_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3363_p_din0;
+        grp_fu_3306_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3306_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3363_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3363_p_din0;
+        grp_fu_3306_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3306_p_din0;
     end else begin
-        grp_fu_3363_p0 = 'bx;
+        grp_fu_3306_p0 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3363_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3363_p_din1;
+        grp_fu_3306_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3306_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3363_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3363_p_din1;
+        grp_fu_3306_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3306_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3363_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3363_p_din1;
+        grp_fu_3306_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3306_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3363_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3363_p_din1;
+        grp_fu_3306_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3306_p_din1;
     end else begin
-        grp_fu_3363_p1 = 'bx;
+        grp_fu_3306_p1 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3367_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3367_p_ce;
+        grp_fu_3310_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3310_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3367_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3367_p_ce;
+        grp_fu_3310_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3310_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3367_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3367_p_ce;
+        grp_fu_3310_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3310_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3367_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3367_p_ce;
+        grp_fu_3310_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3310_p_ce;
     end else begin
-        grp_fu_3367_ce = 1'b1;
+        grp_fu_3310_ce = 1'b1;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3367_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3367_p_din0;
+        grp_fu_3310_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3310_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3367_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3367_p_din0;
+        grp_fu_3310_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3310_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3367_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3367_p_din0;
+        grp_fu_3310_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3310_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3367_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3367_p_din0;
+        grp_fu_3310_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3310_p_din0;
     end else begin
-        grp_fu_3367_p0 = 'bx;
+        grp_fu_3310_p0 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3367_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3367_p_din1;
+        grp_fu_3310_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3310_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3367_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3367_p_din1;
+        grp_fu_3310_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3310_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3367_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3367_p_din1;
+        grp_fu_3310_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3310_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3367_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3367_p_din1;
+        grp_fu_3310_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3310_p_din1;
     end else begin
-        grp_fu_3367_p1 = 'bx;
+        grp_fu_3310_p1 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3371_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3371_p_ce;
+        grp_fu_3314_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3314_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3371_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3371_p_ce;
+        grp_fu_3314_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3314_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3371_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3371_p_ce;
+        grp_fu_3314_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3314_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3371_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3371_p_ce;
+        grp_fu_3314_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3314_p_ce;
     end else begin
-        grp_fu_3371_ce = 1'b1;
+        grp_fu_3314_ce = 1'b1;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3371_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3371_p_din0;
+        grp_fu_3314_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3314_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3371_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3371_p_din0;
+        grp_fu_3314_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3314_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3371_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3371_p_din0;
+        grp_fu_3314_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3314_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3371_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3371_p_din0;
+        grp_fu_3314_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3314_p_din0;
     end else begin
-        grp_fu_3371_p0 = 'bx;
+        grp_fu_3314_p0 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3371_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3371_p_din1;
+        grp_fu_3314_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3314_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3371_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3371_p_din1;
+        grp_fu_3314_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3314_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3371_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3371_p_din1;
+        grp_fu_3314_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3314_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3371_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3371_p_din1;
+        grp_fu_3314_p1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3314_p_din1;
     end else begin
-        grp_fu_3371_p1 = 'bx;
+        grp_fu_3314_p1 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3375_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3375_p_ce;
+        grp_fu_3318_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3318_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3375_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3375_p_ce;
+        grp_fu_3318_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3318_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3375_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3375_p_ce;
+        grp_fu_3318_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3318_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3375_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3375_p_ce;
+        grp_fu_3318_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3318_p_ce;
     end else begin
-        grp_fu_3375_ce = 1'b1;
+        grp_fu_3318_ce = 1'b1;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3375_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3375_p_din0;
+        grp_fu_3318_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3318_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3375_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3375_p_din0;
+        grp_fu_3318_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3318_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3375_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3375_p_din0;
+        grp_fu_3318_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3318_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3375_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3375_p_din0;
+        grp_fu_3318_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3318_p_din0;
     end else begin
-        grp_fu_3375_p0 = 'bx;
+        grp_fu_3318_p0 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3378_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3378_p_ce;
+        grp_fu_3321_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3321_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3378_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3378_p_ce;
+        grp_fu_3321_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3321_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3378_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3378_p_ce;
+        grp_fu_3321_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3321_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3378_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3378_p_ce;
+        grp_fu_3321_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3321_p_ce;
     end else begin
-        grp_fu_3378_ce = 1'b1;
+        grp_fu_3321_ce = 1'b1;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3378_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3378_p_din0;
+        grp_fu_3321_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3321_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3378_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3378_p_din0;
+        grp_fu_3321_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3321_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3378_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3378_p_din0;
+        grp_fu_3321_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3321_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3378_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3378_p_din0;
+        grp_fu_3321_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3321_p_din0;
     end else begin
-        grp_fu_3378_p0 = 'bx;
+        grp_fu_3321_p0 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3381_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3381_p_ce;
+        grp_fu_3324_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3324_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3381_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3381_p_ce;
+        grp_fu_3324_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3324_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3381_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3381_p_ce;
+        grp_fu_3324_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3324_p_ce;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3381_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3381_p_ce;
+        grp_fu_3324_ce = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3324_p_ce;
     end else begin
-        grp_fu_3381_ce = 1'b1;
+        grp_fu_3324_ce = 1'b1;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        grp_fu_3381_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_grp_fu_3381_p_din0;
+        grp_fu_3324_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_grp_fu_3324_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        grp_fu_3381_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_grp_fu_3381_p_din0;
+        grp_fu_3324_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_grp_fu_3324_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        grp_fu_3381_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_grp_fu_3381_p_din0;
+        grp_fu_3324_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_grp_fu_3324_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_3381_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_grp_fu_3381_p_din0;
+        grp_fu_3324_p0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_grp_fu_3324_p_din0;
     end else begin
-        grp_fu_3381_p0 = 'bx;
+        grp_fu_3324_p0 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_0_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_address0;
+        rb_0_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_0_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_address0;
+        rb_0_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_0_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_address0;
+        rb_0_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_0_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_address0;
+        rb_0_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_address0;
     end else begin
         rb_0_address0 = rb_0_address0_local;
     end
@@ -7358,13 +7104,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_0_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_0_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_0_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_0_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_0_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_0_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_0_address0_local = zext_ln55_fu_1553_p1;
+        rb_0_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_0_address0_local = 'bx;
     end
@@ -7372,13 +7118,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_0_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_address1;
+        rb_0_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_0_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_address1;
+        rb_0_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_0_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_address1;
+        rb_0_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_0_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_address1;
+        rb_0_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_address1;
     end else begin
         rb_0_address1 = 'bx;
     end
@@ -7386,13 +7132,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_0_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_address2;
+        rb_0_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_0_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_address2;
+        rb_0_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_0_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_address2;
+        rb_0_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_0_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_address2;
+        rb_0_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_address2;
     end else begin
         rb_0_address2 = 'bx;
     end
@@ -7400,20 +7146,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_0_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_ce0;
+        rb_0_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_0_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_ce0;
+        rb_0_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_0_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_ce0;
+        rb_0_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_0_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_ce0;
+        rb_0_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_ce0;
     end else begin
         rb_0_ce0 = rb_0_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_0_ce0_local = 1'b1;
     end else begin
         rb_0_ce0_local = 1'b0;
@@ -7422,13 +7168,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_0_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_ce1;
+        rb_0_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_0_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_ce1;
+        rb_0_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_0_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_ce1;
+        rb_0_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_0_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_ce1;
+        rb_0_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_ce1;
     end else begin
         rb_0_ce1 = 1'b0;
     end
@@ -7436,13 +7182,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_0_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_0_ce2;
+        rb_0_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_0_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_0_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_0_ce2;
+        rb_0_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_0_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_0_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_0_ce2;
+        rb_0_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_0_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_0_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_0_ce2;
+        rb_0_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_0_ce2;
     end else begin
         rb_0_ce2 = 1'b0;
     end
@@ -7450,13 +7196,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_10_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_address0;
+        rb_10_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_10_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_address0;
+        rb_10_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_10_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_address0;
+        rb_10_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_10_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_address0;
+        rb_10_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_address0;
     end else begin
         rb_10_address0 = rb_10_address0_local;
     end
@@ -7464,13 +7210,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_10_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_10_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_10_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_10_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_10_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_10_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_10_address0_local = zext_ln55_fu_1553_p1;
+        rb_10_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_10_address0_local = 'bx;
     end
@@ -7478,13 +7224,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_10_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_address1;
+        rb_10_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_10_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_address1;
+        rb_10_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_10_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_address1;
+        rb_10_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_10_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_address1;
+        rb_10_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_address1;
     end else begin
         rb_10_address1 = 'bx;
     end
@@ -7492,13 +7238,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_10_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_address2;
+        rb_10_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_10_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_address2;
+        rb_10_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_10_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_address2;
+        rb_10_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_10_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_address2;
+        rb_10_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_address2;
     end else begin
         rb_10_address2 = 'bx;
     end
@@ -7506,20 +7252,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_10_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_ce0;
+        rb_10_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_10_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_ce0;
+        rb_10_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_10_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_ce0;
+        rb_10_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_10_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_ce0;
+        rb_10_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_ce0;
     end else begin
         rb_10_ce0 = rb_10_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_10_ce0_local = 1'b1;
     end else begin
         rb_10_ce0_local = 1'b0;
@@ -7528,13 +7274,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_10_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_ce1;
+        rb_10_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_10_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_ce1;
+        rb_10_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_10_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_ce1;
+        rb_10_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_10_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_ce1;
+        rb_10_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_ce1;
     end else begin
         rb_10_ce1 = 1'b0;
     end
@@ -7542,13 +7288,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_10_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_10_ce2;
+        rb_10_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_10_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_10_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_10_ce2;
+        rb_10_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_10_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_10_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_10_ce2;
+        rb_10_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_10_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_10_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_10_ce2;
+        rb_10_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_10_ce2;
     end else begin
         rb_10_ce2 = 1'b0;
     end
@@ -7556,13 +7302,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_11_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_address0;
+        rb_11_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_11_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_address0;
+        rb_11_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_11_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_address0;
+        rb_11_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_11_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_address0;
+        rb_11_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_address0;
     end else begin
         rb_11_address0 = rb_11_address0_local;
     end
@@ -7570,13 +7316,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_11_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_11_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_11_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_11_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_11_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_11_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_11_address0_local = zext_ln55_fu_1553_p1;
+        rb_11_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_11_address0_local = 'bx;
     end
@@ -7584,13 +7330,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_11_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_address1;
+        rb_11_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_11_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_address1;
+        rb_11_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_11_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_address1;
+        rb_11_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_11_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_address1;
+        rb_11_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_address1;
     end else begin
         rb_11_address1 = 'bx;
     end
@@ -7598,13 +7344,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_11_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_address2;
+        rb_11_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_11_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_address2;
+        rb_11_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_11_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_address2;
+        rb_11_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_11_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_address2;
+        rb_11_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_address2;
     end else begin
         rb_11_address2 = 'bx;
     end
@@ -7612,20 +7358,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_11_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_ce0;
+        rb_11_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_11_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_ce0;
+        rb_11_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_11_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_ce0;
+        rb_11_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_11_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_ce0;
+        rb_11_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_ce0;
     end else begin
         rb_11_ce0 = rb_11_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_11_ce0_local = 1'b1;
     end else begin
         rb_11_ce0_local = 1'b0;
@@ -7634,13 +7380,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_11_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_ce1;
+        rb_11_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_11_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_ce1;
+        rb_11_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_11_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_ce1;
+        rb_11_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_11_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_ce1;
+        rb_11_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_ce1;
     end else begin
         rb_11_ce1 = 1'b0;
     end
@@ -7648,13 +7394,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_11_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_11_ce2;
+        rb_11_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_11_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_11_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_11_ce2;
+        rb_11_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_11_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_11_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_11_ce2;
+        rb_11_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_11_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_11_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_11_ce2;
+        rb_11_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_11_ce2;
     end else begin
         rb_11_ce2 = 1'b0;
     end
@@ -7662,13 +7408,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_12_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_address0;
+        rb_12_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_12_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_address0;
+        rb_12_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_12_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_address0;
+        rb_12_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_12_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_address0;
+        rb_12_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_address0;
     end else begin
         rb_12_address0 = rb_12_address0_local;
     end
@@ -7676,13 +7422,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_12_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_12_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_12_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_12_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_12_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_12_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_12_address0_local = zext_ln55_fu_1553_p1;
+        rb_12_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_12_address0_local = 'bx;
     end
@@ -7690,13 +7436,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_12_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_address1;
+        rb_12_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_12_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_address1;
+        rb_12_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_12_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_address1;
+        rb_12_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_12_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_address1;
+        rb_12_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_address1;
     end else begin
         rb_12_address1 = 'bx;
     end
@@ -7704,13 +7450,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_12_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_address2;
+        rb_12_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_12_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_address2;
+        rb_12_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_12_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_address2;
+        rb_12_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_12_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_address2;
+        rb_12_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_address2;
     end else begin
         rb_12_address2 = 'bx;
     end
@@ -7718,20 +7464,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_12_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_ce0;
+        rb_12_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_12_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_ce0;
+        rb_12_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_12_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_ce0;
+        rb_12_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_12_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_ce0;
+        rb_12_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_ce0;
     end else begin
         rb_12_ce0 = rb_12_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_12_ce0_local = 1'b1;
     end else begin
         rb_12_ce0_local = 1'b0;
@@ -7740,13 +7486,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_12_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_ce1;
+        rb_12_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_12_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_ce1;
+        rb_12_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_12_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_ce1;
+        rb_12_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_12_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_ce1;
+        rb_12_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_ce1;
     end else begin
         rb_12_ce1 = 1'b0;
     end
@@ -7754,13 +7500,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_12_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_12_ce2;
+        rb_12_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_12_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_12_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_12_ce2;
+        rb_12_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_12_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_12_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_12_ce2;
+        rb_12_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_12_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_12_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_12_ce2;
+        rb_12_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_12_ce2;
     end else begin
         rb_12_ce2 = 1'b0;
     end
@@ -7768,13 +7514,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_13_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_address0;
+        rb_13_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_13_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_address0;
+        rb_13_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_13_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_address0;
+        rb_13_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_13_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_address0;
+        rb_13_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_address0;
     end else begin
         rb_13_address0 = rb_13_address0_local;
     end
@@ -7782,13 +7528,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_13_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_13_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_13_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_13_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_13_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_13_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_13_address0_local = zext_ln55_fu_1553_p1;
+        rb_13_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_13_address0_local = 'bx;
     end
@@ -7796,13 +7542,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_13_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_address1;
+        rb_13_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_13_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_address1;
+        rb_13_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_13_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_address1;
+        rb_13_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_13_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_address1;
+        rb_13_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_address1;
     end else begin
         rb_13_address1 = 'bx;
     end
@@ -7810,13 +7556,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_13_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_address2;
+        rb_13_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_13_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_address2;
+        rb_13_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_13_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_address2;
+        rb_13_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_13_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_address2;
+        rb_13_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_address2;
     end else begin
         rb_13_address2 = 'bx;
     end
@@ -7824,20 +7570,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_13_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_ce0;
+        rb_13_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_13_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_ce0;
+        rb_13_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_13_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_ce0;
+        rb_13_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_13_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_ce0;
+        rb_13_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_ce0;
     end else begin
         rb_13_ce0 = rb_13_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_13_ce0_local = 1'b1;
     end else begin
         rb_13_ce0_local = 1'b0;
@@ -7846,13 +7592,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_13_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_ce1;
+        rb_13_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_13_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_ce1;
+        rb_13_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_13_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_ce1;
+        rb_13_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_13_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_ce1;
+        rb_13_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_ce1;
     end else begin
         rb_13_ce1 = 1'b0;
     end
@@ -7860,13 +7606,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_13_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_13_ce2;
+        rb_13_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_13_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_13_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_13_ce2;
+        rb_13_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_13_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_13_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_13_ce2;
+        rb_13_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_13_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_13_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_13_ce2;
+        rb_13_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_13_ce2;
     end else begin
         rb_13_ce2 = 1'b0;
     end
@@ -7874,13 +7620,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_14_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_address0;
+        rb_14_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_14_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_address0;
+        rb_14_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_14_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_address0;
+        rb_14_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_14_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_address0;
+        rb_14_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_address0;
     end else begin
         rb_14_address0 = rb_14_address0_local;
     end
@@ -7888,13 +7634,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_14_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_14_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_14_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_14_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_14_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_14_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_14_address0_local = zext_ln55_fu_1553_p1;
+        rb_14_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_14_address0_local = 'bx;
     end
@@ -7902,13 +7648,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_14_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_address1;
+        rb_14_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_14_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_address1;
+        rb_14_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_14_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_address1;
+        rb_14_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_14_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_address1;
+        rb_14_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_address1;
     end else begin
         rb_14_address1 = 'bx;
     end
@@ -7916,13 +7662,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_14_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_address2;
+        rb_14_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_14_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_address2;
+        rb_14_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_14_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_address2;
+        rb_14_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_14_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_address2;
+        rb_14_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_address2;
     end else begin
         rb_14_address2 = 'bx;
     end
@@ -7930,20 +7676,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_14_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_ce0;
+        rb_14_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_14_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_ce0;
+        rb_14_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_14_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_ce0;
+        rb_14_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_14_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_ce0;
+        rb_14_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_ce0;
     end else begin
         rb_14_ce0 = rb_14_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_14_ce0_local = 1'b1;
     end else begin
         rb_14_ce0_local = 1'b0;
@@ -7952,13 +7698,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_14_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_ce1;
+        rb_14_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_14_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_ce1;
+        rb_14_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_14_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_ce1;
+        rb_14_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_14_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_ce1;
+        rb_14_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_ce1;
     end else begin
         rb_14_ce1 = 1'b0;
     end
@@ -7966,13 +7712,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_14_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_14_ce2;
+        rb_14_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_14_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_14_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_14_ce2;
+        rb_14_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_14_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_14_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_14_ce2;
+        rb_14_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_14_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_14_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_14_ce2;
+        rb_14_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_14_ce2;
     end else begin
         rb_14_ce2 = 1'b0;
     end
@@ -7980,13 +7726,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_15_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_address0;
+        rb_15_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_15_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_address0;
+        rb_15_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_15_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_address0;
+        rb_15_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_15_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_address0;
+        rb_15_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_address0;
     end else begin
         rb_15_address0 = rb_15_address0_local;
     end
@@ -7994,13 +7740,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_15_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_15_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_15_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_15_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_15_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_15_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_15_address0_local = zext_ln55_fu_1553_p1;
+        rb_15_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_15_address0_local = 'bx;
     end
@@ -8008,13 +7754,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_15_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_address1;
+        rb_15_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_15_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_address1;
+        rb_15_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_15_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_address1;
+        rb_15_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_15_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_address1;
+        rb_15_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_address1;
     end else begin
         rb_15_address1 = 'bx;
     end
@@ -8022,13 +7768,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_15_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_address2;
+        rb_15_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_15_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_address2;
+        rb_15_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_15_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_address2;
+        rb_15_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_15_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_address2;
+        rb_15_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_address2;
     end else begin
         rb_15_address2 = 'bx;
     end
@@ -8036,20 +7782,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_15_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_ce0;
+        rb_15_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_15_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_ce0;
+        rb_15_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_15_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_ce0;
+        rb_15_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_15_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_ce0;
+        rb_15_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_ce0;
     end else begin
         rb_15_ce0 = rb_15_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_15_ce0_local = 1'b1;
     end else begin
         rb_15_ce0_local = 1'b0;
@@ -8058,13 +7804,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_15_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_ce1;
+        rb_15_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_15_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_ce1;
+        rb_15_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_15_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_ce1;
+        rb_15_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_15_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_ce1;
+        rb_15_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_ce1;
     end else begin
         rb_15_ce1 = 1'b0;
     end
@@ -8072,13 +7818,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_15_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_15_ce2;
+        rb_15_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_15_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_15_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_15_ce2;
+        rb_15_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_15_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_15_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_15_ce2;
+        rb_15_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_15_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_15_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_15_ce2;
+        rb_15_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_15_ce2;
     end else begin
         rb_15_ce2 = 1'b0;
     end
@@ -8086,13 +7832,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_1_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_address0;
+        rb_1_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_1_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_address0;
+        rb_1_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_1_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_address0;
+        rb_1_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_1_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_address0;
+        rb_1_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_address0;
     end else begin
         rb_1_address0 = rb_1_address0_local;
     end
@@ -8100,13 +7846,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_1_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_1_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_1_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_1_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_1_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_1_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_1_address0_local = zext_ln55_fu_1553_p1;
+        rb_1_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_1_address0_local = 'bx;
     end
@@ -8114,13 +7860,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_1_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_address1;
+        rb_1_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_1_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_address1;
+        rb_1_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_1_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_address1;
+        rb_1_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_1_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_address1;
+        rb_1_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_address1;
     end else begin
         rb_1_address1 = 'bx;
     end
@@ -8128,13 +7874,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_1_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_address2;
+        rb_1_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_1_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_address2;
+        rb_1_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_1_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_address2;
+        rb_1_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_1_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_address2;
+        rb_1_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_address2;
     end else begin
         rb_1_address2 = 'bx;
     end
@@ -8142,20 +7888,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_1_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_ce0;
+        rb_1_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_1_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_ce0;
+        rb_1_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_1_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_ce0;
+        rb_1_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_1_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_ce0;
+        rb_1_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_ce0;
     end else begin
         rb_1_ce0 = rb_1_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_1_ce0_local = 1'b1;
     end else begin
         rb_1_ce0_local = 1'b0;
@@ -8164,13 +7910,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_1_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_ce1;
+        rb_1_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_1_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_ce1;
+        rb_1_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_1_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_ce1;
+        rb_1_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_1_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_ce1;
+        rb_1_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_ce1;
     end else begin
         rb_1_ce1 = 1'b0;
     end
@@ -8178,13 +7924,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_1_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_1_ce2;
+        rb_1_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_1_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_1_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_1_ce2;
+        rb_1_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_1_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_1_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_1_ce2;
+        rb_1_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_1_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_1_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_1_ce2;
+        rb_1_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_1_ce2;
     end else begin
         rb_1_ce2 = 1'b0;
     end
@@ -8192,13 +7938,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_2_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_address0;
+        rb_2_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_2_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_address0;
+        rb_2_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_2_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_address0;
+        rb_2_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_2_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_address0;
+        rb_2_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_address0;
     end else begin
         rb_2_address0 = rb_2_address0_local;
     end
@@ -8206,13 +7952,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_2_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_2_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_2_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_2_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_2_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_2_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_2_address0_local = zext_ln55_fu_1553_p1;
+        rb_2_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_2_address0_local = 'bx;
     end
@@ -8220,13 +7966,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_2_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_address1;
+        rb_2_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_2_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_address1;
+        rb_2_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_2_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_address1;
+        rb_2_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_2_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_address1;
+        rb_2_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_address1;
     end else begin
         rb_2_address1 = 'bx;
     end
@@ -8234,13 +7980,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_2_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_address2;
+        rb_2_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_2_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_address2;
+        rb_2_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_2_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_address2;
+        rb_2_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_2_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_address2;
+        rb_2_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_address2;
     end else begin
         rb_2_address2 = 'bx;
     end
@@ -8248,20 +7994,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_2_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_ce0;
+        rb_2_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_2_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_ce0;
+        rb_2_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_2_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_ce0;
+        rb_2_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_2_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_ce0;
+        rb_2_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_ce0;
     end else begin
         rb_2_ce0 = rb_2_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_2_ce0_local = 1'b1;
     end else begin
         rb_2_ce0_local = 1'b0;
@@ -8270,13 +8016,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_2_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_ce1;
+        rb_2_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_2_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_ce1;
+        rb_2_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_2_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_ce1;
+        rb_2_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_2_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_ce1;
+        rb_2_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_ce1;
     end else begin
         rb_2_ce1 = 1'b0;
     end
@@ -8284,13 +8030,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_2_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_2_ce2;
+        rb_2_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_2_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_2_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_2_ce2;
+        rb_2_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_2_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_2_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_2_ce2;
+        rb_2_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_2_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_2_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_2_ce2;
+        rb_2_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_2_ce2;
     end else begin
         rb_2_ce2 = 1'b0;
     end
@@ -8298,13 +8044,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_3_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_address0;
+        rb_3_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_3_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_address0;
+        rb_3_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_3_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_address0;
+        rb_3_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_3_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_address0;
+        rb_3_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_address0;
     end else begin
         rb_3_address0 = rb_3_address0_local;
     end
@@ -8312,13 +8058,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_3_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_3_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_3_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_3_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_3_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_3_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_3_address0_local = zext_ln55_fu_1553_p1;
+        rb_3_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_3_address0_local = 'bx;
     end
@@ -8326,13 +8072,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_3_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_address1;
+        rb_3_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_3_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_address1;
+        rb_3_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_3_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_address1;
+        rb_3_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_3_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_address1;
+        rb_3_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_address1;
     end else begin
         rb_3_address1 = 'bx;
     end
@@ -8340,13 +8086,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_3_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_address2;
+        rb_3_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_3_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_address2;
+        rb_3_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_3_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_address2;
+        rb_3_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_3_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_address2;
+        rb_3_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_address2;
     end else begin
         rb_3_address2 = 'bx;
     end
@@ -8354,20 +8100,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_3_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_ce0;
+        rb_3_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_3_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_ce0;
+        rb_3_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_3_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_ce0;
+        rb_3_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_3_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_ce0;
+        rb_3_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_ce0;
     end else begin
         rb_3_ce0 = rb_3_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_3_ce0_local = 1'b1;
     end else begin
         rb_3_ce0_local = 1'b0;
@@ -8376,13 +8122,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_3_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_ce1;
+        rb_3_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_3_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_ce1;
+        rb_3_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_3_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_ce1;
+        rb_3_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_3_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_ce1;
+        rb_3_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_ce1;
     end else begin
         rb_3_ce1 = 1'b0;
     end
@@ -8390,13 +8136,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_3_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_3_ce2;
+        rb_3_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_3_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_3_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_3_ce2;
+        rb_3_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_3_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_3_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_3_ce2;
+        rb_3_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_3_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_3_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_3_ce2;
+        rb_3_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_3_ce2;
     end else begin
         rb_3_ce2 = 1'b0;
     end
@@ -8404,13 +8150,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_4_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_address0;
+        rb_4_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_4_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_address0;
+        rb_4_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_4_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_address0;
+        rb_4_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_4_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_address0;
+        rb_4_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_address0;
     end else begin
         rb_4_address0 = rb_4_address0_local;
     end
@@ -8418,13 +8164,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_4_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_4_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_4_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_4_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_4_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_4_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_4_address0_local = zext_ln55_fu_1553_p1;
+        rb_4_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_4_address0_local = 'bx;
     end
@@ -8432,13 +8178,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_4_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_address1;
+        rb_4_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_4_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_address1;
+        rb_4_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_4_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_address1;
+        rb_4_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_4_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_address1;
+        rb_4_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_address1;
     end else begin
         rb_4_address1 = 'bx;
     end
@@ -8446,13 +8192,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_4_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_address2;
+        rb_4_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_4_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_address2;
+        rb_4_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_4_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_address2;
+        rb_4_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_4_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_address2;
+        rb_4_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_address2;
     end else begin
         rb_4_address2 = 'bx;
     end
@@ -8460,20 +8206,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_4_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_ce0;
+        rb_4_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_4_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_ce0;
+        rb_4_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_4_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_ce0;
+        rb_4_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_4_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_ce0;
+        rb_4_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_ce0;
     end else begin
         rb_4_ce0 = rb_4_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_4_ce0_local = 1'b1;
     end else begin
         rb_4_ce0_local = 1'b0;
@@ -8482,13 +8228,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_4_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_ce1;
+        rb_4_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_4_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_ce1;
+        rb_4_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_4_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_ce1;
+        rb_4_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_4_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_ce1;
+        rb_4_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_ce1;
     end else begin
         rb_4_ce1 = 1'b0;
     end
@@ -8496,13 +8242,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_4_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_4_ce2;
+        rb_4_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_4_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_4_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_4_ce2;
+        rb_4_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_4_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_4_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_4_ce2;
+        rb_4_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_4_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_4_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_4_ce2;
+        rb_4_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_4_ce2;
     end else begin
         rb_4_ce2 = 1'b0;
     end
@@ -8510,13 +8256,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_5_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_address0;
+        rb_5_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_5_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_address0;
+        rb_5_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_5_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_address0;
+        rb_5_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_5_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_address0;
+        rb_5_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_address0;
     end else begin
         rb_5_address0 = rb_5_address0_local;
     end
@@ -8524,13 +8270,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_5_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_5_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_5_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_5_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_5_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_5_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_5_address0_local = zext_ln55_fu_1553_p1;
+        rb_5_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_5_address0_local = 'bx;
     end
@@ -8538,13 +8284,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_5_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_address1;
+        rb_5_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_5_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_address1;
+        rb_5_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_5_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_address1;
+        rb_5_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_5_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_address1;
+        rb_5_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_address1;
     end else begin
         rb_5_address1 = 'bx;
     end
@@ -8552,13 +8298,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_5_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_address2;
+        rb_5_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_5_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_address2;
+        rb_5_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_5_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_address2;
+        rb_5_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_5_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_address2;
+        rb_5_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_address2;
     end else begin
         rb_5_address2 = 'bx;
     end
@@ -8566,20 +8312,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_5_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_ce0;
+        rb_5_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_5_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_ce0;
+        rb_5_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_5_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_ce0;
+        rb_5_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_5_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_ce0;
+        rb_5_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_ce0;
     end else begin
         rb_5_ce0 = rb_5_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_5_ce0_local = 1'b1;
     end else begin
         rb_5_ce0_local = 1'b0;
@@ -8588,13 +8334,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_5_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_ce1;
+        rb_5_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_5_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_ce1;
+        rb_5_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_5_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_ce1;
+        rb_5_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_5_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_ce1;
+        rb_5_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_ce1;
     end else begin
         rb_5_ce1 = 1'b0;
     end
@@ -8602,13 +8348,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_5_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_5_ce2;
+        rb_5_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_5_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_5_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_5_ce2;
+        rb_5_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_5_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_5_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_5_ce2;
+        rb_5_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_5_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_5_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_5_ce2;
+        rb_5_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_5_ce2;
     end else begin
         rb_5_ce2 = 1'b0;
     end
@@ -8616,13 +8362,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_6_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_address0;
+        rb_6_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_6_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_address0;
+        rb_6_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_6_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_address0;
+        rb_6_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_6_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_address0;
+        rb_6_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_address0;
     end else begin
         rb_6_address0 = rb_6_address0_local;
     end
@@ -8630,13 +8376,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_6_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_6_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_6_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_6_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_6_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_6_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_6_address0_local = zext_ln55_fu_1553_p1;
+        rb_6_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_6_address0_local = 'bx;
     end
@@ -8644,13 +8390,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_6_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_address1;
+        rb_6_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_6_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_address1;
+        rb_6_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_6_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_address1;
+        rb_6_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_6_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_address1;
+        rb_6_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_address1;
     end else begin
         rb_6_address1 = 'bx;
     end
@@ -8658,13 +8404,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_6_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_address2;
+        rb_6_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_6_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_address2;
+        rb_6_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_6_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_address2;
+        rb_6_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_6_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_address2;
+        rb_6_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_address2;
     end else begin
         rb_6_address2 = 'bx;
     end
@@ -8672,20 +8418,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_6_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_ce0;
+        rb_6_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_6_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_ce0;
+        rb_6_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_6_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_ce0;
+        rb_6_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_6_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_ce0;
+        rb_6_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_ce0;
     end else begin
         rb_6_ce0 = rb_6_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_6_ce0_local = 1'b1;
     end else begin
         rb_6_ce0_local = 1'b0;
@@ -8694,13 +8440,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_6_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_ce1;
+        rb_6_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_6_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_ce1;
+        rb_6_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_6_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_ce1;
+        rb_6_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_6_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_ce1;
+        rb_6_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_ce1;
     end else begin
         rb_6_ce1 = 1'b0;
     end
@@ -8708,13 +8454,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_6_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_6_ce2;
+        rb_6_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_6_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_6_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_6_ce2;
+        rb_6_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_6_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_6_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_6_ce2;
+        rb_6_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_6_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_6_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_6_ce2;
+        rb_6_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_6_ce2;
     end else begin
         rb_6_ce2 = 1'b0;
     end
@@ -8722,13 +8468,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_7_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_address0;
+        rb_7_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_7_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_address0;
+        rb_7_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_7_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_address0;
+        rb_7_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_7_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_address0;
+        rb_7_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_address0;
     end else begin
         rb_7_address0 = rb_7_address0_local;
     end
@@ -8736,13 +8482,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_7_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_7_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_7_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_7_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_7_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_7_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_7_address0_local = zext_ln55_fu_1553_p1;
+        rb_7_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_7_address0_local = 'bx;
     end
@@ -8750,13 +8496,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_7_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_address1;
+        rb_7_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_7_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_address1;
+        rb_7_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_7_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_address1;
+        rb_7_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_7_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_address1;
+        rb_7_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_address1;
     end else begin
         rb_7_address1 = 'bx;
     end
@@ -8764,13 +8510,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_7_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_address2;
+        rb_7_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_7_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_address2;
+        rb_7_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_7_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_address2;
+        rb_7_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_7_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_address2;
+        rb_7_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_address2;
     end else begin
         rb_7_address2 = 'bx;
     end
@@ -8778,20 +8524,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_7_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_ce0;
+        rb_7_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_7_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_ce0;
+        rb_7_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_7_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_ce0;
+        rb_7_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_7_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_ce0;
+        rb_7_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_ce0;
     end else begin
         rb_7_ce0 = rb_7_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_7_ce0_local = 1'b1;
     end else begin
         rb_7_ce0_local = 1'b0;
@@ -8800,13 +8546,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_7_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_ce1;
+        rb_7_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_7_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_ce1;
+        rb_7_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_7_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_ce1;
+        rb_7_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_7_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_ce1;
+        rb_7_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_ce1;
     end else begin
         rb_7_ce1 = 1'b0;
     end
@@ -8814,13 +8560,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_7_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_7_ce2;
+        rb_7_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_7_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_7_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_7_ce2;
+        rb_7_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_7_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_7_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_7_ce2;
+        rb_7_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_7_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_7_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_7_ce2;
+        rb_7_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_7_ce2;
     end else begin
         rb_7_ce2 = 1'b0;
     end
@@ -8828,13 +8574,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_8_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_address0;
+        rb_8_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_8_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_address0;
+        rb_8_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_8_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_address0;
+        rb_8_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_8_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_address0;
+        rb_8_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_address0;
     end else begin
         rb_8_address0 = rb_8_address0_local;
     end
@@ -8842,13 +8588,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_8_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_8_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_8_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_8_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_8_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_8_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_8_address0_local = zext_ln55_fu_1553_p1;
+        rb_8_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_8_address0_local = 'bx;
     end
@@ -8856,13 +8602,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_8_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_address1;
+        rb_8_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_8_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_address1;
+        rb_8_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_8_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_address1;
+        rb_8_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_8_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_address1;
+        rb_8_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_address1;
     end else begin
         rb_8_address1 = 'bx;
     end
@@ -8870,13 +8616,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_8_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_address2;
+        rb_8_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_8_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_address2;
+        rb_8_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_8_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_address2;
+        rb_8_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_8_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_address2;
+        rb_8_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_address2;
     end else begin
         rb_8_address2 = 'bx;
     end
@@ -8884,20 +8630,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_8_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_ce0;
+        rb_8_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_8_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_ce0;
+        rb_8_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_8_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_ce0;
+        rb_8_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_8_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_ce0;
+        rb_8_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_ce0;
     end else begin
         rb_8_ce0 = rb_8_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_8_ce0_local = 1'b1;
     end else begin
         rb_8_ce0_local = 1'b0;
@@ -8906,13 +8652,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_8_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_ce1;
+        rb_8_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_8_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_ce1;
+        rb_8_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_8_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_ce1;
+        rb_8_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_8_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_ce1;
+        rb_8_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_ce1;
     end else begin
         rb_8_ce1 = 1'b0;
     end
@@ -8920,13 +8666,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_8_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_8_ce2;
+        rb_8_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_8_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_8_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_8_ce2;
+        rb_8_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_8_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_8_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_8_ce2;
+        rb_8_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_8_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_8_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_8_ce2;
+        rb_8_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_8_ce2;
     end else begin
         rb_8_ce2 = 1'b0;
     end
@@ -8934,13 +8680,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_9_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_address0;
+        rb_9_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_address0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_9_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_address0;
+        rb_9_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_address0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_9_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_address0;
+        rb_9_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_address0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_9_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_address0;
+        rb_9_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_address0;
     end else begin
         rb_9_address0 = rb_9_address0_local;
     end
@@ -8948,13 +8694,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state297)) begin
-        rb_9_address0_local = zext_ln55_12_fu_2191_p1;
+        rb_9_address0_local = zext_ln54_12_fu_2122_p1;
     end else if ((1'b1 == ap_CS_fsm_state199)) begin
-        rb_9_address0_local = zext_ln55_8_fu_1980_p1;
+        rb_9_address0_local = zext_ln54_8_fu_1911_p1;
     end else if ((1'b1 == ap_CS_fsm_state101)) begin
-        rb_9_address0_local = zext_ln55_4_fu_1758_p1;
+        rb_9_address0_local = zext_ln54_4_fu_1689_p1;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        rb_9_address0_local = zext_ln55_fu_1553_p1;
+        rb_9_address0_local = zext_ln54_fu_1465_p1;
     end else begin
         rb_9_address0_local = 'bx;
     end
@@ -8962,13 +8708,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_9_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_address1;
+        rb_9_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_address1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_9_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_address1;
+        rb_9_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_address1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_9_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_address1;
+        rb_9_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_address1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_9_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_address1;
+        rb_9_address1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_address1;
     end else begin
         rb_9_address1 = 'bx;
     end
@@ -8976,13 +8722,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_9_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_address2;
+        rb_9_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_address2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_9_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_address2;
+        rb_9_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_address2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_9_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_address2;
+        rb_9_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_address2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_9_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_address2;
+        rb_9_address2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_address2;
     end else begin
         rb_9_address2 = 'bx;
     end
@@ -8990,20 +8736,20 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_9_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_ce0;
+        rb_9_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_ce0;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_9_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_ce0;
+        rb_9_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_ce0;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_9_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_ce0;
+        rb_9_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_ce0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_9_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_ce0;
+        rb_9_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_ce0;
     end else begin
         rb_9_ce0 = rb_9_ce0_local;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if (((1'b1 == ap_CS_fsm_state297) | (1'b1 == ap_CS_fsm_state199) | (1'b1 == ap_CS_fsm_state101) | ((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3)))) begin
         rb_9_ce0_local = 1'b1;
     end else begin
         rb_9_ce0_local = 1'b0;
@@ -9012,13 +8758,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_9_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_ce1;
+        rb_9_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_ce1;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_9_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_ce1;
+        rb_9_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_ce1;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_9_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_ce1;
+        rb_9_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_ce1;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_9_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_ce1;
+        rb_9_ce1 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_ce1;
     end else begin
         rb_9_ce1 = 1'b0;
     end
@@ -9026,13 +8772,13 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state300)) begin
-        rb_9_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_rb_9_ce2;
+        rb_9_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_rb_9_ce2;
     end else if ((1'b1 == ap_CS_fsm_state202)) begin
-        rb_9_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_rb_9_ce2;
+        rb_9_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_rb_9_ce2;
     end else if ((1'b1 == ap_CS_fsm_state104)) begin
-        rb_9_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_rb_9_ce2;
+        rb_9_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_rb_9_ce2;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        rb_9_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_rb_9_ce2;
+        rb_9_ce2 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_rb_9_ce2;
     end else begin
         rb_9_ce2 = 1'b0;
     end
@@ -9048,14 +8794,14 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((tmp_1_fu_1502_p3 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+            if (((tmp_1_fu_1414_p3 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_state396;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
             end
         end
         ap_ST_fsm_state3 : begin
-            if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+            if (((grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
                 ap_NS_fsm = ap_ST_fsm_state4;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
@@ -9068,7 +8814,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state6;
         end
         ap_ST_fsm_state6 : begin
-            if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+            if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
                 ap_NS_fsm = ap_ST_fsm_state7;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state6;
@@ -9360,7 +9106,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state102;
         end
         ap_ST_fsm_state102 : begin
-            if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
+            if (((grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state102))) begin
                 ap_NS_fsm = ap_ST_fsm_state103;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state102;
@@ -9370,7 +9116,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state104;
         end
         ap_ST_fsm_state104 : begin
-            if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
+            if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state104))) begin
                 ap_NS_fsm = ap_ST_fsm_state105;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state104;
@@ -9662,7 +9408,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state200;
         end
         ap_ST_fsm_state200 : begin
-            if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
+            if (((grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state200))) begin
                 ap_NS_fsm = ap_ST_fsm_state201;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state200;
@@ -9672,7 +9418,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state202;
         end
         ap_ST_fsm_state202 : begin
-            if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
+            if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state202))) begin
                 ap_NS_fsm = ap_ST_fsm_state203;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state202;
@@ -9964,7 +9710,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state298;
         end
         ap_ST_fsm_state298 : begin
-            if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
+            if (((grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state298))) begin
                 ap_NS_fsm = ap_ST_fsm_state299;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state298;
@@ -9974,7 +9720,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state300;
         end
         ap_ST_fsm_state300 : begin
-            if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
+            if (((grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state300))) begin
                 ap_NS_fsm = ap_ST_fsm_state301;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state300;
@@ -11324,15 +11070,15 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln468_fu_2363_p2 = (b_fu_254 + 6'd4);
+assign add_ln465_fu_2294_p2 = (b_fu_210 + 6'd4);
 
-assign add_ln55_1_fu_1733_p2 = (mul_ln55_reg_2823 + 13'd418);
+assign add_ln54_1_fu_1664_p2 = (mul_ln54_reg_2750 + 13'd418);
 
-assign add_ln55_2_fu_1955_p2 = (mul_ln55_reg_2823 + 13'd628);
+assign add_ln54_2_fu_1886_p2 = (mul_ln54_reg_2750 + 13'd628);
 
-assign add_ln55_3_fu_2166_p2 = (mul_ln55_reg_2823 + 13'd838);
+assign add_ln54_3_fu_2097_p2 = (mul_ln54_reg_2750 + 13'd838);
 
-assign add_ln55_fu_1528_p2 = (mul_ln55_reg_2823 + 13'd208);
+assign add_ln54_fu_1440_p2 = (mul_ln54_reg_2750 + 13'd208);
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
@@ -11682,238 +11428,150 @@ assign ap_CS_fsm_state94 = ap_CS_fsm[32'd93];
 
 assign ap_CS_fsm_state95 = ap_CS_fsm[32'd94];
 
-assign gate_0_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_0_address0;
+assign gate_0_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_gate_0_address0;
 
-assign gate_0_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_0_ce0;
+assign gate_0_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_gate_0_ce0;
 
-assign gate_10_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_10_address0;
+assign gate_1_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_gate_1_address0;
 
-assign gate_10_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_10_ce0;
+assign gate_1_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_gate_1_ce0;
 
-assign gate_11_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_11_address0;
+assign gate_2_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_gate_2_address0;
 
-assign gate_11_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_11_ce0;
+assign gate_2_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_gate_2_ce0;
 
-assign gate_12_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_12_address0;
+assign gate_3_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_gate_3_address0;
 
-assign gate_12_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_12_ce0;
+assign gate_3_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_gate_3_ce0;
 
-assign gate_13_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_13_address0;
+assign gate_4_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_gate_4_address0;
 
-assign gate_13_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_13_ce0;
+assign gate_4_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_gate_4_ce0;
 
-assign gate_14_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_14_address0;
+assign gate_5_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_gate_5_address0;
 
-assign gate_14_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_14_ce0;
+assign gate_5_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_gate_5_ce0;
 
-assign gate_15_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_15_address0;
+assign gate_6_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_gate_6_address0;
 
-assign gate_15_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_15_ce0;
+assign gate_6_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_gate_6_ce0;
 
-assign gate_16_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_16_address0;
+assign gate_7_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_gate_7_address0;
 
-assign gate_16_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_16_ce0;
+assign gate_7_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_gate_7_ce0;
 
-assign gate_17_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_17_address0;
+assign grp_fp16_to_fp32_fu_532_p_ce = grp_fp16_to_fp32_fu_1036_ap_ce;
 
-assign gate_17_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_17_ce0;
+assign grp_fp16_to_fp32_fu_532_p_din1 = grp_fp16_to_fp32_fu_1036_h;
 
-assign gate_18_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_18_address0;
+assign grp_fu_536_p_ce = 1'b1;
 
-assign gate_18_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_18_ce0;
+assign grp_fu_536_p_din0 = grp_fu_1233_p0;
 
-assign gate_19_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_19_address0;
+assign grp_fu_536_p_din1 = grp_fu_1233_p1;
 
-assign gate_19_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_19_ce0;
+assign grp_fu_536_p_opcode = 2'd0;
 
-assign gate_1_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_1_address0;
+assign grp_fu_540_p_ce = grp_fu_1238_ce;
 
-assign gate_1_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_1_ce0;
+assign grp_fu_540_p_din0 = grp_fu_1238_p0;
 
-assign gate_20_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_20_address0;
+assign grp_fu_540_p_din1 = grp_fu_1238_p1;
 
-assign gate_20_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_20_ce0;
+assign grp_fu_544_p_ce = grp_fu_3310_ce;
 
-assign gate_21_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_21_address0;
+assign grp_fu_544_p_din0 = grp_fu_3310_p0;
 
-assign gate_21_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_21_ce0;
+assign grp_fu_544_p_din1 = grp_fu_3310_p1;
 
-assign gate_22_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_22_address0;
+assign grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_start = grp_mac_blocks_down_q6k_Pipeline_1_fu_972_ap_start_reg;
 
-assign gate_22_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_22_ce0;
+assign grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_start = grp_mac_blocks_down_q6k_Pipeline_3_fu_1041_ap_start_reg;
 
-assign gate_23_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_23_address0;
+assign grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_start = grp_mac_blocks_down_q6k_Pipeline_5_fu_1105_ap_start_reg;
 
-assign gate_23_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_23_ce0;
+assign grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_start = grp_mac_blocks_down_q6k_Pipeline_7_fu_1169_ap_start_reg;
 
-assign gate_24_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_24_address0;
+assign grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_start = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_1053_ap_start_reg;
 
-assign gate_24_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_24_ce0;
+assign grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_start = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K8_fu_1117_ap_start_reg;
 
-assign gate_25_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_25_address0;
+assign grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_start = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_1181_ap_start_reg;
 
-assign gate_25_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_25_ce0;
+assign grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_start = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_984_ap_start_reg;
 
-assign gate_26_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_26_address0;
+assign lshr_ln54_1_fu_1455_p4 = {{add_ln54_fu_1440_p2[12:8]}};
 
-assign gate_26_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_26_ce0;
+assign lshr_ln54_6_fu_1901_p4 = {{add_ln54_2_fu_1886_p2[12:8]}};
 
-assign gate_27_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_27_address0;
+assign lshr_ln54_9_fu_1679_p4 = {{add_ln54_1_fu_1664_p2[12:8]}};
 
-assign gate_27_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_27_ce0;
+assign lshr_ln54_s_fu_2112_p4 = {{add_ln54_3_fu_2097_p2[12:8]}};
 
-assign gate_28_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_28_address0;
+assign lshr_ln_fu_1497_p4 = {{b_fu_210[4:3]}};
 
-assign gate_28_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_28_ce0;
+assign mul_ln54_fu_1430_p0 = mul_ln54_fu_1430_p00;
 
-assign gate_29_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_29_address0;
+assign mul_ln54_fu_1430_p00 = trunc_ln465_1_fu_1422_p1;
 
-assign gate_29_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_29_ce0;
+assign mul_ln54_fu_1430_p1 = 13'd210;
 
-assign gate_2_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_2_address0;
+assign or_i_1_fu_1839_p3 = {{tmp_61_reg_2983}, {tmp_62_reg_2988}};
 
-assign gate_2_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_2_ce0;
+assign or_i_2_fu_2050_p3 = {{tmp_70_reg_3093}, {tmp_71_reg_3098}};
 
-assign gate_30_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_30_address0;
+assign or_i_3_fu_2247_p3 = {{tmp_79_reg_3198}, {tmp_80_reg_3203}};
 
-assign gate_30_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_30_ce0;
+assign or_i_fu_1617_p3 = {{tmp_s_reg_2873}, {tmp_53_reg_2878}};
 
-assign gate_31_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_31_address0;
+assign tmp_1_fu_1414_p3 = b_fu_210[32'd5];
 
-assign gate_31_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_31_ce0;
+assign tmp_53_fu_1609_p2 = {{tmp_2_reg_2852}, {6'd0}};
 
-assign gate_3_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_3_address0;
+assign tmp_5_fu_2012_p3 = b_fu_210[32'd2];
 
-assign gate_3_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_3_ce0;
+assign tmp_60_fu_1725_p33 = 'bx;
 
-assign gate_4_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_4_address0;
+assign tmp_61_fu_1813_p2 = {{tmp_76_fu_1796_p4}, {5'd24}};
 
-assign gate_4_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_4_ce0;
+assign tmp_62_fu_1831_p2 = {{{{tmp_3_reg_2973}, {1'd0}}, {tmp_4_reg_2978}}, {4'd0}};
 
-assign gate_5_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_5_address0;
+assign tmp_69_fu_1941_p33 = 'bx;
 
-assign gate_5_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_5_ce0;
+assign tmp_70_fu_2027_p2 = {{tmp_5_fu_2012_p3}, {6'd40}};
 
-assign gate_6_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_6_address0;
+assign tmp_71_fu_2042_p2 = {{tmp_77_reg_3083}, {5'd0}};
 
-assign gate_6_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_gate_6_ce0;
+assign tmp_75_fu_1506_p3 = {{lshr_ln_fu_1497_p4}, {8'd0}};
 
-assign gate_7_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_7_address0;
+assign tmp_76_fu_1796_p4 = {{b_fu_210[2:1]}};
 
-assign gate_7_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_gate_7_ce0;
+assign tmp_78_fu_2146_p33 = 'bx;
 
-assign gate_8_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_8_address0;
+assign tmp_79_fu_2224_p2 = {{tmp_5_reg_3088}, {6'd56}};
 
-assign gate_8_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_gate_8_ce0;
+assign tmp_80_fu_2239_p2 = {{trunc_ln54_reg_3193}, {3'd0}};
 
-assign gate_9_address0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_9_address0;
+assign tmp_fu_1523_p33 = 'bx;
 
-assign gate_9_ce0 = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_gate_9_ce0;
+assign tmp_s_fu_1594_p2 = {{trunc_ln465_fu_1493_p1}, {4'd8}};
 
-assign grp_fp16_to_fp32_fu_828_p_ce = grp_fp16_to_fp32_fu_1091_ap_ce;
+assign trunc_ln465_1_fu_1422_p1 = b_fu_210[4:0];
 
-assign grp_fp16_to_fp32_fu_828_p_din1 = grp_fp16_to_fp32_fu_1091_h;
+assign trunc_ln465_fu_1493_p1 = b_fu_210[2:0];
 
-assign grp_fu_832_p_ce = 1'b1;
+assign trunc_ln54_fu_2142_p1 = add_ln54_3_fu_2097_p2[3:0];
 
-assign grp_fu_832_p_din0 = grp_fu_1321_p0;
+assign zext_ln54_12_fu_2122_p1 = lshr_ln54_s_fu_2112_p4;
 
-assign grp_fu_832_p_din1 = grp_fu_1321_p1;
+assign zext_ln54_4_fu_1689_p1 = lshr_ln54_9_fu_1679_p4;
 
-assign grp_fu_832_p_opcode = 2'd0;
+assign zext_ln54_8_fu_1911_p1 = lshr_ln54_6_fu_1901_p4;
 
-assign grp_fu_836_p_ce = grp_fu_1326_ce;
+assign zext_ln54_fu_1465_p1 = lshr_ln54_1_fu_1455_p4;
 
-assign grp_fu_836_p_din0 = grp_fu_1326_p0;
-
-assign grp_fu_836_p_din1 = grp_fu_1326_p1;
-
-assign grp_fu_840_p_ce = grp_fu_3367_ce;
-
-assign grp_fu_840_p_din0 = grp_fu_3367_p0;
-
-assign grp_fu_840_p_din1 = grp_fu_3367_p1;
-
-assign grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_start = grp_mac_blocks_down_q6k_Pipeline_1_fu_1016_ap_start_reg;
-
-assign grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_start = grp_mac_blocks_down_q6k_Pipeline_3_fu_1096_ap_start_reg;
-
-assign grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_start = grp_mac_blocks_down_q6k_Pipeline_5_fu_1171_ap_start_reg;
-
-assign grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_start = grp_mac_blocks_down_q6k_Pipeline_7_fu_1246_ap_start_reg;
-
-assign grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_start = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108_ap_start_reg;
-
-assign grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_start = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183_ap_start_reg;
-
-assign grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_start = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258_ap_start_reg;
-
-assign grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_start = grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028_ap_start_reg;
-
-assign lshr_ln55_1_fu_1543_p4 = {{add_ln55_fu_1528_p2[12:8]}};
-
-assign lshr_ln55_6_fu_1970_p4 = {{add_ln55_2_fu_1955_p2[12:8]}};
-
-assign lshr_ln55_9_fu_1748_p4 = {{add_ln55_1_fu_1733_p2[12:8]}};
-
-assign lshr_ln55_s_fu_2181_p4 = {{add_ln55_3_fu_2166_p2[12:8]}};
-
-assign mul_ln55_fu_1518_p0 = mul_ln55_fu_1518_p00;
-
-assign mul_ln55_fu_1518_p00 = trunc_ln468_fu_1510_p1;
-
-assign mul_ln55_fu_1518_p1 = 13'd210;
-
-assign or_i_1_fu_1908_p3 = {{tmp_62_reg_3040}, {tmp_63_reg_3045}};
-
-assign or_i_2_fu_2119_p3 = {{tmp_72_reg_3150}, {tmp_73_reg_3155}};
-
-assign or_i_3_fu_2316_p3 = {{tmp_80_reg_3255}, {tmp_81_reg_3260}};
-
-assign or_i_fu_1686_p3 = {{tmp_s_reg_2930}, {tmp_53_reg_2935}};
-
-assign tmp_1_fu_1502_p3 = b_fu_254[32'd5];
-
-assign tmp_53_fu_1678_p2 = {{tmp_2_reg_2925}, {6'd0}};
-
-assign tmp_5_fu_2081_p3 = b_fu_254[32'd2];
-
-assign tmp_61_fu_1794_p33 = 'bx;
-
-assign tmp_62_fu_1882_p2 = {{tmp_77_fu_1865_p4}, {5'd24}};
-
-assign tmp_63_fu_1900_p2 = {{{{tmp_3_reg_3030}, {1'd0}}, {tmp_4_reg_3035}}, {4'd0}};
-
-assign tmp_71_fu_2010_p33 = 'bx;
-
-assign tmp_72_fu_2096_p2 = {{tmp_5_fu_2081_p3}, {6'd40}};
-
-assign tmp_73_fu_2111_p2 = {{tmp_78_reg_3140}, {5'd0}};
-
-assign tmp_77_fu_1865_p4 = {{b_fu_254[2:1]}};
-
-assign tmp_79_fu_2215_p33 = 'bx;
-
-assign tmp_80_fu_2293_p2 = {{tmp_5_reg_3145}, {6'd56}};
-
-assign tmp_81_fu_2308_p2 = {{trunc_ln55_11_reg_3250}, {3'd0}};
-
-assign tmp_fu_1581_p33 = 'bx;
-
-assign tmp_s_fu_1663_p2 = {{trunc_ln55_fu_1652_p1}, {4'd8}};
-
-assign trunc_ln468_fu_1510_p1 = b_fu_254[4:0];
-
-assign trunc_ln55_11_fu_2211_p1 = add_ln55_3_fu_2166_p2[3:0];
-
-assign trunc_ln55_fu_1652_p1 = b_fu_254[2:0];
-
-assign zext_ln55_12_fu_2191_p1 = lshr_ln55_s_fu_2181_p4;
-
-assign zext_ln55_4_fu_1758_p1 = lshr_ln55_9_fu_1748_p4;
-
-assign zext_ln55_8_fu_1980_p1 = lshr_ln55_6_fu_1970_p4;
-
-assign zext_ln55_fu_1553_p1 = lshr_ln55_1_fu_1543_p4;
+always @ (posedge ap_clk) begin
+    tmp_75_reg_2865[7:0] <= 8'b00000000;
+end
 
 endmodule //swiglu_mac_blocks_down_q6k

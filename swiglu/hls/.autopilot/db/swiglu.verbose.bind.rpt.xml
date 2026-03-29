@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'swiglu'" level="0">
-<item name = "Date">Sun Mar 29 14:22:36 2026
+<item name = "Date">Sun Mar 29 14:53:26 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,18 +24,18 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">6775222, 32727478, 22.561 ms, 0.109 sec, 4579331, 28131403, dataflow</column>
+<column name="">8397238, 32727478, 27.963 ms, 0.109 sec, 4579331, 28131403, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_x_local_fu_1330">load_x_local, 202, 202, 0.673 us, 0.673 us, 128, 128, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_compute_X1_fu_1850">compute_X1, 4579330, 4579330, 15.249 ms, 15.249 ms, 4579330, 4579330, no</column>
-<column name="grp_compute_X2_fu_1987">compute_X2, 4579330, 4579330, 15.249 ms, 15.249 ms, 4579330, 4579330, no</column>
-<column name="grp_compute_gate_fu_2124">compute_gate, 16541, 16541, 55.082 us, 55.082 us, 16541, 16541, no</column>
-<column name="grp_compute_output_fu_2164">compute_output, 2179146, 28131402, 7.257 ms, 93.678 ms, 2179146, 28131402, no</column>
+<column name="grp_load_x_local_fu_1232">load_x_local, 202, 202, 0.673 us, 0.673 us, 128, 128, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_compute_X1_fu_1752">compute_X1, 4579330, 4579330, 15.249 ms, 15.249 ms, 4579330, 4579330, no</column>
+<column name="grp_compute_X2_fu_1889">compute_X2, 4579330, 4579330, 15.249 ms, 15.249 ms, 4579330, 4579330, no</column>
+<column name="grp_compute_gate_fu_2026">compute_gate, 16541, 16541, 55.082 us, 55.082 us, 16541, 16541, no</column>
+<column name="grp_compute_output_fu_2042">compute_output, 3801162, 28131402, 12.658 ms, 93.678 ms, 3801162, 28131402, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

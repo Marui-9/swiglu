@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'swiglu'" level="0">
-<item name = "Date">Sun Mar 29 14:23:10 2026
+<item name = "Date">Sun Mar 29 14:53:58 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">6775222, 32727478, 22.561 ms, 0.109 sec, 4579331, 28131403, dataflow</column>
+<column name="">8397238, 32727478, 27.963 ms, 0.109 sec, 4579331, 28131403, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 <column name="compute_X1_U0">compute_X1, 4579330, 4579330, 15.249 ms, 15.249 ms, 4579330, 4579330, no</column>
 <column name="compute_X2_U0">compute_X2, 4579330, 4579330, 15.249 ms, 15.249 ms, 4579330, 4579330, no</column>
 <column name="compute_gate_U0">compute_gate, 16541, 16541, 55.082 us, 55.082 us, 16541, 16541, no</column>
-<column name="compute_output_U0">compute_output, 2179146, 28131402, 7.257 ms, 93.678 ms, 2179146, 28131402, no</column>
+<column name="compute_output_U0">compute_output, 3801162, 28131402, 12.658 ms, 93.678 ms, 3801162, 28131402, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -54,12 +54,12 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 40, -</column>
 <column name="FIFO">-, -, 99, 67, -</column>
-<column name="Instance">302, 141, 109409, 92328, 2</column>
-<column name="Memory">320, -, 0, 0, 8</column>
+<column name="Instance">486, 141, 93570, 90799, 2</column>
+<column name="Memory">272, -, 0, 0, 8</column>
 <column name="Multiplexer">-, -, 0, 72, -</column>
 <column name="Register">-, -, 8, -, -</column>
 <specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
-<specialColumn name="Utilization (%)">215, 11, 46, 78, 15</specialColumn>
+<specialColumn name="Utilization (%)">263, 11, 39, 77, 15</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -67,15 +67,15 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="CTRL_s_axi_U">CTRL_s_axi, 0, 0, 462, 808, 0</column>
-<column name="compute_X1_U0">compute_X1, 0, 26, 12840, 13195, 0</column>
-<column name="compute_X2_U0">compute_X2, 0, 26, 12840, 13195, 0</column>
-<column name="compute_gate_U0">compute_gate, 8, 11, 3073, 4708, 2</column>
-<column name="compute_output_U0">compute_output, 260, 78, 75941, 56244, 0</column>
-<column name="gmem_V_m_axi_U">gmem_V_m_axi, 8, 0, 774, 843, 0</column>
-<column name="gmem_W_m_axi_U">gmem_W_m_axi, 8, 0, 774, 843, 0</column>
-<column name="gmem_Wd_m_axi_U">gmem_Wd_m_axi, 8, 0, 774, 843, 0</column>
+<column name="compute_X1_U0">compute_X1, 32, 26, 10831, 13131, 0</column>
+<column name="compute_X2_U0">compute_X2, 32, 26, 10831, 13131, 0</column>
+<column name="compute_gate_U0">compute_gate, 8, 11, 3105, 4730, 2</column>
+<column name="compute_output_U0">compute_output, 292, 78, 64080, 54797, 0</column>
+<column name="gmem_V_m_axi_U">gmem_V_m_axi, 30, 0, 776, 849, 0</column>
+<column name="gmem_W_m_axi_U">gmem_W_m_axi, 30, 0, 776, 849, 0</column>
+<column name="gmem_Wd_m_axi_U">gmem_Wd_m_axi, 30, 0, 776, 849, 0</column>
 <column name="gmem_out_m_axi_U">gmem_out_m_axi, 2, 0, 673, 636, 0</column>
-<column name="gmem_x_m_axi_U">gmem_x_m_axi, 8, 0, 774, 843, 0</column>
+<column name="gmem_x_m_axi_U">gmem_x_m_axi, 30, 0, 776, 849, 0</column>
 <column name="load_x_local_U0">load_x_local, 0, 0, 484, 170, 0</column>
 </table>
 </item>
@@ -87,38 +87,14 @@
 <keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
 <column name="X1_cache_U">X1_cache_RAM_2P_URAM_1R1W, 0, 0, 0, 4, 8192, 32, 1, 262144</column>
 <column name="X2_cache_U">X1_cache_RAM_2P_URAM_1R1W, 0, 0, 0, 4, 8192, 32, 1, 262144</column>
-<column name="gate_cache_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_1_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_2_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_3_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_4_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_5_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_6_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_7_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_8_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_9_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_10_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_11_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_12_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_13_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_14_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_15_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_16_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_17_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_18_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_19_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_20_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_21_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_22_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_23_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_24_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_25_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_26_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_27_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_28_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_29_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_30_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
-<column name="gate_cache_31_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 256, 8, 1, 2048</column>
+<column name="gate_cache_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 1024, 8, 1, 8192</column>
+<column name="gate_cache_1_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 1024, 8, 1, 8192</column>
+<column name="gate_cache_2_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 1024, 8, 1, 8192</column>
+<column name="gate_cache_3_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 1024, 8, 1, 8192</column>
+<column name="gate_cache_4_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 1024, 8, 1, 8192</column>
+<column name="gate_cache_5_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 1024, 8, 1, 8192</column>
+<column name="gate_cache_6_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 1024, 8, 1, 8192</column>
+<column name="gate_cache_7_U">gate_cache_RAM_2P_BRAM_1R1W, 2, 0, 0, 0, 1024, 8, 1, 8192</column>
 <column name="x_local_1_U">x_local_1_RAM_1P_BRAM_1R1W, 1, 0, 0, 0, 16, 8, 1, 128</column>
 <column name="x_local_1_1_U">x_local_1_RAM_1P_BRAM_1R1W, 1, 0, 0, 0, 16, 8, 1, 128</column>
 <column name="x_local_1_2_U">x_local_1_RAM_1P_BRAM_1R1W, 1, 0, 0, 0, 16, 8, 1, 128</column>
@@ -384,7 +360,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="ap_channel_done_gate_cache_31">and, 0, 0, 2, 1, 1</column>
+<column name="ap_channel_done_gate_cache_7">and, 0, 0, 2, 1, 1</column>
 <column name="ap_channel_done_gate_scale">and, 0, 0, 2, 1, 1</column>
 <column name="ap_channel_done_x_local_1_127">and, 0, 0, 2, 1, 1</column>
 <column name="ap_channel_done_x_local_2_127">and, 0, 0, 2, 1, 1</column>
@@ -396,7 +372,7 @@
 <column name="compute_output_U0_ap_start">and, 0, 0, 2, 1, 1</column>
 <column name="load_x_local_U0_ap_continue">and, 0, 0, 2, 1, 1</column>
 <column name="load_x_local_U0_ap_start">and, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_channel_write_gate_cache_31">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_channel_write_gate_cache_7">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_gate_scale">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_x_local_1_127">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_x_local_2_127">or, 0, 0, 2, 1, 1</column>
@@ -408,7 +384,7 @@
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_sync_reg_channel_write_gate_cache_31">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_gate_cache_7">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_gate_scale">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_x_local_1_127">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_x_local_2_127">9, 2, 1, 2</column>
@@ -420,7 +396,7 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_sync_reg_channel_write_gate_cache_31">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_gate_cache_7">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_gate_scale">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_x_local_1_127">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_x_local_2_127">1, 0, 1, 0</column>

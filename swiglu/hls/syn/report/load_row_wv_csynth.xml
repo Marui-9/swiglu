@@ -35,7 +35,7 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:100</SourceLocation>
+<SourceLocation>swiglu.cpp:99</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
@@ -549,7 +549,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>10</Bits>
+<Bits>13</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -652,7 +652,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_0_address1</name>
+<name>rb_0_address0</name>
 <Object>rb_0</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -663,7 +663,7 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_0_ce1</name>
+<name>rb_0_ce0</name>
 <Object>rb_0</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -674,7 +674,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_0_we1</name>
+<name>rb_0_we0</name>
 <Object>rb_0</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -685,7 +685,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_0_d1</name>
+<name>rb_0_d0</name>
 <Object>rb_0</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -696,7 +696,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_1_address1</name>
+<name>rb_1_address0</name>
 <Object>rb_1</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -707,7 +707,7 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_1_ce1</name>
+<name>rb_1_ce0</name>
 <Object>rb_1</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -718,7 +718,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_1_we1</name>
+<name>rb_1_we0</name>
 <Object>rb_1</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -729,7 +729,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_1_d1</name>
+<name>rb_1_d0</name>
 <Object>rb_1</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -740,7 +740,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_2_address1</name>
+<name>rb_2_address0</name>
 <Object>rb_2</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -751,7 +751,7 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_2_ce1</name>
+<name>rb_2_ce0</name>
 <Object>rb_2</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -762,7 +762,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_2_we1</name>
+<name>rb_2_we0</name>
 <Object>rb_2</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -773,7 +773,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_2_d1</name>
+<name>rb_2_d0</name>
 <Object>rb_2</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -784,7 +784,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_3_address1</name>
+<name>rb_3_address0</name>
 <Object>rb_3</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -795,7 +795,7 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_3_ce1</name>
+<name>rb_3_ce0</name>
 <Object>rb_3</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -806,7 +806,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_3_we1</name>
+<name>rb_3_we0</name>
 <Object>rb_3</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -817,7 +817,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_3_d1</name>
+<name>rb_3_d0</name>
 <Object>rb_3</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -828,7 +828,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_4_address1</name>
+<name>rb_4_address0</name>
 <Object>rb_4</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -839,7 +839,7 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_4_ce1</name>
+<name>rb_4_ce0</name>
 <Object>rb_4</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -850,7 +850,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_4_we1</name>
+<name>rb_4_we0</name>
 <Object>rb_4</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -861,7 +861,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_4_d1</name>
+<name>rb_4_d0</name>
 <Object>rb_4</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -872,7 +872,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_5_address1</name>
+<name>rb_5_address0</name>
 <Object>rb_5</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -883,7 +883,7 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_5_ce1</name>
+<name>rb_5_ce0</name>
 <Object>rb_5</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -894,7 +894,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_5_we1</name>
+<name>rb_5_we0</name>
 <Object>rb_5</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -905,7 +905,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_5_d1</name>
+<name>rb_5_d0</name>
 <Object>rb_5</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -916,7 +916,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_6_address1</name>
+<name>rb_6_address0</name>
 <Object>rb_6</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -927,7 +927,7 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_6_ce1</name>
+<name>rb_6_ce0</name>
 <Object>rb_6</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -938,7 +938,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_6_we1</name>
+<name>rb_6_we0</name>
 <Object>rb_6</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -949,7 +949,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_6_d1</name>
+<name>rb_6_d0</name>
 <Object>rb_6</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -960,7 +960,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_7_address1</name>
+<name>rb_7_address0</name>
 <Object>rb_7</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -971,7 +971,7 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_7_ce1</name>
+<name>rb_7_ce0</name>
 <Object>rb_7</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -982,7 +982,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_7_we1</name>
+<name>rb_7_we0</name>
 <Object>rb_7</Object>
 <Type>array</Type>
 <Scope></Scope>
@@ -993,7 +993,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>rb_7_d1</name>
+<name>rb_7_d0</name>
 <Object>rb_7</Object>
 <Type>array</Type>
 <Scope></Scope>

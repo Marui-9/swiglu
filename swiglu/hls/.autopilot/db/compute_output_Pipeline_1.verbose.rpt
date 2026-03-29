@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'compute_output_Pipeline_1'
 ================================================================
-* Date:           Sun Mar 29 14:23:07 2026
+* Date:           Sun Mar 29 14:53:55 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -85,9 +85,9 @@
     +---------------------------+----------+----+---+----+------------+------------+
     |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------------+----------+----+---+----+------------+------------+
-    |empty_fu_101_p2            |         +|   0|  0|  19|          12|           1|
+    |empty_fu_99_p2             |         +|   0|  0|  19|          12|           1|
     |ap_block_pp0_stage0_11001  |       and|   0|  0|   2|           1|           1|
-    |exitcond4_i_fu_95_p2       |      icmp|   0|  0|  20|          12|          13|
+    |exitcond4_i_fu_93_p2       |      icmp|   0|  0|  20|          12|          13|
     |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
     +---------------------------+----------+----+---+----+------------+------------+
     |Total                      |          |   0|  0|  43|          26|          17|
@@ -101,7 +101,7 @@
     |ap_enable_reg_pp0_iter1             |   9|          2|    1|          2|
     |ap_sig_allocacmp_loop_index_i_load  |   9|          2|   12|         24|
     |gmem_out_blk_n_W                    |   9|          2|    1|          2|
-    |loop_index_i_fu_52                  |   9|          2|   12|         24|
+    |loop_index_i_fu_50                  |   9|          2|   12|         24|
     +------------------------------------+----+-----------+-----+-----------+
     |Total                               |  45|         10|   27|         54|
     +------------------------------------+----+-----------+-----+-----------+
@@ -115,8 +115,8 @@
     |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
     |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
-    |loop_index_i_fu_52                |  12|   0|   12|          0|
-    |out_local_load_reg_148            |  32|   0|   32|          0|
+    |loop_index_i_fu_50                |  12|   0|   12|          0|
+    |out_local_load_reg_146            |  32|   0|   32|          0|
     +----------------------------------+----+----+-----+-----------+
     |Total                             |  49|   0|   49|          0|
     +----------------------------------+----+----+-----+-----------+
@@ -182,7 +182,7 @@
 |m_axi_gmem_out_0_BRESP     |   in|    2|       m_axi|                   gmem_out|       pointer|
 |m_axi_gmem_out_0_BID       |   in|    1|       m_axi|                   gmem_out|       pointer|
 |m_axi_gmem_out_0_BUSER     |   in|    1|       m_axi|                   gmem_out|       pointer|
-|sext_ln513                 |   in|   62|     ap_none|                 sext_ln513|        scalar|
+|sext_ln509                 |   in|   62|     ap_none|                 sext_ln509|        scalar|
 |out_local_address0         |  out|   11|   ap_memory|                  out_local|         array|
 |out_local_ce0              |  out|    1|   ap_memory|                  out_local|         array|
 |out_local_q0               |   in|   32|   ap_memory|                  out_local|         array|
@@ -231,9 +231,9 @@ IsGatedGlobalClock: 0
 
 State 1 <SV = 0> <Delay = 1.66>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%loop_index_i = alloca i32 1"   --->   Operation 6 'alloca' 'loop_index_i' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln513_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln513"   --->   Operation 7 'read' 'sext_ln513_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%sext_ln513_cast = sext i62 %sext_ln513_read"   --->   Operation 8 'sext' 'sext_ln513_cast' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 2048, void @empty_2, void @empty_35, void @empty_32, i32 16, i32 2, i32 16, i32 256, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln509_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln509"   --->   Operation 7 'read' 'sext_ln509_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%sext_ln509_cast = sext i62 %sext_ln509_read"   --->   Operation 8 'sext' 'sext_ln509_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 2048, void @empty_2, void @empty_35, void @empty_32, i32 16, i32 16, i32 16, i32 256, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 10 [1/1] (0.42ns)   --->   "%store_ln0 = store i12 0, i12 %loop_index_i"   --->   Operation 10 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
 ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop.i"   --->   Operation 11 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%loop_index_i_load = load i12 %loop_index_i"   --->   Operation 12 'load' 'loop_index_i_load' <Predicate = true> <Delay = 0.00>
@@ -250,11 +250,11 @@ ST_2 : Operation 20 [1/2] ( I:1.23ns O:1.23ns )   --->   "%out_local_load = load
 ST_2 : Operation 27 [1/1] (0.42ns)   --->   "%ret_ln0 = ret"   --->   Operation 27 'ret' 'ret_ln0' <Predicate = (exitcond4_i)> <Delay = 0.42>
 
 State 3 <SV = 2> <Delay = 2.43>
-ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln513_cast" [swiglu.cpp:513->swiglu.cpp:611]   --->   Operation 21 'getelementptr' 'gmem_out_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln509_cast" [swiglu.cpp:509->swiglu.cpp:606]   --->   Operation 21 'getelementptr' 'gmem_out_addr' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_32"   --->   Operation 22 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2048, i64 2048, i64 2048"   --->   Operation 23 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%empty_138 = bitcast i32 %out_local_load"   --->   Operation 24 'bitcast' 'empty_138' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 25 [1/1] (2.43ns)   --->   "%write_ln513 = write void @_ssdm_op_Write.m_axi.p1i32, i64 %gmem_out_addr, i32 %empty_138, i4 15" [swiglu.cpp:513->swiglu.cpp:611]   --->   Operation 25 'write' 'write_ln513' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 25 [1/1] (2.43ns)   --->   "%write_ln509 = write void @_ssdm_op_Write.m_axi.p1i32, i64 %gmem_out_addr, i32 %empty_138, i4 15" [swiglu.cpp:509->swiglu.cpp:606]   --->   Operation 25 'write' 'write_ln509' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop.i"   --->   Operation 26 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 
 
@@ -270,7 +270,7 @@ STG Binding:
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
 Port [ gmem_out]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
-Port [ sext_ln513]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ sext_ln509]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ out_local]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
 ---------------- STG Properties END ------------------
 
@@ -279,8 +279,8 @@ Port [ out_local]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; 
 <LifeTime>
 <method=bitvector/>
 loop_index_i          (alloca           ) [ 0100]
-sext_ln513_read       (read             ) [ 0000]
-sext_ln513_cast       (sext             ) [ 0111]
+sext_ln509_read       (read             ) [ 0000]
+sext_ln509_cast       (sext             ) [ 0111]
 specinterface_ln0     (specinterface    ) [ 0000]
 store_ln0             (store            ) [ 0000]
 br_ln0                (br               ) [ 0000]
@@ -296,7 +296,7 @@ gmem_out_addr         (getelementptr    ) [ 0000]
 specpipeline_ln0      (specpipeline     ) [ 0000]
 speclooptripcount_ln0 (speclooptripcount) [ 0000]
 empty_138             (bitcast          ) [ 0000]
-write_ln513           (write            ) [ 0000]
+write_ln509           (write            ) [ 0000]
 br_ln0                (br               ) [ 0000]
 ret_ln0               (ret              ) [ 0000]
 </LifeTime>
@@ -314,12 +314,12 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="2" class="1000" name="sext_ln513">
+<comp id="2" class="1000" name="sext_ln509">
 <pin_list>
 <pin id="3" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="sext_ln513"/></StgValue>
+<StgValue><ssdm name="sext_ln509"/></StgValue>
 </bind>
 </comp>
 
@@ -452,7 +452,7 @@ ret_ln0               (ret              ) [ 0000]
 
 <comp id="32" class="1001" name="const_32">
 <pin_list>
-<pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name=""/></StgValue>
@@ -488,10 +488,10 @@ ret_ln0               (ret              ) [ 0000]
 
 <comp id="40" class="1001" name="const_40">
 <pin_list>
-<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+<pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecPipeline"/></StgValue>
 </bind>
 </comp>
 
@@ -500,7 +500,7 @@ ret_ln0               (ret              ) [ 0000]
 <pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecPipeline"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
 </bind>
 </comp>
 
@@ -509,16 +509,16 @@ ret_ln0               (ret              ) [ 0000]
 <pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
 <comp id="46" class="1001" name="const_46">
 <pin_list>
-<pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Write.m_axi.p1i32"/></StgValue>
 </bind>
 </comp>
 
@@ -527,23 +527,14 @@ ret_ln0               (ret              ) [ 0000]
 <pin id="49" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Write.m_axi.p1i32"/></StgValue>
-</bind>
-</comp>
-
-<comp id="50" class="1001" name="const_50">
-<pin_list>
-<pin id="51" dir="1" index="0" bw="1" slack="0"/>
-</pin_list>
-<bind>
 <StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
-<comp id="52" class="1004" name="loop_index_i_fu_52">
+<comp id="50" class="1004" name="loop_index_i_fu_50">
 <pin_list>
-<pin id="53" dir="0" index="0" bw="1" slack="0"/>
-<pin id="54" dir="1" index="1" bw="12" slack="0"/>
+<pin id="51" dir="0" index="0" bw="1" slack="0"/>
+<pin id="52" dir="1" index="1" bw="12" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -551,24 +542,24 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="56" class="1004" name="sext_ln513_read_read_fu_56">
+<comp id="54" class="1004" name="sext_ln509_read_read_fu_54">
 <pin_list>
-<pin id="57" dir="0" index="0" bw="62" slack="0"/>
-<pin id="58" dir="0" index="1" bw="62" slack="0"/>
-<pin id="59" dir="1" index="2" bw="62" slack="0"/>
+<pin id="55" dir="0" index="0" bw="62" slack="0"/>
+<pin id="56" dir="0" index="1" bw="62" slack="0"/>
+<pin id="57" dir="1" index="2" bw="62" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="sext_ln513_read/1 "/>
+<opset="sext_ln509_read/1 "/>
 </bind>
 </comp>
 
-<comp id="62" class="1004" name="out_local_addr_gep_fu_62">
+<comp id="60" class="1004" name="out_local_addr_gep_fu_60">
 <pin_list>
-<pin id="63" dir="0" index="0" bw="32" slack="0"/>
-<pin id="64" dir="0" index="1" bw="1" slack="0"/>
-<pin id="65" dir="0" index="2" bw="12" slack="0"/>
-<pin id="66" dir="1" index="3" bw="11" slack="0"/>
+<pin id="61" dir="0" index="0" bw="32" slack="0"/>
+<pin id="62" dir="0" index="1" bw="1" slack="0"/>
+<pin id="63" dir="0" index="2" bw="12" slack="0"/>
+<pin id="64" dir="1" index="3" bw="11" slack="0"/>
 </pin_list>
 <bind>
 <opcode="getelementptr(29) " fcode="getelementptr"/>
@@ -576,12 +567,12 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="69" class="1004" name="grp_access_fu_69">
+<comp id="67" class="1004" name="grp_access_fu_67">
 <pin_list>
-<pin id="70" dir="0" index="0" bw="11" slack="0"/>
-<pin id="71" dir="0" index="1" bw="32" slack="2147483647"/>
-<pin id="72" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="73" dir="1" index="3" bw="32" slack="1"/>
+<pin id="68" dir="0" index="0" bw="11" slack="0"/>
+<pin id="69" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="70" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="71" dir="1" index="3" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -589,36 +580,36 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="75" class="1004" name="write_ln513_write_fu_75">
+<comp id="73" class="1004" name="write_ln509_write_fu_73">
 <pin_list>
-<pin id="76" dir="0" index="0" bw="0" slack="0"/>
-<pin id="77" dir="0" index="1" bw="32" slack="0"/>
-<pin id="78" dir="0" index="2" bw="32" slack="0"/>
-<pin id="79" dir="0" index="3" bw="1" slack="0"/>
-<pin id="80" dir="1" index="4" bw="0" slack="2147483647"/>
+<pin id="74" dir="0" index="0" bw="0" slack="0"/>
+<pin id="75" dir="0" index="1" bw="32" slack="0"/>
+<pin id="76" dir="0" index="2" bw="32" slack="0"/>
+<pin id="77" dir="0" index="3" bw="1" slack="0"/>
+<pin id="78" dir="1" index="4" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln513/3 "/>
+<opset="write_ln509/3 "/>
 </bind>
 </comp>
 
-<comp id="83" class="1004" name="sext_ln513_cast_fu_83">
+<comp id="81" class="1004" name="sext_ln509_cast_fu_81">
 <pin_list>
-<pin id="84" dir="0" index="0" bw="62" slack="0"/>
-<pin id="85" dir="1" index="1" bw="64" slack="2"/>
+<pin id="82" dir="0" index="0" bw="62" slack="0"/>
+<pin id="83" dir="1" index="1" bw="64" slack="2"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
-<opset="sext_ln513_cast/1 "/>
+<opset="sext_ln509_cast/1 "/>
 </bind>
 </comp>
 
-<comp id="87" class="1004" name="store_ln0_store_fu_87">
+<comp id="85" class="1004" name="store_ln0_store_fu_85">
 <pin_list>
-<pin id="88" dir="0" index="0" bw="1" slack="0"/>
-<pin id="89" dir="0" index="1" bw="12" slack="0"/>
-<pin id="90" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="86" dir="0" index="0" bw="1" slack="0"/>
+<pin id="87" dir="0" index="1" bw="12" slack="0"/>
+<pin id="88" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -626,10 +617,10 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="92" class="1004" name="loop_index_i_load_load_fu_92">
+<comp id="90" class="1004" name="loop_index_i_load_load_fu_90">
 <pin_list>
-<pin id="93" dir="0" index="0" bw="12" slack="0"/>
-<pin id="94" dir="1" index="1" bw="12" slack="0"/>
+<pin id="91" dir="0" index="0" bw="12" slack="0"/>
+<pin id="92" dir="1" index="1" bw="12" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -637,11 +628,11 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="95" class="1004" name="exitcond4_i_fu_95">
+<comp id="93" class="1004" name="exitcond4_i_fu_93">
 <pin_list>
-<pin id="96" dir="0" index="0" bw="12" slack="0"/>
-<pin id="97" dir="0" index="1" bw="12" slack="0"/>
-<pin id="98" dir="1" index="2" bw="1" slack="1"/>
+<pin id="94" dir="0" index="0" bw="12" slack="0"/>
+<pin id="95" dir="0" index="1" bw="12" slack="0"/>
+<pin id="96" dir="1" index="2" bw="1" slack="1"/>
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
@@ -649,11 +640,11 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="101" class="1004" name="empty_fu_101">
+<comp id="99" class="1004" name="empty_fu_99">
 <pin_list>
-<pin id="102" dir="0" index="0" bw="12" slack="0"/>
-<pin id="103" dir="0" index="1" bw="1" slack="0"/>
-<pin id="104" dir="1" index="2" bw="12" slack="0"/>
+<pin id="100" dir="0" index="0" bw="12" slack="0"/>
+<pin id="101" dir="0" index="1" bw="1" slack="0"/>
+<pin id="102" dir="1" index="2" bw="12" slack="0"/>
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
@@ -661,10 +652,10 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="107" class="1004" name="loop_index_i_cast_fu_107">
+<comp id="105" class="1004" name="loop_index_i_cast_fu_105">
 <pin_list>
-<pin id="108" dir="0" index="0" bw="12" slack="0"/>
-<pin id="109" dir="1" index="1" bw="64" slack="0"/>
+<pin id="106" dir="0" index="0" bw="12" slack="0"/>
+<pin id="107" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
@@ -672,11 +663,11 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="112" class="1004" name="store_ln0_store_fu_112">
+<comp id="110" class="1004" name="store_ln0_store_fu_110">
 <pin_list>
-<pin id="113" dir="0" index="0" bw="12" slack="0"/>
-<pin id="114" dir="0" index="1" bw="12" slack="0"/>
-<pin id="115" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="111" dir="0" index="0" bw="12" slack="0"/>
+<pin id="112" dir="0" index="1" bw="12" slack="0"/>
+<pin id="113" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -684,11 +675,11 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="117" class="1004" name="gmem_out_addr_fu_117">
+<comp id="115" class="1004" name="gmem_out_addr_fu_115">
 <pin_list>
-<pin id="118" dir="0" index="0" bw="64" slack="0"/>
-<pin id="119" dir="0" index="1" bw="64" slack="2"/>
-<pin id="120" dir="1" index="2" bw="64" slack="0"/>
+<pin id="116" dir="0" index="0" bw="64" slack="0"/>
+<pin id="117" dir="0" index="1" bw="64" slack="2"/>
+<pin id="118" dir="1" index="2" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="getelementptr(29) " fcode="getelementptr"/>
@@ -696,10 +687,10 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="123" class="1004" name="empty_138_fu_123">
+<comp id="121" class="1004" name="empty_138_fu_121">
 <pin_list>
-<pin id="124" dir="0" index="0" bw="32" slack="1"/>
-<pin id="125" dir="1" index="1" bw="32" slack="0"/>
+<pin id="122" dir="0" index="0" bw="32" slack="1"/>
+<pin id="123" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
@@ -707,50 +698,50 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="127" class="1005" name="loop_index_i_reg_127">
+<comp id="125" class="1005" name="loop_index_i_reg_125">
 <pin_list>
-<pin id="128" dir="0" index="0" bw="12" slack="0"/>
-<pin id="129" dir="1" index="1" bw="12" slack="0"/>
+<pin id="126" dir="0" index="0" bw="12" slack="0"/>
+<pin id="127" dir="1" index="1" bw="12" slack="0"/>
 </pin_list>
 <bind>
 <opset="loop_index_i "/>
 </bind>
 </comp>
 
-<comp id="134" class="1005" name="sext_ln513_cast_reg_134">
+<comp id="132" class="1005" name="sext_ln509_cast_reg_132">
 <pin_list>
-<pin id="135" dir="0" index="0" bw="64" slack="2"/>
-<pin id="136" dir="1" index="1" bw="64" slack="2"/>
+<pin id="133" dir="0" index="0" bw="64" slack="2"/>
+<pin id="134" dir="1" index="1" bw="64" slack="2"/>
 </pin_list>
 <bind>
-<opset="sext_ln513_cast "/>
+<opset="sext_ln509_cast "/>
 </bind>
 </comp>
 
-<comp id="139" class="1005" name="exitcond4_i_reg_139">
+<comp id="137" class="1005" name="exitcond4_i_reg_137">
 <pin_list>
-<pin id="140" dir="0" index="0" bw="1" slack="1"/>
-<pin id="141" dir="1" index="1" bw="1" slack="2147483647"/>
+<pin id="138" dir="0" index="0" bw="1" slack="1"/>
+<pin id="139" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="exitcond4_i "/>
 </bind>
 </comp>
 
-<comp id="143" class="1005" name="out_local_addr_reg_143">
+<comp id="141" class="1005" name="out_local_addr_reg_141">
 <pin_list>
-<pin id="144" dir="0" index="0" bw="11" slack="1"/>
-<pin id="145" dir="1" index="1" bw="11" slack="1"/>
+<pin id="142" dir="0" index="0" bw="11" slack="1"/>
+<pin id="143" dir="1" index="1" bw="11" slack="1"/>
 </pin_list>
 <bind>
 <opset="out_local_addr "/>
 </bind>
 </comp>
 
-<comp id="148" class="1005" name="out_local_load_reg_148">
+<comp id="146" class="1005" name="out_local_load_reg_146">
 <pin_list>
-<pin id="149" dir="0" index="0" bw="32" slack="1"/>
-<pin id="150" dir="1" index="1" bw="32" slack="1"/>
+<pin id="147" dir="0" index="0" bw="32" slack="1"/>
+<pin id="148" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="out_local_load "/>
@@ -760,67 +751,67 @@ ret_ln0               (ret              ) [ 0000]
 </comp_list>
 
 <net_list>
-<net id="55"><net_src comp="6" pin="0"/><net_sink comp="52" pin=0"/></net>
+<net id="53"><net_src comp="6" pin="0"/><net_sink comp="50" pin=0"/></net>
 
-<net id="60"><net_src comp="8" pin="0"/><net_sink comp="56" pin=0"/></net>
+<net id="58"><net_src comp="8" pin="0"/><net_sink comp="54" pin=0"/></net>
 
-<net id="61"><net_src comp="2" pin="0"/><net_sink comp="56" pin=1"/></net>
+<net id="59"><net_src comp="2" pin="0"/><net_sink comp="54" pin=1"/></net>
 
-<net id="67"><net_src comp="4" pin="0"/><net_sink comp="62" pin=0"/></net>
+<net id="65"><net_src comp="4" pin="0"/><net_sink comp="60" pin=0"/></net>
 
-<net id="68"><net_src comp="40" pin="0"/><net_sink comp="62" pin=1"/></net>
+<net id="66"><net_src comp="38" pin="0"/><net_sink comp="60" pin=1"/></net>
 
-<net id="74"><net_src comp="62" pin="3"/><net_sink comp="69" pin=0"/></net>
+<net id="72"><net_src comp="60" pin="3"/><net_sink comp="67" pin=0"/></net>
 
-<net id="81"><net_src comp="48" pin="0"/><net_sink comp="75" pin=0"/></net>
+<net id="79"><net_src comp="46" pin="0"/><net_sink comp="73" pin=0"/></net>
 
-<net id="82"><net_src comp="50" pin="0"/><net_sink comp="75" pin=3"/></net>
+<net id="80"><net_src comp="48" pin="0"/><net_sink comp="73" pin=3"/></net>
 
-<net id="86"><net_src comp="56" pin="2"/><net_sink comp="83" pin=0"/></net>
+<net id="84"><net_src comp="54" pin="2"/><net_sink comp="81" pin=0"/></net>
 
-<net id="91"><net_src comp="34" pin="0"/><net_sink comp="87" pin=0"/></net>
+<net id="89"><net_src comp="32" pin="0"/><net_sink comp="85" pin=0"/></net>
 
-<net id="99"><net_src comp="92" pin="1"/><net_sink comp="95" pin=0"/></net>
+<net id="97"><net_src comp="90" pin="1"/><net_sink comp="93" pin=0"/></net>
 
-<net id="100"><net_src comp="36" pin="0"/><net_sink comp="95" pin=1"/></net>
+<net id="98"><net_src comp="34" pin="0"/><net_sink comp="93" pin=1"/></net>
 
-<net id="105"><net_src comp="92" pin="1"/><net_sink comp="101" pin=0"/></net>
+<net id="103"><net_src comp="90" pin="1"/><net_sink comp="99" pin=0"/></net>
 
-<net id="106"><net_src comp="38" pin="0"/><net_sink comp="101" pin=1"/></net>
+<net id="104"><net_src comp="36" pin="0"/><net_sink comp="99" pin=1"/></net>
 
-<net id="110"><net_src comp="92" pin="1"/><net_sink comp="107" pin=0"/></net>
+<net id="108"><net_src comp="90" pin="1"/><net_sink comp="105" pin=0"/></net>
 
-<net id="111"><net_src comp="107" pin="1"/><net_sink comp="62" pin=2"/></net>
+<net id="109"><net_src comp="105" pin="1"/><net_sink comp="60" pin=2"/></net>
 
-<net id="116"><net_src comp="101" pin="2"/><net_sink comp="112" pin=0"/></net>
+<net id="114"><net_src comp="99" pin="2"/><net_sink comp="110" pin=0"/></net>
 
-<net id="121"><net_src comp="0" pin="0"/><net_sink comp="117" pin=0"/></net>
+<net id="119"><net_src comp="0" pin="0"/><net_sink comp="115" pin=0"/></net>
 
-<net id="122"><net_src comp="117" pin="2"/><net_sink comp="75" pin=1"/></net>
+<net id="120"><net_src comp="115" pin="2"/><net_sink comp="73" pin=1"/></net>
 
-<net id="126"><net_src comp="123" pin="1"/><net_sink comp="75" pin=2"/></net>
+<net id="124"><net_src comp="121" pin="1"/><net_sink comp="73" pin=2"/></net>
 
-<net id="130"><net_src comp="52" pin="1"/><net_sink comp="127" pin=0"/></net>
+<net id="128"><net_src comp="50" pin="1"/><net_sink comp="125" pin=0"/></net>
 
-<net id="131"><net_src comp="127" pin="1"/><net_sink comp="87" pin=1"/></net>
+<net id="129"><net_src comp="125" pin="1"/><net_sink comp="85" pin=1"/></net>
 
-<net id="132"><net_src comp="127" pin="1"/><net_sink comp="92" pin=0"/></net>
+<net id="130"><net_src comp="125" pin="1"/><net_sink comp="90" pin=0"/></net>
 
-<net id="133"><net_src comp="127" pin="1"/><net_sink comp="112" pin=1"/></net>
+<net id="131"><net_src comp="125" pin="1"/><net_sink comp="110" pin=1"/></net>
 
-<net id="137"><net_src comp="83" pin="1"/><net_sink comp="134" pin=0"/></net>
+<net id="135"><net_src comp="81" pin="1"/><net_sink comp="132" pin=0"/></net>
 
-<net id="138"><net_src comp="134" pin="1"/><net_sink comp="117" pin=1"/></net>
+<net id="136"><net_src comp="132" pin="1"/><net_sink comp="115" pin=1"/></net>
 
-<net id="142"><net_src comp="95" pin="2"/><net_sink comp="139" pin=0"/></net>
+<net id="140"><net_src comp="93" pin="2"/><net_sink comp="137" pin=0"/></net>
 
-<net id="146"><net_src comp="62" pin="3"/><net_sink comp="143" pin=0"/></net>
+<net id="144"><net_src comp="60" pin="3"/><net_sink comp="141" pin=0"/></net>
 
-<net id="147"><net_src comp="143" pin="1"/><net_sink comp="69" pin=0"/></net>
+<net id="145"><net_src comp="141" pin="1"/><net_sink comp="67" pin=0"/></net>
 
-<net id="151"><net_src comp="69" pin="3"/><net_sink comp="148" pin=0"/></net>
+<net id="149"><net_src comp="67" pin="3"/><net_sink comp="146" pin=0"/></net>
 
-<net id="152"><net_src comp="148" pin="1"/><net_sink comp="123" pin=0"/></net>
+<net id="150"><net_src comp="146" pin="1"/><net_sink comp="121" pin=0"/></net>
 
 </net_list>
 
@@ -832,7 +823,7 @@ ret_ln0               (ret              ) [ 0000]
 	Port: gmem_out | {3 }
  - Input state : 
 	Port: compute_output_Pipeline_1 : gmem_out | {}
-	Port: compute_output_Pipeline_1 : sext_ln513 | {1 }
+	Port: compute_output_Pipeline_1 : sext_ln509 | {1 }
 	Port: compute_output_Pipeline_1 : out_local | {1 2 }
   - Chain level:
 	State 1
@@ -847,7 +838,7 @@ ret_ln0               (ret              ) [ 0000]
 		store_ln0 : 3
 	State 2
 	State 3
-		write_ln513 : 1
+		write_ln509 : 1
 
 
 ============================================================
@@ -858,17 +849,17 @@ ret_ln0               (ret              ) [ 0000]
 |----------|----------------------------|---------|---------|
 | Operation|       Functional Unit      |    FF   |   LUT   |
 |----------|----------------------------|---------|---------|
-|   icmp   |      exitcond4_i_fu_95     |    0    |    19   |
+|   icmp   |      exitcond4_i_fu_93     |    0    |    19   |
 |----------|----------------------------|---------|---------|
-|    add   |        empty_fu_101        |    0    |    19   |
+|    add   |         empty_fu_99        |    0    |    19   |
 |----------|----------------------------|---------|---------|
-|   read   | sext_ln513_read_read_fu_56 |    0    |    0    |
+|   read   | sext_ln509_read_read_fu_54 |    0    |    0    |
 |----------|----------------------------|---------|---------|
-|   write  |   write_ln513_write_fu_75  |    0    |    0    |
+|   write  |   write_ln509_write_fu_73  |    0    |    0    |
 |----------|----------------------------|---------|---------|
-|   sext   |    sext_ln513_cast_fu_83   |    0    |    0    |
+|   sext   |    sext_ln509_cast_fu_81   |    0    |    0    |
 |----------|----------------------------|---------|---------|
-|   zext   |  loop_index_i_cast_fu_107  |    0    |    0    |
+|   zext   |  loop_index_i_cast_fu_105  |    0    |    0    |
 |----------|----------------------------|---------|---------|
 |   Total  |                            |    0    |    38   |
 |----------|----------------------------|---------|---------|
@@ -880,11 +871,11 @@ N/A
 +-----------------------+--------+
 |                       |   FF   |
 +-----------------------+--------+
-|  exitcond4_i_reg_139  |    1   |
-|  loop_index_i_reg_127 |   12   |
-| out_local_addr_reg_143|   11   |
-| out_local_load_reg_148|   32   |
-|sext_ln513_cast_reg_134|   64   |
+|  exitcond4_i_reg_137  |    1   |
+|  loop_index_i_reg_125 |   12   |
+| out_local_addr_reg_141|   11   |
+| out_local_load_reg_146|   32   |
+|sext_ln509_cast_reg_132|   64   |
 +-----------------------+--------+
 |         Total         |   120  |
 +-----------------------+--------+
@@ -893,7 +884,7 @@ N/A
 |------------------|------|------|------|--------||---------||---------||---------|
 |       Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||    FF   ||   LUT   |
 |------------------|------|------|------|--------||---------||---------||---------|
-| grp_access_fu_69 |  p0  |   2  |  11  |   22   ||    0    ||    9    |
+| grp_access_fu_67 |  p0  |   2  |  11  |   22   ||    0    ||    9    |
 |------------------|------|------|------|--------||---------||---------||---------|
 |       Total      |      |      |      |   22   ||  0.427  ||    0    ||    9    |
 |------------------|------|------|------|--------||---------||---------||---------|
