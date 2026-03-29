@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 38
+set cdfgNum 36
 set C_modelName {mac_blocks_down_q6k_Pipeline_5}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]

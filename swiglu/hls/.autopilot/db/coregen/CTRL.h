@@ -18,32 +18,36 @@
 //        bit 1 - ap_ready (Read/TOW)
 //        others - reserved
 // 0x10 : Data signal of W
-//        bit 7~0 - W[7:0] (Read/Write)
-//        others  - reserved
-// 0x14 : reserved
-// 0x18 : Data signal of V
-//        bit 7~0 - V[7:0] (Read/Write)
-//        others  - reserved
-// 0x1c : reserved
-// 0x20 : Data signal of W_down
-//        bit 7~0 - W_down[7:0] (Read/Write)
-//        others  - reserved
+//        bit 31~0 - W[31:0] (Read/Write)
+// 0x14 : Data signal of W
+//        bit 31~0 - W[63:32] (Read/Write)
+// 0x18 : reserved
+// 0x1c : Data signal of V
+//        bit 31~0 - V[31:0] (Read/Write)
+// 0x20 : Data signal of V
+//        bit 31~0 - V[63:32] (Read/Write)
 // 0x24 : reserved
-// 0x28 : Data signal of x_batch
-//        bit 7~0 - x_batch[7:0] (Read/Write)
-//        others  - reserved
-// 0x2c : reserved
-// 0x30 : Data signal of out_batch
+// 0x28 : Data signal of W_down
+//        bit 31~0 - W_down[31:0] (Read/Write)
+// 0x2c : Data signal of W_down
+//        bit 31~0 - W_down[63:32] (Read/Write)
+// 0x30 : reserved
+// 0x34 : Data signal of x_batch
+//        bit 31~0 - x_batch[31:0] (Read/Write)
+// 0x38 : Data signal of x_batch
+//        bit 31~0 - x_batch[63:32] (Read/Write)
+// 0x3c : reserved
+// 0x40 : Data signal of out_batch
 //        bit 31~0 - out_batch[31:0] (Read/Write)
-// 0x34 : Data signal of out_batch
+// 0x44 : Data signal of out_batch
 //        bit 31~0 - out_batch[63:32] (Read/Write)
-// 0x38 : reserved
-// 0x3c : Data signal of down_quant_mode
-//        bit 31~0 - down_quant_mode[31:0] (Read/Write)
-// 0x40 : reserved
-// 0x44 : Data signal of x_scale
-//        bit 31~0 - x_scale[31:0] (Read/Write)
 // 0x48 : reserved
+// 0x4c : Data signal of down_quant_mode
+//        bit 31~0 - down_quant_mode[31:0] (Read/Write)
+// 0x50 : reserved
+// 0x54 : Data signal of x_scale
+//        bit 31~0 - x_scale[31:0] (Read/Write)
+// 0x58 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define CTRL_ADDR_AP_CTRL              0x00
@@ -51,16 +55,16 @@
 #define CTRL_ADDR_IER                  0x08
 #define CTRL_ADDR_ISR                  0x0c
 #define CTRL_ADDR_W_DATA               0x10
-#define CTRL_BITS_W_DATA               8
-#define CTRL_ADDR_V_DATA               0x18
-#define CTRL_BITS_V_DATA               8
-#define CTRL_ADDR_W_DOWN_DATA          0x20
-#define CTRL_BITS_W_DOWN_DATA          8
-#define CTRL_ADDR_X_BATCH_DATA         0x28
-#define CTRL_BITS_X_BATCH_DATA         8
-#define CTRL_ADDR_OUT_BATCH_DATA       0x30
+#define CTRL_BITS_W_DATA               64
+#define CTRL_ADDR_V_DATA               0x1c
+#define CTRL_BITS_V_DATA               64
+#define CTRL_ADDR_W_DOWN_DATA          0x28
+#define CTRL_BITS_W_DOWN_DATA          64
+#define CTRL_ADDR_X_BATCH_DATA         0x34
+#define CTRL_BITS_X_BATCH_DATA         64
+#define CTRL_ADDR_OUT_BATCH_DATA       0x40
 #define CTRL_BITS_OUT_BATCH_DATA       64
-#define CTRL_ADDR_DOWN_QUANT_MODE_DATA 0x3c
+#define CTRL_ADDR_DOWN_QUANT_MODE_DATA 0x4c
 #define CTRL_BITS_DOWN_QUANT_MODE_DATA 32
-#define CTRL_ADDR_X_SCALE_DATA         0x44
+#define CTRL_ADDR_X_SCALE_DATA         0x54
 #define CTRL_BITS_X_SCALE_DATA         32

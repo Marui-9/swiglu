@@ -14,10 +14,12 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 38
+set cdfgNum 36
 set C_modelName {compute_gate}
 set C_modelType { float 32 }
 set ap_memory_interface_dict [dict create]
+dict set ap_memory_interface_dict X1_cache { MEM_WIDTH 32 MEM_SIZE 32768 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
+dict set ap_memory_interface_dict X2_cache { MEM_WIDTH 32 MEM_SIZE 32768 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 dict set ap_memory_interface_dict gate_cache_0 { MEM_WIDTH 8 MEM_SIZE 256 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 dict set ap_memory_interface_dict gate_cache_1 { MEM_WIDTH 8 MEM_SIZE 256 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 dict set ap_memory_interface_dict gate_cache_2 { MEM_WIDTH 8 MEM_SIZE 256 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
@@ -51,8 +53,8 @@ dict set ap_memory_interface_dict gate_cache_29 { MEM_WIDTH 8 MEM_SIZE 256 MASTE
 dict set ap_memory_interface_dict gate_cache_30 { MEM_WIDTH 8 MEM_SIZE 256 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 dict set ap_memory_interface_dict gate_cache_31 { MEM_WIDTH 8 MEM_SIZE 256 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 set C_modelArgList {
-	{ X1_cache int 32 regular {fifo 0 volatile }  }
-	{ X2_cache int 32 regular {fifo 0 volatile }  }
+	{ X1_cache float 32 regular {array 8192 { 1 3 } 1 1 }  }
+	{ X2_cache float 32 regular {array 8192 { 1 3 } 1 1 }  }
 	{ gate_cache_0 int 8 regular {array 256 { 3 0 } 0 1 }  }
 	{ gate_cache_1 int 8 regular {array 256 { 3 0 } 0 1 }  }
 	{ gate_cache_2 int 8 regular {array 256 { 3 0 } 0 1 }  }
@@ -90,8 +92,8 @@ set hasAXIMCache 0
 set l_AXIML2Cache [list]
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
-	{ "Name" : "X1_cache", "interface" : "fifo", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "X2_cache", "interface" : "fifo", "bitwidth" : 32, "direction" : "READONLY"} , 
+	{ "Name" : "X1_cache", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "X2_cache", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "gate_cache_0", "interface" : "memory", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
  	{ "Name" : "gate_cache_1", "interface" : "memory", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
  	{ "Name" : "gate_cache_2", "interface" : "memory", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
@@ -126,7 +128,7 @@ set C_modelArgMapList {[
  	{ "Name" : "gate_cache_31", "interface" : "memory", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
  	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 32} ]}
 # RTL Port declarations: 
-set portNum 146
+set portNum 142
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -135,16 +137,12 @@ set portList {
 	{ ap_continue sc_in sc_logic 1 continue -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ X1_cache_dout sc_in sc_lv 32 signal 0 } 
-	{ X1_cache_empty_n sc_in sc_logic 1 signal 0 } 
-	{ X1_cache_read sc_out sc_logic 1 signal 0 } 
-	{ X1_cache_num_data_valid sc_in sc_lv 5 signal 0 } 
-	{ X1_cache_fifo_cap sc_in sc_lv 5 signal 0 } 
-	{ X2_cache_dout sc_in sc_lv 32 signal 1 } 
-	{ X2_cache_empty_n sc_in sc_logic 1 signal 1 } 
-	{ X2_cache_read sc_out sc_logic 1 signal 1 } 
-	{ X2_cache_num_data_valid sc_in sc_lv 5 signal 1 } 
-	{ X2_cache_fifo_cap sc_in sc_lv 5 signal 1 } 
+	{ X1_cache_address0 sc_out sc_lv 13 signal 0 } 
+	{ X1_cache_ce0 sc_out sc_logic 1 signal 0 } 
+	{ X1_cache_q0 sc_in sc_lv 32 signal 0 } 
+	{ X2_cache_address0 sc_out sc_lv 13 signal 1 } 
+	{ X2_cache_ce0 sc_out sc_logic 1 signal 1 } 
+	{ X2_cache_q0 sc_in sc_lv 32 signal 1 } 
 	{ gate_cache_0_address1 sc_out sc_lv 8 signal 2 } 
 	{ gate_cache_0_ce1 sc_out sc_logic 1 signal 2 } 
 	{ gate_cache_0_we1 sc_out sc_logic 1 signal 2 } 
@@ -283,16 +281,12 @@ set NewPortList {[
  	{ "name": "ap_continue", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "continue", "bundle":{"name": "ap_continue", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "X1_cache_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "X1_cache", "role": "dout" }} , 
- 	{ "name": "X1_cache_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "X1_cache", "role": "empty_n" }} , 
- 	{ "name": "X1_cache_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "X1_cache", "role": "read" }} , 
- 	{ "name": "X1_cache_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "X1_cache", "role": "num_data_valid" }} , 
- 	{ "name": "X1_cache_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "X1_cache", "role": "fifo_cap" }} , 
- 	{ "name": "X2_cache_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "X2_cache", "role": "dout" }} , 
- 	{ "name": "X2_cache_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "X2_cache", "role": "empty_n" }} , 
- 	{ "name": "X2_cache_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "X2_cache", "role": "read" }} , 
- 	{ "name": "X2_cache_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "X2_cache", "role": "num_data_valid" }} , 
- 	{ "name": "X2_cache_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "X2_cache", "role": "fifo_cap" }} , 
+ 	{ "name": "X1_cache_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":13, "type": "signal", "bundle":{"name": "X1_cache", "role": "address0" }} , 
+ 	{ "name": "X1_cache_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "X1_cache", "role": "ce0" }} , 
+ 	{ "name": "X1_cache_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "X1_cache", "role": "q0" }} , 
+ 	{ "name": "X2_cache_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":13, "type": "signal", "bundle":{"name": "X2_cache", "role": "address0" }} , 
+ 	{ "name": "X2_cache_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "X2_cache", "role": "ce0" }} , 
+ 	{ "name": "X2_cache_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "X2_cache", "role": "q0" }} , 
  	{ "name": "gate_cache_0_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "gate_cache_0", "role": "address1" }} , 
  	{ "name": "gate_cache_0_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "gate_cache_0", "role": "ce1" }} , 
  	{ "name": "gate_cache_0_we1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "gate_cache_0", "role": "we1" }} , 
@@ -425,8 +419,8 @@ set NewPortList {[
 
 set ArgLastReadFirstWriteLatency {
 	compute_gate {
-		X1_cache {Type I LastRead 1 FirstWrite -1}
-		X2_cache {Type I LastRead 1 FirstWrite -1}
+		X1_cache {Type I LastRead 0 FirstWrite -1}
+		X2_cache {Type I LastRead 31 FirstWrite -1}
 		gate_cache_0 {Type O LastRead -1 FirstWrite 13}
 		gate_cache_1 {Type O LastRead -1 FirstWrite 13}
 		gate_cache_2 {Type O LastRead -1 FirstWrite 13}
@@ -461,8 +455,8 @@ set ArgLastReadFirstWriteLatency {
 		gate_cache_31 {Type O LastRead -1 FirstWrite 13}
 		sigmoid_lut {Type I LastRead -1 FirstWrite -1}}
 	compute_gate_Pipeline_GATE_PASS1 {
-		X1_cache {Type I LastRead 1 FirstWrite -1}
-		X2_cache {Type I LastRead 1 FirstWrite -1}
+		X1_cache {Type I LastRead 0 FirstWrite -1}
+		X2_cache {Type I LastRead 31 FirstWrite -1}
 		gate_fp {Type O LastRead -1 FirstWrite 40}
 		max_abs_out {Type O LastRead -1 FirstWrite 46}
 		max_abs_2_out {Type O LastRead -1 FirstWrite 46}
@@ -520,8 +514,8 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	X1_cache { ap_fifo {  { X1_cache_dout fifo_data_in 0 32 }  { X1_cache_empty_n fifo_status 0 1 }  { X1_cache_read fifo_port_we 1 1 }  { X1_cache_num_data_valid fifo_status_num_data_valid 0 5 }  { X1_cache_fifo_cap fifo_update 0 5 } } }
-	X2_cache { ap_fifo {  { X2_cache_dout fifo_data_in 0 32 }  { X2_cache_empty_n fifo_status 0 1 }  { X2_cache_read fifo_port_we 1 1 }  { X2_cache_num_data_valid fifo_status_num_data_valid 0 5 }  { X2_cache_fifo_cap fifo_update 0 5 } } }
+	X1_cache { ap_memory {  { X1_cache_address0 mem_address 1 13 }  { X1_cache_ce0 mem_ce 1 1 }  { X1_cache_q0 mem_dout 0 32 } } }
+	X2_cache { ap_memory {  { X2_cache_address0 mem_address 1 13 }  { X2_cache_ce0 mem_ce 1 1 }  { X2_cache_q0 mem_dout 0 32 } } }
 	gate_cache_0 { ap_memory {  { gate_cache_0_address1 MemPortADDR2 1 8 }  { gate_cache_0_ce1 MemPortCE2 1 1 }  { gate_cache_0_we1 MemPortWE2 1 1 }  { gate_cache_0_d1 MemPortDIN2 1 8 } } }
 	gate_cache_1 { ap_memory {  { gate_cache_1_address1 MemPortADDR2 1 8 }  { gate_cache_1_ce1 MemPortCE2 1 1 }  { gate_cache_1_we1 MemPortWE2 1 1 }  { gate_cache_1_d1 MemPortDIN2 1 8 } } }
 	gate_cache_2 { ap_memory {  { gate_cache_2_address1 MemPortADDR2 1 8 }  { gate_cache_2_ce1 MemPortCE2 1 1 }  { gate_cache_2_we1 MemPortWE2 1 1 }  { gate_cache_2_d1 MemPortDIN2 1 8 } } }

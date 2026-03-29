@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_wv'" level="0">
-<item name = "Date">Sat Mar 28 22:36:47 2026
+<item name = "Date">Sun Mar 29 14:22:06 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,22 +24,15 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">385, 385, 1.282 us, 1.282 us, 385, 385, no</column>
+<column name="">405, 405, 1.349 us, 1.349 us, 405, 405, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS_fu_924">mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS, 260, 260, 0.866 us, 0.866 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_fp16_to_fp32_fu_1328">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_1333">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_1338">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_1343">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_1348">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_1353">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_1358">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_1363">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
+<column name="grp_mac_blocks_wv_Pipeline_UNPACK_HDR_WV_fu_1502">mac_blocks_wv_Pipeline_UNPACK_HDR_WV, 15, 15, 49.950 ns, 49.950 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS_fu_1666">mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS, 264, 264, 0.879 us, 0.879 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

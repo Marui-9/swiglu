@@ -26,6 +26,7 @@
 
 // ─── fp16_to_fp32 ─────────────────────────────────────────────────────────────
 static float fp16_to_fp32(uint16_t h) {
+#pragma HLS INLINE off
     uint32_t sign = ((uint32_t)(h >> 15)) << 31;
     uint32_t exp  = (h >> 10) & 0x1F;
     uint32_t mant = (uint32_t)(h & 0x3FF);
@@ -126,7 +127,6 @@ static void mac_blocks_wv(const ap_uint<128> rb[WV_BLOCKS_PER_ROW][Q4_K_WORDS],
     #pragma HLS ARRAY_PARTITION variable=mn6  dim=0 complete
 
     UNPACK_HDR_WV: for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
-        #pragma HLS UNROLL
         d[b]    = fp16_to_fp32((uint16_t)get_byte(rb[b], 0) |
                                ((uint16_t)get_byte(rb[b], 1) << 8));
         dmin[b] = fp16_to_fp32((uint16_t)get_byte(rb[b], 2) |
@@ -222,6 +222,8 @@ static void compute_X1(
     const ap_uint<128> *W_wide = (const ap_uint<128>*)W;
     COMPUTE_X1: for (int row = 0; row < FFN_DIM; row++) {
         ap_uint<128> row_buf[WV_BLOCKS_PER_ROW][Q4_K_WORDS];
+        #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 complete
+        #pragma HLS BIND_STORAGE variable=row_buf type=ram_2p impl=lutram
         load_row_wv(W_wide, row, row_buf);
         float row_result;
         mac_blocks_wv(row_buf, x_local_1[0], x_scale, &row_result);
@@ -262,7 +264,7 @@ static void compute_gate(
     SWISH_GATE: for (int n = 0; n < MAX_BATCH; n++) {
         #pragma HLS UNROLL
         float gate_fp[FFN_DIM];
-        #pragma HLS BIND_STORAGE variable=gate_fp type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=gate_fp type=ram_2p impl=uram
 
         float pmax[8] = {0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f};
         #pragma HLS ARRAY_PARTITION variable=pmax complete
@@ -306,11 +308,11 @@ static void compute_gate(
 // ─── Phase 5 sub-functions: Q4K output path ──────────────────────────────────
 
 // load_row_down_q4k: read one Q4_K row (32 blocks) into 2D rb[32][9].
-// dim=1 complete → 32 independent BRAM banks.
+// dim=1 cyclic factor=8 → 8 banks (lower BRAM pressure while matching 8-lane fold).
 static void load_row_down_q4k(const ap_uint<128> *W_down_wide, int out_i,
                                 ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_WORDS]) {
 #pragma HLS INLINE off
-#pragma HLS ARRAY_PARTITION variable=rb dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=rb dim=1 cyclic factor=8
     LOAD_DOWN_Q4K: for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
         for (int w = 0; w < Q4_K_WORDS; w++) {
             #pragma HLS PIPELINE II=1
@@ -328,8 +330,8 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
                                   float gate_scale,
                                   float *result) {
 #pragma HLS INLINE off
-#pragma HLS ARRAY_PARTITION variable=rb   dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=gate dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=rb   dim=1 cyclic factor=8
+#pragma HLS ARRAY_PARTITION variable=gate dim=1 cyclic factor=8
 
     float   d   [DOWN_BLOCKS_PER_ROW];
     float   dmin[DOWN_BLOCKS_PER_ROW];
@@ -341,7 +343,6 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
     #pragma HLS ARRAY_PARTITION variable=mn6  dim=0 complete
 
     UNPACK_HDR_DOWN: for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
-        #pragma HLS UNROLL
         d[b]    = fp16_to_fp32((uint16_t)get_byte(rb[b], 0) | ((uint16_t)get_byte(rb[b], 1) << 8));
         dmin[b] = fp16_to_fp32((uint16_t)get_byte(rb[b], 2) | ((uint16_t)get_byte(rb[b], 3) << 8));
         
@@ -375,17 +376,12 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
         }
     }
 
-    // 2-group × 16-block fold. Resolves Level 5 routing congestion by halving
-    // simultaneous BRAM fanout (32 → 16 banks per cycle).
-    // Two explicit sequential PIPELINE loops with fixed offsets (b and b+16) ensure
-    // array indices are compile-time constants after UNROLL, so HLS wires directly
-    // to specific banks with no runtime MUX. A runtime index (e.g. g*16+b_sub)
-    // would force 32:1 MUXes on every partitioned array, negating the routing relief.
-    // Cost: 2 × 256 = 512 cycles/row (vs 256 for full unroll).
+// 4-group × 8-block fold to reduce LUT pressure and routing congestion.
+    // Cost: 4 × 256 = 1024 cycles/row (vs 512 for 2×16 fold).
     MAC_BLOCKS_G0: for (int n = 0; n < 256; n++) {
         #pragma HLS PIPELINE II=1
-        for (int b = 0; b < 16; b++) {
-            #pragma HLS UNROLL
+        for (int b = 0; b < 8; b++) {
+            #pragma HLS UNROLL factor=4
             int32_t gi  = (int32_t)gate[b][n];
             int32_t nib = (int32_t)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
                                      >> ((n & 32) ? 4 : 0)) & 0xF);
@@ -396,8 +392,20 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
     }
     MAC_BLOCKS_G1: for (int n = 0; n < 256; n++) {
         #pragma HLS PIPELINE II=1
-        for (int b = 0; b < 16; b++) {
-            #pragma HLS UNROLL
+               for (int b = 0; b < 8; b++) {
+            #pragma HLS UNROLL factor=4
+            int32_t gi  = (int32_t)gate[b + 8][n];
+            int32_t nib = (int32_t)((get_byte(rb[b + 8], 16 + (n & 31) + ((n & 0xC0) >> 1))
+                                     >> ((n & 32) ? 4 : 0)) & 0xF);
+            int sub = n >> 5; int k = n & 7;
+            int_acc_w[b + 8][k] += gi * nib * (int32_t)sc6[b + 8][sub];
+            int_acc_m[b + 8][k] += gi       * (int32_t)mn6[b + 8][sub];
+        }
+    }
+    MAC_BLOCKS_G2: for (int n = 0; n < 256; n++) {
+        #pragma HLS PIPELINE II=1
+        for (int b = 0; b < 8; b++) {
+            #pragma HLS UNROLL factor=4
             int32_t gi  = (int32_t)gate[b + 16][n];
             int32_t nib = (int32_t)((get_byte(rb[b + 16], 16 + (n & 31) + ((n & 0xC0) >> 1))
                                      >> ((n & 32) ? 4 : 0)) & 0xF);
@@ -406,7 +414,18 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
             int_acc_m[b + 16][k] += gi       * (int32_t)mn6[b + 16][sub];
         }
     }
-
+    MAC_BLOCKS_G3: for (int n = 0; n < 256; n++) {
+        #pragma HLS PIPELINE II=1
+        for (int b = 0; b < 8; b++) {
+            #pragma HLS UNROLL factor=4
+            int32_t gi  = (int32_t)gate[b + 24][n];
+            int32_t nib = (int32_t)((get_byte(rb[b + 24], 16 + (n & 31) + ((n & 0xC0) >> 1))
+                                     >> ((n & 32) ? 4 : 0)) & 0xF);
+            int sub = n >> 5; int k = n & 7;
+            int_acc_w[b + 24][k] += gi * nib * (int32_t)sc6[b + 24][sub];
+            int_acc_m[b + 24][k] += gi       * (int32_t)mn6[b + 24][sub];
+        }
+    }
     // FP32 reduction: INT32 sums → float, then scale by gate_scale × d/dmin.
     float total = 0.f;
     REDUCE_DOWN_Q4K: for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
@@ -428,7 +447,7 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
 static void load_row_down_q6k(const ap_uint<128> *W_down_wide, int out_i,
                                 ap_uint<128> rb[DOWN_Q6K_WORDS]) {
 #pragma HLS INLINE off
-#pragma HLS ARRAY_PARTITION variable=rb complete
+#pragma HLS ARRAY_PARTITION variable=rb cyclic factor=16
     LOAD_DOWN_Q6K: for (int i = 0; i < DOWN_Q6K_WORDS; i++) {
         #pragma HLS PIPELINE II=1
         rb[i] = W_down_wide[(ap_uint<64>)out_i * DOWN_Q6K_WORDS + i];
@@ -440,12 +459,12 @@ static void mac_blocks_down_q6k(const ap_uint<128> rb[DOWN_Q6K_WORDS],
                                   float gate_scale,
                                   float *result) {
 #pragma HLS INLINE off
-#pragma HLS ARRAY_PARTITION variable=rb complete
+#pragma HLS ARRAY_PARTITION variable=rb cyclic factor=16
 #pragma HLS ARRAY_PARTITION variable=gate dim=1 complete
     float block_sums[DOWN_BLOCKS_PER_ROW];
     #pragma HLS ARRAY_PARTITION variable=block_sums complete
     for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
-        #pragma HLS UNROLL factor=8
+        #pragma HLS UNROLL factor=4
         // gate[b] is INT8; decode_mac_q6k dequantizes each element by gate_scale.
         block_sums[b] = decode_mac_q6k(rb, b * Q6_K_BYTES, gate[b], gate_scale, 0);
     }
@@ -466,7 +485,7 @@ static void compute_output(
     uint32_t       down_quant_mode)
 {
 #pragma HLS INLINE off
-#pragma HLS ARRAY_PARTITION variable=gate_cache dim=2 complete
+#pragma HLS ARRAY_PARTITION variable=gate_cache dim=2 cyclic factor=8
 
     const ap_uint<128> *W_down_wide = (const ap_uint<128>*)W_down;
     float out_local[VECTOR_DIM];
@@ -475,13 +494,14 @@ static void compute_output(
     if (down_quant_mode == 0) {
         DOWN_Q4K: for (int out_i = 0; out_i < VECTOR_DIM; out_i++) {
             ap_uint<128> row_buf[DOWN_BLOCKS_PER_ROW][Q4_K_WORDS];
+            #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 cyclic factor=8
             load_row_down_q4k(W_down_wide, out_i, row_buf);
             mac_blocks_down_q4k(row_buf, gate_cache[0], gate_scale, &out_local[out_i]);
         }
     } else {
         DOWN_Q6K: for (int out_i = 0; out_i < VECTOR_DIM; out_i++) {
             ap_uint<128> row_buf[DOWN_Q6K_WORDS];
-            #pragma HLS ARRAY_PARTITION variable=row_buf complete
+            #pragma HLS ARRAY_PARTITION variable=row_buf cyclic factor=16
             load_row_down_q6k(W_down_wide, out_i, row_buf);
             mac_blocks_down_q6k(row_buf, gate_cache[0], gate_scale, &out_local[out_i]);
         }
@@ -533,12 +553,10 @@ void swiglu(
     uint32_t       down_quant_mode,
     float          x_scale)
 {
-    #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W   offset=slave depth=9437184  max_read_burst_length=256  latency=64 num_read_outstanding=16 DATA_WIDTH=128
-    #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V   offset=slave depth=9437184  max_read_burst_length=256  latency=64 num_read_outstanding=16 DATA_WIDTH=128
-    #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd  offset=slave depth=13762560 max_read_burst_length=256  latency=64 num_read_outstanding=16 DATA_WIDTH=128
-    #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x   offset=slave depth=2048     max_read_burst_length=256  latency=64 num_read_outstanding=16 DATA_WIDTH=128
-    #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out offset=slave depth=2048     max_write_burst_length=256 latency=64 num_write_outstanding=16
-
+#pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W   offset=slave depth=9437184  max_read_burst_length=256  latency=64 num_read_outstanding=16 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V   offset=slave depth=9437184  max_read_burst_length=256  latency=64 num_read_outstanding=16 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd  offset=slave depth=13762560 max_read_burst_length=256  latency=64 num_read_outstanding=16 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x   offset=slave depth=2048     max_read_burst_length=256  latency=64 num_read_outstanding=16 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=s_axilite port=W               bundle=CTRL
     #pragma HLS INTERFACE mode=s_axilite port=V               bundle=CTRL
     #pragma HLS INTERFACE mode=s_axilite port=W_down          bundle=CTRL
@@ -561,13 +579,16 @@ void swiglu(
     // DATAFLOW channels: declared here so HLS infers them as FIFOs/ping-pong
     // buffers between tasks, not as external memory ports.
     float X1_cache[MAX_BATCH][FFN_DIM];
+    #pragma HLS ARRAY_PARTITION variable=X1_cache dim=1 complete
+    #pragma HLS BIND_STORAGE variable=X1_cache type=ram_2p impl=uram
+
     float X2_cache[MAX_BATCH][FFN_DIM];
-    #pragma HLS STREAM variable=X1_cache depth=16
-    #pragma HLS STREAM variable=X2_cache depth=16
+    #pragma HLS ARRAY_PARTITION variable=X2_cache dim=1 complete
+    #pragma HLS BIND_STORAGE variable=X2_cache type=ram_2p impl=uram
 
     int8_t gate_cache[MAX_BATCH][DOWN_BLOCKS_PER_ROW][256];
     #pragma HLS BIND_STORAGE variable=gate_cache type=ram_2p impl=bram
-    #pragma HLS ARRAY_PARTITION variable=gate_cache dim=2 complete
+    #pragma HLS ARRAY_PARTITION variable=gate_cache dim=2 cyclic factor=8
 
     float gate_scale[MAX_BATCH];
 

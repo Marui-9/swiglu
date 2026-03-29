@@ -16,7 +16,7 @@ module swiglu_x_local_1_RAM_1P_BRAM_1R1W_memcore (
      
     reset, clk);
 
-parameter DataWidth = 1;
+parameter DataWidth = 8;
 parameter AddressWidth = 5;
 parameter AddressRange = 32;
  

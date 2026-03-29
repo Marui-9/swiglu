@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q4k'" level="0">
-<item name = "Date">Sat Mar 28 22:37:22 2026
+<item name = "Date">Sun Mar 29 14:22:34 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,47 +24,18 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">649, 649, 2.161 us, 2.161 us, 649, 649, no</column>
+<column name="">693, 693, 2.308 us, 2.308 us, 693, 693, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0_fu_2656">mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0, 260, 260, 0.866 us, 0.866 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_fp16_to_fp32_fu_2980">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_2985">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_2990">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_2995">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3000">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3005">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3010">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3015">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3020">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3025">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3030">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3035">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3040">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3045">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3050">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3055">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3060">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3065">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3070">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3075">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3080">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3085">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3090">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3095">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3100">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3105">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3110">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3115">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3120">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3125">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3130">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_fp16_to_fp32_fu_3135">fp16_to_fp32, 3, 3, 9.990 ns, 9.990 ns, 3, 3, no</column>
-<column name="grp_mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G1_fu_3140">mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G1, 260, 260, 0.866 us, 0.866 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k_Pipeline_UNPACK_HDR_DOWN_fu_4966">mac_blocks_down_q4k_Pipeline_UNPACK_HDR_DOWN, 39, 39, 0.130 us, 0.130 us, 33, 33, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0_fu_5610">mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0, 264, 264, 0.879 us, 0.879 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G1_fu_5902">mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G1, 264, 264, 0.879 us, 0.879 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G2_fu_6194">mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G2, 264, 264, 0.879 us, 0.879 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G3_fu_6486">mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G3, 264, 264, 0.879 us, 0.879 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

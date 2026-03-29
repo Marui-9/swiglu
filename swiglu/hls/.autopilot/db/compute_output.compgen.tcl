@@ -6,7 +6,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler swiglu_compute_output_row_buf_RAM_AUTO_1R1W BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler swiglu_compute_output_row_buf_32_RAM_1WNR_AUTO_1R1W BINDTYPE {storage} TYPE {ram_1wnr} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
 }
 
 
@@ -21,7 +21,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6015 \
+    id 3871 \
     name gate_cache_0 \
     reset_level 1 \
     sync_rst true \
@@ -40,7 +40,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6016 \
+    id 3872 \
     name gate_cache_1 \
     reset_level 1 \
     sync_rst true \
@@ -59,7 +59,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6017 \
+    id 3873 \
     name gate_cache_2 \
     reset_level 1 \
     sync_rst true \
@@ -78,7 +78,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6018 \
+    id 3874 \
     name gate_cache_3 \
     reset_level 1 \
     sync_rst true \
@@ -97,7 +97,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6019 \
+    id 3875 \
     name gate_cache_4 \
     reset_level 1 \
     sync_rst true \
@@ -116,7 +116,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6020 \
+    id 3876 \
     name gate_cache_5 \
     reset_level 1 \
     sync_rst true \
@@ -135,7 +135,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6021 \
+    id 3877 \
     name gate_cache_6 \
     reset_level 1 \
     sync_rst true \
@@ -154,7 +154,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6022 \
+    id 3878 \
     name gate_cache_7 \
     reset_level 1 \
     sync_rst true \
@@ -173,7 +173,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6023 \
+    id 3879 \
     name gate_cache_8 \
     reset_level 1 \
     sync_rst true \
@@ -192,7 +192,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6024 \
+    id 3880 \
     name gate_cache_9 \
     reset_level 1 \
     sync_rst true \
@@ -211,7 +211,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6025 \
+    id 3881 \
     name gate_cache_10 \
     reset_level 1 \
     sync_rst true \
@@ -230,7 +230,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6026 \
+    id 3882 \
     name gate_cache_11 \
     reset_level 1 \
     sync_rst true \
@@ -249,7 +249,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6027 \
+    id 3883 \
     name gate_cache_12 \
     reset_level 1 \
     sync_rst true \
@@ -268,7 +268,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6028 \
+    id 3884 \
     name gate_cache_13 \
     reset_level 1 \
     sync_rst true \
@@ -287,7 +287,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6029 \
+    id 3885 \
     name gate_cache_14 \
     reset_level 1 \
     sync_rst true \
@@ -306,7 +306,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6030 \
+    id 3886 \
     name gate_cache_15 \
     reset_level 1 \
     sync_rst true \
@@ -325,7 +325,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6031 \
+    id 3887 \
     name gate_cache_16 \
     reset_level 1 \
     sync_rst true \
@@ -344,7 +344,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6032 \
+    id 3888 \
     name gate_cache_17 \
     reset_level 1 \
     sync_rst true \
@@ -363,7 +363,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6033 \
+    id 3889 \
     name gate_cache_18 \
     reset_level 1 \
     sync_rst true \
@@ -382,7 +382,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6034 \
+    id 3890 \
     name gate_cache_19 \
     reset_level 1 \
     sync_rst true \
@@ -401,7 +401,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6035 \
+    id 3891 \
     name gate_cache_20 \
     reset_level 1 \
     sync_rst true \
@@ -420,7 +420,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6036 \
+    id 3892 \
     name gate_cache_21 \
     reset_level 1 \
     sync_rst true \
@@ -439,7 +439,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6037 \
+    id 3893 \
     name gate_cache_22 \
     reset_level 1 \
     sync_rst true \
@@ -458,7 +458,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6038 \
+    id 3894 \
     name gate_cache_23 \
     reset_level 1 \
     sync_rst true \
@@ -477,7 +477,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6039 \
+    id 3895 \
     name gate_cache_24 \
     reset_level 1 \
     sync_rst true \
@@ -496,7 +496,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6040 \
+    id 3896 \
     name gate_cache_25 \
     reset_level 1 \
     sync_rst true \
@@ -515,7 +515,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6041 \
+    id 3897 \
     name gate_cache_26 \
     reset_level 1 \
     sync_rst true \
@@ -534,7 +534,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6042 \
+    id 3898 \
     name gate_cache_27 \
     reset_level 1 \
     sync_rst true \
@@ -553,7 +553,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6043 \
+    id 3899 \
     name gate_cache_28 \
     reset_level 1 \
     sync_rst true \
@@ -572,7 +572,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6044 \
+    id 3900 \
     name gate_cache_29 \
     reset_level 1 \
     sync_rst true \
@@ -591,7 +591,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6045 \
+    id 3901 \
     name gate_cache_30 \
     reset_level 1 \
     sync_rst true \
@@ -610,7 +610,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6046 \
+    id 3902 \
     name gate_cache_31 \
     reset_level 1 \
     sync_rst true \
@@ -628,7 +628,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 6013 \
+    id 3868 \
     name p_read \
     type other \
     dir I \
@@ -643,22 +643,37 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 6014 \
-    name W_down \
-    type fifo \
+    id 3869 \
+    name gmem_Wd \
+    type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_W_down \
+    corename dc_gmem_Wd \
     op interface \
-    ports { W_down_dout { I 8 vector } W_down_empty_n { I 1 bit } W_down_read { O 1 bit } W_down_num_data_valid { I 4 vector } W_down_fifo_cap { I 4 vector } } \
+    ports { m_axi_gmem_Wd_0_AWVALID { O 1 bit } m_axi_gmem_Wd_0_AWREADY { I 1 bit } m_axi_gmem_Wd_0_AWADDR { O 64 vector } m_axi_gmem_Wd_0_AWID { O 1 vector } m_axi_gmem_Wd_0_AWLEN { O 32 vector } m_axi_gmem_Wd_0_AWSIZE { O 3 vector } m_axi_gmem_Wd_0_AWBURST { O 2 vector } m_axi_gmem_Wd_0_AWLOCK { O 2 vector } m_axi_gmem_Wd_0_AWCACHE { O 4 vector } m_axi_gmem_Wd_0_AWPROT { O 3 vector } m_axi_gmem_Wd_0_AWQOS { O 4 vector } m_axi_gmem_Wd_0_AWREGION { O 4 vector } m_axi_gmem_Wd_0_AWUSER { O 1 vector } m_axi_gmem_Wd_0_WVALID { O 1 bit } m_axi_gmem_Wd_0_WREADY { I 1 bit } m_axi_gmem_Wd_0_WDATA { O 128 vector } m_axi_gmem_Wd_0_WSTRB { O 16 vector } m_axi_gmem_Wd_0_WLAST { O 1 bit } m_axi_gmem_Wd_0_WID { O 1 vector } m_axi_gmem_Wd_0_WUSER { O 1 vector } m_axi_gmem_Wd_0_ARVALID { O 1 bit } m_axi_gmem_Wd_0_ARREADY { I 1 bit } m_axi_gmem_Wd_0_ARADDR { O 64 vector } m_axi_gmem_Wd_0_ARID { O 1 vector } m_axi_gmem_Wd_0_ARLEN { O 32 vector } m_axi_gmem_Wd_0_ARSIZE { O 3 vector } m_axi_gmem_Wd_0_ARBURST { O 2 vector } m_axi_gmem_Wd_0_ARLOCK { O 2 vector } m_axi_gmem_Wd_0_ARCACHE { O 4 vector } m_axi_gmem_Wd_0_ARPROT { O 3 vector } m_axi_gmem_Wd_0_ARQOS { O 4 vector } m_axi_gmem_Wd_0_ARREGION { O 4 vector } m_axi_gmem_Wd_0_ARUSER { O 1 vector } m_axi_gmem_Wd_0_RVALID { I 1 bit } m_axi_gmem_Wd_0_RREADY { O 1 bit } m_axi_gmem_Wd_0_RDATA { I 128 vector } m_axi_gmem_Wd_0_RLAST { I 1 bit } m_axi_gmem_Wd_0_RID { I 1 vector } m_axi_gmem_Wd_0_RFIFONUM { I 10 vector } m_axi_gmem_Wd_0_RUSER { I 1 vector } m_axi_gmem_Wd_0_RRESP { I 2 vector } m_axi_gmem_Wd_0_BVALID { I 1 bit } m_axi_gmem_Wd_0_BREADY { O 1 bit } m_axi_gmem_Wd_0_BRESP { I 2 vector } m_axi_gmem_Wd_0_BID { I 1 vector } m_axi_gmem_Wd_0_BUSER { I 1 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 6047 \
+    id 3870 \
+    name W_down \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_W_down \
+    op interface \
+    ports { W_down { I 64 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 3903 \
     name gmem_out \
     type other \
     dir O \
@@ -673,30 +688,30 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 6048 \
+    id 3904 \
     name out_batch \
-    type fifo \
+    type other \
     dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_out_batch \
     op interface \
-    ports { out_batch_dout { I 64 vector } out_batch_empty_n { I 1 bit } out_batch_read { O 1 bit } out_batch_num_data_valid { I 4 vector } out_batch_fifo_cap { I 4 vector } } \
+    ports { out_batch { I 64 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 6049 \
+    id 3905 \
     name down_quant_mode \
-    type fifo \
+    type other \
     dir I \
     reset_level 1 \
     sync_rst true \
     corename dc_down_quant_mode \
     op interface \
-    ports { down_quant_mode_dout { I 32 vector } down_quant_mode_empty_n { I 1 bit } down_quant_mode_read { O 1 bit } down_quant_mode_num_data_valid { I 4 vector } down_quant_mode_fifo_cap { I 4 vector } } \
+    ports { down_quant_mode { I 32 vector } } \
 } "
 }
 

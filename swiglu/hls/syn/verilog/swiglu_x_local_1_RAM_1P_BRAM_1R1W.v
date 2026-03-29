@@ -7,7 +7,7 @@
 `timescale 1ns/1ps
 module swiglu_x_local_1_RAM_1P_BRAM_1R1W
 #(parameter
-    DataWidth    = 1,
+    DataWidth    = 8,
     AddressRange = 16,
     AddressWidth = 4,
     BufferCount  = 2,

@@ -11,7 +11,7 @@ use ieee.std_logic_unsigned.all;
 entity swiglu_x_local_1_RAM_1P_BRAM_1R1W_memcore is 
     generic(
         MEM_TYPE        : string    := "block"; 
-        DataWidth       : integer   := 1; 
+        DataWidth       : integer   := 8; 
         AddressWidth    : integer   := 5;
         AddressRange    : integer   := 32
     ); 

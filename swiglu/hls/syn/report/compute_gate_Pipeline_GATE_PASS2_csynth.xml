@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:295</SourceLocation>
+<SourceLocation>swiglu.cpp:298</SourceLocation>
 <SummaryOfLoopViolations>
 <GATE_PASS2>
 <Name>GATE_PASS2</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:295</SourceLocation>
+<SourceLocation>swiglu.cpp:298</SourceLocation>
 </GATE_PASS2>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -146,7 +146,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1179_p_din0</name>
+<name>grp_fu_1171_p_din0</name>
 <Object>compute_gate_Pipeline_GATE_PASS2</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -157,7 +157,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1179_p_din1</name>
+<name>grp_fu_1171_p_din1</name>
 <Object>compute_gate_Pipeline_GATE_PASS2</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -168,7 +168,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1179_p_dout0</name>
+<name>grp_fu_1171_p_dout0</name>
 <Object>compute_gate_Pipeline_GATE_PASS2</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -179,7 +179,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1179_p_ce</name>
+<name>grp_fu_1171_p_ce</name>
 <Object>compute_gate_Pipeline_GATE_PASS2</Object>
 <Type>return value</Type>
 <Scope></Scope>

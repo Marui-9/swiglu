@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_x_local'" level="0">
-<item name = "Date">Sat Mar 28 22:36:44 2026
+<item name = "Date">Sun Mar 29 14:22:02 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33 ns, 2.337 ns, 0.90 ns</column>
+<column name="ap_clk">3.33 ns, 2.430 ns, 0.90 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">129, 129, 0.430 us, 0.430 us, 128, 128, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">202, 202, 0.673 us, 0.673 us, 128, 128, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- LOAD_X_VEC">127, 127, 1, 1, 1, 128, yes</column>
+<column name="- LOAD_X_VEC">200, 200, 74, 1, 1, 128, yes</column>
 </table>
 </item>
 </section>

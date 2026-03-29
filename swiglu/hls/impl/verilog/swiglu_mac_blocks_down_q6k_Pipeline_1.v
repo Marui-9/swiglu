@@ -69,15 +69,15 @@ reg acc_7_ap_vld;
 (* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 reg    ap_block_state1_pp0_stage0_iter0;
-wire   [0:0] exitcond32_fu_130_p2;
+wire   [0:0] exitcond33_fu_130_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
 reg   [3:0] empty_fu_54;
-wire   [3:0] empty_99_fu_136_p2;
+wire   [3:0] empty_90_fu_136_p2;
 wire    ap_loop_init;
 reg   [3:0] ap_sig_allocacmp_p_load;
-wire   [2:0] empty_100_fu_142_p1;
+wire   [2:0] empty_91_fu_142_p1;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -132,8 +132,8 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
-        if ((exitcond32_fu_130_p2 == 1'd0)) begin
-            empty_fu_54 <= empty_99_fu_136_p2;
+        if ((exitcond33_fu_130_p2 == 1'd0)) begin
+            empty_fu_54 <= empty_90_fu_136_p2;
         end else if ((ap_loop_init == 1'b1)) begin
             empty_fu_54 <= 4'd0;
         end
@@ -141,7 +141,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (*) begin
-    if (((empty_100_fu_142_p1 == 3'd1) & (exitcond32_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((empty_91_fu_142_p1 == 3'd1) & (exitcond33_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         acc_1_ap_vld = 1'b1;
     end else begin
         acc_1_ap_vld = 1'b0;
@@ -149,7 +149,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((empty_100_fu_142_p1 == 3'd2) & (exitcond32_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((empty_91_fu_142_p1 == 3'd2) & (exitcond33_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         acc_2_ap_vld = 1'b1;
     end else begin
         acc_2_ap_vld = 1'b0;
@@ -157,7 +157,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((empty_100_fu_142_p1 == 3'd3) & (exitcond32_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((empty_91_fu_142_p1 == 3'd3) & (exitcond33_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         acc_3_ap_vld = 1'b1;
     end else begin
         acc_3_ap_vld = 1'b0;
@@ -165,7 +165,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((empty_100_fu_142_p1 == 3'd4) & (exitcond32_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((empty_91_fu_142_p1 == 3'd4) & (exitcond33_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         acc_4_ap_vld = 1'b1;
     end else begin
         acc_4_ap_vld = 1'b0;
@@ -173,7 +173,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((empty_100_fu_142_p1 == 3'd5) & (exitcond32_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((empty_91_fu_142_p1 == 3'd5) & (exitcond33_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         acc_5_ap_vld = 1'b1;
     end else begin
         acc_5_ap_vld = 1'b0;
@@ -181,7 +181,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((empty_100_fu_142_p1 == 3'd6) & (exitcond32_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((empty_91_fu_142_p1 == 3'd6) & (exitcond33_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         acc_6_ap_vld = 1'b1;
     end else begin
         acc_6_ap_vld = 1'b0;
@@ -189,7 +189,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((empty_100_fu_142_p1 == 3'd7) & (exitcond32_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((empty_91_fu_142_p1 == 3'd7) & (exitcond33_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         acc_7_ap_vld = 1'b1;
     end else begin
         acc_7_ap_vld = 1'b0;
@@ -197,7 +197,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((empty_100_fu_142_p1 == 3'd0) & (exitcond32_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((empty_91_fu_142_p1 == 3'd0) & (exitcond33_fu_130_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         acc_ap_vld = 1'b1;
     end else begin
         acc_ap_vld = 1'b0;
@@ -213,7 +213,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((exitcond32_fu_130_p2 == 1'd1) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((exitcond33_fu_130_p2 == 1'd1) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -291,10 +291,10 @@ assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
 assign ap_ready = ap_ready_sig;
 
-assign empty_100_fu_142_p1 = ap_sig_allocacmp_p_load[2:0];
+assign empty_90_fu_136_p2 = (ap_sig_allocacmp_p_load + 4'd1);
 
-assign empty_99_fu_136_p2 = (ap_sig_allocacmp_p_load + 4'd1);
+assign empty_91_fu_142_p1 = ap_sig_allocacmp_p_load[2:0];
 
-assign exitcond32_fu_130_p2 = ((ap_sig_allocacmp_p_load == 4'd8) ? 1'b1 : 1'b0);
+assign exitcond33_fu_130_p2 = ((ap_sig_allocacmp_p_load == 4'd8) ? 1'b1 : 1'b0);
 
 endmodule //swiglu_mac_blocks_down_q6k_Pipeline_1

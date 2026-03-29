@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q6k'" level="0">
-<item name = "Date">Sat Mar 28 22:37:14 2026
+<item name = "Date">Sun Mar 29 14:22:23 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,34 +24,27 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">13220, 13220, 44.023 us, 44.023 us, 13220, 13220, no</column>
+<column name="">13232, 13232, 44.063 us, 44.063 us, 13232, 13232, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_mac_blocks_down_q6k_Pipeline_1_fu_3748">mac_blocks_down_q6k_Pipeline_1, 10, 10, 33.300 ns, 33.300 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_3760">mac_blocks_down_q6k_Pipeline_MAC_Q6K, 294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_3_fu_4112">mac_blocks_down_q6k_Pipeline_3, 10, 10, 33.300 ns, 33.300 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_4124">mac_blocks_down_q6k_Pipeline_MAC_Q6K1, 294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_5_fu_4476">mac_blocks_down_q6k_Pipeline_5, 10, 10, 33.300 ns, 33.300 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_4488">mac_blocks_down_q6k_Pipeline_MAC_Q6K2, 294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_7_fu_4853">mac_blocks_down_q6k_Pipeline_7, 10, 10, 33.300 ns, 33.300 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_4865">mac_blocks_down_q6k_Pipeline_MAC_Q6K3, 294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_9_fu_5217">mac_blocks_down_q6k_Pipeline_9, 10, 10, 33.300 ns, 33.300 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K4_fu_5229">mac_blocks_down_q6k_Pipeline_MAC_Q6K4, 294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_11_fu_5620">mac_blocks_down_q6k_Pipeline_11, 10, 10, 33.300 ns, 33.300 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K5_fu_5632">mac_blocks_down_q6k_Pipeline_MAC_Q6K5, 294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_13_fu_6010">mac_blocks_down_q6k_Pipeline_13, 10, 10, 33.300 ns, 33.300 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K6_fu_6022">mac_blocks_down_q6k_Pipeline_MAC_Q6K6, 294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_15_fu_6387">mac_blocks_down_q6k_Pipeline_15, 10, 10, 33.300 ns, 33.300 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K7_fu_6399">mac_blocks_down_q6k_Pipeline_MAC_Q6K7, 294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q6k_Pipeline_1_fu_1016">mac_blocks_down_q6k_Pipeline_1, 10, 10, 33.300 ns, 33.300 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_1028">mac_blocks_down_q6k_Pipeline_MAC_Q6K, 294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_fp16_to_fp32_fu_1091">fp16_to_fp32, 4, 4, 13.320 ns, 13.320 ns, 1, 1, yes</column>
+<column name="grp_mac_blocks_down_q6k_Pipeline_3_fu_1096">mac_blocks_down_q6k_Pipeline_3, 10, 10, 33.300 ns, 33.300 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K1_fu_1108">mac_blocks_down_q6k_Pipeline_MAC_Q6K1, 294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q6k_Pipeline_5_fu_1171">mac_blocks_down_q6k_Pipeline_5, 10, 10, 33.300 ns, 33.300 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K2_fu_1183">mac_blocks_down_q6k_Pipeline_MAC_Q6K2, 294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q6k_Pipeline_7_fu_1246">mac_blocks_down_q6k_Pipeline_7, 10, 10, 33.300 ns, 33.300 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K3_fu_1258">mac_blocks_down_q6k_Pipeline_MAC_Q6K3, 294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_447_1">12868, 12868, 3217, -, -, 4, no</column>
+<column name="- VITIS_LOOP_468_1">12880, 12880, 1610, -, -, 8, no</column>
 </table>
 </item>
 </section>

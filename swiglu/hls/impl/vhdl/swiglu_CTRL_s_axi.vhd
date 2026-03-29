@@ -35,10 +35,10 @@ port (
     RVALID                :out  STD_LOGIC;
     RREADY                :in   STD_LOGIC;
     interrupt             :out  STD_LOGIC;
-    W                     :out  STD_LOGIC_VECTOR(7 downto 0);
-    V                     :out  STD_LOGIC_VECTOR(7 downto 0);
-    W_down                :out  STD_LOGIC_VECTOR(7 downto 0);
-    x_batch               :out  STD_LOGIC_VECTOR(7 downto 0);
+    W                     :out  STD_LOGIC_VECTOR(63 downto 0);
+    V                     :out  STD_LOGIC_VECTOR(63 downto 0);
+    W_down                :out  STD_LOGIC_VECTOR(63 downto 0);
+    x_batch               :out  STD_LOGIC_VECTOR(63 downto 0);
     out_batch             :out  STD_LOGIC_VECTOR(63 downto 0);
     down_quant_mode       :out  STD_LOGIC_VECTOR(31 downto 0);
     x_scale               :out  STD_LOGIC_VECTOR(31 downto 0);
@@ -72,32 +72,36 @@ end entity swiglu_CTRL_s_axi;
 --        bit 1 - ap_ready (Read/TOW)
 --        others - reserved
 -- 0x10 : Data signal of W
---        bit 7~0 - W[7:0] (Read/Write)
---        others  - reserved
--- 0x14 : reserved
--- 0x18 : Data signal of V
---        bit 7~0 - V[7:0] (Read/Write)
---        others  - reserved
--- 0x1c : reserved
--- 0x20 : Data signal of W_down
---        bit 7~0 - W_down[7:0] (Read/Write)
---        others  - reserved
+--        bit 31~0 - W[31:0] (Read/Write)
+-- 0x14 : Data signal of W
+--        bit 31~0 - W[63:32] (Read/Write)
+-- 0x18 : reserved
+-- 0x1c : Data signal of V
+--        bit 31~0 - V[31:0] (Read/Write)
+-- 0x20 : Data signal of V
+--        bit 31~0 - V[63:32] (Read/Write)
 -- 0x24 : reserved
--- 0x28 : Data signal of x_batch
---        bit 7~0 - x_batch[7:0] (Read/Write)
---        others  - reserved
--- 0x2c : reserved
--- 0x30 : Data signal of out_batch
+-- 0x28 : Data signal of W_down
+--        bit 31~0 - W_down[31:0] (Read/Write)
+-- 0x2c : Data signal of W_down
+--        bit 31~0 - W_down[63:32] (Read/Write)
+-- 0x30 : reserved
+-- 0x34 : Data signal of x_batch
+--        bit 31~0 - x_batch[31:0] (Read/Write)
+-- 0x38 : Data signal of x_batch
+--        bit 31~0 - x_batch[63:32] (Read/Write)
+-- 0x3c : reserved
+-- 0x40 : Data signal of out_batch
 --        bit 31~0 - out_batch[31:0] (Read/Write)
--- 0x34 : Data signal of out_batch
+-- 0x44 : Data signal of out_batch
 --        bit 31~0 - out_batch[63:32] (Read/Write)
--- 0x38 : reserved
--- 0x3c : Data signal of down_quant_mode
---        bit 31~0 - down_quant_mode[31:0] (Read/Write)
--- 0x40 : reserved
--- 0x44 : Data signal of x_scale
---        bit 31~0 - x_scale[31:0] (Read/Write)
 -- 0x48 : reserved
+-- 0x4c : Data signal of down_quant_mode
+--        bit 31~0 - down_quant_mode[31:0] (Read/Write)
+-- 0x50 : reserved
+-- 0x54 : Data signal of x_scale
+--        bit 31~0 - x_scale[31:0] (Read/Write)
+-- 0x58 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of swiglu_CTRL_s_axi is
@@ -110,20 +114,24 @@ architecture behave of swiglu_CTRL_s_axi is
     constant ADDR_IER                    : INTEGER := 16#08#;
     constant ADDR_ISR                    : INTEGER := 16#0c#;
     constant ADDR_W_DATA_0               : INTEGER := 16#10#;
-    constant ADDR_W_CTRL                 : INTEGER := 16#14#;
-    constant ADDR_V_DATA_0               : INTEGER := 16#18#;
-    constant ADDR_V_CTRL                 : INTEGER := 16#1c#;
-    constant ADDR_W_DOWN_DATA_0          : INTEGER := 16#20#;
-    constant ADDR_W_DOWN_CTRL            : INTEGER := 16#24#;
-    constant ADDR_X_BATCH_DATA_0         : INTEGER := 16#28#;
-    constant ADDR_X_BATCH_CTRL           : INTEGER := 16#2c#;
-    constant ADDR_OUT_BATCH_DATA_0       : INTEGER := 16#30#;
-    constant ADDR_OUT_BATCH_DATA_1       : INTEGER := 16#34#;
-    constant ADDR_OUT_BATCH_CTRL         : INTEGER := 16#38#;
-    constant ADDR_DOWN_QUANT_MODE_DATA_0 : INTEGER := 16#3c#;
-    constant ADDR_DOWN_QUANT_MODE_CTRL   : INTEGER := 16#40#;
-    constant ADDR_X_SCALE_DATA_0         : INTEGER := 16#44#;
-    constant ADDR_X_SCALE_CTRL           : INTEGER := 16#48#;
+    constant ADDR_W_DATA_1               : INTEGER := 16#14#;
+    constant ADDR_W_CTRL                 : INTEGER := 16#18#;
+    constant ADDR_V_DATA_0               : INTEGER := 16#1c#;
+    constant ADDR_V_DATA_1               : INTEGER := 16#20#;
+    constant ADDR_V_CTRL                 : INTEGER := 16#24#;
+    constant ADDR_W_DOWN_DATA_0          : INTEGER := 16#28#;
+    constant ADDR_W_DOWN_DATA_1          : INTEGER := 16#2c#;
+    constant ADDR_W_DOWN_CTRL            : INTEGER := 16#30#;
+    constant ADDR_X_BATCH_DATA_0         : INTEGER := 16#34#;
+    constant ADDR_X_BATCH_DATA_1         : INTEGER := 16#38#;
+    constant ADDR_X_BATCH_CTRL           : INTEGER := 16#3c#;
+    constant ADDR_OUT_BATCH_DATA_0       : INTEGER := 16#40#;
+    constant ADDR_OUT_BATCH_DATA_1       : INTEGER := 16#44#;
+    constant ADDR_OUT_BATCH_CTRL         : INTEGER := 16#48#;
+    constant ADDR_DOWN_QUANT_MODE_DATA_0 : INTEGER := 16#4c#;
+    constant ADDR_DOWN_QUANT_MODE_CTRL   : INTEGER := 16#50#;
+    constant ADDR_X_SCALE_DATA_0         : INTEGER := 16#54#;
+    constant ADDR_X_SCALE_CTRL           : INTEGER := 16#58#;
     constant ADDR_BITS         : INTEGER := 7;
 
     signal AWREADY_t           : STD_LOGIC;
@@ -153,10 +161,10 @@ architecture behave of swiglu_CTRL_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_W               : UNSIGNED(7 downto 0) := (others => '0');
-    signal int_V               : UNSIGNED(7 downto 0) := (others => '0');
-    signal int_W_down          : UNSIGNED(7 downto 0) := (others => '0');
-    signal int_x_batch         : UNSIGNED(7 downto 0) := (others => '0');
+    signal int_W               : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_V               : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_W_down          : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_x_batch         : UNSIGNED(63 downto 0) := (others => '0');
     signal int_out_batch       : UNSIGNED(63 downto 0) := (others => '0');
     signal int_down_quant_mode : UNSIGNED(31 downto 0) := (others => '0');
     signal int_x_scale         : UNSIGNED(31 downto 0) := (others => '0');
@@ -290,13 +298,21 @@ begin
                     when ADDR_ISR =>
                         rdata_data(1 downto 0) <= int_isr;
                     when ADDR_W_DATA_0 =>
-                        rdata_data <= RESIZE(int_W(7 downto 0), 32);
+                        rdata_data <= RESIZE(int_W(31 downto 0), 32);
+                    when ADDR_W_DATA_1 =>
+                        rdata_data <= RESIZE(int_W(63 downto 32), 32);
                     when ADDR_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_V(7 downto 0), 32);
+                        rdata_data <= RESIZE(int_V(31 downto 0), 32);
+                    when ADDR_V_DATA_1 =>
+                        rdata_data <= RESIZE(int_V(63 downto 32), 32);
                     when ADDR_W_DOWN_DATA_0 =>
-                        rdata_data <= RESIZE(int_W_down(7 downto 0), 32);
+                        rdata_data <= RESIZE(int_W_down(31 downto 0), 32);
+                    when ADDR_W_DOWN_DATA_1 =>
+                        rdata_data <= RESIZE(int_W_down(63 downto 32), 32);
                     when ADDR_X_BATCH_DATA_0 =>
-                        rdata_data <= RESIZE(int_x_batch(7 downto 0), 32);
+                        rdata_data <= RESIZE(int_x_batch(31 downto 0), 32);
+                    when ADDR_X_BATCH_DATA_1 =>
+                        rdata_data <= RESIZE(int_x_batch(63 downto 32), 32);
                     when ADDR_OUT_BATCH_DATA_0 =>
                         rdata_data <= RESIZE(int_out_batch(31 downto 0), 32);
                     when ADDR_OUT_BATCH_DATA_1 =>
@@ -501,10 +517,10 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_W(7 downto 0) <= (others => '0');
+                int_W(31 downto 0) <= (others => '0');
             elsif (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_W_DATA_0) then
-                    int_W(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_W(7 downto 0));
+                    int_W(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_W(31 downto 0));
                 end if;
             end if;
         end if;
@@ -514,10 +530,23 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_V(7 downto 0) <= (others => '0');
+                int_W(63 downto 32) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_W_DATA_1) then
+                    int_W(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_W(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_V(31 downto 0) <= (others => '0');
             elsif (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_V_DATA_0) then
-                    int_V(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_V(7 downto 0));
+                    int_V(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_V(31 downto 0));
                 end if;
             end if;
         end if;
@@ -527,10 +556,23 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_W_down(7 downto 0) <= (others => '0');
+                int_V(63 downto 32) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_V_DATA_1) then
+                    int_V(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_V(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_W_down(31 downto 0) <= (others => '0');
             elsif (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_W_DOWN_DATA_0) then
-                    int_W_down(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_W_down(7 downto 0));
+                    int_W_down(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_W_down(31 downto 0));
                 end if;
             end if;
         end if;
@@ -540,10 +582,36 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_x_batch(7 downto 0) <= (others => '0');
+                int_W_down(63 downto 32) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_W_DOWN_DATA_1) then
+                    int_W_down(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_W_down(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_x_batch(31 downto 0) <= (others => '0');
             elsif (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_X_BATCH_DATA_0) then
-                    int_x_batch(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_x_batch(7 downto 0));
+                    int_x_batch(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_x_batch(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_x_batch(63 downto 32) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_X_BATCH_DATA_1) then
+                    int_x_batch(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_x_batch(63 downto 32));
                 end if;
             end if;
         end if;

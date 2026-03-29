@@ -52,7 +52,7 @@
             <Obj>
               <type>1</type>
               <id>2</id>
-              <name>sext_ln490</name>
+              <name>sext_ln513</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -170,7 +170,7 @@
             <Obj>
               <type>0</type>
               <id>5</id>
-              <name>sext_ln490_read</name>
+              <name>sext_ln513_read</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -213,7 +213,7 @@
             <Obj>
               <type>0</type>
               <id>6</id>
-              <name>sext_ln490_cast</name>
+              <name>sext_ln513_cast</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -367,7 +367,7 @@
             <count>2</count>
             <item_version>0</item_version>
             <item>39</item>
-            <item>115</item>
+            <item>116</item>
           </oprand_edges>
           <opcode>load</opcode>
           <m_Display>0</m_Display>
@@ -394,7 +394,7 @@
                 <item_version>0</item_version>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>exitcond4_i_fu_93_p2</rtlName>
+              <rtlName>exitcond4_i_fu_95_p2</rtlName>
               <control>auto</control>
               <opType>seteq</opType>
               <implIndex>auto</implIndex>
@@ -437,7 +437,7 @@
                 <item_version>0</item_version>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>empty_fu_99_p2</rtlName>
+              <rtlName>empty_fu_101_p2</rtlName>
               <control>auto</control>
               <opType>add</opType>
               <implIndex>fabric</implIndex>
@@ -516,7 +516,7 @@
               <name>gmem_out_addr</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>490</lineNumber>
+              <lineNumber>513</lineNumber>
               <contextFuncName>compute_output</contextFuncName>
               <contextNormFuncName>compute_output</contextNormFuncName>
               <inlineStackInfo>
@@ -532,14 +532,14 @@
                         <first>swiglu.cpp</first>
                         <second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
                       </first>
-                      <second>585</second>
+                      <second>611</second>
                     </item>
                     <item>
                       <first>
                         <first>swiglu.cpp</first>
                         <second>compute_output</second>
                       </first>
-                      <second>490</second>
+                      <second>513</second>
                     </item>
                   </second>
                 </item>
@@ -588,7 +588,7 @@
                 <item_version>0</item_version>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>loop_index_i_cast_fu_105_p1</rtlName>
+              <rtlName>loop_index_i_cast_fu_107_p1</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -705,7 +705,7 @@
             <Obj>
               <type>0</type>
               <id>22</id>
-              <name>empty_146</name>
+              <name>empty_138</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -747,10 +747,10 @@
             <Obj>
               <type>0</type>
               <id>23</id>
-              <name>gmem_out_addr_write_ln490</name>
+              <name>gmem_out_addr_write_ln513</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>490</lineNumber>
+              <lineNumber>513</lineNumber>
               <contextFuncName>compute_output</contextFuncName>
               <contextNormFuncName>compute_output</contextNormFuncName>
               <inlineStackInfo>
@@ -766,14 +766,14 @@
                         <first>swiglu.cpp</first>
                         <second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
                       </first>
-                      <second>585</second>
+                      <second>611</second>
                     </item>
                     <item>
                       <first>
                         <first>swiglu.cpp</first>
                         <second>compute_output</second>
                       </first>
-                      <second>490</second>
+                      <second>513</second>
                     </item>
                   </second>
                 </item>
@@ -841,8 +841,8 @@
             <item_version>0</item_version>
             <item>64</item>
             <item>65</item>
-            <item>116</item>
             <item>117</item>
+            <item>118</item>
           </oprand_edges>
           <opcode>store</opcode>
           <m_Display>0</m_Display>
@@ -1469,49 +1469,49 @@
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_60">
-          <id>111</id>
+          <id>112</id>
           <edge_type>2</edge_type>
           <source_obj>10</source_obj>
           <sink_obj>15</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_61">
-          <id>112</id>
+          <id>113</id>
           <edge_type>2</edge_type>
           <source_obj>15</source_obj>
           <sink_obj>28</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_62">
-          <id>113</id>
+          <id>114</id>
           <edge_type>2</edge_type>
           <source_obj>15</source_obj>
           <sink_obj>26</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_63">
-          <id>114</id>
+          <id>115</id>
           <edge_type>2</edge_type>
           <source_obj>26</source_obj>
           <sink_obj>15</sink_obj>
           <is_back_edge>1</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_64">
-          <id>115</id>
+          <id>116</id>
           <edge_type>4</edge_type>
           <source_obj>8</source_obj>
           <sink_obj>11</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_65">
-          <id>116</id>
+          <id>117</id>
           <edge_type>4</edge_type>
           <source_obj>8</source_obj>
           <sink_obj>24</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_66">
-          <id>117</id>
+          <id>118</id>
           <edge_type>4</edge_type>
           <source_obj>11</source_obj>
           <sink_obj>24</sink_obj>
@@ -1851,7 +1851,7 @@
           </second>
         </item>
         <item>
-          <first>empty_fu_99_p2 ( + ) </first>
+          <first>empty_fu_101_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -1874,7 +1874,7 @@
           </second>
         </item>
         <item>
-          <first>exitcond4_i_fu_93_p2 ( icmp ) </first>
+          <first>exitcond4_i_fu_95_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -2017,7 +2017,7 @@
           </second>
         </item>
         <item>
-          <first>loop_index_i_fu_50</first>
+          <first>loop_index_i_fu_52</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -2143,7 +2143,7 @@
           </second>
         </item>
         <item>
-          <first>loop_index_i_fu_50</first>
+          <first>loop_index_i_fu_52</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -2162,7 +2162,7 @@
           </second>
         </item>
         <item>
-          <first>out_local_load_reg_146</first>
+          <first>out_local_load_reg_148</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -2200,7 +2200,7 @@
         <count>2</count>
         <item_version>0</item_version>
         <item class_id="40" tracking_level="0" version="0">
-          <first>empty_fu_99_p2 ( + ) </first>
+          <first>empty_fu_101_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -2208,7 +2208,7 @@
           </second>
         </item>
         <item>
-          <first>exitcond4_i_fu_93_p2 ( icmp ) </first>
+          <first>exitcond4_i_fu_95_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -2416,7 +2416,7 @@
       <count>14</count>
       <item_version>0</item_version>
       <item class_id="51" tracking_level="0" version="0">
-        <first>50</first>
+        <first>52</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2424,7 +2424,7 @@
         </second>
       </item>
       <item>
-        <first>54</first>
+        <first>56</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2432,7 +2432,7 @@
         </second>
       </item>
       <item>
-        <first>60</first>
+        <first>62</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2440,7 +2440,7 @@
         </second>
       </item>
       <item>
-        <first>67</first>
+        <first>69</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -2449,7 +2449,7 @@
         </second>
       </item>
       <item>
-        <first>73</first>
+        <first>75</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2457,7 +2457,7 @@
         </second>
       </item>
       <item>
-        <first>81</first>
+        <first>83</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2465,7 +2465,7 @@
         </second>
       </item>
       <item>
-        <first>85</first>
+        <first>87</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2473,7 +2473,7 @@
         </second>
       </item>
       <item>
-        <first>90</first>
+        <first>92</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2481,7 +2481,7 @@
         </second>
       </item>
       <item>
-        <first>93</first>
+        <first>95</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2489,7 +2489,7 @@
         </second>
       </item>
       <item>
-        <first>99</first>
+        <first>101</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2497,7 +2497,7 @@
         </second>
       </item>
       <item>
-        <first>105</first>
+        <first>107</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2505,7 +2505,7 @@
         </second>
       </item>
       <item>
-        <first>110</first>
+        <first>112</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2513,7 +2513,7 @@
         </second>
       </item>
       <item>
-        <first>115</first>
+        <first>117</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2521,7 +2521,7 @@
         </second>
       </item>
       <item>
-        <first>121</first>
+        <first>123</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2533,7 +2533,7 @@
       <count>8</count>
       <item_version>0</item_version>
       <item class_id="54" tracking_level="0" version="0">
-        <first>empty_146_fu_121</first>
+        <first>empty_138_fu_123</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2541,7 +2541,7 @@
         </second>
       </item>
       <item>
-        <first>empty_fu_99</first>
+        <first>empty_fu_101</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2549,7 +2549,7 @@
         </second>
       </item>
       <item>
-        <first>exitcond4_i_fu_93</first>
+        <first>exitcond4_i_fu_95</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2557,7 +2557,7 @@
         </second>
       </item>
       <item>
-        <first>gmem_out_addr_fu_115</first>
+        <first>gmem_out_addr_fu_117</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2565,7 +2565,7 @@
         </second>
       </item>
       <item>
-        <first>loop_index_i_cast_fu_105</first>
+        <first>loop_index_i_cast_fu_107</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2573,7 +2573,7 @@
         </second>
       </item>
       <item>
-        <first>loop_index_i_fu_50</first>
+        <first>loop_index_i_fu_52</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2581,7 +2581,7 @@
         </second>
       </item>
       <item>
-        <first>out_local_addr_gep_fu_60</first>
+        <first>out_local_addr_gep_fu_62</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2589,7 +2589,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln490_cast_fu_81</first>
+        <first>sext_ln513_cast_fu_83</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2605,7 +2605,7 @@
       <count>5</count>
       <item_version>0</item_version>
       <item>
-        <first>loop_index_i_load_load_fu_90</first>
+        <first>loop_index_i_load_load_fu_92</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2613,7 +2613,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln490_read_read_fu_54</first>
+        <first>sext_ln513_read_read_fu_56</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2621,7 +2621,7 @@
         </second>
       </item>
       <item>
-        <first>store_ln0_store_fu_110</first>
+        <first>store_ln0_store_fu_112</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2629,7 +2629,7 @@
         </second>
       </item>
       <item>
-        <first>store_ln0_store_fu_85</first>
+        <first>store_ln0_store_fu_87</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2637,7 +2637,7 @@
         </second>
       </item>
       <item>
-        <first>write_ln490_write_fu_73</first>
+        <first>write_ln513_write_fu_75</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2669,7 +2669,7 @@
       <count>5</count>
       <item_version>0</item_version>
       <item>
-        <first>125</first>
+        <first>127</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2677,7 +2677,7 @@
         </second>
       </item>
       <item>
-        <first>132</first>
+        <first>134</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2685,7 +2685,7 @@
         </second>
       </item>
       <item>
-        <first>137</first>
+        <first>139</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2693,7 +2693,7 @@
         </second>
       </item>
       <item>
-        <first>141</first>
+        <first>143</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2701,7 +2701,7 @@
         </second>
       </item>
       <item>
-        <first>146</first>
+        <first>148</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2713,7 +2713,7 @@
       <count>5</count>
       <item_version>0</item_version>
       <item>
-        <first>exitcond4_i_reg_137</first>
+        <first>exitcond4_i_reg_139</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2721,7 +2721,7 @@
         </second>
       </item>
       <item>
-        <first>loop_index_i_reg_125</first>
+        <first>loop_index_i_reg_127</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2729,7 +2729,7 @@
         </second>
       </item>
       <item>
-        <first>out_local_addr_reg_141</first>
+        <first>out_local_addr_reg_143</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2737,7 +2737,7 @@
         </second>
       </item>
       <item>
-        <first>out_local_load_reg_146</first>
+        <first>out_local_load_reg_148</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2745,7 +2745,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln490_cast_reg_132</first>
+        <first>sext_ln513_cast_reg_134</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2796,7 +2796,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln490</first>
+        <first>sext_ln513</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

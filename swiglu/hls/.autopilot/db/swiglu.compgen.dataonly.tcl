@@ -4,59 +4,59 @@ set axilite_register_dict [dict create]
 set port_CTRL {
 W { 
 	dir I
-	width 8
+	width 64
 	depth 1
 	mode ap_none
 	offset 16
-	offset_end 23
+	offset_end 27
 }
 V { 
 	dir I
-	width 8
+	width 64
 	depth 1
 	mode ap_none
-	offset 24
-	offset_end 31
+	offset 28
+	offset_end 39
 }
 W_down { 
 	dir I
-	width 8
-	depth 1
-	mode ap_none
-	offset 32
-	offset_end 39
-}
-x_batch { 
-	dir I
-	width 8
+	width 64
 	depth 1
 	mode ap_none
 	offset 40
-	offset_end 47
+	offset_end 51
+}
+x_batch { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 52
+	offset_end 63
 }
 out_batch { 
 	dir I
 	width 64
 	depth 1
 	mode ap_none
-	offset 48
-	offset_end 59
+	offset 64
+	offset_end 75
 }
 down_quant_mode { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 60
-	offset_end 67
+	offset 76
+	offset_end 83
 }
 x_scale { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 68
-	offset_end 75
+	offset 84
+	offset_end 91
 }
 ap_start { }
 ap_done { }

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0'" level="0">
-<item name = "Date">Sat Mar 28 22:37:16 2026
+<item name = "Date">Sun Mar 29 14:22:26 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33 ns, 2.250 ns, 0.90 ns</column>
+<column name="ap_clk">3.33 ns, 2.371 ns, 0.90 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">260, 260, 0.866 us, 0.866 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">264, 264, 0.879 us, 0.879 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- MAC_BLOCKS_G0">258, 258, 4, 1, 1, 256, yes</column>
+<column name="- MAC_BLOCKS_G0">262, 262, 8, 1, 1, 256, yes</column>
 </table>
 </item>
 </section>

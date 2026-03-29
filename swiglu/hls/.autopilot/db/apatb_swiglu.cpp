@@ -35,12 +35,24 @@ using namespace std;
 #define AUTOTB_TVOUT_down_quant_mode "../tv/cdatafile/c.swiglu.autotvout_down_quant_mode.dat"
 #define AUTOTB_TVIN_x_scale "../tv/cdatafile/c.swiglu.autotvin_x_scale.dat"
 #define AUTOTB_TVOUT_x_scale "../tv/cdatafile/c.swiglu.autotvout_x_scale.dat"
+#define AUTOTB_TVIN_gmem_V "../tv/cdatafile/c.swiglu.autotvin_gmem_V.dat"
+#define AUTOTB_TVOUT_gmem_V "../tv/cdatafile/c.swiglu.autotvout_gmem_V.dat"
+#define AUTOTB_TVIN_gmem_W "../tv/cdatafile/c.swiglu.autotvin_gmem_W.dat"
+#define AUTOTB_TVOUT_gmem_W "../tv/cdatafile/c.swiglu.autotvout_gmem_W.dat"
+#define AUTOTB_TVIN_gmem_Wd "../tv/cdatafile/c.swiglu.autotvin_gmem_Wd.dat"
+#define AUTOTB_TVOUT_gmem_Wd "../tv/cdatafile/c.swiglu.autotvout_gmem_Wd.dat"
 #define AUTOTB_TVIN_gmem_out "../tv/cdatafile/c.swiglu.autotvin_gmem_out.dat"
 #define AUTOTB_TVOUT_gmem_out "../tv/cdatafile/c.swiglu.autotvout_gmem_out.dat"
+#define AUTOTB_TVIN_gmem_x "../tv/cdatafile/c.swiglu.autotvin_gmem_x.dat"
+#define AUTOTB_TVOUT_gmem_x "../tv/cdatafile/c.swiglu.autotvout_gmem_x.dat"
 
 
 // tvout file define:
+#define AUTOTB_TVOUT_PC_gmem_V "../tv/rtldatafile/rtl.swiglu.autotvout_gmem_V.dat"
+#define AUTOTB_TVOUT_PC_gmem_W "../tv/rtldatafile/rtl.swiglu.autotvout_gmem_W.dat"
+#define AUTOTB_TVOUT_PC_gmem_Wd "../tv/rtldatafile/rtl.swiglu.autotvout_gmem_Wd.dat"
 #define AUTOTB_TVOUT_PC_gmem_out "../tv/rtldatafile/rtl.swiglu.autotvout_gmem_out.dat"
+#define AUTOTB_TVOUT_PC_gmem_x "../tv/rtldatafile/rtl.swiglu.autotvout_gmem_x.dat"
 
 
 namespace hls::sim
@@ -1249,49 +1261,53 @@ void swiglu_hw_stub_wrapper(void*, void*, void*, void*, void*, hls::sim::Byte<4>
 extern "C"
 void apatb_swiglu_hw(void* __xlx_apatb_param_W, void* __xlx_apatb_param_V, void* __xlx_apatb_param_W_down, void* __xlx_apatb_param_x_batch, void* __xlx_apatb_param_out_batch, hls::sim::Byte<4> __xlx_apatb_param_down_quant_mode, float __xlx_apatb_param_x_scale)
 {
+  static hls::sim::Byte<4> __xlx_offset_byte_param_W;
   static hls::sim::Register port0 {
     .name = "W",
-    .width = 8,
+    .width = 32,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_W),
 #endif
   };
-  port0.param = __xlx_apatb_param_W;
+  port0.param = &__xlx_offset_byte_param_W;
 
+  static hls::sim::Byte<4> __xlx_offset_byte_param_V;
   static hls::sim::Register port1 {
     .name = "V",
-    .width = 8,
+    .width = 32,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_V),
 #endif
   };
-  port1.param = __xlx_apatb_param_V;
+  port1.param = &__xlx_offset_byte_param_V;
 
+  static hls::sim::Byte<4> __xlx_offset_byte_param_W_down;
   static hls::sim::Register port2 {
     .name = "W_down",
-    .width = 8,
+    .width = 32,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_W_down),
 #endif
   };
-  port2.param = __xlx_apatb_param_W_down;
+  port2.param = &__xlx_offset_byte_param_W_down;
 
+  static hls::sim::Byte<4> __xlx_offset_byte_param_x_batch;
   static hls::sim::Register port3 {
     .name = "x_batch",
-    .width = 8,
+    .width = 32,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_x_batch),
 #endif
   };
-  port3.param = __xlx_apatb_param_x_batch;
+  port3.param = &__xlx_offset_byte_param_x_batch;
 
   static hls::sim::Byte<4> __xlx_offset_byte_param_out_batch;
   static hls::sim::Register port4 {
@@ -1332,6 +1348,81 @@ void apatb_swiglu_hw(void* __xlx_apatb_param_W, void* __xlx_apatb_param_V, void*
 #else
   static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port7 {
 #endif
+    .width = 128,
+    .asize = 16,
+    .hbm = false,
+    .name = { "gmem_V" },
+#ifdef POST_CHECK
+#else
+    .owriter = nullptr,
+#ifdef USE_BINARY_TV_FILE
+    .iwriter = new hls::sim::Output(AUTOTB_TVIN_gmem_V),
+#else
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem_V),
+#endif
+#endif
+    .hasWrite = { false },
+    .max_nbytes = { 0 },
+  };
+  port7.param = { __xlx_apatb_param_V };
+  port7.mname = { "V" };
+  port7.nbytes = { 9437184 };
+
+#ifdef USE_BINARY_TV_FILE
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port8 {
+#else
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port8 {
+#endif
+    .width = 128,
+    .asize = 16,
+    .hbm = false,
+    .name = { "gmem_W" },
+#ifdef POST_CHECK
+#else
+    .owriter = nullptr,
+#ifdef USE_BINARY_TV_FILE
+    .iwriter = new hls::sim::Output(AUTOTB_TVIN_gmem_W),
+#else
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem_W),
+#endif
+#endif
+    .hasWrite = { false },
+    .max_nbytes = { 0 },
+  };
+  port8.param = { __xlx_apatb_param_W };
+  port8.mname = { "W" };
+  port8.nbytes = { 9437184 };
+
+#ifdef USE_BINARY_TV_FILE
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port9 {
+#else
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port9 {
+#endif
+    .width = 128,
+    .asize = 16,
+    .hbm = false,
+    .name = { "gmem_Wd" },
+#ifdef POST_CHECK
+#else
+    .owriter = nullptr,
+#ifdef USE_BINARY_TV_FILE
+    .iwriter = new hls::sim::Output(AUTOTB_TVIN_gmem_Wd),
+#else
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem_Wd),
+#endif
+#endif
+    .hasWrite = { false },
+    .max_nbytes = { 0 },
+  };
+  port9.param = { __xlx_apatb_param_W_down };
+  port9.mname = { "W_down" };
+  port9.nbytes = { 13762560 };
+
+#ifdef USE_BINARY_TV_FILE
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port10 {
+#else
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port10 {
+#endif
     .width = 32,
     .asize = 4,
     .hbm = false,
@@ -1357,26 +1448,55 @@ void apatb_swiglu_hw(void* __xlx_apatb_param_W, void* __xlx_apatb_param_V, void*
     .hasWrite = { true },
     .max_nbytes = { 0 },
   };
-  port7.param = { __xlx_apatb_param_out_batch };
-  port7.mname = { "out_batch" };
-  port7.nbytes = { 8192 };
+  port10.param = { __xlx_apatb_param_out_batch };
+  port10.mname = { "out_batch" };
+  port10.nbytes = { 8192 };
+
+#ifdef USE_BINARY_TV_FILE
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port11 {
+#else
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port11 {
+#endif
+    .width = 128,
+    .asize = 16,
+    .hbm = false,
+    .name = { "gmem_x" },
+#ifdef POST_CHECK
+#else
+    .owriter = nullptr,
+#ifdef USE_BINARY_TV_FILE
+    .iwriter = new hls::sim::Output(AUTOTB_TVIN_gmem_x),
+#else
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem_x),
+#endif
+#endif
+    .hasWrite = { false },
+    .max_nbytes = { 0 },
+  };
+  port11.param = { __xlx_apatb_param_x_batch };
+  port11.mname = { "x_batch" };
+  port11.nbytes = { 2048 };
 
   try {
 #ifdef POST_CHECK
     CodeState = ENTER_WRAPC_PC;
-    check(port7);
+    check(port10);
 #else
     static hls::sim::RefTCL tcl("../tv/cdatafile/ref.tcl");
     tcl.containsVLA = 0;
     CodeState = DUMP_INPUTS;
+    delay_dump(port0, port0.iwriter, tcl.AESL_transaction);
+    delay_dump(port1, port1.iwriter, tcl.AESL_transaction);
+    delay_dump(port2, port2.iwriter, tcl.AESL_transaction);
+    delay_dump(port3, port3.iwriter, tcl.AESL_transaction);
     delay_dump(port4, port4.iwriter, tcl.AESL_transaction);
-    dump(port0, port0.iwriter, tcl.AESL_transaction);
-    dump(port1, port1.iwriter, tcl.AESL_transaction);
-    dump(port2, port2.iwriter, tcl.AESL_transaction);
-    dump(port3, port3.iwriter, tcl.AESL_transaction);
     dump(port5, port5.iwriter, tcl.AESL_transaction);
     dump(port6, port6.iwriter, tcl.AESL_transaction);
     dump(port7, port7.iwriter, tcl.AESL_transaction);
+    dump(port8, port8.iwriter, tcl.AESL_transaction);
+    dump(port9, port9.iwriter, tcl.AESL_transaction);
+    dump(port10, port10.iwriter, tcl.AESL_transaction);
+    dump(port11, port11.iwriter, tcl.AESL_transaction);
     port0.doTCL(tcl);
     port1.doTCL(tcl);
     port2.doTCL(tcl);
@@ -1385,10 +1505,14 @@ void apatb_swiglu_hw(void* __xlx_apatb_param_W, void* __xlx_apatb_param_V, void*
     port5.doTCL(tcl);
     port6.doTCL(tcl);
     port7.doTCL(tcl);
+    port8.doTCL(tcl);
+    port9.doTCL(tcl);
+    port10.doTCL(tcl);
+    port11.doTCL(tcl);
     CodeState = CALL_C_DUT;
     swiglu_hw_stub_wrapper(__xlx_apatb_param_W, __xlx_apatb_param_V, __xlx_apatb_param_W_down, __xlx_apatb_param_x_batch, __xlx_apatb_param_out_batch, __xlx_apatb_param_down_quant_mode, __xlx_apatb_param_x_scale);
     CodeState = DUMP_OUTPUTS;
-    dump(port7, port7.owriter, tcl.AESL_transaction);
+    dump(port10, port10.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;
 #endif
   } catch (const hls::sim::SimException &e) {

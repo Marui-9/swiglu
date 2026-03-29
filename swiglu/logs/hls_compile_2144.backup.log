@@ -1,0 +1,1293 @@
+  **** HLS Build v2025.1 6135595
+INFO: [HLS 200-2005] Using work_dir C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu 
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./swiglu.cpp' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./swiglu.h' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(13)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./sigmoid_lut.h' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(14)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/sigmoid_lut.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./swiglu_tb.cpp' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu_tb.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=swiglu' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xck26-sfvc784-2LV-c' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1465] Applying config ini 'clock=3.33ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(7)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.33ns.
+INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=0.90ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(8)
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.9ns.
+INFO: [HLS 200-1465] Applying config ini 'cosim.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(11)
+INFO: [HLS 200-1465] Applying config ini 'package.ip.version=3.2' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(15)
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/vitis-comp.json
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.027 seconds; current allocated memory: 179.676 MB.
+INFO: [HLS 200-10] Analyzing design file 'swiglu.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.93 seconds; current allocated memory: 183.582 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 12,707 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 29,110 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 21,205 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 20,944 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 20,756 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 48,895 instructions in the design after the 'Array/Struct' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 29,095 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 29,097 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 29,097 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 29,276 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 29,135 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 29,097 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 38,437 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 32,333 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 32,361 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 28,625 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function 'get_byte(ap_uint<128> const*, int)' into 'mac_blocks_wv(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)' (swiglu.cpp:130:32)
+INFO: [HLS 214-131] Inlining function 'get_byte(ap_uint<128> const*, int)' into 'mac_blocks_down_q4k(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)' (swiglu.cpp:345:32)
+INFO: [HLS 214-131] Inlining function 'get_byte(ap_uint<128> const*, int)' into 'decode_mac_q6k(ap_uint<128> const*, int, signed char const*, float, int)' (swiglu.cpp:63:35)
+INFO: [HLS 214-131] Inlining function 'decode_mac_q6k(ap_uint<128> const*, int, signed char const*, float, int)' into 'mac_blocks_down_q6k(ap_uint<128> const*, signed char const (*) [256], float, float*)' (swiglu.cpp:450:18)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_399_3' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:399:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_387_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:387:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_186_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:186:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_510_1' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:510:31)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_453_2' (swiglu.cpp:453:23) in function 'mac_blocks_down_q6k' completely with a factor of 32 (swiglu.cpp:441:0)
+INFO: [HLS 214-188] Unrolling loop 'VITIS_LOOP_447_1' (swiglu.cpp:447:20) in function 'mac_blocks_down_q6k' partially with a factor of 8 (swiglu.cpp:441:0)
+INFO: [HLS 214-186] Unrolling loop 'REDUCE_Q6K' (swiglu.cpp:82:17) in function 'mac_blocks_down_q6k' completely with a factor of 8 (swiglu.cpp:441:0)
+INFO: [HLS 214-186] Unrolling loop 'REDUCE_DOWN_Q4K' (swiglu.cpp:412:22) in function 'mac_blocks_down_q4k' completely with a factor of 32 (swiglu.cpp:329:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_415_4' (swiglu.cpp:415:27) in function 'mac_blocks_down_q4k' completely with a factor of 8 (swiglu.cpp:329:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_399_3' (swiglu.cpp:399:20) in function 'mac_blocks_down_q4k' completely with a factor of 16 (swiglu.cpp:329:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_387_2' (swiglu.cpp:387:20) in function 'mac_blocks_down_q4k' completely with a factor of 16 (swiglu.cpp:329:0)
+INFO: [HLS 214-186] Unrolling loop 'INIT_ACC_DOWN' (swiglu.cpp:369:17) in function 'mac_blocks_down_q4k' completely with a factor of 32 (swiglu.cpp:329:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_371_1' (swiglu.cpp:371:20) in function 'mac_blocks_down_q4k' completely with a factor of 8 (swiglu.cpp:329:0)
+INFO: [HLS 214-186] Unrolling loop 'UNPACK_HDR_DOWN' (swiglu.cpp:343:19) in function 'mac_blocks_down_q4k' completely with a factor of 32 (swiglu.cpp:329:0)
+INFO: [HLS 214-186] Unrolling loop 'SWISH_GATE' (swiglu.cpp:262:14) in function 'compute_gate' completely with a factor of 1 (swiglu.cpp:260:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_286_1' (swiglu.cpp:286:27) in function 'compute_gate' completely with a factor of 8 (swiglu.cpp:260:0)
+INFO: [HLS 214-186] Unrolling loop 'REDUCE_WV' (swiglu.cpp:200:16) in function 'mac_blocks_wv' completely with a factor of 8 (swiglu.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_203_3' (swiglu.cpp:203:27) in function 'mac_blocks_wv' completely with a factor of 8 (swiglu.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_186_2' (swiglu.cpp:186:20) in function 'mac_blocks_wv' completely with a factor of 8 (swiglu.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'INIT_ACC_WV' (swiglu.cpp:165:15) in function 'mac_blocks_wv' completely with a factor of 8 (swiglu.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_167_1' (swiglu.cpp:167:20) in function 'mac_blocks_wv' completely with a factor of 8 (swiglu.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'UNPACK_HDR_WV' (swiglu.cpp:128:17) in function 'mac_blocks_wv' completely with a factor of 8 (swiglu.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_37_1' (swiglu.cpp:37:26) in function 'fp16_to_fp32' completely with a factor of 10 (swiglu.cpp:28:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_510_1' (swiglu.cpp:510:31) in function 'load_x_local' completely with a factor of 16 (swiglu.cpp:501:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::mantissa() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::expv() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::__signbit() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' into 'int generic_cast_IEEE754<int, float>(float, bool)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, float>(float, bool)' into '__hls_fptosi_float_i32' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_float_i32' into 'compute_gate(float const (*) [8192], float const (*) [8192], signed char (*) [32][256], float*)' (swiglu.cpp:260:0)
+WARNING: [HLS 214-464] Skipping array undecay on variable length array 'x_batch'. (swiglu.cpp:535:0)
+INFO: [HLS 214-248] Applying array_partition to 'd': Complete partitioning on dimension 1. (swiglu.cpp:119:8)
+INFO: [HLS 214-248] Applying array_partition to 'dmin': Complete partitioning on dimension 1. (swiglu.cpp:120:11)
+INFO: [HLS 214-248] Applying array_partition to 'sc6': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:121:13)
+INFO: [HLS 214-248] Applying array_partition to 'mn6': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:122:13)
+INFO: [HLS 214-248] Applying array_partition to 'int_acc_w': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:161:13)
+INFO: [HLS 214-248] Applying array_partition to 'int_acc_m': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:162:13)
+INFO: [HLS 214-248] Applying array_partition to 'row_buf': Complete partitioning on dimension 1. (swiglu.cpp:224:22)
+INFO: [HLS 214-248] Applying array_partition to 'row_buf': Complete partitioning on dimension 1. (swiglu.cpp:243:22)
+INFO: [HLS 214-248] Applying array_partition to 'pmax': Complete partitioning on dimension 1. (swiglu.cpp:267:8)
+INFO: [HLS 214-248] Applying array_partition to 'd': Complete partitioning on dimension 1. (swiglu.cpp:334:8)
+INFO: [HLS 214-248] Applying array_partition to 'dmin': Complete partitioning on dimension 1. (swiglu.cpp:335:11)
+INFO: [HLS 214-248] Applying array_partition to 'sc6': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:336:13)
+INFO: [HLS 214-248] Applying array_partition to 'mn6': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:337:13)
+INFO: [HLS 214-248] Applying array_partition to 'int_acc_w': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:364:13)
+INFO: [HLS 214-248] Applying array_partition to 'int_acc_m': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:365:13)
+INFO: [HLS 214-248] Applying array_partition to 'acc.i': Complete partitioning on dimension 1. (swiglu.cpp:66:11)
+INFO: [HLS 214-248] Applying array_partition to 'block_sums': Complete partitioning on dimension 1. (swiglu.cpp:445:8)
+INFO: [HLS 214-248] Applying array_partition to 'row_buf': Complete partitioning on dimension 1. (swiglu.cpp:477:26)
+INFO: [HLS 214-248] Applying array_partition to 'row_buf11': Complete partitioning on dimension 1. (swiglu.cpp:483:26)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:553:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:557:9)
+INFO: [HLS 214-248] Applying array_partition to 'gate_cache': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:568:9)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at  
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at swiglu.cpp:490:5 
+INFO: [HLS 214-449] Automatically partitioning array 'gate_scale' dimension 1 completely based on constant index. (swiglu.cpp:572:8)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_0' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_1' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_2' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_3' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_4' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_5' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_6' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_7' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_0' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_1' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_2' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_3' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_4' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_5' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_6' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_7' due to pipeline pragma (swiglu.cpp:508:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'gate_scale' due to pipeline pragma (swiglu.cpp:572:8)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_0': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:553:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_1': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:553:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_2': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:553:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_3': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:553:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_4': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:553:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_5': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:553:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_6': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:553:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_7': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:553:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_0': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:557:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_1': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:557:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_2': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:557:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_3': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:557:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_4': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:557:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_5': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:557:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_6': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:557:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_7': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:557:9)
+INFO: [HLS 214-248] Applying array_partition to 'gate_scale': Complete partitioning on dimension 1. (swiglu.cpp:572:8)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'X1_cache'
+Resolution: For help on HLS 214-142 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=214-142.html
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'X2_cache'
+Resolution: For help on HLS 214-142 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=214-142.html
+INFO: [HLS 214-115] Multiple burst reads of length 128 and bit width 128 in loop 'LOAD_X_VEC'(swiglu.cpp:507:21) has been inferred on bundle 'gmem_x'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:507:21)
+INFO: [HLS 214-115] Multiple burst reads of length 72 and bit width 128 in loop 'LOAD_WV'(swiglu.cpp:99:11) has been inferred on bundle 'gmem_V'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:99:11)
+INFO: [HLS 214-115] Multiple burst reads of length 288 and bit width 128 in loop 'LOAD_DOWN_Q4K'(swiglu.cpp:314:17) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:314:17)
+INFO: [HLS 214-115] Multiple burst reads of length 420 and bit width 128 in loop 'LOAD_DOWN_Q6K'(swiglu.cpp:432:17) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:432:17)
+INFO: [HLS 214-115] Multiple burst writes of length 2048 and bit width 32 in loop 'anonymous'(swiglu.cpp:490:5) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:490:5)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 99.104 seconds; current allocated memory: 190.543 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.003 seconds; current allocated memory: 190.543 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 5 seconds. CPU system time: 0 seconds. Elapsed time: 5.396 seconds; current allocated memory: 223.512 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] swiglu.cpp:54: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 5 seconds. CPU system time: 0 seconds. Elapsed time: 4.932 seconds; current allocated memory: 251.773 MB.
+INFO: [XFORM 203-712] Applying dataflow to function 'swiglu' (swiglu.cpp:527:9), detected/extracted 5 process function(s): 
+	 'load_x_local'
+	 'compute_X1'
+	 'compute_X2'
+	 'compute_gate'
+	 'compute_output'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (swiglu.cpp:28:36) to (swiglu.cpp:47:50) in function 'fp16_to_fp32'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'compute_gate'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'mac_blocks_wv' (swiglu.cpp:54:21)...112 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'mac_blocks_down_q4k' (swiglu.cpp:54:20)...448 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 24 seconds. CPU system time: 1 seconds. Elapsed time: 24.689 seconds; current allocated memory: 291.336 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'LOAD_WV'(swiglu.cpp:99:11) and 'VITIS_LOOP_100_1'(swiglu.cpp:100:27) in function 'load_row_wv' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'LOAD_DOWN_Q4K'(swiglu.cpp:314:17) and 'VITIS_LOOP_315_1'(swiglu.cpp:315:27) in function 'load_row_down_q4k' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'LOAD_WV' (swiglu.cpp:99:11) in function 'load_row_wv'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LOAD_DOWN_Q4K' (swiglu.cpp:314:17) in function 'load_row_down_q4k'.
+WARNING: [HLS 200-1449] Process compute_X1 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process compute_X2 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process compute_output has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 17 seconds. CPU system time: 0 seconds. Elapsed time: 17.844 seconds; current allocated memory: 748.328 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'swiglu' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'load_x_local' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOAD_X_VEC'.
+INFO: [HLS 200-876] Unable to schedule the whole 71 cycles bus request operation ('empty', swiglu.cpp:507) on port 'gmem_x' (swiglu.cpp:507) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
+Resolution: For help on HLS 200-876 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-876.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'LOAD_X_VEC'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 2.927 seconds; current allocated memory: 775.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.209 seconds; current allocated memory: 776.297 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOAD_WV_VITIS_LOOP_100_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_WV_VITIS_LOOP_100_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.233 seconds; current allocated memory: 776.383 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.037 seconds; current allocated memory: 776.391 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'load_row_wv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.062 seconds; current allocated memory: 776.406 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.042 seconds; current allocated memory: 776.473 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_71) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_68) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_64) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_71) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_68) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_64) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'MAC_ALL_BLOCKS'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'MAC_ALL_BLOCKS'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.117 seconds; current allocated memory: 778.160 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.353 seconds; current allocated memory: 778.211 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fp16_to_fp32' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.472 seconds; current allocated memory: 778.328 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.044 seconds; current allocated memory: 778.477 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_wv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_wv' consists of the following:
+	'sitofp' operation 32 bit ('conv', swiglu.cpp:208) [842]  (3.239 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.388 seconds; current allocated memory: 783.285 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.314 seconds; current allocated memory: 786.523 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_X1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.331 seconds; current allocated memory: 787.203 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.077 seconds; current allocated memory: 787.656 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_X2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.147 seconds; current allocated memory: 787.879 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.071 seconds; current allocated memory: 788.145 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_gate_Pipeline_GATE_PASS1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'GATE_PASS1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 48, loop 'GATE_PASS1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.174 seconds; current allocated memory: 789.332 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 789.402 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_gate_Pipeline_GATE_PASS2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'GATE_PASS2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 14, loop 'GATE_PASS2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.127 seconds; current allocated memory: 790.508 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.066 seconds; current allocated memory: 790.734 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_gate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.151 seconds; current allocated memory: 791.840 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.077 seconds; current allocated memory: 792.289 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOAD_DOWN_Q6K'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'LOAD_DOWN_Q6K'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 10 seconds. CPU system time: 0 seconds. Elapsed time: 10.347 seconds; current allocated memory: 813.555 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.288 seconds; current allocated memory: 813.953 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'load_row_down_q6k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.318 seconds; current allocated memory: 814.359 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.075 seconds; current allocated memory: 814.633 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.115 seconds; current allocated memory: 814.734 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.032 seconds; current allocated memory: 814.734 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'MAC_Q6K'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_142', swiglu.cpp:78->swiglu.cpp:450) to 'fadd' operation 32 bit ('acc', swiglu.cpp:78->swiglu.cpp:450) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
+Resolution: For help on HLS 200-887 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K' consists of the following:
+	'sitofp' operation 32 bit ('conv40_i', swiglu.cpp:77->swiglu.cpp:450) [740]  (3.239 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.772 seconds; current allocated memory: 819.711 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.227 seconds; current allocated memory: 820.488 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.216 seconds; current allocated memory: 820.703 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.031 seconds; current allocated memory: 820.941 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'MAC_Q6K'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_150', swiglu.cpp:78->swiglu.cpp:450) to 'fadd' operation 32 bit ('acc', swiglu.cpp:78->swiglu.cpp:450) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
+Resolution: For help on HLS 200-887 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K1' consists of the following:
+	'sitofp' operation 32 bit ('conv40_i_1', swiglu.cpp:77->swiglu.cpp:450) [746]  (3.239 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.267 seconds; current allocated memory: 825.586 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.176 seconds; current allocated memory: 826.465 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.087 seconds; current allocated memory: 826.719 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.031 seconds; current allocated memory: 826.719 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'MAC_Q6K'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_148', swiglu.cpp:78->swiglu.cpp:450) to 'fadd' operation 32 bit ('acc', swiglu.cpp:78->swiglu.cpp:450) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
+Resolution: For help on HLS 200-887 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K2' consists of the following:
+	'sitofp' operation 32 bit ('conv40_i_2', swiglu.cpp:77->swiglu.cpp:450) [772]  (3.239 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.279 seconds; current allocated memory: 832.062 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.196 seconds; current allocated memory: 833.078 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.222 seconds; current allocated memory: 833.289 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.035 seconds; current allocated memory: 833.402 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'MAC_Q6K'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_139', swiglu.cpp:78->swiglu.cpp:450) to 'fadd' operation 32 bit ('acc', swiglu.cpp:78->swiglu.cpp:450) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
+Resolution: For help on HLS 200-887 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K3' consists of the following:
+	'sitofp' operation 32 bit ('conv40_i_3', swiglu.cpp:77->swiglu.cpp:450) [746]  (3.239 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.465 seconds; current allocated memory: 838.391 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.18 seconds; current allocated memory: 839.273 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_9' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.213 seconds; current allocated memory: 839.457 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 839.457 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'MAC_Q6K'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_130', swiglu.cpp:78->swiglu.cpp:450) to 'fadd' operation 32 bit ('acc', swiglu.cpp:78->swiglu.cpp:450) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
+Resolution: For help on HLS 200-887 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K4' consists of the following:
+	'sitofp' operation 32 bit ('conv40_i_4', swiglu.cpp:77->swiglu.cpp:450) [824]  (3.239 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.381 seconds; current allocated memory: 844.863 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.221 seconds; current allocated memory: 846.277 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.263 seconds; current allocated memory: 846.648 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.031 seconds; current allocated memory: 846.648 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'MAC_Q6K'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_121', swiglu.cpp:78->swiglu.cpp:450) to 'fadd' operation 32 bit ('acc', swiglu.cpp:78->swiglu.cpp:450) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
+Resolution: For help on HLS 200-887 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K5' consists of the following:
+	'sitofp' operation 32 bit ('conv40_i_5', swiglu.cpp:77->swiglu.cpp:450) [798]  (3.239 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.365 seconds; current allocated memory: 851.926 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.099 seconds; current allocated memory: 853.090 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.218 seconds; current allocated memory: 853.316 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.033 seconds; current allocated memory: 853.316 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'MAC_Q6K'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_112', swiglu.cpp:78->swiglu.cpp:450) to 'fadd' operation 32 bit ('acc', swiglu.cpp:78->swiglu.cpp:450) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
+Resolution: For help on HLS 200-887 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K6' consists of the following:
+	'sitofp' operation 32 bit ('conv40_i_6', swiglu.cpp:77->swiglu.cpp:450) [772]  (3.239 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.281 seconds; current allocated memory: 858.102 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.177 seconds; current allocated memory: 859.125 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.211 seconds; current allocated memory: 859.379 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.085 seconds; current allocated memory: 859.379 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'MAC_Q6K'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_103', swiglu.cpp:78->swiglu.cpp:450) to 'fadd' operation 32 bit ('acc', swiglu.cpp:78->swiglu.cpp:450) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
+Resolution: For help on HLS 200-887 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K7' consists of the following:
+	'sitofp' operation 32 bit ('conv40_i_7', swiglu.cpp:77->swiglu.cpp:450) [746]  (3.239 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.318 seconds; current allocated memory: 864.582 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.176 seconds; current allocated memory: 865.523 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q6k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-871] Estimated clock period (3.013 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_down_q6k' consists of the following:
+	'call' operation 0 bit ('_ln447', swiglu.cpp:447) to 'mac_blocks_down_q6k_Pipeline_MAC_Q6K' [2862]  (3.013 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.887 seconds; current allocated memory: 897.969 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.722 seconds; current allocated memory: 924.676 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOAD_DOWN_Q4K_VITIS_LOOP_315_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_DOWN_Q4K_VITIS_LOOP_315_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.449 seconds; current allocated memory: 927.457 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 927.602 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'load_row_down_q4k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.073 seconds; current allocated memory: 927.656 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.045 seconds; current allocated memory: 927.656 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_214) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_213) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_212) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_211) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_210) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_209) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_208) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_207) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_206) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_205) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_204) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_203) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_202) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_201) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_200) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_199) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_214) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_213) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_212) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_211) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_210) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_209) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_208) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_207) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_206) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_205) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_204) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_203) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_202) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_201) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_200) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_199) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'MAC_BLOCKS_G0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'MAC_BLOCKS_G0'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.112 seconds; current allocated memory: 946.215 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.604 seconds; current allocated memory: 946.285 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_86) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_85) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_84) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_83) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_82) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_81) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_80) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_79) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_78) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_77) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_76) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_75) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_74) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_73) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m_72) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_m) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_86) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_85) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_84) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_83) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_82) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_81) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_80) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_79) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_78) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_77) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_76) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_75) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_74) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_73) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w_72) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=int_acc_w) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'MAC_BLOCKS_G1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'MAC_BLOCKS_G1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 2.696 seconds; current allocated memory: 954.254 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.34 seconds; current allocated memory: 954.520 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q4k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_down_q4k' consists of the following:
+	'sitofp' operation 32 bit ('conv', swiglu.cpp:420) [2355]  (3.239 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.905 seconds; current allocated memory: 975.945 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.002 seconds; current allocated memory: 983.004 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_output_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.032 seconds; current allocated memory: 984.953 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.029 seconds; current allocated memory: 984.953 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_output' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.554 seconds; current allocated memory: 989.320 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.463 seconds; current allocated memory: 989.906 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'swiglu' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.704 seconds; current allocated memory: 993.176 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.317 seconds; current allocated memory: 994.094 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'load_x_local' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'load_x_local' pipeline 'LOAD_X_VEC' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_x_local'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.136 seconds; current allocated memory: 1005.449 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1' pipeline 'LOAD_WV_VITIS_LOOP_100_1' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1/m_axi_gmem_V_0_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1/m_axi_gmem_V_0_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1/m_axi_gmem_V_0_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1/m_axi_gmem_V_0_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1/m_axi_gmem_V_0_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1/m_axi_gmem_V_0_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1/m_axi_gmem_V_0_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1/m_axi_gmem_V_0_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1/m_axi_gmem_V_0_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1/m_axi_gmem_V_0_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1/m_axi_gmem_V_0_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1/m_axi_gmem_V_0_ARUSER' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 1.087 seconds; current allocated memory: 1022.059 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'load_row_wv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_row_wv'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 1022.059 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS' pipeline 'MAC_ALL_BLOCKS' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_12s_6ns_32s_32_4_1': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_14s_4ns_32s_32_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_6ns_32s_32_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_4ns_12_1_1': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_6ns_14_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'partselect_8ns_128ns_7ns_8_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_6_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_33_4_8_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.928 seconds; current allocated memory: 1.011 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fp16_to_fp32' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fp16_to_fp32'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.927 seconds; current allocated memory: 1.042 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_wv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_11_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_11_full_dsp_1': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32ns_32_7_no_dsp_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_wv'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.531 seconds; current allocated memory: 1.044 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_X1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_X1'.
+INFO: [RTMG 210-278] Implementing memory 'swiglu_compute_X1_row_buf_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.263 seconds; current allocated memory: 1.065 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_X2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_X2'.
+INFO: [RTMG 210-278] Implementing memory 'swiglu_compute_X2_row_buf_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.379 seconds; current allocated memory: 1.065 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_gate_Pipeline_GATE_PASS1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_gate_Pipeline_GATE_PASS1' pipeline 'GATE_PASS1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_11_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_3_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_gate_Pipeline_GATE_PASS1'.
+INFO: [RTMG 210-279] Implementing memory 'swiglu_compute_gate_Pipeline_GATE_PASS1_sigmoid_lut_ROM_1P_BRAM_1R' using block ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 0.484 seconds; current allocated memory: 1.070 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_gate_Pipeline_GATE_PASS2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_gate_Pipeline_GATE_PASS2' pipeline 'GATE_PASS2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_gate_Pipeline_GATE_PASS2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.411 seconds; current allocated memory: 1.074 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_gate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_3_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_30_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_gate'.
+INFO: [RTMG 210-278] Implementing memory 'swiglu_compute_gate_gate_fp_RAM_1P_BRAM_1R1W' using block RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.437 seconds; current allocated memory: 1.079 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K' pipeline 'LOAD_DOWN_Q6K' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K/m_axi_gmem_Wd_0_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K/m_axi_gmem_Wd_0_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K/m_axi_gmem_Wd_0_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K/m_axi_gmem_Wd_0_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K/m_axi_gmem_Wd_0_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K/m_axi_gmem_Wd_0_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K/m_axi_gmem_Wd_0_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K/m_axi_gmem_Wd_0_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K/m_axi_gmem_Wd_0_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K/m_axi_gmem_Wd_0_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K/m_axi_gmem_Wd_0_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K/m_axi_gmem_Wd_0_ARUSER' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.024 seconds; current allocated memory: 1.099 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'load_row_down_q6k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_11ns_14ns_24_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_row_down_q6k'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.603 seconds; current allocated memory: 1.123 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.55 seconds; current allocated memory: 1.132 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K' pipeline 'MAC_Q6K' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_8_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'partselect_8ns_128ns_7ns_8_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_633_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_639_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_647_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_5_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_MAC_Q6K'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.971 seconds; current allocated memory: 1.141 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.592 seconds; current allocated memory: 1.156 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K1' pipeline 'MAC_Q6K' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_8_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'partselect_8ns_128ns_7ns_8_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_635_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_641_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_649_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_5_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_MAC_Q6K1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.028 seconds; current allocated memory: 1.162 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.6 seconds; current allocated memory: 1.177 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K2' pipeline 'MAC_Q6K' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_8_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'partselect_8ns_128ns_7ns_8_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_661_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_667_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_675_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_5_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_MAC_Q6K2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.18 seconds; current allocated memory: 1.184 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_7'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.611 seconds; current allocated memory: 1.199 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K3' pipeline 'MAC_Q6K' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] RTL name 'sparsemux_649_9_128_1_1' is changed to 'sparsemux_649_9_128_1_1_x' due to conflict.
+WARNING: [RTGEN 206-101] RTL name 'sparsemux_641_9_128_1_1' is changed to 'sparsemux_641_9_128_1_1_x' due to conflict.
+WARNING: [RTGEN 206-101] RTL name 'sparsemux_635_9_128_1_1' is changed to 'sparsemux_635_9_128_1_1_x' due to conflict.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_8_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'partselect_8ns_128ns_7ns_8_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_635_9_128_1_1_x': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_641_9_128_1_1_x': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_649_9_128_1_1_x': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_5_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_MAC_Q6K3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.968 seconds; current allocated memory: 1.206 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_9' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_9'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 0.603 seconds; current allocated memory: 1.221 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K4' pipeline 'MAC_Q6K' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_8_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'partselect_8ns_128ns_7ns_8_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_713_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_719_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_727_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_5_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_MAC_Q6K4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.277 seconds; current allocated memory: 1.228 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_11'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.671 seconds; current allocated memory: 1.247 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K5' pipeline 'MAC_Q6K' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_8_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'partselect_8ns_128ns_7ns_8_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_687_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_693_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_701_9_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_5_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_MAC_Q6K5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.086 seconds; current allocated memory: 1.252 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_13' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_13'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.649 seconds; current allocated memory: 1.270 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K6' pipeline 'MAC_Q6K' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] RTL name 'sparsemux_675_9_128_1_1' is changed to 'sparsemux_675_9_128_1_1_x' due to conflict.
+WARNING: [RTGEN 206-101] RTL name 'sparsemux_667_9_128_1_1' is changed to 'sparsemux_667_9_128_1_1_x' due to conflict.
+WARNING: [RTGEN 206-101] RTL name 'sparsemux_661_9_128_1_1' is changed to 'sparsemux_661_9_128_1_1_x' due to conflict.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_8_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'partselect_8ns_128ns_7ns_8_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_661_9_128_1_1_x': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_667_9_128_1_1_x': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_675_9_128_1_1_x': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_5_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_MAC_Q6K6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.29 seconds; current allocated memory: 1.275 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_15'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.62 seconds; current allocated memory: 1.290 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K7' pipeline 'MAC_Q6K' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] RTL name 'sparsemux_649_9_128_1_1' is changed to 'sparsemux_649_9_128_1_1_x0' due to conflict.
+WARNING: [RTGEN 206-101] RTL name 'sparsemux_641_9_128_1_1' is changed to 'sparsemux_641_9_128_1_1_x0' due to conflict.
+WARNING: [RTGEN 206-101] RTL name 'sparsemux_635_9_128_1_1' is changed to 'sparsemux_635_9_128_1_1_x0' due to conflict.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_8_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'partselect_8ns_128ns_7ns_8_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_635_9_128_1_1_x0': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_641_9_128_1_1_x0': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_649_9_128_1_1_x0': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_5_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k_Pipeline_MAC_Q6K7'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.973 seconds; current allocated memory: 1.296 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q6k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] RTL name 'sparsemux_633_9_128_1_1' is changed to 'sparsemux_633_9_128_1_1_x' due to conflict.
+INFO: [RTGEN 206-104] Estimated max fanout for 'mac_blocks_down_q6k' is 136576 from HDL expression: (1'b1 == ap_CS_fsm_state1)
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_8_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_11_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_5ns_8ns_12_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_5ns_9ns_13_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_633_9_112_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_633_9_128_1_1_x': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_633_9_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_633_9_48_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_633_9_64_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_633_9_80_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_633_9_96_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_2_16_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q6k'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 3.807 seconds; current allocated memory: 1.369 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1' pipeline 'LOAD_DOWN_Q4K_VITIS_LOOP_315_1' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1/m_axi_gmem_Wd_0_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1/m_axi_gmem_Wd_0_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1/m_axi_gmem_Wd_0_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1/m_axi_gmem_Wd_0_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1/m_axi_gmem_Wd_0_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1/m_axi_gmem_Wd_0_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1/m_axi_gmem_Wd_0_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1/m_axi_gmem_Wd_0_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1/m_axi_gmem_Wd_0_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1/m_axi_gmem_Wd_0_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1/m_axi_gmem_Wd_0_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1/m_axi_gmem_Wd_0_ARUSER' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_315_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 3.45 seconds; current allocated memory: 1.443 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'load_row_down_q4k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_row_down_q4k'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.352 seconds; current allocated memory: 1.443 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0' pipeline 'MAC_BLOCKS_G0' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0' is 8680 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_12s_6ns_32s_32_4_1': 15 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_14s_4ns_32s_32_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_6ns_32s_32_4_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_4ns_12_1_1': 15 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_6ns_14_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'partselect_8ns_128ns_7ns_8_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_6_1_1': 32 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G0'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.437 seconds; current allocated memory: 1.443 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G1' pipeline 'MAC_BLOCKS_G1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_12s_6ns_32s_32_4_1': 15 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_14s_4ns_32s_32_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_6ns_32s_32_4_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_4ns_12_1_1': 15 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_6ns_14_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'partselect_8ns_128ns_7ns_8_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_6_1_1': 32 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q4k_Pipeline_MAC_BLOCKS_G1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 2 seconds. Elapsed time: 4.32 seconds; current allocated memory: 1.487 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q4k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'mac_blocks_down_q4k' is 8224 from HDL expression: ((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_11_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 64 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_11_full_dsp_1': 31 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32ns_32_7_no_dsp_1': 64 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q4k'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 3.016 seconds; current allocated memory: 1.543 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_output_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_output_Pipeline_1' pipeline 'Loop 1' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_BREADY' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_output_Pipeline_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 2 seconds. Elapsed time: 4.465 seconds; current allocated memory: 1.617 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_output' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_11_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_output'.
+INFO: [RTMG 210-278] Implementing memory 'swiglu_compute_output_out_local_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'swiglu_compute_output_row_buf_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.482 seconds; current allocated memory: 1.617 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'swiglu' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'swiglu/gmem_W' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'swiglu/gmem_V' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'swiglu/gmem_Wd' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'swiglu/gmem_x' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'swiglu/gmem_out' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'swiglu/W' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'swiglu/V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'swiglu/W_down' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'swiglu/x_batch' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'swiglu/out_batch' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'swiglu/down_quant_mode' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'swiglu/x_scale' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'swiglu' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'W', 'V', 'W_down', 'x_batch', 'out_batch', 'down_quant_mode', 'x_scale' and 'return' to AXI-Lite port CTRL.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'swiglu'.
+INFO: [HLS 200-741] Implementing PIPO swiglu_x_local_1_RAM_1P_BRAM_1R1W using a single memory for all blocks
+INFO: [RTMG 210-278] Implementing memory 'swiglu_x_local_1_RAM_1P_BRAM_1R1W_memcore' using block RAMs.
+INFO: [HLS 200-740] Implementing PIPO swiglu_gate_cache_RAM_2P_BRAM_1R1W using a separate memory for each block
+INFO: [RTMG 210-278] Implementing memory 'swiglu_gate_cache_RAM_2P_BRAM_1R1W_memcore' using block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'X1_cache_U(swiglu_fifo_w32_d16_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'X2_cache_U(swiglu_fifo_w32_d16_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'gate_scale_U(swiglu_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_compute_gate_U0_U(swiglu_start_for_compute_gate_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 1.795 seconds; current allocated memory: 1.647 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 4.139 seconds; current allocated memory: 1.684 GB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 4 seconds. CPU system time: 1 seconds. Elapsed time: 4.667 seconds; current allocated memory: 1.733 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for swiglu.
+INFO: [VLOG 209-307] Generating Verilog RTL for swiglu.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 308.74 MHz
+INFO: [HLS 200-112] Total CPU user time: 137 seconds. Total CPU system time: 16 seconds. Total elapsed time: 265.89 seconds; peak allocated memory: 1.733 GB.
+INFO: [v++ 60-791] Total elapsed time: 0h 4m 30s

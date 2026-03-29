@@ -24,7 +24,7 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.33ns.
 INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=0.90ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(8)
 INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.9ns.
 INFO: [HLS 200-1465] Applying config ini 'cosim.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(11)
-INFO: [HLS 200-1465] Applying config ini 'package.ip.version=3.1' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(15)
+INFO: [HLS 200-1465] Applying config ini 'package.ip.version=3.5' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(15)
 INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(5)
 INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/vitis-comp.json
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
@@ -33,15 +33,15 @@ INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
   **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
   **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
   **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-  **** Start of session at: Sat Mar 28 22:39:21 2026
+  **** Start of session at: Sun Mar 29 13:06:03 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source run_ippack.tcl -notrace
 INFO: calling package_hls_ip ip_types=vitis sysgen json_file=C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/hls_data.json outdir=C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/impl/ip srcdir=C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls ippack_options_dict= ippack_options_dict=
 INFO: Copied 1 ipmisc file(s) to C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/impl/ip/misc
-INFO: Copied 102 verilog file(s) to C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/impl/ip/hdl/verilog
-INFO: Copied 98 vhdl file(s) to C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/impl/ip/hdl/vhdl
+INFO: Copied 95 verilog file(s) to C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/impl/ip/hdl/verilog
+INFO: Copied 90 vhdl file(s) to C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/impl/ip/hdl/vhdl
 INFO: Copied 10 swdriver file(s) to C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/impl/ip/drivers
 Generating 9 subcores in C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/impl/ip/subcore_prj:
 impl/misc/swiglu_fadd_32ns_32ns_32_8_no_dsp_1_ip.tcl
@@ -53,6 +53,7 @@ impl/misc/swiglu_fmul_32ns_32ns_32_7_max_dsp_1_ip.tcl
 impl/misc/swiglu_fsub_32ns_32ns_32_11_full_dsp_1_ip.tcl
 impl/misc/swiglu_sitofp_32ns_32_7_no_dsp_1_ip.tcl
 impl/misc/swiglu_sitofp_32s_32_7_no_dsp_1_ip.tcl
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 531.707 ; gain = 213.367
 INFO: Using COE_DIR=C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/impl/ip/hdl/verilog
 INFO: Generating swiglu_fadd_32ns_32ns_32_8_no_dsp_1_ip via file impl/misc/swiglu_fadd_32ns_32ns_32_8_no_dsp_1_ip.tcl
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -112,13 +113,17 @@ INFO: Add interrupt interface interrupt
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
+INFO: Add axi4full interface m_axi_gmem_V
+INFO: Add axi4full interface m_axi_gmem_W
+INFO: Add axi4full interface m_axi_gmem_Wd
 INFO: Add axi4full interface m_axi_gmem_out
+INFO: Add axi4full interface m_axi_gmem_x
 INFO: Calling post_process_vitis to specialize IP
 INFO: Calling post_process_sysgen to specialize IP
 Generating sysgen info xml from json file
 INFO: Created IP C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/impl/ip/component.xml
-INFO: Created IP archive C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/impl/ip/xilinx_com_hls_swiglu_3_1.zip
-INFO: [Common 17-206] Exiting Vivado at Sat Mar 28 22:39:39 2026...
+INFO: Created IP archive C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/impl/ip/xilinx_com_hls_swiglu_3_5.zip
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 29 13:06:31 2026...
 INFO: [HLS 200-802] Generated output file swiglu/swiglu.zip
-INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 25.068 seconds; peak allocated memory: 280.219 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 28s
+INFO: [HLS 200-112] Total CPU user time: 10 seconds. Total CPU system time: 2 seconds. Total elapsed time: 42.915 seconds; peak allocated memory: 286.168 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 47s

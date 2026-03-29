@@ -79,10 +79,10 @@ memset.loop:0 %p_load = load i4 %empty
 
 <Node id="14" bw="1" op_0_bw="4" op_1_bw="4">
 <![CDATA[
-memset.loop:1 %exitcond32 = icmp_eq  i4 %p_load, i4 8
+memset.loop:1 %exitcond33 = icmp_eq  i4 %p_load, i4 8
 
 ]]></Node>
-<StgValue><ssdm name="exitcond32"/></StgValue>
+<StgValue><ssdm name="exitcond33"/></StgValue>
 </operation>
 
 <operation id="9" st_id="1" stage="1" lat="1">
@@ -94,10 +94,10 @@ memset.loop:1 %exitcond32 = icmp_eq  i4 %p_load, i4 8
 
 <Node id="15" bw="4" op_0_bw="4" op_1_bw="4">
 <![CDATA[
-memset.loop:2 %empty_99 = add i4 %p_load, i4 1
+memset.loop:2 %empty_90 = add i4 %p_load, i4 1
 
 ]]></Node>
-<StgValue><ssdm name="empty_99"/></StgValue>
+<StgValue><ssdm name="empty_90"/></StgValue>
 </operation>
 
 <operation id="10" st_id="1" stage="1" lat="1">
@@ -109,7 +109,7 @@ memset.loop:2 %empty_99 = add i4 %p_load, i4 1
 
 <Node id="16" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-memset.loop:3 %br_ln0 = br i1 %exitcond32, void %memset.loop.split, void %split.exitStub
+memset.loop:3 %br_ln0 = br i1 %exitcond33, void %memset.loop.split, void %for.body.i.preheader.exitStub
 
 ]]></Node>
 <StgValue><ssdm name="br_ln0"/></StgValue>
@@ -119,29 +119,29 @@ memset.loop:3 %br_ln0 = br i1 %exitcond32, void %memset.loop.split, void %split.
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
 </and_exp></or_exp>
 </condition>
 
 <Node id="18" bw="3" op_0_bw="4">
 <![CDATA[
-memset.loop.split:0 %empty_100 = trunc i4 %p_load
+memset.loop.split:0 %empty_91 = trunc i4 %p_load
 
 ]]></Node>
-<StgValue><ssdm name="empty_100"/></StgValue>
+<StgValue><ssdm name="empty_91"/></StgValue>
 </operation>
 
 <operation id="12" st_id="1" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
 </and_exp></or_exp>
 </condition>
 
 <Node id="19" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-memset.loop.split:1 %specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_15
+memset.loop.split:1 %specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_32
 
 ]]></Node>
 <StgValue><ssdm name="specpipeline_ln0"/></StgValue>
@@ -151,7 +151,7 @@ memset.loop.split:1 %specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -167,13 +167,13 @@ memset.loop.split:2 %speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_Sp
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
 </and_exp></or_exp>
 </condition>
 
 <Node id="21" bw="0" op_0_bw="3" op_1_bw="0" op_2_bw="3" op_3_bw="0" op_4_bw="3" op_5_bw="0" op_6_bw="3" op_7_bw="0" op_8_bw="3" op_9_bw="0" op_10_bw="3" op_11_bw="0" op_12_bw="3" op_13_bw="0" op_14_bw="3" op_15_bw="0">
 <![CDATA[
-memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, void %.case.0, i3 1, void %.case.1, i3 2, void %.case.2, i3 3, void %.case.3, i3 4, void %.case.4, i3 5, void %.case.5, i3 6, void %.case.6
+memset.loop.split:3 %switch_ln0 = switch i3 %empty_91, void %.case.7, i3 0, void %.case.0, i3 1, void %.case.1, i3 2, void %.case.2, i3 3, void %.case.3, i3 4, void %.case.4, i3 5, void %.case.5, i3 6, void %.case.6
 
 ]]></Node>
 <StgValue><ssdm name="switch_ln0"/></StgValue>
@@ -183,8 +183,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="-2"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="-2"/>
 </and_exp></or_exp>
 </condition>
 
@@ -200,8 +200,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="-2"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="-2"/>
 </and_exp></or_exp>
 </condition>
 
@@ -217,8 +217,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="-3"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="-3"/>
 </and_exp></or_exp>
 </condition>
 
@@ -234,8 +234,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="-3"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="-3"/>
 </and_exp></or_exp>
 </condition>
 
@@ -251,8 +251,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="-4"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="-4"/>
 </and_exp></or_exp>
 </condition>
 
@@ -268,8 +268,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="-4"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="-4"/>
 </and_exp></or_exp>
 </condition>
 
@@ -285,8 +285,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="3"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="3"/>
 </and_exp></or_exp>
 </condition>
 
@@ -302,8 +302,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="3"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="3"/>
 </and_exp></or_exp>
 </condition>
 
@@ -319,8 +319,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="2"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="2"/>
 </and_exp></or_exp>
 </condition>
 
@@ -336,8 +336,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="2"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="2"/>
 </and_exp></or_exp>
 </condition>
 
@@ -353,8 +353,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="1"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -370,8 +370,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="1"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -387,8 +387,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="0"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -404,8 +404,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="0"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -421,8 +421,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="-1"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="-1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -438,8 +438,8 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
-<literal name="empty_100" val="-1"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
+<literal name="empty_91" val="-1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -455,13 +455,13 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
 </and_exp></or_exp>
 </condition>
 
 <Node id="47" bw="0" op_0_bw="4" op_1_bw="4" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-.exit:0 %store_ln0 = store i4 %empty_99, i4 %empty
+.exit:0 %store_ln0 = store i4 %empty_90, i4 %empty
 
 ]]></Node>
 <StgValue><ssdm name="store_ln0"/></StgValue>
@@ -471,7 +471,7 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="0"/>
+<or_exp><and_exp><literal name="exitcond33" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -487,13 +487,13 @@ memset.loop.split:3 %switch_ln0 = switch i3 %empty_100, void %.case.7, i3 0, voi
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="exitcond32" val="1"/>
+<or_exp><and_exp><literal name="exitcond33" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <Node id="50" bw="0">
 <![CDATA[
-split.exitStub:0 %ret_ln0 = ret
+for.body.i.preheader.exitStub:0 %ret_ln0 = ret
 
 ]]></Node>
 <StgValue><ssdm name="ret_ln0"/></StgValue>

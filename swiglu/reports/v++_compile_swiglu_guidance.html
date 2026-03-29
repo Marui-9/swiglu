@@ -3407,7 +3407,7 @@ window.onload = function () { addSorting(); }
 <center><h1>Design Guidance Report</h1></center><center><table class="header" border="0">
 <tr><td><b>Copyright</b></td><td>Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.</td></tr>
 <tr><td><b>Tool Version</b></td><td>xcd v.2025.1 (win64) Build 0 </td></tr>
-<tr><td><b>Date</b></td><td>Sat Mar 28 22:38:11 2026</td></tr>
+<tr><td><b>Date</b></td><td>Sun Mar 29 14:23:17 2026</td></tr>
 <tr><td><b>Host</b></td><td>marui-machine running 64-bit major release  (build 9200)</td></tr>
 <tr><td><b>Command</b></td><td>C:/Xilinx/2025.1/Vitis/bin/unwrapped/win64.o/v++.exe  -c --mode hls --config C:\Users\Jacob\Desktop\Vitis_projects\swiglu\hls_config.cfg --work_dir swiglu </td></tr>
 </table></center><br>
@@ -3416,7 +3416,7 @@ window.onload = function () { addSorting(); }
 <tr><td><a href="#VIOLATION DETAILS">2 VIOLATION DETAILS</a></tr></td>
 </table>
 <a name="REPORT SUMMARY"></a><h1>1 REPORT SUMMARY</h1>
-<pre>Violations found: 62
+<pre>Violations found: 50
 </pre>
 <pre>Rule Specs Violated: 3
 </pre>
@@ -3434,18 +3434,516 @@ window.onload = function () { addSorting(); }
 <th align="left" width="380">Resolution</th>
 </tr>
 <tr>
+<td align="left">6</td>
+<td align="left">Kernel</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Unable to schedule the whole 71 cycles bus request operation ('empty', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=530">swiglu.cpp</a>) on port 'gmem_x' (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=530">swiglu.cpp</a>) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 14, loop 'GATE_PASS2'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">31</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K2' consists of the following:
+	'sitofp' operation 32 bit ('conv40_i_2', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) [223]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">28</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_74', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=79">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) to 'fadd' operation 32 bit ('acc', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=79">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'mac_blocks_wv' consists of the following:
+	'sitofp' operation 32 bit ('conv', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=208">swiglu.cpp</a>) [851]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Multiple burst writes of length 2048 and bit width 32 in loop 'anonymous'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=513">swiglu.cpp</a>) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=513">swiglu.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Multiple burst reads of length 72 and bit width 128 in loop 'LOAD_WV'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=100">swiglu.cpp</a>) has been inferred on bundle 'gmem_V'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=100">swiglu.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">36</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K3' consists of the following:
+	'sitofp' operation 32 bit ('conv40_i_3', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) [224]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">50</td>
+<td align="left">Kernel</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">**** Estimated Fmax: 308.74 MHz
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">44</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'MAC_BLOCKS_G3'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">18</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_60', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=79">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) to 'fadd' operation 32 bit ('acc', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=79">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">17</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">38</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'mac_blocks_down_q6k' consists of the following:
+	'call' operation 0 bit ('_ln55', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=55">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=64">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) to 'mac_blocks_down_q6k_Pipeline_MAC_Q6K' [173]  (3.013 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">43</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'MAC_BLOCKS_G2'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">26</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K1' consists of the following:
+	'sitofp' operation 32 bit ('conv40_i_1', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) [224]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
 <td align="left">33</td>
 <td align="left">Kernel</td>
 <td align="left">WARNING</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_58', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) to 'fadd' operation 32 bit ('acc', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
+<td align="left">Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_67', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=79">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) to 'fadd' operation 32 bit ('acc', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=79">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">17</td>
+<td align="left">20</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Multiple burst reads of length 128 and bit width 128 in loop 'LOAD_X_VEC'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=530">swiglu.cpp</a>) has been inferred on bundle 'gmem_x'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=530">swiglu.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Multiple burst reads of length 420 and bit width 128 in loop 'LOAD_DOWN_Q6K'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=453">swiglu.cpp</a>) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=453">swiglu.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">47</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'Loop 1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">30</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">45</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">39</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_DOWN_Q4K_VITIS_LOOP_318_1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">29</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">27</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 5, function 'fp16_to_fp32'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_70', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=79">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) to 'fadd' operation 32 bit ('acc', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=79">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_DOWN_Q6K'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">48</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">41</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'MAC_BLOCKS_G0'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_WV_VITIS_LOOP_101_1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">32</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">46</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'mac_blocks_down_q4k' consists of the following:
+	'sitofp' operation 32 bit ('conv', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=441">swiglu.cpp</a>) [2390]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">34</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K' consists of the following:
+	'sitofp' operation 32 bit ('conv40_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) [222]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">37</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.013 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Multiple burst reads of length 288 and bit width 128 in loop 'LOAD_DOWN_Q4K'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=317">swiglu.cpp</a>) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=317">swiglu.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 48, loop 'GATE_PASS1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 7, loop 'UNPACK_HDR_WV'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'LOAD_X_VEC'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">24</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">40</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 7, loop 'UNPACK_HDR_DOWN'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">22</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
@@ -3462,154 +3960,18 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'LOAD_DOWN_Q6K'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'MAC_ALL_BLOCKS'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">39</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">45</td>
+<td align="left">49</td>
 <td align="left">Kernel</td>
-<td align="left">WARNING</td>
+<td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">29</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">40</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">10</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 14, loop 'GATE_PASS2'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_WV_VITIS_LOOP_100_1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">1</td>
-<td align="left">Interface</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'X1_cache'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">25</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">9</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 48, loop 'GATE_PASS1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">44</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">23</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_44', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) to 'fadd' operation 32 bit ('acc', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">58</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_down_q4k' consists of the following:
-	'sitofp' operation 32 bit ('conv', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=420">swiglu.cpp</a>) [1235]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">51</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K7' consists of the following:
-	'sitofp' operation 32 bit ('conv40_i_7', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=77">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) [749]  (3.239 ns)
-
+<td align="left">**** Loop Constraint Status: All loop constraints were satisfied.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3625,515 +3987,13 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">16</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K' consists of the following:
-	'sitofp' operation 32 bit ('conv40_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=77">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) [743]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">14</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">Interface</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'X2_cache'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">21</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K1' consists of the following:
-	'sitofp' operation 32 bit ('conv40_i_1', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=77">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) [749]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">37</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">27</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">26</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K2' consists of the following:
-	'sitofp' operation 32 bit ('conv40_i_2', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=77">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) [775]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">8</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_wv' consists of the following:
-	'sitofp' operation 32 bit ('conv', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=208">swiglu.cpp</a>) [562]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">53</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_down_q6k' consists of the following:
-	'call' operation 0 bit ('_ln447', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=447">swiglu.cpp</a>) to 'mac_blocks_down_q6k_Pipeline_MAC_Q6K' [962]  (3.013 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">18</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_37', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) to 'fadd' operation 32 bit ('acc', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">34</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">24</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">38</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_55', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) to 'fadd' operation 32 bit ('acc', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">49</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'MAC_Q6K'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'LOAD_X_VEC'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">61</td>
-<td align="left">Kernel</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">**** Loop Constraint Status: All loop constraints were satisfied.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">60</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">54</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_DOWN_Q4K_VITIS_LOOP_315_1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">41</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K5' consists of the following:
-	'sitofp' operation 32 bit ('conv40_i_5', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=77">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) [801]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">12</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">35</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">59</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'Loop 1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">43</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_46', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) to 'fadd' operation 32 bit ('acc', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">56</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'MAC_BLOCKS_G1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">30</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">46</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K6' consists of the following:
-	'sitofp' operation 32 bit ('conv40_i_6', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=77">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) [775]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">50</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Multiple burst writes of length 2048 and bit width 32 in loop 'anonymous'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=490">swiglu.cpp</a>) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=490">swiglu.cpp</a>)
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">28</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_51', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) to 'fadd' operation 32 bit ('acc', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
 <td align="left">42</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">47</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">36</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K4' consists of the following:
-	'sitofp' operation 32 bit ('conv40_i_4', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=77">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) [827]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">55</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'MAC_BLOCKS_G0'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">13</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_30', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) to 'fadd' operation 32 bit ('acc', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">52</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.013 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">7</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">57</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">48</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Cannot meet target clock period from 'sparsemux' operation 32 bit ('tmp_37', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) to 'fadd' operation 32 bit ('acc', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=78">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) (combination delay: 3.013 ns) to honor II or Latency constraint in region 'MAC_Q6K'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">31</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_MAC_Q6K3' consists of the following:
-	'sitofp' operation 32 bit ('conv40_i_3', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=77">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=450">swiglu.cpp</a>) [749]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">20</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">6</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'MAC_ALL_BLOCKS'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">22</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">62</td>
-<td align="left">Kernel</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">**** Estimated Fmax: 308.74 MHz
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">32</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">15</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'MAC_BLOCKS_G1'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>

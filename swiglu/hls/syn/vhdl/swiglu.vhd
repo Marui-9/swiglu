@@ -12,6 +12,30 @@ entity swiglu is
 generic (
     C_S_AXI_CTRL_ADDR_WIDTH : INTEGER := 7;
     C_S_AXI_CTRL_DATA_WIDTH : INTEGER := 32;
+    C_M_AXI_GMEM_V_ADDR_WIDTH : INTEGER := 64;
+    C_M_AXI_GMEM_V_ID_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_V_AWUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_V_DATA_WIDTH : INTEGER := 128;
+    C_M_AXI_GMEM_V_WUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_V_ARUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_V_RUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_V_BUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_W_ADDR_WIDTH : INTEGER := 64;
+    C_M_AXI_GMEM_W_ID_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_W_AWUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_W_DATA_WIDTH : INTEGER := 128;
+    C_M_AXI_GMEM_W_WUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_W_ARUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_W_RUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_W_BUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_WD_ADDR_WIDTH : INTEGER := 64;
+    C_M_AXI_GMEM_WD_ID_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_WD_AWUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_WD_DATA_WIDTH : INTEGER := 128;
+    C_M_AXI_GMEM_WD_WUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_WD_ARUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_WD_RUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_WD_BUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM_OUT_ADDR_WIDTH : INTEGER := 64;
     C_M_AXI_GMEM_OUT_ID_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM_OUT_AWUSER_WIDTH : INTEGER := 1;
@@ -20,9 +44,29 @@ generic (
     C_M_AXI_GMEM_OUT_ARUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM_OUT_RUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM_OUT_BUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_X_ADDR_WIDTH : INTEGER := 64;
+    C_M_AXI_GMEM_X_ID_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_X_AWUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_X_DATA_WIDTH : INTEGER := 128;
+    C_M_AXI_GMEM_X_WUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_X_ARUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_X_RUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_X_BUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM_V_USER_VALUE : INTEGER := 0;
+    C_M_AXI_GMEM_V_PROT_VALUE : INTEGER := 0;
+    C_M_AXI_GMEM_V_CACHE_VALUE : INTEGER := 3;
+    C_M_AXI_GMEM_W_USER_VALUE : INTEGER := 0;
+    C_M_AXI_GMEM_W_PROT_VALUE : INTEGER := 0;
+    C_M_AXI_GMEM_W_CACHE_VALUE : INTEGER := 3;
+    C_M_AXI_GMEM_WD_USER_VALUE : INTEGER := 0;
+    C_M_AXI_GMEM_WD_PROT_VALUE : INTEGER := 0;
+    C_M_AXI_GMEM_WD_CACHE_VALUE : INTEGER := 3;
     C_M_AXI_GMEM_OUT_USER_VALUE : INTEGER := 0;
     C_M_AXI_GMEM_OUT_PROT_VALUE : INTEGER := 0;
-    C_M_AXI_GMEM_OUT_CACHE_VALUE : INTEGER := 3 );
+    C_M_AXI_GMEM_OUT_CACHE_VALUE : INTEGER := 3;
+    C_M_AXI_GMEM_X_USER_VALUE : INTEGER := 0;
+    C_M_AXI_GMEM_X_PROT_VALUE : INTEGER := 0;
+    C_M_AXI_GMEM_X_CACHE_VALUE : INTEGER := 3 );
 port (
     ap_clk : IN STD_LOGIC;
     ap_rst_n : IN STD_LOGIC;
@@ -44,6 +88,141 @@ port (
     s_axi_CTRL_BREADY : IN STD_LOGIC;
     s_axi_CTRL_BRESP : OUT STD_LOGIC_VECTOR (1 downto 0);
     interrupt : OUT STD_LOGIC;
+    m_axi_gmem_V_AWVALID : OUT STD_LOGIC;
+    m_axi_gmem_V_AWREADY : IN STD_LOGIC;
+    m_axi_gmem_V_AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_ADDR_WIDTH-1 downto 0);
+    m_axi_gmem_V_AWID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_ID_WIDTH-1 downto 0);
+    m_axi_gmem_V_AWLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem_V_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_V_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_V_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_V_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_V_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_V_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_V_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_V_AWUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_AWUSER_WIDTH-1 downto 0);
+    m_axi_gmem_V_WVALID : OUT STD_LOGIC;
+    m_axi_gmem_V_WREADY : IN STD_LOGIC;
+    m_axi_gmem_V_WDATA : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_DATA_WIDTH-1 downto 0);
+    m_axi_gmem_V_WSTRB : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_DATA_WIDTH/8-1 downto 0);
+    m_axi_gmem_V_WLAST : OUT STD_LOGIC;
+    m_axi_gmem_V_WID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_ID_WIDTH-1 downto 0);
+    m_axi_gmem_V_WUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_WUSER_WIDTH-1 downto 0);
+    m_axi_gmem_V_ARVALID : OUT STD_LOGIC;
+    m_axi_gmem_V_ARREADY : IN STD_LOGIC;
+    m_axi_gmem_V_ARADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_ADDR_WIDTH-1 downto 0);
+    m_axi_gmem_V_ARID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_ID_WIDTH-1 downto 0);
+    m_axi_gmem_V_ARLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem_V_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_V_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_V_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_V_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_V_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_V_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_V_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_V_ARUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_ARUSER_WIDTH-1 downto 0);
+    m_axi_gmem_V_RVALID : IN STD_LOGIC;
+    m_axi_gmem_V_RREADY : OUT STD_LOGIC;
+    m_axi_gmem_V_RDATA : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_DATA_WIDTH-1 downto 0);
+    m_axi_gmem_V_RLAST : IN STD_LOGIC;
+    m_axi_gmem_V_RID : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_ID_WIDTH-1 downto 0);
+    m_axi_gmem_V_RUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_RUSER_WIDTH-1 downto 0);
+    m_axi_gmem_V_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_V_BVALID : IN STD_LOGIC;
+    m_axi_gmem_V_BREADY : OUT STD_LOGIC;
+    m_axi_gmem_V_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_V_BID : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_ID_WIDTH-1 downto 0);
+    m_axi_gmem_V_BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_V_BUSER_WIDTH-1 downto 0);
+    m_axi_gmem_W_AWVALID : OUT STD_LOGIC;
+    m_axi_gmem_W_AWREADY : IN STD_LOGIC;
+    m_axi_gmem_W_AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_ADDR_WIDTH-1 downto 0);
+    m_axi_gmem_W_AWID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_ID_WIDTH-1 downto 0);
+    m_axi_gmem_W_AWLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem_W_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_W_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_W_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_W_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_W_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_W_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_W_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_W_AWUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_AWUSER_WIDTH-1 downto 0);
+    m_axi_gmem_W_WVALID : OUT STD_LOGIC;
+    m_axi_gmem_W_WREADY : IN STD_LOGIC;
+    m_axi_gmem_W_WDATA : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_DATA_WIDTH-1 downto 0);
+    m_axi_gmem_W_WSTRB : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_DATA_WIDTH/8-1 downto 0);
+    m_axi_gmem_W_WLAST : OUT STD_LOGIC;
+    m_axi_gmem_W_WID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_ID_WIDTH-1 downto 0);
+    m_axi_gmem_W_WUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_WUSER_WIDTH-1 downto 0);
+    m_axi_gmem_W_ARVALID : OUT STD_LOGIC;
+    m_axi_gmem_W_ARREADY : IN STD_LOGIC;
+    m_axi_gmem_W_ARADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_ADDR_WIDTH-1 downto 0);
+    m_axi_gmem_W_ARID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_ID_WIDTH-1 downto 0);
+    m_axi_gmem_W_ARLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem_W_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_W_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_W_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_W_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_W_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_W_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_W_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_W_ARUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_ARUSER_WIDTH-1 downto 0);
+    m_axi_gmem_W_RVALID : IN STD_LOGIC;
+    m_axi_gmem_W_RREADY : OUT STD_LOGIC;
+    m_axi_gmem_W_RDATA : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_DATA_WIDTH-1 downto 0);
+    m_axi_gmem_W_RLAST : IN STD_LOGIC;
+    m_axi_gmem_W_RID : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_ID_WIDTH-1 downto 0);
+    m_axi_gmem_W_RUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_RUSER_WIDTH-1 downto 0);
+    m_axi_gmem_W_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_W_BVALID : IN STD_LOGIC;
+    m_axi_gmem_W_BREADY : OUT STD_LOGIC;
+    m_axi_gmem_W_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_W_BID : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_ID_WIDTH-1 downto 0);
+    m_axi_gmem_W_BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_W_BUSER_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_AWVALID : OUT STD_LOGIC;
+    m_axi_gmem_Wd_AWREADY : IN STD_LOGIC;
+    m_axi_gmem_Wd_AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_ADDR_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_AWID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_ID_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_AWLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem_Wd_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_Wd_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_Wd_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_Wd_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_Wd_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_Wd_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_Wd_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_Wd_AWUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_AWUSER_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_WVALID : OUT STD_LOGIC;
+    m_axi_gmem_Wd_WREADY : IN STD_LOGIC;
+    m_axi_gmem_Wd_WDATA : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_DATA_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_WSTRB : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_DATA_WIDTH/8-1 downto 0);
+    m_axi_gmem_Wd_WLAST : OUT STD_LOGIC;
+    m_axi_gmem_Wd_WID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_ID_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_WUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_WUSER_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_ARVALID : OUT STD_LOGIC;
+    m_axi_gmem_Wd_ARREADY : IN STD_LOGIC;
+    m_axi_gmem_Wd_ARADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_ADDR_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_ARID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_ID_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_ARLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem_Wd_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_Wd_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_Wd_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_Wd_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_Wd_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_Wd_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_Wd_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_Wd_ARUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_ARUSER_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_RVALID : IN STD_LOGIC;
+    m_axi_gmem_Wd_RREADY : OUT STD_LOGIC;
+    m_axi_gmem_Wd_RDATA : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_DATA_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_RLAST : IN STD_LOGIC;
+    m_axi_gmem_Wd_RID : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_ID_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_RUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_RUSER_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_Wd_BVALID : IN STD_LOGIC;
+    m_axi_gmem_Wd_BREADY : OUT STD_LOGIC;
+    m_axi_gmem_Wd_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_Wd_BID : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_ID_WIDTH-1 downto 0);
+    m_axi_gmem_Wd_BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_WD_BUSER_WIDTH-1 downto 0);
     m_axi_gmem_out_AWVALID : OUT STD_LOGIC;
     m_axi_gmem_out_AWREADY : IN STD_LOGIC;
     m_axi_gmem_out_AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_OUT_ADDR_WIDTH-1 downto 0);
@@ -88,539 +267,591 @@ port (
     m_axi_gmem_out_BREADY : OUT STD_LOGIC;
     m_axi_gmem_out_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
     m_axi_gmem_out_BID : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_OUT_ID_WIDTH-1 downto 0);
-    m_axi_gmem_out_BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_OUT_BUSER_WIDTH-1 downto 0) );
+    m_axi_gmem_out_BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_OUT_BUSER_WIDTH-1 downto 0);
+    m_axi_gmem_x_AWVALID : OUT STD_LOGIC;
+    m_axi_gmem_x_AWREADY : IN STD_LOGIC;
+    m_axi_gmem_x_AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_ADDR_WIDTH-1 downto 0);
+    m_axi_gmem_x_AWID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_ID_WIDTH-1 downto 0);
+    m_axi_gmem_x_AWLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem_x_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_x_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_x_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_x_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_x_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_x_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_x_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_x_AWUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_AWUSER_WIDTH-1 downto 0);
+    m_axi_gmem_x_WVALID : OUT STD_LOGIC;
+    m_axi_gmem_x_WREADY : IN STD_LOGIC;
+    m_axi_gmem_x_WDATA : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_DATA_WIDTH-1 downto 0);
+    m_axi_gmem_x_WSTRB : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_DATA_WIDTH/8-1 downto 0);
+    m_axi_gmem_x_WLAST : OUT STD_LOGIC;
+    m_axi_gmem_x_WID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_ID_WIDTH-1 downto 0);
+    m_axi_gmem_x_WUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_WUSER_WIDTH-1 downto 0);
+    m_axi_gmem_x_ARVALID : OUT STD_LOGIC;
+    m_axi_gmem_x_ARREADY : IN STD_LOGIC;
+    m_axi_gmem_x_ARADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_ADDR_WIDTH-1 downto 0);
+    m_axi_gmem_x_ARID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_ID_WIDTH-1 downto 0);
+    m_axi_gmem_x_ARLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem_x_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_x_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_x_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_x_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_x_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem_x_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_x_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem_x_ARUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_ARUSER_WIDTH-1 downto 0);
+    m_axi_gmem_x_RVALID : IN STD_LOGIC;
+    m_axi_gmem_x_RREADY : OUT STD_LOGIC;
+    m_axi_gmem_x_RDATA : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_DATA_WIDTH-1 downto 0);
+    m_axi_gmem_x_RLAST : IN STD_LOGIC;
+    m_axi_gmem_x_RID : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_ID_WIDTH-1 downto 0);
+    m_axi_gmem_x_RUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_RUSER_WIDTH-1 downto 0);
+    m_axi_gmem_x_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_x_BVALID : IN STD_LOGIC;
+    m_axi_gmem_x_BREADY : OUT STD_LOGIC;
+    m_axi_gmem_x_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem_x_BID : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_ID_WIDTH-1 downto 0);
+    m_axi_gmem_x_BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM_X_BUSER_WIDTH-1 downto 0) );
 end;
 
 
 architecture behav of swiglu is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=3.330000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=14961006,HLS_SYN_TPT=14944331,HLS_SYN_MEM=350,HLS_SYN_DSP=0,HLS_SYN_FF=98856,HLS_SYN_LUT=151661,HLS_VERSION=2025_1}";
+    "swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=3.330000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=19751350,HLS_SYN_TPT=15155275,HLS_SYN_MEM=622,HLS_SYN_DSP=0,HLS_SYN_FF=109516,HLS_SYN_LUT=92507,HLS_VERSION=2025_1}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant C_S_AXI_DATA_WIDTH : INTEGER := 32;
     constant C_M_AXI_DATA_WIDTH : INTEGER := 32;
     constant ap_const_logic_0 : STD_LOGIC := '0';
-    constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv8_0 : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
-    constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
+    constant ap_const_lv13_0 : STD_LOGIC_VECTOR (12 downto 0) := "0000000000000";
+    constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
+    constant ap_const_lv128_lc_1 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_const_lv16_0 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000000";
     constant ap_const_lv9_0 : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
     constant ap_const_boolean_1 : BOOLEAN := true;
 
     signal ap_rst_n_inv : STD_LOGIC;
-    signal x_local_1_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_1_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_1_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_2_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_2_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_3_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_3_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_4_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_4_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_5_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_5_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_6_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_6_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_7_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_7_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_8_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_8_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_9_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_9_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_10_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_10_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_11_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_11_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_12_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_12_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_13_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_13_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_14_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_14_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_15_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_15_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_16_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_16_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_17_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_17_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_18_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_18_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_19_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_19_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_20_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_20_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_21_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_21_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_22_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_22_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_23_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_23_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_24_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_24_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_25_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_25_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_26_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_26_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_27_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_27_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_28_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_28_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_29_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_29_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_30_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_30_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_31_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_31_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_32_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_32_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_33_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_33_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_34_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_34_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_35_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_35_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_36_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_36_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_37_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_37_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_38_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_38_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_39_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_39_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_40_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_40_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_41_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_41_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_42_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_42_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_43_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_43_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_44_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_44_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_45_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_45_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_46_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_46_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_47_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_47_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_48_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_48_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_49_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_49_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_50_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_50_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_51_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_51_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_52_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_52_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_53_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_53_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_54_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_54_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_55_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_55_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_56_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_56_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_57_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_57_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_58_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_58_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_59_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_59_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_60_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_60_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_61_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_61_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_62_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_62_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_63_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_63_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_64_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_64_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_65_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_65_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_66_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_66_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_67_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_67_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_68_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_68_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_69_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_69_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_70_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_70_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_71_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_71_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_72_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_72_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_73_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_73_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_74_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_74_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_75_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_75_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_76_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_76_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_77_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_77_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_78_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_78_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_79_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_79_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_80_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_80_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_81_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_81_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_82_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_82_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_83_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_83_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_84_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_84_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_85_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_85_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_86_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_86_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_87_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_87_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_88_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_88_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_89_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_89_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_90_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_90_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_91_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_91_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_92_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_92_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_93_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_93_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_94_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_94_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_95_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_95_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_96_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_96_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_97_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_97_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_98_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_98_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_99_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_99_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_100_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_100_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_101_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_101_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_102_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_102_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_103_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_103_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_104_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_104_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_105_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_105_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_106_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_106_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_107_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_107_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_108_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_108_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_109_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_109_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_110_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_110_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_111_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_111_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_112_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_112_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_113_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_113_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_114_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_114_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_115_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_115_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_116_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_116_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_117_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_117_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_118_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_118_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_119_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_119_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_120_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_120_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_121_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_121_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_122_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_122_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_123_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_123_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_124_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_124_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_125_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_125_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_126_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_126_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_127_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_1_127_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_1_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_1_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_2_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_2_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_3_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_3_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_4_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_4_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_5_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_5_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_6_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_6_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_7_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_7_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_8_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_8_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_9_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_9_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_10_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_10_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_11_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_11_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_12_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_12_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_13_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_13_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_14_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_14_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_15_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_15_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_16_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_16_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_17_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_17_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_18_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_18_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_19_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_19_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_20_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_20_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_21_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_21_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_22_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_22_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_23_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_23_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_24_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_24_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_25_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_25_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_26_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_26_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_27_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_27_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_28_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_28_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_29_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_29_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_30_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_30_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_31_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_31_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_32_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_32_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_33_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_33_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_34_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_34_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_35_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_35_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_36_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_36_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_37_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_37_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_38_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_38_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_39_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_39_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_40_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_40_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_41_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_41_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_42_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_42_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_43_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_43_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_44_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_44_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_45_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_45_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_46_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_46_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_47_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_47_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_48_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_48_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_49_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_49_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_50_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_50_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_51_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_51_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_52_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_52_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_53_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_53_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_54_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_54_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_55_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_55_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_56_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_56_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_57_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_57_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_58_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_58_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_59_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_59_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_60_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_60_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_61_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_61_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_62_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_62_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_63_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_63_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_64_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_64_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_65_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_65_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_66_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_66_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_67_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_67_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_68_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_68_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_69_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_69_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_70_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_70_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_71_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_71_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_72_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_72_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_73_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_73_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_74_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_74_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_75_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_75_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_76_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_76_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_77_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_77_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_78_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_78_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_79_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_79_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_80_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_80_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_81_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_81_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_82_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_82_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_83_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_83_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_84_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_84_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_85_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_85_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_86_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_86_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_87_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_87_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_88_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_88_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_89_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_89_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_90_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_90_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_91_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_91_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_92_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_92_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_93_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_93_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_94_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_94_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_95_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_95_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_96_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_96_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_97_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_97_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_98_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_98_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_99_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_99_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_100_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_100_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_101_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_101_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_102_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_102_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_103_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_103_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_104_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_104_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_105_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_105_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_106_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_106_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_107_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_107_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_108_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_108_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_109_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_109_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_110_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_110_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_111_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_111_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_112_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_112_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_113_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_113_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_114_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_114_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_115_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_115_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_116_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_116_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_117_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_117_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_118_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_118_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_119_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_119_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_120_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_120_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_121_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_121_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_122_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_122_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_123_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_123_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_124_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_124_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_125_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_125_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_126_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_126_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_127_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal x_local_2_127_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal x_local_1_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_1_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_1_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_2_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_2_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_3_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_3_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_4_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_4_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_5_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_5_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_6_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_6_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_7_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_7_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_8_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_8_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_9_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_9_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_10_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_10_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_11_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_11_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_12_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_12_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_13_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_13_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_14_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_14_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_15_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_15_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_16_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_16_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_17_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_17_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_18_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_18_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_19_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_19_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_20_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_20_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_21_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_21_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_22_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_22_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_23_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_23_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_24_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_24_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_25_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_25_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_26_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_26_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_27_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_27_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_28_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_28_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_29_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_29_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_30_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_30_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_31_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_31_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_32_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_32_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_33_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_33_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_34_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_34_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_35_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_35_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_36_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_36_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_37_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_37_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_38_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_38_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_39_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_39_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_40_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_40_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_41_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_41_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_42_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_42_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_43_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_43_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_44_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_44_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_45_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_45_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_46_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_46_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_47_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_47_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_48_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_48_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_49_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_49_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_50_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_50_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_51_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_51_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_52_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_52_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_53_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_53_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_54_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_54_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_55_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_55_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_56_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_56_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_57_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_57_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_58_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_58_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_59_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_59_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_60_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_60_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_61_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_61_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_62_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_62_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_63_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_63_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_64_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_64_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_65_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_65_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_66_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_66_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_67_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_67_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_68_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_68_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_69_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_69_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_70_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_70_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_71_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_71_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_72_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_72_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_73_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_73_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_74_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_74_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_75_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_75_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_76_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_76_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_77_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_77_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_78_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_78_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_79_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_79_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_80_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_80_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_81_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_81_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_82_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_82_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_83_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_83_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_84_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_84_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_85_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_85_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_86_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_86_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_87_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_87_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_88_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_88_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_89_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_89_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_90_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_90_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_91_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_91_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_92_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_92_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_93_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_93_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_94_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_94_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_95_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_95_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_96_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_96_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_97_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_97_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_98_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_98_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_99_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_99_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_100_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_100_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_101_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_101_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_102_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_102_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_103_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_103_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_104_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_104_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_105_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_105_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_106_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_106_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_107_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_107_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_108_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_108_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_109_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_109_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_110_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_110_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_111_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_111_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_112_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_112_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_113_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_113_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_114_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_114_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_115_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_115_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_116_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_116_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_117_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_117_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_118_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_118_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_119_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_119_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_120_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_120_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_121_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_121_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_122_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_122_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_123_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_123_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_124_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_124_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_125_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_125_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_126_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_126_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_127_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_1_127_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_1_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_1_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_2_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_2_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_3_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_3_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_4_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_4_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_5_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_5_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_6_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_6_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_7_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_7_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_8_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_8_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_9_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_9_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_10_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_10_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_11_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_11_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_12_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_12_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_13_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_13_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_14_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_14_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_15_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_15_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_16_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_16_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_17_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_17_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_18_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_18_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_19_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_19_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_20_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_20_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_21_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_21_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_22_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_22_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_23_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_23_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_24_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_24_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_25_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_25_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_26_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_26_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_27_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_27_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_28_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_28_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_29_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_29_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_30_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_30_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_31_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_31_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_32_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_32_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_33_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_33_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_34_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_34_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_35_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_35_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_36_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_36_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_37_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_37_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_38_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_38_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_39_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_39_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_40_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_40_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_41_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_41_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_42_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_42_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_43_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_43_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_44_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_44_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_45_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_45_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_46_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_46_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_47_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_47_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_48_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_48_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_49_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_49_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_50_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_50_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_51_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_51_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_52_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_52_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_53_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_53_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_54_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_54_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_55_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_55_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_56_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_56_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_57_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_57_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_58_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_58_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_59_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_59_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_60_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_60_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_61_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_61_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_62_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_62_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_63_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_63_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_64_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_64_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_65_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_65_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_66_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_66_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_67_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_67_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_68_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_68_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_69_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_69_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_70_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_70_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_71_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_71_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_72_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_72_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_73_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_73_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_74_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_74_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_75_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_75_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_76_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_76_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_77_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_77_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_78_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_78_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_79_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_79_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_80_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_80_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_81_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_81_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_82_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_82_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_83_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_83_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_84_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_84_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_85_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_85_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_86_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_86_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_87_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_87_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_88_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_88_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_89_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_89_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_90_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_90_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_91_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_91_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_92_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_92_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_93_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_93_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_94_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_94_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_95_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_95_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_96_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_96_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_97_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_97_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_98_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_98_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_99_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_99_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_100_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_100_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_101_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_101_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_102_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_102_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_103_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_103_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_104_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_104_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_105_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_105_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_106_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_106_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_107_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_107_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_108_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_108_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_109_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_109_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_110_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_110_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_111_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_111_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_112_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_112_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_113_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_113_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_114_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_114_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_115_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_115_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_116_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_116_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_117_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_117_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_118_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_118_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_119_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_119_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_120_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_120_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_121_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_121_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_122_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_122_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_123_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_123_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_124_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_124_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_125_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_125_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_126_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_126_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_127_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal x_local_2_127_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal X1_cache_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal X1_cache_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal X2_cache_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal X2_cache_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal gate_cache_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
     signal gate_cache_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
     signal gate_cache_1_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
@@ -685,10 +916,10 @@ architecture behav of swiglu is
     signal gate_cache_30_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
     signal gate_cache_31_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
     signal gate_cache_31_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal W : STD_LOGIC_VECTOR (7 downto 0);
-    signal V : STD_LOGIC_VECTOR (7 downto 0);
-    signal W_down : STD_LOGIC_VECTOR (7 downto 0);
-    signal x_batch : STD_LOGIC_VECTOR (7 downto 0);
+    signal W : STD_LOGIC_VECTOR (63 downto 0);
+    signal V : STD_LOGIC_VECTOR (63 downto 0);
+    signal W_down : STD_LOGIC_VECTOR (63 downto 0);
+    signal x_batch : STD_LOGIC_VECTOR (63 downto 0);
     signal out_batch : STD_LOGIC_VECTOR (63 downto 0);
     signal down_quant_mode : STD_LOGIC_VECTOR (31 downto 0);
     signal x_scale : STD_LOGIC_VECTOR (31 downto 0);
@@ -696,6 +927,39 @@ architecture behav of swiglu is
     signal ap_ready : STD_LOGIC;
     signal ap_done : STD_LOGIC;
     signal ap_idle : STD_LOGIC;
+    signal gmem_V_0_AWREADY : STD_LOGIC;
+    signal gmem_V_0_WREADY : STD_LOGIC;
+    signal gmem_V_0_ARREADY : STD_LOGIC;
+    signal gmem_V_0_RVALID : STD_LOGIC;
+    signal gmem_V_0_RDATA : STD_LOGIC_VECTOR (127 downto 0);
+    signal gmem_V_0_RLAST : STD_LOGIC;
+    signal gmem_V_0_RID : STD_LOGIC_VECTOR (0 downto 0);
+    signal gmem_V_0_RFIFONUM : STD_LOGIC_VECTOR (9 downto 0);
+    signal gmem_V_0_RUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal gmem_V_0_RRESP : STD_LOGIC_VECTOR (1 downto 0);
+    signal gmem_V_0_BVALID : STD_LOGIC;
+    signal gmem_W_0_AWREADY : STD_LOGIC;
+    signal gmem_W_0_WREADY : STD_LOGIC;
+    signal gmem_W_0_ARREADY : STD_LOGIC;
+    signal gmem_W_0_RVALID : STD_LOGIC;
+    signal gmem_W_0_RDATA : STD_LOGIC_VECTOR (127 downto 0);
+    signal gmem_W_0_RLAST : STD_LOGIC;
+    signal gmem_W_0_RID : STD_LOGIC_VECTOR (0 downto 0);
+    signal gmem_W_0_RFIFONUM : STD_LOGIC_VECTOR (9 downto 0);
+    signal gmem_W_0_RUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal gmem_W_0_RRESP : STD_LOGIC_VECTOR (1 downto 0);
+    signal gmem_W_0_BVALID : STD_LOGIC;
+    signal gmem_Wd_0_AWREADY : STD_LOGIC;
+    signal gmem_Wd_0_WREADY : STD_LOGIC;
+    signal gmem_Wd_0_ARREADY : STD_LOGIC;
+    signal gmem_Wd_0_RVALID : STD_LOGIC;
+    signal gmem_Wd_0_RDATA : STD_LOGIC_VECTOR (127 downto 0);
+    signal gmem_Wd_0_RLAST : STD_LOGIC;
+    signal gmem_Wd_0_RID : STD_LOGIC_VECTOR (0 downto 0);
+    signal gmem_Wd_0_RFIFONUM : STD_LOGIC_VECTOR (9 downto 0);
+    signal gmem_Wd_0_RUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal gmem_Wd_0_RRESP : STD_LOGIC_VECTOR (1 downto 0);
+    signal gmem_Wd_0_BVALID : STD_LOGIC;
     signal gmem_out_0_AWREADY : STD_LOGIC;
     signal gmem_out_0_WREADY : STD_LOGIC;
     signal gmem_out_0_ARREADY : STD_LOGIC;
@@ -706,1054 +970,1078 @@ architecture behav of swiglu is
     signal gmem_out_0_BRESP : STD_LOGIC_VECTOR (1 downto 0);
     signal gmem_out_0_BID : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem_out_0_BUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal entry_proc_U0_ap_start : STD_LOGIC;
-    signal entry_proc_U0_ap_done : STD_LOGIC;
-    signal entry_proc_U0_ap_continue : STD_LOGIC;
-    signal entry_proc_U0_ap_idle : STD_LOGIC;
-    signal entry_proc_U0_ap_ready : STD_LOGIC;
-    signal entry_proc_U0_W_c_din : STD_LOGIC_VECTOR (7 downto 0);
-    signal entry_proc_U0_W_c_write : STD_LOGIC;
-    signal entry_proc_U0_V_c_din : STD_LOGIC_VECTOR (7 downto 0);
-    signal entry_proc_U0_V_c_write : STD_LOGIC;
-    signal entry_proc_U0_W_down_c_din : STD_LOGIC_VECTOR (7 downto 0);
-    signal entry_proc_U0_W_down_c_write : STD_LOGIC;
-    signal entry_proc_U0_out_batch_c_din : STD_LOGIC_VECTOR (63 downto 0);
-    signal entry_proc_U0_out_batch_c_write : STD_LOGIC;
-    signal entry_proc_U0_down_quant_mode_c_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal entry_proc_U0_down_quant_mode_c_write : STD_LOGIC;
-    signal entry_proc_U0_x_scale_c_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal entry_proc_U0_x_scale_c_write : STD_LOGIC;
-    signal entry_proc_U0_x_scale_c1_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal entry_proc_U0_x_scale_c1_write : STD_LOGIC;
+    signal gmem_x_0_AWREADY : STD_LOGIC;
+    signal gmem_x_0_WREADY : STD_LOGIC;
+    signal gmem_x_0_ARREADY : STD_LOGIC;
+    signal gmem_x_0_RVALID : STD_LOGIC;
+    signal gmem_x_0_RDATA : STD_LOGIC_VECTOR (127 downto 0);
+    signal gmem_x_0_RLAST : STD_LOGIC;
+    signal gmem_x_0_RID : STD_LOGIC_VECTOR (0 downto 0);
+    signal gmem_x_0_RFIFONUM : STD_LOGIC_VECTOR (9 downto 0);
+    signal gmem_x_0_RUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal gmem_x_0_RRESP : STD_LOGIC_VECTOR (1 downto 0);
+    signal gmem_x_0_BVALID : STD_LOGIC;
     signal load_x_local_U0_ap_start : STD_LOGIC;
     signal load_x_local_U0_ap_done : STD_LOGIC;
     signal load_x_local_U0_ap_continue : STD_LOGIC;
     signal load_x_local_U0_ap_idle : STD_LOGIC;
     signal load_x_local_U0_ap_ready : STD_LOGIC;
+    signal load_x_local_U0_m_axi_gmem_x_0_AWVALID : STD_LOGIC;
+    signal load_x_local_U0_m_axi_gmem_x_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_WVALID : STD_LOGIC;
+    signal load_x_local_U0_m_axi_gmem_x_0_WDATA : STD_LOGIC_VECTOR (127 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_WSTRB : STD_LOGIC_VECTOR (15 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_WLAST : STD_LOGIC;
+    signal load_x_local_U0_m_axi_gmem_x_0_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_ARVALID : STD_LOGIC;
+    signal load_x_local_U0_m_axi_gmem_x_0_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_m_axi_gmem_x_0_RREADY : STD_LOGIC;
+    signal load_x_local_U0_m_axi_gmem_x_0_BREADY : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_0_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_0_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_0_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_0_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_0_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_1_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_1_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_1_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_1_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_1_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_2_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_2_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_2_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_2_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_2_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_3_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_3_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_3_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_3_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_3_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_4_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_4_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_4_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_4_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_4_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_5_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_5_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_5_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_5_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_5_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_6_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_6_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_6_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_6_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_6_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_1_7_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_1_7_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_1_7_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_1_7_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_1_7_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_0_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_0_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_0_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_0_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_0_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_1_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_1_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_1_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_1_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_1_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_2_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_2_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_2_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_2_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_2_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_3_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_3_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_3_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_3_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_3_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_4_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_4_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_4_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_4_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_4_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_5_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_5_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_5_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_5_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_5_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_6_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_6_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_6_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_6_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_6_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_0_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_0_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_0_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_1_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_1_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_1_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_2_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_2_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_2_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_2_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_3_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_3_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_3_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_3_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_4_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_4_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_4_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_4_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_4_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_5_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_5_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_5_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_5_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_5_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_6_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_6_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_6_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_6_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_6_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_7_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_7_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_7_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_7_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_7_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_8_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_8_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_8_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_8_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_8_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_9_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_9_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_9_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_9_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_9_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_10_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_10_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_10_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_10_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_10_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_11_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_11_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_11_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_11_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_11_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_12_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_12_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_12_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_12_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_12_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_13_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_13_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_13_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_13_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_13_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_14_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_14_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_14_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_14_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_14_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal load_x_local_U0_x_local_2_7_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal load_x_local_U0_x_local_2_7_15_ce0 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_15_we0 : STD_LOGIC;
-    signal load_x_local_U0_x_local_2_7_15_d0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal load_x_local_U0_x_local_2_7_15_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal ap_channel_done_x_local_2_127 : STD_LOGIC;
     signal load_x_local_U0_x_local_2_7_15_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_x_local_2_127 : STD_LOGIC := '0';
@@ -1767,9 +2055,38 @@ architecture behav of swiglu is
     signal compute_X1_U0_ap_continue : STD_LOGIC;
     signal compute_X1_U0_ap_idle : STD_LOGIC;
     signal compute_X1_U0_ap_ready : STD_LOGIC;
-    signal compute_X1_U0_start_out : STD_LOGIC;
-    signal compute_X1_U0_start_write : STD_LOGIC;
-    signal compute_X1_U0_W_read : STD_LOGIC;
+    signal compute_X1_U0_m_axi_gmem_W_0_AWVALID : STD_LOGIC;
+    signal compute_X1_U0_m_axi_gmem_W_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_WVALID : STD_LOGIC;
+    signal compute_X1_U0_m_axi_gmem_W_0_WDATA : STD_LOGIC_VECTOR (127 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_WSTRB : STD_LOGIC_VECTOR (15 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_WLAST : STD_LOGIC;
+    signal compute_X1_U0_m_axi_gmem_W_0_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_ARVALID : STD_LOGIC;
+    signal compute_X1_U0_m_axi_gmem_W_0_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_X1_U0_m_axi_gmem_W_0_RREADY : STD_LOGIC;
+    signal compute_X1_U0_m_axi_gmem_W_0_BREADY : STD_LOGIC;
     signal compute_X1_U0_x_local_1_0_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal compute_X1_U0_x_local_1_0_0_ce0 : STD_LOGIC;
     signal compute_X1_U0_x_local_1_0_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
@@ -2026,15 +2343,47 @@ architecture behav of swiglu is
     signal compute_X1_U0_x_local_1_7_14_ce0 : STD_LOGIC;
     signal compute_X1_U0_x_local_1_7_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal compute_X1_U0_x_local_1_7_15_ce0 : STD_LOGIC;
-    signal compute_X1_U0_x_scale_read : STD_LOGIC;
-    signal compute_X1_U0_X1_cache_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal compute_X1_U0_X1_cache_write : STD_LOGIC;
+    signal compute_X1_U0_X1_cache_address1 : STD_LOGIC_VECTOR (12 downto 0);
+    signal compute_X1_U0_X1_cache_ce1 : STD_LOGIC;
+    signal compute_X1_U0_X1_cache_we1 : STD_LOGIC;
+    signal compute_X1_U0_X1_cache_d1 : STD_LOGIC_VECTOR (31 downto 0);
     signal compute_X2_U0_ap_start : STD_LOGIC;
     signal compute_X2_U0_ap_done : STD_LOGIC;
     signal compute_X2_U0_ap_continue : STD_LOGIC;
     signal compute_X2_U0_ap_idle : STD_LOGIC;
     signal compute_X2_U0_ap_ready : STD_LOGIC;
-    signal compute_X2_U0_V_read : STD_LOGIC;
+    signal compute_X2_U0_m_axi_gmem_V_0_AWVALID : STD_LOGIC;
+    signal compute_X2_U0_m_axi_gmem_V_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_WVALID : STD_LOGIC;
+    signal compute_X2_U0_m_axi_gmem_V_0_WDATA : STD_LOGIC_VECTOR (127 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_WSTRB : STD_LOGIC_VECTOR (15 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_WLAST : STD_LOGIC;
+    signal compute_X2_U0_m_axi_gmem_V_0_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_ARVALID : STD_LOGIC;
+    signal compute_X2_U0_m_axi_gmem_V_0_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_X2_U0_m_axi_gmem_V_0_RREADY : STD_LOGIC;
+    signal compute_X2_U0_m_axi_gmem_V_0_BREADY : STD_LOGIC;
     signal compute_X2_U0_x_local_2_0_0_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal compute_X2_U0_x_local_2_0_0_ce0 : STD_LOGIC;
     signal compute_X2_U0_x_local_2_0_1_address0 : STD_LOGIC_VECTOR (3 downto 0);
@@ -2291,16 +2640,19 @@ architecture behav of swiglu is
     signal compute_X2_U0_x_local_2_7_14_ce0 : STD_LOGIC;
     signal compute_X2_U0_x_local_2_7_15_address0 : STD_LOGIC_VECTOR (3 downto 0);
     signal compute_X2_U0_x_local_2_7_15_ce0 : STD_LOGIC;
-    signal compute_X2_U0_x_scale_read : STD_LOGIC;
-    signal compute_X2_U0_X2_cache_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal compute_X2_U0_X2_cache_write : STD_LOGIC;
+    signal compute_X2_U0_X2_cache_address1 : STD_LOGIC_VECTOR (12 downto 0);
+    signal compute_X2_U0_X2_cache_ce1 : STD_LOGIC;
+    signal compute_X2_U0_X2_cache_we1 : STD_LOGIC;
+    signal compute_X2_U0_X2_cache_d1 : STD_LOGIC_VECTOR (31 downto 0);
     signal compute_gate_U0_ap_start : STD_LOGIC;
     signal compute_gate_U0_ap_done : STD_LOGIC;
     signal compute_gate_U0_ap_continue : STD_LOGIC;
     signal compute_gate_U0_ap_idle : STD_LOGIC;
     signal compute_gate_U0_ap_ready : STD_LOGIC;
-    signal compute_gate_U0_X1_cache_read : STD_LOGIC;
-    signal compute_gate_U0_X2_cache_read : STD_LOGIC;
+    signal compute_gate_U0_X1_cache_address0 : STD_LOGIC_VECTOR (12 downto 0);
+    signal compute_gate_U0_X1_cache_ce0 : STD_LOGIC;
+    signal compute_gate_U0_X2_cache_address0 : STD_LOGIC_VECTOR (12 downto 0);
+    signal compute_gate_U0_X2_cache_ce0 : STD_LOGIC;
     signal compute_gate_U0_gate_cache_0_address1 : STD_LOGIC_VECTOR (7 downto 0);
     signal compute_gate_U0_gate_cache_0_ce1 : STD_LOGIC;
     signal compute_gate_U0_gate_cache_0_we1 : STD_LOGIC;
@@ -2443,7 +2795,38 @@ architecture behav of swiglu is
     signal compute_output_U0_ap_continue : STD_LOGIC;
     signal compute_output_U0_ap_idle : STD_LOGIC;
     signal compute_output_U0_ap_ready : STD_LOGIC;
-    signal compute_output_U0_W_down_read : STD_LOGIC;
+    signal compute_output_U0_m_axi_gmem_Wd_0_AWVALID : STD_LOGIC;
+    signal compute_output_U0_m_axi_gmem_Wd_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_WVALID : STD_LOGIC;
+    signal compute_output_U0_m_axi_gmem_Wd_0_WDATA : STD_LOGIC_VECTOR (127 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_WSTRB : STD_LOGIC_VECTOR (15 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_WLAST : STD_LOGIC;
+    signal compute_output_U0_m_axi_gmem_Wd_0_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_ARVALID : STD_LOGIC;
+    signal compute_output_U0_m_axi_gmem_Wd_0_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal compute_output_U0_m_axi_gmem_Wd_0_RREADY : STD_LOGIC;
+    signal compute_output_U0_m_axi_gmem_Wd_0_BREADY : STD_LOGIC;
     signal compute_output_U0_gate_cache_0_address0 : STD_LOGIC_VECTOR (7 downto 0);
     signal compute_output_U0_gate_cache_0_ce0 : STD_LOGIC;
     signal compute_output_U0_gate_cache_1_address0 : STD_LOGIC_VECTOR (7 downto 0);
@@ -2540,8 +2923,6 @@ architecture behav of swiglu is
     signal compute_output_U0_m_axi_gmem_out_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal compute_output_U0_m_axi_gmem_out_0_RREADY : STD_LOGIC;
     signal compute_output_U0_m_axi_gmem_out_0_BREADY : STD_LOGIC;
-    signal compute_output_U0_out_batch_read : STD_LOGIC;
-    signal compute_output_U0_down_quant_mode_read : STD_LOGIC;
     signal x_local_1_i_full_n : STD_LOGIC;
     signal x_local_1_t_empty_n : STD_LOGIC;
     signal x_local_1_1_i_full_n : STD_LOGIC;
@@ -3054,6 +3435,10 @@ architecture behav of swiglu is
     signal x_local_2_126_t_empty_n : STD_LOGIC;
     signal x_local_2_127_i_full_n : STD_LOGIC;
     signal x_local_2_127_t_empty_n : STD_LOGIC;
+    signal X1_cache_i_full_n : STD_LOGIC;
+    signal X1_cache_t_empty_n : STD_LOGIC;
+    signal X2_cache_i_full_n : STD_LOGIC;
+    signal X2_cache_t_empty_n : STD_LOGIC;
     signal gate_cache_i_full_n : STD_LOGIC;
     signal gate_cache_t_empty_n : STD_LOGIC;
     signal gate_cache_1_i_full_n : STD_LOGIC;
@@ -3118,118 +3503,20 @@ architecture behav of swiglu is
     signal gate_cache_30_t_empty_n : STD_LOGIC;
     signal gate_cache_31_i_full_n : STD_LOGIC;
     signal gate_cache_31_t_empty_n : STD_LOGIC;
-    signal W_c_full_n : STD_LOGIC;
-    signal W_c_dout : STD_LOGIC_VECTOR (7 downto 0);
-    signal W_c_empty_n : STD_LOGIC;
-    signal W_c_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
-    signal W_c_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
-    signal V_c_full_n : STD_LOGIC;
-    signal V_c_dout : STD_LOGIC_VECTOR (7 downto 0);
-    signal V_c_empty_n : STD_LOGIC;
-    signal V_c_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
-    signal V_c_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
-    signal W_down_c_full_n : STD_LOGIC;
-    signal W_down_c_dout : STD_LOGIC_VECTOR (7 downto 0);
-    signal W_down_c_empty_n : STD_LOGIC;
-    signal W_down_c_num_data_valid : STD_LOGIC_VECTOR (3 downto 0);
-    signal W_down_c_fifo_cap : STD_LOGIC_VECTOR (3 downto 0);
-    signal out_batch_c_full_n : STD_LOGIC;
-    signal out_batch_c_dout : STD_LOGIC_VECTOR (63 downto 0);
-    signal out_batch_c_empty_n : STD_LOGIC;
-    signal out_batch_c_num_data_valid : STD_LOGIC_VECTOR (3 downto 0);
-    signal out_batch_c_fifo_cap : STD_LOGIC_VECTOR (3 downto 0);
-    signal down_quant_mode_c_full_n : STD_LOGIC;
-    signal down_quant_mode_c_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal down_quant_mode_c_empty_n : STD_LOGIC;
-    signal down_quant_mode_c_num_data_valid : STD_LOGIC_VECTOR (3 downto 0);
-    signal down_quant_mode_c_fifo_cap : STD_LOGIC_VECTOR (3 downto 0);
-    signal x_scale_c_full_n : STD_LOGIC;
-    signal x_scale_c_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal x_scale_c_empty_n : STD_LOGIC;
-    signal x_scale_c_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
-    signal x_scale_c_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
-    signal x_scale_c1_full_n : STD_LOGIC;
-    signal x_scale_c1_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal x_scale_c1_empty_n : STD_LOGIC;
-    signal x_scale_c1_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
-    signal x_scale_c1_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
-    signal X1_cache_full_n : STD_LOGIC;
-    signal X1_cache_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal X1_cache_empty_n : STD_LOGIC;
-    signal X1_cache_num_data_valid : STD_LOGIC_VECTOR (4 downto 0);
-    signal X1_cache_fifo_cap : STD_LOGIC_VECTOR (4 downto 0);
-    signal X2_cache_full_n : STD_LOGIC;
-    signal X2_cache_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal X2_cache_empty_n : STD_LOGIC;
-    signal X2_cache_num_data_valid : STD_LOGIC_VECTOR (4 downto 0);
-    signal X2_cache_fifo_cap : STD_LOGIC_VECTOR (4 downto 0);
     signal gate_scale_dout : STD_LOGIC_VECTOR (31 downto 0);
     signal gate_scale_empty_n : STD_LOGIC;
     signal gate_scale_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
     signal gate_scale_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
     signal ap_sync_ready : STD_LOGIC;
-    signal ap_sync_reg_entry_proc_U0_ap_ready : STD_LOGIC := '0';
-    signal ap_sync_entry_proc_U0_ap_ready : STD_LOGIC;
     signal ap_sync_reg_load_x_local_U0_ap_ready : STD_LOGIC := '0';
     signal ap_sync_load_x_local_U0_ap_ready : STD_LOGIC;
-    signal start_for_compute_gate_U0_din : STD_LOGIC_VECTOR (0 downto 0);
-    signal start_for_compute_gate_U0_full_n : STD_LOGIC;
-    signal start_for_compute_gate_U0_dout : STD_LOGIC_VECTOR (0 downto 0);
-    signal start_for_compute_gate_U0_empty_n : STD_LOGIC;
+    signal ap_sync_reg_compute_X1_U0_ap_ready : STD_LOGIC := '0';
+    signal ap_sync_compute_X1_U0_ap_ready : STD_LOGIC;
+    signal ap_sync_reg_compute_X2_U0_ap_ready : STD_LOGIC := '0';
+    signal ap_sync_compute_X2_U0_ap_ready : STD_LOGIC;
+    signal ap_sync_reg_compute_output_U0_ap_ready : STD_LOGIC := '0';
+    signal ap_sync_compute_output_U0_ap_ready : STD_LOGIC;
     signal ap_ce_reg : STD_LOGIC;
-
-    component swiglu_entry_proc IS
-    port (
-        ap_clk : IN STD_LOGIC;
-        ap_rst : IN STD_LOGIC;
-        ap_start : IN STD_LOGIC;
-        ap_done : OUT STD_LOGIC;
-        ap_continue : IN STD_LOGIC;
-        ap_idle : OUT STD_LOGIC;
-        ap_ready : OUT STD_LOGIC;
-        W : IN STD_LOGIC_VECTOR (7 downto 0);
-        W_c_din : OUT STD_LOGIC_VECTOR (7 downto 0);
-        W_c_full_n : IN STD_LOGIC;
-        W_c_write : OUT STD_LOGIC;
-        W_c_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        W_c_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
-        V : IN STD_LOGIC_VECTOR (7 downto 0);
-        V_c_din : OUT STD_LOGIC_VECTOR (7 downto 0);
-        V_c_full_n : IN STD_LOGIC;
-        V_c_write : OUT STD_LOGIC;
-        V_c_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        V_c_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
-        W_down : IN STD_LOGIC_VECTOR (7 downto 0);
-        W_down_c_din : OUT STD_LOGIC_VECTOR (7 downto 0);
-        W_down_c_full_n : IN STD_LOGIC;
-        W_down_c_write : OUT STD_LOGIC;
-        W_down_c_num_data_valid : IN STD_LOGIC_VECTOR (3 downto 0);
-        W_down_c_fifo_cap : IN STD_LOGIC_VECTOR (3 downto 0);
-        out_batch : IN STD_LOGIC_VECTOR (63 downto 0);
-        out_batch_c_din : OUT STD_LOGIC_VECTOR (63 downto 0);
-        out_batch_c_full_n : IN STD_LOGIC;
-        out_batch_c_write : OUT STD_LOGIC;
-        out_batch_c_num_data_valid : IN STD_LOGIC_VECTOR (3 downto 0);
-        out_batch_c_fifo_cap : IN STD_LOGIC_VECTOR (3 downto 0);
-        down_quant_mode : IN STD_LOGIC_VECTOR (31 downto 0);
-        down_quant_mode_c_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        down_quant_mode_c_full_n : IN STD_LOGIC;
-        down_quant_mode_c_write : OUT STD_LOGIC;
-        down_quant_mode_c_num_data_valid : IN STD_LOGIC_VECTOR (3 downto 0);
-        down_quant_mode_c_fifo_cap : IN STD_LOGIC_VECTOR (3 downto 0);
-        x_scale : IN STD_LOGIC_VECTOR (31 downto 0);
-        x_scale_c_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        x_scale_c_full_n : IN STD_LOGIC;
-        x_scale_c_write : OUT STD_LOGIC;
-        x_scale_c_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        x_scale_c_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
-        x_scale_c1_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        x_scale_c1_full_n : IN STD_LOGIC;
-        x_scale_c1_write : OUT STD_LOGIC;
-        x_scale_c1_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        x_scale_c1_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0) );
-    end component;
-
 
     component swiglu_load_x_local IS
     port (
@@ -3240,1031 +3527,1077 @@ architecture behav of swiglu is
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        x_batch : IN STD_LOGIC_VECTOR (7 downto 0);
+        m_axi_gmem_x_0_AWVALID : OUT STD_LOGIC;
+        m_axi_gmem_x_0_AWREADY : IN STD_LOGIC;
+        m_axi_gmem_x_0_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem_x_0_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_x_0_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem_x_0_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_x_0_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_x_0_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_x_0_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_x_0_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_x_0_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_x_0_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_x_0_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_x_0_WVALID : OUT STD_LOGIC;
+        m_axi_gmem_x_0_WREADY : IN STD_LOGIC;
+        m_axi_gmem_x_0_WDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
+        m_axi_gmem_x_0_WSTRB : OUT STD_LOGIC_VECTOR (15 downto 0);
+        m_axi_gmem_x_0_WLAST : OUT STD_LOGIC;
+        m_axi_gmem_x_0_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_x_0_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_x_0_ARVALID : OUT STD_LOGIC;
+        m_axi_gmem_x_0_ARREADY : IN STD_LOGIC;
+        m_axi_gmem_x_0_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem_x_0_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_x_0_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem_x_0_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_x_0_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_x_0_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_x_0_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_x_0_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_x_0_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_x_0_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_x_0_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_x_0_RVALID : IN STD_LOGIC;
+        m_axi_gmem_x_0_RREADY : OUT STD_LOGIC;
+        m_axi_gmem_x_0_RDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+        m_axi_gmem_x_0_RLAST : IN STD_LOGIC;
+        m_axi_gmem_x_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_x_0_RFIFONUM : IN STD_LOGIC_VECTOR (9 downto 0);
+        m_axi_gmem_x_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_x_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_x_0_BVALID : IN STD_LOGIC;
+        m_axi_gmem_x_0_BREADY : OUT STD_LOGIC;
+        m_axi_gmem_x_0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_x_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_x_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_batch : IN STD_LOGIC_VECTOR (63 downto 0);
         x_local_1_0_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_0_ce0 : OUT STD_LOGIC;
         x_local_1_0_0_we0 : OUT STD_LOGIC;
-        x_local_1_0_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_1_ce0 : OUT STD_LOGIC;
         x_local_1_0_1_we0 : OUT STD_LOGIC;
-        x_local_1_0_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_2_ce0 : OUT STD_LOGIC;
         x_local_1_0_2_we0 : OUT STD_LOGIC;
-        x_local_1_0_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_3_ce0 : OUT STD_LOGIC;
         x_local_1_0_3_we0 : OUT STD_LOGIC;
-        x_local_1_0_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_4_ce0 : OUT STD_LOGIC;
         x_local_1_0_4_we0 : OUT STD_LOGIC;
-        x_local_1_0_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_5_ce0 : OUT STD_LOGIC;
         x_local_1_0_5_we0 : OUT STD_LOGIC;
-        x_local_1_0_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_6_ce0 : OUT STD_LOGIC;
         x_local_1_0_6_we0 : OUT STD_LOGIC;
-        x_local_1_0_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_7_ce0 : OUT STD_LOGIC;
         x_local_1_0_7_we0 : OUT STD_LOGIC;
-        x_local_1_0_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_8_ce0 : OUT STD_LOGIC;
         x_local_1_0_8_we0 : OUT STD_LOGIC;
-        x_local_1_0_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_9_ce0 : OUT STD_LOGIC;
         x_local_1_0_9_we0 : OUT STD_LOGIC;
-        x_local_1_0_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_10_ce0 : OUT STD_LOGIC;
         x_local_1_0_10_we0 : OUT STD_LOGIC;
-        x_local_1_0_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_11_ce0 : OUT STD_LOGIC;
         x_local_1_0_11_we0 : OUT STD_LOGIC;
-        x_local_1_0_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_12_ce0 : OUT STD_LOGIC;
         x_local_1_0_12_we0 : OUT STD_LOGIC;
-        x_local_1_0_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_13_ce0 : OUT STD_LOGIC;
         x_local_1_0_13_we0 : OUT STD_LOGIC;
-        x_local_1_0_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_14_ce0 : OUT STD_LOGIC;
         x_local_1_0_14_we0 : OUT STD_LOGIC;
-        x_local_1_0_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_15_ce0 : OUT STD_LOGIC;
         x_local_1_0_15_we0 : OUT STD_LOGIC;
-        x_local_1_0_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_0_ce0 : OUT STD_LOGIC;
         x_local_1_1_0_we0 : OUT STD_LOGIC;
-        x_local_1_1_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_1_ce0 : OUT STD_LOGIC;
         x_local_1_1_1_we0 : OUT STD_LOGIC;
-        x_local_1_1_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_2_ce0 : OUT STD_LOGIC;
         x_local_1_1_2_we0 : OUT STD_LOGIC;
-        x_local_1_1_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_3_ce0 : OUT STD_LOGIC;
         x_local_1_1_3_we0 : OUT STD_LOGIC;
-        x_local_1_1_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_4_ce0 : OUT STD_LOGIC;
         x_local_1_1_4_we0 : OUT STD_LOGIC;
-        x_local_1_1_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_5_ce0 : OUT STD_LOGIC;
         x_local_1_1_5_we0 : OUT STD_LOGIC;
-        x_local_1_1_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_6_ce0 : OUT STD_LOGIC;
         x_local_1_1_6_we0 : OUT STD_LOGIC;
-        x_local_1_1_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_7_ce0 : OUT STD_LOGIC;
         x_local_1_1_7_we0 : OUT STD_LOGIC;
-        x_local_1_1_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_8_ce0 : OUT STD_LOGIC;
         x_local_1_1_8_we0 : OUT STD_LOGIC;
-        x_local_1_1_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_9_ce0 : OUT STD_LOGIC;
         x_local_1_1_9_we0 : OUT STD_LOGIC;
-        x_local_1_1_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_10_ce0 : OUT STD_LOGIC;
         x_local_1_1_10_we0 : OUT STD_LOGIC;
-        x_local_1_1_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_11_ce0 : OUT STD_LOGIC;
         x_local_1_1_11_we0 : OUT STD_LOGIC;
-        x_local_1_1_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_12_ce0 : OUT STD_LOGIC;
         x_local_1_1_12_we0 : OUT STD_LOGIC;
-        x_local_1_1_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_13_ce0 : OUT STD_LOGIC;
         x_local_1_1_13_we0 : OUT STD_LOGIC;
-        x_local_1_1_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_14_ce0 : OUT STD_LOGIC;
         x_local_1_1_14_we0 : OUT STD_LOGIC;
-        x_local_1_1_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_15_ce0 : OUT STD_LOGIC;
         x_local_1_1_15_we0 : OUT STD_LOGIC;
-        x_local_1_1_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_0_ce0 : OUT STD_LOGIC;
         x_local_1_2_0_we0 : OUT STD_LOGIC;
-        x_local_1_2_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_1_ce0 : OUT STD_LOGIC;
         x_local_1_2_1_we0 : OUT STD_LOGIC;
-        x_local_1_2_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_2_ce0 : OUT STD_LOGIC;
         x_local_1_2_2_we0 : OUT STD_LOGIC;
-        x_local_1_2_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_3_ce0 : OUT STD_LOGIC;
         x_local_1_2_3_we0 : OUT STD_LOGIC;
-        x_local_1_2_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_4_ce0 : OUT STD_LOGIC;
         x_local_1_2_4_we0 : OUT STD_LOGIC;
-        x_local_1_2_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_5_ce0 : OUT STD_LOGIC;
         x_local_1_2_5_we0 : OUT STD_LOGIC;
-        x_local_1_2_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_6_ce0 : OUT STD_LOGIC;
         x_local_1_2_6_we0 : OUT STD_LOGIC;
-        x_local_1_2_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_7_ce0 : OUT STD_LOGIC;
         x_local_1_2_7_we0 : OUT STD_LOGIC;
-        x_local_1_2_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_8_ce0 : OUT STD_LOGIC;
         x_local_1_2_8_we0 : OUT STD_LOGIC;
-        x_local_1_2_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_9_ce0 : OUT STD_LOGIC;
         x_local_1_2_9_we0 : OUT STD_LOGIC;
-        x_local_1_2_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_10_ce0 : OUT STD_LOGIC;
         x_local_1_2_10_we0 : OUT STD_LOGIC;
-        x_local_1_2_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_11_ce0 : OUT STD_LOGIC;
         x_local_1_2_11_we0 : OUT STD_LOGIC;
-        x_local_1_2_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_12_ce0 : OUT STD_LOGIC;
         x_local_1_2_12_we0 : OUT STD_LOGIC;
-        x_local_1_2_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_13_ce0 : OUT STD_LOGIC;
         x_local_1_2_13_we0 : OUT STD_LOGIC;
-        x_local_1_2_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_14_ce0 : OUT STD_LOGIC;
         x_local_1_2_14_we0 : OUT STD_LOGIC;
-        x_local_1_2_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_15_ce0 : OUT STD_LOGIC;
         x_local_1_2_15_we0 : OUT STD_LOGIC;
-        x_local_1_2_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_0_ce0 : OUT STD_LOGIC;
         x_local_1_3_0_we0 : OUT STD_LOGIC;
-        x_local_1_3_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_1_ce0 : OUT STD_LOGIC;
         x_local_1_3_1_we0 : OUT STD_LOGIC;
-        x_local_1_3_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_2_ce0 : OUT STD_LOGIC;
         x_local_1_3_2_we0 : OUT STD_LOGIC;
-        x_local_1_3_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_3_ce0 : OUT STD_LOGIC;
         x_local_1_3_3_we0 : OUT STD_LOGIC;
-        x_local_1_3_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_4_ce0 : OUT STD_LOGIC;
         x_local_1_3_4_we0 : OUT STD_LOGIC;
-        x_local_1_3_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_5_ce0 : OUT STD_LOGIC;
         x_local_1_3_5_we0 : OUT STD_LOGIC;
-        x_local_1_3_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_6_ce0 : OUT STD_LOGIC;
         x_local_1_3_6_we0 : OUT STD_LOGIC;
-        x_local_1_3_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_7_ce0 : OUT STD_LOGIC;
         x_local_1_3_7_we0 : OUT STD_LOGIC;
-        x_local_1_3_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_8_ce0 : OUT STD_LOGIC;
         x_local_1_3_8_we0 : OUT STD_LOGIC;
-        x_local_1_3_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_9_ce0 : OUT STD_LOGIC;
         x_local_1_3_9_we0 : OUT STD_LOGIC;
-        x_local_1_3_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_10_ce0 : OUT STD_LOGIC;
         x_local_1_3_10_we0 : OUT STD_LOGIC;
-        x_local_1_3_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_11_ce0 : OUT STD_LOGIC;
         x_local_1_3_11_we0 : OUT STD_LOGIC;
-        x_local_1_3_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_12_ce0 : OUT STD_LOGIC;
         x_local_1_3_12_we0 : OUT STD_LOGIC;
-        x_local_1_3_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_13_ce0 : OUT STD_LOGIC;
         x_local_1_3_13_we0 : OUT STD_LOGIC;
-        x_local_1_3_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_14_ce0 : OUT STD_LOGIC;
         x_local_1_3_14_we0 : OUT STD_LOGIC;
-        x_local_1_3_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_15_ce0 : OUT STD_LOGIC;
         x_local_1_3_15_we0 : OUT STD_LOGIC;
-        x_local_1_3_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_0_ce0 : OUT STD_LOGIC;
         x_local_1_4_0_we0 : OUT STD_LOGIC;
-        x_local_1_4_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_1_ce0 : OUT STD_LOGIC;
         x_local_1_4_1_we0 : OUT STD_LOGIC;
-        x_local_1_4_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_2_ce0 : OUT STD_LOGIC;
         x_local_1_4_2_we0 : OUT STD_LOGIC;
-        x_local_1_4_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_3_ce0 : OUT STD_LOGIC;
         x_local_1_4_3_we0 : OUT STD_LOGIC;
-        x_local_1_4_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_4_ce0 : OUT STD_LOGIC;
         x_local_1_4_4_we0 : OUT STD_LOGIC;
-        x_local_1_4_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_5_ce0 : OUT STD_LOGIC;
         x_local_1_4_5_we0 : OUT STD_LOGIC;
-        x_local_1_4_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_6_ce0 : OUT STD_LOGIC;
         x_local_1_4_6_we0 : OUT STD_LOGIC;
-        x_local_1_4_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_7_ce0 : OUT STD_LOGIC;
         x_local_1_4_7_we0 : OUT STD_LOGIC;
-        x_local_1_4_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_8_ce0 : OUT STD_LOGIC;
         x_local_1_4_8_we0 : OUT STD_LOGIC;
-        x_local_1_4_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_9_ce0 : OUT STD_LOGIC;
         x_local_1_4_9_we0 : OUT STD_LOGIC;
-        x_local_1_4_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_10_ce0 : OUT STD_LOGIC;
         x_local_1_4_10_we0 : OUT STD_LOGIC;
-        x_local_1_4_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_11_ce0 : OUT STD_LOGIC;
         x_local_1_4_11_we0 : OUT STD_LOGIC;
-        x_local_1_4_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_12_ce0 : OUT STD_LOGIC;
         x_local_1_4_12_we0 : OUT STD_LOGIC;
-        x_local_1_4_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_13_ce0 : OUT STD_LOGIC;
         x_local_1_4_13_we0 : OUT STD_LOGIC;
-        x_local_1_4_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_14_ce0 : OUT STD_LOGIC;
         x_local_1_4_14_we0 : OUT STD_LOGIC;
-        x_local_1_4_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_15_ce0 : OUT STD_LOGIC;
         x_local_1_4_15_we0 : OUT STD_LOGIC;
-        x_local_1_4_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_0_ce0 : OUT STD_LOGIC;
         x_local_1_5_0_we0 : OUT STD_LOGIC;
-        x_local_1_5_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_1_ce0 : OUT STD_LOGIC;
         x_local_1_5_1_we0 : OUT STD_LOGIC;
-        x_local_1_5_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_2_ce0 : OUT STD_LOGIC;
         x_local_1_5_2_we0 : OUT STD_LOGIC;
-        x_local_1_5_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_3_ce0 : OUT STD_LOGIC;
         x_local_1_5_3_we0 : OUT STD_LOGIC;
-        x_local_1_5_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_4_ce0 : OUT STD_LOGIC;
         x_local_1_5_4_we0 : OUT STD_LOGIC;
-        x_local_1_5_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_5_ce0 : OUT STD_LOGIC;
         x_local_1_5_5_we0 : OUT STD_LOGIC;
-        x_local_1_5_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_6_ce0 : OUT STD_LOGIC;
         x_local_1_5_6_we0 : OUT STD_LOGIC;
-        x_local_1_5_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_7_ce0 : OUT STD_LOGIC;
         x_local_1_5_7_we0 : OUT STD_LOGIC;
-        x_local_1_5_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_8_ce0 : OUT STD_LOGIC;
         x_local_1_5_8_we0 : OUT STD_LOGIC;
-        x_local_1_5_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_9_ce0 : OUT STD_LOGIC;
         x_local_1_5_9_we0 : OUT STD_LOGIC;
-        x_local_1_5_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_10_ce0 : OUT STD_LOGIC;
         x_local_1_5_10_we0 : OUT STD_LOGIC;
-        x_local_1_5_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_11_ce0 : OUT STD_LOGIC;
         x_local_1_5_11_we0 : OUT STD_LOGIC;
-        x_local_1_5_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_12_ce0 : OUT STD_LOGIC;
         x_local_1_5_12_we0 : OUT STD_LOGIC;
-        x_local_1_5_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_13_ce0 : OUT STD_LOGIC;
         x_local_1_5_13_we0 : OUT STD_LOGIC;
-        x_local_1_5_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_14_ce0 : OUT STD_LOGIC;
         x_local_1_5_14_we0 : OUT STD_LOGIC;
-        x_local_1_5_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_15_ce0 : OUT STD_LOGIC;
         x_local_1_5_15_we0 : OUT STD_LOGIC;
-        x_local_1_5_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_0_ce0 : OUT STD_LOGIC;
         x_local_1_6_0_we0 : OUT STD_LOGIC;
-        x_local_1_6_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_1_ce0 : OUT STD_LOGIC;
         x_local_1_6_1_we0 : OUT STD_LOGIC;
-        x_local_1_6_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_2_ce0 : OUT STD_LOGIC;
         x_local_1_6_2_we0 : OUT STD_LOGIC;
-        x_local_1_6_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_3_ce0 : OUT STD_LOGIC;
         x_local_1_6_3_we0 : OUT STD_LOGIC;
-        x_local_1_6_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_4_ce0 : OUT STD_LOGIC;
         x_local_1_6_4_we0 : OUT STD_LOGIC;
-        x_local_1_6_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_5_ce0 : OUT STD_LOGIC;
         x_local_1_6_5_we0 : OUT STD_LOGIC;
-        x_local_1_6_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_6_ce0 : OUT STD_LOGIC;
         x_local_1_6_6_we0 : OUT STD_LOGIC;
-        x_local_1_6_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_7_ce0 : OUT STD_LOGIC;
         x_local_1_6_7_we0 : OUT STD_LOGIC;
-        x_local_1_6_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_8_ce0 : OUT STD_LOGIC;
         x_local_1_6_8_we0 : OUT STD_LOGIC;
-        x_local_1_6_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_9_ce0 : OUT STD_LOGIC;
         x_local_1_6_9_we0 : OUT STD_LOGIC;
-        x_local_1_6_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_10_ce0 : OUT STD_LOGIC;
         x_local_1_6_10_we0 : OUT STD_LOGIC;
-        x_local_1_6_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_11_ce0 : OUT STD_LOGIC;
         x_local_1_6_11_we0 : OUT STD_LOGIC;
-        x_local_1_6_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_12_ce0 : OUT STD_LOGIC;
         x_local_1_6_12_we0 : OUT STD_LOGIC;
-        x_local_1_6_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_13_ce0 : OUT STD_LOGIC;
         x_local_1_6_13_we0 : OUT STD_LOGIC;
-        x_local_1_6_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_14_ce0 : OUT STD_LOGIC;
         x_local_1_6_14_we0 : OUT STD_LOGIC;
-        x_local_1_6_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_15_ce0 : OUT STD_LOGIC;
         x_local_1_6_15_we0 : OUT STD_LOGIC;
-        x_local_1_6_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_0_ce0 : OUT STD_LOGIC;
         x_local_1_7_0_we0 : OUT STD_LOGIC;
-        x_local_1_7_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_1_ce0 : OUT STD_LOGIC;
         x_local_1_7_1_we0 : OUT STD_LOGIC;
-        x_local_1_7_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_2_ce0 : OUT STD_LOGIC;
         x_local_1_7_2_we0 : OUT STD_LOGIC;
-        x_local_1_7_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_3_ce0 : OUT STD_LOGIC;
         x_local_1_7_3_we0 : OUT STD_LOGIC;
-        x_local_1_7_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_4_ce0 : OUT STD_LOGIC;
         x_local_1_7_4_we0 : OUT STD_LOGIC;
-        x_local_1_7_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_5_ce0 : OUT STD_LOGIC;
         x_local_1_7_5_we0 : OUT STD_LOGIC;
-        x_local_1_7_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_6_ce0 : OUT STD_LOGIC;
         x_local_1_7_6_we0 : OUT STD_LOGIC;
-        x_local_1_7_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_7_ce0 : OUT STD_LOGIC;
         x_local_1_7_7_we0 : OUT STD_LOGIC;
-        x_local_1_7_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_8_ce0 : OUT STD_LOGIC;
         x_local_1_7_8_we0 : OUT STD_LOGIC;
-        x_local_1_7_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_9_ce0 : OUT STD_LOGIC;
         x_local_1_7_9_we0 : OUT STD_LOGIC;
-        x_local_1_7_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_10_ce0 : OUT STD_LOGIC;
         x_local_1_7_10_we0 : OUT STD_LOGIC;
-        x_local_1_7_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_11_ce0 : OUT STD_LOGIC;
         x_local_1_7_11_we0 : OUT STD_LOGIC;
-        x_local_1_7_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_12_ce0 : OUT STD_LOGIC;
         x_local_1_7_12_we0 : OUT STD_LOGIC;
-        x_local_1_7_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_13_ce0 : OUT STD_LOGIC;
         x_local_1_7_13_we0 : OUT STD_LOGIC;
-        x_local_1_7_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_14_ce0 : OUT STD_LOGIC;
         x_local_1_7_14_we0 : OUT STD_LOGIC;
-        x_local_1_7_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_15_ce0 : OUT STD_LOGIC;
         x_local_1_7_15_we0 : OUT STD_LOGIC;
-        x_local_1_7_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_0_ce0 : OUT STD_LOGIC;
         x_local_2_0_0_we0 : OUT STD_LOGIC;
-        x_local_2_0_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_1_ce0 : OUT STD_LOGIC;
         x_local_2_0_1_we0 : OUT STD_LOGIC;
-        x_local_2_0_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_2_ce0 : OUT STD_LOGIC;
         x_local_2_0_2_we0 : OUT STD_LOGIC;
-        x_local_2_0_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_3_ce0 : OUT STD_LOGIC;
         x_local_2_0_3_we0 : OUT STD_LOGIC;
-        x_local_2_0_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_4_ce0 : OUT STD_LOGIC;
         x_local_2_0_4_we0 : OUT STD_LOGIC;
-        x_local_2_0_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_5_ce0 : OUT STD_LOGIC;
         x_local_2_0_5_we0 : OUT STD_LOGIC;
-        x_local_2_0_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_6_ce0 : OUT STD_LOGIC;
         x_local_2_0_6_we0 : OUT STD_LOGIC;
-        x_local_2_0_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_7_ce0 : OUT STD_LOGIC;
         x_local_2_0_7_we0 : OUT STD_LOGIC;
-        x_local_2_0_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_8_ce0 : OUT STD_LOGIC;
         x_local_2_0_8_we0 : OUT STD_LOGIC;
-        x_local_2_0_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_9_ce0 : OUT STD_LOGIC;
         x_local_2_0_9_we0 : OUT STD_LOGIC;
-        x_local_2_0_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_10_ce0 : OUT STD_LOGIC;
         x_local_2_0_10_we0 : OUT STD_LOGIC;
-        x_local_2_0_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_11_ce0 : OUT STD_LOGIC;
         x_local_2_0_11_we0 : OUT STD_LOGIC;
-        x_local_2_0_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_12_ce0 : OUT STD_LOGIC;
         x_local_2_0_12_we0 : OUT STD_LOGIC;
-        x_local_2_0_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_13_ce0 : OUT STD_LOGIC;
         x_local_2_0_13_we0 : OUT STD_LOGIC;
-        x_local_2_0_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_14_ce0 : OUT STD_LOGIC;
         x_local_2_0_14_we0 : OUT STD_LOGIC;
-        x_local_2_0_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_15_ce0 : OUT STD_LOGIC;
         x_local_2_0_15_we0 : OUT STD_LOGIC;
-        x_local_2_0_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_0_ce0 : OUT STD_LOGIC;
         x_local_2_1_0_we0 : OUT STD_LOGIC;
-        x_local_2_1_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_1_ce0 : OUT STD_LOGIC;
         x_local_2_1_1_we0 : OUT STD_LOGIC;
-        x_local_2_1_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_2_ce0 : OUT STD_LOGIC;
         x_local_2_1_2_we0 : OUT STD_LOGIC;
-        x_local_2_1_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_3_ce0 : OUT STD_LOGIC;
         x_local_2_1_3_we0 : OUT STD_LOGIC;
-        x_local_2_1_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_4_ce0 : OUT STD_LOGIC;
         x_local_2_1_4_we0 : OUT STD_LOGIC;
-        x_local_2_1_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_5_ce0 : OUT STD_LOGIC;
         x_local_2_1_5_we0 : OUT STD_LOGIC;
-        x_local_2_1_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_6_ce0 : OUT STD_LOGIC;
         x_local_2_1_6_we0 : OUT STD_LOGIC;
-        x_local_2_1_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_7_ce0 : OUT STD_LOGIC;
         x_local_2_1_7_we0 : OUT STD_LOGIC;
-        x_local_2_1_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_8_ce0 : OUT STD_LOGIC;
         x_local_2_1_8_we0 : OUT STD_LOGIC;
-        x_local_2_1_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_9_ce0 : OUT STD_LOGIC;
         x_local_2_1_9_we0 : OUT STD_LOGIC;
-        x_local_2_1_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_10_ce0 : OUT STD_LOGIC;
         x_local_2_1_10_we0 : OUT STD_LOGIC;
-        x_local_2_1_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_11_ce0 : OUT STD_LOGIC;
         x_local_2_1_11_we0 : OUT STD_LOGIC;
-        x_local_2_1_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_12_ce0 : OUT STD_LOGIC;
         x_local_2_1_12_we0 : OUT STD_LOGIC;
-        x_local_2_1_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_13_ce0 : OUT STD_LOGIC;
         x_local_2_1_13_we0 : OUT STD_LOGIC;
-        x_local_2_1_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_14_ce0 : OUT STD_LOGIC;
         x_local_2_1_14_we0 : OUT STD_LOGIC;
-        x_local_2_1_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_15_ce0 : OUT STD_LOGIC;
         x_local_2_1_15_we0 : OUT STD_LOGIC;
-        x_local_2_1_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_0_ce0 : OUT STD_LOGIC;
         x_local_2_2_0_we0 : OUT STD_LOGIC;
-        x_local_2_2_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_1_ce0 : OUT STD_LOGIC;
         x_local_2_2_1_we0 : OUT STD_LOGIC;
-        x_local_2_2_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_2_ce0 : OUT STD_LOGIC;
         x_local_2_2_2_we0 : OUT STD_LOGIC;
-        x_local_2_2_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_3_ce0 : OUT STD_LOGIC;
         x_local_2_2_3_we0 : OUT STD_LOGIC;
-        x_local_2_2_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_4_ce0 : OUT STD_LOGIC;
         x_local_2_2_4_we0 : OUT STD_LOGIC;
-        x_local_2_2_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_5_ce0 : OUT STD_LOGIC;
         x_local_2_2_5_we0 : OUT STD_LOGIC;
-        x_local_2_2_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_6_ce0 : OUT STD_LOGIC;
         x_local_2_2_6_we0 : OUT STD_LOGIC;
-        x_local_2_2_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_7_ce0 : OUT STD_LOGIC;
         x_local_2_2_7_we0 : OUT STD_LOGIC;
-        x_local_2_2_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_8_ce0 : OUT STD_LOGIC;
         x_local_2_2_8_we0 : OUT STD_LOGIC;
-        x_local_2_2_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_9_ce0 : OUT STD_LOGIC;
         x_local_2_2_9_we0 : OUT STD_LOGIC;
-        x_local_2_2_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_10_ce0 : OUT STD_LOGIC;
         x_local_2_2_10_we0 : OUT STD_LOGIC;
-        x_local_2_2_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_11_ce0 : OUT STD_LOGIC;
         x_local_2_2_11_we0 : OUT STD_LOGIC;
-        x_local_2_2_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_12_ce0 : OUT STD_LOGIC;
         x_local_2_2_12_we0 : OUT STD_LOGIC;
-        x_local_2_2_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_13_ce0 : OUT STD_LOGIC;
         x_local_2_2_13_we0 : OUT STD_LOGIC;
-        x_local_2_2_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_14_ce0 : OUT STD_LOGIC;
         x_local_2_2_14_we0 : OUT STD_LOGIC;
-        x_local_2_2_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_15_ce0 : OUT STD_LOGIC;
         x_local_2_2_15_we0 : OUT STD_LOGIC;
-        x_local_2_2_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_0_ce0 : OUT STD_LOGIC;
         x_local_2_3_0_we0 : OUT STD_LOGIC;
-        x_local_2_3_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_1_ce0 : OUT STD_LOGIC;
         x_local_2_3_1_we0 : OUT STD_LOGIC;
-        x_local_2_3_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_2_ce0 : OUT STD_LOGIC;
         x_local_2_3_2_we0 : OUT STD_LOGIC;
-        x_local_2_3_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_3_ce0 : OUT STD_LOGIC;
         x_local_2_3_3_we0 : OUT STD_LOGIC;
-        x_local_2_3_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_4_ce0 : OUT STD_LOGIC;
         x_local_2_3_4_we0 : OUT STD_LOGIC;
-        x_local_2_3_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_5_ce0 : OUT STD_LOGIC;
         x_local_2_3_5_we0 : OUT STD_LOGIC;
-        x_local_2_3_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_6_ce0 : OUT STD_LOGIC;
         x_local_2_3_6_we0 : OUT STD_LOGIC;
-        x_local_2_3_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_7_ce0 : OUT STD_LOGIC;
         x_local_2_3_7_we0 : OUT STD_LOGIC;
-        x_local_2_3_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_8_ce0 : OUT STD_LOGIC;
         x_local_2_3_8_we0 : OUT STD_LOGIC;
-        x_local_2_3_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_9_ce0 : OUT STD_LOGIC;
         x_local_2_3_9_we0 : OUT STD_LOGIC;
-        x_local_2_3_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_10_ce0 : OUT STD_LOGIC;
         x_local_2_3_10_we0 : OUT STD_LOGIC;
-        x_local_2_3_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_11_ce0 : OUT STD_LOGIC;
         x_local_2_3_11_we0 : OUT STD_LOGIC;
-        x_local_2_3_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_12_ce0 : OUT STD_LOGIC;
         x_local_2_3_12_we0 : OUT STD_LOGIC;
-        x_local_2_3_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_13_ce0 : OUT STD_LOGIC;
         x_local_2_3_13_we0 : OUT STD_LOGIC;
-        x_local_2_3_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_14_ce0 : OUT STD_LOGIC;
         x_local_2_3_14_we0 : OUT STD_LOGIC;
-        x_local_2_3_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_15_ce0 : OUT STD_LOGIC;
         x_local_2_3_15_we0 : OUT STD_LOGIC;
-        x_local_2_3_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_0_ce0 : OUT STD_LOGIC;
         x_local_2_4_0_we0 : OUT STD_LOGIC;
-        x_local_2_4_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_1_ce0 : OUT STD_LOGIC;
         x_local_2_4_1_we0 : OUT STD_LOGIC;
-        x_local_2_4_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_2_ce0 : OUT STD_LOGIC;
         x_local_2_4_2_we0 : OUT STD_LOGIC;
-        x_local_2_4_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_3_ce0 : OUT STD_LOGIC;
         x_local_2_4_3_we0 : OUT STD_LOGIC;
-        x_local_2_4_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_4_ce0 : OUT STD_LOGIC;
         x_local_2_4_4_we0 : OUT STD_LOGIC;
-        x_local_2_4_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_5_ce0 : OUT STD_LOGIC;
         x_local_2_4_5_we0 : OUT STD_LOGIC;
-        x_local_2_4_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_6_ce0 : OUT STD_LOGIC;
         x_local_2_4_6_we0 : OUT STD_LOGIC;
-        x_local_2_4_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_7_ce0 : OUT STD_LOGIC;
         x_local_2_4_7_we0 : OUT STD_LOGIC;
-        x_local_2_4_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_8_ce0 : OUT STD_LOGIC;
         x_local_2_4_8_we0 : OUT STD_LOGIC;
-        x_local_2_4_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_9_ce0 : OUT STD_LOGIC;
         x_local_2_4_9_we0 : OUT STD_LOGIC;
-        x_local_2_4_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_10_ce0 : OUT STD_LOGIC;
         x_local_2_4_10_we0 : OUT STD_LOGIC;
-        x_local_2_4_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_11_ce0 : OUT STD_LOGIC;
         x_local_2_4_11_we0 : OUT STD_LOGIC;
-        x_local_2_4_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_12_ce0 : OUT STD_LOGIC;
         x_local_2_4_12_we0 : OUT STD_LOGIC;
-        x_local_2_4_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_13_ce0 : OUT STD_LOGIC;
         x_local_2_4_13_we0 : OUT STD_LOGIC;
-        x_local_2_4_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_14_ce0 : OUT STD_LOGIC;
         x_local_2_4_14_we0 : OUT STD_LOGIC;
-        x_local_2_4_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_15_ce0 : OUT STD_LOGIC;
         x_local_2_4_15_we0 : OUT STD_LOGIC;
-        x_local_2_4_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_0_ce0 : OUT STD_LOGIC;
         x_local_2_5_0_we0 : OUT STD_LOGIC;
-        x_local_2_5_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_1_ce0 : OUT STD_LOGIC;
         x_local_2_5_1_we0 : OUT STD_LOGIC;
-        x_local_2_5_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_2_ce0 : OUT STD_LOGIC;
         x_local_2_5_2_we0 : OUT STD_LOGIC;
-        x_local_2_5_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_3_ce0 : OUT STD_LOGIC;
         x_local_2_5_3_we0 : OUT STD_LOGIC;
-        x_local_2_5_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_4_ce0 : OUT STD_LOGIC;
         x_local_2_5_4_we0 : OUT STD_LOGIC;
-        x_local_2_5_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_5_ce0 : OUT STD_LOGIC;
         x_local_2_5_5_we0 : OUT STD_LOGIC;
-        x_local_2_5_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_6_ce0 : OUT STD_LOGIC;
         x_local_2_5_6_we0 : OUT STD_LOGIC;
-        x_local_2_5_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_7_ce0 : OUT STD_LOGIC;
         x_local_2_5_7_we0 : OUT STD_LOGIC;
-        x_local_2_5_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_8_ce0 : OUT STD_LOGIC;
         x_local_2_5_8_we0 : OUT STD_LOGIC;
-        x_local_2_5_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_9_ce0 : OUT STD_LOGIC;
         x_local_2_5_9_we0 : OUT STD_LOGIC;
-        x_local_2_5_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_10_ce0 : OUT STD_LOGIC;
         x_local_2_5_10_we0 : OUT STD_LOGIC;
-        x_local_2_5_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_11_ce0 : OUT STD_LOGIC;
         x_local_2_5_11_we0 : OUT STD_LOGIC;
-        x_local_2_5_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_12_ce0 : OUT STD_LOGIC;
         x_local_2_5_12_we0 : OUT STD_LOGIC;
-        x_local_2_5_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_13_ce0 : OUT STD_LOGIC;
         x_local_2_5_13_we0 : OUT STD_LOGIC;
-        x_local_2_5_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_14_ce0 : OUT STD_LOGIC;
         x_local_2_5_14_we0 : OUT STD_LOGIC;
-        x_local_2_5_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_15_ce0 : OUT STD_LOGIC;
         x_local_2_5_15_we0 : OUT STD_LOGIC;
-        x_local_2_5_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_0_ce0 : OUT STD_LOGIC;
         x_local_2_6_0_we0 : OUT STD_LOGIC;
-        x_local_2_6_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_1_ce0 : OUT STD_LOGIC;
         x_local_2_6_1_we0 : OUT STD_LOGIC;
-        x_local_2_6_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_2_ce0 : OUT STD_LOGIC;
         x_local_2_6_2_we0 : OUT STD_LOGIC;
-        x_local_2_6_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_3_ce0 : OUT STD_LOGIC;
         x_local_2_6_3_we0 : OUT STD_LOGIC;
-        x_local_2_6_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_4_ce0 : OUT STD_LOGIC;
         x_local_2_6_4_we0 : OUT STD_LOGIC;
-        x_local_2_6_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_5_ce0 : OUT STD_LOGIC;
         x_local_2_6_5_we0 : OUT STD_LOGIC;
-        x_local_2_6_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_6_ce0 : OUT STD_LOGIC;
         x_local_2_6_6_we0 : OUT STD_LOGIC;
-        x_local_2_6_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_7_ce0 : OUT STD_LOGIC;
         x_local_2_6_7_we0 : OUT STD_LOGIC;
-        x_local_2_6_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_8_ce0 : OUT STD_LOGIC;
         x_local_2_6_8_we0 : OUT STD_LOGIC;
-        x_local_2_6_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_9_ce0 : OUT STD_LOGIC;
         x_local_2_6_9_we0 : OUT STD_LOGIC;
-        x_local_2_6_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_10_ce0 : OUT STD_LOGIC;
         x_local_2_6_10_we0 : OUT STD_LOGIC;
-        x_local_2_6_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_11_ce0 : OUT STD_LOGIC;
         x_local_2_6_11_we0 : OUT STD_LOGIC;
-        x_local_2_6_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_12_ce0 : OUT STD_LOGIC;
         x_local_2_6_12_we0 : OUT STD_LOGIC;
-        x_local_2_6_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_13_ce0 : OUT STD_LOGIC;
         x_local_2_6_13_we0 : OUT STD_LOGIC;
-        x_local_2_6_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_14_ce0 : OUT STD_LOGIC;
         x_local_2_6_14_we0 : OUT STD_LOGIC;
-        x_local_2_6_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_15_ce0 : OUT STD_LOGIC;
         x_local_2_6_15_we0 : OUT STD_LOGIC;
-        x_local_2_6_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_0_ce0 : OUT STD_LOGIC;
         x_local_2_7_0_we0 : OUT STD_LOGIC;
-        x_local_2_7_0_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_1_ce0 : OUT STD_LOGIC;
         x_local_2_7_1_we0 : OUT STD_LOGIC;
-        x_local_2_7_1_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_2_ce0 : OUT STD_LOGIC;
         x_local_2_7_2_we0 : OUT STD_LOGIC;
-        x_local_2_7_2_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_3_ce0 : OUT STD_LOGIC;
         x_local_2_7_3_we0 : OUT STD_LOGIC;
-        x_local_2_7_3_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_4_ce0 : OUT STD_LOGIC;
         x_local_2_7_4_we0 : OUT STD_LOGIC;
-        x_local_2_7_4_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_4_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_5_ce0 : OUT STD_LOGIC;
         x_local_2_7_5_we0 : OUT STD_LOGIC;
-        x_local_2_7_5_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_5_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_6_ce0 : OUT STD_LOGIC;
         x_local_2_7_6_we0 : OUT STD_LOGIC;
-        x_local_2_7_6_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_6_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_7_ce0 : OUT STD_LOGIC;
         x_local_2_7_7_we0 : OUT STD_LOGIC;
-        x_local_2_7_7_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_7_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_8_ce0 : OUT STD_LOGIC;
         x_local_2_7_8_we0 : OUT STD_LOGIC;
-        x_local_2_7_8_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_8_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_9_ce0 : OUT STD_LOGIC;
         x_local_2_7_9_we0 : OUT STD_LOGIC;
-        x_local_2_7_9_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_9_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_10_ce0 : OUT STD_LOGIC;
         x_local_2_7_10_we0 : OUT STD_LOGIC;
-        x_local_2_7_10_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_10_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_11_ce0 : OUT STD_LOGIC;
         x_local_2_7_11_we0 : OUT STD_LOGIC;
-        x_local_2_7_11_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_11_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_12_ce0 : OUT STD_LOGIC;
         x_local_2_7_12_we0 : OUT STD_LOGIC;
-        x_local_2_7_12_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_12_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_13_ce0 : OUT STD_LOGIC;
         x_local_2_7_13_we0 : OUT STD_LOGIC;
-        x_local_2_7_13_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_13_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_14_ce0 : OUT STD_LOGIC;
         x_local_2_7_14_we0 : OUT STD_LOGIC;
-        x_local_2_7_14_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_14_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_15_ce0 : OUT STD_LOGIC;
         x_local_2_7_15_we0 : OUT STD_LOGIC;
-        x_local_2_7_15_d0 : OUT STD_LOGIC_VECTOR (0 downto 0) );
+        x_local_2_7_15_d0 : OUT STD_LOGIC_VECTOR (7 downto 0) );
     end component;
 
 
@@ -4273,412 +4606,446 @@ architecture behav of swiglu is
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
         ap_start : IN STD_LOGIC;
-        start_full_n : IN STD_LOGIC;
         ap_done : OUT STD_LOGIC;
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        start_out : OUT STD_LOGIC;
-        start_write : OUT STD_LOGIC;
-        W_dout : IN STD_LOGIC_VECTOR (7 downto 0);
-        W_empty_n : IN STD_LOGIC;
-        W_read : OUT STD_LOGIC;
-        W_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        W_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_W_0_AWVALID : OUT STD_LOGIC;
+        m_axi_gmem_W_0_AWREADY : IN STD_LOGIC;
+        m_axi_gmem_W_0_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem_W_0_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_W_0_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem_W_0_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_W_0_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_W_0_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_W_0_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_W_0_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_W_0_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_W_0_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_W_0_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_W_0_WVALID : OUT STD_LOGIC;
+        m_axi_gmem_W_0_WREADY : IN STD_LOGIC;
+        m_axi_gmem_W_0_WDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
+        m_axi_gmem_W_0_WSTRB : OUT STD_LOGIC_VECTOR (15 downto 0);
+        m_axi_gmem_W_0_WLAST : OUT STD_LOGIC;
+        m_axi_gmem_W_0_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_W_0_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_W_0_ARVALID : OUT STD_LOGIC;
+        m_axi_gmem_W_0_ARREADY : IN STD_LOGIC;
+        m_axi_gmem_W_0_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem_W_0_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_W_0_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem_W_0_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_W_0_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_W_0_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_W_0_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_W_0_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_W_0_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_W_0_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_W_0_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_W_0_RVALID : IN STD_LOGIC;
+        m_axi_gmem_W_0_RREADY : OUT STD_LOGIC;
+        m_axi_gmem_W_0_RDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+        m_axi_gmem_W_0_RLAST : IN STD_LOGIC;
+        m_axi_gmem_W_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_W_0_RFIFONUM : IN STD_LOGIC_VECTOR (9 downto 0);
+        m_axi_gmem_W_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_W_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_W_0_BVALID : IN STD_LOGIC;
+        m_axi_gmem_W_0_BREADY : OUT STD_LOGIC;
+        m_axi_gmem_W_0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_W_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_W_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        W : IN STD_LOGIC_VECTOR (63 downto 0);
         x_local_1_0_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_0_ce0 : OUT STD_LOGIC;
-        x_local_1_0_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_1_ce0 : OUT STD_LOGIC;
-        x_local_1_0_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_2_ce0 : OUT STD_LOGIC;
-        x_local_1_0_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_3_ce0 : OUT STD_LOGIC;
-        x_local_1_0_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_4_ce0 : OUT STD_LOGIC;
-        x_local_1_0_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_5_ce0 : OUT STD_LOGIC;
-        x_local_1_0_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_6_ce0 : OUT STD_LOGIC;
-        x_local_1_0_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_7_ce0 : OUT STD_LOGIC;
-        x_local_1_0_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_8_ce0 : OUT STD_LOGIC;
-        x_local_1_0_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_9_ce0 : OUT STD_LOGIC;
-        x_local_1_0_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_10_ce0 : OUT STD_LOGIC;
-        x_local_1_0_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_11_ce0 : OUT STD_LOGIC;
-        x_local_1_0_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_12_ce0 : OUT STD_LOGIC;
-        x_local_1_0_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_13_ce0 : OUT STD_LOGIC;
-        x_local_1_0_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_14_ce0 : OUT STD_LOGIC;
-        x_local_1_0_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_0_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_0_15_ce0 : OUT STD_LOGIC;
-        x_local_1_0_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_0_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_0_ce0 : OUT STD_LOGIC;
-        x_local_1_1_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_1_ce0 : OUT STD_LOGIC;
-        x_local_1_1_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_2_ce0 : OUT STD_LOGIC;
-        x_local_1_1_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_3_ce0 : OUT STD_LOGIC;
-        x_local_1_1_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_4_ce0 : OUT STD_LOGIC;
-        x_local_1_1_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_5_ce0 : OUT STD_LOGIC;
-        x_local_1_1_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_6_ce0 : OUT STD_LOGIC;
-        x_local_1_1_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_7_ce0 : OUT STD_LOGIC;
-        x_local_1_1_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_8_ce0 : OUT STD_LOGIC;
-        x_local_1_1_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_9_ce0 : OUT STD_LOGIC;
-        x_local_1_1_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_10_ce0 : OUT STD_LOGIC;
-        x_local_1_1_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_11_ce0 : OUT STD_LOGIC;
-        x_local_1_1_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_12_ce0 : OUT STD_LOGIC;
-        x_local_1_1_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_13_ce0 : OUT STD_LOGIC;
-        x_local_1_1_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_14_ce0 : OUT STD_LOGIC;
-        x_local_1_1_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_1_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_1_15_ce0 : OUT STD_LOGIC;
-        x_local_1_1_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_1_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_0_ce0 : OUT STD_LOGIC;
-        x_local_1_2_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_1_ce0 : OUT STD_LOGIC;
-        x_local_1_2_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_2_ce0 : OUT STD_LOGIC;
-        x_local_1_2_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_3_ce0 : OUT STD_LOGIC;
-        x_local_1_2_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_4_ce0 : OUT STD_LOGIC;
-        x_local_1_2_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_5_ce0 : OUT STD_LOGIC;
-        x_local_1_2_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_6_ce0 : OUT STD_LOGIC;
-        x_local_1_2_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_7_ce0 : OUT STD_LOGIC;
-        x_local_1_2_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_8_ce0 : OUT STD_LOGIC;
-        x_local_1_2_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_9_ce0 : OUT STD_LOGIC;
-        x_local_1_2_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_10_ce0 : OUT STD_LOGIC;
-        x_local_1_2_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_11_ce0 : OUT STD_LOGIC;
-        x_local_1_2_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_12_ce0 : OUT STD_LOGIC;
-        x_local_1_2_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_13_ce0 : OUT STD_LOGIC;
-        x_local_1_2_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_14_ce0 : OUT STD_LOGIC;
-        x_local_1_2_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_2_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_2_15_ce0 : OUT STD_LOGIC;
-        x_local_1_2_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_2_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_0_ce0 : OUT STD_LOGIC;
-        x_local_1_3_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_1_ce0 : OUT STD_LOGIC;
-        x_local_1_3_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_2_ce0 : OUT STD_LOGIC;
-        x_local_1_3_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_3_ce0 : OUT STD_LOGIC;
-        x_local_1_3_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_4_ce0 : OUT STD_LOGIC;
-        x_local_1_3_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_5_ce0 : OUT STD_LOGIC;
-        x_local_1_3_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_6_ce0 : OUT STD_LOGIC;
-        x_local_1_3_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_7_ce0 : OUT STD_LOGIC;
-        x_local_1_3_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_8_ce0 : OUT STD_LOGIC;
-        x_local_1_3_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_9_ce0 : OUT STD_LOGIC;
-        x_local_1_3_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_10_ce0 : OUT STD_LOGIC;
-        x_local_1_3_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_11_ce0 : OUT STD_LOGIC;
-        x_local_1_3_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_12_ce0 : OUT STD_LOGIC;
-        x_local_1_3_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_13_ce0 : OUT STD_LOGIC;
-        x_local_1_3_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_14_ce0 : OUT STD_LOGIC;
-        x_local_1_3_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_3_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_3_15_ce0 : OUT STD_LOGIC;
-        x_local_1_3_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_3_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_0_ce0 : OUT STD_LOGIC;
-        x_local_1_4_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_1_ce0 : OUT STD_LOGIC;
-        x_local_1_4_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_2_ce0 : OUT STD_LOGIC;
-        x_local_1_4_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_3_ce0 : OUT STD_LOGIC;
-        x_local_1_4_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_4_ce0 : OUT STD_LOGIC;
-        x_local_1_4_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_5_ce0 : OUT STD_LOGIC;
-        x_local_1_4_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_6_ce0 : OUT STD_LOGIC;
-        x_local_1_4_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_7_ce0 : OUT STD_LOGIC;
-        x_local_1_4_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_8_ce0 : OUT STD_LOGIC;
-        x_local_1_4_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_9_ce0 : OUT STD_LOGIC;
-        x_local_1_4_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_10_ce0 : OUT STD_LOGIC;
-        x_local_1_4_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_11_ce0 : OUT STD_LOGIC;
-        x_local_1_4_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_12_ce0 : OUT STD_LOGIC;
-        x_local_1_4_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_13_ce0 : OUT STD_LOGIC;
-        x_local_1_4_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_14_ce0 : OUT STD_LOGIC;
-        x_local_1_4_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_4_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_4_15_ce0 : OUT STD_LOGIC;
-        x_local_1_4_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_4_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_0_ce0 : OUT STD_LOGIC;
-        x_local_1_5_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_1_ce0 : OUT STD_LOGIC;
-        x_local_1_5_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_2_ce0 : OUT STD_LOGIC;
-        x_local_1_5_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_3_ce0 : OUT STD_LOGIC;
-        x_local_1_5_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_4_ce0 : OUT STD_LOGIC;
-        x_local_1_5_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_5_ce0 : OUT STD_LOGIC;
-        x_local_1_5_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_6_ce0 : OUT STD_LOGIC;
-        x_local_1_5_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_7_ce0 : OUT STD_LOGIC;
-        x_local_1_5_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_8_ce0 : OUT STD_LOGIC;
-        x_local_1_5_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_9_ce0 : OUT STD_LOGIC;
-        x_local_1_5_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_10_ce0 : OUT STD_LOGIC;
-        x_local_1_5_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_11_ce0 : OUT STD_LOGIC;
-        x_local_1_5_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_12_ce0 : OUT STD_LOGIC;
-        x_local_1_5_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_13_ce0 : OUT STD_LOGIC;
-        x_local_1_5_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_14_ce0 : OUT STD_LOGIC;
-        x_local_1_5_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_5_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_5_15_ce0 : OUT STD_LOGIC;
-        x_local_1_5_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_5_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_0_ce0 : OUT STD_LOGIC;
-        x_local_1_6_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_1_ce0 : OUT STD_LOGIC;
-        x_local_1_6_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_2_ce0 : OUT STD_LOGIC;
-        x_local_1_6_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_3_ce0 : OUT STD_LOGIC;
-        x_local_1_6_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_4_ce0 : OUT STD_LOGIC;
-        x_local_1_6_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_5_ce0 : OUT STD_LOGIC;
-        x_local_1_6_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_6_ce0 : OUT STD_LOGIC;
-        x_local_1_6_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_7_ce0 : OUT STD_LOGIC;
-        x_local_1_6_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_8_ce0 : OUT STD_LOGIC;
-        x_local_1_6_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_9_ce0 : OUT STD_LOGIC;
-        x_local_1_6_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_10_ce0 : OUT STD_LOGIC;
-        x_local_1_6_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_11_ce0 : OUT STD_LOGIC;
-        x_local_1_6_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_12_ce0 : OUT STD_LOGIC;
-        x_local_1_6_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_13_ce0 : OUT STD_LOGIC;
-        x_local_1_6_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_14_ce0 : OUT STD_LOGIC;
-        x_local_1_6_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_6_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_6_15_ce0 : OUT STD_LOGIC;
-        x_local_1_6_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_6_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_0_ce0 : OUT STD_LOGIC;
-        x_local_1_7_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_1_ce0 : OUT STD_LOGIC;
-        x_local_1_7_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_2_ce0 : OUT STD_LOGIC;
-        x_local_1_7_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_3_ce0 : OUT STD_LOGIC;
-        x_local_1_7_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_4_ce0 : OUT STD_LOGIC;
-        x_local_1_7_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_5_ce0 : OUT STD_LOGIC;
-        x_local_1_7_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_6_ce0 : OUT STD_LOGIC;
-        x_local_1_7_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_7_ce0 : OUT STD_LOGIC;
-        x_local_1_7_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_8_ce0 : OUT STD_LOGIC;
-        x_local_1_7_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_9_ce0 : OUT STD_LOGIC;
-        x_local_1_7_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_10_ce0 : OUT STD_LOGIC;
-        x_local_1_7_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_11_ce0 : OUT STD_LOGIC;
-        x_local_1_7_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_12_ce0 : OUT STD_LOGIC;
-        x_local_1_7_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_13_ce0 : OUT STD_LOGIC;
-        x_local_1_7_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_14_ce0 : OUT STD_LOGIC;
-        x_local_1_7_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_1_7_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_1_7_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_1_7_15_ce0 : OUT STD_LOGIC;
-        x_local_1_7_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
-        x_scale_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        x_scale_empty_n : IN STD_LOGIC;
-        x_scale_read : OUT STD_LOGIC;
-        x_scale_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        x_scale_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
-        X1_cache_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        X1_cache_full_n : IN STD_LOGIC;
-        X1_cache_write : OUT STD_LOGIC;
-        X1_cache_num_data_valid : IN STD_LOGIC_VECTOR (4 downto 0);
-        X1_cache_fifo_cap : IN STD_LOGIC_VECTOR (4 downto 0) );
+        x_local_1_7_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        x_scale : IN STD_LOGIC_VECTOR (31 downto 0);
+        X1_cache_address1 : OUT STD_LOGIC_VECTOR (12 downto 0);
+        X1_cache_ce1 : OUT STD_LOGIC;
+        X1_cache_we1 : OUT STD_LOGIC;
+        X1_cache_d1 : OUT STD_LOGIC_VECTOR (31 downto 0) );
     end component;
 
 
@@ -4691,405 +5058,442 @@ architecture behav of swiglu is
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        V_dout : IN STD_LOGIC_VECTOR (7 downto 0);
-        V_empty_n : IN STD_LOGIC;
-        V_read : OUT STD_LOGIC;
-        V_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        V_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_V_0_AWVALID : OUT STD_LOGIC;
+        m_axi_gmem_V_0_AWREADY : IN STD_LOGIC;
+        m_axi_gmem_V_0_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem_V_0_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_V_0_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem_V_0_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_V_0_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_V_0_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_V_0_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_V_0_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_V_0_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_V_0_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_V_0_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_V_0_WVALID : OUT STD_LOGIC;
+        m_axi_gmem_V_0_WREADY : IN STD_LOGIC;
+        m_axi_gmem_V_0_WDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
+        m_axi_gmem_V_0_WSTRB : OUT STD_LOGIC_VECTOR (15 downto 0);
+        m_axi_gmem_V_0_WLAST : OUT STD_LOGIC;
+        m_axi_gmem_V_0_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_V_0_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_V_0_ARVALID : OUT STD_LOGIC;
+        m_axi_gmem_V_0_ARREADY : IN STD_LOGIC;
+        m_axi_gmem_V_0_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem_V_0_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_V_0_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem_V_0_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_V_0_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_V_0_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_V_0_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_V_0_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_V_0_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_V_0_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_V_0_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_V_0_RVALID : IN STD_LOGIC;
+        m_axi_gmem_V_0_RREADY : OUT STD_LOGIC;
+        m_axi_gmem_V_0_RDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+        m_axi_gmem_V_0_RLAST : IN STD_LOGIC;
+        m_axi_gmem_V_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_V_0_RFIFONUM : IN STD_LOGIC_VECTOR (9 downto 0);
+        m_axi_gmem_V_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_V_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_V_0_BVALID : IN STD_LOGIC;
+        m_axi_gmem_V_0_BREADY : OUT STD_LOGIC;
+        m_axi_gmem_V_0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_V_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_V_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        V : IN STD_LOGIC_VECTOR (63 downto 0);
         x_local_2_0_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_0_ce0 : OUT STD_LOGIC;
-        x_local_2_0_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_1_ce0 : OUT STD_LOGIC;
-        x_local_2_0_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_2_ce0 : OUT STD_LOGIC;
-        x_local_2_0_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_3_ce0 : OUT STD_LOGIC;
-        x_local_2_0_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_4_ce0 : OUT STD_LOGIC;
-        x_local_2_0_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_5_ce0 : OUT STD_LOGIC;
-        x_local_2_0_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_6_ce0 : OUT STD_LOGIC;
-        x_local_2_0_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_7_ce0 : OUT STD_LOGIC;
-        x_local_2_0_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_8_ce0 : OUT STD_LOGIC;
-        x_local_2_0_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_9_ce0 : OUT STD_LOGIC;
-        x_local_2_0_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_10_ce0 : OUT STD_LOGIC;
-        x_local_2_0_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_11_ce0 : OUT STD_LOGIC;
-        x_local_2_0_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_12_ce0 : OUT STD_LOGIC;
-        x_local_2_0_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_13_ce0 : OUT STD_LOGIC;
-        x_local_2_0_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_14_ce0 : OUT STD_LOGIC;
-        x_local_2_0_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_0_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_0_15_ce0 : OUT STD_LOGIC;
-        x_local_2_0_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_0_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_0_ce0 : OUT STD_LOGIC;
-        x_local_2_1_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_1_ce0 : OUT STD_LOGIC;
-        x_local_2_1_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_2_ce0 : OUT STD_LOGIC;
-        x_local_2_1_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_3_ce0 : OUT STD_LOGIC;
-        x_local_2_1_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_4_ce0 : OUT STD_LOGIC;
-        x_local_2_1_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_5_ce0 : OUT STD_LOGIC;
-        x_local_2_1_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_6_ce0 : OUT STD_LOGIC;
-        x_local_2_1_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_7_ce0 : OUT STD_LOGIC;
-        x_local_2_1_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_8_ce0 : OUT STD_LOGIC;
-        x_local_2_1_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_9_ce0 : OUT STD_LOGIC;
-        x_local_2_1_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_10_ce0 : OUT STD_LOGIC;
-        x_local_2_1_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_11_ce0 : OUT STD_LOGIC;
-        x_local_2_1_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_12_ce0 : OUT STD_LOGIC;
-        x_local_2_1_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_13_ce0 : OUT STD_LOGIC;
-        x_local_2_1_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_14_ce0 : OUT STD_LOGIC;
-        x_local_2_1_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_1_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_1_15_ce0 : OUT STD_LOGIC;
-        x_local_2_1_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_1_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_0_ce0 : OUT STD_LOGIC;
-        x_local_2_2_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_1_ce0 : OUT STD_LOGIC;
-        x_local_2_2_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_2_ce0 : OUT STD_LOGIC;
-        x_local_2_2_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_3_ce0 : OUT STD_LOGIC;
-        x_local_2_2_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_4_ce0 : OUT STD_LOGIC;
-        x_local_2_2_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_5_ce0 : OUT STD_LOGIC;
-        x_local_2_2_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_6_ce0 : OUT STD_LOGIC;
-        x_local_2_2_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_7_ce0 : OUT STD_LOGIC;
-        x_local_2_2_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_8_ce0 : OUT STD_LOGIC;
-        x_local_2_2_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_9_ce0 : OUT STD_LOGIC;
-        x_local_2_2_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_10_ce0 : OUT STD_LOGIC;
-        x_local_2_2_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_11_ce0 : OUT STD_LOGIC;
-        x_local_2_2_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_12_ce0 : OUT STD_LOGIC;
-        x_local_2_2_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_13_ce0 : OUT STD_LOGIC;
-        x_local_2_2_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_14_ce0 : OUT STD_LOGIC;
-        x_local_2_2_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_2_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_2_15_ce0 : OUT STD_LOGIC;
-        x_local_2_2_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_2_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_0_ce0 : OUT STD_LOGIC;
-        x_local_2_3_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_1_ce0 : OUT STD_LOGIC;
-        x_local_2_3_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_2_ce0 : OUT STD_LOGIC;
-        x_local_2_3_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_3_ce0 : OUT STD_LOGIC;
-        x_local_2_3_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_4_ce0 : OUT STD_LOGIC;
-        x_local_2_3_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_5_ce0 : OUT STD_LOGIC;
-        x_local_2_3_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_6_ce0 : OUT STD_LOGIC;
-        x_local_2_3_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_7_ce0 : OUT STD_LOGIC;
-        x_local_2_3_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_8_ce0 : OUT STD_LOGIC;
-        x_local_2_3_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_9_ce0 : OUT STD_LOGIC;
-        x_local_2_3_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_10_ce0 : OUT STD_LOGIC;
-        x_local_2_3_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_11_ce0 : OUT STD_LOGIC;
-        x_local_2_3_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_12_ce0 : OUT STD_LOGIC;
-        x_local_2_3_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_13_ce0 : OUT STD_LOGIC;
-        x_local_2_3_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_14_ce0 : OUT STD_LOGIC;
-        x_local_2_3_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_3_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_3_15_ce0 : OUT STD_LOGIC;
-        x_local_2_3_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_3_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_0_ce0 : OUT STD_LOGIC;
-        x_local_2_4_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_1_ce0 : OUT STD_LOGIC;
-        x_local_2_4_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_2_ce0 : OUT STD_LOGIC;
-        x_local_2_4_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_3_ce0 : OUT STD_LOGIC;
-        x_local_2_4_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_4_ce0 : OUT STD_LOGIC;
-        x_local_2_4_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_5_ce0 : OUT STD_LOGIC;
-        x_local_2_4_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_6_ce0 : OUT STD_LOGIC;
-        x_local_2_4_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_7_ce0 : OUT STD_LOGIC;
-        x_local_2_4_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_8_ce0 : OUT STD_LOGIC;
-        x_local_2_4_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_9_ce0 : OUT STD_LOGIC;
-        x_local_2_4_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_10_ce0 : OUT STD_LOGIC;
-        x_local_2_4_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_11_ce0 : OUT STD_LOGIC;
-        x_local_2_4_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_12_ce0 : OUT STD_LOGIC;
-        x_local_2_4_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_13_ce0 : OUT STD_LOGIC;
-        x_local_2_4_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_14_ce0 : OUT STD_LOGIC;
-        x_local_2_4_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_4_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_4_15_ce0 : OUT STD_LOGIC;
-        x_local_2_4_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_4_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_0_ce0 : OUT STD_LOGIC;
-        x_local_2_5_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_1_ce0 : OUT STD_LOGIC;
-        x_local_2_5_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_2_ce0 : OUT STD_LOGIC;
-        x_local_2_5_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_3_ce0 : OUT STD_LOGIC;
-        x_local_2_5_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_4_ce0 : OUT STD_LOGIC;
-        x_local_2_5_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_5_ce0 : OUT STD_LOGIC;
-        x_local_2_5_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_6_ce0 : OUT STD_LOGIC;
-        x_local_2_5_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_7_ce0 : OUT STD_LOGIC;
-        x_local_2_5_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_8_ce0 : OUT STD_LOGIC;
-        x_local_2_5_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_9_ce0 : OUT STD_LOGIC;
-        x_local_2_5_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_10_ce0 : OUT STD_LOGIC;
-        x_local_2_5_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_11_ce0 : OUT STD_LOGIC;
-        x_local_2_5_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_12_ce0 : OUT STD_LOGIC;
-        x_local_2_5_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_13_ce0 : OUT STD_LOGIC;
-        x_local_2_5_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_14_ce0 : OUT STD_LOGIC;
-        x_local_2_5_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_5_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_5_15_ce0 : OUT STD_LOGIC;
-        x_local_2_5_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_5_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_0_ce0 : OUT STD_LOGIC;
-        x_local_2_6_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_1_ce0 : OUT STD_LOGIC;
-        x_local_2_6_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_2_ce0 : OUT STD_LOGIC;
-        x_local_2_6_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_3_ce0 : OUT STD_LOGIC;
-        x_local_2_6_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_4_ce0 : OUT STD_LOGIC;
-        x_local_2_6_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_5_ce0 : OUT STD_LOGIC;
-        x_local_2_6_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_6_ce0 : OUT STD_LOGIC;
-        x_local_2_6_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_7_ce0 : OUT STD_LOGIC;
-        x_local_2_6_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_8_ce0 : OUT STD_LOGIC;
-        x_local_2_6_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_9_ce0 : OUT STD_LOGIC;
-        x_local_2_6_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_10_ce0 : OUT STD_LOGIC;
-        x_local_2_6_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_11_ce0 : OUT STD_LOGIC;
-        x_local_2_6_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_12_ce0 : OUT STD_LOGIC;
-        x_local_2_6_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_13_ce0 : OUT STD_LOGIC;
-        x_local_2_6_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_14_ce0 : OUT STD_LOGIC;
-        x_local_2_6_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_6_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_6_15_ce0 : OUT STD_LOGIC;
-        x_local_2_6_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_6_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_0_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_0_ce0 : OUT STD_LOGIC;
-        x_local_2_7_0_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_1_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_1_ce0 : OUT STD_LOGIC;
-        x_local_2_7_1_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_2_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_2_ce0 : OUT STD_LOGIC;
-        x_local_2_7_2_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_3_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_3_ce0 : OUT STD_LOGIC;
-        x_local_2_7_3_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_4_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_4_ce0 : OUT STD_LOGIC;
-        x_local_2_7_4_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_4_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_5_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_5_ce0 : OUT STD_LOGIC;
-        x_local_2_7_5_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_5_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_6_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_6_ce0 : OUT STD_LOGIC;
-        x_local_2_7_6_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_6_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_7_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_7_ce0 : OUT STD_LOGIC;
-        x_local_2_7_7_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_7_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_8_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_8_ce0 : OUT STD_LOGIC;
-        x_local_2_7_8_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_8_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_9_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_9_ce0 : OUT STD_LOGIC;
-        x_local_2_7_9_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_9_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_10_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_10_ce0 : OUT STD_LOGIC;
-        x_local_2_7_10_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_10_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_11_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_11_ce0 : OUT STD_LOGIC;
-        x_local_2_7_11_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_11_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_12_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_12_ce0 : OUT STD_LOGIC;
-        x_local_2_7_12_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_12_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_13_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_13_ce0 : OUT STD_LOGIC;
-        x_local_2_7_13_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_13_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_14_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_14_ce0 : OUT STD_LOGIC;
-        x_local_2_7_14_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        x_local_2_7_14_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         x_local_2_7_15_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
         x_local_2_7_15_ce0 : OUT STD_LOGIC;
-        x_local_2_7_15_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
-        x_scale_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        x_scale_empty_n : IN STD_LOGIC;
-        x_scale_read : OUT STD_LOGIC;
-        x_scale_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        x_scale_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
-        X2_cache_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        X2_cache_full_n : IN STD_LOGIC;
-        X2_cache_write : OUT STD_LOGIC;
-        X2_cache_num_data_valid : IN STD_LOGIC_VECTOR (4 downto 0);
-        X2_cache_fifo_cap : IN STD_LOGIC_VECTOR (4 downto 0) );
+        x_local_2_7_15_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        x_scale : IN STD_LOGIC_VECTOR (31 downto 0);
+        X2_cache_address1 : OUT STD_LOGIC_VECTOR (12 downto 0);
+        X2_cache_ce1 : OUT STD_LOGIC;
+        X2_cache_we1 : OUT STD_LOGIC;
+        X2_cache_d1 : OUT STD_LOGIC_VECTOR (31 downto 0) );
     end component;
 
 
@@ -5102,16 +5506,12 @@ architecture behav of swiglu is
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        X1_cache_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        X1_cache_empty_n : IN STD_LOGIC;
-        X1_cache_read : OUT STD_LOGIC;
-        X1_cache_num_data_valid : IN STD_LOGIC_VECTOR (4 downto 0);
-        X1_cache_fifo_cap : IN STD_LOGIC_VECTOR (4 downto 0);
-        X2_cache_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        X2_cache_empty_n : IN STD_LOGIC;
-        X2_cache_read : OUT STD_LOGIC;
-        X2_cache_num_data_valid : IN STD_LOGIC_VECTOR (4 downto 0);
-        X2_cache_fifo_cap : IN STD_LOGIC_VECTOR (4 downto 0);
+        X1_cache_address0 : OUT STD_LOGIC_VECTOR (12 downto 0);
+        X1_cache_ce0 : OUT STD_LOGIC;
+        X1_cache_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
+        X2_cache_address0 : OUT STD_LOGIC_VECTOR (12 downto 0);
+        X2_cache_ce0 : OUT STD_LOGIC;
+        X2_cache_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
         gate_cache_0_address1 : OUT STD_LOGIC_VECTOR (7 downto 0);
         gate_cache_0_ce1 : OUT STD_LOGIC;
         gate_cache_0_we1 : OUT STD_LOGIC;
@@ -5254,11 +5654,53 @@ architecture behav of swiglu is
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         p_read : IN STD_LOGIC_VECTOR (31 downto 0);
-        W_down_dout : IN STD_LOGIC_VECTOR (7 downto 0);
-        W_down_empty_n : IN STD_LOGIC;
-        W_down_read : OUT STD_LOGIC;
-        W_down_num_data_valid : IN STD_LOGIC_VECTOR (3 downto 0);
-        W_down_fifo_cap : IN STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_Wd_0_AWVALID : OUT STD_LOGIC;
+        m_axi_gmem_Wd_0_AWREADY : IN STD_LOGIC;
+        m_axi_gmem_Wd_0_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem_Wd_0_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_Wd_0_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem_Wd_0_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_Wd_0_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_Wd_0_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_Wd_0_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_Wd_0_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_Wd_0_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_Wd_0_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_Wd_0_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_Wd_0_WVALID : OUT STD_LOGIC;
+        m_axi_gmem_Wd_0_WREADY : IN STD_LOGIC;
+        m_axi_gmem_Wd_0_WDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
+        m_axi_gmem_Wd_0_WSTRB : OUT STD_LOGIC_VECTOR (15 downto 0);
+        m_axi_gmem_Wd_0_WLAST : OUT STD_LOGIC;
+        m_axi_gmem_Wd_0_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_Wd_0_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_Wd_0_ARVALID : OUT STD_LOGIC;
+        m_axi_gmem_Wd_0_ARREADY : IN STD_LOGIC;
+        m_axi_gmem_Wd_0_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem_Wd_0_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_Wd_0_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem_Wd_0_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_Wd_0_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_Wd_0_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_Wd_0_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_Wd_0_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem_Wd_0_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_Wd_0_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem_Wd_0_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_Wd_0_RVALID : IN STD_LOGIC;
+        m_axi_gmem_Wd_0_RREADY : OUT STD_LOGIC;
+        m_axi_gmem_Wd_0_RDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+        m_axi_gmem_Wd_0_RLAST : IN STD_LOGIC;
+        m_axi_gmem_Wd_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_Wd_0_RFIFONUM : IN STD_LOGIC_VECTOR (9 downto 0);
+        m_axi_gmem_Wd_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_Wd_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_Wd_0_BVALID : IN STD_LOGIC;
+        m_axi_gmem_Wd_0_BREADY : OUT STD_LOGIC;
+        m_axi_gmem_Wd_0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem_Wd_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem_Wd_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        W_down : IN STD_LOGIC_VECTOR (63 downto 0);
         gate_cache_0_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         gate_cache_0_ce0 : OUT STD_LOGIC;
         gate_cache_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
@@ -5401,16 +5843,8 @@ architecture behav of swiglu is
         m_axi_gmem_out_0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem_out_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem_out_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        out_batch_dout : IN STD_LOGIC_VECTOR (63 downto 0);
-        out_batch_empty_n : IN STD_LOGIC;
-        out_batch_read : OUT STD_LOGIC;
-        out_batch_num_data_valid : IN STD_LOGIC_VECTOR (3 downto 0);
-        out_batch_fifo_cap : IN STD_LOGIC_VECTOR (3 downto 0);
-        down_quant_mode_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        down_quant_mode_empty_n : IN STD_LOGIC;
-        down_quant_mode_read : OUT STD_LOGIC;
-        down_quant_mode_num_data_valid : IN STD_LOGIC_VECTOR (3 downto 0);
-        down_quant_mode_fifo_cap : IN STD_LOGIC_VECTOR (3 downto 0) );
+        out_batch : IN STD_LOGIC_VECTOR (63 downto 0);
+        down_quant_mode : IN STD_LOGIC_VECTOR (31 downto 0) );
     end component;
 
 
@@ -5425,13 +5859,44 @@ architecture behav of swiglu is
         i_address0 : IN STD_LOGIC_VECTOR (3 downto 0);
         i_ce0 : IN STD_LOGIC;
         i_we0 : IN STD_LOGIC;
-        i_d0 : IN STD_LOGIC_VECTOR (0 downto 0);
-        i_q0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        i_d0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        i_q0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         t_address0 : IN STD_LOGIC_VECTOR (3 downto 0);
         t_ce0 : IN STD_LOGIC;
         t_we0 : IN STD_LOGIC;
-        t_d0 : IN STD_LOGIC_VECTOR (0 downto 0);
-        t_q0 : OUT STD_LOGIC_VECTOR (0 downto 0);
+        t_d0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        t_q0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        i_ce : IN STD_LOGIC;
+        t_ce : IN STD_LOGIC;
+        i_full_n : OUT STD_LOGIC;
+        i_write : IN STD_LOGIC;
+        t_empty_n : OUT STD_LOGIC;
+        t_read : IN STD_LOGIC );
+    end component;
+
+
+    component swiglu_X1_cache_RAM_2P_URAM_1R1W IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        i_address0 : IN STD_LOGIC_VECTOR (12 downto 0);
+        i_ce0 : IN STD_LOGIC;
+        i_q0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        i_address1 : IN STD_LOGIC_VECTOR (12 downto 0);
+        i_ce1 : IN STD_LOGIC;
+        i_we1 : IN STD_LOGIC;
+        i_d1 : IN STD_LOGIC_VECTOR (31 downto 0);
+        t_address0 : IN STD_LOGIC_VECTOR (12 downto 0);
+        t_ce0 : IN STD_LOGIC;
+        t_q0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        t_address1 : IN STD_LOGIC_VECTOR (12 downto 0);
+        t_ce1 : IN STD_LOGIC;
+        t_we1 : IN STD_LOGIC;
+        t_d1 : IN STD_LOGIC_VECTOR (31 downto 0);
         i_ce : IN STD_LOGIC;
         t_ce : IN STD_LOGIC;
         i_full_n : OUT STD_LOGIC;
@@ -5472,108 +5937,6 @@ architecture behav of swiglu is
     end component;
 
 
-    component swiglu_fifo_w8_d3_S IS
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        if_read_ce : IN STD_LOGIC;
-        if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (7 downto 0);
-        if_full_n : OUT STD_LOGIC;
-        if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (7 downto 0);
-        if_empty_n : OUT STD_LOGIC;
-        if_read : IN STD_LOGIC;
-        if_num_data_valid : OUT STD_LOGIC_VECTOR (2 downto 0);
-        if_fifo_cap : OUT STD_LOGIC_VECTOR (2 downto 0) );
-    end component;
-
-
-    component swiglu_fifo_w8_d5_S IS
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        if_read_ce : IN STD_LOGIC;
-        if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (7 downto 0);
-        if_full_n : OUT STD_LOGIC;
-        if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (7 downto 0);
-        if_empty_n : OUT STD_LOGIC;
-        if_read : IN STD_LOGIC;
-        if_num_data_valid : OUT STD_LOGIC_VECTOR (3 downto 0);
-        if_fifo_cap : OUT STD_LOGIC_VECTOR (3 downto 0) );
-    end component;
-
-
-    component swiglu_fifo_w64_d5_S IS
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        if_read_ce : IN STD_LOGIC;
-        if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (63 downto 0);
-        if_full_n : OUT STD_LOGIC;
-        if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (63 downto 0);
-        if_empty_n : OUT STD_LOGIC;
-        if_read : IN STD_LOGIC;
-        if_num_data_valid : OUT STD_LOGIC_VECTOR (3 downto 0);
-        if_fifo_cap : OUT STD_LOGIC_VECTOR (3 downto 0) );
-    end component;
-
-
-    component swiglu_fifo_w32_d5_S IS
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        if_read_ce : IN STD_LOGIC;
-        if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (31 downto 0);
-        if_full_n : OUT STD_LOGIC;
-        if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (31 downto 0);
-        if_empty_n : OUT STD_LOGIC;
-        if_read : IN STD_LOGIC;
-        if_num_data_valid : OUT STD_LOGIC_VECTOR (3 downto 0);
-        if_fifo_cap : OUT STD_LOGIC_VECTOR (3 downto 0) );
-    end component;
-
-
-    component swiglu_fifo_w32_d3_S IS
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        if_read_ce : IN STD_LOGIC;
-        if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (31 downto 0);
-        if_full_n : OUT STD_LOGIC;
-        if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (31 downto 0);
-        if_empty_n : OUT STD_LOGIC;
-        if_read : IN STD_LOGIC;
-        if_num_data_valid : OUT STD_LOGIC_VECTOR (2 downto 0);
-        if_fifo_cap : OUT STD_LOGIC_VECTOR (2 downto 0) );
-    end component;
-
-
-    component swiglu_fifo_w32_d16_S IS
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        if_read_ce : IN STD_LOGIC;
-        if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (31 downto 0);
-        if_full_n : OUT STD_LOGIC;
-        if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (31 downto 0);
-        if_empty_n : OUT STD_LOGIC;
-        if_read : IN STD_LOGIC;
-        if_num_data_valid : OUT STD_LOGIC_VECTOR (4 downto 0);
-        if_fifo_cap : OUT STD_LOGIC_VECTOR (4 downto 0) );
-    end component;
-
-
     component swiglu_fifo_w32_d2_S IS
     port (
         clk : IN STD_LOGIC;
@@ -5588,21 +5951,6 @@ architecture behav of swiglu is
         if_read : IN STD_LOGIC;
         if_num_data_valid : OUT STD_LOGIC_VECTOR (2 downto 0);
         if_fifo_cap : OUT STD_LOGIC_VECTOR (2 downto 0) );
-    end component;
-
-
-    component swiglu_start_for_compute_gate_U0 IS
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        if_read_ce : IN STD_LOGIC;
-        if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (0 downto 0);
-        if_full_n : OUT STD_LOGIC;
-        if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (0 downto 0);
-        if_empty_n : OUT STD_LOGIC;
-        if_read : IN STD_LOGIC );
     end component;
 
 
@@ -5631,10 +5979,10 @@ architecture behav of swiglu is
         ACLK : IN STD_LOGIC;
         ARESET : IN STD_LOGIC;
         ACLK_EN : IN STD_LOGIC;
-        W : OUT STD_LOGIC_VECTOR (7 downto 0);
-        V : OUT STD_LOGIC_VECTOR (7 downto 0);
-        W_down : OUT STD_LOGIC_VECTOR (7 downto 0);
-        x_batch : OUT STD_LOGIC_VECTOR (7 downto 0);
+        W : OUT STD_LOGIC_VECTOR (63 downto 0);
+        V : OUT STD_LOGIC_VECTOR (63 downto 0);
+        W_down : OUT STD_LOGIC_VECTOR (63 downto 0);
+        x_batch : OUT STD_LOGIC_VECTOR (63 downto 0);
         out_batch : OUT STD_LOGIC_VECTOR (63 downto 0);
         down_quant_mode : OUT STD_LOGIC_VECTOR (31 downto 0);
         x_scale : OUT STD_LOGIC_VECTOR (31 downto 0);
@@ -5643,6 +5991,288 @@ architecture behav of swiglu is
         ap_ready : IN STD_LOGIC;
         ap_done : IN STD_LOGIC;
         ap_idle : IN STD_LOGIC );
+    end component;
+
+
+    component swiglu_gmem_V_m_axi IS
+    generic (
+        CONSERVATIVE : INTEGER;
+        USER_MAXREQS : INTEGER;
+        MAX_READ_BURST_LENGTH : INTEGER;
+        MAX_WRITE_BURST_LENGTH : INTEGER;
+        C_M_AXI_ID_WIDTH : INTEGER;
+        C_M_AXI_ADDR_WIDTH : INTEGER;
+        C_M_AXI_DATA_WIDTH : INTEGER;
+        C_M_AXI_AWUSER_WIDTH : INTEGER;
+        C_M_AXI_ARUSER_WIDTH : INTEGER;
+        C_M_AXI_WUSER_WIDTH : INTEGER;
+        C_M_AXI_RUSER_WIDTH : INTEGER;
+        C_M_AXI_BUSER_WIDTH : INTEGER;
+        C_USER_VALUE : INTEGER;
+        C_PROT_VALUE : INTEGER;
+        C_CACHE_VALUE : INTEGER;
+        CH0_NUM_READ_OUTSTANDING : INTEGER;
+        CH0_NUM_WRITE_OUTSTANDING : INTEGER;
+        CH0_USER_RFIFONUM_WIDTH : INTEGER;
+        CH0_USER_DW : INTEGER;
+        CH0_USER_AW : INTEGER;
+        NUM_READ_OUTSTANDING : INTEGER;
+        NUM_WRITE_OUTSTANDING : INTEGER );
+    port (
+        AWVALID : OUT STD_LOGIC;
+        AWREADY : IN STD_LOGIC;
+        AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_ADDR_WIDTH-1 downto 0);
+        AWID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        AWLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+        AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_AWUSER_WIDTH-1 downto 0);
+        WVALID : OUT STD_LOGIC;
+        WREADY : IN STD_LOGIC;
+        WDATA : OUT STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH-1 downto 0);
+        WSTRB : OUT STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH/8-1 downto 0);
+        WLAST : OUT STD_LOGIC;
+        WID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        WUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_WUSER_WIDTH-1 downto 0);
+        ARVALID : OUT STD_LOGIC;
+        ARREADY : IN STD_LOGIC;
+        ARADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_ADDR_WIDTH-1 downto 0);
+        ARID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        ARLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_ARUSER_WIDTH-1 downto 0);
+        RVALID : IN STD_LOGIC;
+        RREADY : OUT STD_LOGIC;
+        RDATA : IN STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH-1 downto 0);
+        RLAST : IN STD_LOGIC;
+        RID : IN STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        RUSER : IN STD_LOGIC_VECTOR (C_M_AXI_RUSER_WIDTH-1 downto 0);
+        RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        BVALID : IN STD_LOGIC;
+        BREADY : OUT STD_LOGIC;
+        BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        BID : IN STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_BUSER_WIDTH-1 downto 0);
+        ACLK : IN STD_LOGIC;
+        ARESET : IN STD_LOGIC;
+        ACLK_EN : IN STD_LOGIC;
+        I_CH0_ARVALID : IN STD_LOGIC;
+        I_CH0_ARREADY : OUT STD_LOGIC;
+        I_CH0_ARADDR : IN STD_LOGIC_VECTOR (63 downto 0);
+        I_CH0_ARLEN : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_CH0_RVALID : OUT STD_LOGIC;
+        I_CH0_RREADY : IN STD_LOGIC;
+        I_CH0_RDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
+        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (9 downto 0);
+        I_CH0_AWVALID : IN STD_LOGIC;
+        I_CH0_AWREADY : OUT STD_LOGIC;
+        I_CH0_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
+        I_CH0_AWLEN : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_CH0_WVALID : IN STD_LOGIC;
+        I_CH0_WREADY : OUT STD_LOGIC;
+        I_CH0_WDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+        I_CH0_WSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
+        I_CH0_BVALID : OUT STD_LOGIC;
+        I_CH0_BREADY : IN STD_LOGIC );
+    end component;
+
+
+    component swiglu_gmem_W_m_axi IS
+    generic (
+        CONSERVATIVE : INTEGER;
+        USER_MAXREQS : INTEGER;
+        MAX_READ_BURST_LENGTH : INTEGER;
+        MAX_WRITE_BURST_LENGTH : INTEGER;
+        C_M_AXI_ID_WIDTH : INTEGER;
+        C_M_AXI_ADDR_WIDTH : INTEGER;
+        C_M_AXI_DATA_WIDTH : INTEGER;
+        C_M_AXI_AWUSER_WIDTH : INTEGER;
+        C_M_AXI_ARUSER_WIDTH : INTEGER;
+        C_M_AXI_WUSER_WIDTH : INTEGER;
+        C_M_AXI_RUSER_WIDTH : INTEGER;
+        C_M_AXI_BUSER_WIDTH : INTEGER;
+        C_USER_VALUE : INTEGER;
+        C_PROT_VALUE : INTEGER;
+        C_CACHE_VALUE : INTEGER;
+        CH0_NUM_READ_OUTSTANDING : INTEGER;
+        CH0_NUM_WRITE_OUTSTANDING : INTEGER;
+        CH0_USER_RFIFONUM_WIDTH : INTEGER;
+        CH0_USER_DW : INTEGER;
+        CH0_USER_AW : INTEGER;
+        NUM_READ_OUTSTANDING : INTEGER;
+        NUM_WRITE_OUTSTANDING : INTEGER );
+    port (
+        AWVALID : OUT STD_LOGIC;
+        AWREADY : IN STD_LOGIC;
+        AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_ADDR_WIDTH-1 downto 0);
+        AWID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        AWLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+        AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_AWUSER_WIDTH-1 downto 0);
+        WVALID : OUT STD_LOGIC;
+        WREADY : IN STD_LOGIC;
+        WDATA : OUT STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH-1 downto 0);
+        WSTRB : OUT STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH/8-1 downto 0);
+        WLAST : OUT STD_LOGIC;
+        WID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        WUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_WUSER_WIDTH-1 downto 0);
+        ARVALID : OUT STD_LOGIC;
+        ARREADY : IN STD_LOGIC;
+        ARADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_ADDR_WIDTH-1 downto 0);
+        ARID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        ARLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_ARUSER_WIDTH-1 downto 0);
+        RVALID : IN STD_LOGIC;
+        RREADY : OUT STD_LOGIC;
+        RDATA : IN STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH-1 downto 0);
+        RLAST : IN STD_LOGIC;
+        RID : IN STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        RUSER : IN STD_LOGIC_VECTOR (C_M_AXI_RUSER_WIDTH-1 downto 0);
+        RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        BVALID : IN STD_LOGIC;
+        BREADY : OUT STD_LOGIC;
+        BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        BID : IN STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_BUSER_WIDTH-1 downto 0);
+        ACLK : IN STD_LOGIC;
+        ARESET : IN STD_LOGIC;
+        ACLK_EN : IN STD_LOGIC;
+        I_CH0_ARVALID : IN STD_LOGIC;
+        I_CH0_ARREADY : OUT STD_LOGIC;
+        I_CH0_ARADDR : IN STD_LOGIC_VECTOR (63 downto 0);
+        I_CH0_ARLEN : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_CH0_RVALID : OUT STD_LOGIC;
+        I_CH0_RREADY : IN STD_LOGIC;
+        I_CH0_RDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
+        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (9 downto 0);
+        I_CH0_AWVALID : IN STD_LOGIC;
+        I_CH0_AWREADY : OUT STD_LOGIC;
+        I_CH0_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
+        I_CH0_AWLEN : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_CH0_WVALID : IN STD_LOGIC;
+        I_CH0_WREADY : OUT STD_LOGIC;
+        I_CH0_WDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+        I_CH0_WSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
+        I_CH0_BVALID : OUT STD_LOGIC;
+        I_CH0_BREADY : IN STD_LOGIC );
+    end component;
+
+
+    component swiglu_gmem_Wd_m_axi IS
+    generic (
+        CONSERVATIVE : INTEGER;
+        USER_MAXREQS : INTEGER;
+        MAX_READ_BURST_LENGTH : INTEGER;
+        MAX_WRITE_BURST_LENGTH : INTEGER;
+        C_M_AXI_ID_WIDTH : INTEGER;
+        C_M_AXI_ADDR_WIDTH : INTEGER;
+        C_M_AXI_DATA_WIDTH : INTEGER;
+        C_M_AXI_AWUSER_WIDTH : INTEGER;
+        C_M_AXI_ARUSER_WIDTH : INTEGER;
+        C_M_AXI_WUSER_WIDTH : INTEGER;
+        C_M_AXI_RUSER_WIDTH : INTEGER;
+        C_M_AXI_BUSER_WIDTH : INTEGER;
+        C_USER_VALUE : INTEGER;
+        C_PROT_VALUE : INTEGER;
+        C_CACHE_VALUE : INTEGER;
+        CH0_NUM_READ_OUTSTANDING : INTEGER;
+        CH0_NUM_WRITE_OUTSTANDING : INTEGER;
+        CH0_USER_RFIFONUM_WIDTH : INTEGER;
+        CH0_USER_DW : INTEGER;
+        CH0_USER_AW : INTEGER;
+        NUM_READ_OUTSTANDING : INTEGER;
+        NUM_WRITE_OUTSTANDING : INTEGER );
+    port (
+        AWVALID : OUT STD_LOGIC;
+        AWREADY : IN STD_LOGIC;
+        AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_ADDR_WIDTH-1 downto 0);
+        AWID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        AWLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+        AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_AWUSER_WIDTH-1 downto 0);
+        WVALID : OUT STD_LOGIC;
+        WREADY : IN STD_LOGIC;
+        WDATA : OUT STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH-1 downto 0);
+        WSTRB : OUT STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH/8-1 downto 0);
+        WLAST : OUT STD_LOGIC;
+        WID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        WUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_WUSER_WIDTH-1 downto 0);
+        ARVALID : OUT STD_LOGIC;
+        ARREADY : IN STD_LOGIC;
+        ARADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_ADDR_WIDTH-1 downto 0);
+        ARID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        ARLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_ARUSER_WIDTH-1 downto 0);
+        RVALID : IN STD_LOGIC;
+        RREADY : OUT STD_LOGIC;
+        RDATA : IN STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH-1 downto 0);
+        RLAST : IN STD_LOGIC;
+        RID : IN STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        RUSER : IN STD_LOGIC_VECTOR (C_M_AXI_RUSER_WIDTH-1 downto 0);
+        RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        BVALID : IN STD_LOGIC;
+        BREADY : OUT STD_LOGIC;
+        BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        BID : IN STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_BUSER_WIDTH-1 downto 0);
+        ACLK : IN STD_LOGIC;
+        ARESET : IN STD_LOGIC;
+        ACLK_EN : IN STD_LOGIC;
+        I_CH0_ARVALID : IN STD_LOGIC;
+        I_CH0_ARREADY : OUT STD_LOGIC;
+        I_CH0_ARADDR : IN STD_LOGIC_VECTOR (63 downto 0);
+        I_CH0_ARLEN : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_CH0_RVALID : OUT STD_LOGIC;
+        I_CH0_RREADY : IN STD_LOGIC;
+        I_CH0_RDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
+        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (9 downto 0);
+        I_CH0_AWVALID : IN STD_LOGIC;
+        I_CH0_AWREADY : OUT STD_LOGIC;
+        I_CH0_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
+        I_CH0_AWLEN : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_CH0_WVALID : IN STD_LOGIC;
+        I_CH0_WREADY : OUT STD_LOGIC;
+        I_CH0_WDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+        I_CH0_WSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
+        I_CH0_BVALID : OUT STD_LOGIC;
+        I_CH0_BREADY : IN STD_LOGIC );
     end component;
 
 
@@ -5740,11 +6370,105 @@ architecture behav of swiglu is
     end component;
 
 
+    component swiglu_gmem_x_m_axi IS
+    generic (
+        CONSERVATIVE : INTEGER;
+        USER_MAXREQS : INTEGER;
+        MAX_READ_BURST_LENGTH : INTEGER;
+        MAX_WRITE_BURST_LENGTH : INTEGER;
+        C_M_AXI_ID_WIDTH : INTEGER;
+        C_M_AXI_ADDR_WIDTH : INTEGER;
+        C_M_AXI_DATA_WIDTH : INTEGER;
+        C_M_AXI_AWUSER_WIDTH : INTEGER;
+        C_M_AXI_ARUSER_WIDTH : INTEGER;
+        C_M_AXI_WUSER_WIDTH : INTEGER;
+        C_M_AXI_RUSER_WIDTH : INTEGER;
+        C_M_AXI_BUSER_WIDTH : INTEGER;
+        C_USER_VALUE : INTEGER;
+        C_PROT_VALUE : INTEGER;
+        C_CACHE_VALUE : INTEGER;
+        CH0_NUM_READ_OUTSTANDING : INTEGER;
+        CH0_NUM_WRITE_OUTSTANDING : INTEGER;
+        CH0_USER_RFIFONUM_WIDTH : INTEGER;
+        CH0_USER_DW : INTEGER;
+        CH0_USER_AW : INTEGER;
+        NUM_READ_OUTSTANDING : INTEGER;
+        NUM_WRITE_OUTSTANDING : INTEGER );
+    port (
+        AWVALID : OUT STD_LOGIC;
+        AWREADY : IN STD_LOGIC;
+        AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_ADDR_WIDTH-1 downto 0);
+        AWID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        AWLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+        AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_AWUSER_WIDTH-1 downto 0);
+        WVALID : OUT STD_LOGIC;
+        WREADY : IN STD_LOGIC;
+        WDATA : OUT STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH-1 downto 0);
+        WSTRB : OUT STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH/8-1 downto 0);
+        WLAST : OUT STD_LOGIC;
+        WID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        WUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_WUSER_WIDTH-1 downto 0);
+        ARVALID : OUT STD_LOGIC;
+        ARREADY : IN STD_LOGIC;
+        ARADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_ADDR_WIDTH-1 downto 0);
+        ARID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        ARLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_ARUSER_WIDTH-1 downto 0);
+        RVALID : IN STD_LOGIC;
+        RREADY : OUT STD_LOGIC;
+        RDATA : IN STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH-1 downto 0);
+        RLAST : IN STD_LOGIC;
+        RID : IN STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        RUSER : IN STD_LOGIC_VECTOR (C_M_AXI_RUSER_WIDTH-1 downto 0);
+        RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        BVALID : IN STD_LOGIC;
+        BREADY : OUT STD_LOGIC;
+        BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        BID : IN STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_BUSER_WIDTH-1 downto 0);
+        ACLK : IN STD_LOGIC;
+        ARESET : IN STD_LOGIC;
+        ACLK_EN : IN STD_LOGIC;
+        I_CH0_ARVALID : IN STD_LOGIC;
+        I_CH0_ARREADY : OUT STD_LOGIC;
+        I_CH0_ARADDR : IN STD_LOGIC_VECTOR (63 downto 0);
+        I_CH0_ARLEN : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_CH0_RVALID : OUT STD_LOGIC;
+        I_CH0_RREADY : IN STD_LOGIC;
+        I_CH0_RDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
+        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (9 downto 0);
+        I_CH0_AWVALID : IN STD_LOGIC;
+        I_CH0_AWREADY : OUT STD_LOGIC;
+        I_CH0_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
+        I_CH0_AWLEN : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_CH0_WVALID : IN STD_LOGIC;
+        I_CH0_WREADY : OUT STD_LOGIC;
+        I_CH0_WDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+        I_CH0_WSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
+        I_CH0_BVALID : OUT STD_LOGIC;
+        I_CH0_BREADY : IN STD_LOGIC );
+    end component;
+
+
 
 begin
     x_local_1_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -5758,7 +6482,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_0_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -5769,7 +6493,7 @@ begin
 
     x_local_1_1_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -5783,7 +6507,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_1_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_1_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -5794,7 +6518,7 @@ begin
 
     x_local_1_2_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -5808,7 +6532,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_2_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_2_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -5819,7 +6543,7 @@ begin
 
     x_local_1_3_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -5833,7 +6557,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_3_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_3_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -5844,7 +6568,7 @@ begin
 
     x_local_1_4_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -5858,7 +6582,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_4_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_4_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -5869,7 +6593,7 @@ begin
 
     x_local_1_5_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -5883,7 +6607,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_5_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_5_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -5894,7 +6618,7 @@ begin
 
     x_local_1_6_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -5908,7 +6632,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_6_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_6_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -5919,7 +6643,7 @@ begin
 
     x_local_1_7_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -5933,7 +6657,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_7_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_7_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -5944,7 +6668,7 @@ begin
 
     x_local_1_8_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -5958,7 +6682,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_8_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_8_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -5969,7 +6693,7 @@ begin
 
     x_local_1_9_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -5983,7 +6707,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_9_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_9_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -5994,7 +6718,7 @@ begin
 
     x_local_1_10_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6008,7 +6732,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_10_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_10_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6019,7 +6743,7 @@ begin
 
     x_local_1_11_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6033,7 +6757,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_11_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_11_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6044,7 +6768,7 @@ begin
 
     x_local_1_12_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6058,7 +6782,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_12_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_12_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6069,7 +6793,7 @@ begin
 
     x_local_1_13_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6083,7 +6807,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_13_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_13_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6094,7 +6818,7 @@ begin
 
     x_local_1_14_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6108,7 +6832,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_14_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_14_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6119,7 +6843,7 @@ begin
 
     x_local_1_15_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6133,7 +6857,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_0_15_address0,
         t_ce0 => compute_X1_U0_x_local_1_0_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_15_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6144,7 +6868,7 @@ begin
 
     x_local_1_16_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6158,7 +6882,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_0_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_16_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6169,7 +6893,7 @@ begin
 
     x_local_1_17_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6183,7 +6907,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_1_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_17_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6194,7 +6918,7 @@ begin
 
     x_local_1_18_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6208,7 +6932,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_2_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_18_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6219,7 +6943,7 @@ begin
 
     x_local_1_19_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6233,7 +6957,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_3_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_19_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6244,7 +6968,7 @@ begin
 
     x_local_1_20_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6258,7 +6982,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_4_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_20_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6269,7 +6993,7 @@ begin
 
     x_local_1_21_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6283,7 +7007,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_5_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_21_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6294,7 +7018,7 @@ begin
 
     x_local_1_22_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6308,7 +7032,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_6_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_22_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6319,7 +7043,7 @@ begin
 
     x_local_1_23_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6333,7 +7057,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_7_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_23_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6344,7 +7068,7 @@ begin
 
     x_local_1_24_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6358,7 +7082,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_8_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_24_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6369,7 +7093,7 @@ begin
 
     x_local_1_25_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6383,7 +7107,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_9_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_25_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6394,7 +7118,7 @@ begin
 
     x_local_1_26_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6408,7 +7132,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_10_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_26_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6419,7 +7143,7 @@ begin
 
     x_local_1_27_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6433,7 +7157,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_11_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_27_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6444,7 +7168,7 @@ begin
 
     x_local_1_28_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6458,7 +7182,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_12_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_28_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6469,7 +7193,7 @@ begin
 
     x_local_1_29_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6483,7 +7207,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_13_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_29_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6494,7 +7218,7 @@ begin
 
     x_local_1_30_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6508,7 +7232,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_14_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_30_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6519,7 +7243,7 @@ begin
 
     x_local_1_31_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6533,7 +7257,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_1_15_address0,
         t_ce0 => compute_X1_U0_x_local_1_1_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_31_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6544,7 +7268,7 @@ begin
 
     x_local_1_32_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6558,7 +7282,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_0_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_32_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6569,7 +7293,7 @@ begin
 
     x_local_1_33_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6583,7 +7307,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_1_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_33_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6594,7 +7318,7 @@ begin
 
     x_local_1_34_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6608,7 +7332,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_2_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_34_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6619,7 +7343,7 @@ begin
 
     x_local_1_35_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6633,7 +7357,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_3_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_35_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6644,7 +7368,7 @@ begin
 
     x_local_1_36_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6658,7 +7382,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_4_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_36_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6669,7 +7393,7 @@ begin
 
     x_local_1_37_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6683,7 +7407,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_5_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_37_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6694,7 +7418,7 @@ begin
 
     x_local_1_38_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6708,7 +7432,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_6_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_38_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6719,7 +7443,7 @@ begin
 
     x_local_1_39_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6733,7 +7457,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_7_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_39_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6744,7 +7468,7 @@ begin
 
     x_local_1_40_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6758,7 +7482,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_8_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_40_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6769,7 +7493,7 @@ begin
 
     x_local_1_41_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6783,7 +7507,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_9_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_41_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6794,7 +7518,7 @@ begin
 
     x_local_1_42_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6808,7 +7532,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_10_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_42_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6819,7 +7543,7 @@ begin
 
     x_local_1_43_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6833,7 +7557,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_11_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_43_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6844,7 +7568,7 @@ begin
 
     x_local_1_44_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6858,7 +7582,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_12_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_44_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6869,7 +7593,7 @@ begin
 
     x_local_1_45_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6883,7 +7607,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_13_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_45_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6894,7 +7618,7 @@ begin
 
     x_local_1_46_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6908,7 +7632,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_14_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_46_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6919,7 +7643,7 @@ begin
 
     x_local_1_47_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6933,7 +7657,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_2_15_address0,
         t_ce0 => compute_X1_U0_x_local_1_2_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_47_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6944,7 +7668,7 @@ begin
 
     x_local_1_48_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6958,7 +7682,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_0_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_48_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6969,7 +7693,7 @@ begin
 
     x_local_1_49_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -6983,7 +7707,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_1_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_49_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -6994,7 +7718,7 @@ begin
 
     x_local_1_50_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7008,7 +7732,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_2_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_50_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7019,7 +7743,7 @@ begin
 
     x_local_1_51_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7033,7 +7757,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_3_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_51_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7044,7 +7768,7 @@ begin
 
     x_local_1_52_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7058,7 +7782,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_4_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_52_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7069,7 +7793,7 @@ begin
 
     x_local_1_53_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7083,7 +7807,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_5_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_53_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7094,7 +7818,7 @@ begin
 
     x_local_1_54_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7108,7 +7832,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_6_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_54_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7119,7 +7843,7 @@ begin
 
     x_local_1_55_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7133,7 +7857,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_7_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_55_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7144,7 +7868,7 @@ begin
 
     x_local_1_56_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7158,7 +7882,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_8_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_56_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7169,7 +7893,7 @@ begin
 
     x_local_1_57_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7183,7 +7907,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_9_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_57_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7194,7 +7918,7 @@ begin
 
     x_local_1_58_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7208,7 +7932,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_10_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_58_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7219,7 +7943,7 @@ begin
 
     x_local_1_59_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7233,7 +7957,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_11_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_59_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7244,7 +7968,7 @@ begin
 
     x_local_1_60_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7258,7 +7982,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_12_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_60_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7269,7 +7993,7 @@ begin
 
     x_local_1_61_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7283,7 +8007,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_13_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_61_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7294,7 +8018,7 @@ begin
 
     x_local_1_62_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7308,7 +8032,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_14_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_62_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7319,7 +8043,7 @@ begin
 
     x_local_1_63_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7333,7 +8057,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_3_15_address0,
         t_ce0 => compute_X1_U0_x_local_1_3_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_63_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7344,7 +8068,7 @@ begin
 
     x_local_1_64_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7358,7 +8082,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_0_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_64_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7369,7 +8093,7 @@ begin
 
     x_local_1_65_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7383,7 +8107,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_1_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_65_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7394,7 +8118,7 @@ begin
 
     x_local_1_66_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7408,7 +8132,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_2_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_66_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7419,7 +8143,7 @@ begin
 
     x_local_1_67_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7433,7 +8157,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_3_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_67_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7444,7 +8168,7 @@ begin
 
     x_local_1_68_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7458,7 +8182,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_4_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_68_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7469,7 +8193,7 @@ begin
 
     x_local_1_69_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7483,7 +8207,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_5_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_69_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7494,7 +8218,7 @@ begin
 
     x_local_1_70_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7508,7 +8232,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_6_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_70_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7519,7 +8243,7 @@ begin
 
     x_local_1_71_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7533,7 +8257,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_7_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_71_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7544,7 +8268,7 @@ begin
 
     x_local_1_72_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7558,7 +8282,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_8_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_72_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7569,7 +8293,7 @@ begin
 
     x_local_1_73_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7583,7 +8307,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_9_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_73_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7594,7 +8318,7 @@ begin
 
     x_local_1_74_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7608,7 +8332,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_10_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_74_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7619,7 +8343,7 @@ begin
 
     x_local_1_75_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7633,7 +8357,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_11_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_75_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7644,7 +8368,7 @@ begin
 
     x_local_1_76_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7658,7 +8382,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_12_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_76_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7669,7 +8393,7 @@ begin
 
     x_local_1_77_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7683,7 +8407,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_13_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_77_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7694,7 +8418,7 @@ begin
 
     x_local_1_78_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7708,7 +8432,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_14_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_78_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7719,7 +8443,7 @@ begin
 
     x_local_1_79_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7733,7 +8457,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_4_15_address0,
         t_ce0 => compute_X1_U0_x_local_1_4_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_79_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7744,7 +8468,7 @@ begin
 
     x_local_1_80_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7758,7 +8482,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_0_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_80_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7769,7 +8493,7 @@ begin
 
     x_local_1_81_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7783,7 +8507,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_1_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_81_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7794,7 +8518,7 @@ begin
 
     x_local_1_82_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7808,7 +8532,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_2_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_82_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7819,7 +8543,7 @@ begin
 
     x_local_1_83_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7833,7 +8557,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_3_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_83_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7844,7 +8568,7 @@ begin
 
     x_local_1_84_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7858,7 +8582,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_4_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_84_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7869,7 +8593,7 @@ begin
 
     x_local_1_85_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7883,7 +8607,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_5_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_85_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7894,7 +8618,7 @@ begin
 
     x_local_1_86_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7908,7 +8632,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_6_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_86_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7919,7 +8643,7 @@ begin
 
     x_local_1_87_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7933,7 +8657,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_7_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_87_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7944,7 +8668,7 @@ begin
 
     x_local_1_88_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7958,7 +8682,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_8_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_88_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7969,7 +8693,7 @@ begin
 
     x_local_1_89_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -7983,7 +8707,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_9_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_89_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -7994,7 +8718,7 @@ begin
 
     x_local_1_90_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8008,7 +8732,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_10_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_90_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8019,7 +8743,7 @@ begin
 
     x_local_1_91_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8033,7 +8757,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_11_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_91_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8044,7 +8768,7 @@ begin
 
     x_local_1_92_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8058,7 +8782,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_12_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_92_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8069,7 +8793,7 @@ begin
 
     x_local_1_93_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8083,7 +8807,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_13_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_93_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8094,7 +8818,7 @@ begin
 
     x_local_1_94_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8108,7 +8832,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_14_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_94_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8119,7 +8843,7 @@ begin
 
     x_local_1_95_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8133,7 +8857,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_5_15_address0,
         t_ce0 => compute_X1_U0_x_local_1_5_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_95_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8144,7 +8868,7 @@ begin
 
     x_local_1_96_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8158,7 +8882,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_0_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_96_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8169,7 +8893,7 @@ begin
 
     x_local_1_97_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8183,7 +8907,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_1_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_97_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8194,7 +8918,7 @@ begin
 
     x_local_1_98_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8208,7 +8932,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_2_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_98_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8219,7 +8943,7 @@ begin
 
     x_local_1_99_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8233,7 +8957,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_3_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_99_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8244,7 +8968,7 @@ begin
 
     x_local_1_100_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8258,7 +8982,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_4_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_100_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8269,7 +8993,7 @@ begin
 
     x_local_1_101_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8283,7 +9007,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_5_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_101_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8294,7 +9018,7 @@ begin
 
     x_local_1_102_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8308,7 +9032,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_6_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_102_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8319,7 +9043,7 @@ begin
 
     x_local_1_103_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8333,7 +9057,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_7_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_103_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8344,7 +9068,7 @@ begin
 
     x_local_1_104_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8358,7 +9082,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_8_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_104_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8369,7 +9093,7 @@ begin
 
     x_local_1_105_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8383,7 +9107,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_9_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_105_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8394,7 +9118,7 @@ begin
 
     x_local_1_106_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8408,7 +9132,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_10_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_106_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8419,7 +9143,7 @@ begin
 
     x_local_1_107_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8433,7 +9157,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_11_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_107_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8444,7 +9168,7 @@ begin
 
     x_local_1_108_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8458,7 +9182,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_12_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_108_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8469,7 +9193,7 @@ begin
 
     x_local_1_109_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8483,7 +9207,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_13_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_109_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8494,7 +9218,7 @@ begin
 
     x_local_1_110_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8508,7 +9232,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_14_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_110_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8519,7 +9243,7 @@ begin
 
     x_local_1_111_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8533,7 +9257,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_6_15_address0,
         t_ce0 => compute_X1_U0_x_local_1_6_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_111_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8544,7 +9268,7 @@ begin
 
     x_local_1_112_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8558,7 +9282,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_0_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_112_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8569,7 +9293,7 @@ begin
 
     x_local_1_113_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8583,7 +9307,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_1_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_113_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8594,7 +9318,7 @@ begin
 
     x_local_1_114_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8608,7 +9332,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_2_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_114_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8619,7 +9343,7 @@ begin
 
     x_local_1_115_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8633,7 +9357,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_3_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_115_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8644,7 +9368,7 @@ begin
 
     x_local_1_116_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8658,7 +9382,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_4_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_116_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8669,7 +9393,7 @@ begin
 
     x_local_1_117_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8683,7 +9407,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_5_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_117_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8694,7 +9418,7 @@ begin
 
     x_local_1_118_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8708,7 +9432,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_6_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_118_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8719,7 +9443,7 @@ begin
 
     x_local_1_119_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8733,7 +9457,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_7_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_119_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8744,7 +9468,7 @@ begin
 
     x_local_1_120_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8758,7 +9482,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_8_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_120_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8769,7 +9493,7 @@ begin
 
     x_local_1_121_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8783,7 +9507,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_9_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_121_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8794,7 +9518,7 @@ begin
 
     x_local_1_122_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8808,7 +9532,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_10_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_122_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8819,7 +9543,7 @@ begin
 
     x_local_1_123_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8833,7 +9557,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_11_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_123_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8844,7 +9568,7 @@ begin
 
     x_local_1_124_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8858,7 +9582,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_12_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_124_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8869,7 +9593,7 @@ begin
 
     x_local_1_125_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8883,7 +9607,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_13_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_125_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8894,7 +9618,7 @@ begin
 
     x_local_1_126_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8908,7 +9632,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_14_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_126_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8919,7 +9643,7 @@ begin
 
     x_local_1_127_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8933,7 +9657,7 @@ begin
         t_address0 => compute_X1_U0_x_local_1_7_15_address0,
         t_ce0 => compute_X1_U0_x_local_1_7_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_1_127_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8944,7 +9668,7 @@ begin
 
     x_local_2_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8958,7 +9682,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_0_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8969,7 +9693,7 @@ begin
 
     x_local_2_1_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -8983,7 +9707,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_1_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_1_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -8994,7 +9718,7 @@ begin
 
     x_local_2_2_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9008,7 +9732,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_2_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_2_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9019,7 +9743,7 @@ begin
 
     x_local_2_3_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9033,7 +9757,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_3_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_3_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9044,7 +9768,7 @@ begin
 
     x_local_2_4_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9058,7 +9782,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_4_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_4_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9069,7 +9793,7 @@ begin
 
     x_local_2_5_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9083,7 +9807,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_5_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_5_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9094,7 +9818,7 @@ begin
 
     x_local_2_6_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9108,7 +9832,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_6_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_6_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9119,7 +9843,7 @@ begin
 
     x_local_2_7_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9133,7 +9857,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_7_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_7_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9144,7 +9868,7 @@ begin
 
     x_local_2_8_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9158,7 +9882,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_8_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_8_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9169,7 +9893,7 @@ begin
 
     x_local_2_9_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9183,7 +9907,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_9_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_9_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9194,7 +9918,7 @@ begin
 
     x_local_2_10_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9208,7 +9932,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_10_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_10_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9219,7 +9943,7 @@ begin
 
     x_local_2_11_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9233,7 +9957,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_11_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_11_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9244,7 +9968,7 @@ begin
 
     x_local_2_12_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9258,7 +9982,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_12_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_12_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9269,7 +9993,7 @@ begin
 
     x_local_2_13_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9283,7 +10007,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_13_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_13_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9294,7 +10018,7 @@ begin
 
     x_local_2_14_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9308,7 +10032,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_14_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_14_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9319,7 +10043,7 @@ begin
 
     x_local_2_15_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9333,7 +10057,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_0_15_address0,
         t_ce0 => compute_X2_U0_x_local_2_0_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_15_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9344,7 +10068,7 @@ begin
 
     x_local_2_16_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9358,7 +10082,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_0_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_16_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9369,7 +10093,7 @@ begin
 
     x_local_2_17_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9383,7 +10107,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_1_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_17_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9394,7 +10118,7 @@ begin
 
     x_local_2_18_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9408,7 +10132,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_2_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_18_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9419,7 +10143,7 @@ begin
 
     x_local_2_19_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9433,7 +10157,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_3_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_19_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9444,7 +10168,7 @@ begin
 
     x_local_2_20_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9458,7 +10182,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_4_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_20_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9469,7 +10193,7 @@ begin
 
     x_local_2_21_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9483,7 +10207,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_5_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_21_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9494,7 +10218,7 @@ begin
 
     x_local_2_22_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9508,7 +10232,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_6_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_22_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9519,7 +10243,7 @@ begin
 
     x_local_2_23_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9533,7 +10257,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_7_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_23_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9544,7 +10268,7 @@ begin
 
     x_local_2_24_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9558,7 +10282,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_8_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_24_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9569,7 +10293,7 @@ begin
 
     x_local_2_25_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9583,7 +10307,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_9_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_25_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9594,7 +10318,7 @@ begin
 
     x_local_2_26_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9608,7 +10332,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_10_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_26_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9619,7 +10343,7 @@ begin
 
     x_local_2_27_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9633,7 +10357,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_11_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_27_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9644,7 +10368,7 @@ begin
 
     x_local_2_28_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9658,7 +10382,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_12_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_28_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9669,7 +10393,7 @@ begin
 
     x_local_2_29_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9683,7 +10407,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_13_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_29_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9694,7 +10418,7 @@ begin
 
     x_local_2_30_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9708,7 +10432,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_14_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_30_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9719,7 +10443,7 @@ begin
 
     x_local_2_31_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9733,7 +10457,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_1_15_address0,
         t_ce0 => compute_X2_U0_x_local_2_1_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_31_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9744,7 +10468,7 @@ begin
 
     x_local_2_32_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9758,7 +10482,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_0_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_32_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9769,7 +10493,7 @@ begin
 
     x_local_2_33_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9783,7 +10507,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_1_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_33_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9794,7 +10518,7 @@ begin
 
     x_local_2_34_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9808,7 +10532,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_2_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_34_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9819,7 +10543,7 @@ begin
 
     x_local_2_35_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9833,7 +10557,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_3_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_35_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9844,7 +10568,7 @@ begin
 
     x_local_2_36_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9858,7 +10582,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_4_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_36_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9869,7 +10593,7 @@ begin
 
     x_local_2_37_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9883,7 +10607,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_5_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_37_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9894,7 +10618,7 @@ begin
 
     x_local_2_38_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9908,7 +10632,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_6_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_38_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9919,7 +10643,7 @@ begin
 
     x_local_2_39_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9933,7 +10657,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_7_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_39_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9944,7 +10668,7 @@ begin
 
     x_local_2_40_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9958,7 +10682,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_8_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_40_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9969,7 +10693,7 @@ begin
 
     x_local_2_41_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -9983,7 +10707,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_9_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_41_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -9994,7 +10718,7 @@ begin
 
     x_local_2_42_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10008,7 +10732,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_10_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_42_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10019,7 +10743,7 @@ begin
 
     x_local_2_43_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10033,7 +10757,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_11_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_43_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10044,7 +10768,7 @@ begin
 
     x_local_2_44_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10058,7 +10782,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_12_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_44_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10069,7 +10793,7 @@ begin
 
     x_local_2_45_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10083,7 +10807,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_13_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_45_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10094,7 +10818,7 @@ begin
 
     x_local_2_46_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10108,7 +10832,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_14_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_46_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10119,7 +10843,7 @@ begin
 
     x_local_2_47_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10133,7 +10857,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_2_15_address0,
         t_ce0 => compute_X2_U0_x_local_2_2_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_47_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10144,7 +10868,7 @@ begin
 
     x_local_2_48_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10158,7 +10882,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_0_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_48_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10169,7 +10893,7 @@ begin
 
     x_local_2_49_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10183,7 +10907,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_1_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_49_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10194,7 +10918,7 @@ begin
 
     x_local_2_50_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10208,7 +10932,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_2_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_50_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10219,7 +10943,7 @@ begin
 
     x_local_2_51_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10233,7 +10957,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_3_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_51_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10244,7 +10968,7 @@ begin
 
     x_local_2_52_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10258,7 +10982,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_4_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_52_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10269,7 +10993,7 @@ begin
 
     x_local_2_53_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10283,7 +11007,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_5_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_53_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10294,7 +11018,7 @@ begin
 
     x_local_2_54_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10308,7 +11032,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_6_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_54_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10319,7 +11043,7 @@ begin
 
     x_local_2_55_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10333,7 +11057,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_7_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_55_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10344,7 +11068,7 @@ begin
 
     x_local_2_56_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10358,7 +11082,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_8_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_56_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10369,7 +11093,7 @@ begin
 
     x_local_2_57_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10383,7 +11107,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_9_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_57_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10394,7 +11118,7 @@ begin
 
     x_local_2_58_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10408,7 +11132,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_10_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_58_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10419,7 +11143,7 @@ begin
 
     x_local_2_59_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10433,7 +11157,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_11_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_59_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10444,7 +11168,7 @@ begin
 
     x_local_2_60_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10458,7 +11182,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_12_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_60_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10469,7 +11193,7 @@ begin
 
     x_local_2_61_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10483,7 +11207,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_13_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_61_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10494,7 +11218,7 @@ begin
 
     x_local_2_62_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10508,7 +11232,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_14_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_62_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10519,7 +11243,7 @@ begin
 
     x_local_2_63_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10533,7 +11257,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_3_15_address0,
         t_ce0 => compute_X2_U0_x_local_2_3_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_63_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10544,7 +11268,7 @@ begin
 
     x_local_2_64_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10558,7 +11282,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_0_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_64_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10569,7 +11293,7 @@ begin
 
     x_local_2_65_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10583,7 +11307,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_1_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_65_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10594,7 +11318,7 @@ begin
 
     x_local_2_66_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10608,7 +11332,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_2_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_66_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10619,7 +11343,7 @@ begin
 
     x_local_2_67_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10633,7 +11357,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_3_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_67_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10644,7 +11368,7 @@ begin
 
     x_local_2_68_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10658,7 +11382,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_4_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_68_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10669,7 +11393,7 @@ begin
 
     x_local_2_69_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10683,7 +11407,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_5_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_69_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10694,7 +11418,7 @@ begin
 
     x_local_2_70_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10708,7 +11432,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_6_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_70_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10719,7 +11443,7 @@ begin
 
     x_local_2_71_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10733,7 +11457,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_7_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_71_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10744,7 +11468,7 @@ begin
 
     x_local_2_72_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10758,7 +11482,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_8_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_72_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10769,7 +11493,7 @@ begin
 
     x_local_2_73_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10783,7 +11507,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_9_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_73_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10794,7 +11518,7 @@ begin
 
     x_local_2_74_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10808,7 +11532,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_10_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_74_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10819,7 +11543,7 @@ begin
 
     x_local_2_75_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10833,7 +11557,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_11_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_75_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10844,7 +11568,7 @@ begin
 
     x_local_2_76_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10858,7 +11582,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_12_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_76_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10869,7 +11593,7 @@ begin
 
     x_local_2_77_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10883,7 +11607,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_13_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_77_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10894,7 +11618,7 @@ begin
 
     x_local_2_78_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10908,7 +11632,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_14_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_78_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10919,7 +11643,7 @@ begin
 
     x_local_2_79_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10933,7 +11657,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_4_15_address0,
         t_ce0 => compute_X2_U0_x_local_2_4_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_79_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10944,7 +11668,7 @@ begin
 
     x_local_2_80_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10958,7 +11682,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_0_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_80_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10969,7 +11693,7 @@ begin
 
     x_local_2_81_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -10983,7 +11707,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_1_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_81_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -10994,7 +11718,7 @@ begin
 
     x_local_2_82_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11008,7 +11732,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_2_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_82_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11019,7 +11743,7 @@ begin
 
     x_local_2_83_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11033,7 +11757,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_3_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_83_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11044,7 +11768,7 @@ begin
 
     x_local_2_84_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11058,7 +11782,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_4_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_84_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11069,7 +11793,7 @@ begin
 
     x_local_2_85_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11083,7 +11807,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_5_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_85_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11094,7 +11818,7 @@ begin
 
     x_local_2_86_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11108,7 +11832,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_6_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_86_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11119,7 +11843,7 @@ begin
 
     x_local_2_87_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11133,7 +11857,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_7_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_87_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11144,7 +11868,7 @@ begin
 
     x_local_2_88_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11158,7 +11882,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_8_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_88_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11169,7 +11893,7 @@ begin
 
     x_local_2_89_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11183,7 +11907,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_9_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_89_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11194,7 +11918,7 @@ begin
 
     x_local_2_90_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11208,7 +11932,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_10_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_90_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11219,7 +11943,7 @@ begin
 
     x_local_2_91_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11233,7 +11957,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_11_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_91_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11244,7 +11968,7 @@ begin
 
     x_local_2_92_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11258,7 +11982,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_12_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_92_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11269,7 +11993,7 @@ begin
 
     x_local_2_93_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11283,7 +12007,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_13_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_93_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11294,7 +12018,7 @@ begin
 
     x_local_2_94_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11308,7 +12032,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_14_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_94_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11319,7 +12043,7 @@ begin
 
     x_local_2_95_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11333,7 +12057,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_5_15_address0,
         t_ce0 => compute_X2_U0_x_local_2_5_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_95_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11344,7 +12068,7 @@ begin
 
     x_local_2_96_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11358,7 +12082,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_0_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_96_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11369,7 +12093,7 @@ begin
 
     x_local_2_97_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11383,7 +12107,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_1_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_97_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11394,7 +12118,7 @@ begin
 
     x_local_2_98_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11408,7 +12132,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_2_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_98_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11419,7 +12143,7 @@ begin
 
     x_local_2_99_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11433,7 +12157,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_3_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_99_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11444,7 +12168,7 @@ begin
 
     x_local_2_100_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11458,7 +12182,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_4_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_100_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11469,7 +12193,7 @@ begin
 
     x_local_2_101_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11483,7 +12207,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_5_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_101_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11494,7 +12218,7 @@ begin
 
     x_local_2_102_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11508,7 +12232,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_6_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_102_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11519,7 +12243,7 @@ begin
 
     x_local_2_103_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11533,7 +12257,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_7_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_103_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11544,7 +12268,7 @@ begin
 
     x_local_2_104_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11558,7 +12282,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_8_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_104_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11569,7 +12293,7 @@ begin
 
     x_local_2_105_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11583,7 +12307,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_9_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_105_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11594,7 +12318,7 @@ begin
 
     x_local_2_106_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11608,7 +12332,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_10_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_106_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11619,7 +12343,7 @@ begin
 
     x_local_2_107_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11633,7 +12357,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_11_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_107_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11644,7 +12368,7 @@ begin
 
     x_local_2_108_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11658,7 +12382,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_12_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_108_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11669,7 +12393,7 @@ begin
 
     x_local_2_109_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11683,7 +12407,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_13_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_109_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11694,7 +12418,7 @@ begin
 
     x_local_2_110_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11708,7 +12432,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_14_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_110_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11719,7 +12443,7 @@ begin
 
     x_local_2_111_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11733,7 +12457,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_6_15_address0,
         t_ce0 => compute_X2_U0_x_local_2_6_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_111_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11744,7 +12468,7 @@ begin
 
     x_local_2_112_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11758,7 +12482,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_0_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_0_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_112_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11769,7 +12493,7 @@ begin
 
     x_local_2_113_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11783,7 +12507,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_1_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_1_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_113_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11794,7 +12518,7 @@ begin
 
     x_local_2_114_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11808,7 +12532,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_2_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_2_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_114_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11819,7 +12543,7 @@ begin
 
     x_local_2_115_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11833,7 +12557,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_3_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_3_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_115_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11844,7 +12568,7 @@ begin
 
     x_local_2_116_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11858,7 +12582,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_4_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_4_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_116_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11869,7 +12593,7 @@ begin
 
     x_local_2_117_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11883,7 +12607,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_5_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_5_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_117_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11894,7 +12618,7 @@ begin
 
     x_local_2_118_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11908,7 +12632,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_6_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_6_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_118_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11919,7 +12643,7 @@ begin
 
     x_local_2_119_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11933,7 +12657,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_7_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_7_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_119_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11944,7 +12668,7 @@ begin
 
     x_local_2_120_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11958,7 +12682,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_8_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_8_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_120_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11969,7 +12693,7 @@ begin
 
     x_local_2_121_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -11983,7 +12707,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_9_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_9_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_121_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -11994,7 +12718,7 @@ begin
 
     x_local_2_122_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -12008,7 +12732,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_10_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_10_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_122_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -12019,7 +12743,7 @@ begin
 
     x_local_2_123_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -12033,7 +12757,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_11_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_11_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_123_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -12044,7 +12768,7 @@ begin
 
     x_local_2_124_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -12058,7 +12782,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_12_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_12_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_124_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -12069,7 +12793,7 @@ begin
 
     x_local_2_125_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -12083,7 +12807,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_13_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_13_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_125_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -12094,7 +12818,7 @@ begin
 
     x_local_2_126_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -12108,7 +12832,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_14_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_14_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_126_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -12119,7 +12843,7 @@ begin
 
     x_local_2_127_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
     generic map (
-        DataWidth => 1,
+        DataWidth => 8,
         AddressRange => 16,
         AddressWidth => 4)
     port map (
@@ -12133,7 +12857,7 @@ begin
         t_address0 => compute_X2_U0_x_local_2_7_15_address0,
         t_ce0 => compute_X2_U0_x_local_2_7_15_ce0,
         t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
+        t_d0 => ap_const_lv8_0,
         t_q0 => x_local_2_127_t_q0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
@@ -12141,6 +12865,64 @@ begin
         i_write => ap_channel_done_x_local_2_127,
         t_empty_n => x_local_2_127_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
+
+    X1_cache_U : component swiglu_X1_cache_RAM_2P_URAM_1R1W
+    generic map (
+        DataWidth => 32,
+        AddressRange => 8192,
+        AddressWidth => 13)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        i_address0 => ap_const_lv13_0,
+        i_ce0 => ap_const_logic_0,
+        i_q0 => X1_cache_i_q0,
+        i_address1 => compute_X1_U0_X1_cache_address1,
+        i_ce1 => compute_X1_U0_X1_cache_ce1,
+        i_we1 => compute_X1_U0_X1_cache_we1,
+        i_d1 => compute_X1_U0_X1_cache_d1,
+        t_address0 => compute_gate_U0_X1_cache_address0,
+        t_ce0 => compute_gate_U0_X1_cache_ce0,
+        t_q0 => X1_cache_t_q0,
+        t_address1 => ap_const_lv13_0,
+        t_ce1 => ap_const_logic_0,
+        t_we1 => ap_const_logic_0,
+        t_d1 => ap_const_lv32_0,
+        i_ce => ap_const_logic_1,
+        t_ce => ap_const_logic_1,
+        i_full_n => X1_cache_i_full_n,
+        i_write => compute_X1_U0_ap_done,
+        t_empty_n => X1_cache_t_empty_n,
+        t_read => compute_gate_U0_ap_ready);
+
+    X2_cache_U : component swiglu_X1_cache_RAM_2P_URAM_1R1W
+    generic map (
+        DataWidth => 32,
+        AddressRange => 8192,
+        AddressWidth => 13)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        i_address0 => ap_const_lv13_0,
+        i_ce0 => ap_const_logic_0,
+        i_q0 => X2_cache_i_q0,
+        i_address1 => compute_X2_U0_X2_cache_address1,
+        i_ce1 => compute_X2_U0_X2_cache_ce1,
+        i_we1 => compute_X2_U0_X2_cache_we1,
+        i_d1 => compute_X2_U0_X2_cache_d1,
+        t_address0 => compute_gate_U0_X2_cache_address0,
+        t_ce0 => compute_gate_U0_X2_cache_ce0,
+        t_q0 => X2_cache_t_q0,
+        t_address1 => ap_const_lv13_0,
+        t_ce1 => ap_const_logic_0,
+        t_we1 => ap_const_logic_0,
+        t_d1 => ap_const_lv32_0,
+        i_ce => ap_const_logic_1,
+        t_ce => ap_const_logic_1,
+        i_full_n => X2_cache_i_full_n,
+        i_write => compute_X2_U0_ap_done,
+        t_empty_n => X2_cache_t_empty_n,
+        t_read => compute_gate_U0_ap_ready);
 
     gate_cache_U : component swiglu_gate_cache_RAM_2P_BRAM_1R1W
     generic map (
@@ -13108,6 +13890,282 @@ begin
         ap_done => ap_done,
         ap_idle => ap_idle);
 
+    gmem_V_m_axi_U : component swiglu_gmem_V_m_axi
+    generic map (
+        CONSERVATIVE => 1,
+        USER_MAXREQS => 70,
+        MAX_READ_BURST_LENGTH => 256,
+        MAX_WRITE_BURST_LENGTH => 16,
+        C_M_AXI_ID_WIDTH => C_M_AXI_GMEM_V_ID_WIDTH,
+        C_M_AXI_ADDR_WIDTH => C_M_AXI_GMEM_V_ADDR_WIDTH,
+        C_M_AXI_DATA_WIDTH => C_M_AXI_GMEM_V_DATA_WIDTH,
+        C_M_AXI_AWUSER_WIDTH => C_M_AXI_GMEM_V_AWUSER_WIDTH,
+        C_M_AXI_ARUSER_WIDTH => C_M_AXI_GMEM_V_ARUSER_WIDTH,
+        C_M_AXI_WUSER_WIDTH => C_M_AXI_GMEM_V_WUSER_WIDTH,
+        C_M_AXI_RUSER_WIDTH => C_M_AXI_GMEM_V_RUSER_WIDTH,
+        C_M_AXI_BUSER_WIDTH => C_M_AXI_GMEM_V_BUSER_WIDTH,
+        C_USER_VALUE => C_M_AXI_GMEM_V_USER_VALUE,
+        C_PROT_VALUE => C_M_AXI_GMEM_V_PROT_VALUE,
+        C_CACHE_VALUE => C_M_AXI_GMEM_V_CACHE_VALUE,
+        CH0_NUM_READ_OUTSTANDING => 2,
+        CH0_NUM_WRITE_OUTSTANDING => 16,
+        CH0_USER_RFIFONUM_WIDTH => 10,
+        CH0_USER_DW => 128,
+        CH0_USER_AW => 64,
+        NUM_READ_OUTSTANDING => 2,
+        NUM_WRITE_OUTSTANDING => 0)
+    port map (
+        AWVALID => m_axi_gmem_V_AWVALID,
+        AWREADY => m_axi_gmem_V_AWREADY,
+        AWADDR => m_axi_gmem_V_AWADDR,
+        AWID => m_axi_gmem_V_AWID,
+        AWLEN => m_axi_gmem_V_AWLEN,
+        AWSIZE => m_axi_gmem_V_AWSIZE,
+        AWBURST => m_axi_gmem_V_AWBURST,
+        AWLOCK => m_axi_gmem_V_AWLOCK,
+        AWCACHE => m_axi_gmem_V_AWCACHE,
+        AWPROT => m_axi_gmem_V_AWPROT,
+        AWQOS => m_axi_gmem_V_AWQOS,
+        AWREGION => m_axi_gmem_V_AWREGION,
+        AWUSER => m_axi_gmem_V_AWUSER,
+        WVALID => m_axi_gmem_V_WVALID,
+        WREADY => m_axi_gmem_V_WREADY,
+        WDATA => m_axi_gmem_V_WDATA,
+        WSTRB => m_axi_gmem_V_WSTRB,
+        WLAST => m_axi_gmem_V_WLAST,
+        WID => m_axi_gmem_V_WID,
+        WUSER => m_axi_gmem_V_WUSER,
+        ARVALID => m_axi_gmem_V_ARVALID,
+        ARREADY => m_axi_gmem_V_ARREADY,
+        ARADDR => m_axi_gmem_V_ARADDR,
+        ARID => m_axi_gmem_V_ARID,
+        ARLEN => m_axi_gmem_V_ARLEN,
+        ARSIZE => m_axi_gmem_V_ARSIZE,
+        ARBURST => m_axi_gmem_V_ARBURST,
+        ARLOCK => m_axi_gmem_V_ARLOCK,
+        ARCACHE => m_axi_gmem_V_ARCACHE,
+        ARPROT => m_axi_gmem_V_ARPROT,
+        ARQOS => m_axi_gmem_V_ARQOS,
+        ARREGION => m_axi_gmem_V_ARREGION,
+        ARUSER => m_axi_gmem_V_ARUSER,
+        RVALID => m_axi_gmem_V_RVALID,
+        RREADY => m_axi_gmem_V_RREADY,
+        RDATA => m_axi_gmem_V_RDATA,
+        RLAST => m_axi_gmem_V_RLAST,
+        RID => m_axi_gmem_V_RID,
+        RUSER => m_axi_gmem_V_RUSER,
+        RRESP => m_axi_gmem_V_RRESP,
+        BVALID => m_axi_gmem_V_BVALID,
+        BREADY => m_axi_gmem_V_BREADY,
+        BRESP => m_axi_gmem_V_BRESP,
+        BID => m_axi_gmem_V_BID,
+        BUSER => m_axi_gmem_V_BUSER,
+        ACLK => ap_clk,
+        ARESET => ap_rst_n_inv,
+        ACLK_EN => ap_const_logic_1,
+        I_CH0_ARVALID => compute_X2_U0_m_axi_gmem_V_0_ARVALID,
+        I_CH0_ARREADY => gmem_V_0_ARREADY,
+        I_CH0_ARADDR => compute_X2_U0_m_axi_gmem_V_0_ARADDR,
+        I_CH0_ARLEN => compute_X2_U0_m_axi_gmem_V_0_ARLEN,
+        I_CH0_RVALID => gmem_V_0_RVALID,
+        I_CH0_RREADY => compute_X2_U0_m_axi_gmem_V_0_RREADY,
+        I_CH0_RDATA => gmem_V_0_RDATA,
+        I_CH0_RFIFONUM => gmem_V_0_RFIFONUM,
+        I_CH0_AWVALID => ap_const_logic_0,
+        I_CH0_AWREADY => gmem_V_0_AWREADY,
+        I_CH0_AWADDR => ap_const_lv64_0,
+        I_CH0_AWLEN => ap_const_lv32_0,
+        I_CH0_WVALID => ap_const_logic_0,
+        I_CH0_WREADY => gmem_V_0_WREADY,
+        I_CH0_WDATA => ap_const_lv128_lc_1,
+        I_CH0_WSTRB => ap_const_lv16_0,
+        I_CH0_BVALID => gmem_V_0_BVALID,
+        I_CH0_BREADY => ap_const_logic_0);
+
+    gmem_W_m_axi_U : component swiglu_gmem_W_m_axi
+    generic map (
+        CONSERVATIVE => 1,
+        USER_MAXREQS => 70,
+        MAX_READ_BURST_LENGTH => 256,
+        MAX_WRITE_BURST_LENGTH => 16,
+        C_M_AXI_ID_WIDTH => C_M_AXI_GMEM_W_ID_WIDTH,
+        C_M_AXI_ADDR_WIDTH => C_M_AXI_GMEM_W_ADDR_WIDTH,
+        C_M_AXI_DATA_WIDTH => C_M_AXI_GMEM_W_DATA_WIDTH,
+        C_M_AXI_AWUSER_WIDTH => C_M_AXI_GMEM_W_AWUSER_WIDTH,
+        C_M_AXI_ARUSER_WIDTH => C_M_AXI_GMEM_W_ARUSER_WIDTH,
+        C_M_AXI_WUSER_WIDTH => C_M_AXI_GMEM_W_WUSER_WIDTH,
+        C_M_AXI_RUSER_WIDTH => C_M_AXI_GMEM_W_RUSER_WIDTH,
+        C_M_AXI_BUSER_WIDTH => C_M_AXI_GMEM_W_BUSER_WIDTH,
+        C_USER_VALUE => C_M_AXI_GMEM_W_USER_VALUE,
+        C_PROT_VALUE => C_M_AXI_GMEM_W_PROT_VALUE,
+        C_CACHE_VALUE => C_M_AXI_GMEM_W_CACHE_VALUE,
+        CH0_NUM_READ_OUTSTANDING => 2,
+        CH0_NUM_WRITE_OUTSTANDING => 16,
+        CH0_USER_RFIFONUM_WIDTH => 10,
+        CH0_USER_DW => 128,
+        CH0_USER_AW => 64,
+        NUM_READ_OUTSTANDING => 2,
+        NUM_WRITE_OUTSTANDING => 0)
+    port map (
+        AWVALID => m_axi_gmem_W_AWVALID,
+        AWREADY => m_axi_gmem_W_AWREADY,
+        AWADDR => m_axi_gmem_W_AWADDR,
+        AWID => m_axi_gmem_W_AWID,
+        AWLEN => m_axi_gmem_W_AWLEN,
+        AWSIZE => m_axi_gmem_W_AWSIZE,
+        AWBURST => m_axi_gmem_W_AWBURST,
+        AWLOCK => m_axi_gmem_W_AWLOCK,
+        AWCACHE => m_axi_gmem_W_AWCACHE,
+        AWPROT => m_axi_gmem_W_AWPROT,
+        AWQOS => m_axi_gmem_W_AWQOS,
+        AWREGION => m_axi_gmem_W_AWREGION,
+        AWUSER => m_axi_gmem_W_AWUSER,
+        WVALID => m_axi_gmem_W_WVALID,
+        WREADY => m_axi_gmem_W_WREADY,
+        WDATA => m_axi_gmem_W_WDATA,
+        WSTRB => m_axi_gmem_W_WSTRB,
+        WLAST => m_axi_gmem_W_WLAST,
+        WID => m_axi_gmem_W_WID,
+        WUSER => m_axi_gmem_W_WUSER,
+        ARVALID => m_axi_gmem_W_ARVALID,
+        ARREADY => m_axi_gmem_W_ARREADY,
+        ARADDR => m_axi_gmem_W_ARADDR,
+        ARID => m_axi_gmem_W_ARID,
+        ARLEN => m_axi_gmem_W_ARLEN,
+        ARSIZE => m_axi_gmem_W_ARSIZE,
+        ARBURST => m_axi_gmem_W_ARBURST,
+        ARLOCK => m_axi_gmem_W_ARLOCK,
+        ARCACHE => m_axi_gmem_W_ARCACHE,
+        ARPROT => m_axi_gmem_W_ARPROT,
+        ARQOS => m_axi_gmem_W_ARQOS,
+        ARREGION => m_axi_gmem_W_ARREGION,
+        ARUSER => m_axi_gmem_W_ARUSER,
+        RVALID => m_axi_gmem_W_RVALID,
+        RREADY => m_axi_gmem_W_RREADY,
+        RDATA => m_axi_gmem_W_RDATA,
+        RLAST => m_axi_gmem_W_RLAST,
+        RID => m_axi_gmem_W_RID,
+        RUSER => m_axi_gmem_W_RUSER,
+        RRESP => m_axi_gmem_W_RRESP,
+        BVALID => m_axi_gmem_W_BVALID,
+        BREADY => m_axi_gmem_W_BREADY,
+        BRESP => m_axi_gmem_W_BRESP,
+        BID => m_axi_gmem_W_BID,
+        BUSER => m_axi_gmem_W_BUSER,
+        ACLK => ap_clk,
+        ARESET => ap_rst_n_inv,
+        ACLK_EN => ap_const_logic_1,
+        I_CH0_ARVALID => compute_X1_U0_m_axi_gmem_W_0_ARVALID,
+        I_CH0_ARREADY => gmem_W_0_ARREADY,
+        I_CH0_ARADDR => compute_X1_U0_m_axi_gmem_W_0_ARADDR,
+        I_CH0_ARLEN => compute_X1_U0_m_axi_gmem_W_0_ARLEN,
+        I_CH0_RVALID => gmem_W_0_RVALID,
+        I_CH0_RREADY => compute_X1_U0_m_axi_gmem_W_0_RREADY,
+        I_CH0_RDATA => gmem_W_0_RDATA,
+        I_CH0_RFIFONUM => gmem_W_0_RFIFONUM,
+        I_CH0_AWVALID => ap_const_logic_0,
+        I_CH0_AWREADY => gmem_W_0_AWREADY,
+        I_CH0_AWADDR => ap_const_lv64_0,
+        I_CH0_AWLEN => ap_const_lv32_0,
+        I_CH0_WVALID => ap_const_logic_0,
+        I_CH0_WREADY => gmem_W_0_WREADY,
+        I_CH0_WDATA => ap_const_lv128_lc_1,
+        I_CH0_WSTRB => ap_const_lv16_0,
+        I_CH0_BVALID => gmem_W_0_BVALID,
+        I_CH0_BREADY => ap_const_logic_0);
+
+    gmem_Wd_m_axi_U : component swiglu_gmem_Wd_m_axi
+    generic map (
+        CONSERVATIVE => 1,
+        USER_MAXREQS => 70,
+        MAX_READ_BURST_LENGTH => 256,
+        MAX_WRITE_BURST_LENGTH => 16,
+        C_M_AXI_ID_WIDTH => C_M_AXI_GMEM_WD_ID_WIDTH,
+        C_M_AXI_ADDR_WIDTH => C_M_AXI_GMEM_WD_ADDR_WIDTH,
+        C_M_AXI_DATA_WIDTH => C_M_AXI_GMEM_WD_DATA_WIDTH,
+        C_M_AXI_AWUSER_WIDTH => C_M_AXI_GMEM_WD_AWUSER_WIDTH,
+        C_M_AXI_ARUSER_WIDTH => C_M_AXI_GMEM_WD_ARUSER_WIDTH,
+        C_M_AXI_WUSER_WIDTH => C_M_AXI_GMEM_WD_WUSER_WIDTH,
+        C_M_AXI_RUSER_WIDTH => C_M_AXI_GMEM_WD_RUSER_WIDTH,
+        C_M_AXI_BUSER_WIDTH => C_M_AXI_GMEM_WD_BUSER_WIDTH,
+        C_USER_VALUE => C_M_AXI_GMEM_WD_USER_VALUE,
+        C_PROT_VALUE => C_M_AXI_GMEM_WD_PROT_VALUE,
+        C_CACHE_VALUE => C_M_AXI_GMEM_WD_CACHE_VALUE,
+        CH0_NUM_READ_OUTSTANDING => 2,
+        CH0_NUM_WRITE_OUTSTANDING => 16,
+        CH0_USER_RFIFONUM_WIDTH => 10,
+        CH0_USER_DW => 128,
+        CH0_USER_AW => 64,
+        NUM_READ_OUTSTANDING => 2,
+        NUM_WRITE_OUTSTANDING => 0)
+    port map (
+        AWVALID => m_axi_gmem_Wd_AWVALID,
+        AWREADY => m_axi_gmem_Wd_AWREADY,
+        AWADDR => m_axi_gmem_Wd_AWADDR,
+        AWID => m_axi_gmem_Wd_AWID,
+        AWLEN => m_axi_gmem_Wd_AWLEN,
+        AWSIZE => m_axi_gmem_Wd_AWSIZE,
+        AWBURST => m_axi_gmem_Wd_AWBURST,
+        AWLOCK => m_axi_gmem_Wd_AWLOCK,
+        AWCACHE => m_axi_gmem_Wd_AWCACHE,
+        AWPROT => m_axi_gmem_Wd_AWPROT,
+        AWQOS => m_axi_gmem_Wd_AWQOS,
+        AWREGION => m_axi_gmem_Wd_AWREGION,
+        AWUSER => m_axi_gmem_Wd_AWUSER,
+        WVALID => m_axi_gmem_Wd_WVALID,
+        WREADY => m_axi_gmem_Wd_WREADY,
+        WDATA => m_axi_gmem_Wd_WDATA,
+        WSTRB => m_axi_gmem_Wd_WSTRB,
+        WLAST => m_axi_gmem_Wd_WLAST,
+        WID => m_axi_gmem_Wd_WID,
+        WUSER => m_axi_gmem_Wd_WUSER,
+        ARVALID => m_axi_gmem_Wd_ARVALID,
+        ARREADY => m_axi_gmem_Wd_ARREADY,
+        ARADDR => m_axi_gmem_Wd_ARADDR,
+        ARID => m_axi_gmem_Wd_ARID,
+        ARLEN => m_axi_gmem_Wd_ARLEN,
+        ARSIZE => m_axi_gmem_Wd_ARSIZE,
+        ARBURST => m_axi_gmem_Wd_ARBURST,
+        ARLOCK => m_axi_gmem_Wd_ARLOCK,
+        ARCACHE => m_axi_gmem_Wd_ARCACHE,
+        ARPROT => m_axi_gmem_Wd_ARPROT,
+        ARQOS => m_axi_gmem_Wd_ARQOS,
+        ARREGION => m_axi_gmem_Wd_ARREGION,
+        ARUSER => m_axi_gmem_Wd_ARUSER,
+        RVALID => m_axi_gmem_Wd_RVALID,
+        RREADY => m_axi_gmem_Wd_RREADY,
+        RDATA => m_axi_gmem_Wd_RDATA,
+        RLAST => m_axi_gmem_Wd_RLAST,
+        RID => m_axi_gmem_Wd_RID,
+        RUSER => m_axi_gmem_Wd_RUSER,
+        RRESP => m_axi_gmem_Wd_RRESP,
+        BVALID => m_axi_gmem_Wd_BVALID,
+        BREADY => m_axi_gmem_Wd_BREADY,
+        BRESP => m_axi_gmem_Wd_BRESP,
+        BID => m_axi_gmem_Wd_BID,
+        BUSER => m_axi_gmem_Wd_BUSER,
+        ACLK => ap_clk,
+        ARESET => ap_rst_n_inv,
+        ACLK_EN => ap_const_logic_1,
+        I_CH0_ARVALID => compute_output_U0_m_axi_gmem_Wd_0_ARVALID,
+        I_CH0_ARREADY => gmem_Wd_0_ARREADY,
+        I_CH0_ARADDR => compute_output_U0_m_axi_gmem_Wd_0_ARADDR,
+        I_CH0_ARLEN => compute_output_U0_m_axi_gmem_Wd_0_ARLEN,
+        I_CH0_RVALID => gmem_Wd_0_RVALID,
+        I_CH0_RREADY => compute_output_U0_m_axi_gmem_Wd_0_RREADY,
+        I_CH0_RDATA => gmem_Wd_0_RDATA,
+        I_CH0_RFIFONUM => gmem_Wd_0_RFIFONUM,
+        I_CH0_AWVALID => ap_const_logic_0,
+        I_CH0_AWREADY => gmem_Wd_0_AWREADY,
+        I_CH0_AWADDR => ap_const_lv64_0,
+        I_CH0_AWLEN => ap_const_lv32_0,
+        I_CH0_WVALID => ap_const_logic_0,
+        I_CH0_WREADY => gmem_Wd_0_WREADY,
+        I_CH0_WDATA => ap_const_lv128_lc_1,
+        I_CH0_WSTRB => ap_const_lv16_0,
+        I_CH0_BVALID => gmem_Wd_0_BVALID,
+        I_CH0_BREADY => ap_const_logic_0);
+
     gmem_out_m_axi_U : component swiglu_gmem_out_m_axi
     generic map (
         CONSERVATIVE => 1,
@@ -13126,12 +14184,12 @@ begin
         C_PROT_VALUE => C_M_AXI_GMEM_OUT_PROT_VALUE,
         C_CACHE_VALUE => C_M_AXI_GMEM_OUT_CACHE_VALUE,
         CH0_NUM_READ_OUTSTANDING => 16,
-        CH0_NUM_WRITE_OUTSTANDING => 16,
+        CH0_NUM_WRITE_OUTSTANDING => 2,
         CH0_USER_RFIFONUM_WIDTH => 9,
         CH0_USER_DW => 32,
         CH0_USER_AW => 64,
         NUM_READ_OUTSTANDING => 0,
-        NUM_WRITE_OUTSTANDING => 16)
+        NUM_WRITE_OUTSTANDING => 2)
     port map (
         AWVALID => m_axi_gmem_out_AWVALID,
         AWREADY => m_axi_gmem_out_AWREADY,
@@ -13200,56 +14258,97 @@ begin
         I_CH0_BVALID => gmem_out_0_BVALID,
         I_CH0_BREADY => compute_output_U0_m_axi_gmem_out_0_BREADY);
 
-    entry_proc_U0 : component swiglu_entry_proc
+    gmem_x_m_axi_U : component swiglu_gmem_x_m_axi
+    generic map (
+        CONSERVATIVE => 1,
+        USER_MAXREQS => 70,
+        MAX_READ_BURST_LENGTH => 256,
+        MAX_WRITE_BURST_LENGTH => 16,
+        C_M_AXI_ID_WIDTH => C_M_AXI_GMEM_X_ID_WIDTH,
+        C_M_AXI_ADDR_WIDTH => C_M_AXI_GMEM_X_ADDR_WIDTH,
+        C_M_AXI_DATA_WIDTH => C_M_AXI_GMEM_X_DATA_WIDTH,
+        C_M_AXI_AWUSER_WIDTH => C_M_AXI_GMEM_X_AWUSER_WIDTH,
+        C_M_AXI_ARUSER_WIDTH => C_M_AXI_GMEM_X_ARUSER_WIDTH,
+        C_M_AXI_WUSER_WIDTH => C_M_AXI_GMEM_X_WUSER_WIDTH,
+        C_M_AXI_RUSER_WIDTH => C_M_AXI_GMEM_X_RUSER_WIDTH,
+        C_M_AXI_BUSER_WIDTH => C_M_AXI_GMEM_X_BUSER_WIDTH,
+        C_USER_VALUE => C_M_AXI_GMEM_X_USER_VALUE,
+        C_PROT_VALUE => C_M_AXI_GMEM_X_PROT_VALUE,
+        C_CACHE_VALUE => C_M_AXI_GMEM_X_CACHE_VALUE,
+        CH0_NUM_READ_OUTSTANDING => 2,
+        CH0_NUM_WRITE_OUTSTANDING => 16,
+        CH0_USER_RFIFONUM_WIDTH => 10,
+        CH0_USER_DW => 128,
+        CH0_USER_AW => 64,
+        NUM_READ_OUTSTANDING => 2,
+        NUM_WRITE_OUTSTANDING => 0)
     port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst_n_inv,
-        ap_start => entry_proc_U0_ap_start,
-        ap_done => entry_proc_U0_ap_done,
-        ap_continue => entry_proc_U0_ap_continue,
-        ap_idle => entry_proc_U0_ap_idle,
-        ap_ready => entry_proc_U0_ap_ready,
-        W => W,
-        W_c_din => entry_proc_U0_W_c_din,
-        W_c_full_n => W_c_full_n,
-        W_c_write => entry_proc_U0_W_c_write,
-        W_c_num_data_valid => W_c_num_data_valid,
-        W_c_fifo_cap => W_c_fifo_cap,
-        V => V,
-        V_c_din => entry_proc_U0_V_c_din,
-        V_c_full_n => V_c_full_n,
-        V_c_write => entry_proc_U0_V_c_write,
-        V_c_num_data_valid => V_c_num_data_valid,
-        V_c_fifo_cap => V_c_fifo_cap,
-        W_down => W_down,
-        W_down_c_din => entry_proc_U0_W_down_c_din,
-        W_down_c_full_n => W_down_c_full_n,
-        W_down_c_write => entry_proc_U0_W_down_c_write,
-        W_down_c_num_data_valid => W_down_c_num_data_valid,
-        W_down_c_fifo_cap => W_down_c_fifo_cap,
-        out_batch => out_batch,
-        out_batch_c_din => entry_proc_U0_out_batch_c_din,
-        out_batch_c_full_n => out_batch_c_full_n,
-        out_batch_c_write => entry_proc_U0_out_batch_c_write,
-        out_batch_c_num_data_valid => out_batch_c_num_data_valid,
-        out_batch_c_fifo_cap => out_batch_c_fifo_cap,
-        down_quant_mode => down_quant_mode,
-        down_quant_mode_c_din => entry_proc_U0_down_quant_mode_c_din,
-        down_quant_mode_c_full_n => down_quant_mode_c_full_n,
-        down_quant_mode_c_write => entry_proc_U0_down_quant_mode_c_write,
-        down_quant_mode_c_num_data_valid => down_quant_mode_c_num_data_valid,
-        down_quant_mode_c_fifo_cap => down_quant_mode_c_fifo_cap,
-        x_scale => x_scale,
-        x_scale_c_din => entry_proc_U0_x_scale_c_din,
-        x_scale_c_full_n => x_scale_c_full_n,
-        x_scale_c_write => entry_proc_U0_x_scale_c_write,
-        x_scale_c_num_data_valid => x_scale_c_num_data_valid,
-        x_scale_c_fifo_cap => x_scale_c_fifo_cap,
-        x_scale_c1_din => entry_proc_U0_x_scale_c1_din,
-        x_scale_c1_full_n => x_scale_c1_full_n,
-        x_scale_c1_write => entry_proc_U0_x_scale_c1_write,
-        x_scale_c1_num_data_valid => x_scale_c1_num_data_valid,
-        x_scale_c1_fifo_cap => x_scale_c1_fifo_cap);
+        AWVALID => m_axi_gmem_x_AWVALID,
+        AWREADY => m_axi_gmem_x_AWREADY,
+        AWADDR => m_axi_gmem_x_AWADDR,
+        AWID => m_axi_gmem_x_AWID,
+        AWLEN => m_axi_gmem_x_AWLEN,
+        AWSIZE => m_axi_gmem_x_AWSIZE,
+        AWBURST => m_axi_gmem_x_AWBURST,
+        AWLOCK => m_axi_gmem_x_AWLOCK,
+        AWCACHE => m_axi_gmem_x_AWCACHE,
+        AWPROT => m_axi_gmem_x_AWPROT,
+        AWQOS => m_axi_gmem_x_AWQOS,
+        AWREGION => m_axi_gmem_x_AWREGION,
+        AWUSER => m_axi_gmem_x_AWUSER,
+        WVALID => m_axi_gmem_x_WVALID,
+        WREADY => m_axi_gmem_x_WREADY,
+        WDATA => m_axi_gmem_x_WDATA,
+        WSTRB => m_axi_gmem_x_WSTRB,
+        WLAST => m_axi_gmem_x_WLAST,
+        WID => m_axi_gmem_x_WID,
+        WUSER => m_axi_gmem_x_WUSER,
+        ARVALID => m_axi_gmem_x_ARVALID,
+        ARREADY => m_axi_gmem_x_ARREADY,
+        ARADDR => m_axi_gmem_x_ARADDR,
+        ARID => m_axi_gmem_x_ARID,
+        ARLEN => m_axi_gmem_x_ARLEN,
+        ARSIZE => m_axi_gmem_x_ARSIZE,
+        ARBURST => m_axi_gmem_x_ARBURST,
+        ARLOCK => m_axi_gmem_x_ARLOCK,
+        ARCACHE => m_axi_gmem_x_ARCACHE,
+        ARPROT => m_axi_gmem_x_ARPROT,
+        ARQOS => m_axi_gmem_x_ARQOS,
+        ARREGION => m_axi_gmem_x_ARREGION,
+        ARUSER => m_axi_gmem_x_ARUSER,
+        RVALID => m_axi_gmem_x_RVALID,
+        RREADY => m_axi_gmem_x_RREADY,
+        RDATA => m_axi_gmem_x_RDATA,
+        RLAST => m_axi_gmem_x_RLAST,
+        RID => m_axi_gmem_x_RID,
+        RUSER => m_axi_gmem_x_RUSER,
+        RRESP => m_axi_gmem_x_RRESP,
+        BVALID => m_axi_gmem_x_BVALID,
+        BREADY => m_axi_gmem_x_BREADY,
+        BRESP => m_axi_gmem_x_BRESP,
+        BID => m_axi_gmem_x_BID,
+        BUSER => m_axi_gmem_x_BUSER,
+        ACLK => ap_clk,
+        ARESET => ap_rst_n_inv,
+        ACLK_EN => ap_const_logic_1,
+        I_CH0_ARVALID => load_x_local_U0_m_axi_gmem_x_0_ARVALID,
+        I_CH0_ARREADY => gmem_x_0_ARREADY,
+        I_CH0_ARADDR => load_x_local_U0_m_axi_gmem_x_0_ARADDR,
+        I_CH0_ARLEN => load_x_local_U0_m_axi_gmem_x_0_ARLEN,
+        I_CH0_RVALID => gmem_x_0_RVALID,
+        I_CH0_RREADY => load_x_local_U0_m_axi_gmem_x_0_RREADY,
+        I_CH0_RDATA => gmem_x_0_RDATA,
+        I_CH0_RFIFONUM => gmem_x_0_RFIFONUM,
+        I_CH0_AWVALID => ap_const_logic_0,
+        I_CH0_AWREADY => gmem_x_0_AWREADY,
+        I_CH0_AWADDR => ap_const_lv64_0,
+        I_CH0_AWLEN => ap_const_lv32_0,
+        I_CH0_WVALID => ap_const_logic_0,
+        I_CH0_WREADY => gmem_x_0_WREADY,
+        I_CH0_WDATA => ap_const_lv128_lc_1,
+        I_CH0_WSTRB => ap_const_lv16_0,
+        I_CH0_BVALID => gmem_x_0_BVALID,
+        I_CH0_BREADY => ap_const_logic_0);
 
     load_x_local_U0 : component swiglu_load_x_local
     port map (
@@ -13260,6 +14359,52 @@ begin
         ap_continue => load_x_local_U0_ap_continue,
         ap_idle => load_x_local_U0_ap_idle,
         ap_ready => load_x_local_U0_ap_ready,
+        m_axi_gmem_x_0_AWVALID => load_x_local_U0_m_axi_gmem_x_0_AWVALID,
+        m_axi_gmem_x_0_AWREADY => ap_const_logic_0,
+        m_axi_gmem_x_0_AWADDR => load_x_local_U0_m_axi_gmem_x_0_AWADDR,
+        m_axi_gmem_x_0_AWID => load_x_local_U0_m_axi_gmem_x_0_AWID,
+        m_axi_gmem_x_0_AWLEN => load_x_local_U0_m_axi_gmem_x_0_AWLEN,
+        m_axi_gmem_x_0_AWSIZE => load_x_local_U0_m_axi_gmem_x_0_AWSIZE,
+        m_axi_gmem_x_0_AWBURST => load_x_local_U0_m_axi_gmem_x_0_AWBURST,
+        m_axi_gmem_x_0_AWLOCK => load_x_local_U0_m_axi_gmem_x_0_AWLOCK,
+        m_axi_gmem_x_0_AWCACHE => load_x_local_U0_m_axi_gmem_x_0_AWCACHE,
+        m_axi_gmem_x_0_AWPROT => load_x_local_U0_m_axi_gmem_x_0_AWPROT,
+        m_axi_gmem_x_0_AWQOS => load_x_local_U0_m_axi_gmem_x_0_AWQOS,
+        m_axi_gmem_x_0_AWREGION => load_x_local_U0_m_axi_gmem_x_0_AWREGION,
+        m_axi_gmem_x_0_AWUSER => load_x_local_U0_m_axi_gmem_x_0_AWUSER,
+        m_axi_gmem_x_0_WVALID => load_x_local_U0_m_axi_gmem_x_0_WVALID,
+        m_axi_gmem_x_0_WREADY => ap_const_logic_0,
+        m_axi_gmem_x_0_WDATA => load_x_local_U0_m_axi_gmem_x_0_WDATA,
+        m_axi_gmem_x_0_WSTRB => load_x_local_U0_m_axi_gmem_x_0_WSTRB,
+        m_axi_gmem_x_0_WLAST => load_x_local_U0_m_axi_gmem_x_0_WLAST,
+        m_axi_gmem_x_0_WID => load_x_local_U0_m_axi_gmem_x_0_WID,
+        m_axi_gmem_x_0_WUSER => load_x_local_U0_m_axi_gmem_x_0_WUSER,
+        m_axi_gmem_x_0_ARVALID => load_x_local_U0_m_axi_gmem_x_0_ARVALID,
+        m_axi_gmem_x_0_ARREADY => gmem_x_0_ARREADY,
+        m_axi_gmem_x_0_ARADDR => load_x_local_U0_m_axi_gmem_x_0_ARADDR,
+        m_axi_gmem_x_0_ARID => load_x_local_U0_m_axi_gmem_x_0_ARID,
+        m_axi_gmem_x_0_ARLEN => load_x_local_U0_m_axi_gmem_x_0_ARLEN,
+        m_axi_gmem_x_0_ARSIZE => load_x_local_U0_m_axi_gmem_x_0_ARSIZE,
+        m_axi_gmem_x_0_ARBURST => load_x_local_U0_m_axi_gmem_x_0_ARBURST,
+        m_axi_gmem_x_0_ARLOCK => load_x_local_U0_m_axi_gmem_x_0_ARLOCK,
+        m_axi_gmem_x_0_ARCACHE => load_x_local_U0_m_axi_gmem_x_0_ARCACHE,
+        m_axi_gmem_x_0_ARPROT => load_x_local_U0_m_axi_gmem_x_0_ARPROT,
+        m_axi_gmem_x_0_ARQOS => load_x_local_U0_m_axi_gmem_x_0_ARQOS,
+        m_axi_gmem_x_0_ARREGION => load_x_local_U0_m_axi_gmem_x_0_ARREGION,
+        m_axi_gmem_x_0_ARUSER => load_x_local_U0_m_axi_gmem_x_0_ARUSER,
+        m_axi_gmem_x_0_RVALID => gmem_x_0_RVALID,
+        m_axi_gmem_x_0_RREADY => load_x_local_U0_m_axi_gmem_x_0_RREADY,
+        m_axi_gmem_x_0_RDATA => gmem_x_0_RDATA,
+        m_axi_gmem_x_0_RLAST => gmem_x_0_RLAST,
+        m_axi_gmem_x_0_RID => gmem_x_0_RID,
+        m_axi_gmem_x_0_RFIFONUM => gmem_x_0_RFIFONUM,
+        m_axi_gmem_x_0_RUSER => gmem_x_0_RUSER,
+        m_axi_gmem_x_0_RRESP => gmem_x_0_RRESP,
+        m_axi_gmem_x_0_BVALID => ap_const_logic_0,
+        m_axi_gmem_x_0_BREADY => load_x_local_U0_m_axi_gmem_x_0_BREADY,
+        m_axi_gmem_x_0_BRESP => ap_const_lv2_0,
+        m_axi_gmem_x_0_BID => ap_const_lv1_0,
+        m_axi_gmem_x_0_BUSER => ap_const_lv1_0,
         x_batch => x_batch,
         x_local_1_0_0_address0 => load_x_local_U0_x_local_1_0_0_address0,
         x_local_1_0_0_ce0 => load_x_local_U0_x_local_1_0_0_ce0,
@@ -14291,18 +15436,57 @@ begin
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
         ap_start => compute_X1_U0_ap_start,
-        start_full_n => start_for_compute_gate_U0_full_n,
         ap_done => compute_X1_U0_ap_done,
         ap_continue => compute_X1_U0_ap_continue,
         ap_idle => compute_X1_U0_ap_idle,
         ap_ready => compute_X1_U0_ap_ready,
-        start_out => compute_X1_U0_start_out,
-        start_write => compute_X1_U0_start_write,
-        W_dout => W_c_dout,
-        W_empty_n => W_c_empty_n,
-        W_read => compute_X1_U0_W_read,
-        W_num_data_valid => W_c_num_data_valid,
-        W_fifo_cap => W_c_fifo_cap,
+        m_axi_gmem_W_0_AWVALID => compute_X1_U0_m_axi_gmem_W_0_AWVALID,
+        m_axi_gmem_W_0_AWREADY => ap_const_logic_0,
+        m_axi_gmem_W_0_AWADDR => compute_X1_U0_m_axi_gmem_W_0_AWADDR,
+        m_axi_gmem_W_0_AWID => compute_X1_U0_m_axi_gmem_W_0_AWID,
+        m_axi_gmem_W_0_AWLEN => compute_X1_U0_m_axi_gmem_W_0_AWLEN,
+        m_axi_gmem_W_0_AWSIZE => compute_X1_U0_m_axi_gmem_W_0_AWSIZE,
+        m_axi_gmem_W_0_AWBURST => compute_X1_U0_m_axi_gmem_W_0_AWBURST,
+        m_axi_gmem_W_0_AWLOCK => compute_X1_U0_m_axi_gmem_W_0_AWLOCK,
+        m_axi_gmem_W_0_AWCACHE => compute_X1_U0_m_axi_gmem_W_0_AWCACHE,
+        m_axi_gmem_W_0_AWPROT => compute_X1_U0_m_axi_gmem_W_0_AWPROT,
+        m_axi_gmem_W_0_AWQOS => compute_X1_U0_m_axi_gmem_W_0_AWQOS,
+        m_axi_gmem_W_0_AWREGION => compute_X1_U0_m_axi_gmem_W_0_AWREGION,
+        m_axi_gmem_W_0_AWUSER => compute_X1_U0_m_axi_gmem_W_0_AWUSER,
+        m_axi_gmem_W_0_WVALID => compute_X1_U0_m_axi_gmem_W_0_WVALID,
+        m_axi_gmem_W_0_WREADY => ap_const_logic_0,
+        m_axi_gmem_W_0_WDATA => compute_X1_U0_m_axi_gmem_W_0_WDATA,
+        m_axi_gmem_W_0_WSTRB => compute_X1_U0_m_axi_gmem_W_0_WSTRB,
+        m_axi_gmem_W_0_WLAST => compute_X1_U0_m_axi_gmem_W_0_WLAST,
+        m_axi_gmem_W_0_WID => compute_X1_U0_m_axi_gmem_W_0_WID,
+        m_axi_gmem_W_0_WUSER => compute_X1_U0_m_axi_gmem_W_0_WUSER,
+        m_axi_gmem_W_0_ARVALID => compute_X1_U0_m_axi_gmem_W_0_ARVALID,
+        m_axi_gmem_W_0_ARREADY => gmem_W_0_ARREADY,
+        m_axi_gmem_W_0_ARADDR => compute_X1_U0_m_axi_gmem_W_0_ARADDR,
+        m_axi_gmem_W_0_ARID => compute_X1_U0_m_axi_gmem_W_0_ARID,
+        m_axi_gmem_W_0_ARLEN => compute_X1_U0_m_axi_gmem_W_0_ARLEN,
+        m_axi_gmem_W_0_ARSIZE => compute_X1_U0_m_axi_gmem_W_0_ARSIZE,
+        m_axi_gmem_W_0_ARBURST => compute_X1_U0_m_axi_gmem_W_0_ARBURST,
+        m_axi_gmem_W_0_ARLOCK => compute_X1_U0_m_axi_gmem_W_0_ARLOCK,
+        m_axi_gmem_W_0_ARCACHE => compute_X1_U0_m_axi_gmem_W_0_ARCACHE,
+        m_axi_gmem_W_0_ARPROT => compute_X1_U0_m_axi_gmem_W_0_ARPROT,
+        m_axi_gmem_W_0_ARQOS => compute_X1_U0_m_axi_gmem_W_0_ARQOS,
+        m_axi_gmem_W_0_ARREGION => compute_X1_U0_m_axi_gmem_W_0_ARREGION,
+        m_axi_gmem_W_0_ARUSER => compute_X1_U0_m_axi_gmem_W_0_ARUSER,
+        m_axi_gmem_W_0_RVALID => gmem_W_0_RVALID,
+        m_axi_gmem_W_0_RREADY => compute_X1_U0_m_axi_gmem_W_0_RREADY,
+        m_axi_gmem_W_0_RDATA => gmem_W_0_RDATA,
+        m_axi_gmem_W_0_RLAST => gmem_W_0_RLAST,
+        m_axi_gmem_W_0_RID => gmem_W_0_RID,
+        m_axi_gmem_W_0_RFIFONUM => gmem_W_0_RFIFONUM,
+        m_axi_gmem_W_0_RUSER => gmem_W_0_RUSER,
+        m_axi_gmem_W_0_RRESP => gmem_W_0_RRESP,
+        m_axi_gmem_W_0_BVALID => ap_const_logic_0,
+        m_axi_gmem_W_0_BREADY => compute_X1_U0_m_axi_gmem_W_0_BREADY,
+        m_axi_gmem_W_0_BRESP => ap_const_lv2_0,
+        m_axi_gmem_W_0_BID => ap_const_lv1_0,
+        m_axi_gmem_W_0_BUSER => ap_const_lv1_0,
+        W => W,
         x_local_1_0_0_address0 => compute_X1_U0_x_local_1_0_0_address0,
         x_local_1_0_0_ce0 => compute_X1_U0_x_local_1_0_0_ce0,
         x_local_1_0_0_q0 => x_local_1_t_q0,
@@ -14687,16 +15871,11 @@ begin
         x_local_1_7_15_address0 => compute_X1_U0_x_local_1_7_15_address0,
         x_local_1_7_15_ce0 => compute_X1_U0_x_local_1_7_15_ce0,
         x_local_1_7_15_q0 => x_local_1_127_t_q0,
-        x_scale_dout => x_scale_c1_dout,
-        x_scale_empty_n => x_scale_c1_empty_n,
-        x_scale_read => compute_X1_U0_x_scale_read,
-        x_scale_num_data_valid => x_scale_c1_num_data_valid,
-        x_scale_fifo_cap => x_scale_c1_fifo_cap,
-        X1_cache_din => compute_X1_U0_X1_cache_din,
-        X1_cache_full_n => X1_cache_full_n,
-        X1_cache_write => compute_X1_U0_X1_cache_write,
-        X1_cache_num_data_valid => X1_cache_num_data_valid,
-        X1_cache_fifo_cap => X1_cache_fifo_cap);
+        x_scale => x_scale,
+        X1_cache_address1 => compute_X1_U0_X1_cache_address1,
+        X1_cache_ce1 => compute_X1_U0_X1_cache_ce1,
+        X1_cache_we1 => compute_X1_U0_X1_cache_we1,
+        X1_cache_d1 => compute_X1_U0_X1_cache_d1);
 
     compute_X2_U0 : component swiglu_compute_X2
     port map (
@@ -14707,11 +15886,53 @@ begin
         ap_continue => compute_X2_U0_ap_continue,
         ap_idle => compute_X2_U0_ap_idle,
         ap_ready => compute_X2_U0_ap_ready,
-        V_dout => V_c_dout,
-        V_empty_n => V_c_empty_n,
-        V_read => compute_X2_U0_V_read,
-        V_num_data_valid => V_c_num_data_valid,
-        V_fifo_cap => V_c_fifo_cap,
+        m_axi_gmem_V_0_AWVALID => compute_X2_U0_m_axi_gmem_V_0_AWVALID,
+        m_axi_gmem_V_0_AWREADY => ap_const_logic_0,
+        m_axi_gmem_V_0_AWADDR => compute_X2_U0_m_axi_gmem_V_0_AWADDR,
+        m_axi_gmem_V_0_AWID => compute_X2_U0_m_axi_gmem_V_0_AWID,
+        m_axi_gmem_V_0_AWLEN => compute_X2_U0_m_axi_gmem_V_0_AWLEN,
+        m_axi_gmem_V_0_AWSIZE => compute_X2_U0_m_axi_gmem_V_0_AWSIZE,
+        m_axi_gmem_V_0_AWBURST => compute_X2_U0_m_axi_gmem_V_0_AWBURST,
+        m_axi_gmem_V_0_AWLOCK => compute_X2_U0_m_axi_gmem_V_0_AWLOCK,
+        m_axi_gmem_V_0_AWCACHE => compute_X2_U0_m_axi_gmem_V_0_AWCACHE,
+        m_axi_gmem_V_0_AWPROT => compute_X2_U0_m_axi_gmem_V_0_AWPROT,
+        m_axi_gmem_V_0_AWQOS => compute_X2_U0_m_axi_gmem_V_0_AWQOS,
+        m_axi_gmem_V_0_AWREGION => compute_X2_U0_m_axi_gmem_V_0_AWREGION,
+        m_axi_gmem_V_0_AWUSER => compute_X2_U0_m_axi_gmem_V_0_AWUSER,
+        m_axi_gmem_V_0_WVALID => compute_X2_U0_m_axi_gmem_V_0_WVALID,
+        m_axi_gmem_V_0_WREADY => ap_const_logic_0,
+        m_axi_gmem_V_0_WDATA => compute_X2_U0_m_axi_gmem_V_0_WDATA,
+        m_axi_gmem_V_0_WSTRB => compute_X2_U0_m_axi_gmem_V_0_WSTRB,
+        m_axi_gmem_V_0_WLAST => compute_X2_U0_m_axi_gmem_V_0_WLAST,
+        m_axi_gmem_V_0_WID => compute_X2_U0_m_axi_gmem_V_0_WID,
+        m_axi_gmem_V_0_WUSER => compute_X2_U0_m_axi_gmem_V_0_WUSER,
+        m_axi_gmem_V_0_ARVALID => compute_X2_U0_m_axi_gmem_V_0_ARVALID,
+        m_axi_gmem_V_0_ARREADY => gmem_V_0_ARREADY,
+        m_axi_gmem_V_0_ARADDR => compute_X2_U0_m_axi_gmem_V_0_ARADDR,
+        m_axi_gmem_V_0_ARID => compute_X2_U0_m_axi_gmem_V_0_ARID,
+        m_axi_gmem_V_0_ARLEN => compute_X2_U0_m_axi_gmem_V_0_ARLEN,
+        m_axi_gmem_V_0_ARSIZE => compute_X2_U0_m_axi_gmem_V_0_ARSIZE,
+        m_axi_gmem_V_0_ARBURST => compute_X2_U0_m_axi_gmem_V_0_ARBURST,
+        m_axi_gmem_V_0_ARLOCK => compute_X2_U0_m_axi_gmem_V_0_ARLOCK,
+        m_axi_gmem_V_0_ARCACHE => compute_X2_U0_m_axi_gmem_V_0_ARCACHE,
+        m_axi_gmem_V_0_ARPROT => compute_X2_U0_m_axi_gmem_V_0_ARPROT,
+        m_axi_gmem_V_0_ARQOS => compute_X2_U0_m_axi_gmem_V_0_ARQOS,
+        m_axi_gmem_V_0_ARREGION => compute_X2_U0_m_axi_gmem_V_0_ARREGION,
+        m_axi_gmem_V_0_ARUSER => compute_X2_U0_m_axi_gmem_V_0_ARUSER,
+        m_axi_gmem_V_0_RVALID => gmem_V_0_RVALID,
+        m_axi_gmem_V_0_RREADY => compute_X2_U0_m_axi_gmem_V_0_RREADY,
+        m_axi_gmem_V_0_RDATA => gmem_V_0_RDATA,
+        m_axi_gmem_V_0_RLAST => gmem_V_0_RLAST,
+        m_axi_gmem_V_0_RID => gmem_V_0_RID,
+        m_axi_gmem_V_0_RFIFONUM => gmem_V_0_RFIFONUM,
+        m_axi_gmem_V_0_RUSER => gmem_V_0_RUSER,
+        m_axi_gmem_V_0_RRESP => gmem_V_0_RRESP,
+        m_axi_gmem_V_0_BVALID => ap_const_logic_0,
+        m_axi_gmem_V_0_BREADY => compute_X2_U0_m_axi_gmem_V_0_BREADY,
+        m_axi_gmem_V_0_BRESP => ap_const_lv2_0,
+        m_axi_gmem_V_0_BID => ap_const_lv1_0,
+        m_axi_gmem_V_0_BUSER => ap_const_lv1_0,
+        V => V,
         x_local_2_0_0_address0 => compute_X2_U0_x_local_2_0_0_address0,
         x_local_2_0_0_ce0 => compute_X2_U0_x_local_2_0_0_ce0,
         x_local_2_0_0_q0 => x_local_2_t_q0,
@@ -15096,16 +16317,11 @@ begin
         x_local_2_7_15_address0 => compute_X2_U0_x_local_2_7_15_address0,
         x_local_2_7_15_ce0 => compute_X2_U0_x_local_2_7_15_ce0,
         x_local_2_7_15_q0 => x_local_2_127_t_q0,
-        x_scale_dout => x_scale_c_dout,
-        x_scale_empty_n => x_scale_c_empty_n,
-        x_scale_read => compute_X2_U0_x_scale_read,
-        x_scale_num_data_valid => x_scale_c_num_data_valid,
-        x_scale_fifo_cap => x_scale_c_fifo_cap,
-        X2_cache_din => compute_X2_U0_X2_cache_din,
-        X2_cache_full_n => X2_cache_full_n,
-        X2_cache_write => compute_X2_U0_X2_cache_write,
-        X2_cache_num_data_valid => X2_cache_num_data_valid,
-        X2_cache_fifo_cap => X2_cache_fifo_cap);
+        x_scale => x_scale,
+        X2_cache_address1 => compute_X2_U0_X2_cache_address1,
+        X2_cache_ce1 => compute_X2_U0_X2_cache_ce1,
+        X2_cache_we1 => compute_X2_U0_X2_cache_we1,
+        X2_cache_d1 => compute_X2_U0_X2_cache_d1);
 
     compute_gate_U0 : component swiglu_compute_gate
     port map (
@@ -15116,16 +16332,12 @@ begin
         ap_continue => compute_gate_U0_ap_continue,
         ap_idle => compute_gate_U0_ap_idle,
         ap_ready => compute_gate_U0_ap_ready,
-        X1_cache_dout => X1_cache_dout,
-        X1_cache_empty_n => X1_cache_empty_n,
-        X1_cache_read => compute_gate_U0_X1_cache_read,
-        X1_cache_num_data_valid => X1_cache_num_data_valid,
-        X1_cache_fifo_cap => X1_cache_fifo_cap,
-        X2_cache_dout => X2_cache_dout,
-        X2_cache_empty_n => X2_cache_empty_n,
-        X2_cache_read => compute_gate_U0_X2_cache_read,
-        X2_cache_num_data_valid => X2_cache_num_data_valid,
-        X2_cache_fifo_cap => X2_cache_fifo_cap,
+        X1_cache_address0 => compute_gate_U0_X1_cache_address0,
+        X1_cache_ce0 => compute_gate_U0_X1_cache_ce0,
+        X1_cache_q0 => X1_cache_t_q0,
+        X2_cache_address0 => compute_gate_U0_X2_cache_address0,
+        X2_cache_ce0 => compute_gate_U0_X2_cache_ce0,
+        X2_cache_q0 => X2_cache_t_q0,
         gate_cache_0_address1 => compute_gate_U0_gate_cache_0_address1,
         gate_cache_0_ce1 => compute_gate_U0_gate_cache_0_ce1,
         gate_cache_0_we1 => compute_gate_U0_gate_cache_0_we1,
@@ -15266,11 +16478,53 @@ begin
         ap_idle => compute_output_U0_ap_idle,
         ap_ready => compute_output_U0_ap_ready,
         p_read => gate_scale_dout,
-        W_down_dout => W_down_c_dout,
-        W_down_empty_n => W_down_c_empty_n,
-        W_down_read => compute_output_U0_W_down_read,
-        W_down_num_data_valid => W_down_c_num_data_valid,
-        W_down_fifo_cap => W_down_c_fifo_cap,
+        m_axi_gmem_Wd_0_AWVALID => compute_output_U0_m_axi_gmem_Wd_0_AWVALID,
+        m_axi_gmem_Wd_0_AWREADY => ap_const_logic_0,
+        m_axi_gmem_Wd_0_AWADDR => compute_output_U0_m_axi_gmem_Wd_0_AWADDR,
+        m_axi_gmem_Wd_0_AWID => compute_output_U0_m_axi_gmem_Wd_0_AWID,
+        m_axi_gmem_Wd_0_AWLEN => compute_output_U0_m_axi_gmem_Wd_0_AWLEN,
+        m_axi_gmem_Wd_0_AWSIZE => compute_output_U0_m_axi_gmem_Wd_0_AWSIZE,
+        m_axi_gmem_Wd_0_AWBURST => compute_output_U0_m_axi_gmem_Wd_0_AWBURST,
+        m_axi_gmem_Wd_0_AWLOCK => compute_output_U0_m_axi_gmem_Wd_0_AWLOCK,
+        m_axi_gmem_Wd_0_AWCACHE => compute_output_U0_m_axi_gmem_Wd_0_AWCACHE,
+        m_axi_gmem_Wd_0_AWPROT => compute_output_U0_m_axi_gmem_Wd_0_AWPROT,
+        m_axi_gmem_Wd_0_AWQOS => compute_output_U0_m_axi_gmem_Wd_0_AWQOS,
+        m_axi_gmem_Wd_0_AWREGION => compute_output_U0_m_axi_gmem_Wd_0_AWREGION,
+        m_axi_gmem_Wd_0_AWUSER => compute_output_U0_m_axi_gmem_Wd_0_AWUSER,
+        m_axi_gmem_Wd_0_WVALID => compute_output_U0_m_axi_gmem_Wd_0_WVALID,
+        m_axi_gmem_Wd_0_WREADY => ap_const_logic_0,
+        m_axi_gmem_Wd_0_WDATA => compute_output_U0_m_axi_gmem_Wd_0_WDATA,
+        m_axi_gmem_Wd_0_WSTRB => compute_output_U0_m_axi_gmem_Wd_0_WSTRB,
+        m_axi_gmem_Wd_0_WLAST => compute_output_U0_m_axi_gmem_Wd_0_WLAST,
+        m_axi_gmem_Wd_0_WID => compute_output_U0_m_axi_gmem_Wd_0_WID,
+        m_axi_gmem_Wd_0_WUSER => compute_output_U0_m_axi_gmem_Wd_0_WUSER,
+        m_axi_gmem_Wd_0_ARVALID => compute_output_U0_m_axi_gmem_Wd_0_ARVALID,
+        m_axi_gmem_Wd_0_ARREADY => gmem_Wd_0_ARREADY,
+        m_axi_gmem_Wd_0_ARADDR => compute_output_U0_m_axi_gmem_Wd_0_ARADDR,
+        m_axi_gmem_Wd_0_ARID => compute_output_U0_m_axi_gmem_Wd_0_ARID,
+        m_axi_gmem_Wd_0_ARLEN => compute_output_U0_m_axi_gmem_Wd_0_ARLEN,
+        m_axi_gmem_Wd_0_ARSIZE => compute_output_U0_m_axi_gmem_Wd_0_ARSIZE,
+        m_axi_gmem_Wd_0_ARBURST => compute_output_U0_m_axi_gmem_Wd_0_ARBURST,
+        m_axi_gmem_Wd_0_ARLOCK => compute_output_U0_m_axi_gmem_Wd_0_ARLOCK,
+        m_axi_gmem_Wd_0_ARCACHE => compute_output_U0_m_axi_gmem_Wd_0_ARCACHE,
+        m_axi_gmem_Wd_0_ARPROT => compute_output_U0_m_axi_gmem_Wd_0_ARPROT,
+        m_axi_gmem_Wd_0_ARQOS => compute_output_U0_m_axi_gmem_Wd_0_ARQOS,
+        m_axi_gmem_Wd_0_ARREGION => compute_output_U0_m_axi_gmem_Wd_0_ARREGION,
+        m_axi_gmem_Wd_0_ARUSER => compute_output_U0_m_axi_gmem_Wd_0_ARUSER,
+        m_axi_gmem_Wd_0_RVALID => gmem_Wd_0_RVALID,
+        m_axi_gmem_Wd_0_RREADY => compute_output_U0_m_axi_gmem_Wd_0_RREADY,
+        m_axi_gmem_Wd_0_RDATA => gmem_Wd_0_RDATA,
+        m_axi_gmem_Wd_0_RLAST => gmem_Wd_0_RLAST,
+        m_axi_gmem_Wd_0_RID => gmem_Wd_0_RID,
+        m_axi_gmem_Wd_0_RFIFONUM => gmem_Wd_0_RFIFONUM,
+        m_axi_gmem_Wd_0_RUSER => gmem_Wd_0_RUSER,
+        m_axi_gmem_Wd_0_RRESP => gmem_Wd_0_RRESP,
+        m_axi_gmem_Wd_0_BVALID => ap_const_logic_0,
+        m_axi_gmem_Wd_0_BREADY => compute_output_U0_m_axi_gmem_Wd_0_BREADY,
+        m_axi_gmem_Wd_0_BRESP => ap_const_lv2_0,
+        m_axi_gmem_Wd_0_BID => ap_const_lv1_0,
+        m_axi_gmem_Wd_0_BUSER => ap_const_lv1_0,
+        W_down => W_down,
         gate_cache_0_address0 => compute_output_U0_gate_cache_0_address0,
         gate_cache_0_ce0 => compute_output_U0_gate_cache_0_ce0,
         gate_cache_0_q0 => gate_cache_t_q0,
@@ -15413,151 +16667,8 @@ begin
         m_axi_gmem_out_0_BRESP => gmem_out_0_BRESP,
         m_axi_gmem_out_0_BID => gmem_out_0_BID,
         m_axi_gmem_out_0_BUSER => gmem_out_0_BUSER,
-        out_batch_dout => out_batch_c_dout,
-        out_batch_empty_n => out_batch_c_empty_n,
-        out_batch_read => compute_output_U0_out_batch_read,
-        out_batch_num_data_valid => out_batch_c_num_data_valid,
-        out_batch_fifo_cap => out_batch_c_fifo_cap,
-        down_quant_mode_dout => down_quant_mode_c_dout,
-        down_quant_mode_empty_n => down_quant_mode_c_empty_n,
-        down_quant_mode_read => compute_output_U0_down_quant_mode_read,
-        down_quant_mode_num_data_valid => down_quant_mode_c_num_data_valid,
-        down_quant_mode_fifo_cap => down_quant_mode_c_fifo_cap);
-
-    W_c_U : component swiglu_fifo_w8_d3_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => entry_proc_U0_W_c_din,
-        if_full_n => W_c_full_n,
-        if_write => entry_proc_U0_W_c_write,
-        if_dout => W_c_dout,
-        if_empty_n => W_c_empty_n,
-        if_read => compute_X1_U0_W_read,
-        if_num_data_valid => W_c_num_data_valid,
-        if_fifo_cap => W_c_fifo_cap);
-
-    V_c_U : component swiglu_fifo_w8_d3_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => entry_proc_U0_V_c_din,
-        if_full_n => V_c_full_n,
-        if_write => entry_proc_U0_V_c_write,
-        if_dout => V_c_dout,
-        if_empty_n => V_c_empty_n,
-        if_read => compute_X2_U0_V_read,
-        if_num_data_valid => V_c_num_data_valid,
-        if_fifo_cap => V_c_fifo_cap);
-
-    W_down_c_U : component swiglu_fifo_w8_d5_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => entry_proc_U0_W_down_c_din,
-        if_full_n => W_down_c_full_n,
-        if_write => entry_proc_U0_W_down_c_write,
-        if_dout => W_down_c_dout,
-        if_empty_n => W_down_c_empty_n,
-        if_read => compute_output_U0_W_down_read,
-        if_num_data_valid => W_down_c_num_data_valid,
-        if_fifo_cap => W_down_c_fifo_cap);
-
-    out_batch_c_U : component swiglu_fifo_w64_d5_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => entry_proc_U0_out_batch_c_din,
-        if_full_n => out_batch_c_full_n,
-        if_write => entry_proc_U0_out_batch_c_write,
-        if_dout => out_batch_c_dout,
-        if_empty_n => out_batch_c_empty_n,
-        if_read => compute_output_U0_out_batch_read,
-        if_num_data_valid => out_batch_c_num_data_valid,
-        if_fifo_cap => out_batch_c_fifo_cap);
-
-    down_quant_mode_c_U : component swiglu_fifo_w32_d5_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => entry_proc_U0_down_quant_mode_c_din,
-        if_full_n => down_quant_mode_c_full_n,
-        if_write => entry_proc_U0_down_quant_mode_c_write,
-        if_dout => down_quant_mode_c_dout,
-        if_empty_n => down_quant_mode_c_empty_n,
-        if_read => compute_output_U0_down_quant_mode_read,
-        if_num_data_valid => down_quant_mode_c_num_data_valid,
-        if_fifo_cap => down_quant_mode_c_fifo_cap);
-
-    x_scale_c_U : component swiglu_fifo_w32_d3_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => entry_proc_U0_x_scale_c_din,
-        if_full_n => x_scale_c_full_n,
-        if_write => entry_proc_U0_x_scale_c_write,
-        if_dout => x_scale_c_dout,
-        if_empty_n => x_scale_c_empty_n,
-        if_read => compute_X2_U0_x_scale_read,
-        if_num_data_valid => x_scale_c_num_data_valid,
-        if_fifo_cap => x_scale_c_fifo_cap);
-
-    x_scale_c1_U : component swiglu_fifo_w32_d3_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => entry_proc_U0_x_scale_c1_din,
-        if_full_n => x_scale_c1_full_n,
-        if_write => entry_proc_U0_x_scale_c1_write,
-        if_dout => x_scale_c1_dout,
-        if_empty_n => x_scale_c1_empty_n,
-        if_read => compute_X1_U0_x_scale_read,
-        if_num_data_valid => x_scale_c1_num_data_valid,
-        if_fifo_cap => x_scale_c1_fifo_cap);
-
-    X1_cache_U : component swiglu_fifo_w32_d16_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => compute_X1_U0_X1_cache_din,
-        if_full_n => X1_cache_full_n,
-        if_write => compute_X1_U0_X1_cache_write,
-        if_dout => X1_cache_dout,
-        if_empty_n => X1_cache_empty_n,
-        if_read => compute_gate_U0_X1_cache_read,
-        if_num_data_valid => X1_cache_num_data_valid,
-        if_fifo_cap => X1_cache_fifo_cap);
-
-    X2_cache_U : component swiglu_fifo_w32_d16_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => compute_X2_U0_X2_cache_din,
-        if_full_n => X2_cache_full_n,
-        if_write => compute_X2_U0_X2_cache_write,
-        if_dout => X2_cache_dout,
-        if_empty_n => X2_cache_empty_n,
-        if_read => compute_gate_U0_X2_cache_read,
-        if_num_data_valid => X2_cache_num_data_valid,
-        if_fifo_cap => X2_cache_fifo_cap);
+        out_batch => out_batch,
+        down_quant_mode => down_quant_mode);
 
     gate_scale_U : component swiglu_fifo_w32_d2_S
     port map (
@@ -15573,19 +16684,6 @@ begin
         if_read => compute_output_U0_ap_ready,
         if_num_data_valid => gate_scale_num_data_valid,
         if_fifo_cap => gate_scale_fifo_cap);
-
-    start_for_compute_gate_U0_U : component swiglu_start_for_compute_gate_U0
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => start_for_compute_gate_U0_din,
-        if_full_n => start_for_compute_gate_U0_full_n,
-        if_write => compute_X1_U0_start_write,
-        if_dout => start_for_compute_gate_U0_dout,
-        if_empty_n => start_for_compute_gate_U0_empty_n,
-        if_read => compute_gate_U0_ap_ready);
 
 
 
@@ -15655,16 +16753,48 @@ begin
     end process;
 
 
-    ap_sync_reg_entry_proc_U0_ap_ready_assign_proc : process(ap_clk)
+    ap_sync_reg_compute_X1_U0_ap_ready_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst_n_inv = '1') then
-                ap_sync_reg_entry_proc_U0_ap_ready <= ap_const_logic_0;
+                ap_sync_reg_compute_X1_U0_ap_ready <= ap_const_logic_0;
             else
                 if (((ap_sync_ready and ap_start) = ap_const_logic_1)) then 
-                    ap_sync_reg_entry_proc_U0_ap_ready <= ap_const_logic_0;
+                    ap_sync_reg_compute_X1_U0_ap_ready <= ap_const_logic_0;
                 else 
-                    ap_sync_reg_entry_proc_U0_ap_ready <= ap_sync_entry_proc_U0_ap_ready;
+                    ap_sync_reg_compute_X1_U0_ap_ready <= ap_sync_compute_X1_U0_ap_ready;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_compute_X2_U0_ap_ready_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst_n_inv = '1') then
+                ap_sync_reg_compute_X2_U0_ap_ready <= ap_const_logic_0;
+            else
+                if (((ap_sync_ready and ap_start) = ap_const_logic_1)) then 
+                    ap_sync_reg_compute_X2_U0_ap_ready <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_compute_X2_U0_ap_ready <= ap_sync_compute_X2_U0_ap_ready;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+
+    ap_sync_reg_compute_output_U0_ap_ready_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst_n_inv = '1') then
+                ap_sync_reg_compute_output_U0_ap_ready <= ap_const_logic_0;
+            else
+                if (((ap_sync_ready and ap_start) = ap_const_logic_1)) then 
+                    ap_sync_reg_compute_output_U0_ap_ready <= ap_const_logic_0;
+                else 
+                    ap_sync_reg_compute_output_U0_ap_ready <= ap_sync_compute_output_U0_ap_ready;
                 end if; 
             end if;
         end if;
@@ -15691,7 +16821,7 @@ begin
     ap_channel_done_x_local_1_127 <= (load_x_local_U0_ap_done and (ap_sync_reg_channel_write_x_local_1_127 xor ap_const_logic_1));
     ap_channel_done_x_local_2_127 <= (load_x_local_U0_ap_done and (ap_sync_reg_channel_write_x_local_2_127 xor ap_const_logic_1));
     ap_done <= compute_output_U0_ap_done;
-    ap_idle <= (load_x_local_U0_ap_idle and (gate_scale_empty_n xor ap_const_logic_1) and (x_local_2_127_t_empty_n xor ap_const_logic_1) and (x_local_1_127_t_empty_n xor ap_const_logic_1) and entry_proc_U0_ap_idle and compute_output_U0_ap_idle and compute_gate_U0_ap_idle and compute_X2_U0_ap_idle and compute_X1_U0_ap_idle);
+    ap_idle <= (load_x_local_U0_ap_idle and (x_local_2_127_t_empty_n xor ap_const_logic_1) and (x_local_1_127_t_empty_n xor ap_const_logic_1) and (ap_const_logic_1 xor X2_cache_t_empty_n) and (ap_const_logic_1 xor X1_cache_t_empty_n) and (gate_scale_empty_n xor ap_const_logic_1) and compute_output_U0_ap_idle and compute_gate_U0_ap_idle and compute_X2_U0_ap_idle and compute_X1_U0_ap_idle);
     ap_ready <= ap_sync_ready;
 
     ap_rst_n_inv_assign_proc : process(ap_rst_n)
@@ -15703,26 +16833,41 @@ begin
     ap_sync_channel_write_gate_scale <= ((gate_scale_full_n and ap_channel_done_gate_scale) or ap_sync_reg_channel_write_gate_scale);
     ap_sync_channel_write_x_local_1_127 <= ((load_x_local_U0_x_local_1_7_15_full_n and ap_channel_done_x_local_1_127) or ap_sync_reg_channel_write_x_local_1_127);
     ap_sync_channel_write_x_local_2_127 <= ((load_x_local_U0_x_local_2_7_15_full_n and ap_channel_done_x_local_2_127) or ap_sync_reg_channel_write_x_local_2_127);
-    ap_sync_entry_proc_U0_ap_ready <= (entry_proc_U0_ap_ready or ap_sync_reg_entry_proc_U0_ap_ready);
+    ap_sync_compute_X1_U0_ap_ready <= (compute_X1_U0_ap_ready or ap_sync_reg_compute_X1_U0_ap_ready);
+    ap_sync_compute_X2_U0_ap_ready <= (compute_X2_U0_ap_ready or ap_sync_reg_compute_X2_U0_ap_ready);
+    ap_sync_compute_output_U0_ap_ready <= (compute_output_U0_ap_ready or ap_sync_reg_compute_output_U0_ap_ready);
     ap_sync_load_x_local_U0_ap_ready <= (load_x_local_U0_ap_ready or ap_sync_reg_load_x_local_U0_ap_ready);
-    ap_sync_ready <= (ap_sync_load_x_local_U0_ap_ready and ap_sync_entry_proc_U0_ap_ready);
-    compute_X1_U0_ap_continue <= ap_const_logic_1;
-    compute_X1_U0_ap_start <= x_local_1_127_t_empty_n;
-    compute_X2_U0_ap_continue <= ap_const_logic_1;
-    compute_X2_U0_ap_start <= x_local_2_127_t_empty_n;
+    ap_sync_ready <= (ap_sync_load_x_local_U0_ap_ready and ap_sync_compute_output_U0_ap_ready and ap_sync_compute_X2_U0_ap_ready and ap_sync_compute_X1_U0_ap_ready);
+    compute_X1_U0_ap_continue <= X1_cache_i_full_n;
+    compute_X1_U0_ap_start <= (x_local_1_127_t_empty_n and (ap_sync_reg_compute_X1_U0_ap_ready xor ap_const_logic_1) and ap_start and ap_const_logic_1);
+    compute_X2_U0_ap_continue <= X2_cache_i_full_n;
+    compute_X2_U0_ap_start <= (x_local_2_127_t_empty_n and (ap_sync_reg_compute_X2_U0_ap_ready xor ap_const_logic_1) and ap_start and ap_const_logic_1);
     compute_gate_U0_ap_continue <= ap_sync_channel_write_gate_cache_31;
-    compute_gate_U0_ap_start <= start_for_compute_gate_U0_empty_n;
+    compute_gate_U0_ap_start <= (X2_cache_t_empty_n and X1_cache_t_empty_n);
     compute_gate_U0_gate_cache_31_full_n <= gate_cache_31_i_full_n;
     compute_output_U0_ap_continue <= ap_const_logic_1;
-    compute_output_U0_ap_start <= gate_scale_empty_n;
-    entry_proc_U0_ap_continue <= ap_const_logic_1;
-    entry_proc_U0_ap_start <= ((ap_sync_reg_entry_proc_U0_ap_ready xor ap_const_logic_1) and ap_start and ap_const_logic_1);
+    compute_output_U0_ap_start <= (gate_scale_empty_n and (ap_sync_reg_compute_output_U0_ap_ready xor ap_const_logic_1) and ap_start and ap_const_logic_1);
+    gmem_V_0_RID <= ap_const_lv1_0;
+    gmem_V_0_RLAST <= ap_const_logic_0;
+    gmem_V_0_RRESP <= ap_const_lv2_0;
+    gmem_V_0_RUSER <= ap_const_lv1_0;
+    gmem_W_0_RID <= ap_const_lv1_0;
+    gmem_W_0_RLAST <= ap_const_logic_0;
+    gmem_W_0_RRESP <= ap_const_lv2_0;
+    gmem_W_0_RUSER <= ap_const_lv1_0;
+    gmem_Wd_0_RID <= ap_const_lv1_0;
+    gmem_Wd_0_RLAST <= ap_const_logic_0;
+    gmem_Wd_0_RRESP <= ap_const_lv2_0;
+    gmem_Wd_0_RUSER <= ap_const_lv1_0;
     gmem_out_0_BID <= ap_const_lv1_0;
     gmem_out_0_BRESP <= ap_const_lv2_0;
     gmem_out_0_BUSER <= ap_const_lv1_0;
+    gmem_x_0_RID <= ap_const_lv1_0;
+    gmem_x_0_RLAST <= ap_const_logic_0;
+    gmem_x_0_RRESP <= ap_const_lv2_0;
+    gmem_x_0_RUSER <= ap_const_lv1_0;
     load_x_local_U0_ap_continue <= (ap_sync_channel_write_x_local_2_127 and ap_sync_channel_write_x_local_1_127);
     load_x_local_U0_ap_start <= ((ap_sync_reg_load_x_local_U0_ap_ready xor ap_const_logic_1) and ap_start and ap_const_logic_1);
     load_x_local_U0_x_local_1_7_15_full_n <= x_local_1_127_i_full_n;
     load_x_local_U0_x_local_2_7_15_full_n <= x_local_2_127_i_full_n;
-    start_for_compute_gate_U0_din <= (0=>ap_const_logic_1, others=>'-');
 end behav;

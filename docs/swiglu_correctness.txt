@@ -47,3 +47,37 @@ Q4_K_WORDS=9: nested b×w loop, no division	✓	Lines 99–104, 314–319
 3D gate_cache [batch][32][256] with dim=2 complete	✓	Lines 568–570
 dim=0 complete on int_acc_w/m	✓	Lines 163–164, 366–367
 Q6K retains UNROLL factor=8 (non-integer stride, cannot loop-invert)	✓	Line 448
+
+Resource Over-utilization Fixes (2026-03-29)
+Three synthesis failures (LUT/FF/BRAM overuse) corrected:
+
+1. Caller-side partition mismatch (→ F7/F8/LUT explosion)
+   load_row_wv and mac_blocks_wv are INLINE off and declare `dim=1 complete` on their rb
+   parameter. The local row_buf in compute_X1 / compute_X2 / compute_output (Q4K path) lacked
+   a matching pragma. HLS was generating large mux trees to bridge the unpartitioned single-port
+   caller storage to the 8-port (or 32-port) callee interface.
+   Fix: added `#pragma HLS ARRAY_PARTITION variable=row_buf dim=1 complete` immediately after
+   each local row_buf declaration in compute_X1, compute_X2, and the DOWN_Q4K loop in
+   compute_output.
+   Performance impact: none — loop structure and II unchanged.
+
+2. Q6K rb complete partition (→ FDRE/Slice register explosion)
+   rb[DOWN_Q6K_WORDS] = rb[420] with `complete` partition created 420 × 128-bit = 53,760
+   individual flip-flop registers, exceeding the ZU5EV's 234,944 FDRE limit when combined
+   with the rest of the design.
+   Fix: changed `complete` to `cyclic factor=16` on rb in load_row_down_q6k,
+   mac_blocks_down_q6k, and the local row_buf in the DOWN_Q6K loop of compute_output.
+   16 cyclic banks of ~27 entries each map to distributed RAM instead of FFs.
+   Performance impact: minor — cyclic factor=16 may raise MAC_Q6K II slightly above 1
+   under 8-way concurrent access. Q4K path and X1/X2 matvecs are unaffected.
+
+3. STREAM pragma on 2D float cache (→ BRAM ping-pong overuse)
+   `#pragma HLS STREAM depth=16` on 2D float arrays X1_cache[1][8192] and X2_cache[1][8192]
+   was not properly converted to FIFOs by HLS (STREAM on 2D arrays is unreliable). HLS fell
+   back to ping-pong BRAM double-buffers: 2 × 32 BRAM_18K × 2 caches = 128 BRAM_18K, pushing
+   the design over the 288-block limit (304 required).
+   Fix: removed STREAM pragmas; replaced with:
+     #pragma HLS ARRAY_PARTITION variable=X1_cache dim=1 complete
+     #pragma HLS BIND_STORAGE variable=X1_cache type=ram_2p impl=uram
+   (and same for X2_cache). Forces the two 32KB caches into URAM (1 block each vs 32 BRAM_18K).
+   Performance impact: none — access pattern is sequential; URAM latency matches BRAM.

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q6k_Pipeline_1'" level="0">
-<item name = "Date">Sat Mar 28 22:37:36 2026
+<item name = "Date">Sun Mar 29 14:22:46 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -78,8 +78,8 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="empty_99_fu_136_p2">+, 0, 0, 12, 4, 1</column>
-<column name="exitcond32_fu_130_p2">icmp, 0, 0, 12, 4, 5</column>
+<column name="empty_90_fu_136_p2">+, 0, 0, 12, 4, 1</column>
+<column name="exitcond33_fu_130_p2">icmp, 0, 0, 12, 4, 5</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">

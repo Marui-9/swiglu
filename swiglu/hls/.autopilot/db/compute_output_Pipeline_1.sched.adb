@@ -52,7 +52,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>sext_ln490</name>
+						<name>sext_ln513</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -170,7 +170,7 @@
 					<Obj>
 						<type>0</type>
 						<id>5</id>
-						<name>sext_ln490_read</name>
+						<name>sext_ln513_read</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -213,7 +213,7 @@
 					<Obj>
 						<type>0</type>
 						<id>6</id>
-						<name>sext_ln490_cast</name>
+						<name>sext_ln513_cast</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -367,7 +367,7 @@
 					<count>2</count>
 					<item_version>0</item_version>
 					<item>39</item>
-					<item>115</item>
+					<item>116</item>
 				</oprand_edges>
 				<opcode>load</opcode>
 				<m_Display>0</m_Display>
@@ -516,7 +516,7 @@
 						<name>gmem_out_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>490</lineNumber>
+						<lineNumber>513</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -532,14 +532,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>585</second>
+										<second>611</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>490</second>
+										<second>513</second>
 									</item>
 								</second>
 							</item>
@@ -705,7 +705,7 @@
 					<Obj>
 						<type>0</type>
 						<id>22</id>
-						<name>empty_146</name>
+						<name>empty_138</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -747,10 +747,10 @@
 					<Obj>
 						<type>0</type>
 						<id>23</id>
-						<name>gmem_out_addr_write_ln490</name>
+						<name>gmem_out_addr_write_ln513</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>490</lineNumber>
+						<lineNumber>513</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -766,14 +766,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>585</second>
+										<second>611</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>490</second>
+										<second>513</second>
 									</item>
 								</second>
 							</item>
@@ -841,8 +841,8 @@
 					<item_version>0</item_version>
 					<item>64</item>
 					<item>65</item>
-					<item>116</item>
 					<item>117</item>
+					<item>118</item>
 				</oprand_edges>
 				<opcode>store</opcode>
 				<m_Display>0</m_Display>
@@ -1469,49 +1469,49 @@
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_60">
-				<id>111</id>
+				<id>112</id>
 				<edge_type>2</edge_type>
 				<source_obj>10</source_obj>
 				<sink_obj>15</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_61">
-				<id>112</id>
+				<id>113</id>
 				<edge_type>2</edge_type>
 				<source_obj>15</source_obj>
 				<sink_obj>28</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_62">
-				<id>113</id>
+				<id>114</id>
 				<edge_type>2</edge_type>
 				<source_obj>15</source_obj>
 				<sink_obj>26</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_63">
-				<id>114</id>
+				<id>115</id>
 				<edge_type>2</edge_type>
 				<source_obj>26</source_obj>
 				<sink_obj>15</sink_obj>
 				<is_back_edge>1</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_64">
-				<id>115</id>
+				<id>116</id>
 				<edge_type>4</edge_type>
 				<source_obj>8</source_obj>
 				<sink_obj>11</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_65">
-				<id>116</id>
+				<id>117</id>
 				<edge_type>4</edge_type>
 				<source_obj>8</source_obj>
 				<sink_obj>24</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_66">
-				<id>117</id>
+				<id>118</id>
 				<edge_type>4</edge_type>
 				<source_obj>11</source_obj>
 				<sink_obj>24</sink_obj>

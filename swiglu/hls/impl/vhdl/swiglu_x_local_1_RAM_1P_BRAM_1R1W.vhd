@@ -8,7 +8,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 entity swiglu_x_local_1_RAM_1P_BRAM_1R1W  is
     generic (
-        DataWidth    : integer := 1;
+        DataWidth    : integer := 8;
         AddressRange : integer := 16;
         AddressWidth : integer := 4;
         BufferCount  : integer := 2;
