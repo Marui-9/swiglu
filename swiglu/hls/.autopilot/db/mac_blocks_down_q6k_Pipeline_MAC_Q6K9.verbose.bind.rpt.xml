@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q6k_Pipeline_MAC_Q6K9'" level="0">
-<item name = "Date">Sun Mar 29 14:53:09 2026
+<item name = "Date">Mon Mar 30 09:36:51 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">294, 294, 0.979 us, 0.979 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">804, 804, 2.677 us, 2.677 us, 771, 771, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- MAC_Q6K">292, 292, 38, 1, 1, 256, yes</column>
+<column name="- MAC_Q6K">802, 802, 38, 3, 1, 256, yes</column>
 </table>
 </item>
 </section>

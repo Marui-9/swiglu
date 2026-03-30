@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 36
+set cdfgNum 30
 set C_modelName {mac_blocks_wv}
 set C_modelType { float 32 }
 set ap_memory_interface_dict [dict create]
@@ -155,14 +155,14 @@ dict set ap_memory_interface_dict x_7_13 { MEM_WIDTH 8 MEM_SIZE 16 MASTER_TYPE B
 dict set ap_memory_interface_dict x_7_14 { MEM_WIDTH 8 MEM_SIZE 16 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 dict set ap_memory_interface_dict x_7_15 { MEM_WIDTH 8 MEM_SIZE 16 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 set C_modelArgList {
-	{ rb_0 int 128 regular {array 9 { 1 3 } 1 1 }  }
-	{ rb_1 int 128 regular {array 9 { 1 3 } 1 1 }  }
-	{ rb_2 int 128 regular {array 9 { 1 3 } 1 1 }  }
-	{ rb_3 int 128 regular {array 9 { 1 3 } 1 1 }  }
-	{ rb_4 int 128 regular {array 9 { 1 3 } 1 1 }  }
-	{ rb_5 int 128 regular {array 9 { 1 3 } 1 1 }  }
-	{ rb_6 int 128 regular {array 9 { 1 3 } 1 1 }  }
-	{ rb_7 int 128 regular {array 9 { 1 3 } 1 1 }  }
+	{ rb_0 int 128 regular {array 9 { 1 } 1 1 }  }
+	{ rb_1 int 128 regular {array 9 { 1 } 1 1 }  }
+	{ rb_2 int 128 regular {array 9 { 1 } 1 1 }  }
+	{ rb_3 int 128 regular {array 9 { 1 } 1 1 }  }
+	{ rb_4 int 128 regular {array 9 { 1 } 1 1 }  }
+	{ rb_5 int 128 regular {array 9 { 1 } 1 1 }  }
+	{ rb_6 int 128 regular {array 9 { 1 } 1 1 }  }
+	{ rb_7 int 128 regular {array 9 { 1 } 1 1 }  }
 	{ x_0_0 int 8 regular {array 16 { 1 } 1 1 }  }
 	{ x_0_1 int 8 regular {array 16 { 1 } 1 1 }  }
 	{ x_0_2 int 8 regular {array 16 { 1 } 1 1 }  }
@@ -1275,7 +1275,7 @@ set NewPortList {[
 
 set ArgLastReadFirstWriteLatency {
 	mac_blocks_wv {
-		rb_0 {Type I LastRead 2 FirstWrite -1}
+		rb_0 {Type I LastRead 1 FirstWrite -1}
 		rb_1 {Type I LastRead 1 FirstWrite -1}
 		rb_2 {Type I LastRead 1 FirstWrite -1}
 		rb_3 {Type I LastRead 1 FirstWrite -1}
@@ -1586,15 +1586,23 @@ set ArgLastReadFirstWriteLatency {
 		x_0_13 {Type I LastRead 1 FirstWrite -1}
 		x_0_14 {Type I LastRead 1 FirstWrite -1}
 		x_0_15 {Type I LastRead 1 FirstWrite -1}
-		rb_0 {Type I LastRead 2 FirstWrite -1}
-		sc6_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_1_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_2_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_3_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_4_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_5_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_6_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_7_reload {Type I LastRead 0 FirstWrite -1}
+		rb_0 {Type I LastRead 1 FirstWrite -1}
+		empty_37 {Type I LastRead 0 FirstWrite -1}
+		empty_38 {Type I LastRead 0 FirstWrite -1}
+		empty_39 {Type I LastRead 0 FirstWrite -1}
+		empty_40 {Type I LastRead 0 FirstWrite -1}
+		empty_41 {Type I LastRead 0 FirstWrite -1}
+		empty_42 {Type I LastRead 0 FirstWrite -1}
+		empty_43 {Type I LastRead 0 FirstWrite -1}
+		empty_44 {Type I LastRead 0 FirstWrite -1}
+		empty_45 {Type I LastRead 0 FirstWrite -1}
+		empty_46 {Type I LastRead 0 FirstWrite -1}
+		empty_47 {Type I LastRead 0 FirstWrite -1}
+		empty_48 {Type I LastRead 0 FirstWrite -1}
+		empty_49 {Type I LastRead 0 FirstWrite -1}
+		empty_50 {Type I LastRead 0 FirstWrite -1}
+		empty_51 {Type I LastRead 0 FirstWrite -1}
+		empty_52 {Type I LastRead 0 FirstWrite -1}
 		x_1_0 {Type I LastRead 1 FirstWrite -1}
 		x_1_1 {Type I LastRead 1 FirstWrite -1}
 		x_1_2 {Type I LastRead 1 FirstWrite -1}
@@ -1714,126 +1722,118 @@ set ArgLastReadFirstWriteLatency {
 		x_7_14 {Type I LastRead 1 FirstWrite -1}
 		x_7_15 {Type I LastRead 1 FirstWrite -1}
 		rb_7 {Type I LastRead 1 FirstWrite -1}
-		sc6_8_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_9_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_10_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_11_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_12_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_13_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_14_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_15_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_16_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_17_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_18_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_19_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_20_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_21_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_22_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_23_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_24_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_25_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_26_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_27_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_28_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_29_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_30_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_31_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_32_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_33_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_34_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_35_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_36_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_37_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_38_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_39_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_40_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_41_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_42_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_43_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_44_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_45_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_46_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_47_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_48_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_49_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_50_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_51_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_52_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_53_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_54_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_55_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_56_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_57_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_58_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_59_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_60_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_61_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_62_reload {Type I LastRead 0 FirstWrite -1}
-		sc6_63_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_1_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_2_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_3_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_4_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_5_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_6_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_7_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_8_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_9_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_10_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_11_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_12_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_13_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_14_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_15_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_16_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_17_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_18_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_19_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_20_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_21_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_22_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_23_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_24_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_25_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_26_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_27_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_28_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_29_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_30_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_31_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_32_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_33_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_34_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_35_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_36_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_37_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_38_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_39_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_40_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_41_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_42_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_43_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_44_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_45_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_46_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_47_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_48_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_49_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_50_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_51_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_52_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_53_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_54_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_55_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_56_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_57_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_58_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_59_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_60_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_61_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_62_reload {Type I LastRead 0 FirstWrite -1}
-		mn6_63_reload {Type I LastRead 0 FirstWrite -1}
+		empty_53 {Type I LastRead 0 FirstWrite -1}
+		empty_54 {Type I LastRead 0 FirstWrite -1}
+		empty_55 {Type I LastRead 0 FirstWrite -1}
+		empty_56 {Type I LastRead 0 FirstWrite -1}
+		empty_57 {Type I LastRead 0 FirstWrite -1}
+		empty_58 {Type I LastRead 0 FirstWrite -1}
+		empty_59 {Type I LastRead 0 FirstWrite -1}
+		empty_60 {Type I LastRead 0 FirstWrite -1}
+		empty_61 {Type I LastRead 0 FirstWrite -1}
+		empty_62 {Type I LastRead 0 FirstWrite -1}
+		empty_63 {Type I LastRead 0 FirstWrite -1}
+		empty_64 {Type I LastRead 0 FirstWrite -1}
+		empty_65 {Type I LastRead 0 FirstWrite -1}
+		empty_66 {Type I LastRead 0 FirstWrite -1}
+		empty_67 {Type I LastRead 0 FirstWrite -1}
+		empty_68 {Type I LastRead 0 FirstWrite -1}
+		empty_69 {Type I LastRead 0 FirstWrite -1}
+		empty_70 {Type I LastRead 0 FirstWrite -1}
+		empty_71 {Type I LastRead 0 FirstWrite -1}
+		empty_72 {Type I LastRead 0 FirstWrite -1}
+		empty_73 {Type I LastRead 0 FirstWrite -1}
+		empty_74 {Type I LastRead 0 FirstWrite -1}
+		empty_75 {Type I LastRead 0 FirstWrite -1}
+		empty_76 {Type I LastRead 0 FirstWrite -1}
+		empty_77 {Type I LastRead 0 FirstWrite -1}
+		empty_78 {Type I LastRead 0 FirstWrite -1}
+		empty_79 {Type I LastRead 0 FirstWrite -1}
+		empty_80 {Type I LastRead 0 FirstWrite -1}
+		empty_81 {Type I LastRead 0 FirstWrite -1}
+		empty_82 {Type I LastRead 0 FirstWrite -1}
+		empty_83 {Type I LastRead 0 FirstWrite -1}
+		empty_84 {Type I LastRead 0 FirstWrite -1}
+		empty_85 {Type I LastRead 0 FirstWrite -1}
+		empty_86 {Type I LastRead 0 FirstWrite -1}
+		empty_87 {Type I LastRead 0 FirstWrite -1}
+		empty_88 {Type I LastRead 0 FirstWrite -1}
+		empty_89 {Type I LastRead 0 FirstWrite -1}
+		empty_90 {Type I LastRead 0 FirstWrite -1}
+		empty_91 {Type I LastRead 0 FirstWrite -1}
+		empty_92 {Type I LastRead 0 FirstWrite -1}
+		empty_93 {Type I LastRead 0 FirstWrite -1}
+		empty_94 {Type I LastRead 0 FirstWrite -1}
+		empty_95 {Type I LastRead 0 FirstWrite -1}
+		empty_96 {Type I LastRead 0 FirstWrite -1}
+		empty_97 {Type I LastRead 0 FirstWrite -1}
+		empty_98 {Type I LastRead 0 FirstWrite -1}
+		empty_99 {Type I LastRead 0 FirstWrite -1}
+		empty_100 {Type I LastRead 0 FirstWrite -1}
+		empty_101 {Type I LastRead 0 FirstWrite -1}
+		empty_102 {Type I LastRead 0 FirstWrite -1}
+		empty_103 {Type I LastRead 0 FirstWrite -1}
+		empty_104 {Type I LastRead 0 FirstWrite -1}
+		empty_105 {Type I LastRead 0 FirstWrite -1}
+		empty_106 {Type I LastRead 0 FirstWrite -1}
+		empty_107 {Type I LastRead 0 FirstWrite -1}
+		empty_108 {Type I LastRead 0 FirstWrite -1}
+		empty_109 {Type I LastRead 0 FirstWrite -1}
+		empty_110 {Type I LastRead 0 FirstWrite -1}
+		empty_111 {Type I LastRead 0 FirstWrite -1}
+		empty_112 {Type I LastRead 0 FirstWrite -1}
+		empty_113 {Type I LastRead 0 FirstWrite -1}
+		empty_114 {Type I LastRead 0 FirstWrite -1}
+		empty_115 {Type I LastRead 0 FirstWrite -1}
+		empty_116 {Type I LastRead 0 FirstWrite -1}
+		empty_117 {Type I LastRead 0 FirstWrite -1}
+		empty_118 {Type I LastRead 0 FirstWrite -1}
+		empty_119 {Type I LastRead 0 FirstWrite -1}
+		empty_120 {Type I LastRead 0 FirstWrite -1}
+		empty_121 {Type I LastRead 0 FirstWrite -1}
+		empty_122 {Type I LastRead 0 FirstWrite -1}
+		empty_123 {Type I LastRead 0 FirstWrite -1}
+		empty_124 {Type I LastRead 0 FirstWrite -1}
+		empty_125 {Type I LastRead 0 FirstWrite -1}
+		empty_126 {Type I LastRead 0 FirstWrite -1}
+		empty_127 {Type I LastRead 0 FirstWrite -1}
+		empty_128 {Type I LastRead 0 FirstWrite -1}
+		empty_129 {Type I LastRead 0 FirstWrite -1}
+		empty_130 {Type I LastRead 0 FirstWrite -1}
+		empty_131 {Type I LastRead 0 FirstWrite -1}
+		empty_132 {Type I LastRead 0 FirstWrite -1}
+		empty_133 {Type I LastRead 0 FirstWrite -1}
+		empty_134 {Type I LastRead 0 FirstWrite -1}
+		empty_135 {Type I LastRead 0 FirstWrite -1}
+		empty_136 {Type I LastRead 0 FirstWrite -1}
+		empty_137 {Type I LastRead 0 FirstWrite -1}
+		empty_138 {Type I LastRead 0 FirstWrite -1}
+		empty_139 {Type I LastRead 0 FirstWrite -1}
+		empty_140 {Type I LastRead 0 FirstWrite -1}
+		empty_141 {Type I LastRead 0 FirstWrite -1}
+		empty_142 {Type I LastRead 0 FirstWrite -1}
+		empty_143 {Type I LastRead 0 FirstWrite -1}
+		empty_144 {Type I LastRead 0 FirstWrite -1}
+		empty_145 {Type I LastRead 0 FirstWrite -1}
+		empty_146 {Type I LastRead 0 FirstWrite -1}
+		empty_147 {Type I LastRead 0 FirstWrite -1}
+		empty_148 {Type I LastRead 0 FirstWrite -1}
+		empty_149 {Type I LastRead 0 FirstWrite -1}
+		empty_150 {Type I LastRead 0 FirstWrite -1}
+		empty_151 {Type I LastRead 0 FirstWrite -1}
+		empty_152 {Type I LastRead 0 FirstWrite -1}
+		empty_153 {Type I LastRead 0 FirstWrite -1}
+		empty_154 {Type I LastRead 0 FirstWrite -1}
+		empty_155 {Type I LastRead 0 FirstWrite -1}
+		empty_156 {Type I LastRead 0 FirstWrite -1}
+		empty_157 {Type I LastRead 0 FirstWrite -1}
+		empty_158 {Type I LastRead 0 FirstWrite -1}
+		empty_159 {Type I LastRead 0 FirstWrite -1}
+		empty_160 {Type I LastRead 0 FirstWrite -1}
+		empty_161 {Type I LastRead 0 FirstWrite -1}
+		empty_162 {Type I LastRead 0 FirstWrite -1}
+		empty_163 {Type I LastRead 0 FirstWrite -1}
+		empty {Type I LastRead 0 FirstWrite -1}
 		sw_out {Type O LastRead -1 FirstWrite 6}
 		int_acc_w_1_load_out {Type O LastRead -1 FirstWrite 6}
 		int_acc_w_2_load_out {Type O LastRead -1 FirstWrite 6}

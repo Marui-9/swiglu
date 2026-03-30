@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_row_down_q6k'" level="0">
-<item name = "Date">Sun Mar 29 14:52:59 2026
+<item name = "Date">Mon Mar 30 09:36:47 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_97">load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, 423, 423, 1.409 us, 1.409 us, 421, 421, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107">load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, 423, 423, 1.409 us, 1.409 us, 421, 421, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

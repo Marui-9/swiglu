@@ -11,6 +11,13 @@ as the reference for all HLS and software driver patterns.
 
 ---
 
+## Recent changes (2026-03-30)
+
+- HLS: moved all hot scratch buffers to BRAM (row_buf in X1/X2/output, out_local, x_local_1/2, sigmoid_lut ROM) and kept cache arrays in URAM; Q4 down-path inner unroll restored to 2; DSP binding applied to hot muls; AXI outstanding depth reduced to 2 to curb LUTRAM FIFO growth.
+- Runtime (ggml-cpu.c): cached W/V/Wd base-address programming to the swiglu IP; only re-write when layer or quant mode changes, while still updating x/out/mode/scale per token. Preserves functionality, lowers per-token register traffic.
+
+---
+
 ## Model Dimensions (confirmed from GGUF metadata)
 
 | Symbol        | Value  | Meaning                          |

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_row_down_q6k'" level="0">
-<item name = "Date">Sun Mar 29 14:53:35 2026
+<item name = "Date">Mon Mar 30 09:37:18 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_97">load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, 423, 423, 1.409 us, 1.409 us, 421, 421, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107">load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, 423, 423, 1.409 us, 1.409 us, 421, 421, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -62,8 +62,8 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_97">load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, 0, 0, 161, 81, 0</column>
-<column name="mul_11ns_14ns_24_1_1_U1389">mul_11ns_14ns_24_1_1, 0, 1, 0, 5, 0</column>
+<column name="grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107">load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, 0, 0, 161, 81, 0</column>
+<column name="mul_11ns_14ns_24_1_1_U1394">mul_11ns_14ns_24_1_1, 0, 1, 0, 5, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -80,7 +80,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="empty_134_fu_149_p2">+, 0, 0, 71, 64, 64</column>
+<column name="empty_762_fu_159_p2">+, 0, 0, 71, 64, 64</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -105,9 +105,9 @@
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">75, 0, 75, 0</column>
-<column name="empty_reg_175">24, 0, 24, 0</column>
-<column name="grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_97_ap_start_reg">1, 0, 1, 0</column>
-<column name="trunc_ln_reg_180">60, 0, 60, 0</column>
+<column name="empty_reg_185">24, 0, 24, 0</column>
+<column name="grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_start_reg">1, 0, 1, 0</column>
+<column name="trunc_ln_reg_190">60, 0, 60, 0</column>
 </table>
 </item>
 </section>
@@ -161,7 +161,7 @@
 <column name="m_axi_gmem_Wd_0_RDATA">in, 128, m_axi, gmem_Wd, pointer</column>
 <column name="m_axi_gmem_Wd_0_RLAST">in, 1, m_axi, gmem_Wd, pointer</column>
 <column name="m_axi_gmem_Wd_0_RID">in, 1, m_axi, gmem_Wd, pointer</column>
-<column name="m_axi_gmem_Wd_0_RFIFONUM">in, 13, m_axi, gmem_Wd, pointer</column>
+<column name="m_axi_gmem_Wd_0_RFIFONUM">in, 10, m_axi, gmem_Wd, pointer</column>
 <column name="m_axi_gmem_Wd_0_RUSER">in, 1, m_axi, gmem_Wd, pointer</column>
 <column name="m_axi_gmem_Wd_0_RRESP">in, 2, m_axi, gmem_Wd, pointer</column>
 <column name="m_axi_gmem_Wd_0_BVALID">in, 1, m_axi, gmem_Wd, pointer</column>

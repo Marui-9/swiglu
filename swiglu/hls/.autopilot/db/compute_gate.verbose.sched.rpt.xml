@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_gate'" level="0">
-<item name = "Date">Sun Mar 29 14:52:57 2026
+<item name = "Date">Mon Mar 30 09:36:45 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">16541, 16541, 55.082 us, 55.082 us, 16541, 16541, no</column>
+<column name="">16579, 16579, 55.208 us, 55.208 us, 16579, 16579, no</column>
 </table>
 </item>
 <item name = "Detail">

@@ -23,13 +23,13 @@
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>3801162</Best-caseLatency>
-<Average-caseLatency>15966282</Average-caseLatency>
-<Worst-caseLatency>28131402</Worst-caseLatency>
+<Average-caseLatency>32399434</Average-caseLatency>
+<Worst-caseLatency>60997706</Worst-caseLatency>
 <Best-caseRealTimeLatency>12.658 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>53.168 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>93.678 ms</Worst-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.108 sec</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.203 sec</Worst-caseRealTimeLatency>
 <Interval-min>3801162</Interval-min>
-<Interval-max>28131402</Interval-max>
+<Interval-max>60997706</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
@@ -48,9 +48,9 @@
 <Slack>2.43</Slack>
 <TripCount>2048</TripCount>
 <isPerfectNested>0</isPerfectNested>
-<Latency>28129280</Latency>
-<AbsoluteTimeLatency>93670500</AbsoluteTimeLatency>
-<IterationLatency>13735</IterationLatency>
+<Latency>60995584</Latency>
+<AbsoluteTimeLatency>203115290</AbsoluteTimeLatency>
+<IterationLatency>29783</IterationLatency>
 <PerformancePragma>-</PerformancePragma>
 <InstanceList>
 </InstanceList>
@@ -59,19 +59,19 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:490~swiglu.cpp:606</SourceLocation>
+<SourceLocation>swiglu.cpp:510~swiglu.cpp:627</SourceLocation>
 <SummaryOfLoopViolations>
 <DOWN_Q4K>
 <Name>DOWN_Q4K</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:494~swiglu.cpp:606</SourceLocation>
+<SourceLocation>swiglu.cpp:515~swiglu.cpp:627</SourceLocation>
 </DOWN_Q4K>
 <DOWN_Q6K>
 <Name>DOWN_Q6K</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:501~swiglu.cpp:606</SourceLocation>
+<SourceLocation>swiglu.cpp:523~swiglu.cpp:627</SourceLocation>
 </DOWN_Q6K>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -79,10 +79,10 @@
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>292</BRAM_18K>
-<DSP>78</DSP>
-<FF>64080</FF>
-<LUT>54797</LUT>
+<BRAM_18K>100</BRAM_18K>
+<DSP>75</DSP>
+<FF>76622</FF>
+<LUT>66413</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -609,7 +609,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>13</Bits>
+<Bits>10</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>

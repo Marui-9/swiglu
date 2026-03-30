@@ -24,13 +24,12 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.33ns.
 INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=0.90ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(8)
 INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.9ns.
 INFO: [HLS 200-1465] Applying config ini 'cosim.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(11)
-INFO: [HLS 200-1465] Applying config ini 'package.ip.version=3.3' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(15)
+INFO: [HLS 200-1465] Applying config ini 'package.ip.version=4.2' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(15)
 INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(5)
 INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/vitis-comp.json
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
-   Compiling ../../../../swiglu_tb.cpp in debug mode
    Compiling ../../../../swiglu.cpp in debug mode
    Generating csim.exe
 In file included from ../../../../swiglu.cpp:5:
@@ -62,5 +61,5 @@ T5: PASSED  (batch=1)
 All tests PASSED.
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 63.835 seconds; peak allocated memory: 180.211 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 1m 7s
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 136.293 seconds; peak allocated memory: 180.930 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 2m 20s

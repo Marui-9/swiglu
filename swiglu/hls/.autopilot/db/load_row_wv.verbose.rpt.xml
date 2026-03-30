@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_row_wv'" level="0">
-<item name = "Date">Sun Mar 29 14:53:28 2026
+<item name = "Date">Mon Mar 30 09:37:10 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1_fu_87">load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1, 75, 75, 0.250 us, 0.250 us, 73, 73, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1_fu_97">load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1, 75, 75, 0.250 us, 0.250 us, 73, 73, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -62,7 +62,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1_fu_87">load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1, 0, 0, 156, 141, 0</column>
+<column name="grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1_fu_97">load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1, 0, 0, 156, 141, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -79,8 +79,8 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="empty_132_fu_144_p2">+, 0, 0, 71, 64, 64</column>
-<column name="empty_fu_134_p2">+, 0, 0, 31, 24, 24</column>
+<column name="empty_760_fu_154_p2">+, 0, 0, 71, 64, 64</column>
+<column name="empty_fu_144_p2">+, 0, 0, 31, 24, 24</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -105,8 +105,8 @@
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">74, 0, 74, 0</column>
-<column name="grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_100_1_fu_87_ap_start_reg">1, 0, 1, 0</column>
-<column name="trunc_ln_reg_170">60, 0, 60, 0</column>
+<column name="grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1_fu_97_ap_start_reg">1, 0, 1, 0</column>
+<column name="trunc_ln_reg_180">60, 0, 60, 0</column>
 </table>
 </item>
 </section>
@@ -160,7 +160,7 @@
 <column name="m_axi_gmem_V_0_RDATA">in, 128, m_axi, gmem_V, pointer</column>
 <column name="m_axi_gmem_V_0_RLAST">in, 1, m_axi, gmem_V, pointer</column>
 <column name="m_axi_gmem_V_0_RID">in, 1, m_axi, gmem_V, pointer</column>
-<column name="m_axi_gmem_V_0_RFIFONUM">in, 13, m_axi, gmem_V, pointer</column>
+<column name="m_axi_gmem_V_0_RFIFONUM">in, 10, m_axi, gmem_V, pointer</column>
 <column name="m_axi_gmem_V_0_RUSER">in, 1, m_axi, gmem_V, pointer</column>
 <column name="m_axi_gmem_V_0_RRESP">in, 2, m_axi, gmem_V, pointer</column>
 <column name="m_axi_gmem_V_0_BVALID">in, 1, m_axi, gmem_V, pointer</column>

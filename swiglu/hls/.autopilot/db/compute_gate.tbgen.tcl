@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 36
+set cdfgNum 30
 set C_modelName {compute_gate}
 set C_modelType { float 32 }
 set ap_memory_interface_dict [dict create]
@@ -157,19 +157,18 @@ set ArgLastReadFirstWriteLatency {
 	compute_gate {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 31 FirstWrite -1}
-		gate_cache_0 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_1 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_2 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_3 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_4 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_5 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_6 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_7 {Type O LastRead -1 FirstWrite 13}
+		gate_cache_0 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_1 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_2 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_3 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_4 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_5 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_6 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_7 {Type O LastRead -1 FirstWrite 51}
 		sigmoid_lut {Type I LastRead -1 FirstWrite -1}}
 	compute_gate_Pipeline_GATE_PASS1 {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 31 FirstWrite -1}
-		gate_fp {Type O LastRead -1 FirstWrite 40}
 		max_abs_out {Type O LastRead -1 FirstWrite 46}
 		max_abs_2_out {Type O LastRead -1 FirstWrite 46}
 		max_abs_4_out {Type O LastRead -1 FirstWrite 46}
@@ -178,24 +177,26 @@ set ArgLastReadFirstWriteLatency {
 		max_abs_10_out {Type O LastRead -1 FirstWrite 46}
 		max_abs_12_out {Type O LastRead -1 FirstWrite 46}
 		max_abs_14_out {Type O LastRead -1 FirstWrite 46}
-		sigmoid_lut {Type I LastRead -1 FirstWrite -1}}
+		sigmoid_lut {Type I LastRead 24 FirstWrite -1}}
 	compute_gate_Pipeline_GATE_PASS2 {
-		gate_cache_7 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_6 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_5 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_4 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_3 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_2 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_1 {Type O LastRead -1 FirstWrite 13}
-		gate_cache_0 {Type O LastRead -1 FirstWrite 13}
-		gate_fp {Type I LastRead 0 FirstWrite -1}
-		inv_gs {Type I LastRead 0 FirstWrite -1}}}
+		X1_cache {Type I LastRead 0 FirstWrite -1}
+		X2_cache {Type I LastRead 31 FirstWrite -1}
+		gate_cache_7 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_6 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_5 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_4 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_3 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_2 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_1 {Type O LastRead -1 FirstWrite 51}
+		gate_cache_0 {Type O LastRead -1 FirstWrite 51}
+		inv_gs {Type I LastRead 0 FirstWrite -1}
+		sigmoid_lut {Type I LastRead 24 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "16541", "Max" : "16541"}
-	, {"Name" : "Interval", "Min" : "16541", "Max" : "16541"}
+	{"Name" : "Latency", "Min" : "16579", "Max" : "16579"}
+	, {"Name" : "Interval", "Min" : "16579", "Max" : "16579"}
 ]}
 
 set PipelineEnableSignalInfo {[

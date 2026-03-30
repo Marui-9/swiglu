@@ -11,7 +11,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1683 \
+    id 1555 \
     name rb_0 \
     reset_level 1 \
     sync_rst true \
@@ -30,7 +30,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1684 \
+    id 1556 \
     name rb_1 \
     reset_level 1 \
     sync_rst true \
@@ -49,7 +49,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1685 \
+    id 1557 \
     name rb_2 \
     reset_level 1 \
     sync_rst true \
@@ -68,7 +68,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1686 \
+    id 1558 \
     name rb_3 \
     reset_level 1 \
     sync_rst true \
@@ -87,7 +87,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1687 \
+    id 1559 \
     name rb_4 \
     reset_level 1 \
     sync_rst true \
@@ -106,7 +106,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1688 \
+    id 1560 \
     name rb_5 \
     reset_level 1 \
     sync_rst true \
@@ -125,7 +125,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1689 \
+    id 1561 \
     name rb_6 \
     reset_level 1 \
     sync_rst true \
@@ -144,7 +144,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1690 \
+    id 1562 \
     name rb_7 \
     reset_level 1 \
     sync_rst true \
@@ -162,7 +162,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1680 \
+    id 1552 \
     name gmem_Wd \
     type other \
     dir I \
@@ -170,14 +170,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_gmem_Wd \
     op interface \
-    ports { m_axi_gmem_Wd_0_AWVALID { O 1 bit } m_axi_gmem_Wd_0_AWREADY { I 1 bit } m_axi_gmem_Wd_0_AWADDR { O 64 vector } m_axi_gmem_Wd_0_AWID { O 1 vector } m_axi_gmem_Wd_0_AWLEN { O 32 vector } m_axi_gmem_Wd_0_AWSIZE { O 3 vector } m_axi_gmem_Wd_0_AWBURST { O 2 vector } m_axi_gmem_Wd_0_AWLOCK { O 2 vector } m_axi_gmem_Wd_0_AWCACHE { O 4 vector } m_axi_gmem_Wd_0_AWPROT { O 3 vector } m_axi_gmem_Wd_0_AWQOS { O 4 vector } m_axi_gmem_Wd_0_AWREGION { O 4 vector } m_axi_gmem_Wd_0_AWUSER { O 1 vector } m_axi_gmem_Wd_0_WVALID { O 1 bit } m_axi_gmem_Wd_0_WREADY { I 1 bit } m_axi_gmem_Wd_0_WDATA { O 128 vector } m_axi_gmem_Wd_0_WSTRB { O 16 vector } m_axi_gmem_Wd_0_WLAST { O 1 bit } m_axi_gmem_Wd_0_WID { O 1 vector } m_axi_gmem_Wd_0_WUSER { O 1 vector } m_axi_gmem_Wd_0_ARVALID { O 1 bit } m_axi_gmem_Wd_0_ARREADY { I 1 bit } m_axi_gmem_Wd_0_ARADDR { O 64 vector } m_axi_gmem_Wd_0_ARID { O 1 vector } m_axi_gmem_Wd_0_ARLEN { O 32 vector } m_axi_gmem_Wd_0_ARSIZE { O 3 vector } m_axi_gmem_Wd_0_ARBURST { O 2 vector } m_axi_gmem_Wd_0_ARLOCK { O 2 vector } m_axi_gmem_Wd_0_ARCACHE { O 4 vector } m_axi_gmem_Wd_0_ARPROT { O 3 vector } m_axi_gmem_Wd_0_ARQOS { O 4 vector } m_axi_gmem_Wd_0_ARREGION { O 4 vector } m_axi_gmem_Wd_0_ARUSER { O 1 vector } m_axi_gmem_Wd_0_RVALID { I 1 bit } m_axi_gmem_Wd_0_RREADY { O 1 bit } m_axi_gmem_Wd_0_RDATA { I 128 vector } m_axi_gmem_Wd_0_RLAST { I 1 bit } m_axi_gmem_Wd_0_RID { I 1 vector } m_axi_gmem_Wd_0_RFIFONUM { I 13 vector } m_axi_gmem_Wd_0_RUSER { I 1 vector } m_axi_gmem_Wd_0_RRESP { I 2 vector } m_axi_gmem_Wd_0_BVALID { I 1 bit } m_axi_gmem_Wd_0_BREADY { O 1 bit } m_axi_gmem_Wd_0_BRESP { I 2 vector } m_axi_gmem_Wd_0_BID { I 1 vector } m_axi_gmem_Wd_0_BUSER { I 1 vector } } \
+    ports { m_axi_gmem_Wd_0_AWVALID { O 1 bit } m_axi_gmem_Wd_0_AWREADY { I 1 bit } m_axi_gmem_Wd_0_AWADDR { O 64 vector } m_axi_gmem_Wd_0_AWID { O 1 vector } m_axi_gmem_Wd_0_AWLEN { O 32 vector } m_axi_gmem_Wd_0_AWSIZE { O 3 vector } m_axi_gmem_Wd_0_AWBURST { O 2 vector } m_axi_gmem_Wd_0_AWLOCK { O 2 vector } m_axi_gmem_Wd_0_AWCACHE { O 4 vector } m_axi_gmem_Wd_0_AWPROT { O 3 vector } m_axi_gmem_Wd_0_AWQOS { O 4 vector } m_axi_gmem_Wd_0_AWREGION { O 4 vector } m_axi_gmem_Wd_0_AWUSER { O 1 vector } m_axi_gmem_Wd_0_WVALID { O 1 bit } m_axi_gmem_Wd_0_WREADY { I 1 bit } m_axi_gmem_Wd_0_WDATA { O 128 vector } m_axi_gmem_Wd_0_WSTRB { O 16 vector } m_axi_gmem_Wd_0_WLAST { O 1 bit } m_axi_gmem_Wd_0_WID { O 1 vector } m_axi_gmem_Wd_0_WUSER { O 1 vector } m_axi_gmem_Wd_0_ARVALID { O 1 bit } m_axi_gmem_Wd_0_ARREADY { I 1 bit } m_axi_gmem_Wd_0_ARADDR { O 64 vector } m_axi_gmem_Wd_0_ARID { O 1 vector } m_axi_gmem_Wd_0_ARLEN { O 32 vector } m_axi_gmem_Wd_0_ARSIZE { O 3 vector } m_axi_gmem_Wd_0_ARBURST { O 2 vector } m_axi_gmem_Wd_0_ARLOCK { O 2 vector } m_axi_gmem_Wd_0_ARCACHE { O 4 vector } m_axi_gmem_Wd_0_ARPROT { O 3 vector } m_axi_gmem_Wd_0_ARQOS { O 4 vector } m_axi_gmem_Wd_0_ARREGION { O 4 vector } m_axi_gmem_Wd_0_ARUSER { O 1 vector } m_axi_gmem_Wd_0_RVALID { I 1 bit } m_axi_gmem_Wd_0_RREADY { O 1 bit } m_axi_gmem_Wd_0_RDATA { I 128 vector } m_axi_gmem_Wd_0_RLAST { I 1 bit } m_axi_gmem_Wd_0_RID { I 1 vector } m_axi_gmem_Wd_0_RFIFONUM { I 10 vector } m_axi_gmem_Wd_0_RUSER { I 1 vector } m_axi_gmem_Wd_0_RRESP { I 2 vector } m_axi_gmem_Wd_0_BVALID { I 1 bit } m_axi_gmem_Wd_0_BREADY { O 1 bit } m_axi_gmem_Wd_0_BRESP { I 2 vector } m_axi_gmem_Wd_0_BID { I 1 vector } m_axi_gmem_Wd_0_BUSER { I 1 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1681 \
+    id 1553 \
     name W_down_wide \
     type other \
     dir I \
@@ -192,7 +192,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1682 \
+    id 1554 \
     name out_i \
     type other \
     dir I \

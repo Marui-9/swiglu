@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K'
 ================================================================
-* Date:           Sun Mar 29 14:53:35 2026
+* Date:           Mon Mar 30 09:37:17 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -85,9 +85,9 @@
     +---------------------------+----------+----+---+----+------------+------------+
     |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------------+----------+----+---+----+------------+------------+
-    |add_ln450_fu_359_p2        |         +|   0|  0|  16|           9|           1|
+    |add_ln470_fu_369_p2        |         +|   0|  0|  16|           9|           1|
     |ap_block_pp0_stage0_11001  |       and|   0|  0|   2|           1|           1|
-    |icmp_ln450_fu_353_p2       |      icmp|   0|  0|  16|           9|           8|
+    |icmp_ln470_fu_363_p2       |      icmp|   0|  0|  16|           9|           8|
     |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
     +---------------------------+----------+----+---+----+------------+------------+
     |Total                      |          |   0|  0|  36|          20|          12|
@@ -101,7 +101,7 @@
     |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
     |ap_sig_allocacmp_i_1     |   9|          2|    9|         18|
     |gmem_Wd_blk_n_R          |   9|          2|    1|          2|
-    |i_fu_118                 |   9|          2|    9|         18|
+    |i_fu_128                 |   9|          2|    9|         18|
     +-------------------------+----+-----------+-----+-----------+
     |Total                    |  45|         10|   21|         42|
     +-------------------------+----+-----------+-----+-----------+
@@ -116,12 +116,12 @@
     |ap_enable_reg_pp0_iter1                    |    1|   0|    1|          0|
     |ap_enable_reg_pp0_iter2                    |    1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter1_reg           |    1|   0|    1|          0|
-    |gmem_Wd_addr_read_reg_468                  |  128|   0|  128|          0|
-    |i_fu_118                                   |    9|   0|    9|          0|
-    |lshr_ln_reg_463                            |    5|   0|    5|          0|
-    |lshr_ln_reg_463_pp0_iter1_reg              |    5|   0|    5|          0|
-    |trunc_ln450_reg_459                        |    4|   0|    4|          0|
-    |trunc_ln450_reg_459_pp0_iter1_reg          |    4|   0|    4|          0|
+    |gmem_Wd_addr_read_reg_478                  |  128|   0|  128|          0|
+    |i_fu_128                                   |    9|   0|    9|          0|
+    |lshr_ln_reg_473                            |    5|   0|    5|          0|
+    |lshr_ln_reg_473_pp0_iter1_reg              |    5|   0|    5|          0|
+    |trunc_ln470_reg_469                        |    4|   0|    4|          0|
+    |trunc_ln470_reg_469_pp0_iter1_reg          |    4|   0|    4|          0|
     +-------------------------------------------+-----+----+-----+-----------+
     |Total                                      |  161|   0|  161|          0|
     +-------------------------------------------+-----+----+-----+-----------+
@@ -179,7 +179,7 @@
 |m_axi_gmem_Wd_0_RDATA     |   in|  128|       m_axi|                                   gmem_Wd|       pointer|
 |m_axi_gmem_Wd_0_RLAST     |   in|    1|       m_axi|                                   gmem_Wd|       pointer|
 |m_axi_gmem_Wd_0_RID       |   in|    1|       m_axi|                                   gmem_Wd|       pointer|
-|m_axi_gmem_Wd_0_RFIFONUM  |   in|   13|       m_axi|                                   gmem_Wd|       pointer|
+|m_axi_gmem_Wd_0_RFIFONUM  |   in|   10|       m_axi|                                   gmem_Wd|       pointer|
 |m_axi_gmem_Wd_0_RUSER     |   in|    1|       m_axi|                                   gmem_Wd|       pointer|
 |m_axi_gmem_Wd_0_RRESP     |   in|    2|       m_axi|                                   gmem_Wd|       pointer|
 |m_axi_gmem_Wd_0_BVALID    |   in|    1|       m_axi|                                   gmem_Wd|       pointer|
@@ -187,7 +187,7 @@
 |m_axi_gmem_Wd_0_BRESP     |   in|    2|       m_axi|                                   gmem_Wd|       pointer|
 |m_axi_gmem_Wd_0_BID       |   in|    1|       m_axi|                                   gmem_Wd|       pointer|
 |m_axi_gmem_Wd_0_BUSER     |   in|    1|       m_axi|                                   gmem_Wd|       pointer|
-|sext_ln450                |   in|   60|     ap_none|                                sext_ln450|        scalar|
+|sext_ln470                |   in|   60|     ap_none|                                sext_ln470|        scalar|
 |rb_15_address0            |  out|    5|   ap_memory|                                     rb_15|         array|
 |rb_15_ce0                 |  out|    1|   ap_memory|                                     rb_15|         array|
 |rb_15_we0                 |  out|    1|   ap_memory|                                     rb_15|         array|

@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=3.330000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=20562358,HLS_SYN_TPT=15966283,HLS_SYN_MEM=758,HLS_SYN_DSP=0,HLS_SYN_FF=93677,HLS_SYN_LUT=90978,HLS_VERSION=2025_1}" *)
+(* CORE_GENERATION_INFO="swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=3.330000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=36995548,HLS_SYN_TPT=32399435,HLS_SYN_MEM=462,HLS_SYN_DSP=0,HLS_SYN_FF=124822,HLS_SYN_LUT=111823,HLS_VERSION=2025_1}" *)
 
 module swiglu (
         ap_clk,
@@ -1122,7 +1122,7 @@ wire    gmem_V_0_RVALID;
 wire   [127:0] gmem_V_0_RDATA;
 wire    gmem_V_0_RLAST;
 wire   [0:0] gmem_V_0_RID;
-wire   [12:0] gmem_V_0_RFIFONUM;
+wire   [9:0] gmem_V_0_RFIFONUM;
 wire   [0:0] gmem_V_0_RUSER;
 wire   [1:0] gmem_V_0_RRESP;
 wire    gmem_V_0_BVALID;
@@ -1133,7 +1133,7 @@ wire    gmem_W_0_RVALID;
 wire   [127:0] gmem_W_0_RDATA;
 wire    gmem_W_0_RLAST;
 wire   [0:0] gmem_W_0_RID;
-wire   [12:0] gmem_W_0_RFIFONUM;
+wire   [9:0] gmem_W_0_RFIFONUM;
 wire   [0:0] gmem_W_0_RUSER;
 wire   [1:0] gmem_W_0_RRESP;
 wire    gmem_W_0_BVALID;
@@ -1144,7 +1144,7 @@ wire    gmem_Wd_0_RVALID;
 wire   [127:0] gmem_Wd_0_RDATA;
 wire    gmem_Wd_0_RLAST;
 wire   [0:0] gmem_Wd_0_RID;
-wire   [12:0] gmem_Wd_0_RFIFONUM;
+wire   [9:0] gmem_Wd_0_RFIFONUM;
 wire   [0:0] gmem_Wd_0_RUSER;
 wire   [1:0] gmem_Wd_0_RRESP;
 wire    gmem_Wd_0_BVALID;
@@ -1165,7 +1165,7 @@ wire    gmem_x_0_RVALID;
 wire   [127:0] gmem_x_0_RDATA;
 wire    gmem_x_0_RLAST;
 wire   [0:0] gmem_x_0_RID;
-wire   [12:0] gmem_x_0_RFIFONUM;
+wire   [9:0] gmem_x_0_RFIFONUM;
 wire   [0:0] gmem_x_0_RUSER;
 wire   [1:0] gmem_x_0_RRESP;
 wire    gmem_x_0_BVALID;
@@ -9984,7 +9984,7 @@ X2_cache_U(
     .t_read(compute_gate_U0_ap_ready)
 );
 
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
+swiglu_gate_cache_RAM_2P_URAM_1R1W #(
     .DataWidth( 8 ),
     .AddressRange( 1024 ),
     .AddressWidth( 10 ))
@@ -10013,7 +10013,7 @@ gate_cache_U(
     .t_read(compute_output_U0_ap_ready)
 );
 
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
+swiglu_gate_cache_RAM_2P_URAM_1R1W #(
     .DataWidth( 8 ),
     .AddressRange( 1024 ),
     .AddressWidth( 10 ))
@@ -10042,7 +10042,7 @@ gate_cache_1_U(
     .t_read(compute_output_U0_ap_ready)
 );
 
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
+swiglu_gate_cache_RAM_2P_URAM_1R1W #(
     .DataWidth( 8 ),
     .AddressRange( 1024 ),
     .AddressWidth( 10 ))
@@ -10071,7 +10071,7 @@ gate_cache_2_U(
     .t_read(compute_output_U0_ap_ready)
 );
 
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
+swiglu_gate_cache_RAM_2P_URAM_1R1W #(
     .DataWidth( 8 ),
     .AddressRange( 1024 ),
     .AddressWidth( 10 ))
@@ -10100,7 +10100,7 @@ gate_cache_3_U(
     .t_read(compute_output_U0_ap_ready)
 );
 
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
+swiglu_gate_cache_RAM_2P_URAM_1R1W #(
     .DataWidth( 8 ),
     .AddressRange( 1024 ),
     .AddressWidth( 10 ))
@@ -10129,7 +10129,7 @@ gate_cache_4_U(
     .t_read(compute_output_U0_ap_ready)
 );
 
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
+swiglu_gate_cache_RAM_2P_URAM_1R1W #(
     .DataWidth( 8 ),
     .AddressRange( 1024 ),
     .AddressWidth( 10 ))
@@ -10158,7 +10158,7 @@ gate_cache_5_U(
     .t_read(compute_output_U0_ap_ready)
 );
 
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
+swiglu_gate_cache_RAM_2P_URAM_1R1W #(
     .DataWidth( 8 ),
     .AddressRange( 1024 ),
     .AddressWidth( 10 ))
@@ -10187,7 +10187,7 @@ gate_cache_6_U(
     .t_read(compute_output_U0_ap_ready)
 );
 
-swiglu_gate_cache_RAM_2P_BRAM_1R1W #(
+swiglu_gate_cache_RAM_2P_URAM_1R1W #(
     .DataWidth( 8 ),
     .AddressRange( 1024 ),
     .AddressWidth( 10 ))
@@ -10270,12 +10270,12 @@ swiglu_gmem_V_m_axi #(
     .C_USER_VALUE( C_M_AXI_GMEM_V_USER_VALUE ),
     .C_PROT_VALUE( C_M_AXI_GMEM_V_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_GMEM_V_CACHE_VALUE ),
-    .CH0_NUM_READ_OUTSTANDING( 16 ),
+    .CH0_NUM_READ_OUTSTANDING( 2 ),
     .CH0_NUM_WRITE_OUTSTANDING( 16 ),
-    .CH0_USER_RFIFONUM_WIDTH( 13 ),
+    .CH0_USER_RFIFONUM_WIDTH( 10 ),
     .CH0_USER_DW( 128 ),
     .CH0_USER_AW( 64 ),
-    .NUM_READ_OUTSTANDING( 16 ),
+    .NUM_READ_OUTSTANDING( 2 ),
     .NUM_WRITE_OUTSTANDING( 0 ))
 gmem_V_m_axi_U(
     .AWVALID(m_axi_gmem_V_AWVALID),
@@ -10362,12 +10362,12 @@ swiglu_gmem_W_m_axi #(
     .C_USER_VALUE( C_M_AXI_GMEM_W_USER_VALUE ),
     .C_PROT_VALUE( C_M_AXI_GMEM_W_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_GMEM_W_CACHE_VALUE ),
-    .CH0_NUM_READ_OUTSTANDING( 16 ),
+    .CH0_NUM_READ_OUTSTANDING( 2 ),
     .CH0_NUM_WRITE_OUTSTANDING( 16 ),
-    .CH0_USER_RFIFONUM_WIDTH( 13 ),
+    .CH0_USER_RFIFONUM_WIDTH( 10 ),
     .CH0_USER_DW( 128 ),
     .CH0_USER_AW( 64 ),
-    .NUM_READ_OUTSTANDING( 16 ),
+    .NUM_READ_OUTSTANDING( 2 ),
     .NUM_WRITE_OUTSTANDING( 0 ))
 gmem_W_m_axi_U(
     .AWVALID(m_axi_gmem_W_AWVALID),
@@ -10454,12 +10454,12 @@ swiglu_gmem_Wd_m_axi #(
     .C_USER_VALUE( C_M_AXI_GMEM_WD_USER_VALUE ),
     .C_PROT_VALUE( C_M_AXI_GMEM_WD_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_GMEM_WD_CACHE_VALUE ),
-    .CH0_NUM_READ_OUTSTANDING( 16 ),
+    .CH0_NUM_READ_OUTSTANDING( 2 ),
     .CH0_NUM_WRITE_OUTSTANDING( 16 ),
-    .CH0_USER_RFIFONUM_WIDTH( 13 ),
+    .CH0_USER_RFIFONUM_WIDTH( 10 ),
     .CH0_USER_DW( 128 ),
     .CH0_USER_AW( 64 ),
-    .NUM_READ_OUTSTANDING( 16 ),
+    .NUM_READ_OUTSTANDING( 2 ),
     .NUM_WRITE_OUTSTANDING( 0 ))
 gmem_Wd_m_axi_U(
     .AWVALID(m_axi_gmem_Wd_AWVALID),
@@ -10547,12 +10547,12 @@ swiglu_gmem_out_m_axi #(
     .C_PROT_VALUE( C_M_AXI_GMEM_OUT_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_GMEM_OUT_CACHE_VALUE ),
     .CH0_NUM_READ_OUTSTANDING( 16 ),
-    .CH0_NUM_WRITE_OUTSTANDING( 16 ),
+    .CH0_NUM_WRITE_OUTSTANDING( 2 ),
     .CH0_USER_RFIFONUM_WIDTH( 9 ),
     .CH0_USER_DW( 32 ),
     .CH0_USER_AW( 64 ),
     .NUM_READ_OUTSTANDING( 0 ),
-    .NUM_WRITE_OUTSTANDING( 16 ))
+    .NUM_WRITE_OUTSTANDING( 2 ))
 gmem_out_m_axi_U(
     .AWVALID(m_axi_gmem_out_AWVALID),
     .AWREADY(m_axi_gmem_out_AWREADY),
@@ -10638,12 +10638,12 @@ swiglu_gmem_x_m_axi #(
     .C_USER_VALUE( C_M_AXI_GMEM_X_USER_VALUE ),
     .C_PROT_VALUE( C_M_AXI_GMEM_X_PROT_VALUE ),
     .C_CACHE_VALUE( C_M_AXI_GMEM_X_CACHE_VALUE ),
-    .CH0_NUM_READ_OUTSTANDING( 16 ),
+    .CH0_NUM_READ_OUTSTANDING( 2 ),
     .CH0_NUM_WRITE_OUTSTANDING( 16 ),
-    .CH0_USER_RFIFONUM_WIDTH( 13 ),
+    .CH0_USER_RFIFONUM_WIDTH( 10 ),
     .CH0_USER_DW( 128 ),
     .CH0_USER_AW( 64 ),
-    .NUM_READ_OUTSTANDING( 16 ),
+    .NUM_READ_OUTSTANDING( 2 ),
     .NUM_WRITE_OUTSTANDING( 0 ))
 gmem_x_m_axi_U(
     .AWVALID(m_axi_gmem_x_AWVALID),

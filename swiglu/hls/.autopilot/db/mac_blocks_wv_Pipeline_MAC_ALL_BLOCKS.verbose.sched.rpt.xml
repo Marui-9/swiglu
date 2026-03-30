@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS'" level="0">
-<item name = "Date">Sun Mar 29 14:52:53 2026
+<item name = "Date">Mon Mar 30 09:36:42 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33 ns, 2.371 ns, 0.90 ns</column>
+<column name="ap_clk">3.33 ns, 2.044 ns, 0.90 ns</column>
 </table>
 </item>
 </section>

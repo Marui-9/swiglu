@@ -1,0 +1,6 @@
+Resource     Utilization     Available     Utilization %
+LUT          104374          117120        89.12
+FF           111792          234240        47.73
+BRAM         12.50           144           8.68
+URAM         24              64            37.50
+DSP          165             1248          13.22    

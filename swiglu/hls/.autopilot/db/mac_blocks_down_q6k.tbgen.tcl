@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 36
+set cdfgNum 30
 set C_modelName {mac_blocks_down_q6k}
 set C_modelType { float 32 }
 set ap_memory_interface_dict [dict create]
@@ -43,22 +43,22 @@ dict set ap_memory_interface_dict gate_5 { MEM_WIDTH 8 MEM_SIZE 1024 MASTER_TYPE
 dict set ap_memory_interface_dict gate_6 { MEM_WIDTH 8 MEM_SIZE 1024 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 dict set ap_memory_interface_dict gate_7 { MEM_WIDTH 8 MEM_SIZE 1024 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 set C_modelArgList {
-	{ rb_0 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_1 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_2 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_3 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_4 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_5 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_6 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_7 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_8 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_9 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_10 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_11 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_12 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_13 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_14 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
-	{ rb_15 int 128 regular {array 27 { 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 } 1 1 }  }
+	{ rb_0 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_1 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_2 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_3 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_4 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_5 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_6 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_7 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_8 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_9 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_10 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_11 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_12 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_13 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_14 int 128 regular {array 27 { 1 } 1 1 }  }
+	{ rb_15 int 128 regular {array 27 { 1 } 1 1 }  }
 	{ gate_0 int 8 regular {array 1024 { 1 3 } 1 1 }  }
 	{ gate_1 int 8 regular {array 1024 { 1 3 } 1 1 }  }
 	{ gate_2 int 8 regular {array 1024 { 1 3 } 1 1 }  }
@@ -100,7 +100,7 @@ set C_modelArgMapList {[
  	{ "Name" : "gate_scale", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 32} ]}
 # RTL Port declarations: 
-set portNum 192
+set portNum 92
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -111,147 +111,51 @@ set portList {
 	{ rb_0_address0 sc_out sc_lv 5 signal 0 } 
 	{ rb_0_ce0 sc_out sc_logic 1 signal 0 } 
 	{ rb_0_q0 sc_in sc_lv 128 signal 0 } 
-	{ rb_0_address1 sc_out sc_lv 5 signal 0 } 
-	{ rb_0_ce1 sc_out sc_logic 1 signal 0 } 
-	{ rb_0_q1 sc_in sc_lv 128 signal 0 } 
-	{ rb_0_address2 sc_out sc_lv 5 signal 0 } 
-	{ rb_0_ce2 sc_out sc_logic 1 signal 0 } 
-	{ rb_0_q2 sc_in sc_lv 128 signal 0 } 
 	{ rb_1_address0 sc_out sc_lv 5 signal 1 } 
 	{ rb_1_ce0 sc_out sc_logic 1 signal 1 } 
 	{ rb_1_q0 sc_in sc_lv 128 signal 1 } 
-	{ rb_1_address1 sc_out sc_lv 5 signal 1 } 
-	{ rb_1_ce1 sc_out sc_logic 1 signal 1 } 
-	{ rb_1_q1 sc_in sc_lv 128 signal 1 } 
-	{ rb_1_address2 sc_out sc_lv 5 signal 1 } 
-	{ rb_1_ce2 sc_out sc_logic 1 signal 1 } 
-	{ rb_1_q2 sc_in sc_lv 128 signal 1 } 
 	{ rb_2_address0 sc_out sc_lv 5 signal 2 } 
 	{ rb_2_ce0 sc_out sc_logic 1 signal 2 } 
 	{ rb_2_q0 sc_in sc_lv 128 signal 2 } 
-	{ rb_2_address1 sc_out sc_lv 5 signal 2 } 
-	{ rb_2_ce1 sc_out sc_logic 1 signal 2 } 
-	{ rb_2_q1 sc_in sc_lv 128 signal 2 } 
-	{ rb_2_address2 sc_out sc_lv 5 signal 2 } 
-	{ rb_2_ce2 sc_out sc_logic 1 signal 2 } 
-	{ rb_2_q2 sc_in sc_lv 128 signal 2 } 
 	{ rb_3_address0 sc_out sc_lv 5 signal 3 } 
 	{ rb_3_ce0 sc_out sc_logic 1 signal 3 } 
 	{ rb_3_q0 sc_in sc_lv 128 signal 3 } 
-	{ rb_3_address1 sc_out sc_lv 5 signal 3 } 
-	{ rb_3_ce1 sc_out sc_logic 1 signal 3 } 
-	{ rb_3_q1 sc_in sc_lv 128 signal 3 } 
-	{ rb_3_address2 sc_out sc_lv 5 signal 3 } 
-	{ rb_3_ce2 sc_out sc_logic 1 signal 3 } 
-	{ rb_3_q2 sc_in sc_lv 128 signal 3 } 
 	{ rb_4_address0 sc_out sc_lv 5 signal 4 } 
 	{ rb_4_ce0 sc_out sc_logic 1 signal 4 } 
 	{ rb_4_q0 sc_in sc_lv 128 signal 4 } 
-	{ rb_4_address1 sc_out sc_lv 5 signal 4 } 
-	{ rb_4_ce1 sc_out sc_logic 1 signal 4 } 
-	{ rb_4_q1 sc_in sc_lv 128 signal 4 } 
-	{ rb_4_address2 sc_out sc_lv 5 signal 4 } 
-	{ rb_4_ce2 sc_out sc_logic 1 signal 4 } 
-	{ rb_4_q2 sc_in sc_lv 128 signal 4 } 
 	{ rb_5_address0 sc_out sc_lv 5 signal 5 } 
 	{ rb_5_ce0 sc_out sc_logic 1 signal 5 } 
 	{ rb_5_q0 sc_in sc_lv 128 signal 5 } 
-	{ rb_5_address1 sc_out sc_lv 5 signal 5 } 
-	{ rb_5_ce1 sc_out sc_logic 1 signal 5 } 
-	{ rb_5_q1 sc_in sc_lv 128 signal 5 } 
-	{ rb_5_address2 sc_out sc_lv 5 signal 5 } 
-	{ rb_5_ce2 sc_out sc_logic 1 signal 5 } 
-	{ rb_5_q2 sc_in sc_lv 128 signal 5 } 
 	{ rb_6_address0 sc_out sc_lv 5 signal 6 } 
 	{ rb_6_ce0 sc_out sc_logic 1 signal 6 } 
 	{ rb_6_q0 sc_in sc_lv 128 signal 6 } 
-	{ rb_6_address1 sc_out sc_lv 5 signal 6 } 
-	{ rb_6_ce1 sc_out sc_logic 1 signal 6 } 
-	{ rb_6_q1 sc_in sc_lv 128 signal 6 } 
-	{ rb_6_address2 sc_out sc_lv 5 signal 6 } 
-	{ rb_6_ce2 sc_out sc_logic 1 signal 6 } 
-	{ rb_6_q2 sc_in sc_lv 128 signal 6 } 
 	{ rb_7_address0 sc_out sc_lv 5 signal 7 } 
 	{ rb_7_ce0 sc_out sc_logic 1 signal 7 } 
 	{ rb_7_q0 sc_in sc_lv 128 signal 7 } 
-	{ rb_7_address1 sc_out sc_lv 5 signal 7 } 
-	{ rb_7_ce1 sc_out sc_logic 1 signal 7 } 
-	{ rb_7_q1 sc_in sc_lv 128 signal 7 } 
-	{ rb_7_address2 sc_out sc_lv 5 signal 7 } 
-	{ rb_7_ce2 sc_out sc_logic 1 signal 7 } 
-	{ rb_7_q2 sc_in sc_lv 128 signal 7 } 
 	{ rb_8_address0 sc_out sc_lv 5 signal 8 } 
 	{ rb_8_ce0 sc_out sc_logic 1 signal 8 } 
 	{ rb_8_q0 sc_in sc_lv 128 signal 8 } 
-	{ rb_8_address1 sc_out sc_lv 5 signal 8 } 
-	{ rb_8_ce1 sc_out sc_logic 1 signal 8 } 
-	{ rb_8_q1 sc_in sc_lv 128 signal 8 } 
-	{ rb_8_address2 sc_out sc_lv 5 signal 8 } 
-	{ rb_8_ce2 sc_out sc_logic 1 signal 8 } 
-	{ rb_8_q2 sc_in sc_lv 128 signal 8 } 
 	{ rb_9_address0 sc_out sc_lv 5 signal 9 } 
 	{ rb_9_ce0 sc_out sc_logic 1 signal 9 } 
 	{ rb_9_q0 sc_in sc_lv 128 signal 9 } 
-	{ rb_9_address1 sc_out sc_lv 5 signal 9 } 
-	{ rb_9_ce1 sc_out sc_logic 1 signal 9 } 
-	{ rb_9_q1 sc_in sc_lv 128 signal 9 } 
-	{ rb_9_address2 sc_out sc_lv 5 signal 9 } 
-	{ rb_9_ce2 sc_out sc_logic 1 signal 9 } 
-	{ rb_9_q2 sc_in sc_lv 128 signal 9 } 
 	{ rb_10_address0 sc_out sc_lv 5 signal 10 } 
 	{ rb_10_ce0 sc_out sc_logic 1 signal 10 } 
 	{ rb_10_q0 sc_in sc_lv 128 signal 10 } 
-	{ rb_10_address1 sc_out sc_lv 5 signal 10 } 
-	{ rb_10_ce1 sc_out sc_logic 1 signal 10 } 
-	{ rb_10_q1 sc_in sc_lv 128 signal 10 } 
-	{ rb_10_address2 sc_out sc_lv 5 signal 10 } 
-	{ rb_10_ce2 sc_out sc_logic 1 signal 10 } 
-	{ rb_10_q2 sc_in sc_lv 128 signal 10 } 
 	{ rb_11_address0 sc_out sc_lv 5 signal 11 } 
 	{ rb_11_ce0 sc_out sc_logic 1 signal 11 } 
 	{ rb_11_q0 sc_in sc_lv 128 signal 11 } 
-	{ rb_11_address1 sc_out sc_lv 5 signal 11 } 
-	{ rb_11_ce1 sc_out sc_logic 1 signal 11 } 
-	{ rb_11_q1 sc_in sc_lv 128 signal 11 } 
-	{ rb_11_address2 sc_out sc_lv 5 signal 11 } 
-	{ rb_11_ce2 sc_out sc_logic 1 signal 11 } 
-	{ rb_11_q2 sc_in sc_lv 128 signal 11 } 
 	{ rb_12_address0 sc_out sc_lv 5 signal 12 } 
 	{ rb_12_ce0 sc_out sc_logic 1 signal 12 } 
 	{ rb_12_q0 sc_in sc_lv 128 signal 12 } 
-	{ rb_12_address1 sc_out sc_lv 5 signal 12 } 
-	{ rb_12_ce1 sc_out sc_logic 1 signal 12 } 
-	{ rb_12_q1 sc_in sc_lv 128 signal 12 } 
-	{ rb_12_address2 sc_out sc_lv 5 signal 12 } 
-	{ rb_12_ce2 sc_out sc_logic 1 signal 12 } 
-	{ rb_12_q2 sc_in sc_lv 128 signal 12 } 
 	{ rb_13_address0 sc_out sc_lv 5 signal 13 } 
 	{ rb_13_ce0 sc_out sc_logic 1 signal 13 } 
 	{ rb_13_q0 sc_in sc_lv 128 signal 13 } 
-	{ rb_13_address1 sc_out sc_lv 5 signal 13 } 
-	{ rb_13_ce1 sc_out sc_logic 1 signal 13 } 
-	{ rb_13_q1 sc_in sc_lv 128 signal 13 } 
-	{ rb_13_address2 sc_out sc_lv 5 signal 13 } 
-	{ rb_13_ce2 sc_out sc_logic 1 signal 13 } 
-	{ rb_13_q2 sc_in sc_lv 128 signal 13 } 
 	{ rb_14_address0 sc_out sc_lv 5 signal 14 } 
 	{ rb_14_ce0 sc_out sc_logic 1 signal 14 } 
 	{ rb_14_q0 sc_in sc_lv 128 signal 14 } 
-	{ rb_14_address1 sc_out sc_lv 5 signal 14 } 
-	{ rb_14_ce1 sc_out sc_logic 1 signal 14 } 
-	{ rb_14_q1 sc_in sc_lv 128 signal 14 } 
-	{ rb_14_address2 sc_out sc_lv 5 signal 14 } 
-	{ rb_14_ce2 sc_out sc_logic 1 signal 14 } 
-	{ rb_14_q2 sc_in sc_lv 128 signal 14 } 
 	{ rb_15_address0 sc_out sc_lv 5 signal 15 } 
 	{ rb_15_ce0 sc_out sc_logic 1 signal 15 } 
 	{ rb_15_q0 sc_in sc_lv 128 signal 15 } 
-	{ rb_15_address1 sc_out sc_lv 5 signal 15 } 
-	{ rb_15_ce1 sc_out sc_logic 1 signal 15 } 
-	{ rb_15_q1 sc_in sc_lv 128 signal 15 } 
-	{ rb_15_address2 sc_out sc_lv 5 signal 15 } 
-	{ rb_15_ce2 sc_out sc_logic 1 signal 15 } 
-	{ rb_15_q2 sc_in sc_lv 128 signal 15 } 
 	{ gate_0_address0 sc_out sc_lv 10 signal 16 } 
 	{ gate_0_ce0 sc_out sc_logic 1 signal 16 } 
 	{ gate_0_q0 sc_in sc_lv 8 signal 16 } 
@@ -278,22 +182,18 @@ set portList {
 	{ gate_7_q0 sc_in sc_lv 8 signal 23 } 
 	{ gate_scale sc_in sc_lv 32 signal 24 } 
 	{ ap_return sc_out sc_lv 32 signal -1 } 
-	{ grp_fp16_to_fp32_fu_532_p_din1 sc_out sc_lv 16 signal -1 } 
-	{ grp_fp16_to_fp32_fu_532_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fp16_to_fp32_fu_532_p_ce sc_out sc_logic 1 signal -1 } 
-	{ grp_fu_536_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_536_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_536_p_opcode sc_out sc_lv 1 signal -1 } 
-	{ grp_fu_536_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fu_536_p_ce sc_out sc_logic 1 signal -1 } 
-	{ grp_fu_540_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_540_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_540_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fu_540_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fp16_to_fp32_fu_540_p_din1 sc_out sc_lv 16 signal -1 } 
+	{ grp_fp16_to_fp32_fu_540_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fp16_to_fp32_fu_540_p_ce sc_out sc_logic 1 signal -1 } 
 	{ grp_fu_544_p_din0 sc_out sc_lv 32 signal -1 } 
 	{ grp_fu_544_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_544_p_opcode sc_out sc_lv 1 signal -1 } 
 	{ grp_fu_544_p_dout0 sc_in sc_lv 32 signal -1 } 
 	{ grp_fu_544_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_548_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_548_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_548_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_548_p_ce sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -305,147 +205,51 @@ set NewPortList {[
  	{ "name": "rb_0_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_0", "role": "address0" }} , 
  	{ "name": "rb_0_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_0", "role": "ce0" }} , 
  	{ "name": "rb_0_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_0", "role": "q0" }} , 
- 	{ "name": "rb_0_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_0", "role": "address1" }} , 
- 	{ "name": "rb_0_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_0", "role": "ce1" }} , 
- 	{ "name": "rb_0_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_0", "role": "q1" }} , 
- 	{ "name": "rb_0_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_0", "role": "address2" }} , 
- 	{ "name": "rb_0_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_0", "role": "ce2" }} , 
- 	{ "name": "rb_0_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_0", "role": "q2" }} , 
  	{ "name": "rb_1_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_1", "role": "address0" }} , 
  	{ "name": "rb_1_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_1", "role": "ce0" }} , 
  	{ "name": "rb_1_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_1", "role": "q0" }} , 
- 	{ "name": "rb_1_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_1", "role": "address1" }} , 
- 	{ "name": "rb_1_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_1", "role": "ce1" }} , 
- 	{ "name": "rb_1_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_1", "role": "q1" }} , 
- 	{ "name": "rb_1_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_1", "role": "address2" }} , 
- 	{ "name": "rb_1_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_1", "role": "ce2" }} , 
- 	{ "name": "rb_1_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_1", "role": "q2" }} , 
  	{ "name": "rb_2_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_2", "role": "address0" }} , 
  	{ "name": "rb_2_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_2", "role": "ce0" }} , 
  	{ "name": "rb_2_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_2", "role": "q0" }} , 
- 	{ "name": "rb_2_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_2", "role": "address1" }} , 
- 	{ "name": "rb_2_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_2", "role": "ce1" }} , 
- 	{ "name": "rb_2_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_2", "role": "q1" }} , 
- 	{ "name": "rb_2_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_2", "role": "address2" }} , 
- 	{ "name": "rb_2_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_2", "role": "ce2" }} , 
- 	{ "name": "rb_2_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_2", "role": "q2" }} , 
  	{ "name": "rb_3_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_3", "role": "address0" }} , 
  	{ "name": "rb_3_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_3", "role": "ce0" }} , 
  	{ "name": "rb_3_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_3", "role": "q0" }} , 
- 	{ "name": "rb_3_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_3", "role": "address1" }} , 
- 	{ "name": "rb_3_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_3", "role": "ce1" }} , 
- 	{ "name": "rb_3_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_3", "role": "q1" }} , 
- 	{ "name": "rb_3_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_3", "role": "address2" }} , 
- 	{ "name": "rb_3_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_3", "role": "ce2" }} , 
- 	{ "name": "rb_3_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_3", "role": "q2" }} , 
  	{ "name": "rb_4_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_4", "role": "address0" }} , 
  	{ "name": "rb_4_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_4", "role": "ce0" }} , 
  	{ "name": "rb_4_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_4", "role": "q0" }} , 
- 	{ "name": "rb_4_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_4", "role": "address1" }} , 
- 	{ "name": "rb_4_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_4", "role": "ce1" }} , 
- 	{ "name": "rb_4_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_4", "role": "q1" }} , 
- 	{ "name": "rb_4_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_4", "role": "address2" }} , 
- 	{ "name": "rb_4_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_4", "role": "ce2" }} , 
- 	{ "name": "rb_4_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_4", "role": "q2" }} , 
  	{ "name": "rb_5_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_5", "role": "address0" }} , 
  	{ "name": "rb_5_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_5", "role": "ce0" }} , 
  	{ "name": "rb_5_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_5", "role": "q0" }} , 
- 	{ "name": "rb_5_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_5", "role": "address1" }} , 
- 	{ "name": "rb_5_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_5", "role": "ce1" }} , 
- 	{ "name": "rb_5_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_5", "role": "q1" }} , 
- 	{ "name": "rb_5_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_5", "role": "address2" }} , 
- 	{ "name": "rb_5_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_5", "role": "ce2" }} , 
- 	{ "name": "rb_5_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_5", "role": "q2" }} , 
  	{ "name": "rb_6_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_6", "role": "address0" }} , 
  	{ "name": "rb_6_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_6", "role": "ce0" }} , 
  	{ "name": "rb_6_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_6", "role": "q0" }} , 
- 	{ "name": "rb_6_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_6", "role": "address1" }} , 
- 	{ "name": "rb_6_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_6", "role": "ce1" }} , 
- 	{ "name": "rb_6_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_6", "role": "q1" }} , 
- 	{ "name": "rb_6_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_6", "role": "address2" }} , 
- 	{ "name": "rb_6_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_6", "role": "ce2" }} , 
- 	{ "name": "rb_6_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_6", "role": "q2" }} , 
  	{ "name": "rb_7_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_7", "role": "address0" }} , 
  	{ "name": "rb_7_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_7", "role": "ce0" }} , 
  	{ "name": "rb_7_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_7", "role": "q0" }} , 
- 	{ "name": "rb_7_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_7", "role": "address1" }} , 
- 	{ "name": "rb_7_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_7", "role": "ce1" }} , 
- 	{ "name": "rb_7_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_7", "role": "q1" }} , 
- 	{ "name": "rb_7_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_7", "role": "address2" }} , 
- 	{ "name": "rb_7_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_7", "role": "ce2" }} , 
- 	{ "name": "rb_7_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_7", "role": "q2" }} , 
  	{ "name": "rb_8_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_8", "role": "address0" }} , 
  	{ "name": "rb_8_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_8", "role": "ce0" }} , 
  	{ "name": "rb_8_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_8", "role": "q0" }} , 
- 	{ "name": "rb_8_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_8", "role": "address1" }} , 
- 	{ "name": "rb_8_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_8", "role": "ce1" }} , 
- 	{ "name": "rb_8_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_8", "role": "q1" }} , 
- 	{ "name": "rb_8_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_8", "role": "address2" }} , 
- 	{ "name": "rb_8_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_8", "role": "ce2" }} , 
- 	{ "name": "rb_8_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_8", "role": "q2" }} , 
  	{ "name": "rb_9_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_9", "role": "address0" }} , 
  	{ "name": "rb_9_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_9", "role": "ce0" }} , 
  	{ "name": "rb_9_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_9", "role": "q0" }} , 
- 	{ "name": "rb_9_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_9", "role": "address1" }} , 
- 	{ "name": "rb_9_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_9", "role": "ce1" }} , 
- 	{ "name": "rb_9_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_9", "role": "q1" }} , 
- 	{ "name": "rb_9_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_9", "role": "address2" }} , 
- 	{ "name": "rb_9_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_9", "role": "ce2" }} , 
- 	{ "name": "rb_9_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_9", "role": "q2" }} , 
  	{ "name": "rb_10_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_10", "role": "address0" }} , 
  	{ "name": "rb_10_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_10", "role": "ce0" }} , 
  	{ "name": "rb_10_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_10", "role": "q0" }} , 
- 	{ "name": "rb_10_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_10", "role": "address1" }} , 
- 	{ "name": "rb_10_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_10", "role": "ce1" }} , 
- 	{ "name": "rb_10_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_10", "role": "q1" }} , 
- 	{ "name": "rb_10_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_10", "role": "address2" }} , 
- 	{ "name": "rb_10_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_10", "role": "ce2" }} , 
- 	{ "name": "rb_10_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_10", "role": "q2" }} , 
  	{ "name": "rb_11_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_11", "role": "address0" }} , 
  	{ "name": "rb_11_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_11", "role": "ce0" }} , 
  	{ "name": "rb_11_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_11", "role": "q0" }} , 
- 	{ "name": "rb_11_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_11", "role": "address1" }} , 
- 	{ "name": "rb_11_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_11", "role": "ce1" }} , 
- 	{ "name": "rb_11_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_11", "role": "q1" }} , 
- 	{ "name": "rb_11_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_11", "role": "address2" }} , 
- 	{ "name": "rb_11_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_11", "role": "ce2" }} , 
- 	{ "name": "rb_11_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_11", "role": "q2" }} , 
  	{ "name": "rb_12_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_12", "role": "address0" }} , 
  	{ "name": "rb_12_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_12", "role": "ce0" }} , 
  	{ "name": "rb_12_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_12", "role": "q0" }} , 
- 	{ "name": "rb_12_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_12", "role": "address1" }} , 
- 	{ "name": "rb_12_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_12", "role": "ce1" }} , 
- 	{ "name": "rb_12_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_12", "role": "q1" }} , 
- 	{ "name": "rb_12_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_12", "role": "address2" }} , 
- 	{ "name": "rb_12_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_12", "role": "ce2" }} , 
- 	{ "name": "rb_12_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_12", "role": "q2" }} , 
  	{ "name": "rb_13_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_13", "role": "address0" }} , 
  	{ "name": "rb_13_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_13", "role": "ce0" }} , 
  	{ "name": "rb_13_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_13", "role": "q0" }} , 
- 	{ "name": "rb_13_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_13", "role": "address1" }} , 
- 	{ "name": "rb_13_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_13", "role": "ce1" }} , 
- 	{ "name": "rb_13_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_13", "role": "q1" }} , 
- 	{ "name": "rb_13_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_13", "role": "address2" }} , 
- 	{ "name": "rb_13_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_13", "role": "ce2" }} , 
- 	{ "name": "rb_13_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_13", "role": "q2" }} , 
  	{ "name": "rb_14_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_14", "role": "address0" }} , 
  	{ "name": "rb_14_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_14", "role": "ce0" }} , 
  	{ "name": "rb_14_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_14", "role": "q0" }} , 
- 	{ "name": "rb_14_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_14", "role": "address1" }} , 
- 	{ "name": "rb_14_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_14", "role": "ce1" }} , 
- 	{ "name": "rb_14_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_14", "role": "q1" }} , 
- 	{ "name": "rb_14_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_14", "role": "address2" }} , 
- 	{ "name": "rb_14_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_14", "role": "ce2" }} , 
- 	{ "name": "rb_14_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_14", "role": "q2" }} , 
  	{ "name": "rb_15_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_15", "role": "address0" }} , 
  	{ "name": "rb_15_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_15", "role": "ce0" }} , 
  	{ "name": "rb_15_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_15", "role": "q0" }} , 
- 	{ "name": "rb_15_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_15", "role": "address1" }} , 
- 	{ "name": "rb_15_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_15", "role": "ce1" }} , 
- 	{ "name": "rb_15_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_15", "role": "q1" }} , 
- 	{ "name": "rb_15_address2", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_15", "role": "address2" }} , 
- 	{ "name": "rb_15_ce2", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_15", "role": "ce2" }} , 
- 	{ "name": "rb_15_q2", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_15", "role": "q2" }} , 
  	{ "name": "gate_0_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "gate_0", "role": "address0" }} , 
  	{ "name": "gate_0_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "gate_0", "role": "ce0" }} , 
  	{ "name": "gate_0_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "gate_0", "role": "q0" }} , 
@@ -472,41 +276,37 @@ set NewPortList {[
  	{ "name": "gate_7_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "gate_7", "role": "q0" }} , 
  	{ "name": "gate_scale", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "gate_scale", "role": "default" }} , 
  	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_532_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_532_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_532_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_532_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_532_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_532_p_ce", "role": "default" }} , 
- 	{ "name": "grp_fu_536_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_536_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_536_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_536_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_536_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_536_p_opcode", "role": "default" }} , 
- 	{ "name": "grp_fu_536_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_536_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_536_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_536_p_ce", "role": "default" }} , 
- 	{ "name": "grp_fu_540_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_540_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_540_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_540_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_540_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_540_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_540_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_540_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fp16_to_fp32_fu_540_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_540_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fp16_to_fp32_fu_540_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_540_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fp16_to_fp32_fu_540_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_540_p_ce", "role": "default" }} , 
  	{ "name": "grp_fu_544_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_544_p_din0", "role": "default" }} , 
  	{ "name": "grp_fu_544_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_544_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_544_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_544_p_opcode", "role": "default" }} , 
  	{ "name": "grp_fu_544_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_544_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_544_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_544_p_ce", "role": "default" }}  ]}
+ 	{ "name": "grp_fu_544_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_544_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_548_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_548_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_548_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_548_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_548_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_548_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_548_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_548_p_ce", "role": "default" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	mac_blocks_down_q6k {
-		rb_0 {Type I LastRead 296 FirstWrite -1}
-		rb_1 {Type I LastRead 296 FirstWrite -1}
-		rb_2 {Type I LastRead 296 FirstWrite -1}
-		rb_3 {Type I LastRead 296 FirstWrite -1}
-		rb_4 {Type I LastRead 296 FirstWrite -1}
-		rb_5 {Type I LastRead 296 FirstWrite -1}
-		rb_6 {Type I LastRead 296 FirstWrite -1}
-		rb_7 {Type I LastRead 296 FirstWrite -1}
-		rb_8 {Type I LastRead 296 FirstWrite -1}
-		rb_9 {Type I LastRead 296 FirstWrite -1}
-		rb_10 {Type I LastRead 296 FirstWrite -1}
-		rb_11 {Type I LastRead 296 FirstWrite -1}
-		rb_12 {Type I LastRead 296 FirstWrite -1}
-		rb_13 {Type I LastRead 296 FirstWrite -1}
-		rb_14 {Type I LastRead 296 FirstWrite -1}
-		rb_15 {Type I LastRead 296 FirstWrite -1}
+		rb_0 {Type I LastRead 101 FirstWrite -1}
+		rb_1 {Type I LastRead 101 FirstWrite -1}
+		rb_2 {Type I LastRead 101 FirstWrite -1}
+		rb_3 {Type I LastRead 101 FirstWrite -1}
+		rb_4 {Type I LastRead 101 FirstWrite -1}
+		rb_5 {Type I LastRead 101 FirstWrite -1}
+		rb_6 {Type I LastRead 101 FirstWrite -1}
+		rb_7 {Type I LastRead 101 FirstWrite -1}
+		rb_8 {Type I LastRead 101 FirstWrite -1}
+		rb_9 {Type I LastRead 101 FirstWrite -1}
+		rb_10 {Type I LastRead 101 FirstWrite -1}
+		rb_11 {Type I LastRead 101 FirstWrite -1}
+		rb_12 {Type I LastRead 101 FirstWrite -1}
+		rb_13 {Type I LastRead 101 FirstWrite -1}
+		rb_14 {Type I LastRead 101 FirstWrite -1}
+		rb_15 {Type I LastRead 101 FirstWrite -1}
 		gate_0 {Type I LastRead 0 FirstWrite -1}
 		gate_1 {Type I LastRead 0 FirstWrite -1}
 		gate_2 {Type I LastRead 0 FirstWrite -1}
@@ -516,194 +316,100 @@ set ArgLastReadFirstWriteLatency {
 		gate_6 {Type I LastRead 0 FirstWrite -1}
 		gate_7 {Type I LastRead 0 FirstWrite -1}
 		gate_scale {Type I LastRead 0 FirstWrite -1}}
-	mac_blocks_down_q6k_Pipeline_1 {
-		acc {Type O LastRead -1 FirstWrite 0}
-		acc_1 {Type O LastRead -1 FirstWrite 0}
-		acc_2 {Type O LastRead -1 FirstWrite 0}
-		acc_3 {Type O LastRead -1 FirstWrite 0}
-		acc_4 {Type O LastRead -1 FirstWrite 0}
-		acc_5 {Type O LastRead -1 FirstWrite 0}
-		acc_6 {Type O LastRead -1 FirstWrite 0}
-		acc_7 {Type O LastRead -1 FirstWrite 0}}
 	mac_blocks_down_q6k_Pipeline_MAC_Q6K {
-		empty {Type I LastRead 0 FirstWrite -1}
-		acc {Type IO LastRead 30 FirstWrite 37}
-		zext_ln77 {Type I LastRead 0 FirstWrite -1}
+		acc {Type IO LastRead 29 FirstWrite 37}
+		zext_ln79 {Type I LastRead 0 FirstWrite -1}
 		gate_0 {Type I LastRead 0 FirstWrite -1}
-		gate_4 {Type I LastRead 0 FirstWrite -1}
-		acc_7 {Type IO LastRead 30 FirstWrite 37}
-		acc_6 {Type IO LastRead 30 FirstWrite 37}
-		acc_5 {Type IO LastRead 30 FirstWrite 37}
-		acc_4 {Type IO LastRead 30 FirstWrite 37}
-		acc_3 {Type IO LastRead 30 FirstWrite 37}
-		acc_2 {Type IO LastRead 30 FirstWrite 37}
-		acc_1 {Type IO LastRead 30 FirstWrite 37}
-		mul_ln54 {Type I LastRead 0 FirstWrite -1}
-		rb_0 {Type I LastRead 1 FirstWrite -1}
-		rb_1 {Type I LastRead 1 FirstWrite -1}
-		rb_2 {Type I LastRead 1 FirstWrite -1}
-		rb_3 {Type I LastRead 1 FirstWrite -1}
-		rb_4 {Type I LastRead 1 FirstWrite -1}
-		rb_5 {Type I LastRead 1 FirstWrite -1}
-		rb_6 {Type I LastRead 1 FirstWrite -1}
-		rb_7 {Type I LastRead 1 FirstWrite -1}
-		rb_8 {Type I LastRead 1 FirstWrite -1}
-		rb_9 {Type I LastRead 1 FirstWrite -1}
-		rb_10 {Type I LastRead 1 FirstWrite -1}
-		rb_11 {Type I LastRead 1 FirstWrite -1}
-		rb_12 {Type I LastRead 1 FirstWrite -1}
-		rb_13 {Type I LastRead 1 FirstWrite -1}
-		rb_14 {Type I LastRead 1 FirstWrite -1}
-		rb_15 {Type I LastRead 1 FirstWrite -1}
-		gate_scale {Type I LastRead 0 FirstWrite -1}}
-	mac_blocks_down_q6k_Pipeline_3 {
-		acc {Type O LastRead -1 FirstWrite 0}
-		acc_1 {Type O LastRead -1 FirstWrite 0}
-		acc_2 {Type O LastRead -1 FirstWrite 0}
-		acc_3 {Type O LastRead -1 FirstWrite 0}
-		acc_4 {Type O LastRead -1 FirstWrite 0}
-		acc_5 {Type O LastRead -1 FirstWrite 0}
-		acc_6 {Type O LastRead -1 FirstWrite 0}
-		acc_7 {Type O LastRead -1 FirstWrite 0}}
-	mac_blocks_down_q6k_Pipeline_MAC_Q6K7 {
-		empty {Type I LastRead 0 FirstWrite -1}
-		acc {Type IO LastRead 30 FirstWrite 37}
-		zext_ln77 {Type I LastRead 0 FirstWrite -1}
-		gate_1 {Type I LastRead 0 FirstWrite -1}
-		gate_5 {Type I LastRead 0 FirstWrite -1}
-		acc_7 {Type IO LastRead 30 FirstWrite 37}
-		acc_6 {Type IO LastRead 30 FirstWrite 37}
-		acc_5 {Type IO LastRead 30 FirstWrite 37}
-		acc_4 {Type IO LastRead 30 FirstWrite 37}
-		acc_3 {Type IO LastRead 30 FirstWrite 37}
-		acc_2 {Type IO LastRead 30 FirstWrite 37}
-		acc_1 {Type IO LastRead 30 FirstWrite 37}
-		mul_ln54 {Type I LastRead 0 FirstWrite -1}
-		rb_0 {Type I LastRead 2 FirstWrite -1}
-		rb_1 {Type I LastRead 2 FirstWrite -1}
-		rb_2 {Type I LastRead 2 FirstWrite -1}
-		rb_3 {Type I LastRead 2 FirstWrite -1}
-		rb_4 {Type I LastRead 2 FirstWrite -1}
-		rb_5 {Type I LastRead 2 FirstWrite -1}
-		rb_6 {Type I LastRead 2 FirstWrite -1}
-		rb_7 {Type I LastRead 2 FirstWrite -1}
-		rb_8 {Type I LastRead 2 FirstWrite -1}
-		rb_9 {Type I LastRead 2 FirstWrite -1}
-		rb_10 {Type I LastRead 2 FirstWrite -1}
-		rb_11 {Type I LastRead 2 FirstWrite -1}
-		rb_12 {Type I LastRead 2 FirstWrite -1}
-		rb_13 {Type I LastRead 2 FirstWrite -1}
-		rb_14 {Type I LastRead 2 FirstWrite -1}
-		rb_15 {Type I LastRead 2 FirstWrite -1}
-		gate_scale {Type I LastRead 0 FirstWrite -1}}
-	mac_blocks_down_q6k_Pipeline_5 {
-		acc {Type O LastRead -1 FirstWrite 0}
-		acc_1 {Type O LastRead -1 FirstWrite 0}
-		acc_2 {Type O LastRead -1 FirstWrite 0}
-		acc_3 {Type O LastRead -1 FirstWrite 0}
-		acc_4 {Type O LastRead -1 FirstWrite 0}
-		acc_5 {Type O LastRead -1 FirstWrite 0}
-		acc_6 {Type O LastRead -1 FirstWrite 0}
-		acc_7 {Type O LastRead -1 FirstWrite 0}}
-	mac_blocks_down_q6k_Pipeline_MAC_Q6K8 {
-		empty {Type I LastRead 0 FirstWrite -1}
-		acc {Type IO LastRead 30 FirstWrite 37}
-		zext_ln77 {Type I LastRead 0 FirstWrite -1}
 		gate_2 {Type I LastRead 0 FirstWrite -1}
+		gate_4 {Type I LastRead 0 FirstWrite -1}
 		gate_6 {Type I LastRead 0 FirstWrite -1}
-		acc_7 {Type IO LastRead 30 FirstWrite 37}
-		acc_6 {Type IO LastRead 30 FirstWrite 37}
-		acc_5 {Type IO LastRead 30 FirstWrite 37}
-		acc_4 {Type IO LastRead 30 FirstWrite 37}
-		acc_3 {Type IO LastRead 30 FirstWrite 37}
-		acc_2 {Type IO LastRead 30 FirstWrite 37}
-		acc_1 {Type IO LastRead 30 FirstWrite 37}
-		mul_ln54 {Type I LastRead 0 FirstWrite -1}
-		rb_0 {Type I LastRead 2 FirstWrite -1}
-		rb_1 {Type I LastRead 2 FirstWrite -1}
-		rb_2 {Type I LastRead 2 FirstWrite -1}
-		rb_3 {Type I LastRead 2 FirstWrite -1}
-		rb_4 {Type I LastRead 2 FirstWrite -1}
-		rb_5 {Type I LastRead 2 FirstWrite -1}
-		rb_6 {Type I LastRead 2 FirstWrite -1}
-		rb_7 {Type I LastRead 2 FirstWrite -1}
-		rb_8 {Type I LastRead 2 FirstWrite -1}
-		rb_9 {Type I LastRead 2 FirstWrite -1}
-		rb_10 {Type I LastRead 2 FirstWrite -1}
-		rb_11 {Type I LastRead 2 FirstWrite -1}
-		rb_12 {Type I LastRead 2 FirstWrite -1}
-		rb_13 {Type I LastRead 2 FirstWrite -1}
-		rb_14 {Type I LastRead 2 FirstWrite -1}
-		rb_15 {Type I LastRead 2 FirstWrite -1}
-		gate_scale {Type I LastRead 0 FirstWrite -1}}
-	mac_blocks_down_q6k_Pipeline_7 {
-		acc {Type O LastRead -1 FirstWrite 0}
-		acc_1 {Type O LastRead -1 FirstWrite 0}
-		acc_2 {Type O LastRead -1 FirstWrite 0}
-		acc_3 {Type O LastRead -1 FirstWrite 0}
-		acc_4 {Type O LastRead -1 FirstWrite 0}
-		acc_5 {Type O LastRead -1 FirstWrite 0}
-		acc_6 {Type O LastRead -1 FirstWrite 0}
-		acc_7 {Type O LastRead -1 FirstWrite 0}}
-	mac_blocks_down_q6k_Pipeline_MAC_Q6K9 {
+		acc_7 {Type IO LastRead 29 FirstWrite 37}
+		acc_6 {Type IO LastRead 29 FirstWrite 37}
+		acc_5 {Type IO LastRead 29 FirstWrite 37}
+		acc_4 {Type IO LastRead 29 FirstWrite 37}
+		acc_3 {Type IO LastRead 29 FirstWrite 37}
+		acc_2 {Type IO LastRead 29 FirstWrite 37}
+		acc_1 {Type IO LastRead 29 FirstWrite 37}
+		mul_ln55 {Type I LastRead 0 FirstWrite -1}
+		rb_0 {Type I LastRead 14 FirstWrite -1}
+		rb_1 {Type I LastRead 14 FirstWrite -1}
+		rb_2 {Type I LastRead 14 FirstWrite -1}
+		rb_3 {Type I LastRead 14 FirstWrite -1}
+		rb_4 {Type I LastRead 14 FirstWrite -1}
+		rb_5 {Type I LastRead 14 FirstWrite -1}
+		rb_6 {Type I LastRead 14 FirstWrite -1}
+		rb_7 {Type I LastRead 14 FirstWrite -1}
+		rb_8 {Type I LastRead 14 FirstWrite -1}
+		rb_9 {Type I LastRead 14 FirstWrite -1}
+		rb_10 {Type I LastRead 14 FirstWrite -1}
+		rb_11 {Type I LastRead 14 FirstWrite -1}
+		rb_12 {Type I LastRead 14 FirstWrite -1}
+		rb_13 {Type I LastRead 14 FirstWrite -1}
+		rb_14 {Type I LastRead 14 FirstWrite -1}
+		rb_15 {Type I LastRead 14 FirstWrite -1}
 		empty {Type I LastRead 0 FirstWrite -1}
-		acc {Type IO LastRead 30 FirstWrite 37}
-		zext_ln77 {Type I LastRead 0 FirstWrite -1}
+		gate_scale {Type I LastRead 0 FirstWrite -1}}
+	mac_blocks_down_q6k_Pipeline_MAC_Q6K9 {
+		acc {Type IO LastRead 29 FirstWrite 37}
+		zext_ln79 {Type I LastRead 0 FirstWrite -1}
+		gate_1 {Type I LastRead 0 FirstWrite -1}
 		gate_3 {Type I LastRead 0 FirstWrite -1}
+		gate_5 {Type I LastRead 0 FirstWrite -1}
 		gate_7 {Type I LastRead 0 FirstWrite -1}
-		acc_7 {Type IO LastRead 30 FirstWrite 37}
-		acc_6 {Type IO LastRead 30 FirstWrite 37}
-		acc_5 {Type IO LastRead 30 FirstWrite 37}
-		acc_4 {Type IO LastRead 30 FirstWrite 37}
-		acc_3 {Type IO LastRead 30 FirstWrite 37}
-		acc_2 {Type IO LastRead 30 FirstWrite 37}
-		acc_1 {Type IO LastRead 30 FirstWrite 37}
-		mul_ln54 {Type I LastRead 0 FirstWrite -1}
-		rb_0 {Type I LastRead 2 FirstWrite -1}
-		rb_1 {Type I LastRead 2 FirstWrite -1}
-		rb_2 {Type I LastRead 2 FirstWrite -1}
-		rb_3 {Type I LastRead 2 FirstWrite -1}
-		rb_4 {Type I LastRead 2 FirstWrite -1}
-		rb_5 {Type I LastRead 2 FirstWrite -1}
-		rb_6 {Type I LastRead 2 FirstWrite -1}
-		rb_7 {Type I LastRead 2 FirstWrite -1}
-		rb_8 {Type I LastRead 2 FirstWrite -1}
-		rb_9 {Type I LastRead 2 FirstWrite -1}
-		rb_10 {Type I LastRead 2 FirstWrite -1}
-		rb_11 {Type I LastRead 2 FirstWrite -1}
-		rb_12 {Type I LastRead 2 FirstWrite -1}
-		rb_13 {Type I LastRead 2 FirstWrite -1}
-		rb_14 {Type I LastRead 2 FirstWrite -1}
-		rb_15 {Type I LastRead 2 FirstWrite -1}
+		acc_7 {Type IO LastRead 29 FirstWrite 37}
+		acc_6 {Type IO LastRead 29 FirstWrite 37}
+		acc_5 {Type IO LastRead 29 FirstWrite 37}
+		acc_4 {Type IO LastRead 29 FirstWrite 37}
+		acc_3 {Type IO LastRead 29 FirstWrite 37}
+		acc_2 {Type IO LastRead 29 FirstWrite 37}
+		acc_1 {Type IO LastRead 29 FirstWrite 37}
+		mul_ln55 {Type I LastRead 0 FirstWrite -1}
+		rb_0 {Type I LastRead 12 FirstWrite -1}
+		rb_1 {Type I LastRead 12 FirstWrite -1}
+		rb_2 {Type I LastRead 12 FirstWrite -1}
+		rb_3 {Type I LastRead 12 FirstWrite -1}
+		rb_4 {Type I LastRead 12 FirstWrite -1}
+		rb_5 {Type I LastRead 12 FirstWrite -1}
+		rb_6 {Type I LastRead 12 FirstWrite -1}
+		rb_7 {Type I LastRead 12 FirstWrite -1}
+		rb_8 {Type I LastRead 12 FirstWrite -1}
+		rb_9 {Type I LastRead 12 FirstWrite -1}
+		rb_10 {Type I LastRead 12 FirstWrite -1}
+		rb_11 {Type I LastRead 12 FirstWrite -1}
+		rb_12 {Type I LastRead 12 FirstWrite -1}
+		rb_13 {Type I LastRead 12 FirstWrite -1}
+		rb_14 {Type I LastRead 12 FirstWrite -1}
+		rb_15 {Type I LastRead 12 FirstWrite -1}
+		empty {Type I LastRead 0 FirstWrite -1}
 		gate_scale {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "13232", "Max" : "13232"}
-	, {"Name" : "Interval", "Min" : "13232", "Max" : "13232"}
+	{"Name" : "Latency", "Min" : "29280", "Max" : "29280"}
+	, {"Name" : "Interval", "Min" : "29280", "Max" : "29280"}
 ]}
 
 set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	rb_0 { ap_memory {  { rb_0_address0 mem_address 1 5 }  { rb_0_ce0 mem_ce 1 1 }  { rb_0_q0 mem_dout 0 128 }  { rb_0_address1 MemPortADDR2 1 5 }  { rb_0_ce1 MemPortCE2 1 1 }  { rb_0_q1 MemPortDOUT2 0 128 }  { rb_0_address2 MemPortADDR2 1 5 }  { rb_0_ce2 MemPortCE2 1 1 }  { rb_0_q2 MemPortDOUT2 0 128 } } }
-	rb_1 { ap_memory {  { rb_1_address0 mem_address 1 5 }  { rb_1_ce0 mem_ce 1 1 }  { rb_1_q0 mem_dout 0 128 }  { rb_1_address1 MemPortADDR2 1 5 }  { rb_1_ce1 MemPortCE2 1 1 }  { rb_1_q1 MemPortDOUT2 0 128 }  { rb_1_address2 MemPortADDR2 1 5 }  { rb_1_ce2 MemPortCE2 1 1 }  { rb_1_q2 MemPortDOUT2 0 128 } } }
-	rb_2 { ap_memory {  { rb_2_address0 mem_address 1 5 }  { rb_2_ce0 mem_ce 1 1 }  { rb_2_q0 mem_dout 0 128 }  { rb_2_address1 MemPortADDR2 1 5 }  { rb_2_ce1 MemPortCE2 1 1 }  { rb_2_q1 MemPortDOUT2 0 128 }  { rb_2_address2 MemPortADDR2 1 5 }  { rb_2_ce2 MemPortCE2 1 1 }  { rb_2_q2 MemPortDOUT2 0 128 } } }
-	rb_3 { ap_memory {  { rb_3_address0 mem_address 1 5 }  { rb_3_ce0 mem_ce 1 1 }  { rb_3_q0 mem_dout 0 128 }  { rb_3_address1 MemPortADDR2 1 5 }  { rb_3_ce1 MemPortCE2 1 1 }  { rb_3_q1 MemPortDOUT2 0 128 }  { rb_3_address2 MemPortADDR2 1 5 }  { rb_3_ce2 MemPortCE2 1 1 }  { rb_3_q2 MemPortDOUT2 0 128 } } }
-	rb_4 { ap_memory {  { rb_4_address0 mem_address 1 5 }  { rb_4_ce0 mem_ce 1 1 }  { rb_4_q0 mem_dout 0 128 }  { rb_4_address1 MemPortADDR2 1 5 }  { rb_4_ce1 MemPortCE2 1 1 }  { rb_4_q1 MemPortDOUT2 0 128 }  { rb_4_address2 MemPortADDR2 1 5 }  { rb_4_ce2 MemPortCE2 1 1 }  { rb_4_q2 MemPortDOUT2 0 128 } } }
-	rb_5 { ap_memory {  { rb_5_address0 mem_address 1 5 }  { rb_5_ce0 mem_ce 1 1 }  { rb_5_q0 mem_dout 0 128 }  { rb_5_address1 MemPortADDR2 1 5 }  { rb_5_ce1 MemPortCE2 1 1 }  { rb_5_q1 MemPortDOUT2 0 128 }  { rb_5_address2 MemPortADDR2 1 5 }  { rb_5_ce2 MemPortCE2 1 1 }  { rb_5_q2 MemPortDOUT2 0 128 } } }
-	rb_6 { ap_memory {  { rb_6_address0 mem_address 1 5 }  { rb_6_ce0 mem_ce 1 1 }  { rb_6_q0 mem_dout 0 128 }  { rb_6_address1 MemPortADDR2 1 5 }  { rb_6_ce1 MemPortCE2 1 1 }  { rb_6_q1 MemPortDOUT2 0 128 }  { rb_6_address2 MemPortADDR2 1 5 }  { rb_6_ce2 MemPortCE2 1 1 }  { rb_6_q2 MemPortDOUT2 0 128 } } }
-	rb_7 { ap_memory {  { rb_7_address0 mem_address 1 5 }  { rb_7_ce0 mem_ce 1 1 }  { rb_7_q0 mem_dout 0 128 }  { rb_7_address1 MemPortADDR2 1 5 }  { rb_7_ce1 MemPortCE2 1 1 }  { rb_7_q1 MemPortDOUT2 0 128 }  { rb_7_address2 MemPortADDR2 1 5 }  { rb_7_ce2 MemPortCE2 1 1 }  { rb_7_q2 MemPortDOUT2 0 128 } } }
-	rb_8 { ap_memory {  { rb_8_address0 mem_address 1 5 }  { rb_8_ce0 mem_ce 1 1 }  { rb_8_q0 mem_dout 0 128 }  { rb_8_address1 MemPortADDR2 1 5 }  { rb_8_ce1 MemPortCE2 1 1 }  { rb_8_q1 MemPortDOUT2 0 128 }  { rb_8_address2 MemPortADDR2 1 5 }  { rb_8_ce2 MemPortCE2 1 1 }  { rb_8_q2 MemPortDOUT2 0 128 } } }
-	rb_9 { ap_memory {  { rb_9_address0 mem_address 1 5 }  { rb_9_ce0 mem_ce 1 1 }  { rb_9_q0 mem_dout 0 128 }  { rb_9_address1 MemPortADDR2 1 5 }  { rb_9_ce1 MemPortCE2 1 1 }  { rb_9_q1 MemPortDOUT2 0 128 }  { rb_9_address2 MemPortADDR2 1 5 }  { rb_9_ce2 MemPortCE2 1 1 }  { rb_9_q2 MemPortDOUT2 0 128 } } }
-	rb_10 { ap_memory {  { rb_10_address0 mem_address 1 5 }  { rb_10_ce0 mem_ce 1 1 }  { rb_10_q0 mem_dout 0 128 }  { rb_10_address1 MemPortADDR2 1 5 }  { rb_10_ce1 MemPortCE2 1 1 }  { rb_10_q1 MemPortDOUT2 0 128 }  { rb_10_address2 MemPortADDR2 1 5 }  { rb_10_ce2 MemPortCE2 1 1 }  { rb_10_q2 MemPortDOUT2 0 128 } } }
-	rb_11 { ap_memory {  { rb_11_address0 mem_address 1 5 }  { rb_11_ce0 mem_ce 1 1 }  { rb_11_q0 mem_dout 0 128 }  { rb_11_address1 MemPortADDR2 1 5 }  { rb_11_ce1 MemPortCE2 1 1 }  { rb_11_q1 MemPortDOUT2 0 128 }  { rb_11_address2 MemPortADDR2 1 5 }  { rb_11_ce2 MemPortCE2 1 1 }  { rb_11_q2 MemPortDOUT2 0 128 } } }
-	rb_12 { ap_memory {  { rb_12_address0 mem_address 1 5 }  { rb_12_ce0 mem_ce 1 1 }  { rb_12_q0 mem_dout 0 128 }  { rb_12_address1 MemPortADDR2 1 5 }  { rb_12_ce1 MemPortCE2 1 1 }  { rb_12_q1 MemPortDOUT2 0 128 }  { rb_12_address2 MemPortADDR2 1 5 }  { rb_12_ce2 MemPortCE2 1 1 }  { rb_12_q2 MemPortDOUT2 0 128 } } }
-	rb_13 { ap_memory {  { rb_13_address0 mem_address 1 5 }  { rb_13_ce0 mem_ce 1 1 }  { rb_13_q0 mem_dout 0 128 }  { rb_13_address1 MemPortADDR2 1 5 }  { rb_13_ce1 MemPortCE2 1 1 }  { rb_13_q1 MemPortDOUT2 0 128 }  { rb_13_address2 MemPortADDR2 1 5 }  { rb_13_ce2 MemPortCE2 1 1 }  { rb_13_q2 MemPortDOUT2 0 128 } } }
-	rb_14 { ap_memory {  { rb_14_address0 mem_address 1 5 }  { rb_14_ce0 mem_ce 1 1 }  { rb_14_q0 mem_dout 0 128 }  { rb_14_address1 MemPortADDR2 1 5 }  { rb_14_ce1 MemPortCE2 1 1 }  { rb_14_q1 MemPortDOUT2 0 128 }  { rb_14_address2 MemPortADDR2 1 5 }  { rb_14_ce2 MemPortCE2 1 1 }  { rb_14_q2 MemPortDOUT2 0 128 } } }
-	rb_15 { ap_memory {  { rb_15_address0 mem_address 1 5 }  { rb_15_ce0 mem_ce 1 1 }  { rb_15_q0 mem_dout 0 128 }  { rb_15_address1 MemPortADDR2 1 5 }  { rb_15_ce1 MemPortCE2 1 1 }  { rb_15_q1 MemPortDOUT2 0 128 }  { rb_15_address2 MemPortADDR2 1 5 }  { rb_15_ce2 MemPortCE2 1 1 }  { rb_15_q2 MemPortDOUT2 0 128 } } }
+	rb_0 { ap_memory {  { rb_0_address0 mem_address 1 5 }  { rb_0_ce0 mem_ce 1 1 }  { rb_0_q0 mem_dout 0 128 } } }
+	rb_1 { ap_memory {  { rb_1_address0 mem_address 1 5 }  { rb_1_ce0 mem_ce 1 1 }  { rb_1_q0 mem_dout 0 128 } } }
+	rb_2 { ap_memory {  { rb_2_address0 mem_address 1 5 }  { rb_2_ce0 mem_ce 1 1 }  { rb_2_q0 mem_dout 0 128 } } }
+	rb_3 { ap_memory {  { rb_3_address0 mem_address 1 5 }  { rb_3_ce0 mem_ce 1 1 }  { rb_3_q0 mem_dout 0 128 } } }
+	rb_4 { ap_memory {  { rb_4_address0 mem_address 1 5 }  { rb_4_ce0 mem_ce 1 1 }  { rb_4_q0 mem_dout 0 128 } } }
+	rb_5 { ap_memory {  { rb_5_address0 mem_address 1 5 }  { rb_5_ce0 mem_ce 1 1 }  { rb_5_q0 mem_dout 0 128 } } }
+	rb_6 { ap_memory {  { rb_6_address0 mem_address 1 5 }  { rb_6_ce0 mem_ce 1 1 }  { rb_6_q0 mem_dout 0 128 } } }
+	rb_7 { ap_memory {  { rb_7_address0 mem_address 1 5 }  { rb_7_ce0 mem_ce 1 1 }  { rb_7_q0 mem_dout 0 128 } } }
+	rb_8 { ap_memory {  { rb_8_address0 mem_address 1 5 }  { rb_8_ce0 mem_ce 1 1 }  { rb_8_q0 mem_dout 0 128 } } }
+	rb_9 { ap_memory {  { rb_9_address0 mem_address 1 5 }  { rb_9_ce0 mem_ce 1 1 }  { rb_9_q0 mem_dout 0 128 } } }
+	rb_10 { ap_memory {  { rb_10_address0 mem_address 1 5 }  { rb_10_ce0 mem_ce 1 1 }  { rb_10_q0 mem_dout 0 128 } } }
+	rb_11 { ap_memory {  { rb_11_address0 mem_address 1 5 }  { rb_11_ce0 mem_ce 1 1 }  { rb_11_q0 mem_dout 0 128 } } }
+	rb_12 { ap_memory {  { rb_12_address0 mem_address 1 5 }  { rb_12_ce0 mem_ce 1 1 }  { rb_12_q0 mem_dout 0 128 } } }
+	rb_13 { ap_memory {  { rb_13_address0 mem_address 1 5 }  { rb_13_ce0 mem_ce 1 1 }  { rb_13_q0 mem_dout 0 128 } } }
+	rb_14 { ap_memory {  { rb_14_address0 mem_address 1 5 }  { rb_14_ce0 mem_ce 1 1 }  { rb_14_q0 mem_dout 0 128 } } }
+	rb_15 { ap_memory {  { rb_15_address0 mem_address 1 5 }  { rb_15_ce0 mem_ce 1 1 }  { rb_15_q0 mem_dout 0 128 } } }
 	gate_0 { ap_memory {  { gate_0_address0 mem_address 1 10 }  { gate_0_ce0 mem_ce 1 1 }  { gate_0_q0 mem_dout 0 8 } } }
 	gate_1 { ap_memory {  { gate_1_address0 mem_address 1 10 }  { gate_1_ce0 mem_ce 1 1 }  { gate_1_q0 mem_dout 0 8 } } }
 	gate_2 { ap_memory {  { gate_2_address0 mem_address 1 10 }  { gate_2_ce0 mem_ce 1 1 }  { gate_2_q0 mem_dout 0 8 } } }

@@ -1,0 +1,55 @@
+<dict>
+  <key>main-file</key>
+  <string>C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/.autopilot/db/swiglu.pp.0.cpp</string>
+  <key>diagnostics</key>
+  <array>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>64</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>missing argument for &apos;variable&apos;</string>
+      <key>ID</key>
+      <integer>5562</integer>
+      <key>WarningOption</key>
+      <string>invalid-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>118</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>missing argument for &apos;variable&apos;</string>
+      <key>ID</key>
+      <integer>5562</integer>
+      <key>WarningOption</key>
+      <string>invalid-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>342</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>missing argument for &apos;variable&apos;</string>
+      <key>ID</key>
+      <integer>5562</integer>
+      <key>WarningOption</key>
+      <string>invalid-hls-pragmas</string>
+    </dict>
+  </array>
+</dict>

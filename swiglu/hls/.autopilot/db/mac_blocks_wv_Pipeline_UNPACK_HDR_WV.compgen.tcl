@@ -143,7 +143,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_63_out \
     op interface \
-    ports { mn6_63_out { O 8 vector } mn6_63_out_ap_vld { O 1 bit } } \
+    ports { mn6_63_out { O 6 vector } mn6_63_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -158,7 +158,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_62_out \
     op interface \
-    ports { mn6_62_out { O 8 vector } mn6_62_out_ap_vld { O 1 bit } } \
+    ports { mn6_62_out { O 6 vector } mn6_62_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -173,7 +173,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_61_out \
     op interface \
-    ports { mn6_61_out { O 8 vector } mn6_61_out_ap_vld { O 1 bit } } \
+    ports { mn6_61_out { O 6 vector } mn6_61_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -188,7 +188,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_60_out \
     op interface \
-    ports { mn6_60_out { O 8 vector } mn6_60_out_ap_vld { O 1 bit } } \
+    ports { mn6_60_out { O 6 vector } mn6_60_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -203,7 +203,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_59_out \
     op interface \
-    ports { mn6_59_out { O 8 vector } mn6_59_out_ap_vld { O 1 bit } } \
+    ports { mn6_59_out { O 6 vector } mn6_59_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -218,7 +218,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_58_out \
     op interface \
-    ports { mn6_58_out { O 8 vector } mn6_58_out_ap_vld { O 1 bit } } \
+    ports { mn6_58_out { O 6 vector } mn6_58_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -233,7 +233,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_57_out \
     op interface \
-    ports { mn6_57_out { O 8 vector } mn6_57_out_ap_vld { O 1 bit } } \
+    ports { mn6_57_out { O 6 vector } mn6_57_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -248,7 +248,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_56_out \
     op interface \
-    ports { mn6_56_out { O 8 vector } mn6_56_out_ap_vld { O 1 bit } } \
+    ports { mn6_56_out { O 6 vector } mn6_56_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -263,7 +263,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_55_out \
     op interface \
-    ports { mn6_55_out { O 8 vector } mn6_55_out_ap_vld { O 1 bit } } \
+    ports { mn6_55_out { O 6 vector } mn6_55_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -278,7 +278,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_54_out \
     op interface \
-    ports { mn6_54_out { O 8 vector } mn6_54_out_ap_vld { O 1 bit } } \
+    ports { mn6_54_out { O 6 vector } mn6_54_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -293,7 +293,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_53_out \
     op interface \
-    ports { mn6_53_out { O 8 vector } mn6_53_out_ap_vld { O 1 bit } } \
+    ports { mn6_53_out { O 6 vector } mn6_53_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -308,7 +308,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_52_out \
     op interface \
-    ports { mn6_52_out { O 8 vector } mn6_52_out_ap_vld { O 1 bit } } \
+    ports { mn6_52_out { O 6 vector } mn6_52_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -323,7 +323,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_51_out \
     op interface \
-    ports { mn6_51_out { O 8 vector } mn6_51_out_ap_vld { O 1 bit } } \
+    ports { mn6_51_out { O 6 vector } mn6_51_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -338,7 +338,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_50_out \
     op interface \
-    ports { mn6_50_out { O 8 vector } mn6_50_out_ap_vld { O 1 bit } } \
+    ports { mn6_50_out { O 6 vector } mn6_50_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -353,7 +353,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_49_out \
     op interface \
-    ports { mn6_49_out { O 8 vector } mn6_49_out_ap_vld { O 1 bit } } \
+    ports { mn6_49_out { O 6 vector } mn6_49_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -368,7 +368,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_48_out \
     op interface \
-    ports { mn6_48_out { O 8 vector } mn6_48_out_ap_vld { O 1 bit } } \
+    ports { mn6_48_out { O 6 vector } mn6_48_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -383,7 +383,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_47_out \
     op interface \
-    ports { mn6_47_out { O 8 vector } mn6_47_out_ap_vld { O 1 bit } } \
+    ports { mn6_47_out { O 6 vector } mn6_47_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -398,7 +398,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_46_out \
     op interface \
-    ports { mn6_46_out { O 8 vector } mn6_46_out_ap_vld { O 1 bit } } \
+    ports { mn6_46_out { O 6 vector } mn6_46_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -413,7 +413,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_45_out \
     op interface \
-    ports { mn6_45_out { O 8 vector } mn6_45_out_ap_vld { O 1 bit } } \
+    ports { mn6_45_out { O 6 vector } mn6_45_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -428,7 +428,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_44_out \
     op interface \
-    ports { mn6_44_out { O 8 vector } mn6_44_out_ap_vld { O 1 bit } } \
+    ports { mn6_44_out { O 6 vector } mn6_44_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -443,7 +443,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_43_out \
     op interface \
-    ports { mn6_43_out { O 8 vector } mn6_43_out_ap_vld { O 1 bit } } \
+    ports { mn6_43_out { O 6 vector } mn6_43_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -458,7 +458,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_42_out \
     op interface \
-    ports { mn6_42_out { O 8 vector } mn6_42_out_ap_vld { O 1 bit } } \
+    ports { mn6_42_out { O 6 vector } mn6_42_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -473,7 +473,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_41_out \
     op interface \
-    ports { mn6_41_out { O 8 vector } mn6_41_out_ap_vld { O 1 bit } } \
+    ports { mn6_41_out { O 6 vector } mn6_41_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -488,7 +488,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_40_out \
     op interface \
-    ports { mn6_40_out { O 8 vector } mn6_40_out_ap_vld { O 1 bit } } \
+    ports { mn6_40_out { O 6 vector } mn6_40_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -503,7 +503,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_39_out \
     op interface \
-    ports { mn6_39_out { O 8 vector } mn6_39_out_ap_vld { O 1 bit } } \
+    ports { mn6_39_out { O 6 vector } mn6_39_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -518,7 +518,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_38_out \
     op interface \
-    ports { mn6_38_out { O 8 vector } mn6_38_out_ap_vld { O 1 bit } } \
+    ports { mn6_38_out { O 6 vector } mn6_38_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -533,7 +533,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_37_out \
     op interface \
-    ports { mn6_37_out { O 8 vector } mn6_37_out_ap_vld { O 1 bit } } \
+    ports { mn6_37_out { O 6 vector } mn6_37_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -548,7 +548,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_36_out \
     op interface \
-    ports { mn6_36_out { O 8 vector } mn6_36_out_ap_vld { O 1 bit } } \
+    ports { mn6_36_out { O 6 vector } mn6_36_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -563,7 +563,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_35_out \
     op interface \
-    ports { mn6_35_out { O 8 vector } mn6_35_out_ap_vld { O 1 bit } } \
+    ports { mn6_35_out { O 6 vector } mn6_35_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -578,7 +578,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_34_out \
     op interface \
-    ports { mn6_34_out { O 8 vector } mn6_34_out_ap_vld { O 1 bit } } \
+    ports { mn6_34_out { O 6 vector } mn6_34_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -593,7 +593,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_33_out \
     op interface \
-    ports { mn6_33_out { O 8 vector } mn6_33_out_ap_vld { O 1 bit } } \
+    ports { mn6_33_out { O 6 vector } mn6_33_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -608,7 +608,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_32_out \
     op interface \
-    ports { mn6_32_out { O 8 vector } mn6_32_out_ap_vld { O 1 bit } } \
+    ports { mn6_32_out { O 6 vector } mn6_32_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -623,7 +623,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_31_out \
     op interface \
-    ports { mn6_31_out { O 8 vector } mn6_31_out_ap_vld { O 1 bit } } \
+    ports { mn6_31_out { O 6 vector } mn6_31_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -638,7 +638,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_30_out \
     op interface \
-    ports { mn6_30_out { O 8 vector } mn6_30_out_ap_vld { O 1 bit } } \
+    ports { mn6_30_out { O 6 vector } mn6_30_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -653,7 +653,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_29_out \
     op interface \
-    ports { mn6_29_out { O 8 vector } mn6_29_out_ap_vld { O 1 bit } } \
+    ports { mn6_29_out { O 6 vector } mn6_29_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -668,7 +668,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_28_out \
     op interface \
-    ports { mn6_28_out { O 8 vector } mn6_28_out_ap_vld { O 1 bit } } \
+    ports { mn6_28_out { O 6 vector } mn6_28_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -683,7 +683,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_27_out \
     op interface \
-    ports { mn6_27_out { O 8 vector } mn6_27_out_ap_vld { O 1 bit } } \
+    ports { mn6_27_out { O 6 vector } mn6_27_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -698,7 +698,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_26_out \
     op interface \
-    ports { mn6_26_out { O 8 vector } mn6_26_out_ap_vld { O 1 bit } } \
+    ports { mn6_26_out { O 6 vector } mn6_26_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -713,7 +713,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_25_out \
     op interface \
-    ports { mn6_25_out { O 8 vector } mn6_25_out_ap_vld { O 1 bit } } \
+    ports { mn6_25_out { O 6 vector } mn6_25_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -728,7 +728,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_24_out \
     op interface \
-    ports { mn6_24_out { O 8 vector } mn6_24_out_ap_vld { O 1 bit } } \
+    ports { mn6_24_out { O 6 vector } mn6_24_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -743,7 +743,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_23_out \
     op interface \
-    ports { mn6_23_out { O 8 vector } mn6_23_out_ap_vld { O 1 bit } } \
+    ports { mn6_23_out { O 6 vector } mn6_23_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -758,7 +758,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_22_out \
     op interface \
-    ports { mn6_22_out { O 8 vector } mn6_22_out_ap_vld { O 1 bit } } \
+    ports { mn6_22_out { O 6 vector } mn6_22_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -773,7 +773,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_21_out \
     op interface \
-    ports { mn6_21_out { O 8 vector } mn6_21_out_ap_vld { O 1 bit } } \
+    ports { mn6_21_out { O 6 vector } mn6_21_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -788,7 +788,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_20_out \
     op interface \
-    ports { mn6_20_out { O 8 vector } mn6_20_out_ap_vld { O 1 bit } } \
+    ports { mn6_20_out { O 6 vector } mn6_20_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -803,7 +803,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_19_out \
     op interface \
-    ports { mn6_19_out { O 8 vector } mn6_19_out_ap_vld { O 1 bit } } \
+    ports { mn6_19_out { O 6 vector } mn6_19_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -818,7 +818,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_18_out \
     op interface \
-    ports { mn6_18_out { O 8 vector } mn6_18_out_ap_vld { O 1 bit } } \
+    ports { mn6_18_out { O 6 vector } mn6_18_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -833,7 +833,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_17_out \
     op interface \
-    ports { mn6_17_out { O 8 vector } mn6_17_out_ap_vld { O 1 bit } } \
+    ports { mn6_17_out { O 6 vector } mn6_17_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -848,7 +848,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_16_out \
     op interface \
-    ports { mn6_16_out { O 8 vector } mn6_16_out_ap_vld { O 1 bit } } \
+    ports { mn6_16_out { O 6 vector } mn6_16_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -863,7 +863,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_15_out \
     op interface \
-    ports { mn6_15_out { O 8 vector } mn6_15_out_ap_vld { O 1 bit } } \
+    ports { mn6_15_out { O 6 vector } mn6_15_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -878,7 +878,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_14_out \
     op interface \
-    ports { mn6_14_out { O 8 vector } mn6_14_out_ap_vld { O 1 bit } } \
+    ports { mn6_14_out { O 6 vector } mn6_14_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -893,7 +893,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_13_out \
     op interface \
-    ports { mn6_13_out { O 8 vector } mn6_13_out_ap_vld { O 1 bit } } \
+    ports { mn6_13_out { O 6 vector } mn6_13_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -908,7 +908,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_12_out \
     op interface \
-    ports { mn6_12_out { O 8 vector } mn6_12_out_ap_vld { O 1 bit } } \
+    ports { mn6_12_out { O 6 vector } mn6_12_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -923,7 +923,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_11_out \
     op interface \
-    ports { mn6_11_out { O 8 vector } mn6_11_out_ap_vld { O 1 bit } } \
+    ports { mn6_11_out { O 6 vector } mn6_11_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -938,7 +938,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_10_out \
     op interface \
-    ports { mn6_10_out { O 8 vector } mn6_10_out_ap_vld { O 1 bit } } \
+    ports { mn6_10_out { O 6 vector } mn6_10_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -953,7 +953,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_9_out \
     op interface \
-    ports { mn6_9_out { O 8 vector } mn6_9_out_ap_vld { O 1 bit } } \
+    ports { mn6_9_out { O 6 vector } mn6_9_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -968,7 +968,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_8_out \
     op interface \
-    ports { mn6_8_out { O 8 vector } mn6_8_out_ap_vld { O 1 bit } } \
+    ports { mn6_8_out { O 6 vector } mn6_8_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -983,7 +983,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_7_out \
     op interface \
-    ports { mn6_7_out { O 8 vector } mn6_7_out_ap_vld { O 1 bit } } \
+    ports { mn6_7_out { O 6 vector } mn6_7_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -998,7 +998,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_6_out \
     op interface \
-    ports { mn6_6_out { O 8 vector } mn6_6_out_ap_vld { O 1 bit } } \
+    ports { mn6_6_out { O 6 vector } mn6_6_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1013,7 +1013,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_5_out \
     op interface \
-    ports { mn6_5_out { O 8 vector } mn6_5_out_ap_vld { O 1 bit } } \
+    ports { mn6_5_out { O 6 vector } mn6_5_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1028,7 +1028,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_4_out \
     op interface \
-    ports { mn6_4_out { O 8 vector } mn6_4_out_ap_vld { O 1 bit } } \
+    ports { mn6_4_out { O 6 vector } mn6_4_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1043,7 +1043,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_3_out \
     op interface \
-    ports { mn6_3_out { O 8 vector } mn6_3_out_ap_vld { O 1 bit } } \
+    ports { mn6_3_out { O 6 vector } mn6_3_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1058,7 +1058,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_2_out \
     op interface \
-    ports { mn6_2_out { O 8 vector } mn6_2_out_ap_vld { O 1 bit } } \
+    ports { mn6_2_out { O 6 vector } mn6_2_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1073,7 +1073,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_1_out \
     op interface \
-    ports { mn6_1_out { O 8 vector } mn6_1_out_ap_vld { O 1 bit } } \
+    ports { mn6_1_out { O 6 vector } mn6_1_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1088,7 +1088,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_mn6_out \
     op interface \
-    ports { mn6_out { O 8 vector } mn6_out_ap_vld { O 1 bit } } \
+    ports { mn6_out { O 6 vector } mn6_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1103,7 +1103,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_63_out \
     op interface \
-    ports { sc6_63_out { O 8 vector } sc6_63_out_ap_vld { O 1 bit } } \
+    ports { sc6_63_out { O 6 vector } sc6_63_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1118,7 +1118,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_62_out \
     op interface \
-    ports { sc6_62_out { O 8 vector } sc6_62_out_ap_vld { O 1 bit } } \
+    ports { sc6_62_out { O 6 vector } sc6_62_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1133,7 +1133,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_61_out \
     op interface \
-    ports { sc6_61_out { O 8 vector } sc6_61_out_ap_vld { O 1 bit } } \
+    ports { sc6_61_out { O 6 vector } sc6_61_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1148,7 +1148,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_60_out \
     op interface \
-    ports { sc6_60_out { O 8 vector } sc6_60_out_ap_vld { O 1 bit } } \
+    ports { sc6_60_out { O 6 vector } sc6_60_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1163,7 +1163,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_59_out \
     op interface \
-    ports { sc6_59_out { O 8 vector } sc6_59_out_ap_vld { O 1 bit } } \
+    ports { sc6_59_out { O 6 vector } sc6_59_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1178,7 +1178,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_58_out \
     op interface \
-    ports { sc6_58_out { O 8 vector } sc6_58_out_ap_vld { O 1 bit } } \
+    ports { sc6_58_out { O 6 vector } sc6_58_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1193,7 +1193,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_57_out \
     op interface \
-    ports { sc6_57_out { O 8 vector } sc6_57_out_ap_vld { O 1 bit } } \
+    ports { sc6_57_out { O 6 vector } sc6_57_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1208,7 +1208,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_56_out \
     op interface \
-    ports { sc6_56_out { O 8 vector } sc6_56_out_ap_vld { O 1 bit } } \
+    ports { sc6_56_out { O 6 vector } sc6_56_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1223,7 +1223,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_55_out \
     op interface \
-    ports { sc6_55_out { O 8 vector } sc6_55_out_ap_vld { O 1 bit } } \
+    ports { sc6_55_out { O 6 vector } sc6_55_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1238,7 +1238,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_54_out \
     op interface \
-    ports { sc6_54_out { O 8 vector } sc6_54_out_ap_vld { O 1 bit } } \
+    ports { sc6_54_out { O 6 vector } sc6_54_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1253,7 +1253,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_53_out \
     op interface \
-    ports { sc6_53_out { O 8 vector } sc6_53_out_ap_vld { O 1 bit } } \
+    ports { sc6_53_out { O 6 vector } sc6_53_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1268,7 +1268,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_52_out \
     op interface \
-    ports { sc6_52_out { O 8 vector } sc6_52_out_ap_vld { O 1 bit } } \
+    ports { sc6_52_out { O 6 vector } sc6_52_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1283,7 +1283,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_51_out \
     op interface \
-    ports { sc6_51_out { O 8 vector } sc6_51_out_ap_vld { O 1 bit } } \
+    ports { sc6_51_out { O 6 vector } sc6_51_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1298,7 +1298,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_50_out \
     op interface \
-    ports { sc6_50_out { O 8 vector } sc6_50_out_ap_vld { O 1 bit } } \
+    ports { sc6_50_out { O 6 vector } sc6_50_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1313,7 +1313,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_49_out \
     op interface \
-    ports { sc6_49_out { O 8 vector } sc6_49_out_ap_vld { O 1 bit } } \
+    ports { sc6_49_out { O 6 vector } sc6_49_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1328,7 +1328,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_48_out \
     op interface \
-    ports { sc6_48_out { O 8 vector } sc6_48_out_ap_vld { O 1 bit } } \
+    ports { sc6_48_out { O 6 vector } sc6_48_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1343,7 +1343,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_47_out \
     op interface \
-    ports { sc6_47_out { O 8 vector } sc6_47_out_ap_vld { O 1 bit } } \
+    ports { sc6_47_out { O 6 vector } sc6_47_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1358,7 +1358,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_46_out \
     op interface \
-    ports { sc6_46_out { O 8 vector } sc6_46_out_ap_vld { O 1 bit } } \
+    ports { sc6_46_out { O 6 vector } sc6_46_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1373,7 +1373,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_45_out \
     op interface \
-    ports { sc6_45_out { O 8 vector } sc6_45_out_ap_vld { O 1 bit } } \
+    ports { sc6_45_out { O 6 vector } sc6_45_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1388,7 +1388,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_44_out \
     op interface \
-    ports { sc6_44_out { O 8 vector } sc6_44_out_ap_vld { O 1 bit } } \
+    ports { sc6_44_out { O 6 vector } sc6_44_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1403,7 +1403,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_43_out \
     op interface \
-    ports { sc6_43_out { O 8 vector } sc6_43_out_ap_vld { O 1 bit } } \
+    ports { sc6_43_out { O 6 vector } sc6_43_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1418,7 +1418,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_42_out \
     op interface \
-    ports { sc6_42_out { O 8 vector } sc6_42_out_ap_vld { O 1 bit } } \
+    ports { sc6_42_out { O 6 vector } sc6_42_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1433,7 +1433,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_41_out \
     op interface \
-    ports { sc6_41_out { O 8 vector } sc6_41_out_ap_vld { O 1 bit } } \
+    ports { sc6_41_out { O 6 vector } sc6_41_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1448,7 +1448,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_40_out \
     op interface \
-    ports { sc6_40_out { O 8 vector } sc6_40_out_ap_vld { O 1 bit } } \
+    ports { sc6_40_out { O 6 vector } sc6_40_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1463,7 +1463,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_39_out \
     op interface \
-    ports { sc6_39_out { O 8 vector } sc6_39_out_ap_vld { O 1 bit } } \
+    ports { sc6_39_out { O 6 vector } sc6_39_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1478,7 +1478,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_38_out \
     op interface \
-    ports { sc6_38_out { O 8 vector } sc6_38_out_ap_vld { O 1 bit } } \
+    ports { sc6_38_out { O 6 vector } sc6_38_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1493,7 +1493,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_37_out \
     op interface \
-    ports { sc6_37_out { O 8 vector } sc6_37_out_ap_vld { O 1 bit } } \
+    ports { sc6_37_out { O 6 vector } sc6_37_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1508,7 +1508,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_36_out \
     op interface \
-    ports { sc6_36_out { O 8 vector } sc6_36_out_ap_vld { O 1 bit } } \
+    ports { sc6_36_out { O 6 vector } sc6_36_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1523,7 +1523,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_35_out \
     op interface \
-    ports { sc6_35_out { O 8 vector } sc6_35_out_ap_vld { O 1 bit } } \
+    ports { sc6_35_out { O 6 vector } sc6_35_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1538,7 +1538,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_34_out \
     op interface \
-    ports { sc6_34_out { O 8 vector } sc6_34_out_ap_vld { O 1 bit } } \
+    ports { sc6_34_out { O 6 vector } sc6_34_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1553,7 +1553,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_33_out \
     op interface \
-    ports { sc6_33_out { O 8 vector } sc6_33_out_ap_vld { O 1 bit } } \
+    ports { sc6_33_out { O 6 vector } sc6_33_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1568,7 +1568,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_32_out \
     op interface \
-    ports { sc6_32_out { O 8 vector } sc6_32_out_ap_vld { O 1 bit } } \
+    ports { sc6_32_out { O 6 vector } sc6_32_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1583,7 +1583,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_31_out \
     op interface \
-    ports { sc6_31_out { O 8 vector } sc6_31_out_ap_vld { O 1 bit } } \
+    ports { sc6_31_out { O 6 vector } sc6_31_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1598,7 +1598,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_30_out \
     op interface \
-    ports { sc6_30_out { O 8 vector } sc6_30_out_ap_vld { O 1 bit } } \
+    ports { sc6_30_out { O 6 vector } sc6_30_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1613,7 +1613,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_29_out \
     op interface \
-    ports { sc6_29_out { O 8 vector } sc6_29_out_ap_vld { O 1 bit } } \
+    ports { sc6_29_out { O 6 vector } sc6_29_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1628,7 +1628,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_28_out \
     op interface \
-    ports { sc6_28_out { O 8 vector } sc6_28_out_ap_vld { O 1 bit } } \
+    ports { sc6_28_out { O 6 vector } sc6_28_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1643,7 +1643,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_27_out \
     op interface \
-    ports { sc6_27_out { O 8 vector } sc6_27_out_ap_vld { O 1 bit } } \
+    ports { sc6_27_out { O 6 vector } sc6_27_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1658,7 +1658,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_26_out \
     op interface \
-    ports { sc6_26_out { O 8 vector } sc6_26_out_ap_vld { O 1 bit } } \
+    ports { sc6_26_out { O 6 vector } sc6_26_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1673,7 +1673,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_25_out \
     op interface \
-    ports { sc6_25_out { O 8 vector } sc6_25_out_ap_vld { O 1 bit } } \
+    ports { sc6_25_out { O 6 vector } sc6_25_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1688,7 +1688,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_24_out \
     op interface \
-    ports { sc6_24_out { O 8 vector } sc6_24_out_ap_vld { O 1 bit } } \
+    ports { sc6_24_out { O 6 vector } sc6_24_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1703,7 +1703,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_23_out \
     op interface \
-    ports { sc6_23_out { O 8 vector } sc6_23_out_ap_vld { O 1 bit } } \
+    ports { sc6_23_out { O 6 vector } sc6_23_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1718,7 +1718,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_22_out \
     op interface \
-    ports { sc6_22_out { O 8 vector } sc6_22_out_ap_vld { O 1 bit } } \
+    ports { sc6_22_out { O 6 vector } sc6_22_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1733,7 +1733,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_21_out \
     op interface \
-    ports { sc6_21_out { O 8 vector } sc6_21_out_ap_vld { O 1 bit } } \
+    ports { sc6_21_out { O 6 vector } sc6_21_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1748,7 +1748,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_20_out \
     op interface \
-    ports { sc6_20_out { O 8 vector } sc6_20_out_ap_vld { O 1 bit } } \
+    ports { sc6_20_out { O 6 vector } sc6_20_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1763,7 +1763,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_19_out \
     op interface \
-    ports { sc6_19_out { O 8 vector } sc6_19_out_ap_vld { O 1 bit } } \
+    ports { sc6_19_out { O 6 vector } sc6_19_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1778,7 +1778,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_18_out \
     op interface \
-    ports { sc6_18_out { O 8 vector } sc6_18_out_ap_vld { O 1 bit } } \
+    ports { sc6_18_out { O 6 vector } sc6_18_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1793,7 +1793,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_17_out \
     op interface \
-    ports { sc6_17_out { O 8 vector } sc6_17_out_ap_vld { O 1 bit } } \
+    ports { sc6_17_out { O 6 vector } sc6_17_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1808,7 +1808,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_16_out \
     op interface \
-    ports { sc6_16_out { O 8 vector } sc6_16_out_ap_vld { O 1 bit } } \
+    ports { sc6_16_out { O 6 vector } sc6_16_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1823,7 +1823,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_15_out \
     op interface \
-    ports { sc6_15_out { O 8 vector } sc6_15_out_ap_vld { O 1 bit } } \
+    ports { sc6_15_out { O 6 vector } sc6_15_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1838,7 +1838,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_14_out \
     op interface \
-    ports { sc6_14_out { O 8 vector } sc6_14_out_ap_vld { O 1 bit } } \
+    ports { sc6_14_out { O 6 vector } sc6_14_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1853,7 +1853,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_13_out \
     op interface \
-    ports { sc6_13_out { O 8 vector } sc6_13_out_ap_vld { O 1 bit } } \
+    ports { sc6_13_out { O 6 vector } sc6_13_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1868,7 +1868,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_12_out \
     op interface \
-    ports { sc6_12_out { O 8 vector } sc6_12_out_ap_vld { O 1 bit } } \
+    ports { sc6_12_out { O 6 vector } sc6_12_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1883,7 +1883,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_11_out \
     op interface \
-    ports { sc6_11_out { O 8 vector } sc6_11_out_ap_vld { O 1 bit } } \
+    ports { sc6_11_out { O 6 vector } sc6_11_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1898,7 +1898,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_10_out \
     op interface \
-    ports { sc6_10_out { O 8 vector } sc6_10_out_ap_vld { O 1 bit } } \
+    ports { sc6_10_out { O 6 vector } sc6_10_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1913,7 +1913,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_9_out \
     op interface \
-    ports { sc6_9_out { O 8 vector } sc6_9_out_ap_vld { O 1 bit } } \
+    ports { sc6_9_out { O 6 vector } sc6_9_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1928,7 +1928,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_8_out \
     op interface \
-    ports { sc6_8_out { O 8 vector } sc6_8_out_ap_vld { O 1 bit } } \
+    ports { sc6_8_out { O 6 vector } sc6_8_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1943,7 +1943,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_7_out \
     op interface \
-    ports { sc6_7_out { O 8 vector } sc6_7_out_ap_vld { O 1 bit } } \
+    ports { sc6_7_out { O 6 vector } sc6_7_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1958,7 +1958,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_6_out \
     op interface \
-    ports { sc6_6_out { O 8 vector } sc6_6_out_ap_vld { O 1 bit } } \
+    ports { sc6_6_out { O 6 vector } sc6_6_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1973,7 +1973,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_5_out \
     op interface \
-    ports { sc6_5_out { O 8 vector } sc6_5_out_ap_vld { O 1 bit } } \
+    ports { sc6_5_out { O 6 vector } sc6_5_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1988,7 +1988,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_4_out \
     op interface \
-    ports { sc6_4_out { O 8 vector } sc6_4_out_ap_vld { O 1 bit } } \
+    ports { sc6_4_out { O 6 vector } sc6_4_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -2003,7 +2003,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_3_out \
     op interface \
-    ports { sc6_3_out { O 8 vector } sc6_3_out_ap_vld { O 1 bit } } \
+    ports { sc6_3_out { O 6 vector } sc6_3_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -2018,7 +2018,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_2_out \
     op interface \
-    ports { sc6_2_out { O 8 vector } sc6_2_out_ap_vld { O 1 bit } } \
+    ports { sc6_2_out { O 6 vector } sc6_2_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -2033,7 +2033,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_1_out \
     op interface \
-    ports { sc6_1_out { O 8 vector } sc6_1_out_ap_vld { O 1 bit } } \
+    ports { sc6_1_out { O 6 vector } sc6_1_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -2048,7 +2048,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sc6_out \
     op interface \
-    ports { sc6_out { O 8 vector } sc6_out_ap_vld { O 1 bit } } \
+    ports { sc6_out { O 6 vector } sc6_out_ap_vld { O 1 bit } } \
 } "
 }
 

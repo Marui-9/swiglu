@@ -68,6 +68,9 @@
 	static bool swg_layer_W_loaded [SWG_NUM_LAYERS];   // ffn_gate loaded flags
 	static bool swg_layer_V_loaded [SWG_NUM_LAYERS];   // ffn_up   loaded flags
 	static bool swg_layer_Wd_loaded[SWG_NUM_LAYERS];   // ffn_down loaded flags
+	// Track last layer/mode whose base addresses were programmed to the IP.
+	static int      swg_last_prog_layer = -1;
+	static uint32_t swg_last_prog_mode  = 0;
 //end of modification
 #if defined(__gnu_linux__)
 #include <syscall.h>
@@ -1302,7 +1305,7 @@ typedef struct __attribute__((aligned(64))) {
 // SwiGLU udmabuf layout offsets.
 // LP matrix (Q6_K, 65536×2048) occupies 0x300000–0x6C00000 (108 MB).
 // SwiGLU x and output are placed just after at 0x6C50000/0x6C52000.
-#define SWG_MAX_BATCH    8             // must match MAX_BATCH in swiglu.h
+#define SWG_MAX_BATCH    1             // must match MAX_BATCH in swiglu.h
 #define SWG_VEC_OFF      0x06C50000U   // x batch: SWG_MAX_BATCH × 2048 × F32 = 64 KB
 #define SWG_OUT_OFF      0x06C60000U   // output:  SWG_MAX_BATCH × 2048 × F32 = 64 KB (SWG_VEC_OFF + 0x10000)
 //
@@ -1351,13 +1354,22 @@ typedef struct __attribute__((aligned(64))) {
 #define SWG_CTRL_OUT_LO   0x40   // out_batch phys addr [31:0]
 #define SWG_CTRL_OUT_HI   0x44   // out_batch phys addr [63:32]
 // 0x48 reserved
-#define SWG_CTRL_BATCHSZ  0x4C   // batch_size (uint32)
+<<<<<<< ours
+<<<<<<< ours
+#define SWG_CTRL_MODE     0x4C   // down_quant_mode: 0=Q4_K 1=Q6_K  (confirmed xswiglu_hw.h 0x4c)
 // 0x50 reserved
-#define SWG_CTRL_MODE     0x54   // down_quant_mode: 0=Q4_K 1=Q6_K
+#define SWG_CTRL_XSCALE   0x54   // x_scale (float)                  (confirmed xswiglu_hw.h 0x54)
 // 0x58 reserved
-// IMPORTANT: SWG_CTRL_XSCALE offset is auto-assigned by HLS for the new x_scale parameter.
-// Verify from xswiglu_hw.h after re-synthesis and update this define accordingly.
-#define SWG_CTRL_XSCALE   0x5C   // x_scale (float) — VERIFY from xswiglu_hw.h after re-synthesis
+=======
+#define SWG_CTRL_MODE     0x4C   // down_quant_mode: 0=Q4_K 1=Q6_K
+// 0x50 reserved
+#define SWG_CTRL_XSCALE   0x54   // x_scale (float)
+>>>>>>> theirs
+=======
+#define SWG_CTRL_MODE     0x4C   // down_quant_mode: 0=Q4_K 1=Q6_K
+// 0x50 reserved
+#define SWG_CTRL_XSCALE   0x54   // x_scale (float)
+>>>>>>> theirs
 
 
 // Find the /dev/uioN device whose map0 physical address matches target_addr.
@@ -1618,6 +1630,18 @@ void ggml_compute_forward_mul_mat(
                 is_swiglu_initialized = true;
             }
 
+<<<<<<< ours
+<<<<<<< ours
+            // Batch guard: accelerator handles single-token decode only.
+            // Prefill (ne[1] > 1) falls back to CPU — call counter NOT incremented.
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+            if (src1->ne[1] != 1) {
+                goto cpu_compute_fallback;
+            }
+
             // --- Layer index and quantization mode ---
             int   layer = swiglu_call_count % 16;
             // Detect Q4_K vs Q6_K from actual buffer size, not type field.
@@ -1722,6 +1746,7 @@ void ggml_compute_forward_mul_mat(
             uint64_t phys_W  = udmabuf_phys_base + SWG_LAYER_W_OFF(layer);
             uint64_t phys_V  = udmabuf_phys_base + SWG_LAYER_V_OFF(layer);
             uint64_t phys_Wd = udmabuf_phys_base + SWG_LAYER_WD_OFF(layer);
+            bool need_prog_wvw = (layer != swg_last_prog_layer) || (mode != swg_last_prog_mode);
             for (int c = 0; c < swg_total_tokens; c += SWG_MAX_BATCH) {
                 int bsz = ((c + SWG_MAX_BATCH) <= swg_total_tokens)
                           ? SWG_MAX_BATCH : (swg_total_tokens - c);
@@ -1770,18 +1795,28 @@ void ggml_compute_forward_mul_mat(
                         swg_ip_regs[SWG_CTRL_AP_CTRL / 4]);
                 fflush(stderr);
 
-                swg_ip_regs[SWG_CTRL_W_LO   / 4] = (uint32_t) phys_W;
-                swg_ip_regs[SWG_CTRL_W_HI   / 4] = (uint32_t)(phys_W   >> 32);
-                swg_ip_regs[SWG_CTRL_V_LO   / 4] = (uint32_t) phys_V;
-                swg_ip_regs[SWG_CTRL_V_HI   / 4] = (uint32_t)(phys_V   >> 32);
-                swg_ip_regs[SWG_CTRL_WD_LO  / 4] = (uint32_t) phys_Wd;
-                swg_ip_regs[SWG_CTRL_WD_HI  / 4] = (uint32_t)(phys_Wd  >> 32);
+                if (need_prog_wvw) {
+                    swg_ip_regs[SWG_CTRL_W_LO   / 4] = (uint32_t) phys_W;
+                    swg_ip_regs[SWG_CTRL_W_HI   / 4] = (uint32_t)(phys_W   >> 32);
+                    swg_ip_regs[SWG_CTRL_V_LO   / 4] = (uint32_t) phys_V;
+                    swg_ip_regs[SWG_CTRL_V_HI   / 4] = (uint32_t)(phys_V   >> 32);
+                    swg_ip_regs[SWG_CTRL_WD_LO  / 4] = (uint32_t) phys_Wd;
+                    swg_ip_regs[SWG_CTRL_WD_HI  / 4] = (uint32_t)(phys_Wd  >> 32);
+                    swg_last_prog_layer = layer;
+                    swg_last_prog_mode  = mode;
+                }
                 swg_ip_regs[SWG_CTRL_X_LO   / 4] = (uint32_t) phys_x;
                 swg_ip_regs[SWG_CTRL_X_HI   / 4] = (uint32_t)(phys_x   >> 32);
                 swg_ip_regs[SWG_CTRL_OUT_LO / 4] = (uint32_t) phys_out;
                 swg_ip_regs[SWG_CTRL_OUT_HI / 4] = (uint32_t)(phys_out >> 32);
-                swg_ip_regs[SWG_CTRL_BATCHSZ / 4] = (uint32_t)bsz;
+<<<<<<< ours
+<<<<<<< ours
+                swg_ip_regs[SWG_CTRL_MODE   / 4] = mode;
+=======
+=======
+>>>>>>> theirs
                 swg_ip_regs[SWG_CTRL_MODE    / 4] = mode;
+>>>>>>> theirs
                 uint32_t swg_x_scale_bits;
                 memcpy(&swg_x_scale_bits, &swg_x_scale, sizeof(float));
                 swg_ip_regs[SWG_CTRL_XSCALE / 4] = swg_x_scale_bits;

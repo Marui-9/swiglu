@@ -1,0 +1,200 @@
+
+
+================================================================
+== Vitis HLS Report for 'load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1'
+================================================================
+* Date:           Mon Mar 30 09:36:39 2026
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        swiglu
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.430 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |       75|       75|  0.250 us|  0.250 us|   73|   73|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                            |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |          Loop Name         |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- LOAD_WV_VITIS_LOOP_102_1  |       73|       73|         3|          1|          1|    72|       yes|
+        +----------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.62>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%w = alloca i32 1" [swiglu.cpp:102]   --->   Operation 6 'alloca' 'w' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%b = alloca i32 1" [swiglu.cpp:101]   --->   Operation 7 'alloca' 'b' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 8 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%sext_ln101_read = read i60 @_ssdm_op_Read.ap_auto.i60, i60 %sext_ln101"   --->   Operation 9 'read' 'sext_ln101_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%sext_ln101_cast = sext i60 %sext_ln101_read"   --->   Operation 10 'sext' 'sext_ln101_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_7, i64 666, i64 18, i64 18446744073709551615"   --->   Operation 11 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_6, i64 666, i64 18, i64 18446744073709551615"   --->   Operation 12 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_5, i64 666, i64 18, i64 18446744073709551615"   --->   Operation 13 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_4, i64 666, i64 18, i64 18446744073709551615"   --->   Operation 14 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_3, i64 666, i64 18, i64 18446744073709551615"   --->   Operation 15 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_2, i64 666, i64 18, i64 18446744073709551615"   --->   Operation 16 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_1, i64 666, i64 18, i64 18446744073709551615"   --->   Operation 17 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_0, i64 666, i64 18, i64 18446744073709551615"   --->   Operation 18 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %gmem_V, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 589824, void @empty_4, void @empty_35, void @empty_32, i32 2, i32 16, i32 256, i32 16, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.42ns)   --->   "%store_ln0 = store i7 0, i7 %indvar_flatten"   --->   Operation 20 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 21 [1/1] (0.42ns)   --->   "%store_ln101 = store i4 0, i4 %b" [swiglu.cpp:101]   --->   Operation 21 'store' 'store_ln101' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 22 [1/1] (0.42ns)   --->   "%store_ln102 = store i4 0, i4 %w" [swiglu.cpp:102]   --->   Operation 22 'store' 'store_ln102' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->   Operation 23 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i7 %indvar_flatten" [swiglu.cpp:101]   --->   Operation 24 'load' 'indvar_flatten_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.77ns)   --->   "%icmp_ln101 = icmp_eq  i7 %indvar_flatten_load, i7 72" [swiglu.cpp:101]   --->   Operation 25 'icmp' 'icmp_ln101' <Predicate = true> <Delay = 0.77> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 26 [1/1] (0.77ns)   --->   "%add_ln101_1 = add i7 %indvar_flatten_load, i7 1" [swiglu.cpp:101]   --->   Operation 26 'add' 'add_ln101_1' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%br_ln101 = br i1 %icmp_ln101, void %for.inc10, void %for.end12.exitStub" [swiglu.cpp:101]   --->   Operation 27 'br' 'br_ln101' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.42ns)   --->   "%store_ln101 = store i7 %add_ln101_1, i7 %indvar_flatten" [swiglu.cpp:101]   --->   Operation 28 'store' 'store_ln101' <Predicate = (!icmp_ln101)> <Delay = 0.42>
+
+State 2 <SV = 1> <Delay = 2.43>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%w_load = load i4 %w" [swiglu.cpp:102]   --->   Operation 29 'load' 'w_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%b_load = load i4 %b" [swiglu.cpp:101]   --->   Operation 30 'load' 'b_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%gmem_V_addr = getelementptr i128 %gmem_V, i64 %sext_ln101_cast" [swiglu.cpp:101]   --->   Operation 31 'getelementptr' 'gmem_V_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.79ns)   --->   "%add_ln101 = add i4 %b_load, i4 1" [swiglu.cpp:101]   --->   Operation 32 'add' 'add_ln101' <Predicate = true> <Delay = 0.79> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.79> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (0.79ns)   --->   "%icmp_ln102 = icmp_eq  i4 %w_load, i4 9" [swiglu.cpp:102]   --->   Operation 33 'icmp' 'icmp_ln102' <Predicate = true> <Delay = 0.79> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.79> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.39ns)   --->   "%select_ln101 = select i1 %icmp_ln102, i4 0, i4 %w_load" [swiglu.cpp:101]   --->   Operation 34 'select' 'select_ln101' <Predicate = true> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.39ns)   --->   "%select_ln101_1 = select i1 %icmp_ln102, i4 %add_ln101, i4 %b_load" [swiglu.cpp:101]   --->   Operation 35 'select' 'select_ln101_1' <Predicate = true> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%trunc_ln101 = trunc i4 %select_ln101_1" [swiglu.cpp:101]   --->   Operation 36 'trunc' 'trunc_ln101' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (2.43ns)   --->   "%gmem_V_addr_read = read i128 @_ssdm_op_Read.m_axi.p1i128, i128 %gmem_V_addr" [swiglu.cpp:104]   --->   Operation 37 'read' 'gmem_V_addr_read' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 38 [1/1] (0.67ns)   --->   "%switch_ln104 = switch i3 %trunc_ln101, void %arrayidx911.case.7, i3 0, void %arrayidx911.case.0, i3 1, void %arrayidx911.case.1, i3 2, void %arrayidx911.case.2, i3 3, void %arrayidx911.case.3, i3 4, void %arrayidx911.case.4, i3 5, void %arrayidx911.case.5, i3 6, void %arrayidx911.case.6" [swiglu.cpp:104]   --->   Operation 38 'switch' 'switch_ln104' <Predicate = true> <Delay = 0.67>
+ST_2 : Operation 39 [1/1] (0.79ns)   --->   "%add_ln102 = add i4 %select_ln101, i4 1" [swiglu.cpp:102]   --->   Operation 39 'add' 'add_ln102' <Predicate = true> <Delay = 0.79> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.79> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 40 [1/1] (0.42ns)   --->   "%store_ln101 = store i4 %select_ln101_1, i4 %b" [swiglu.cpp:101]   --->   Operation 40 'store' 'store_ln101' <Predicate = true> <Delay = 0.42>
+ST_2 : Operation 41 [1/1] (0.42ns)   --->   "%store_ln102 = store i4 %add_ln102, i4 %w" [swiglu.cpp:102]   --->   Operation 41 'store' 'store_ln102' <Predicate = true> <Delay = 0.42>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%br_ln102 = br void %for.inc" [swiglu.cpp:102]   --->   Operation 42 'br' 'br_ln102' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 71 [1/1] (0.42ns)   --->   "%ret_ln0 = ret"   --->   Operation 71 'ret' 'ret_ln0' <Predicate = (icmp_ln101)> <Delay = 0.42>
+
+State 3 <SV = 2> <Delay = 1.23>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @LOAD_WV_VITIS_LOOP_102_1_str"   --->   Operation 43 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 72, i64 72, i64 72"   --->   Operation 44 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%zext_ln102 = zext i4 %select_ln101" [swiglu.cpp:102]   --->   Operation 45 'zext' 'zext_ln102' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%specpipeline_ln103 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_32" [swiglu.cpp:103]   --->   Operation 46 'specpipeline' 'specpipeline_ln103' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%rb_0_addr = getelementptr i128 %rb_0, i64 0, i64 %zext_ln102" [swiglu.cpp:104]   --->   Operation 47 'getelementptr' 'rb_0_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%rb_1_addr = getelementptr i128 %rb_1, i64 0, i64 %zext_ln102" [swiglu.cpp:104]   --->   Operation 48 'getelementptr' 'rb_1_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%rb_2_addr = getelementptr i128 %rb_2, i64 0, i64 %zext_ln102" [swiglu.cpp:104]   --->   Operation 49 'getelementptr' 'rb_2_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%rb_3_addr = getelementptr i128 %rb_3, i64 0, i64 %zext_ln102" [swiglu.cpp:104]   --->   Operation 50 'getelementptr' 'rb_3_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%rb_4_addr = getelementptr i128 %rb_4, i64 0, i64 %zext_ln102" [swiglu.cpp:104]   --->   Operation 51 'getelementptr' 'rb_4_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%rb_5_addr = getelementptr i128 %rb_5, i64 0, i64 %zext_ln102" [swiglu.cpp:104]   --->   Operation 52 'getelementptr' 'rb_5_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%rb_6_addr = getelementptr i128 %rb_6, i64 0, i64 %zext_ln102" [swiglu.cpp:104]   --->   Operation 53 'getelementptr' 'rb_6_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%rb_7_addr = getelementptr i128 %rb_7, i64 0, i64 %zext_ln102" [swiglu.cpp:104]   --->   Operation 54 'getelementptr' 'rb_7_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln104 = store i128 %gmem_V_addr_read, i4 %rb_6_addr" [swiglu.cpp:104]   --->   Operation 55 'store' 'store_ln104' <Predicate = (trunc_ln101 == 6)> <Delay = 1.23> <CoreInst = "RAM_1P_BRAM">   --->   Core 89 'RAM_1P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 128> <Depth = 9> <RAM>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%br_ln104 = br void %arrayidx911.exit" [swiglu.cpp:104]   --->   Operation 56 'br' 'br_ln104' <Predicate = (trunc_ln101 == 6)> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln104 = store i128 %gmem_V_addr_read, i4 %rb_5_addr" [swiglu.cpp:104]   --->   Operation 57 'store' 'store_ln104' <Predicate = (trunc_ln101 == 5)> <Delay = 1.23> <CoreInst = "RAM_1P_BRAM">   --->   Core 89 'RAM_1P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 128> <Depth = 9> <RAM>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%br_ln104 = br void %arrayidx911.exit" [swiglu.cpp:104]   --->   Operation 58 'br' 'br_ln104' <Predicate = (trunc_ln101 == 5)> <Delay = 0.00>
+ST_3 : Operation 59 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln104 = store i128 %gmem_V_addr_read, i4 %rb_4_addr" [swiglu.cpp:104]   --->   Operation 59 'store' 'store_ln104' <Predicate = (trunc_ln101 == 4)> <Delay = 1.23> <CoreInst = "RAM_1P_BRAM">   --->   Core 89 'RAM_1P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 128> <Depth = 9> <RAM>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%br_ln104 = br void %arrayidx911.exit" [swiglu.cpp:104]   --->   Operation 60 'br' 'br_ln104' <Predicate = (trunc_ln101 == 4)> <Delay = 0.00>
+ST_3 : Operation 61 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln104 = store i128 %gmem_V_addr_read, i4 %rb_3_addr" [swiglu.cpp:104]   --->   Operation 61 'store' 'store_ln104' <Predicate = (trunc_ln101 == 3)> <Delay = 1.23> <CoreInst = "RAM_1P_BRAM">   --->   Core 89 'RAM_1P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 128> <Depth = 9> <RAM>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%br_ln104 = br void %arrayidx911.exit" [swiglu.cpp:104]   --->   Operation 62 'br' 'br_ln104' <Predicate = (trunc_ln101 == 3)> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln104 = store i128 %gmem_V_addr_read, i4 %rb_2_addr" [swiglu.cpp:104]   --->   Operation 63 'store' 'store_ln104' <Predicate = (trunc_ln101 == 2)> <Delay = 1.23> <CoreInst = "RAM_1P_BRAM">   --->   Core 89 'RAM_1P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 128> <Depth = 9> <RAM>
+ST_3 : Operation 64 [1/1] (0.00ns)   --->   "%br_ln104 = br void %arrayidx911.exit" [swiglu.cpp:104]   --->   Operation 64 'br' 'br_ln104' <Predicate = (trunc_ln101 == 2)> <Delay = 0.00>
+ST_3 : Operation 65 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln104 = store i128 %gmem_V_addr_read, i4 %rb_1_addr" [swiglu.cpp:104]   --->   Operation 65 'store' 'store_ln104' <Predicate = (trunc_ln101 == 1)> <Delay = 1.23> <CoreInst = "RAM_1P_BRAM">   --->   Core 89 'RAM_1P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 128> <Depth = 9> <RAM>
+ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%br_ln104 = br void %arrayidx911.exit" [swiglu.cpp:104]   --->   Operation 66 'br' 'br_ln104' <Predicate = (trunc_ln101 == 1)> <Delay = 0.00>
+ST_3 : Operation 67 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln104 = store i128 %gmem_V_addr_read, i4 %rb_0_addr" [swiglu.cpp:104]   --->   Operation 67 'store' 'store_ln104' <Predicate = (trunc_ln101 == 0)> <Delay = 1.23> <CoreInst = "RAM_1P_BRAM">   --->   Core 89 'RAM_1P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 128> <Depth = 9> <RAM>
+ST_3 : Operation 68 [1/1] (0.00ns)   --->   "%br_ln104 = br void %arrayidx911.exit" [swiglu.cpp:104]   --->   Operation 68 'br' 'br_ln104' <Predicate = (trunc_ln101 == 0)> <Delay = 0.00>
+ST_3 : Operation 69 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln104 = store i128 %gmem_V_addr_read, i4 %rb_7_addr" [swiglu.cpp:104]   --->   Operation 69 'store' 'store_ln104' <Predicate = (trunc_ln101 == 7)> <Delay = 1.23> <CoreInst = "RAM_1P_BRAM">   --->   Core 89 'RAM_1P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 128> <Depth = 9> <RAM>
+ST_3 : Operation 70 [1/1] (0.00ns)   --->   "%br_ln104 = br void %arrayidx911.exit" [swiglu.cpp:104]   --->   Operation 70 'br' 'br_ln104' <Predicate = (trunc_ln101 == 7)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.330ns, clock uncertainty: 0.900ns.
+
+ <State 1>: 1.627ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln0') of constant 0 on local variable 'indvar_flatten' [25]  (0.427 ns)
+	'load' operation 7 bit ('indvar_flatten_load', swiglu.cpp:101) on local variable 'indvar_flatten' [30]  (0.000 ns)
+	'add' operation 7 bit ('add_ln101_1', swiglu.cpp:101) [32]  (0.773 ns)
+	'store' operation 0 bit ('store_ln101', swiglu.cpp:101) of variable 'add_ln101_1', swiglu.cpp:101 on local variable 'indvar_flatten' [83]  (0.427 ns)
+
+ <State 2>: 2.430ns
+The critical path consists of the following:
+	'getelementptr' operation 128 bit ('gmem_V_addr', swiglu.cpp:101) [37]  (0.000 ns)
+	bus read operation ('gmem_V_addr_read', swiglu.cpp:104) on port 'gmem_V' (swiglu.cpp:104) [55]  (2.430 ns)
+
+ <State 3>: 1.237ns
+The critical path consists of the following:
+	'getelementptr' operation 4 bit ('rb_6_addr', swiglu.cpp:104) [53]  (0.000 ns)
+	'store' operation 0 bit ('store_ln104', swiglu.cpp:104) of variable 'gmem_V_addr_read', swiglu.cpp:104 on array 'rb_6' [58]  (1.237 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

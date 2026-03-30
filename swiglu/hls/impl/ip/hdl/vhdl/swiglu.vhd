@@ -319,7 +319,7 @@ end;
 architecture behav of swiglu is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=3.330000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=20562358,HLS_SYN_TPT=15966283,HLS_SYN_MEM=758,HLS_SYN_DSP=0,HLS_SYN_FF=93677,HLS_SYN_LUT=90978,HLS_VERSION=2025_1}";
+    "swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=3.330000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=36995548,HLS_SYN_TPT=32399435,HLS_SYN_MEM=462,HLS_SYN_DSP=0,HLS_SYN_FF=124822,HLS_SYN_LUT=111823,HLS_VERSION=2025_1}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant C_S_AXI_DATA_WIDTH : INTEGER := 32;
     constant C_M_AXI_DATA_WIDTH : INTEGER := 32;
@@ -887,7 +887,7 @@ architecture behav of swiglu is
     signal gmem_V_0_RDATA : STD_LOGIC_VECTOR (127 downto 0);
     signal gmem_V_0_RLAST : STD_LOGIC;
     signal gmem_V_0_RID : STD_LOGIC_VECTOR (0 downto 0);
-    signal gmem_V_0_RFIFONUM : STD_LOGIC_VECTOR (12 downto 0);
+    signal gmem_V_0_RFIFONUM : STD_LOGIC_VECTOR (9 downto 0);
     signal gmem_V_0_RUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem_V_0_RRESP : STD_LOGIC_VECTOR (1 downto 0);
     signal gmem_V_0_BVALID : STD_LOGIC;
@@ -898,7 +898,7 @@ architecture behav of swiglu is
     signal gmem_W_0_RDATA : STD_LOGIC_VECTOR (127 downto 0);
     signal gmem_W_0_RLAST : STD_LOGIC;
     signal gmem_W_0_RID : STD_LOGIC_VECTOR (0 downto 0);
-    signal gmem_W_0_RFIFONUM : STD_LOGIC_VECTOR (12 downto 0);
+    signal gmem_W_0_RFIFONUM : STD_LOGIC_VECTOR (9 downto 0);
     signal gmem_W_0_RUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem_W_0_RRESP : STD_LOGIC_VECTOR (1 downto 0);
     signal gmem_W_0_BVALID : STD_LOGIC;
@@ -909,7 +909,7 @@ architecture behav of swiglu is
     signal gmem_Wd_0_RDATA : STD_LOGIC_VECTOR (127 downto 0);
     signal gmem_Wd_0_RLAST : STD_LOGIC;
     signal gmem_Wd_0_RID : STD_LOGIC_VECTOR (0 downto 0);
-    signal gmem_Wd_0_RFIFONUM : STD_LOGIC_VECTOR (12 downto 0);
+    signal gmem_Wd_0_RFIFONUM : STD_LOGIC_VECTOR (9 downto 0);
     signal gmem_Wd_0_RUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem_Wd_0_RRESP : STD_LOGIC_VECTOR (1 downto 0);
     signal gmem_Wd_0_BVALID : STD_LOGIC;
@@ -930,7 +930,7 @@ architecture behav of swiglu is
     signal gmem_x_0_RDATA : STD_LOGIC_VECTOR (127 downto 0);
     signal gmem_x_0_RLAST : STD_LOGIC;
     signal gmem_x_0_RID : STD_LOGIC_VECTOR (0 downto 0);
-    signal gmem_x_0_RFIFONUM : STD_LOGIC_VECTOR (12 downto 0);
+    signal gmem_x_0_RFIFONUM : STD_LOGIC_VECTOR (9 downto 0);
     signal gmem_x_0_RUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem_x_0_RRESP : STD_LOGIC_VECTOR (1 downto 0);
     signal gmem_x_0_BVALID : STD_LOGIC;
@@ -3326,7 +3326,7 @@ architecture behav of swiglu is
         m_axi_gmem_x_0_RDATA : IN STD_LOGIC_VECTOR (127 downto 0);
         m_axi_gmem_x_0_RLAST : IN STD_LOGIC;
         m_axi_gmem_x_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
-        m_axi_gmem_x_0_RFIFONUM : IN STD_LOGIC_VECTOR (12 downto 0);
+        m_axi_gmem_x_0_RFIFONUM : IN STD_LOGIC_VECTOR (9 downto 0);
         m_axi_gmem_x_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem_x_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem_x_0_BVALID : IN STD_LOGIC;
@@ -4409,7 +4409,7 @@ architecture behav of swiglu is
         m_axi_gmem_W_0_RDATA : IN STD_LOGIC_VECTOR (127 downto 0);
         m_axi_gmem_W_0_RLAST : IN STD_LOGIC;
         m_axi_gmem_W_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
-        m_axi_gmem_W_0_RFIFONUM : IN STD_LOGIC_VECTOR (12 downto 0);
+        m_axi_gmem_W_0_RFIFONUM : IN STD_LOGIC_VECTOR (9 downto 0);
         m_axi_gmem_W_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem_W_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem_W_0_BVALID : IN STD_LOGIC;
@@ -4857,7 +4857,7 @@ architecture behav of swiglu is
         m_axi_gmem_V_0_RDATA : IN STD_LOGIC_VECTOR (127 downto 0);
         m_axi_gmem_V_0_RLAST : IN STD_LOGIC;
         m_axi_gmem_V_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
-        m_axi_gmem_V_0_RFIFONUM : IN STD_LOGIC_VECTOR (12 downto 0);
+        m_axi_gmem_V_0_RFIFONUM : IN STD_LOGIC_VECTOR (9 downto 0);
         m_axi_gmem_V_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem_V_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem_V_0_BVALID : IN STD_LOGIC;
@@ -5357,7 +5357,7 @@ architecture behav of swiglu is
         m_axi_gmem_Wd_0_RDATA : IN STD_LOGIC_VECTOR (127 downto 0);
         m_axi_gmem_Wd_0_RLAST : IN STD_LOGIC;
         m_axi_gmem_Wd_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
-        m_axi_gmem_Wd_0_RFIFONUM : IN STD_LOGIC_VECTOR (12 downto 0);
+        m_axi_gmem_Wd_0_RFIFONUM : IN STD_LOGIC_VECTOR (9 downto 0);
         m_axi_gmem_Wd_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem_Wd_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem_Wd_0_BVALID : IN STD_LOGIC;
@@ -5499,7 +5499,7 @@ architecture behav of swiglu is
     end component;
 
 
-    component swiglu_gate_cache_RAM_2P_BRAM_1R1W IS
+    component swiglu_gate_cache_RAM_2P_URAM_1R1W IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -5667,7 +5667,7 @@ architecture behav of swiglu is
         I_CH0_RVALID : OUT STD_LOGIC;
         I_CH0_RREADY : IN STD_LOGIC;
         I_CH0_RDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
-        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (12 downto 0);
+        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (9 downto 0);
         I_CH0_AWVALID : IN STD_LOGIC;
         I_CH0_AWREADY : OUT STD_LOGIC;
         I_CH0_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
@@ -5761,7 +5761,7 @@ architecture behav of swiglu is
         I_CH0_RVALID : OUT STD_LOGIC;
         I_CH0_RREADY : IN STD_LOGIC;
         I_CH0_RDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
-        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (12 downto 0);
+        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (9 downto 0);
         I_CH0_AWVALID : IN STD_LOGIC;
         I_CH0_AWREADY : OUT STD_LOGIC;
         I_CH0_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
@@ -5855,7 +5855,7 @@ architecture behav of swiglu is
         I_CH0_RVALID : OUT STD_LOGIC;
         I_CH0_RREADY : IN STD_LOGIC;
         I_CH0_RDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
-        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (12 downto 0);
+        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (9 downto 0);
         I_CH0_AWVALID : IN STD_LOGIC;
         I_CH0_AWREADY : OUT STD_LOGIC;
         I_CH0_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
@@ -6043,7 +6043,7 @@ architecture behav of swiglu is
         I_CH0_RVALID : OUT STD_LOGIC;
         I_CH0_RREADY : IN STD_LOGIC;
         I_CH0_RDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
-        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (12 downto 0);
+        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (9 downto 0);
         I_CH0_AWVALID : IN STD_LOGIC;
         I_CH0_AWREADY : OUT STD_LOGIC;
         I_CH0_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
@@ -12517,7 +12517,7 @@ begin
         t_empty_n => X2_cache_t_empty_n,
         t_read => compute_gate_U0_ap_ready);
 
-    gate_cache_U : component swiglu_gate_cache_RAM_2P_BRAM_1R1W
+    gate_cache_U : component swiglu_gate_cache_RAM_2P_URAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 1024,
@@ -12546,7 +12546,7 @@ begin
         t_empty_n => gate_cache_t_empty_n,
         t_read => compute_output_U0_ap_ready);
 
-    gate_cache_1_U : component swiglu_gate_cache_RAM_2P_BRAM_1R1W
+    gate_cache_1_U : component swiglu_gate_cache_RAM_2P_URAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 1024,
@@ -12575,7 +12575,7 @@ begin
         t_empty_n => gate_cache_1_t_empty_n,
         t_read => compute_output_U0_ap_ready);
 
-    gate_cache_2_U : component swiglu_gate_cache_RAM_2P_BRAM_1R1W
+    gate_cache_2_U : component swiglu_gate_cache_RAM_2P_URAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 1024,
@@ -12604,7 +12604,7 @@ begin
         t_empty_n => gate_cache_2_t_empty_n,
         t_read => compute_output_U0_ap_ready);
 
-    gate_cache_3_U : component swiglu_gate_cache_RAM_2P_BRAM_1R1W
+    gate_cache_3_U : component swiglu_gate_cache_RAM_2P_URAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 1024,
@@ -12633,7 +12633,7 @@ begin
         t_empty_n => gate_cache_3_t_empty_n,
         t_read => compute_output_U0_ap_ready);
 
-    gate_cache_4_U : component swiglu_gate_cache_RAM_2P_BRAM_1R1W
+    gate_cache_4_U : component swiglu_gate_cache_RAM_2P_URAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 1024,
@@ -12662,7 +12662,7 @@ begin
         t_empty_n => gate_cache_4_t_empty_n,
         t_read => compute_output_U0_ap_ready);
 
-    gate_cache_5_U : component swiglu_gate_cache_RAM_2P_BRAM_1R1W
+    gate_cache_5_U : component swiglu_gate_cache_RAM_2P_URAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 1024,
@@ -12691,7 +12691,7 @@ begin
         t_empty_n => gate_cache_5_t_empty_n,
         t_read => compute_output_U0_ap_ready);
 
-    gate_cache_6_U : component swiglu_gate_cache_RAM_2P_BRAM_1R1W
+    gate_cache_6_U : component swiglu_gate_cache_RAM_2P_URAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 1024,
@@ -12720,7 +12720,7 @@ begin
         t_empty_n => gate_cache_6_t_empty_n,
         t_read => compute_output_U0_ap_ready);
 
-    gate_cache_7_U : component swiglu_gate_cache_RAM_2P_BRAM_1R1W
+    gate_cache_7_U : component swiglu_gate_cache_RAM_2P_URAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 1024,
@@ -12804,12 +12804,12 @@ begin
         C_USER_VALUE => C_M_AXI_GMEM_V_USER_VALUE,
         C_PROT_VALUE => C_M_AXI_GMEM_V_PROT_VALUE,
         C_CACHE_VALUE => C_M_AXI_GMEM_V_CACHE_VALUE,
-        CH0_NUM_READ_OUTSTANDING => 16,
+        CH0_NUM_READ_OUTSTANDING => 2,
         CH0_NUM_WRITE_OUTSTANDING => 16,
-        CH0_USER_RFIFONUM_WIDTH => 13,
+        CH0_USER_RFIFONUM_WIDTH => 10,
         CH0_USER_DW => 128,
         CH0_USER_AW => 64,
-        NUM_READ_OUTSTANDING => 16,
+        NUM_READ_OUTSTANDING => 2,
         NUM_WRITE_OUTSTANDING => 0)
     port map (
         AWVALID => m_axi_gmem_V_AWVALID,
@@ -12896,12 +12896,12 @@ begin
         C_USER_VALUE => C_M_AXI_GMEM_W_USER_VALUE,
         C_PROT_VALUE => C_M_AXI_GMEM_W_PROT_VALUE,
         C_CACHE_VALUE => C_M_AXI_GMEM_W_CACHE_VALUE,
-        CH0_NUM_READ_OUTSTANDING => 16,
+        CH0_NUM_READ_OUTSTANDING => 2,
         CH0_NUM_WRITE_OUTSTANDING => 16,
-        CH0_USER_RFIFONUM_WIDTH => 13,
+        CH0_USER_RFIFONUM_WIDTH => 10,
         CH0_USER_DW => 128,
         CH0_USER_AW => 64,
-        NUM_READ_OUTSTANDING => 16,
+        NUM_READ_OUTSTANDING => 2,
         NUM_WRITE_OUTSTANDING => 0)
     port map (
         AWVALID => m_axi_gmem_W_AWVALID,
@@ -12988,12 +12988,12 @@ begin
         C_USER_VALUE => C_M_AXI_GMEM_WD_USER_VALUE,
         C_PROT_VALUE => C_M_AXI_GMEM_WD_PROT_VALUE,
         C_CACHE_VALUE => C_M_AXI_GMEM_WD_CACHE_VALUE,
-        CH0_NUM_READ_OUTSTANDING => 16,
+        CH0_NUM_READ_OUTSTANDING => 2,
         CH0_NUM_WRITE_OUTSTANDING => 16,
-        CH0_USER_RFIFONUM_WIDTH => 13,
+        CH0_USER_RFIFONUM_WIDTH => 10,
         CH0_USER_DW => 128,
         CH0_USER_AW => 64,
-        NUM_READ_OUTSTANDING => 16,
+        NUM_READ_OUTSTANDING => 2,
         NUM_WRITE_OUTSTANDING => 0)
     port map (
         AWVALID => m_axi_gmem_Wd_AWVALID,
@@ -13081,12 +13081,12 @@ begin
         C_PROT_VALUE => C_M_AXI_GMEM_OUT_PROT_VALUE,
         C_CACHE_VALUE => C_M_AXI_GMEM_OUT_CACHE_VALUE,
         CH0_NUM_READ_OUTSTANDING => 16,
-        CH0_NUM_WRITE_OUTSTANDING => 16,
+        CH0_NUM_WRITE_OUTSTANDING => 2,
         CH0_USER_RFIFONUM_WIDTH => 9,
         CH0_USER_DW => 32,
         CH0_USER_AW => 64,
         NUM_READ_OUTSTANDING => 0,
-        NUM_WRITE_OUTSTANDING => 16)
+        NUM_WRITE_OUTSTANDING => 2)
     port map (
         AWVALID => m_axi_gmem_out_AWVALID,
         AWREADY => m_axi_gmem_out_AWREADY,
@@ -13172,12 +13172,12 @@ begin
         C_USER_VALUE => C_M_AXI_GMEM_X_USER_VALUE,
         C_PROT_VALUE => C_M_AXI_GMEM_X_PROT_VALUE,
         C_CACHE_VALUE => C_M_AXI_GMEM_X_CACHE_VALUE,
-        CH0_NUM_READ_OUTSTANDING => 16,
+        CH0_NUM_READ_OUTSTANDING => 2,
         CH0_NUM_WRITE_OUTSTANDING => 16,
-        CH0_USER_RFIFONUM_WIDTH => 13,
+        CH0_USER_RFIFONUM_WIDTH => 10,
         CH0_USER_DW => 128,
         CH0_USER_AW => 64,
-        NUM_READ_OUTSTANDING => 16,
+        NUM_READ_OUTSTANDING => 2,
         NUM_WRITE_OUTSTANDING => 0)
     port map (
         AWVALID => m_axi_gmem_x_AWVALID,
