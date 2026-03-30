@@ -1,0 +1,51 @@
+1. Compute the first linear projection: A=x*W+b (dimension 2048->8192)
+     A = x·W (+b) (gate projection 2048→8192): executed by the first 
+     GGML_OP_MUL_MAT node. Dispatch happens in the main op switch at 
+     ggml-cpu.c:1813, which calls the matmul kernel defined at 
+     ggml-cpu.c:1235 (ggml_compute_forward_mul_mat).
+2. Compute the second linear projection: B=x*V+c (dimension 2048->8192)
+     B = x·V (+c) (up projection 2048→8192): identical path to A, a second 
+     GGML_OP_MUL_MAT node using the same matmul kernel (ggml-cpu.c:1235), 
+     dispatched via the same switch at ggml-cpu.c:1813.
+3. Apply the Swish activation only to A  sA=Swishβ(A) 
+    Swish on A: performed inside the fused GLU op. The executor dispatches 
+    GGML_OP_GLU at ggml-cpu.c:2002–2004, selecting subtype GGML_GLU_OP_SWIGLU 
+    (see subtype switch ggml-cpu.c:2258–2266). The activation itself is 
+    implemented inside ggml_compute_forward_glu (declared in ggml-cpu-impl.h, 
+    included at the top).
+4. Perform the element-wise multiplication: Y=sA⊙B  
+    Elementwise multiply sA ⊙ B: also inside ggml_compute_forward_glu 
+    invoked from the same GGML_OP_GLU dispatch (ggml-cpu.c:2002–2004).
+5. Finally, apply the down-projection to X to go back to 2048.
+    Y·W_down (8192→2048): a later GGML_OP_MUL_MAT node, again routed 
+    through ggml_compute_forward_mul_mat (ggml-cpu.c:1235), dispatched 
+    via the main switch at ggml-cpu.c:1813.
+
+
+    Orchestration path (all in ggml-cpu.c):
+Graph driver: ggml_graph_compute sets up the threadpool and kicks 
+off work (ggml-cpu.c:3238–3294).
+- Worker loop: each thread runs ggml_graph_compute_thread, iterating the graph
+nodes in topological order and calling ggml_compute_forward for each 
+(ggml-cpu.c:2952–3007).
+- Op dispatcher: ggml_compute_forward is a big switch that selects the 
+per‑op kernel (e.g., MUL_MAT, GLU, etc.) (ggml-cpu.c:1698–2058). 
+This is where control “jumps” to the specific function for the current node.
+- Per‑op kernels: e.g., matmul is ggml_compute_forward_mul_mat (ggml-cpu.c:1235); 
+the fused SwiGLU activation/multiply is inside ggml_compute_forward_glu (declared
+in ggml-cpu-impl.h, dispatched at ggml-cpu.c:2002–2005); your custom down‑projection 
+offload is inside the MUL_MAT kernel early in ggml_compute_forward_mul_mat 
+(ggml-cpu.c:1612–1850).
+- Threading & barriers: after each node, threads sync with ggml_barrier to respect 
+dependencies (ggml-cpu.c:2996–2998). Task parallelism per op is precomputed 
+(see the n_tasks selection around ggml-cpu.c:2200–2268).
+
+
+Renaming to match docs (A, B, sA, Y)
+Current names → doc-friendly names:
+
+compute_X1 / X1_cache → compute_A / A_cache (gate projection)
+compute_X2 / X2_cache → compute_B / B_cache (up projection)
+compute_gate → compute_sA_times_B (or compute_sA_B)
+Outputs: gate_cache → Y_int8, gate_scale → Y_scale
+compute_output uses Y_int8, Y_scale, W_down and produces out_batch (unchanged)

@@ -214,6 +214,68 @@ static float dot_q6k_ref(const uint8_t* block, const int8_t* x_int, int v_base, 
 }
 
 // ============================================================================
+// Mock token test: single token, Q4_K down, host ref vs DUT
+// ============================================================================
+static int run_mock_token_test() {
+    for (int row = 0; row < FFN_DIM; ++row) {
+        fill_q4k_block(W_buf + row * WV_BLOCKS_PER_ROW * Q4_K_BYTES, 0x3C00, 0x0000);
+        fill_q4k_block(V_buf + row * WV_BLOCKS_PER_ROW * Q4_K_BYTES, 0x3C00, 0x0000);
+    }
+    for (int out = 0; out < VECTOR_DIM; ++out) {
+        fill_q4k_block(Wd_q4k + out * DOWN_BLOCKS_PER_ROW * Q4_K_BYTES, 0x3C00, 0x0000);
+    }
+    for (int i = 0; i < VECTOR_DIM; ++i) x_batch_buf[i] = (int8_t)((i % 17) - 8);
+
+    swiglu(W_buf, V_buf, Wd_q4k, x_batch_buf, out_batch_buf,
+           /*down_quant_mode=*/0, /*x_scale=*/1.0f);
+
+    for (int j = 0; j < FFN_DIM; ++j) {
+        const uint8_t *wblk = W_buf + j * WV_BLOCKS_PER_ROW * Q4_K_BYTES;
+        const uint8_t *vblk = V_buf + j * WV_BLOCKS_PER_ROW * Q4_K_BYTES;
+        float accA = 0.f, accB = 0.f;
+        for (int b = 0; b < WV_BLOCKS_PER_ROW; ++b) {
+            accA += dot_q4k_int32_ref(wblk + b * Q4_K_BYTES, x_batch_buf, b * 256, 1.0f);
+            accB += dot_q4k_int32_ref(vblk + b * Q4_K_BYTES, x_batch_buf, b * 256, 1.0f);
+        }
+        X1_ref[0][j] = accA;
+        X2_ref[0][j] = accB;
+    }
+    float max_abs = 0.f;
+    for (int j = 0; j < FFN_DIM; ++j) {
+        float g = silu_ref_lut(X1_ref[0][j]) * X2_ref[0][j];
+        gate_ref[0][j] = g;
+        float a = g >= 0.f ? g : -g;
+        if (a > max_abs) max_abs = a;
+    }
+    float gate_scale = (max_abs > 0.f) ? (max_abs / 127.0f) : 1.0f;
+    float inv_gs = 1.0f / gate_scale;
+    int8_t gate_q[DOWN_BLOCKS_PER_ROW][256];
+    for (int j = 0; j < FFN_DIM; ++j) {
+        float fq = gate_ref[0][j] * inv_gs;
+        int iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
+        if (iq > 127) iq = 127;
+        if (iq < -128) iq = -128;
+        gate_q[j >> 8][j & 255] = (int8_t)iq;
+    }
+    for (int o = 0; o < VECTOR_DIM; ++o) {
+        const uint8_t *wd = Wd_q4k + o * DOWN_BLOCKS_PER_ROW * Q4_K_BYTES;
+        float sum = 0.f;
+        for (int b = 0; b < DOWN_BLOCKS_PER_ROW; ++b) {
+            sum += dot_q4k_int32_ref(wd + b * Q4_K_BYTES,
+                                     (const int8_t*)gate_q[b], 0, gate_scale);
+        }
+        expected[0][o] = sum;
+    }
+    float max_err = 0.f;
+    for (int i = 0; i < VECTOR_DIM; ++i) {
+        float e = fabsf(out_batch_buf[i] - expected[0][i]);
+        if (e > max_err) max_err = e;
+    }
+    std::cout << "Mock token max abs err: " << max_err << std::endl;
+    return (max_err > 1e-3f);
+}
+
+// ============================================================================
 // run_test — fills weight buffers, computes reference, calls swiglu(), checks.
 //
 // x_vecs:     pointer to batch_size × VECTOR_DIM floats (row-major)
@@ -375,7 +437,6 @@ static int run_test(const char*  label,
             }
         }
     }
-
     if (err_cnt == 0)
         cout << label << ": PASSED  (batch=" << batch_size << ")\n";
     else
@@ -396,7 +457,8 @@ int main() {
     for (int i = 0; i < VECTOR_DIM; i++) {
         all_vecs[i] = (float)((i % 4) + 1) * 0.1f;
     }
-    int total_errors = 0;
+    cout << "=== Mock token sanity ===" << endl;
+    int total_errors = run_mock_token_test();
 
     // ── T1: Q4_K W_down, batch=1, all normal fp16 ───────────────────────────
     // 0x3800 = fp16 0.5 (normal); 0x2000 = fp16 0.125 (normal)

@@ -15,7 +15,6 @@
 #include "ggml.h"
 #include "common.h"
 
-
 #if defined(_MSC_VER) || defined(__MINGW32__)
 #include <malloc.h> // using malloc.h with MSC/MINGW
 #elif !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
@@ -35,47 +34,138 @@
 #include <limits.h>
 #include <stdarg.h>
 #include <signal.h>
-//modified here
-	#include <fcntl.h>
-	#include <poll.h>
-	#include <sys/mman.h>
-	#include <unistd.h>
-
-	
-	static int udmabuf_fd __attribute__((unused)) = -1;
-		
-	static int sync_device_fd = -1;
-	static int sync_cpu_fd = -1;
-// Forward declaration to resolve implicit function declaration
-
-	static uint64_t udmabuf_phys_base = 0;
-	static void *udmabuf_vptr = NULL;
-	static uint64_t phys_addr_rx_tail_desc = 0;
-	static uint64_t phys_addr_tx_tail_desc = 0;
-	static uint64_t phys_addr_rx_desc = 0;
-	static uint64_t phys_addr_tx_desc_chain = 0;
-	static volatile uint32_t *dma_regs = NULL;
-	static int uio_fd = -1;       // /dev/uio0  →  S2MM completion interrupt (pl_ps_irq0[1])
-
-// SwiGLU-specific file-scope statics (m_axi interface — no DMA)
-	static volatile uint32_t *swg_ip_regs = NULL;     // persistent mmap of CTRL registers
-	static int swiglu_uio_fd = -1;                    // UIO fd for SWIGLU_IP_BASE (ap_done)
-	static int swiglu_uio_idx = -1;                   // uio index found for swiglu_0
-	static int swiglu_call_count = 0;
-	// Phase B weight cache: one loaded flag per layer per weight matrix.
-	// Once layer i is loaded into its permanent udmabuf slot it is never
-	// overwritten — the physical address stays valid for all future tokens.
-	#define SWG_NUM_LAYERS 16
-	static bool swg_layer_W_loaded [SWG_NUM_LAYERS];   // ffn_gate loaded flags
-	static bool swg_layer_V_loaded [SWG_NUM_LAYERS];   // ffn_up   loaded flags
-	static bool swg_layer_Wd_loaded[SWG_NUM_LAYERS];   // ffn_down loaded flags
-	// Track last layer/mode whose base addresses were programmed to the IP.
-	static int      swg_last_prog_layer = -1;
-	static uint32_t swg_last_prog_mode  = 0;
-//end of modification
 #if defined(__gnu_linux__)
 #include <syscall.h>
 #endif
+
+#include <fcntl.h>
+#include <poll.h>
+#include <sys/mman.h>
+#include <unistd.h>
+
+// ---------------- SwiGLU HW offload state (m_axi, no DMA) ----------------
+static int udmabuf_fd __attribute__((unused)) = -1;
+static int sync_device_fd = -1;
+static int sync_cpu_fd    = -1;
+static uint64_t udmabuf_phys_base = 0;
+static void    *udmabuf_vptr      = NULL;
+
+// SwiGLU IP control (ap_done interrupt via UIO)
+static volatile uint32_t *swg_ip_regs = NULL;
+static int swiglu_uio_fd = -1;
+static int swiglu_uio_idx = -1;
+static int swiglu_call_count = 0;
+
+#define SWG_NUM_LAYERS 16
+static bool swg_layer_W_loaded [SWG_NUM_LAYERS];
+static bool swg_layer_V_loaded [SWG_NUM_LAYERS];
+static bool swg_layer_Wd_loaded[SWG_NUM_LAYERS];
+static int      swg_last_prog_layer = -1;
+static uint32_t swg_last_prog_mode  = 0;
+
+// udmabuf layout (640 MB pool)
+#define UDMABUF_SIZE        671088640U
+#define SWG_MAX_BATCH       1
+#define SWG_VEC_OFF         0x06C50000U  // x INT8
+#define SWG_OUT_OFF         0x06C60000U  // out F32
+#define SWG_LAYER_W_BASE    0x06D00000U  // gate
+#define SWG_LAYER_V_BASE    0x0FD00000U  // up
+#define SWG_LAYER_WD_BASE   0x18D00000U  // down
+#define SWG_LAYER_W_STRIDE  0x00900000U  // Q4_K size
+#define SWG_LAYER_V_STRIDE  0x00900000U
+#define SWG_LAYER_WD_STRIDE 0x00E00000U  // padded for Q6_K
+#define SWG_LAYER_W_OFF(i)  (SWG_LAYER_W_BASE  + (uint32_t)(i) * SWG_LAYER_W_STRIDE)
+#define SWG_LAYER_V_OFF(i)  (SWG_LAYER_V_BASE  + (uint32_t)(i) * SWG_LAYER_V_STRIDE)
+#define SWG_LAYER_WD_OFF(i) (SWG_LAYER_WD_BASE + (uint32_t)(i) * SWG_LAYER_WD_STRIDE)
+#define SWG_OUTPUT_SIZE     8192U        // 2048 floats
+
+// IP CTRL register offsets
+#define SWIGLU_IP_BASE   0xA0020000UL
+#define SWG_CTRL_AP_CTRL 0x00
+#define SWG_CTRL_GIE     0x04
+#define SWG_CTRL_IER     0x08
+#define SWG_CTRL_ISR     0x0C
+#define SWG_CTRL_W_LO    0x10
+#define SWG_CTRL_W_HI    0x14
+#define SWG_CTRL_V_LO    0x1C
+#define SWG_CTRL_V_HI    0x20
+#define SWG_CTRL_WD_LO   0x28
+#define SWG_CTRL_WD_HI   0x2C
+#define SWG_CTRL_X_LO    0x34
+#define SWG_CTRL_X_HI    0x38
+#define SWG_CTRL_OUT_LO  0x40
+#define SWG_CTRL_OUT_HI  0x44
+#define SWG_CTRL_MODE    0x4C  // 0=Q4_K 1=Q6_K
+#define SWG_CTRL_XSCALE  0x54  // float bits
+
+// Find /dev/uioN whose map0 addr matches target
+static int open_uio_by_addr(unsigned long target_addr) {
+    for (int i = 0; i < 16; i++) {
+        char path[80];
+        snprintf(path, sizeof(path), "/sys/class/uio/uio%d/maps/map0/addr", i);
+        FILE *f = fopen(path, "r");
+        if (!f) break;
+        unsigned long addr = 0;
+        (void)fscanf(f, "%lx", &addr);
+        fclose(f);
+        if (addr == target_addr) {
+            snprintf(path, sizeof(path), "/dev/uio%d", i);
+            swiglu_uio_idx = i;
+            return open(path, O_RDWR);
+        }
+    }
+    return -1;
+}
+
+static void init_hardware_offload(void) {
+    FILE *fp = fopen("/sys/class/u-dma-buf/udmabuf0/phys_addr", "r");
+    if (!fp) {
+        fprintf(stderr, "Error: udmabuf0 phys_addr not found.\n");
+        exit(1);
+    }
+    if (fscanf(fp, "%llx", (long long unsigned int *)&udmabuf_phys_base) != 1) {
+        fprintf(stderr, "Error: Failed to parse phys_addr.\n");
+        fclose(fp);
+        exit(1);
+    }
+    fclose(fp);
+
+    udmabuf_fd = open("/dev/udmabuf0", O_RDWR);
+    if (udmabuf_fd < 0) {
+        fprintf(stderr, "Error: Cannot open /dev/udmabuf0.\n");
+        exit(1);
+    }
+    sync_device_fd = open("/sys/class/u-dma-buf/udmabuf0/sync_for_device", O_WRONLY);
+    sync_cpu_fd    = open("/sys/class/u-dma-buf/udmabuf0/sync_for_cpu",    O_WRONLY);
+
+    udmabuf_vptr = mmap(NULL, UDMABUF_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, udmabuf_fd, 0);
+    if (udmabuf_vptr == MAP_FAILED) {
+        fprintf(stderr, "[INIT] mmap udmabuf0 FAILED (requested %u bytes)\n", UDMABUF_SIZE);
+        exit(1);
+    }
+}
+
+static void init_swiglu_offload(void) {
+    int mem_fd = open("/dev/mem", O_RDWR | O_SYNC);
+    if (mem_fd < 0) {
+        fprintf(stderr, "[SWG_INIT] Cannot open /dev/mem.\n");
+        exit(1);
+    }
+    swg_ip_regs = (volatile uint32_t *)mmap(NULL, 0x10000, PROT_READ | PROT_WRITE, MAP_SHARED, mem_fd, SWIGLU_IP_BASE);
+    close(mem_fd);
+    if (swg_ip_regs == MAP_FAILED) {
+        fprintf(stderr, "[SWG_INIT] mmap CTRL registers failed at 0x%08lX\n", (unsigned long)SWIGLU_IP_BASE);
+        exit(1);
+    }
+    swg_ip_regs[SWG_CTRL_GIE / 4] = 0x1;
+    swg_ip_regs[SWG_CTRL_IER / 4] = 0x1;
+
+    swiglu_uio_fd = open_uio_by_addr(SWIGLU_IP_BASE);
+    if (swiglu_uio_fd >= 0) {
+        uint32_t uio_enable = 1;
+        (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
+    }
+}
 
 #ifdef GGML_USE_OPENMP
 #include <omp.h>
@@ -145,10 +235,6 @@ typedef atomic_int atomic_bool;
 typedef atomic_int atomic_flag;
 
 #define ATOMIC_FLAG_INIT 0
-
-//MODIFIED HERE AND ALSO IN THE ABOVE MARKED SECTION
-#include <stddef.h>
-
 
 typedef enum {
     memory_order_relaxed,
@@ -310,6 +396,12 @@ static const struct ggml_type_traits_cpu type_traits_cpu[GGML_TYPE_COUNT] = {
     [GGML_TYPE_MXFP4] = {
         .from_float               = quantize_row_mxfp4,
         .vec_dot                  = ggml_vec_dot_mxfp4_q8_0,
+        .vec_dot_type             = GGML_TYPE_Q8_0,
+        .nrows                    = 1,
+    },
+    [GGML_TYPE_NVFP4] = {
+        .from_float               = quantize_row_nvfp4,
+        .vec_dot                  = ggml_vec_dot_nvfp4_q8_0,
         .vec_dot_type             = GGML_TYPE_Q8_0,
         .nrows                    = 1,
     },
@@ -1269,333 +1361,6 @@ static void ggml_compute_forward_mul_mat_one_chunk(
     }
 }
 
-// AXI DMA Register Offsets
-	#define MM2S_DMACR    0x00
-	#define MM2S_DMASR    0x04
-	#define MM2S_CURDESC  0x08
-	#define MM2S_TAILDESC 0x10
-	#define S2MM_DMACR    0x30
-	#define S2MM_DMASR    0x34
-	#define S2MM_CURDESC  0x38
-	#define S2MM_TAILDESC 0x40
-	
-
-// 64-byte aligned AXI DMA Scatter-Gather Descriptor
-typedef struct __attribute__((aligned(64))) {
-    uint32_t nxtdesc;      // 0x00: Next Descriptor Pointer
-    uint32_t nxtdesc_msb;  // 0x04: Next Descriptor Pointer MSB
-    uint32_t buffer_addr;  // 0x08: Buffer Address
-    uint32_t buffer_addr_msb; // 0x0C: Buffer Address MSB
-    uint32_t reserved1;    // 0x10: Reserved
-    uint32_t reserved2;    // 0x14: Reserved
-    uint32_t control;      // 0x18: Control (Transfer Length, SOF, EOF)
-    uint32_t status;       // 0x1C: Status
-    uint32_t app[5];       // 0x20 - 0x30: Application Data (unused)
-    uint32_t padding[3];   // Pad to 64 bytes
-} axi_sg_desc_t;
-
-    
-#define UDMABUF_SIZE 671088640U // 640 MB: Phase B per-layer weight cache (614 MB used)
-#define CHUNK_SIZE 4194304     // 8 MB per descriptor payload
-#define VECTOR_SIZE 8192       // 2048 * 4 bytes
-#define OUTPUT_SIZE 262144     // 65536 * 4 bytes
-
-// SwiGLU accelerator address (m_axi design — DMA removed)
-#define SWIGLU_IP_BASE   0xA0020000UL   // swiglu_0 s_axi_CTRL
-
-// SwiGLU udmabuf layout offsets.
-// LP matrix (Q6_K, 65536×2048) occupies 0x300000–0x6C00000 (108 MB).
-// SwiGLU x and output are placed just after at 0x6C50000/0x6C52000.
-#define SWG_MAX_BATCH    1             // must match MAX_BATCH in swiglu.h
-#define SWG_VEC_OFF      0x06C50000U   // x batch: SWG_MAX_BATCH × 2048 × F32 = 64 KB
-#define SWG_OUT_OFF      0x06C60000U   // output:  SWG_MAX_BATCH × 2048 × F32 = 64 KB (SWG_VEC_OFF + 0x10000)
-//
-// Phase B: per-layer weight cache — 16 permanent slots, never overwritten.
-// W (ffn_gate Q4_K): 9,437,184 B = 0x900000 per layer
-// V (ffn_up   Q4_K): 9,437,184 B = 0x900000 per layer
-// W_down (Q4_K 0x900000 or Q6_K 0xD20000): padded to 0xE00000 (14 MB) per layer
-//
-//   SWG_LAYER_W_BASE  0x06D00000  layers 0-15 at +i*0x900000
-//     end: 0x06D00000 + 16*0x900000 = 0x0FD00000  (253 MB)
-//   SWG_LAYER_V_BASE  0x0FD00000  layers 0-15 at +i*0x900000
-//     end: 0x0FD00000 + 16*0x900000 = 0x18D00000  (397 MB)
-//   SWG_LAYER_WD_BASE 0x18D00000  layers 0-15 at +i*0xE00000
-//     end: 0x18D00000 + 16*0xE00000 = 0x26D00000  (614 MB) < 640 MB ✓
-#define SWG_LAYER_W_BASE      0x06D00000U
-#define SWG_LAYER_V_BASE      0x0FD00000U
-#define SWG_LAYER_WD_BASE     0x18D00000U
-#define SWG_LAYER_W_STRIDE    0x00900000U  // 9 MB — exact Q4_K size
-#define SWG_LAYER_V_STRIDE    0x00900000U
-#define SWG_LAYER_WD_STRIDE   0x00E00000U  // 14 MB — fits Q6_K (13.8 MB)
-#define SWG_LAYER_W_OFF(i)  (SWG_LAYER_W_BASE  + (uint32_t)(i) * SWG_LAYER_W_STRIDE)
-#define SWG_LAYER_V_OFF(i)  (SWG_LAYER_V_BASE  + (uint32_t)(i) * SWG_LAYER_V_STRIDE)
-#define SWG_LAYER_WD_OFF(i) (SWG_LAYER_WD_BASE + (uint32_t)(i) * SWG_LAYER_WD_STRIDE)
-
-#define SWG_OUTPUT_SIZE  8192U         // 2048 × sizeof(float)
-
-// swiglu_0 s_axi_CTRL register offsets — confirmed from xswiglu_hw.h
-// HLS inserts a reserved word after each 64-bit argument (lo, hi, rsvd = 12 B each)
-// and after each 32-bit scalar (data, rsvd = 8 B each).
-#define SWG_CTRL_AP_CTRL  0x00   // ap_start[0] ap_done[1] ap_idle[2] ap_ready[3]
-#define SWG_CTRL_GIE      0x04   // global interrupt enable
-#define SWG_CTRL_IER      0x08   // interrupt enable  (bit 0 = ap_done)
-#define SWG_CTRL_ISR      0x0C   // interrupt status  (TOW: write 1 to toggle/clear)
-#define SWG_CTRL_W_LO     0x10   // W       phys addr [31:0]
-#define SWG_CTRL_W_HI     0x14   // W       phys addr [63:32]
-// 0x18 reserved
-#define SWG_CTRL_V_LO     0x1C   // V       phys addr [31:0]
-#define SWG_CTRL_V_HI     0x20   // V       phys addr [63:32]
-// 0x24 reserved
-#define SWG_CTRL_WD_LO    0x28   // W_down  phys addr [31:0]
-#define SWG_CTRL_WD_HI    0x2C   // W_down  phys addr [63:32]
-// 0x30 reserved
-#define SWG_CTRL_X_LO     0x34   // x_batch phys addr [31:0]
-#define SWG_CTRL_X_HI     0x38   // x_batch phys addr [63:32]
-// 0x3C reserved
-#define SWG_CTRL_OUT_LO   0x40   // out_batch phys addr [31:0]
-#define SWG_CTRL_OUT_HI   0x44   // out_batch phys addr [63:32]
-// 0x48 reserved
-#define SWG_CTRL_MODE     0x4C   // down_quant_mode: 0=Q4_K 1=Q6_K  (confirmed xswiglu_hw.h 0x4c)
-// 0x50 reserved
-#define SWG_CTRL_XSCALE   0x54   // x_scale (float)                  (confirmed xswiglu_hw.h 0x54)
-// 0x58 reserved
-=======
-#define SWG_CTRL_MODE     0x4C   // down_quant_mode: 0=Q4_K 1=Q6_K
-// 0x50 reserved
-#define SWG_CTRL_XSCALE   0x54   // x_scale (float)
->>>>>>> theirs
-=======
-#define SWG_CTRL_MODE     0x4C   // down_quant_mode: 0=Q4_K 1=Q6_K
-// 0x50 reserved
-#define SWG_CTRL_XSCALE   0x54   // x_scale (float)
->>>>>>> theirs
-
-
-// Find the /dev/uioN device whose map0 physical address matches target_addr.
-// Needed because pre-existing axi-pmon devices occupy uio0..uio3, so the
-// DMA generic-uio device will be uio4 (or higher) after overlay load.
-static int open_uio_by_addr(unsigned long target_addr) {
-    for (int i = 0; i < 16; i++) {
-        char path[80];
-        snprintf(path, sizeof(path), "/sys/class/uio/uio%d/maps/map0/addr", i);
-        FILE *f = fopen(path, "r");
-        if (!f) break;  // no more uio devices
-        unsigned long addr = 0;
-        (void)fscanf(f, "%lx", &addr);
-        fclose(f);
-        if (addr == target_addr) {
-            snprintf(path, sizeof(path), "/dev/uio%d", i);
-            fprintf(stderr, "[INIT] Found DMA UIO device at /dev/uio%d (addr=0x%lx)\n",
-                    i, target_addr);
-            swiglu_uio_idx = i;
-            return open(path, O_RDWR);
-        }
-    }
-    return -1;
-}
-
-//__attribute__((constructor))
-static void init_hardware_offload(void) {
-    // 1. Read Physical Base Address from sysfs
-    FILE *fp = fopen("/sys/class/u-dma-buf/udmabuf0/phys_addr", "r");
-    if (!fp) {
-        fprintf(stderr, "Error: udmabuf0 phys_addr not found.\n");
-        exit(1);
-    }
-    // --- REPLACE FSCANF LOGIC ---
-    if (fscanf(fp, "%llx", (long long unsigned int *)&udmabuf_phys_base) != 1) {
-        fprintf(stderr, "Error: Failed to parse phys_addr.\n");
-        fclose(fp);
-        exit(1);
-    }
-    fclose(fp);
-    fprintf(stderr, "[INIT] udmabuf_phys_base = 0x%016llX (%s 4GB)\n",
-            (unsigned long long)udmabuf_phys_base,
-            udmabuf_phys_base > 0xFFFFFFFFULL ? "ABOVE" : "below");
-    // ----------------------------
-
-    // 2. Open and Map UDMABUF to Virtual Memory
-    udmabuf_fd = open("/dev/udmabuf0", O_RDWR);
-    if (udmabuf_fd < 0) {
-        fprintf(stderr, "Error: Cannot open /dev/udmabuf0.\n");
-        exit(1);
-    }
-    sync_device_fd = open("/sys/class/u-dma-buf/udmabuf0/sync_for_device", O_WRONLY);
-    sync_cpu_fd    = open("/sys/class/u-dma-buf/udmabuf0/sync_for_cpu",    O_WRONLY);
-    // AXI DMA is at 0xA0000000 in the deployed bitstream.
-    // Look up the UIO device by physical address so pre-existing uio0..uioN
-    // (axi-pmon etc.) do not interfere.
-    uio_fd = open_uio_by_addr(0xa0000000UL);
-    if (uio_fd < 0)
-        fprintf(stderr, "[INIT] DMA UIO device not found at 0xa0000000 — overlay not loaded?\n");
-    else
-        fprintf(stderr, "[INIT] uio_fd=%d (interrupt-driven S2MM wait enabled)\n", uio_fd);
-    udmabuf_vptr = mmap(NULL, UDMABUF_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, udmabuf_fd, 0);
-    if (udmabuf_vptr == MAP_FAILED) {
-        fprintf(stderr, "[INIT] mmap udmabuf0 FAILED (requested %u bytes). CMA likely too small; check boot cma= and udmabuf size.\n", UDMABUF_SIZE);
-        exit(1);
-    }
-    off_t ub_sz = lseek(udmabuf_fd, 0, SEEK_END);
-    fprintf(stderr, "[INIT] udmabuf map: vptr=%p phys=0x%016llX size_req=%u size_file=%lld\n",
-            udmabuf_vptr, (unsigned long long)udmabuf_phys_base,
-            UDMABUF_SIZE, (long long)ub_sz);
-    if (ub_sz > 0 && ub_sz < (off_t)UDMABUF_SIZE) {
-        fprintf(stderr, "[WARN] udmabuf backing size smaller than requested (%lld < %u). Consider shrinking UDMABUF_SIZE or increasing CMA.\n",
-                (long long)ub_sz, UDMABUF_SIZE);
-    }
-
-    // Memory Map Layout:
-    // [0] rx_desc | [64] tx_desc_vector | [128...] tx_desc_matrix | ... 
-    // [1MB] Vector Data | [2MB] Output Data | [3MB...] Matrix Data
-
-    //memory clear
-    memset(udmabuf_vptr, 0, 1048576);
-    
-    uint64_t phys_desc_base = udmabuf_phys_base;
-    axi_sg_desc_t *v_desc_base = (axi_sg_desc_t *)udmabuf_vptr;
-
-    // 3. Configure S2MM (Receive) Descriptor Chain (Max 8192 bytes per descriptor)
-    uint64_t rx_payload_phys = udmabuf_phys_base + 0x200000;
-    uint32_t remaining_rx = OUTPUT_SIZE; 
-    int rx_idx = 0;
-    phys_addr_rx_desc = phys_desc_base;
-
-    while (remaining_rx > 0) {
-        uint32_t current_chunk = (remaining_rx > 8192) ? 8192 : remaining_rx;
-        
-        v_desc_base[rx_idx].buffer_addr = (uint32_t)rx_payload_phys;
-        v_desc_base[rx_idx].buffer_addr_msb = (uint32_t)(rx_payload_phys >> 32);
-        
-        uint64_t next_desc_addr = phys_desc_base + ((rx_idx + 1) * 64);
-        v_desc_base[rx_idx].nxtdesc = (uint32_t)next_desc_addr;
-        v_desc_base[rx_idx].nxtdesc_msb = (uint32_t)(next_desc_addr >> 32);
-        
-        if (rx_idx == 0) { 
-            v_desc_base[rx_idx].control = current_chunk | (1 << 27); // SOF
-        } else if (remaining_rx == current_chunk) { 
-            v_desc_base[rx_idx].control = current_chunk | (1 << 26); // EOF
-        } else {
-            v_desc_base[rx_idx].control = current_chunk; 
-        }
-
-        // Handle edge case of single-chunk frame
-        if (remaining_rx == current_chunk && rx_idx == 0) {
-            v_desc_base[rx_idx].control = current_chunk | (1 << 26) | (1 << 27);
-        }
-
-        rx_payload_phys += current_chunk;
-        remaining_rx -= current_chunk;
-        rx_idx++;
-    }
-    phys_addr_rx_tail_desc = phys_desc_base + ((rx_idx - 1) * 64);
-
-
-    // 4. Configure MM2S (Transmit) Descriptor Chain (Starts at offset 100 to prevent overlap)
-    int tx_idx = 100;
-    phys_addr_tx_desc_chain = phys_desc_base + (tx_idx * 64);
-
-    // Vector Payload
-    uint64_t tx_payload_phys = udmabuf_phys_base + 0x100000;
-    uint32_t remaining_tx = VECTOR_SIZE; 
-
-    while (remaining_tx > 0) {
-        uint32_t current_chunk = (remaining_tx > 8192) ? 8192 : remaining_tx;
-        
-        v_desc_base[tx_idx].buffer_addr = (uint32_t)tx_payload_phys;
-        v_desc_base[tx_idx].buffer_addr_msb = (uint32_t)(tx_payload_phys >> 32);
-        
-        uint64_t next_desc_addr = phys_desc_base + ((tx_idx + 1) * 64);
-        v_desc_base[tx_idx].nxtdesc = (uint32_t)next_desc_addr;
-        v_desc_base[tx_idx].nxtdesc_msb = (uint32_t)(next_desc_addr >> 32);
-        
-        if (tx_idx == 100) {
-            v_desc_base[tx_idx].control = current_chunk | (1 << 27); // SOF
-        } else {
-            v_desc_base[tx_idx].control = current_chunk; 
-        }
-
-        tx_payload_phys += current_chunk;
-        remaining_tx -= current_chunk;
-        tx_idx++;
-    }
-
-    // 5. Matrix Payload
-    tx_payload_phys = udmabuf_phys_base + 0x300000;
-    remaining_tx = 110100480;
-
-    while (remaining_tx > 0) {
-        uint32_t current_chunk = (remaining_tx > 8192) ? 8192 : remaining_tx;
-        
-        v_desc_base[tx_idx].buffer_addr = (uint32_t)tx_payload_phys;
-        v_desc_base[tx_idx].buffer_addr_msb = (uint32_t)(tx_payload_phys >> 32);
-        
-        uint64_t next_desc_addr = phys_desc_base + ((tx_idx + 1) * 64);
-        v_desc_base[tx_idx].nxtdesc = (uint32_t)next_desc_addr;
-        v_desc_base[tx_idx].nxtdesc_msb = (uint32_t)(next_desc_addr >> 32);
-        
-        if (remaining_tx == current_chunk) { 
-            v_desc_base[tx_idx].control = current_chunk | (1 << 26); // EOF
-        } else {
-            v_desc_base[tx_idx].control = current_chunk; 
-        }
-
-        tx_payload_phys += current_chunk;
-        remaining_tx -= current_chunk;
-        tx_idx++;
-    }
-    phys_addr_tx_tail_desc = phys_desc_base + ((tx_idx - 1) * 64);
-
-    // Register mappings are created per-call in ggml_compute_forward_mul_mat
-    // so that they can be safely munmap'd after each invocation.
-}
-
-// ---------------------------------------------------------------------------
-// init_swiglu_offload() — called lazily on the first SwiGLU down-projection
-// intercept.  With the m_axi interface the IP fetches data directly from DDR;
-// no DMA descriptors are needed.  This function maps the CTRL registers once
-// and opens the UIO interrupt device for ap_done.
-// Requires udmabuf_phys_base and udmabuf_vptr to be set by init_hardware_offload().
-// ---------------------------------------------------------------------------
-static void init_swiglu_offload(void) {
-    int mem_fd = open("/dev/mem", O_RDWR | O_SYNC);
-    if (mem_fd < 0) {
-        fprintf(stderr, "[SWG_INIT] Cannot open /dev/mem.\n");
-        exit(1);
-    }
-    swg_ip_regs = (volatile uint32_t *)mmap(
-        NULL, 0x10000, PROT_READ | PROT_WRITE, MAP_SHARED, mem_fd, SWIGLU_IP_BASE);
-    close(mem_fd);
-    if (swg_ip_regs == MAP_FAILED) {
-        fprintf(stderr, "[SWG_INIT] mmap CTRL registers failed at 0x%08lX.\n",
-                (unsigned long)SWIGLU_IP_BASE);
-        exit(1);
-    }
-
-    // Enable ap_done interrupt
-    swg_ip_regs[SWG_CTRL_GIE / 4] = 0x1;  // global interrupt enable
-    swg_ip_regs[SWG_CTRL_IER / 4] = 0x1;  // ap_done interrupt enable
-
-    swiglu_uio_fd = open_uio_by_addr(SWIGLU_IP_BASE);
-    if (swiglu_uio_fd < 0) {
-        fprintf(stderr, "[SWG_INIT] SwiGLU UIO not found at 0x%08lX "
-                "— overlay not loaded?\n", (unsigned long)SWIGLU_IP_BASE);
-    } else {
-        // Arm UIO interrupt for first call
-        uint32_t uio_enable = 1;
-        (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
-        fprintf(stderr, "[SWG_INIT] swiglu_uio_fd=%d (uio%d) ap_done interrupt armed\n",
-                swiglu_uio_fd, swiglu_uio_idx);
-    }
-}
-
-// Global state variables for hardware offload
-
-//static int udmabuf_fd = -1;
-//static void *udmabuf_vptr = null;
-//static uint32_t udmabuf_phys_base = 0;
-//static uint32_t phys_addr_rx_desc = 0;
-//static uint32_t phys_addr_tx_desc_chain = 0;
-////////////////////////////////////////////////////////////////////////////////////////////////////
 void ggml_compute_forward_mul_mat(
         const struct ggml_compute_params * params,
               struct ggml_tensor * dst) {
@@ -1607,670 +1372,7 @@ void ggml_compute_forward_mul_mat(
 
     const int ith = params->ith;
     const int nth = params->nth;
-//MODIFIED HERE
-// =========================================================================
-    // 0. SWIGLU HARDWARE OFFLOAD — ffn_down projection of LFM2 SwiGLU block
-    //    Intercepts MUL_MAT(W_down, gated) where W_down is [2048, 8192] Q4_K/Q6_K.
-    //    Must appear BEFORE the linear-projection check below.
-    // =========================================================================
-    if (src0->ne[0] == 8192 && src0->ne[1] == 2048 &&
-        (src0->type == GGML_TYPE_Q4_K || src0->type == GGML_TYPE_Q6_K) &&
-        src1->type == GGML_TYPE_F32) {
 
-        if (ith == 0) {
-            // --- Lazy initialization ---
-            static bool is_swiglu_initialized = false;
-            if (!is_swiglu_initialized) {
-                fprintf(stderr, "[SWG_INIT] First call: udmabuf_vptr=%p\n", udmabuf_vptr);
-                fflush(stderr);
-                // Ensure the shared udmabuf mapping is set up first
-                if (udmabuf_vptr == NULL || udmabuf_vptr == MAP_FAILED) {
-                    init_hardware_offload();
-                    if (udmabuf_vptr == NULL || udmabuf_vptr == MAP_FAILED) {
-                        fprintf(stderr, "[SWG] Fatal: udmabuf mapping failed.\n");
-                        fflush(stderr);
-                        exit(1);
-                    }
-                }
-                fprintf(stderr, "[SWG_INIT] udmabuf OK: vptr=%p phys=0x%016llX\n",
-                        udmabuf_vptr, (unsigned long long)udmabuf_phys_base);
-                fflush(stderr);
-                init_swiglu_offload();
-            fprintf(stderr, "[SWG_INIT] init_swiglu_offload done: swg_ip_regs=%p uio_fd=%d\n",
-                    (void*)swg_ip_regs, swiglu_uio_fd);
-                fflush(stderr);
-                is_swiglu_initialized = true;
-            }
-
-            // Batch guard: accelerator handles single-token decode only.
-            // Prefill (ne[1] > 1) falls back to CPU — call counter NOT incremented.
-            if (src1->ne[1] != 1) {
-                goto cpu_compute_fallback;
-            }
-
-            // --- Layer index and quantization mode ---
-            int   layer = swiglu_call_count % 16;
-            // Detect Q4_K vs Q6_K from actual buffer size, not type field.
-            // nb[3] holds the true allocation size for this tensor.  Use an asm
-            // barrier to prevent GCC from constant-folding the read via the type
-            // proof from the outer if-condition.
-            // Q4_K [8192,2048]: nb[3] = 9,437,184 B
-            // Q6_K [8192,2048]: nb[3] = 13,762,560 B  (threshold = 9437184+1)
-            // CRITICAL: down_bytes must use this same _nbytes value.  ggml_nbytes()
-            // can return a different value (type-based formula vs stride-based nb[3])
-            // causing mode/transfer-size mismatch → NaN or DMA timeout.
-            size_t _nbytes = src0->nb[3];
-            __asm__ volatile("" : "+r"(_nbytes));  /* barrier: prevent constant-fold via type */
-            uint32_t mode = (_nbytes > 9437184UL) ? 1 : 0;
-            swiglu_call_count++;
-
-            // --- Graph walk to recover x, W (ffn_gate), V (ffn_up) ---
-            // Actual llama.cpp graph for LFM2 SwiGLU (fused GLU op):
-            //   dst->src[0] = W_down              (already in src0)
-            //   dst->src[1] = gated   op=GLU      = GLU(gate_mm, up_mm)
-            //   gated->src[0] = gate_mm op=MUL_MAT = MUL_MAT(W_gate, x)
-            //   gated->src[1] = up_mm   op=MUL_MAT = MUL_MAT(W_up,  x)
-            //   gate_mm->src[0] = W_gate  (leaf, q4_K)
-            //   gate_mm->src[1] = x       (leaf, f32)
-            //   up_mm->src[0]   = W_up    (leaf, q4_K)
-            struct ggml_tensor *gated   = dst->src[1];
-            struct ggml_tensor *gate_mm = gated ? gated->src[0] : NULL;  // MUL_MAT(W_gate, x)
-            struct ggml_tensor *up_mm   = gated ? gated->src[1] : NULL;  // MUL_MAT(W_up,  x)
-
-            if (!gated || !gate_mm || !up_mm ||
-                !gate_mm->src[0] || !gate_mm->src[1] || !up_mm->src[0]) {
-                fprintf(stderr, "[SWG] Graph walk failed. Falling back to CPU.\n");
-                swiglu_call_count--;
-                goto cpu_compute_fallback;
-            }
-            if (gate_mm->src[0]->type != GGML_TYPE_Q4_K ||
-                up_mm->src[0]->type   != GGML_TYPE_Q4_K ||
-                gate_mm->src[1]->type != GGML_TYPE_F32) {
-                fprintf(stderr, "[SWG] Unexpected types W=%s V=%s x=%s. Falling back.\n",
-                        ggml_type_name(gate_mm->src[0]->type),
-                        ggml_type_name(up_mm->src[0]->type),
-                        ggml_type_name(gate_mm->src[1]->type));
-                swiglu_call_count--;
-                goto cpu_compute_fallback;
-            }
-
-            const void  *W_data      = gate_mm->src[0]->data;  // ffn_gate weights (Q4_K)
-            const void  *V_data      = up_mm->src[0]->data;    // ffn_up   weights (Q4_K)
-            const float *x_data      = (const float *)gate_mm->src[1]->data;  // input (F32)
-            const void  *W_down_data = src0->data;             // ffn_down weights
-
-            GGML_ASSERT(W_data      != NULL);
-            GGML_ASSERT(V_data      != NULL);
-            GGML_ASSERT(x_data      != NULL);
-            GGML_ASSERT(W_down_data != NULL);
-
-            // --- Copy data to udmabuf ---
-            // x is always written (changes every token).
-            // Weights are cached by source pointer: skip memcpy if the same
-            // layer's data is already in udmabuf from a previous token call.
-            size_t gate_bytes = ggml_nbytes(gate_mm->src[0]);  // W_gate, Q4_K
-            size_t up_bytes   = ggml_nbytes(up_mm->src[0]);    // W_up,   Q4_K
-            size_t down_bytes = _nbytes;  // W_down — use nb[3] via asm barrier (matches mode)
-
-            fprintf(stderr, "[SWG] call=%d layer=%d mode=%u "
-                    "gate=%zu up=%zu down=%zu bytes\n",
-                    swiglu_call_count, layer, mode,
-                    gate_bytes, up_bytes, down_bytes);
-            fflush(stderr);
-
-            // Phase B weight cache: each layer has a permanent slot in udmabuf.
-            // On first call for layer i the weights are copied once; all subsequent
-            // tokens for that layer skip the memcpy — the physical address is stable.
-            if (!swg_layer_W_loaded[layer]) {
-                fprintf(stderr, "[SWG] copying W[%d] (%zu B)...\n", layer, gate_bytes); fflush(stderr);
-                memcpy((char*)udmabuf_vptr + SWG_LAYER_W_OFF(layer), W_data, gate_bytes);
-                swg_layer_W_loaded[layer] = true;
-                fprintf(stderr, "[SWG] W[%d] done\n", layer); fflush(stderr);
-            } else {
-                fprintf(stderr, "[SWG] W[%d] cached\n", layer); fflush(stderr);
-            }
-            if (!swg_layer_V_loaded[layer]) {
-                fprintf(stderr, "[SWG] copying V[%d] (%zu B)...\n", layer, up_bytes); fflush(stderr);
-                memcpy((char*)udmabuf_vptr + SWG_LAYER_V_OFF(layer), V_data, up_bytes);
-                swg_layer_V_loaded[layer] = true;
-                fprintf(stderr, "[SWG] V[%d] done\n", layer); fflush(stderr);
-            } else {
-                fprintf(stderr, "[SWG] V[%d] cached\n", layer); fflush(stderr);
-            }
-            if (!swg_layer_Wd_loaded[layer]) {
-                fprintf(stderr, "[SWG] copying Wd[%d] (%zu B)...\n", layer, down_bytes); fflush(stderr);
-                memcpy((char*)udmabuf_vptr + SWG_LAYER_WD_OFF(layer), W_down_data, down_bytes);
-                swg_layer_Wd_loaded[layer] = true;
-                fprintf(stderr, "[SWG] Wd[%d] done\n", layer); fflush(stderr);
-            } else {
-                fprintf(stderr, "[SWG] Wd[%d] cached\n", layer); fflush(stderr);
-            }
-
-            // Phase C batch loop: process all tokens in chunks of SWG_MAX_BATCH.
-            // Weights are staged above (once per layer); only x changes each chunk.
-            int swg_total_tokens = (int)src1->ne[1];
-            uint64_t phys_W  = udmabuf_phys_base + SWG_LAYER_W_OFF(layer);
-            uint64_t phys_V  = udmabuf_phys_base + SWG_LAYER_V_OFF(layer);
-            uint64_t phys_Wd = udmabuf_phys_base + SWG_LAYER_WD_OFF(layer);
-            bool need_prog_wvw = (layer != swg_last_prog_layer) || (mode != swg_last_prog_mode);
-            for (int c = 0; c < swg_total_tokens; c += SWG_MAX_BATCH) {
-                int bsz = ((c + SWG_MAX_BATCH) <= swg_total_tokens)
-                          ? SWG_MAX_BATCH : (swg_total_tokens - c);
-
-                // Quantize x to INT8 and write into udmabuf x slot.
-                // W4A8: scan FP32 x for abs-max, compute scale, quantize to INT8.
-                // Transfer size: bsz × 2048 × 1 byte (was bsz × 2048 × 4 bytes F32).
-                const float *x_chunk = x_data + (size_t)c * 2048;
-                fprintf(stderr, "[SWG] chunk c=%d bsz=%d quantizing x to INT8...\n", c, bsz); fflush(stderr);
-                float swg_x_max_abs = 0.f;
-                for (int _i = 0; _i < (int)(bsz * 2048); _i++) {
-                    float v = x_chunk[_i];
-                    if (v < 0.f) v = -v;
-                    if (v > swg_x_max_abs) swg_x_max_abs = v;
-                }
-                float swg_x_scale = (swg_x_max_abs > 0.f) ? (swg_x_max_abs / 127.0f) : 1.0f;
-                float swg_x_inv   = 1.0f / swg_x_scale;
-                int8_t *x_dst = (int8_t*)((char*)udmabuf_vptr + SWG_VEC_OFF);
-                for (int _i = 0; _i < (int)(bsz * 2048); _i++) {
-                    float fq = x_chunk[_i] * swg_x_inv;
-                    int   iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
-                    if (iq >  127) iq =  127;
-                    if (iq < -128) iq = -128;
-                    x_dst[_i] = (int8_t)iq;
-                }
-
-                // Flush CPU caches so the IP sees fresh x (and weights if first token).
-                fprintf(stderr, "[SWG] cache flush...\n"); fflush(stderr);
-                if (sync_device_fd >= 0) (void)write(sync_device_fd, "1", 1);
-
-                // ================================================================
-                // CTRL REGISTER PROGRAMMING — write all arguments before ap_start.
-                // W/V/Wd addresses are constant per layer; x/out/bsz change per chunk.
-                // Offsets confirmed from xswiglu_hw.h (synthesis complete).
-                // ================================================================
-                uint64_t phys_x   = udmabuf_phys_base + SWG_VEC_OFF;
-                uint64_t phys_out = udmabuf_phys_base + SWG_OUT_OFF;
-
-                fprintf(stderr, "[SWG] phys W=0x%llX V=0x%llX Wd=0x%llX x=0x%llX out=0x%llX mode=%u xscale=%g\n",
-                        (unsigned long long)phys_W, (unsigned long long)phys_V,
-                        (unsigned long long)phys_Wd, (unsigned long long)phys_x,
-                        (unsigned long long)phys_out, mode, swg_x_scale);
-                fprintf(stderr, "[SWG] AP_CTRL pre 0x%08X ISR=0x%08X IER=0x%08X\n",
-                        swg_ip_regs[SWG_CTRL_AP_CTRL / 4],
-                        swg_ip_regs[SWG_CTRL_ISR / 4],
-                        swg_ip_regs[SWG_CTRL_IER / 4]);
-                fflush(stderr);
-
-                if (need_prog_wvw) {
-                    swg_ip_regs[SWG_CTRL_W_LO   / 4] = (uint32_t) phys_W;
-                    swg_ip_regs[SWG_CTRL_W_HI   / 4] = (uint32_t)(phys_W   >> 32);
-                    swg_ip_regs[SWG_CTRL_V_LO   / 4] = (uint32_t) phys_V;
-                    swg_ip_regs[SWG_CTRL_V_HI   / 4] = (uint32_t)(phys_V   >> 32);
-                    swg_ip_regs[SWG_CTRL_WD_LO  / 4] = (uint32_t) phys_Wd;
-                    swg_ip_regs[SWG_CTRL_WD_HI  / 4] = (uint32_t)(phys_Wd  >> 32);
-                    swg_last_prog_layer = layer;
-                    swg_last_prog_mode  = mode;
-                }
-                swg_ip_regs[SWG_CTRL_X_LO   / 4] = (uint32_t) phys_x;
-                swg_ip_regs[SWG_CTRL_X_HI   / 4] = (uint32_t)(phys_x   >> 32);
-                swg_ip_regs[SWG_CTRL_OUT_LO / 4] = (uint32_t) phys_out;
-                swg_ip_regs[SWG_CTRL_OUT_HI / 4] = (uint32_t)(phys_out >> 32);
-                swg_ip_regs[SWG_CTRL_MODE    / 4] = mode;
-                uint32_t swg_x_scale_bits;
-                memcpy(&swg_x_scale_bits, &swg_x_scale, sizeof(float));
-                swg_ip_regs[SWG_CTRL_XSCALE / 4] = swg_x_scale_bits;
-                __asm__ __volatile__("" ::: "memory");
-
-                // Start the IP core
-                fprintf(stderr, "[SWG] writing ap_start (uio_fd=%d)...\n", swiglu_uio_fd);
-                fflush(stderr);
-                swg_ip_regs[SWG_CTRL_AP_CTRL / 4] = 0x01;
-                __asm__ __volatile__("" ::: "memory");
-                // Short poll after start to ensure ap_start latched and ISR is clean
-                for (int spin = 0; spin < 5; ++spin) {
-                    uint32_t ap_now = swg_ip_regs[SWG_CTRL_AP_CTRL / 4];
-                    if (ap_now & 0x01) break;
-                    usleep(1000);
-                }
-                fprintf(stderr, "[SWG] AP_CTRL post 0x%08X ISR=0x%08X\n",
-                        swg_ip_regs[SWG_CTRL_AP_CTRL / 4],
-                        swg_ip_regs[SWG_CTRL_ISR / 4]);
-                fflush(stderr);
-
-                // ================================================================
-                // Wait for ap_done interrupt (UIO) or poll fallback
-                // ================================================================
-                int swg_ip_done = 0;
-
-                if (swiglu_uio_fd >= 0) {
-                    // Poll in 50 ms slices; also check AP_CTRL each slice so we don't wait
-                    // 7 full seconds if the UIO interrupt routing is misconfigured.
-                    struct pollfd pfd = { .fd = swiglu_uio_fd, .events = POLLIN };
-                    int total_ms = 0;
-                    fprintf(stderr, "[SWG] waiting for ap_done (uio_fd=%d)...\n", swiglu_uio_fd);
-                    fflush(stderr);
-                    while (total_ms < 7000 && !swg_ip_done) {
-                        int ret = poll(&pfd, 1, 50);   // 50 ms slice
-                        total_ms += 50;
-                        if (ret > 0 && (pfd.revents & POLLIN)) {
-                            uint32_t irq_count;
-                            (void)read(swiglu_uio_fd, &irq_count, sizeof(irq_count));
-                            fprintf(stderr, "[SWG] UIO interrupt (count=%u, %d ms)\n",
-                                    irq_count, total_ms);
-                            fflush(stderr);
-                            swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;
-                            uint32_t uio_enable = 1;
-                            (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
-                            swg_ip_done = 1;
-                        } else if (ret == 0) {
-                            // No UIO event this slice — check AP_CTRL directly
-                            uint32_t ap_now = swg_ip_regs[SWG_CTRL_AP_CTRL / 4];
-                            if (ap_now & 0x02) {
-                                fprintf(stderr, "[SWG] ap_done via AP_CTRL poll (%d ms) — UIO IRQ missed\n",
-                                        total_ms);
-                                fflush(stderr);
-                                swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;
-                                uint32_t uio_enable = 1;
-                                (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
-                                swg_ip_done = 1;
-                            } else if ((total_ms % 500) == 0) {
-                                fprintf(stderr, "[SWG] wait %d ms: AP_CTRL=0x%08X ISR=0x%08X\n",
-                                        total_ms,
-                                        swg_ip_regs[SWG_CTRL_AP_CTRL / 4],
-                                        swg_ip_regs[SWG_CTRL_ISR / 4]);
-                                fflush(stderr);
-                            }
-                        } else {
-                            perror("[SWG] poll() error");
-                            break;
-                        }
-                    }
-                    if (!swg_ip_done) {
-                        fprintf(stderr, "[SWG] TIMEOUT (7s): AP_CTRL=0x%08X ISR=0x%08X\n",
-                                swg_ip_regs[SWG_CTRL_AP_CTRL / 4],
-                                swg_ip_regs[SWG_CTRL_ISR / 4]);
-                        fflush(stderr);
-                    }
-                } else {
-                    // Polling fallback (no UIO device — overlay not loaded)
-                    fprintf(stderr, "[SWG] no UIO — polling AP_CTRL...\n"); fflush(stderr);
-                    for (int i = 0; i < 7000; i++) {
-                        uint32_t ap = swg_ip_regs[SWG_CTRL_AP_CTRL / 4];
-                        if (ap & 0x02) {
-                            swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;
-                            swg_ip_done = 1;
-                            fprintf(stderr, "[SWG] poll done after %d ms, AP_CTRL=0x%08X\n",
-                                    i, ap);
-                            fflush(stderr);
-                            break;
-                        }
-                        usleep(1000);
-                    }
-                    if (!swg_ip_done) {
-                        fprintf(stderr, "[SWG] TIMEOUT (7s): AP_CTRL=0x%08X ISR=0x%08X\n",
-                                swg_ip_regs[SWG_CTRL_AP_CTRL / 4],
-                                swg_ip_regs[SWG_CTRL_ISR / 4]);
-                        fflush(stderr);
-                    }
-                }
-
-                if (!swg_ip_done) {
-                    fprintf(stderr, "[SWG] === IP TIMEOUT — aborting ===\n");
-                    fflush(stderr);
-                    exit(1);
-                }
-
-                // Invalidate CPU cache to read fresh FPGA output
-                if (sync_cpu_fd >= 0) (void)write(sync_cpu_fd, "1", 1);
-
-                // Copy bsz output vectors to dst tensor at chunk offset.
-                float *out_chunk = (float*)dst->data + (size_t)c * 2048;
-                memcpy(out_chunk, (char*)udmabuf_vptr + SWG_OUT_OFF,
-                       (size_t)bsz * 2048 * sizeof(float));
-                fprintf(stderr, "[SWG] chunk c=%d done. out[0]=%.6f\n",
-                        c, out_chunk[0]);
-                fflush(stderr);
-            } // end batch loop
-
-            fprintf(stderr, "[SWG] call=%d done (%d tokens).\n",
-                    swiglu_call_count, swg_total_tokens);
-            fflush(stderr);
-        }
-
-        ggml_barrier(params->threadpool);
-        return;
-    }
-
-// =========================================================================
-    // 1. HARDWARE OFFLOAD INTERCEPTION BLOCK (linear_projection disabled)
-    // =========================================================================
-    if (0 && src0->ne[0] == 2048 && src0->ne[1] == 65536 ) {
-        if (ith == 0) {
-        // --- NEW: LAZY INITIALIZATION BLOCK ---
-            static bool is_hw_initialized = false;
-            if (!is_hw_initialized) {
-                init_hardware_offload();
-                if (udmabuf_vptr == NULL || udmabuf_vptr == MAP_FAILED) {
-                    fprintf(stderr, "Fatal: UDMABUF mapping failed.\n");
-                    exit(1);
-                }
-                fprintf(stderr, "[INIT] sync_device_fd=%d sync_cpu_fd=%d (both must be >=0 for cache sync)\n",
-                        sync_device_fd, sync_cpu_fd);
-                is_hw_initialized = true;
-            }
-            // --------------------------------------
-            int mem_fd = open("/dev/mem", O_RDWR | O_SYNC);
-            if (mem_fd < 0) {
-                fprintf(stderr, "HW Offload Failed: Cannot open /dev/mem. Falling back to CPU.\n");
-                goto cpu_compute_fallback;
-            }
-
-            // AXI DMA at 0xA0000000, Linear Projection IP at 0xA0010000.
-            // The pl.dtsi generated from the new Vivado project (with Concat interrupt
-            // routing) shows these addresses reversed.  Update both lines here AFTER
-            // the new bitstream is deployed and the new addresses are confirmed.
-            dma_regs = (volatile uint32_t *)mmap(NULL, 0x10000, PROT_READ | PROT_WRITE, MAP_SHARED, mem_fd, 0xA0000000);
-            if (dma_regs == MAP_FAILED) {
-                fprintf(stderr, "HW Offload Failed: mmap of DMA registers failed.\n");
-                close(mem_fd);
-                goto cpu_compute_fallback;
-            }
-
-            // --- INJECTED IP CONTROL BLOCK ---
-            volatile uint32_t *ip_ctrl_regs = (volatile uint32_t *)mmap(NULL, 0x10000, PROT_READ | PROT_WRITE, MAP_SHARED, mem_fd, 0xA0010000);
-            if (ip_ctrl_regs == MAP_FAILED) {
-                fprintf(stderr, "HW Offload Failed: mmap of IP registers failed.\n");
-                munmap((void *)(uintptr_t)dma_regs, 0x10000);
-                close(mem_fd);
-                goto cpu_compute_fallback;
-            }
-            // ---------------------------------
-
-            // ======== DIMENSION AND FORMAT VERIFICATION ========
-            // Verify this is the exact layer we expect to offload
-            GGML_ASSERT(src0->ne[0] == 2048);
-            GGML_ASSERT(src0->ne[1] == 65536);
-            GGML_ASSERT(src0->type == GGML_TYPE_Q6_K);  // Must be Q6_K quantization!
-            GGML_ASSERT(src1->ne[0] == 2048);           // Input vector dim
-            GGML_ASSERT(ggml_nbytes(dst) == OUTPUT_SIZE);  // Output size
-            fprintf(stderr, "[DEBUG] src1 type=%d (expect 0=F32) ne=[%lld %lld] nbytes=%zu\n",
-                    (int)src1->type, (long long)src1->ne[0], (long long)src1->ne[1],
-                    ggml_nbytes(src1));
-            if (src1->type != GGML_TYPE_F32) {
-                fprintf(stderr, "[FATAL] src1 is not F32 — IP requires F32 input. Falling back to CPU.\n");
-                munmap((void *)(uintptr_t)ip_ctrl_regs, 0x10000);
-                munmap((void *)(uintptr_t)dma_regs, 0x10000);
-                close(mem_fd);
-                goto cpu_compute_fallback;
-            }
-            
-            // Verify src0 (weights) is exactly the expected Q6_K size
-            // Q6_K: 65536 tokens × 8 blocks × 210 bytes = 110,100,480 bytes
-            int expected_src0_bytes = 65536 * 8 * 210;
-            int actual_src0_bytes = ggml_nbytes(src0);
-            if (actual_src0_bytes != expected_src0_bytes) {
-                fprintf(stderr, "HW Offload Failed: src0 size mismatch. Expected %d bytes, got %d\n", 
-                        expected_src0_bytes, actual_src0_bytes);
-                munmap((void *)(uintptr_t)ip_ctrl_regs, 0x10000);
-                munmap((void *)(uintptr_t)dma_regs, 0x10000);
-                close(mem_fd);
-                goto cpu_compute_fallback;
-            }
-            // ====================================================
-
-            // Copy current token vector data to UDMABUF
-            memcpy((char*)udmabuf_vptr + 0x100000, src1->data, VECTOR_SIZE);
-            
-            // copy matrix weights to udmabuf (Q6_K format)
-	    memcpy((char*)udmabuf_vptr + 0x300000, src0->data, actual_src0_bytes);
-            
-            // CRITICAL: Clear output buffer before each execution
-            memset((char*)udmabuf_vptr + 0x200000, 0, OUTPUT_SIZE);
-
-            // CRITICAL: Clear descriptor Status fields before each reuse.
-            // PG021: SG engine will not process a descriptor whose Completed bit
-            // (bit 31 of Status) is set. After run 1 all descriptors have
-            // Completed=1; on run 2 the SG engine chases nxtdesc past the end of
-            // the valid chain and generates SGSlvErr. Must clear Status=0 every call.
-            {
-                axi_sg_desc_t *v_desc_base = (axi_sg_desc_t *)udmabuf_vptr;
-                for (int i = 0; i < 32; i++)    v_desc_base[i].status = 0;      // RX chain
-                for (int i = 100; i <= 13540; i++) v_desc_base[i].status = 0;   // TX chain
-            }
-
-            // Flush CPU cache for FPGA visibility (includes cleared status fields)
-            if (sync_device_fd >= 0) (void)write(sync_device_fd, "1", 1);
-
-            // ====================================================================
-            // DMA PROGRAMMING SEQUENCE
-            // Order: S2MM arm → IP start → S2MM trigger → MM2S trigger
-            // IP must be running (TREADY=1 on in_stream) before MM2S TAILDESC
-            // is written, otherwise MM2S stalls on backpressure indefinitely.
-            // ====================================================================
-
-            // 0. Soft-reset both DMA channels so CURDESC can be safely rewritten.
-            //    Required on every invocation after the first: without reset the channel
-            //    stays in Idle/RS=1 state and silently ignores CURDESC writes, causing
-            //    S2MM DMAIntErr on the second and subsequent calls.
-            dma_regs[MM2S_DMACR / 4] = 0x00000004;  // MM2S soft reset
-            while (dma_regs[MM2S_DMACR / 4] & 0x04); // wait for hardware to clear bit
-            dma_regs[S2MM_DMACR / 4] = 0x00000004;  // S2MM soft reset
-            while (dma_regs[S2MM_DMACR / 4] & 0x04); // wait for hardware to clear bit
-
-            // 1. Arm S2MM (Receive) - set CURDESC and enable, but don't trigger yet
-            dma_regs[S2MM_CURDESC / 4] = (uint32_t)phys_addr_rx_desc;
-            dma_regs[(S2MM_CURDESC + 4) / 4] = (uint32_t)((uint64_t)phys_addr_rx_desc >> 32);
-            dma_regs[S2MM_DMACR / 4] = 0x00011001;  // RS | IOC_IrqEn | IRQThreshold=1
-
-            // 2. Start IP core - must happen before MM2S sends data so TREADY=1
-            fprintf(stderr, "[DEBUG] Asserting ap_start\n");
-            ip_ctrl_regs[0] = 0x01;
-            __asm__ __volatile__("" ::: "memory");
-            fprintf(stderr, "[DEBUG] AP_CTRL after ap_start write: 0x%08X\n", ip_ctrl_regs[0]);
-
-            // Arm UIO interrupt BEFORE writing S2MM TAILDESC so the interrupt
-            // cannot fire and be missed before we call poll()/read().
-            if (uio_fd >= 0) {
-                uint32_t uio_enable = 1;
-                (void)write(uio_fd, &uio_enable, sizeof(uio_enable));
-            }
-
-            // 3. Trigger S2MM by writing TAILDESC (safe - just waits for IP output)
-            dma_regs[S2MM_TAILDESC / 4] = (uint32_t)phys_addr_rx_tail_desc;
-            dma_regs[(S2MM_TAILDESC + 4) / 4] = (uint32_t)((uint64_t)phys_addr_rx_tail_desc >> 32);
-
-            // 4. Configure and trigger MM2S (Transmit) - IP is now ready to accept data
-            dma_regs[MM2S_CURDESC / 4] = (uint32_t)phys_addr_tx_desc_chain;
-            dma_regs[(MM2S_CURDESC + 4) / 4] = (uint32_t)((uint64_t)phys_addr_tx_desc_chain >> 32);
-            dma_regs[MM2S_DMACR / 4] = 0x1001;  // SGMode + Run
-            dma_regs[MM2S_TAILDESC / 4] = (uint32_t)phys_addr_tx_tail_desc;
-            dma_regs[(MM2S_TAILDESC + 4) / 4] = (uint32_t)((uint64_t)phys_addr_tx_tail_desc >> 32);
-            
-            // DEBUG: Peek at vector and first Q6_K block's d value
-            fprintf(stderr, "[DEBUG] Input vector[0..3]: %08X %08X %08X %08X\n",
-                    ((uint32_t*)(udmabuf_vptr + 0x100000))[0],
-                    ((uint32_t*)(udmabuf_vptr + 0x100000))[1],
-                    ((uint32_t*)(udmabuf_vptr + 0x100000))[2],
-                    ((uint32_t*)(udmabuf_vptr + 0x100000))[3]);
-            {
-                uint8_t *blk = (uint8_t*)(udmabuf_vptr + 0x300000);
-                uint16_t d_raw = blk[208] | ((uint16_t)blk[209] << 8);
-                fprintf(stderr, "[DEBUG] First Q6_K block: ql[0]=%02X qh[0]=%02X sc[0]=%02X d_raw=0x%04X\n",
-                        blk[0], blk[128], (uint8_t)blk[192], d_raw);
-            }
-
-            // ====================================================================
-            // WAIT FOR S2MM COMPLETION (interrupt-driven or polling fallback)
-            // S2MM IOC_Irq fires once all RX descriptors are complete, which
-            // guarantees the IP has finished (ap_done) and all output is in memory.
-            // S2MM_DMACR = 0x00011001: RS(bit0) | IOC_IrqEn(bit12) | IRQThreshold=1(bits[23:16]).
-            // IRQThreshold=0 is invalid per PG021 — it sets DMASR bit 12 for SW polling
-            // but does NOT assert the interrupt output pin.  Must be >= 1 for UIO to fire.
-            // ====================================================================
-            int ip_done = 0;
-            uint32_t s2mm_status, mm2s_status;
-
-            if (uio_fd >= 0) {
-                // Interrupt path: poll() blocks the thread with zero CPU burn.
-                struct pollfd pfd = { .fd = uio_fd, .events = POLLIN };
-                int ret = poll(&pfd, 1, 7000);  // 7-second timeout
-                if (ret > 0 && (pfd.revents & POLLIN)) {
-                    uint32_t irq_count;
-                    (void)read(uio_fd, &irq_count, sizeof(irq_count));
-                    // Acknowledge: write-1-to-clear IOC_Irq (DMASR bit 12 = 0x1000)
-                    dma_regs[S2MM_DMASR / 4] = 0x00001000;
-                    ip_done = 1;
-                    fprintf(stderr, "[IRQ] S2MM completion interrupt received (count=%u)\n", irq_count);
-                } else if (ret == 0) {
-                    fprintf(stderr, "[IRQ] Timeout (7s): S2MM interrupt never fired\n");
-                    fprintf(stderr, "AP_CTRL: 0x%08X  S2MM_DMASR: 0x%08X  MM2S_DMASR: 0x%08X\n",
-                            ip_ctrl_regs[0], dma_regs[S2MM_DMASR / 4], dma_regs[MM2S_DMASR / 4]);
-                } else {
-                    perror("[IRQ] poll() error on uio_fd");
-                }
-            } else {
-                // Polling fallback: used when /dev/uio0 is unavailable.
-                usleep(10);
-                uint32_t ap_ctrl_status = 0;
-                int poll_count = 0, timeout = 7000;
-                while (timeout-- > 0) {
-                    ap_ctrl_status = ip_ctrl_regs[0];
-                    __asm__ __volatile__("" ::: "memory");
-                    poll_count++;
-                    if (ap_ctrl_status & 0x02) { ip_done = 1; break; }
-                    usleep(1000);
-                }
-                if (ip_done) {
-                    // Wait for DMA channels to reach Idle after ap_done
-                    for (int i = 0; i < 2000; i++) {
-                        s2mm_status = dma_regs[S2MM_DMASR / 4];
-                        mm2s_status = dma_regs[MM2S_DMASR / 4];
-                        if ((s2mm_status & 0x0002) && (mm2s_status & 0x0002)) break;
-                        usleep(100);
-                    }
-                }
-                fprintf(stderr, "[POLL] ip_done=%d after %d polls (fallback mode)\n", ip_done, poll_count);
-            }
-
-            if (!ip_done) {
-                fprintf(stderr, "\n=== IP/DMA TIMEOUT ===\n");
-                fprintf(stderr, "AP_CTRL: 0x%08X  S2MM_DMASR: 0x%08X  MM2S_DMASR: 0x%08X\n",
-                        ip_ctrl_regs[0], dma_regs[S2MM_DMASR / 4], dma_regs[MM2S_DMASR / 4]);
-                ip_ctrl_regs[0] = 0x00;
-                __asm__ __volatile__("" ::: "memory");
-                goto dma_error;
-            }
-
-            fprintf(stderr, "[DEBUG] IP Core completed successfully\n");
-            
-            // Verify both channels idle and error-free
-            s2mm_status = dma_regs[S2MM_DMASR / 4];
-            mm2s_status = dma_regs[MM2S_DMASR / 4];
-            if ((s2mm_status & 0x0050) || (mm2s_status & 0x0050)) {
-                fprintf(stderr, "DMA Error flag set after completion signal\n");
-                goto dma_error;
-            }
-            
-            // Normal completion path
-            goto dma_success;
-            
-        dma_error:
-            munmap((void *)(uintptr_t)ip_ctrl_regs, 0x10000);
-            munmap((void *)(uintptr_t)dma_regs, 0x10000);
-            close(mem_fd);
-            exit(1);
-            
-        dma_success:
-
-            // Invalidate cache to read fresh FPGA data
-            {
-                uint32_t *pre = (uint32_t*)((char*)udmabuf_vptr + 0x200000);
-                fprintf(stderr, "[DEBUG] Pre-sync raw[0..3]: %08X %08X %08X %08X (expect 0 if cached)\n",
-                        pre[0], pre[1], pre[2], pre[3]);
-            }
-            if (sync_cpu_fd >= 0) {
-                (void)write(sync_cpu_fd, "1", 1);
-                fprintf(stderr, "[DEBUG] sync_for_cpu written\n");
-            } else {
-                fprintf(stderr, "[WARN] sync_cpu_fd < 0 — cache NOT invalidated, output will read stale zeros!\n");
-            }
-
-            // Check S2MM descriptor STATUS fields to see if data was actually received
-            {
-                axi_sg_desc_t *v_desc = (axi_sg_desc_t *)udmabuf_vptr;
-                int completed = 0;
-                uint32_t total_rx_bytes = 0;
-                for (int i = 0; i < 32; i++) {
-                    uint32_t st = v_desc[i].status;
-                    if (st & (1u << 31)) { completed++; total_rx_bytes += (st & 0x3FFFFFFu); }
-                }
-                fprintf(stderr, "[DEBUG] S2MM: %d/32 descriptors Completed, total bytes = %u (expect 262144)\n",
-                        completed, total_rx_bytes);
-                fprintf(stderr, "[DEBUG] RX desc[0]: buf=0x%08X%08X status=0x%08X  RX desc[31]: buf=0x%08X%08X status=0x%08X\n",
-                        v_desc[0].buffer_addr_msb, v_desc[0].buffer_addr, v_desc[0].status,
-                        v_desc[31].buffer_addr_msb, v_desc[31].buffer_addr, v_desc[31].status);
-                fprintf(stderr, "[DEBUG] expected output phys = 0x%016llX\n",
-                        (unsigned long long)(udmabuf_phys_base + 0x200000));
-            }
-
-            // Read back input areas — this reflects what the IP actually received this run
-            {
-                uint32_t *vec = (uint32_t*)((char*)udmabuf_vptr + 0x100000);
-                fprintf(stderr, "[DEBUG] THIS-RUN vector[0..3]: %08X %08X %08X %08X\n",
-                        vec[0], vec[1], vec[2], vec[3]);
-                uint8_t *blk = (uint8_t*)((char*)udmabuf_vptr + 0x300000);
-                uint16_t d_raw = blk[208] | ((uint16_t)blk[209] << 8);
-                fprintf(stderr, "[DEBUG] THIS-RUN Q6K block[0]: ql[0]=%02X qh[0]=%02X sc[0]=%02X d_raw=0x%04X\n",
-                        blk[0], blk[128], (uint8_t)blk[192], d_raw);
-            }
-
-            // CPU reference: compute expected logit[0] with same input data
-            // Confirms whether the IP *should* output non-zero and what value is expected
-            {
-                float *fvec = (float*)((char*)udmabuf_vptr + 0x100000);
-                uint8_t *matrix = (uint8_t*)((char*)udmabuf_vptr + 0x300000);
-                float ref_logit = 0.0f;
-                for (int b = 0; b < 8; b++) {
-                    uint8_t *blk = matrix + (size_t)b * 210;
-                    uint16_t d_raw = (uint16_t)blk[208] | ((uint16_t)blk[209] << 8);
-                    float d = ggml_fp16_to_fp32((ggml_fp16_t)d_raw);
-                    fprintf(stderr, "[CPU-REF] blk%d: d_raw=0x%04X d_f32=%.6e sc[0]=%d\n",
-                            b, d_raw, d, (int)(int8_t)blk[192]);
-                    for (int n = 0; n < 256; n++) {
-                        uint8_t ql_val = (n % 2 == 0) ? (blk[n/2] & 0x0F) : (blk[n/2] >> 4);
-                        uint8_t qh_val = (blk[128 + n/4] >> ((n % 4) * 2)) & 0x03;
-                        int8_t q = (int8_t)((uint8_t)((qh_val << 4) | ql_val)) - 32;
-                        float weight = (float)q * (float)(int8_t)blk[192 + n/16] * d;
-                        ref_logit += fvec[b * 256 + n] * weight;
-                    }
-                }
-                uint32_t hw_out = ((uint32_t*)((char*)udmabuf_vptr + 0x200000))[0];
-                fprintf(stderr, "[CPU-REF] Expected logit[0]=%.6f (0x%08X)  HW output=0x%08X\n",
-                        ref_logit, *(uint32_t*)&ref_logit, hw_out);
-            }
-
-            // Copy output logits back to ggml dst tensor
-            memcpy(dst->data, (char*)udmabuf_vptr + 0x200000, OUTPUT_SIZE);
-            {
-                uint32_t *raw = (uint32_t*)((char*)udmabuf_vptr + 0x200000);
-                fprintf(stderr, "[DEBUG] Post-sync raw[0..3]: %08X %08X %08X %08X\n",
-                        raw[0], raw[1], raw[2], raw[3]);
-                float *out = (float *)dst->data;
-                fprintf(stderr, "[DEBUG] First 4 output logits (post-sync): %.6f %.6f %.6f %.6f\n",
-                        out[0], out[1], out[2], out[3]);
-            }
-
-            munmap((void *)(uintptr_t)ip_ctrl_regs, 0x10000);
-            munmap((void *)(uintptr_t)dma_regs, 0x10000);
-            close(mem_fd);
-        }
-
-        ggml_barrier(params->threadpool);
-        return; 
-    }
-
-cpu_compute_fallback:;
-    // ========================================================================= END OF MODIFICATION
     enum ggml_type           const vec_dot_type         = type_traits_cpu[src0->type].vec_dot_type;
     ggml_from_float_t        const from_float           = type_traits_cpu[vec_dot_type].from_float;
     int64_t                  const vec_dot_num_rows     = type_traits_cpu[src0->type].nrows;
@@ -2710,6 +1812,145 @@ static void ggml_compute_forward_mul_mat_id(
 
 /////////////////////////////////
 
+// SwiGLU fused hardware offload kernel
+static void ggml_compute_forward_swiglu_fused_hw(
+        const struct ggml_compute_params * params,
+              struct ggml_tensor * dst) {
+
+    if (params->ith != 0) return; // n_tasks set to 1
+
+    struct ggml_tensor * x      = dst->src[0];
+    struct ggml_tensor * W_gate = dst->src[1];
+    struct ggml_tensor * W_up   = dst->src[2];
+    struct ggml_tensor * W_down = dst->src[3];
+
+    // basic guards
+    if (!x || !W_gate || !W_up || !W_down ||
+        x->type != GGML_TYPE_F32 ||
+        W_gate->type != GGML_TYPE_Q4_K || W_up->type != GGML_TYPE_Q4_K ||
+        (W_down->type != GGML_TYPE_Q4_K && W_down->type != GGML_TYPE_Q6_K) ||
+        x->ne[0] != 2048 || W_gate->ne[0] != 2048 || W_gate->ne[1] != 8192 ||
+        W_up->ne[0]   != 2048 || W_up->ne[1]   != 8192 ||
+        W_down->ne[0] != 8192 || W_down->ne[1] != 2048) {
+        fprintf(stderr, "[SWG] unsupported shapes/types, fallback CPU\n");
+        return;
+    }
+
+    // lazy init
+    static bool is_hw_initialized = false;
+    if (!is_hw_initialized) {
+        init_hardware_offload();
+        init_swiglu_offload();
+        is_hw_initialized = true;
+    }
+
+    int total_tokens = (int)x->ne[1];
+    int layer = swiglu_call_count % SWG_NUM_LAYERS;
+    size_t down_bytes = W_down->nb[3];
+    uint32_t mode = (down_bytes > 9437184UL) ? 1 : 0; // Q6_K threshold
+
+    size_t gate_bytes = ggml_nbytes(W_gate);
+    size_t up_bytes   = ggml_nbytes(W_up);
+    if (!swg_layer_W_loaded[layer]) {
+        memcpy((char*)udmabuf_vptr + SWG_LAYER_W_OFF(layer), W_gate->data, gate_bytes);
+        swg_layer_W_loaded[layer] = true;
+    }
+    if (!swg_layer_V_loaded[layer]) {
+        memcpy((char*)udmabuf_vptr + SWG_LAYER_V_OFF(layer), W_up->data, up_bytes);
+        swg_layer_V_loaded[layer] = true;
+    }
+    if (!swg_layer_Wd_loaded[layer]) {
+        memcpy((char*)udmabuf_vptr + SWG_LAYER_WD_OFF(layer), W_down->data, down_bytes);
+        swg_layer_Wd_loaded[layer] = true;
+    }
+
+    uint64_t phys_W  = udmabuf_phys_base + SWG_LAYER_W_OFF(layer);
+    uint64_t phys_V  = udmabuf_phys_base + SWG_LAYER_V_OFF(layer);
+    uint64_t phys_Wd = udmabuf_phys_base + SWG_LAYER_WD_OFF(layer);
+
+    uint64_t phys_x_base   = udmabuf_phys_base + SWG_VEC_OFF;
+    uint64_t phys_out_base = udmabuf_phys_base + SWG_OUT_OFF;
+
+    for (int c = 0; c < total_tokens; c += SWG_MAX_BATCH) {
+        int bsz = (c + SWG_MAX_BATCH <= total_tokens) ? SWG_MAX_BATCH : (total_tokens - c);
+
+        const float *x_chunk = (const float *)x->data + (size_t)c * 2048;
+        int8_t *x_dst = (int8_t*)((char*)udmabuf_vptr + SWG_VEC_OFF);
+        float max_abs = 0.f;
+        for (int i = 0; i < bsz * 2048; ++i) {
+            float v = x_chunk[i];
+            float a = v >= 0.f ? v : -v;
+            if (a > max_abs) max_abs = a;
+        }
+        float x_scale = (max_abs > 0.f) ? (max_abs / 127.0f) : 1.0f;
+        float inv = 1.0f / x_scale;
+        for (int i = 0; i < bsz * 2048; ++i) {
+            float fq = x_chunk[i] * inv;
+            int iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
+            if (iq > 127) iq = 127;
+            if (iq < -128) iq = -128;
+            x_dst[i] = (int8_t)iq;
+        }
+
+        if (sync_device_fd >= 0) (void)write(sync_device_fd, "1", 1);
+
+        bool need_prog_wvw = (layer != swg_last_prog_layer) || (mode != swg_last_prog_mode);
+        if (need_prog_wvw) {
+            swg_ip_regs[SWG_CTRL_W_LO   / 4] = (uint32_t)phys_W;
+            swg_ip_regs[SWG_CTRL_W_HI   / 4] = (uint32_t)(phys_W >> 32);
+            swg_ip_regs[SWG_CTRL_V_LO   / 4] = (uint32_t)phys_V;
+            swg_ip_regs[SWG_CTRL_V_HI   / 4] = (uint32_t)(phys_V >> 32);
+            swg_ip_regs[SWG_CTRL_WD_LO  / 4] = (uint32_t)phys_Wd;
+            swg_ip_regs[SWG_CTRL_WD_HI  / 4] = (uint32_t)(phys_Wd >> 32);
+            swg_last_prog_layer = layer;
+            swg_last_prog_mode  = mode;
+        }
+
+        uint64_t phys_x   = phys_x_base;
+        uint64_t phys_out = phys_out_base;
+
+        swg_ip_regs[SWG_CTRL_X_LO   / 4] = (uint32_t)phys_x;
+        swg_ip_regs[SWG_CTRL_X_HI   / 4] = (uint32_t)(phys_x >> 32);
+        swg_ip_regs[SWG_CTRL_OUT_LO / 4] = (uint32_t)phys_out;
+        swg_ip_regs[SWG_CTRL_OUT_HI / 4] = (uint32_t)(phys_out >> 32);
+        swg_ip_regs[SWG_CTRL_MODE   / 4] = mode;
+        uint32_t xscale_bits;
+        memcpy(&xscale_bits, &x_scale, sizeof(float));
+        swg_ip_regs[SWG_CTRL_XSCALE / 4] = xscale_bits;
+        __asm__ __volatile__("" ::: "memory");
+
+        swg_ip_regs[SWG_CTRL_AP_CTRL / 4] = 0x01;
+        __asm__ __volatile__("" ::: "memory");
+
+        if (swiglu_uio_fd >= 0) {
+            struct pollfd pfd = { .fd = swiglu_uio_fd, .events = POLLIN };
+            int pr = poll(&pfd, 1, 7000);
+            if (pr > 0) {
+                uint32_t irq_count;
+                (void)read(swiglu_uio_fd, &irq_count, sizeof(irq_count));
+                uint32_t uio_enable = 1;
+                (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
+            } else {
+                int tmo = 7000;
+                while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
+                    usleep(1000);
+                }
+            }
+        } else {
+            int tmo = 7000;
+            while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
+                usleep(1000);
+            }
+        }
+
+        memcpy((char*)dst->data + (size_t)c * 2048 * sizeof(float),
+               (char*)udmabuf_vptr + SWG_OUT_OFF,
+               (size_t)bsz * 2048 * sizeof(float));
+    }
+
+    swiglu_call_count++;
+}
+
 static void ggml_compute_forward(struct ggml_compute_params * params, struct ggml_tensor * tensor) {
     GGML_ASSERT(params);
 
@@ -2723,6 +1964,11 @@ static void ggml_compute_forward(struct ggml_compute_params * params, struct ggm
     }
 
     switch (tensor->op) {
+//modified here
+        case GGML_OP_SWIGLU_FUSED_HW: {
+                ggml_compute_forward_swiglu_fused_hw(params, tensor);
+        } break;
+/////////////////S
         case GGML_OP_DUP:
             {
                 ggml_compute_forward_dup(params, tensor);
@@ -3054,6 +2300,10 @@ static void ggml_compute_forward(struct ggml_compute_params * params, struct ggm
             {
                 ggml_compute_forward_solve_tri(params, tensor);
             } break;
+        case GGML_OP_GATED_DELTA_NET:
+            {
+                ggml_compute_forward_gated_delta_net(params, tensor);
+            } break;
         case GGML_OP_MAP_CUSTOM1:
             {
                 ggml_compute_forward_map_custom1(params, tensor);
@@ -3205,6 +2455,11 @@ static int ggml_get_n_tasks(struct ggml_tensor * node, int n_threads) {
     }
 
     switch (node->op) {
+    ////////////////modified here
+        case GGML_OP_SWIGLU_FUSED_HW: {
+            n_tasks = 1;      // or n_threads if you want host-side parallel work
+        } break;
+    ////////////////////////////
         case GGML_OP_CPY:
         case GGML_OP_DUP:
         case GGML_OP_CONT:
@@ -3233,6 +2488,7 @@ static int ggml_get_n_tasks(struct ggml_tensor * node, int n_threads) {
             } break;
         case GGML_OP_COUNT_EQUAL:
         case GGML_OP_SOLVE_TRI:
+        case GGML_OP_GATED_DELTA_NET:
             {
                 n_tasks = n_threads;
             } break;
@@ -3893,8 +3149,12 @@ struct ggml_cplan ggml_graph_plan(
                         const int64_t ne11 = node->src[1]->ne[1]; // H
                         const int64_t ne12 = node->src[1]->ne[2]; // Channels In
 
-                        cur += sizeof(ggml_fp16_t)*ne00*ne01*ne02*ne03;
-                        cur += sizeof(ggml_fp16_t)*ne10*ne11*ne12;
+                        GGML_ASSERT(node->src[0]->type == GGML_TYPE_F16 || node->src[0]->type == GGML_TYPE_F32);
+                        GGML_ASSERT(node->src[1]->type == GGML_TYPE_F32);
+
+                        cur += ggml_type_size(node->src[0]->type) * ne00 * ne01 * ne02 * ne03;
+                        cur += ggml_type_size(node->src[0]->type) * ne10 * ne11 * ne12;
+
                     } break;
                 case GGML_OP_TOP_K:
                     {
@@ -3937,6 +3197,11 @@ struct ggml_cplan ggml_graph_plan(
                 case GGML_OP_CROSS_ENTROPY_LOSS:
                     {
                         cur = ggml_type_size(node->type)*(n_tasks + node->src[0]->ne[0]*n_tasks);
+                    } break;
+                case GGML_OP_GATED_DELTA_NET:
+                    {
+                        const int64_t S_v = node->src[2]->ne[0];
+                        cur = S_v * sizeof(float) * n_tasks;
                     } break;
                 case GGML_OP_COUNT:
                     {
@@ -3997,25 +3262,9 @@ static thread_ret_t ggml_graph_compute_thread(void * data) {
         if ((node->flags & GGML_TENSOR_FLAG_COMPUTE) == 0) {
             continue;
         }
-// MODIFIED HERE!!
-   //     ggml_compute_forward(&params, node);
-// --- INJECTED PROFILING TIMER START ---
 
-//int64_t t_start = ggml_time_us();
-        
         ggml_compute_forward(&params, node);
-        
-   /*     int64_t t_end = ggml_time_us();
-        if (params.ith == 0) {
-            const char * actual_name = node->name;
-            // If it's a temporary node, print the name of the weight tensor it's using!
-            if (strncmp(node->name, "node_", 5) == 0 && node->src[0] != NULL) {
-                actual_name = node->src[0]->name;
-            }
-            printf("LFM_PROFILE | %s | %s | %ld\n", actual_name, ggml_op_name(node->op), (long)(t_end - t_start));
-            fflush(stdout);
-        } */
-// --- INJECTED PROFILING TIMER END ---
+
         if (state->ith == 0 && cplan->abort_callback &&
                 cplan->abort_callback(cplan->abort_callback_data)) {
             atomic_store_explicit(&tp->abort, node_n + 1, memory_order_relaxed);

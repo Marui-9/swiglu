@@ -1,0 +1,50 @@
+To have decode and prefill > 1, it must support more than one input token at
+a time.  confirm the IP can accept bsz>1 (e.g., program XSCALE per token, stride 
+the X/OUT buffers). If not, you’ll need to extend the IP (loop over tokens internally).
+Program bsz (if the IP needs it) or just loop start->wait per chunk.
+
+OLD SWIGLU IP
+what swiglu.cpp implements, with these details:
+
+Phase 0 (stage x): load_x_local() pulls x_batch (INT8, length 2048) from m_axi into on‑chip BRAM copies (x_local_1/x_local_2), 
+         (type int8_t [MAX_BATCH][8][256]) so both projectors can read it without extra DDR traffic.
+         x is quantized to INT8; W/V are Q4_K (packed int4 + per-block scales/zeros). The MACs reconstruct dequantized values 
+         on the fly: int8 * int4 * (scale, d/dmin, etc.) → accumulate in FP32 to avoid large quant error.
+Phases 1 & 2 (A = x·W, B = x·V): compute_X1() and compute_X2() run as separate DATAFLOW tasks, each reading 
+        its own copy of x_local_* and streaming through W or V (Q4_K packed as uint8_t). They are eligible to run in parallel because 
+        DATAFLOW is applied at the top level and they don’t depend on each other.
+         W and V are always Q4_K
+Phase 3 + 4 (Swish and elementwise multiply): compute_gate() takes the two FP32 streams X1_cache and X2_cache 
+        both FP32 (float X1_cache[MAX_BATCH][8192])., 
+        computes Swish(X1), multiplies by X2, and quantizes the gate vector to INT8 with a per‑batch scale.
+Phase 5 (down projection): compute_output() consumes the INT8 gate, dequantizes with the stored gate_scale, 
+        and multiplies by W_down (Q4_K or Q6_K) to produce the final 2048‑float output (out_batch).
+        The down weight is Q4_K or Q6_K depending on the file type you load; your HLS already handles both.
+        (this enables to use both the Q4_K and Q6_K variants of the 1.2B model)
+
+Other notes:
+All five phases are connected under #pragma HLS DATAFLOW, so they pipeline; compute_X1 and compute_X2 can overlap in time, 
+and later stages stream behind them.
+It works with both Q4 quantized version and Q6 quantized ggml reads the tensor dtypes from the GGUF, so:
+    ffn_gate and ffn_up load as Q4_K in either file; no change needed.
+    ffn_down loads as Q4_K or Q6_K depending on the GGUF. Your offload already 
+    detects this by inspecting the actual buffer size (nb[3] threshold) and sets mode accordingly, 
+    then routes to the Q4_K or Q6_K decode path in the IP.
+    No manual switch is required: the accelerator will work with both LFM2.5-1.2B-Thinking-Q4_K_M.gguf 
+    and …Q6_K.gguf as long as the mode detection and the IP’s dual Q4/Q6 path stay in place.
+
+BATCH
+Batch is currently fixed to MAX_BATCH (1) in this design. Although arrays have MAX_BATCH, the kernels use only index 0 
+(x_local_[0], gate_cache[0], gate_scale_array[0], etc.). The top-level AXI depths (depth=2048 for x/out) also assume 
+a single token. That’s fine for batch=1, but won’t work for prefill/batched decode without code changes.
+compute_gate fills gate_scale_out[n], but compute_output always takes gate_scale_array[0]. 
+Again okay for batch=1, wrong for batch>1.
+Single x_scale: IP expects one x_scale scalar for the whole batch. If the host quantizes per token, you’d need per-token
+scales or one run per token.
+Batch-aware address striding: The top-level ports and internal buffers don’t stride x/out for multiple tokens. 
+If you later add batch, you’ll need to add per-token offsets and loop over n.
+The only staging/copy to shared memory is the initial x load; outputs go directly to out_batch via m_axi.
+
+  It’s normal: quantization reduces bandwidth and storage, but most high-performance kernels still accumulate in FP32 (or at least INT32) 
+  to keep accuracy. In your HLS, you dequantize on the fly and accumulate in FP32—this is standard for int4/int8 GEMMs (e.g., x86 AVX2/AVX512 
+  int8 GEMM accumulates to int32, then often to float). So seeing FP32 math inside a quantized model is expected.
