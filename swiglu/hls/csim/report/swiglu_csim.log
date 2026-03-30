@@ -1,18 +1,5 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../swiglu_tb.cpp in debug mode
    Compiling ../../../../swiglu.cpp in debug mode
    Generating csim.exe
-=== T1: Q4_K down, batch=1, normal fp16 ===
-T1: PASSED  (batch=1)
-=== T2: Q4_K down, batch=1, subnormal d in W (0x00A4 ~9.8e-6) ===
-T2: PASSED  (batch=1)
-=== T3: Q4_K down, batch=1, subnormal dmin in V (0x817E) ===
-T3: PASSED  (batch=1)
-=== T4: Q6_K down, batch=1, normal fp16 (mode=1) ===
-T4: PASSED  (batch=1)
-=== T5: Q6_K down, batch=1, subnormal d in W_down (0x00A4) ===
-T5: PASSED  (batch=1)
-
-All tests PASSED.
-INFO: [SIM 1] CSim done with 0 errors.
-INFO: [SIM 3] *************** CSIM finish ***************

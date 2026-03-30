@@ -217,6 +217,7 @@ static float dot_q6k_ref(const uint8_t* block, const int8_t* x_int, int v_base, 
 // Mock token test: single token, Q4_K down, host ref vs DUT
 // ============================================================================
 static int run_mock_token_test() {
+    // weights
     for (int row = 0; row < FFN_DIM; ++row) {
         fill_q4k_block(W_buf + row * WV_BLOCKS_PER_ROW * Q4_K_BYTES, 0x3C00, 0x0000);
         fill_q4k_block(V_buf + row * WV_BLOCKS_PER_ROW * Q4_K_BYTES, 0x3C00, 0x0000);
@@ -224,11 +225,14 @@ static int run_mock_token_test() {
     for (int out = 0; out < VECTOR_DIM; ++out) {
         fill_q4k_block(Wd_q4k + out * DOWN_BLOCKS_PER_ROW * Q4_K_BYTES, 0x3C00, 0x0000);
     }
+    // input
     for (int i = 0; i < VECTOR_DIM; ++i) x_batch_buf[i] = (int8_t)((i % 17) - 8);
 
+    // DUT
     swiglu(W_buf, V_buf, Wd_q4k, x_batch_buf, out_batch_buf,
            /*down_quant_mode=*/0, /*x_scale=*/1.0f);
 
+    // reference A,B
     for (int j = 0; j < FFN_DIM; ++j) {
         const uint8_t *wblk = W_buf + j * WV_BLOCKS_PER_ROW * Q4_K_BYTES;
         const uint8_t *vblk = V_buf + j * WV_BLOCKS_PER_ROW * Q4_K_BYTES;
@@ -240,6 +244,7 @@ static int run_mock_token_test() {
         X1_ref[0][j] = accA;
         X2_ref[0][j] = accB;
     }
+    // gate and scale
     float max_abs = 0.f;
     for (int j = 0; j < FFN_DIM; ++j) {
         float g = silu_ref_lut(X1_ref[0][j]) * X2_ref[0][j];
@@ -257,6 +262,7 @@ static int run_mock_token_test() {
         if (iq < -128) iq = -128;
         gate_q[j >> 8][j & 255] = (int8_t)iq;
     }
+    // down
     for (int o = 0; o < VECTOR_DIM; ++o) {
         const uint8_t *wd = Wd_q4k + o * DOWN_BLOCKS_PER_ROW * Q4_K_BYTES;
         float sum = 0.f;
@@ -266,6 +272,7 @@ static int run_mock_token_test() {
         }
         expected[0][o] = sum;
     }
+
     float max_err = 0.f;
     for (int i = 0; i < VECTOR_DIM; ++i) {
         float e = fabsf(out_batch_buf[i] - expected[0][i]);
@@ -437,6 +444,7 @@ static int run_test(const char*  label,
             }
         }
     }
+
     if (err_cnt == 0)
         cout << label << ": PASSED  (batch=" << batch_size << ")\n";
     else
@@ -457,7 +465,7 @@ int main() {
     for (int i = 0; i < VECTOR_DIM; i++) {
         all_vecs[i] = (float)((i % 4) + 1) * 0.1f;
     }
-    cout << "=== Mock token sanity ===" << endl;
+    cout << "=== Mock token sanity ===\n";
     int total_errors = run_mock_token_test();
 
     // ── T1: Q4_K W_down, batch=1, all normal fp16 ───────────────────────────
