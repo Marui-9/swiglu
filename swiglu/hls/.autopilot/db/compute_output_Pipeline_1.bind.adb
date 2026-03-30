@@ -52,7 +52,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>sext_ln532</name>
+						<name>sext_ln534</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -103,7 +103,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -170,7 +170,7 @@
 					<Obj>
 						<type>0</type>
 						<id>5</id>
-						<name>sext_ln532_read</name>
+						<name>sext_ln534_read</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -213,7 +213,7 @@
 					<Obj>
 						<type>0</type>
 						<id>6</id>
-						<name>sext_ln532_cast</name>
+						<name>sext_ln534_cast</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -516,7 +516,7 @@
 						<name>gmem_out_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>532</lineNumber>
+						<lineNumber>534</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -532,14 +532,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>627</second>
+										<second>629</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>532</second>
+										<second>534</second>
 									</item>
 								</second>
 							</item>
@@ -677,11 +677,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -696,7 +696,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>12</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -747,10 +747,10 @@
 					<Obj>
 						<type>0</type>
 						<id>24</id>
-						<name>gmem_out_addr_write_ln532</name>
+						<name>gmem_out_addr_write_ln534</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>532</lineNumber>
+						<lineNumber>534</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -766,14 +766,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>627</second>
+										<second>629</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>532</second>
+										<second>534</second>
 									</item>
 								</second>
 							</item>
@@ -804,7 +804,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.43</m_delay>
+				<m_delay>8.00</m_delay>
 				<m_topoIndex>17</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -2159,7 +2159,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln532_cast_fu_91</first>
+			<first>sext_ln534_cast_fu_91</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2183,7 +2183,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln532_read_read_fu_64</first>
+			<first>sext_ln534_read_read_fu_64</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2207,7 +2207,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln532_write_fu_83</first>
+			<first>write_ln534_write_fu_83</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2315,7 +2315,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln532_cast_reg_142</first>
+			<first>sext_ln534_cast_reg_142</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2366,7 +2366,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln532</first>
+			<first>sext_ln534</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2388,7 +2388,7 @@
 			<first>3</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 	</port2core>
@@ -2413,7 +2413,7 @@
 			<first>22</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>

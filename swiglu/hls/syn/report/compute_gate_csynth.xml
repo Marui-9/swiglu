@@ -9,8 +9,8 @@
 <ProductFamily>zynquplus</ProductFamily>
 <Part>xck26-sfvc784-2LV-c</Part>
 <TopModelName>compute_gate</TopModelName>
-<TargetClockPeriod>3.33</TargetClockPeriod>
-<ClockUncertainty>0.90</ClockUncertainty>
+<TargetClockPeriod>10.00</TargetClockPeriod>
+<ClockUncertainty>2.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,33 +18,33 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>2.416</EstimatedClockPeriod>
+<EstimatedClockPeriod>7.781</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>16579</Best-caseLatency>
-<Average-caseLatency>16579</Average-caseLatency>
-<Worst-caseLatency>16579</Worst-caseLatency>
-<Best-caseRealTimeLatency>55.208 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>55.208 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>55.208 us</Worst-caseRealTimeLatency>
-<Interval-min>16579</Interval-min>
-<Interval-max>16579</Interval-max>
+<Best-caseLatency>16450</Best-caseLatency>
+<Average-caseLatency>16450</Average-caseLatency>
+<Worst-caseLatency>16450</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.165 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.165 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.165 ms</Worst-caseRealTimeLatency>
+<Interval-min>16450</Interval-min>
+<Interval-max>16450</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:292</SourceLocation>
+<SourceLocation>swiglu.cpp:294</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>8</BRAM_18K>
 <DSP>14</DSP>
-<FF>3822</FF>
-<LUT>5791</LUT>
+<FF>2596</FF>
+<LUT>7397</LUT>
+<BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>

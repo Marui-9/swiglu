@@ -36,7 +36,7 @@ dict set ap_memory_interface_dict rb_1 { MEM_WIDTH 128 MEM_SIZE 432 MASTER_TYPE 
 dict set ap_memory_interface_dict rb_0 { MEM_WIDTH 128 MEM_SIZE 432 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 0 }
 set C_modelArgList {
 	{ gmem_Wd int 128 regular {axi_master 0}  }
-	{ sext_ln470 int 60 regular  }
+	{ sext_ln472 int 60 regular  }
 	{ rb_15 int 128 regular {array 27 { 0 } 0 1 }  }
 	{ rb_14 int 128 regular {array 27 { 0 } 0 1 }  }
 	{ rb_13 int 128 regular {array 27 { 0 } 0 1 }  }
@@ -59,7 +59,7 @@ set l_AXIML2Cache [list]
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
 	{ "Name" : "gmem_Wd", "interface" : "axi_master", "bitwidth" : 128, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "W_down","offset": { "type": "dynamic","port_name": "W_down","bundle": "CTRL"},"direction": "READONLY"}]}]} , 
- 	{ "Name" : "sext_ln470", "interface" : "wire", "bitwidth" : 60, "direction" : "READONLY"} , 
+ 	{ "Name" : "sext_ln472", "interface" : "wire", "bitwidth" : 60, "direction" : "READONLY"} , 
  	{ "Name" : "rb_15", "interface" : "memory", "bitwidth" : 128, "direction" : "WRITEONLY"} , 
  	{ "Name" : "rb_14", "interface" : "memory", "bitwidth" : 128, "direction" : "WRITEONLY"} , 
  	{ "Name" : "rb_13", "interface" : "memory", "bitwidth" : 128, "direction" : "WRITEONLY"} , 
@@ -131,7 +131,7 @@ set portList {
 	{ m_axi_gmem_Wd_0_BRESP sc_in sc_lv 2 signal 0 } 
 	{ m_axi_gmem_Wd_0_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_gmem_Wd_0_BUSER sc_in sc_lv 1 signal 0 } 
-	{ sext_ln470 sc_in sc_lv 60 signal 1 } 
+	{ sext_ln472 sc_in sc_lv 60 signal 1 } 
 	{ rb_15_address0 sc_out sc_lv 5 signal 2 } 
 	{ rb_15_ce0 sc_out sc_logic 1 signal 2 } 
 	{ rb_15_we0 sc_out sc_logic 1 signal 2 } 
@@ -250,7 +250,7 @@ set NewPortList {[
  	{ "name": "m_axi_gmem_Wd_0_BRESP", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "gmem_Wd", "role": "0_BRESP" }} , 
  	{ "name": "m_axi_gmem_Wd_0_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem_Wd", "role": "0_BID" }} , 
  	{ "name": "m_axi_gmem_Wd_0_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem_Wd", "role": "0_BUSER" }} , 
- 	{ "name": "sext_ln470", "direction": "in", "datatype": "sc_lv", "bitwidth":60, "type": "signal", "bundle":{"name": "sext_ln470", "role": "default" }} , 
+ 	{ "name": "sext_ln472", "direction": "in", "datatype": "sc_lv", "bitwidth":60, "type": "signal", "bundle":{"name": "sext_ln472", "role": "default" }} , 
  	{ "name": "rb_15_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "rb_15", "role": "address0" }} , 
  	{ "name": "rb_15_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_15", "role": "ce0" }} , 
  	{ "name": "rb_15_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "rb_15", "role": "we0" }} , 
@@ -319,7 +319,7 @@ set NewPortList {[
 set ArgLastReadFirstWriteLatency {
 	load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K {
 		gmem_Wd {Type I LastRead 1 FirstWrite -1}
-		sext_ln470 {Type I LastRead 0 FirstWrite -1}
+		sext_ln472 {Type I LastRead 0 FirstWrite -1}
 		rb_15 {Type O LastRead -1 FirstWrite 2}
 		rb_14 {Type O LastRead -1 FirstWrite 2}
 		rb_13 {Type O LastRead -1 FirstWrite 2}
@@ -350,7 +350,7 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	 { m_axi {  { m_axi_gmem_Wd_0_AWVALID VALID 1 1 }  { m_axi_gmem_Wd_0_AWREADY READY 0 1 }  { m_axi_gmem_Wd_0_AWADDR ADDR 1 64 }  { m_axi_gmem_Wd_0_AWID ID 1 1 }  { m_axi_gmem_Wd_0_AWLEN SIZE 1 32 }  { m_axi_gmem_Wd_0_AWSIZE BURST 1 3 }  { m_axi_gmem_Wd_0_AWBURST LOCK 1 2 }  { m_axi_gmem_Wd_0_AWLOCK CACHE 1 2 }  { m_axi_gmem_Wd_0_AWCACHE PROT 1 4 }  { m_axi_gmem_Wd_0_AWPROT QOS 1 3 }  { m_axi_gmem_Wd_0_AWQOS REGION 1 4 }  { m_axi_gmem_Wd_0_AWREGION USER 1 4 }  { m_axi_gmem_Wd_0_AWUSER DATA 1 1 }  { m_axi_gmem_Wd_0_WVALID VALID 1 1 }  { m_axi_gmem_Wd_0_WREADY READY 0 1 }  { m_axi_gmem_Wd_0_WDATA FIFONUM 1 128 }  { m_axi_gmem_Wd_0_WSTRB STRB 1 16 }  { m_axi_gmem_Wd_0_WLAST LAST 1 1 }  { m_axi_gmem_Wd_0_WID ID 1 1 }  { m_axi_gmem_Wd_0_WUSER DATA 1 1 }  { m_axi_gmem_Wd_0_ARVALID VALID 1 1 }  { m_axi_gmem_Wd_0_ARREADY READY 0 1 }  { m_axi_gmem_Wd_0_ARADDR ADDR 1 64 }  { m_axi_gmem_Wd_0_ARID ID 1 1 }  { m_axi_gmem_Wd_0_ARLEN SIZE 1 32 }  { m_axi_gmem_Wd_0_ARSIZE BURST 1 3 }  { m_axi_gmem_Wd_0_ARBURST LOCK 1 2 }  { m_axi_gmem_Wd_0_ARLOCK CACHE 1 2 }  { m_axi_gmem_Wd_0_ARCACHE PROT 1 4 }  { m_axi_gmem_Wd_0_ARPROT QOS 1 3 }  { m_axi_gmem_Wd_0_ARQOS REGION 1 4 }  { m_axi_gmem_Wd_0_ARREGION USER 1 4 }  { m_axi_gmem_Wd_0_ARUSER DATA 1 1 }  { m_axi_gmem_Wd_0_RVALID VALID 0 1 }  { m_axi_gmem_Wd_0_RREADY READY 1 1 }  { m_axi_gmem_Wd_0_RDATA FIFONUM 0 128 }  { m_axi_gmem_Wd_0_RLAST LAST 0 1 }  { m_axi_gmem_Wd_0_RID ID 0 1 }  { m_axi_gmem_Wd_0_RFIFONUM LEN 0 10 }  { m_axi_gmem_Wd_0_RUSER DATA 0 1 }  { m_axi_gmem_Wd_0_RRESP RESP 0 2 }  { m_axi_gmem_Wd_0_BVALID VALID 0 1 }  { m_axi_gmem_Wd_0_BREADY READY 1 1 }  { m_axi_gmem_Wd_0_BRESP RESP 0 2 }  { m_axi_gmem_Wd_0_BID ID 0 1 }  { m_axi_gmem_Wd_0_BUSER DATA 0 1 } } }
-	sext_ln470 { ap_none {  { sext_ln470 in_data 0 60 } } }
+	sext_ln472 { ap_none {  { sext_ln472 in_data 0 60 } } }
 	rb_15 { ap_memory {  { rb_15_address0 mem_address 1 5 }  { rb_15_ce0 mem_ce 1 1 }  { rb_15_we0 mem_we 1 1 }  { rb_15_d0 mem_din 1 128 } } }
 	rb_14 { ap_memory {  { rb_14_address0 mem_address 1 5 }  { rb_14_ce0 mem_ce 1 1 }  { rb_14_we0 mem_we 1 1 }  { rb_14_d0 mem_din 1 128 } } }
 	rb_13 { ap_memory {  { rb_13_address0 mem_address 1 5 }  { rb_13_ce0 mem_ce 1 1 }  { rb_13_we0 mem_we 1 1 }  { rb_13_d0 mem_din 1 128 } } }

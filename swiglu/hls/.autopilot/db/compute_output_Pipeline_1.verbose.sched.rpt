@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'compute_output_Pipeline_1'
 ================================================================
-* Date:           Mon Mar 30 09:37:07 2026
+* Date:           Mon Mar 30 15:05:50 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -17,20 +17,20 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+---------+----------+------------+
-    |  Clock |  Target | Estimated| Uncertainty|
-    +--------+---------+----------+------------+
-    |ap_clk  |  3.33 ns|  2.430 ns|     0.90 ns|
-    +--------+---------+----------+------------+
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  8.000 ns|     2.00 ns|
+    +--------+----------+----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+----------+------+------+------------------------------------------------+
-    |  Latency (cycles) |  Latency (absolute) |   Interval  |                    Pipeline                    |
-    |   min   |   max   |    min   |    max   |  min |  max |                      Type                      |
-    +---------+---------+----------+----------+------+------+------------------------------------------------+
-    |     2051|     2051|  6.830 us|  6.830 us|  2049|  2049|  loop auto-rewind stp (delay=0 clock cycles(s))|
-    +---------+---------+----------+----------+------+------+------------------------------------------------+
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  |                    Pipeline                    |
+    |   min   |   max   |    min    |    max    |  min |  max |                      Type                      |
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
+    |     2051|     2051|  20.510 us|  20.510 us|  2049|  2049|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
 
     + Detail: 
         * Instance: 
@@ -87,9 +87,9 @@ IsGatedGlobalClock: 0
 
 State 1 <SV = 0> <Delay = 1.66>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%loop_index_i = alloca i32 1"   --->   Operation 6 'alloca' 'loop_index_i' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln532_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln532"   --->   Operation 7 'read' 'sext_ln532_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%sext_ln532_cast = sext i62 %sext_ln532_read"   --->   Operation 8 'sext' 'sext_ln532_cast' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %out_local, i64 666, i64 18, i64 18446744073709551615"   --->   Operation 9 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln534_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln534"   --->   Operation 7 'read' 'sext_ln534_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%sext_ln534_cast = sext i62 %sext_ln534_read"   --->   Operation 8 'sext' 'sext_ln534_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %out_local, i64 666, i64 19, i64 18446744073709551615"   --->   Operation 9 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 2048, void @empty_2, void @empty_35, void @empty_32, i32 16, i32 2, i32 16, i32 256, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 11 [1/1] (0.42ns)   --->   "%store_ln0 = store i12 0, i12 %loop_index_i"   --->   Operation 11 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop.i"   --->   Operation 12 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
@@ -99,42 +99,42 @@ ST_1 : Operation 15 [1/1] (0.80ns)   --->   "%empty = add i12 %loop_index_i_load
 ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond4_i, void %load-store-loop.split.i, void %_ZL14compute_outputPKhPA32_A256_KaPKfPfj.1.1.exit.exitStub"   --->   Operation 16 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%loop_index_i_cast = zext i12 %loop_index_i_load"   --->   Operation 17 'zext' 'loop_index_i_cast' <Predicate = (!exitcond4_i)> <Delay = 0.00>
 ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%out_local_addr = getelementptr i32 %out_local, i64 0, i64 %loop_index_i_cast"   --->   Operation 18 'getelementptr' 'out_local_addr' <Predicate = (!exitcond4_i)> <Delay = 0.00>
-ST_1 : Operation 19 [2/2] (1.23ns)   --->   "%out_local_load = load i11 %out_local_addr"   --->   Operation 19 'load' 'out_local_load' <Predicate = (!exitcond4_i)> <Delay = 1.23> <CoreInst = "RAM_1P_BRAM">   --->   Core 89 'RAM_1P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 2048> <RAM>
+ST_1 : Operation 19 [2/2] (0.67ns)   --->   "%out_local_load = load i11 %out_local_addr"   --->   Operation 19 'load' 'out_local_load' <Predicate = (!exitcond4_i)> <Delay = 0.67> <CoreInst = "RAM_1P_LUTRAM">   --->   Core 88 'RAM_1P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 2048> <RAM>
 ST_1 : Operation 20 [1/1] (0.42ns)   --->   "%store_ln0 = store i12 %empty, i12 %loop_index_i"   --->   Operation 20 'store' 'store_ln0' <Predicate = (!exitcond4_i)> <Delay = 0.42>
 
-State 2 <SV = 1> <Delay = 1.23>
-ST_2 : Operation 21 [1/2] ( I:1.23ns O:1.23ns )   --->   "%out_local_load = load i11 %out_local_addr"   --->   Operation 21 'load' 'out_local_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_1P_BRAM">   --->   Core 89 'RAM_1P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 2048> <RAM>
+State 2 <SV = 1> <Delay = 0.67>
+ST_2 : Operation 21 [1/2] ( I:0.67ns O:0.67ns )   --->   "%out_local_load = load i11 %out_local_addr"   --->   Operation 21 'load' 'out_local_load' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM_1P_LUTRAM">   --->   Core 88 'RAM_1P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 2048> <RAM>
 ST_2 : Operation 28 [1/1] (0.42ns)   --->   "%ret_ln0 = ret"   --->   Operation 28 'ret' 'ret_ln0' <Predicate = (exitcond4_i)> <Delay = 0.42>
 
-State 3 <SV = 2> <Delay = 2.43>
-ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln532_cast" [swiglu.cpp:532->swiglu.cpp:627]   --->   Operation 22 'getelementptr' 'gmem_out_addr' <Predicate = true> <Delay = 0.00>
+State 3 <SV = 2> <Delay = 8.00>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln534_cast" [swiglu.cpp:534->swiglu.cpp:629]   --->   Operation 22 'getelementptr' 'gmem_out_addr' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_32"   --->   Operation 23 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2048, i64 2048, i64 2048"   --->   Operation 24 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%empty_766 = bitcast i32 %out_local_load"   --->   Operation 25 'bitcast' 'empty_766' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 26 [1/1] (2.43ns)   --->   "%write_ln532 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_out_addr, i32 %empty_766, i4 15" [swiglu.cpp:532->swiglu.cpp:627]   --->   Operation 26 'write' 'write_ln532' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 26 [1/1] (8.00ns)   --->   "%write_ln534 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_out_addr, i32 %empty_766, i4 15" [swiglu.cpp:534->swiglu.cpp:629]   --->   Operation 26 'write' 'write_ln534' <Predicate = true> <Delay = 8.00> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop.i"   --->   Operation 27 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
 + Verbose Summary: Timing violations
 ============================================================
-Target clock period: 3.330ns, clock uncertainty: 0.900ns.
+Target clock period: 10.000ns, clock uncertainty: 2.000ns.
 
- <State 1>: 1.664ns
+ <State 1>: 1.663ns
 The critical path consists of the following:
 	'store' operation 0 bit ('store_ln0') of constant 0 on local variable 'loop_index_i' [9]  (0.427 ns)
 	'load' operation 12 bit ('loop_index_i_load') on local variable 'loop_index_i' [12]  (0.000 ns)
-	'getelementptr' operation 11 bit ('out_local_addr') [21]  (0.000 ns)
-	'load' operation 32 bit ('out_local_load') on array 'out_local' [22]  (1.237 ns)
+	'icmp' operation 1 bit ('exitcond4_i') [13]  (0.809 ns)
+	'store' operation 0 bit ('store_ln0') of variable 'empty' on local variable 'loop_index_i' [25]  (0.427 ns)
 
- <State 2>: 1.237ns
+ <State 2>: 0.677ns
 The critical path consists of the following:
-	'load' operation 32 bit ('out_local_load') on array 'out_local' [22]  (1.237 ns)
+	'load' operation 32 bit ('out_local_load') on array 'out_local' [22]  (0.677 ns)
 
- <State 3>: 2.430ns
+ <State 3>: 8.000ns
 The critical path consists of the following:
-	'getelementptr' operation 32 bit ('gmem_out_addr', swiglu.cpp:532->swiglu.cpp:627) [17]  (0.000 ns)
-	bus write operation ('write_ln532', swiglu.cpp:532->swiglu.cpp:627) on port 'gmem_out' (swiglu.cpp:532->swiglu.cpp:627) [24]  (2.430 ns)
+	'getelementptr' operation 32 bit ('gmem_out_addr', swiglu.cpp:534->swiglu.cpp:629) [17]  (0.000 ns)
+	bus write operation ('write_ln534', swiglu.cpp:534->swiglu.cpp:629) on port 'gmem_out' (swiglu.cpp:534->swiglu.cpp:629) [24]  (8.000 ns)
 
 
 ============================================================

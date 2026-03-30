@@ -9,8 +9,8 @@
 <ProductFamily>zynquplus</ProductFamily>
 <Part>xck26-sfvc784-2LV-c</Part>
 <TopModelName>compute_X2</TopModelName>
-<TargetClockPeriod>3.33</TargetClockPeriod>
-<ClockUncertainty>0.90</ClockUncertainty>
+<TargetClockPeriod>10.00</TargetClockPeriod>
+<ClockUncertainty>2.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,28 +18,28 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>3.239</EstimatedClockPeriod>
+<EstimatedClockPeriod>8.000</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>4579330</Best-caseLatency>
-<Average-caseLatency>4579330</Average-caseLatency>
-<Worst-caseLatency>4579330</Worst-caseLatency>
-<Best-caseRealTimeLatency>15.249 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>15.249 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>15.249 ms</Worst-caseRealTimeLatency>
-<Interval-min>4579330</Interval-min>
-<Interval-max>4579330</Interval-max>
+<Best-caseLatency>3883009</Best-caseLatency>
+<Average-caseLatency>3883009</Average-caseLatency>
+<Worst-caseLatency>3883009</Worst-caseLatency>
+<Best-caseRealTimeLatency>38.830 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>38.830 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>38.830 ms</Worst-caseRealTimeLatency>
+<Interval-min>3883009</Interval-min>
+<Interval-max>3883009</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <COMPUTE_X2>
-<Slack>2.43</Slack>
+<Slack>8.00</Slack>
 <TripCount>8192</TripCount>
 <isPerfectNested>0</isPerfectNested>
-<Latency>4579329</Latency>
-<AbsoluteTimeLatency>15249165</AbsoluteTimeLatency>
-<IterationLatency>559</IterationLatency>
+<Latency>3883008</Latency>
+<AbsoluteTimeLatency>38830080</AbsoluteTimeLatency>
+<IterationLatency>474</IterationLatency>
 <PerformancePragma>-</PerformancePragma>
 <InstanceList>
 </InstanceList>
@@ -48,13 +48,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:247</SourceLocation>
+<SourceLocation>swiglu.cpp:248</SourceLocation>
 <SummaryOfLoopViolations>
 <COMPUTE_X2>
 <Name>COMPUTE_X2</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:247</SourceLocation>
+<SourceLocation>swiglu.cpp:248</SourceLocation>
 </COMPUTE_X2>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -62,10 +62,10 @@
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>32</BRAM_18K>
 <DSP>26</DSP>
-<FF>19778</FF>
-<LUT>17227</LUT>
+<FF>10561</FF>
+<LUT>12456</LUT>
+<BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>

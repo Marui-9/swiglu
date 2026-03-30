@@ -245,9 +245,9 @@ set ArgLastReadFirstWriteLatency {
 		rb_5 {Type O LastRead -1 FirstWrite 2}
 		rb_6 {Type O LastRead -1 FirstWrite 2}
 		rb_7 {Type O LastRead -1 FirstWrite 2}}
-	load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1 {
+	load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1 {
 		gmem_Wd {Type I LastRead 1 FirstWrite -1}
-		sext_ln325 {Type I LastRead 0 FirstWrite -1}
+		sext_ln327 {Type I LastRead 0 FirstWrite -1}
 		rb_0 {Type O LastRead -1 FirstWrite 2}
 		rb_1 {Type O LastRead -1 FirstWrite 2}
 		rb_2 {Type O LastRead -1 FirstWrite 2}

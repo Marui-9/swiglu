@@ -139,7 +139,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -175,7 +175,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -211,7 +211,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -247,7 +247,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -283,7 +283,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -319,7 +319,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -355,7 +355,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -391,7 +391,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1023,7 +1023,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.43</m_delay>
+				<m_delay>8.00</m_delay>
 				<m_topoIndex>13</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4377,56 +4377,56 @@
 			<first>4</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>5</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>6</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>7</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>8</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>9</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>10</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>11</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 	</port2core>

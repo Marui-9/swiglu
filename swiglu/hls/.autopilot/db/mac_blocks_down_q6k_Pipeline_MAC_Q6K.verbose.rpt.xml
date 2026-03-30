@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q6k_Pipeline_MAC_Q6K'" level="0">
-<item name = "Date">Mon Mar 30 09:37:19 2026
+<item name = "Date">Mon Mar 30 15:06:00 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33 ns, 3.239 ns, 0.90 ns</column>
+<column name="ap_clk">10.00 ns, 7.894 ns, 2.00 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">804, 804, 2.677 us, 2.677 us, 771, 771, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">786, 786, 7.860 us, 7.860 us, 771, 771, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- MAC_Q6K">802, 802, 38, 3, 1, 256, yes</column>
+<column name="- MAC_Q6K">784, 784, 20, 3, 1, 256, yes</column>
 </table>
 </item>
 </section>
@@ -52,10 +52,10 @@
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, 0, 360, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, 0, 625, -</column>
-<column name="Register">-, -, 2577, 96, -</column>
+<column name="Multiplexer">-, -, 0, 571, -</column>
+<column name="Register">-, -, 426, 64, -</column>
 <specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, 1, 1, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -88,14 +88,14 @@
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
 <column name="add_ln71_fu_953_p2">+, 0, 0, 16, 9, 1</column>
 <column name="add_ln73_fu_980_p2">+, 0, 0, 20, 13, 13</column>
-<column name="add_ln75_1_fu_1054_p2">+, 0, 0, 20, 13, 13</column>
-<column name="add_ln78_1_fu_1363_p2">+, 0, 0, 20, 13, 13</column>
+<column name="add_ln75_1_fu_1165_p2">+, 0, 0, 20, 13, 13</column>
+<column name="add_ln78_1_fu_1379_p2">+, 0, 0, 20, 13, 13</column>
 <column name="add_ln79_fu_895_p2">+, 0, 0, 17, 10, 10</column>
 <column name="icmp_ln71_fu_885_p2">icmp, 0, 0, 17, 9, 10</column>
-<column name="lshr_ln76_fu_1299_p2">lshr, 0, 0, 16, 8, 8</column>
-<column name="ql_fu_1186_p3">select, 0, 0, 4, 1, 4</column>
+<column name="lshr_ln76_fu_1315_p2">lshr, 0, 0, 16, 8, 8</column>
+<column name="ql_fu_1132_p3">select, 0, 0, 4, 1, 4</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
-<column name="xor_ln77_fu_1313_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln77_fu_1329_p2">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -112,18 +112,12 @@
 <column name="ap_done_int">9, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter0">9, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
-<column name="ap_enable_reg_pp0_iter12">9, 2, 1, 2</column>
-<column name="ap_loop_exit_ready_pp0_iter10_reg">9, 2, 1, 2</column>
-<column name="ap_loop_exit_ready_pp0_iter11_reg">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter6">9, 2, 1, 2</column>
 <column name="ap_loop_exit_ready_pp0_iter1_reg">9, 2, 1, 2</column>
 <column name="ap_loop_exit_ready_pp0_iter2_reg">9, 2, 1, 2</column>
 <column name="ap_loop_exit_ready_pp0_iter3_reg">9, 2, 1, 2</column>
 <column name="ap_loop_exit_ready_pp0_iter4_reg">9, 2, 1, 2</column>
 <column name="ap_loop_exit_ready_pp0_iter5_reg">9, 2, 1, 2</column>
-<column name="ap_loop_exit_ready_pp0_iter6_reg">9, 2, 1, 2</column>
-<column name="ap_loop_exit_ready_pp0_iter7_reg">9, 2, 1, 2</column>
-<column name="ap_loop_exit_ready_pp0_iter8_reg">9, 2, 1, 2</column>
-<column name="ap_loop_exit_ready_pp0_iter9_reg">9, 2, 1, 2</column>
 <column name="ap_sig_allocacmp_n_2">9, 2, 9, 18</column>
 <column name="grp_fu_870_p0">20, 4, 32, 128</column>
 <column name="grp_fu_870_p1">20, 4, 32, 128</column>
@@ -149,75 +143,45 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="add_ln75_1_reg_1785">13, 0, 13, 0</column>
+<column name="add_ln75_1_reg_1727">13, 0, 13, 0</column>
 <column name="ap_CS_fsm">3, 0, 3, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter0_reg">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp0_iter10">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp0_iter11">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp0_iter12">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter4">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter5">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter6">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp0_iter7">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp0_iter8">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp0_iter9">1, 0, 1, 0</column>
-<column name="ap_loop_exit_ready_pp0_iter10_reg">1, 0, 1, 0</column>
-<column name="ap_loop_exit_ready_pp0_iter11_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter1_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter2_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter3_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter4_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter5_reg">1, 0, 1, 0</column>
-<column name="ap_loop_exit_ready_pp0_iter6_reg">1, 0, 1, 0</column>
-<column name="ap_loop_exit_ready_pp0_iter7_reg">1, 0, 1, 0</column>
-<column name="ap_loop_exit_ready_pp0_iter8_reg">1, 0, 1, 0</column>
-<column name="ap_loop_exit_ready_pp0_iter9_reg">1, 0, 1, 0</column>
-<column name="conv40_i_reg_1895">32, 0, 32, 0</column>
-<column name="conv41_i_reg_2005">32, 0, 32, 0</column>
-<column name="conv43_i_reg_2020">32, 0, 32, 0</column>
-<column name="icmp_ln71_reg_1576">1, 0, 1, 0</column>
-<column name="mul42_i_reg_2015">32, 0, 32, 0</column>
-<column name="mul44_i_reg_2025">32, 0, 32, 0</column>
-<column name="n_2_reg_1565">9, 0, 9, 0</column>
+<column name="conv40_i_reg_1817">32, 0, 32, 0</column>
+<column name="conv41_i_reg_1937">32, 0, 32, 0</column>
+<column name="conv43_i_reg_1957">32, 0, 32, 0</column>
+<column name="icmp_ln71_reg_1593">1, 0, 1, 0</column>
+<column name="mul42_i_reg_1952">32, 0, 32, 0</column>
+<column name="mul44_i_reg_1962">32, 0, 32, 0</column>
+<column name="n_2_reg_1582">9, 0, 9, 0</column>
+<column name="n_2_reg_1582_pp0_iter1_reg">9, 0, 9, 0</column>
 <column name="n_fu_210">9, 0, 9, 0</column>
-<column name="ql_reg_1875">4, 0, 4, 0</column>
-<column name="rb_0_load_2_reg_1705">128, 0, 128, 0</column>
-<column name="rb_10_load_1_reg_1755">128, 0, 128, 0</column>
-<column name="rb_11_load_1_reg_1760">128, 0, 128, 0</column>
-<column name="rb_12_load_1_reg_1765">128, 0, 128, 0</column>
-<column name="rb_13_load_1_reg_1770">128, 0, 128, 0</column>
-<column name="rb_14_load_1_reg_1775">128, 0, 128, 0</column>
-<column name="rb_15_load_1_reg_1780">128, 0, 128, 0</column>
-<column name="rb_1_load_2_reg_1710">128, 0, 128, 0</column>
-<column name="rb_2_load_2_reg_1715">128, 0, 128, 0</column>
-<column name="rb_3_load_2_reg_1720">128, 0, 128, 0</column>
-<column name="rb_4_load_2_reg_1725">128, 0, 128, 0</column>
-<column name="rb_5_load_2_reg_1730">128, 0, 128, 0</column>
-<column name="rb_6_load_2_reg_1735">128, 0, 128, 0</column>
-<column name="rb_7_load_2_reg_1740">128, 0, 128, 0</column>
-<column name="rb_8_load_1_reg_1745">128, 0, 128, 0</column>
-<column name="rb_9_load_1_reg_1750">128, 0, 128, 0</column>
-<column name="scale_reg_1995">8, 0, 8, 0</column>
-<column name="tmp_41_reg_1605">8, 0, 8, 0</column>
-<column name="tmp_42_reg_2030">32, 0, 32, 0</column>
-<column name="tmp_56_reg_1890">4, 0, 4, 0</column>
-<column name="tmp_56_reg_1890_pp0_iter3_reg">4, 0, 4, 0</column>
-<column name="trunc_ln55_5_reg_1615">4, 0, 4, 0</column>
-<column name="trunc_ln55_6_reg_1790">4, 0, 4, 0</column>
-<column name="trunc_ln55_7_reg_1905">4, 0, 4, 0</column>
-<column name="trunc_ln55_9_reg_1990">4, 0, 4, 0</column>
-<column name="trunc_ln55_reg_1700">4, 0, 4, 0</column>
-<column name="trunc_ln73_reg_1600">3, 0, 3, 0</column>
-<column name="trunc_ln77_reg_1885">1, 0, 1, 0</column>
-<column name="v_reg_2000">32, 0, 32, 0</column>
-<column name="xor_ln77_reg_1880">1, 0, 1, 0</column>
-<column name="icmp_ln71_reg_1576">64, 32, 1, 0</column>
-<column name="n_2_reg_1565">64, 32, 9, 0</column>
-<column name="trunc_ln73_reg_1600">64, 32, 3, 0</column>
+<column name="ql_reg_1722">4, 0, 4, 0</column>
+<column name="scale_reg_1942">8, 0, 8, 0</column>
+<column name="tmp_41_reg_1622">8, 0, 8, 0</column>
+<column name="tmp_56_reg_1832">4, 0, 4, 0</column>
+<column name="trunc_ln55_5_reg_1632">4, 0, 4, 0</column>
+<column name="trunc_ln55_6_reg_1732">4, 0, 4, 0</column>
+<column name="trunc_ln55_7_reg_1847">4, 0, 4, 0</column>
+<column name="trunc_ln55_9_reg_1932">4, 0, 4, 0</column>
+<column name="trunc_ln55_reg_1717">4, 0, 4, 0</column>
+<column name="trunc_ln73_reg_1617">3, 0, 3, 0</column>
+<column name="trunc_ln77_reg_1827">1, 0, 1, 0</column>
+<column name="v_reg_1842">32, 0, 32, 0</column>
+<column name="xor_ln77_reg_1822">1, 0, 1, 0</column>
+<column name="icmp_ln71_reg_1593">64, 32, 1, 0</column>
+<column name="trunc_ln73_reg_1617">64, 32, 3, 0</column>
 </table>
 </item>
 </section>
@@ -233,18 +197,18 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
-<column name="grp_fu_2389_p_din0">out, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
-<column name="grp_fu_2389_p_din1">out, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
-<column name="grp_fu_2389_p_opcode">out, 2, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
-<column name="grp_fu_2389_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
-<column name="grp_fu_2389_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
+<column name="grp_fu_823_p_din0">out, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
+<column name="grp_fu_823_p_din1">out, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
+<column name="grp_fu_823_p_opcode">out, 1, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
+<column name="grp_fu_823_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
+<column name="grp_fu_823_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
 <column name="grp_fu_828_p_din0">out, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
 <column name="grp_fu_828_p_din1">out, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
 <column name="grp_fu_828_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
 <column name="grp_fu_828_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
-<column name="grp_fu_2393_p_din0">out, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
-<column name="grp_fu_2393_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
-<column name="grp_fu_2393_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
+<column name="grp_fu_2314_p_din0">out, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
+<column name="grp_fu_2314_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
+<column name="grp_fu_2314_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q6k_Pipeline_MAC_Q6K, return value</column>
 <column name="acc_i">in, 32, ap_ovld, acc, pointer</column>
 <column name="acc_o">out, 32, ap_ovld, acc, pointer</column>
 <column name="acc_o_ap_vld">out, 1, ap_ovld, acc, pointer</column>

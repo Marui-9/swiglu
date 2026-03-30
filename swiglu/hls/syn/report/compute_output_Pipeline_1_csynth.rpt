@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'compute_output_Pipeline_1'
 ================================================================
-* Date:           Mon Mar 30 09:37:33 2026
+* Date:           Mon Mar 30 15:06:18 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -17,20 +17,20 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+---------+----------+------------+
-    |  Clock |  Target | Estimated| Uncertainty|
-    +--------+---------+----------+------------+
-    |ap_clk  |  3.33 ns|  2.430 ns|     0.90 ns|
-    +--------+---------+----------+------------+
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  8.000 ns|     2.00 ns|
+    +--------+----------+----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+----------+------+------+------------------------------------------------+
-    |  Latency (cycles) |  Latency (absolute) |   Interval  |                    Pipeline                    |
-    |   min   |   max   |    min   |    max   |  min |  max |                      Type                      |
-    +---------+---------+----------+----------+------+------+------------------------------------------------+
-    |     2051|     2051|  6.830 us|  6.830 us|  2049|  2049|  loop auto-rewind stp (delay=0 clock cycles(s))|
-    +---------+---------+----------+----------+------+------+------------------------------------------------+
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  |                    Pipeline                    |
+    |   min   |   max   |    min    |    max    |  min |  max |                      Type                      |
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
+    |     2051|     2051|  20.510 us|  20.510 us|  2049|  2049|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
 
     + Detail: 
         * Instance: 
@@ -182,7 +182,7 @@
 |m_axi_gmem_out_0_BRESP     |   in|    2|       m_axi|                   gmem_out|       pointer|
 |m_axi_gmem_out_0_BID       |   in|    1|       m_axi|                   gmem_out|       pointer|
 |m_axi_gmem_out_0_BUSER     |   in|    1|       m_axi|                   gmem_out|       pointer|
-|sext_ln532                 |   in|   62|     ap_none|                 sext_ln532|        scalar|
+|sext_ln534                 |   in|   62|     ap_none|                 sext_ln534|        scalar|
 |out_local_address0         |  out|   11|   ap_memory|                  out_local|         array|
 |out_local_ce0              |  out|    1|   ap_memory|                  out_local|         array|
 |out_local_q0               |   in|   32|   ap_memory|                  out_local|         array|

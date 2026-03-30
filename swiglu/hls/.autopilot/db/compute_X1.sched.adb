@@ -5752,7 +5752,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>22</m_topoIndex>
+				<m_topoIndex>23</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_151">
@@ -5763,7 +5763,7 @@
 						<name>X1_cache_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>233</lineNumber>
+						<lineNumber>234</lineNumber>
 						<contextFuncName>compute_X1</contextFuncName>
 						<contextNormFuncName>compute_X1</contextNormFuncName>
 						<inlineStackInfo>
@@ -5779,7 +5779,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X1</second>
 										</first>
-										<second>233</second>
+										<second>234</second>
 									</item>
 								</second>
 							</item>
@@ -5810,7 +5810,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>23</m_topoIndex>
+				<m_topoIndex>24</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_152">
@@ -5818,10 +5818,10 @@
 					<Obj>
 						<type>0</type>
 						<id>294</id>
-						<name>trunc_ln230</name>
+						<name>trunc_ln231</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>230</lineNumber>
+						<lineNumber>231</lineNumber>
 						<contextFuncName>compute_X1</contextFuncName>
 						<contextNormFuncName>compute_X1</contextNormFuncName>
 						<inlineStackInfo>
@@ -5837,7 +5837,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X1</second>
 										</first>
-										<second>230</second>
+										<second>231</second>
 									</item>
 								</second>
 							</item>
@@ -5874,10 +5874,10 @@
 					<Obj>
 						<type>0</type>
 						<id>295</id>
-						<name>_ln230</name>
+						<name>_ln231</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>230</lineNumber>
+						<lineNumber>231</lineNumber>
 						<contextFuncName>compute_X1</contextFuncName>
 						<contextNormFuncName>compute_X1</contextNormFuncName>
 						<inlineStackInfo>
@@ -5893,7 +5893,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X1</second>
 										</first>
-										<second>230</second>
+										<second>231</second>
 									</item>
 								</second>
 							</item>
@@ -5944,7 +5944,7 @@
 						<name>row_result</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>232</lineNumber>
+						<lineNumber>233</lineNumber>
 						<contextFuncName>compute_X1</contextFuncName>
 						<contextNormFuncName>compute_X1</contextNormFuncName>
 						<inlineStackInfo>
@@ -5960,7 +5960,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X1</second>
 										</first>
-										<second>232</second>
+										<second>233</second>
 									</item>
 								</second>
 							</item>
@@ -6127,8 +6127,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.41</m_delay>
-				<m_topoIndex>21</m_topoIndex>
+				<m_delay>7.01</m_delay>
+				<m_topoIndex>22</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_155">
@@ -6136,10 +6136,10 @@
 					<Obj>
 						<type>0</type>
 						<id>297</id>
-						<name>X1_cache_addr_write_ln233</name>
+						<name>X1_cache_addr_write_ln234</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>233</lineNumber>
+						<lineNumber>234</lineNumber>
 						<contextFuncName>compute_X1</contextFuncName>
 						<contextNormFuncName>compute_X1</contextNormFuncName>
 						<inlineStackInfo>
@@ -6155,7 +6155,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X1</second>
 										</first>
-										<second>233</second>
+										<second>234</second>
 									</item>
 								</second>
 							</item>
@@ -6185,7 +6185,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.23</m_delay>
-				<m_topoIndex>24</m_topoIndex>
+				<m_topoIndex>25</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_156">
@@ -6244,7 +6244,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.42</m_delay>
-				<m_topoIndex>25</m_topoIndex>
+				<m_topoIndex>20</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_157">
@@ -6308,10 +6308,10 @@
 					<Obj>
 						<type>0</type>
 						<id>301</id>
-						<name>_ln235</name>
+						<name>_ln236</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>235</lineNumber>
+						<lineNumber>236</lineNumber>
 						<contextFuncName>compute_X1</contextFuncName>
 						<contextNormFuncName>compute_X1</contextNormFuncName>
 						<inlineStackInfo>
@@ -6327,7 +6327,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X1</second>
 										</first>
-										<second>235</second>
+										<second>236</second>
 									</item>
 								</second>
 							</item>
@@ -6355,7 +6355,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>20</m_topoIndex>
+				<m_topoIndex>21</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 		</nodes>
@@ -8126,8 +8126,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>4579330</mMinLatency>
-			<mMaxLatency>4579330</mMaxLatency>
+			<mMinLatency>3883009</mMinLatency>
+			<mMaxLatency>3883009</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -8173,8 +8173,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>8192</mMinTripCount>
 			<mMaxTripCount>8192</mMaxTripCount>
-			<mMinLatency>4579329</mMinLatency>
-			<mMaxLatency>4579329</mMaxLatency>
+			<mMinLatency>3883008</mMinLatency>
+			<mMaxLatency>3883008</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -8315,77 +8315,77 @@
 		<item>
 			<first>287</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>288</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>290</first>
 			<second>
-				<first>6</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>291</first>
 			<second>
-				<first>6</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>294</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>295</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>296</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>297</first>
 			<second>
-				<first>6</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>298</first>
 			<second>
-				<first>6</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>299</first>
 			<second>
-				<first>6</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>301</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -8404,21 +8404,21 @@
 			<first>289</first>
 			<second>
 				<first>1</first>
-				<second>2</second>
+				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>300</first>
 			<second>
-				<first>2</first>
-				<second>6</second>
+				<first>1</first>
+				<second>4</second>
 			</second>
 		</item>
 		<item>
 			<first>302</first>
 			<second>
-				<first>2</first>
-				<second>2</second>
+				<first>1</first>
+				<second>1</second>
 			</second>
 		</item>
 	</bblk_ent_exit>

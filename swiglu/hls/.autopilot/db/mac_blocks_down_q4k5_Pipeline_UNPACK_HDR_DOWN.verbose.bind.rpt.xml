@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN'" level="0">
-<item name = "Date">Mon Mar 30 09:36:54 2026
+<item name = "Date">Mon Mar 30 15:05:39 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33 ns, 2.330 ns, 0.90 ns</column>
+<column name="ap_clk">10.00 ns, 7.466 ns, 2.00 ns</column>
 </table>
 </item>
 </section>
@@ -24,20 +24,20 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">40, 40, 0.133 us, 0.133 us, 33, 33, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">35, 35, 0.350 us, 0.350 us, 33, 33, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_fp16_to_fp32_fu_7854">fp16_to_fp32, 4, 4, 13.320 ns, 13.320 ns, 1, 1, yes</column>
-<column name="grp_fp16_to_fp32_fu_7859">fp16_to_fp32, 4, 4, 13.320 ns, 13.320 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_7854">fp16_to_fp32, 1, 1, 10.000 ns, 10.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_7859">fp16_to_fp32, 1, 1, 10.000 ns, 10.000 ns, 1, 1, yes</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- UNPACK_HDR_DOWN">38, 38, 8, 1, 1, 32, yes</column>
+<column name="- UNPACK_HDR_DOWN">33, 33, 3, 1, 1, 32, yes</column>
 </table>
 </item>
 </section>

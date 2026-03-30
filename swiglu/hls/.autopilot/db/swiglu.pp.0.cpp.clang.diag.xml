@@ -509,7 +509,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_X1_XLX_SEP_ PragmaOptions=variable=row_buf type=ram_1p impl=bram_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_X1_XLX_SEP_ PragmaOptions=variable=row_buf dim=1 complete_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -521,11 +521,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>244</integer>
+      <integer>230</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_X2_XLX_SEP_ PragmaOptions=off_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_X1_XLX_SEP_ PragmaOptions=variable=row_buf type=ram_1p impl=lutram_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -541,6 +541,22 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_X2_XLX_SEP_ PragmaOptions=off_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>246</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
       <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_X2_XLX_SEP_ PragmaOptions=variable=x_local_2 dim=2 complete_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
@@ -553,11 +569,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>249</integer>
+      <integer>250</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_X2_XLX_SEP_ PragmaOptions=variable=row_buf type=ram_1p impl=bram_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_X2_XLX_SEP_ PragmaOptions=variable=row_buf dim=1 complete_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -569,11 +585,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>268</integer>
+      <integer>251</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_gate_XLX_SEP_ PragmaOptions=off_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_X2_XLX_SEP_ PragmaOptions=variable=row_buf type=ram_1p impl=lutram_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -589,7 +605,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_gate_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_gate_XLX_SEP_ PragmaOptions=off_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -605,6 +621,22 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_gate_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>274</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
       <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_gate_XLX_SEP_ PragmaOptions=variable=pmax complete_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
@@ -617,7 +649,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>277</integer>
+      <integer>279</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -633,7 +665,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>291</integer>
+      <integer>293</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -649,7 +681,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>300</integer>
+      <integer>302</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -665,7 +697,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>323</integer>
+      <integer>325</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -681,7 +713,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>324</integer>
+      <integer>326</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -697,7 +729,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>327</integer>
+      <integer>329</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -713,7 +745,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>341</integer>
+      <integer>343</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -729,7 +761,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>342</integer>
+      <integer>344</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -745,7 +777,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>342</integer>
+      <integer>344</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -761,7 +793,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>343</integer>
+      <integer>345</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -777,7 +809,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>344</integer>
+      <integer>346</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -793,7 +825,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>350</integer>
+      <integer>352</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -809,7 +841,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>351</integer>
+      <integer>353</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -825,7 +857,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>352</integer>
+      <integer>354</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -841,7 +873,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>353</integer>
+      <integer>355</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -857,7 +889,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>377</integer>
+      <integer>379</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -873,27 +905,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>378</integer>
+      <integer>380</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
       <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=variable=int_acc_m dim=0 complete_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>swiglu.cpp</string>
-      <key>line</key>
-      <integer>381</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -921,11 +937,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>392</integer>
+      <integer>385</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -941,7 +957,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -953,11 +969,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>406</integer>
+      <integer>396</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -973,7 +989,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -985,11 +1001,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>420</integer>
+      <integer>410</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -1005,7 +1021,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -1017,11 +1033,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>434</integer>
+      <integer>424</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -1037,7 +1053,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -1049,7 +1065,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>451</integer>
+      <integer>438</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1065,7 +1081,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>454</integer>
+      <integer>453</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1081,7 +1097,23 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>468</integer>
+      <integer>456</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>470</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1097,7 +1129,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>469</integer>
+      <integer>471</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1113,7 +1145,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>471</integer>
+      <integer>473</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1129,7 +1161,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>480</integer>
+      <integer>482</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1145,7 +1177,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>481</integer>
+      <integer>483</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1161,7 +1193,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>482</integer>
+      <integer>484</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1177,7 +1209,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>484</integer>
+      <integer>486</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1193,7 +1225,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>486</integer>
+      <integer>488</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1209,7 +1241,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>492</integer>
+      <integer>494</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1225,7 +1257,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>506</integer>
+      <integer>508</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1241,7 +1273,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>507</integer>
+      <integer>509</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1257,11 +1289,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>511</integer>
+      <integer>513</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_output_XLX_SEP_ PragmaOptions=variable=out_local type=ram_1p impl=bram_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_output_XLX_SEP_ PragmaOptions=variable=out_local type=ram_1p impl=lutram_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -1273,7 +1305,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>517</integer>
+      <integer>519</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1289,11 +1321,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>518</integer>
+      <integer>520</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_output_XLX_SEP_ PragmaOptions=variable=row_buf type=ram_1p impl=bram_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_output_XLX_SEP_ PragmaOptions=variable=row_buf type=ram_1p impl=lutram_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -1305,7 +1337,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>525</integer>
+      <integer>527</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1321,43 +1353,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>526</integer>
+      <integer>528</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_output_XLX_SEP_ PragmaOptions=variable=row_buf type=ram_1p impl=bram_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>swiglu.cpp</string>
-      <key>line</key>
-      <integer>544</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=load_x_local_XLX_SEP_ PragmaOptions=off_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>swiglu.cpp</string>
-      <key>line</key>
-      <integer>545</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=load_x_local_XLX_SEP_ PragmaOptions=variable=x_local_1 dim=2 complete_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_output_XLX_SEP_ PragmaOptions=variable=row_buf type=ram_1p impl=lutram_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -1373,6 +1373,38 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=load_x_local_XLX_SEP_ PragmaOptions=off_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>547</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=load_x_local_XLX_SEP_ PragmaOptions=variable=x_local_1 dim=2 complete_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>548</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
       <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=load_x_local_XLX_SEP_ PragmaOptions=variable=x_local_2 dim=2 complete_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
@@ -1385,7 +1417,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>550</integer>
+      <integer>552</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1401,7 +1433,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>553</integer>
+      <integer>555</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1433,7 +1465,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>578</integer>
+      <integer>580</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1449,7 +1481,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>579</integer>
+      <integer>581</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1465,7 +1497,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>580</integer>
+      <integer>582</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1481,7 +1513,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>581</integer>
+      <integer>583</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1497,7 +1529,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>582</integer>
+      <integer>584</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1513,7 +1545,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>584</integer>
+      <integer>586</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1529,7 +1561,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>585</integer>
+      <integer>587</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1545,7 +1577,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>586</integer>
+      <integer>588</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1561,7 +1593,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>587</integer>
+      <integer>589</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1577,7 +1609,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>588</integer>
+      <integer>590</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1593,7 +1625,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>589</integer>
+      <integer>591</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1609,7 +1641,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>590</integer>
+      <integer>592</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1625,7 +1657,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>591</integer>
+      <integer>593</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1641,11 +1673,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>596</integer>
+      <integer>598</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=swiglu_XLX_SEP_ PragmaOptions=variable=x_local_1 type=ram_1p impl=bram_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=swiglu_XLX_SEP_ PragmaOptions=variable=x_local_1 type=ram_1p impl=lutram_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -1657,7 +1689,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>597</integer>
+      <integer>599</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1673,11 +1705,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>600</integer>
+      <integer>602</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=swiglu_XLX_SEP_ PragmaOptions=variable=x_local_2 type=ram_1p impl=bram_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=swiglu_XLX_SEP_ PragmaOptions=variable=x_local_2 type=ram_1p impl=lutram_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -1689,7 +1721,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>601</integer>
+      <integer>603</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1705,7 +1737,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>607</integer>
+      <integer>609</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1721,7 +1753,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>608</integer>
+      <integer>610</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1737,7 +1769,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>611</integer>
+      <integer>613</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1753,7 +1785,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>612</integer>
+      <integer>614</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1769,11 +1801,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>616</integer>
+      <integer>618</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=swiglu_XLX_SEP_ PragmaOptions=variable=sigmoid_lut type=rom_1p impl=bram_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=swiglu_XLX_SEP_ PragmaOptions=variable=sigmoid_lut type=rom_1p impl=lutram_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -1785,7 +1817,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>622</integer>
+      <integer>624</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>

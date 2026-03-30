@@ -9,8 +9,8 @@
 <ProductFamily>zynquplus</ProductFamily>
 <Part>xck26-sfvc784-2LV-c</Part>
 <TopModelName>load_x_local</TopModelName>
-<TargetClockPeriod>3.33</TargetClockPeriod>
-<ClockUncertainty>0.90</ClockUncertainty>
+<TargetClockPeriod>10.00</TargetClockPeriod>
+<ClockUncertainty>2.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,27 +18,27 @@
 <PipelineType>loop auto-rewind stp (delay=0 cycles)</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>2.430</EstimatedClockPeriod>
+<EstimatedClockPeriod>8.000</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>202</Best-caseLatency>
 <Average-caseLatency>202</Average-caseLatency>
 <Worst-caseLatency>202</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.673 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.673 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.673 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>2.020 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>2.020 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>2.020 us</Worst-caseRealTimeLatency>
 <Interval-min>128</Interval-min>
 <Interval-max>128</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <LOAD_X_VEC>
-<Slack>2.43</Slack>
+<Slack>8.00</Slack>
 <TripCount>128</TripCount>
 <isPerfectNested>1</isPerfectNested>
 <Latency>200</Latency>
-<AbsoluteTimeLatency>665</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>2000</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>74</PipelineDepth>
 <PerformancePragma>-</PerformancePragma>
@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:540</SourceLocation>
+<SourceLocation>swiglu.cpp:542</SourceLocation>
 <SummaryOfLoopViolations>
 <LOAD_X_VEC>
 <Name>LOAD_X_VEC</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:549</SourceLocation>
+<SourceLocation>swiglu.cpp:551</SourceLocation>
 </LOAD_X_VEC>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>

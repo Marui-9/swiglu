@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_gate'" level="0">
-<item name = "Date">Mon Mar 30 09:36:47 2026
+<item name = "Date">Mon Mar 30 15:05:32 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33 ns, 2.416 ns, 0.90 ns</column>
+<column name="ap_clk">10.00 ns, 7.781 ns, 2.00 ns</column>
 </table>
 </item>
 </section>
@@ -24,15 +24,15 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">16579, 16579, 55.208 us, 55.208 us, 16579, 16579, no</column>
+<column name="">16450, 16450, 0.165 ms, 0.165 ms, 16450, 16450, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_compute_gate_Pipeline_GATE_PASS1_fu_86">compute_gate_Pipeline_GATE_PASS1, 8240, 8240, 27.439 us, 27.439 us, 8193, 8193, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_compute_gate_Pipeline_GATE_PASS2_fu_104">compute_gate_Pipeline_GATE_PASS2, 8244, 8244, 27.453 us, 27.453 us, 8193, 8193, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_compute_gate_Pipeline_GATE_PASS1_fu_86">compute_gate_Pipeline_GATE_PASS1, 8210, 8210, 82.100 us, 82.100 us, 8193, 8193, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_compute_gate_Pipeline_GATE_PASS2_fu_104">compute_gate_Pipeline_GATE_PASS2, 8211, 8211, 82.110 us, 82.110 us, 8193, 8193, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

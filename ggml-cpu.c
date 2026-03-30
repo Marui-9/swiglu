@@ -60,6 +60,7 @@
 // SwiGLU-specific file-scope statics (m_axi interface — no DMA)
 	static volatile uint32_t *swg_ip_regs = NULL;     // persistent mmap of CTRL registers
 	static int swiglu_uio_fd = -1;                    // UIO fd for SWIGLU_IP_BASE (ap_done)
+	static int swiglu_uio_idx = -1;                   // uio index found for swiglu_0
 	static int swiglu_call_count = 0;
 	// Phase B weight cache: one loaded flag per layer per weight matrix.
 	// Once layer i is loaded into its permanent udmabuf slot it is never
@@ -1354,8 +1355,6 @@ typedef struct __attribute__((aligned(64))) {
 #define SWG_CTRL_OUT_LO   0x40   // out_batch phys addr [31:0]
 #define SWG_CTRL_OUT_HI   0x44   // out_batch phys addr [63:32]
 // 0x48 reserved
-<<<<<<< ours
-<<<<<<< ours
 #define SWG_CTRL_MODE     0x4C   // down_quant_mode: 0=Q4_K 1=Q6_K  (confirmed xswiglu_hw.h 0x4c)
 // 0x50 reserved
 #define SWG_CTRL_XSCALE   0x54   // x_scale (float)                  (confirmed xswiglu_hw.h 0x54)
@@ -1388,6 +1387,7 @@ static int open_uio_by_addr(unsigned long target_addr) {
             snprintf(path, sizeof(path), "/dev/uio%d", i);
             fprintf(stderr, "[INIT] Found DMA UIO device at /dev/uio%d (addr=0x%lx)\n",
                     i, target_addr);
+            swiglu_uio_idx = i;
             return open(path, O_RDWR);
         }
     }
@@ -1431,6 +1431,18 @@ static void init_hardware_offload(void) {
     else
         fprintf(stderr, "[INIT] uio_fd=%d (interrupt-driven S2MM wait enabled)\n", uio_fd);
     udmabuf_vptr = mmap(NULL, UDMABUF_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, udmabuf_fd, 0);
+    if (udmabuf_vptr == MAP_FAILED) {
+        fprintf(stderr, "[INIT] mmap udmabuf0 FAILED (requested %u bytes). CMA likely too small; check boot cma= and udmabuf size.\n", UDMABUF_SIZE);
+        exit(1);
+    }
+    off_t ub_sz = lseek(udmabuf_fd, 0, SEEK_END);
+    fprintf(stderr, "[INIT] udmabuf map: vptr=%p phys=0x%016llX size_req=%u size_file=%lld\n",
+            udmabuf_vptr, (unsigned long long)udmabuf_phys_base,
+            UDMABUF_SIZE, (long long)ub_sz);
+    if (ub_sz > 0 && ub_sz < (off_t)UDMABUF_SIZE) {
+        fprintf(stderr, "[WARN] udmabuf backing size smaller than requested (%lld < %u). Consider shrinking UDMABUF_SIZE or increasing CMA.\n",
+                (long long)ub_sz, UDMABUF_SIZE);
+    }
 
     // Memory Map Layout:
     // [0] rx_desc | [64] tx_desc_vector | [128...] tx_desc_matrix | ... 
@@ -1571,8 +1583,8 @@ static void init_swiglu_offload(void) {
         // Arm UIO interrupt for first call
         uint32_t uio_enable = 1;
         (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
-        fprintf(stderr, "[SWG_INIT] swiglu_uio_fd=%d (ap_done interrupt armed)\n",
-                swiglu_uio_fd);
+        fprintf(stderr, "[SWG_INIT] swiglu_uio_fd=%d (uio%d) ap_done interrupt armed\n",
+                swiglu_uio_fd, swiglu_uio_idx);
     }
 }
 
@@ -1624,20 +1636,14 @@ void ggml_compute_forward_mul_mat(
                         udmabuf_vptr, (unsigned long long)udmabuf_phys_base);
                 fflush(stderr);
                 init_swiglu_offload();
-                fprintf(stderr, "[SWG_INIT] init_swiglu_offload done: swg_ip_regs=%p uio_fd=%d\n",
-                        (void*)swg_ip_regs, swiglu_uio_fd);
+            fprintf(stderr, "[SWG_INIT] init_swiglu_offload done: swg_ip_regs=%p uio_fd=%d\n",
+                    (void*)swg_ip_regs, swiglu_uio_fd);
                 fflush(stderr);
                 is_swiglu_initialized = true;
             }
 
-<<<<<<< ours
-<<<<<<< ours
             // Batch guard: accelerator handles single-token decode only.
             // Prefill (ne[1] > 1) falls back to CPU — call counter NOT incremented.
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
             if (src1->ne[1] != 1) {
                 goto cpu_compute_fallback;
             }
@@ -1785,14 +1791,14 @@ void ggml_compute_forward_mul_mat(
                 uint64_t phys_x   = udmabuf_phys_base + SWG_VEC_OFF;
                 uint64_t phys_out = udmabuf_phys_base + SWG_OUT_OFF;
 
-                fprintf(stderr, "[SWG] phys: W=0x%llX V=0x%llX Wd=0x%llX x=0x%llX out=0x%llX\n",
+                fprintf(stderr, "[SWG] phys W=0x%llX V=0x%llX Wd=0x%llX x=0x%llX out=0x%llX mode=%u xscale=%g\n",
                         (unsigned long long)phys_W, (unsigned long long)phys_V,
                         (unsigned long long)phys_Wd, (unsigned long long)phys_x,
-                        (unsigned long long)phys_out);
-                fflush(stderr);
-
-                fprintf(stderr, "[SWG] AP_CTRL before start = 0x%08X\n",
-                        swg_ip_regs[SWG_CTRL_AP_CTRL / 4]);
+                        (unsigned long long)phys_out, mode, swg_x_scale);
+                fprintf(stderr, "[SWG] AP_CTRL pre 0x%08X ISR=0x%08X IER=0x%08X\n",
+                        swg_ip_regs[SWG_CTRL_AP_CTRL / 4],
+                        swg_ip_regs[SWG_CTRL_ISR / 4],
+                        swg_ip_regs[SWG_CTRL_IER / 4]);
                 fflush(stderr);
 
                 if (need_prog_wvw) {
@@ -1809,14 +1815,7 @@ void ggml_compute_forward_mul_mat(
                 swg_ip_regs[SWG_CTRL_X_HI   / 4] = (uint32_t)(phys_x   >> 32);
                 swg_ip_regs[SWG_CTRL_OUT_LO / 4] = (uint32_t) phys_out;
                 swg_ip_regs[SWG_CTRL_OUT_HI / 4] = (uint32_t)(phys_out >> 32);
-<<<<<<< ours
-<<<<<<< ours
-                swg_ip_regs[SWG_CTRL_MODE   / 4] = mode;
-=======
-=======
->>>>>>> theirs
                 swg_ip_regs[SWG_CTRL_MODE    / 4] = mode;
->>>>>>> theirs
                 uint32_t swg_x_scale_bits;
                 memcpy(&swg_x_scale_bits, &swg_x_scale, sizeof(float));
                 swg_ip_regs[SWG_CTRL_XSCALE / 4] = swg_x_scale_bits;
@@ -1827,8 +1826,15 @@ void ggml_compute_forward_mul_mat(
                 fflush(stderr);
                 swg_ip_regs[SWG_CTRL_AP_CTRL / 4] = 0x01;
                 __asm__ __volatile__("" ::: "memory");
-                fprintf(stderr, "[SWG] AP_CTRL after start  = 0x%08X\n",
-                        swg_ip_regs[SWG_CTRL_AP_CTRL / 4]);
+                // Short poll after start to ensure ap_start latched and ISR is clean
+                for (int spin = 0; spin < 5; ++spin) {
+                    uint32_t ap_now = swg_ip_regs[SWG_CTRL_AP_CTRL / 4];
+                    if (ap_now & 0x01) break;
+                    usleep(1000);
+                }
+                fprintf(stderr, "[SWG] AP_CTRL post 0x%08X ISR=0x%08X\n",
+                        swg_ip_regs[SWG_CTRL_AP_CTRL / 4],
+                        swg_ip_regs[SWG_CTRL_ISR / 4]);
                 fflush(stderr);
 
                 // ================================================================
@@ -1867,6 +1873,12 @@ void ggml_compute_forward_mul_mat(
                                 uint32_t uio_enable = 1;
                                 (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
                                 swg_ip_done = 1;
+                            } else if ((total_ms % 500) == 0) {
+                                fprintf(stderr, "[SWG] wait %d ms: AP_CTRL=0x%08X ISR=0x%08X\n",
+                                        total_ms,
+                                        swg_ip_regs[SWG_CTRL_AP_CTRL / 4],
+                                        swg_ip_regs[SWG_CTRL_ISR / 4]);
+                                fflush(stderr);
                             }
                         } else {
                             perror("[SWG] poll() error");

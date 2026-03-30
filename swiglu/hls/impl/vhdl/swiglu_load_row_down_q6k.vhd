@@ -134,81 +134,80 @@ end;
 architecture behav of swiglu_load_row_down_q6k is 
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
-    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000000001";
-    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000000010";
-    constant ap_ST_fsm_state3 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000000100";
-    constant ap_ST_fsm_state4 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000001000";
-    constant ap_ST_fsm_state5 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000010000";
-    constant ap_ST_fsm_state6 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000100000";
-    constant ap_ST_fsm_state7 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000001000000";
-    constant ap_ST_fsm_state8 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000010000000";
-    constant ap_ST_fsm_state9 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000100000000";
-    constant ap_ST_fsm_state10 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000001000000000";
-    constant ap_ST_fsm_state11 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000010000000000";
-    constant ap_ST_fsm_state12 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000100000000000";
-    constant ap_ST_fsm_state13 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000001000000000000";
-    constant ap_ST_fsm_state14 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000010000000000000";
-    constant ap_ST_fsm_state15 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000100000000000000";
-    constant ap_ST_fsm_state16 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000001000000000000000";
-    constant ap_ST_fsm_state17 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000010000000000000000";
-    constant ap_ST_fsm_state18 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000100000000000000000";
-    constant ap_ST_fsm_state19 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000001000000000000000000";
-    constant ap_ST_fsm_state20 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000010000000000000000000";
-    constant ap_ST_fsm_state21 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000100000000000000000000";
-    constant ap_ST_fsm_state22 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000001000000000000000000000";
-    constant ap_ST_fsm_state23 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000010000000000000000000000";
-    constant ap_ST_fsm_state24 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000100000000000000000000000";
-    constant ap_ST_fsm_state25 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000001000000000000000000000000";
-    constant ap_ST_fsm_state26 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000010000000000000000000000000";
-    constant ap_ST_fsm_state27 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000100000000000000000000000000";
-    constant ap_ST_fsm_state28 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000001000000000000000000000000000";
-    constant ap_ST_fsm_state29 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000010000000000000000000000000000";
-    constant ap_ST_fsm_state30 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000100000000000000000000000000000";
-    constant ap_ST_fsm_state31 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000001000000000000000000000000000000";
-    constant ap_ST_fsm_state32 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000010000000000000000000000000000000";
-    constant ap_ST_fsm_state33 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000100000000000000000000000000000000";
-    constant ap_ST_fsm_state34 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000001000000000000000000000000000000000";
-    constant ap_ST_fsm_state35 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000010000000000000000000000000000000000";
-    constant ap_ST_fsm_state36 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000100000000000000000000000000000000000";
-    constant ap_ST_fsm_state37 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000001000000000000000000000000000000000000";
-    constant ap_ST_fsm_state38 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000010000000000000000000000000000000000000";
-    constant ap_ST_fsm_state39 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000100000000000000000000000000000000000000";
-    constant ap_ST_fsm_state40 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000001000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state41 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000010000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state42 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000100000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state43 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000001000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state44 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000010000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state45 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000100000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state46 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000001000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state47 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000010000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state48 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000100000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state49 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000001000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state50 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000010000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state51 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000100000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state52 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000001000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state53 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000010000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state54 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000100000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state55 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000001000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state56 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000010000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state57 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000100000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state58 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000001000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state59 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000010000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state60 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000100000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state61 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000001000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state62 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000010000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state63 : STD_LOGIC_VECTOR (74 downto 0) := "000000000000100000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state64 : STD_LOGIC_VECTOR (74 downto 0) := "000000000001000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state65 : STD_LOGIC_VECTOR (74 downto 0) := "000000000010000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state66 : STD_LOGIC_VECTOR (74 downto 0) := "000000000100000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state67 : STD_LOGIC_VECTOR (74 downto 0) := "000000001000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state68 : STD_LOGIC_VECTOR (74 downto 0) := "000000010000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state69 : STD_LOGIC_VECTOR (74 downto 0) := "000000100000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state70 : STD_LOGIC_VECTOR (74 downto 0) := "000001000000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state71 : STD_LOGIC_VECTOR (74 downto 0) := "000010000000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state72 : STD_LOGIC_VECTOR (74 downto 0) := "000100000000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state73 : STD_LOGIC_VECTOR (74 downto 0) := "001000000000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state74 : STD_LOGIC_VECTOR (74 downto 0) := "010000000000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state75 : STD_LOGIC_VECTOR (74 downto 0) := "100000000000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000001";
+    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000010";
+    constant ap_ST_fsm_state3 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000100";
+    constant ap_ST_fsm_state4 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000001000";
+    constant ap_ST_fsm_state5 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000010000";
+    constant ap_ST_fsm_state6 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000100000";
+    constant ap_ST_fsm_state7 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000001000000";
+    constant ap_ST_fsm_state8 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000010000000";
+    constant ap_ST_fsm_state9 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000100000000";
+    constant ap_ST_fsm_state10 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000001000000000";
+    constant ap_ST_fsm_state11 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000010000000000";
+    constant ap_ST_fsm_state12 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000100000000000";
+    constant ap_ST_fsm_state13 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000001000000000000";
+    constant ap_ST_fsm_state14 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000010000000000000";
+    constant ap_ST_fsm_state15 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000100000000000000";
+    constant ap_ST_fsm_state16 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000001000000000000000";
+    constant ap_ST_fsm_state17 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000010000000000000000";
+    constant ap_ST_fsm_state18 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000100000000000000000";
+    constant ap_ST_fsm_state19 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000001000000000000000000";
+    constant ap_ST_fsm_state20 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000010000000000000000000";
+    constant ap_ST_fsm_state21 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000100000000000000000000";
+    constant ap_ST_fsm_state22 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000001000000000000000000000";
+    constant ap_ST_fsm_state23 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000010000000000000000000000";
+    constant ap_ST_fsm_state24 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000100000000000000000000000";
+    constant ap_ST_fsm_state25 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000001000000000000000000000000";
+    constant ap_ST_fsm_state26 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000010000000000000000000000000";
+    constant ap_ST_fsm_state27 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000100000000000000000000000000";
+    constant ap_ST_fsm_state28 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000001000000000000000000000000000";
+    constant ap_ST_fsm_state29 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000010000000000000000000000000000";
+    constant ap_ST_fsm_state30 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000100000000000000000000000000000";
+    constant ap_ST_fsm_state31 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000001000000000000000000000000000000";
+    constant ap_ST_fsm_state32 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000010000000000000000000000000000000";
+    constant ap_ST_fsm_state33 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000100000000000000000000000000000000";
+    constant ap_ST_fsm_state34 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000001000000000000000000000000000000000";
+    constant ap_ST_fsm_state35 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000010000000000000000000000000000000000";
+    constant ap_ST_fsm_state36 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000100000000000000000000000000000000000";
+    constant ap_ST_fsm_state37 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000001000000000000000000000000000000000000";
+    constant ap_ST_fsm_state38 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000010000000000000000000000000000000000000";
+    constant ap_ST_fsm_state39 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000100000000000000000000000000000000000000";
+    constant ap_ST_fsm_state40 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000001000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state41 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000010000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state42 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000100000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state43 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000001000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state44 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000010000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state45 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000100000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state46 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000001000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state47 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000010000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state48 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000100000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state49 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000001000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state50 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000010000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state51 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000100000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state52 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000001000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state53 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000010000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state54 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000100000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state55 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000001000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state56 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000010000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state57 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000100000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state58 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000001000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state59 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000010000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state60 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000100000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state61 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000001000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state62 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000010000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state63 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000100000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state64 : STD_LOGIC_VECTOR (73 downto 0) := "00000000001000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state65 : STD_LOGIC_VECTOR (73 downto 0) := "00000000010000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state66 : STD_LOGIC_VECTOR (73 downto 0) := "00000000100000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state67 : STD_LOGIC_VECTOR (73 downto 0) := "00000001000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state68 : STD_LOGIC_VECTOR (73 downto 0) := "00000010000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state69 : STD_LOGIC_VECTOR (73 downto 0) := "00000100000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state70 : STD_LOGIC_VECTOR (73 downto 0) := "00001000000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state71 : STD_LOGIC_VECTOR (73 downto 0) := "00010000000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state72 : STD_LOGIC_VECTOR (73 downto 0) := "00100000000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state73 : STD_LOGIC_VECTOR (73 downto 0) := "01000000000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state74 : STD_LOGIC_VECTOR (73 downto 0) := "10000000000000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_boolean_1 : BOOLEAN := true;
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
@@ -218,29 +217,24 @@ architecture behav of swiglu_load_row_down_q6k is
     constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
     constant ap_const_lv128_lc_1 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv16_0 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000000";
-    constant ap_const_lv32_2 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000010";
     constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
+    constant ap_const_lv32_48 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001000";
     constant ap_const_lv32_49 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001001";
-    constant ap_const_lv32_4A : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001010";
     constant ap_const_lv64_1A4 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000110100100";
     constant ap_const_lv24_1A40 : STD_LOGIC_VECTOR (23 downto 0) := "000000000001101001000000";
     constant ap_const_lv32_4 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000100";
     constant ap_const_lv32_3F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111111";
 
 attribute shreg_extract : string;
-    signal ap_CS_fsm : STD_LOGIC_VECTOR (74 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000000001";
+    signal ap_CS_fsm : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000001";
     attribute fsm_encoding : string;
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
     signal gmem_Wd_blk_n_AR : STD_LOGIC;
-    signal ap_CS_fsm_state3 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
-    signal empty_fu_150_p2 : STD_LOGIC_VECTOR (23 downto 0);
-    signal empty_reg_185 : STD_LOGIC_VECTOR (23 downto 0);
-    signal trunc_ln_reg_190 : STD_LOGIC_VECTOR (59 downto 0);
     signal ap_CS_fsm_state2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
+    signal trunc_ln_reg_186 : STD_LOGIC_VECTOR (59 downto 0);
     signal grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_start : STD_LOGIC;
     signal grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done : STD_LOGIC;
     signal grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_idle : STD_LOGIC;
@@ -342,16 +336,17 @@ attribute shreg_extract : string;
     signal grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_0_we0 : STD_LOGIC;
     signal grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_0_d0 : STD_LOGIC_VECTOR (127 downto 0);
     signal grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_start_reg : STD_LOGIC := '0';
+    signal ap_CS_fsm_state73 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state73 : signal is "none";
     signal ap_CS_fsm_state74 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state74 : signal is "none";
-    signal ap_CS_fsm_state75 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state75 : signal is "none";
-    signal sext_ln470_fu_175_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sext_ln472_fu_176_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal empty_fu_150_p0 : STD_LOGIC_VECTOR (10 downto 0);
     signal empty_fu_150_p1 : STD_LOGIC_VECTOR (13 downto 0);
+    signal empty_fu_150_p2 : STD_LOGIC_VECTOR (23 downto 0);
     signal p_cast_fu_156_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal empty_762_fu_159_p2 : STD_LOGIC_VECTOR (63 downto 0);
-    signal ap_NS_fsm : STD_LOGIC_VECTOR (74 downto 0);
+    signal empty_762_fu_160_p2 : STD_LOGIC_VECTOR (63 downto 0);
+    signal ap_NS_fsm : STD_LOGIC_VECTOR (73 downto 0);
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
     signal ap_ST_fsm_state2_blk : STD_LOGIC;
     signal ap_ST_fsm_state3_blk : STD_LOGIC;
@@ -426,7 +421,6 @@ attribute shreg_extract : string;
     signal ap_ST_fsm_state72_blk : STD_LOGIC;
     signal ap_ST_fsm_state73_blk : STD_LOGIC;
     signal ap_ST_fsm_state74_blk : STD_LOGIC;
-    signal ap_ST_fsm_state75_blk : STD_LOGIC;
     signal empty_fu_150_p00 : STD_LOGIC_VECTOR (23 downto 0);
     signal ap_ce_reg : STD_LOGIC;
 
@@ -484,7 +478,7 @@ attribute shreg_extract : string;
         m_axi_gmem_Wd_0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem_Wd_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem_Wd_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        sext_ln470 : IN STD_LOGIC_VECTOR (59 downto 0);
+        sext_ln472 : IN STD_LOGIC_VECTOR (59 downto 0);
         rb_15_address0 : OUT STD_LOGIC_VECTOR (4 downto 0);
         rb_15_ce0 : OUT STD_LOGIC;
         rb_15_we0 : OUT STD_LOGIC;
@@ -622,7 +616,7 @@ begin
         m_axi_gmem_Wd_0_BRESP => ap_const_lv2_0,
         m_axi_gmem_Wd_0_BID => ap_const_lv1_0,
         m_axi_gmem_Wd_0_BUSER => ap_const_lv1_0,
-        sext_ln470 => trunc_ln_reg_190,
+        sext_ln472 => trunc_ln_reg_186,
         rb_15_address0 => grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_15_address0,
         rb_15_ce0 => grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_15_ce0,
         rb_15_we0 => grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_15_we0,
@@ -722,7 +716,7 @@ begin
             if (ap_rst = '1') then
                 grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_start_reg <= ap_const_logic_0;
             else
-                if ((ap_const_logic_1 = ap_CS_fsm_state74)) then 
+                if ((ap_const_logic_1 = ap_CS_fsm_state73)) then 
                     grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_start_reg <= ap_const_logic_1;
                 elsif ((grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_ready = ap_const_logic_1)) then 
                     grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_start_reg <= ap_const_logic_0;
@@ -735,20 +729,12 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state1)) then
-                empty_reg_185 <= empty_fu_150_p2;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if ((ap_const_logic_1 = ap_CS_fsm_state2)) then
-                trunc_ln_reg_190 <= empty_762_fu_159_p2(63 downto 4);
+                trunc_ln_reg_186 <= empty_762_fu_160_p2(63 downto 4);
             end if;
         end if;
     end process;
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, m_axi_gmem_Wd_0_ARREADY, ap_CS_fsm_state3, grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done, ap_CS_fsm_state75)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, m_axi_gmem_Wd_0_ARREADY, ap_CS_fsm_state2, grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done, ap_CS_fsm_state74)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -758,13 +744,13 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 end if;
             when ap_ST_fsm_state2 => 
-                ap_NS_fsm <= ap_ST_fsm_state3;
-            when ap_ST_fsm_state3 => 
-                if (((ap_const_logic_1 = ap_CS_fsm_state3) and (m_axi_gmem_Wd_0_ARREADY = ap_const_logic_1))) then
-                    ap_NS_fsm <= ap_ST_fsm_state4;
-                else
+                if (((ap_const_logic_1 = ap_CS_fsm_state2) and (m_axi_gmem_Wd_0_ARREADY = ap_const_logic_1))) then
                     ap_NS_fsm <= ap_ST_fsm_state3;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state2;
                 end if;
+            when ap_ST_fsm_state3 => 
+                ap_NS_fsm <= ap_ST_fsm_state4;
             when ap_ST_fsm_state4 => 
                 ap_NS_fsm <= ap_ST_fsm_state5;
             when ap_ST_fsm_state5 => 
@@ -906,22 +892,19 @@ begin
             when ap_ST_fsm_state73 => 
                 ap_NS_fsm <= ap_ST_fsm_state74;
             when ap_ST_fsm_state74 => 
-                ap_NS_fsm <= ap_ST_fsm_state75;
-            when ap_ST_fsm_state75 => 
-                if (((grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state75))) then
+                if (((grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state74))) then
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 else
-                    ap_NS_fsm <= ap_ST_fsm_state75;
+                    ap_NS_fsm <= ap_ST_fsm_state74;
                 end if;
             when others =>  
-                ap_NS_fsm <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+                ap_NS_fsm <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end case;
     end process;
     ap_CS_fsm_state1 <= ap_CS_fsm(0);
     ap_CS_fsm_state2 <= ap_CS_fsm(1);
-    ap_CS_fsm_state3 <= ap_CS_fsm(2);
+    ap_CS_fsm_state73 <= ap_CS_fsm(72);
     ap_CS_fsm_state74 <= ap_CS_fsm(73);
-    ap_CS_fsm_state75 <= ap_CS_fsm(74);
     ap_ST_fsm_state10_blk <= ap_const_logic_0;
     ap_ST_fsm_state11_blk <= ap_const_logic_0;
     ap_ST_fsm_state12_blk <= ap_const_logic_0;
@@ -952,7 +935,16 @@ begin
     ap_ST_fsm_state27_blk <= ap_const_logic_0;
     ap_ST_fsm_state28_blk <= ap_const_logic_0;
     ap_ST_fsm_state29_blk <= ap_const_logic_0;
-    ap_ST_fsm_state2_blk <= ap_const_logic_0;
+
+    ap_ST_fsm_state2_blk_assign_proc : process(m_axi_gmem_Wd_0_ARREADY)
+    begin
+        if ((m_axi_gmem_Wd_0_ARREADY = ap_const_logic_0)) then 
+            ap_ST_fsm_state2_blk <= ap_const_logic_1;
+        else 
+            ap_ST_fsm_state2_blk <= ap_const_logic_0;
+        end if; 
+    end process;
+
     ap_ST_fsm_state30_blk <= ap_const_logic_0;
     ap_ST_fsm_state31_blk <= ap_const_logic_0;
     ap_ST_fsm_state32_blk <= ap_const_logic_0;
@@ -963,16 +955,7 @@ begin
     ap_ST_fsm_state37_blk <= ap_const_logic_0;
     ap_ST_fsm_state38_blk <= ap_const_logic_0;
     ap_ST_fsm_state39_blk <= ap_const_logic_0;
-
-    ap_ST_fsm_state3_blk_assign_proc : process(m_axi_gmem_Wd_0_ARREADY)
-    begin
-        if ((m_axi_gmem_Wd_0_ARREADY = ap_const_logic_0)) then 
-            ap_ST_fsm_state3_blk <= ap_const_logic_1;
-        else 
-            ap_ST_fsm_state3_blk <= ap_const_logic_0;
-        end if; 
-    end process;
-
+    ap_ST_fsm_state3_blk <= ap_const_logic_0;
     ap_ST_fsm_state40_blk <= ap_const_logic_0;
     ap_ST_fsm_state41_blk <= ap_const_logic_0;
     ap_ST_fsm_state42_blk <= ap_const_logic_0;
@@ -1010,14 +993,13 @@ begin
     ap_ST_fsm_state71_blk <= ap_const_logic_0;
     ap_ST_fsm_state72_blk <= ap_const_logic_0;
     ap_ST_fsm_state73_blk <= ap_const_logic_0;
-    ap_ST_fsm_state74_blk <= ap_const_logic_0;
 
-    ap_ST_fsm_state75_blk_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done)
+    ap_ST_fsm_state74_blk_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done)
     begin
         if ((grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done = ap_const_logic_0)) then 
-            ap_ST_fsm_state75_blk <= ap_const_logic_1;
+            ap_ST_fsm_state74_blk <= ap_const_logic_1;
         else 
-            ap_ST_fsm_state75_blk <= ap_const_logic_0;
+            ap_ST_fsm_state74_blk <= ap_const_logic_0;
         end if; 
     end process;
 
@@ -1025,9 +1007,9 @@ begin
     ap_ST_fsm_state8_blk <= ap_const_logic_0;
     ap_ST_fsm_state9_blk <= ap_const_logic_0;
 
-    ap_done_assign_proc : process(ap_start, ap_CS_fsm_state1, grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done, ap_CS_fsm_state75)
+    ap_done_assign_proc : process(ap_start, ap_CS_fsm_state1, grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done, ap_CS_fsm_state74)
     begin
-        if ((((ap_start = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state1)) or ((grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state75)))) then 
+        if ((((ap_start = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state1)) or ((grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state74)))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_const_logic_0;
@@ -1045,23 +1027,23 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done, ap_CS_fsm_state75)
+    ap_ready_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done, ap_CS_fsm_state74)
     begin
-        if (((grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state75))) then 
+        if (((grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state74))) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
         end if; 
     end process;
 
-    empty_762_fu_159_p2 <= std_logic_vector(unsigned(p_cast_fu_156_p1) + unsigned(W_down_wide));
+    empty_762_fu_160_p2 <= std_logic_vector(unsigned(p_cast_fu_156_p1) + unsigned(W_down_wide));
     empty_fu_150_p0 <= empty_fu_150_p00(11 - 1 downto 0);
     empty_fu_150_p00 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(out_i),24));
     empty_fu_150_p1 <= ap_const_lv24_1A40(14 - 1 downto 0);
 
-    gmem_Wd_blk_n_AR_assign_proc : process(m_axi_gmem_Wd_0_ARREADY, ap_CS_fsm_state3)
+    gmem_Wd_blk_n_AR_assign_proc : process(m_axi_gmem_Wd_0_ARREADY, ap_CS_fsm_state2)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+        if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
             gmem_Wd_blk_n_AR <= m_axi_gmem_Wd_0_ARREADY;
         else 
             gmem_Wd_blk_n_AR <= ap_const_logic_1;
@@ -1070,11 +1052,11 @@ begin
 
     grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_start <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_start_reg;
 
-    m_axi_gmem_Wd_0_ARADDR_assign_proc : process(m_axi_gmem_Wd_0_ARREADY, ap_CS_fsm_state3, grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARADDR, ap_CS_fsm_state74, ap_CS_fsm_state75, sext_ln470_fu_175_p1)
+    m_axi_gmem_Wd_0_ARADDR_assign_proc : process(m_axi_gmem_Wd_0_ARREADY, ap_CS_fsm_state2, grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARADDR, ap_CS_fsm_state73, ap_CS_fsm_state74, sext_ln472_fu_176_p1)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state3) and (m_axi_gmem_Wd_0_ARREADY = ap_const_logic_1))) then 
-            m_axi_gmem_Wd_0_ARADDR <= sext_ln470_fu_175_p1;
-        elsif (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state2) and (m_axi_gmem_Wd_0_ARREADY = ap_const_logic_1))) then 
+            m_axi_gmem_Wd_0_ARADDR <= sext_ln472_fu_176_p1;
+        elsif (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARADDR <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARADDR;
         else 
             m_axi_gmem_Wd_0_ARADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -1082,9 +1064,9 @@ begin
     end process;
 
 
-    m_axi_gmem_Wd_0_ARBURST_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARBURST, ap_CS_fsm_state74, ap_CS_fsm_state75)
+    m_axi_gmem_Wd_0_ARBURST_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARBURST, ap_CS_fsm_state73, ap_CS_fsm_state74)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARBURST <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARBURST;
         else 
             m_axi_gmem_Wd_0_ARBURST <= ap_const_lv2_0;
@@ -1092,9 +1074,9 @@ begin
     end process;
 
 
-    m_axi_gmem_Wd_0_ARCACHE_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARCACHE, ap_CS_fsm_state74, ap_CS_fsm_state75)
+    m_axi_gmem_Wd_0_ARCACHE_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARCACHE, ap_CS_fsm_state73, ap_CS_fsm_state74)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARCACHE <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARCACHE;
         else 
             m_axi_gmem_Wd_0_ARCACHE <= ap_const_lv4_0;
@@ -1102,9 +1084,9 @@ begin
     end process;
 
 
-    m_axi_gmem_Wd_0_ARID_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARID, ap_CS_fsm_state74, ap_CS_fsm_state75)
+    m_axi_gmem_Wd_0_ARID_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARID, ap_CS_fsm_state73, ap_CS_fsm_state74)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARID <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARID;
         else 
             m_axi_gmem_Wd_0_ARID <= ap_const_lv1_0;
@@ -1112,11 +1094,11 @@ begin
     end process;
 
 
-    m_axi_gmem_Wd_0_ARLEN_assign_proc : process(m_axi_gmem_Wd_0_ARREADY, ap_CS_fsm_state3, grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARLEN, ap_CS_fsm_state74, ap_CS_fsm_state75)
+    m_axi_gmem_Wd_0_ARLEN_assign_proc : process(m_axi_gmem_Wd_0_ARREADY, ap_CS_fsm_state2, grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARLEN, ap_CS_fsm_state73, ap_CS_fsm_state74)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state3) and (m_axi_gmem_Wd_0_ARREADY = ap_const_logic_1))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state2) and (m_axi_gmem_Wd_0_ARREADY = ap_const_logic_1))) then 
             m_axi_gmem_Wd_0_ARLEN <= ap_const_lv64_1A4(32 - 1 downto 0);
-        elsif (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        elsif (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARLEN <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARLEN;
         else 
             m_axi_gmem_Wd_0_ARLEN <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -1124,9 +1106,9 @@ begin
     end process;
 
 
-    m_axi_gmem_Wd_0_ARLOCK_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARLOCK, ap_CS_fsm_state74, ap_CS_fsm_state75)
+    m_axi_gmem_Wd_0_ARLOCK_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARLOCK, ap_CS_fsm_state73, ap_CS_fsm_state74)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARLOCK <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARLOCK;
         else 
             m_axi_gmem_Wd_0_ARLOCK <= ap_const_lv2_0;
@@ -1134,9 +1116,9 @@ begin
     end process;
 
 
-    m_axi_gmem_Wd_0_ARPROT_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARPROT, ap_CS_fsm_state74, ap_CS_fsm_state75)
+    m_axi_gmem_Wd_0_ARPROT_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARPROT, ap_CS_fsm_state73, ap_CS_fsm_state74)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARPROT <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARPROT;
         else 
             m_axi_gmem_Wd_0_ARPROT <= ap_const_lv3_0;
@@ -1144,9 +1126,9 @@ begin
     end process;
 
 
-    m_axi_gmem_Wd_0_ARQOS_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARQOS, ap_CS_fsm_state74, ap_CS_fsm_state75)
+    m_axi_gmem_Wd_0_ARQOS_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARQOS, ap_CS_fsm_state73, ap_CS_fsm_state74)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARQOS <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARQOS;
         else 
             m_axi_gmem_Wd_0_ARQOS <= ap_const_lv4_0;
@@ -1154,9 +1136,9 @@ begin
     end process;
 
 
-    m_axi_gmem_Wd_0_ARREGION_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARREGION, ap_CS_fsm_state74, ap_CS_fsm_state75)
+    m_axi_gmem_Wd_0_ARREGION_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARREGION, ap_CS_fsm_state73, ap_CS_fsm_state74)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARREGION <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARREGION;
         else 
             m_axi_gmem_Wd_0_ARREGION <= ap_const_lv4_0;
@@ -1164,9 +1146,9 @@ begin
     end process;
 
 
-    m_axi_gmem_Wd_0_ARSIZE_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARSIZE, ap_CS_fsm_state74, ap_CS_fsm_state75)
+    m_axi_gmem_Wd_0_ARSIZE_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARSIZE, ap_CS_fsm_state73, ap_CS_fsm_state74)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARSIZE <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARSIZE;
         else 
             m_axi_gmem_Wd_0_ARSIZE <= ap_const_lv3_0;
@@ -1174,9 +1156,9 @@ begin
     end process;
 
 
-    m_axi_gmem_Wd_0_ARUSER_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARUSER, ap_CS_fsm_state74, ap_CS_fsm_state75)
+    m_axi_gmem_Wd_0_ARUSER_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARUSER, ap_CS_fsm_state73, ap_CS_fsm_state74)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARUSER <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARUSER;
         else 
             m_axi_gmem_Wd_0_ARUSER <= ap_const_lv1_0;
@@ -1184,11 +1166,11 @@ begin
     end process;
 
 
-    m_axi_gmem_Wd_0_ARVALID_assign_proc : process(m_axi_gmem_Wd_0_ARREADY, ap_CS_fsm_state3, grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARVALID, ap_CS_fsm_state74, ap_CS_fsm_state75)
+    m_axi_gmem_Wd_0_ARVALID_assign_proc : process(m_axi_gmem_Wd_0_ARREADY, ap_CS_fsm_state2, grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARVALID, ap_CS_fsm_state73, ap_CS_fsm_state74)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state3) and (m_axi_gmem_Wd_0_ARREADY = ap_const_logic_1))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state2) and (m_axi_gmem_Wd_0_ARREADY = ap_const_logic_1))) then 
             m_axi_gmem_Wd_0_ARVALID <= ap_const_logic_1;
-        elsif (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        elsif (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARVALID <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARVALID;
         else 
             m_axi_gmem_Wd_0_ARVALID <= ap_const_logic_0;
@@ -1209,9 +1191,9 @@ begin
     m_axi_gmem_Wd_0_AWVALID <= ap_const_logic_0;
     m_axi_gmem_Wd_0_BREADY <= ap_const_logic_0;
 
-    m_axi_gmem_Wd_0_RREADY_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_RREADY, ap_CS_fsm_state74, ap_CS_fsm_state75)
+    m_axi_gmem_Wd_0_RREADY_assign_proc : process(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_RREADY, ap_CS_fsm_state73, ap_CS_fsm_state74)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state75) or (ap_const_logic_1 = ap_CS_fsm_state74))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_RREADY <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_RREADY;
         else 
             m_axi_gmem_Wd_0_RREADY <= ap_const_logic_0;
@@ -1224,7 +1206,7 @@ begin
     m_axi_gmem_Wd_0_WSTRB <= ap_const_lv16_0;
     m_axi_gmem_Wd_0_WUSER <= ap_const_lv1_0;
     m_axi_gmem_Wd_0_WVALID <= ap_const_logic_0;
-    p_cast_fu_156_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(empty_reg_185),64));
+    p_cast_fu_156_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(empty_fu_150_p2),64));
     rb_0_address0 <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_0_address0;
     rb_0_ce0 <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_0_ce0;
     rb_0_d0 <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_0_d0;
@@ -1289,6 +1271,6 @@ begin
     rb_9_ce0 <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_9_ce0;
     rb_9_d0 <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_9_d0;
     rb_9_we0 <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_9_we0;
-        sext_ln470_fu_175_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln_reg_190),64));
+        sext_ln472_fu_176_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln_reg_186),64));
 
 end behav;

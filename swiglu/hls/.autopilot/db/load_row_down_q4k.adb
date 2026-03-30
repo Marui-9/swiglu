@@ -139,7 +139,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -175,7 +175,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -211,7 +211,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -247,7 +247,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -283,7 +283,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -319,7 +319,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -355,7 +355,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -391,7 +391,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -805,7 +805,7 @@
               <name>trunc_ln</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>325</lineNumber>
+              <lineNumber>327</lineNumber>
               <contextFuncName>load_row_down_q4k</contextFuncName>
               <contextNormFuncName>load_row_down_q4k</contextNormFuncName>
               <inlineStackInfo>
@@ -821,7 +821,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_down_q4k</second>
                       </first>
-                      <second>325</second>
+                      <second>327</second>
                     </item>
                   </second>
                 </item>
@@ -861,10 +861,10 @@
             <Obj>
               <type>0</type>
               <id>31</id>
-              <name>sext_ln325</name>
+              <name>sext_ln327</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>325</lineNumber>
+              <lineNumber>327</lineNumber>
               <contextFuncName>load_row_down_q4k</contextFuncName>
               <contextNormFuncName>load_row_down_q4k</contextNormFuncName>
               <inlineStackInfo>
@@ -880,13 +880,13 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_down_q4k</second>
                       </first>
-                      <second>325</second>
+                      <second>327</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>sext_ln325_fu_170_p1</rtlName>
+              <rtlName>sext_ln327_fu_170_p1</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -920,7 +920,7 @@
               <name>gmem_Wd_addr</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>325</lineNumber>
+              <lineNumber>327</lineNumber>
               <contextFuncName>load_row_down_q4k</contextFuncName>
               <contextNormFuncName>load_row_down_q4k</contextNormFuncName>
               <inlineStackInfo>
@@ -936,7 +936,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_down_q4k</second>
                       </first>
-                      <second>325</second>
+                      <second>327</second>
                     </item>
                   </second>
                 </item>
@@ -977,7 +977,7 @@
               <name>empty_765</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>325</lineNumber>
+              <lineNumber>327</lineNumber>
               <contextFuncName>load_row_down_q4k</contextFuncName>
               <contextNormFuncName>load_row_down_q4k</contextNormFuncName>
               <inlineStackInfo>
@@ -993,7 +993,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_down_q4k</second>
                       </first>
-                      <second>325</second>
+                      <second>327</second>
                     </item>
                   </second>
                 </item>
@@ -1023,7 +1023,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>2.43</m_delay>
+          <m_delay>8.00</m_delay>
           <m_topoIndex>13</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -1032,10 +1032,10 @@
             <Obj>
               <type>0</type>
               <id>34</id>
-              <name>_ln325</name>
+              <name>_ln327</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>325</lineNumber>
+              <lineNumber>327</lineNumber>
               <contextFuncName>load_row_down_q4k</contextFuncName>
               <contextNormFuncName>load_row_down_q4k</contextNormFuncName>
               <inlineStackInfo>
@@ -1051,13 +1051,13 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_down_q4k</second>
                       </first>
-                      <second>325</second>
+                      <second>327</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1_fu_97</rtlName>
+              <rtlName>grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -1099,10 +1099,10 @@
             <Obj>
               <type>0</type>
               <id>35</id>
-              <name>_ln331</name>
+              <name>_ln333</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>331</lineNumber>
+              <lineNumber>333</lineNumber>
               <contextFuncName>load_row_down_q4k</contextFuncName>
               <contextNormFuncName>load_row_down_q4k</contextNormFuncName>
               <inlineStackInfo>
@@ -1118,7 +1118,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_down_q4k</second>
                       </first>
-                      <second>331</second>
+                      <second>333</second>
                     </item>
                   </second>
                 </item>
@@ -1313,7 +1313,7 @@
             <Obj>
               <type>2</type>
               <id>75</id>
-              <name>load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1</name>
+              <name>load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -1337,7 +1337,7 @@
             <bitwidth>0</bitwidth>
           </Value>
           <const_type>6</const_type>
-          <content>&lt;constant:load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1&gt;</content>
+          <content>&lt;constant:load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1&gt;</content>
         </item>
       </consts>
       <blocks class_id="17" tracking_level="0" version="0">
@@ -3755,17 +3755,17 @@
         <count>1</count>
         <item_version>0</item_version>
         <item class_id="36" tracking_level="0" version="0">
-          <first>grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1_fu_97 (load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1)</first>
+          <first>grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97 (load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1)</first>
           <second class_id="37" tracking_level="0" version="0">
             <count>2</count>
             <item_version>0</item_version>
             <item class_id="38" tracking_level="0" version="0">
               <first>FF</first>
-              <second>162</second>
+              <second>153</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>161</second>
+              <second>159</second>
             </item>
           </second>
         </item>
@@ -4260,7 +4260,7 @@
           </second>
         </item>
         <item>
-          <first>grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1_fu_97_ap_start_reg</first>
+          <first>grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -4302,7 +4302,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item>
-          <first>grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1_fu_97</first>
+          <first>grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -4313,7 +4313,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item class_id="40" tracking_level="0" version="0">
-          <first>grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1_fu_97 (load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1)</first>
+          <first>grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97 (load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -4713,7 +4713,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln325_fu_170</first>
+        <first>sext_ln327_fu_170</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -4749,7 +4749,7 @@
       <count>1</count>
       <item_version>0</item_version>
       <item>
-        <first>grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1_fu_97</first>
+        <first>grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -4976,56 +4976,56 @@
         <first>4</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>5</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>6</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>7</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>8</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>9</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>10</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>11</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
     </port2core>

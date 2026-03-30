@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_wv'" level="0">
-<item name = "Date">Mon Mar 30 09:36:44 2026
+<item name = "Date">Mon Mar 30 15:05:30 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33 ns, 3.239 ns, 0.90 ns</column>
+<column name="ap_clk">10.00 ns, 7.894 ns, 2.00 ns</column>
 </table>
 </item>
 </section>
@@ -24,15 +24,15 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">405, 405, 1.349 us, 1.349 us, 405, 405, no</column>
+<column name="">322, 322, 3.220 us, 3.220 us, 322, 322, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_mac_blocks_wv_Pipeline_UNPACK_HDR_WV_fu_1500">mac_blocks_wv_Pipeline_UNPACK_HDR_WV, 15, 15, 49.950 ns, 49.950 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS_fu_1664">mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS, 264, 264, 0.879 us, 0.879 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_wv_Pipeline_UNPACK_HDR_WV_fu_1500">mac_blocks_wv_Pipeline_UNPACK_HDR_WV, 11, 11, 0.110 us, 0.110 us, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS_fu_1664">mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS, 261, 261, 2.610 us, 2.610 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

@@ -9815,7 +9815,7 @@
 						<name>n_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
+						<lineNumber>407</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9831,7 +9831,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>405</second>
+										<second>407</second>
 									</item>
 								</second>
 							</item>
@@ -15372,10 +15372,10 @@
 					<Obj>
 						<type>0</type>
 						<id>418</id>
-						<name>n_2_write_ln405</name>
+						<name>n_2_write_ln407</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
+						<lineNumber>407</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15391,7 +15391,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>405</second>
+										<second>407</second>
 									</item>
 								</second>
 							</item>
@@ -15474,7 +15474,7 @@
 						<name>n</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
+						<lineNumber>407</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15490,7 +15490,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>405</second>
+										<second>407</second>
 									</item>
 								</second>
 							</item>
@@ -15528,10 +15528,10 @@
 					<Obj>
 						<type>0</type>
 						<id>422</id>
-						<name>icmp_ln405</name>
+						<name>icmp_ln407</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
+						<lineNumber>407</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15547,7 +15547,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>405</second>
+										<second>407</second>
 									</item>
 								</second>
 							</item>
@@ -15585,10 +15585,10 @@
 					<Obj>
 						<type>0</type>
 						<id>423</id>
-						<name>add_ln405</name>
+						<name>add_ln407</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
+						<lineNumber>407</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15604,7 +15604,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>405</second>
+										<second>407</second>
 									</item>
 								</second>
 							</item>
@@ -15642,10 +15642,10 @@
 					<Obj>
 						<type>0</type>
 						<id>424</id>
-						<name>br_ln405</name>
+						<name>br_ln407</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
+						<lineNumber>407</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15661,7 +15661,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>405</second>
+										<second>407</second>
 									</item>
 								</second>
 							</item>
@@ -15700,2394 +15700,6 @@
 					<Obj>
 						<type>0</type>
 						<id>426</id>
-						<name>trunc_ln409</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>409</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>1254</item>
-				</oprand_edges>
-				<opcode>trunc</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>148</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_409">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>427</id>
-						<name>add_ln</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>409</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>9</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1256</item>
-					<item>1258</item>
-					<item>1259</item>
-				</oprand_edges>
-				<opcode>bitconcatenate</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>149</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_410">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>428</id>
-						<name>zext_ln409</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>409</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>64</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>1260</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>150</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_411">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>429</id>
-						<name>gate_0_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>409</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>10</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1261</item>
-					<item>1263</item>
-					<item>1264</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>151</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_412">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>430</id>
-						<name>gate_1_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>409</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>10</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1265</item>
-					<item>1266</item>
-					<item>1267</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>152</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_413">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>431</id>
-						<name>gate_2_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>409</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>10</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1268</item>
-					<item>1269</item>
-					<item>1270</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>153</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_414">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>432</id>
-						<name>gate_3_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>409</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>10</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1271</item>
-					<item>1272</item>
-					<item>1273</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>154</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_415">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>433</id>
-						<name>gate_4_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>409</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>10</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1274</item>
-					<item>1275</item>
-					<item>1276</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>155</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_416">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>434</id>
-						<name>gate_5_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>409</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>10</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1277</item>
-					<item>1278</item>
-					<item>1279</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>156</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_417">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>435</id>
-						<name>gate_6_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>409</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>10</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1280</item>
-					<item>1281</item>
-					<item>1282</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>157</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_418">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>436</id>
-						<name>gate_7_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>409</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>10</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1283</item>
-					<item>1284</item>
-					<item>1285</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>158</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_419">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>440</id>
-						<name>empty_754</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>3</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>1286</item>
-				</oprand_edges>
-				<opcode>trunc</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>159</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_420">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>441</id>
-						<name>empty_755</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>5</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>1287</item>
-				</oprand_edges>
-				<opcode>trunc</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>136</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_421">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>442</id>
-						<name>thr_and_cast</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>1288</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>137</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_422">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>443</id>
-						<name>thr_add</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>1289</item>
-					<item>1291</item>
-				</oprand_edges>
-				<opcode>add</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.78</m_delay>
-				<m_topoIndex>138</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_423">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>444</id>
-						<name>thr_add_cast</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>1292</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>139</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_424">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>445</id>
-						<name>tmp_s</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>2</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>1294</item>
-					<item>1295</item>
-					<item>1297</item>
-					<item>1299</item>
-				</oprand_edges>
-				<opcode>partselect</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>140</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_425">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>446</id>
-						<name>thr_and1</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>7</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1301</item>
-					<item>1302</item>
-					<item>1304</item>
-				</oprand_edges>
-				<opcode>bitconcatenate</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>141</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_426">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>447</id>
-						<name>thr_and1337_cast</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>1305</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>142</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_427">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>448</id>
-						<name>byte_idx_assign_6</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName>byte_idx</originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>1306</item>
-					<item>1307</item>
-				</oprand_edges>
-				<opcode>add</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.77</m_delay>
-				<m_topoIndex>143</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_428">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>449</id>
-						<name>tmp_133</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>4</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>1309</item>
-					<item>1310</item>
-					<item>1312</item>
-					<item>1313</item>
-				</oprand_edges>
-				<opcode>partselect</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>144</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_429">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>450</id>
-						<name>zext_ln55</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>5</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>1314</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>160</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_430">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>451</id>
-						<name>add_ln55</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>5</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>1315</item>
-					<item>1317</item>
-				</oprand_edges>
-				<opcode>add</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.78</m_delay>
-				<m_topoIndex>161</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_431">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>452</id>
-						<name>zext_ln55_25</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>64</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>1318</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>162</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_432">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>453</id>
-						<name>rb_0_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1319</item>
-					<item>1320</item>
-					<item>1321</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>163</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_433">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>454</id>
-						<name>rb_1_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1322</item>
-					<item>1323</item>
-					<item>1324</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>164</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_434">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>455</id>
-						<name>rb_2_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1325</item>
-					<item>1326</item>
-					<item>1327</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>165</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_435">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>456</id>
-						<name>rb_3_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1328</item>
-					<item>1329</item>
-					<item>1330</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>166</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_436">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>457</id>
-						<name>rb_4_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1331</item>
-					<item>1332</item>
-					<item>1333</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>167</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_437">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>458</id>
-						<name>rb_5_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1334</item>
-					<item>1335</item>
-					<item>1336</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>168</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_438">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>459</id>
-						<name>rb_6_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1337</item>
-					<item>1338</item>
-					<item>1339</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>169</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_439">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>460</id>
-						<name>rb_7_addr</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1340</item>
-					<item>1341</item>
-					<item>1342</item>
-				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>170</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_440">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>461</id>
-						<name>empty_756</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>4</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>1343</item>
-				</oprand_edges>
-				<opcode>trunc</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>145</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_441">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>462</id>
-						<name>and_i2</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>7</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1345</item>
-					<item>1346</item>
-					<item>1348</item>
-				</oprand_edges>
-				<opcode>bitconcatenate</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>190</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_442">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>463</id>
-						<name>tmp_567</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1350</item>
-					<item>1351</item>
-					<item>1353</item>
-				</oprand_edges>
-				<opcode>bitselect</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>171</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_443">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>464</id>
-						<name>sub_2_cast</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>405</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>3</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>1355</item>
-					<item>1356</item>
-					<item>1357</item>
-					<item>1358</item>
-				</oprand_edges>
-				<opcode>partselect</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>172</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_444">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>465</id>
-						<name>gi8</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>409</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName>gi8</originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>1359</item>
-				</oprand_edges>
-				<opcode>load</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>173</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_445">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>466</id>
-						<name>rb_0_load</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>128</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>1360</item>
-				</oprand_edges>
-				<opcode>load</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>174</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_446">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>467</id>
-						<name>tmp_76</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
-						<contextFuncName>get_byte</contextFuncName>
-						<contextNormFuncName>get_byte</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>2</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>get_byte</second>
-										</first>
-										<second>55</second>
-									</item>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>410</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>1362</item>
-					<item>1363</item>
-					<item>1364</item>
-				</oprand_edges>
-				<opcode>partselect</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.80</m_delay>
-				<m_topoIndex>191</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_447">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>468</id>
-						<name>tmp_134</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
-						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
-						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>mac_blocks_down_q4k</second>
-										</first>
-										<second>411</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>4</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>1365</item>
-					<item>1366</item>
-					<item>1367</item>
-					<item>1368</item>
-				</oprand_edges>
-				<opcode>partselect</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>192</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_448">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>469</id>
 						<name>trunc_ln411</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
@@ -18123,12 +15735,12 @@
 						<coreId>4294967295</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>4</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>1369</item>
+					<item>1254</item>
 				</oprand_edges>
 				<opcode>trunc</opcode>
 				<m_Display>0</m_Display>
@@ -18136,15 +15748,15 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>193</m_topoIndex>
+				<m_topoIndex>136</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_449">
+			<item class_id_reference="9" object_id="_409">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>470</id>
-						<name>nib4</name>
+						<id>427</id>
+						<name>add_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>411</lineNumber>
@@ -18164,6 +15776,2394 @@
 											<second>mac_blocks_down_q4k</second>
 										</first>
 										<second>411</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>9</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1256</item>
+					<item>1258</item>
+					<item>1259</item>
+				</oprand_edges>
+				<opcode>bitconcatenate</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>137</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_410">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>428</id>
+						<name>zext_ln411</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>411</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>411</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>64</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>1260</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>138</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_411">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>429</id>
+						<name>gate_0_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>411</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>411</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>10</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1261</item>
+					<item>1263</item>
+					<item>1264</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>139</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_412">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>430</id>
+						<name>gate_1_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>411</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>411</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>10</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1265</item>
+					<item>1266</item>
+					<item>1267</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>140</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_413">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>431</id>
+						<name>gate_2_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>411</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>411</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>10</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1268</item>
+					<item>1269</item>
+					<item>1270</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>141</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_414">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>432</id>
+						<name>gate_3_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>411</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>411</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>10</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1271</item>
+					<item>1272</item>
+					<item>1273</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>142</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_415">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>433</id>
+						<name>gate_4_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>411</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>411</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>10</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1274</item>
+					<item>1275</item>
+					<item>1276</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>143</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_416">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>434</id>
+						<name>gate_5_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>411</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>411</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>10</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1277</item>
+					<item>1278</item>
+					<item>1279</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>144</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_417">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>435</id>
+						<name>gate_6_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>411</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>411</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>10</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1280</item>
+					<item>1281</item>
+					<item>1282</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>145</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_418">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>436</id>
+						<name>gate_7_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>411</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>411</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>10</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1283</item>
+					<item>1284</item>
+					<item>1285</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>146</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_419">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>440</id>
+						<name>empty_754</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>3</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>1286</item>
+				</oprand_edges>
+				<opcode>trunc</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>147</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_420">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>441</id>
+						<name>empty_755</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>5</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>1287</item>
+				</oprand_edges>
+				<opcode>trunc</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>148</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_421">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>442</id>
+						<name>thr_and_cast</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>1288</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>149</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_422">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>443</id>
+						<name>thr_add</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>1289</item>
+					<item>1291</item>
+				</oprand_edges>
+				<opcode>add</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.78</m_delay>
+				<m_topoIndex>150</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_423">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>444</id>
+						<name>thr_add_cast</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>1292</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>151</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_424">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>445</id>
+						<name>tmp_s</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>2</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>1294</item>
+					<item>1295</item>
+					<item>1297</item>
+					<item>1299</item>
+				</oprand_edges>
+				<opcode>partselect</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>152</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_425">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>446</id>
+						<name>thr_and1</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>7</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1301</item>
+					<item>1302</item>
+					<item>1304</item>
+				</oprand_edges>
+				<opcode>bitconcatenate</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>153</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_426">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>447</id>
+						<name>thr_and1337_cast</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>1305</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>154</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_427">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>448</id>
+						<name>byte_idx_assign_6</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName>byte_idx</originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>1306</item>
+					<item>1307</item>
+				</oprand_edges>
+				<opcode>add</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.77</m_delay>
+				<m_topoIndex>155</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_428">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>449</id>
+						<name>tmp_133</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>4</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>1309</item>
+					<item>1310</item>
+					<item>1312</item>
+					<item>1313</item>
+				</oprand_edges>
+				<opcode>partselect</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>156</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_429">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>450</id>
+						<name>zext_ln55</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>5</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>1314</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>157</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_430">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>451</id>
+						<name>add_ln55</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>5</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>1315</item>
+					<item>1317</item>
+				</oprand_edges>
+				<opcode>add</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.78</m_delay>
+				<m_topoIndex>158</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_431">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>452</id>
+						<name>zext_ln55_25</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>64</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>1318</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>159</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_432">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>453</id>
+						<name>rb_0_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1319</item>
+					<item>1320</item>
+					<item>1321</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>160</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_433">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>454</id>
+						<name>rb_1_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1322</item>
+					<item>1323</item>
+					<item>1324</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>161</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_434">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>455</id>
+						<name>rb_2_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1325</item>
+					<item>1326</item>
+					<item>1327</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>162</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_435">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>456</id>
+						<name>rb_3_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1328</item>
+					<item>1329</item>
+					<item>1330</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>163</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_436">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>457</id>
+						<name>rb_4_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1331</item>
+					<item>1332</item>
+					<item>1333</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>164</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_437">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>458</id>
+						<name>rb_5_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1334</item>
+					<item>1335</item>
+					<item>1336</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>165</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_438">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>459</id>
+						<name>rb_6_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1337</item>
+					<item>1338</item>
+					<item>1339</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>166</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_439">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>460</id>
+						<name>rb_7_addr</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1340</item>
+					<item>1341</item>
+					<item>1342</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>167</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_440">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>461</id>
+						<name>empty_756</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>4</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>1343</item>
+				</oprand_edges>
+				<opcode>trunc</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>168</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_441">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>462</id>
+						<name>and_i2</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>7</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1345</item>
+					<item>1346</item>
+					<item>1348</item>
+				</oprand_edges>
+				<opcode>bitconcatenate</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>206</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_442">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>463</id>
+						<name>tmp_567</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1350</item>
+					<item>1351</item>
+					<item>1353</item>
+				</oprand_edges>
+				<opcode>bitselect</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>169</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_443">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>464</id>
+						<name>sub_2_cast</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>407</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>407</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>3</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>1355</item>
+					<item>1356</item>
+					<item>1357</item>
+					<item>1358</item>
+				</oprand_edges>
+				<opcode>partselect</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>170</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_444">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>465</id>
+						<name>gi8</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>411</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>411</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName>gi8</originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>1359</item>
+				</oprand_edges>
+				<opcode>load</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>1.23</m_delay>
+				<m_topoIndex>171</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_445">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>466</id>
+						<name>rb_0_load</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>128</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>1360</item>
+				</oprand_edges>
+				<opcode>load</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>172</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_446">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>467</id>
+						<name>tmp_76</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>get_byte</contextFuncName>
+						<contextNormFuncName>get_byte</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>2</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>get_byte</second>
+										</first>
+										<second>55</second>
+									</item>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>412</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>1362</item>
+					<item>1363</item>
+					<item>1364</item>
+				</oprand_edges>
+				<opcode>partselect</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.80</m_delay>
+				<m_topoIndex>207</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_447">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>468</id>
+						<name>tmp_134</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>413</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>413</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>4</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>1365</item>
+					<item>1366</item>
+					<item>1367</item>
+					<item>1368</item>
+				</oprand_edges>
+				<opcode>partselect</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>208</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_448">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>469</id>
+						<name>trunc_ln413</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>413</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>413</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>4</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>1369</item>
+				</oprand_edges>
+				<opcode>trunc</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>209</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_449">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>470</id>
+						<name>nib4</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>413</lineNumber>
+						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
+						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>mac_blocks_down_q4k</second>
+										</first>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -18194,7 +18194,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.39</m_delay>
-				<m_topoIndex>247</m_topoIndex>
+				<m_topoIndex>210</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_450">
@@ -18205,7 +18205,7 @@
 						<name>sc6u_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>413</lineNumber>
+						<lineNumber>415</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18221,7 +18221,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>413</second>
+										<second>415</second>
 									</item>
 								</second>
 							</item>
@@ -18268,7 +18268,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>279</m_topoIndex>
+				<m_topoIndex>173</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_451">
@@ -18279,7 +18279,7 @@
 						<name>mn6u_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>414</lineNumber>
+						<lineNumber>416</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18295,7 +18295,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>414</second>
+										<second>416</second>
 									</item>
 								</second>
 							</item>
@@ -18342,7 +18342,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>194</m_topoIndex>
+				<m_topoIndex>174</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_452">
@@ -18350,10 +18350,10 @@
 					<Obj>
 						<type>0</type>
 						<id>473</id>
-						<name>sext_ln415</name>
+						<name>sext_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18369,7 +18369,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -18398,7 +18398,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>248</m_topoIndex>
+				<m_topoIndex>211</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_453">
@@ -18406,10 +18406,10 @@
 					<Obj>
 						<type>0</type>
 						<id>474</id>
-						<name>zext_ln415</name>
+						<name>zext_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18425,7 +18425,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -18454,7 +18454,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>249</m_topoIndex>
+				<m_topoIndex>212</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_454">
@@ -18462,10 +18462,10 @@
 					<Obj>
 						<type>0</type>
 						<id>475</id>
-						<name>mul_ln415</name>
+						<name>mul_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18481,7 +18481,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -18511,7 +18511,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.65</m_delay>
-				<m_topoIndex>250</m_topoIndex>
+				<m_topoIndex>213</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_455">
@@ -18519,10 +18519,10 @@
 					<Obj>
 						<type>0</type>
 						<id>476</id>
-						<name>sext_ln415_1</name>
+						<name>sext_ln417_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18538,7 +18538,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -18567,7 +18567,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>280</m_topoIndex>
+				<m_topoIndex>214</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_456">
@@ -18575,10 +18575,10 @@
 					<Obj>
 						<type>0</type>
 						<id>477</id>
-						<name>zext_ln415_1</name>
+						<name>zext_ln417_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18594,7 +18594,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -18623,7 +18623,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>281</m_topoIndex>
+				<m_topoIndex>215</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_457">
@@ -18631,10 +18631,10 @@
 					<Obj>
 						<type>0</type>
 						<id>478</id>
-						<name>mul_ln415_1</name>
+						<name>mul_ln417_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18650,7 +18650,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -18680,7 +18680,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>282</m_topoIndex>
+				<m_topoIndex>216</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_458">
@@ -18688,10 +18688,10 @@
 					<Obj>
 						<type>0</type>
 						<id>479</id>
-						<name>sext_ln415_2</name>
+						<name>sext_ln417_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18707,7 +18707,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -18736,7 +18736,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>463</m_topoIndex>
+				<m_topoIndex>311</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_459">
@@ -18747,7 +18747,7 @@
 						<name>int_acc_w_135_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18763,7 +18763,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -18793,7 +18793,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>464</m_topoIndex>
+				<m_topoIndex>312</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_460">
@@ -18804,7 +18804,7 @@
 						<name>int_acc_w_136_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18820,7 +18820,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -18850,7 +18850,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>465</m_topoIndex>
+				<m_topoIndex>313</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_461">
@@ -18861,7 +18861,7 @@
 						<name>int_acc_w_137_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18877,7 +18877,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -18907,7 +18907,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>466</m_topoIndex>
+				<m_topoIndex>314</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_462">
@@ -18918,7 +18918,7 @@
 						<name>int_acc_w_138_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18934,7 +18934,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -18964,7 +18964,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>467</m_topoIndex>
+				<m_topoIndex>315</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_463">
@@ -18975,7 +18975,7 @@
 						<name>int_acc_w_139_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18991,7 +18991,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -19021,7 +19021,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>468</m_topoIndex>
+				<m_topoIndex>316</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_464">
@@ -19032,7 +19032,7 @@
 						<name>int_acc_w_140_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19048,7 +19048,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -19078,7 +19078,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>469</m_topoIndex>
+				<m_topoIndex>317</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_465">
@@ -19089,7 +19089,7 @@
 						<name>int_acc_w_141_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19105,7 +19105,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -19135,7 +19135,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>470</m_topoIndex>
+				<m_topoIndex>318</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_466">
@@ -19146,7 +19146,7 @@
 						<name>int_acc_w_142_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19162,7 +19162,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -19192,7 +19192,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>471</m_topoIndex>
+				<m_topoIndex>319</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_467">
@@ -19203,7 +19203,7 @@
 						<name>tmp_77</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19219,7 +19219,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -19266,7 +19266,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>472</m_topoIndex>
+				<m_topoIndex>320</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_468">
@@ -19277,7 +19277,7 @@
 						<name>int_acc_w</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19293,7 +19293,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -19323,7 +19323,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>473</m_topoIndex>
+				<m_topoIndex>321</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_469">
@@ -19331,10 +19331,10 @@
 					<Obj>
 						<type>0</type>
 						<id>490</id>
-						<name>sext_ln416</name>
+						<name>sext_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19350,7 +19350,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -19379,7 +19379,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>195</m_topoIndex>
+				<m_topoIndex>217</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_470">
@@ -19387,10 +19387,10 @@
 					<Obj>
 						<type>0</type>
 						<id>491</id>
-						<name>zext_ln416</name>
+						<name>zext_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19406,7 +19406,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -19435,7 +19435,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>196</m_topoIndex>
+				<m_topoIndex>218</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_471">
@@ -19443,10 +19443,10 @@
 					<Obj>
 						<type>0</type>
 						<id>492</id>
-						<name>mul_ln416</name>
+						<name>mul_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19462,7 +19462,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -19492,7 +19492,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>197</m_topoIndex>
+				<m_topoIndex>219</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_472">
@@ -19500,10 +19500,10 @@
 					<Obj>
 						<type>0</type>
 						<id>493</id>
-						<name>sext_ln416_1</name>
+						<name>sext_ln418_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19519,7 +19519,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -19548,7 +19548,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>283</m_topoIndex>
+				<m_topoIndex>322</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_473">
@@ -19559,7 +19559,7 @@
 						<name>gi8_34</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19575,7 +19575,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -19612,10 +19612,10 @@
 					<Obj>
 						<type>0</type>
 						<id>495</id>
-						<name>sext_ln416_2</name>
+						<name>sext_ln418_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19631,7 +19631,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -19660,7 +19660,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>251</m_topoIndex>
+				<m_topoIndex>220</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_475">
@@ -19668,10 +19668,10 @@
 					<Obj>
 						<type>0</type>
 						<id>496</id>
-						<name>sext_ln409</name>
+						<name>sext_ln411</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19687,7 +19687,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -19716,7 +19716,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>198</m_topoIndex>
+				<m_topoIndex>221</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_476">
@@ -19727,7 +19727,7 @@
 						<name>gi8_35</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19743,7 +19743,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -19780,10 +19780,10 @@
 					<Obj>
 						<type>0</type>
 						<id>498</id>
-						<name>sext_ln416_3</name>
+						<name>sext_ln418_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19799,7 +19799,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -19828,7 +19828,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>252</m_topoIndex>
+				<m_topoIndex>222</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_478">
@@ -19836,10 +19836,10 @@
 					<Obj>
 						<type>0</type>
 						<id>499</id>
-						<name>sext_ln409_1</name>
+						<name>sext_ln411_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19855,7 +19855,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -19884,7 +19884,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>199</m_topoIndex>
+				<m_topoIndex>223</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_479">
@@ -19895,7 +19895,7 @@
 						<name>gi8_36</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19911,7 +19911,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -19948,10 +19948,10 @@
 					<Obj>
 						<type>0</type>
 						<id>501</id>
-						<name>sext_ln416_4</name>
+						<name>sext_ln418_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19967,7 +19967,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -19996,7 +19996,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>253</m_topoIndex>
+				<m_topoIndex>224</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_481">
@@ -20004,10 +20004,10 @@
 					<Obj>
 						<type>0</type>
 						<id>502</id>
-						<name>sext_ln409_2</name>
+						<name>sext_ln411_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20023,7 +20023,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -20052,7 +20052,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>200</m_topoIndex>
+				<m_topoIndex>225</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_482">
@@ -20063,7 +20063,7 @@
 						<name>gi8_37</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20079,7 +20079,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -20116,10 +20116,10 @@
 					<Obj>
 						<type>0</type>
 						<id>504</id>
-						<name>sext_ln416_5</name>
+						<name>sext_ln418_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20135,7 +20135,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -20164,7 +20164,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>254</m_topoIndex>
+				<m_topoIndex>226</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_484">
@@ -20172,10 +20172,10 @@
 					<Obj>
 						<type>0</type>
 						<id>505</id>
-						<name>sext_ln409_3</name>
+						<name>sext_ln411_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20191,7 +20191,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -20220,7 +20220,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>201</m_topoIndex>
+				<m_topoIndex>227</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_485">
@@ -20231,7 +20231,7 @@
 						<name>gi8_38</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20247,7 +20247,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -20284,10 +20284,10 @@
 					<Obj>
 						<type>0</type>
 						<id>507</id>
-						<name>sext_ln416_6</name>
+						<name>sext_ln418_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20303,7 +20303,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -20332,7 +20332,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>255</m_topoIndex>
+				<m_topoIndex>228</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_487">
@@ -20340,10 +20340,10 @@
 					<Obj>
 						<type>0</type>
 						<id>508</id>
-						<name>sext_ln409_4</name>
+						<name>sext_ln411_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20359,7 +20359,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -20388,7 +20388,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>202</m_topoIndex>
+				<m_topoIndex>229</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_488">
@@ -20399,7 +20399,7 @@
 						<name>gi8_39</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20415,7 +20415,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -20452,10 +20452,10 @@
 					<Obj>
 						<type>0</type>
 						<id>510</id>
-						<name>sext_ln416_7</name>
+						<name>sext_ln418_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20471,7 +20471,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -20500,7 +20500,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>256</m_topoIndex>
+				<m_topoIndex>230</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_490">
@@ -20508,10 +20508,10 @@
 					<Obj>
 						<type>0</type>
 						<id>511</id>
-						<name>sext_ln409_5</name>
+						<name>sext_ln411_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20527,7 +20527,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -20556,7 +20556,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>203</m_topoIndex>
+				<m_topoIndex>231</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_491">
@@ -20567,7 +20567,7 @@
 						<name>gi8_33</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>409</lineNumber>
+						<lineNumber>411</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20583,7 +20583,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>409</second>
+										<second>411</second>
 									</item>
 								</second>
 							</item>
@@ -20646,7 +20646,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -20674,7 +20674,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>182</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -20709,7 +20709,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -20740,7 +20740,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.80</m_delay>
-				<m_topoIndex>204</m_topoIndex>
+				<m_topoIndex>232</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_494">
@@ -20751,7 +20751,7 @@
 						<name>tmp_135</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20767,7 +20767,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -20799,7 +20799,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>205</m_topoIndex>
+				<m_topoIndex>233</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_495">
@@ -20807,10 +20807,10 @@
 					<Obj>
 						<type>0</type>
 						<id>516</id>
-						<name>trunc_ln411_1</name>
+						<name>trunc_ln413_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20826,7 +20826,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -20855,7 +20855,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>206</m_topoIndex>
+				<m_topoIndex>234</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_496">
@@ -20866,7 +20866,7 @@
 						<name>nib4_47</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20882,7 +20882,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -20913,7 +20913,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.39</m_delay>
-				<m_topoIndex>257</m_topoIndex>
+				<m_topoIndex>235</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_497">
@@ -20921,10 +20921,10 @@
 					<Obj>
 						<type>0</type>
 						<id>518</id>
-						<name>zext_ln415_2</name>
+						<name>zext_ln417_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20940,7 +20940,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -20969,7 +20969,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>258</m_topoIndex>
+				<m_topoIndex>236</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_498">
@@ -20977,10 +20977,10 @@
 					<Obj>
 						<type>0</type>
 						<id>519</id>
-						<name>mul_ln415_2</name>
+						<name>mul_ln417_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20996,7 +20996,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -21026,7 +21026,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.65</m_delay>
-				<m_topoIndex>259</m_topoIndex>
+				<m_topoIndex>237</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_499">
@@ -21060,7 +21060,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -21089,7 +21089,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>284</m_topoIndex>
+				<m_topoIndex>238</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_500">
@@ -21123,7 +21123,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -21151,7 +21151,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>183</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -21186,7 +21186,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -21217,7 +21217,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.80</m_delay>
-				<m_topoIndex>207</m_topoIndex>
+				<m_topoIndex>239</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_502">
@@ -21228,7 +21228,7 @@
 						<name>tmp_136</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -21244,7 +21244,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -21276,7 +21276,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>208</m_topoIndex>
+				<m_topoIndex>240</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_503">
@@ -21284,10 +21284,10 @@
 					<Obj>
 						<type>0</type>
 						<id>524</id>
-						<name>trunc_ln411_2</name>
+						<name>trunc_ln413_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -21303,7 +21303,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -21332,7 +21332,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>209</m_topoIndex>
+				<m_topoIndex>241</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_504">
@@ -21343,7 +21343,7 @@
 						<name>nib4_48</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -21359,7 +21359,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -21390,7 +21390,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.39</m_delay>
-				<m_topoIndex>260</m_topoIndex>
+				<m_topoIndex>242</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_505">
@@ -21398,10 +21398,10 @@
 					<Obj>
 						<type>0</type>
 						<id>526</id>
-						<name>zext_ln415_3</name>
+						<name>zext_ln417_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -21417,7 +21417,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -21446,7 +21446,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>261</m_topoIndex>
+				<m_topoIndex>243</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_506">
@@ -21454,10 +21454,10 @@
 					<Obj>
 						<type>0</type>
 						<id>527</id>
-						<name>mul_ln415_3</name>
+						<name>mul_ln417_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -21473,7 +21473,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -21503,7 +21503,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.65</m_delay>
-				<m_topoIndex>262</m_topoIndex>
+				<m_topoIndex>244</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_507">
@@ -21537,7 +21537,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -21566,7 +21566,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>285</m_topoIndex>
+				<m_topoIndex>245</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_508">
@@ -21600,7 +21600,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -21628,7 +21628,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>184</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -21663,7 +21663,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -21694,7 +21694,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.80</m_delay>
-				<m_topoIndex>210</m_topoIndex>
+				<m_topoIndex>246</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_510">
@@ -21705,7 +21705,7 @@
 						<name>tmp_137</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -21721,7 +21721,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -21753,7 +21753,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>211</m_topoIndex>
+				<m_topoIndex>247</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_511">
@@ -21761,10 +21761,10 @@
 					<Obj>
 						<type>0</type>
 						<id>532</id>
-						<name>trunc_ln411_3</name>
+						<name>trunc_ln413_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -21780,7 +21780,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -21809,7 +21809,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>212</m_topoIndex>
+				<m_topoIndex>248</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_512">
@@ -21820,7 +21820,7 @@
 						<name>nib4_49</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -21836,7 +21836,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -21867,7 +21867,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.39</m_delay>
-				<m_topoIndex>263</m_topoIndex>
+				<m_topoIndex>249</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_513">
@@ -21875,10 +21875,10 @@
 					<Obj>
 						<type>0</type>
 						<id>534</id>
-						<name>zext_ln415_4</name>
+						<name>zext_ln417_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -21894,7 +21894,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -21923,7 +21923,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>264</m_topoIndex>
+				<m_topoIndex>250</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_514">
@@ -21931,10 +21931,10 @@
 					<Obj>
 						<type>0</type>
 						<id>535</id>
-						<name>mul_ln415_4</name>
+						<name>mul_ln417_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -21950,7 +21950,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -21980,7 +21980,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.65</m_delay>
-				<m_topoIndex>265</m_topoIndex>
+				<m_topoIndex>251</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_515">
@@ -22014,7 +22014,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -22043,7 +22043,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>286</m_topoIndex>
+				<m_topoIndex>252</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_516">
@@ -22077,7 +22077,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -22105,7 +22105,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>185</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -22140,7 +22140,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -22171,7 +22171,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.80</m_delay>
-				<m_topoIndex>213</m_topoIndex>
+				<m_topoIndex>253</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_518">
@@ -22182,7 +22182,7 @@
 						<name>tmp_138</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -22198,7 +22198,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -22230,7 +22230,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>214</m_topoIndex>
+				<m_topoIndex>254</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_519">
@@ -22238,10 +22238,10 @@
 					<Obj>
 						<type>0</type>
 						<id>540</id>
-						<name>trunc_ln411_4</name>
+						<name>trunc_ln413_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -22257,7 +22257,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -22286,7 +22286,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>215</m_topoIndex>
+				<m_topoIndex>255</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_520">
@@ -22297,7 +22297,7 @@
 						<name>nib4_50</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -22313,7 +22313,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -22344,7 +22344,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.39</m_delay>
-				<m_topoIndex>266</m_topoIndex>
+				<m_topoIndex>256</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_521">
@@ -22352,10 +22352,10 @@
 					<Obj>
 						<type>0</type>
 						<id>542</id>
-						<name>zext_ln415_5</name>
+						<name>zext_ln417_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -22371,7 +22371,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -22400,7 +22400,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>267</m_topoIndex>
+				<m_topoIndex>257</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_522">
@@ -22408,10 +22408,10 @@
 					<Obj>
 						<type>0</type>
 						<id>543</id>
-						<name>mul_ln415_5</name>
+						<name>mul_ln417_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -22427,7 +22427,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -22457,7 +22457,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.65</m_delay>
-				<m_topoIndex>268</m_topoIndex>
+				<m_topoIndex>258</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_523">
@@ -22491,7 +22491,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -22520,7 +22520,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>287</m_topoIndex>
+				<m_topoIndex>259</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_524">
@@ -22554,7 +22554,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -22582,7 +22582,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>186</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -22617,7 +22617,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -22648,7 +22648,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.80</m_delay>
-				<m_topoIndex>216</m_topoIndex>
+				<m_topoIndex>260</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_526">
@@ -22659,7 +22659,7 @@
 						<name>tmp_139</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -22675,7 +22675,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -22707,7 +22707,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>217</m_topoIndex>
+				<m_topoIndex>261</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_527">
@@ -22715,10 +22715,10 @@
 					<Obj>
 						<type>0</type>
 						<id>548</id>
-						<name>trunc_ln411_5</name>
+						<name>trunc_ln413_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -22734,7 +22734,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -22763,7 +22763,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>218</m_topoIndex>
+				<m_topoIndex>262</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_528">
@@ -22774,7 +22774,7 @@
 						<name>nib4_51</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -22790,7 +22790,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -22821,7 +22821,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.39</m_delay>
-				<m_topoIndex>269</m_topoIndex>
+				<m_topoIndex>263</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_529">
@@ -22829,10 +22829,10 @@
 					<Obj>
 						<type>0</type>
 						<id>550</id>
-						<name>zext_ln415_6</name>
+						<name>zext_ln417_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -22848,7 +22848,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -22877,7 +22877,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>270</m_topoIndex>
+				<m_topoIndex>264</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_530">
@@ -22885,10 +22885,10 @@
 					<Obj>
 						<type>0</type>
 						<id>551</id>
-						<name>mul_ln415_6</name>
+						<name>mul_ln417_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -22904,7 +22904,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -22934,7 +22934,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.65</m_delay>
-				<m_topoIndex>271</m_topoIndex>
+				<m_topoIndex>265</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_531">
@@ -22968,7 +22968,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -22997,7 +22997,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>288</m_topoIndex>
+				<m_topoIndex>266</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_532">
@@ -23031,7 +23031,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -23059,7 +23059,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>187</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -23094,7 +23094,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -23125,7 +23125,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.80</m_delay>
-				<m_topoIndex>219</m_topoIndex>
+				<m_topoIndex>267</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_534">
@@ -23136,7 +23136,7 @@
 						<name>tmp_140</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -23152,7 +23152,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -23184,7 +23184,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>220</m_topoIndex>
+				<m_topoIndex>268</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_535">
@@ -23192,10 +23192,10 @@
 					<Obj>
 						<type>0</type>
 						<id>556</id>
-						<name>trunc_ln411_6</name>
+						<name>trunc_ln413_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -23211,7 +23211,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -23240,7 +23240,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>221</m_topoIndex>
+				<m_topoIndex>269</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_536">
@@ -23251,7 +23251,7 @@
 						<name>nib4_52</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -23267,7 +23267,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -23298,7 +23298,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.39</m_delay>
-				<m_topoIndex>272</m_topoIndex>
+				<m_topoIndex>270</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_537">
@@ -23306,10 +23306,10 @@
 					<Obj>
 						<type>0</type>
 						<id>558</id>
-						<name>zext_ln415_7</name>
+						<name>zext_ln417_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -23325,7 +23325,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -23354,7 +23354,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>273</m_topoIndex>
+				<m_topoIndex>271</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_538">
@@ -23362,10 +23362,10 @@
 					<Obj>
 						<type>0</type>
 						<id>559</id>
-						<name>mul_ln415_7</name>
+						<name>mul_ln417_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -23381,7 +23381,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -23411,7 +23411,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.65</m_delay>
-				<m_topoIndex>274</m_topoIndex>
+				<m_topoIndex>272</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_539">
@@ -23445,7 +23445,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -23474,7 +23474,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>289</m_topoIndex>
+				<m_topoIndex>273</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_540">
@@ -23508,7 +23508,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -23536,7 +23536,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>188</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -23571,7 +23571,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>410</second>
+										<second>412</second>
 									</item>
 								</second>
 							</item>
@@ -23602,7 +23602,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.80</m_delay>
-				<m_topoIndex>222</m_topoIndex>
+				<m_topoIndex>274</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_542">
@@ -23613,7 +23613,7 @@
 						<name>tmp_141</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -23629,7 +23629,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -23661,7 +23661,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>223</m_topoIndex>
+				<m_topoIndex>275</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_543">
@@ -23669,10 +23669,10 @@
 					<Obj>
 						<type>0</type>
 						<id>564</id>
-						<name>trunc_ln411_7</name>
+						<name>trunc_ln413_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -23688,7 +23688,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -23717,7 +23717,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>224</m_topoIndex>
+				<m_topoIndex>276</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_544">
@@ -23728,7 +23728,7 @@
 						<name>nib4_46</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>411</lineNumber>
+						<lineNumber>413</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -23744,7 +23744,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>411</second>
+										<second>413</second>
 									</item>
 								</second>
 							</item>
@@ -23775,7 +23775,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.39</m_delay>
-				<m_topoIndex>275</m_topoIndex>
+				<m_topoIndex>277</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_545">
@@ -23786,7 +23786,7 @@
 						<name>sc6u_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>413</lineNumber>
+						<lineNumber>415</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -23802,7 +23802,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>413</second>
+										<second>415</second>
 									</item>
 								</second>
 							</item>
@@ -23849,7 +23849,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>290</m_topoIndex>
+				<m_topoIndex>189</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_546">
@@ -23857,10 +23857,10 @@
 					<Obj>
 						<type>0</type>
 						<id>567</id>
-						<name>zext_ln415_8</name>
+						<name>zext_ln417_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -23876,7 +23876,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -23905,7 +23905,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>291</m_topoIndex>
+				<m_topoIndex>278</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_547">
@@ -23913,10 +23913,10 @@
 					<Obj>
 						<type>0</type>
 						<id>568</id>
-						<name>mul_ln415_8</name>
+						<name>mul_ln417_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -23932,7 +23932,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -23962,7 +23962,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>292</m_topoIndex>
+				<m_topoIndex>279</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_548">
@@ -23970,10 +23970,10 @@
 					<Obj>
 						<type>0</type>
 						<id>569</id>
-						<name>sext_ln415_3</name>
+						<name>sext_ln417_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -23989,7 +23989,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24018,7 +24018,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>474</m_topoIndex>
+				<m_topoIndex>323</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_549">
@@ -24029,7 +24029,7 @@
 						<name>sc6u_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>413</lineNumber>
+						<lineNumber>415</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24045,7 +24045,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>413</second>
+										<second>415</second>
 									</item>
 								</second>
 							</item>
@@ -24092,7 +24092,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>293</m_topoIndex>
+				<m_topoIndex>190</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_550">
@@ -24100,10 +24100,10 @@
 					<Obj>
 						<type>0</type>
 						<id>571</id>
-						<name>zext_ln415_9</name>
+						<name>zext_ln417_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24119,7 +24119,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24148,7 +24148,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>294</m_topoIndex>
+				<m_topoIndex>280</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_551">
@@ -24156,10 +24156,10 @@
 					<Obj>
 						<type>0</type>
 						<id>572</id>
-						<name>mul_ln415_9</name>
+						<name>mul_ln417_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24175,7 +24175,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24205,7 +24205,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>295</m_topoIndex>
+				<m_topoIndex>281</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_552">
@@ -24213,10 +24213,10 @@
 					<Obj>
 						<type>0</type>
 						<id>573</id>
-						<name>sext_ln415_4</name>
+						<name>sext_ln417_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24232,7 +24232,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24261,7 +24261,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>475</m_topoIndex>
+				<m_topoIndex>324</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_553">
@@ -24272,7 +24272,7 @@
 						<name>sc6u_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>413</lineNumber>
+						<lineNumber>415</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24288,7 +24288,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>413</second>
+										<second>415</second>
 									</item>
 								</second>
 							</item>
@@ -24335,7 +24335,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>296</m_topoIndex>
+				<m_topoIndex>191</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_554">
@@ -24343,10 +24343,10 @@
 					<Obj>
 						<type>0</type>
 						<id>575</id>
-						<name>zext_ln415_10</name>
+						<name>zext_ln417_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24362,7 +24362,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24391,7 +24391,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>297</m_topoIndex>
+				<m_topoIndex>282</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_555">
@@ -24399,10 +24399,10 @@
 					<Obj>
 						<type>0</type>
 						<id>576</id>
-						<name>mul_ln415_10</name>
+						<name>mul_ln417_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24418,7 +24418,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24448,7 +24448,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>298</m_topoIndex>
+				<m_topoIndex>283</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_556">
@@ -24456,10 +24456,10 @@
 					<Obj>
 						<type>0</type>
 						<id>577</id>
-						<name>sext_ln415_5</name>
+						<name>sext_ln417_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24475,7 +24475,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24504,7 +24504,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>476</m_topoIndex>
+				<m_topoIndex>325</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_557">
@@ -24515,7 +24515,7 @@
 						<name>sc6u</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>413</lineNumber>
+						<lineNumber>415</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24531,7 +24531,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>413</second>
+										<second>415</second>
 									</item>
 								</second>
 							</item>
@@ -24578,7 +24578,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>299</m_topoIndex>
+				<m_topoIndex>192</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_558">
@@ -24586,10 +24586,10 @@
 					<Obj>
 						<type>0</type>
 						<id>579</id>
-						<name>zext_ln415_11</name>
+						<name>zext_ln417_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24605,7 +24605,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24634,7 +24634,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>300</m_topoIndex>
+				<m_topoIndex>284</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_559">
@@ -24642,10 +24642,10 @@
 					<Obj>
 						<type>0</type>
 						<id>580</id>
-						<name>mul_ln415_11</name>
+						<name>mul_ln417_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24661,7 +24661,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24691,7 +24691,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>301</m_topoIndex>
+				<m_topoIndex>285</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_560">
@@ -24699,10 +24699,10 @@
 					<Obj>
 						<type>0</type>
 						<id>581</id>
-						<name>sext_ln415_6</name>
+						<name>sext_ln417_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24718,7 +24718,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24747,7 +24747,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>477</m_topoIndex>
+				<m_topoIndex>326</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_561">
@@ -24758,7 +24758,7 @@
 						<name>sc6u_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>413</lineNumber>
+						<lineNumber>415</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24774,7 +24774,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>413</second>
+										<second>415</second>
 									</item>
 								</second>
 							</item>
@@ -24821,7 +24821,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>302</m_topoIndex>
+				<m_topoIndex>193</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_562">
@@ -24829,10 +24829,10 @@
 					<Obj>
 						<type>0</type>
 						<id>583</id>
-						<name>zext_ln415_12</name>
+						<name>zext_ln417_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24848,7 +24848,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24877,7 +24877,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>303</m_topoIndex>
+				<m_topoIndex>286</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_563">
@@ -24885,10 +24885,10 @@
 					<Obj>
 						<type>0</type>
 						<id>584</id>
-						<name>mul_ln415_12</name>
+						<name>mul_ln417_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24904,7 +24904,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24934,7 +24934,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>304</m_topoIndex>
+				<m_topoIndex>287</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_564">
@@ -24942,10 +24942,10 @@
 					<Obj>
 						<type>0</type>
 						<id>585</id>
-						<name>sext_ln415_7</name>
+						<name>sext_ln417_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -24961,7 +24961,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -24990,7 +24990,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>478</m_topoIndex>
+				<m_topoIndex>327</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_565">
@@ -25001,7 +25001,7 @@
 						<name>sc6u_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>413</lineNumber>
+						<lineNumber>415</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25017,7 +25017,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>413</second>
+										<second>415</second>
 									</item>
 								</second>
 							</item>
@@ -25064,7 +25064,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>305</m_topoIndex>
+				<m_topoIndex>194</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_566">
@@ -25072,10 +25072,10 @@
 					<Obj>
 						<type>0</type>
 						<id>587</id>
-						<name>zext_ln415_13</name>
+						<name>zext_ln417_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25091,7 +25091,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -25120,7 +25120,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>306</m_topoIndex>
+				<m_topoIndex>288</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_567">
@@ -25128,10 +25128,10 @@
 					<Obj>
 						<type>0</type>
 						<id>588</id>
-						<name>mul_ln415_13</name>
+						<name>mul_ln417_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25147,7 +25147,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -25177,7 +25177,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>307</m_topoIndex>
+				<m_topoIndex>289</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_568">
@@ -25185,10 +25185,10 @@
 					<Obj>
 						<type>0</type>
 						<id>589</id>
-						<name>sext_ln415_8</name>
+						<name>sext_ln417_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25204,7 +25204,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -25233,7 +25233,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>479</m_topoIndex>
+				<m_topoIndex>328</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_569">
@@ -25244,7 +25244,7 @@
 						<name>sc6u_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>413</lineNumber>
+						<lineNumber>415</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25260,7 +25260,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>413</second>
+										<second>415</second>
 									</item>
 								</second>
 							</item>
@@ -25307,7 +25307,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>308</m_topoIndex>
+				<m_topoIndex>195</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_570">
@@ -25318,7 +25318,7 @@
 						<name>mn6u_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>414</lineNumber>
+						<lineNumber>416</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25334,7 +25334,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>414</second>
+										<second>416</second>
 									</item>
 								</second>
 							</item>
@@ -25381,7 +25381,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>225</m_topoIndex>
+				<m_topoIndex>196</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_571">
@@ -25389,10 +25389,10 @@
 					<Obj>
 						<type>0</type>
 						<id>592</id>
-						<name>zext_ln416_1</name>
+						<name>zext_ln418_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25408,7 +25408,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -25437,7 +25437,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>226</m_topoIndex>
+				<m_topoIndex>290</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_572">
@@ -25445,10 +25445,10 @@
 					<Obj>
 						<type>0</type>
 						<id>593</id>
-						<name>mul_ln416_1</name>
+						<name>mul_ln418_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25464,7 +25464,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -25494,7 +25494,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>227</m_topoIndex>
+				<m_topoIndex>291</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_573">
@@ -25502,10 +25502,10 @@
 					<Obj>
 						<type>0</type>
 						<id>594</id>
-						<name>sext_ln416_8</name>
+						<name>sext_ln418_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25521,7 +25521,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -25550,7 +25550,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>309</m_topoIndex>
+				<m_topoIndex>329</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_574">
@@ -25561,7 +25561,7 @@
 						<name>mn6u_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>414</lineNumber>
+						<lineNumber>416</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25577,7 +25577,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>414</second>
+										<second>416</second>
 									</item>
 								</second>
 							</item>
@@ -25624,7 +25624,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>228</m_topoIndex>
+				<m_topoIndex>197</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_575">
@@ -25632,10 +25632,10 @@
 					<Obj>
 						<type>0</type>
 						<id>596</id>
-						<name>zext_ln416_2</name>
+						<name>zext_ln418_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25651,7 +25651,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -25680,7 +25680,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>229</m_topoIndex>
+				<m_topoIndex>292</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_576">
@@ -25688,10 +25688,10 @@
 					<Obj>
 						<type>0</type>
 						<id>597</id>
-						<name>mul_ln416_2</name>
+						<name>mul_ln418_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25707,7 +25707,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -25737,7 +25737,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>230</m_topoIndex>
+				<m_topoIndex>293</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_577">
@@ -25745,10 +25745,10 @@
 					<Obj>
 						<type>0</type>
 						<id>598</id>
-						<name>sext_ln416_9</name>
+						<name>sext_ln418_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25764,7 +25764,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -25793,7 +25793,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>310</m_topoIndex>
+				<m_topoIndex>330</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_578">
@@ -25804,7 +25804,7 @@
 						<name>mn6u_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>414</lineNumber>
+						<lineNumber>416</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25820,7 +25820,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>414</second>
+										<second>416</second>
 									</item>
 								</second>
 							</item>
@@ -25867,7 +25867,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>231</m_topoIndex>
+				<m_topoIndex>198</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_579">
@@ -25875,10 +25875,10 @@
 					<Obj>
 						<type>0</type>
 						<id>600</id>
-						<name>zext_ln416_3</name>
+						<name>zext_ln418_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25894,7 +25894,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -25923,7 +25923,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>232</m_topoIndex>
+				<m_topoIndex>294</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_580">
@@ -25931,10 +25931,10 @@
 					<Obj>
 						<type>0</type>
 						<id>601</id>
-						<name>mul_ln416_3</name>
+						<name>mul_ln418_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -25950,7 +25950,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -25980,7 +25980,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>233</m_topoIndex>
+				<m_topoIndex>295</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_581">
@@ -25988,10 +25988,10 @@
 					<Obj>
 						<type>0</type>
 						<id>602</id>
-						<name>sext_ln416_10</name>
+						<name>sext_ln418_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26007,7 +26007,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -26036,7 +26036,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>311</m_topoIndex>
+				<m_topoIndex>331</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_582">
@@ -26047,7 +26047,7 @@
 						<name>mn6u</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>414</lineNumber>
+						<lineNumber>416</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26063,7 +26063,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>414</second>
+										<second>416</second>
 									</item>
 								</second>
 							</item>
@@ -26110,7 +26110,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>234</m_topoIndex>
+				<m_topoIndex>199</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_583">
@@ -26118,10 +26118,10 @@
 					<Obj>
 						<type>0</type>
 						<id>604</id>
-						<name>zext_ln416_4</name>
+						<name>zext_ln418_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26137,7 +26137,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -26166,7 +26166,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>235</m_topoIndex>
+				<m_topoIndex>296</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_584">
@@ -26174,10 +26174,10 @@
 					<Obj>
 						<type>0</type>
 						<id>605</id>
-						<name>mul_ln416_4</name>
+						<name>mul_ln418_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26193,7 +26193,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -26223,7 +26223,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>236</m_topoIndex>
+				<m_topoIndex>297</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_585">
@@ -26231,10 +26231,10 @@
 					<Obj>
 						<type>0</type>
 						<id>606</id>
-						<name>sext_ln416_11</name>
+						<name>sext_ln418_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26250,7 +26250,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -26279,7 +26279,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>312</m_topoIndex>
+				<m_topoIndex>332</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_586">
@@ -26290,7 +26290,7 @@
 						<name>mn6u_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>414</lineNumber>
+						<lineNumber>416</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26306,7 +26306,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>414</second>
+										<second>416</second>
 									</item>
 								</second>
 							</item>
@@ -26353,7 +26353,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>237</m_topoIndex>
+				<m_topoIndex>200</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_587">
@@ -26361,10 +26361,10 @@
 					<Obj>
 						<type>0</type>
 						<id>608</id>
-						<name>zext_ln416_5</name>
+						<name>zext_ln418_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26380,7 +26380,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -26409,7 +26409,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>238</m_topoIndex>
+				<m_topoIndex>298</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_588">
@@ -26417,10 +26417,10 @@
 					<Obj>
 						<type>0</type>
 						<id>609</id>
-						<name>mul_ln416_5</name>
+						<name>mul_ln418_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26436,7 +26436,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -26466,7 +26466,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>239</m_topoIndex>
+				<m_topoIndex>299</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_589">
@@ -26474,10 +26474,10 @@
 					<Obj>
 						<type>0</type>
 						<id>610</id>
-						<name>sext_ln416_12</name>
+						<name>sext_ln418_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26493,7 +26493,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -26522,7 +26522,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>313</m_topoIndex>
+				<m_topoIndex>333</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_590">
@@ -26533,7 +26533,7 @@
 						<name>mn6u_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>414</lineNumber>
+						<lineNumber>416</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26549,7 +26549,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>414</second>
+										<second>416</second>
 									</item>
 								</second>
 							</item>
@@ -26596,7 +26596,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>240</m_topoIndex>
+				<m_topoIndex>201</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_591">
@@ -26604,10 +26604,10 @@
 					<Obj>
 						<type>0</type>
 						<id>612</id>
-						<name>zext_ln416_6</name>
+						<name>zext_ln418_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26623,7 +26623,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -26652,7 +26652,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>241</m_topoIndex>
+				<m_topoIndex>300</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_592">
@@ -26660,10 +26660,10 @@
 					<Obj>
 						<type>0</type>
 						<id>613</id>
-						<name>mul_ln416_6</name>
+						<name>mul_ln418_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26679,7 +26679,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -26709,7 +26709,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>242</m_topoIndex>
+				<m_topoIndex>301</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_593">
@@ -26717,10 +26717,10 @@
 					<Obj>
 						<type>0</type>
 						<id>614</id>
-						<name>sext_ln416_13</name>
+						<name>sext_ln418_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26736,7 +26736,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -26765,7 +26765,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>314</m_topoIndex>
+				<m_topoIndex>334</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_594">
@@ -26776,7 +26776,7 @@
 						<name>mn6u_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>414</lineNumber>
+						<lineNumber>416</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26792,7 +26792,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>414</second>
+										<second>416</second>
 									</item>
 								</second>
 							</item>
@@ -26839,7 +26839,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>243</m_topoIndex>
+				<m_topoIndex>202</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_595">
@@ -26847,10 +26847,10 @@
 					<Obj>
 						<type>0</type>
 						<id>616</id>
-						<name>sext_ln415_9</name>
+						<name>sext_ln417_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26866,7 +26866,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -26895,7 +26895,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>276</m_topoIndex>
+				<m_topoIndex>302</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_596">
@@ -26903,10 +26903,10 @@
 					<Obj>
 						<type>0</type>
 						<id>617</id>
-						<name>zext_ln415_14</name>
+						<name>zext_ln417_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26922,7 +26922,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -26951,7 +26951,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>277</m_topoIndex>
+				<m_topoIndex>303</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_597">
@@ -26959,10 +26959,10 @@
 					<Obj>
 						<type>0</type>
 						<id>618</id>
-						<name>mul_ln415_14</name>
+						<name>mul_ln417_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -26978,7 +26978,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27008,7 +27008,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.65</m_delay>
-				<m_topoIndex>278</m_topoIndex>
+				<m_topoIndex>304</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_598">
@@ -27016,10 +27016,10 @@
 					<Obj>
 						<type>0</type>
 						<id>619</id>
-						<name>sext_ln415_10</name>
+						<name>sext_ln417_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27035,7 +27035,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27064,7 +27064,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>315</m_topoIndex>
+				<m_topoIndex>305</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_599">
@@ -27072,10 +27072,10 @@
 					<Obj>
 						<type>0</type>
 						<id>620</id>
-						<name>zext_ln415_15</name>
+						<name>zext_ln417_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27091,7 +27091,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27120,7 +27120,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>316</m_topoIndex>
+				<m_topoIndex>306</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_600">
@@ -27128,10 +27128,10 @@
 					<Obj>
 						<type>0</type>
 						<id>621</id>
-						<name>mul_ln415_15</name>
+						<name>mul_ln417_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27147,7 +27147,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27177,7 +27177,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>317</m_topoIndex>
+				<m_topoIndex>307</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_601">
@@ -27185,10 +27185,10 @@
 					<Obj>
 						<type>0</type>
 						<id>622</id>
-						<name>sext_ln415_11</name>
+						<name>sext_ln417_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27204,7 +27204,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27233,7 +27233,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>480</m_topoIndex>
+				<m_topoIndex>335</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_602">
@@ -27241,10 +27241,10 @@
 					<Obj>
 						<type>0</type>
 						<id>623</id>
-						<name>sext_ln416_14</name>
+						<name>sext_ln418_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27260,7 +27260,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -27289,7 +27289,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>244</m_topoIndex>
+				<m_topoIndex>308</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_603">
@@ -27297,10 +27297,10 @@
 					<Obj>
 						<type>0</type>
 						<id>624</id>
-						<name>zext_ln416_7</name>
+						<name>zext_ln418_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27316,7 +27316,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -27345,7 +27345,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>245</m_topoIndex>
+				<m_topoIndex>309</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_604">
@@ -27353,10 +27353,10 @@
 					<Obj>
 						<type>0</type>
 						<id>625</id>
-						<name>mul_ln416_7</name>
+						<name>mul_ln418_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27372,7 +27372,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -27402,7 +27402,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.99</m_delay>
-				<m_topoIndex>246</m_topoIndex>
+				<m_topoIndex>310</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_605">
@@ -27410,10 +27410,10 @@
 					<Obj>
 						<type>0</type>
 						<id>626</id>
-						<name>sext_ln416_15</name>
+						<name>sext_ln418_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27429,7 +27429,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -27458,7 +27458,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>318</m_topoIndex>
+				<m_topoIndex>336</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_606">
@@ -27469,7 +27469,7 @@
 						<name>int_acc_w_143_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27485,7 +27485,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27515,7 +27515,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>481</m_topoIndex>
+				<m_topoIndex>337</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_607">
@@ -27526,7 +27526,7 @@
 						<name>int_acc_w_144_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27542,7 +27542,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27572,7 +27572,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>482</m_topoIndex>
+				<m_topoIndex>338</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_608">
@@ -27583,7 +27583,7 @@
 						<name>int_acc_w_145_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27599,7 +27599,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27629,7 +27629,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>483</m_topoIndex>
+				<m_topoIndex>339</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_609">
@@ -27640,7 +27640,7 @@
 						<name>int_acc_w_146_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27656,7 +27656,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27686,7 +27686,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>484</m_topoIndex>
+				<m_topoIndex>340</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_610">
@@ -27697,7 +27697,7 @@
 						<name>int_acc_w_147_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27713,7 +27713,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27743,7 +27743,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>485</m_topoIndex>
+				<m_topoIndex>341</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_611">
@@ -27754,7 +27754,7 @@
 						<name>int_acc_w_148_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27770,7 +27770,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27800,7 +27800,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>486</m_topoIndex>
+				<m_topoIndex>342</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_612">
@@ -27811,7 +27811,7 @@
 						<name>int_acc_w_149_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27827,7 +27827,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27857,7 +27857,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>487</m_topoIndex>
+				<m_topoIndex>343</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_613">
@@ -27868,7 +27868,7 @@
 						<name>int_acc_w_150_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27884,7 +27884,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27914,7 +27914,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>488</m_topoIndex>
+				<m_topoIndex>344</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_614">
@@ -27925,7 +27925,7 @@
 						<name>tmp_85</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -27941,7 +27941,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -27988,7 +27988,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>489</m_topoIndex>
+				<m_topoIndex>345</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_615">
@@ -27999,7 +27999,7 @@
 						<name>int_acc_w_86</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28015,7 +28015,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28045,7 +28045,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>490</m_topoIndex>
+				<m_topoIndex>346</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_616">
@@ -28056,7 +28056,7 @@
 						<name>int_acc_w_151_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28072,7 +28072,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28102,7 +28102,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>491</m_topoIndex>
+				<m_topoIndex>347</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_617">
@@ -28113,7 +28113,7 @@
 						<name>int_acc_w_152_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28129,7 +28129,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28159,7 +28159,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>492</m_topoIndex>
+				<m_topoIndex>348</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_618">
@@ -28170,7 +28170,7 @@
 						<name>int_acc_w_153_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28186,7 +28186,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28216,7 +28216,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>493</m_topoIndex>
+				<m_topoIndex>349</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_619">
@@ -28227,7 +28227,7 @@
 						<name>int_acc_w_154_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28243,7 +28243,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28273,7 +28273,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>494</m_topoIndex>
+				<m_topoIndex>350</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_620">
@@ -28284,7 +28284,7 @@
 						<name>int_acc_w_155_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28300,7 +28300,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28330,7 +28330,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>495</m_topoIndex>
+				<m_topoIndex>351</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_621">
@@ -28341,7 +28341,7 @@
 						<name>int_acc_w_156_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28357,7 +28357,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28387,7 +28387,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>496</m_topoIndex>
+				<m_topoIndex>352</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_622">
@@ -28398,7 +28398,7 @@
 						<name>int_acc_w_157_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28414,7 +28414,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28444,7 +28444,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>497</m_topoIndex>
+				<m_topoIndex>353</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_623">
@@ -28455,7 +28455,7 @@
 						<name>int_acc_w_158_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28471,7 +28471,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28501,7 +28501,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>498</m_topoIndex>
+				<m_topoIndex>354</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_624">
@@ -28512,7 +28512,7 @@
 						<name>tmp_86</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28528,7 +28528,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28575,7 +28575,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>499</m_topoIndex>
+				<m_topoIndex>355</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_625">
@@ -28586,7 +28586,7 @@
 						<name>int_acc_w_87</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28602,7 +28602,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28632,7 +28632,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>500</m_topoIndex>
+				<m_topoIndex>356</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_626">
@@ -28643,7 +28643,7 @@
 						<name>int_acc_w_159_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28659,7 +28659,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28689,7 +28689,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>501</m_topoIndex>
+				<m_topoIndex>357</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_627">
@@ -28700,7 +28700,7 @@
 						<name>int_acc_w_160_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28716,7 +28716,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28746,7 +28746,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>502</m_topoIndex>
+				<m_topoIndex>358</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_628">
@@ -28757,7 +28757,7 @@
 						<name>int_acc_w_161_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28773,7 +28773,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28803,7 +28803,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>503</m_topoIndex>
+				<m_topoIndex>359</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_629">
@@ -28814,7 +28814,7 @@
 						<name>int_acc_w_162_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28830,7 +28830,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28860,7 +28860,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>504</m_topoIndex>
+				<m_topoIndex>360</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_630">
@@ -28871,7 +28871,7 @@
 						<name>int_acc_w_163_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28887,7 +28887,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28917,7 +28917,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>505</m_topoIndex>
+				<m_topoIndex>361</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_631">
@@ -28928,7 +28928,7 @@
 						<name>int_acc_w_164_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -28944,7 +28944,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -28974,7 +28974,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>506</m_topoIndex>
+				<m_topoIndex>362</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_632">
@@ -28985,7 +28985,7 @@
 						<name>int_acc_w_165_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29001,7 +29001,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29031,7 +29031,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>507</m_topoIndex>
+				<m_topoIndex>363</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_633">
@@ -29042,7 +29042,7 @@
 						<name>int_acc_w_166_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29058,7 +29058,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29088,7 +29088,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>508</m_topoIndex>
+				<m_topoIndex>364</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_634">
@@ -29099,7 +29099,7 @@
 						<name>tmp_87</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29115,7 +29115,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29162,7 +29162,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>509</m_topoIndex>
+				<m_topoIndex>365</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_635">
@@ -29173,7 +29173,7 @@
 						<name>int_acc_w_88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29189,7 +29189,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29219,7 +29219,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>510</m_topoIndex>
+				<m_topoIndex>366</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_636">
@@ -29230,7 +29230,7 @@
 						<name>int_acc_w_167_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29246,7 +29246,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29276,7 +29276,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>511</m_topoIndex>
+				<m_topoIndex>367</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_637">
@@ -29287,7 +29287,7 @@
 						<name>int_acc_w_168_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29303,7 +29303,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29333,7 +29333,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>512</m_topoIndex>
+				<m_topoIndex>368</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_638">
@@ -29344,7 +29344,7 @@
 						<name>int_acc_w_169_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29360,7 +29360,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29390,7 +29390,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>513</m_topoIndex>
+				<m_topoIndex>369</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_639">
@@ -29401,7 +29401,7 @@
 						<name>int_acc_w_170_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29417,7 +29417,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29447,7 +29447,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>514</m_topoIndex>
+				<m_topoIndex>370</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_640">
@@ -29458,7 +29458,7 @@
 						<name>int_acc_w_171_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29474,7 +29474,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29504,7 +29504,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>515</m_topoIndex>
+				<m_topoIndex>371</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_641">
@@ -29515,7 +29515,7 @@
 						<name>int_acc_w_172_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29531,7 +29531,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29561,7 +29561,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>516</m_topoIndex>
+				<m_topoIndex>372</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_642">
@@ -29572,7 +29572,7 @@
 						<name>int_acc_w_173_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29588,7 +29588,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29618,7 +29618,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>517</m_topoIndex>
+				<m_topoIndex>373</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_643">
@@ -29629,7 +29629,7 @@
 						<name>int_acc_w_174_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29645,7 +29645,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29675,7 +29675,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>518</m_topoIndex>
+				<m_topoIndex>374</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_644">
@@ -29686,7 +29686,7 @@
 						<name>tmp_88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29702,7 +29702,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29749,7 +29749,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>519</m_topoIndex>
+				<m_topoIndex>375</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_645">
@@ -29760,7 +29760,7 @@
 						<name>int_acc_w_89</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29776,7 +29776,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29806,7 +29806,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>520</m_topoIndex>
+				<m_topoIndex>376</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_646">
@@ -29817,7 +29817,7 @@
 						<name>int_acc_w_175_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29833,7 +29833,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29863,7 +29863,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>521</m_topoIndex>
+				<m_topoIndex>377</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_647">
@@ -29874,7 +29874,7 @@
 						<name>int_acc_w_176_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29890,7 +29890,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29920,7 +29920,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>522</m_topoIndex>
+				<m_topoIndex>378</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_648">
@@ -29931,7 +29931,7 @@
 						<name>int_acc_w_177_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -29947,7 +29947,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -29977,7 +29977,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>523</m_topoIndex>
+				<m_topoIndex>379</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_649">
@@ -29988,7 +29988,7 @@
 						<name>int_acc_w_178_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30004,7 +30004,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30034,7 +30034,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>524</m_topoIndex>
+				<m_topoIndex>380</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_650">
@@ -30045,7 +30045,7 @@
 						<name>int_acc_w_179_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30061,7 +30061,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30091,7 +30091,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>525</m_topoIndex>
+				<m_topoIndex>381</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_651">
@@ -30102,7 +30102,7 @@
 						<name>int_acc_w_180_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30118,7 +30118,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30148,7 +30148,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>526</m_topoIndex>
+				<m_topoIndex>382</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_652">
@@ -30159,7 +30159,7 @@
 						<name>int_acc_w_181_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30175,7 +30175,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30205,7 +30205,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>527</m_topoIndex>
+				<m_topoIndex>383</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_653">
@@ -30216,7 +30216,7 @@
 						<name>int_acc_w_182_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30232,7 +30232,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30262,7 +30262,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>528</m_topoIndex>
+				<m_topoIndex>384</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_654">
@@ -30273,7 +30273,7 @@
 						<name>tmp_89</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30289,7 +30289,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30336,7 +30336,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>529</m_topoIndex>
+				<m_topoIndex>385</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_655">
@@ -30347,7 +30347,7 @@
 						<name>int_acc_w_90</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30363,7 +30363,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30393,7 +30393,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>530</m_topoIndex>
+				<m_topoIndex>386</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_656">
@@ -30404,7 +30404,7 @@
 						<name>int_acc_w_183_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30420,7 +30420,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30450,7 +30450,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>531</m_topoIndex>
+				<m_topoIndex>387</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_657">
@@ -30461,7 +30461,7 @@
 						<name>int_acc_w_184_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30477,7 +30477,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30507,7 +30507,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>532</m_topoIndex>
+				<m_topoIndex>388</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_658">
@@ -30518,7 +30518,7 @@
 						<name>int_acc_w_185_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30534,7 +30534,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30564,7 +30564,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>533</m_topoIndex>
+				<m_topoIndex>389</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_659">
@@ -30575,7 +30575,7 @@
 						<name>int_acc_w_186_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30591,7 +30591,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30621,7 +30621,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>534</m_topoIndex>
+				<m_topoIndex>390</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_660">
@@ -30632,7 +30632,7 @@
 						<name>int_acc_w_187_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30648,7 +30648,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30678,7 +30678,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>535</m_topoIndex>
+				<m_topoIndex>391</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_661">
@@ -30689,7 +30689,7 @@
 						<name>int_acc_w_188_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30705,7 +30705,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30735,7 +30735,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>536</m_topoIndex>
+				<m_topoIndex>392</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_662">
@@ -30746,7 +30746,7 @@
 						<name>int_acc_w_189_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30762,7 +30762,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30792,7 +30792,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>537</m_topoIndex>
+				<m_topoIndex>393</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_663">
@@ -30803,7 +30803,7 @@
 						<name>int_acc_w_190_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30819,7 +30819,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30849,7 +30849,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>538</m_topoIndex>
+				<m_topoIndex>394</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_664">
@@ -30860,7 +30860,7 @@
 						<name>tmp_90</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30876,7 +30876,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30923,7 +30923,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>539</m_topoIndex>
+				<m_topoIndex>395</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_665">
@@ -30934,7 +30934,7 @@
 						<name>int_acc_w_91</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -30950,7 +30950,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -30980,7 +30980,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>540</m_topoIndex>
+				<m_topoIndex>396</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_666">
@@ -30991,7 +30991,7 @@
 						<name>int_acc_w_191_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31007,7 +31007,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -31037,7 +31037,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>541</m_topoIndex>
+				<m_topoIndex>397</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_667">
@@ -31048,7 +31048,7 @@
 						<name>int_acc_w_192_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31064,7 +31064,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -31094,7 +31094,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>542</m_topoIndex>
+				<m_topoIndex>398</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_668">
@@ -31105,7 +31105,7 @@
 						<name>int_acc_w_193_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31121,7 +31121,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -31151,7 +31151,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>543</m_topoIndex>
+				<m_topoIndex>399</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_669">
@@ -31162,7 +31162,7 @@
 						<name>int_acc_w_194_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31178,7 +31178,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -31208,7 +31208,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>544</m_topoIndex>
+				<m_topoIndex>400</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_670">
@@ -31219,7 +31219,7 @@
 						<name>int_acc_w_195_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31235,7 +31235,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -31265,7 +31265,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>545</m_topoIndex>
+				<m_topoIndex>401</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_671">
@@ -31276,7 +31276,7 @@
 						<name>int_acc_w_196_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31292,7 +31292,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -31322,7 +31322,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>546</m_topoIndex>
+				<m_topoIndex>402</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_672">
@@ -31333,7 +31333,7 @@
 						<name>int_acc_w_197_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31349,7 +31349,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -31379,7 +31379,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>547</m_topoIndex>
+				<m_topoIndex>403</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_673">
@@ -31390,7 +31390,7 @@
 						<name>int_acc_w_198_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31406,7 +31406,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -31436,7 +31436,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>548</m_topoIndex>
+				<m_topoIndex>404</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_674">
@@ -31447,7 +31447,7 @@
 						<name>tmp_91</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31463,7 +31463,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -31510,7 +31510,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>549</m_topoIndex>
+				<m_topoIndex>405</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_675">
@@ -31521,7 +31521,7 @@
 						<name>int_acc_w_92</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31537,7 +31537,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -31567,7 +31567,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>550</m_topoIndex>
+				<m_topoIndex>406</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_676">
@@ -31578,7 +31578,7 @@
 						<name>int_acc_m_135_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31594,7 +31594,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -31624,7 +31624,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>319</m_topoIndex>
+				<m_topoIndex>407</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_677">
@@ -31635,7 +31635,7 @@
 						<name>int_acc_m_136_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31651,7 +31651,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -31681,7 +31681,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>320</m_topoIndex>
+				<m_topoIndex>408</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_678">
@@ -31692,7 +31692,7 @@
 						<name>int_acc_m_137_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31708,7 +31708,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -31738,7 +31738,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>321</m_topoIndex>
+				<m_topoIndex>409</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_679">
@@ -31749,7 +31749,7 @@
 						<name>int_acc_m_138_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31765,7 +31765,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -31795,7 +31795,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>322</m_topoIndex>
+				<m_topoIndex>410</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_680">
@@ -31806,7 +31806,7 @@
 						<name>int_acc_m_139_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31822,7 +31822,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -31852,7 +31852,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>323</m_topoIndex>
+				<m_topoIndex>411</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_681">
@@ -31863,7 +31863,7 @@
 						<name>int_acc_m_140_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31879,7 +31879,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -31909,7 +31909,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>324</m_topoIndex>
+				<m_topoIndex>412</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_682">
@@ -31920,7 +31920,7 @@
 						<name>int_acc_m_141_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31936,7 +31936,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -31966,7 +31966,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>325</m_topoIndex>
+				<m_topoIndex>413</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_683">
@@ -31977,7 +31977,7 @@
 						<name>int_acc_m_142_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -31993,7 +31993,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32023,7 +32023,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>326</m_topoIndex>
+				<m_topoIndex>414</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_684">
@@ -32034,7 +32034,7 @@
 						<name>tmp_92</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32050,7 +32050,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32097,7 +32097,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>327</m_topoIndex>
+				<m_topoIndex>415</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_685">
@@ -32108,7 +32108,7 @@
 						<name>int_acc_m</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32124,7 +32124,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32154,7 +32154,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>328</m_topoIndex>
+				<m_topoIndex>416</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_686">
@@ -32165,7 +32165,7 @@
 						<name>int_acc_m_143_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32181,7 +32181,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32211,7 +32211,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>329</m_topoIndex>
+				<m_topoIndex>417</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_687">
@@ -32222,7 +32222,7 @@
 						<name>int_acc_m_144_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32238,7 +32238,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32268,7 +32268,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>330</m_topoIndex>
+				<m_topoIndex>418</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_688">
@@ -32279,7 +32279,7 @@
 						<name>int_acc_m_145_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32295,7 +32295,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32325,7 +32325,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>331</m_topoIndex>
+				<m_topoIndex>419</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_689">
@@ -32336,7 +32336,7 @@
 						<name>int_acc_m_146_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32352,7 +32352,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32382,7 +32382,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>332</m_topoIndex>
+				<m_topoIndex>420</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_690">
@@ -32393,7 +32393,7 @@
 						<name>int_acc_m_147_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32409,7 +32409,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32439,7 +32439,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>333</m_topoIndex>
+				<m_topoIndex>421</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_691">
@@ -32450,7 +32450,7 @@
 						<name>int_acc_m_148_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32466,7 +32466,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32496,7 +32496,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>334</m_topoIndex>
+				<m_topoIndex>422</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_692">
@@ -32507,7 +32507,7 @@
 						<name>int_acc_m_149_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32523,7 +32523,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32553,7 +32553,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>335</m_topoIndex>
+				<m_topoIndex>423</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_693">
@@ -32564,7 +32564,7 @@
 						<name>int_acc_m_150_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32580,7 +32580,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32610,7 +32610,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>336</m_topoIndex>
+				<m_topoIndex>424</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_694">
@@ -32621,7 +32621,7 @@
 						<name>tmp_93</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32637,7 +32637,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32684,7 +32684,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>337</m_topoIndex>
+				<m_topoIndex>425</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_695">
@@ -32695,7 +32695,7 @@
 						<name>int_acc_m_86</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32711,7 +32711,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32741,7 +32741,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>338</m_topoIndex>
+				<m_topoIndex>426</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_696">
@@ -32752,7 +32752,7 @@
 						<name>int_acc_m_151_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32768,7 +32768,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32798,7 +32798,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>339</m_topoIndex>
+				<m_topoIndex>427</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_697">
@@ -32809,7 +32809,7 @@
 						<name>int_acc_m_152_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32825,7 +32825,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32855,7 +32855,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>340</m_topoIndex>
+				<m_topoIndex>428</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_698">
@@ -32866,7 +32866,7 @@
 						<name>int_acc_m_153_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32882,7 +32882,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32912,7 +32912,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>341</m_topoIndex>
+				<m_topoIndex>429</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_699">
@@ -32923,7 +32923,7 @@
 						<name>int_acc_m_154_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32939,7 +32939,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -32969,7 +32969,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>342</m_topoIndex>
+				<m_topoIndex>430</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_700">
@@ -32980,7 +32980,7 @@
 						<name>int_acc_m_155_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -32996,7 +32996,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33026,7 +33026,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>343</m_topoIndex>
+				<m_topoIndex>431</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_701">
@@ -33037,7 +33037,7 @@
 						<name>int_acc_m_156_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33053,7 +33053,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33083,7 +33083,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>344</m_topoIndex>
+				<m_topoIndex>432</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_702">
@@ -33094,7 +33094,7 @@
 						<name>int_acc_m_157_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33110,7 +33110,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33140,7 +33140,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>345</m_topoIndex>
+				<m_topoIndex>433</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_703">
@@ -33151,7 +33151,7 @@
 						<name>int_acc_m_158_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33167,7 +33167,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33197,7 +33197,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>346</m_topoIndex>
+				<m_topoIndex>434</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_704">
@@ -33208,7 +33208,7 @@
 						<name>tmp_94</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33224,7 +33224,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33271,7 +33271,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>347</m_topoIndex>
+				<m_topoIndex>435</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_705">
@@ -33282,7 +33282,7 @@
 						<name>int_acc_m_87</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33298,7 +33298,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33328,7 +33328,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>348</m_topoIndex>
+				<m_topoIndex>436</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_706">
@@ -33339,7 +33339,7 @@
 						<name>int_acc_m_159_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33355,7 +33355,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33385,7 +33385,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>349</m_topoIndex>
+				<m_topoIndex>437</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_707">
@@ -33396,7 +33396,7 @@
 						<name>int_acc_m_160_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33412,7 +33412,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33442,7 +33442,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>350</m_topoIndex>
+				<m_topoIndex>438</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_708">
@@ -33453,7 +33453,7 @@
 						<name>int_acc_m_161_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33469,7 +33469,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33499,7 +33499,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>351</m_topoIndex>
+				<m_topoIndex>439</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_709">
@@ -33510,7 +33510,7 @@
 						<name>int_acc_m_162_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33526,7 +33526,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33556,7 +33556,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>352</m_topoIndex>
+				<m_topoIndex>440</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_710">
@@ -33567,7 +33567,7 @@
 						<name>int_acc_m_163_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33583,7 +33583,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33613,7 +33613,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>353</m_topoIndex>
+				<m_topoIndex>441</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_711">
@@ -33624,7 +33624,7 @@
 						<name>int_acc_m_164_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33640,7 +33640,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33670,7 +33670,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>354</m_topoIndex>
+				<m_topoIndex>442</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_712">
@@ -33681,7 +33681,7 @@
 						<name>int_acc_m_165_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33697,7 +33697,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33727,7 +33727,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>355</m_topoIndex>
+				<m_topoIndex>443</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_713">
@@ -33738,7 +33738,7 @@
 						<name>int_acc_m_166_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33754,7 +33754,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33784,7 +33784,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>356</m_topoIndex>
+				<m_topoIndex>444</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_714">
@@ -33795,7 +33795,7 @@
 						<name>tmp_95</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33811,7 +33811,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33858,7 +33858,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>357</m_topoIndex>
+				<m_topoIndex>445</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_715">
@@ -33869,7 +33869,7 @@
 						<name>int_acc_m_88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33885,7 +33885,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33915,7 +33915,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>358</m_topoIndex>
+				<m_topoIndex>446</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_716">
@@ -33926,7 +33926,7 @@
 						<name>int_acc_m_167_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33942,7 +33942,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -33972,7 +33972,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>359</m_topoIndex>
+				<m_topoIndex>447</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_717">
@@ -33983,7 +33983,7 @@
 						<name>int_acc_m_168_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -33999,7 +33999,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34029,7 +34029,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>360</m_topoIndex>
+				<m_topoIndex>448</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_718">
@@ -34040,7 +34040,7 @@
 						<name>int_acc_m_169_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34056,7 +34056,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34086,7 +34086,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>361</m_topoIndex>
+				<m_topoIndex>449</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_719">
@@ -34097,7 +34097,7 @@
 						<name>int_acc_m_170_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34113,7 +34113,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34143,7 +34143,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>362</m_topoIndex>
+				<m_topoIndex>450</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_720">
@@ -34154,7 +34154,7 @@
 						<name>int_acc_m_171_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34170,7 +34170,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34200,7 +34200,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>363</m_topoIndex>
+				<m_topoIndex>451</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_721">
@@ -34211,7 +34211,7 @@
 						<name>int_acc_m_172_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34227,7 +34227,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34257,7 +34257,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>364</m_topoIndex>
+				<m_topoIndex>452</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_722">
@@ -34268,7 +34268,7 @@
 						<name>int_acc_m_173_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34284,7 +34284,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34314,7 +34314,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>365</m_topoIndex>
+				<m_topoIndex>453</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_723">
@@ -34325,7 +34325,7 @@
 						<name>int_acc_m_174_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34341,7 +34341,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34371,7 +34371,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>366</m_topoIndex>
+				<m_topoIndex>454</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_724">
@@ -34382,7 +34382,7 @@
 						<name>tmp_96</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34398,7 +34398,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34445,7 +34445,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>367</m_topoIndex>
+				<m_topoIndex>455</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_725">
@@ -34456,7 +34456,7 @@
 						<name>int_acc_m_89</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34472,7 +34472,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34502,7 +34502,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>368</m_topoIndex>
+				<m_topoIndex>456</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_726">
@@ -34513,7 +34513,7 @@
 						<name>int_acc_m_175_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34529,7 +34529,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34559,7 +34559,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>369</m_topoIndex>
+				<m_topoIndex>457</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_727">
@@ -34570,7 +34570,7 @@
 						<name>int_acc_m_176_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34586,7 +34586,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34616,7 +34616,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>370</m_topoIndex>
+				<m_topoIndex>458</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_728">
@@ -34627,7 +34627,7 @@
 						<name>int_acc_m_177_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34643,7 +34643,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34673,7 +34673,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>371</m_topoIndex>
+				<m_topoIndex>459</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_729">
@@ -34684,7 +34684,7 @@
 						<name>int_acc_m_178_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34700,7 +34700,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34730,7 +34730,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>372</m_topoIndex>
+				<m_topoIndex>460</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_730">
@@ -34741,7 +34741,7 @@
 						<name>int_acc_m_179_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34757,7 +34757,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34787,7 +34787,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>373</m_topoIndex>
+				<m_topoIndex>461</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_731">
@@ -34798,7 +34798,7 @@
 						<name>int_acc_m_180_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34814,7 +34814,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34844,7 +34844,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>374</m_topoIndex>
+				<m_topoIndex>462</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_732">
@@ -34855,7 +34855,7 @@
 						<name>int_acc_m_181_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34871,7 +34871,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34901,7 +34901,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>375</m_topoIndex>
+				<m_topoIndex>463</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_733">
@@ -34912,7 +34912,7 @@
 						<name>int_acc_m_182_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34928,7 +34928,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -34958,7 +34958,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>376</m_topoIndex>
+				<m_topoIndex>464</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_734">
@@ -34969,7 +34969,7 @@
 						<name>tmp_97</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -34985,7 +34985,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35032,7 +35032,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>377</m_topoIndex>
+				<m_topoIndex>465</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_735">
@@ -35043,7 +35043,7 @@
 						<name>int_acc_m_90</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35059,7 +35059,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35089,7 +35089,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>378</m_topoIndex>
+				<m_topoIndex>466</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_736">
@@ -35100,7 +35100,7 @@
 						<name>int_acc_m_183_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35116,7 +35116,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35146,7 +35146,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>379</m_topoIndex>
+				<m_topoIndex>467</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_737">
@@ -35157,7 +35157,7 @@
 						<name>int_acc_m_184_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35173,7 +35173,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35203,7 +35203,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>380</m_topoIndex>
+				<m_topoIndex>468</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_738">
@@ -35214,7 +35214,7 @@
 						<name>int_acc_m_185_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35230,7 +35230,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35260,7 +35260,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>381</m_topoIndex>
+				<m_topoIndex>469</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_739">
@@ -35271,7 +35271,7 @@
 						<name>int_acc_m_186_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35287,7 +35287,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35317,7 +35317,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>382</m_topoIndex>
+				<m_topoIndex>470</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_740">
@@ -35328,7 +35328,7 @@
 						<name>int_acc_m_187_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35344,7 +35344,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35374,7 +35374,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>383</m_topoIndex>
+				<m_topoIndex>471</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_741">
@@ -35385,7 +35385,7 @@
 						<name>int_acc_m_188_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35401,7 +35401,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35431,7 +35431,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>384</m_topoIndex>
+				<m_topoIndex>472</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_742">
@@ -35442,7 +35442,7 @@
 						<name>int_acc_m_189_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35458,7 +35458,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35488,7 +35488,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>385</m_topoIndex>
+				<m_topoIndex>473</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_743">
@@ -35499,7 +35499,7 @@
 						<name>int_acc_m_190_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35515,7 +35515,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35545,7 +35545,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>386</m_topoIndex>
+				<m_topoIndex>474</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_744">
@@ -35556,7 +35556,7 @@
 						<name>tmp_98</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35572,7 +35572,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35619,7 +35619,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>387</m_topoIndex>
+				<m_topoIndex>475</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_745">
@@ -35630,7 +35630,7 @@
 						<name>int_acc_m_91</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35646,7 +35646,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35676,7 +35676,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>388</m_topoIndex>
+				<m_topoIndex>476</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_746">
@@ -35687,7 +35687,7 @@
 						<name>int_acc_m_191_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35703,7 +35703,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35733,7 +35733,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>389</m_topoIndex>
+				<m_topoIndex>477</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_747">
@@ -35744,7 +35744,7 @@
 						<name>int_acc_m_192_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35760,7 +35760,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35790,7 +35790,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>390</m_topoIndex>
+				<m_topoIndex>478</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_748">
@@ -35801,7 +35801,7 @@
 						<name>int_acc_m_193_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35817,7 +35817,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35847,7 +35847,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>391</m_topoIndex>
+				<m_topoIndex>479</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_749">
@@ -35858,7 +35858,7 @@
 						<name>int_acc_m_194_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35874,7 +35874,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35904,7 +35904,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>392</m_topoIndex>
+				<m_topoIndex>480</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_750">
@@ -35915,7 +35915,7 @@
 						<name>int_acc_m_195_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35931,7 +35931,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -35961,7 +35961,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>393</m_topoIndex>
+				<m_topoIndex>481</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_751">
@@ -35972,7 +35972,7 @@
 						<name>int_acc_m_196_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -35988,7 +35988,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -36018,7 +36018,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>394</m_topoIndex>
+				<m_topoIndex>482</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_752">
@@ -36029,7 +36029,7 @@
 						<name>int_acc_m_197_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36045,7 +36045,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -36075,7 +36075,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>395</m_topoIndex>
+				<m_topoIndex>483</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_753">
@@ -36086,7 +36086,7 @@
 						<name>int_acc_m_198_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36102,7 +36102,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -36132,7 +36132,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>396</m_topoIndex>
+				<m_topoIndex>484</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_754">
@@ -36143,7 +36143,7 @@
 						<name>tmp_99</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36159,7 +36159,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -36206,7 +36206,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.72</m_delay>
-				<m_topoIndex>397</m_topoIndex>
+				<m_topoIndex>485</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_755">
@@ -36217,7 +36217,7 @@
 						<name>int_acc_m_92</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36233,7 +36233,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -36263,7 +36263,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.64</m_delay>
-				<m_topoIndex>398</m_topoIndex>
+				<m_topoIndex>486</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_756">
@@ -36271,10 +36271,10 @@
 					<Obj>
 						<type>0</type>
 						<id>777</id>
-						<name>_ln415</name>
+						<name>_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36290,7 +36290,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -36334,7 +36334,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.67</m_delay>
-				<m_topoIndex>189</m_topoIndex>
+				<m_topoIndex>203</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_757">
@@ -36342,10 +36342,10 @@
 					<Obj>
 						<type>0</type>
 						<id>779</id>
-						<name>int_acc_w_141_write_ln415</name>
+						<name>int_acc_w_141_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36361,7 +36361,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -36393,7 +36393,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>552</m_topoIndex>
+				<m_topoIndex>488</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_758">
@@ -36401,10 +36401,10 @@
 					<Obj>
 						<type>0</type>
 						<id>780</id>
-						<name>int_acc_w_149_write_ln415</name>
+						<name>int_acc_w_149_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36420,7 +36420,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -36452,7 +36452,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>553</m_topoIndex>
+				<m_topoIndex>489</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_759">
@@ -36460,10 +36460,10 @@
 					<Obj>
 						<type>0</type>
 						<id>781</id>
-						<name>int_acc_w_157_write_ln415</name>
+						<name>int_acc_w_157_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36479,7 +36479,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -36511,7 +36511,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>554</m_topoIndex>
+				<m_topoIndex>490</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_760">
@@ -36519,10 +36519,10 @@
 					<Obj>
 						<type>0</type>
 						<id>782</id>
-						<name>int_acc_w_165_write_ln415</name>
+						<name>int_acc_w_165_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36538,7 +36538,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -36570,7 +36570,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>555</m_topoIndex>
+				<m_topoIndex>491</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_761">
@@ -36578,10 +36578,10 @@
 					<Obj>
 						<type>0</type>
 						<id>783</id>
-						<name>int_acc_w_173_write_ln415</name>
+						<name>int_acc_w_173_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36597,7 +36597,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -36629,7 +36629,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>556</m_topoIndex>
+				<m_topoIndex>492</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_762">
@@ -36637,10 +36637,10 @@
 					<Obj>
 						<type>0</type>
 						<id>784</id>
-						<name>int_acc_w_181_write_ln415</name>
+						<name>int_acc_w_181_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36656,7 +36656,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -36688,7 +36688,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>557</m_topoIndex>
+				<m_topoIndex>493</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_763">
@@ -36696,10 +36696,10 @@
 					<Obj>
 						<type>0</type>
 						<id>785</id>
-						<name>int_acc_w_189_write_ln415</name>
+						<name>int_acc_w_189_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36715,7 +36715,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -36747,7 +36747,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>558</m_topoIndex>
+				<m_topoIndex>494</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_764">
@@ -36755,10 +36755,10 @@
 					<Obj>
 						<type>0</type>
 						<id>786</id>
-						<name>int_acc_w_197_write_ln415</name>
+						<name>int_acc_w_197_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36774,7 +36774,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -36806,7 +36806,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>559</m_topoIndex>
+				<m_topoIndex>495</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_765">
@@ -36814,10 +36814,10 @@
 					<Obj>
 						<type>0</type>
 						<id>787</id>
-						<name>int_acc_m_141_write_ln416</name>
+						<name>int_acc_m_141_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36833,7 +36833,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -36865,7 +36865,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>399</m_topoIndex>
+				<m_topoIndex>496</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_766">
@@ -36873,10 +36873,10 @@
 					<Obj>
 						<type>0</type>
 						<id>788</id>
-						<name>int_acc_m_149_write_ln416</name>
+						<name>int_acc_m_149_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36892,7 +36892,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -36924,7 +36924,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>400</m_topoIndex>
+				<m_topoIndex>497</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_767">
@@ -36932,10 +36932,10 @@
 					<Obj>
 						<type>0</type>
 						<id>789</id>
-						<name>int_acc_m_157_write_ln416</name>
+						<name>int_acc_m_157_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -36951,7 +36951,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -36983,7 +36983,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>401</m_topoIndex>
+				<m_topoIndex>498</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_768">
@@ -36991,10 +36991,10 @@
 					<Obj>
 						<type>0</type>
 						<id>790</id>
-						<name>int_acc_m_165_write_ln416</name>
+						<name>int_acc_m_165_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37010,7 +37010,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -37042,7 +37042,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>402</m_topoIndex>
+				<m_topoIndex>499</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_769">
@@ -37050,10 +37050,10 @@
 					<Obj>
 						<type>0</type>
 						<id>791</id>
-						<name>int_acc_m_173_write_ln416</name>
+						<name>int_acc_m_173_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37069,7 +37069,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -37101,7 +37101,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>403</m_topoIndex>
+				<m_topoIndex>500</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_770">
@@ -37109,10 +37109,10 @@
 					<Obj>
 						<type>0</type>
 						<id>792</id>
-						<name>int_acc_m_181_write_ln416</name>
+						<name>int_acc_m_181_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37128,7 +37128,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -37160,7 +37160,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>404</m_topoIndex>
+				<m_topoIndex>501</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_771">
@@ -37168,10 +37168,10 @@
 					<Obj>
 						<type>0</type>
 						<id>793</id>
-						<name>int_acc_m_189_write_ln416</name>
+						<name>int_acc_m_189_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37187,7 +37187,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -37219,7 +37219,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>405</m_topoIndex>
+				<m_topoIndex>502</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_772">
@@ -37227,10 +37227,10 @@
 					<Obj>
 						<type>0</type>
 						<id>794</id>
-						<name>int_acc_m_197_write_ln416</name>
+						<name>int_acc_m_197_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37246,7 +37246,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -37278,7 +37278,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>406</m_topoIndex>
+				<m_topoIndex>503</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_773">
@@ -37286,10 +37286,10 @@
 					<Obj>
 						<type>0</type>
 						<id>795</id>
-						<name>br_ln416</name>
+						<name>br_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37305,7 +37305,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -37334,7 +37334,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>560</m_topoIndex>
+				<m_topoIndex>504</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_774">
@@ -37342,10 +37342,10 @@
 					<Obj>
 						<type>0</type>
 						<id>797</id>
-						<name>int_acc_w_140_write_ln415</name>
+						<name>int_acc_w_140_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37361,7 +37361,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -37393,7 +37393,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>561</m_topoIndex>
+				<m_topoIndex>505</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_775">
@@ -37401,10 +37401,10 @@
 					<Obj>
 						<type>0</type>
 						<id>798</id>
-						<name>int_acc_w_148_write_ln415</name>
+						<name>int_acc_w_148_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37420,7 +37420,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -37452,7 +37452,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>562</m_topoIndex>
+				<m_topoIndex>506</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_776">
@@ -37460,10 +37460,10 @@
 					<Obj>
 						<type>0</type>
 						<id>799</id>
-						<name>int_acc_w_156_write_ln415</name>
+						<name>int_acc_w_156_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37479,7 +37479,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -37511,7 +37511,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>563</m_topoIndex>
+				<m_topoIndex>507</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_777">
@@ -37519,10 +37519,10 @@
 					<Obj>
 						<type>0</type>
 						<id>800</id>
-						<name>int_acc_w_164_write_ln415</name>
+						<name>int_acc_w_164_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37538,7 +37538,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -37570,7 +37570,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>564</m_topoIndex>
+				<m_topoIndex>508</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_778">
@@ -37578,10 +37578,10 @@
 					<Obj>
 						<type>0</type>
 						<id>801</id>
-						<name>int_acc_w_172_write_ln415</name>
+						<name>int_acc_w_172_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37597,7 +37597,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -37629,7 +37629,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>565</m_topoIndex>
+				<m_topoIndex>509</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_779">
@@ -37637,10 +37637,10 @@
 					<Obj>
 						<type>0</type>
 						<id>802</id>
-						<name>int_acc_w_180_write_ln415</name>
+						<name>int_acc_w_180_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37656,7 +37656,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -37688,7 +37688,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>566</m_topoIndex>
+				<m_topoIndex>510</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_780">
@@ -37696,10 +37696,10 @@
 					<Obj>
 						<type>0</type>
 						<id>803</id>
-						<name>int_acc_w_188_write_ln415</name>
+						<name>int_acc_w_188_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37715,7 +37715,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -37747,7 +37747,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>567</m_topoIndex>
+				<m_topoIndex>511</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_781">
@@ -37755,10 +37755,10 @@
 					<Obj>
 						<type>0</type>
 						<id>804</id>
-						<name>int_acc_w_196_write_ln415</name>
+						<name>int_acc_w_196_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37774,7 +37774,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -37806,7 +37806,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>568</m_topoIndex>
+				<m_topoIndex>512</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_782">
@@ -37814,10 +37814,10 @@
 					<Obj>
 						<type>0</type>
 						<id>805</id>
-						<name>int_acc_m_140_write_ln416</name>
+						<name>int_acc_m_140_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37833,7 +37833,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -37865,7 +37865,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>407</m_topoIndex>
+				<m_topoIndex>513</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_783">
@@ -37873,10 +37873,10 @@
 					<Obj>
 						<type>0</type>
 						<id>806</id>
-						<name>int_acc_m_148_write_ln416</name>
+						<name>int_acc_m_148_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37892,7 +37892,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -37924,7 +37924,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>408</m_topoIndex>
+				<m_topoIndex>514</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_784">
@@ -37932,10 +37932,10 @@
 					<Obj>
 						<type>0</type>
 						<id>807</id>
-						<name>int_acc_m_156_write_ln416</name>
+						<name>int_acc_m_156_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -37951,7 +37951,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -37983,7 +37983,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>409</m_topoIndex>
+				<m_topoIndex>515</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_785">
@@ -37991,10 +37991,10 @@
 					<Obj>
 						<type>0</type>
 						<id>808</id>
-						<name>int_acc_m_164_write_ln416</name>
+						<name>int_acc_m_164_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38010,7 +38010,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -38042,7 +38042,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>410</m_topoIndex>
+				<m_topoIndex>516</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_786">
@@ -38050,10 +38050,10 @@
 					<Obj>
 						<type>0</type>
 						<id>809</id>
-						<name>int_acc_m_172_write_ln416</name>
+						<name>int_acc_m_172_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38069,7 +38069,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -38101,7 +38101,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>411</m_topoIndex>
+				<m_topoIndex>517</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_787">
@@ -38109,10 +38109,10 @@
 					<Obj>
 						<type>0</type>
 						<id>810</id>
-						<name>int_acc_m_180_write_ln416</name>
+						<name>int_acc_m_180_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38128,7 +38128,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -38160,7 +38160,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>412</m_topoIndex>
+				<m_topoIndex>518</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_788">
@@ -38168,10 +38168,10 @@
 					<Obj>
 						<type>0</type>
 						<id>811</id>
-						<name>int_acc_m_188_write_ln416</name>
+						<name>int_acc_m_188_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38187,7 +38187,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -38219,7 +38219,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>413</m_topoIndex>
+				<m_topoIndex>519</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_789">
@@ -38227,10 +38227,10 @@
 					<Obj>
 						<type>0</type>
 						<id>812</id>
-						<name>int_acc_m_196_write_ln416</name>
+						<name>int_acc_m_196_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38246,7 +38246,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -38278,7 +38278,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>414</m_topoIndex>
+				<m_topoIndex>520</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_790">
@@ -38286,10 +38286,10 @@
 					<Obj>
 						<type>0</type>
 						<id>813</id>
-						<name>br_ln416</name>
+						<name>br_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38305,7 +38305,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -38334,7 +38334,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>569</m_topoIndex>
+				<m_topoIndex>521</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_791">
@@ -38342,10 +38342,10 @@
 					<Obj>
 						<type>0</type>
 						<id>815</id>
-						<name>int_acc_w_139_write_ln415</name>
+						<name>int_acc_w_139_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38361,7 +38361,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -38393,7 +38393,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>570</m_topoIndex>
+				<m_topoIndex>522</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_792">
@@ -38401,10 +38401,10 @@
 					<Obj>
 						<type>0</type>
 						<id>816</id>
-						<name>int_acc_w_147_write_ln415</name>
+						<name>int_acc_w_147_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38420,7 +38420,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -38452,7 +38452,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>571</m_topoIndex>
+				<m_topoIndex>523</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_793">
@@ -38460,10 +38460,10 @@
 					<Obj>
 						<type>0</type>
 						<id>817</id>
-						<name>int_acc_w_155_write_ln415</name>
+						<name>int_acc_w_155_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38479,7 +38479,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -38511,7 +38511,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>572</m_topoIndex>
+				<m_topoIndex>524</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_794">
@@ -38519,10 +38519,10 @@
 					<Obj>
 						<type>0</type>
 						<id>818</id>
-						<name>int_acc_w_163_write_ln415</name>
+						<name>int_acc_w_163_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38538,7 +38538,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -38570,7 +38570,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>573</m_topoIndex>
+				<m_topoIndex>525</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_795">
@@ -38578,10 +38578,10 @@
 					<Obj>
 						<type>0</type>
 						<id>819</id>
-						<name>int_acc_w_171_write_ln415</name>
+						<name>int_acc_w_171_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38597,7 +38597,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -38629,7 +38629,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>574</m_topoIndex>
+				<m_topoIndex>526</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_796">
@@ -38637,10 +38637,10 @@
 					<Obj>
 						<type>0</type>
 						<id>820</id>
-						<name>int_acc_w_179_write_ln415</name>
+						<name>int_acc_w_179_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38656,7 +38656,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -38688,7 +38688,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>575</m_topoIndex>
+				<m_topoIndex>527</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_797">
@@ -38696,10 +38696,10 @@
 					<Obj>
 						<type>0</type>
 						<id>821</id>
-						<name>int_acc_w_187_write_ln415</name>
+						<name>int_acc_w_187_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38715,7 +38715,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -38747,7 +38747,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>576</m_topoIndex>
+				<m_topoIndex>528</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_798">
@@ -38755,10 +38755,10 @@
 					<Obj>
 						<type>0</type>
 						<id>822</id>
-						<name>int_acc_w_195_write_ln415</name>
+						<name>int_acc_w_195_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38774,7 +38774,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -38806,7 +38806,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>577</m_topoIndex>
+				<m_topoIndex>529</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_799">
@@ -38814,10 +38814,10 @@
 					<Obj>
 						<type>0</type>
 						<id>823</id>
-						<name>int_acc_m_139_write_ln416</name>
+						<name>int_acc_m_139_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38833,7 +38833,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -38865,7 +38865,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>415</m_topoIndex>
+				<m_topoIndex>530</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_800">
@@ -38873,10 +38873,10 @@
 					<Obj>
 						<type>0</type>
 						<id>824</id>
-						<name>int_acc_m_147_write_ln416</name>
+						<name>int_acc_m_147_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38892,7 +38892,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -38924,7 +38924,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>416</m_topoIndex>
+				<m_topoIndex>531</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_801">
@@ -38932,10 +38932,10 @@
 					<Obj>
 						<type>0</type>
 						<id>825</id>
-						<name>int_acc_m_155_write_ln416</name>
+						<name>int_acc_m_155_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -38951,7 +38951,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -38983,7 +38983,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>417</m_topoIndex>
+				<m_topoIndex>532</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_802">
@@ -38991,10 +38991,10 @@
 					<Obj>
 						<type>0</type>
 						<id>826</id>
-						<name>int_acc_m_163_write_ln416</name>
+						<name>int_acc_m_163_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39010,7 +39010,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -39042,7 +39042,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>418</m_topoIndex>
+				<m_topoIndex>533</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_803">
@@ -39050,10 +39050,10 @@
 					<Obj>
 						<type>0</type>
 						<id>827</id>
-						<name>int_acc_m_171_write_ln416</name>
+						<name>int_acc_m_171_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39069,7 +39069,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -39101,7 +39101,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>419</m_topoIndex>
+				<m_topoIndex>534</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_804">
@@ -39109,10 +39109,10 @@
 					<Obj>
 						<type>0</type>
 						<id>828</id>
-						<name>int_acc_m_179_write_ln416</name>
+						<name>int_acc_m_179_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39128,7 +39128,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -39160,7 +39160,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>420</m_topoIndex>
+				<m_topoIndex>535</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_805">
@@ -39168,10 +39168,10 @@
 					<Obj>
 						<type>0</type>
 						<id>829</id>
-						<name>int_acc_m_187_write_ln416</name>
+						<name>int_acc_m_187_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39187,7 +39187,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -39219,7 +39219,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>421</m_topoIndex>
+				<m_topoIndex>536</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_806">
@@ -39227,10 +39227,10 @@
 					<Obj>
 						<type>0</type>
 						<id>830</id>
-						<name>int_acc_m_195_write_ln416</name>
+						<name>int_acc_m_195_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39246,7 +39246,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -39278,7 +39278,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>422</m_topoIndex>
+				<m_topoIndex>537</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_807">
@@ -39286,10 +39286,10 @@
 					<Obj>
 						<type>0</type>
 						<id>831</id>
-						<name>br_ln416</name>
+						<name>br_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39305,7 +39305,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -39334,7 +39334,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>578</m_topoIndex>
+				<m_topoIndex>538</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_808">
@@ -39342,10 +39342,10 @@
 					<Obj>
 						<type>0</type>
 						<id>833</id>
-						<name>int_acc_w_138_write_ln415</name>
+						<name>int_acc_w_138_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39361,7 +39361,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -39393,7 +39393,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>579</m_topoIndex>
+				<m_topoIndex>539</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_809">
@@ -39401,10 +39401,10 @@
 					<Obj>
 						<type>0</type>
 						<id>834</id>
-						<name>int_acc_w_146_write_ln415</name>
+						<name>int_acc_w_146_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39420,7 +39420,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -39452,7 +39452,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>580</m_topoIndex>
+				<m_topoIndex>540</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_810">
@@ -39460,10 +39460,10 @@
 					<Obj>
 						<type>0</type>
 						<id>835</id>
-						<name>int_acc_w_154_write_ln415</name>
+						<name>int_acc_w_154_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39479,7 +39479,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -39511,7 +39511,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>581</m_topoIndex>
+				<m_topoIndex>541</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_811">
@@ -39519,10 +39519,10 @@
 					<Obj>
 						<type>0</type>
 						<id>836</id>
-						<name>int_acc_w_162_write_ln415</name>
+						<name>int_acc_w_162_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39538,7 +39538,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -39570,7 +39570,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>582</m_topoIndex>
+				<m_topoIndex>542</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_812">
@@ -39578,10 +39578,10 @@
 					<Obj>
 						<type>0</type>
 						<id>837</id>
-						<name>int_acc_w_170_write_ln415</name>
+						<name>int_acc_w_170_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39597,7 +39597,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -39629,7 +39629,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>583</m_topoIndex>
+				<m_topoIndex>543</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_813">
@@ -39637,10 +39637,10 @@
 					<Obj>
 						<type>0</type>
 						<id>838</id>
-						<name>int_acc_w_178_write_ln415</name>
+						<name>int_acc_w_178_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39656,7 +39656,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -39688,7 +39688,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>584</m_topoIndex>
+				<m_topoIndex>544</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_814">
@@ -39696,10 +39696,10 @@
 					<Obj>
 						<type>0</type>
 						<id>839</id>
-						<name>int_acc_w_186_write_ln415</name>
+						<name>int_acc_w_186_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39715,7 +39715,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -39747,7 +39747,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>585</m_topoIndex>
+				<m_topoIndex>545</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_815">
@@ -39755,10 +39755,10 @@
 					<Obj>
 						<type>0</type>
 						<id>840</id>
-						<name>int_acc_w_194_write_ln415</name>
+						<name>int_acc_w_194_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39774,7 +39774,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -39806,7 +39806,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>586</m_topoIndex>
+				<m_topoIndex>546</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_816">
@@ -39814,10 +39814,10 @@
 					<Obj>
 						<type>0</type>
 						<id>841</id>
-						<name>int_acc_m_138_write_ln416</name>
+						<name>int_acc_m_138_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39833,7 +39833,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -39865,7 +39865,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>423</m_topoIndex>
+				<m_topoIndex>547</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_817">
@@ -39873,10 +39873,10 @@
 					<Obj>
 						<type>0</type>
 						<id>842</id>
-						<name>int_acc_m_146_write_ln416</name>
+						<name>int_acc_m_146_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39892,7 +39892,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -39924,7 +39924,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>424</m_topoIndex>
+				<m_topoIndex>548</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_818">
@@ -39932,10 +39932,10 @@
 					<Obj>
 						<type>0</type>
 						<id>843</id>
-						<name>int_acc_m_154_write_ln416</name>
+						<name>int_acc_m_154_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -39951,7 +39951,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -39983,7 +39983,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>425</m_topoIndex>
+				<m_topoIndex>549</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_819">
@@ -39991,10 +39991,10 @@
 					<Obj>
 						<type>0</type>
 						<id>844</id>
-						<name>int_acc_m_162_write_ln416</name>
+						<name>int_acc_m_162_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40010,7 +40010,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -40042,7 +40042,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>426</m_topoIndex>
+				<m_topoIndex>550</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_820">
@@ -40050,10 +40050,10 @@
 					<Obj>
 						<type>0</type>
 						<id>845</id>
-						<name>int_acc_m_170_write_ln416</name>
+						<name>int_acc_m_170_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40069,7 +40069,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -40101,7 +40101,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>427</m_topoIndex>
+				<m_topoIndex>551</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_821">
@@ -40109,10 +40109,10 @@
 					<Obj>
 						<type>0</type>
 						<id>846</id>
-						<name>int_acc_m_178_write_ln416</name>
+						<name>int_acc_m_178_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40128,7 +40128,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -40160,7 +40160,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>428</m_topoIndex>
+				<m_topoIndex>552</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_822">
@@ -40168,10 +40168,10 @@
 					<Obj>
 						<type>0</type>
 						<id>847</id>
-						<name>int_acc_m_186_write_ln416</name>
+						<name>int_acc_m_186_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40187,7 +40187,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -40219,7 +40219,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>429</m_topoIndex>
+				<m_topoIndex>553</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_823">
@@ -40227,10 +40227,10 @@
 					<Obj>
 						<type>0</type>
 						<id>848</id>
-						<name>int_acc_m_194_write_ln416</name>
+						<name>int_acc_m_194_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40246,7 +40246,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -40278,7 +40278,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>430</m_topoIndex>
+				<m_topoIndex>554</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_824">
@@ -40286,10 +40286,10 @@
 					<Obj>
 						<type>0</type>
 						<id>849</id>
-						<name>br_ln416</name>
+						<name>br_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40305,7 +40305,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -40334,7 +40334,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>587</m_topoIndex>
+				<m_topoIndex>555</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_825">
@@ -40342,10 +40342,10 @@
 					<Obj>
 						<type>0</type>
 						<id>851</id>
-						<name>int_acc_w_137_write_ln415</name>
+						<name>int_acc_w_137_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40361,7 +40361,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -40393,7 +40393,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>588</m_topoIndex>
+				<m_topoIndex>556</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_826">
@@ -40401,10 +40401,10 @@
 					<Obj>
 						<type>0</type>
 						<id>852</id>
-						<name>int_acc_w_145_write_ln415</name>
+						<name>int_acc_w_145_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40420,7 +40420,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -40452,7 +40452,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>589</m_topoIndex>
+				<m_topoIndex>557</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_827">
@@ -40460,10 +40460,10 @@
 					<Obj>
 						<type>0</type>
 						<id>853</id>
-						<name>int_acc_w_153_write_ln415</name>
+						<name>int_acc_w_153_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40479,7 +40479,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -40511,7 +40511,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>590</m_topoIndex>
+				<m_topoIndex>558</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_828">
@@ -40519,10 +40519,10 @@
 					<Obj>
 						<type>0</type>
 						<id>854</id>
-						<name>int_acc_w_161_write_ln415</name>
+						<name>int_acc_w_161_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40538,7 +40538,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -40570,7 +40570,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>591</m_topoIndex>
+				<m_topoIndex>559</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_829">
@@ -40578,10 +40578,10 @@
 					<Obj>
 						<type>0</type>
 						<id>855</id>
-						<name>int_acc_w_169_write_ln415</name>
+						<name>int_acc_w_169_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40597,7 +40597,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -40629,7 +40629,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>592</m_topoIndex>
+				<m_topoIndex>560</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_830">
@@ -40637,10 +40637,10 @@
 					<Obj>
 						<type>0</type>
 						<id>856</id>
-						<name>int_acc_w_177_write_ln415</name>
+						<name>int_acc_w_177_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40656,7 +40656,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -40688,7 +40688,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>593</m_topoIndex>
+				<m_topoIndex>561</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_831">
@@ -40696,10 +40696,10 @@
 					<Obj>
 						<type>0</type>
 						<id>857</id>
-						<name>int_acc_w_185_write_ln415</name>
+						<name>int_acc_w_185_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40715,7 +40715,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -40747,7 +40747,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>594</m_topoIndex>
+				<m_topoIndex>562</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_832">
@@ -40755,10 +40755,10 @@
 					<Obj>
 						<type>0</type>
 						<id>858</id>
-						<name>int_acc_w_193_write_ln415</name>
+						<name>int_acc_w_193_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40774,7 +40774,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -40806,7 +40806,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>595</m_topoIndex>
+				<m_topoIndex>563</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_833">
@@ -40814,10 +40814,10 @@
 					<Obj>
 						<type>0</type>
 						<id>859</id>
-						<name>int_acc_m_137_write_ln416</name>
+						<name>int_acc_m_137_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40833,7 +40833,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -40865,7 +40865,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>431</m_topoIndex>
+				<m_topoIndex>564</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_834">
@@ -40873,10 +40873,10 @@
 					<Obj>
 						<type>0</type>
 						<id>860</id>
-						<name>int_acc_m_145_write_ln416</name>
+						<name>int_acc_m_145_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40892,7 +40892,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -40924,7 +40924,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>432</m_topoIndex>
+				<m_topoIndex>565</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_835">
@@ -40932,10 +40932,10 @@
 					<Obj>
 						<type>0</type>
 						<id>861</id>
-						<name>int_acc_m_153_write_ln416</name>
+						<name>int_acc_m_153_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -40951,7 +40951,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -40983,7 +40983,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>433</m_topoIndex>
+				<m_topoIndex>566</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_836">
@@ -40991,10 +40991,10 @@
 					<Obj>
 						<type>0</type>
 						<id>862</id>
-						<name>int_acc_m_161_write_ln416</name>
+						<name>int_acc_m_161_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41010,7 +41010,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -41042,7 +41042,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>434</m_topoIndex>
+				<m_topoIndex>567</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_837">
@@ -41050,10 +41050,10 @@
 					<Obj>
 						<type>0</type>
 						<id>863</id>
-						<name>int_acc_m_169_write_ln416</name>
+						<name>int_acc_m_169_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41069,7 +41069,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -41101,7 +41101,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>435</m_topoIndex>
+				<m_topoIndex>568</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_838">
@@ -41109,10 +41109,10 @@
 					<Obj>
 						<type>0</type>
 						<id>864</id>
-						<name>int_acc_m_177_write_ln416</name>
+						<name>int_acc_m_177_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41128,7 +41128,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -41160,7 +41160,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>436</m_topoIndex>
+				<m_topoIndex>569</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_839">
@@ -41168,10 +41168,10 @@
 					<Obj>
 						<type>0</type>
 						<id>865</id>
-						<name>int_acc_m_185_write_ln416</name>
+						<name>int_acc_m_185_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41187,7 +41187,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -41219,7 +41219,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>437</m_topoIndex>
+				<m_topoIndex>570</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_840">
@@ -41227,10 +41227,10 @@
 					<Obj>
 						<type>0</type>
 						<id>866</id>
-						<name>int_acc_m_193_write_ln416</name>
+						<name>int_acc_m_193_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41246,7 +41246,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -41278,7 +41278,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>438</m_topoIndex>
+				<m_topoIndex>571</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_841">
@@ -41286,10 +41286,10 @@
 					<Obj>
 						<type>0</type>
 						<id>867</id>
-						<name>br_ln416</name>
+						<name>br_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41305,7 +41305,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -41334,7 +41334,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>596</m_topoIndex>
+				<m_topoIndex>572</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_842">
@@ -41342,10 +41342,10 @@
 					<Obj>
 						<type>0</type>
 						<id>869</id>
-						<name>int_acc_w_136_write_ln415</name>
+						<name>int_acc_w_136_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41361,7 +41361,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -41393,7 +41393,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>597</m_topoIndex>
+				<m_topoIndex>573</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_843">
@@ -41401,10 +41401,10 @@
 					<Obj>
 						<type>0</type>
 						<id>870</id>
-						<name>int_acc_w_144_write_ln415</name>
+						<name>int_acc_w_144_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41420,7 +41420,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -41452,7 +41452,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>598</m_topoIndex>
+				<m_topoIndex>574</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_844">
@@ -41460,10 +41460,10 @@
 					<Obj>
 						<type>0</type>
 						<id>871</id>
-						<name>int_acc_w_152_write_ln415</name>
+						<name>int_acc_w_152_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41479,7 +41479,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -41511,7 +41511,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>599</m_topoIndex>
+				<m_topoIndex>575</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_845">
@@ -41519,10 +41519,10 @@
 					<Obj>
 						<type>0</type>
 						<id>872</id>
-						<name>int_acc_w_160_write_ln415</name>
+						<name>int_acc_w_160_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41538,7 +41538,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -41570,7 +41570,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>600</m_topoIndex>
+				<m_topoIndex>576</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_846">
@@ -41578,10 +41578,10 @@
 					<Obj>
 						<type>0</type>
 						<id>873</id>
-						<name>int_acc_w_168_write_ln415</name>
+						<name>int_acc_w_168_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41597,7 +41597,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -41629,7 +41629,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>601</m_topoIndex>
+				<m_topoIndex>577</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_847">
@@ -41637,10 +41637,10 @@
 					<Obj>
 						<type>0</type>
 						<id>874</id>
-						<name>int_acc_w_176_write_ln415</name>
+						<name>int_acc_w_176_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41656,7 +41656,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -41688,7 +41688,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>602</m_topoIndex>
+				<m_topoIndex>578</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_848">
@@ -41696,10 +41696,10 @@
 					<Obj>
 						<type>0</type>
 						<id>875</id>
-						<name>int_acc_w_184_write_ln415</name>
+						<name>int_acc_w_184_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41715,7 +41715,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -41747,7 +41747,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>603</m_topoIndex>
+				<m_topoIndex>579</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_849">
@@ -41755,10 +41755,10 @@
 					<Obj>
 						<type>0</type>
 						<id>876</id>
-						<name>int_acc_w_192_write_ln415</name>
+						<name>int_acc_w_192_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41774,7 +41774,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -41806,7 +41806,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>604</m_topoIndex>
+				<m_topoIndex>580</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_850">
@@ -41814,10 +41814,10 @@
 					<Obj>
 						<type>0</type>
 						<id>877</id>
-						<name>int_acc_m_136_write_ln416</name>
+						<name>int_acc_m_136_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41833,7 +41833,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -41865,7 +41865,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>439</m_topoIndex>
+				<m_topoIndex>581</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_851">
@@ -41873,10 +41873,10 @@
 					<Obj>
 						<type>0</type>
 						<id>878</id>
-						<name>int_acc_m_144_write_ln416</name>
+						<name>int_acc_m_144_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41892,7 +41892,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -41924,7 +41924,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>440</m_topoIndex>
+				<m_topoIndex>582</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_852">
@@ -41932,10 +41932,10 @@
 					<Obj>
 						<type>0</type>
 						<id>879</id>
-						<name>int_acc_m_152_write_ln416</name>
+						<name>int_acc_m_152_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -41951,7 +41951,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -41983,7 +41983,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>441</m_topoIndex>
+				<m_topoIndex>583</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_853">
@@ -41991,10 +41991,10 @@
 					<Obj>
 						<type>0</type>
 						<id>880</id>
-						<name>int_acc_m_160_write_ln416</name>
+						<name>int_acc_m_160_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42010,7 +42010,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -42042,7 +42042,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>442</m_topoIndex>
+				<m_topoIndex>584</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_854">
@@ -42050,10 +42050,10 @@
 					<Obj>
 						<type>0</type>
 						<id>881</id>
-						<name>int_acc_m_168_write_ln416</name>
+						<name>int_acc_m_168_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42069,7 +42069,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -42101,7 +42101,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>443</m_topoIndex>
+				<m_topoIndex>585</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_855">
@@ -42109,10 +42109,10 @@
 					<Obj>
 						<type>0</type>
 						<id>882</id>
-						<name>int_acc_m_176_write_ln416</name>
+						<name>int_acc_m_176_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42128,7 +42128,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -42160,7 +42160,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>444</m_topoIndex>
+				<m_topoIndex>586</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_856">
@@ -42168,10 +42168,10 @@
 					<Obj>
 						<type>0</type>
 						<id>883</id>
-						<name>int_acc_m_184_write_ln416</name>
+						<name>int_acc_m_184_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42187,7 +42187,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -42219,7 +42219,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>445</m_topoIndex>
+				<m_topoIndex>587</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_857">
@@ -42227,10 +42227,10 @@
 					<Obj>
 						<type>0</type>
 						<id>884</id>
-						<name>int_acc_m_192_write_ln416</name>
+						<name>int_acc_m_192_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42246,7 +42246,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -42278,7 +42278,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>446</m_topoIndex>
+				<m_topoIndex>588</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_858">
@@ -42286,10 +42286,10 @@
 					<Obj>
 						<type>0</type>
 						<id>885</id>
-						<name>br_ln416</name>
+						<name>br_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42305,7 +42305,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -42334,7 +42334,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>605</m_topoIndex>
+				<m_topoIndex>589</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_859">
@@ -42342,10 +42342,10 @@
 					<Obj>
 						<type>0</type>
 						<id>887</id>
-						<name>int_acc_w_135_write_ln415</name>
+						<name>int_acc_w_135_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42361,7 +42361,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -42393,7 +42393,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>606</m_topoIndex>
+				<m_topoIndex>590</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_860">
@@ -42401,10 +42401,10 @@
 					<Obj>
 						<type>0</type>
 						<id>888</id>
-						<name>int_acc_w_143_write_ln415</name>
+						<name>int_acc_w_143_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42420,7 +42420,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -42452,7 +42452,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>607</m_topoIndex>
+				<m_topoIndex>591</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_861">
@@ -42460,10 +42460,10 @@
 					<Obj>
 						<type>0</type>
 						<id>889</id>
-						<name>int_acc_w_151_write_ln415</name>
+						<name>int_acc_w_151_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42479,7 +42479,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -42511,7 +42511,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>608</m_topoIndex>
+				<m_topoIndex>592</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_862">
@@ -42519,10 +42519,10 @@
 					<Obj>
 						<type>0</type>
 						<id>890</id>
-						<name>int_acc_w_159_write_ln415</name>
+						<name>int_acc_w_159_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42538,7 +42538,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -42570,7 +42570,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>609</m_topoIndex>
+				<m_topoIndex>593</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_863">
@@ -42578,10 +42578,10 @@
 					<Obj>
 						<type>0</type>
 						<id>891</id>
-						<name>int_acc_w_167_write_ln415</name>
+						<name>int_acc_w_167_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42597,7 +42597,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -42629,7 +42629,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>610</m_topoIndex>
+				<m_topoIndex>594</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_864">
@@ -42637,10 +42637,10 @@
 					<Obj>
 						<type>0</type>
 						<id>892</id>
-						<name>int_acc_w_175_write_ln415</name>
+						<name>int_acc_w_175_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42656,7 +42656,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -42688,7 +42688,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>611</m_topoIndex>
+				<m_topoIndex>595</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_865">
@@ -42696,10 +42696,10 @@
 					<Obj>
 						<type>0</type>
 						<id>893</id>
-						<name>int_acc_w_183_write_ln415</name>
+						<name>int_acc_w_183_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42715,7 +42715,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -42747,7 +42747,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>612</m_topoIndex>
+				<m_topoIndex>596</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_866">
@@ -42755,10 +42755,10 @@
 					<Obj>
 						<type>0</type>
 						<id>894</id>
-						<name>int_acc_w_191_write_ln415</name>
+						<name>int_acc_w_191_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42774,7 +42774,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -42806,7 +42806,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>613</m_topoIndex>
+				<m_topoIndex>597</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_867">
@@ -42814,10 +42814,10 @@
 					<Obj>
 						<type>0</type>
 						<id>895</id>
-						<name>int_acc_m_135_write_ln416</name>
+						<name>int_acc_m_135_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42833,7 +42833,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -42865,7 +42865,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>447</m_topoIndex>
+				<m_topoIndex>598</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_868">
@@ -42873,10 +42873,10 @@
 					<Obj>
 						<type>0</type>
 						<id>896</id>
-						<name>int_acc_m_143_write_ln416</name>
+						<name>int_acc_m_143_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42892,7 +42892,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -42924,7 +42924,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>448</m_topoIndex>
+				<m_topoIndex>599</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_869">
@@ -42932,10 +42932,10 @@
 					<Obj>
 						<type>0</type>
 						<id>897</id>
-						<name>int_acc_m_151_write_ln416</name>
+						<name>int_acc_m_151_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -42951,7 +42951,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -42983,7 +42983,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>449</m_topoIndex>
+				<m_topoIndex>600</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_870">
@@ -42991,10 +42991,10 @@
 					<Obj>
 						<type>0</type>
 						<id>898</id>
-						<name>int_acc_m_159_write_ln416</name>
+						<name>int_acc_m_159_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43010,7 +43010,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -43042,7 +43042,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>450</m_topoIndex>
+				<m_topoIndex>601</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_871">
@@ -43050,10 +43050,10 @@
 					<Obj>
 						<type>0</type>
 						<id>899</id>
-						<name>int_acc_m_167_write_ln416</name>
+						<name>int_acc_m_167_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43069,7 +43069,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -43101,7 +43101,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>451</m_topoIndex>
+				<m_topoIndex>602</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_872">
@@ -43109,10 +43109,10 @@
 					<Obj>
 						<type>0</type>
 						<id>900</id>
-						<name>int_acc_m_175_write_ln416</name>
+						<name>int_acc_m_175_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43128,7 +43128,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -43160,7 +43160,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>452</m_topoIndex>
+				<m_topoIndex>603</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_873">
@@ -43168,10 +43168,10 @@
 					<Obj>
 						<type>0</type>
 						<id>901</id>
-						<name>int_acc_m_183_write_ln416</name>
+						<name>int_acc_m_183_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43187,7 +43187,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -43219,7 +43219,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>453</m_topoIndex>
+				<m_topoIndex>604</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_874">
@@ -43227,10 +43227,10 @@
 					<Obj>
 						<type>0</type>
 						<id>902</id>
-						<name>int_acc_m_191_write_ln416</name>
+						<name>int_acc_m_191_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43246,7 +43246,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -43278,7 +43278,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>454</m_topoIndex>
+				<m_topoIndex>605</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_875">
@@ -43286,10 +43286,10 @@
 					<Obj>
 						<type>0</type>
 						<id>903</id>
-						<name>br_ln416</name>
+						<name>br_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43305,7 +43305,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -43334,7 +43334,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>614</m_topoIndex>
+				<m_topoIndex>606</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_876">
@@ -43342,10 +43342,10 @@
 					<Obj>
 						<type>0</type>
 						<id>905</id>
-						<name>int_acc_w_142_write_ln415</name>
+						<name>int_acc_w_142_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43361,7 +43361,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -43393,7 +43393,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>615</m_topoIndex>
+				<m_topoIndex>607</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_877">
@@ -43401,10 +43401,10 @@
 					<Obj>
 						<type>0</type>
 						<id>906</id>
-						<name>int_acc_w_150_write_ln415</name>
+						<name>int_acc_w_150_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43420,7 +43420,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -43452,7 +43452,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>616</m_topoIndex>
+				<m_topoIndex>608</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_878">
@@ -43460,10 +43460,10 @@
 					<Obj>
 						<type>0</type>
 						<id>907</id>
-						<name>int_acc_w_158_write_ln415</name>
+						<name>int_acc_w_158_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43479,7 +43479,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -43511,7 +43511,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>617</m_topoIndex>
+				<m_topoIndex>609</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_879">
@@ -43519,10 +43519,10 @@
 					<Obj>
 						<type>0</type>
 						<id>908</id>
-						<name>int_acc_w_166_write_ln415</name>
+						<name>int_acc_w_166_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43538,7 +43538,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -43570,7 +43570,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>618</m_topoIndex>
+				<m_topoIndex>610</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_880">
@@ -43578,10 +43578,10 @@
 					<Obj>
 						<type>0</type>
 						<id>909</id>
-						<name>int_acc_w_174_write_ln415</name>
+						<name>int_acc_w_174_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43597,7 +43597,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -43629,7 +43629,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>619</m_topoIndex>
+				<m_topoIndex>611</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_881">
@@ -43637,10 +43637,10 @@
 					<Obj>
 						<type>0</type>
 						<id>910</id>
-						<name>int_acc_w_182_write_ln415</name>
+						<name>int_acc_w_182_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43656,7 +43656,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -43688,7 +43688,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>620</m_topoIndex>
+				<m_topoIndex>612</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_882">
@@ -43696,10 +43696,10 @@
 					<Obj>
 						<type>0</type>
 						<id>911</id>
-						<name>int_acc_w_190_write_ln415</name>
+						<name>int_acc_w_190_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43715,7 +43715,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -43747,7 +43747,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>621</m_topoIndex>
+				<m_topoIndex>613</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_883">
@@ -43755,10 +43755,10 @@
 					<Obj>
 						<type>0</type>
 						<id>912</id>
-						<name>int_acc_w_198_write_ln415</name>
+						<name>int_acc_w_198_write_ln417</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>415</lineNumber>
+						<lineNumber>417</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43774,7 +43774,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>415</second>
+										<second>417</second>
 									</item>
 								</second>
 							</item>
@@ -43806,7 +43806,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>622</m_topoIndex>
+				<m_topoIndex>614</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_884">
@@ -43814,10 +43814,10 @@
 					<Obj>
 						<type>0</type>
 						<id>913</id>
-						<name>int_acc_m_142_write_ln416</name>
+						<name>int_acc_m_142_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43833,7 +43833,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -43865,7 +43865,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>455</m_topoIndex>
+				<m_topoIndex>615</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_885">
@@ -43873,10 +43873,10 @@
 					<Obj>
 						<type>0</type>
 						<id>914</id>
-						<name>int_acc_m_150_write_ln416</name>
+						<name>int_acc_m_150_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43892,7 +43892,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -43924,7 +43924,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>456</m_topoIndex>
+				<m_topoIndex>616</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_886">
@@ -43932,10 +43932,10 @@
 					<Obj>
 						<type>0</type>
 						<id>915</id>
-						<name>int_acc_m_158_write_ln416</name>
+						<name>int_acc_m_158_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -43951,7 +43951,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -43983,7 +43983,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>457</m_topoIndex>
+				<m_topoIndex>617</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_887">
@@ -43991,10 +43991,10 @@
 					<Obj>
 						<type>0</type>
 						<id>916</id>
-						<name>int_acc_m_166_write_ln416</name>
+						<name>int_acc_m_166_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -44010,7 +44010,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -44042,7 +44042,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>458</m_topoIndex>
+				<m_topoIndex>618</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_888">
@@ -44050,10 +44050,10 @@
 					<Obj>
 						<type>0</type>
 						<id>917</id>
-						<name>int_acc_m_174_write_ln416</name>
+						<name>int_acc_m_174_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -44069,7 +44069,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -44101,7 +44101,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>459</m_topoIndex>
+				<m_topoIndex>619</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_889">
@@ -44109,10 +44109,10 @@
 					<Obj>
 						<type>0</type>
 						<id>918</id>
-						<name>int_acc_m_182_write_ln416</name>
+						<name>int_acc_m_182_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -44128,7 +44128,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -44160,7 +44160,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>460</m_topoIndex>
+				<m_topoIndex>620</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_890">
@@ -44168,10 +44168,10 @@
 					<Obj>
 						<type>0</type>
 						<id>919</id>
-						<name>int_acc_m_190_write_ln416</name>
+						<name>int_acc_m_190_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -44187,7 +44187,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -44219,7 +44219,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>461</m_topoIndex>
+				<m_topoIndex>621</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_891">
@@ -44227,10 +44227,10 @@
 					<Obj>
 						<type>0</type>
 						<id>920</id>
-						<name>int_acc_m_198_write_ln416</name>
+						<name>int_acc_m_198_write_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -44246,7 +44246,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -44278,7 +44278,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>462</m_topoIndex>
+				<m_topoIndex>622</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_892">
@@ -44286,10 +44286,10 @@
 					<Obj>
 						<type>0</type>
 						<id>921</id>
-						<name>br_ln416</name>
+						<name>br_ln418</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>416</lineNumber>
+						<lineNumber>418</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -44305,7 +44305,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>416</second>
+										<second>418</second>
 									</item>
 								</second>
 							</item>
@@ -44342,10 +44342,10 @@
 					<Obj>
 						<type>0</type>
 						<id>923</id>
-						<name>n_2_write_ln405</name>
+						<name>n_2_write_ln407</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
+						<lineNumber>407</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -44361,7 +44361,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>405</second>
+										<second>407</second>
 									</item>
 								</second>
 							</item>
@@ -44393,7 +44393,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.42</m_delay>
-				<m_topoIndex>146</m_topoIndex>
+				<m_topoIndex>204</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_894">
@@ -44401,10 +44401,10 @@
 					<Obj>
 						<type>0</type>
 						<id>924</id>
-						<name>br_ln405</name>
+						<name>br_ln407</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>405</lineNumber>
+						<lineNumber>407</lineNumber>
 						<contextFuncName>mac_blocks_down_q4k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -44420,7 +44420,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q4k</second>
 										</first>
-										<second>405</second>
+										<second>407</second>
 									</item>
 								</second>
 							</item>
@@ -44449,7 +44449,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>147</m_topoIndex>
+				<m_topoIndex>205</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_895">
@@ -44490,7 +44490,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.42</m_delay>
-				<m_topoIndex>551</m_topoIndex>
+				<m_topoIndex>487</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 		</nodes>
@@ -45379,7 +45379,7 @@
 				<Obj>
 					<type>3</type>
 					<id>425</id>
-					<name>VITIS_LOOP_407_3</name>
+					<name>VITIS_LOOP_409_3</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -45413,7 +45413,7 @@
 				<Obj>
 					<type>3</type>
 					<id>778</id>
-					<name>VITIS_LOOP_407_3.split</name>
+					<name>VITIS_LOOP_409_3.split</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -46200,7 +46200,7 @@
 				<Obj>
 					<type>3</type>
 					<id>927</id>
-					<name>VITIS_LOOP_421_4.preheader.exitStub</name>
+					<name>VITIS_LOOP_423_4.preheader.exitStub</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -57393,8 +57393,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>264</mMinLatency>
-			<mMaxLatency>264</mMaxLatency>
+			<mMinLatency>261</mMinLatency>
+			<mMaxLatency>261</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -57446,11 +57446,11 @@
 				<item>925</item>
 			</basic_blocks>
 			<mII>1</mII>
-			<mDepth>8</mDepth>
+			<mDepth>5</mDepth>
 			<mMinTripCount>256</mMinTripCount>
 			<mMaxTripCount>256</mMaxTripCount>
-			<mMinLatency>262</mMinLatency>
-			<mMaxLatency>262</mMaxLatency>
+			<mMinLatency>259</mMinLatency>
+			<mMaxLatency>259</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -58431,84 +58431,84 @@
 		<item>
 			<first>426</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>427</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>428</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>429</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>430</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>431</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>432</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>433</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>434</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>435</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>436</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>440</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -58578,77 +58578,77 @@
 		<item>
 			<first>450</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>451</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>452</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>453</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>454</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>455</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>456</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>457</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>458</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>459</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>460</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -58662,3164 +58662,3164 @@
 		<item>
 			<first>462</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>463</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>464</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>465</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>466</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>467</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>468</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>469</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>470</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>471</first>
 			<second>
-				<first>4</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>472</first>
 			<second>
-				<first>2</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>473</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>474</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>475</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>476</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>477</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>478</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>479</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>480</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>481</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>482</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>483</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>484</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>485</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>486</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>487</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>488</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>489</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>490</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>491</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>492</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>493</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>494</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>495</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>496</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>497</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>498</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>499</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>500</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>501</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>502</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>503</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>504</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>505</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>506</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>507</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>508</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>509</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>510</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>511</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>512</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>513</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>514</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>515</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>516</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>517</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>518</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>519</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>520</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>521</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>522</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>523</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>524</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>525</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>526</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>527</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>528</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>529</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>530</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>531</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>532</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>533</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>534</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>535</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>536</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>537</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>538</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>539</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>540</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>541</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>542</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>543</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>544</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>545</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>546</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>547</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>548</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>549</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>550</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>551</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>552</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>553</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>554</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>555</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>556</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>557</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>558</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>559</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>560</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>561</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>562</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>563</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>564</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>565</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>566</first>
 			<second>
-				<first>4</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>567</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>568</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>569</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>570</first>
 			<second>
-				<first>4</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>571</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>572</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>573</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>574</first>
 			<second>
-				<first>4</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>575</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>576</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>577</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>578</first>
 			<second>
-				<first>4</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>579</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>580</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>581</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>582</first>
 			<second>
-				<first>4</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>583</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>584</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>585</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>586</first>
 			<second>
-				<first>4</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>587</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>588</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>589</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>590</first>
 			<second>
-				<first>4</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>591</first>
 			<second>
-				<first>2</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>592</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>593</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>594</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>595</first>
 			<second>
-				<first>2</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>596</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>597</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>598</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>599</first>
 			<second>
-				<first>2</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>600</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>601</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>602</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>603</first>
 			<second>
-				<first>2</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>604</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>605</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>606</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>607</first>
 			<second>
-				<first>2</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>608</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>609</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>610</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>611</first>
 			<second>
-				<first>2</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>612</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>613</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>614</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>615</first>
 			<second>
-				<first>2</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>616</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>617</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>618</first>
 			<second>
-				<first>3</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>619</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>620</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>621</first>
 			<second>
-				<first>4</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>622</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>623</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>624</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>625</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>626</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>627</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>628</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>629</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>630</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>631</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>632</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>633</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>634</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>635</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>636</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>637</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>638</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>639</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>640</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>641</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>642</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>643</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>644</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>645</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>646</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>647</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>648</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>649</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>650</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>651</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>652</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>653</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>654</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>655</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>656</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>657</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>658</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>659</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>660</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>661</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>662</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>663</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>664</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>665</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>666</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>667</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>668</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>669</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>670</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>671</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>672</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>673</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>674</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>675</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>676</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>677</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>678</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>679</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>680</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>681</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>682</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>683</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>684</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>685</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>686</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>687</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>688</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>689</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>690</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>691</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>692</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>693</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>694</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>695</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>696</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>697</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>698</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>699</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>700</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>701</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>702</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>703</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>704</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>705</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>706</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>707</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>708</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>709</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>710</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>711</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>712</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>713</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>714</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>715</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>716</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>717</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>718</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>719</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>720</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>721</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>722</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>723</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>724</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>725</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>726</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>727</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>728</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>729</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>730</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>731</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>732</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>733</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>734</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>735</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>736</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>737</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>738</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>739</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>740</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>741</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>742</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>743</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>744</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>745</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>746</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>747</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>748</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>749</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>750</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>751</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>752</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>753</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>754</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>755</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>756</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>757</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>758</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>759</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>760</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>761</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>762</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>763</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>764</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>765</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>766</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>767</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>768</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>769</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>770</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>771</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>772</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>773</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>774</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>775</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>776</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>777</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>779</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>780</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>781</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>782</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>783</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>784</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>785</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>786</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>787</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>788</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>789</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>790</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>791</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>792</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>793</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>794</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>795</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>797</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>798</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>799</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>800</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>801</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>802</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>803</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>804</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>805</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>806</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>807</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>808</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>809</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>810</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>811</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>812</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>813</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>815</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>816</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>817</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>818</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>819</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>820</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>821</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>822</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>823</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>824</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>825</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>826</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>827</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>828</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>829</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>830</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>831</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>833</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>834</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>835</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>836</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>837</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>838</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>839</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>840</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>841</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>842</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>843</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>844</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>845</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>846</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>847</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>848</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>849</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>851</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>852</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>853</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>854</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>855</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>856</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>857</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>858</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>859</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>860</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>861</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>862</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>863</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>864</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>865</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>866</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>867</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>869</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>870</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>871</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>872</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>873</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>874</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>875</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>876</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>877</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>878</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>879</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>880</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>881</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>882</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>883</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>884</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>885</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>887</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>888</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>889</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>890</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>891</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>892</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>893</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>894</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>895</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>896</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>897</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>898</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>899</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>900</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>901</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>902</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>903</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>905</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>906</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>907</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>908</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>909</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>910</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>911</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>912</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>913</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>914</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>915</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>916</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>917</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>918</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>919</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>920</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>921</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -61840,7 +61840,7 @@
 		<item>
 			<first>926</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -61866,63 +61866,63 @@
 			<first>778</first>
 			<second>
 				<first>1</first>
-				<second>8</second>
+				<second>5</second>
 			</second>
 		</item>
 		<item>
 			<first>796</first>
 			<second>
-				<first>6</first>
-				<second>8</second>
+				<first>5</first>
+				<second>5</second>
 			</second>
 		</item>
 		<item>
 			<first>814</first>
 			<second>
-				<first>6</first>
-				<second>8</second>
+				<first>5</first>
+				<second>5</second>
 			</second>
 		</item>
 		<item>
 			<first>832</first>
 			<second>
-				<first>6</first>
-				<second>8</second>
+				<first>5</first>
+				<second>5</second>
 			</second>
 		</item>
 		<item>
 			<first>850</first>
 			<second>
-				<first>6</first>
-				<second>8</second>
+				<first>5</first>
+				<second>5</second>
 			</second>
 		</item>
 		<item>
 			<first>868</first>
 			<second>
-				<first>6</first>
-				<second>8</second>
+				<first>5</first>
+				<second>5</second>
 			</second>
 		</item>
 		<item>
 			<first>886</first>
 			<second>
-				<first>6</first>
-				<second>8</second>
+				<first>5</first>
+				<second>5</second>
 			</second>
 		</item>
 		<item>
 			<first>904</first>
 			<second>
-				<first>6</first>
-				<second>8</second>
+				<first>5</first>
+				<second>5</second>
 			</second>
 		</item>
 		<item>
 			<first>922</first>
 			<second>
-				<first>6</first>
-				<second>8</second>
+				<first>5</first>
+				<second>5</second>
 			</second>
 		</item>
 		<item>
@@ -61967,7 +61967,7 @@
 			<anchor_node>-1</anchor_node>
 			<region_type>8</region_type>
 			<interval>1</interval>
-			<pipe_depth>8</pipe_depth>
+			<pipe_depth>5</pipe_depth>
 			<mDBIIViolationVec class_id="34" tracking_level="0" version="0">
 				<count>0</count>
 				<item_version>0</item_version>

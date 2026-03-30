@@ -103,7 +103,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -139,7 +139,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -175,7 +175,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -211,7 +211,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -247,7 +247,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -283,7 +283,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -319,7 +319,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -355,7 +355,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -391,7 +391,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -427,7 +427,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -463,7 +463,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -499,7 +499,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -535,7 +535,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -571,7 +571,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -607,7 +607,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -643,7 +643,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -679,7 +679,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -715,7 +715,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -751,7 +751,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -787,7 +787,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -823,7 +823,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -859,7 +859,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -895,7 +895,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -931,7 +931,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -967,7 +967,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1003,7 +1003,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1039,7 +1039,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1075,7 +1075,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1111,7 +1111,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1147,7 +1147,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1183,7 +1183,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1219,7 +1219,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1255,7 +1255,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1291,7 +1291,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1327,7 +1327,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1363,7 +1363,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1399,7 +1399,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1435,7 +1435,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1471,7 +1471,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1507,7 +1507,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1543,7 +1543,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1579,7 +1579,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1615,7 +1615,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1651,7 +1651,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1687,7 +1687,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1723,7 +1723,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1759,7 +1759,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1795,7 +1795,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1831,7 +1831,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1867,7 +1867,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1903,7 +1903,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1939,7 +1939,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1975,7 +1975,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2011,7 +2011,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2047,7 +2047,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2083,7 +2083,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2119,7 +2119,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2155,7 +2155,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2191,7 +2191,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2227,7 +2227,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2263,7 +2263,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2299,7 +2299,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2335,7 +2335,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2371,7 +2371,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2407,7 +2407,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2443,7 +2443,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2479,7 +2479,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2515,7 +2515,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2551,7 +2551,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2587,7 +2587,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2623,7 +2623,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2659,7 +2659,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2695,7 +2695,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2731,7 +2731,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2767,7 +2767,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2803,7 +2803,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2839,7 +2839,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2875,7 +2875,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2911,7 +2911,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2947,7 +2947,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2983,7 +2983,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3019,7 +3019,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3055,7 +3055,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3091,7 +3091,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3127,7 +3127,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3163,7 +3163,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3199,7 +3199,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3235,7 +3235,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3271,7 +3271,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3307,7 +3307,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3343,7 +3343,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3379,7 +3379,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3415,7 +3415,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3451,7 +3451,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3487,7 +3487,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3523,7 +3523,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3559,7 +3559,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3595,7 +3595,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3631,7 +3631,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3667,7 +3667,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3703,7 +3703,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3739,7 +3739,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3775,7 +3775,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3811,7 +3811,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3847,7 +3847,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3883,7 +3883,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3919,7 +3919,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3955,7 +3955,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3991,7 +3991,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4027,7 +4027,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4063,7 +4063,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4099,7 +4099,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4135,7 +4135,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4171,7 +4171,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4207,7 +4207,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4243,7 +4243,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4279,7 +4279,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4315,7 +4315,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4351,7 +4351,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4387,7 +4387,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4423,7 +4423,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4459,7 +4459,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4495,7 +4495,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4531,7 +4531,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4567,7 +4567,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4603,7 +4603,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4639,7 +4639,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4675,7 +4675,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4711,7 +4711,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4747,7 +4747,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4783,7 +4783,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4819,7 +4819,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4855,7 +4855,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4891,7 +4891,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4927,7 +4927,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4963,7 +4963,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4999,7 +4999,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5035,7 +5035,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5071,7 +5071,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5107,7 +5107,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5143,7 +5143,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5179,7 +5179,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5215,7 +5215,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5251,7 +5251,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5287,7 +5287,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5323,7 +5323,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5359,7 +5359,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5395,7 +5395,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5431,7 +5431,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5467,7 +5467,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5503,7 +5503,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5539,7 +5539,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5575,7 +5575,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5611,7 +5611,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5647,7 +5647,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5683,7 +5683,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5719,7 +5719,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5755,7 +5755,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5791,7 +5791,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5827,7 +5827,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5863,7 +5863,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5899,7 +5899,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5935,7 +5935,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -5971,7 +5971,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6007,7 +6007,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6043,7 +6043,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6079,7 +6079,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6115,7 +6115,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6151,7 +6151,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6187,7 +6187,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6223,7 +6223,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6259,7 +6259,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6295,7 +6295,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6331,7 +6331,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6367,7 +6367,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6403,7 +6403,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6439,7 +6439,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6475,7 +6475,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6511,7 +6511,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6547,7 +6547,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6583,7 +6583,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6619,7 +6619,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6655,7 +6655,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6691,7 +6691,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6727,7 +6727,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6763,7 +6763,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6799,7 +6799,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6835,7 +6835,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6871,7 +6871,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6907,7 +6907,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6943,7 +6943,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -6979,7 +6979,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7015,7 +7015,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7051,7 +7051,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7087,7 +7087,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7123,7 +7123,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7159,7 +7159,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7195,7 +7195,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7231,7 +7231,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7267,7 +7267,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7303,7 +7303,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7339,7 +7339,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7375,7 +7375,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7411,7 +7411,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7447,7 +7447,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7483,7 +7483,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7519,7 +7519,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7555,7 +7555,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7591,7 +7591,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7627,7 +7627,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7663,7 +7663,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7699,7 +7699,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7735,7 +7735,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7771,7 +7771,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7807,7 +7807,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7843,7 +7843,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7879,7 +7879,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7915,7 +7915,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7951,7 +7951,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -7987,7 +7987,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8023,7 +8023,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8059,7 +8059,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8095,7 +8095,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8131,7 +8131,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8167,7 +8167,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8203,7 +8203,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8239,7 +8239,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8275,7 +8275,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8311,7 +8311,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8347,7 +8347,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8383,7 +8383,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8419,7 +8419,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8455,7 +8455,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8491,7 +8491,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8527,7 +8527,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8563,7 +8563,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8599,7 +8599,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8635,7 +8635,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8671,7 +8671,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8707,7 +8707,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8743,7 +8743,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8779,7 +8779,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8815,7 +8815,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8851,7 +8851,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8887,7 +8887,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8923,7 +8923,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8959,7 +8959,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -8995,7 +8995,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -9031,7 +9031,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -9067,7 +9067,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -9103,7 +9103,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -9139,7 +9139,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -9175,7 +9175,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -9211,7 +9211,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -9247,7 +9247,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -9283,7 +9283,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -9353,7 +9353,7 @@
 						<name>x_batch_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>540</lineNumber>
+						<lineNumber>542</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -9369,7 +9369,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>540</second>
+										<second>542</second>
 									</item>
 								</second>
 							</item>
@@ -9450,10 +9450,10 @@
 					<Obj>
 						<type>0</type>
 						<id>519</id>
-						<name>br_ln549</name>
+						<name>br_ln551</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>549</lineNumber>
+						<lineNumber>551</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -9469,7 +9469,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>549</second>
+										<second>551</second>
 									</item>
 								</second>
 							</item>
@@ -9509,7 +9509,7 @@
 						<name>i1536_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>549</lineNumber>
+						<lineNumber>551</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -9525,7 +9525,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>549</second>
+										<second>551</second>
 									</item>
 								</second>
 							</item>
@@ -9566,7 +9566,7 @@
 						<name>first_iter_0</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>549</lineNumber>
+						<lineNumber>551</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -9582,7 +9582,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>549</second>
+										<second>551</second>
 									</item>
 								</second>
 							</item>
@@ -9623,7 +9623,7 @@
 						<name>trunc_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>549</lineNumber>
+						<lineNumber>551</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -9639,7 +9639,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>549</second>
+										<second>551</second>
 									</item>
 								</second>
 							</item>
@@ -9679,10 +9679,10 @@
 					<Obj>
 						<type>0</type>
 						<id>524</id>
-						<name>sext_ln549</name>
+						<name>sext_ln551</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>549</lineNumber>
+						<lineNumber>551</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -9698,7 +9698,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>549</second>
+										<second>551</second>
 									</item>
 								</second>
 							</item>
@@ -9738,7 +9738,7 @@
 						<name>gmem_x_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>549</lineNumber>
+						<lineNumber>551</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -9754,7 +9754,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>549</second>
+										<second>551</second>
 									</item>
 								</second>
 							</item>
@@ -9792,10 +9792,10 @@
 					<Obj>
 						<type>0</type>
 						<id>526</id>
-						<name>br_ln549</name>
+						<name>br_ln551</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>549</lineNumber>
+						<lineNumber>551</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -9811,7 +9811,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>549</second>
+										<second>551</second>
 									</item>
 								</second>
 							</item>
@@ -9853,7 +9853,7 @@
 						<name>empty</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>549</lineNumber>
+						<lineNumber>551</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -9869,7 +9869,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>549</second>
+										<second>551</second>
 									</item>
 								</second>
 							</item>
@@ -9899,7 +9899,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.43</m_delay>
+				<m_delay>8.00</m_delay>
 				<m_topoIndex>42</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -9953,7 +9953,7 @@
 						<name>wide_val</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>551</lineNumber>
+						<lineNumber>553</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -9969,7 +9969,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>551</second>
+										<second>553</second>
 									</item>
 								</second>
 							</item>
@@ -9999,7 +9999,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.43</m_delay>
+				<m_delay>8.00</m_delay>
 				<m_topoIndex>47</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -10011,7 +10011,7 @@
 						<name>val</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10027,7 +10027,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -10064,10 +10064,10 @@
 					<Obj>
 						<type>0</type>
 						<id>536</id>
-						<name>trunc_ln556</name>
+						<name>trunc_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10083,7 +10083,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -10120,10 +10120,10 @@
 					<Obj>
 						<type>0</type>
 						<id>537</id>
-						<name>trunc_ln556_2</name>
+						<name>trunc_ln558_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10139,7 +10139,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -10179,10 +10179,10 @@
 					<Obj>
 						<type>0</type>
 						<id>538</id>
-						<name>zext_ln556</name>
+						<name>zext_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10198,7 +10198,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -10238,7 +10238,7 @@
 						<name>x_local_1_0_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10254,7 +10254,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -10296,7 +10296,7 @@
 						<name>x_local_1_1_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10312,7 +10312,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -10354,7 +10354,7 @@
 						<name>x_local_1_2_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10370,7 +10370,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -10412,7 +10412,7 @@
 						<name>x_local_1_3_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10428,7 +10428,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -10470,7 +10470,7 @@
 						<name>x_local_1_4_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10486,7 +10486,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -10528,7 +10528,7 @@
 						<name>x_local_1_5_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10544,7 +10544,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -10586,7 +10586,7 @@
 						<name>x_local_1_6_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10602,7 +10602,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -10644,7 +10644,7 @@
 						<name>x_local_1_7_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10660,7 +10660,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -10702,7 +10702,7 @@
 						<name>x_local_2_0_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10718,7 +10718,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -10760,7 +10760,7 @@
 						<name>x_local_2_1_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10776,7 +10776,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -10818,7 +10818,7 @@
 						<name>x_local_2_2_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10834,7 +10834,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -10876,7 +10876,7 @@
 						<name>x_local_2_3_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10892,7 +10892,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -10934,7 +10934,7 @@
 						<name>x_local_2_4_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -10950,7 +10950,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -10992,7 +10992,7 @@
 						<name>x_local_2_5_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11008,7 +11008,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -11050,7 +11050,7 @@
 						<name>x_local_2_6_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11066,7 +11066,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -11108,7 +11108,7 @@
 						<name>x_local_2_7_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11124,7 +11124,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -11166,7 +11166,7 @@
 						<name>val_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11182,7 +11182,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -11224,7 +11224,7 @@
 						<name>x_local_1_0_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11240,7 +11240,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -11282,7 +11282,7 @@
 						<name>x_local_1_1_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11298,7 +11298,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -11340,7 +11340,7 @@
 						<name>x_local_1_2_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11356,7 +11356,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -11398,7 +11398,7 @@
 						<name>x_local_1_3_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11414,7 +11414,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -11456,7 +11456,7 @@
 						<name>x_local_1_4_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11472,7 +11472,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -11514,7 +11514,7 @@
 						<name>x_local_1_5_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11530,7 +11530,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -11572,7 +11572,7 @@
 						<name>x_local_1_6_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11588,7 +11588,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -11630,7 +11630,7 @@
 						<name>x_local_1_7_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11646,7 +11646,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -11688,7 +11688,7 @@
 						<name>x_local_2_0_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11704,7 +11704,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -11746,7 +11746,7 @@
 						<name>x_local_2_1_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11762,7 +11762,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -11804,7 +11804,7 @@
 						<name>x_local_2_2_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11820,7 +11820,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -11862,7 +11862,7 @@
 						<name>x_local_2_3_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11878,7 +11878,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -11920,7 +11920,7 @@
 						<name>x_local_2_4_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11936,7 +11936,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -11978,7 +11978,7 @@
 						<name>x_local_2_5_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -11994,7 +11994,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -12036,7 +12036,7 @@
 						<name>x_local_2_6_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12052,7 +12052,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -12094,7 +12094,7 @@
 						<name>x_local_2_7_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12110,7 +12110,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -12152,7 +12152,7 @@
 						<name>val_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12168,7 +12168,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -12210,7 +12210,7 @@
 						<name>x_local_1_0_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12226,7 +12226,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -12268,7 +12268,7 @@
 						<name>x_local_1_1_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12284,7 +12284,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -12326,7 +12326,7 @@
 						<name>x_local_1_2_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12342,7 +12342,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -12384,7 +12384,7 @@
 						<name>x_local_1_3_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12400,7 +12400,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -12442,7 +12442,7 @@
 						<name>x_local_1_4_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12458,7 +12458,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -12500,7 +12500,7 @@
 						<name>x_local_1_5_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12516,7 +12516,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -12558,7 +12558,7 @@
 						<name>x_local_1_6_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12574,7 +12574,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -12616,7 +12616,7 @@
 						<name>x_local_1_7_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12632,7 +12632,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -12674,7 +12674,7 @@
 						<name>x_local_2_0_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12690,7 +12690,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -12732,7 +12732,7 @@
 						<name>x_local_2_1_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12748,7 +12748,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -12790,7 +12790,7 @@
 						<name>x_local_2_2_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12806,7 +12806,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -12848,7 +12848,7 @@
 						<name>x_local_2_3_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12864,7 +12864,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -12906,7 +12906,7 @@
 						<name>x_local_2_4_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12922,7 +12922,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -12964,7 +12964,7 @@
 						<name>x_local_2_5_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -12980,7 +12980,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -13022,7 +13022,7 @@
 						<name>x_local_2_6_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13038,7 +13038,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -13080,7 +13080,7 @@
 						<name>x_local_2_7_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13096,7 +13096,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -13138,7 +13138,7 @@
 						<name>val_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13154,7 +13154,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -13196,7 +13196,7 @@
 						<name>x_local_1_0_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13212,7 +13212,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -13254,7 +13254,7 @@
 						<name>x_local_1_1_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13270,7 +13270,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -13312,7 +13312,7 @@
 						<name>x_local_1_2_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13328,7 +13328,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -13370,7 +13370,7 @@
 						<name>x_local_1_3_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13386,7 +13386,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -13428,7 +13428,7 @@
 						<name>x_local_1_4_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13444,7 +13444,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -13486,7 +13486,7 @@
 						<name>x_local_1_5_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13502,7 +13502,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -13544,7 +13544,7 @@
 						<name>x_local_1_6_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13560,7 +13560,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -13602,7 +13602,7 @@
 						<name>x_local_1_7_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13618,7 +13618,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -13660,7 +13660,7 @@
 						<name>x_local_2_0_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13676,7 +13676,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -13718,7 +13718,7 @@
 						<name>x_local_2_1_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13734,7 +13734,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -13776,7 +13776,7 @@
 						<name>x_local_2_2_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13792,7 +13792,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -13834,7 +13834,7 @@
 						<name>x_local_2_3_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13850,7 +13850,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -13892,7 +13892,7 @@
 						<name>x_local_2_4_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13908,7 +13908,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -13950,7 +13950,7 @@
 						<name>x_local_2_5_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -13966,7 +13966,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -14008,7 +14008,7 @@
 						<name>x_local_2_6_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14024,7 +14024,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -14066,7 +14066,7 @@
 						<name>x_local_2_7_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14082,7 +14082,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -14124,7 +14124,7 @@
 						<name>val_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14140,7 +14140,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -14182,7 +14182,7 @@
 						<name>x_local_1_0_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14198,7 +14198,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -14240,7 +14240,7 @@
 						<name>x_local_1_1_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14256,7 +14256,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -14298,7 +14298,7 @@
 						<name>x_local_1_2_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14314,7 +14314,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -14356,7 +14356,7 @@
 						<name>x_local_1_3_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14372,7 +14372,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -14414,7 +14414,7 @@
 						<name>x_local_1_4_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14430,7 +14430,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -14472,7 +14472,7 @@
 						<name>x_local_1_5_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14488,7 +14488,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -14530,7 +14530,7 @@
 						<name>x_local_1_6_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14546,7 +14546,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -14588,7 +14588,7 @@
 						<name>x_local_1_7_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14604,7 +14604,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -14646,7 +14646,7 @@
 						<name>x_local_2_0_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14662,7 +14662,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -14704,7 +14704,7 @@
 						<name>x_local_2_1_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14720,7 +14720,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -14762,7 +14762,7 @@
 						<name>x_local_2_2_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14778,7 +14778,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -14820,7 +14820,7 @@
 						<name>x_local_2_3_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14836,7 +14836,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -14878,7 +14878,7 @@
 						<name>x_local_2_4_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14894,7 +14894,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -14936,7 +14936,7 @@
 						<name>x_local_2_5_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -14952,7 +14952,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -14994,7 +14994,7 @@
 						<name>x_local_2_6_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15010,7 +15010,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -15052,7 +15052,7 @@
 						<name>x_local_2_7_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15068,7 +15068,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -15110,7 +15110,7 @@
 						<name>val_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15126,7 +15126,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -15168,7 +15168,7 @@
 						<name>x_local_1_0_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15184,7 +15184,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -15226,7 +15226,7 @@
 						<name>x_local_1_1_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15242,7 +15242,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -15284,7 +15284,7 @@
 						<name>x_local_1_2_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15300,7 +15300,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -15342,7 +15342,7 @@
 						<name>x_local_1_3_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15358,7 +15358,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -15400,7 +15400,7 @@
 						<name>x_local_1_4_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15416,7 +15416,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -15458,7 +15458,7 @@
 						<name>x_local_1_5_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15474,7 +15474,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -15516,7 +15516,7 @@
 						<name>x_local_1_6_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15532,7 +15532,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -15574,7 +15574,7 @@
 						<name>x_local_1_7_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15590,7 +15590,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -15632,7 +15632,7 @@
 						<name>x_local_2_0_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15648,7 +15648,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -15690,7 +15690,7 @@
 						<name>x_local_2_1_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15706,7 +15706,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -15748,7 +15748,7 @@
 						<name>x_local_2_2_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15764,7 +15764,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -15806,7 +15806,7 @@
 						<name>x_local_2_3_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15822,7 +15822,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -15864,7 +15864,7 @@
 						<name>x_local_2_4_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15880,7 +15880,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -15922,7 +15922,7 @@
 						<name>x_local_2_5_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15938,7 +15938,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -15980,7 +15980,7 @@
 						<name>x_local_2_6_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -15996,7 +15996,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -16038,7 +16038,7 @@
 						<name>x_local_2_7_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16054,7 +16054,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -16096,7 +16096,7 @@
 						<name>val_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16112,7 +16112,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -16154,7 +16154,7 @@
 						<name>x_local_1_0_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16170,7 +16170,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -16212,7 +16212,7 @@
 						<name>x_local_1_1_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16228,7 +16228,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -16270,7 +16270,7 @@
 						<name>x_local_1_2_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16286,7 +16286,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -16328,7 +16328,7 @@
 						<name>x_local_1_3_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16344,7 +16344,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -16386,7 +16386,7 @@
 						<name>x_local_1_4_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16402,7 +16402,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -16444,7 +16444,7 @@
 						<name>x_local_1_5_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16460,7 +16460,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -16502,7 +16502,7 @@
 						<name>x_local_1_6_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16518,7 +16518,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -16560,7 +16560,7 @@
 						<name>x_local_1_7_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16576,7 +16576,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -16618,7 +16618,7 @@
 						<name>x_local_2_0_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16634,7 +16634,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -16676,7 +16676,7 @@
 						<name>x_local_2_1_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16692,7 +16692,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -16734,7 +16734,7 @@
 						<name>x_local_2_2_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16750,7 +16750,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -16792,7 +16792,7 @@
 						<name>x_local_2_3_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16808,7 +16808,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -16850,7 +16850,7 @@
 						<name>x_local_2_4_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16866,7 +16866,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -16908,7 +16908,7 @@
 						<name>x_local_2_5_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16924,7 +16924,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -16966,7 +16966,7 @@
 						<name>x_local_2_6_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -16982,7 +16982,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -17024,7 +17024,7 @@
 						<name>x_local_2_7_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17040,7 +17040,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -17082,7 +17082,7 @@
 						<name>val_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17098,7 +17098,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -17140,7 +17140,7 @@
 						<name>x_local_1_0_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17156,7 +17156,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -17198,7 +17198,7 @@
 						<name>x_local_1_1_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17214,7 +17214,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -17256,7 +17256,7 @@
 						<name>x_local_1_2_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17272,7 +17272,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -17314,7 +17314,7 @@
 						<name>x_local_1_3_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17330,7 +17330,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -17372,7 +17372,7 @@
 						<name>x_local_1_4_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17388,7 +17388,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -17430,7 +17430,7 @@
 						<name>x_local_1_5_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17446,7 +17446,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -17488,7 +17488,7 @@
 						<name>x_local_1_6_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17504,7 +17504,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -17546,7 +17546,7 @@
 						<name>x_local_1_7_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17562,7 +17562,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -17604,7 +17604,7 @@
 						<name>x_local_2_0_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17620,7 +17620,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -17662,7 +17662,7 @@
 						<name>x_local_2_1_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17678,7 +17678,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -17720,7 +17720,7 @@
 						<name>x_local_2_2_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17736,7 +17736,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -17778,7 +17778,7 @@
 						<name>x_local_2_3_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17794,7 +17794,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -17836,7 +17836,7 @@
 						<name>x_local_2_4_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17852,7 +17852,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -17894,7 +17894,7 @@
 						<name>x_local_2_5_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17910,7 +17910,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -17952,7 +17952,7 @@
 						<name>x_local_2_6_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -17968,7 +17968,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -18010,7 +18010,7 @@
 						<name>x_local_2_7_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18026,7 +18026,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -18068,7 +18068,7 @@
 						<name>val_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18084,7 +18084,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -18126,7 +18126,7 @@
 						<name>x_local_1_0_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18142,7 +18142,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -18184,7 +18184,7 @@
 						<name>x_local_1_1_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18200,7 +18200,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -18242,7 +18242,7 @@
 						<name>x_local_1_2_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18258,7 +18258,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -18300,7 +18300,7 @@
 						<name>x_local_1_3_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18316,7 +18316,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -18358,7 +18358,7 @@
 						<name>x_local_1_4_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18374,7 +18374,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -18416,7 +18416,7 @@
 						<name>x_local_1_5_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18432,7 +18432,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -18474,7 +18474,7 @@
 						<name>x_local_1_6_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18490,7 +18490,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -18532,7 +18532,7 @@
 						<name>x_local_1_7_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18548,7 +18548,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -18590,7 +18590,7 @@
 						<name>x_local_2_0_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18606,7 +18606,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -18648,7 +18648,7 @@
 						<name>x_local_2_1_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18664,7 +18664,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -18706,7 +18706,7 @@
 						<name>x_local_2_2_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18722,7 +18722,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -18764,7 +18764,7 @@
 						<name>x_local_2_3_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18780,7 +18780,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -18822,7 +18822,7 @@
 						<name>x_local_2_4_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18838,7 +18838,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -18880,7 +18880,7 @@
 						<name>x_local_2_5_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18896,7 +18896,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -18938,7 +18938,7 @@
 						<name>x_local_2_6_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -18954,7 +18954,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -18996,7 +18996,7 @@
 						<name>x_local_2_7_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19012,7 +19012,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -19054,7 +19054,7 @@
 						<name>val_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19070,7 +19070,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -19112,7 +19112,7 @@
 						<name>x_local_1_0_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19128,7 +19128,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -19170,7 +19170,7 @@
 						<name>x_local_1_1_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19186,7 +19186,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -19228,7 +19228,7 @@
 						<name>x_local_1_2_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19244,7 +19244,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -19286,7 +19286,7 @@
 						<name>x_local_1_3_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19302,7 +19302,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -19344,7 +19344,7 @@
 						<name>x_local_1_4_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19360,7 +19360,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -19402,7 +19402,7 @@
 						<name>x_local_1_5_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19418,7 +19418,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -19460,7 +19460,7 @@
 						<name>x_local_1_6_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19476,7 +19476,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -19518,7 +19518,7 @@
 						<name>x_local_1_7_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19534,7 +19534,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -19576,7 +19576,7 @@
 						<name>x_local_2_0_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19592,7 +19592,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -19634,7 +19634,7 @@
 						<name>x_local_2_1_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19650,7 +19650,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -19692,7 +19692,7 @@
 						<name>x_local_2_2_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19708,7 +19708,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -19750,7 +19750,7 @@
 						<name>x_local_2_3_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19766,7 +19766,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -19808,7 +19808,7 @@
 						<name>x_local_2_4_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19824,7 +19824,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -19866,7 +19866,7 @@
 						<name>x_local_2_5_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19882,7 +19882,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -19924,7 +19924,7 @@
 						<name>x_local_2_6_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19940,7 +19940,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -19982,7 +19982,7 @@
 						<name>x_local_2_7_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -19998,7 +19998,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -20040,7 +20040,7 @@
 						<name>val_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20056,7 +20056,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -20098,7 +20098,7 @@
 						<name>x_local_1_0_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20114,7 +20114,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -20156,7 +20156,7 @@
 						<name>x_local_1_1_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20172,7 +20172,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -20214,7 +20214,7 @@
 						<name>x_local_1_2_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20230,7 +20230,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -20272,7 +20272,7 @@
 						<name>x_local_1_3_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20288,7 +20288,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -20330,7 +20330,7 @@
 						<name>x_local_1_4_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20346,7 +20346,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -20388,7 +20388,7 @@
 						<name>x_local_1_5_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20404,7 +20404,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -20446,7 +20446,7 @@
 						<name>x_local_1_6_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20462,7 +20462,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -20504,7 +20504,7 @@
 						<name>x_local_1_7_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20520,7 +20520,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -20562,7 +20562,7 @@
 						<name>x_local_2_0_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20578,7 +20578,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -20620,7 +20620,7 @@
 						<name>x_local_2_1_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20636,7 +20636,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -20678,7 +20678,7 @@
 						<name>x_local_2_2_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20694,7 +20694,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -20736,7 +20736,7 @@
 						<name>x_local_2_3_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20752,7 +20752,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -20794,7 +20794,7 @@
 						<name>x_local_2_4_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20810,7 +20810,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -20852,7 +20852,7 @@
 						<name>x_local_2_5_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20868,7 +20868,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -20910,7 +20910,7 @@
 						<name>x_local_2_6_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20926,7 +20926,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -20968,7 +20968,7 @@
 						<name>x_local_2_7_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -20984,7 +20984,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -21026,7 +21026,7 @@
 						<name>val_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21042,7 +21042,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -21084,7 +21084,7 @@
 						<name>x_local_1_0_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21100,7 +21100,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -21142,7 +21142,7 @@
 						<name>x_local_1_1_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21158,7 +21158,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -21200,7 +21200,7 @@
 						<name>x_local_1_2_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21216,7 +21216,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -21258,7 +21258,7 @@
 						<name>x_local_1_3_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21274,7 +21274,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -21316,7 +21316,7 @@
 						<name>x_local_1_4_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21332,7 +21332,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -21374,7 +21374,7 @@
 						<name>x_local_1_5_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21390,7 +21390,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -21432,7 +21432,7 @@
 						<name>x_local_1_6_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21448,7 +21448,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -21490,7 +21490,7 @@
 						<name>x_local_1_7_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21506,7 +21506,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -21548,7 +21548,7 @@
 						<name>x_local_2_0_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21564,7 +21564,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -21606,7 +21606,7 @@
 						<name>x_local_2_1_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21622,7 +21622,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -21664,7 +21664,7 @@
 						<name>x_local_2_2_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21680,7 +21680,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -21722,7 +21722,7 @@
 						<name>x_local_2_3_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21738,7 +21738,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -21780,7 +21780,7 @@
 						<name>x_local_2_4_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21796,7 +21796,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -21838,7 +21838,7 @@
 						<name>x_local_2_5_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21854,7 +21854,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -21896,7 +21896,7 @@
 						<name>x_local_2_6_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21912,7 +21912,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -21954,7 +21954,7 @@
 						<name>x_local_2_7_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -21970,7 +21970,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -22012,7 +22012,7 @@
 						<name>val_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22028,7 +22028,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -22070,7 +22070,7 @@
 						<name>x_local_1_0_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22086,7 +22086,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -22128,7 +22128,7 @@
 						<name>x_local_1_1_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22144,7 +22144,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -22186,7 +22186,7 @@
 						<name>x_local_1_2_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22202,7 +22202,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -22244,7 +22244,7 @@
 						<name>x_local_1_3_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22260,7 +22260,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -22302,7 +22302,7 @@
 						<name>x_local_1_4_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22318,7 +22318,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -22360,7 +22360,7 @@
 						<name>x_local_1_5_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22376,7 +22376,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -22418,7 +22418,7 @@
 						<name>x_local_1_6_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22434,7 +22434,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -22476,7 +22476,7 @@
 						<name>x_local_1_7_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22492,7 +22492,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -22534,7 +22534,7 @@
 						<name>x_local_2_0_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22550,7 +22550,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -22592,7 +22592,7 @@
 						<name>x_local_2_1_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22608,7 +22608,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -22650,7 +22650,7 @@
 						<name>x_local_2_2_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22666,7 +22666,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -22708,7 +22708,7 @@
 						<name>x_local_2_3_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22724,7 +22724,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -22766,7 +22766,7 @@
 						<name>x_local_2_4_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22782,7 +22782,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -22824,7 +22824,7 @@
 						<name>x_local_2_5_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22840,7 +22840,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -22882,7 +22882,7 @@
 						<name>x_local_2_6_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22898,7 +22898,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -22940,7 +22940,7 @@
 						<name>x_local_2_7_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -22956,7 +22956,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -22998,7 +22998,7 @@
 						<name>val_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23014,7 +23014,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -23056,7 +23056,7 @@
 						<name>x_local_1_0_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23072,7 +23072,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -23114,7 +23114,7 @@
 						<name>x_local_1_1_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23130,7 +23130,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -23172,7 +23172,7 @@
 						<name>x_local_1_2_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23188,7 +23188,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -23230,7 +23230,7 @@
 						<name>x_local_1_3_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23246,7 +23246,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -23288,7 +23288,7 @@
 						<name>x_local_1_4_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23304,7 +23304,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -23346,7 +23346,7 @@
 						<name>x_local_1_5_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23362,7 +23362,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -23404,7 +23404,7 @@
 						<name>x_local_1_6_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23420,7 +23420,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -23462,7 +23462,7 @@
 						<name>x_local_1_7_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23478,7 +23478,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -23520,7 +23520,7 @@
 						<name>x_local_2_0_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23536,7 +23536,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -23578,7 +23578,7 @@
 						<name>x_local_2_1_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23594,7 +23594,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -23636,7 +23636,7 @@
 						<name>x_local_2_2_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23652,7 +23652,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -23694,7 +23694,7 @@
 						<name>x_local_2_3_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23710,7 +23710,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -23752,7 +23752,7 @@
 						<name>x_local_2_4_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23768,7 +23768,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -23810,7 +23810,7 @@
 						<name>x_local_2_5_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23826,7 +23826,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -23868,7 +23868,7 @@
 						<name>x_local_2_6_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23884,7 +23884,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -23926,7 +23926,7 @@
 						<name>x_local_2_7_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -23942,7 +23942,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -23984,7 +23984,7 @@
 						<name>val_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24000,7 +24000,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -24042,7 +24042,7 @@
 						<name>x_local_1_0_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24058,7 +24058,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -24100,7 +24100,7 @@
 						<name>x_local_1_1_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24116,7 +24116,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -24158,7 +24158,7 @@
 						<name>x_local_1_2_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24174,7 +24174,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -24216,7 +24216,7 @@
 						<name>x_local_1_3_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24232,7 +24232,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -24274,7 +24274,7 @@
 						<name>x_local_1_4_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24290,7 +24290,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -24332,7 +24332,7 @@
 						<name>x_local_1_5_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24348,7 +24348,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -24390,7 +24390,7 @@
 						<name>x_local_1_6_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24406,7 +24406,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -24448,7 +24448,7 @@
 						<name>x_local_1_7_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24464,7 +24464,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -24506,7 +24506,7 @@
 						<name>x_local_2_0_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24522,7 +24522,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -24564,7 +24564,7 @@
 						<name>x_local_2_1_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24580,7 +24580,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -24622,7 +24622,7 @@
 						<name>x_local_2_2_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24638,7 +24638,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -24680,7 +24680,7 @@
 						<name>x_local_2_3_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24696,7 +24696,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -24738,7 +24738,7 @@
 						<name>x_local_2_4_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24754,7 +24754,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -24796,7 +24796,7 @@
 						<name>x_local_2_5_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24812,7 +24812,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -24854,7 +24854,7 @@
 						<name>x_local_2_6_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24870,7 +24870,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -24912,7 +24912,7 @@
 						<name>x_local_2_7_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24928,7 +24928,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -24970,7 +24970,7 @@
 						<name>val_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>554</lineNumber>
+						<lineNumber>556</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -24986,7 +24986,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>554</second>
+										<second>556</second>
 									</item>
 								</second>
 							</item>
@@ -25028,7 +25028,7 @@
 						<name>x_local_1_0_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25044,7 +25044,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25086,7 +25086,7 @@
 						<name>x_local_1_1_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25102,7 +25102,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25144,7 +25144,7 @@
 						<name>x_local_1_2_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25160,7 +25160,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25202,7 +25202,7 @@
 						<name>x_local_1_3_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25218,7 +25218,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25260,7 +25260,7 @@
 						<name>x_local_1_4_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25276,7 +25276,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25318,7 +25318,7 @@
 						<name>x_local_1_5_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25334,7 +25334,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25376,7 +25376,7 @@
 						<name>x_local_1_6_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25392,7 +25392,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25434,7 +25434,7 @@
 						<name>x_local_1_7_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25450,7 +25450,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25492,7 +25492,7 @@
 						<name>i</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>549</lineNumber>
+						<lineNumber>551</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25508,7 +25508,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>549</second>
+										<second>551</second>
 									</item>
 								</second>
 							</item>
@@ -25546,10 +25546,10 @@
 					<Obj>
 						<type>0</type>
 						<id>803</id>
-						<name>_ln556</name>
+						<name>_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25565,7 +25565,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25617,10 +25617,10 @@
 					<Obj>
 						<type>0</type>
 						<id>805</id>
-						<name>x_local_1_6_0_addr_write_ln556</name>
+						<name>x_local_1_6_0_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25636,7 +25636,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25645,11 +25645,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -25665,7 +25665,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>313</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -25674,10 +25674,10 @@
 					<Obj>
 						<type>0</type>
 						<id>806</id>
-						<name>x_local_1_6_1_addr_write_ln556</name>
+						<name>x_local_1_6_1_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25693,7 +25693,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25702,11 +25702,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -25722,7 +25722,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>314</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -25731,10 +25731,10 @@
 					<Obj>
 						<type>0</type>
 						<id>807</id>
-						<name>x_local_1_6_2_addr_write_ln556</name>
+						<name>x_local_1_6_2_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25750,7 +25750,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25759,11 +25759,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -25779,7 +25779,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>315</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -25788,10 +25788,10 @@
 					<Obj>
 						<type>0</type>
 						<id>808</id>
-						<name>x_local_1_6_3_addr_write_ln556</name>
+						<name>x_local_1_6_3_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25807,7 +25807,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25816,11 +25816,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -25836,7 +25836,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>316</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -25845,10 +25845,10 @@
 					<Obj>
 						<type>0</type>
 						<id>809</id>
-						<name>x_local_1_6_4_addr_write_ln556</name>
+						<name>x_local_1_6_4_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25864,7 +25864,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25873,11 +25873,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -25893,7 +25893,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>317</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -25902,10 +25902,10 @@
 					<Obj>
 						<type>0</type>
 						<id>810</id>
-						<name>x_local_1_6_5_addr_write_ln556</name>
+						<name>x_local_1_6_5_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25921,7 +25921,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25930,11 +25930,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -25950,7 +25950,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>318</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -25959,10 +25959,10 @@
 					<Obj>
 						<type>0</type>
 						<id>811</id>
-						<name>x_local_1_6_6_addr_write_ln556</name>
+						<name>x_local_1_6_6_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -25978,7 +25978,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -25987,11 +25987,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26007,7 +26007,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>319</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26016,10 +26016,10 @@
 					<Obj>
 						<type>0</type>
 						<id>812</id>
-						<name>x_local_1_6_7_addr_write_ln556</name>
+						<name>x_local_1_6_7_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26035,7 +26035,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26044,11 +26044,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26064,7 +26064,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>320</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26073,10 +26073,10 @@
 					<Obj>
 						<type>0</type>
 						<id>813</id>
-						<name>x_local_1_6_8_addr_write_ln556</name>
+						<name>x_local_1_6_8_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26092,7 +26092,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26101,11 +26101,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26121,7 +26121,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>321</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26130,10 +26130,10 @@
 					<Obj>
 						<type>0</type>
 						<id>814</id>
-						<name>x_local_1_6_9_addr_write_ln556</name>
+						<name>x_local_1_6_9_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26149,7 +26149,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26158,11 +26158,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26178,7 +26178,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>322</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26187,10 +26187,10 @@
 					<Obj>
 						<type>0</type>
 						<id>815</id>
-						<name>x_local_1_6_10_addr_write_ln556</name>
+						<name>x_local_1_6_10_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26206,7 +26206,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26215,11 +26215,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26235,7 +26235,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>323</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26244,10 +26244,10 @@
 					<Obj>
 						<type>0</type>
 						<id>816</id>
-						<name>x_local_1_6_11_addr_write_ln556</name>
+						<name>x_local_1_6_11_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26263,7 +26263,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26272,11 +26272,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26292,7 +26292,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>324</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26301,10 +26301,10 @@
 					<Obj>
 						<type>0</type>
 						<id>817</id>
-						<name>x_local_1_6_12_addr_write_ln556</name>
+						<name>x_local_1_6_12_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26320,7 +26320,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26329,11 +26329,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26349,7 +26349,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>325</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26358,10 +26358,10 @@
 					<Obj>
 						<type>0</type>
 						<id>818</id>
-						<name>x_local_1_6_13_addr_write_ln556</name>
+						<name>x_local_1_6_13_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26377,7 +26377,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26386,11 +26386,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26406,7 +26406,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>326</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26415,10 +26415,10 @@
 					<Obj>
 						<type>0</type>
 						<id>819</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26434,7 +26434,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26471,10 +26471,10 @@
 					<Obj>
 						<type>0</type>
 						<id>821</id>
-						<name>x_local_1_5_0_addr_write_ln556</name>
+						<name>x_local_1_5_0_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26490,7 +26490,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26499,11 +26499,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26519,7 +26519,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>327</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26528,10 +26528,10 @@
 					<Obj>
 						<type>0</type>
 						<id>822</id>
-						<name>x_local_1_5_1_addr_write_ln556</name>
+						<name>x_local_1_5_1_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26547,7 +26547,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26556,11 +26556,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26576,7 +26576,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>328</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26585,10 +26585,10 @@
 					<Obj>
 						<type>0</type>
 						<id>823</id>
-						<name>x_local_1_5_2_addr_write_ln556</name>
+						<name>x_local_1_5_2_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26604,7 +26604,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26613,11 +26613,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26633,7 +26633,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>329</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26642,10 +26642,10 @@
 					<Obj>
 						<type>0</type>
 						<id>824</id>
-						<name>x_local_1_5_3_addr_write_ln556</name>
+						<name>x_local_1_5_3_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26661,7 +26661,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26670,11 +26670,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26690,7 +26690,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>330</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26699,10 +26699,10 @@
 					<Obj>
 						<type>0</type>
 						<id>825</id>
-						<name>x_local_1_5_4_addr_write_ln556</name>
+						<name>x_local_1_5_4_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26718,7 +26718,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26727,11 +26727,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26747,7 +26747,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>331</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26756,10 +26756,10 @@
 					<Obj>
 						<type>0</type>
 						<id>826</id>
-						<name>x_local_1_5_5_addr_write_ln556</name>
+						<name>x_local_1_5_5_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26775,7 +26775,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26784,11 +26784,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26804,7 +26804,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>332</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26813,10 +26813,10 @@
 					<Obj>
 						<type>0</type>
 						<id>827</id>
-						<name>x_local_1_5_6_addr_write_ln556</name>
+						<name>x_local_1_5_6_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26832,7 +26832,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26841,11 +26841,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26861,7 +26861,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>333</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26870,10 +26870,10 @@
 					<Obj>
 						<type>0</type>
 						<id>828</id>
-						<name>x_local_1_5_7_addr_write_ln556</name>
+						<name>x_local_1_5_7_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26889,7 +26889,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26898,11 +26898,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26918,7 +26918,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>334</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26927,10 +26927,10 @@
 					<Obj>
 						<type>0</type>
 						<id>829</id>
-						<name>x_local_1_5_8_addr_write_ln556</name>
+						<name>x_local_1_5_8_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -26946,7 +26946,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -26955,11 +26955,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -26975,7 +26975,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>335</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -26984,10 +26984,10 @@
 					<Obj>
 						<type>0</type>
 						<id>830</id>
-						<name>x_local_1_5_9_addr_write_ln556</name>
+						<name>x_local_1_5_9_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27003,7 +27003,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27012,11 +27012,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27032,7 +27032,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>336</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27041,10 +27041,10 @@
 					<Obj>
 						<type>0</type>
 						<id>831</id>
-						<name>x_local_1_5_10_addr_write_ln556</name>
+						<name>x_local_1_5_10_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27060,7 +27060,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27069,11 +27069,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27089,7 +27089,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>337</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27098,10 +27098,10 @@
 					<Obj>
 						<type>0</type>
 						<id>832</id>
-						<name>x_local_1_5_11_addr_write_ln556</name>
+						<name>x_local_1_5_11_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27117,7 +27117,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27126,11 +27126,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27146,7 +27146,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>338</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27155,10 +27155,10 @@
 					<Obj>
 						<type>0</type>
 						<id>833</id>
-						<name>x_local_1_5_12_addr_write_ln556</name>
+						<name>x_local_1_5_12_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27174,7 +27174,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27183,11 +27183,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27203,7 +27203,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>339</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27212,10 +27212,10 @@
 					<Obj>
 						<type>0</type>
 						<id>834</id>
-						<name>x_local_1_5_13_addr_write_ln556</name>
+						<name>x_local_1_5_13_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27231,7 +27231,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27240,11 +27240,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27260,7 +27260,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>340</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27269,10 +27269,10 @@
 					<Obj>
 						<type>0</type>
 						<id>835</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27288,7 +27288,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27325,10 +27325,10 @@
 					<Obj>
 						<type>0</type>
 						<id>837</id>
-						<name>x_local_1_4_0_addr_write_ln556</name>
+						<name>x_local_1_4_0_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27344,7 +27344,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27353,11 +27353,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27373,7 +27373,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>341</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27382,10 +27382,10 @@
 					<Obj>
 						<type>0</type>
 						<id>838</id>
-						<name>x_local_1_4_1_addr_write_ln556</name>
+						<name>x_local_1_4_1_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27401,7 +27401,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27410,11 +27410,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27430,7 +27430,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>342</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27439,10 +27439,10 @@
 					<Obj>
 						<type>0</type>
 						<id>839</id>
-						<name>x_local_1_4_2_addr_write_ln556</name>
+						<name>x_local_1_4_2_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27458,7 +27458,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27467,11 +27467,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27487,7 +27487,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>343</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27496,10 +27496,10 @@
 					<Obj>
 						<type>0</type>
 						<id>840</id>
-						<name>x_local_1_4_3_addr_write_ln556</name>
+						<name>x_local_1_4_3_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27515,7 +27515,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27524,11 +27524,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27544,7 +27544,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>344</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27553,10 +27553,10 @@
 					<Obj>
 						<type>0</type>
 						<id>841</id>
-						<name>x_local_1_4_4_addr_write_ln556</name>
+						<name>x_local_1_4_4_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27572,7 +27572,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27581,11 +27581,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27601,7 +27601,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>345</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27610,10 +27610,10 @@
 					<Obj>
 						<type>0</type>
 						<id>842</id>
-						<name>x_local_1_4_5_addr_write_ln556</name>
+						<name>x_local_1_4_5_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27629,7 +27629,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27638,11 +27638,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27658,7 +27658,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>346</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27667,10 +27667,10 @@
 					<Obj>
 						<type>0</type>
 						<id>843</id>
-						<name>x_local_1_4_6_addr_write_ln556</name>
+						<name>x_local_1_4_6_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27686,7 +27686,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27695,11 +27695,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27715,7 +27715,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>347</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27724,10 +27724,10 @@
 					<Obj>
 						<type>0</type>
 						<id>844</id>
-						<name>x_local_1_4_7_addr_write_ln556</name>
+						<name>x_local_1_4_7_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27743,7 +27743,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27752,11 +27752,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27772,7 +27772,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>348</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27781,10 +27781,10 @@
 					<Obj>
 						<type>0</type>
 						<id>845</id>
-						<name>x_local_1_4_8_addr_write_ln556</name>
+						<name>x_local_1_4_8_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27800,7 +27800,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27809,11 +27809,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27829,7 +27829,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>349</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27838,10 +27838,10 @@
 					<Obj>
 						<type>0</type>
 						<id>846</id>
-						<name>x_local_1_4_9_addr_write_ln556</name>
+						<name>x_local_1_4_9_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27857,7 +27857,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27866,11 +27866,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27886,7 +27886,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>350</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27895,10 +27895,10 @@
 					<Obj>
 						<type>0</type>
 						<id>847</id>
-						<name>x_local_1_4_10_addr_write_ln556</name>
+						<name>x_local_1_4_10_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27914,7 +27914,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27923,11 +27923,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -27943,7 +27943,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>351</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -27952,10 +27952,10 @@
 					<Obj>
 						<type>0</type>
 						<id>848</id>
-						<name>x_local_1_4_11_addr_write_ln556</name>
+						<name>x_local_1_4_11_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -27971,7 +27971,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -27980,11 +27980,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28000,7 +28000,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>352</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28009,10 +28009,10 @@
 					<Obj>
 						<type>0</type>
 						<id>849</id>
-						<name>x_local_1_4_12_addr_write_ln556</name>
+						<name>x_local_1_4_12_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28028,7 +28028,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28037,11 +28037,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28057,7 +28057,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>353</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28066,10 +28066,10 @@
 					<Obj>
 						<type>0</type>
 						<id>850</id>
-						<name>x_local_1_4_13_addr_write_ln556</name>
+						<name>x_local_1_4_13_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28085,7 +28085,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28094,11 +28094,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28114,7 +28114,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>354</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28123,10 +28123,10 @@
 					<Obj>
 						<type>0</type>
 						<id>851</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28142,7 +28142,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28179,10 +28179,10 @@
 					<Obj>
 						<type>0</type>
 						<id>853</id>
-						<name>x_local_1_3_0_addr_write_ln556</name>
+						<name>x_local_1_3_0_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28198,7 +28198,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28207,11 +28207,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28227,7 +28227,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>355</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28236,10 +28236,10 @@
 					<Obj>
 						<type>0</type>
 						<id>854</id>
-						<name>x_local_1_3_1_addr_write_ln556</name>
+						<name>x_local_1_3_1_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28255,7 +28255,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28264,11 +28264,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28284,7 +28284,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>356</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28293,10 +28293,10 @@
 					<Obj>
 						<type>0</type>
 						<id>855</id>
-						<name>x_local_1_3_2_addr_write_ln556</name>
+						<name>x_local_1_3_2_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28312,7 +28312,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28321,11 +28321,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28341,7 +28341,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>357</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28350,10 +28350,10 @@
 					<Obj>
 						<type>0</type>
 						<id>856</id>
-						<name>x_local_1_3_3_addr_write_ln556</name>
+						<name>x_local_1_3_3_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28369,7 +28369,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28378,11 +28378,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28398,7 +28398,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>358</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28407,10 +28407,10 @@
 					<Obj>
 						<type>0</type>
 						<id>857</id>
-						<name>x_local_1_3_4_addr_write_ln556</name>
+						<name>x_local_1_3_4_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28426,7 +28426,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28435,11 +28435,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28455,7 +28455,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>359</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28464,10 +28464,10 @@
 					<Obj>
 						<type>0</type>
 						<id>858</id>
-						<name>x_local_1_3_5_addr_write_ln556</name>
+						<name>x_local_1_3_5_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28483,7 +28483,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28492,11 +28492,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28512,7 +28512,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>360</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28521,10 +28521,10 @@
 					<Obj>
 						<type>0</type>
 						<id>859</id>
-						<name>x_local_1_3_6_addr_write_ln556</name>
+						<name>x_local_1_3_6_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28540,7 +28540,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28549,11 +28549,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28569,7 +28569,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>361</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28578,10 +28578,10 @@
 					<Obj>
 						<type>0</type>
 						<id>860</id>
-						<name>x_local_1_3_7_addr_write_ln556</name>
+						<name>x_local_1_3_7_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28597,7 +28597,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28606,11 +28606,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28626,7 +28626,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>362</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28635,10 +28635,10 @@
 					<Obj>
 						<type>0</type>
 						<id>861</id>
-						<name>x_local_1_3_8_addr_write_ln556</name>
+						<name>x_local_1_3_8_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28654,7 +28654,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28663,11 +28663,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28683,7 +28683,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>363</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28692,10 +28692,10 @@
 					<Obj>
 						<type>0</type>
 						<id>862</id>
-						<name>x_local_1_3_9_addr_write_ln556</name>
+						<name>x_local_1_3_9_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28711,7 +28711,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28720,11 +28720,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28740,7 +28740,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>364</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28749,10 +28749,10 @@
 					<Obj>
 						<type>0</type>
 						<id>863</id>
-						<name>x_local_1_3_10_addr_write_ln556</name>
+						<name>x_local_1_3_10_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28768,7 +28768,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28777,11 +28777,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28797,7 +28797,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>365</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28806,10 +28806,10 @@
 					<Obj>
 						<type>0</type>
 						<id>864</id>
-						<name>x_local_1_3_11_addr_write_ln556</name>
+						<name>x_local_1_3_11_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28825,7 +28825,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28834,11 +28834,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28854,7 +28854,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>366</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28863,10 +28863,10 @@
 					<Obj>
 						<type>0</type>
 						<id>865</id>
-						<name>x_local_1_3_12_addr_write_ln556</name>
+						<name>x_local_1_3_12_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28882,7 +28882,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28891,11 +28891,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28911,7 +28911,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>367</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28920,10 +28920,10 @@
 					<Obj>
 						<type>0</type>
 						<id>866</id>
-						<name>x_local_1_3_13_addr_write_ln556</name>
+						<name>x_local_1_3_13_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28939,7 +28939,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -28948,11 +28948,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -28968,7 +28968,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>368</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -28977,10 +28977,10 @@
 					<Obj>
 						<type>0</type>
 						<id>867</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -28996,7 +28996,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29033,10 +29033,10 @@
 					<Obj>
 						<type>0</type>
 						<id>869</id>
-						<name>x_local_1_2_0_addr_write_ln556</name>
+						<name>x_local_1_2_0_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29052,7 +29052,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29061,11 +29061,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29081,7 +29081,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>369</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29090,10 +29090,10 @@
 					<Obj>
 						<type>0</type>
 						<id>870</id>
-						<name>x_local_1_2_1_addr_write_ln556</name>
+						<name>x_local_1_2_1_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29109,7 +29109,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29118,11 +29118,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29138,7 +29138,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>370</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29147,10 +29147,10 @@
 					<Obj>
 						<type>0</type>
 						<id>871</id>
-						<name>x_local_1_2_2_addr_write_ln556</name>
+						<name>x_local_1_2_2_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29166,7 +29166,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29175,11 +29175,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29195,7 +29195,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>371</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29204,10 +29204,10 @@
 					<Obj>
 						<type>0</type>
 						<id>872</id>
-						<name>x_local_1_2_3_addr_write_ln556</name>
+						<name>x_local_1_2_3_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29223,7 +29223,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29232,11 +29232,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29252,7 +29252,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>372</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29261,10 +29261,10 @@
 					<Obj>
 						<type>0</type>
 						<id>873</id>
-						<name>x_local_1_2_4_addr_write_ln556</name>
+						<name>x_local_1_2_4_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29280,7 +29280,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29289,11 +29289,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29309,7 +29309,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>373</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29318,10 +29318,10 @@
 					<Obj>
 						<type>0</type>
 						<id>874</id>
-						<name>x_local_1_2_5_addr_write_ln556</name>
+						<name>x_local_1_2_5_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29337,7 +29337,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29346,11 +29346,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29366,7 +29366,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>374</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29375,10 +29375,10 @@
 					<Obj>
 						<type>0</type>
 						<id>875</id>
-						<name>x_local_1_2_6_addr_write_ln556</name>
+						<name>x_local_1_2_6_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29394,7 +29394,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29403,11 +29403,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29423,7 +29423,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>375</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29432,10 +29432,10 @@
 					<Obj>
 						<type>0</type>
 						<id>876</id>
-						<name>x_local_1_2_7_addr_write_ln556</name>
+						<name>x_local_1_2_7_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29451,7 +29451,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29460,11 +29460,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29480,7 +29480,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>376</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29489,10 +29489,10 @@
 					<Obj>
 						<type>0</type>
 						<id>877</id>
-						<name>x_local_1_2_8_addr_write_ln556</name>
+						<name>x_local_1_2_8_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29508,7 +29508,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29517,11 +29517,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29537,7 +29537,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>377</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29546,10 +29546,10 @@
 					<Obj>
 						<type>0</type>
 						<id>878</id>
-						<name>x_local_1_2_9_addr_write_ln556</name>
+						<name>x_local_1_2_9_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29565,7 +29565,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29574,11 +29574,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29594,7 +29594,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>378</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29603,10 +29603,10 @@
 					<Obj>
 						<type>0</type>
 						<id>879</id>
-						<name>x_local_1_2_10_addr_write_ln556</name>
+						<name>x_local_1_2_10_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29622,7 +29622,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29631,11 +29631,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29651,7 +29651,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>379</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29660,10 +29660,10 @@
 					<Obj>
 						<type>0</type>
 						<id>880</id>
-						<name>x_local_1_2_11_addr_write_ln556</name>
+						<name>x_local_1_2_11_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29679,7 +29679,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29688,11 +29688,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29708,7 +29708,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>380</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29717,10 +29717,10 @@
 					<Obj>
 						<type>0</type>
 						<id>881</id>
-						<name>x_local_1_2_12_addr_write_ln556</name>
+						<name>x_local_1_2_12_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29736,7 +29736,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29745,11 +29745,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29765,7 +29765,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>381</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29774,10 +29774,10 @@
 					<Obj>
 						<type>0</type>
 						<id>882</id>
-						<name>x_local_1_2_13_addr_write_ln556</name>
+						<name>x_local_1_2_13_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29793,7 +29793,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29802,11 +29802,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29822,7 +29822,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>382</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29831,10 +29831,10 @@
 					<Obj>
 						<type>0</type>
 						<id>883</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29850,7 +29850,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29887,10 +29887,10 @@
 					<Obj>
 						<type>0</type>
 						<id>885</id>
-						<name>x_local_1_1_0_addr_write_ln556</name>
+						<name>x_local_1_1_0_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29906,7 +29906,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29915,11 +29915,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29935,7 +29935,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>383</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -29944,10 +29944,10 @@
 					<Obj>
 						<type>0</type>
 						<id>886</id>
-						<name>x_local_1_1_1_addr_write_ln556</name>
+						<name>x_local_1_1_1_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -29963,7 +29963,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -29972,11 +29972,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -29992,7 +29992,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>384</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30001,10 +30001,10 @@
 					<Obj>
 						<type>0</type>
 						<id>887</id>
-						<name>x_local_1_1_2_addr_write_ln556</name>
+						<name>x_local_1_1_2_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30020,7 +30020,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30029,11 +30029,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30049,7 +30049,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>385</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30058,10 +30058,10 @@
 					<Obj>
 						<type>0</type>
 						<id>888</id>
-						<name>x_local_1_1_3_addr_write_ln556</name>
+						<name>x_local_1_1_3_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30077,7 +30077,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30086,11 +30086,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30106,7 +30106,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>386</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30115,10 +30115,10 @@
 					<Obj>
 						<type>0</type>
 						<id>889</id>
-						<name>x_local_1_1_4_addr_write_ln556</name>
+						<name>x_local_1_1_4_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30134,7 +30134,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30143,11 +30143,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30163,7 +30163,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>387</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30172,10 +30172,10 @@
 					<Obj>
 						<type>0</type>
 						<id>890</id>
-						<name>x_local_1_1_5_addr_write_ln556</name>
+						<name>x_local_1_1_5_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30191,7 +30191,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30200,11 +30200,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30220,7 +30220,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>388</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30229,10 +30229,10 @@
 					<Obj>
 						<type>0</type>
 						<id>891</id>
-						<name>x_local_1_1_6_addr_write_ln556</name>
+						<name>x_local_1_1_6_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30248,7 +30248,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30257,11 +30257,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30277,7 +30277,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>389</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30286,10 +30286,10 @@
 					<Obj>
 						<type>0</type>
 						<id>892</id>
-						<name>x_local_1_1_7_addr_write_ln556</name>
+						<name>x_local_1_1_7_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30305,7 +30305,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30314,11 +30314,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30334,7 +30334,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>390</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30343,10 +30343,10 @@
 					<Obj>
 						<type>0</type>
 						<id>893</id>
-						<name>x_local_1_1_8_addr_write_ln556</name>
+						<name>x_local_1_1_8_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30362,7 +30362,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30371,11 +30371,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30391,7 +30391,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>391</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30400,10 +30400,10 @@
 					<Obj>
 						<type>0</type>
 						<id>894</id>
-						<name>x_local_1_1_9_addr_write_ln556</name>
+						<name>x_local_1_1_9_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30419,7 +30419,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30428,11 +30428,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30448,7 +30448,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>392</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30457,10 +30457,10 @@
 					<Obj>
 						<type>0</type>
 						<id>895</id>
-						<name>x_local_1_1_10_addr_write_ln556</name>
+						<name>x_local_1_1_10_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30476,7 +30476,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30485,11 +30485,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30505,7 +30505,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>393</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30514,10 +30514,10 @@
 					<Obj>
 						<type>0</type>
 						<id>896</id>
-						<name>x_local_1_1_11_addr_write_ln556</name>
+						<name>x_local_1_1_11_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30533,7 +30533,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30542,11 +30542,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30562,7 +30562,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>394</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30571,10 +30571,10 @@
 					<Obj>
 						<type>0</type>
 						<id>897</id>
-						<name>x_local_1_1_12_addr_write_ln556</name>
+						<name>x_local_1_1_12_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30590,7 +30590,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30599,11 +30599,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30619,7 +30619,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>395</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30628,10 +30628,10 @@
 					<Obj>
 						<type>0</type>
 						<id>898</id>
-						<name>x_local_1_1_13_addr_write_ln556</name>
+						<name>x_local_1_1_13_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30647,7 +30647,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30656,11 +30656,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30676,7 +30676,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>396</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30685,10 +30685,10 @@
 					<Obj>
 						<type>0</type>
 						<id>899</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30704,7 +30704,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30741,10 +30741,10 @@
 					<Obj>
 						<type>0</type>
 						<id>901</id>
-						<name>x_local_1_7_0_addr_write_ln556</name>
+						<name>x_local_1_7_0_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30760,7 +30760,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30769,11 +30769,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30789,7 +30789,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>397</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30798,10 +30798,10 @@
 					<Obj>
 						<type>0</type>
 						<id>902</id>
-						<name>x_local_1_7_1_addr_write_ln556</name>
+						<name>x_local_1_7_1_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30817,7 +30817,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30826,11 +30826,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30846,7 +30846,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>398</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30855,10 +30855,10 @@
 					<Obj>
 						<type>0</type>
 						<id>903</id>
-						<name>x_local_1_7_2_addr_write_ln556</name>
+						<name>x_local_1_7_2_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30874,7 +30874,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30883,11 +30883,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30903,7 +30903,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>399</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30912,10 +30912,10 @@
 					<Obj>
 						<type>0</type>
 						<id>904</id>
-						<name>x_local_1_7_3_addr_write_ln556</name>
+						<name>x_local_1_7_3_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30931,7 +30931,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30940,11 +30940,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -30960,7 +30960,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>400</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -30969,10 +30969,10 @@
 					<Obj>
 						<type>0</type>
 						<id>905</id>
-						<name>x_local_1_7_4_addr_write_ln556</name>
+						<name>x_local_1_7_4_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -30988,7 +30988,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -30997,11 +30997,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31017,7 +31017,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>401</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31026,10 +31026,10 @@
 					<Obj>
 						<type>0</type>
 						<id>906</id>
-						<name>x_local_1_7_5_addr_write_ln556</name>
+						<name>x_local_1_7_5_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31045,7 +31045,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31054,11 +31054,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31074,7 +31074,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>402</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31083,10 +31083,10 @@
 					<Obj>
 						<type>0</type>
 						<id>907</id>
-						<name>x_local_1_7_6_addr_write_ln556</name>
+						<name>x_local_1_7_6_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31102,7 +31102,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31111,11 +31111,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31131,7 +31131,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>403</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31140,10 +31140,10 @@
 					<Obj>
 						<type>0</type>
 						<id>908</id>
-						<name>x_local_1_7_7_addr_write_ln556</name>
+						<name>x_local_1_7_7_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31159,7 +31159,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31168,11 +31168,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31188,7 +31188,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>404</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31197,10 +31197,10 @@
 					<Obj>
 						<type>0</type>
 						<id>909</id>
-						<name>x_local_1_7_8_addr_write_ln556</name>
+						<name>x_local_1_7_8_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31216,7 +31216,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31225,11 +31225,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31245,7 +31245,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>405</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31254,10 +31254,10 @@
 					<Obj>
 						<type>0</type>
 						<id>910</id>
-						<name>x_local_1_7_9_addr_write_ln556</name>
+						<name>x_local_1_7_9_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31273,7 +31273,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31282,11 +31282,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31302,7 +31302,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>406</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31311,10 +31311,10 @@
 					<Obj>
 						<type>0</type>
 						<id>911</id>
-						<name>x_local_1_7_10_addr_write_ln556</name>
+						<name>x_local_1_7_10_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31330,7 +31330,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31339,11 +31339,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31359,7 +31359,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>407</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31368,10 +31368,10 @@
 					<Obj>
 						<type>0</type>
 						<id>912</id>
-						<name>x_local_1_7_11_addr_write_ln556</name>
+						<name>x_local_1_7_11_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31387,7 +31387,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31396,11 +31396,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31416,7 +31416,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>408</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31425,10 +31425,10 @@
 					<Obj>
 						<type>0</type>
 						<id>913</id>
-						<name>x_local_1_7_12_addr_write_ln556</name>
+						<name>x_local_1_7_12_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31444,7 +31444,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31453,11 +31453,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31473,7 +31473,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>409</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31482,10 +31482,10 @@
 					<Obj>
 						<type>0</type>
 						<id>914</id>
-						<name>x_local_1_7_13_addr_write_ln556</name>
+						<name>x_local_1_7_13_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31501,7 +31501,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31510,11 +31510,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31530,7 +31530,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>410</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31539,10 +31539,10 @@
 					<Obj>
 						<type>0</type>
 						<id>915</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31558,7 +31558,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31595,10 +31595,10 @@
 					<Obj>
 						<type>0</type>
 						<id>917</id>
-						<name>x_local_1_0_0_addr_write_ln556</name>
+						<name>x_local_1_0_0_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31614,7 +31614,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31623,11 +31623,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31643,7 +31643,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>411</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31652,10 +31652,10 @@
 					<Obj>
 						<type>0</type>
 						<id>918</id>
-						<name>x_local_1_0_1_addr_write_ln556</name>
+						<name>x_local_1_0_1_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31671,7 +31671,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31680,11 +31680,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31700,7 +31700,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>412</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31709,10 +31709,10 @@
 					<Obj>
 						<type>0</type>
 						<id>919</id>
-						<name>x_local_1_0_2_addr_write_ln556</name>
+						<name>x_local_1_0_2_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31728,7 +31728,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31737,11 +31737,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31757,7 +31757,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>413</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31766,10 +31766,10 @@
 					<Obj>
 						<type>0</type>
 						<id>920</id>
-						<name>x_local_1_0_3_addr_write_ln556</name>
+						<name>x_local_1_0_3_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31785,7 +31785,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31794,11 +31794,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31814,7 +31814,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>414</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31823,10 +31823,10 @@
 					<Obj>
 						<type>0</type>
 						<id>921</id>
-						<name>x_local_1_0_4_addr_write_ln556</name>
+						<name>x_local_1_0_4_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31842,7 +31842,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31851,11 +31851,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31871,7 +31871,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>415</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31880,10 +31880,10 @@
 					<Obj>
 						<type>0</type>
 						<id>922</id>
-						<name>x_local_1_0_5_addr_write_ln556</name>
+						<name>x_local_1_0_5_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31899,7 +31899,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31908,11 +31908,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31928,7 +31928,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>416</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31937,10 +31937,10 @@
 					<Obj>
 						<type>0</type>
 						<id>923</id>
-						<name>x_local_1_0_6_addr_write_ln556</name>
+						<name>x_local_1_0_6_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -31956,7 +31956,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -31965,11 +31965,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -31985,7 +31985,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>417</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -31994,10 +31994,10 @@
 					<Obj>
 						<type>0</type>
 						<id>924</id>
-						<name>x_local_1_0_7_addr_write_ln556</name>
+						<name>x_local_1_0_7_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32013,7 +32013,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32022,11 +32022,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32042,7 +32042,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>418</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32051,10 +32051,10 @@
 					<Obj>
 						<type>0</type>
 						<id>925</id>
-						<name>x_local_1_0_8_addr_write_ln556</name>
+						<name>x_local_1_0_8_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32070,7 +32070,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32079,11 +32079,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32099,7 +32099,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>419</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32108,10 +32108,10 @@
 					<Obj>
 						<type>0</type>
 						<id>926</id>
-						<name>x_local_1_0_9_addr_write_ln556</name>
+						<name>x_local_1_0_9_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32127,7 +32127,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32136,11 +32136,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32156,7 +32156,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>420</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32165,10 +32165,10 @@
 					<Obj>
 						<type>0</type>
 						<id>927</id>
-						<name>x_local_1_0_10_addr_write_ln556</name>
+						<name>x_local_1_0_10_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32184,7 +32184,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32193,11 +32193,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32213,7 +32213,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>421</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32222,10 +32222,10 @@
 					<Obj>
 						<type>0</type>
 						<id>928</id>
-						<name>x_local_1_0_11_addr_write_ln556</name>
+						<name>x_local_1_0_11_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32241,7 +32241,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32250,11 +32250,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32270,7 +32270,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>422</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32279,10 +32279,10 @@
 					<Obj>
 						<type>0</type>
 						<id>929</id>
-						<name>x_local_1_0_12_addr_write_ln556</name>
+						<name>x_local_1_0_12_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32298,7 +32298,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32307,11 +32307,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32327,7 +32327,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>423</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32336,10 +32336,10 @@
 					<Obj>
 						<type>0</type>
 						<id>930</id>
-						<name>x_local_1_0_13_addr_write_ln556</name>
+						<name>x_local_1_0_13_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32355,7 +32355,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32364,11 +32364,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32384,7 +32384,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>424</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32393,10 +32393,10 @@
 					<Obj>
 						<type>0</type>
 						<id>931</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32412,7 +32412,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32449,10 +32449,10 @@
 					<Obj>
 						<type>0</type>
 						<id>933</id>
-						<name>_ln556</name>
+						<name>_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32468,7 +32468,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32520,10 +32520,10 @@
 					<Obj>
 						<type>0</type>
 						<id>935</id>
-						<name>x_local_1_6_14_addr_write_ln556</name>
+						<name>x_local_1_6_14_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32539,7 +32539,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32548,11 +32548,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32568,7 +32568,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>425</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32577,10 +32577,10 @@
 					<Obj>
 						<type>0</type>
 						<id>936</id>
-						<name>x_local_1_6_15_addr_write_ln556</name>
+						<name>x_local_1_6_15_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32596,7 +32596,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32605,11 +32605,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32625,7 +32625,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>426</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32634,10 +32634,10 @@
 					<Obj>
 						<type>0</type>
 						<id>937</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32653,7 +32653,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32690,10 +32690,10 @@
 					<Obj>
 						<type>0</type>
 						<id>939</id>
-						<name>x_local_1_5_14_addr_write_ln556</name>
+						<name>x_local_1_5_14_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32709,7 +32709,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32718,11 +32718,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32738,7 +32738,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>427</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32747,10 +32747,10 @@
 					<Obj>
 						<type>0</type>
 						<id>940</id>
-						<name>x_local_1_5_15_addr_write_ln556</name>
+						<name>x_local_1_5_15_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32766,7 +32766,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32775,11 +32775,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32795,7 +32795,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>428</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32804,10 +32804,10 @@
 					<Obj>
 						<type>0</type>
 						<id>941</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32823,7 +32823,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32860,10 +32860,10 @@
 					<Obj>
 						<type>0</type>
 						<id>943</id>
-						<name>x_local_1_4_14_addr_write_ln556</name>
+						<name>x_local_1_4_14_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32879,7 +32879,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32888,11 +32888,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32908,7 +32908,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>429</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32917,10 +32917,10 @@
 					<Obj>
 						<type>0</type>
 						<id>944</id>
-						<name>x_local_1_4_15_addr_write_ln556</name>
+						<name>x_local_1_4_15_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32936,7 +32936,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -32945,11 +32945,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -32965,7 +32965,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>430</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -32974,10 +32974,10 @@
 					<Obj>
 						<type>0</type>
 						<id>945</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -32993,7 +32993,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33030,10 +33030,10 @@
 					<Obj>
 						<type>0</type>
 						<id>947</id>
-						<name>x_local_1_3_14_addr_write_ln556</name>
+						<name>x_local_1_3_14_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33049,7 +33049,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33058,11 +33058,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -33078,7 +33078,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>431</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -33087,10 +33087,10 @@
 					<Obj>
 						<type>0</type>
 						<id>948</id>
-						<name>x_local_1_3_15_addr_write_ln556</name>
+						<name>x_local_1_3_15_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33106,7 +33106,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33115,11 +33115,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -33135,7 +33135,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>432</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -33144,10 +33144,10 @@
 					<Obj>
 						<type>0</type>
 						<id>949</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33163,7 +33163,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33200,10 +33200,10 @@
 					<Obj>
 						<type>0</type>
 						<id>951</id>
-						<name>x_local_1_2_14_addr_write_ln556</name>
+						<name>x_local_1_2_14_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33219,7 +33219,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33228,11 +33228,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -33248,7 +33248,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>433</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -33257,10 +33257,10 @@
 					<Obj>
 						<type>0</type>
 						<id>952</id>
-						<name>x_local_1_2_15_addr_write_ln556</name>
+						<name>x_local_1_2_15_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33276,7 +33276,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33285,11 +33285,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -33305,7 +33305,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>434</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -33314,10 +33314,10 @@
 					<Obj>
 						<type>0</type>
 						<id>953</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33333,7 +33333,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33370,10 +33370,10 @@
 					<Obj>
 						<type>0</type>
 						<id>955</id>
-						<name>x_local_1_1_14_addr_write_ln556</name>
+						<name>x_local_1_1_14_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33389,7 +33389,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33398,11 +33398,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -33418,7 +33418,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>435</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -33427,10 +33427,10 @@
 					<Obj>
 						<type>0</type>
 						<id>956</id>
-						<name>x_local_1_1_15_addr_write_ln556</name>
+						<name>x_local_1_1_15_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33446,7 +33446,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33455,11 +33455,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -33475,7 +33475,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>436</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -33484,10 +33484,10 @@
 					<Obj>
 						<type>0</type>
 						<id>957</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33503,7 +33503,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33540,10 +33540,10 @@
 					<Obj>
 						<type>0</type>
 						<id>959</id>
-						<name>x_local_1_7_14_addr_write_ln556</name>
+						<name>x_local_1_7_14_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33559,7 +33559,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33568,11 +33568,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -33588,7 +33588,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>437</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -33597,10 +33597,10 @@
 					<Obj>
 						<type>0</type>
 						<id>960</id>
-						<name>x_local_1_7_15_addr_write_ln556</name>
+						<name>x_local_1_7_15_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33616,7 +33616,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33625,11 +33625,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -33645,7 +33645,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>438</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -33654,10 +33654,10 @@
 					<Obj>
 						<type>0</type>
 						<id>961</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33673,7 +33673,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33710,10 +33710,10 @@
 					<Obj>
 						<type>0</type>
 						<id>963</id>
-						<name>x_local_1_0_14_addr_write_ln556</name>
+						<name>x_local_1_0_14_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33729,7 +33729,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33738,11 +33738,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -33758,7 +33758,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>439</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -33767,10 +33767,10 @@
 					<Obj>
 						<type>0</type>
 						<id>964</id>
-						<name>x_local_1_0_15_addr_write_ln556</name>
+						<name>x_local_1_0_15_addr_write_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33786,7 +33786,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33795,11 +33795,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -33815,7 +33815,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>440</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -33824,10 +33824,10 @@
 					<Obj>
 						<type>0</type>
 						<id>965</id>
-						<name>br_ln556</name>
+						<name>br_ln558</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>556</lineNumber>
+						<lineNumber>558</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33843,7 +33843,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>556</second>
+										<second>558</second>
 									</item>
 								</second>
 							</item>
@@ -33883,7 +33883,7 @@
 						<name>x_local_2_0_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33899,7 +33899,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -33941,7 +33941,7 @@
 						<name>x_local_2_1_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -33957,7 +33957,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -33999,7 +33999,7 @@
 						<name>x_local_2_2_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34015,7 +34015,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34057,7 +34057,7 @@
 						<name>x_local_2_3_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34073,7 +34073,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34115,7 +34115,7 @@
 						<name>x_local_2_4_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34131,7 +34131,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34173,7 +34173,7 @@
 						<name>x_local_2_5_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34189,7 +34189,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34231,7 +34231,7 @@
 						<name>x_local_2_6_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34247,7 +34247,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34289,7 +34289,7 @@
 						<name>x_local_2_7_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34305,7 +34305,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34344,10 +34344,10 @@
 					<Obj>
 						<type>0</type>
 						<id>975</id>
-						<name>_ln557</name>
+						<name>_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34363,7 +34363,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34415,10 +34415,10 @@
 					<Obj>
 						<type>0</type>
 						<id>977</id>
-						<name>x_local_2_6_0_addr_write_ln557</name>
+						<name>x_local_2_6_0_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34434,7 +34434,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34443,11 +34443,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -34463,7 +34463,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>449</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -34472,10 +34472,10 @@
 					<Obj>
 						<type>0</type>
 						<id>978</id>
-						<name>x_local_2_6_1_addr_write_ln557</name>
+						<name>x_local_2_6_1_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34491,7 +34491,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34500,11 +34500,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -34520,7 +34520,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>450</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -34529,10 +34529,10 @@
 					<Obj>
 						<type>0</type>
 						<id>979</id>
-						<name>x_local_2_6_2_addr_write_ln557</name>
+						<name>x_local_2_6_2_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34548,7 +34548,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34557,11 +34557,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -34577,7 +34577,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>451</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -34586,10 +34586,10 @@
 					<Obj>
 						<type>0</type>
 						<id>980</id>
-						<name>x_local_2_6_3_addr_write_ln557</name>
+						<name>x_local_2_6_3_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34605,7 +34605,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34614,11 +34614,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -34634,7 +34634,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>452</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -34643,10 +34643,10 @@
 					<Obj>
 						<type>0</type>
 						<id>981</id>
-						<name>x_local_2_6_4_addr_write_ln557</name>
+						<name>x_local_2_6_4_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34662,7 +34662,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34671,11 +34671,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -34691,7 +34691,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>453</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -34700,10 +34700,10 @@
 					<Obj>
 						<type>0</type>
 						<id>982</id>
-						<name>x_local_2_6_5_addr_write_ln557</name>
+						<name>x_local_2_6_5_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34719,7 +34719,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34728,11 +34728,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -34748,7 +34748,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>454</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -34757,10 +34757,10 @@
 					<Obj>
 						<type>0</type>
 						<id>983</id>
-						<name>x_local_2_6_6_addr_write_ln557</name>
+						<name>x_local_2_6_6_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34776,7 +34776,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34785,11 +34785,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -34805,7 +34805,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>455</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -34814,10 +34814,10 @@
 					<Obj>
 						<type>0</type>
 						<id>984</id>
-						<name>x_local_2_6_7_addr_write_ln557</name>
+						<name>x_local_2_6_7_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34833,7 +34833,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34842,11 +34842,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -34862,7 +34862,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>456</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -34871,10 +34871,10 @@
 					<Obj>
 						<type>0</type>
 						<id>985</id>
-						<name>x_local_2_6_8_addr_write_ln557</name>
+						<name>x_local_2_6_8_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34890,7 +34890,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34899,11 +34899,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -34919,7 +34919,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>457</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -34928,10 +34928,10 @@
 					<Obj>
 						<type>0</type>
 						<id>986</id>
-						<name>x_local_2_6_9_addr_write_ln557</name>
+						<name>x_local_2_6_9_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -34947,7 +34947,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -34956,11 +34956,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -34976,7 +34976,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>458</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -34985,10 +34985,10 @@
 					<Obj>
 						<type>0</type>
 						<id>987</id>
-						<name>x_local_2_6_10_addr_write_ln557</name>
+						<name>x_local_2_6_10_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35004,7 +35004,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35013,11 +35013,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35033,7 +35033,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>459</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35042,10 +35042,10 @@
 					<Obj>
 						<type>0</type>
 						<id>988</id>
-						<name>x_local_2_6_11_addr_write_ln557</name>
+						<name>x_local_2_6_11_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35061,7 +35061,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35070,11 +35070,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35090,7 +35090,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>460</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35099,10 +35099,10 @@
 					<Obj>
 						<type>0</type>
 						<id>989</id>
-						<name>x_local_2_6_12_addr_write_ln557</name>
+						<name>x_local_2_6_12_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35118,7 +35118,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35127,11 +35127,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35147,7 +35147,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>461</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35156,10 +35156,10 @@
 					<Obj>
 						<type>0</type>
 						<id>990</id>
-						<name>x_local_2_6_13_addr_write_ln557</name>
+						<name>x_local_2_6_13_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35175,7 +35175,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35184,11 +35184,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35204,7 +35204,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>462</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35213,10 +35213,10 @@
 					<Obj>
 						<type>0</type>
 						<id>991</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35232,7 +35232,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35269,10 +35269,10 @@
 					<Obj>
 						<type>0</type>
 						<id>993</id>
-						<name>x_local_2_5_0_addr_write_ln557</name>
+						<name>x_local_2_5_0_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35288,7 +35288,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35297,11 +35297,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35317,7 +35317,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>463</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35326,10 +35326,10 @@
 					<Obj>
 						<type>0</type>
 						<id>994</id>
-						<name>x_local_2_5_1_addr_write_ln557</name>
+						<name>x_local_2_5_1_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35345,7 +35345,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35354,11 +35354,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35374,7 +35374,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>464</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35383,10 +35383,10 @@
 					<Obj>
 						<type>0</type>
 						<id>995</id>
-						<name>x_local_2_5_2_addr_write_ln557</name>
+						<name>x_local_2_5_2_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35402,7 +35402,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35411,11 +35411,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35431,7 +35431,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>465</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35440,10 +35440,10 @@
 					<Obj>
 						<type>0</type>
 						<id>996</id>
-						<name>x_local_2_5_3_addr_write_ln557</name>
+						<name>x_local_2_5_3_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35459,7 +35459,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35468,11 +35468,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35488,7 +35488,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>466</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35497,10 +35497,10 @@
 					<Obj>
 						<type>0</type>
 						<id>997</id>
-						<name>x_local_2_5_4_addr_write_ln557</name>
+						<name>x_local_2_5_4_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35516,7 +35516,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35525,11 +35525,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35545,7 +35545,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>467</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35554,10 +35554,10 @@
 					<Obj>
 						<type>0</type>
 						<id>998</id>
-						<name>x_local_2_5_5_addr_write_ln557</name>
+						<name>x_local_2_5_5_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35573,7 +35573,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35582,11 +35582,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35602,7 +35602,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>468</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35611,10 +35611,10 @@
 					<Obj>
 						<type>0</type>
 						<id>999</id>
-						<name>x_local_2_5_6_addr_write_ln557</name>
+						<name>x_local_2_5_6_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35630,7 +35630,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35639,11 +35639,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35659,7 +35659,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>469</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35668,10 +35668,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1000</id>
-						<name>x_local_2_5_7_addr_write_ln557</name>
+						<name>x_local_2_5_7_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35687,7 +35687,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35696,11 +35696,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35716,7 +35716,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>470</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35725,10 +35725,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1001</id>
-						<name>x_local_2_5_8_addr_write_ln557</name>
+						<name>x_local_2_5_8_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35744,7 +35744,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35753,11 +35753,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35773,7 +35773,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>471</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35782,10 +35782,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1002</id>
-						<name>x_local_2_5_9_addr_write_ln557</name>
+						<name>x_local_2_5_9_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35801,7 +35801,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35810,11 +35810,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35830,7 +35830,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>472</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35839,10 +35839,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1003</id>
-						<name>x_local_2_5_10_addr_write_ln557</name>
+						<name>x_local_2_5_10_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35858,7 +35858,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35867,11 +35867,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35887,7 +35887,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>473</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35896,10 +35896,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1004</id>
-						<name>x_local_2_5_11_addr_write_ln557</name>
+						<name>x_local_2_5_11_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35915,7 +35915,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35924,11 +35924,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -35944,7 +35944,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>474</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -35953,10 +35953,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1005</id>
-						<name>x_local_2_5_12_addr_write_ln557</name>
+						<name>x_local_2_5_12_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -35972,7 +35972,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -35981,11 +35981,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36001,7 +36001,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>475</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36010,10 +36010,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1006</id>
-						<name>x_local_2_5_13_addr_write_ln557</name>
+						<name>x_local_2_5_13_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36029,7 +36029,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36038,11 +36038,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36058,7 +36058,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>476</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36067,10 +36067,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1007</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36086,7 +36086,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36123,10 +36123,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1009</id>
-						<name>x_local_2_4_0_addr_write_ln557</name>
+						<name>x_local_2_4_0_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36142,7 +36142,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36151,11 +36151,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36171,7 +36171,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>477</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36180,10 +36180,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1010</id>
-						<name>x_local_2_4_1_addr_write_ln557</name>
+						<name>x_local_2_4_1_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36199,7 +36199,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36208,11 +36208,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36228,7 +36228,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>478</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36237,10 +36237,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1011</id>
-						<name>x_local_2_4_2_addr_write_ln557</name>
+						<name>x_local_2_4_2_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36256,7 +36256,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36265,11 +36265,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36285,7 +36285,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>479</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36294,10 +36294,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1012</id>
-						<name>x_local_2_4_3_addr_write_ln557</name>
+						<name>x_local_2_4_3_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36313,7 +36313,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36322,11 +36322,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36342,7 +36342,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>480</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36351,10 +36351,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1013</id>
-						<name>x_local_2_4_4_addr_write_ln557</name>
+						<name>x_local_2_4_4_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36370,7 +36370,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36379,11 +36379,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36399,7 +36399,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>481</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36408,10 +36408,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1014</id>
-						<name>x_local_2_4_5_addr_write_ln557</name>
+						<name>x_local_2_4_5_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36427,7 +36427,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36436,11 +36436,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36456,7 +36456,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>482</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36465,10 +36465,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1015</id>
-						<name>x_local_2_4_6_addr_write_ln557</name>
+						<name>x_local_2_4_6_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36484,7 +36484,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36493,11 +36493,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36513,7 +36513,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>483</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36522,10 +36522,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1016</id>
-						<name>x_local_2_4_7_addr_write_ln557</name>
+						<name>x_local_2_4_7_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36541,7 +36541,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36550,11 +36550,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36570,7 +36570,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>484</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36579,10 +36579,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1017</id>
-						<name>x_local_2_4_8_addr_write_ln557</name>
+						<name>x_local_2_4_8_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36598,7 +36598,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36607,11 +36607,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36627,7 +36627,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>485</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36636,10 +36636,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1018</id>
-						<name>x_local_2_4_9_addr_write_ln557</name>
+						<name>x_local_2_4_9_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36655,7 +36655,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36664,11 +36664,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36684,7 +36684,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>486</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36693,10 +36693,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1019</id>
-						<name>x_local_2_4_10_addr_write_ln557</name>
+						<name>x_local_2_4_10_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36712,7 +36712,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36721,11 +36721,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36741,7 +36741,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>487</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36750,10 +36750,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1020</id>
-						<name>x_local_2_4_11_addr_write_ln557</name>
+						<name>x_local_2_4_11_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36769,7 +36769,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36778,11 +36778,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36798,7 +36798,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>488</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36807,10 +36807,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1021</id>
-						<name>x_local_2_4_12_addr_write_ln557</name>
+						<name>x_local_2_4_12_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36826,7 +36826,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36835,11 +36835,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36855,7 +36855,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>489</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36864,10 +36864,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1022</id>
-						<name>x_local_2_4_13_addr_write_ln557</name>
+						<name>x_local_2_4_13_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36883,7 +36883,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36892,11 +36892,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -36912,7 +36912,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>490</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -36921,10 +36921,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1023</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36940,7 +36940,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -36977,10 +36977,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1025</id>
-						<name>x_local_2_3_0_addr_write_ln557</name>
+						<name>x_local_2_3_0_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -36996,7 +36996,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37005,11 +37005,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37025,7 +37025,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>491</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37034,10 +37034,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1026</id>
-						<name>x_local_2_3_1_addr_write_ln557</name>
+						<name>x_local_2_3_1_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37053,7 +37053,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37062,11 +37062,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37082,7 +37082,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>492</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37091,10 +37091,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1027</id>
-						<name>x_local_2_3_2_addr_write_ln557</name>
+						<name>x_local_2_3_2_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37110,7 +37110,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37119,11 +37119,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37139,7 +37139,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>493</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37148,10 +37148,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1028</id>
-						<name>x_local_2_3_3_addr_write_ln557</name>
+						<name>x_local_2_3_3_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37167,7 +37167,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37176,11 +37176,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37196,7 +37196,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>494</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37205,10 +37205,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1029</id>
-						<name>x_local_2_3_4_addr_write_ln557</name>
+						<name>x_local_2_3_4_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37224,7 +37224,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37233,11 +37233,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37253,7 +37253,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>495</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37262,10 +37262,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1030</id>
-						<name>x_local_2_3_5_addr_write_ln557</name>
+						<name>x_local_2_3_5_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37281,7 +37281,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37290,11 +37290,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37310,7 +37310,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>496</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37319,10 +37319,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1031</id>
-						<name>x_local_2_3_6_addr_write_ln557</name>
+						<name>x_local_2_3_6_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37338,7 +37338,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37347,11 +37347,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37367,7 +37367,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>497</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37376,10 +37376,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1032</id>
-						<name>x_local_2_3_7_addr_write_ln557</name>
+						<name>x_local_2_3_7_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37395,7 +37395,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37404,11 +37404,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37424,7 +37424,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>498</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37433,10 +37433,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1033</id>
-						<name>x_local_2_3_8_addr_write_ln557</name>
+						<name>x_local_2_3_8_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37452,7 +37452,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37461,11 +37461,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37481,7 +37481,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>499</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37490,10 +37490,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1034</id>
-						<name>x_local_2_3_9_addr_write_ln557</name>
+						<name>x_local_2_3_9_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37509,7 +37509,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37518,11 +37518,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37538,7 +37538,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>500</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37547,10 +37547,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1035</id>
-						<name>x_local_2_3_10_addr_write_ln557</name>
+						<name>x_local_2_3_10_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37566,7 +37566,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37575,11 +37575,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37595,7 +37595,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>501</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37604,10 +37604,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1036</id>
-						<name>x_local_2_3_11_addr_write_ln557</name>
+						<name>x_local_2_3_11_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37623,7 +37623,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37632,11 +37632,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37652,7 +37652,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>502</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37661,10 +37661,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1037</id>
-						<name>x_local_2_3_12_addr_write_ln557</name>
+						<name>x_local_2_3_12_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37680,7 +37680,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37689,11 +37689,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37709,7 +37709,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>503</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37718,10 +37718,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1038</id>
-						<name>x_local_2_3_13_addr_write_ln557</name>
+						<name>x_local_2_3_13_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37737,7 +37737,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37746,11 +37746,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37766,7 +37766,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>504</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37775,10 +37775,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1039</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37794,7 +37794,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37831,10 +37831,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1041</id>
-						<name>x_local_2_2_0_addr_write_ln557</name>
+						<name>x_local_2_2_0_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37850,7 +37850,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37859,11 +37859,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37879,7 +37879,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>505</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37888,10 +37888,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1042</id>
-						<name>x_local_2_2_1_addr_write_ln557</name>
+						<name>x_local_2_2_1_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37907,7 +37907,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37916,11 +37916,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37936,7 +37936,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>506</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -37945,10 +37945,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1043</id>
-						<name>x_local_2_2_2_addr_write_ln557</name>
+						<name>x_local_2_2_2_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -37964,7 +37964,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -37973,11 +37973,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -37993,7 +37993,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>507</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38002,10 +38002,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1044</id>
-						<name>x_local_2_2_3_addr_write_ln557</name>
+						<name>x_local_2_2_3_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38021,7 +38021,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38030,11 +38030,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38050,7 +38050,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>508</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38059,10 +38059,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1045</id>
-						<name>x_local_2_2_4_addr_write_ln557</name>
+						<name>x_local_2_2_4_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38078,7 +38078,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38087,11 +38087,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38107,7 +38107,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>509</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38116,10 +38116,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1046</id>
-						<name>x_local_2_2_5_addr_write_ln557</name>
+						<name>x_local_2_2_5_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38135,7 +38135,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38144,11 +38144,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38164,7 +38164,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>510</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38173,10 +38173,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1047</id>
-						<name>x_local_2_2_6_addr_write_ln557</name>
+						<name>x_local_2_2_6_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38192,7 +38192,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38201,11 +38201,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38221,7 +38221,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>511</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38230,10 +38230,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1048</id>
-						<name>x_local_2_2_7_addr_write_ln557</name>
+						<name>x_local_2_2_7_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38249,7 +38249,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38258,11 +38258,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38278,7 +38278,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>512</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38287,10 +38287,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1049</id>
-						<name>x_local_2_2_8_addr_write_ln557</name>
+						<name>x_local_2_2_8_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38306,7 +38306,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38315,11 +38315,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38335,7 +38335,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>513</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38344,10 +38344,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1050</id>
-						<name>x_local_2_2_9_addr_write_ln557</name>
+						<name>x_local_2_2_9_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38363,7 +38363,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38372,11 +38372,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38392,7 +38392,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>514</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38401,10 +38401,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1051</id>
-						<name>x_local_2_2_10_addr_write_ln557</name>
+						<name>x_local_2_2_10_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38420,7 +38420,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38429,11 +38429,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38449,7 +38449,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>515</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38458,10 +38458,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1052</id>
-						<name>x_local_2_2_11_addr_write_ln557</name>
+						<name>x_local_2_2_11_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38477,7 +38477,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38486,11 +38486,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38506,7 +38506,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>516</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38515,10 +38515,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1053</id>
-						<name>x_local_2_2_12_addr_write_ln557</name>
+						<name>x_local_2_2_12_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38534,7 +38534,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38543,11 +38543,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38563,7 +38563,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>517</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38572,10 +38572,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1054</id>
-						<name>x_local_2_2_13_addr_write_ln557</name>
+						<name>x_local_2_2_13_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38591,7 +38591,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38600,11 +38600,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38620,7 +38620,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>518</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38629,10 +38629,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1055</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38648,7 +38648,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38685,10 +38685,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1057</id>
-						<name>x_local_2_1_0_addr_write_ln557</name>
+						<name>x_local_2_1_0_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38704,7 +38704,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38713,11 +38713,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38733,7 +38733,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>519</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38742,10 +38742,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1058</id>
-						<name>x_local_2_1_1_addr_write_ln557</name>
+						<name>x_local_2_1_1_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38761,7 +38761,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38770,11 +38770,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38790,7 +38790,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>520</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38799,10 +38799,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1059</id>
-						<name>x_local_2_1_2_addr_write_ln557</name>
+						<name>x_local_2_1_2_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38818,7 +38818,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38827,11 +38827,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38847,7 +38847,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>521</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38856,10 +38856,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1060</id>
-						<name>x_local_2_1_3_addr_write_ln557</name>
+						<name>x_local_2_1_3_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38875,7 +38875,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38884,11 +38884,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38904,7 +38904,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>522</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38913,10 +38913,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1061</id>
-						<name>x_local_2_1_4_addr_write_ln557</name>
+						<name>x_local_2_1_4_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38932,7 +38932,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38941,11 +38941,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -38961,7 +38961,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>523</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -38970,10 +38970,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1062</id>
-						<name>x_local_2_1_5_addr_write_ln557</name>
+						<name>x_local_2_1_5_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -38989,7 +38989,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -38998,11 +38998,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39018,7 +39018,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>524</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39027,10 +39027,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1063</id>
-						<name>x_local_2_1_6_addr_write_ln557</name>
+						<name>x_local_2_1_6_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39046,7 +39046,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39055,11 +39055,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39075,7 +39075,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>525</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39084,10 +39084,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1064</id>
-						<name>x_local_2_1_7_addr_write_ln557</name>
+						<name>x_local_2_1_7_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39103,7 +39103,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39112,11 +39112,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39132,7 +39132,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>526</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39141,10 +39141,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1065</id>
-						<name>x_local_2_1_8_addr_write_ln557</name>
+						<name>x_local_2_1_8_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39160,7 +39160,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39169,11 +39169,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39189,7 +39189,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>527</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39198,10 +39198,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1066</id>
-						<name>x_local_2_1_9_addr_write_ln557</name>
+						<name>x_local_2_1_9_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39217,7 +39217,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39226,11 +39226,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39246,7 +39246,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>528</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39255,10 +39255,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1067</id>
-						<name>x_local_2_1_10_addr_write_ln557</name>
+						<name>x_local_2_1_10_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39274,7 +39274,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39283,11 +39283,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39303,7 +39303,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>529</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39312,10 +39312,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1068</id>
-						<name>x_local_2_1_11_addr_write_ln557</name>
+						<name>x_local_2_1_11_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39331,7 +39331,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39340,11 +39340,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39360,7 +39360,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>530</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39369,10 +39369,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1069</id>
-						<name>x_local_2_1_12_addr_write_ln557</name>
+						<name>x_local_2_1_12_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39388,7 +39388,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39397,11 +39397,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39417,7 +39417,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>531</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39426,10 +39426,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1070</id>
-						<name>x_local_2_1_13_addr_write_ln557</name>
+						<name>x_local_2_1_13_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39445,7 +39445,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39454,11 +39454,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39474,7 +39474,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>532</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39483,10 +39483,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1071</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39502,7 +39502,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39539,10 +39539,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1073</id>
-						<name>x_local_2_7_0_addr_write_ln557</name>
+						<name>x_local_2_7_0_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39558,7 +39558,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39567,11 +39567,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39587,7 +39587,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>533</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39596,10 +39596,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1074</id>
-						<name>x_local_2_7_1_addr_write_ln557</name>
+						<name>x_local_2_7_1_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39615,7 +39615,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39624,11 +39624,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39644,7 +39644,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>534</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39653,10 +39653,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1075</id>
-						<name>x_local_2_7_2_addr_write_ln557</name>
+						<name>x_local_2_7_2_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39672,7 +39672,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39681,11 +39681,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39701,7 +39701,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>535</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39710,10 +39710,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1076</id>
-						<name>x_local_2_7_3_addr_write_ln557</name>
+						<name>x_local_2_7_3_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39729,7 +39729,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39738,11 +39738,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39758,7 +39758,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>536</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39767,10 +39767,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1077</id>
-						<name>x_local_2_7_4_addr_write_ln557</name>
+						<name>x_local_2_7_4_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39786,7 +39786,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39795,11 +39795,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39815,7 +39815,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>537</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39824,10 +39824,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1078</id>
-						<name>x_local_2_7_5_addr_write_ln557</name>
+						<name>x_local_2_7_5_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39843,7 +39843,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39852,11 +39852,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39872,7 +39872,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>538</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39881,10 +39881,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1079</id>
-						<name>x_local_2_7_6_addr_write_ln557</name>
+						<name>x_local_2_7_6_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39900,7 +39900,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39909,11 +39909,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39929,7 +39929,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>539</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39938,10 +39938,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1080</id>
-						<name>x_local_2_7_7_addr_write_ln557</name>
+						<name>x_local_2_7_7_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -39957,7 +39957,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -39966,11 +39966,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -39986,7 +39986,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>540</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -39995,10 +39995,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1081</id>
-						<name>x_local_2_7_8_addr_write_ln557</name>
+						<name>x_local_2_7_8_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40014,7 +40014,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40023,11 +40023,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40043,7 +40043,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>541</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40052,10 +40052,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1082</id>
-						<name>x_local_2_7_9_addr_write_ln557</name>
+						<name>x_local_2_7_9_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40071,7 +40071,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40080,11 +40080,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40100,7 +40100,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>542</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40109,10 +40109,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1083</id>
-						<name>x_local_2_7_10_addr_write_ln557</name>
+						<name>x_local_2_7_10_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40128,7 +40128,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40137,11 +40137,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40157,7 +40157,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>543</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40166,10 +40166,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1084</id>
-						<name>x_local_2_7_11_addr_write_ln557</name>
+						<name>x_local_2_7_11_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40185,7 +40185,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40194,11 +40194,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40214,7 +40214,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>544</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40223,10 +40223,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1085</id>
-						<name>x_local_2_7_12_addr_write_ln557</name>
+						<name>x_local_2_7_12_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40242,7 +40242,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40251,11 +40251,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40271,7 +40271,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>545</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40280,10 +40280,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1086</id>
-						<name>x_local_2_7_13_addr_write_ln557</name>
+						<name>x_local_2_7_13_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40299,7 +40299,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40308,11 +40308,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40328,7 +40328,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>546</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40337,10 +40337,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1087</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40356,7 +40356,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40393,10 +40393,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1089</id>
-						<name>x_local_2_0_0_addr_write_ln557</name>
+						<name>x_local_2_0_0_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40412,7 +40412,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40421,11 +40421,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40441,7 +40441,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>547</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40450,10 +40450,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1090</id>
-						<name>x_local_2_0_1_addr_write_ln557</name>
+						<name>x_local_2_0_1_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40469,7 +40469,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40478,11 +40478,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40498,7 +40498,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>548</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40507,10 +40507,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1091</id>
-						<name>x_local_2_0_2_addr_write_ln557</name>
+						<name>x_local_2_0_2_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40526,7 +40526,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40535,11 +40535,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40555,7 +40555,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>549</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40564,10 +40564,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1092</id>
-						<name>x_local_2_0_3_addr_write_ln557</name>
+						<name>x_local_2_0_3_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40583,7 +40583,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40592,11 +40592,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40612,7 +40612,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>550</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40621,10 +40621,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1093</id>
-						<name>x_local_2_0_4_addr_write_ln557</name>
+						<name>x_local_2_0_4_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40640,7 +40640,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40649,11 +40649,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40669,7 +40669,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>551</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40678,10 +40678,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1094</id>
-						<name>x_local_2_0_5_addr_write_ln557</name>
+						<name>x_local_2_0_5_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40697,7 +40697,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40706,11 +40706,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40726,7 +40726,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>552</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40735,10 +40735,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1095</id>
-						<name>x_local_2_0_6_addr_write_ln557</name>
+						<name>x_local_2_0_6_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40754,7 +40754,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40763,11 +40763,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40783,7 +40783,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>553</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40792,10 +40792,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1096</id>
-						<name>x_local_2_0_7_addr_write_ln557</name>
+						<name>x_local_2_0_7_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40811,7 +40811,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40820,11 +40820,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40840,7 +40840,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>554</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40849,10 +40849,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1097</id>
-						<name>x_local_2_0_8_addr_write_ln557</name>
+						<name>x_local_2_0_8_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40868,7 +40868,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40877,11 +40877,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40897,7 +40897,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>555</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40906,10 +40906,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1098</id>
-						<name>x_local_2_0_9_addr_write_ln557</name>
+						<name>x_local_2_0_9_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40925,7 +40925,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40934,11 +40934,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -40954,7 +40954,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>556</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -40963,10 +40963,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1099</id>
-						<name>x_local_2_0_10_addr_write_ln557</name>
+						<name>x_local_2_0_10_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -40982,7 +40982,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -40991,11 +40991,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -41011,7 +41011,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>557</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -41020,10 +41020,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1100</id>
-						<name>x_local_2_0_11_addr_write_ln557</name>
+						<name>x_local_2_0_11_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41039,7 +41039,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41048,11 +41048,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -41068,7 +41068,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>558</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -41077,10 +41077,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1101</id>
-						<name>x_local_2_0_12_addr_write_ln557</name>
+						<name>x_local_2_0_12_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41096,7 +41096,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41105,11 +41105,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -41125,7 +41125,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>559</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -41134,10 +41134,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1102</id>
-						<name>x_local_2_0_13_addr_write_ln557</name>
+						<name>x_local_2_0_13_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41153,7 +41153,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41162,11 +41162,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -41182,7 +41182,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>560</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -41191,10 +41191,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1103</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41210,7 +41210,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41247,10 +41247,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1105</id>
-						<name>_ln557</name>
+						<name>_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41266,7 +41266,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41318,10 +41318,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1107</id>
-						<name>x_local_2_6_14_addr_write_ln557</name>
+						<name>x_local_2_6_14_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41337,7 +41337,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41346,11 +41346,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -41366,7 +41366,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>561</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -41375,10 +41375,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1108</id>
-						<name>x_local_2_6_15_addr_write_ln557</name>
+						<name>x_local_2_6_15_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41394,7 +41394,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41403,11 +41403,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -41423,7 +41423,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>562</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -41432,10 +41432,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1109</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41451,7 +41451,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41488,10 +41488,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1111</id>
-						<name>x_local_2_5_14_addr_write_ln557</name>
+						<name>x_local_2_5_14_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41507,7 +41507,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41516,11 +41516,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -41536,7 +41536,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>564</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -41545,10 +41545,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1112</id>
-						<name>x_local_2_5_15_addr_write_ln557</name>
+						<name>x_local_2_5_15_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41564,7 +41564,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41573,11 +41573,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -41593,7 +41593,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>565</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -41602,10 +41602,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1113</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41621,7 +41621,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41658,10 +41658,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1115</id>
-						<name>x_local_2_4_14_addr_write_ln557</name>
+						<name>x_local_2_4_14_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41677,7 +41677,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41686,11 +41686,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -41706,7 +41706,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>567</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -41715,10 +41715,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1116</id>
-						<name>x_local_2_4_15_addr_write_ln557</name>
+						<name>x_local_2_4_15_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41734,7 +41734,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41743,11 +41743,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -41763,7 +41763,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>568</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -41772,10 +41772,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1117</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41791,7 +41791,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41828,10 +41828,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1119</id>
-						<name>x_local_2_3_14_addr_write_ln557</name>
+						<name>x_local_2_3_14_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41847,7 +41847,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41856,11 +41856,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -41876,7 +41876,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>570</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -41885,10 +41885,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1120</id>
-						<name>x_local_2_3_15_addr_write_ln557</name>
+						<name>x_local_2_3_15_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41904,7 +41904,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41913,11 +41913,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -41933,7 +41933,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>571</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -41942,10 +41942,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1121</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -41961,7 +41961,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -41998,10 +41998,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1123</id>
-						<name>x_local_2_2_14_addr_write_ln557</name>
+						<name>x_local_2_2_14_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42017,7 +42017,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -42026,11 +42026,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -42046,7 +42046,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>573</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -42055,10 +42055,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1124</id>
-						<name>x_local_2_2_15_addr_write_ln557</name>
+						<name>x_local_2_2_15_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42074,7 +42074,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -42083,11 +42083,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -42103,7 +42103,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>574</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -42112,10 +42112,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1125</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42131,7 +42131,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -42168,10 +42168,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1127</id>
-						<name>x_local_2_1_14_addr_write_ln557</name>
+						<name>x_local_2_1_14_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42187,7 +42187,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -42196,11 +42196,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -42216,7 +42216,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>576</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -42225,10 +42225,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1128</id>
-						<name>x_local_2_1_15_addr_write_ln557</name>
+						<name>x_local_2_1_15_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42244,7 +42244,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -42253,11 +42253,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -42273,7 +42273,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>577</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -42282,10 +42282,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1129</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42301,7 +42301,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -42338,10 +42338,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1131</id>
-						<name>x_local_2_7_14_addr_write_ln557</name>
+						<name>x_local_2_7_14_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42357,7 +42357,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -42366,11 +42366,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -42386,7 +42386,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>579</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -42395,10 +42395,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1132</id>
-						<name>x_local_2_7_15_addr_write_ln557</name>
+						<name>x_local_2_7_15_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42414,7 +42414,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -42423,11 +42423,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -42443,7 +42443,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>580</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -42452,10 +42452,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1133</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42471,7 +42471,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -42508,10 +42508,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1135</id>
-						<name>x_local_2_0_14_addr_write_ln557</name>
+						<name>x_local_2_0_14_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42527,7 +42527,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -42536,11 +42536,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -42556,7 +42556,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>582</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -42565,10 +42565,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1136</id>
-						<name>x_local_2_0_15_addr_write_ln557</name>
+						<name>x_local_2_0_15_addr_write_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42584,7 +42584,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -42593,11 +42593,11 @@
 						<rtlName></rtlName>
 						<control>auto</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -42613,7 +42613,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>583</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -42622,10 +42622,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1137</id>
-						<name>br_ln557</name>
+						<name>br_ln559</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>557</lineNumber>
+						<lineNumber>559</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42641,7 +42641,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>557</second>
+										<second>559</second>
 									</item>
 								</second>
 							</item>
@@ -42678,10 +42678,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1139</id>
-						<name>icmp_ln549</name>
+						<name>icmp_ln551</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>549</lineNumber>
+						<lineNumber>551</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42697,7 +42697,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>549</second>
+										<second>551</second>
 									</item>
 								</second>
 							</item>
@@ -42735,10 +42735,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1140</id>
-						<name>i1536_write_ln549</name>
+						<name>i1536_write_ln551</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>549</lineNumber>
+						<lineNumber>551</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42754,7 +42754,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>549</second>
+										<second>551</second>
 									</item>
 								</second>
 							</item>
@@ -42794,10 +42794,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1141</id>
-						<name>br_ln549</name>
+						<name>br_ln551</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>549</lineNumber>
+						<lineNumber>551</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42813,7 +42813,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>549</second>
+										<second>551</second>
 									</item>
 								</second>
 							</item>
@@ -42852,10 +42852,10 @@
 					<Obj>
 						<type>0</type>
 						<id>1143</id>
-						<name>_ln561</name>
+						<name>_ln563</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>561</lineNumber>
+						<lineNumber>563</lineNumber>
 						<contextFuncName>load_x_local</contextFuncName>
 						<contextNormFuncName>load_x_local</contextNormFuncName>
 						<inlineStackInfo>
@@ -42871,7 +42871,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_x_local</second>
 										</first>
-										<second>561</second>
+										<second>563</second>
 									</item>
 								</second>
 							</item>
@@ -43945,7 +43945,7 @@
 				<Obj>
 					<type>3</type>
 					<id>530</id>
-					<name>for.first.iter.VITIS_LOOP_552_1.split</name>
+					<name>for.first.iter.VITIS_LOOP_554_1.split</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -43977,7 +43977,7 @@
 				<Obj>
 					<type>3</type>
 					<id>804</id>
-					<name>VITIS_LOOP_552_1.split</name>
+					<name>VITIS_LOOP_554_1.split</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -71585,7 +71585,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln549_fu_4028</first>
+			<first>icmp_ln551_fu_4028</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -71593,7 +71593,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln549_fu_4048</first>
+			<first>sext_ln551_fu_4048</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -71601,7 +71601,7 @@
 			</second>
 		</item>
 		<item>
-			<first>switch_ln556_fu_4010</first>
+			<first>switch_ln558_fu_4010</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -71609,7 +71609,7 @@
 			</second>
 		</item>
 		<item>
-			<first>switch_ln556_fu_4059</first>
+			<first>switch_ln558_fu_4059</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -71617,7 +71617,7 @@
 			</second>
 		</item>
 		<item>
-			<first>switch_ln557_fu_4076</first>
+			<first>switch_ln559_fu_4076</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -71625,7 +71625,7 @@
 			</second>
 		</item>
 		<item>
-			<first>switch_ln557_fu_4093</first>
+			<first>switch_ln559_fu_4093</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -71633,7 +71633,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln556_2_fu_3994</first>
+			<first>trunc_ln558_2_fu_3994</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -71641,7 +71641,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln556_fu_3990</first>
+			<first>trunc_ln558_fu_3990</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -73833,7 +73833,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln556_fu_4234</first>
+			<first>zext_ln558_fu_4234</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -73943,7 +73943,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln549_store_fu_4034</first>
+			<first>store_ln551_store_fu_4034</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -77007,7 +77007,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln549_reg_4521</first>
+			<first>icmp_ln551_reg_4521</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -77015,7 +77015,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln556_2_reg_4514</first>
+			<first>trunc_ln558_2_reg_4514</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -77023,7 +77023,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln556_reg_4509</first>
+			<first>trunc_ln558_reg_4509</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -81064,1792 +81064,1792 @@
 			<first>3</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>4</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>5</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>6</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>7</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>8</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>9</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>10</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>11</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>12</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>13</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>14</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>15</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>16</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>17</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>18</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>19</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>20</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>21</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>22</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>23</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>24</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>25</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>26</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>27</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>28</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>29</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>30</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>31</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>32</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>33</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>34</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>35</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>36</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>37</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>38</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>39</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>40</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>41</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>42</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>43</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>44</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>45</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>46</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>47</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>48</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>49</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>50</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>51</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>52</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>53</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>54</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>55</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>56</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>57</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>58</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>59</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>60</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>61</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>62</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>63</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>64</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>65</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>66</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>67</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>68</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>69</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>70</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>71</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>72</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>73</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>74</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>75</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>76</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>77</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>78</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>79</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>80</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>81</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>82</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>83</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>84</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>85</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>86</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>87</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>88</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>89</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>90</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>91</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>92</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>93</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>94</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>95</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>96</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>97</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>98</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>99</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>100</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>101</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>102</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>103</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>104</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>105</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>106</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>107</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>108</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>109</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>110</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>111</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>112</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>113</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>114</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>115</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>116</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>117</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>118</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>119</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>120</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>121</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>122</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>123</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>124</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>125</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>126</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>127</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>128</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>129</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>130</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>131</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>132</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>133</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>134</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>135</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>136</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>137</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>138</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>139</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>140</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>141</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>142</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>143</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>144</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>145</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>146</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>147</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>148</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>149</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>150</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>151</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>152</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>153</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>154</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>155</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>156</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>157</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>158</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>159</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>160</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>161</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>162</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>163</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>164</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>165</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>166</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>167</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>168</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>169</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>170</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>171</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>172</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>173</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>174</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>175</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>176</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>177</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>178</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>179</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>180</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>181</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>182</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>183</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>184</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>185</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>186</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>187</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>188</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>189</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>190</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>191</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>192</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>193</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>194</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>195</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>196</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>197</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>198</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>199</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>200</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>201</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>202</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>203</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>204</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>205</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>206</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>207</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>208</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>209</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>210</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>211</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>212</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>213</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>214</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>215</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>216</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>217</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>218</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>219</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>220</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>221</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>222</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>223</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>224</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>225</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>226</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>227</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>228</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>229</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>230</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>231</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>232</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>233</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>234</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>235</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>236</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>237</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>238</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>239</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>240</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>241</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>242</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>243</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>244</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>245</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>246</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>247</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>248</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>249</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>250</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>251</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>252</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>253</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>254</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>255</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>256</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>257</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>258</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 	</port2core>
@@ -82888,1792 +82888,1792 @@
 			<first>805</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>806</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>807</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>808</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>809</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>810</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>811</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>812</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>813</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>814</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>815</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>816</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>817</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>818</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>821</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>822</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>823</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>824</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>825</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>826</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>827</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>828</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>829</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>830</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>831</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>832</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>833</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>834</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>837</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>838</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>839</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>840</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>841</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>842</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>843</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>844</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>845</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>846</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>847</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>848</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>849</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>850</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>853</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>854</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>855</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>856</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>857</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>858</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>859</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>860</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>861</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>862</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>863</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>864</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>865</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>866</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>869</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>870</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>871</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>872</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>873</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>874</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>875</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>876</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>877</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>878</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>879</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>880</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>881</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>882</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>885</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>886</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>887</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>888</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>889</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>890</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>891</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>892</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>893</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>894</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>895</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>896</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>897</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>898</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>901</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>902</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>903</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>904</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>905</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>906</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>907</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>908</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>909</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>910</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>911</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>912</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>913</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>914</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>917</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>918</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>919</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>920</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>921</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>922</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>923</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>924</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>925</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>926</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>927</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>928</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>929</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>930</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>935</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>936</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>939</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>940</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>943</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>944</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>947</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>948</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>951</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>952</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>955</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>956</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>959</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>960</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>963</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>964</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>977</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>978</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>979</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>980</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>981</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>982</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>983</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>984</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>985</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>986</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>987</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>988</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>989</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>990</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>993</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>994</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>995</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>996</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>997</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>998</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>999</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1000</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1001</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1002</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1003</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1004</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1005</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1006</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1009</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1010</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1011</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1012</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1013</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1014</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1015</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1016</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1017</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1018</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1019</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1020</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1021</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1022</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1025</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1026</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1027</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1028</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1029</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1030</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1031</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1032</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1033</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1034</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1035</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1036</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1037</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1038</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1041</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1042</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1043</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1044</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1045</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1046</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1047</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1048</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1049</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1050</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1051</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1052</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1053</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1054</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1057</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1058</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1059</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1060</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1061</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1062</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1063</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1064</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1065</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1066</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1067</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1068</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1069</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1070</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1073</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1074</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1075</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1076</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1077</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1078</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1079</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1080</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1081</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1082</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1083</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1084</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1085</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1086</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1089</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1090</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1091</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1092</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1093</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1094</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1095</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1096</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1097</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1098</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1099</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1100</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1101</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1102</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1107</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1108</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1111</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1112</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1115</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1116</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1119</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1120</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1123</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1124</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1127</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1128</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1131</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1132</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1135</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>1136</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>

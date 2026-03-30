@@ -6,58 +6,58 @@
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 | Phase         | Step                        | Instructions | Description                                                                            |
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
-| Compile/Link  |                             | 18,089       | After all functions are compiled and linked into a single design                       |
+| Compile/Link  |                             | 18,091       | After all functions are compiled and linked into a single design                       |
 |               |                             |              |                                                                                        |
 | Unroll/Inline |                             |              | After user unroll and inline pragmas are applied                                       |
-|               | (1) unroll                  | 10,139       | user unroll pragmas are applied                                                        |
-|               | (2) simplification          |  8,115       | simplification of applied user unroll pragmas                                          |
-|               | (3) inline                  |  7,994       | user inline pragmas are applied                                                        |
-|               | (4) simplification          |  7,866       | simplification of applied user inline pragmas                                          |
+|               | (1) unroll                  | 10,141       | user unroll pragmas are applied                                                        |
+|               | (2) simplification          |  8,117       | simplification of applied user unroll pragmas                                          |
+|               | (3) inline                  |  7,996       | user inline pragmas are applied                                                        |
+|               | (4) simplification          |  7,868       | simplification of applied user inline pragmas                                          |
 |               |                             |              |                                                                                        |
 | Array/Struct  |                             |              | After user array partition and struct aggregate/disaggregate pragmas are applied       |
-|               | (1) array partition         | 21,004       | user array partition pragmas are applied                                               |
-|               | (2) simplification          | 17,047       | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
-|               | (3) aggregate/disaggregate  | 17,047       | user struct aggregate/disaggregate pragmas are applied                                 |
-|               | (4) array reshape           | 17,047       | apply array reshape pragmas                                                            |
-|               | (5) access patterns         | 18,050       | array access pattern optmizations                                                      |
+|               | (1) array partition         | 21,020       | user array partition pragmas are applied                                               |
+|               | (2) simplification          | 17,063       | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
+|               | (3) aggregate/disaggregate  | 17,063       | user struct aggregate/disaggregate pragmas are applied                                 |
+|               | (4) array reshape           | 17,063       | apply array reshape pragmas                                                            |
+|               | (5) access patterns         | 18,066       | array access pattern optmizations                                                      |
 |               |                             |              |                                                                                        |
 | Performance   |                             |              | After transformations are applied to meet performance pragma targets                   |
-|               | (1) loop simplification     | 17,947       | loop and instruction simplification                                                    |
-|               | (2) parallelization         | 17,036       | loops are unrolled or pipelined to meet performance targets                            |
-|               | (3) array partition         | 26,280       | arrays are partitioned to meet performance targets                                     |
-|               | (4) simplification          | 20,176       | simplification of design after performance transformations                             |
+|               | (1) loop simplification     | 17,963       | loop and instruction simplification                                                    |
+|               | (2) parallelization         | 17,052       | loops are unrolled or pipelined to meet performance targets                            |
+|               | (3) array partition         | 26,296       | arrays are partitioned to meet performance targets                                     |
+|               | (4) simplification          | 20,192       | simplification of design after performance transformations                             |
 |               |                             |              |                                                                                        |
 | HW Transforms |                             |              | After hardware transfomations                                                          |
-|               | (1) lowering                | 20,198       | initial conversion to HW specific instructions                                         |
-|               | (2) optimizations           | 17,826       | high level synthesis optimizations                                                     |
+|               | (1) lowering                | 20,214       | initial conversion to HW specific instructions                                         |
+|               | (2) optimizations           | 17,842       | high level synthesis optimizations                                                     |
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 
 * Instructions per Function for each Compilation Phase
 +-------------------------+----------------+------------------+----------------+-----------------+-----------------+-----------------+
 | Function                | Location       | Compile/Link     | Unroll/Inline  | Array/Struct    | Performance     | HW Transforms   |
 +-------------------------+----------------+------------------+----------------+-----------------+-----------------+-----------------+
-| + swiglu                | swiglu.cpp:569 | 18,089           | 7,866          | 18,050          | 20,176          | 17,826          |
-|    load_x_local         | swiglu.cpp:539 |   104            |  140           |   732           | 1,152           | 1,157           |
-|  + compute_X1           | swiglu.cpp:218 | 2,909            | 1,331          | 2,513           | 2,618           | 2,229           |
+| + swiglu                | swiglu.cpp:571 | 18,091           | 7,868          | 18,066          | 20,192          | 17,842          |
+|    load_x_local         | swiglu.cpp:541 |   104            |  140           |   732           | 1,152           | 1,157           |
+|  + compute_X1           | swiglu.cpp:218 | 2,910            | 1,332          | 2,521           | 2,626           | 2,237           |
 |     load_row_wv         | swiglu.cpp:96  |   363            |   20           |    63           |    62           |    70           |
 |   + mac_blocks_wv       | swiglu.cpp:113 | 2,512            | 1,285          | 2,385           | 2,491           | 2,118           |
 |      get_byte           | swiglu.cpp:53  | 1,392 (29 calls) |                |                 |                 |                 |
 |      fp16_to_fp32       | swiglu.cpp:28  |   134 (2 calls)  |  182 (2 calls) |   182 (2 calls) |   182 (2 calls) |   184 (2 calls) |
-|  + compute_X2           | swiglu.cpp:238 | 2,909            | 1,331          | 2,513           | 2,618           | 2,229           |
+|  + compute_X2           | swiglu.cpp:239 | 2,910            | 1,332          | 2,521           | 2,626           | 2,237           |
 |     load_row_wv         | swiglu.cpp:96  |   363            |   20           |    63           |    62           |    70           |
 |   + mac_blocks_wv       | swiglu.cpp:113 | 2,512            | 1,285          | 2,385           | 2,491           | 2,118           |
 |      get_byte           | swiglu.cpp:53  | 1,392 (29 calls) |                |                 |                 |                 |
 |      fp16_to_fp32       | swiglu.cpp:28  |   134 (2 calls)  |  182 (2 calls) |   182 (2 calls) |   182 (2 calls) |   184 (2 calls) |
-|    compute_gate         | swiglu.cpp:262 | 6,545            |  190           |   342           |   303           |   291           |
-|  + compute_output       | swiglu.cpp:499 | 5,552            | 4,822          | 11,761          | 11,071          |                 |
-|     load_row_down_q6k   | swiglu.cpp:466 |   248            |   13           |    82           |    81           |                 |
-|   + mac_blocks_down_q6k | swiglu.cpp:476 |   496            |  527           | 1,055           |   947           |                 |
+|    compute_gate         | swiglu.cpp:264 | 6,545            |  190           |   342           |   303           |   291           |
+|  + compute_output       | swiglu.cpp:501 | 5,552            | 4,822          | 11,761          | 11,071          |                 |
+|     load_row_down_q6k   | swiglu.cpp:468 |   248            |   13           |    82           |    81           |                 |
+|   + mac_blocks_down_q6k | swiglu.cpp:478 |   496            |  527           | 1,055           |   947           |                 |
 |    + decode_mac_q6k     | swiglu.cpp:61  |   455            |                |                 |                 |                 |
 |       get_byte          | swiglu.cpp:53  |   288 (6 calls)  |                |                 |                 |                 |
 |       fp16_to_fp32      | swiglu.cpp:28  |    67            |                |                 |                 |                 |
 |      fp16_to_fp32       | swiglu.cpp:28  |                  |  182 (2 calls) |   182 (2 calls) |   182 (2 calls) |                 |
-|     load_row_down_q4k   | swiglu.cpp:321 |   363            |   20           |    65           |    64           |                 |
-|   + mac_blocks_down_q4k | swiglu.cpp:337 | 4,378            | 4,207          | 10,256          | 9,680           |                 |
+|     load_row_down_q4k   | swiglu.cpp:323 |   363            |   20           |    65           |    64           |                 |
+|   + mac_blocks_down_q4k | swiglu.cpp:339 | 4,378            | 4,207          | 10,256          | 9,680           |                 |
 |      get_byte           | swiglu.cpp:53  | 1,536 (32 calls) |                |                 |                 |                 |
 |      fp16_to_fp32       | swiglu.cpp:28  |   134 (2 calls)  |  182 (2 calls) |   182 (2 calls) |   182 (2 calls) |                 |
 +-------------------------+----------------+------------------+----------------+-----------------+-----------------+-----------------+

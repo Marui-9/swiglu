@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'compute_output_Pipeline_1'
 ================================================================
-* Date:           Mon Mar 30 09:37:33 2026
+* Date:           Mon Mar 30 15:06:18 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -17,20 +17,20 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+---------+----------+------------+
-    |  Clock |  Target | Estimated| Uncertainty|
-    +--------+---------+----------+------------+
-    |ap_clk  |  3.33 ns|  2.430 ns|     0.90 ns|
-    +--------+---------+----------+------------+
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  8.000 ns|     2.00 ns|
+    +--------+----------+----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+----------+------+------+------------------------------------------------+
-    |  Latency (cycles) |  Latency (absolute) |   Interval  |                    Pipeline                    |
-    |   min   |   max   |    min   |    max   |  min |  max |                      Type                      |
-    +---------+---------+----------+----------+------+------+------------------------------------------------+
-    |     2051|     2051|  6.830 us|  6.830 us|  2049|  2049|  loop auto-rewind stp (delay=0 clock cycles(s))|
-    +---------+---------+----------+----------+------+------+------------------------------------------------+
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  |                    Pipeline                    |
+    |   min   |   max   |    min    |    max    |  min |  max |                      Type                      |
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
+    |     2051|     2051|  20.510 us|  20.510 us|  2049|  2049|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
 
     + Detail: 
         * Instance: 
@@ -182,7 +182,7 @@
 |m_axi_gmem_out_0_BRESP     |   in|    2|       m_axi|                   gmem_out|       pointer|
 |m_axi_gmem_out_0_BID       |   in|    1|       m_axi|                   gmem_out|       pointer|
 |m_axi_gmem_out_0_BUSER     |   in|    1|       m_axi|                   gmem_out|       pointer|
-|sext_ln532                 |   in|   62|     ap_none|                 sext_ln532|        scalar|
+|sext_ln534                 |   in|   62|     ap_none|                 sext_ln534|        scalar|
 |out_local_address0         |  out|   11|   ap_memory|                  out_local|         array|
 |out_local_ce0              |  out|    1|   ap_memory|                  out_local|         array|
 |out_local_q0               |   in|   32|   ap_memory|                  out_local|         array|
@@ -231,9 +231,9 @@ IsGatedGlobalClock: 0
 
 State 1 <SV = 0> <Delay = 1.66>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%loop_index_i = alloca i32 1"   --->   Operation 6 'alloca' 'loop_index_i' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln532_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln532"   --->   Operation 7 'read' 'sext_ln532_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%sext_ln532_cast = sext i62 %sext_ln532_read"   --->   Operation 8 'sext' 'sext_ln532_cast' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %out_local, i64 666, i64 18, i64 18446744073709551615"   --->   Operation 9 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln534_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln534"   --->   Operation 7 'read' 'sext_ln534_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%sext_ln534_cast = sext i62 %sext_ln534_read"   --->   Operation 8 'sext' 'sext_ln534_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %out_local, i64 666, i64 19, i64 18446744073709551615"   --->   Operation 9 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_31, i32 0, i32 0, void @empty_32, i32 64, i32 2048, void @empty_2, void @empty_35, void @empty_32, i32 16, i32 2, i32 16, i32 256, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 11 [1/1] (0.42ns)   --->   "%store_ln0 = store i12 0, i12 %loop_index_i"   --->   Operation 11 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop.i"   --->   Operation 12 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
@@ -243,19 +243,19 @@ ST_1 : Operation 15 [1/1] (0.80ns)   --->   "%empty = add i12 %loop_index_i_load
 ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond4_i, void %load-store-loop.split.i, void %_ZL14compute_outputPKhPA32_A256_KaPKfPfj.1.1.exit.exitStub"   --->   Operation 16 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%loop_index_i_cast = zext i12 %loop_index_i_load"   --->   Operation 17 'zext' 'loop_index_i_cast' <Predicate = (!exitcond4_i)> <Delay = 0.00>
 ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%out_local_addr = getelementptr i32 %out_local, i64 0, i64 %loop_index_i_cast"   --->   Operation 18 'getelementptr' 'out_local_addr' <Predicate = (!exitcond4_i)> <Delay = 0.00>
-ST_1 : Operation 19 [2/2] (1.23ns)   --->   "%out_local_load = load i11 %out_local_addr"   --->   Operation 19 'load' 'out_local_load' <Predicate = (!exitcond4_i)> <Delay = 1.23> <CoreInst = "RAM_1P_BRAM">   --->   Core 89 'RAM_1P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 2048> <RAM>
+ST_1 : Operation 19 [2/2] (0.67ns)   --->   "%out_local_load = load i11 %out_local_addr"   --->   Operation 19 'load' 'out_local_load' <Predicate = (!exitcond4_i)> <Delay = 0.67> <CoreInst = "RAM_1P_LUTRAM">   --->   Core 88 'RAM_1P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 2048> <RAM>
 ST_1 : Operation 20 [1/1] (0.42ns)   --->   "%store_ln0 = store i12 %empty, i12 %loop_index_i"   --->   Operation 20 'store' 'store_ln0' <Predicate = (!exitcond4_i)> <Delay = 0.42>
 
-State 2 <SV = 1> <Delay = 1.23>
-ST_2 : Operation 21 [1/2] ( I:1.23ns O:1.23ns )   --->   "%out_local_load = load i11 %out_local_addr"   --->   Operation 21 'load' 'out_local_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_1P_BRAM">   --->   Core 89 'RAM_1P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 2048> <RAM>
+State 2 <SV = 1> <Delay = 0.67>
+ST_2 : Operation 21 [1/2] ( I:0.67ns O:0.67ns )   --->   "%out_local_load = load i11 %out_local_addr"   --->   Operation 21 'load' 'out_local_load' <Predicate = true> <Delay = 0.67> <CoreInst = "RAM_1P_LUTRAM">   --->   Core 88 'RAM_1P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 2048> <RAM>
 ST_2 : Operation 28 [1/1] (0.42ns)   --->   "%ret_ln0 = ret"   --->   Operation 28 'ret' 'ret_ln0' <Predicate = (exitcond4_i)> <Delay = 0.42>
 
-State 3 <SV = 2> <Delay = 2.43>
-ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln532_cast" [swiglu.cpp:532->swiglu.cpp:627]   --->   Operation 22 'getelementptr' 'gmem_out_addr' <Predicate = true> <Delay = 0.00>
+State 3 <SV = 2> <Delay = 8.00>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln534_cast" [swiglu.cpp:534->swiglu.cpp:629]   --->   Operation 22 'getelementptr' 'gmem_out_addr' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_32"   --->   Operation 23 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2048, i64 2048, i64 2048"   --->   Operation 24 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%empty_766 = bitcast i32 %out_local_load"   --->   Operation 25 'bitcast' 'empty_766' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 26 [1/1] (2.43ns)   --->   "%write_ln532 = write void @_ssdm_op_Write.m_axi.p1i32, i64 %gmem_out_addr, i32 %empty_766, i4 15" [swiglu.cpp:532->swiglu.cpp:627]   --->   Operation 26 'write' 'write_ln532' <Predicate = true> <Delay = 2.43> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 26 [1/1] (8.00ns)   --->   "%write_ln534 = write void @_ssdm_op_Write.m_axi.p1i32, i64 %gmem_out_addr, i32 %empty_766, i4 15" [swiglu.cpp:534->swiglu.cpp:629]   --->   Operation 26 'write' 'write_ln534' <Predicate = true> <Delay = 8.00> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop.i"   --->   Operation 27 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 
 
@@ -271,7 +271,7 @@ STG Binding:
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
 Port [ gmem_out]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
-Port [ sext_ln532]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ sext_ln534]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ out_local]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
 ---------------- STG Properties END ------------------
 
@@ -280,8 +280,8 @@ Port [ out_local]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; 
 <LifeTime>
 <method=bitvector/>
 loop_index_i          (alloca           ) [ 0100]
-sext_ln532_read       (read             ) [ 0000]
-sext_ln532_cast       (sext             ) [ 0111]
+sext_ln534_read       (read             ) [ 0000]
+sext_ln534_cast       (sext             ) [ 0111]
 specmemcore_ln0       (specmemcore      ) [ 0000]
 specinterface_ln0     (specinterface    ) [ 0000]
 store_ln0             (store            ) [ 0000]
@@ -298,7 +298,7 @@ gmem_out_addr         (getelementptr    ) [ 0000]
 specpipeline_ln0      (specpipeline     ) [ 0000]
 speclooptripcount_ln0 (speclooptripcount) [ 0000]
 empty_766             (bitcast          ) [ 0000]
-write_ln532           (write            ) [ 0000]
+write_ln534           (write            ) [ 0000]
 br_ln0                (br               ) [ 0000]
 ret_ln0               (ret              ) [ 0000]
 </LifeTime>
@@ -316,12 +316,12 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="2" class="1000" name="sext_ln532">
+<comp id="2" class="1000" name="sext_ln534">
 <pin_list>
 <pin id="3" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="sext_ln532"/></StgValue>
+<StgValue><ssdm name="sext_ln534"/></StgValue>
 </bind>
 </comp>
 
@@ -589,7 +589,7 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="64" class="1004" name="sext_ln532_read_read_fu_64">
+<comp id="64" class="1004" name="sext_ln534_read_read_fu_64">
 <pin_list>
 <pin id="65" dir="0" index="0" bw="62" slack="0"/>
 <pin id="66" dir="0" index="1" bw="62" slack="0"/>
@@ -597,7 +597,7 @@ ret_ln0               (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="sext_ln532_read/1 "/>
+<opset="sext_ln534_read/1 "/>
 </bind>
 </comp>
 
@@ -627,7 +627,7 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="83" class="1004" name="write_ln532_write_fu_83">
+<comp id="83" class="1004" name="write_ln534_write_fu_83">
 <pin_list>
 <pin id="84" dir="0" index="0" bw="0" slack="0"/>
 <pin id="85" dir="0" index="1" bw="32" slack="0"/>
@@ -637,18 +637,18 @@ ret_ln0               (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln532/3 "/>
+<opset="write_ln534/3 "/>
 </bind>
 </comp>
 
-<comp id="91" class="1004" name="sext_ln532_cast_fu_91">
+<comp id="91" class="1004" name="sext_ln534_cast_fu_91">
 <pin_list>
 <pin id="92" dir="0" index="0" bw="62" slack="0"/>
 <pin id="93" dir="1" index="1" bw="64" slack="2"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
-<opset="sext_ln532_cast/1 "/>
+<opset="sext_ln534_cast/1 "/>
 </bind>
 </comp>
 
@@ -755,13 +755,13 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="142" class="1005" name="sext_ln532_cast_reg_142">
+<comp id="142" class="1005" name="sext_ln534_cast_reg_142">
 <pin_list>
 <pin id="143" dir="0" index="0" bw="64" slack="2"/>
 <pin id="144" dir="1" index="1" bw="64" slack="2"/>
 </pin_list>
 <bind>
-<opset="sext_ln532_cast "/>
+<opset="sext_ln534_cast "/>
 </bind>
 </comp>
 
@@ -870,7 +870,7 @@ ret_ln0               (ret              ) [ 0000]
 	Port: gmem_out | {3 }
  - Input state : 
 	Port: compute_output_Pipeline_1 : gmem_out | {}
-	Port: compute_output_Pipeline_1 : sext_ln532 | {1 }
+	Port: compute_output_Pipeline_1 : sext_ln534 | {1 }
 	Port: compute_output_Pipeline_1 : out_local | {1 2 }
   - Chain level:
 	State 1
@@ -885,7 +885,7 @@ ret_ln0               (ret              ) [ 0000]
 		store_ln0 : 3
 	State 2
 	State 3
-		write_ln532 : 1
+		write_ln534 : 1
 
 
 ============================================================
@@ -900,11 +900,11 @@ ret_ln0               (ret              ) [ 0000]
 |----------|----------------------------|---------|---------|
 |    add   |        empty_fu_109        |    0    |    19   |
 |----------|----------------------------|---------|---------|
-|   read   | sext_ln532_read_read_fu_64 |    0    |    0    |
+|   read   | sext_ln534_read_read_fu_64 |    0    |    0    |
 |----------|----------------------------|---------|---------|
-|   write  |   write_ln532_write_fu_83  |    0    |    0    |
+|   write  |   write_ln534_write_fu_83  |    0    |    0    |
 |----------|----------------------------|---------|---------|
-|   sext   |    sext_ln532_cast_fu_91   |    0    |    0    |
+|   sext   |    sext_ln534_cast_fu_91   |    0    |    0    |
 |----------|----------------------------|---------|---------|
 |   zext   |  loop_index_i_cast_fu_115  |    0    |    0    |
 |----------|----------------------------|---------|---------|
@@ -922,7 +922,7 @@ N/A
 |  loop_index_i_reg_135 |   12   |
 | out_local_addr_reg_151|   11   |
 | out_local_load_reg_156|   32   |
-|sext_ln532_cast_reg_142|   64   |
+|sext_ln534_cast_reg_142|   64   |
 +-----------------------+--------+
 |         Total         |   120  |
 +-----------------------+--------+

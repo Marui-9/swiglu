@@ -205,18 +205,18 @@ set portList {
 	{ rb_15_q0 sc_in sc_lv 128 signal 29 } 
 	{ empty sc_in sc_lv 3 signal 30 } 
 	{ gate_scale sc_in sc_lv 32 signal 31 } 
-	{ grp_fu_2389_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_2389_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_2389_p_opcode sc_out sc_lv 2 signal -1 } 
-	{ grp_fu_2389_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fu_2389_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_823_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_823_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_823_p_opcode sc_out sc_lv 1 signal -1 } 
+	{ grp_fu_823_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_823_p_ce sc_out sc_logic 1 signal -1 } 
 	{ grp_fu_828_p_din0 sc_out sc_lv 32 signal -1 } 
 	{ grp_fu_828_p_din1 sc_out sc_lv 32 signal -1 } 
 	{ grp_fu_828_p_dout0 sc_in sc_lv 32 signal -1 } 
 	{ grp_fu_828_p_ce sc_out sc_logic 1 signal -1 } 
-	{ grp_fu_2393_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_2393_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fu_2393_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_2314_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_2314_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_2314_p_ce sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -313,59 +313,59 @@ set NewPortList {[
  	{ "name": "rb_15_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "rb_15", "role": "q0" }} , 
  	{ "name": "empty", "direction": "in", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "empty", "role": "default" }} , 
  	{ "name": "gate_scale", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "gate_scale", "role": "default" }} , 
- 	{ "name": "grp_fu_2389_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2389_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_2389_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2389_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_2389_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "grp_fu_2389_p_opcode", "role": "default" }} , 
- 	{ "name": "grp_fu_2389_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2389_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_2389_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_2389_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_823_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_823_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_823_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_823_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_823_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_823_p_opcode", "role": "default" }} , 
+ 	{ "name": "grp_fu_823_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_823_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_823_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_823_p_ce", "role": "default" }} , 
  	{ "name": "grp_fu_828_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_828_p_din0", "role": "default" }} , 
  	{ "name": "grp_fu_828_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_828_p_din1", "role": "default" }} , 
  	{ "name": "grp_fu_828_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_828_p_dout0", "role": "default" }} , 
  	{ "name": "grp_fu_828_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_828_p_ce", "role": "default" }} , 
- 	{ "name": "grp_fu_2393_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2393_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_2393_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2393_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_2393_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_2393_p_ce", "role": "default" }}  ]}
+ 	{ "name": "grp_fu_2314_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2314_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_2314_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2314_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_2314_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_2314_p_ce", "role": "default" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	mac_blocks_down_q6k_Pipeline_MAC_Q6K {
-		acc {Type IO LastRead 29 FirstWrite 37}
+		acc {Type IO LastRead 16 FirstWrite 19}
 		zext_ln79 {Type I LastRead 0 FirstWrite -1}
 		gate_0 {Type I LastRead 0 FirstWrite -1}
 		gate_2 {Type I LastRead 0 FirstWrite -1}
 		gate_4 {Type I LastRead 0 FirstWrite -1}
 		gate_6 {Type I LastRead 0 FirstWrite -1}
-		acc_7 {Type IO LastRead 29 FirstWrite 37}
-		acc_6 {Type IO LastRead 29 FirstWrite 37}
-		acc_5 {Type IO LastRead 29 FirstWrite 37}
-		acc_4 {Type IO LastRead 29 FirstWrite 37}
-		acc_3 {Type IO LastRead 29 FirstWrite 37}
-		acc_2 {Type IO LastRead 29 FirstWrite 37}
-		acc_1 {Type IO LastRead 29 FirstWrite 37}
+		acc_7 {Type IO LastRead 16 FirstWrite 19}
+		acc_6 {Type IO LastRead 16 FirstWrite 19}
+		acc_5 {Type IO LastRead 16 FirstWrite 19}
+		acc_4 {Type IO LastRead 16 FirstWrite 19}
+		acc_3 {Type IO LastRead 16 FirstWrite 19}
+		acc_2 {Type IO LastRead 16 FirstWrite 19}
+		acc_1 {Type IO LastRead 16 FirstWrite 19}
 		mul_ln55 {Type I LastRead 0 FirstWrite -1}
-		rb_0 {Type I LastRead 14 FirstWrite -1}
-		rb_1 {Type I LastRead 14 FirstWrite -1}
-		rb_2 {Type I LastRead 14 FirstWrite -1}
-		rb_3 {Type I LastRead 14 FirstWrite -1}
-		rb_4 {Type I LastRead 14 FirstWrite -1}
-		rb_5 {Type I LastRead 14 FirstWrite -1}
-		rb_6 {Type I LastRead 14 FirstWrite -1}
-		rb_7 {Type I LastRead 14 FirstWrite -1}
-		rb_8 {Type I LastRead 14 FirstWrite -1}
-		rb_9 {Type I LastRead 14 FirstWrite -1}
-		rb_10 {Type I LastRead 14 FirstWrite -1}
-		rb_11 {Type I LastRead 14 FirstWrite -1}
-		rb_12 {Type I LastRead 14 FirstWrite -1}
-		rb_13 {Type I LastRead 14 FirstWrite -1}
-		rb_14 {Type I LastRead 14 FirstWrite -1}
-		rb_15 {Type I LastRead 14 FirstWrite -1}
+		rb_0 {Type I LastRead 8 FirstWrite -1}
+		rb_1 {Type I LastRead 8 FirstWrite -1}
+		rb_2 {Type I LastRead 8 FirstWrite -1}
+		rb_3 {Type I LastRead 8 FirstWrite -1}
+		rb_4 {Type I LastRead 8 FirstWrite -1}
+		rb_5 {Type I LastRead 8 FirstWrite -1}
+		rb_6 {Type I LastRead 8 FirstWrite -1}
+		rb_7 {Type I LastRead 8 FirstWrite -1}
+		rb_8 {Type I LastRead 8 FirstWrite -1}
+		rb_9 {Type I LastRead 8 FirstWrite -1}
+		rb_10 {Type I LastRead 8 FirstWrite -1}
+		rb_11 {Type I LastRead 8 FirstWrite -1}
+		rb_12 {Type I LastRead 8 FirstWrite -1}
+		rb_13 {Type I LastRead 8 FirstWrite -1}
+		rb_14 {Type I LastRead 8 FirstWrite -1}
+		rb_15 {Type I LastRead 8 FirstWrite -1}
 		empty {Type I LastRead 0 FirstWrite -1}
 		gate_scale {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "804", "Max" : "804"}
-	, {"Name" : "Interval", "Min" : "804", "Max" : "804"}
+	{"Name" : "Latency", "Min" : "786", "Max" : "786"}
+	, {"Name" : "Interval", "Min" : "786", "Max" : "786"}
 ]}
 
 set PipelineEnableSignalInfo {[

@@ -103,7 +103,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -139,7 +139,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -175,7 +175,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -211,7 +211,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -247,7 +247,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -283,7 +283,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -319,7 +319,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -355,7 +355,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -391,7 +391,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -427,7 +427,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -463,7 +463,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -499,7 +499,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -535,7 +535,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -571,7 +571,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -607,7 +607,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -643,7 +643,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -679,7 +679,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -715,7 +715,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -751,7 +751,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -787,7 +787,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -823,7 +823,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -859,7 +859,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -895,7 +895,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -931,7 +931,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -967,7 +967,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1003,7 +1003,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1039,7 +1039,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1075,7 +1075,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1111,7 +1111,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1147,7 +1147,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1183,7 +1183,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1219,7 +1219,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1255,7 +1255,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1291,7 +1291,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1327,7 +1327,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1363,7 +1363,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1399,7 +1399,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1435,7 +1435,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1471,7 +1471,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1507,7 +1507,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1543,7 +1543,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1579,7 +1579,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1615,7 +1615,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1651,7 +1651,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1687,7 +1687,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1723,7 +1723,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1759,7 +1759,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1795,7 +1795,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1831,7 +1831,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1867,7 +1867,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1903,7 +1903,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1939,7 +1939,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -1975,7 +1975,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2011,7 +2011,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2047,7 +2047,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2083,7 +2083,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2119,7 +2119,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2155,7 +2155,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2191,7 +2191,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2227,7 +2227,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2263,7 +2263,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2299,7 +2299,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2335,7 +2335,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2371,7 +2371,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2407,7 +2407,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2443,7 +2443,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2479,7 +2479,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2515,7 +2515,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2551,7 +2551,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2587,7 +2587,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2623,7 +2623,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2659,7 +2659,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2695,7 +2695,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2731,7 +2731,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2767,7 +2767,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2803,7 +2803,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2839,7 +2839,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2875,7 +2875,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2911,7 +2911,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2947,7 +2947,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -2983,7 +2983,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3019,7 +3019,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3055,7 +3055,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3091,7 +3091,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3127,7 +3127,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3163,7 +3163,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3199,7 +3199,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3235,7 +3235,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3271,7 +3271,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3307,7 +3307,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3343,7 +3343,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3379,7 +3379,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3415,7 +3415,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3451,7 +3451,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3487,7 +3487,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3523,7 +3523,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3559,7 +3559,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3595,7 +3595,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3631,7 +3631,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3667,7 +3667,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3703,7 +3703,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3739,7 +3739,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3775,7 +3775,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3811,7 +3811,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3847,7 +3847,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3883,7 +3883,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3919,7 +3919,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3955,7 +3955,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -3991,7 +3991,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4027,7 +4027,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4063,7 +4063,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4099,7 +4099,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4135,7 +4135,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4171,7 +4171,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4207,7 +4207,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4243,7 +4243,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4279,7 +4279,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4315,7 +4315,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4351,7 +4351,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4387,7 +4387,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4423,7 +4423,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4459,7 +4459,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4495,7 +4495,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4531,7 +4531,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4567,7 +4567,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4603,7 +4603,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4639,7 +4639,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4675,7 +4675,7 @@
 						<control></control>
 						<opType></opType>
 						<implIndex></implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
 						<coreId>4294967295</coreId>
@@ -4942,11 +4942,11 @@
 						<rtlName></rtlName>
 						<control>pragma</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>128</bitwidth>
@@ -4998,11 +4998,11 @@
 						<rtlName></rtlName>
 						<control>pragma</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>128</bitwidth>
@@ -5054,11 +5054,11 @@
 						<rtlName></rtlName>
 						<control>pragma</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>128</bitwidth>
@@ -5110,11 +5110,11 @@
 						<rtlName></rtlName>
 						<control>pragma</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>128</bitwidth>
@@ -5166,11 +5166,11 @@
 						<rtlName></rtlName>
 						<control>pragma</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>128</bitwidth>
@@ -5222,11 +5222,11 @@
 						<rtlName></rtlName>
 						<control>pragma</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>128</bitwidth>
@@ -5278,11 +5278,11 @@
 						<rtlName></rtlName>
 						<control>pragma</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>128</bitwidth>
@@ -5334,11 +5334,11 @@
 						<rtlName></rtlName>
 						<control>pragma</control>
 						<opType>ram_1p</opType>
-						<implIndex>bram</implIndex>
-						<coreName>RAM_1P_BRAM</coreName>
+						<implIndex>lutram</implIndex>
+						<coreName>RAM_1P_LUTRAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>89</coreId>
+						<coreId>88</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>128</bitwidth>
@@ -5752,7 +5752,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>22</m_topoIndex>
+				<m_topoIndex>23</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_151">
@@ -5763,7 +5763,7 @@
 						<name>X1_cache_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>233</lineNumber>
+						<lineNumber>234</lineNumber>
 						<contextFuncName>compute_X1</contextFuncName>
 						<contextNormFuncName>compute_X1</contextNormFuncName>
 						<inlineStackInfo>
@@ -5779,7 +5779,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X1</second>
 										</first>
-										<second>233</second>
+										<second>234</second>
 									</item>
 								</second>
 							</item>
@@ -5810,7 +5810,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>23</m_topoIndex>
+				<m_topoIndex>24</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_152">
@@ -5818,10 +5818,10 @@
 					<Obj>
 						<type>0</type>
 						<id>294</id>
-						<name>trunc_ln230</name>
+						<name>trunc_ln231</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>230</lineNumber>
+						<lineNumber>231</lineNumber>
 						<contextFuncName>compute_X1</contextFuncName>
 						<contextNormFuncName>compute_X1</contextNormFuncName>
 						<inlineStackInfo>
@@ -5837,7 +5837,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X1</second>
 										</first>
-										<second>230</second>
+										<second>231</second>
 									</item>
 								</second>
 							</item>
@@ -5874,10 +5874,10 @@
 					<Obj>
 						<type>0</type>
 						<id>295</id>
-						<name>_ln230</name>
+						<name>_ln231</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>230</lineNumber>
+						<lineNumber>231</lineNumber>
 						<contextFuncName>compute_X1</contextFuncName>
 						<contextNormFuncName>compute_X1</contextNormFuncName>
 						<inlineStackInfo>
@@ -5893,7 +5893,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X1</second>
 										</first>
-										<second>230</second>
+										<second>231</second>
 									</item>
 								</second>
 							</item>
@@ -5944,7 +5944,7 @@
 						<name>row_result</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>232</lineNumber>
+						<lineNumber>233</lineNumber>
 						<contextFuncName>compute_X1</contextFuncName>
 						<contextNormFuncName>compute_X1</contextNormFuncName>
 						<inlineStackInfo>
@@ -5960,7 +5960,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X1</second>
 										</first>
-										<second>232</second>
+										<second>233</second>
 									</item>
 								</second>
 							</item>
@@ -6127,8 +6127,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.41</m_delay>
-				<m_topoIndex>21</m_topoIndex>
+				<m_delay>7.01</m_delay>
+				<m_topoIndex>22</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_155">
@@ -6136,10 +6136,10 @@
 					<Obj>
 						<type>0</type>
 						<id>297</id>
-						<name>X1_cache_addr_write_ln233</name>
+						<name>X1_cache_addr_write_ln234</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>233</lineNumber>
+						<lineNumber>234</lineNumber>
 						<contextFuncName>compute_X1</contextFuncName>
 						<contextNormFuncName>compute_X1</contextNormFuncName>
 						<inlineStackInfo>
@@ -6155,7 +6155,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X1</second>
 										</first>
-										<second>233</second>
+										<second>234</second>
 									</item>
 								</second>
 							</item>
@@ -6185,7 +6185,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.23</m_delay>
-				<m_topoIndex>24</m_topoIndex>
+				<m_topoIndex>25</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_156">
@@ -6244,7 +6244,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.42</m_delay>
-				<m_topoIndex>25</m_topoIndex>
+				<m_topoIndex>20</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_157">
@@ -6308,10 +6308,10 @@
 					<Obj>
 						<type>0</type>
 						<id>301</id>
-						<name>_ln235</name>
+						<name>_ln236</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>235</lineNumber>
+						<lineNumber>236</lineNumber>
 						<contextFuncName>compute_X1</contextFuncName>
 						<contextNormFuncName>compute_X1</contextNormFuncName>
 						<inlineStackInfo>
@@ -6327,7 +6327,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X1</second>
 										</first>
-										<second>235</second>
+										<second>236</second>
 									</item>
 								</second>
 							</item>
@@ -6355,7 +6355,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>20</m_topoIndex>
+				<m_topoIndex>21</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 		</nodes>
@@ -8126,8 +8126,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>4579330</mMinLatency>
-			<mMaxLatency>4579330</mMaxLatency>
+			<mMinLatency>3883009</mMinLatency>
+			<mMaxLatency>3883009</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -8173,8 +8173,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>8192</mMinTripCount>
 			<mMaxTripCount>8192</mMaxTripCount>
-			<mMinLatency>4579329</mMinLatency>
-			<mMaxLatency>4579329</mMaxLatency>
+			<mMinLatency>3883008</mMinLatency>
+			<mMaxLatency>3883008</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -8204,7 +8204,7 @@
 	</cdfg_regions>
 	<fsm class_id="24" tracking_level="1" version="0" object_id="_366">
 		<states class_id="25" tracking_level="0" version="0">
-			<count>7</count>
+			<count>5</count>
 			<item_version>0</item_version>
 			<item class_id="26" tracking_level="1" version="0" object_id="_367">
 				<id>1</id>
@@ -8971,7 +8971,7 @@
 			<item class_id_reference="26" object_id="_519">
 				<id>2</id>
 				<operations>
-					<count>2</count>
+					<count>8</count>
 					<item_version>0</item_version>
 					<item class_id_reference="28" object_id="_520">
 						<id>285</id>
@@ -8983,32 +8983,30 @@
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-				</operations>
-			</item>
-			<item class_id_reference="26" object_id="_522">
-				<id>3</id>
-				<operations>
-					<count>5</count>
-					<item_version>0</item_version>
-					<item class_id_reference="28" object_id="_523">
+					<item class_id_reference="28" object_id="_522">
 						<id>287</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_524">
+					<item class_id_reference="28" object_id="_523">
 						<id>288</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_525">
+					<item class_id_reference="28" object_id="_524">
 						<id>294</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_526">
+					<item class_id_reference="28" object_id="_525">
 						<id>295</id>
 						<stage>2</stage>
 						<latency>2</latency>
+					</item>
+					<item class_id_reference="28" object_id="_526">
+						<id>298</id>
+						<stage>1</stage>
+						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_527">
 						<id>301</id>
@@ -9018,7 +9016,7 @@
 				</operations>
 			</item>
 			<item class_id_reference="26" object_id="_528">
-				<id>4</id>
+				<id>3</id>
 				<operations>
 					<count>1</count>
 					<item_version>0</item_version>
@@ -9030,7 +9028,7 @@
 				</operations>
 			</item>
 			<item class_id_reference="26" object_id="_530">
-				<id>5</id>
+				<id>4</id>
 				<operations>
 					<count>1</count>
 					<item_version>0</item_version>
@@ -9042,53 +9040,41 @@
 				</operations>
 			</item>
 			<item class_id_reference="26" object_id="_532">
-				<id>6</id>
-				<operations>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item class_id_reference="28" object_id="_533">
-						<id>296</id>
-						<stage>1</stage>
-						<latency>2</latency>
-					</item>
-				</operations>
-			</item>
-			<item class_id_reference="26" object_id="_534">
-				<id>7</id>
+				<id>5</id>
 				<operations>
 					<count>7</count>
 					<item_version>0</item_version>
-					<item class_id_reference="28" object_id="_535">
+					<item class_id_reference="28" object_id="_533">
 						<id>290</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_536">
+					<item class_id_reference="28" object_id="_534">
 						<id>291</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_537">
+					<item class_id_reference="28" object_id="_535">
 						<id>292</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_538">
+					<item class_id_reference="28" object_id="_536">
 						<id>293</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_539">
+					<item class_id_reference="28" object_id="_537">
+						<id>296</id>
+						<stage>1</stage>
+						<latency>2</latency>
+					</item>
+					<item class_id_reference="28" object_id="_538">
 						<id>297</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_540">
-						<id>298</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_541">
+					<item class_id_reference="28" object_id="_539">
 						<id>299</id>
 						<stage>1</stage>
 						<latency>1</latency>
@@ -9097,9 +9083,9 @@
 			</item>
 		</states>
 		<transitions class_id="29" tracking_level="0" version="0">
-			<count>7</count>
+			<count>5</count>
 			<item_version>0</item_version>
-			<item class_id="30" tracking_level="1" version="0" object_id="_542">
+			<item class_id="30" tracking_level="1" version="0" object_id="_540">
 				<inState>1</inState>
 				<outState>2</outState>
 				<condition class_id="31" tracking_level="0" version="0">
@@ -9114,24 +9100,9 @@
 					</sop>
 				</condition>
 			</item>
-			<item class_id_reference="30" object_id="_543">
+			<item class_id_reference="30" object_id="_541">
 				<inState>2</inState>
 				<outState>3</outState>
-				<condition>
-					<id>-1</id>
-					<sop>
-						<count>1</count>
-						<item_version>0</item_version>
-						<item>
-							<count>0</count>
-							<item_version>0</item_version>
-						</item>
-					</sop>
-				</condition>
-			</item>
-			<item class_id_reference="30" object_id="_544">
-				<inState>3</inState>
-				<outState>4</outState>
 				<condition>
 					<id>-1</id>
 					<sop>
@@ -9151,7 +9122,22 @@
 					</sop>
 				</condition>
 			</item>
-			<item class_id_reference="30" object_id="_545">
+			<item class_id_reference="30" object_id="_542">
+				<inState>3</inState>
+				<outState>4</outState>
+				<condition>
+					<id>-1</id>
+					<sop>
+						<count>1</count>
+						<item_version>0</item_version>
+						<item>
+							<count>0</count>
+							<item_version>0</item_version>
+						</item>
+					</sop>
+				</condition>
+			</item>
+			<item class_id_reference="30" object_id="_543">
 				<inState>4</inState>
 				<outState>5</outState>
 				<condition>
@@ -9166,38 +9152,8 @@
 					</sop>
 				</condition>
 			</item>
-			<item class_id_reference="30" object_id="_546">
+			<item class_id_reference="30" object_id="_544">
 				<inState>5</inState>
-				<outState>6</outState>
-				<condition>
-					<id>-1</id>
-					<sop>
-						<count>1</count>
-						<item_version>0</item_version>
-						<item>
-							<count>0</count>
-							<item_version>0</item_version>
-						</item>
-					</sop>
-				</condition>
-			</item>
-			<item class_id_reference="30" object_id="_547">
-				<inState>6</inState>
-				<outState>7</outState>
-				<condition>
-					<id>-1</id>
-					<sop>
-						<count>1</count>
-						<item_version>0</item_version>
-						<item>
-							<count>0</count>
-							<item_version>0</item_version>
-						</item>
-					</sop>
-				</condition>
-			</item>
-			<item class_id_reference="30" object_id="_548">
-				<inState>7</inState>
 				<outState>2</outState>
 				<condition>
 					<id>-1</id>
@@ -9325,77 +9281,77 @@
 		<item>
 			<first>287</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>288</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>290</first>
 			<second>
-				<first>6</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>291</first>
 			<second>
-				<first>6</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>294</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>295</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>296</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>297</first>
 			<second>
-				<first>6</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>298</first>
 			<second>
-				<first>6</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>299</first>
 			<second>
-				<first>6</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>301</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -9414,21 +9370,21 @@
 			<first>289</first>
 			<second>
 				<first>1</first>
-				<second>2</second>
+				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>300</first>
 			<second>
-				<first>2</first>
-				<second>6</second>
+				<first>1</first>
+				<second>4</second>
 			</second>
 		</item>
 		<item>
 			<first>302</first>
 			<second>
-				<first>2</first>
-				<second>2</second>
+				<first>1</first>
+				<second>1</second>
 			</second>
 		</item>
 	</bblk_ent_exit>
@@ -9562,7 +9518,7 @@
 			</second>
 		</item>
 		<item>
-			<first>676</first>
+			<first>677</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9570,7 +9526,7 @@
 			</second>
 		</item>
 		<item>
-			<first>681</first>
+			<first>682</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9578,7 +9534,7 @@
 			</second>
 		</item>
 		<item>
-			<first>684</first>
+			<first>685</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9586,7 +9542,7 @@
 			</second>
 		</item>
 		<item>
-			<first>690</first>
+			<first>691</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9594,7 +9550,7 @@
 			</second>
 		</item>
 		<item>
-			<first>695</first>
+			<first>697</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9602,19 +9558,19 @@
 			</second>
 		</item>
 		<item>
-			<first>699</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>290</item>
-			</second>
-		</item>
-		<item>
-			<first>703</first>
+			<first>702</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
 				<item>298</item>
+			</second>
+		</item>
+		<item>
+			<first>707</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>290</item>
 			</second>
 		</item>
 	</dp_fu_nodes>
@@ -9630,7 +9586,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln227_fu_690</first>
+			<first>add_ln227_fu_691</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9638,7 +9594,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln227_fu_684</first>
+			<first>icmp_ln227_fu_685</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9718,7 +9674,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln230_fu_695</first>
+			<first>trunc_ln231_fu_697</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9726,7 +9682,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln227_fu_699</first>
+			<first>zext_ln227_fu_707</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9768,7 +9724,7 @@
 			</second>
 		</item>
 		<item>
-			<first>row_2_load_fu_681</first>
+			<first>row_2_load_fu_682</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9776,7 +9732,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln227_store_fu_676</first>
+			<first>store_ln227_store_fu_677</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9784,7 +9740,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln227_store_fu_703</first>
+			<first>store_ln227_store_fu_702</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9820,10 +9776,10 @@
 		</item>
 	</dp_mem_port_nodes>
 	<dp_reg_nodes>
-		<count>7</count>
+		<count>5</count>
 		<item_version>0</item_version>
 		<item>
-			<first>707</first>
+			<first>711</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9831,7 +9787,7 @@
 			</second>
 		</item>
 		<item>
-			<first>714</first>
+			<first>718</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9839,7 +9795,7 @@
 			</second>
 		</item>
 		<item>
-			<first>719</first>
+			<first>723</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9847,19 +9803,11 @@
 			</second>
 		</item>
 		<item>
-			<first>727</first>
+			<first>728</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>286</item>
-			</second>
-		</item>
-		<item>
-			<first>731</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>287</item>
+				<item>285</item>
 			</second>
 		</item>
 		<item>
@@ -9870,20 +9818,12 @@
 				<item>294</item>
 			</second>
 		</item>
-		<item>
-			<first>741</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>296</item>
-			</second>
-		</item>
 	</dp_reg_nodes>
 	<dp_regname_nodes>
-		<count>7</count>
+		<count>5</count>
 		<item_version>0</item_version>
 		<item>
-			<first>W_read_reg_719</first>
+			<first>W_read_reg_723</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9891,23 +9831,15 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln227_reg_731</first>
+			<first>row_2_reg_728</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>287</item>
+				<item>285</item>
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln227_reg_727</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>286</item>
-			</second>
-		</item>
-		<item>
-			<first>row_reg_707</first>
+			<first>row_reg_711</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9915,15 +9847,7 @@
 			</second>
 		</item>
 		<item>
-			<first>row_result_reg_741</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>296</item>
-			</second>
-		</item>
-		<item>
-			<first>trunc_ln230_reg_736</first>
+			<first>trunc_ln231_reg_736</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9931,7 +9855,7 @@
 			</second>
 		</item>
 		<item>
-			<first>x_scale_read_reg_714</first>
+			<first>x_scale_read_reg_718</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -10018,896 +9942,896 @@
 			<first>3</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>4</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>5</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>6</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>7</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>8</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>9</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>10</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>11</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>12</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>13</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>14</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>15</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>16</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>17</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>18</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>19</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>20</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>21</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>22</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>23</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>24</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>25</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>26</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>27</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>28</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>29</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>30</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>31</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>32</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>33</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>34</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>35</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>36</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>37</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>38</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>39</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>40</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>41</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>42</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>43</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>44</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>45</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>46</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>47</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>48</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>49</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>50</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>51</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>52</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>53</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>54</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>55</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>56</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>57</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>58</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>59</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>60</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>61</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>62</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>63</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>64</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>65</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>66</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>67</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>68</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>69</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>70</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>71</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>72</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>73</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>74</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>75</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>76</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>77</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>78</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>79</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>80</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>81</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>82</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>83</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>84</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>85</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>86</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>87</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>88</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>89</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>90</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>91</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>92</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>93</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>94</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>95</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>96</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>97</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>98</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>99</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>100</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>101</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>102</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>103</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>104</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>105</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>106</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>107</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>108</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>109</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>110</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>111</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>112</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>113</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>114</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>115</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>116</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>117</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>118</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>119</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>120</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>121</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>122</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>123</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>124</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>125</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>126</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>127</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>128</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>129</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>130</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
@@ -10925,56 +10849,56 @@
 			<first>266</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>267</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>268</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>269</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>270</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>271</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>272</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>
 			<first>273</first>
 			<second>
 				<first>666</first>
-				<second>18</second>
+				<second>19</second>
 			</second>
 		</item>
 		<item>

@@ -198,20 +198,16 @@ wire    ap_loop_exit_ready;
 reg    ap_ready_int;
 reg    gmem_V_blk_n_R;
 wire    ap_block_pp0_stage0_grp1;
-reg    ap_block_pp0_stage0_11001_grp1;
-reg    ap_block_pp0_stage0_11001;
-wire   [3:0] select_ln101_fu_286_p3;
-reg   [3:0] select_ln101_reg_381;
 wire    ap_block_pp0_stage0_11001_grp0;
 reg    ap_block_pp0_stage0_subdone_grp0_done_reg;
 wire    ap_block_pp0_stage0_subdone_grp0;
-wire   [2:0] trunc_ln101_fu_302_p1;
-reg   [2:0] trunc_ln101_reg_386;
-reg   [127:0] gmem_V_addr_read_reg_390;
-wire   [63:0] zext_ln102_fu_340_p1;
+reg    ap_block_pp0_stage0_11001_grp1;
+reg    ap_block_pp0_stage0_11001;
+reg   [127:0] gmem_V_addr_read_reg_382;
+wire   [63:0] zext_ln102_fu_306_p1;
 wire    ap_block_pp0_stage0_grp0;
 reg   [3:0] w_fu_96;
-wire   [3:0] add_ln102_fu_324_p2;
+wire   [3:0] add_ln102_fu_336_p2;
 wire    ap_loop_init;
 reg   [3:0] b_fu_100;
 wire   [3:0] select_ln101_1_fu_294_p3;
@@ -220,6 +216,7 @@ wire   [6:0] add_ln101_1_fu_251_p2;
 reg   [6:0] ap_sig_allocacmp_indvar_flatten_load;
 wire    ap_block_pp0_stage0;
 reg    rb_6_we0_local;
+wire   [2:0] trunc_ln101_fu_302_p1;
 reg    rb_6_ce0_local;
 reg    rb_5_we0_local;
 reg    rb_5_ce0_local;
@@ -237,6 +234,7 @@ reg    rb_7_we0_local;
 reg    rb_7_ce0_local;
 wire   [0:0] icmp_ln102_fu_280_p2;
 wire   [3:0] add_ln101_fu_274_p2;
+wire   [3:0] select_ln101_fu_286_p3;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -246,7 +244,6 @@ wire    ap_enable_pp0;
 wire    ap_start_int;
 wire    ap_ready_sig;
 wire    ap_done_sig;
-reg    ap_condition_184;
 wire    ap_ce_reg;
 
 // power-on initialization
@@ -331,10 +328,10 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_condition_184)) begin
-        if ((ap_loop_init == 1'b1)) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0))) begin
+        if (((ap_loop_init == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
             b_fu_100 <= 4'd0;
-        end else if ((ap_enable_reg_pp0_iter1 == 1'b1)) begin
+        end else if ((ap_enable_reg_pp0_iter2 == 1'b1)) begin
             b_fu_100 <= select_ln101_1_fu_294_p3;
         end
     end
@@ -351,11 +348,11 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_condition_184)) begin
-        if ((ap_loop_init == 1'b1)) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0))) begin
+        if (((ap_loop_init == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
             w_fu_96 <= 4'd0;
-        end else if ((ap_enable_reg_pp0_iter1 == 1'b1)) begin
-            w_fu_96 <= add_ln102_fu_324_p2;
+        end else if ((ap_enable_reg_pp0_iter2 == 1'b1)) begin
+            w_fu_96 <= add_ln102_fu_336_p2;
         end
     end
 end
@@ -368,14 +365,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001_grp1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        gmem_V_addr_read_reg_390 <= m_axi_gmem_V_0_RDATA;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        select_ln101_reg_381 <= select_ln101_fu_286_p3;
-        trunc_ln101_reg_386 <= trunc_ln101_fu_302_p1;
+        gmem_V_addr_read_reg_382 <= m_axi_gmem_V_0_RDATA;
     end
 end
 
@@ -452,7 +442,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_reg_386 == 3'd0))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_fu_302_p1 == 3'd0))) begin
         rb_0_we0_local = 1'b1;
     end else begin
         rb_0_we0_local = 1'b0;
@@ -468,7 +458,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_reg_386 == 3'd1))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_fu_302_p1 == 3'd1))) begin
         rb_1_we0_local = 1'b1;
     end else begin
         rb_1_we0_local = 1'b0;
@@ -484,7 +474,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_reg_386 == 3'd2))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_fu_302_p1 == 3'd2))) begin
         rb_2_we0_local = 1'b1;
     end else begin
         rb_2_we0_local = 1'b0;
@@ -500,7 +490,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_reg_386 == 3'd3))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_fu_302_p1 == 3'd3))) begin
         rb_3_we0_local = 1'b1;
     end else begin
         rb_3_we0_local = 1'b0;
@@ -516,7 +506,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_reg_386 == 3'd4))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_fu_302_p1 == 3'd4))) begin
         rb_4_we0_local = 1'b1;
     end else begin
         rb_4_we0_local = 1'b0;
@@ -532,7 +522,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_reg_386 == 3'd5))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_fu_302_p1 == 3'd5))) begin
         rb_5_we0_local = 1'b1;
     end else begin
         rb_5_we0_local = 1'b0;
@@ -548,7 +538,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_reg_386 == 3'd6))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_fu_302_p1 == 3'd6))) begin
         rb_6_we0_local = 1'b1;
     end else begin
         rb_6_we0_local = 1'b0;
@@ -564,7 +554,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_reg_386 == 3'd7))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln101_fu_302_p1 == 3'd7))) begin
         rb_7_we0_local = 1'b1;
     end else begin
         rb_7_we0_local = 1'b0;
@@ -586,7 +576,7 @@ assign add_ln101_1_fu_251_p2 = (ap_sig_allocacmp_indvar_flatten_load + 7'd1);
 
 assign add_ln101_fu_274_p2 = (b_fu_100 + 4'd1);
 
-assign add_ln102_fu_324_p2 = (select_ln101_fu_286_p3 + 4'd1);
+assign add_ln102_fu_336_p2 = (select_ln101_fu_286_p3 + 4'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -611,10 +601,6 @@ always @ (*) begin
 end
 
 assign ap_block_pp0_stage0_subdone_grp0 = ~(1'b1 == 1'b1);
-
-always @ (*) begin
-    ap_condition_184 = ((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (1'b1 == ap_CS_fsm_pp0_stage0));
-end
 
 assign ap_done = ap_done_sig;
 
@@ -692,67 +678,67 @@ assign m_axi_gmem_V_0_WUSER = 1'd0;
 
 assign m_axi_gmem_V_0_WVALID = 1'b0;
 
-assign rb_0_address0 = zext_ln102_fu_340_p1;
+assign rb_0_address0 = zext_ln102_fu_306_p1;
 
 assign rb_0_ce0 = rb_0_ce0_local;
 
-assign rb_0_d0 = gmem_V_addr_read_reg_390;
+assign rb_0_d0 = gmem_V_addr_read_reg_382;
 
 assign rb_0_we0 = rb_0_we0_local;
 
-assign rb_1_address0 = zext_ln102_fu_340_p1;
+assign rb_1_address0 = zext_ln102_fu_306_p1;
 
 assign rb_1_ce0 = rb_1_ce0_local;
 
-assign rb_1_d0 = gmem_V_addr_read_reg_390;
+assign rb_1_d0 = gmem_V_addr_read_reg_382;
 
 assign rb_1_we0 = rb_1_we0_local;
 
-assign rb_2_address0 = zext_ln102_fu_340_p1;
+assign rb_2_address0 = zext_ln102_fu_306_p1;
 
 assign rb_2_ce0 = rb_2_ce0_local;
 
-assign rb_2_d0 = gmem_V_addr_read_reg_390;
+assign rb_2_d0 = gmem_V_addr_read_reg_382;
 
 assign rb_2_we0 = rb_2_we0_local;
 
-assign rb_3_address0 = zext_ln102_fu_340_p1;
+assign rb_3_address0 = zext_ln102_fu_306_p1;
 
 assign rb_3_ce0 = rb_3_ce0_local;
 
-assign rb_3_d0 = gmem_V_addr_read_reg_390;
+assign rb_3_d0 = gmem_V_addr_read_reg_382;
 
 assign rb_3_we0 = rb_3_we0_local;
 
-assign rb_4_address0 = zext_ln102_fu_340_p1;
+assign rb_4_address0 = zext_ln102_fu_306_p1;
 
 assign rb_4_ce0 = rb_4_ce0_local;
 
-assign rb_4_d0 = gmem_V_addr_read_reg_390;
+assign rb_4_d0 = gmem_V_addr_read_reg_382;
 
 assign rb_4_we0 = rb_4_we0_local;
 
-assign rb_5_address0 = zext_ln102_fu_340_p1;
+assign rb_5_address0 = zext_ln102_fu_306_p1;
 
 assign rb_5_ce0 = rb_5_ce0_local;
 
-assign rb_5_d0 = gmem_V_addr_read_reg_390;
+assign rb_5_d0 = gmem_V_addr_read_reg_382;
 
 assign rb_5_we0 = rb_5_we0_local;
 
-assign rb_6_address0 = zext_ln102_fu_340_p1;
+assign rb_6_address0 = zext_ln102_fu_306_p1;
 
 assign rb_6_ce0 = rb_6_ce0_local;
 
-assign rb_6_d0 = gmem_V_addr_read_reg_390;
+assign rb_6_d0 = gmem_V_addr_read_reg_382;
 
 assign rb_6_we0 = rb_6_we0_local;
 
-assign rb_7_address0 = zext_ln102_fu_340_p1;
+assign rb_7_address0 = zext_ln102_fu_306_p1;
 
 assign rb_7_ce0 = rb_7_ce0_local;
 
-assign rb_7_d0 = gmem_V_addr_read_reg_390;
+assign rb_7_d0 = gmem_V_addr_read_reg_382;
 
 assign rb_7_we0 = rb_7_we0_local;
 
@@ -762,6 +748,6 @@ assign select_ln101_fu_286_p3 = ((icmp_ln102_fu_280_p2[0:0] == 1'b1) ? 4'd0 : w_
 
 assign trunc_ln101_fu_302_p1 = select_ln101_1_fu_294_p3[2:0];
 
-assign zext_ln102_fu_340_p1 = select_ln101_reg_381;
+assign zext_ln102_fu_306_p1 = select_ln101_fu_286_p3;
 
 endmodule //swiglu_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1

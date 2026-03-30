@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_row_down_q6k'" level="0">
-<item name = "Date">Mon Mar 30 09:36:47 2026
+<item name = "Date">Mon Mar 30 15:05:32 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33 ns, 2.430 ns, 0.90 ns</column>
+<column name="ap_clk">10.00 ns, 8.000 ns, 2.00 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">497, 497, 1.655 us, 1.655 us, 497, 497, no</column>
+<column name="">496, 496, 4.960 us, 4.960 us, 496, 496, no</column>
 </table>
 </item>
 <item name = "Detail">

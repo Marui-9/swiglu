@@ -226,7 +226,8 @@ static void compute_X1(
     const ap_uint<128> *W_wide = (const ap_uint<128>*)W;
     COMPUTE_X1: for (int row = 0; row < FFN_DIM; row++) {
         ap_uint<128> row_buf[WV_BLOCKS_PER_ROW][Q4_K_WORDS];
-        #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=bram
+        #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 complete
+        #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
         load_row_wv(W_wide, row, row_buf);
         float row_result;
         mac_blocks_wv(row_buf, x_local_1[0], x_scale, &row_result);
@@ -246,7 +247,8 @@ static void compute_X2(
     const ap_uint<128> *V_wide = (const ap_uint<128>*)V;
     COMPUTE_X2: for (int row = 0; row < FFN_DIM; row++) {
         ap_uint<128> row_buf[WV_BLOCKS_PER_ROW][Q4_K_WORDS];
-        #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=bram
+        #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 complete
+        #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
         load_row_wv(V_wide, row, row_buf);
         float row_result;
         mac_blocks_wv(row_buf, x_local_2[0], x_scale, &row_result);
@@ -391,7 +393,7 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
     MAC_BLOCKS_G0: for (int n = 0; n < 256; n++) {
         #pragma HLS PIPELINE II=1
         for (int b = 0; b < 8; b++) {
-            #pragma HLS UNROLL factor=2
+            #pragma HLS UNROLL
             ap_int<8>  gi8  = (ap_int<8>) gate[b][n];
             ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
                                              >> ((n & 32) ? 4 : 0)) & 0xF);
@@ -405,7 +407,7 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
     MAC_BLOCKS_G1: for (int n = 0; n < 256; n++) {
         #pragma HLS PIPELINE II=1
         for (int b = 0; b < 8; b++) {
-            #pragma HLS UNROLL factor=2
+            #pragma HLS UNROLL
             ap_int<8>  gi8  = (ap_int<8>) gate[b + 8][n];
             ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b + 8], 16 + (n & 31) + ((n & 0xC0) >> 1))
                                              >> ((n & 32) ? 4 : 0)) & 0xF);
@@ -419,7 +421,7 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
     MAC_BLOCKS_G2: for (int n = 0; n < 256; n++) {
         #pragma HLS PIPELINE II=1
         for (int b = 0; b < 8; b++) {
-            #pragma HLS UNROLL factor=2
+            #pragma HLS UNROLL
             ap_int<8>  gi8  = (ap_int<8>) gate[b + 16][n];
             ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b + 16], 16 + (n & 31) + ((n & 0xC0) >> 1))
                                              >> ((n & 32) ? 4 : 0)) & 0xF);
@@ -433,7 +435,7 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
     MAC_BLOCKS_G3: for (int n = 0; n < 256; n++) {
         #pragma HLS PIPELINE II=1
         for (int b = 0; b < 8; b++) {
-            #pragma HLS UNROLL factor=2
+            #pragma HLS UNROLL
             ap_int<8>  gi8  = (ap_int<8>) gate[b + 24][n];
             ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b + 24], 16 + (n & 31) + ((n & 0xC0) >> 1))
                                              >> ((n & 32) ? 4 : 0)) & 0xF);
@@ -508,14 +510,14 @@ static void compute_output(
 
     const ap_uint<128> *W_down_wide = (const ap_uint<128>*)W_down;
     float out_local[VECTOR_DIM];
-    #pragma HLS BIND_STORAGE variable=out_local type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=out_local type=ram_1p impl=lutram
     float gate_scale = gate_scale_array[0];
 
     if (down_quant_mode == 0) {
         DOWN_Q4K: for (int out_i = 0; out_i < VECTOR_DIM; out_i++) {
             ap_uint<128> row_buf[DOWN_BLOCKS_PER_ROW][Q4_K_WORDS];
             #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 cyclic factor=8
-            #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
             load_row_down_q4k(W_down_wide, out_i, row_buf);
             mac_blocks_down_q4k(row_buf, gate_cache[0], gate_scale, &out_local[out_i]);
         }
@@ -523,7 +525,7 @@ static void compute_output(
         DOWN_Q6K: for (int out_i = 0; out_i < VECTOR_DIM; out_i++) {
             ap_uint<128> row_buf[DOWN_Q6K_WORDS];
             #pragma HLS ARRAY_PARTITION variable=row_buf cyclic factor=16
-            #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
             load_row_down_q6k(W_down_wide, out_i, row_buf);
             mac_blocks_down_q6k(row_buf, gate_cache[0], gate_scale, &out_local[out_i]);
         }
@@ -593,11 +595,11 @@ void swiglu(
     // x_local: INT8 [1][8][256], 8-bank partition. Written by load_x_local,
     // read by compute_X1 / compute_X2 (separate copies to avoid DATAFLOW serializer).
     int8_t x_local_1[MAX_BATCH][WV_BLOCKS_PER_ROW][256];
-    #pragma HLS BIND_STORAGE variable=x_local_1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=x_local_1 type=ram_1p impl=lutram
     #pragma HLS ARRAY_PARTITION variable=x_local_1 dim=2 complete
 
     int8_t x_local_2[MAX_BATCH][WV_BLOCKS_PER_ROW][256];
-    #pragma HLS BIND_STORAGE variable=x_local_2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=x_local_2 type=ram_1p impl=lutram
     #pragma HLS ARRAY_PARTITION variable=x_local_2 dim=2 complete
 
     // DATAFLOW channels: declared here so HLS infers them as FIFOs/ping-pong
@@ -613,7 +615,7 @@ void swiglu(
 
     float gate_scale[MAX_BATCH];
 
-    #pragma HLS BIND_STORAGE variable=sigmoid_lut type=rom_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=sigmoid_lut type=rom_1p impl=lutram
 
 #ifndef __SYNTHESIS__
     init_sigmoid_lut_csim();

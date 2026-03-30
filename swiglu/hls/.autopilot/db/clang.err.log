@@ -4,7 +4,7 @@ swiglu.cpp:64:9: warning: missing argument for 'variable' [-Winvalid-hls-pragmas
 swiglu.cpp:118:9: warning: missing argument for 'variable' [-Winvalid-hls-pragmas]
 #pragma HLS BIND_OP op=mul impl=dsp
         ^
-swiglu.cpp:342:9: warning: missing argument for 'variable' [-Winvalid-hls-pragmas]
+swiglu.cpp:344:9: warning: missing argument for 'variable' [-Winvalid-hls-pragmas]
 #pragma HLS BIND_OP op=mul impl=dsp
         ^
 3 warnings generated.

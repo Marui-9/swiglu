@@ -3,4 +3,4 @@ Family       : zynquplus
 Device       : xck26
 Package      : -sfvc784
 Speed Grade  : -2LV-c
-Clock Period : 3.33
+Clock Period : 10

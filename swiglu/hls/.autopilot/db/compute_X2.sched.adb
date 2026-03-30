@@ -4775,7 +4775,7 @@
 						<name>row</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>247</lineNumber>
+						<lineNumber>248</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -4791,7 +4791,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>247</second>
+										<second>248</second>
 									</item>
 								</second>
 							</item>
@@ -4917,7 +4917,7 @@
 						<name>row_buf</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>249</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -4933,7 +4933,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>249</second>
 									</item>
 								</second>
 							</item>
@@ -4973,7 +4973,7 @@
 						<name>row_buf_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>249</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -4989,7 +4989,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>249</second>
 									</item>
 								</second>
 							</item>
@@ -5029,7 +5029,7 @@
 						<name>row_buf_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>249</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5045,7 +5045,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>249</second>
 									</item>
 								</second>
 							</item>
@@ -5085,7 +5085,7 @@
 						<name>row_buf_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>249</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5101,7 +5101,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>249</second>
 									</item>
 								</second>
 							</item>
@@ -5141,7 +5141,7 @@
 						<name>row_buf_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>249</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5157,7 +5157,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>249</second>
 									</item>
 								</second>
 							</item>
@@ -5197,7 +5197,7 @@
 						<name>row_buf_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>249</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5213,7 +5213,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>249</second>
 									</item>
 								</second>
 							</item>
@@ -5253,7 +5253,7 @@
 						<name>row_buf_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>249</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5269,7 +5269,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>249</second>
 									</item>
 								</second>
 							</item>
@@ -5309,7 +5309,7 @@
 						<name>row_buf_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>249</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5325,7 +5325,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>249</second>
 									</item>
 								</second>
 							</item>
@@ -5362,10 +5362,10 @@
 					<Obj>
 						<type>0</type>
 						<id>282</id>
-						<name>row_write_ln247</name>
+						<name>row_write_ln248</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>247</lineNumber>
+						<lineNumber>248</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5381,7 +5381,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>247</second>
+										<second>248</second>
 									</item>
 								</second>
 							</item>
@@ -5419,10 +5419,10 @@
 					<Obj>
 						<type>0</type>
 						<id>283</id>
-						<name>br_ln247</name>
+						<name>br_ln248</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>247</lineNumber>
+						<lineNumber>248</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5438,7 +5438,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>247</second>
+										<second>248</second>
 									</item>
 								</second>
 							</item>
@@ -5478,7 +5478,7 @@
 						<name>row_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>247</lineNumber>
+						<lineNumber>248</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5494,7 +5494,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>247</second>
+										<second>248</second>
 									</item>
 								</second>
 							</item>
@@ -5532,10 +5532,10 @@
 					<Obj>
 						<type>0</type>
 						<id>286</id>
-						<name>icmp_ln247</name>
+						<name>icmp_ln248</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>247</lineNumber>
+						<lineNumber>248</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5551,7 +5551,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>247</second>
+										<second>248</second>
 									</item>
 								</second>
 							</item>
@@ -5589,10 +5589,10 @@
 					<Obj>
 						<type>0</type>
 						<id>287</id>
-						<name>add_ln247</name>
+						<name>add_ln248</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>247</lineNumber>
+						<lineNumber>248</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5608,7 +5608,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>247</second>
+										<second>248</second>
 									</item>
 								</second>
 							</item>
@@ -5646,10 +5646,10 @@
 					<Obj>
 						<type>0</type>
 						<id>288</id>
-						<name>br_ln247</name>
+						<name>br_ln248</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>247</lineNumber>
+						<lineNumber>248</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5665,7 +5665,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>247</second>
+										<second>248</second>
 									</item>
 								</second>
 							</item>
@@ -5704,10 +5704,10 @@
 					<Obj>
 						<type>0</type>
 						<id>290</id>
-						<name>zext_ln247</name>
+						<name>zext_ln248</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>247</lineNumber>
+						<lineNumber>248</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5723,7 +5723,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>247</second>
+										<second>248</second>
 									</item>
 								</second>
 							</item>
@@ -5752,7 +5752,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>22</m_topoIndex>
+				<m_topoIndex>23</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_151">
@@ -5763,7 +5763,7 @@
 						<name>X2_cache_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>253</lineNumber>
+						<lineNumber>255</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5779,7 +5779,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>253</second>
+										<second>255</second>
 									</item>
 								</second>
 							</item>
@@ -5810,7 +5810,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>23</m_topoIndex>
+				<m_topoIndex>24</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_152">
@@ -5818,10 +5818,10 @@
 					<Obj>
 						<type>0</type>
 						<id>294</id>
-						<name>trunc_ln250</name>
+						<name>trunc_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>250</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5837,7 +5837,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>250</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5874,10 +5874,10 @@
 					<Obj>
 						<type>0</type>
 						<id>295</id>
-						<name>_ln250</name>
+						<name>_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>250</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5893,7 +5893,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>250</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5944,7 +5944,7 @@
 						<name>row_result</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>252</lineNumber>
+						<lineNumber>254</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5960,7 +5960,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>252</second>
+										<second>254</second>
 									</item>
 								</second>
 							</item>
@@ -6127,8 +6127,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.41</m_delay>
-				<m_topoIndex>21</m_topoIndex>
+				<m_delay>7.01</m_delay>
+				<m_topoIndex>22</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_155">
@@ -6136,179 +6136,7 @@
 					<Obj>
 						<type>0</type>
 						<id>297</id>
-						<name>X2_cache_addr_write_ln253</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>253</lineNumber>
-						<contextFuncName>compute_X2</contextFuncName>
-						<contextNormFuncName>compute_X2</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>compute_X2</second>
-										</first>
-										<second>253</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>492</item>
-					<item>493</item>
-				</oprand_edges>
-				<opcode>store</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>24</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_156">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>298</id>
-						<name>row_write_ln247</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>247</lineNumber>
-						<contextFuncName>compute_X2</contextFuncName>
-						<contextNormFuncName>compute_X2</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>compute_X2</second>
-										</first>
-										<second>247</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>494</item>
-					<item>495</item>
-					<item>1235</item>
-					<item>1236</item>
-				</oprand_edges>
-				<opcode>store</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.42</m_delay>
-				<m_topoIndex>25</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_157">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>299</id>
-						<name>br_ln247</name>
-						<fileName>swiglu.cpp</fileName>
-						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>247</lineNumber>
-						<contextFuncName>compute_X2</contextFuncName>
-						<contextNormFuncName>compute_X2</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>swiglu.cpp</first>
-											<second>compute_X2</second>
-										</first>
-										<second>247</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>496</item>
-				</oprand_edges>
-				<opcode>br</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>26</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_158">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>301</id>
-						<name>_ln255</name>
+						<name>X2_cache_addr_write_ln255</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>255</lineNumber>
@@ -6346,6 +6174,178 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>492</item>
+					<item>493</item>
+				</oprand_edges>
+				<opcode>store</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>1.23</m_delay>
+				<m_topoIndex>25</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_156">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>298</id>
+						<name>row_write_ln248</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>248</lineNumber>
+						<contextFuncName>compute_X2</contextFuncName>
+						<contextNormFuncName>compute_X2</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>compute_X2</second>
+										</first>
+										<second>248</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>494</item>
+					<item>495</item>
+					<item>1235</item>
+					<item>1236</item>
+				</oprand_edges>
+				<opcode>store</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.42</m_delay>
+				<m_topoIndex>20</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_157">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>299</id>
+						<name>br_ln248</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>248</lineNumber>
+						<contextFuncName>compute_X2</contextFuncName>
+						<contextNormFuncName>compute_X2</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>compute_X2</second>
+										</first>
+										<second>248</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>496</item>
+				</oprand_edges>
+				<opcode>br</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>26</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_158">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>301</id>
+						<name>_ln257</name>
+						<fileName>swiglu.cpp</fileName>
+						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
+						<lineNumber>257</lineNumber>
+						<contextFuncName>compute_X2</contextFuncName>
+						<contextNormFuncName>compute_X2</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>swiglu.cpp</first>
+											<second>compute_X2</second>
+										</first>
+										<second>257</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
 					<count>0</count>
 					<item_version>0</item_version>
 				</oprand_edges>
@@ -6355,7 +6355,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>20</m_topoIndex>
+				<m_topoIndex>21</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 		</nodes>
@@ -8126,8 +8126,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>4579330</mMinLatency>
-			<mMaxLatency>4579330</mMaxLatency>
+			<mMinLatency>3883009</mMinLatency>
+			<mMaxLatency>3883009</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -8173,8 +8173,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>8192</mMinTripCount>
 			<mMaxTripCount>8192</mMaxTripCount>
-			<mMinLatency>4579329</mMinLatency>
-			<mMaxLatency>4579329</mMaxLatency>
+			<mMinLatency>3883008</mMinLatency>
+			<mMaxLatency>3883008</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -8315,77 +8315,77 @@
 		<item>
 			<first>287</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>288</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>290</first>
 			<second>
-				<first>6</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>291</first>
 			<second>
-				<first>6</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>294</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>295</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>296</first>
 			<second>
-				<first>4</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>297</first>
 			<second>
-				<first>6</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>298</first>
 			<second>
-				<first>6</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>299</first>
 			<second>
-				<first>6</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>301</first>
 			<second>
-				<first>2</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -8404,21 +8404,21 @@
 			<first>289</first>
 			<second>
 				<first>1</first>
-				<second>2</second>
+				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>300</first>
 			<second>
-				<first>2</first>
-				<second>6</second>
+				<first>1</first>
+				<second>4</second>
 			</second>
 		</item>
 		<item>
 			<first>302</first>
 			<second>
-				<first>2</first>
-				<second>2</second>
+				<first>1</first>
+				<second>1</second>
 			</second>
 		</item>
 	</bblk_ent_exit>

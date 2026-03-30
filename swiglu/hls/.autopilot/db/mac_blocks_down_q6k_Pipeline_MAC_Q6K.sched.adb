@@ -1198,7 +1198,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -1433,7 +1433,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -1539,7 +1539,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -1603,7 +1603,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -1667,7 +1667,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -1731,7 +1731,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -1796,7 +1796,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -1859,7 +1859,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -1923,7 +1923,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -1986,7 +1986,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2051,7 +2051,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2116,7 +2116,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2181,7 +2181,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2246,7 +2246,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2309,7 +2309,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2338,7 +2338,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>117</m_topoIndex>
+				<m_topoIndex>77</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_53">
@@ -2372,7 +2372,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2438,7 +2438,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2501,7 +2501,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2572,7 +2572,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2645,7 +2645,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2718,7 +2718,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2788,7 +2788,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2860,7 +2860,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -2932,7 +2932,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3004,7 +3004,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3076,7 +3076,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3148,7 +3148,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3220,7 +3220,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3292,7 +3292,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3364,7 +3364,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3436,7 +3436,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3508,7 +3508,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3580,7 +3580,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3652,7 +3652,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3724,7 +3724,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3796,7 +3796,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3868,7 +3868,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -3940,7 +3940,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4010,7 +4010,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4041,7 +4041,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>118</m_topoIndex>
+				<m_topoIndex>78</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_77">
@@ -4082,7 +4082,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4110,7 +4110,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>1</m_isLCDNode>
 				<m_isStartOfPath>1</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>61</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4152,7 +4152,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4180,7 +4180,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>62</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4222,7 +4222,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4250,7 +4250,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>63</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4292,7 +4292,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4320,7 +4320,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>64</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4362,7 +4362,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4390,7 +4390,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>65</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4432,7 +4432,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4460,7 +4460,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>66</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4502,7 +4502,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4530,7 +4530,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>67</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4572,7 +4572,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4600,7 +4600,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>68</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4642,7 +4642,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4670,7 +4670,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>69</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4712,7 +4712,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4740,7 +4740,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>70</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4782,7 +4782,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4810,7 +4810,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>71</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4852,7 +4852,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4880,7 +4880,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>72</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4922,7 +4922,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -4950,7 +4950,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>73</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4992,7 +4992,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5020,7 +5020,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>74</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -5062,7 +5062,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5090,7 +5090,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>75</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -5132,7 +5132,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5160,7 +5160,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>76</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -5202,7 +5202,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5265,7 +5265,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.48</m_delay>
-				<m_topoIndex>119</m_topoIndex>
+				<m_topoIndex>79</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_94">
@@ -5306,7 +5306,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5337,7 +5337,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.80</m_delay>
-				<m_topoIndex>120</m_topoIndex>
+				<m_topoIndex>80</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_95">
@@ -5371,7 +5371,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5403,7 +5403,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>121</m_topoIndex>
+				<m_topoIndex>81</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_96">
@@ -5437,7 +5437,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5466,7 +5466,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>122</m_topoIndex>
+				<m_topoIndex>82</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_97">
@@ -5500,7 +5500,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5531,7 +5531,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.39</m_delay>
-				<m_topoIndex>123</m_topoIndex>
+				<m_topoIndex>83</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_98">
@@ -5565,7 +5565,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5597,7 +5597,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>77</m_topoIndex>
+				<m_topoIndex>84</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_99">
@@ -5631,7 +5631,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5660,7 +5660,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>78</m_topoIndex>
+				<m_topoIndex>85</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_100">
@@ -5694,7 +5694,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5725,7 +5725,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>79</m_topoIndex>
+				<m_topoIndex>86</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_101">
@@ -5759,7 +5759,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5788,7 +5788,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>80</m_topoIndex>
+				<m_topoIndex>87</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_102">
@@ -5822,7 +5822,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5852,7 +5852,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.82</m_delay>
-				<m_topoIndex>81</m_topoIndex>
+				<m_topoIndex>88</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_103">
@@ -5893,7 +5893,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5925,7 +5925,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>82</m_topoIndex>
+				<m_topoIndex>89</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_104">
@@ -5966,7 +5966,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -5998,7 +5998,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>83</m_topoIndex>
+				<m_topoIndex>90</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_105">
@@ -6039,7 +6039,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6068,7 +6068,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>84</m_topoIndex>
+				<m_topoIndex>91</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_106">
@@ -6109,7 +6109,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6140,7 +6140,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>85</m_topoIndex>
+				<m_topoIndex>92</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_107">
@@ -6181,7 +6181,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6212,7 +6212,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>86</m_topoIndex>
+				<m_topoIndex>93</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_108">
@@ -6253,7 +6253,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6284,7 +6284,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>87</m_topoIndex>
+				<m_topoIndex>94</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_109">
@@ -6325,7 +6325,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6356,7 +6356,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>88</m_topoIndex>
+				<m_topoIndex>95</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_110">
@@ -6397,7 +6397,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6428,7 +6428,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>89</m_topoIndex>
+				<m_topoIndex>96</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_111">
@@ -6469,7 +6469,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6500,7 +6500,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>90</m_topoIndex>
+				<m_topoIndex>97</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_112">
@@ -6541,7 +6541,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6572,7 +6572,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>91</m_topoIndex>
+				<m_topoIndex>98</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_113">
@@ -6613,7 +6613,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6644,7 +6644,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>92</m_topoIndex>
+				<m_topoIndex>99</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_114">
@@ -6685,7 +6685,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6716,7 +6716,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>93</m_topoIndex>
+				<m_topoIndex>100</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_115">
@@ -6757,7 +6757,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6788,7 +6788,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>94</m_topoIndex>
+				<m_topoIndex>101</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_116">
@@ -6829,7 +6829,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6860,7 +6860,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>95</m_topoIndex>
+				<m_topoIndex>102</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_117">
@@ -6901,7 +6901,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -6932,7 +6932,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>96</m_topoIndex>
+				<m_topoIndex>103</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_118">
@@ -6973,7 +6973,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7004,7 +7004,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>97</m_topoIndex>
+				<m_topoIndex>104</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_119">
@@ -7045,7 +7045,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7076,7 +7076,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>98</m_topoIndex>
+				<m_topoIndex>105</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_120">
@@ -7117,7 +7117,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7148,7 +7148,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>99</m_topoIndex>
+				<m_topoIndex>106</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_121">
@@ -7189,7 +7189,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7220,7 +7220,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>100</m_topoIndex>
+				<m_topoIndex>107</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_122">
@@ -7261,7 +7261,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7331,7 +7331,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7403,7 +7403,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7431,8 +7431,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>1</m_isLCDNode>
 				<m_isStartOfPath>1</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>101</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>108</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_125">
@@ -7473,7 +7473,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7501,8 +7501,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>102</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>109</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_126">
@@ -7543,7 +7543,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7571,8 +7571,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>103</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>110</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_127">
@@ -7613,7 +7613,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7641,8 +7641,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>104</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>111</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_128">
@@ -7683,7 +7683,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7711,8 +7711,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>105</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>112</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_129">
@@ -7753,7 +7753,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7781,8 +7781,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>106</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>113</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_130">
@@ -7823,7 +7823,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7851,8 +7851,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>107</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>114</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_131">
@@ -7893,7 +7893,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7921,8 +7921,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>108</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>115</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_132">
@@ -7963,7 +7963,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -7991,8 +7991,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>109</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>116</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_133">
@@ -8033,7 +8033,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8061,8 +8061,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>110</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>117</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_134">
@@ -8103,7 +8103,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8131,8 +8131,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>111</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>118</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_135">
@@ -8173,7 +8173,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8201,8 +8201,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>112</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>119</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_136">
@@ -8243,7 +8243,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8271,8 +8271,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>113</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>120</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_137">
@@ -8313,7 +8313,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8341,8 +8341,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>114</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>121</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_138">
@@ -8383,7 +8383,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8411,8 +8411,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>115</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>122</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_139">
@@ -8453,7 +8453,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8481,8 +8481,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
-				<m_topoIndex>116</m_topoIndex>
+				<m_delay>0.67</m_delay>
+				<m_topoIndex>123</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_140">
@@ -8523,7 +8523,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8627,7 +8627,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8692,7 +8692,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8755,7 +8755,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8820,7 +8820,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8883,7 +8883,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -8947,7 +8947,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9012,7 +9012,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9076,7 +9076,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9139,7 +9139,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9171,7 +9171,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>136</m_topoIndex>
+				<m_topoIndex>137</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_150">
@@ -9205,7 +9205,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9271,7 +9271,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9334,7 +9334,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9399,7 +9399,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9462,7 +9462,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9525,7 +9525,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9596,7 +9596,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9669,7 +9669,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9742,7 +9742,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9812,7 +9812,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9884,7 +9884,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -9956,7 +9956,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10028,7 +10028,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10100,7 +10100,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10172,7 +10172,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10244,7 +10244,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10316,7 +10316,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10388,7 +10388,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10460,7 +10460,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10532,7 +10532,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10604,7 +10604,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10676,7 +10676,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10748,7 +10748,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10820,7 +10820,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10892,7 +10892,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -10964,7 +10964,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11034,7 +11034,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11106,7 +11106,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11134,7 +11134,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>165</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -11176,7 +11176,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11204,7 +11204,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>166</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -11246,7 +11246,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11274,7 +11274,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>167</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -11316,7 +11316,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11344,7 +11344,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>168</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -11386,7 +11386,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11414,7 +11414,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>169</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -11456,7 +11456,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11484,7 +11484,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>170</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -11526,7 +11526,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11554,7 +11554,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>171</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -11596,7 +11596,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11624,7 +11624,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>172</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -11666,7 +11666,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11694,7 +11694,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>173</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -11736,7 +11736,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11764,7 +11764,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>174</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -11806,7 +11806,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11834,7 +11834,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>175</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -11876,7 +11876,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11904,7 +11904,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>176</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -11946,7 +11946,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -11974,7 +11974,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>177</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -12016,7 +12016,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12044,7 +12044,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>178</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -12086,7 +12086,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12114,7 +12114,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>179</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -12156,7 +12156,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12184,7 +12184,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.23</m_delay>
+				<m_delay>0.67</m_delay>
 				<m_topoIndex>180</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -12226,7 +12226,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12330,7 +12330,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12395,7 +12395,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12458,7 +12458,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12521,7 +12521,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12584,7 +12584,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12647,7 +12647,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12720,7 +12720,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12745,9 +12745,9 @@
 				</oprand_edges>
 				<opcode>sext</opcode>
 				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>1</m_isOnCriticalPath>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>1</m_isStartOfPath>
+				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
 				<m_topoIndex>34</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
@@ -12783,7 +12783,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12808,10 +12808,10 @@
 				</oprand_edges>
 				<opcode>sitofp</opcode>
 				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>1</m_isOnCriticalPath>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>3.23</m_delay>
+				<m_delay>7.89</m_delay>
 				<m_topoIndex>35</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -12846,7 +12846,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12875,8 +12875,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.41</m_delay>
-				<m_topoIndex>137</m_topoIndex>
+				<m_delay>7.01</m_delay>
+				<m_topoIndex>136</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_203">
@@ -12910,7 +12910,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -12973,7 +12973,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13001,7 +13001,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>3.23</m_delay>
+				<m_delay>7.89</m_delay>
 				<m_topoIndex>139</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -13036,7 +13036,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13065,7 +13065,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.41</m_delay>
+				<m_delay>7.01</m_delay>
 				<m_topoIndex>184</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -13100,7 +13100,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13163,7 +13163,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13191,7 +13191,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>3.23</m_delay>
+				<m_delay>7.89</m_delay>
 				<m_topoIndex>186</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -13226,7 +13226,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13255,7 +13255,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.41</m_delay>
+				<m_delay>7.01</m_delay>
 				<m_topoIndex>187</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -13290,7 +13290,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13354,7 +13354,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13418,7 +13418,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13482,7 +13482,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13546,7 +13546,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13610,7 +13610,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13674,7 +13674,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13738,7 +13738,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13802,7 +13802,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13883,7 +13883,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -13912,7 +13912,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.29</m_delay>
+				<m_delay>6.43</m_delay>
 				<m_topoIndex>197</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -13947,7 +13947,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14025,7 +14025,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14091,7 +14091,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14154,7 +14154,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14220,7 +14220,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14283,7 +14283,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14349,7 +14349,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14412,7 +14412,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14478,7 +14478,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14541,7 +14541,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14607,7 +14607,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14670,7 +14670,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14736,7 +14736,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14799,7 +14799,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14865,7 +14865,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14928,7 +14928,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -14994,7 +14994,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -15057,7 +15057,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -15123,7 +15123,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>488</second>
+										<second>490</second>
 									</item>
 								</second>
 							</item>
@@ -20804,8 +20804,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>804</mMinLatency>
-			<mMaxLatency>804</mMaxLatency>
+			<mMinLatency>786</mMinLatency>
+			<mMaxLatency>786</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -20857,11 +20857,11 @@
 				<item>272</item>
 			</basic_blocks>
 			<mII>3</mII>
-			<mDepth>38</mDepth>
+			<mDepth>20</mDepth>
 			<mMinTripCount>256</mMinTripCount>
 			<mMaxTripCount>256</mMaxTripCount>
-			<mMinLatency>802</mMinLatency>
-			<mMaxLatency>802</mMaxLatency>
+			<mMinLatency>784</mMinLatency>
+			<mMaxLatency>784</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -21030,1001 +21030,1001 @@
 		<item>
 			<first>77</first>
 			<second>
-				<first>8</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>78</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>79</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>80</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>81</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>82</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>83</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>84</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>85</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>86</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>87</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>88</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>89</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>90</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>91</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>92</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>93</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>94</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>95</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>96</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>97</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>98</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>99</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>100</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>101</first>
 			<second>
-				<first>8</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>102</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>103</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>104</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>105</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>106</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>107</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>108</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>109</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>110</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>111</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>112</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>113</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>114</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>115</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>116</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>117</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>118</first>
 			<second>
-				<first>8</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>119</first>
 			<second>
-				<first>8</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>120</first>
 			<second>
-				<first>8</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>121</first>
 			<second>
-				<first>8</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>122</first>
 			<second>
-				<first>8</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>123</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>124</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>125</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>126</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>127</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>128</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>129</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>130</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>131</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>132</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>133</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>134</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>135</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>136</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>137</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>138</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>139</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>140</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>141</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>142</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>143</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>144</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>145</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>146</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>147</first>
 			<second>
-				<first>8</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>148</first>
 			<second>
-				<first>8</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>149</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>150</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>151</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>152</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>153</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>154</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>155</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>156</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>157</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>158</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>159</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>160</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>161</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>162</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>163</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>164</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>165</first>
 			<second>
-				<first>8</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>166</first>
 			<second>
-				<first>8</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>167</first>
 			<second>
-				<first>8</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>168</first>
 			<second>
-				<first>8</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>169</first>
 			<second>
-				<first>8</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>170</first>
 			<second>
-				<first>8</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>171</first>
 			<second>
-				<first>8</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>172</first>
 			<second>
-				<first>8</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>173</first>
 			<second>
-				<first>8</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>174</first>
 			<second>
-				<first>9</first>
+				<first>6</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>175</first>
 			<second>
-				<first>8</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>176</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>177</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>178</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>179</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>180</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>181</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>182</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>183</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>184</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>185</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>186</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>187</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>188</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>189</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>190</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>191</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>192</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>193</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>194</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>195</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>196</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>197</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>198</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>199</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>200</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>201</first>
 			<second>
-				<first>15</first>
+				<first>9</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>202</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>203</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>204</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>205</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>206</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>207</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>208</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>209</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>210</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>211</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>212</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>213</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>214</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>215</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>216</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>217</first>
 			<second>
-				<first>14</first>
+				<first>8</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>218</first>
 			<second>
-				<first>15</first>
+				<first>9</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>219</first>
 			<second>
-				<first>15</first>
+				<first>9</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -22074,126 +22074,126 @@
 			<first>226</first>
 			<second>
 				<first>2</first>
-				<second>6</second>
+				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>227</first>
 			<second>
-				<first>9</first>
-				<second>6</second>
+				<first>5</first>
+				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>228</first>
 			<second>
-				<first>9</first>
+				<first>6</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>229</first>
 			<second>
-				<first>9</first>
-				<second>6</second>
+				<first>6</first>
+				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>230</first>
 			<second>
-				<first>16</first>
-				<second>6</second>
+				<first>9</first>
+				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>231</first>
 			<second>
-				<first>16</first>
+				<first>10</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>232</first>
 			<second>
-				<first>16</first>
-				<second>6</second>
+				<first>10</first>
+				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>233</first>
 			<second>
-				<first>23</first>
-				<second>6</second>
+				<first>13</first>
+				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>234</first>
 			<second>
-				<first>29</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>235</first>
 			<second>
-				<first>29</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>236</first>
 			<second>
-				<first>29</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>237</first>
 			<second>
-				<first>29</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>238</first>
 			<second>
-				<first>29</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>239</first>
 			<second>
-				<first>29</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>240</first>
 			<second>
-				<first>29</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>241</first>
 			<second>
-				<first>29</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>242</first>
 			<second>
-				<first>29</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>243</first>
 			<second>
-				<first>30</first>
-				<second>7</second>
+				<first>16</first>
+				<second>3</second>
 			</second>
 		</item>
 		<item>
@@ -22206,7 +22206,7 @@
 		<item>
 			<first>246</first>
 			<second>
-				<first>37</first>
+				<first>19</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -22220,7 +22220,7 @@
 		<item>
 			<first>249</first>
 			<second>
-				<first>37</first>
+				<first>19</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -22234,7 +22234,7 @@
 		<item>
 			<first>252</first>
 			<second>
-				<first>37</first>
+				<first>19</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -22248,7 +22248,7 @@
 		<item>
 			<first>255</first>
 			<second>
-				<first>37</first>
+				<first>19</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -22262,7 +22262,7 @@
 		<item>
 			<first>258</first>
 			<second>
-				<first>37</first>
+				<first>19</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -22276,7 +22276,7 @@
 		<item>
 			<first>261</first>
 			<second>
-				<first>37</first>
+				<first>19</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -22290,7 +22290,7 @@
 		<item>
 			<first>264</first>
 			<second>
-				<first>37</first>
+				<first>19</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -22304,7 +22304,7 @@
 		<item>
 			<first>267</first>
 			<second>
-				<first>37</first>
+				<first>19</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -22332,7 +22332,7 @@
 		<item>
 			<first>273</first>
 			<second>
-				<first>34</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -22358,63 +22358,63 @@
 			<first>245</first>
 			<second>
 				<first>1</first>
-				<second>38</second>
+				<second>20</second>
 			</second>
 		</item>
 		<item>
 			<first>248</first>
 			<second>
 				<first>2</first>
-				<second>38</second>
+				<second>20</second>
 			</second>
 		</item>
 		<item>
 			<first>251</first>
 			<second>
 				<first>2</first>
-				<second>38</second>
+				<second>20</second>
 			</second>
 		</item>
 		<item>
 			<first>254</first>
 			<second>
 				<first>2</first>
-				<second>38</second>
+				<second>20</second>
 			</second>
 		</item>
 		<item>
 			<first>257</first>
 			<second>
 				<first>2</first>
-				<second>38</second>
+				<second>20</second>
 			</second>
 		</item>
 		<item>
 			<first>260</first>
 			<second>
 				<first>2</first>
-				<second>38</second>
+				<second>20</second>
 			</second>
 		</item>
 		<item>
 			<first>263</first>
 			<second>
 				<first>2</first>
-				<second>38</second>
+				<second>20</second>
 			</second>
 		</item>
 		<item>
 			<first>266</first>
 			<second>
 				<first>2</first>
-				<second>38</second>
+				<second>20</second>
 			</second>
 		</item>
 		<item>
 			<first>269</first>
 			<second>
 				<first>2</first>
-				<second>38</second>
+				<second>20</second>
 			</second>
 		</item>
 		<item>
@@ -22459,7 +22459,7 @@
 			<anchor_node>-1</anchor_node>
 			<region_type>8</region_type>
 			<interval>3</interval>
-			<pipe_depth>38</pipe_depth>
+			<pipe_depth>20</pipe_depth>
 			<mDBIIViolationVec class_id="34" tracking_level="0" version="0">
 				<count>2</count>
 				<item_version>0</item_version>
@@ -22478,7 +22478,7 @@
 						<item class_id="38" tracking_level="0" version="0">
 							<first class_id="39" tracking_level="0" version="0">
 								<first class_id_reference="9" object_id_reference="_124"></first>
-								<second>core:RAM_1P_BRAM:rb_0::load:store</second>
+								<second>core:RAM_1P_LUTRAM:rb_0::load:store</second>
 							</first>
 							<second>149</second>
 						</item>
@@ -22506,14 +22506,14 @@
 						<item>
 							<first>
 								<first class_id_reference="9" object_id_reference="_77"></first>
-								<second>core:RAM_1P_BRAM:rb_0::load:store</second>
+								<second>core:RAM_1P_LUTRAM:rb_0::load:store</second>
 							</first>
 							<second>102</second>
 						</item>
 						<item>
 							<first>
 								<first class_id_reference="9" object_id_reference="_177"></first>
-								<second>core:RAM_1P_BRAM:rb_0::load:store</second>
+								<second>core:RAM_1P_LUTRAM:rb_0::load:store</second>
 							</first>
 							<second>202</second>
 						</item>

@@ -9,8 +9,8 @@
 <ProductFamily>zynquplus</ProductFamily>
 <Part>xck26-sfvc784-2LV-c</Part>
 <TopModelName>mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2</TopModelName>
-<TargetClockPeriod>3.33</TargetClockPeriod>
-<ClockUncertainty>0.90</ClockUncertainty>
+<TargetClockPeriod>10.00</TargetClockPeriod>
+<ClockUncertainty>2.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,29 +18,29 @@
 <PipelineType>loop auto-rewind stp (delay=0 cycles)</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>2.233</EstimatedClockPeriod>
+<EstimatedClockPeriod>4.514</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>264</Best-caseLatency>
-<Average-caseLatency>264</Average-caseLatency>
-<Worst-caseLatency>264</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.879 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.879 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.879 us</Worst-caseRealTimeLatency>
+<Best-caseLatency>261</Best-caseLatency>
+<Average-caseLatency>261</Average-caseLatency>
+<Worst-caseLatency>261</Worst-caseLatency>
+<Best-caseRealTimeLatency>2.610 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>2.610 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>2.610 us</Worst-caseRealTimeLatency>
 <Interval-min>257</Interval-min>
 <Interval-max>257</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <MAC_BLOCKS_G2>
-<Slack>2.43</Slack>
+<Slack>8.00</Slack>
 <TripCount>256</TripCount>
 <isPerfectNested>0</isPerfectNested>
-<Latency>262</Latency>
-<AbsoluteTimeLatency>872</AbsoluteTimeLatency>
+<Latency>259</Latency>
+<AbsoluteTimeLatency>2590</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>8</PipelineDepth>
+<PipelineDepth>5</PipelineDepth>
 <PerformancePragma>-</PerformancePragma>
 <InstanceList>
 </InstanceList>
@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:419</SourceLocation>
+<SourceLocation>swiglu.cpp:421</SourceLocation>
 <SummaryOfLoopViolations>
 <MAC_BLOCKS_G2>
 <Name>MAC_BLOCKS_G2</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:419</SourceLocation>
+<SourceLocation>swiglu.cpp:421</SourceLocation>
 </MAC_BLOCKS_G2>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -64,8 +64,8 @@
 <AreaEstimates>
 <Resources>
 <DSP>16</DSP>
-<FF>405</FF>
-<LUT>3327</LUT>
+<FF>186</FF>
+<LUT>3295</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>

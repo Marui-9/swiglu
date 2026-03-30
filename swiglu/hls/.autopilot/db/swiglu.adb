@@ -756,7 +756,7 @@
               <name>x_local_1</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -772,7 +772,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -781,12 +781,12 @@
               <rtlName>x_local_1_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -812,7 +812,7 @@
               <name>x_local_1_1</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -828,7 +828,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -837,12 +837,12 @@
               <rtlName>x_local_1_1_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -868,7 +868,7 @@
               <name>x_local_1_2</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -884,7 +884,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -893,12 +893,12 @@
               <rtlName>x_local_1_2_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -924,7 +924,7 @@
               <name>x_local_1_3</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -940,7 +940,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -949,12 +949,12 @@
               <rtlName>x_local_1_3_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -980,7 +980,7 @@
               <name>x_local_1_4</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -996,7 +996,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1005,12 +1005,12 @@
               <rtlName>x_local_1_4_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1036,7 +1036,7 @@
               <name>x_local_1_5</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1052,7 +1052,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1061,12 +1061,12 @@
               <rtlName>x_local_1_5_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1092,7 +1092,7 @@
               <name>x_local_1_6</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1108,7 +1108,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1117,12 +1117,12 @@
               <rtlName>x_local_1_6_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1148,7 +1148,7 @@
               <name>x_local_1_7</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1164,7 +1164,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1173,12 +1173,12 @@
               <rtlName>x_local_1_7_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1204,7 +1204,7 @@
               <name>x_local_1_8</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1220,7 +1220,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1229,12 +1229,12 @@
               <rtlName>x_local_1_8_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1260,7 +1260,7 @@
               <name>x_local_1_9</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1276,7 +1276,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1285,12 +1285,12 @@
               <rtlName>x_local_1_9_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1316,7 +1316,7 @@
               <name>x_local_1_10</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1332,7 +1332,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1341,12 +1341,12 @@
               <rtlName>x_local_1_10_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1372,7 +1372,7 @@
               <name>x_local_1_11</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1388,7 +1388,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1397,12 +1397,12 @@
               <rtlName>x_local_1_11_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1428,7 +1428,7 @@
               <name>x_local_1_12</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1444,7 +1444,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1453,12 +1453,12 @@
               <rtlName>x_local_1_12_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1484,7 +1484,7 @@
               <name>x_local_1_13</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1500,7 +1500,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1509,12 +1509,12 @@
               <rtlName>x_local_1_13_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1540,7 +1540,7 @@
               <name>x_local_1_14</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1556,7 +1556,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1565,12 +1565,12 @@
               <rtlName>x_local_1_14_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1596,7 +1596,7 @@
               <name>x_local_1_15</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1612,7 +1612,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1621,12 +1621,12 @@
               <rtlName>x_local_1_15_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1652,7 +1652,7 @@
               <name>x_local_1_16</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1668,7 +1668,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1677,12 +1677,12 @@
               <rtlName>x_local_1_16_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1708,7 +1708,7 @@
               <name>x_local_1_17</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1724,7 +1724,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1733,12 +1733,12 @@
               <rtlName>x_local_1_17_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1764,7 +1764,7 @@
               <name>x_local_1_18</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1780,7 +1780,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1789,12 +1789,12 @@
               <rtlName>x_local_1_18_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1820,7 +1820,7 @@
               <name>x_local_1_19</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1836,7 +1836,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1845,12 +1845,12 @@
               <rtlName>x_local_1_19_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1876,7 +1876,7 @@
               <name>x_local_1_20</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1892,7 +1892,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1901,12 +1901,12 @@
               <rtlName>x_local_1_20_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1932,7 +1932,7 @@
               <name>x_local_1_21</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -1948,7 +1948,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -1957,12 +1957,12 @@
               <rtlName>x_local_1_21_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -1988,7 +1988,7 @@
               <name>x_local_1_22</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2004,7 +2004,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2013,12 +2013,12 @@
               <rtlName>x_local_1_22_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2044,7 +2044,7 @@
               <name>x_local_1_23</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2060,7 +2060,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2069,12 +2069,12 @@
               <rtlName>x_local_1_23_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2100,7 +2100,7 @@
               <name>x_local_1_24</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2116,7 +2116,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2125,12 +2125,12 @@
               <rtlName>x_local_1_24_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2156,7 +2156,7 @@
               <name>x_local_1_25</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2172,7 +2172,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2181,12 +2181,12 @@
               <rtlName>x_local_1_25_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2212,7 +2212,7 @@
               <name>x_local_1_26</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2228,7 +2228,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2237,12 +2237,12 @@
               <rtlName>x_local_1_26_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2268,7 +2268,7 @@
               <name>x_local_1_27</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2284,7 +2284,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2293,12 +2293,12 @@
               <rtlName>x_local_1_27_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2324,7 +2324,7 @@
               <name>x_local_1_28</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2340,7 +2340,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2349,12 +2349,12 @@
               <rtlName>x_local_1_28_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2380,7 +2380,7 @@
               <name>x_local_1_29</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2396,7 +2396,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2405,12 +2405,12 @@
               <rtlName>x_local_1_29_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2436,7 +2436,7 @@
               <name>x_local_1_30</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2452,7 +2452,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2461,12 +2461,12 @@
               <rtlName>x_local_1_30_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2492,7 +2492,7 @@
               <name>x_local_1_31</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2508,7 +2508,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2517,12 +2517,12 @@
               <rtlName>x_local_1_31_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2548,7 +2548,7 @@
               <name>x_local_1_32</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2564,7 +2564,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2573,12 +2573,12 @@
               <rtlName>x_local_1_32_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2604,7 +2604,7 @@
               <name>x_local_1_33</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2620,7 +2620,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2629,12 +2629,12 @@
               <rtlName>x_local_1_33_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2660,7 +2660,7 @@
               <name>x_local_1_34</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2676,7 +2676,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2685,12 +2685,12 @@
               <rtlName>x_local_1_34_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2716,7 +2716,7 @@
               <name>x_local_1_35</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2732,7 +2732,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2741,12 +2741,12 @@
               <rtlName>x_local_1_35_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2772,7 +2772,7 @@
               <name>x_local_1_36</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2788,7 +2788,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2797,12 +2797,12 @@
               <rtlName>x_local_1_36_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2828,7 +2828,7 @@
               <name>x_local_1_37</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2844,7 +2844,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2853,12 +2853,12 @@
               <rtlName>x_local_1_37_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2884,7 +2884,7 @@
               <name>x_local_1_38</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2900,7 +2900,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2909,12 +2909,12 @@
               <rtlName>x_local_1_38_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2940,7 +2940,7 @@
               <name>x_local_1_39</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -2956,7 +2956,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -2965,12 +2965,12 @@
               <rtlName>x_local_1_39_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -2996,7 +2996,7 @@
               <name>x_local_1_40</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3012,7 +3012,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3021,12 +3021,12 @@
               <rtlName>x_local_1_40_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3052,7 +3052,7 @@
               <name>x_local_1_41</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3068,7 +3068,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3077,12 +3077,12 @@
               <rtlName>x_local_1_41_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3108,7 +3108,7 @@
               <name>x_local_1_42</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3124,7 +3124,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3133,12 +3133,12 @@
               <rtlName>x_local_1_42_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3164,7 +3164,7 @@
               <name>x_local_1_43</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3180,7 +3180,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3189,12 +3189,12 @@
               <rtlName>x_local_1_43_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3220,7 +3220,7 @@
               <name>x_local_1_44</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3236,7 +3236,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3245,12 +3245,12 @@
               <rtlName>x_local_1_44_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3276,7 +3276,7 @@
               <name>x_local_1_45</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3292,7 +3292,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3301,12 +3301,12 @@
               <rtlName>x_local_1_45_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3332,7 +3332,7 @@
               <name>x_local_1_46</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3348,7 +3348,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3357,12 +3357,12 @@
               <rtlName>x_local_1_46_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3388,7 +3388,7 @@
               <name>x_local_1_47</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3404,7 +3404,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3413,12 +3413,12 @@
               <rtlName>x_local_1_47_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3444,7 +3444,7 @@
               <name>x_local_1_48</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3460,7 +3460,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3469,12 +3469,12 @@
               <rtlName>x_local_1_48_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3500,7 +3500,7 @@
               <name>x_local_1_49</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3516,7 +3516,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3525,12 +3525,12 @@
               <rtlName>x_local_1_49_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3556,7 +3556,7 @@
               <name>x_local_1_50</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3572,7 +3572,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3581,12 +3581,12 @@
               <rtlName>x_local_1_50_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3612,7 +3612,7 @@
               <name>x_local_1_51</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3628,7 +3628,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3637,12 +3637,12 @@
               <rtlName>x_local_1_51_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3668,7 +3668,7 @@
               <name>x_local_1_52</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3684,7 +3684,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3693,12 +3693,12 @@
               <rtlName>x_local_1_52_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3724,7 +3724,7 @@
               <name>x_local_1_53</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3740,7 +3740,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3749,12 +3749,12 @@
               <rtlName>x_local_1_53_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3780,7 +3780,7 @@
               <name>x_local_1_54</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3796,7 +3796,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3805,12 +3805,12 @@
               <rtlName>x_local_1_54_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3836,7 +3836,7 @@
               <name>x_local_1_55</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3852,7 +3852,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3861,12 +3861,12 @@
               <rtlName>x_local_1_55_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3892,7 +3892,7 @@
               <name>x_local_1_56</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3908,7 +3908,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3917,12 +3917,12 @@
               <rtlName>x_local_1_56_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -3948,7 +3948,7 @@
               <name>x_local_1_57</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -3964,7 +3964,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -3973,12 +3973,12 @@
               <rtlName>x_local_1_57_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4004,7 +4004,7 @@
               <name>x_local_1_58</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4020,7 +4020,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4029,12 +4029,12 @@
               <rtlName>x_local_1_58_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4060,7 +4060,7 @@
               <name>x_local_1_59</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4076,7 +4076,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4085,12 +4085,12 @@
               <rtlName>x_local_1_59_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4116,7 +4116,7 @@
               <name>x_local_1_60</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4132,7 +4132,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4141,12 +4141,12 @@
               <rtlName>x_local_1_60_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4172,7 +4172,7 @@
               <name>x_local_1_61</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4188,7 +4188,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4197,12 +4197,12 @@
               <rtlName>x_local_1_61_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4228,7 +4228,7 @@
               <name>x_local_1_62</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4244,7 +4244,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4253,12 +4253,12 @@
               <rtlName>x_local_1_62_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4284,7 +4284,7 @@
               <name>x_local_1_63</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4300,7 +4300,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4309,12 +4309,12 @@
               <rtlName>x_local_1_63_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4340,7 +4340,7 @@
               <name>x_local_1_64</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4356,7 +4356,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4365,12 +4365,12 @@
               <rtlName>x_local_1_64_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4396,7 +4396,7 @@
               <name>x_local_1_65</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4412,7 +4412,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4421,12 +4421,12 @@
               <rtlName>x_local_1_65_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4452,7 +4452,7 @@
               <name>x_local_1_66</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4468,7 +4468,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4477,12 +4477,12 @@
               <rtlName>x_local_1_66_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4508,7 +4508,7 @@
               <name>x_local_1_67</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4524,7 +4524,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4533,12 +4533,12 @@
               <rtlName>x_local_1_67_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4564,7 +4564,7 @@
               <name>x_local_1_68</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4580,7 +4580,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4589,12 +4589,12 @@
               <rtlName>x_local_1_68_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4620,7 +4620,7 @@
               <name>x_local_1_69</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4636,7 +4636,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4645,12 +4645,12 @@
               <rtlName>x_local_1_69_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4676,7 +4676,7 @@
               <name>x_local_1_70</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4692,7 +4692,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4701,12 +4701,12 @@
               <rtlName>x_local_1_70_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4732,7 +4732,7 @@
               <name>x_local_1_71</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4748,7 +4748,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4757,12 +4757,12 @@
               <rtlName>x_local_1_71_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4788,7 +4788,7 @@
               <name>x_local_1_72</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4804,7 +4804,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4813,12 +4813,12 @@
               <rtlName>x_local_1_72_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4844,7 +4844,7 @@
               <name>x_local_1_73</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4860,7 +4860,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4869,12 +4869,12 @@
               <rtlName>x_local_1_73_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4900,7 +4900,7 @@
               <name>x_local_1_74</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4916,7 +4916,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4925,12 +4925,12 @@
               <rtlName>x_local_1_74_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -4956,7 +4956,7 @@
               <name>x_local_1_75</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -4972,7 +4972,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -4981,12 +4981,12 @@
               <rtlName>x_local_1_75_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5012,7 +5012,7 @@
               <name>x_local_1_76</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5028,7 +5028,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5037,12 +5037,12 @@
               <rtlName>x_local_1_76_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5068,7 +5068,7 @@
               <name>x_local_1_77</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5084,7 +5084,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5093,12 +5093,12 @@
               <rtlName>x_local_1_77_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5124,7 +5124,7 @@
               <name>x_local_1_78</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5140,7 +5140,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5149,12 +5149,12 @@
               <rtlName>x_local_1_78_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5180,7 +5180,7 @@
               <name>x_local_1_79</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5196,7 +5196,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5205,12 +5205,12 @@
               <rtlName>x_local_1_79_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5236,7 +5236,7 @@
               <name>x_local_1_80</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5252,7 +5252,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5261,12 +5261,12 @@
               <rtlName>x_local_1_80_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5292,7 +5292,7 @@
               <name>x_local_1_81</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5308,7 +5308,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5317,12 +5317,12 @@
               <rtlName>x_local_1_81_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5348,7 +5348,7 @@
               <name>x_local_1_82</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5364,7 +5364,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5373,12 +5373,12 @@
               <rtlName>x_local_1_82_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5404,7 +5404,7 @@
               <name>x_local_1_83</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5420,7 +5420,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5429,12 +5429,12 @@
               <rtlName>x_local_1_83_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5460,7 +5460,7 @@
               <name>x_local_1_84</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5476,7 +5476,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5485,12 +5485,12 @@
               <rtlName>x_local_1_84_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5516,7 +5516,7 @@
               <name>x_local_1_85</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5532,7 +5532,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5541,12 +5541,12 @@
               <rtlName>x_local_1_85_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5572,7 +5572,7 @@
               <name>x_local_1_86</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5588,7 +5588,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5597,12 +5597,12 @@
               <rtlName>x_local_1_86_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5628,7 +5628,7 @@
               <name>x_local_1_87</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5644,7 +5644,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5653,12 +5653,12 @@
               <rtlName>x_local_1_87_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5684,7 +5684,7 @@
               <name>x_local_1_88</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5700,7 +5700,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5709,12 +5709,12 @@
               <rtlName>x_local_1_88_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5740,7 +5740,7 @@
               <name>x_local_1_89</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5756,7 +5756,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5765,12 +5765,12 @@
               <rtlName>x_local_1_89_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5796,7 +5796,7 @@
               <name>x_local_1_90</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5812,7 +5812,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5821,12 +5821,12 @@
               <rtlName>x_local_1_90_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5852,7 +5852,7 @@
               <name>x_local_1_91</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5868,7 +5868,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5877,12 +5877,12 @@
               <rtlName>x_local_1_91_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5908,7 +5908,7 @@
               <name>x_local_1_92</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5924,7 +5924,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5933,12 +5933,12 @@
               <rtlName>x_local_1_92_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -5964,7 +5964,7 @@
               <name>x_local_1_93</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -5980,7 +5980,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -5989,12 +5989,12 @@
               <rtlName>x_local_1_93_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6020,7 +6020,7 @@
               <name>x_local_1_94</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6036,7 +6036,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6045,12 +6045,12 @@
               <rtlName>x_local_1_94_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6076,7 +6076,7 @@
               <name>x_local_1_95</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6092,7 +6092,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6101,12 +6101,12 @@
               <rtlName>x_local_1_95_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6132,7 +6132,7 @@
               <name>x_local_1_96</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6148,7 +6148,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6157,12 +6157,12 @@
               <rtlName>x_local_1_96_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6188,7 +6188,7 @@
               <name>x_local_1_97</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6204,7 +6204,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6213,12 +6213,12 @@
               <rtlName>x_local_1_97_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6244,7 +6244,7 @@
               <name>x_local_1_98</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6260,7 +6260,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6269,12 +6269,12 @@
               <rtlName>x_local_1_98_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6300,7 +6300,7 @@
               <name>x_local_1_99</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6316,7 +6316,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6325,12 +6325,12 @@
               <rtlName>x_local_1_99_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6356,7 +6356,7 @@
               <name>x_local_1_100</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6372,7 +6372,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6381,12 +6381,12 @@
               <rtlName>x_local_1_100_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6412,7 +6412,7 @@
               <name>x_local_1_101</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6428,7 +6428,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6437,12 +6437,12 @@
               <rtlName>x_local_1_101_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6468,7 +6468,7 @@
               <name>x_local_1_102</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6484,7 +6484,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6493,12 +6493,12 @@
               <rtlName>x_local_1_102_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6524,7 +6524,7 @@
               <name>x_local_1_103</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6540,7 +6540,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6549,12 +6549,12 @@
               <rtlName>x_local_1_103_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6580,7 +6580,7 @@
               <name>x_local_1_104</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6596,7 +6596,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6605,12 +6605,12 @@
               <rtlName>x_local_1_104_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6636,7 +6636,7 @@
               <name>x_local_1_105</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6652,7 +6652,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6661,12 +6661,12 @@
               <rtlName>x_local_1_105_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6692,7 +6692,7 @@
               <name>x_local_1_106</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6708,7 +6708,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6717,12 +6717,12 @@
               <rtlName>x_local_1_106_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6748,7 +6748,7 @@
               <name>x_local_1_107</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6764,7 +6764,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6773,12 +6773,12 @@
               <rtlName>x_local_1_107_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6804,7 +6804,7 @@
               <name>x_local_1_108</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6820,7 +6820,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6829,12 +6829,12 @@
               <rtlName>x_local_1_108_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6860,7 +6860,7 @@
               <name>x_local_1_109</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6876,7 +6876,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6885,12 +6885,12 @@
               <rtlName>x_local_1_109_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6916,7 +6916,7 @@
               <name>x_local_1_110</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6932,7 +6932,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6941,12 +6941,12 @@
               <rtlName>x_local_1_110_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -6972,7 +6972,7 @@
               <name>x_local_1_111</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -6988,7 +6988,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -6997,12 +6997,12 @@
               <rtlName>x_local_1_111_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7028,7 +7028,7 @@
               <name>x_local_1_112</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7044,7 +7044,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7053,12 +7053,12 @@
               <rtlName>x_local_1_112_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7084,7 +7084,7 @@
               <name>x_local_1_113</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7100,7 +7100,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7109,12 +7109,12 @@
               <rtlName>x_local_1_113_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7140,7 +7140,7 @@
               <name>x_local_1_114</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7156,7 +7156,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7165,12 +7165,12 @@
               <rtlName>x_local_1_114_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7196,7 +7196,7 @@
               <name>x_local_1_115</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7212,7 +7212,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7221,12 +7221,12 @@
               <rtlName>x_local_1_115_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7252,7 +7252,7 @@
               <name>x_local_1_116</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7268,7 +7268,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7277,12 +7277,12 @@
               <rtlName>x_local_1_116_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7308,7 +7308,7 @@
               <name>x_local_1_117</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7324,7 +7324,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7333,12 +7333,12 @@
               <rtlName>x_local_1_117_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7364,7 +7364,7 @@
               <name>x_local_1_118</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7380,7 +7380,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7389,12 +7389,12 @@
               <rtlName>x_local_1_118_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7420,7 +7420,7 @@
               <name>x_local_1_119</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7436,7 +7436,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7445,12 +7445,12 @@
               <rtlName>x_local_1_119_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7476,7 +7476,7 @@
               <name>x_local_1_120</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7492,7 +7492,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7501,12 +7501,12 @@
               <rtlName>x_local_1_120_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7532,7 +7532,7 @@
               <name>x_local_1_121</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7548,7 +7548,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7557,12 +7557,12 @@
               <rtlName>x_local_1_121_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7588,7 +7588,7 @@
               <name>x_local_1_122</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7604,7 +7604,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7613,12 +7613,12 @@
               <rtlName>x_local_1_122_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7644,7 +7644,7 @@
               <name>x_local_1_123</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7660,7 +7660,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7669,12 +7669,12 @@
               <rtlName>x_local_1_123_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7700,7 +7700,7 @@
               <name>x_local_1_124</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7716,7 +7716,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7725,12 +7725,12 @@
               <rtlName>x_local_1_124_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7756,7 +7756,7 @@
               <name>x_local_1_125</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7772,7 +7772,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7781,12 +7781,12 @@
               <rtlName>x_local_1_125_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7812,7 +7812,7 @@
               <name>x_local_1_126</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7828,7 +7828,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7837,12 +7837,12 @@
               <rtlName>x_local_1_126_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7868,7 +7868,7 @@
               <name>x_local_1_127</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>595</lineNumber>
+              <lineNumber>597</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7884,7 +7884,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>595</second>
+                      <second>597</second>
                     </item>
                   </second>
                 </item>
@@ -7893,12 +7893,12 @@
               <rtlName>x_local_1_127_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7924,7 +7924,7 @@
               <name>x_local_2</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7940,7 +7940,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -7949,12 +7949,12 @@
               <rtlName>x_local_2_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -7980,7 +7980,7 @@
               <name>x_local_2_1</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -7996,7 +7996,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8005,12 +8005,12 @@
               <rtlName>x_local_2_1_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8036,7 +8036,7 @@
               <name>x_local_2_2</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8052,7 +8052,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8061,12 +8061,12 @@
               <rtlName>x_local_2_2_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8092,7 +8092,7 @@
               <name>x_local_2_3</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8108,7 +8108,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8117,12 +8117,12 @@
               <rtlName>x_local_2_3_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8148,7 +8148,7 @@
               <name>x_local_2_4</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8164,7 +8164,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8173,12 +8173,12 @@
               <rtlName>x_local_2_4_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8204,7 +8204,7 @@
               <name>x_local_2_5</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8220,7 +8220,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8229,12 +8229,12 @@
               <rtlName>x_local_2_5_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8260,7 +8260,7 @@
               <name>x_local_2_6</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8276,7 +8276,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8285,12 +8285,12 @@
               <rtlName>x_local_2_6_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8316,7 +8316,7 @@
               <name>x_local_2_7</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8332,7 +8332,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8341,12 +8341,12 @@
               <rtlName>x_local_2_7_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8372,7 +8372,7 @@
               <name>x_local_2_8</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8388,7 +8388,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8397,12 +8397,12 @@
               <rtlName>x_local_2_8_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8428,7 +8428,7 @@
               <name>x_local_2_9</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8444,7 +8444,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8453,12 +8453,12 @@
               <rtlName>x_local_2_9_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8484,7 +8484,7 @@
               <name>x_local_2_10</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8500,7 +8500,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8509,12 +8509,12 @@
               <rtlName>x_local_2_10_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8540,7 +8540,7 @@
               <name>x_local_2_11</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8556,7 +8556,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8565,12 +8565,12 @@
               <rtlName>x_local_2_11_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8596,7 +8596,7 @@
               <name>x_local_2_12</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8612,7 +8612,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8621,12 +8621,12 @@
               <rtlName>x_local_2_12_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8652,7 +8652,7 @@
               <name>x_local_2_13</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8668,7 +8668,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8677,12 +8677,12 @@
               <rtlName>x_local_2_13_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8708,7 +8708,7 @@
               <name>x_local_2_14</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8724,7 +8724,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8733,12 +8733,12 @@
               <rtlName>x_local_2_14_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8764,7 +8764,7 @@
               <name>x_local_2_15</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8780,7 +8780,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8789,12 +8789,12 @@
               <rtlName>x_local_2_15_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8820,7 +8820,7 @@
               <name>x_local_2_16</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8836,7 +8836,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8845,12 +8845,12 @@
               <rtlName>x_local_2_16_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8876,7 +8876,7 @@
               <name>x_local_2_17</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8892,7 +8892,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8901,12 +8901,12 @@
               <rtlName>x_local_2_17_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8932,7 +8932,7 @@
               <name>x_local_2_18</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -8948,7 +8948,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -8957,12 +8957,12 @@
               <rtlName>x_local_2_18_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -8988,7 +8988,7 @@
               <name>x_local_2_19</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9004,7 +9004,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9013,12 +9013,12 @@
               <rtlName>x_local_2_19_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9044,7 +9044,7 @@
               <name>x_local_2_20</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9060,7 +9060,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9069,12 +9069,12 @@
               <rtlName>x_local_2_20_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9100,7 +9100,7 @@
               <name>x_local_2_21</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9116,7 +9116,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9125,12 +9125,12 @@
               <rtlName>x_local_2_21_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9156,7 +9156,7 @@
               <name>x_local_2_22</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9172,7 +9172,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9181,12 +9181,12 @@
               <rtlName>x_local_2_22_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9212,7 +9212,7 @@
               <name>x_local_2_23</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9228,7 +9228,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9237,12 +9237,12 @@
               <rtlName>x_local_2_23_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9268,7 +9268,7 @@
               <name>x_local_2_24</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9284,7 +9284,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9293,12 +9293,12 @@
               <rtlName>x_local_2_24_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9324,7 +9324,7 @@
               <name>x_local_2_25</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9340,7 +9340,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9349,12 +9349,12 @@
               <rtlName>x_local_2_25_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9380,7 +9380,7 @@
               <name>x_local_2_26</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9396,7 +9396,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9405,12 +9405,12 @@
               <rtlName>x_local_2_26_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9436,7 +9436,7 @@
               <name>x_local_2_27</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9452,7 +9452,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9461,12 +9461,12 @@
               <rtlName>x_local_2_27_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9492,7 +9492,7 @@
               <name>x_local_2_28</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9508,7 +9508,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9517,12 +9517,12 @@
               <rtlName>x_local_2_28_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9548,7 +9548,7 @@
               <name>x_local_2_29</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9564,7 +9564,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9573,12 +9573,12 @@
               <rtlName>x_local_2_29_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9604,7 +9604,7 @@
               <name>x_local_2_30</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9620,7 +9620,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9629,12 +9629,12 @@
               <rtlName>x_local_2_30_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9660,7 +9660,7 @@
               <name>x_local_2_31</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9676,7 +9676,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9685,12 +9685,12 @@
               <rtlName>x_local_2_31_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9716,7 +9716,7 @@
               <name>x_local_2_32</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9732,7 +9732,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9741,12 +9741,12 @@
               <rtlName>x_local_2_32_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9772,7 +9772,7 @@
               <name>x_local_2_33</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9788,7 +9788,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9797,12 +9797,12 @@
               <rtlName>x_local_2_33_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9828,7 +9828,7 @@
               <name>x_local_2_34</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9844,7 +9844,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9853,12 +9853,12 @@
               <rtlName>x_local_2_34_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9884,7 +9884,7 @@
               <name>x_local_2_35</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9900,7 +9900,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9909,12 +9909,12 @@
               <rtlName>x_local_2_35_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9940,7 +9940,7 @@
               <name>x_local_2_36</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -9956,7 +9956,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -9965,12 +9965,12 @@
               <rtlName>x_local_2_36_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -9996,7 +9996,7 @@
               <name>x_local_2_37</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10012,7 +10012,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10021,12 +10021,12 @@
               <rtlName>x_local_2_37_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10052,7 +10052,7 @@
               <name>x_local_2_38</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10068,7 +10068,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10077,12 +10077,12 @@
               <rtlName>x_local_2_38_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10108,7 +10108,7 @@
               <name>x_local_2_39</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10124,7 +10124,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10133,12 +10133,12 @@
               <rtlName>x_local_2_39_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10164,7 +10164,7 @@
               <name>x_local_2_40</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10180,7 +10180,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10189,12 +10189,12 @@
               <rtlName>x_local_2_40_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10220,7 +10220,7 @@
               <name>x_local_2_41</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10236,7 +10236,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10245,12 +10245,12 @@
               <rtlName>x_local_2_41_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10276,7 +10276,7 @@
               <name>x_local_2_42</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10292,7 +10292,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10301,12 +10301,12 @@
               <rtlName>x_local_2_42_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10332,7 +10332,7 @@
               <name>x_local_2_43</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10348,7 +10348,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10357,12 +10357,12 @@
               <rtlName>x_local_2_43_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10388,7 +10388,7 @@
               <name>x_local_2_44</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10404,7 +10404,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10413,12 +10413,12 @@
               <rtlName>x_local_2_44_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10444,7 +10444,7 @@
               <name>x_local_2_45</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10460,7 +10460,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10469,12 +10469,12 @@
               <rtlName>x_local_2_45_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10500,7 +10500,7 @@
               <name>x_local_2_46</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10516,7 +10516,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10525,12 +10525,12 @@
               <rtlName>x_local_2_46_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10556,7 +10556,7 @@
               <name>x_local_2_47</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10572,7 +10572,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10581,12 +10581,12 @@
               <rtlName>x_local_2_47_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10612,7 +10612,7 @@
               <name>x_local_2_48</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10628,7 +10628,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10637,12 +10637,12 @@
               <rtlName>x_local_2_48_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10668,7 +10668,7 @@
               <name>x_local_2_49</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10684,7 +10684,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10693,12 +10693,12 @@
               <rtlName>x_local_2_49_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10724,7 +10724,7 @@
               <name>x_local_2_50</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10740,7 +10740,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10749,12 +10749,12 @@
               <rtlName>x_local_2_50_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10780,7 +10780,7 @@
               <name>x_local_2_51</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10796,7 +10796,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10805,12 +10805,12 @@
               <rtlName>x_local_2_51_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10836,7 +10836,7 @@
               <name>x_local_2_52</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10852,7 +10852,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10861,12 +10861,12 @@
               <rtlName>x_local_2_52_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10892,7 +10892,7 @@
               <name>x_local_2_53</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10908,7 +10908,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10917,12 +10917,12 @@
               <rtlName>x_local_2_53_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -10948,7 +10948,7 @@
               <name>x_local_2_54</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -10964,7 +10964,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -10973,12 +10973,12 @@
               <rtlName>x_local_2_54_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11004,7 +11004,7 @@
               <name>x_local_2_55</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11020,7 +11020,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11029,12 +11029,12 @@
               <rtlName>x_local_2_55_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11060,7 +11060,7 @@
               <name>x_local_2_56</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11076,7 +11076,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11085,12 +11085,12 @@
               <rtlName>x_local_2_56_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11116,7 +11116,7 @@
               <name>x_local_2_57</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11132,7 +11132,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11141,12 +11141,12 @@
               <rtlName>x_local_2_57_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11172,7 +11172,7 @@
               <name>x_local_2_58</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11188,7 +11188,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11197,12 +11197,12 @@
               <rtlName>x_local_2_58_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11228,7 +11228,7 @@
               <name>x_local_2_59</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11244,7 +11244,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11253,12 +11253,12 @@
               <rtlName>x_local_2_59_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11284,7 +11284,7 @@
               <name>x_local_2_60</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11300,7 +11300,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11309,12 +11309,12 @@
               <rtlName>x_local_2_60_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11340,7 +11340,7 @@
               <name>x_local_2_61</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11356,7 +11356,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11365,12 +11365,12 @@
               <rtlName>x_local_2_61_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11396,7 +11396,7 @@
               <name>x_local_2_62</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11412,7 +11412,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11421,12 +11421,12 @@
               <rtlName>x_local_2_62_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11452,7 +11452,7 @@
               <name>x_local_2_63</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11468,7 +11468,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11477,12 +11477,12 @@
               <rtlName>x_local_2_63_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11508,7 +11508,7 @@
               <name>x_local_2_64</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11524,7 +11524,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11533,12 +11533,12 @@
               <rtlName>x_local_2_64_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11564,7 +11564,7 @@
               <name>x_local_2_65</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11580,7 +11580,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11589,12 +11589,12 @@
               <rtlName>x_local_2_65_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11620,7 +11620,7 @@
               <name>x_local_2_66</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11636,7 +11636,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11645,12 +11645,12 @@
               <rtlName>x_local_2_66_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11676,7 +11676,7 @@
               <name>x_local_2_67</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11692,7 +11692,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11701,12 +11701,12 @@
               <rtlName>x_local_2_67_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11732,7 +11732,7 @@
               <name>x_local_2_68</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11748,7 +11748,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11757,12 +11757,12 @@
               <rtlName>x_local_2_68_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11788,7 +11788,7 @@
               <name>x_local_2_69</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11804,7 +11804,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11813,12 +11813,12 @@
               <rtlName>x_local_2_69_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11844,7 +11844,7 @@
               <name>x_local_2_70</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11860,7 +11860,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11869,12 +11869,12 @@
               <rtlName>x_local_2_70_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11900,7 +11900,7 @@
               <name>x_local_2_71</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11916,7 +11916,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11925,12 +11925,12 @@
               <rtlName>x_local_2_71_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -11956,7 +11956,7 @@
               <name>x_local_2_72</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -11972,7 +11972,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -11981,12 +11981,12 @@
               <rtlName>x_local_2_72_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12012,7 +12012,7 @@
               <name>x_local_2_73</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12028,7 +12028,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12037,12 +12037,12 @@
               <rtlName>x_local_2_73_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12068,7 +12068,7 @@
               <name>x_local_2_74</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12084,7 +12084,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12093,12 +12093,12 @@
               <rtlName>x_local_2_74_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12124,7 +12124,7 @@
               <name>x_local_2_75</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12140,7 +12140,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12149,12 +12149,12 @@
               <rtlName>x_local_2_75_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12180,7 +12180,7 @@
               <name>x_local_2_76</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12196,7 +12196,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12205,12 +12205,12 @@
               <rtlName>x_local_2_76_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12236,7 +12236,7 @@
               <name>x_local_2_77</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12252,7 +12252,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12261,12 +12261,12 @@
               <rtlName>x_local_2_77_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12292,7 +12292,7 @@
               <name>x_local_2_78</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12308,7 +12308,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12317,12 +12317,12 @@
               <rtlName>x_local_2_78_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12348,7 +12348,7 @@
               <name>x_local_2_79</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12364,7 +12364,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12373,12 +12373,12 @@
               <rtlName>x_local_2_79_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12404,7 +12404,7 @@
               <name>x_local_2_80</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12420,7 +12420,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12429,12 +12429,12 @@
               <rtlName>x_local_2_80_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12460,7 +12460,7 @@
               <name>x_local_2_81</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12476,7 +12476,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12485,12 +12485,12 @@
               <rtlName>x_local_2_81_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12516,7 +12516,7 @@
               <name>x_local_2_82</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12532,7 +12532,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12541,12 +12541,12 @@
               <rtlName>x_local_2_82_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12572,7 +12572,7 @@
               <name>x_local_2_83</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12588,7 +12588,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12597,12 +12597,12 @@
               <rtlName>x_local_2_83_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12628,7 +12628,7 @@
               <name>x_local_2_84</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12644,7 +12644,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12653,12 +12653,12 @@
               <rtlName>x_local_2_84_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12684,7 +12684,7 @@
               <name>x_local_2_85</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12700,7 +12700,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12709,12 +12709,12 @@
               <rtlName>x_local_2_85_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12740,7 +12740,7 @@
               <name>x_local_2_86</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12756,7 +12756,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12765,12 +12765,12 @@
               <rtlName>x_local_2_86_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12796,7 +12796,7 @@
               <name>x_local_2_87</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12812,7 +12812,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12821,12 +12821,12 @@
               <rtlName>x_local_2_87_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12852,7 +12852,7 @@
               <name>x_local_2_88</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12868,7 +12868,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12877,12 +12877,12 @@
               <rtlName>x_local_2_88_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12908,7 +12908,7 @@
               <name>x_local_2_89</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12924,7 +12924,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12933,12 +12933,12 @@
               <rtlName>x_local_2_89_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -12964,7 +12964,7 @@
               <name>x_local_2_90</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -12980,7 +12980,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -12989,12 +12989,12 @@
               <rtlName>x_local_2_90_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13020,7 +13020,7 @@
               <name>x_local_2_91</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13036,7 +13036,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13045,12 +13045,12 @@
               <rtlName>x_local_2_91_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13076,7 +13076,7 @@
               <name>x_local_2_92</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13092,7 +13092,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13101,12 +13101,12 @@
               <rtlName>x_local_2_92_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13132,7 +13132,7 @@
               <name>x_local_2_93</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13148,7 +13148,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13157,12 +13157,12 @@
               <rtlName>x_local_2_93_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13188,7 +13188,7 @@
               <name>x_local_2_94</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13204,7 +13204,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13213,12 +13213,12 @@
               <rtlName>x_local_2_94_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13244,7 +13244,7 @@
               <name>x_local_2_95</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13260,7 +13260,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13269,12 +13269,12 @@
               <rtlName>x_local_2_95_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13300,7 +13300,7 @@
               <name>x_local_2_96</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13316,7 +13316,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13325,12 +13325,12 @@
               <rtlName>x_local_2_96_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13356,7 +13356,7 @@
               <name>x_local_2_97</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13372,7 +13372,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13381,12 +13381,12 @@
               <rtlName>x_local_2_97_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13412,7 +13412,7 @@
               <name>x_local_2_98</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13428,7 +13428,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13437,12 +13437,12 @@
               <rtlName>x_local_2_98_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13468,7 +13468,7 @@
               <name>x_local_2_99</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13484,7 +13484,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13493,12 +13493,12 @@
               <rtlName>x_local_2_99_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13524,7 +13524,7 @@
               <name>x_local_2_100</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13540,7 +13540,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13549,12 +13549,12 @@
               <rtlName>x_local_2_100_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13580,7 +13580,7 @@
               <name>x_local_2_101</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13596,7 +13596,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13605,12 +13605,12 @@
               <rtlName>x_local_2_101_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13636,7 +13636,7 @@
               <name>x_local_2_102</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13652,7 +13652,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13661,12 +13661,12 @@
               <rtlName>x_local_2_102_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13692,7 +13692,7 @@
               <name>x_local_2_103</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13708,7 +13708,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13717,12 +13717,12 @@
               <rtlName>x_local_2_103_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13748,7 +13748,7 @@
               <name>x_local_2_104</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13764,7 +13764,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13773,12 +13773,12 @@
               <rtlName>x_local_2_104_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13804,7 +13804,7 @@
               <name>x_local_2_105</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13820,7 +13820,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13829,12 +13829,12 @@
               <rtlName>x_local_2_105_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13860,7 +13860,7 @@
               <name>x_local_2_106</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13876,7 +13876,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13885,12 +13885,12 @@
               <rtlName>x_local_2_106_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13916,7 +13916,7 @@
               <name>x_local_2_107</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13932,7 +13932,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13941,12 +13941,12 @@
               <rtlName>x_local_2_107_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -13972,7 +13972,7 @@
               <name>x_local_2_108</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -13988,7 +13988,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -13997,12 +13997,12 @@
               <rtlName>x_local_2_108_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14028,7 +14028,7 @@
               <name>x_local_2_109</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14044,7 +14044,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14053,12 +14053,12 @@
               <rtlName>x_local_2_109_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14084,7 +14084,7 @@
               <name>x_local_2_110</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14100,7 +14100,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14109,12 +14109,12 @@
               <rtlName>x_local_2_110_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14140,7 +14140,7 @@
               <name>x_local_2_111</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14156,7 +14156,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14165,12 +14165,12 @@
               <rtlName>x_local_2_111_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14196,7 +14196,7 @@
               <name>x_local_2_112</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14212,7 +14212,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14221,12 +14221,12 @@
               <rtlName>x_local_2_112_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14252,7 +14252,7 @@
               <name>x_local_2_113</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14268,7 +14268,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14277,12 +14277,12 @@
               <rtlName>x_local_2_113_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14308,7 +14308,7 @@
               <name>x_local_2_114</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14324,7 +14324,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14333,12 +14333,12 @@
               <rtlName>x_local_2_114_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14364,7 +14364,7 @@
               <name>x_local_2_115</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14380,7 +14380,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14389,12 +14389,12 @@
               <rtlName>x_local_2_115_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14420,7 +14420,7 @@
               <name>x_local_2_116</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14436,7 +14436,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14445,12 +14445,12 @@
               <rtlName>x_local_2_116_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14476,7 +14476,7 @@
               <name>x_local_2_117</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14492,7 +14492,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14501,12 +14501,12 @@
               <rtlName>x_local_2_117_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14532,7 +14532,7 @@
               <name>x_local_2_118</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14548,7 +14548,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14557,12 +14557,12 @@
               <rtlName>x_local_2_118_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14588,7 +14588,7 @@
               <name>x_local_2_119</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14604,7 +14604,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14613,12 +14613,12 @@
               <rtlName>x_local_2_119_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14644,7 +14644,7 @@
               <name>x_local_2_120</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14660,7 +14660,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14669,12 +14669,12 @@
               <rtlName>x_local_2_120_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14700,7 +14700,7 @@
               <name>x_local_2_121</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14716,7 +14716,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14725,12 +14725,12 @@
               <rtlName>x_local_2_121_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14756,7 +14756,7 @@
               <name>x_local_2_122</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14772,7 +14772,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14781,12 +14781,12 @@
               <rtlName>x_local_2_122_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14812,7 +14812,7 @@
               <name>x_local_2_123</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14828,7 +14828,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14837,12 +14837,12 @@
               <rtlName>x_local_2_123_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14868,7 +14868,7 @@
               <name>x_local_2_124</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14884,7 +14884,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14893,12 +14893,12 @@
               <rtlName>x_local_2_124_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14924,7 +14924,7 @@
               <name>x_local_2_125</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14940,7 +14940,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -14949,12 +14949,12 @@
               <rtlName>x_local_2_125_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -14980,7 +14980,7 @@
               <name>x_local_2_126</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -14996,7 +14996,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -15005,12 +15005,12 @@
               <rtlName>x_local_2_126_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -15036,7 +15036,7 @@
               <name>x_local_2_127</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>599</lineNumber>
+              <lineNumber>601</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15052,7 +15052,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>599</second>
+                      <second>601</second>
                     </item>
                   </second>
                 </item>
@@ -15061,12 +15061,12 @@
               <rtlName>x_local_2_127_U</rtlName>
               <control>pragma</control>
               <opType>ram_1p</opType>
-              <implIndex>bram</implIndex>
-              <coreName>RAM_1P_BRAM</coreName>
+              <implIndex>lutram</implIndex>
+              <coreName>RAM_1P_LUTRAM</coreName>
               <isStorage>1</isStorage>
               <storageDepth>16</storageDepth>
-              <coreId>89</coreId>
-              <rtlModuleName>swiglu_x_local_1_RAM_1P_BRAM_1R1W</rtlModuleName>
+              <coreId>88</coreId>
+              <rtlModuleName>swiglu_x_local_1_RAM_1P_LUTRAM_1R1W</rtlModuleName>
             </Obj>
             <bitwidth>8</bitwidth>
           </Value>
@@ -15092,7 +15092,7 @@
               <name>X1_cache</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>605</lineNumber>
+              <lineNumber>607</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15108,7 +15108,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>605</second>
+                      <second>607</second>
                     </item>
                   </second>
                 </item>
@@ -15148,7 +15148,7 @@
               <name>X2_cache</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>606</lineNumber>
+              <lineNumber>608</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15164,7 +15164,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>606</second>
+                      <second>608</second>
                     </item>
                   </second>
                 </item>
@@ -15204,7 +15204,7 @@
               <name>gate_cache</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>610</lineNumber>
+              <lineNumber>612</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15220,7 +15220,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>610</second>
+                      <second>612</second>
                     </item>
                   </second>
                 </item>
@@ -15260,7 +15260,7 @@
               <name>gate_cache_1</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>610</lineNumber>
+              <lineNumber>612</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15276,7 +15276,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>610</second>
+                      <second>612</second>
                     </item>
                   </second>
                 </item>
@@ -15316,7 +15316,7 @@
               <name>gate_cache_2</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>610</lineNumber>
+              <lineNumber>612</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15332,7 +15332,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>610</second>
+                      <second>612</second>
                     </item>
                   </second>
                 </item>
@@ -15372,7 +15372,7 @@
               <name>gate_cache_3</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>610</lineNumber>
+              <lineNumber>612</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15388,7 +15388,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>610</second>
+                      <second>612</second>
                     </item>
                   </second>
                 </item>
@@ -15428,7 +15428,7 @@
               <name>gate_cache_4</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>610</lineNumber>
+              <lineNumber>612</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15444,7 +15444,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>610</second>
+                      <second>612</second>
                     </item>
                   </second>
                 </item>
@@ -15484,7 +15484,7 @@
               <name>gate_cache_5</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>610</lineNumber>
+              <lineNumber>612</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15500,7 +15500,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>610</second>
+                      <second>612</second>
                     </item>
                   </second>
                 </item>
@@ -15540,7 +15540,7 @@
               <name>gate_cache_6</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>610</lineNumber>
+              <lineNumber>612</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15556,7 +15556,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>610</second>
+                      <second>612</second>
                     </item>
                   </second>
                 </item>
@@ -15596,7 +15596,7 @@
               <name>gate_cache_7</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>610</lineNumber>
+              <lineNumber>612</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15612,7 +15612,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>610</second>
+                      <second>612</second>
                     </item>
                   </second>
                 </item>
@@ -15649,10 +15649,10 @@
             <Obj>
               <type>0</type>
               <id>583</id>
-              <name>_ln623</name>
+              <name>_ln625</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>623</lineNumber>
+              <lineNumber>625</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15668,7 +15668,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>623</second>
+                      <second>625</second>
                     </item>
                   </second>
                 </item>
@@ -15963,10 +15963,10 @@
             <Obj>
               <type>0</type>
               <id>584</id>
-              <name>_ln624</name>
+              <name>_ln626</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>624</lineNumber>
+              <lineNumber>626</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -15982,7 +15982,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>624</second>
+                      <second>626</second>
                     </item>
                   </second>
                 </item>
@@ -16153,10 +16153,10 @@
             <Obj>
               <type>0</type>
               <id>585</id>
-              <name>_ln625</name>
+              <name>_ln627</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>625</lineNumber>
+              <lineNumber>627</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -16172,7 +16172,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>625</second>
+                      <second>627</second>
                     </item>
                   </second>
                 </item>
@@ -16345,7 +16345,7 @@
               <name>gate_scale</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>626</lineNumber>
+              <lineNumber>628</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -16361,7 +16361,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>626</second>
+                      <second>628</second>
                     </item>
                   </second>
                 </item>
@@ -16412,10 +16412,10 @@
             <Obj>
               <type>0</type>
               <id>587</id>
-              <name>_ln627</name>
+              <name>_ln629</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>627</lineNumber>
+              <lineNumber>629</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -16431,7 +16431,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>627</second>
+                      <second>629</second>
                     </item>
                   </second>
                 </item>
@@ -16475,7 +16475,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.49</m_delay>
+          <m_delay>1.83</m_delay>
           <m_topoIndex>278</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -16484,10 +16484,10 @@
             <Obj>
               <type>0</type>
               <id>588</id>
-              <name>_ln628</name>
+              <name>_ln630</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>628</lineNumber>
+              <lineNumber>630</lineNumber>
               <contextFuncName>swiglu</contextFuncName>
               <contextNormFuncName>swiglu</contextNormFuncName>
               <inlineStackInfo>
@@ -16503,7 +16503,7 @@
                         <first>swiglu.cpp</first>
                         <second>swiglu</second>
                       </first>
-                      <second>628</second>
+                      <second>630</second>
                     </item>
                   </second>
                 </item>
@@ -22895,8 +22895,8 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>8397276</mMinLatency>
-        <mMaxLatency>65593820</mMaxLatency>
+        <mMinLatency>7162202</mMinLatency>
+        <mMaxLatency>59287898</mMaxLatency>
         <mIsDfPipe>1</mIsDfPipe>
         <mDfPipe class_id="23" tracking_level="1" version="0" object_id="_1133">
           <port_list class_id="24" tracking_level="0" version="0">
@@ -23264,7 +23264,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23307,7 +23307,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23350,7 +23350,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23393,7 +23393,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23436,7 +23436,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23479,7 +23479,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23522,7 +23522,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23565,7 +23565,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23608,7 +23608,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23651,7 +23651,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23694,7 +23694,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23737,7 +23737,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23780,7 +23780,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23823,7 +23823,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23866,7 +23866,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23909,7 +23909,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23952,7 +23952,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -23995,7 +23995,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24038,7 +24038,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24081,7 +24081,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24124,7 +24124,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24167,7 +24167,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24210,7 +24210,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24253,7 +24253,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24296,7 +24296,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24339,7 +24339,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24382,7 +24382,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24425,7 +24425,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24468,7 +24468,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24511,7 +24511,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24554,7 +24554,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24597,7 +24597,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24640,7 +24640,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24683,7 +24683,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24726,7 +24726,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24769,7 +24769,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24812,7 +24812,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24855,7 +24855,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24898,7 +24898,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24941,7 +24941,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -24984,7 +24984,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25027,7 +25027,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25070,7 +25070,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25113,7 +25113,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25156,7 +25156,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25199,7 +25199,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25242,7 +25242,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25285,7 +25285,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25328,7 +25328,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25371,7 +25371,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25414,7 +25414,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25457,7 +25457,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25500,7 +25500,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25543,7 +25543,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25586,7 +25586,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25629,7 +25629,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25672,7 +25672,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25715,7 +25715,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25758,7 +25758,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25801,7 +25801,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25844,7 +25844,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25887,7 +25887,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25930,7 +25930,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -25973,7 +25973,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26016,7 +26016,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26059,7 +26059,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26102,7 +26102,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26145,7 +26145,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26188,7 +26188,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26231,7 +26231,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26274,7 +26274,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26317,7 +26317,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26360,7 +26360,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26403,7 +26403,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26446,7 +26446,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26489,7 +26489,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26532,7 +26532,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26575,7 +26575,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26618,7 +26618,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26661,7 +26661,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26704,7 +26704,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26747,7 +26747,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26790,7 +26790,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26833,7 +26833,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26876,7 +26876,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26919,7 +26919,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -26962,7 +26962,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27005,7 +27005,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27048,7 +27048,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27091,7 +27091,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27134,7 +27134,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27177,7 +27177,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27220,7 +27220,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27263,7 +27263,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27306,7 +27306,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27349,7 +27349,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27392,7 +27392,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27435,7 +27435,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27478,7 +27478,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27521,7 +27521,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27564,7 +27564,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27607,7 +27607,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27650,7 +27650,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27693,7 +27693,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27736,7 +27736,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27779,7 +27779,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27822,7 +27822,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27865,7 +27865,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27908,7 +27908,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27951,7 +27951,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -27994,7 +27994,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28037,7 +28037,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28080,7 +28080,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28123,7 +28123,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28166,7 +28166,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28209,7 +28209,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28252,7 +28252,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28295,7 +28295,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28338,7 +28338,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28381,7 +28381,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28424,7 +28424,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28467,7 +28467,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28510,7 +28510,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28553,7 +28553,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28596,7 +28596,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28639,7 +28639,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28682,7 +28682,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28725,7 +28725,7 @@
                   <inst class_id_reference="31" object_id_reference="_1155"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28768,7 +28768,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28811,7 +28811,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28854,7 +28854,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28897,7 +28897,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28940,7 +28940,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -28983,7 +28983,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29026,7 +29026,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29069,7 +29069,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29112,7 +29112,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29155,7 +29155,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29198,7 +29198,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29241,7 +29241,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29284,7 +29284,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29327,7 +29327,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29370,7 +29370,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29413,7 +29413,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29456,7 +29456,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29499,7 +29499,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29542,7 +29542,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29585,7 +29585,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29628,7 +29628,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29671,7 +29671,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29714,7 +29714,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29757,7 +29757,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29800,7 +29800,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29843,7 +29843,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29886,7 +29886,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29929,7 +29929,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -29972,7 +29972,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30015,7 +30015,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30058,7 +30058,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30101,7 +30101,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30144,7 +30144,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30187,7 +30187,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30230,7 +30230,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30273,7 +30273,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30316,7 +30316,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30359,7 +30359,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30402,7 +30402,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30445,7 +30445,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30488,7 +30488,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30531,7 +30531,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30574,7 +30574,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30617,7 +30617,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30660,7 +30660,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30703,7 +30703,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30746,7 +30746,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30789,7 +30789,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30832,7 +30832,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30875,7 +30875,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30918,7 +30918,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -30961,7 +30961,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31004,7 +31004,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31047,7 +31047,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31090,7 +31090,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31133,7 +31133,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31176,7 +31176,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31219,7 +31219,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31262,7 +31262,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31305,7 +31305,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31348,7 +31348,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31391,7 +31391,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31434,7 +31434,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31477,7 +31477,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31520,7 +31520,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31563,7 +31563,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31606,7 +31606,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31649,7 +31649,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31692,7 +31692,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31735,7 +31735,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31778,7 +31778,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31821,7 +31821,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31864,7 +31864,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31907,7 +31907,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31950,7 +31950,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -31993,7 +31993,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32036,7 +32036,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32079,7 +32079,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32122,7 +32122,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32165,7 +32165,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32208,7 +32208,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32251,7 +32251,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32294,7 +32294,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32337,7 +32337,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32380,7 +32380,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32423,7 +32423,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32466,7 +32466,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32509,7 +32509,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32552,7 +32552,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32595,7 +32595,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32638,7 +32638,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32681,7 +32681,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32724,7 +32724,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32767,7 +32767,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32810,7 +32810,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32853,7 +32853,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32896,7 +32896,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32939,7 +32939,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -32982,7 +32982,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33025,7 +33025,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33068,7 +33068,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33111,7 +33111,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33154,7 +33154,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33197,7 +33197,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33240,7 +33240,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33283,7 +33283,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33326,7 +33326,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33369,7 +33369,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33412,7 +33412,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33455,7 +33455,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33498,7 +33498,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33541,7 +33541,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33584,7 +33584,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33627,7 +33627,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33670,7 +33670,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33713,7 +33713,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33756,7 +33756,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33799,7 +33799,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33842,7 +33842,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33885,7 +33885,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33928,7 +33928,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -33971,7 +33971,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -34014,7 +34014,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -34057,7 +34057,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -34100,7 +34100,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -34143,7 +34143,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -34186,7 +34186,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -34229,7 +34229,7 @@
                   <inst class_id_reference="31" object_id_reference="_1163"></inst>
                 </item>
               </sink_list>
-              <bram_cost>1</bram_cost>
+              <bram_cost>0</bram_cost>
               <uram_cost>0</uram_cost>
               <storage_size>8 16 2</storage_size>
             </item>
@@ -37819,92 +37819,76 @@
         <item>
           <first>compute_X1_U0 (compute_X1)</first>
           <second>
-            <count>4</count>
+            <count>3</count>
             <item_version>0</item_version>
-            <item>
-              <first>BRAM</first>
-              <second>32</second>
-            </item>
             <item>
               <first>DSP</first>
               <second>26</second>
             </item>
             <item>
               <first>FF</first>
-              <second>19778</second>
+              <second>10561</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>17227</second>
+              <second>12456</second>
             </item>
           </second>
         </item>
         <item>
           <first>compute_X2_U0 (compute_X2)</first>
           <second>
-            <count>4</count>
+            <count>3</count>
             <item_version>0</item_version>
-            <item>
-              <first>BRAM</first>
-              <second>32</second>
-            </item>
             <item>
               <first>DSP</first>
               <second>26</second>
             </item>
             <item>
               <first>FF</first>
-              <second>19778</second>
+              <second>10561</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>17227</second>
+              <second>12456</second>
             </item>
           </second>
         </item>
         <item>
           <first>compute_gate_U0 (compute_gate)</first>
           <second>
-            <count>4</count>
+            <count>3</count>
             <item_version>0</item_version>
-            <item>
-              <first>BRAM</first>
-              <second>8</second>
-            </item>
             <item>
               <first>DSP</first>
               <second>14</second>
             </item>
             <item>
               <first>FF</first>
-              <second>3822</second>
+              <second>2596</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>5791</second>
+              <second>7397</second>
             </item>
           </second>
         </item>
         <item>
           <first>compute_output_U0 (compute_output)</first>
           <second>
-            <count>4</count>
+            <count>3</count>
             <item_version>0</item_version>
-            <item>
-              <first>BRAM</first>
-              <second>100</second>
-            </item>
             <item>
               <first>DSP</first>
               <second>75</second>
             </item>
             <item>
               <first>FF</first>
-              <second>76622</second>
+              <second>35343</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>66413</second>
+              <second>48610</second>
             </item>
           </second>
         </item>
@@ -38890,7 +38874,7 @@
         <item>
           <first>x_local_1_100_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -38909,23 +38893,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_101_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -38944,23 +38924,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_102_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -38979,23 +38955,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_103_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39014,23 +38986,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_104_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39049,23 +39017,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_105_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39084,23 +39048,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_106_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39119,23 +39079,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_107_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39154,23 +39110,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_108_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39189,23 +39141,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_109_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39224,23 +39172,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_10_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39259,23 +39203,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_110_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39294,23 +39234,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_111_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39329,23 +39265,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_112_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39364,23 +39296,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_113_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39399,23 +39327,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_114_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39434,23 +39358,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_115_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39469,23 +39389,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_116_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39504,23 +39420,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_117_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39539,23 +39451,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_118_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39574,23 +39482,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_119_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39609,23 +39513,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_11_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39644,23 +39544,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_120_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39679,23 +39575,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_121_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39714,23 +39606,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_122_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39749,23 +39637,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_123_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39784,23 +39668,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_124_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39819,23 +39699,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_125_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39854,23 +39730,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_126_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39889,23 +39761,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_127_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39924,23 +39792,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_12_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39959,23 +39823,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_13_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -39994,23 +39854,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_14_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40029,23 +39885,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_15_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40064,23 +39916,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_16_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40099,23 +39947,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_17_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40134,23 +39978,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_18_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40169,23 +40009,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_19_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40204,23 +40040,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_1_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40239,23 +40071,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_20_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40274,23 +40102,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_21_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40309,23 +40133,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_22_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40344,23 +40164,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_23_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40379,23 +40195,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_24_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40414,23 +40226,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_25_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40449,23 +40257,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_26_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40484,23 +40288,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_27_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40519,23 +40319,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_28_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40554,23 +40350,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_29_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40589,23 +40381,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_2_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40624,23 +40412,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_30_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40659,23 +40443,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_31_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40694,23 +40474,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_32_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40729,23 +40505,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_33_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40764,23 +40536,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_34_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40799,23 +40567,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_35_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40834,23 +40598,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_36_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40869,23 +40629,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_37_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40904,23 +40660,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_38_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40939,23 +40691,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_39_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -40974,23 +40722,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_3_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41009,23 +40753,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_40_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41044,23 +40784,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_41_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41079,23 +40815,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_42_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41114,23 +40846,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_43_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41149,23 +40877,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_44_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41184,23 +40908,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_45_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41219,23 +40939,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_46_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41254,23 +40970,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_47_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41289,23 +41001,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_48_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41324,23 +41032,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_49_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41359,23 +41063,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_4_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41394,23 +41094,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_50_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41429,23 +41125,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_51_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41464,23 +41156,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_52_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41499,23 +41187,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_53_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41534,23 +41218,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_54_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41569,23 +41249,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_55_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41604,23 +41280,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_56_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41639,23 +41311,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_57_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41674,23 +41342,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_58_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41709,23 +41373,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_59_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41744,23 +41404,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_5_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41779,23 +41435,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_60_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41814,23 +41466,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_61_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41849,23 +41497,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_62_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41884,23 +41528,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_63_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41919,23 +41559,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_64_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41954,23 +41590,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_65_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -41989,23 +41621,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_66_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42024,23 +41652,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_67_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42059,23 +41683,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_68_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42094,23 +41714,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_69_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42129,23 +41745,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_6_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42164,23 +41776,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_70_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42199,23 +41807,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_71_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42234,23 +41838,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_72_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42269,23 +41869,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_73_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42304,23 +41900,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_74_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42339,23 +41931,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_75_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42374,23 +41962,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_76_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42409,23 +41993,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_77_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42444,23 +42024,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_78_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42479,23 +42055,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_79_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42514,23 +42086,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_7_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42549,23 +42117,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_80_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42584,23 +42148,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_81_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42619,23 +42179,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_82_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42654,23 +42210,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_83_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42689,23 +42241,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_84_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42724,23 +42272,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_85_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42759,23 +42303,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_86_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42794,23 +42334,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_87_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42829,23 +42365,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_88_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42864,23 +42396,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_89_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42899,23 +42427,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_8_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42934,23 +42458,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_90_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -42969,23 +42489,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_91_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43004,23 +42520,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_92_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43039,23 +42551,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_93_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43074,23 +42582,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_94_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43109,23 +42613,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_95_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43144,23 +42644,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_96_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43179,23 +42675,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_97_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43214,23 +42706,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_98_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43249,23 +42737,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_99_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43284,23 +42768,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_9_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43319,23 +42799,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_1_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43354,23 +42830,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_100_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43389,23 +42861,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_101_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43424,23 +42892,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_102_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43459,23 +42923,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_103_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43494,23 +42954,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_104_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43529,23 +42985,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_105_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43564,23 +43016,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_106_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43599,23 +43047,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_107_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43634,23 +43078,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_108_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43669,23 +43109,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_109_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43704,23 +43140,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_10_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43739,23 +43171,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_110_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43774,23 +43202,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_111_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43809,23 +43233,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_112_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43844,23 +43264,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_113_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43879,23 +43295,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_114_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43914,23 +43326,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_115_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43949,23 +43357,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_116_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -43984,23 +43388,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_117_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44019,23 +43419,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_118_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44054,23 +43450,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_119_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44089,23 +43481,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_11_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44124,23 +43512,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_120_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44159,23 +43543,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_121_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44194,23 +43574,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_122_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44229,23 +43605,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_123_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44264,23 +43636,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_124_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44299,23 +43667,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_125_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44334,23 +43698,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_126_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44369,23 +43729,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_127_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44404,23 +43760,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_12_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44439,23 +43791,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_13_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44474,23 +43822,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_14_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44509,23 +43853,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_15_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44544,23 +43884,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_16_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44579,23 +43915,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_17_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44614,23 +43946,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_18_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44649,23 +43977,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_19_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44684,23 +44008,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_1_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44719,23 +44039,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_20_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44754,23 +44070,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_21_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44789,23 +44101,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_22_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44824,23 +44132,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_23_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44859,23 +44163,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_24_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44894,23 +44194,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_25_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44929,23 +44225,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_26_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44964,23 +44256,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_27_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -44999,23 +44287,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_28_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45034,23 +44318,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_29_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45069,23 +44349,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_2_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45104,23 +44380,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_30_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45139,23 +44411,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_31_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45174,23 +44442,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_32_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45209,23 +44473,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_33_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45244,23 +44504,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_34_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45279,23 +44535,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_35_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45314,23 +44566,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_36_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45349,23 +44597,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_37_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45384,23 +44628,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_38_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45419,23 +44659,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_39_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45454,23 +44690,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_3_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45489,23 +44721,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_40_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45524,23 +44752,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_41_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45559,23 +44783,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_42_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45594,23 +44814,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_43_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45629,23 +44845,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_44_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45664,23 +44876,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_45_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45699,23 +44907,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_46_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45734,23 +44938,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_47_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45769,23 +44969,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_48_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45804,23 +45000,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_49_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45839,23 +45031,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_4_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45874,23 +45062,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_50_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45909,23 +45093,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_51_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45944,23 +45124,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_52_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -45979,23 +45155,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_53_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46014,23 +45186,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_54_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46049,23 +45217,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_55_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46084,23 +45248,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_56_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46119,23 +45279,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_57_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46154,23 +45310,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_58_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46189,23 +45341,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_59_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46224,23 +45372,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_5_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46259,23 +45403,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_60_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46294,23 +45434,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_61_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46329,23 +45465,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_62_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46364,23 +45496,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_63_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46399,23 +45527,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_64_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46434,23 +45558,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_65_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46469,23 +45589,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_66_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46504,23 +45620,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_67_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46539,23 +45651,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_68_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46574,23 +45682,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_69_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46609,23 +45713,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_6_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46644,23 +45744,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_70_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46679,23 +45775,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_71_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46714,23 +45806,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_72_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46749,23 +45837,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_73_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46784,23 +45868,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_74_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46819,23 +45899,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_75_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46854,23 +45930,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_76_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46889,23 +45961,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_77_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46924,23 +45992,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_78_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46959,23 +46023,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_79_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -46994,23 +46054,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_7_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47029,23 +46085,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_80_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47064,23 +46116,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_81_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47099,23 +46147,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_82_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47134,23 +46178,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_83_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47169,23 +46209,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_84_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47204,23 +46240,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_85_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47239,23 +46271,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_86_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47274,23 +46302,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_87_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47309,23 +46333,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_88_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47344,23 +46364,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_89_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47379,23 +46395,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_8_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47414,23 +46426,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_90_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47449,23 +46457,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_91_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47484,23 +46488,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_92_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47519,23 +46519,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_93_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47554,23 +46550,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_94_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47589,23 +46581,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_95_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47624,23 +46612,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_96_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47659,23 +46643,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_97_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47694,23 +46674,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_98_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47729,23 +46705,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_99_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47764,23 +46736,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_9_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47799,23 +46767,19 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
         <item>
           <first>x_local_2_U</first>
           <second>
-            <count>7</count>
+            <count>6</count>
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
@@ -47834,16 +46798,12 @@
               <second>128</second>
             </item>
             <item>
-              <first>BRAM</first>
-              <second>1</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>0</second>
+              <second>16</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>0</second>
+              <second>4</second>
             </item>
           </second>
         </item>
@@ -57946,1792 +56906,1792 @@
         <first>50</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>51</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>52</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>53</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>54</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>55</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>56</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>57</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>58</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>59</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>60</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>61</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>62</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>63</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>64</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>65</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>66</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>67</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>68</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>69</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>70</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>71</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>72</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>73</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>74</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>75</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>76</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>77</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>78</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>79</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>80</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>81</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>82</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>83</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>84</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>85</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>86</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>87</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>88</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>89</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>90</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>91</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>92</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>93</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>94</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>95</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>96</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>97</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>98</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>99</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>100</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>101</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>102</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>103</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>104</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>105</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>106</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>107</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>108</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>109</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>110</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>111</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>112</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>113</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>114</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>115</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>116</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>117</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>118</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>119</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>120</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>121</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>122</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>123</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>124</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>125</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>126</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>127</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>128</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>129</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>130</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>131</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>132</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>133</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>134</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>135</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>136</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>137</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>138</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>139</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>140</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>141</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>142</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>143</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>144</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>145</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>146</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>147</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>148</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>149</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>150</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>151</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>152</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>153</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>154</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>155</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>156</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>157</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>158</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>159</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>160</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>161</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>162</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>163</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>164</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>165</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>166</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>167</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>168</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>169</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>170</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>171</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>172</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>173</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>174</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>175</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>176</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>177</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>178</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>179</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>180</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>181</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>182</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>183</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>184</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>185</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>186</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>187</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>188</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>189</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>190</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>191</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>192</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>193</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>194</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>195</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>196</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>197</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>198</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>199</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>200</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>201</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>202</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>203</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>204</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>205</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>206</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>207</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>208</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>209</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>210</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>211</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>212</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>213</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>214</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>215</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>216</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>217</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>218</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>219</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>220</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>221</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>222</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>223</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>224</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>225</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>226</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>227</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>228</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>229</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>230</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>231</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>232</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>233</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>234</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>235</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>236</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>237</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>238</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>239</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>240</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>241</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>242</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>243</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>244</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>245</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>246</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>247</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>248</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>249</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>250</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>251</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>252</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>253</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>254</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>255</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>256</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>257</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>258</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>259</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>260</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>261</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>262</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>263</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>264</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>265</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>266</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>267</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>268</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>269</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>270</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>271</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>272</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>273</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>274</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>275</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>276</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>277</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>278</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>279</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>280</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>281</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>282</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>283</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>284</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>285</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>286</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>287</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>288</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>289</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>290</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>291</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>292</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>293</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>294</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>295</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>296</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>297</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>298</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>299</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>300</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>301</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>302</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>303</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>304</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>
         <first>305</first>
         <second>
           <first>666</first>
-          <second>18</second>
+          <second>19</second>
         </second>
       </item>
       <item>

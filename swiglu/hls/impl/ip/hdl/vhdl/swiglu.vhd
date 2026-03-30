@@ -319,7 +319,7 @@ end;
 architecture behav of swiglu is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=3.330000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=36995548,HLS_SYN_TPT=32399435,HLS_SYN_MEM=462,HLS_SYN_DSP=0,HLS_SYN_FF=124822,HLS_SYN_LUT=111823,HLS_VERSION=2025_1}";
+    "swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=8.000000,HLS_SYN_LAT=33225050,HLS_SYN_TPT=29325387,HLS_SYN_MEM=34,HLS_SYN_DSP=0,HLS_SYN_FF=67979,HLS_SYN_LUT=87108,HLS_VERSION=2025_1}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant C_S_AXI_DATA_WIDTH : INTEGER := 32;
     constant C_M_AXI_DATA_WIDTH : INTEGER := 32;
@@ -5441,7 +5441,7 @@ architecture behav of swiglu is
     end component;
 
 
-    component swiglu_x_local_1_RAM_1P_BRAM_1R1W IS
+    component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -6059,7 +6059,7 @@ architecture behav of swiglu is
 
 
 begin
-    x_local_1_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6084,7 +6084,7 @@ begin
         t_empty_n => x_local_1_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_1_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_1_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6109,7 +6109,7 @@ begin
         t_empty_n => x_local_1_1_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_2_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_2_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6134,7 +6134,7 @@ begin
         t_empty_n => x_local_1_2_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_3_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_3_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6159,7 +6159,7 @@ begin
         t_empty_n => x_local_1_3_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_4_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_4_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6184,7 +6184,7 @@ begin
         t_empty_n => x_local_1_4_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_5_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_5_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6209,7 +6209,7 @@ begin
         t_empty_n => x_local_1_5_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_6_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_6_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6234,7 +6234,7 @@ begin
         t_empty_n => x_local_1_6_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_7_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_7_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6259,7 +6259,7 @@ begin
         t_empty_n => x_local_1_7_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_8_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_8_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6284,7 +6284,7 @@ begin
         t_empty_n => x_local_1_8_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_9_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_9_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6309,7 +6309,7 @@ begin
         t_empty_n => x_local_1_9_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_10_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_10_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6334,7 +6334,7 @@ begin
         t_empty_n => x_local_1_10_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_11_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_11_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6359,7 +6359,7 @@ begin
         t_empty_n => x_local_1_11_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_12_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_12_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6384,7 +6384,7 @@ begin
         t_empty_n => x_local_1_12_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_13_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_13_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6409,7 +6409,7 @@ begin
         t_empty_n => x_local_1_13_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_14_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_14_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6434,7 +6434,7 @@ begin
         t_empty_n => x_local_1_14_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_15_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_15_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6459,7 +6459,7 @@ begin
         t_empty_n => x_local_1_15_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_16_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_16_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6484,7 +6484,7 @@ begin
         t_empty_n => x_local_1_16_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_17_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_17_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6509,7 +6509,7 @@ begin
         t_empty_n => x_local_1_17_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_18_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_18_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6534,7 +6534,7 @@ begin
         t_empty_n => x_local_1_18_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_19_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_19_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6559,7 +6559,7 @@ begin
         t_empty_n => x_local_1_19_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_20_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_20_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6584,7 +6584,7 @@ begin
         t_empty_n => x_local_1_20_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_21_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_21_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6609,7 +6609,7 @@ begin
         t_empty_n => x_local_1_21_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_22_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_22_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6634,7 +6634,7 @@ begin
         t_empty_n => x_local_1_22_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_23_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_23_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6659,7 +6659,7 @@ begin
         t_empty_n => x_local_1_23_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_24_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_24_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6684,7 +6684,7 @@ begin
         t_empty_n => x_local_1_24_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_25_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_25_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6709,7 +6709,7 @@ begin
         t_empty_n => x_local_1_25_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_26_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_26_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6734,7 +6734,7 @@ begin
         t_empty_n => x_local_1_26_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_27_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_27_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6759,7 +6759,7 @@ begin
         t_empty_n => x_local_1_27_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_28_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_28_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6784,7 +6784,7 @@ begin
         t_empty_n => x_local_1_28_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_29_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_29_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6809,7 +6809,7 @@ begin
         t_empty_n => x_local_1_29_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_30_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_30_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6834,7 +6834,7 @@ begin
         t_empty_n => x_local_1_30_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_31_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_31_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6859,7 +6859,7 @@ begin
         t_empty_n => x_local_1_31_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_32_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_32_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6884,7 +6884,7 @@ begin
         t_empty_n => x_local_1_32_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_33_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_33_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6909,7 +6909,7 @@ begin
         t_empty_n => x_local_1_33_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_34_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_34_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6934,7 +6934,7 @@ begin
         t_empty_n => x_local_1_34_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_35_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_35_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6959,7 +6959,7 @@ begin
         t_empty_n => x_local_1_35_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_36_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_36_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -6984,7 +6984,7 @@ begin
         t_empty_n => x_local_1_36_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_37_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_37_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7009,7 +7009,7 @@ begin
         t_empty_n => x_local_1_37_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_38_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_38_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7034,7 +7034,7 @@ begin
         t_empty_n => x_local_1_38_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_39_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_39_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7059,7 +7059,7 @@ begin
         t_empty_n => x_local_1_39_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_40_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_40_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7084,7 +7084,7 @@ begin
         t_empty_n => x_local_1_40_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_41_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_41_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7109,7 +7109,7 @@ begin
         t_empty_n => x_local_1_41_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_42_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_42_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7134,7 +7134,7 @@ begin
         t_empty_n => x_local_1_42_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_43_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_43_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7159,7 +7159,7 @@ begin
         t_empty_n => x_local_1_43_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_44_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_44_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7184,7 +7184,7 @@ begin
         t_empty_n => x_local_1_44_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_45_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_45_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7209,7 +7209,7 @@ begin
         t_empty_n => x_local_1_45_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_46_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_46_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7234,7 +7234,7 @@ begin
         t_empty_n => x_local_1_46_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_47_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_47_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7259,7 +7259,7 @@ begin
         t_empty_n => x_local_1_47_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_48_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_48_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7284,7 +7284,7 @@ begin
         t_empty_n => x_local_1_48_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_49_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_49_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7309,7 +7309,7 @@ begin
         t_empty_n => x_local_1_49_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_50_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_50_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7334,7 +7334,7 @@ begin
         t_empty_n => x_local_1_50_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_51_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_51_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7359,7 +7359,7 @@ begin
         t_empty_n => x_local_1_51_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_52_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_52_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7384,7 +7384,7 @@ begin
         t_empty_n => x_local_1_52_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_53_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_53_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7409,7 +7409,7 @@ begin
         t_empty_n => x_local_1_53_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_54_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_54_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7434,7 +7434,7 @@ begin
         t_empty_n => x_local_1_54_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_55_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_55_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7459,7 +7459,7 @@ begin
         t_empty_n => x_local_1_55_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_56_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_56_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7484,7 +7484,7 @@ begin
         t_empty_n => x_local_1_56_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_57_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_57_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7509,7 +7509,7 @@ begin
         t_empty_n => x_local_1_57_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_58_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_58_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7534,7 +7534,7 @@ begin
         t_empty_n => x_local_1_58_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_59_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_59_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7559,7 +7559,7 @@ begin
         t_empty_n => x_local_1_59_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_60_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_60_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7584,7 +7584,7 @@ begin
         t_empty_n => x_local_1_60_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_61_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_61_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7609,7 +7609,7 @@ begin
         t_empty_n => x_local_1_61_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_62_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_62_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7634,7 +7634,7 @@ begin
         t_empty_n => x_local_1_62_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_63_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_63_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7659,7 +7659,7 @@ begin
         t_empty_n => x_local_1_63_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_64_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_64_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7684,7 +7684,7 @@ begin
         t_empty_n => x_local_1_64_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_65_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_65_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7709,7 +7709,7 @@ begin
         t_empty_n => x_local_1_65_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_66_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_66_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7734,7 +7734,7 @@ begin
         t_empty_n => x_local_1_66_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_67_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_67_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7759,7 +7759,7 @@ begin
         t_empty_n => x_local_1_67_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_68_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_68_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7784,7 +7784,7 @@ begin
         t_empty_n => x_local_1_68_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_69_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_69_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7809,7 +7809,7 @@ begin
         t_empty_n => x_local_1_69_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_70_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_70_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7834,7 +7834,7 @@ begin
         t_empty_n => x_local_1_70_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_71_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_71_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7859,7 +7859,7 @@ begin
         t_empty_n => x_local_1_71_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_72_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_72_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7884,7 +7884,7 @@ begin
         t_empty_n => x_local_1_72_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_73_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_73_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7909,7 +7909,7 @@ begin
         t_empty_n => x_local_1_73_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_74_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_74_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7934,7 +7934,7 @@ begin
         t_empty_n => x_local_1_74_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_75_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_75_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7959,7 +7959,7 @@ begin
         t_empty_n => x_local_1_75_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_76_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_76_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -7984,7 +7984,7 @@ begin
         t_empty_n => x_local_1_76_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_77_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_77_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8009,7 +8009,7 @@ begin
         t_empty_n => x_local_1_77_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_78_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_78_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8034,7 +8034,7 @@ begin
         t_empty_n => x_local_1_78_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_79_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_79_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8059,7 +8059,7 @@ begin
         t_empty_n => x_local_1_79_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_80_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_80_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8084,7 +8084,7 @@ begin
         t_empty_n => x_local_1_80_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_81_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_81_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8109,7 +8109,7 @@ begin
         t_empty_n => x_local_1_81_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_82_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_82_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8134,7 +8134,7 @@ begin
         t_empty_n => x_local_1_82_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_83_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_83_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8159,7 +8159,7 @@ begin
         t_empty_n => x_local_1_83_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_84_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_84_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8184,7 +8184,7 @@ begin
         t_empty_n => x_local_1_84_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_85_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_85_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8209,7 +8209,7 @@ begin
         t_empty_n => x_local_1_85_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_86_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_86_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8234,7 +8234,7 @@ begin
         t_empty_n => x_local_1_86_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_87_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_87_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8259,7 +8259,7 @@ begin
         t_empty_n => x_local_1_87_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_88_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_88_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8284,7 +8284,7 @@ begin
         t_empty_n => x_local_1_88_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_89_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_89_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8309,7 +8309,7 @@ begin
         t_empty_n => x_local_1_89_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_90_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_90_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8334,7 +8334,7 @@ begin
         t_empty_n => x_local_1_90_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_91_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_91_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8359,7 +8359,7 @@ begin
         t_empty_n => x_local_1_91_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_92_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_92_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8384,7 +8384,7 @@ begin
         t_empty_n => x_local_1_92_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_93_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_93_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8409,7 +8409,7 @@ begin
         t_empty_n => x_local_1_93_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_94_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_94_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8434,7 +8434,7 @@ begin
         t_empty_n => x_local_1_94_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_95_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_95_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8459,7 +8459,7 @@ begin
         t_empty_n => x_local_1_95_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_96_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_96_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8484,7 +8484,7 @@ begin
         t_empty_n => x_local_1_96_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_97_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_97_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8509,7 +8509,7 @@ begin
         t_empty_n => x_local_1_97_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_98_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_98_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8534,7 +8534,7 @@ begin
         t_empty_n => x_local_1_98_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_99_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_99_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8559,7 +8559,7 @@ begin
         t_empty_n => x_local_1_99_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_100_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_100_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8584,7 +8584,7 @@ begin
         t_empty_n => x_local_1_100_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_101_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_101_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8609,7 +8609,7 @@ begin
         t_empty_n => x_local_1_101_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_102_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_102_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8634,7 +8634,7 @@ begin
         t_empty_n => x_local_1_102_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_103_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_103_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8659,7 +8659,7 @@ begin
         t_empty_n => x_local_1_103_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_104_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_104_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8684,7 +8684,7 @@ begin
         t_empty_n => x_local_1_104_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_105_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_105_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8709,7 +8709,7 @@ begin
         t_empty_n => x_local_1_105_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_106_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_106_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8734,7 +8734,7 @@ begin
         t_empty_n => x_local_1_106_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_107_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_107_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8759,7 +8759,7 @@ begin
         t_empty_n => x_local_1_107_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_108_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_108_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8784,7 +8784,7 @@ begin
         t_empty_n => x_local_1_108_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_109_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_109_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8809,7 +8809,7 @@ begin
         t_empty_n => x_local_1_109_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_110_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_110_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8834,7 +8834,7 @@ begin
         t_empty_n => x_local_1_110_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_111_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_111_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8859,7 +8859,7 @@ begin
         t_empty_n => x_local_1_111_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_112_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_112_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8884,7 +8884,7 @@ begin
         t_empty_n => x_local_1_112_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_113_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_113_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8909,7 +8909,7 @@ begin
         t_empty_n => x_local_1_113_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_114_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_114_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8934,7 +8934,7 @@ begin
         t_empty_n => x_local_1_114_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_115_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_115_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8959,7 +8959,7 @@ begin
         t_empty_n => x_local_1_115_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_116_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_116_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -8984,7 +8984,7 @@ begin
         t_empty_n => x_local_1_116_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_117_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_117_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9009,7 +9009,7 @@ begin
         t_empty_n => x_local_1_117_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_118_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_118_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9034,7 +9034,7 @@ begin
         t_empty_n => x_local_1_118_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_119_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_119_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9059,7 +9059,7 @@ begin
         t_empty_n => x_local_1_119_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_120_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_120_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9084,7 +9084,7 @@ begin
         t_empty_n => x_local_1_120_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_121_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_121_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9109,7 +9109,7 @@ begin
         t_empty_n => x_local_1_121_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_122_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_122_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9134,7 +9134,7 @@ begin
         t_empty_n => x_local_1_122_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_123_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_123_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9159,7 +9159,7 @@ begin
         t_empty_n => x_local_1_123_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_124_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_124_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9184,7 +9184,7 @@ begin
         t_empty_n => x_local_1_124_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_125_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_125_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9209,7 +9209,7 @@ begin
         t_empty_n => x_local_1_125_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_126_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_126_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9234,7 +9234,7 @@ begin
         t_empty_n => x_local_1_126_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_1_127_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_1_127_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9259,7 +9259,7 @@ begin
         t_empty_n => x_local_1_127_t_empty_n,
         t_read => compute_X1_U0_ap_ready);
 
-    x_local_2_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9284,7 +9284,7 @@ begin
         t_empty_n => x_local_2_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_1_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_1_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9309,7 +9309,7 @@ begin
         t_empty_n => x_local_2_1_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_2_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_2_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9334,7 +9334,7 @@ begin
         t_empty_n => x_local_2_2_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_3_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_3_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9359,7 +9359,7 @@ begin
         t_empty_n => x_local_2_3_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_4_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_4_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9384,7 +9384,7 @@ begin
         t_empty_n => x_local_2_4_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_5_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_5_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9409,7 +9409,7 @@ begin
         t_empty_n => x_local_2_5_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_6_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_6_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9434,7 +9434,7 @@ begin
         t_empty_n => x_local_2_6_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_7_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_7_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9459,7 +9459,7 @@ begin
         t_empty_n => x_local_2_7_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_8_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_8_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9484,7 +9484,7 @@ begin
         t_empty_n => x_local_2_8_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_9_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_9_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9509,7 +9509,7 @@ begin
         t_empty_n => x_local_2_9_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_10_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_10_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9534,7 +9534,7 @@ begin
         t_empty_n => x_local_2_10_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_11_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_11_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9559,7 +9559,7 @@ begin
         t_empty_n => x_local_2_11_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_12_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_12_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9584,7 +9584,7 @@ begin
         t_empty_n => x_local_2_12_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_13_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_13_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9609,7 +9609,7 @@ begin
         t_empty_n => x_local_2_13_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_14_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_14_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9634,7 +9634,7 @@ begin
         t_empty_n => x_local_2_14_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_15_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_15_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9659,7 +9659,7 @@ begin
         t_empty_n => x_local_2_15_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_16_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_16_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9684,7 +9684,7 @@ begin
         t_empty_n => x_local_2_16_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_17_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_17_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9709,7 +9709,7 @@ begin
         t_empty_n => x_local_2_17_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_18_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_18_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9734,7 +9734,7 @@ begin
         t_empty_n => x_local_2_18_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_19_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_19_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9759,7 +9759,7 @@ begin
         t_empty_n => x_local_2_19_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_20_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_20_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9784,7 +9784,7 @@ begin
         t_empty_n => x_local_2_20_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_21_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_21_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9809,7 +9809,7 @@ begin
         t_empty_n => x_local_2_21_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_22_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_22_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9834,7 +9834,7 @@ begin
         t_empty_n => x_local_2_22_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_23_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_23_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9859,7 +9859,7 @@ begin
         t_empty_n => x_local_2_23_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_24_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_24_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9884,7 +9884,7 @@ begin
         t_empty_n => x_local_2_24_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_25_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_25_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9909,7 +9909,7 @@ begin
         t_empty_n => x_local_2_25_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_26_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_26_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9934,7 +9934,7 @@ begin
         t_empty_n => x_local_2_26_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_27_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_27_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9959,7 +9959,7 @@ begin
         t_empty_n => x_local_2_27_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_28_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_28_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -9984,7 +9984,7 @@ begin
         t_empty_n => x_local_2_28_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_29_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_29_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10009,7 +10009,7 @@ begin
         t_empty_n => x_local_2_29_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_30_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_30_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10034,7 +10034,7 @@ begin
         t_empty_n => x_local_2_30_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_31_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_31_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10059,7 +10059,7 @@ begin
         t_empty_n => x_local_2_31_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_32_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_32_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10084,7 +10084,7 @@ begin
         t_empty_n => x_local_2_32_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_33_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_33_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10109,7 +10109,7 @@ begin
         t_empty_n => x_local_2_33_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_34_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_34_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10134,7 +10134,7 @@ begin
         t_empty_n => x_local_2_34_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_35_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_35_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10159,7 +10159,7 @@ begin
         t_empty_n => x_local_2_35_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_36_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_36_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10184,7 +10184,7 @@ begin
         t_empty_n => x_local_2_36_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_37_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_37_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10209,7 +10209,7 @@ begin
         t_empty_n => x_local_2_37_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_38_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_38_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10234,7 +10234,7 @@ begin
         t_empty_n => x_local_2_38_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_39_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_39_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10259,7 +10259,7 @@ begin
         t_empty_n => x_local_2_39_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_40_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_40_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10284,7 +10284,7 @@ begin
         t_empty_n => x_local_2_40_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_41_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_41_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10309,7 +10309,7 @@ begin
         t_empty_n => x_local_2_41_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_42_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_42_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10334,7 +10334,7 @@ begin
         t_empty_n => x_local_2_42_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_43_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_43_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10359,7 +10359,7 @@ begin
         t_empty_n => x_local_2_43_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_44_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_44_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10384,7 +10384,7 @@ begin
         t_empty_n => x_local_2_44_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_45_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_45_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10409,7 +10409,7 @@ begin
         t_empty_n => x_local_2_45_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_46_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_46_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10434,7 +10434,7 @@ begin
         t_empty_n => x_local_2_46_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_47_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_47_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10459,7 +10459,7 @@ begin
         t_empty_n => x_local_2_47_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_48_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_48_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10484,7 +10484,7 @@ begin
         t_empty_n => x_local_2_48_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_49_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_49_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10509,7 +10509,7 @@ begin
         t_empty_n => x_local_2_49_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_50_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_50_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10534,7 +10534,7 @@ begin
         t_empty_n => x_local_2_50_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_51_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_51_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10559,7 +10559,7 @@ begin
         t_empty_n => x_local_2_51_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_52_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_52_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10584,7 +10584,7 @@ begin
         t_empty_n => x_local_2_52_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_53_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_53_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10609,7 +10609,7 @@ begin
         t_empty_n => x_local_2_53_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_54_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_54_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10634,7 +10634,7 @@ begin
         t_empty_n => x_local_2_54_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_55_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_55_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10659,7 +10659,7 @@ begin
         t_empty_n => x_local_2_55_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_56_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_56_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10684,7 +10684,7 @@ begin
         t_empty_n => x_local_2_56_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_57_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_57_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10709,7 +10709,7 @@ begin
         t_empty_n => x_local_2_57_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_58_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_58_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10734,7 +10734,7 @@ begin
         t_empty_n => x_local_2_58_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_59_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_59_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10759,7 +10759,7 @@ begin
         t_empty_n => x_local_2_59_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_60_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_60_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10784,7 +10784,7 @@ begin
         t_empty_n => x_local_2_60_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_61_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_61_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10809,7 +10809,7 @@ begin
         t_empty_n => x_local_2_61_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_62_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_62_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10834,7 +10834,7 @@ begin
         t_empty_n => x_local_2_62_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_63_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_63_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10859,7 +10859,7 @@ begin
         t_empty_n => x_local_2_63_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_64_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_64_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10884,7 +10884,7 @@ begin
         t_empty_n => x_local_2_64_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_65_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_65_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10909,7 +10909,7 @@ begin
         t_empty_n => x_local_2_65_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_66_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_66_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10934,7 +10934,7 @@ begin
         t_empty_n => x_local_2_66_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_67_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_67_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10959,7 +10959,7 @@ begin
         t_empty_n => x_local_2_67_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_68_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_68_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -10984,7 +10984,7 @@ begin
         t_empty_n => x_local_2_68_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_69_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_69_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11009,7 +11009,7 @@ begin
         t_empty_n => x_local_2_69_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_70_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_70_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11034,7 +11034,7 @@ begin
         t_empty_n => x_local_2_70_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_71_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_71_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11059,7 +11059,7 @@ begin
         t_empty_n => x_local_2_71_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_72_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_72_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11084,7 +11084,7 @@ begin
         t_empty_n => x_local_2_72_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_73_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_73_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11109,7 +11109,7 @@ begin
         t_empty_n => x_local_2_73_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_74_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_74_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11134,7 +11134,7 @@ begin
         t_empty_n => x_local_2_74_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_75_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_75_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11159,7 +11159,7 @@ begin
         t_empty_n => x_local_2_75_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_76_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_76_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11184,7 +11184,7 @@ begin
         t_empty_n => x_local_2_76_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_77_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_77_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11209,7 +11209,7 @@ begin
         t_empty_n => x_local_2_77_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_78_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_78_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11234,7 +11234,7 @@ begin
         t_empty_n => x_local_2_78_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_79_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_79_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11259,7 +11259,7 @@ begin
         t_empty_n => x_local_2_79_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_80_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_80_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11284,7 +11284,7 @@ begin
         t_empty_n => x_local_2_80_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_81_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_81_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11309,7 +11309,7 @@ begin
         t_empty_n => x_local_2_81_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_82_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_82_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11334,7 +11334,7 @@ begin
         t_empty_n => x_local_2_82_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_83_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_83_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11359,7 +11359,7 @@ begin
         t_empty_n => x_local_2_83_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_84_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_84_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11384,7 +11384,7 @@ begin
         t_empty_n => x_local_2_84_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_85_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_85_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11409,7 +11409,7 @@ begin
         t_empty_n => x_local_2_85_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_86_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_86_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11434,7 +11434,7 @@ begin
         t_empty_n => x_local_2_86_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_87_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_87_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11459,7 +11459,7 @@ begin
         t_empty_n => x_local_2_87_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_88_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_88_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11484,7 +11484,7 @@ begin
         t_empty_n => x_local_2_88_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_89_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_89_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11509,7 +11509,7 @@ begin
         t_empty_n => x_local_2_89_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_90_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_90_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11534,7 +11534,7 @@ begin
         t_empty_n => x_local_2_90_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_91_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_91_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11559,7 +11559,7 @@ begin
         t_empty_n => x_local_2_91_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_92_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_92_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11584,7 +11584,7 @@ begin
         t_empty_n => x_local_2_92_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_93_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_93_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11609,7 +11609,7 @@ begin
         t_empty_n => x_local_2_93_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_94_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_94_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11634,7 +11634,7 @@ begin
         t_empty_n => x_local_2_94_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_95_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_95_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11659,7 +11659,7 @@ begin
         t_empty_n => x_local_2_95_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_96_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_96_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11684,7 +11684,7 @@ begin
         t_empty_n => x_local_2_96_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_97_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_97_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11709,7 +11709,7 @@ begin
         t_empty_n => x_local_2_97_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_98_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_98_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11734,7 +11734,7 @@ begin
         t_empty_n => x_local_2_98_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_99_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_99_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11759,7 +11759,7 @@ begin
         t_empty_n => x_local_2_99_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_100_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_100_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11784,7 +11784,7 @@ begin
         t_empty_n => x_local_2_100_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_101_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_101_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11809,7 +11809,7 @@ begin
         t_empty_n => x_local_2_101_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_102_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_102_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11834,7 +11834,7 @@ begin
         t_empty_n => x_local_2_102_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_103_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_103_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11859,7 +11859,7 @@ begin
         t_empty_n => x_local_2_103_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_104_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_104_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11884,7 +11884,7 @@ begin
         t_empty_n => x_local_2_104_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_105_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_105_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11909,7 +11909,7 @@ begin
         t_empty_n => x_local_2_105_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_106_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_106_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11934,7 +11934,7 @@ begin
         t_empty_n => x_local_2_106_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_107_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_107_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11959,7 +11959,7 @@ begin
         t_empty_n => x_local_2_107_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_108_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_108_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -11984,7 +11984,7 @@ begin
         t_empty_n => x_local_2_108_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_109_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_109_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12009,7 +12009,7 @@ begin
         t_empty_n => x_local_2_109_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_110_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_110_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12034,7 +12034,7 @@ begin
         t_empty_n => x_local_2_110_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_111_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_111_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12059,7 +12059,7 @@ begin
         t_empty_n => x_local_2_111_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_112_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_112_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12084,7 +12084,7 @@ begin
         t_empty_n => x_local_2_112_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_113_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_113_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12109,7 +12109,7 @@ begin
         t_empty_n => x_local_2_113_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_114_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_114_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12134,7 +12134,7 @@ begin
         t_empty_n => x_local_2_114_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_115_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_115_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12159,7 +12159,7 @@ begin
         t_empty_n => x_local_2_115_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_116_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_116_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12184,7 +12184,7 @@ begin
         t_empty_n => x_local_2_116_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_117_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_117_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12209,7 +12209,7 @@ begin
         t_empty_n => x_local_2_117_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_118_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_118_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12234,7 +12234,7 @@ begin
         t_empty_n => x_local_2_118_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_119_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_119_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12259,7 +12259,7 @@ begin
         t_empty_n => x_local_2_119_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_120_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_120_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12284,7 +12284,7 @@ begin
         t_empty_n => x_local_2_120_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_121_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_121_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12309,7 +12309,7 @@ begin
         t_empty_n => x_local_2_121_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_122_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_122_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12334,7 +12334,7 @@ begin
         t_empty_n => x_local_2_122_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_123_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_123_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12359,7 +12359,7 @@ begin
         t_empty_n => x_local_2_123_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_124_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_124_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12384,7 +12384,7 @@ begin
         t_empty_n => x_local_2_124_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_125_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_125_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12409,7 +12409,7 @@ begin
         t_empty_n => x_local_2_125_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_126_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_126_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,
@@ -12434,7 +12434,7 @@ begin
         t_empty_n => x_local_2_126_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    x_local_2_127_U : component swiglu_x_local_1_RAM_1P_BRAM_1R1W
+    x_local_2_127_U : component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
     generic map (
         DataWidth => 8,
         AddressRange => 16,

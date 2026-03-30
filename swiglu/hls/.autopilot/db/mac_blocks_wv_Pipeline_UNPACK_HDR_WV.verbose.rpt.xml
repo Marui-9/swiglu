@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_wv_Pipeline_UNPACK_HDR_WV'" level="0">
-<item name = "Date">Mon Mar 30 09:37:11 2026
+<item name = "Date">Mon Mar 30 15:05:52 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33 ns, 2.330 ns, 0.90 ns</column>
+<column name="ap_clk">10.00 ns, 7.466 ns, 2.00 ns</column>
 </table>
 </item>
 </section>
@@ -24,20 +24,20 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">15, 15, 49.950 ns, 49.950 ns, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">11, 11, 0.110 us, 0.110 us, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_fp16_to_fp32_fu_2102">fp16_to_fp32, 4, 4, 13.320 ns, 13.320 ns, 1, 1, yes</column>
-<column name="grp_fp16_to_fp32_fu_2107">fp16_to_fp32, 4, 4, 13.320 ns, 13.320 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_2102">fp16_to_fp32, 1, 1, 10.000 ns, 10.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_2107">fp16_to_fp32, 1, 1, 10.000 ns, 10.000 ns, 1, 1, yes</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- UNPACK_HDR_WV">13, 13, 7, 1, 1, 8, yes</column>
+<column name="- UNPACK_HDR_WV">9, 9, 3, 1, 1, 8, yes</column>
 </table>
 </item>
 </section>
@@ -52,20 +52,20 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 26, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, -, 778, 1073, -</column>
+<column name="Instance">-, -, 72, 793, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, 0, 36, -</column>
-<column name="Register">-, -, 10421, 4160, -</column>
+<column name="Register">-, -, 2098, -, -</column>
 <specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, 4, 4, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_fp16_to_fp32_fu_2102">fp16_to_fp32, 0, 0, 389, 515, 0</column>
-<column name="grp_fp16_to_fp32_fu_2107">fp16_to_fp32, 0, 0, 389, 515, 0</column>
+<column name="grp_fp16_to_fp32_fu_2102">fp16_to_fp32, 0, 0, 36, 375, 0</column>
+<column name="grp_fp16_to_fp32_fu_2107">fp16_to_fp32, 0, 0, 36, 375, 0</column>
 <column name="sparsemux_17_3_128_1_1_U283">sparsemux_17_3_128_1_1, 0, 0, 0, 43, 0</column>
 </table>
 </item>
@@ -102,15 +102,7 @@
 <column name="ap_done_reg">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp0_iter4">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp0_iter5">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp0_iter6">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter1_reg">1, 0, 1, 0</column>
-<column name="ap_loop_exit_ready_pp0_iter2_reg">1, 0, 1, 0</column>
-<column name="ap_loop_exit_ready_pp0_iter3_reg">1, 0, 1, 0</column>
-<column name="ap_loop_exit_ready_pp0_iter4_reg">1, 0, 1, 0</column>
-<column name="ap_loop_exit_ready_pp0_iter5_reg">1, 0, 1, 0</column>
 <column name="b_fu_466">4, 0, 4, 0</column>
 <column name="empty_699_fu_474">32, 0, 32, 0</column>
 <column name="empty_700_fu_478">32, 0, 32, 0</column>
@@ -128,6 +120,8 @@
 <column name="empty_712_fu_526">32, 0, 32, 0</column>
 <column name="empty_713_fu_530">32, 0, 32, 0</column>
 <column name="empty_fu_470">32, 0, 32, 0</column>
+<column name="grp_fp16_to_fp32_fu_2102_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_fp16_to_fp32_fu_2107_ap_start_reg">1, 0, 1, 0</column>
 <column name="icmp_ln131_reg_5772">1, 0, 1, 0</column>
 <column name="mn6_10_fu_830">6, 0, 8, 2</column>
 <column name="mn6_11_fu_834">6, 0, 8, 2</column>
@@ -289,6 +283,7 @@
 <column name="trunc_ln131_126_reg_5762">6, 0, 6, 0</column>
 <column name="trunc_ln131_127_reg_5767">6, 0, 6, 0</column>
 <column name="trunc_ln131_128_reg_5776">3, 0, 3, 0</column>
+<column name="trunc_ln131_128_reg_5776_pp0_iter1_reg">3, 0, 3, 0</column>
 <column name="trunc_ln131_12_reg_5192">6, 0, 6, 0</column>
 <column name="trunc_ln131_13_reg_5197">6, 0, 6, 0</column>
 <column name="trunc_ln131_14_reg_5202">6, 0, 6, 0</column>
@@ -388,136 +383,6 @@
 <column name="trunc_ln131_9_reg_5177">6, 0, 6, 0</column>
 <column name="trunc_ln131_reg_5132">6, 0, 6, 0</column>
 <column name="trunc_ln132_reg_5780">16, 0, 16, 0</column>
-<column name="icmp_ln131_reg_5772">64, 32, 1, 0</column>
-<column name="trunc_ln131_100_reg_5632">64, 32, 6, 0</column>
-<column name="trunc_ln131_101_reg_5637">64, 32, 6, 0</column>
-<column name="trunc_ln131_102_reg_5642">64, 32, 6, 0</column>
-<column name="trunc_ln131_103_reg_5647">64, 32, 6, 0</column>
-<column name="trunc_ln131_104_reg_5652">64, 32, 6, 0</column>
-<column name="trunc_ln131_105_reg_5657">64, 32, 6, 0</column>
-<column name="trunc_ln131_106_reg_5662">64, 32, 6, 0</column>
-<column name="trunc_ln131_107_reg_5667">64, 32, 6, 0</column>
-<column name="trunc_ln131_108_reg_5672">64, 32, 6, 0</column>
-<column name="trunc_ln131_109_reg_5677">64, 32, 6, 0</column>
-<column name="trunc_ln131_10_reg_5182">64, 32, 6, 0</column>
-<column name="trunc_ln131_110_reg_5682">64, 32, 6, 0</column>
-<column name="trunc_ln131_111_reg_5687">64, 32, 6, 0</column>
-<column name="trunc_ln131_112_reg_5692">64, 32, 6, 0</column>
-<column name="trunc_ln131_113_reg_5697">64, 32, 6, 0</column>
-<column name="trunc_ln131_114_reg_5702">64, 32, 6, 0</column>
-<column name="trunc_ln131_115_reg_5707">64, 32, 6, 0</column>
-<column name="trunc_ln131_116_reg_5712">64, 32, 6, 0</column>
-<column name="trunc_ln131_117_reg_5717">64, 32, 6, 0</column>
-<column name="trunc_ln131_118_reg_5722">64, 32, 6, 0</column>
-<column name="trunc_ln131_119_reg_5727">64, 32, 6, 0</column>
-<column name="trunc_ln131_11_reg_5187">64, 32, 6, 0</column>
-<column name="trunc_ln131_120_reg_5732">64, 32, 6, 0</column>
-<column name="trunc_ln131_121_reg_5737">64, 32, 6, 0</column>
-<column name="trunc_ln131_122_reg_5742">64, 32, 6, 0</column>
-<column name="trunc_ln131_123_reg_5747">64, 32, 6, 0</column>
-<column name="trunc_ln131_124_reg_5752">64, 32, 6, 0</column>
-<column name="trunc_ln131_125_reg_5757">64, 32, 6, 0</column>
-<column name="trunc_ln131_126_reg_5762">64, 32, 6, 0</column>
-<column name="trunc_ln131_127_reg_5767">64, 32, 6, 0</column>
-<column name="trunc_ln131_128_reg_5776">64, 32, 3, 0</column>
-<column name="trunc_ln131_12_reg_5192">64, 32, 6, 0</column>
-<column name="trunc_ln131_13_reg_5197">64, 32, 6, 0</column>
-<column name="trunc_ln131_14_reg_5202">64, 32, 6, 0</column>
-<column name="trunc_ln131_15_reg_5207">64, 32, 6, 0</column>
-<column name="trunc_ln131_16_reg_5212">64, 32, 6, 0</column>
-<column name="trunc_ln131_17_reg_5217">64, 32, 6, 0</column>
-<column name="trunc_ln131_18_reg_5222">64, 32, 6, 0</column>
-<column name="trunc_ln131_19_reg_5227">64, 32, 6, 0</column>
-<column name="trunc_ln131_1_reg_5137">64, 32, 6, 0</column>
-<column name="trunc_ln131_20_reg_5232">64, 32, 6, 0</column>
-<column name="trunc_ln131_21_reg_5237">64, 32, 6, 0</column>
-<column name="trunc_ln131_22_reg_5242">64, 32, 6, 0</column>
-<column name="trunc_ln131_23_reg_5247">64, 32, 6, 0</column>
-<column name="trunc_ln131_24_reg_5252">64, 32, 6, 0</column>
-<column name="trunc_ln131_25_reg_5257">64, 32, 6, 0</column>
-<column name="trunc_ln131_26_reg_5262">64, 32, 6, 0</column>
-<column name="trunc_ln131_27_reg_5267">64, 32, 6, 0</column>
-<column name="trunc_ln131_28_reg_5272">64, 32, 6, 0</column>
-<column name="trunc_ln131_29_reg_5277">64, 32, 6, 0</column>
-<column name="trunc_ln131_2_reg_5142">64, 32, 6, 0</column>
-<column name="trunc_ln131_30_reg_5282">64, 32, 6, 0</column>
-<column name="trunc_ln131_31_reg_5287">64, 32, 6, 0</column>
-<column name="trunc_ln131_32_reg_5292">64, 32, 6, 0</column>
-<column name="trunc_ln131_33_reg_5297">64, 32, 6, 0</column>
-<column name="trunc_ln131_34_reg_5302">64, 32, 6, 0</column>
-<column name="trunc_ln131_35_reg_5307">64, 32, 6, 0</column>
-<column name="trunc_ln131_36_reg_5312">64, 32, 6, 0</column>
-<column name="trunc_ln131_37_reg_5317">64, 32, 6, 0</column>
-<column name="trunc_ln131_38_reg_5322">64, 32, 6, 0</column>
-<column name="trunc_ln131_39_reg_5327">64, 32, 6, 0</column>
-<column name="trunc_ln131_3_reg_5147">64, 32, 6, 0</column>
-<column name="trunc_ln131_40_reg_5332">64, 32, 6, 0</column>
-<column name="trunc_ln131_41_reg_5337">64, 32, 6, 0</column>
-<column name="trunc_ln131_42_reg_5342">64, 32, 6, 0</column>
-<column name="trunc_ln131_43_reg_5347">64, 32, 6, 0</column>
-<column name="trunc_ln131_44_reg_5352">64, 32, 6, 0</column>
-<column name="trunc_ln131_45_reg_5357">64, 32, 6, 0</column>
-<column name="trunc_ln131_46_reg_5362">64, 32, 6, 0</column>
-<column name="trunc_ln131_47_reg_5367">64, 32, 6, 0</column>
-<column name="trunc_ln131_48_reg_5372">64, 32, 6, 0</column>
-<column name="trunc_ln131_49_reg_5377">64, 32, 6, 0</column>
-<column name="trunc_ln131_4_reg_5152">64, 32, 6, 0</column>
-<column name="trunc_ln131_50_reg_5382">64, 32, 6, 0</column>
-<column name="trunc_ln131_51_reg_5387">64, 32, 6, 0</column>
-<column name="trunc_ln131_52_reg_5392">64, 32, 6, 0</column>
-<column name="trunc_ln131_53_reg_5397">64, 32, 6, 0</column>
-<column name="trunc_ln131_54_reg_5402">64, 32, 6, 0</column>
-<column name="trunc_ln131_55_reg_5407">64, 32, 6, 0</column>
-<column name="trunc_ln131_56_reg_5412">64, 32, 6, 0</column>
-<column name="trunc_ln131_57_reg_5417">64, 32, 6, 0</column>
-<column name="trunc_ln131_58_reg_5422">64, 32, 6, 0</column>
-<column name="trunc_ln131_59_reg_5427">64, 32, 6, 0</column>
-<column name="trunc_ln131_5_reg_5157">64, 32, 6, 0</column>
-<column name="trunc_ln131_60_reg_5432">64, 32, 6, 0</column>
-<column name="trunc_ln131_61_reg_5437">64, 32, 6, 0</column>
-<column name="trunc_ln131_62_reg_5442">64, 32, 6, 0</column>
-<column name="trunc_ln131_63_reg_5447">64, 32, 6, 0</column>
-<column name="trunc_ln131_64_reg_5452">64, 32, 6, 0</column>
-<column name="trunc_ln131_65_reg_5457">64, 32, 6, 0</column>
-<column name="trunc_ln131_66_reg_5462">64, 32, 6, 0</column>
-<column name="trunc_ln131_67_reg_5467">64, 32, 6, 0</column>
-<column name="trunc_ln131_68_reg_5472">64, 32, 6, 0</column>
-<column name="trunc_ln131_69_reg_5477">64, 32, 6, 0</column>
-<column name="trunc_ln131_6_reg_5162">64, 32, 6, 0</column>
-<column name="trunc_ln131_70_reg_5482">64, 32, 6, 0</column>
-<column name="trunc_ln131_71_reg_5487">64, 32, 6, 0</column>
-<column name="trunc_ln131_72_reg_5492">64, 32, 6, 0</column>
-<column name="trunc_ln131_73_reg_5497">64, 32, 6, 0</column>
-<column name="trunc_ln131_74_reg_5502">64, 32, 6, 0</column>
-<column name="trunc_ln131_75_reg_5507">64, 32, 6, 0</column>
-<column name="trunc_ln131_76_reg_5512">64, 32, 6, 0</column>
-<column name="trunc_ln131_77_reg_5517">64, 32, 6, 0</column>
-<column name="trunc_ln131_78_reg_5522">64, 32, 6, 0</column>
-<column name="trunc_ln131_79_reg_5527">64, 32, 6, 0</column>
-<column name="trunc_ln131_7_reg_5167">64, 32, 6, 0</column>
-<column name="trunc_ln131_80_reg_5532">64, 32, 6, 0</column>
-<column name="trunc_ln131_81_reg_5537">64, 32, 6, 0</column>
-<column name="trunc_ln131_82_reg_5542">64, 32, 6, 0</column>
-<column name="trunc_ln131_83_reg_5547">64, 32, 6, 0</column>
-<column name="trunc_ln131_84_reg_5552">64, 32, 6, 0</column>
-<column name="trunc_ln131_85_reg_5557">64, 32, 6, 0</column>
-<column name="trunc_ln131_86_reg_5562">64, 32, 6, 0</column>
-<column name="trunc_ln131_87_reg_5567">64, 32, 6, 0</column>
-<column name="trunc_ln131_88_reg_5572">64, 32, 6, 0</column>
-<column name="trunc_ln131_89_reg_5577">64, 32, 6, 0</column>
-<column name="trunc_ln131_8_reg_5172">64, 32, 6, 0</column>
-<column name="trunc_ln131_90_reg_5582">64, 32, 6, 0</column>
-<column name="trunc_ln131_91_reg_5587">64, 32, 6, 0</column>
-<column name="trunc_ln131_92_reg_5592">64, 32, 6, 0</column>
-<column name="trunc_ln131_93_reg_5597">64, 32, 6, 0</column>
-<column name="trunc_ln131_94_reg_5602">64, 32, 6, 0</column>
-<column name="trunc_ln131_95_reg_5607">64, 32, 6, 0</column>
-<column name="trunc_ln131_96_reg_5612">64, 32, 6, 0</column>
-<column name="trunc_ln131_97_reg_5617">64, 32, 6, 0</column>
-<column name="trunc_ln131_98_reg_5622">64, 32, 6, 0</column>
-<column name="trunc_ln131_99_reg_5627">64, 32, 6, 0</column>
-<column name="trunc_ln131_9_reg_5177">64, 32, 6, 0</column>
-<column name="trunc_ln131_reg_5132">64, 32, 6, 0</column>
 </table>
 </item>
 </section>

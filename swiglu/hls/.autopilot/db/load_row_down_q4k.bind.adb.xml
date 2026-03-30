@@ -610,10 +610,10 @@ entry:18 %trunc_ln = partselect i60 @_ssdm_op_PartSelect.i60.i64.i32.i32, i64 %e
 
 <Node id="31" bw="64" op_0_bw="60">
 <![CDATA[
-entry:19 %sext_ln325 = sext i60 %trunc_ln
+entry:19 %sext_ln327 = sext i60 %trunc_ln
 
 ]]></Node>
-<StgValue><ssdm name="sext_ln325"/></StgValue>
+<StgValue><ssdm name="sext_ln327"/></StgValue>
 </operation>
 
 <operation id="86" st_id="2" stage="1" lat="1">
@@ -625,7 +625,7 @@ entry:19 %sext_ln325 = sext i60 %trunc_ln
 
 <Node id="32" bw="128" op_0_bw="128" op_1_bw="64">
 <![CDATA[
-entry:20 %gmem_Wd_addr = getelementptr i128 %gmem_Wd, i64 %sext_ln325
+entry:20 %gmem_Wd_addr = getelementptr i128 %gmem_Wd, i64 %sext_ln327
 
 ]]></Node>
 <StgValue><ssdm name="gmem_Wd_addr"/></StgValue>
@@ -1918,10 +1918,10 @@ entry:21 %empty_765 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i128, i128 %gmem_Wd_a
 
 <Node id="34" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="60" op_3_bw="128" op_4_bw="128" op_5_bw="128" op_6_bw="128" op_7_bw="128" op_8_bw="128" op_9_bw="128" op_10_bw="128" op_11_bw="0">
 <![CDATA[
-entry:22 %call_ln325 = call void @load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1, i128 %gmem_Wd, i60 %trunc_ln, i128 %rb_0, i128 %rb_1, i128 %rb_2, i128 %rb_3, i128 %rb_4, i128 %rb_5, i128 %rb_6, i128 %rb_7
+entry:22 %call_ln327 = call void @load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1, i128 %gmem_Wd, i60 %trunc_ln, i128 %rb_0, i128 %rb_1, i128 %rb_2, i128 %rb_3, i128 %rb_4, i128 %rb_5, i128 %rb_6, i128 %rb_7
 
 ]]></Node>
-<StgValue><ssdm name="call_ln325"/></StgValue>
+<StgValue><ssdm name="call_ln327"/></StgValue>
 </operation>
 </state>
 
@@ -1936,7 +1936,7 @@ entry:22 %call_ln325 = call void @load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS
 
 <Node id="14" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="64" op_3_bw="64" op_4_bw="64">
 <![CDATA[
-entry:2 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_0, i64 666, i64 18, i64 18446744073709551615
+entry:2 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_0, i64 666, i64 19, i64 18446744073709551615
 
 ]]></Node>
 <StgValue><ssdm name="specmemcore_ln0"/></StgValue>
@@ -1951,7 +1951,7 @@ entry:2 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_0, i
 
 <Node id="15" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="64" op_3_bw="64" op_4_bw="64">
 <![CDATA[
-entry:3 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_1, i64 666, i64 18, i64 18446744073709551615
+entry:3 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_1, i64 666, i64 19, i64 18446744073709551615
 
 ]]></Node>
 <StgValue><ssdm name="specmemcore_ln0"/></StgValue>
@@ -1966,7 +1966,7 @@ entry:3 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_1, i
 
 <Node id="16" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="64" op_3_bw="64" op_4_bw="64">
 <![CDATA[
-entry:4 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_2, i64 666, i64 18, i64 18446744073709551615
+entry:4 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_2, i64 666, i64 19, i64 18446744073709551615
 
 ]]></Node>
 <StgValue><ssdm name="specmemcore_ln0"/></StgValue>
@@ -1981,7 +1981,7 @@ entry:4 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_2, i
 
 <Node id="17" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="64" op_3_bw="64" op_4_bw="64">
 <![CDATA[
-entry:5 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_3, i64 666, i64 18, i64 18446744073709551615
+entry:5 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_3, i64 666, i64 19, i64 18446744073709551615
 
 ]]></Node>
 <StgValue><ssdm name="specmemcore_ln0"/></StgValue>
@@ -1996,7 +1996,7 @@ entry:5 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_3, i
 
 <Node id="18" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="64" op_3_bw="64" op_4_bw="64">
 <![CDATA[
-entry:6 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_4, i64 666, i64 18, i64 18446744073709551615
+entry:6 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_4, i64 666, i64 19, i64 18446744073709551615
 
 ]]></Node>
 <StgValue><ssdm name="specmemcore_ln0"/></StgValue>
@@ -2011,7 +2011,7 @@ entry:6 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_4, i
 
 <Node id="19" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="64" op_3_bw="64" op_4_bw="64">
 <![CDATA[
-entry:7 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_5, i64 666, i64 18, i64 18446744073709551615
+entry:7 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_5, i64 666, i64 19, i64 18446744073709551615
 
 ]]></Node>
 <StgValue><ssdm name="specmemcore_ln0"/></StgValue>
@@ -2026,7 +2026,7 @@ entry:7 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_5, i
 
 <Node id="20" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="64" op_3_bw="64" op_4_bw="64">
 <![CDATA[
-entry:8 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_6, i64 666, i64 18, i64 18446744073709551615
+entry:8 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_6, i64 666, i64 19, i64 18446744073709551615
 
 ]]></Node>
 <StgValue><ssdm name="specmemcore_ln0"/></StgValue>
@@ -2041,7 +2041,7 @@ entry:8 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_6, i
 
 <Node id="21" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="64" op_3_bw="64" op_4_bw="64">
 <![CDATA[
-entry:9 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_7, i64 666, i64 18, i64 18446744073709551615
+entry:9 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %rb_7, i64 666, i64 19, i64 18446744073709551615
 
 ]]></Node>
 <StgValue><ssdm name="specmemcore_ln0"/></StgValue>
@@ -2071,10 +2071,10 @@ entry:10 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %
 
 <Node id="34" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="60" op_3_bw="128" op_4_bw="128" op_5_bw="128" op_6_bw="128" op_7_bw="128" op_8_bw="128" op_9_bw="128" op_10_bw="128" op_11_bw="0">
 <![CDATA[
-entry:22 %call_ln325 = call void @load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1, i128 %gmem_Wd, i60 %trunc_ln, i128 %rb_0, i128 %rb_1, i128 %rb_2, i128 %rb_3, i128 %rb_4, i128 %rb_5, i128 %rb_6, i128 %rb_7
+entry:22 %call_ln327 = call void @load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1, i128 %gmem_Wd, i60 %trunc_ln, i128 %rb_0, i128 %rb_1, i128 %rb_2, i128 %rb_3, i128 %rb_4, i128 %rb_5, i128 %rb_6, i128 %rb_7
 
 ]]></Node>
-<StgValue><ssdm name="call_ln325"/></StgValue>
+<StgValue><ssdm name="call_ln327"/></StgValue>
 </operation>
 
 <operation id="169" st_id="74" stage="1" lat="1">
@@ -2086,10 +2086,10 @@ entry:22 %call_ln325 = call void @load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS
 
 <Node id="35" bw="0">
 <![CDATA[
-entry:23 %ret_ln331 = ret
+entry:23 %ret_ln333 = ret
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln331"/></StgValue>
+<StgValue><ssdm name="ret_ln333"/></StgValue>
 </operation>
 </state>
 </state_list>
@@ -2107,35 +2107,35 @@ entry:23 %ret_ln331 = ret
 <core>NULL</core><StgValue><ssdm name="out_i"/></StgValue>
 </port>
 <port id="246" name="rb_0" dir="1" iftype="1">
-<core>RAM_1P_BRAM</core><StgValue><ssdm name="rb_0"/><MemPortTyVec>0 </MemPortTyVec>
+<core>RAM_1P_LUTRAM</core><StgValue><ssdm name="rb_0"/><MemPortTyVec>0 </MemPortTyVec>
 </StgValue>
 </port>
 <port id="247" name="rb_1" dir="1" iftype="1">
-<core>RAM_1P_BRAM</core><StgValue><ssdm name="rb_1"/><MemPortTyVec>0 </MemPortTyVec>
+<core>RAM_1P_LUTRAM</core><StgValue><ssdm name="rb_1"/><MemPortTyVec>0 </MemPortTyVec>
 </StgValue>
 </port>
 <port id="248" name="rb_2" dir="1" iftype="1">
-<core>RAM_1P_BRAM</core><StgValue><ssdm name="rb_2"/><MemPortTyVec>0 </MemPortTyVec>
+<core>RAM_1P_LUTRAM</core><StgValue><ssdm name="rb_2"/><MemPortTyVec>0 </MemPortTyVec>
 </StgValue>
 </port>
 <port id="249" name="rb_3" dir="1" iftype="1">
-<core>RAM_1P_BRAM</core><StgValue><ssdm name="rb_3"/><MemPortTyVec>0 </MemPortTyVec>
+<core>RAM_1P_LUTRAM</core><StgValue><ssdm name="rb_3"/><MemPortTyVec>0 </MemPortTyVec>
 </StgValue>
 </port>
 <port id="250" name="rb_4" dir="1" iftype="1">
-<core>RAM_1P_BRAM</core><StgValue><ssdm name="rb_4"/><MemPortTyVec>0 </MemPortTyVec>
+<core>RAM_1P_LUTRAM</core><StgValue><ssdm name="rb_4"/><MemPortTyVec>0 </MemPortTyVec>
 </StgValue>
 </port>
 <port id="251" name="rb_5" dir="1" iftype="1">
-<core>RAM_1P_BRAM</core><StgValue><ssdm name="rb_5"/><MemPortTyVec>0 </MemPortTyVec>
+<core>RAM_1P_LUTRAM</core><StgValue><ssdm name="rb_5"/><MemPortTyVec>0 </MemPortTyVec>
 </StgValue>
 </port>
 <port id="252" name="rb_6" dir="1" iftype="1">
-<core>RAM_1P_BRAM</core><StgValue><ssdm name="rb_6"/><MemPortTyVec>0 </MemPortTyVec>
+<core>RAM_1P_LUTRAM</core><StgValue><ssdm name="rb_6"/><MemPortTyVec>0 </MemPortTyVec>
 </StgValue>
 </port>
 <port id="253" name="rb_7" dir="1" iftype="1">
-<core>RAM_1P_BRAM</core><StgValue><ssdm name="rb_7"/><MemPortTyVec>0 </MemPortTyVec>
+<core>RAM_1P_LUTRAM</core><StgValue><ssdm name="rb_7"/><MemPortTyVec>0 </MemPortTyVec>
 </StgValue>
 </port>
 </ports>
@@ -2184,11 +2184,11 @@ entry:23 %ret_ln331 = ret
 </dataflow>
 <dataflow id="283" from="StgValue_282" to="trunc_ln" fromId="282" toId="84">
 </dataflow>
-<dataflow id="284" from="trunc_ln" to="sext_ln325" fromId="84" toId="85">
+<dataflow id="284" from="trunc_ln" to="sext_ln327" fromId="84" toId="85">
 </dataflow>
 <dataflow id="285" from="gmem_Wd" to="gmem_Wd_addr" fromId="243" toId="86">
 </dataflow>
-<dataflow id="286" from="sext_ln325" to="gmem_Wd_addr" fromId="85" toId="86">
+<dataflow id="286" from="sext_ln327" to="gmem_Wd_addr" fromId="85" toId="86">
 </dataflow>
 <dataflow id="288" from="_ssdm_op_ReadReq.m_axi.p1i128" to="empty_765" fromId="287" toId="87">
 </dataflow>
@@ -2616,27 +2616,27 @@ entry:23 %ret_ln331 = ret
 </dataflow>
 <dataflow id="501" from="StgValue_290" to="empty_765" fromId="290" toId="157">
 </dataflow>
-<dataflow id="503" from="load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1" to="call_ln325" fromId="502" toId="158">
+<dataflow id="503" from="load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1" to="call_ln327" fromId="502" toId="158">
 </dataflow>
-<dataflow id="504" from="gmem_Wd" to="call_ln325" fromId="243" toId="158">
+<dataflow id="504" from="gmem_Wd" to="call_ln327" fromId="243" toId="158">
 </dataflow>
-<dataflow id="505" from="trunc_ln" to="call_ln325" fromId="84" toId="158">
+<dataflow id="505" from="trunc_ln" to="call_ln327" fromId="84" toId="158">
 </dataflow>
-<dataflow id="506" from="rb_0" to="call_ln325" fromId="246" toId="158">
+<dataflow id="506" from="rb_0" to="call_ln327" fromId="246" toId="158">
 </dataflow>
-<dataflow id="507" from="rb_1" to="call_ln325" fromId="247" toId="158">
+<dataflow id="507" from="rb_1" to="call_ln327" fromId="247" toId="158">
 </dataflow>
-<dataflow id="508" from="rb_2" to="call_ln325" fromId="248" toId="158">
+<dataflow id="508" from="rb_2" to="call_ln327" fromId="248" toId="158">
 </dataflow>
-<dataflow id="509" from="rb_3" to="call_ln325" fromId="249" toId="158">
+<dataflow id="509" from="rb_3" to="call_ln327" fromId="249" toId="158">
 </dataflow>
-<dataflow id="510" from="rb_4" to="call_ln325" fromId="250" toId="158">
+<dataflow id="510" from="rb_4" to="call_ln327" fromId="250" toId="158">
 </dataflow>
-<dataflow id="511" from="rb_5" to="call_ln325" fromId="251" toId="158">
+<dataflow id="511" from="rb_5" to="call_ln327" fromId="251" toId="158">
 </dataflow>
-<dataflow id="512" from="rb_6" to="call_ln325" fromId="252" toId="158">
+<dataflow id="512" from="rb_6" to="call_ln327" fromId="252" toId="158">
 </dataflow>
-<dataflow id="513" from="rb_7" to="call_ln325" fromId="253" toId="158">
+<dataflow id="513" from="rb_7" to="call_ln327" fromId="253" toId="158">
 </dataflow>
 <dataflow id="515" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="514" toId="159">
 </dataflow>
@@ -2758,27 +2758,27 @@ entry:23 %ret_ln331 = ret
 </dataflow>
 <dataflow id="589" from="StgValue_563" to="specinterface_ln0" fromId="563" toId="167">
 </dataflow>
-<dataflow id="590" from="load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_326_1" to="call_ln325" fromId="502" toId="168">
+<dataflow id="590" from="load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1" to="call_ln327" fromId="502" toId="168">
 </dataflow>
-<dataflow id="591" from="gmem_Wd" to="call_ln325" fromId="243" toId="168">
+<dataflow id="591" from="gmem_Wd" to="call_ln327" fromId="243" toId="168">
 </dataflow>
-<dataflow id="592" from="trunc_ln" to="call_ln325" fromId="84" toId="168">
+<dataflow id="592" from="trunc_ln" to="call_ln327" fromId="84" toId="168">
 </dataflow>
-<dataflow id="593" from="rb_0" to="call_ln325" fromId="246" toId="168">
+<dataflow id="593" from="rb_0" to="call_ln327" fromId="246" toId="168">
 </dataflow>
-<dataflow id="594" from="rb_1" to="call_ln325" fromId="247" toId="168">
+<dataflow id="594" from="rb_1" to="call_ln327" fromId="247" toId="168">
 </dataflow>
-<dataflow id="595" from="rb_2" to="call_ln325" fromId="248" toId="168">
+<dataflow id="595" from="rb_2" to="call_ln327" fromId="248" toId="168">
 </dataflow>
-<dataflow id="596" from="rb_3" to="call_ln325" fromId="249" toId="168">
+<dataflow id="596" from="rb_3" to="call_ln327" fromId="249" toId="168">
 </dataflow>
-<dataflow id="597" from="rb_4" to="call_ln325" fromId="250" toId="168">
+<dataflow id="597" from="rb_4" to="call_ln327" fromId="250" toId="168">
 </dataflow>
-<dataflow id="598" from="rb_5" to="call_ln325" fromId="251" toId="168">
+<dataflow id="598" from="rb_5" to="call_ln327" fromId="251" toId="168">
 </dataflow>
-<dataflow id="599" from="rb_6" to="call_ln325" fromId="252" toId="168">
+<dataflow id="599" from="rb_6" to="call_ln327" fromId="252" toId="168">
 </dataflow>
-<dataflow id="600" from="rb_7" to="call_ln325" fromId="253" toId="168">
+<dataflow id="600" from="rb_7" to="call_ln327" fromId="253" toId="168">
 </dataflow>
 </dataflows>
 

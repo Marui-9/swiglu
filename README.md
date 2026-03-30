@@ -69,6 +69,16 @@ the Phase 5 MAC loop to use INT32 accumulators — a 16× reduction in LUT cost
 per pipeline that makes full 32-block unrolling feasible within the ZU5EV
 budget. Model weights in DDR are not altered.
 
+### FP32 dequantization in the MACs (swiglu.cpp)
+- **Q4_K (Phases 2/3, gate/up):** each block carries FP16 `d` (scale) and `dmin`
+  (offset). Integer sums `sw`/`sm` are scaled as `d * (x_scale * sw) - dmin * (x_scale * sm)`
+  to recover FP32.
+- **Gate path:** `gate_scale` (Phase 4) rescales INT8 gate back to FP32 during the
+  down-projection MACs.
+- **Q6_K (Phase 5B):** per-block FP16 `d` plus INT4/INT2 encoded weights and per-nibble
+  scales; `decode_mac_q6k` emits FP32 accumulation using `gate_scale` to dequantize
+  the INT8 gate vector.
+
 ### Why INT32 accumulators?
 
 FP32 adders have ~5 cycle pipeline latency; a single FP32 accumulator gives
@@ -306,19 +316,19 @@ passed regardless.
 
 ## Memory Architecture
 
-| Variable      | Shape          | Storage      | Size   | Purpose                              |
-|---------------|----------------|--------------|--------|--------------------------------------|
-| `x_local_1`   | `[1][8][256]`  | BRAM ram\_1p | 2 KB   | x copy for compute\_X1 (8-bank)     |
-| `x_local_2`   | `[1][8][256]`  | BRAM ram\_1p | 2 KB   | x copy for compute\_X2 (8-bank)     |
-| `X1_cache`    | `[1][8192]`    | FIFO stream  | 32 KB  | DATAFLOW channel, depth=16           |
-| `X2_cache`    | `[1][8192]`    | FIFO stream  | 32 KB  | DATAFLOW channel, depth=16           |
-| `gate_fp`     | `[8192]`       | BRAM ram\_1p | 32 KB  | Temporary FP32 gate (compute\_gate) |
-| `gate_cache`  | `[1][32][256]` | BRAM ram\_2p | 8 KB   | INT8 quantized gate (32-bank)        |
-| `gate_scale`  | `[1]`          | Register     | 4 B    | DATAFLOW scalar channel              |
-| `sigmoid_lut` | `[4096]`       | BRAM rom\_1p | 16 KB  | σ(x) over [-8, +8]                  |
-| `row_buf` WV  | `[8][9]`       | Registers    | 1152 B | Per-row Q4\_K buffer (gate/up)      |
-| `row_buf` Q4K | `[32][9]`      | Registers    | 4608 B | Per-row Q4\_K buffer (down)         |
-| `row_buf` Q6K | `[420]`        | Registers    | 6720 B | Per-row Q6\_K buffer (down)         |
+| Variable      | Shape          | Storage              | Size   | Purpose                              |
+|---------------|----------------|----------------------|--------|--------------------------------------|
+| `x_local_1`   | `[1][8][256]`  | LUTRAM ram\_1p       | 2 KB   | x copy for compute\_X1 (8-bank)     |
+| `x_local_2`   | `[1][8][256]`  | LUTRAM ram\_1p       | 2 KB   | x copy for compute\_X2 (8-bank)     |
+| `X1_cache`    | `[1][8192]`    | URAM ram\_2p         | 32 KB  | DATAFLOW channel, depth=16           |
+| `X2_cache`    | `[1][8192]`    | URAM ram\_2p         | 32 KB  | DATAFLOW channel, depth=16           |
+| `gate_cache`  | `[1][32][256]` | URAM ram\_2p         | 8 KB   | INT8 quantized gate (32-bank)        |
+| `gate_scale`  | `[1]`          | Register             | 4 B    | DATAFLOW scalar channel              |
+| `sigmoid_lut` | `[4096]`       | LUTRAM rom\_1p       | 16 KB  | σ(x) over [-8, +8]                  |
+| `row_buf` WV  | `[8][9]`       | LUTRAM ram\_1p + partition | 1152 B | Per-row Q4\_K buffer (gate/up)      |
+| `row_buf` Q4K | `[32][9]`      | LUTRAM ram\_1p + partition | 4608 B | Per-row Q4\_K buffer (down)         |
+| `row_buf` Q6K | `[420]`        | LUTRAM ram\_1p (cyclic)    | 6720 B | Per-row Q6\_K buffer (down)         |
+| `out_local`   | `[2048]`       | LUTRAM ram\_1p       | 8 KB   | Output staging before memcpy         |
 
 ---
 

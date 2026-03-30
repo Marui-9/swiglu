@@ -322,8 +322,8 @@ set NewPortList {[
 
 set ArgLastReadFirstWriteLatency {
 	load_row_down_q6k {
-		gmem_Wd {Type I LastRead 2 FirstWrite -1}
-		W_down_wide {Type I LastRead 1 FirstWrite -1}
+		gmem_Wd {Type I LastRead 1 FirstWrite -1}
+		W_down_wide {Type I LastRead 0 FirstWrite -1}
 		out_i {Type I LastRead 0 FirstWrite -1}
 		rb_0 {Type O LastRead -1 FirstWrite 2}
 		rb_1 {Type O LastRead -1 FirstWrite 2}
@@ -343,7 +343,7 @@ set ArgLastReadFirstWriteLatency {
 		rb_15 {Type O LastRead -1 FirstWrite 2}}
 	load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K {
 		gmem_Wd {Type I LastRead 1 FirstWrite -1}
-		sext_ln470 {Type I LastRead 0 FirstWrite -1}
+		sext_ln472 {Type I LastRead 0 FirstWrite -1}
 		rb_15 {Type O LastRead -1 FirstWrite 2}
 		rb_14 {Type O LastRead -1 FirstWrite 2}
 		rb_13 {Type O LastRead -1 FirstWrite 2}
@@ -364,8 +364,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "497", "Max" : "497"}
-	, {"Name" : "Interval", "Min" : "497", "Max" : "497"}
+	{"Name" : "Latency", "Min" : "496", "Max" : "496"}
+	, {"Name" : "Interval", "Min" : "496", "Max" : "496"}
 ]}
 
 set PipelineEnableSignalInfo {[

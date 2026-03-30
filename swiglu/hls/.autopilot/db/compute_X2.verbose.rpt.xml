@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_X2'" level="0">
-<item name = "Date">Mon Mar 30 09:37:16 2026
+<item name = "Date">Mon Mar 30 15:05:57 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33 ns, 3.239 ns, 0.90 ns</column>
+<column name="ap_clk">10.00 ns, 8.000 ns, 2.00 ns</column>
 </table>
 </item>
 </section>
@@ -24,20 +24,20 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">4579330, 4579330, 15.249 ms, 15.249 ms, 4579330, 4579330, no</column>
+<column name="">3883009, 3883009, 38.830 ms, 38.830 ms, 3883009, 3883009, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_row_wv_fu_391">load_row_wv, 148, 148, 0.493 us, 0.493 us, 148, 148, no</column>
-<column name="grp_mac_blocks_wv_fu_407">mac_blocks_wv, 405, 405, 1.349 us, 1.349 us, 405, 405, no</column>
+<column name="grp_load_row_wv_fu_391">load_row_wv, 148, 148, 1.480 us, 1.480 us, 148, 148, no</column>
+<column name="grp_mac_blocks_wv_fu_407">mac_blocks_wv, 322, 322, 3.220 us, 3.220 us, 322, 322, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- COMPUTE_X2">4579329, 4579329, 559, -, -, 8192, no</column>
+<column name="- COMPUTE_X2">3883008, 3883008, 474, -, -, 8192, no</column>
 </table>
 </item>
 </section>
@@ -52,20 +52,20 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 45, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, 26, 19598, 16825, -</column>
-<column name="Memory">32, -, 0, 0, -</column>
-<column name="Multiplexer">-, -, 0, 357, -</column>
-<column name="Register">-, -, 180, -, -</column>
+<column name="Instance">-, 26, 9392, 11922, -</column>
+<column name="Memory">-, -, 1024, 144, -</column>
+<column name="Multiplexer">-, -, 0, 345, -</column>
+<column name="Register">-, -, 145, -, -</column>
 <specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
-<specialColumn name="Utilization (%)">11, 2, 8, 14, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 2, 4, 10, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_load_row_wv_fu_391">load_row_wv, 0, 0, 291, 785, 0</column>
-<column name="grp_mac_blocks_wv_fu_407">mac_blocks_wv, 0, 26, 19307, 16040, 0</column>
+<column name="grp_load_row_wv_fu_391">load_row_wv, 0, 0, 284, 783, 0</column>
+<column name="grp_mac_blocks_wv_fu_407">mac_blocks_wv, 0, 26, 9108, 11139, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -74,14 +74,14 @@
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="row_buf_U">compute_X1_row_buf_RAM_1P_BRAM_1R1W, 4, 0, 0, 0, 9, 128, 1, 1152</column>
-<column name="row_buf_1_U">compute_X1_row_buf_RAM_1P_BRAM_1R1W, 4, 0, 0, 0, 9, 128, 1, 1152</column>
-<column name="row_buf_2_U">compute_X1_row_buf_RAM_1P_BRAM_1R1W, 4, 0, 0, 0, 9, 128, 1, 1152</column>
-<column name="row_buf_3_U">compute_X1_row_buf_RAM_1P_BRAM_1R1W, 4, 0, 0, 0, 9, 128, 1, 1152</column>
-<column name="row_buf_4_U">compute_X1_row_buf_RAM_1P_BRAM_1R1W, 4, 0, 0, 0, 9, 128, 1, 1152</column>
-<column name="row_buf_5_U">compute_X1_row_buf_RAM_1P_BRAM_1R1W, 4, 0, 0, 0, 9, 128, 1, 1152</column>
-<column name="row_buf_6_U">compute_X1_row_buf_RAM_1P_BRAM_1R1W, 4, 0, 0, 0, 9, 128, 1, 1152</column>
-<column name="row_buf_7_U">compute_X1_row_buf_RAM_1P_BRAM_1R1W, 4, 0, 0, 0, 9, 128, 1, 1152</column>
+<column name="row_buf_U">compute_X1_row_buf_RAM_1P_LUTRAM_1R1W, 0, 128, 18, 0, 9, 128, 1, 1152</column>
+<column name="row_buf_1_U">compute_X1_row_buf_RAM_1P_LUTRAM_1R1W, 0, 128, 18, 0, 9, 128, 1, 1152</column>
+<column name="row_buf_2_U">compute_X1_row_buf_RAM_1P_LUTRAM_1R1W, 0, 128, 18, 0, 9, 128, 1, 1152</column>
+<column name="row_buf_3_U">compute_X1_row_buf_RAM_1P_LUTRAM_1R1W, 0, 128, 18, 0, 9, 128, 1, 1152</column>
+<column name="row_buf_4_U">compute_X1_row_buf_RAM_1P_LUTRAM_1R1W, 0, 128, 18, 0, 9, 128, 1, 1152</column>
+<column name="row_buf_5_U">compute_X1_row_buf_RAM_1P_LUTRAM_1R1W, 0, 128, 18, 0, 9, 128, 1, 1152</column>
+<column name="row_buf_6_U">compute_X1_row_buf_RAM_1P_LUTRAM_1R1W, 0, 128, 18, 0, 9, 128, 1, 1152</column>
+<column name="row_buf_7_U">compute_X1_row_buf_RAM_1P_LUTRAM_1R1W, 0, 128, 18, 0, 9, 128, 1, 1152</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
@@ -90,14 +90,14 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln247_fu_690_p2">+, 0, 0, 21, 14, 1</column>
-<column name="icmp_ln247_fu_684_p2">icmp, 0, 0, 22, 14, 15</column>
+<column name="add_ln248_fu_691_p2">+, 0, 0, 21, 14, 1</column>
+<column name="icmp_ln248_fu_685_p2">icmp, 0, 0, 22, 14, 15</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">43, 8, 1, 8</column>
+<column name="ap_NS_fsm">31, 6, 1, 6</column>
 <column name="ap_done">9, 2, 1, 2</column>
 <column name="row_buf_1_address0">14, 3, 4, 12</column>
 <column name="row_buf_1_ce0">14, 3, 1, 3</column>
@@ -128,17 +128,15 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="V_read_reg_719">64, 0, 64, 0</column>
-<column name="add_ln247_reg_731">14, 0, 14, 0</column>
-<column name="ap_CS_fsm">7, 0, 7, 0</column>
+<column name="V_read_reg_723">64, 0, 64, 0</column>
+<column name="ap_CS_fsm">5, 0, 5, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
 <column name="grp_load_row_wv_fu_391_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_mac_blocks_wv_fu_407_ap_start_reg">1, 0, 1, 0</column>
-<column name="icmp_ln247_reg_727">1, 0, 1, 0</column>
+<column name="row_1_reg_728">14, 0, 14, 0</column>
 <column name="row_fu_326">14, 0, 14, 0</column>
-<column name="row_result_reg_741">32, 0, 32, 0</column>
-<column name="trunc_ln250_reg_736">13, 0, 13, 0</column>
-<column name="x_scale_read_reg_714">32, 0, 32, 0</column>
+<column name="trunc_ln252_reg_736">13, 0, 13, 0</column>
+<column name="x_scale_read_reg_718">32, 0, 32, 0</column>
 </table>
 </item>
 </section>
