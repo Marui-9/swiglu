@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'mac_blocks_wv_Pipeline_MAC_ALL_BLOCKS'
 ================================================================
-* Date:           Tue Mar 31 16:01:00 2026
+* Date:           Wed Apr  1 12:45:22 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -463,8 +463,8 @@
     |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter2_reg  |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter3_reg  |   1|   0|    1|          0|
-    |empty_720_reg_10799               |   3|   0|    3|          0|
-    |empty_722_reg_10819               |   4|   0|    4|          0|
+    |empty_716_reg_10799               |   3|   0|    3|          0|
+    |empty_718_reg_10819               |   4|   0|    4|          0|
     |icmp_ln186_reg_10783              |   1|   0|    1|          0|
     |int_acc_m_10_fu_1138              |  32|   0|   32|          0|
     |int_acc_m_11_fu_1134              |  32|   0|   32|          0|
@@ -613,7 +613,7 @@
     |sc6u_reg_10921                    |   6|   0|    6|          0|
     |tmp_161_reg_10824                 |   1|   0|    1|          0|
     |trunc_ln186_reg_10787             |   4|   0|    4|          0|
-    |empty_720_reg_10799               |  64|  32|    3|          0|
+    |empty_716_reg_10799               |  64|  32|    3|          0|
     |icmp_ln186_reg_10783              |  64|  32|    1|          0|
     +----------------------------------+----+----+-----+-----------+
     |Total                             |4351|  64| 4227|          0|
@@ -685,6 +685,10 @@
 |rb_0_address0                 |  out|    4|   ap_memory|                                   rb_0|         array|
 |rb_0_ce0                      |  out|    1|   ap_memory|                                   rb_0|         array|
 |rb_0_q0                       |   in|  128|   ap_memory|                                   rb_0|         array|
+|empty_36                      |   in|    6|     ap_none|                               empty_36|        scalar|
+|empty_37                      |   in|    6|     ap_none|                               empty_37|        scalar|
+|empty_38                      |   in|    6|     ap_none|                               empty_38|        scalar|
+|empty_39                      |   in|    6|     ap_none|                               empty_39|        scalar|
 |empty_40                      |   in|    6|     ap_none|                               empty_40|        scalar|
 |empty_41                      |   in|    6|     ap_none|                               empty_41|        scalar|
 |empty_42                      |   in|    6|     ap_none|                               empty_42|        scalar|
@@ -697,10 +701,6 @@
 |empty_49                      |   in|    6|     ap_none|                               empty_49|        scalar|
 |empty_50                      |   in|    6|     ap_none|                               empty_50|        scalar|
 |empty_51                      |   in|    6|     ap_none|                               empty_51|        scalar|
-|empty_52                      |   in|    6|     ap_none|                               empty_52|        scalar|
-|empty_53                      |   in|    6|     ap_none|                               empty_53|        scalar|
-|empty_54                      |   in|    6|     ap_none|                               empty_54|        scalar|
-|empty_55                      |   in|    6|     ap_none|                               empty_55|        scalar|
 |x_1_0_address0                |  out|    4|   ap_memory|                                  x_1_0|         array|
 |x_1_0_ce0                     |  out|    1|   ap_memory|                                  x_1_0|         array|
 |x_1_0_q0                      |   in|    8|   ap_memory|                                  x_1_0|         array|
@@ -1058,6 +1058,10 @@
 |rb_7_address0                 |  out|    4|   ap_memory|                                   rb_7|         array|
 |rb_7_ce0                      |  out|    1|   ap_memory|                                   rb_7|         array|
 |rb_7_q0                       |   in|  128|   ap_memory|                                   rb_7|         array|
+|empty_52                      |   in|    6|     ap_none|                               empty_52|        scalar|
+|empty_53                      |   in|    6|     ap_none|                               empty_53|        scalar|
+|empty_54                      |   in|    6|     ap_none|                               empty_54|        scalar|
+|empty_55                      |   in|    6|     ap_none|                               empty_55|        scalar|
 |empty_56                      |   in|    6|     ap_none|                               empty_56|        scalar|
 |empty_57                      |   in|    6|     ap_none|                               empty_57|        scalar|
 |empty_58                      |   in|    6|     ap_none|                               empty_58|        scalar|
@@ -1165,10 +1169,6 @@
 |empty_160                     |   in|    6|     ap_none|                              empty_160|        scalar|
 |empty_161                     |   in|    6|     ap_none|                              empty_161|        scalar|
 |empty_162                     |   in|    6|     ap_none|                              empty_162|        scalar|
-|empty_163                     |   in|    6|     ap_none|                              empty_163|        scalar|
-|empty_164                     |   in|    6|     ap_none|                              empty_164|        scalar|
-|empty_165                     |   in|    6|     ap_none|                              empty_165|        scalar|
-|empty_166                     |   in|    6|     ap_none|                              empty_166|        scalar|
 |empty                         |   in|    6|     ap_none|                                  empty|        scalar|
 |sw_out                        |  out|   32|      ap_vld|                                 sw_out|       pointer|
 |sw_out_ap_vld                 |  out|    1|      ap_vld|                                 sw_out|       pointer|

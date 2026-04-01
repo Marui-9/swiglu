@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1'" level="0">
-<item name = "Date">Tue Mar 31 16:00:09 2026
+<item name = "Date">Wed Apr  1 12:45:11 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>

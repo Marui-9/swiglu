@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_output'" level="0">
-<item name = "Date">Tue Mar 31 16:01:29 2026
+<item name = "Date">Wed Apr  1 12:45:39 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -56,12 +56,12 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 84, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, 267, 47473, 56105, -</column>
+<column name="Instance">-, 27, 30611, 32183, -</column>
 <column name="Memory">-, -, 3104, 2464, -</column>
-<column name="Multiplexer">-, -, 0, 2152, -</column>
+<column name="Multiplexer">-, -, 0, 2080, -</column>
 <column name="Register">-, -, 353, -, -</column>
 <specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
-<specialColumn name="Utilization (%)">0, 21, 21, 51, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 2, 14, 31, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -69,12 +69,12 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="grp_compute_output_Pipeline_1_fu_379">compute_output_Pipeline_1, 0, 0, 49, 88, 0</column>
-<column name="faddfsub_32ns_32ns_32_4_full_dsp_1_U4384">faddfsub_32ns_32ns_32_4_full_dsp_1, 0, 2, 227, 214, 0</column>
-<column name="fmul_32ns_32ns_32_3_max_dsp_1_U4385">fmul_32ns_32ns_32_3_max_dsp_1, 0, 3, 128, 135, 0</column>
+<column name="faddfsub_32ns_32ns_32_4_full_dsp_1_U4132">faddfsub_32ns_32ns_32_4_full_dsp_1, 0, 2, 227, 214, 0</column>
+<column name="fmul_32ns_32ns_32_3_max_dsp_1_U4133">fmul_32ns_32ns_32_3_max_dsp_1, 0, 3, 128, 135, 0</column>
 <column name="grp_fp16_to_fp32_fu_528">fp16_to_fp32, 0, 0, 36, 375, 0</column>
 <column name="grp_load_row_down_q4k_fu_295">load_row_down_q4k, 0, 0, 288, 803, 0</column>
 <column name="grp_load_row_down_q6k_fu_271">load_row_down_q6k, 0, 1, 296, 699, 0</column>
-<column name="grp_mac_blocks_down_q4k5_fu_349">mac_blocks_down_q4k5, 0, 261, 43904, 48860, 0</column>
+<column name="grp_mac_blocks_down_q4k5_fu_349">mac_blocks_down_q4k5, 0, 21, 27042, 24938, 0</column>
 <column name="grp_mac_blocks_down_q6k_fu_311">mac_blocks_down_q6k, 0, 0, 2545, 4931, 0</column>
 </table>
 </item>
@@ -120,7 +120,7 @@
 <column name="grp_fu_396_p2">+, 0, 0, 19, 12, 1</column>
 <column name="ap_block_state2_io">and, 0, 0, 2, 1, 1</column>
 <column name="grp_fu_390_p2">icmp, 0, 0, 20, 12, 13</column>
-<column name="icmp_ln480_fu_406_p2">icmp, 0, 0, 39, 32, 1</column>
+<column name="icmp_ln486_fu_406_p2">icmp, 0, 0, 39, 32, 1</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 <column name="ap_predicate_op169_writereq_state2">or, 0, 0, 2, 1, 1</column>
 </table>
@@ -131,28 +131,20 @@
 <column name="ap_done">9, 2, 1, 2</column>
 <column name="gate_cache_0_address0">14, 3, 10, 30</column>
 <column name="gate_cache_0_ce0">14, 3, 1, 3</column>
-<column name="gate_cache_0_ce1">9, 2, 1, 2</column>
 <column name="gate_cache_1_address0">14, 3, 10, 30</column>
 <column name="gate_cache_1_ce0">14, 3, 1, 3</column>
-<column name="gate_cache_1_ce1">9, 2, 1, 2</column>
 <column name="gate_cache_2_address0">14, 3, 10, 30</column>
 <column name="gate_cache_2_ce0">14, 3, 1, 3</column>
-<column name="gate_cache_2_ce1">9, 2, 1, 2</column>
 <column name="gate_cache_3_address0">14, 3, 10, 30</column>
 <column name="gate_cache_3_ce0">14, 3, 1, 3</column>
-<column name="gate_cache_3_ce1">9, 2, 1, 2</column>
 <column name="gate_cache_4_address0">14, 3, 10, 30</column>
 <column name="gate_cache_4_ce0">14, 3, 1, 3</column>
-<column name="gate_cache_4_ce1">9, 2, 1, 2</column>
 <column name="gate_cache_5_address0">14, 3, 10, 30</column>
 <column name="gate_cache_5_ce0">14, 3, 1, 3</column>
-<column name="gate_cache_5_ce1">9, 2, 1, 2</column>
 <column name="gate_cache_6_address0">14, 3, 10, 30</column>
 <column name="gate_cache_6_ce0">14, 3, 1, 3</column>
-<column name="gate_cache_6_ce1">9, 2, 1, 2</column>
 <column name="gate_cache_7_address0">14, 3, 10, 30</column>
 <column name="gate_cache_7_ce0">14, 3, 1, 3</column>
-<column name="gate_cache_7_ce1">9, 2, 1, 2</column>
 <column name="gmem_out_blk_n_AW">9, 2, 1, 2</column>
 <column name="gmem_out_blk_n_B">9, 2, 1, 2</column>
 <column name="grp_fp16_to_fp32_fu_528_ap_ce">14, 3, 1, 3</column>
@@ -281,13 +273,13 @@
 <column name="grp_load_row_down_q6k_fu_271_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_mac_blocks_down_q4k5_fu_349_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_mac_blocks_down_q6k_fu_311_ap_start_reg">1, 0, 1, 0</column>
-<column name="icmp_ln480_reg_489">1, 0, 1, 0</column>
+<column name="icmp_ln486_reg_489">1, 0, 1, 0</column>
 <column name="out_batch_read_reg_472">64, 0, 64, 0</column>
 <column name="out_i_fu_212">12, 0, 12, 0</column>
 <column name="p_read_1_reg_483">32, 0, 32, 0</column>
 <column name="reg_402">12, 0, 12, 0</column>
-<column name="trunc_ln485_reg_513">11, 0, 11, 0</column>
-<column name="trunc_ln493_reg_505">11, 0, 11, 0</column>
+<column name="trunc_ln491_reg_513">11, 0, 11, 0</column>
+<column name="trunc_ln499_reg_505">11, 0, 11, 0</column>
 <column name="trunc_ln_reg_518">62, 0, 62, 0</column>
 </table>
 </item>
@@ -356,51 +348,27 @@
 <column name="gate_cache_0_address0">out, 10, ap_memory, gate_cache_0, array</column>
 <column name="gate_cache_0_ce0">out, 1, ap_memory, gate_cache_0, array</column>
 <column name="gate_cache_0_q0">in, 8, ap_memory, gate_cache_0, array</column>
-<column name="gate_cache_0_address1">out, 10, ap_memory, gate_cache_0, array</column>
-<column name="gate_cache_0_ce1">out, 1, ap_memory, gate_cache_0, array</column>
-<column name="gate_cache_0_q1">in, 8, ap_memory, gate_cache_0, array</column>
 <column name="gate_cache_1_address0">out, 10, ap_memory, gate_cache_1, array</column>
 <column name="gate_cache_1_ce0">out, 1, ap_memory, gate_cache_1, array</column>
 <column name="gate_cache_1_q0">in, 8, ap_memory, gate_cache_1, array</column>
-<column name="gate_cache_1_address1">out, 10, ap_memory, gate_cache_1, array</column>
-<column name="gate_cache_1_ce1">out, 1, ap_memory, gate_cache_1, array</column>
-<column name="gate_cache_1_q1">in, 8, ap_memory, gate_cache_1, array</column>
 <column name="gate_cache_2_address0">out, 10, ap_memory, gate_cache_2, array</column>
 <column name="gate_cache_2_ce0">out, 1, ap_memory, gate_cache_2, array</column>
 <column name="gate_cache_2_q0">in, 8, ap_memory, gate_cache_2, array</column>
-<column name="gate_cache_2_address1">out, 10, ap_memory, gate_cache_2, array</column>
-<column name="gate_cache_2_ce1">out, 1, ap_memory, gate_cache_2, array</column>
-<column name="gate_cache_2_q1">in, 8, ap_memory, gate_cache_2, array</column>
 <column name="gate_cache_3_address0">out, 10, ap_memory, gate_cache_3, array</column>
 <column name="gate_cache_3_ce0">out, 1, ap_memory, gate_cache_3, array</column>
 <column name="gate_cache_3_q0">in, 8, ap_memory, gate_cache_3, array</column>
-<column name="gate_cache_3_address1">out, 10, ap_memory, gate_cache_3, array</column>
-<column name="gate_cache_3_ce1">out, 1, ap_memory, gate_cache_3, array</column>
-<column name="gate_cache_3_q1">in, 8, ap_memory, gate_cache_3, array</column>
 <column name="gate_cache_4_address0">out, 10, ap_memory, gate_cache_4, array</column>
 <column name="gate_cache_4_ce0">out, 1, ap_memory, gate_cache_4, array</column>
 <column name="gate_cache_4_q0">in, 8, ap_memory, gate_cache_4, array</column>
-<column name="gate_cache_4_address1">out, 10, ap_memory, gate_cache_4, array</column>
-<column name="gate_cache_4_ce1">out, 1, ap_memory, gate_cache_4, array</column>
-<column name="gate_cache_4_q1">in, 8, ap_memory, gate_cache_4, array</column>
 <column name="gate_cache_5_address0">out, 10, ap_memory, gate_cache_5, array</column>
 <column name="gate_cache_5_ce0">out, 1, ap_memory, gate_cache_5, array</column>
 <column name="gate_cache_5_q0">in, 8, ap_memory, gate_cache_5, array</column>
-<column name="gate_cache_5_address1">out, 10, ap_memory, gate_cache_5, array</column>
-<column name="gate_cache_5_ce1">out, 1, ap_memory, gate_cache_5, array</column>
-<column name="gate_cache_5_q1">in, 8, ap_memory, gate_cache_5, array</column>
 <column name="gate_cache_6_address0">out, 10, ap_memory, gate_cache_6, array</column>
 <column name="gate_cache_6_ce0">out, 1, ap_memory, gate_cache_6, array</column>
 <column name="gate_cache_6_q0">in, 8, ap_memory, gate_cache_6, array</column>
-<column name="gate_cache_6_address1">out, 10, ap_memory, gate_cache_6, array</column>
-<column name="gate_cache_6_ce1">out, 1, ap_memory, gate_cache_6, array</column>
-<column name="gate_cache_6_q1">in, 8, ap_memory, gate_cache_6, array</column>
 <column name="gate_cache_7_address0">out, 10, ap_memory, gate_cache_7, array</column>
 <column name="gate_cache_7_ce0">out, 1, ap_memory, gate_cache_7, array</column>
 <column name="gate_cache_7_q0">in, 8, ap_memory, gate_cache_7, array</column>
-<column name="gate_cache_7_address1">out, 10, ap_memory, gate_cache_7, array</column>
-<column name="gate_cache_7_ce1">out, 1, ap_memory, gate_cache_7, array</column>
-<column name="gate_cache_7_q1">in, 8, ap_memory, gate_cache_7, array</column>
 <column name="m_axi_gmem_out_0_AWVALID">out, 1, m_axi, gmem_out, pointer</column>
 <column name="m_axi_gmem_out_0_AWREADY">in, 1, m_axi, gmem_out, pointer</column>
 <column name="m_axi_gmem_out_0_AWADDR">out, 64, m_axi, gmem_out, pointer</column>

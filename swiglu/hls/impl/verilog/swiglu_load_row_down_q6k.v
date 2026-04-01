@@ -446,12 +446,12 @@ wire   [127:0] grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_0_d0;
 reg    grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_start_reg;
 wire    ap_CS_fsm_state73;
 wire    ap_CS_fsm_state74;
-wire  signed [63:0] sext_ln436_fu_176_p1;
+wire  signed [63:0] sext_ln442_fu_176_p1;
 wire   [10:0] empty_fu_150_p0;
 wire   [13:0] empty_fu_150_p1;
 wire   [23:0] empty_fu_150_p2;
 wire   [63:0] p_cast_fu_156_p1;
-wire   [63:0] empty_758_fu_160_p2;
+wire   [63:0] empty_756_fu_160_p2;
 reg   [73:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 reg    ap_ST_fsm_state2_blk;
@@ -589,7 +589,7 @@ swiglu_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K grp_load_row_down_q6k_Pipeline_L
     .m_axi_gmem_Wd_0_BRESP(2'd0),
     .m_axi_gmem_Wd_0_BID(1'd0),
     .m_axi_gmem_Wd_0_BUSER(1'd0),
-    .sext_ln436(trunc_ln_reg_186),
+    .sext_ln442(trunc_ln_reg_186),
     .rb_15_address0(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_15_address0),
     .rb_15_ce0(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_15_ce0),
     .rb_15_we0(grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_15_we0),
@@ -662,7 +662,7 @@ swiglu_mul_11ns_14ns_24_1_1 #(
     .din0_WIDTH( 11 ),
     .din1_WIDTH( 14 ),
     .dout_WIDTH( 24 ))
-mul_11ns_14ns_24_1_1_U1394(
+mul_11ns_14ns_24_1_1_U1396(
     .din0(empty_fu_150_p0),
     .din1(empty_fu_150_p1),
     .dout(empty_fu_150_p2)
@@ -690,7 +690,7 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state1)) begin
-        trunc_ln_reg_186 <= {{empty_758_fu_160_p2[63:4]}};
+        trunc_ln_reg_186 <= {{empty_756_fu_160_p2[63:4]}};
     end
 end
 
@@ -894,7 +894,7 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state2) & (m_axi_gmem_Wd_0_ARREADY == 1'b1))) begin
-        m_axi_gmem_Wd_0_ARADDR = sext_ln436_fu_176_p1;
+        m_axi_gmem_Wd_0_ARADDR = sext_ln442_fu_176_p1;
     end else if (((1'b1 == ap_CS_fsm_state74) | (1'b1 == ap_CS_fsm_state73))) begin
         m_axi_gmem_Wd_0_ARADDR = grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARADDR;
     end else begin
@@ -1252,7 +1252,7 @@ assign ap_CS_fsm_state73 = ap_CS_fsm[32'd72];
 
 assign ap_CS_fsm_state74 = ap_CS_fsm[32'd73];
 
-assign empty_758_fu_160_p2 = (p_cast_fu_156_p1 + W_down_wide);
+assign empty_756_fu_160_p2 = (p_cast_fu_156_p1 + W_down_wide);
 
 assign empty_fu_150_p0 = empty_fu_150_p00;
 
@@ -1430,6 +1430,6 @@ assign rb_9_d0 = grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_9_d0;
 
 assign rb_9_we0 = grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_9_we0;
 
-assign sext_ln436_fu_176_p1 = $signed(trunc_ln_reg_186);
+assign sext_ln442_fu_176_p1 = $signed(trunc_ln_reg_186);
 
 endmodule //swiglu_load_row_down_q6k

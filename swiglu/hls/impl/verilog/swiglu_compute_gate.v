@@ -283,6 +283,10 @@ wire    grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1053_p_ce;
 wire   [31:0] grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_din0;
 wire   [31:0] grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_din1;
 wire    grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_ce;
+wire   [31:0] grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din0;
+wire   [31:0] grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din1;
+wire   [4:0] grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_opcode;
+wire    grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_ce;
 reg    grp_compute_gate_Pipeline_GATE_PASS1_fu_86_ap_start_reg;
 reg    ap_block_state1_ignore_call19;
 wire    ap_CS_fsm_state2;
@@ -597,7 +601,12 @@ swiglu_compute_gate_Pipeline_GATE_PASS2 grp_compute_gate_Pipeline_GATE_PASS2_fu_
     .grp_fu_1057_p_din0(grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_din0),
     .grp_fu_1057_p_din1(grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_din1),
     .grp_fu_1057_p_dout0(grp_fu_1057_p2),
-    .grp_fu_1057_p_ce(grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_ce)
+    .grp_fu_1057_p_ce(grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_ce),
+    .grp_fu_138_p_din0(grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din0),
+    .grp_fu_138_p_din1(grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din1),
+    .grp_fu_138_p_opcode(grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_opcode),
+    .grp_fu_138_p_dout0(grp_fu_138_p2),
+    .grp_fu_138_p_ce(grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_ce)
 );
 
 swiglu_fdiv_32ns_32ns_32_9_no_dsp_1 #(
@@ -606,7 +615,7 @@ swiglu_fdiv_32ns_32ns_32_9_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fdiv_32ns_32ns_32_9_no_dsp_1_U1356(
+fdiv_32ns_32ns_32_9_no_dsp_1_U1358(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_131_p0),
@@ -621,7 +630,7 @@ swiglu_fcmp_32ns_32ns_1_2_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_2_no_dsp_1_U1357(
+fcmp_32ns_32ns_1_2_no_dsp_1_U1359(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_138_p0),
@@ -637,7 +646,7 @@ swiglu_fadd_32ns_32ns_32_4_full_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fadd_32ns_32ns_32_4_full_dsp_1_U1358(
+fadd_32ns_32ns_32_4_full_dsp_1_U1360(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_1045_p0),
@@ -652,7 +661,7 @@ swiglu_fmul_32ns_32ns_32_3_max_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fmul_32ns_32ns_32_3_max_dsp_1_U1359(
+fmul_32ns_32ns_32_3_max_dsp_1_U1361(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_1049_p0),
@@ -667,7 +676,7 @@ swiglu_fmul_32ns_32ns_32_3_max_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fmul_32ns_32ns_32_3_max_dsp_1_U1360(
+fmul_32ns_32ns_32_3_max_dsp_1_U1362(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_1053_p0),
@@ -682,7 +691,7 @@ swiglu_fmul_32ns_32ns_32_3_max_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fmul_32ns_32ns_32_3_max_dsp_1_U1361(
+fmul_32ns_32ns_32_3_max_dsp_1_U1363(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_1057_p0),
@@ -1091,7 +1100,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
+    if ((1'b1 == ap_CS_fsm_state30)) begin
+        grp_fu_138_ce = grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_ce;
+    end else if ((1'b1 == ap_CS_fsm_state2)) begin
         grp_fu_138_ce = grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_ce;
     end else begin
         grp_fu_138_ce = 1'b1;
@@ -1099,7 +1110,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
+    if ((1'b1 == ap_CS_fsm_state30)) begin
+        grp_fu_138_opcode = grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_opcode;
+    end else if ((1'b1 == ap_CS_fsm_state2)) begin
         grp_fu_138_opcode = grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_opcode;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state4))) begin
         grp_fu_138_opcode = 5'd2;
@@ -1109,7 +1122,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
+    if ((1'b1 == ap_CS_fsm_state30)) begin
+        grp_fu_138_p0 = grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din0;
+    end else if ((1'b1 == ap_CS_fsm_state2)) begin
         grp_fu_138_p0 = grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state12)) begin
         grp_fu_138_p0 = max_abs_7_reg_1013;
@@ -1135,7 +1150,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
+    if ((1'b1 == ap_CS_fsm_state30)) begin
+        grp_fu_138_p1 = grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din1;
+    end else if ((1'b1 == ap_CS_fsm_state2)) begin
         grp_fu_138_p1 = grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state10)) begin
         grp_fu_138_p1 = max_abs_6_fu_751_p3;

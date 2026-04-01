@@ -10,3 +10,15 @@ Q4_K stores two fp16 values per 256-element block: d (scale) and dmin (minimum-s
 
 result = d × (x_scale × Σ(xi × qi × sci)) − dmin × (x_scale × Σ(xi × mni))
 The d and dmin are fp16 with arbitrary magnitude — you can't represent them faithfully in a fixed integer range. So one FP32 multiply per block (not per element) is unavoidable.
+
+Neural networks are trained in FP32/BF16, then the weights are quantized for storage. The activations (the tensors flowing between layers) remain FP32 throughout. You can confirm this in two ways:
+
+In lfm2.cpp:
+
+
+cur = ggml_add(ctx0, cur, ffn_out);   // line 201 — add expects F32
+And in the ggml.c builder you already have:
+
+
+result = ggml_new_tensor(ctx, GGML_TYPE_F32, 4, ne);
+The next layer's build_norm (RMSnorm) and the residual add both consume FP32. The rule in llama.cpp is: weight tensors are quantized, activation tensors are always FP32. The GGUF dump confirms this — every F32 entry in the dump is a norm weight (small, cheap), every Q4_K/Q6_K is a projection weight.

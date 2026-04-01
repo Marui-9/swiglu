@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_wv_Pipeline_UNPACK_HDR_WV'" level="0">
-<item name = "Date">Tue Mar 31 16:00:58 2026
+<item name = "Date">Wed Apr  1 12:45:21 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -104,21 +104,21 @@
 <column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter1_reg">1, 0, 1, 0</column>
 <column name="b_fu_466">4, 0, 4, 0</column>
-<column name="empty_705_fu_474">32, 0, 32, 0</column>
-<column name="empty_706_fu_478">32, 0, 32, 0</column>
-<column name="empty_707_fu_482">32, 0, 32, 0</column>
-<column name="empty_708_fu_486">32, 0, 32, 0</column>
-<column name="empty_709_fu_490">32, 0, 32, 0</column>
-<column name="empty_710_fu_494">32, 0, 32, 0</column>
-<column name="empty_711_fu_498">32, 0, 32, 0</column>
-<column name="empty_712_fu_502">32, 0, 32, 0</column>
-<column name="empty_713_fu_506">32, 0, 32, 0</column>
-<column name="empty_714_fu_510">32, 0, 32, 0</column>
-<column name="empty_715_fu_514">32, 0, 32, 0</column>
-<column name="empty_716_fu_518">32, 0, 32, 0</column>
-<column name="empty_717_fu_522">32, 0, 32, 0</column>
-<column name="empty_718_fu_526">32, 0, 32, 0</column>
-<column name="empty_719_fu_530">32, 0, 32, 0</column>
+<column name="empty_701_fu_474">32, 0, 32, 0</column>
+<column name="empty_702_fu_478">32, 0, 32, 0</column>
+<column name="empty_703_fu_482">32, 0, 32, 0</column>
+<column name="empty_704_fu_486">32, 0, 32, 0</column>
+<column name="empty_705_fu_490">32, 0, 32, 0</column>
+<column name="empty_706_fu_494">32, 0, 32, 0</column>
+<column name="empty_707_fu_498">32, 0, 32, 0</column>
+<column name="empty_708_fu_502">32, 0, 32, 0</column>
+<column name="empty_709_fu_506">32, 0, 32, 0</column>
+<column name="empty_710_fu_510">32, 0, 32, 0</column>
+<column name="empty_711_fu_514">32, 0, 32, 0</column>
+<column name="empty_712_fu_518">32, 0, 32, 0</column>
+<column name="empty_713_fu_522">32, 0, 32, 0</column>
+<column name="empty_714_fu_526">32, 0, 32, 0</column>
+<column name="empty_715_fu_530">32, 0, 32, 0</column>
 <column name="empty_fu_470">32, 0, 32, 0</column>
 <column name="grp_fp16_to_fp32_fu_2102_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_fp16_to_fp32_fu_2107_ap_start_reg">1, 0, 1, 0</column>

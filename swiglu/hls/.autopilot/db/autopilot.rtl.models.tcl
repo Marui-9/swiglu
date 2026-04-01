@@ -80,10 +80,15 @@ set SynModuleInfo {
   {SRCNAME load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1 MODELNAME load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1 RTLNAME swiglu_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1}
   {SRCNAME load_row_down_q4k MODELNAME load_row_down_q4k RTLNAME swiglu_load_row_down_q4k}
   {SRCNAME mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN MODELNAME mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN RTLNAME swiglu_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN}
-  {SRCNAME mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL MODELNAME mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL RTLNAME swiglu_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL}
+  {SRCNAME mac_blocks_down_q4k5_Pipeline_VITIS_LOOP_400_2_MAC_GROUP MODELNAME mac_blocks_down_q4k5_Pipeline_VITIS_LOOP_400_2_MAC_GROUP RTLNAME swiglu_mac_blocks_down_q4k5_Pipeline_VITIS_LOOP_400_2_MAC_GROUP
+    SUBMODULES {
+      {MODELNAME swiglu_sparsemux_9_2_6_1_1 RTLNAME swiglu_sparsemux_9_2_6_1_1 BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
+      {MODELNAME swiglu_sparsemux_9_2_32_1_1 RTLNAME swiglu_sparsemux_9_2_32_1_1 BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
+    }
+  }
   {SRCNAME mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K MODELNAME mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K RTLNAME swiglu_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K
     SUBMODULES {
-      {MODELNAME swiglu_sparsemux_17_5_32_1_1 RTLNAME swiglu_sparsemux_17_5_32_1_1 BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
+      {MODELNAME swiglu_sparsemux_9_5_32_1_1 RTLNAME swiglu_sparsemux_9_5_32_1_1 BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
     }
   }
   {SRCNAME mac_blocks_down_q4k5 MODELNAME mac_blocks_down_q4k5 RTLNAME swiglu_mac_blocks_down_q4k5}

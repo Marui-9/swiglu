@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN'
 ================================================================
-* Date:           Tue Mar 31 16:00:11 2026
+* Date:           Wed Apr  1 12:45:12 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -682,12 +682,12 @@ ST_1 : Operation 592 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->
 ST_1 : Operation 593 [1/1] (0.00ns)   --->   "%b_3 = load i6 %b" [swiglu.cpp:361]   --->   Operation 593 'load' 'b_3' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 594 [1/1] (0.78ns)   --->   "%icmp_ln361 = icmp_eq  i6 %b_3, i6 32" [swiglu.cpp:361]   --->   Operation 594 'icmp' 'icmp_ln361' <Predicate = true> <Delay = 0.78> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 595 [1/1] (0.78ns)   --->   "%add_ln361 = add i6 %b_3, i6 1" [swiglu.cpp:361]   --->   Operation 595 'add' 'add_ln361' <Predicate = true> <Delay = 0.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 596 [1/1] (0.00ns)   --->   "%br_ln361 = br i1 %icmp_ln361, void %for.inc.split, void %VITIS_LOOP_401_2.preheader.exitStub" [swiglu.cpp:361]   --->   Operation 596 'br' 'br_ln361' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 596 [1/1] (0.00ns)   --->   "%br_ln361 = br i1 %icmp_ln361, void %for.inc.split, void %for.end.exitStub" [swiglu.cpp:361]   --->   Operation 596 'br' 'br_ln361' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 597 [1/1] (0.00ns)   --->   "%trunc_ln361_512 = trunc i6 %b_3" [swiglu.cpp:361]   --->   Operation 597 'trunc' 'trunc_ln361_512' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_1 : Operation 598 [1/1] (0.00ns)   --->   "%trunc_ln361_513 = trunc i6 %b_3" [swiglu.cpp:361]   --->   Operation 598 'trunc' 'trunc_ln361_513' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_1 : Operation 599 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i2 @_ssdm_op_PartSelect.i2.i6.i32.i32, i6 %b_3, i32 3, i32 4" [swiglu.cpp:361]   --->   Operation 599 'partselect' 'lshr_ln' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_1 : Operation 600 [1/1] (0.00ns)   --->   "%tmp_163 = bitconcatenate i5 @_ssdm_op_BitConcatenate.i5.i2.i1.i2, i2 %lshr_ln, i1 0, i2 %lshr_ln" [swiglu.cpp:55->swiglu.cpp:362]   --->   Operation 600 'bitconcatenate' 'tmp_163' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_1 : Operation 601 [1/1] (0.00ns)   --->   "%zext_ln55_22 = zext i5 %tmp_163" [swiglu.cpp:55->swiglu.cpp:362]   --->   Operation 601 'zext' 'zext_ln55_22' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_1 : Operation 600 [1/1] (0.00ns)   --->   "%tmp_826 = bitconcatenate i5 @_ssdm_op_BitConcatenate.i5.i2.i1.i2, i2 %lshr_ln, i1 0, i2 %lshr_ln" [swiglu.cpp:55->swiglu.cpp:362]   --->   Operation 600 'bitconcatenate' 'tmp_826' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_1 : Operation 601 [1/1] (0.00ns)   --->   "%zext_ln55_22 = zext i5 %tmp_826" [swiglu.cpp:55->swiglu.cpp:362]   --->   Operation 601 'zext' 'zext_ln55_22' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_1 : Operation 602 [1/1] (0.00ns)   --->   "%rb_0_addr = getelementptr i128 %rb_0, i64 0, i64 %zext_ln55_22" [swiglu.cpp:55->swiglu.cpp:362]   --->   Operation 602 'getelementptr' 'rb_0_addr' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_1 : Operation 603 [1/1] (0.00ns)   --->   "%rb_1_addr = getelementptr i128 %rb_1, i64 0, i64 %zext_ln55_22" [swiglu.cpp:55->swiglu.cpp:362]   --->   Operation 603 'getelementptr' 'rb_1_addr' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_1 : Operation 604 [1/1] (0.00ns)   --->   "%rb_2_addr = getelementptr i128 %rb_2, i64 0, i64 %zext_ln55_22" [swiglu.cpp:55->swiglu.cpp:362]   --->   Operation 604 'getelementptr' 'rb_2_addr' <Predicate = (!icmp_ln361)> <Delay = 0.00>
@@ -1767,32 +1767,32 @@ ST_2 : Operation 1675 [1/1] (0.00ns)   --->   "%tmp_s = partselect i2 @_ssdm_op_
 ST_2 : Operation 1676 [1/1] (0.00ns)   --->   "%sc6_74 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_s, i4 %trunc_ln" [swiglu.cpp:370]   --->   Operation 1676 'bitconcatenate' 'sc6_74' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_2 : Operation 1677 [1/1] (0.00ns)   --->   "%zext_ln55_19 = zext i6 %sc6_74" [swiglu.cpp:55->swiglu.cpp:371]   --->   Operation 1677 'zext' 'zext_ln55_19' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_2 : Operation 1678 [1/1] (0.00ns)   --->   "%trunc_ln4 = partselect i4 @_ssdm_op_PartSelect.i4.i128.i32.i32, i128 %tmp, i32 104, i32 107" [swiglu.cpp:371]   --->   Operation 1678 'partselect' 'trunc_ln4' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1679 [1/1] (0.00ns)   --->   "%tmp_59 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 46, i32 47" [swiglu.cpp:371]   --->   Operation 1679 'partselect' 'tmp_59' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1680 [1/1] (0.00ns)   --->   "%sc6_75 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_59, i4 %trunc_ln4" [swiglu.cpp:371]   --->   Operation 1680 'bitconcatenate' 'sc6_75' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1679 [1/1] (0.00ns)   --->   "%tmp_245 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 46, i32 47" [swiglu.cpp:371]   --->   Operation 1679 'partselect' 'tmp_245' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1680 [1/1] (0.00ns)   --->   "%sc6_75 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_245, i4 %trunc_ln4" [swiglu.cpp:371]   --->   Operation 1680 'bitconcatenate' 'sc6_75' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_2 : Operation 1681 [1/1] (0.00ns)   --->   "%zext_ln55_20 = zext i6 %sc6_75" [swiglu.cpp:55->swiglu.cpp:372]   --->   Operation 1681 'zext' 'zext_ln55_20' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_2 : Operation 1682 [1/1] (0.00ns)   --->   "%trunc_ln5 = partselect i4 @_ssdm_op_PartSelect.i4.i128.i32.i32, i128 %tmp, i32 112, i32 115" [swiglu.cpp:372]   --->   Operation 1682 'partselect' 'trunc_ln5' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1683 [1/1] (0.00ns)   --->   "%tmp_60 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 54, i32 55" [swiglu.cpp:372]   --->   Operation 1683 'partselect' 'tmp_60' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1684 [1/1] (0.00ns)   --->   "%sc6_76 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_60, i4 %trunc_ln5" [swiglu.cpp:372]   --->   Operation 1684 'bitconcatenate' 'sc6_76' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1683 [1/1] (0.00ns)   --->   "%tmp_246 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 54, i32 55" [swiglu.cpp:372]   --->   Operation 1683 'partselect' 'tmp_246' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1684 [1/1] (0.00ns)   --->   "%sc6_76 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_246, i4 %trunc_ln5" [swiglu.cpp:372]   --->   Operation 1684 'bitconcatenate' 'sc6_76' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_2 : Operation 1685 [1/1] (0.00ns)   --->   "%zext_ln55_21 = zext i6 %sc6_76" [swiglu.cpp:55->swiglu.cpp:373]   --->   Operation 1685 'zext' 'zext_ln55_21' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_2 : Operation 1686 [1/1] (0.00ns)   --->   "%trunc_ln6 = partselect i4 @_ssdm_op_PartSelect.i4.i128.i32.i32, i128 %tmp, i32 120, i32 123" [swiglu.cpp:373]   --->   Operation 1686 'partselect' 'trunc_ln6' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1687 [1/1] (0.00ns)   --->   "%tmp_61 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 62, i32 63" [swiglu.cpp:373]   --->   Operation 1687 'partselect' 'tmp_61' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1688 [1/1] (0.00ns)   --->   "%sc6_77 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_61, i4 %trunc_ln6" [swiglu.cpp:373]   --->   Operation 1688 'bitconcatenate' 'sc6_77' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1687 [1/1] (0.00ns)   --->   "%tmp_247 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 62, i32 63" [swiglu.cpp:373]   --->   Operation 1687 'partselect' 'tmp_247' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1688 [1/1] (0.00ns)   --->   "%sc6_77 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_247, i4 %trunc_ln6" [swiglu.cpp:373]   --->   Operation 1688 'bitconcatenate' 'sc6_77' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_2 : Operation 1689 [1/1] (0.00ns)   --->   "%zext_ln375 = zext i6 %sc6_77" [swiglu.cpp:375]   --->   Operation 1689 'zext' 'zext_ln375' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1690 [1/1] (0.00ns)   --->   "%tmp_62 = partselect i4 @_ssdm_op_PartSelect.i4.i128.i32.i32, i128 %tmp, i32 100, i32 103" [swiglu.cpp:375]   --->   Operation 1690 'partselect' 'tmp_62' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1691 [1/1] (0.00ns)   --->   "%tmp_63 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 70, i32 71" [swiglu.cpp:375]   --->   Operation 1691 'partselect' 'tmp_63' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1692 [1/1] (0.00ns)   --->   "%mn6_71 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_63, i4 %tmp_62" [swiglu.cpp:375]   --->   Operation 1692 'bitconcatenate' 'mn6_71' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1690 [1/1] (0.00ns)   --->   "%tmp_248 = partselect i4 @_ssdm_op_PartSelect.i4.i128.i32.i32, i128 %tmp, i32 100, i32 103" [swiglu.cpp:375]   --->   Operation 1690 'partselect' 'tmp_248' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1691 [1/1] (0.00ns)   --->   "%tmp_249 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 70, i32 71" [swiglu.cpp:375]   --->   Operation 1691 'partselect' 'tmp_249' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1692 [1/1] (0.00ns)   --->   "%mn6_71 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_249, i4 %tmp_248" [swiglu.cpp:375]   --->   Operation 1692 'bitconcatenate' 'mn6_71' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_2 : Operation 1693 [1/1] (0.00ns)   --->   "%zext_ln376 = zext i6 %mn6_71" [swiglu.cpp:376]   --->   Operation 1693 'zext' 'zext_ln376' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1694 [1/1] (0.00ns)   --->   "%tmp_64 = partselect i4 @_ssdm_op_PartSelect.i4.i128.i32.i32, i128 %tmp, i32 108, i32 111" [swiglu.cpp:376]   --->   Operation 1694 'partselect' 'tmp_64' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1695 [1/1] (0.00ns)   --->   "%tmp_65 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 78, i32 79" [swiglu.cpp:376]   --->   Operation 1695 'partselect' 'tmp_65' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1696 [1/1] (0.00ns)   --->   "%mn6_72 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_65, i4 %tmp_64" [swiglu.cpp:376]   --->   Operation 1696 'bitconcatenate' 'mn6_72' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1694 [1/1] (0.00ns)   --->   "%tmp_250 = partselect i4 @_ssdm_op_PartSelect.i4.i128.i32.i32, i128 %tmp, i32 108, i32 111" [swiglu.cpp:376]   --->   Operation 1694 'partselect' 'tmp_250' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1695 [1/1] (0.00ns)   --->   "%tmp_251 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 78, i32 79" [swiglu.cpp:376]   --->   Operation 1695 'partselect' 'tmp_251' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1696 [1/1] (0.00ns)   --->   "%mn6_72 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_251, i4 %tmp_250" [swiglu.cpp:376]   --->   Operation 1696 'bitconcatenate' 'mn6_72' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_2 : Operation 1697 [1/1] (0.00ns)   --->   "%zext_ln377 = zext i6 %mn6_72" [swiglu.cpp:377]   --->   Operation 1697 'zext' 'zext_ln377' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1698 [1/1] (0.00ns)   --->   "%tmp_66 = partselect i4 @_ssdm_op_PartSelect.i4.i128.i32.i32, i128 %tmp, i32 116, i32 119" [swiglu.cpp:377]   --->   Operation 1698 'partselect' 'tmp_66' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1699 [1/1] (0.00ns)   --->   "%tmp_67 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 86, i32 87" [swiglu.cpp:377]   --->   Operation 1699 'partselect' 'tmp_67' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1700 [1/1] (0.00ns)   --->   "%mn6_73 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_67, i4 %tmp_66" [swiglu.cpp:377]   --->   Operation 1700 'bitconcatenate' 'mn6_73' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1698 [1/1] (0.00ns)   --->   "%tmp_252 = partselect i4 @_ssdm_op_PartSelect.i4.i128.i32.i32, i128 %tmp, i32 116, i32 119" [swiglu.cpp:377]   --->   Operation 1698 'partselect' 'tmp_252' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1699 [1/1] (0.00ns)   --->   "%tmp_253 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 86, i32 87" [swiglu.cpp:377]   --->   Operation 1699 'partselect' 'tmp_253' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1700 [1/1] (0.00ns)   --->   "%mn6_73 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_253, i4 %tmp_252" [swiglu.cpp:377]   --->   Operation 1700 'bitconcatenate' 'mn6_73' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_2 : Operation 1701 [1/1] (0.00ns)   --->   "%zext_ln378 = zext i6 %mn6_73" [swiglu.cpp:378]   --->   Operation 1701 'zext' 'zext_ln378' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1702 [1/1] (0.00ns)   --->   "%tmp_68 = partselect i4 @_ssdm_op_PartSelect.i4.i128.i32.i32, i128 %tmp, i32 124, i32 127" [swiglu.cpp:378]   --->   Operation 1702 'partselect' 'tmp_68' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1703 [1/1] (0.00ns)   --->   "%tmp_69 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 94, i32 95" [swiglu.cpp:378]   --->   Operation 1703 'partselect' 'tmp_69' <Predicate = (!icmp_ln361)> <Delay = 0.00>
-ST_2 : Operation 1704 [1/1] (0.00ns)   --->   "%mn6_74 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_69, i4 %tmp_68" [swiglu.cpp:378]   --->   Operation 1704 'bitconcatenate' 'mn6_74' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1702 [1/1] (0.00ns)   --->   "%tmp_254 = partselect i4 @_ssdm_op_PartSelect.i4.i128.i32.i32, i128 %tmp, i32 124, i32 127" [swiglu.cpp:378]   --->   Operation 1702 'partselect' 'tmp_254' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1703 [1/1] (0.00ns)   --->   "%tmp_255 = partselect i2 @_ssdm_op_PartSelect.i2.i128.i32.i32, i128 %tmp, i32 94, i32 95" [swiglu.cpp:378]   --->   Operation 1703 'partselect' 'tmp_255' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_2 : Operation 1704 [1/1] (0.00ns)   --->   "%mn6_74 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_255, i4 %tmp_254" [swiglu.cpp:378]   --->   Operation 1704 'bitconcatenate' 'mn6_74' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_2 : Operation 1705 [1/1] (0.00ns)   --->   "%zext_ln362 = zext i6 %mn6_74" [swiglu.cpp:362]   --->   Operation 1705 'zext' 'zext_ln362' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 ST_2 : Operation 1706 [1/1] (0.00ns)   --->   "%store_ln355 = store i8 %zext_ln362, i8 %mn6_382" [swiglu.cpp:355]   --->   Operation 1706 'store' 'store_ln355' <Predicate = (!icmp_ln361 & trunc_ln361_513 == 30)> <Delay = 0.00>
 ST_2 : Operation 1707 [1/1] (0.00ns)   --->   "%store_ln355 = store i8 %zext_ln378, i8 %mn6_381" [swiglu.cpp:355]   --->   Operation 1707 'store' 'store_ln355' <Predicate = (!icmp_ln361 & trunc_ln361_513 == 30)> <Delay = 0.00>
@@ -2949,9 +2949,9 @@ ST_2 : Operation 2958 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op
 ST_2 : Operation 2959 [1/1] (0.42ns)   --->   "%ret_ln0 = ret"   --->   Operation 2959 'ret' 'ret_ln0' <Predicate = (icmp_ln361)> <Delay = 0.42>
 
 State 3 <SV = 2> <Delay = 7.46>
-ST_3 : Operation 2218 [1/1] (0.00ns)   --->   "%specpipeline_ln352 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_36" [swiglu.cpp:352]   --->   Operation 2218 'specpipeline' 'specpipeline_ln352' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 2218 [1/1] (0.00ns)   --->   "%specpipeline_ln352 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_29" [swiglu.cpp:352]   --->   Operation 2218 'specpipeline' 'specpipeline_ln352' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 2219 [1/1] (0.00ns)   --->   "%speclooptripcount_ln352 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 32, i64 32, i64 32" [swiglu.cpp:352]   --->   Operation 2219 'speclooptripcount' 'speclooptripcount_ln352' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 2220 [1/1] (0.00ns)   --->   "%specloopname_ln361 = specloopname void @_ssdm_op_SpecLoopName, void @empty_23" [swiglu.cpp:361]   --->   Operation 2220 'specloopname' 'specloopname_ln361' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 2220 [1/1] (0.00ns)   --->   "%specloopname_ln361 = specloopname void @_ssdm_op_SpecLoopName, void @empty_18" [swiglu.cpp:361]   --->   Operation 2220 'specloopname' 'specloopname_ln361' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 2221 [1/2] (7.46ns)   --->   "%d_33 = call i32 @fp16_to_fp32, i16 %trunc_ln362" [swiglu.cpp:362]   --->   Operation 2221 'call' 'd_33' <Predicate = (!icmp_ln361)> <Delay = 7.46> <CoreType = "Generic">   --->   Generic Core
 ST_3 : Operation 2222 [1/2] (7.46ns)   --->   "%dmin_32 = call i32 @fp16_to_fp32, i16 %or2" [swiglu.cpp:363]   --->   Operation 2222 'call' 'dmin_32' <Predicate = (!icmp_ln361)> <Delay = 7.46> <CoreType = "Generic">   --->   Generic Core
 ST_3 : Operation 2223 [1/1] (0.00ns)   --->   "%store_ln353 = store i32 %dmin_32, i32 %dmin_30" [swiglu.cpp:353]   --->   Operation 2223 'store' 'store_ln353' <Predicate = (trunc_ln361_513 == 30)> <Delay = 0.00>
@@ -4247,7 +4247,7 @@ br_ln361                (br               ) [ 0000]
 trunc_ln361_512         (trunc            ) [ 0110]
 trunc_ln361_513         (trunc            ) [ 0111]
 lshr_ln                 (partselect       ) [ 0000]
-tmp_163                 (bitconcatenate   ) [ 0000]
+tmp_826                 (bitconcatenate   ) [ 0000]
 zext_ln55_22            (zext             ) [ 0000]
 rb_0_addr               (getelementptr    ) [ 0110]
 rb_1_addr               (getelementptr    ) [ 0110]
@@ -5316,31 +5316,31 @@ tmp_s                   (partselect       ) [ 0000]
 sc6_74                  (bitconcatenate   ) [ 0000]
 zext_ln55_19            (zext             ) [ 0000]
 trunc_ln4               (partselect       ) [ 0000]
-tmp_59                  (partselect       ) [ 0000]
+tmp_245                 (partselect       ) [ 0000]
 sc6_75                  (bitconcatenate   ) [ 0000]
 zext_ln55_20            (zext             ) [ 0000]
 trunc_ln5               (partselect       ) [ 0000]
-tmp_60                  (partselect       ) [ 0000]
+tmp_246                 (partselect       ) [ 0000]
 sc6_76                  (bitconcatenate   ) [ 0000]
 zext_ln55_21            (zext             ) [ 0000]
 trunc_ln6               (partselect       ) [ 0000]
-tmp_61                  (partselect       ) [ 0000]
+tmp_247                 (partselect       ) [ 0000]
 sc6_77                  (bitconcatenate   ) [ 0000]
 zext_ln375              (zext             ) [ 0000]
-tmp_62                  (partselect       ) [ 0000]
-tmp_63                  (partselect       ) [ 0000]
+tmp_248                 (partselect       ) [ 0000]
+tmp_249                 (partselect       ) [ 0000]
 mn6_71                  (bitconcatenate   ) [ 0000]
 zext_ln376              (zext             ) [ 0000]
-tmp_64                  (partselect       ) [ 0000]
-tmp_65                  (partselect       ) [ 0000]
+tmp_250                 (partselect       ) [ 0000]
+tmp_251                 (partselect       ) [ 0000]
 mn6_72                  (bitconcatenate   ) [ 0000]
 zext_ln377              (zext             ) [ 0000]
-tmp_66                  (partselect       ) [ 0000]
-tmp_67                  (partselect       ) [ 0000]
+tmp_252                 (partselect       ) [ 0000]
+tmp_253                 (partselect       ) [ 0000]
 mn6_73                  (bitconcatenate   ) [ 0000]
 zext_ln378              (zext             ) [ 0000]
-tmp_68                  (partselect       ) [ 0000]
-tmp_69                  (partselect       ) [ 0000]
+tmp_254                 (partselect       ) [ 0000]
+tmp_255                 (partselect       ) [ 0000]
 mn6_74                  (bitconcatenate   ) [ 0000]
 zext_ln362              (zext             ) [ 0000]
 store_ln355             (store            ) [ 0000]
@@ -12897,7 +12897,7 @@ ret_ln0                 (ret              ) [ 0000]
 <pin id="1397" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_36"/></StgValue>
+<StgValue><ssdm name="empty_29"/></StgValue>
 </bind>
 </comp>
 
@@ -12933,7 +12933,7 @@ ret_ln0                 (ret              ) [ 0000]
 <pin id="1405" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_23"/></StgValue>
+<StgValue><ssdm name="empty_18"/></StgValue>
 </bind>
 </comp>
 
@@ -27105,7 +27105,7 @@ ret_ln0                 (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="7902" class="1004" name="tmp_163_fu_7902">
+<comp id="7902" class="1004" name="tmp_826_fu_7902">
 <pin_list>
 <pin id="7903" dir="0" index="0" bw="5" slack="0"/>
 <pin id="7904" dir="0" index="1" bw="2" slack="0"/>
@@ -27115,7 +27115,7 @@ ret_ln0                 (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
-<opset="tmp_163/1 "/>
+<opset="tmp_826/1 "/>
 </bind>
 </comp>
 
@@ -38768,7 +38768,7 @@ ret_ln0                 (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="12300" class="1004" name="tmp_59_fu_12300">
+<comp id="12300" class="1004" name="tmp_245_fu_12300">
 <pin_list>
 <pin id="12301" dir="0" index="0" bw="2" slack="0"/>
 <pin id="12302" dir="0" index="1" bw="128" slack="0"/>
@@ -38778,7 +38778,7 @@ ret_ln0                 (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_59/2 "/>
+<opset="tmp_245/2 "/>
 </bind>
 </comp>
 
@@ -38820,7 +38820,7 @@ ret_ln0                 (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="12332" class="1004" name="tmp_60_fu_12332">
+<comp id="12332" class="1004" name="tmp_246_fu_12332">
 <pin_list>
 <pin id="12333" dir="0" index="0" bw="2" slack="0"/>
 <pin id="12334" dir="0" index="1" bw="128" slack="0"/>
@@ -38830,7 +38830,7 @@ ret_ln0                 (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_60/2 "/>
+<opset="tmp_246/2 "/>
 </bind>
 </comp>
 
@@ -38872,7 +38872,7 @@ ret_ln0                 (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="12364" class="1004" name="tmp_61_fu_12364">
+<comp id="12364" class="1004" name="tmp_247_fu_12364">
 <pin_list>
 <pin id="12365" dir="0" index="0" bw="2" slack="0"/>
 <pin id="12366" dir="0" index="1" bw="128" slack="0"/>
@@ -38882,7 +38882,7 @@ ret_ln0                 (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_61/2 "/>
+<opset="tmp_247/2 "/>
 </bind>
 </comp>
 
@@ -38910,7 +38910,7 @@ ret_ln0                 (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="12386" class="1004" name="tmp_62_fu_12386">
+<comp id="12386" class="1004" name="tmp_248_fu_12386">
 <pin_list>
 <pin id="12387" dir="0" index="0" bw="4" slack="0"/>
 <pin id="12388" dir="0" index="1" bw="128" slack="0"/>
@@ -38920,11 +38920,11 @@ ret_ln0                 (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_62/2 "/>
+<opset="tmp_248/2 "/>
 </bind>
 </comp>
 
-<comp id="12396" class="1004" name="tmp_63_fu_12396">
+<comp id="12396" class="1004" name="tmp_249_fu_12396">
 <pin_list>
 <pin id="12397" dir="0" index="0" bw="2" slack="0"/>
 <pin id="12398" dir="0" index="1" bw="128" slack="0"/>
@@ -38934,7 +38934,7 @@ ret_ln0                 (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_63/2 "/>
+<opset="tmp_249/2 "/>
 </bind>
 </comp>
 
@@ -38962,7 +38962,7 @@ ret_ln0                 (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="12418" class="1004" name="tmp_64_fu_12418">
+<comp id="12418" class="1004" name="tmp_250_fu_12418">
 <pin_list>
 <pin id="12419" dir="0" index="0" bw="4" slack="0"/>
 <pin id="12420" dir="0" index="1" bw="128" slack="0"/>
@@ -38972,11 +38972,11 @@ ret_ln0                 (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_64/2 "/>
+<opset="tmp_250/2 "/>
 </bind>
 </comp>
 
-<comp id="12428" class="1004" name="tmp_65_fu_12428">
+<comp id="12428" class="1004" name="tmp_251_fu_12428">
 <pin_list>
 <pin id="12429" dir="0" index="0" bw="2" slack="0"/>
 <pin id="12430" dir="0" index="1" bw="128" slack="0"/>
@@ -38986,7 +38986,7 @@ ret_ln0                 (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_65/2 "/>
+<opset="tmp_251/2 "/>
 </bind>
 </comp>
 
@@ -39014,7 +39014,7 @@ ret_ln0                 (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="12450" class="1004" name="tmp_66_fu_12450">
+<comp id="12450" class="1004" name="tmp_252_fu_12450">
 <pin_list>
 <pin id="12451" dir="0" index="0" bw="4" slack="0"/>
 <pin id="12452" dir="0" index="1" bw="128" slack="0"/>
@@ -39024,11 +39024,11 @@ ret_ln0                 (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_66/2 "/>
+<opset="tmp_252/2 "/>
 </bind>
 </comp>
 
-<comp id="12460" class="1004" name="tmp_67_fu_12460">
+<comp id="12460" class="1004" name="tmp_253_fu_12460">
 <pin_list>
 <pin id="12461" dir="0" index="0" bw="2" slack="0"/>
 <pin id="12462" dir="0" index="1" bw="128" slack="0"/>
@@ -39038,7 +39038,7 @@ ret_ln0                 (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_67/2 "/>
+<opset="tmp_253/2 "/>
 </bind>
 </comp>
 
@@ -39066,7 +39066,7 @@ ret_ln0                 (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="12482" class="1004" name="tmp_68_fu_12482">
+<comp id="12482" class="1004" name="tmp_254_fu_12482">
 <pin_list>
 <pin id="12483" dir="0" index="0" bw="4" slack="0"/>
 <pin id="12484" dir="0" index="1" bw="128" slack="0"/>
@@ -39076,11 +39076,11 @@ ret_ln0                 (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_68/2 "/>
+<opset="tmp_254/2 "/>
 </bind>
 </comp>
 
-<comp id="12492" class="1004" name="tmp_69_fu_12492">
+<comp id="12492" class="1004" name="tmp_255_fu_12492">
 <pin_list>
 <pin id="12493" dir="0" index="0" bw="2" slack="0"/>
 <pin id="12494" dir="0" index="1" bw="128" slack="0"/>
@@ -39090,7 +39090,7 @@ ret_ln0                 (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_69/2 "/>
+<opset="tmp_255/2 "/>
 </bind>
 </comp>
 
@@ -63997,7 +63997,7 @@ ret_ln0                 (ret              ) [ 0000]
 		trunc_ln361_512 : 2
 		trunc_ln361_513 : 2
 		lshr_ln : 2
-		tmp_163 : 3
+		tmp_826 : 3
 		zext_ln55_22 : 4
 		rb_0_addr : 5
 		rb_1_addr : 5
@@ -64556,31 +64556,31 @@ ret_ln0                 (ret              ) [ 0000]
 		sc6_74 : 3
 		zext_ln55_19 : 4
 		trunc_ln4 : 2
-		tmp_59 : 2
+		tmp_245 : 2
 		sc6_75 : 3
 		zext_ln55_20 : 4
 		trunc_ln5 : 2
-		tmp_60 : 2
+		tmp_246 : 2
 		sc6_76 : 3
 		zext_ln55_21 : 4
 		trunc_ln6 : 2
-		tmp_61 : 2
+		tmp_247 : 2
 		sc6_77 : 3
 		zext_ln375 : 4
-		tmp_62 : 2
-		tmp_63 : 2
+		tmp_248 : 2
+		tmp_249 : 2
 		mn6_71 : 3
 		zext_ln376 : 4
-		tmp_64 : 2
-		tmp_65 : 2
+		tmp_250 : 2
+		tmp_251 : 2
 		mn6_72 : 3
 		zext_ln377 : 4
-		tmp_66 : 2
-		tmp_67 : 2
+		tmp_252 : 2
+		tmp_253 : 2
 		mn6_73 : 3
 		zext_ln378 : 4
-		tmp_68 : 2
-		tmp_69 : 2
+		tmp_254 : 2
+		tmp_255 : 2
 		mn6_74 : 3
 		zext_ln362 : 4
 		store_ln355 : 5
@@ -66861,21 +66861,21 @@ ret_ln0                 (ret              ) [ 0000]
 |          |     trunc_ln_fu_12258     |    0    |    0    |
 |          |       tmp_s_fu_12268      |    0    |    0    |
 |partselect|     trunc_ln4_fu_12290    |    0    |    0    |
-|          |      tmp_59_fu_12300      |    0    |    0    |
+|          |      tmp_245_fu_12300     |    0    |    0    |
 |          |     trunc_ln5_fu_12322    |    0    |    0    |
-|          |      tmp_60_fu_12332      |    0    |    0    |
+|          |      tmp_246_fu_12332     |    0    |    0    |
 |          |     trunc_ln6_fu_12354    |    0    |    0    |
-|          |      tmp_61_fu_12364      |    0    |    0    |
-|          |      tmp_62_fu_12386      |    0    |    0    |
-|          |      tmp_63_fu_12396      |    0    |    0    |
-|          |      tmp_64_fu_12418      |    0    |    0    |
-|          |      tmp_65_fu_12428      |    0    |    0    |
-|          |      tmp_66_fu_12450      |    0    |    0    |
-|          |      tmp_67_fu_12460      |    0    |    0    |
-|          |      tmp_68_fu_12482      |    0    |    0    |
-|          |      tmp_69_fu_12492      |    0    |    0    |
+|          |      tmp_247_fu_12364     |    0    |    0    |
+|          |      tmp_248_fu_12386     |    0    |    0    |
+|          |      tmp_249_fu_12396     |    0    |    0    |
+|          |      tmp_250_fu_12418     |    0    |    0    |
+|          |      tmp_251_fu_12428     |    0    |    0    |
+|          |      tmp_252_fu_12450     |    0    |    0    |
+|          |      tmp_253_fu_12460     |    0    |    0    |
+|          |      tmp_254_fu_12482     |    0    |    0    |
+|          |      tmp_255_fu_12492     |    0    |    0    |
 |----------|---------------------------|---------|---------|
-|          |      tmp_163_fu_7902      |    0    |    0    |
+|          |      tmp_826_fu_7902      |    0    |    0    |
 |          |      sc6_74_fu_12278      |    0    |    0    |
 |          |      sc6_75_fu_12310      |    0    |    0    |
 |          |      sc6_76_fu_12342      |    0    |    0    |

@@ -65,51 +65,27 @@ module swiglu_compute_output (
         gate_cache_0_address0,
         gate_cache_0_ce0,
         gate_cache_0_q0,
-        gate_cache_0_address1,
-        gate_cache_0_ce1,
-        gate_cache_0_q1,
         gate_cache_1_address0,
         gate_cache_1_ce0,
         gate_cache_1_q0,
-        gate_cache_1_address1,
-        gate_cache_1_ce1,
-        gate_cache_1_q1,
         gate_cache_2_address0,
         gate_cache_2_ce0,
         gate_cache_2_q0,
-        gate_cache_2_address1,
-        gate_cache_2_ce1,
-        gate_cache_2_q1,
         gate_cache_3_address0,
         gate_cache_3_ce0,
         gate_cache_3_q0,
-        gate_cache_3_address1,
-        gate_cache_3_ce1,
-        gate_cache_3_q1,
         gate_cache_4_address0,
         gate_cache_4_ce0,
         gate_cache_4_q0,
-        gate_cache_4_address1,
-        gate_cache_4_ce1,
-        gate_cache_4_q1,
         gate_cache_5_address0,
         gate_cache_5_ce0,
         gate_cache_5_q0,
-        gate_cache_5_address1,
-        gate_cache_5_ce1,
-        gate_cache_5_q1,
         gate_cache_6_address0,
         gate_cache_6_ce0,
         gate_cache_6_q0,
-        gate_cache_6_address1,
-        gate_cache_6_ce1,
-        gate_cache_6_q1,
         gate_cache_7_address0,
         gate_cache_7_ce0,
         gate_cache_7_q0,
-        gate_cache_7_address1,
-        gate_cache_7_ce1,
-        gate_cache_7_q1,
         m_axi_gmem_out_0_AWVALID,
         m_axi_gmem_out_0_AWREADY,
         m_axi_gmem_out_0_AWADDR,
@@ -297,51 +273,27 @@ input  [63:0] W_down;
 output  [9:0] gate_cache_0_address0;
 output   gate_cache_0_ce0;
 input  [7:0] gate_cache_0_q0;
-output  [9:0] gate_cache_0_address1;
-output   gate_cache_0_ce1;
-input  [7:0] gate_cache_0_q1;
 output  [9:0] gate_cache_1_address0;
 output   gate_cache_1_ce0;
 input  [7:0] gate_cache_1_q0;
-output  [9:0] gate_cache_1_address1;
-output   gate_cache_1_ce1;
-input  [7:0] gate_cache_1_q1;
 output  [9:0] gate_cache_2_address0;
 output   gate_cache_2_ce0;
 input  [7:0] gate_cache_2_q0;
-output  [9:0] gate_cache_2_address1;
-output   gate_cache_2_ce1;
-input  [7:0] gate_cache_2_q1;
 output  [9:0] gate_cache_3_address0;
 output   gate_cache_3_ce0;
 input  [7:0] gate_cache_3_q0;
-output  [9:0] gate_cache_3_address1;
-output   gate_cache_3_ce1;
-input  [7:0] gate_cache_3_q1;
 output  [9:0] gate_cache_4_address0;
 output   gate_cache_4_ce0;
 input  [7:0] gate_cache_4_q0;
-output  [9:0] gate_cache_4_address1;
-output   gate_cache_4_ce1;
-input  [7:0] gate_cache_4_q1;
 output  [9:0] gate_cache_5_address0;
 output   gate_cache_5_ce0;
 input  [7:0] gate_cache_5_q0;
-output  [9:0] gate_cache_5_address1;
-output   gate_cache_5_ce1;
-input  [7:0] gate_cache_5_q1;
 output  [9:0] gate_cache_6_address0;
 output   gate_cache_6_ce0;
 input  [7:0] gate_cache_6_q0;
-output  [9:0] gate_cache_6_address1;
-output   gate_cache_6_ce1;
-input  [7:0] gate_cache_6_q1;
 output  [9:0] gate_cache_7_address0;
 output   gate_cache_7_ce0;
 input  [7:0] gate_cache_7_q0;
-output  [9:0] gate_cache_7_address1;
-output   gate_cache_7_ce1;
-input  [7:0] gate_cache_7_q1;
 output   m_axi_gmem_out_0_AWVALID;
 input   m_axi_gmem_out_0_AWREADY;
 output  [63:0] m_axi_gmem_out_0_AWADDR;
@@ -409,28 +361,20 @@ reg[0:0] m_axi_gmem_Wd_0_ARUSER;
 reg m_axi_gmem_Wd_0_RREADY;
 reg[9:0] gate_cache_0_address0;
 reg gate_cache_0_ce0;
-reg gate_cache_0_ce1;
 reg[9:0] gate_cache_1_address0;
 reg gate_cache_1_ce0;
-reg gate_cache_1_ce1;
 reg[9:0] gate_cache_2_address0;
 reg gate_cache_2_ce0;
-reg gate_cache_2_ce1;
 reg[9:0] gate_cache_3_address0;
 reg gate_cache_3_ce0;
-reg gate_cache_3_ce1;
 reg[9:0] gate_cache_4_address0;
 reg gate_cache_4_ce0;
-reg gate_cache_4_ce1;
 reg[9:0] gate_cache_5_address0;
 reg gate_cache_5_ce0;
-reg gate_cache_5_ce1;
 reg[9:0] gate_cache_6_address0;
 reg gate_cache_6_ce0;
-reg gate_cache_6_ce1;
 reg[9:0] gate_cache_7_address0;
 reg gate_cache_7_ce0;
-reg gate_cache_7_ce1;
 reg m_axi_gmem_out_0_AWVALID;
 reg[63:0] m_axi_gmem_out_0_AWADDR;
 reg[0:0] m_axi_gmem_out_0_AWID;
@@ -451,7 +395,7 @@ reg    ap_done_reg;
 wire    ap_CS_fsm_state1;
 reg    gmem_out_blk_n_AW;
 wire    ap_CS_fsm_state2;
-reg   [0:0] icmp_ln480_reg_489;
+reg   [0:0] icmp_ln486_reg_489;
 wire   [0:0] grp_fu_390_p2;
 reg    gmem_out_blk_n_B;
 wire    ap_CS_fsm_state78;
@@ -462,11 +406,11 @@ reg   [63:0] out_batch_read_reg_472;
 reg    ap_block_state1;
 reg   [63:0] W_down_read_reg_477;
 reg   [31:0] p_read_1_reg_483;
-wire   [0:0] icmp_ln480_fu_406_p2;
-wire   [10:0] trunc_ln493_fu_422_p1;
-reg   [10:0] trunc_ln493_reg_505;
-wire   [10:0] trunc_ln485_fu_432_p1;
-reg   [10:0] trunc_ln485_reg_513;
+wire   [0:0] icmp_ln486_fu_406_p2;
+wire   [10:0] trunc_ln499_fu_422_p1;
+reg   [10:0] trunc_ln499_reg_505;
+wire   [10:0] trunc_ln491_fu_432_p1;
+reg   [10:0] trunc_ln491_reg_513;
 wire  signed [61:0] trunc_ln_fu_442_p4;
 reg   [61:0] trunc_ln_reg_518;
 reg   [10:0] out_local_address0;
@@ -821,36 +765,20 @@ wire   [5:0] grp_mac_blocks_down_q4k5_fu_349_rb_7_address0;
 wire    grp_mac_blocks_down_q4k5_fu_349_rb_7_ce0;
 wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_0_address0;
 wire    grp_mac_blocks_down_q4k5_fu_349_gate_0_ce0;
-wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_0_address1;
-wire    grp_mac_blocks_down_q4k5_fu_349_gate_0_ce1;
 wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_1_address0;
 wire    grp_mac_blocks_down_q4k5_fu_349_gate_1_ce0;
-wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_1_address1;
-wire    grp_mac_blocks_down_q4k5_fu_349_gate_1_ce1;
 wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_2_address0;
 wire    grp_mac_blocks_down_q4k5_fu_349_gate_2_ce0;
-wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_2_address1;
-wire    grp_mac_blocks_down_q4k5_fu_349_gate_2_ce1;
 wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_3_address0;
 wire    grp_mac_blocks_down_q4k5_fu_349_gate_3_ce0;
-wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_3_address1;
-wire    grp_mac_blocks_down_q4k5_fu_349_gate_3_ce1;
 wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_4_address0;
 wire    grp_mac_blocks_down_q4k5_fu_349_gate_4_ce0;
-wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_4_address1;
-wire    grp_mac_blocks_down_q4k5_fu_349_gate_4_ce1;
 wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_5_address0;
 wire    grp_mac_blocks_down_q4k5_fu_349_gate_5_ce0;
-wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_5_address1;
-wire    grp_mac_blocks_down_q4k5_fu_349_gate_5_ce1;
 wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_6_address0;
 wire    grp_mac_blocks_down_q4k5_fu_349_gate_6_ce0;
-wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_6_address1;
-wire    grp_mac_blocks_down_q4k5_fu_349_gate_6_ce1;
 wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_7_address0;
 wire    grp_mac_blocks_down_q4k5_fu_349_gate_7_ce0;
-wire   [9:0] grp_mac_blocks_down_q4k5_fu_349_gate_7_address1;
-wire    grp_mac_blocks_down_q4k5_fu_349_gate_7_ce1;
 wire   [31:0] grp_mac_blocks_down_q4k5_fu_349_ap_return;
 wire   [15:0] grp_mac_blocks_down_q4k5_fu_349_grp_fp16_to_fp32_fu_528_p_din1;
 wire    grp_mac_blocks_down_q4k5_fu_349_grp_fp16_to_fp32_fu_528_p_ce;
@@ -920,9 +848,9 @@ wire    ap_CS_fsm_state8;
 reg    grp_compute_output_Pipeline_1_fu_379_ap_start_reg;
 wire    ap_CS_fsm_state9;
 wire    ap_CS_fsm_state10;
-wire   [63:0] zext_ln489_fu_462_p1;
-wire   [63:0] zext_ln481_fu_467_p1;
-wire  signed [63:0] sext_ln498_fu_451_p1;
+wire   [63:0] zext_ln495_fu_462_p1;
+wire   [63:0] zext_ln487_fu_467_p1;
+wire  signed [63:0] sext_ln504_fu_451_p1;
 reg   [11:0] out_i_fu_212;
 wire   [11:0] grp_fu_396_p2;
 reg    out_local_we0_local;
@@ -1435,7 +1363,7 @@ swiglu_load_row_down_q6k grp_load_row_down_q6k_fu_271(
     .m_axi_gmem_Wd_0_BID(1'd0),
     .m_axi_gmem_Wd_0_BUSER(1'd0),
     .W_down_wide(W_down_read_reg_477),
-    .out_i(trunc_ln493_reg_505),
+    .out_i(trunc_ln499_reg_505),
     .rb_0_address0(grp_load_row_down_q6k_fu_271_rb_0_address0),
     .rb_0_ce0(grp_load_row_down_q6k_fu_271_rb_0_ce0),
     .rb_0_we0(grp_load_row_down_q6k_fu_271_rb_0_we0),
@@ -1556,7 +1484,7 @@ swiglu_load_row_down_q4k grp_load_row_down_q4k_fu_295(
     .m_axi_gmem_Wd_0_BID(1'd0),
     .m_axi_gmem_Wd_0_BUSER(1'd0),
     .W_down_wide(W_down_read_reg_477),
-    .out_i(trunc_ln485_reg_513),
+    .out_i(trunc_ln491_reg_513),
     .rb_0_address0(grp_load_row_down_q4k_fu_295_rb_0_address0),
     .rb_0_ce0(grp_load_row_down_q4k_fu_295_rb_0_ce0),
     .rb_0_we0(grp_load_row_down_q4k_fu_295_rb_0_we0),
@@ -1724,51 +1652,27 @@ swiglu_mac_blocks_down_q4k5 grp_mac_blocks_down_q4k5_fu_349(
     .gate_0_address0(grp_mac_blocks_down_q4k5_fu_349_gate_0_address0),
     .gate_0_ce0(grp_mac_blocks_down_q4k5_fu_349_gate_0_ce0),
     .gate_0_q0(gate_cache_0_q0),
-    .gate_0_address1(grp_mac_blocks_down_q4k5_fu_349_gate_0_address1),
-    .gate_0_ce1(grp_mac_blocks_down_q4k5_fu_349_gate_0_ce1),
-    .gate_0_q1(gate_cache_0_q1),
     .gate_1_address0(grp_mac_blocks_down_q4k5_fu_349_gate_1_address0),
     .gate_1_ce0(grp_mac_blocks_down_q4k5_fu_349_gate_1_ce0),
     .gate_1_q0(gate_cache_1_q0),
-    .gate_1_address1(grp_mac_blocks_down_q4k5_fu_349_gate_1_address1),
-    .gate_1_ce1(grp_mac_blocks_down_q4k5_fu_349_gate_1_ce1),
-    .gate_1_q1(gate_cache_1_q1),
     .gate_2_address0(grp_mac_blocks_down_q4k5_fu_349_gate_2_address0),
     .gate_2_ce0(grp_mac_blocks_down_q4k5_fu_349_gate_2_ce0),
     .gate_2_q0(gate_cache_2_q0),
-    .gate_2_address1(grp_mac_blocks_down_q4k5_fu_349_gate_2_address1),
-    .gate_2_ce1(grp_mac_blocks_down_q4k5_fu_349_gate_2_ce1),
-    .gate_2_q1(gate_cache_2_q1),
     .gate_3_address0(grp_mac_blocks_down_q4k5_fu_349_gate_3_address0),
     .gate_3_ce0(grp_mac_blocks_down_q4k5_fu_349_gate_3_ce0),
     .gate_3_q0(gate_cache_3_q0),
-    .gate_3_address1(grp_mac_blocks_down_q4k5_fu_349_gate_3_address1),
-    .gate_3_ce1(grp_mac_blocks_down_q4k5_fu_349_gate_3_ce1),
-    .gate_3_q1(gate_cache_3_q1),
     .gate_4_address0(grp_mac_blocks_down_q4k5_fu_349_gate_4_address0),
     .gate_4_ce0(grp_mac_blocks_down_q4k5_fu_349_gate_4_ce0),
     .gate_4_q0(gate_cache_4_q0),
-    .gate_4_address1(grp_mac_blocks_down_q4k5_fu_349_gate_4_address1),
-    .gate_4_ce1(grp_mac_blocks_down_q4k5_fu_349_gate_4_ce1),
-    .gate_4_q1(gate_cache_4_q1),
     .gate_5_address0(grp_mac_blocks_down_q4k5_fu_349_gate_5_address0),
     .gate_5_ce0(grp_mac_blocks_down_q4k5_fu_349_gate_5_ce0),
     .gate_5_q0(gate_cache_5_q0),
-    .gate_5_address1(grp_mac_blocks_down_q4k5_fu_349_gate_5_address1),
-    .gate_5_ce1(grp_mac_blocks_down_q4k5_fu_349_gate_5_ce1),
-    .gate_5_q1(gate_cache_5_q1),
     .gate_6_address0(grp_mac_blocks_down_q4k5_fu_349_gate_6_address0),
     .gate_6_ce0(grp_mac_blocks_down_q4k5_fu_349_gate_6_ce0),
     .gate_6_q0(gate_cache_6_q0),
-    .gate_6_address1(grp_mac_blocks_down_q4k5_fu_349_gate_6_address1),
-    .gate_6_ce1(grp_mac_blocks_down_q4k5_fu_349_gate_6_ce1),
-    .gate_6_q1(gate_cache_6_q1),
     .gate_7_address0(grp_mac_blocks_down_q4k5_fu_349_gate_7_address0),
     .gate_7_ce0(grp_mac_blocks_down_q4k5_fu_349_gate_7_ce0),
     .gate_7_q0(gate_cache_7_q0),
-    .gate_7_address1(grp_mac_blocks_down_q4k5_fu_349_gate_7_address1),
-    .gate_7_ce1(grp_mac_blocks_down_q4k5_fu_349_gate_7_ce1),
-    .gate_7_q1(gate_cache_7_q1),
     .gate_scale(p_read_1_reg_483),
     .ap_return(grp_mac_blocks_down_q4k5_fu_349_ap_return),
     .grp_fp16_to_fp32_fu_528_p_din1(grp_mac_blocks_down_q4k5_fu_349_grp_fp16_to_fp32_fu_528_p_din1),
@@ -1842,7 +1746,7 @@ swiglu_compute_output_Pipeline_1 grp_compute_output_Pipeline_1_fu_379(
     .m_axi_gmem_out_0_BRESP(m_axi_gmem_out_0_BRESP),
     .m_axi_gmem_out_0_BID(m_axi_gmem_out_0_BID),
     .m_axi_gmem_out_0_BUSER(m_axi_gmem_out_0_BUSER),
-    .sext_ln498(trunc_ln_reg_518),
+    .sext_ln504(trunc_ln_reg_518),
     .out_local_address0(grp_compute_output_Pipeline_1_fu_379_out_local_address0),
     .out_local_ce0(grp_compute_output_Pipeline_1_fu_379_out_local_ce0),
     .out_local_q0(out_local_q0)
@@ -1866,7 +1770,7 @@ swiglu_faddfsub_32ns_32ns_32_4_full_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-faddfsub_32ns_32ns_32_4_full_dsp_1_U4384(
+faddfsub_32ns_32ns_32_4_full_dsp_1_U4132(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_532_p0),
@@ -1882,7 +1786,7 @@ swiglu_fmul_32ns_32ns_32_3_max_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fmul_32ns_32ns_32_3_max_dsp_1_U4385(
+fmul_32ns_32ns_32_3_max_dsp_1_U4133(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_536_p0),
@@ -1927,7 +1831,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_load_row_down_q4k_fu_295_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b0 == ap_block_state2_io) & (grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+        if (((1'b0 == ap_block_state2_io) & (grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
             grp_load_row_down_q4k_fu_295_ap_start_reg <= 1'b1;
         end else if ((grp_load_row_down_q4k_fu_295_ap_ready == 1'b1)) begin
             grp_load_row_down_q4k_fu_295_ap_start_reg <= 1'b0;
@@ -1939,7 +1843,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_load_row_down_q6k_fu_271_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b0 == ap_block_state2_io) & (grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+        if (((1'b0 == ap_block_state2_io) & (grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
             grp_load_row_down_q6k_fu_271_ap_start_reg <= 1'b1;
         end else if ((grp_load_row_down_q6k_fu_271_ap_ready == 1'b1)) begin
             grp_load_row_down_q6k_fu_271_ap_start_reg <= 1'b0;
@@ -1972,9 +1876,9 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((((icmp_ln480_fu_406_p2 == 1'd1) & (1'b0 == ap_block_state1) & (1'b1 == ap_CS_fsm_state1)) | ((icmp_ln480_fu_406_p2 == 1'd0) & (1'b0 == ap_block_state1) & (1'b1 == ap_CS_fsm_state1)))) begin
+    if ((((icmp_ln486_fu_406_p2 == 1'd1) & (1'b0 == ap_block_state1) & (1'b1 == ap_CS_fsm_state1)) | ((icmp_ln486_fu_406_p2 == 1'd0) & (1'b0 == ap_block_state1) & (1'b1 == ap_CS_fsm_state1)))) begin
         out_i_fu_212 <= 12'd0;
-    end else if ((((1'b0 == ap_block_state2_io) & (grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)) | ((1'b0 == ap_block_state2_io) & (grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if ((((1'b0 == ap_block_state2_io) & (grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)) | ((1'b0 == ap_block_state2_io) & (grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         out_i_fu_212 <= grp_fu_396_p2;
     end
 end
@@ -1982,22 +1886,22 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_state1) & (1'b1 == ap_CS_fsm_state1))) begin
         W_down_read_reg_477 <= W_down;
-        icmp_ln480_reg_489 <= icmp_ln480_fu_406_p2;
+        icmp_ln486_reg_489 <= icmp_ln486_fu_406_p2;
         out_batch_read_reg_472 <= out_batch;
         p_read_1_reg_483 <= p_read;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((((1'b0 == ap_block_state2_io) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)) | ((1'b0 == ap_block_state2_io) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if ((((1'b0 == ap_block_state2_io) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)) | ((1'b0 == ap_block_state2_io) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         reg_402 <= out_i_fu_212;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_state2_io) & (1'b1 == ap_CS_fsm_state2))) begin
-        trunc_ln485_reg_513 <= trunc_ln485_fu_432_p1;
-        trunc_ln493_reg_505 <= trunc_ln493_fu_422_p1;
+        trunc_ln491_reg_513 <= trunc_ln491_fu_432_p1;
+        trunc_ln499_reg_505 <= trunc_ln499_fu_422_p1;
         trunc_ln_reg_518 <= {{out_batch_read_reg_472[63:2]}};
     end
 end
@@ -2252,14 +2156,6 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        gate_cache_0_ce1 = grp_mac_blocks_down_q4k5_fu_349_gate_0_ce1;
-    end else begin
-        gate_cache_0_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
         gate_cache_1_address0 = grp_mac_blocks_down_q4k5_fu_349_gate_1_address0;
     end else if ((1'b1 == ap_CS_fsm_state5)) begin
         gate_cache_1_address0 = grp_mac_blocks_down_q6k_fu_311_gate_1_address0;
@@ -2275,14 +2171,6 @@ always @ (*) begin
         gate_cache_1_ce0 = grp_mac_blocks_down_q6k_fu_311_gate_1_ce0;
     end else begin
         gate_cache_1_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        gate_cache_1_ce1 = grp_mac_blocks_down_q4k5_fu_349_gate_1_ce1;
-    end else begin
-        gate_cache_1_ce1 = 1'b0;
     end
 end
 
@@ -2308,14 +2196,6 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        gate_cache_2_ce1 = grp_mac_blocks_down_q4k5_fu_349_gate_2_ce1;
-    end else begin
-        gate_cache_2_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
         gate_cache_3_address0 = grp_mac_blocks_down_q4k5_fu_349_gate_3_address0;
     end else if ((1'b1 == ap_CS_fsm_state5)) begin
         gate_cache_3_address0 = grp_mac_blocks_down_q6k_fu_311_gate_3_address0;
@@ -2331,14 +2211,6 @@ always @ (*) begin
         gate_cache_3_ce0 = grp_mac_blocks_down_q6k_fu_311_gate_3_ce0;
     end else begin
         gate_cache_3_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        gate_cache_3_ce1 = grp_mac_blocks_down_q4k5_fu_349_gate_3_ce1;
-    end else begin
-        gate_cache_3_ce1 = 1'b0;
     end
 end
 
@@ -2364,14 +2236,6 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        gate_cache_4_ce1 = grp_mac_blocks_down_q4k5_fu_349_gate_4_ce1;
-    end else begin
-        gate_cache_4_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
         gate_cache_5_address0 = grp_mac_blocks_down_q4k5_fu_349_gate_5_address0;
     end else if ((1'b1 == ap_CS_fsm_state5)) begin
         gate_cache_5_address0 = grp_mac_blocks_down_q6k_fu_311_gate_5_address0;
@@ -2387,14 +2251,6 @@ always @ (*) begin
         gate_cache_5_ce0 = grp_mac_blocks_down_q6k_fu_311_gate_5_ce0;
     end else begin
         gate_cache_5_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        gate_cache_5_ce1 = grp_mac_blocks_down_q4k5_fu_349_gate_5_ce1;
-    end else begin
-        gate_cache_5_ce1 = 1'b0;
     end
 end
 
@@ -2420,14 +2276,6 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        gate_cache_6_ce1 = grp_mac_blocks_down_q4k5_fu_349_gate_6_ce1;
-    end else begin
-        gate_cache_6_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
         gate_cache_7_address0 = grp_mac_blocks_down_q4k5_fu_349_gate_7_address0;
     end else if ((1'b1 == ap_CS_fsm_state5)) begin
         gate_cache_7_address0 = grp_mac_blocks_down_q6k_fu_311_gate_7_address0;
@@ -2447,15 +2295,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        gate_cache_7_ce1 = grp_mac_blocks_down_q4k5_fu_349_gate_7_ce1;
-    end else begin
-        gate_cache_7_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state2) & (((grp_fu_390_p2 == 1'd1) & (icmp_ln480_reg_489 == 1'd0)) | ((grp_fu_390_p2 == 1'd1) & (icmp_ln480_reg_489 == 1'd1))))) begin
+    if (((1'b1 == ap_CS_fsm_state2) & (((grp_fu_390_p2 == 1'd1) & (icmp_ln486_reg_489 == 1'd0)) | ((grp_fu_390_p2 == 1'd1) & (icmp_ln486_reg_489 == 1'd1))))) begin
         gmem_out_blk_n_AW = m_axi_gmem_out_0_AWREADY;
     end else begin
         gmem_out_blk_n_AW = 1'b1;
@@ -2571,9 +2411,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARADDR = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_ARADDR;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARADDR = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_ARADDR;
     end else begin
         m_axi_gmem_Wd_0_ARADDR = 'bx;
@@ -2581,9 +2421,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARBURST = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_ARBURST;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARBURST = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_ARBURST;
     end else begin
         m_axi_gmem_Wd_0_ARBURST = 'bx;
@@ -2591,9 +2431,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARCACHE = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_ARCACHE;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARCACHE = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_ARCACHE;
     end else begin
         m_axi_gmem_Wd_0_ARCACHE = 'bx;
@@ -2601,9 +2441,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARID = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_ARID;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARID = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_ARID;
     end else begin
         m_axi_gmem_Wd_0_ARID = 'bx;
@@ -2611,9 +2451,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARLEN = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_ARLEN;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARLEN = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_ARLEN;
     end else begin
         m_axi_gmem_Wd_0_ARLEN = 'bx;
@@ -2621,9 +2461,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARLOCK = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_ARLOCK;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARLOCK = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_ARLOCK;
     end else begin
         m_axi_gmem_Wd_0_ARLOCK = 'bx;
@@ -2631,9 +2471,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARPROT = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_ARPROT;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARPROT = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_ARPROT;
     end else begin
         m_axi_gmem_Wd_0_ARPROT = 'bx;
@@ -2641,9 +2481,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARQOS = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_ARQOS;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARQOS = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_ARQOS;
     end else begin
         m_axi_gmem_Wd_0_ARQOS = 'bx;
@@ -2651,9 +2491,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARREGION = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_ARREGION;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARREGION = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_ARREGION;
     end else begin
         m_axi_gmem_Wd_0_ARREGION = 'bx;
@@ -2661,9 +2501,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARSIZE = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_ARSIZE;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARSIZE = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_ARSIZE;
     end else begin
         m_axi_gmem_Wd_0_ARSIZE = 'bx;
@@ -2671,9 +2511,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARUSER = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_ARUSER;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARUSER = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_ARUSER;
     end else begin
         m_axi_gmem_Wd_0_ARUSER = 'bx;
@@ -2681,9 +2521,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARVALID = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_ARVALID;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_ARVALID = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_ARVALID;
     end else begin
         m_axi_gmem_Wd_0_ARVALID = 1'b0;
@@ -2691,9 +2531,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_RREADY = grp_load_row_down_q4k_fu_295_m_axi_gmem_Wd_0_RREADY;
-    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
+    end else if (((1'b1 == ap_CS_fsm_state3) | ((grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2)))) begin
         m_axi_gmem_Wd_0_RREADY = grp_load_row_down_q6k_fu_271_m_axi_gmem_Wd_0_RREADY;
     end else begin
         m_axi_gmem_Wd_0_RREADY = 1'b0;
@@ -2702,7 +2542,7 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_state2_io) & (ap_predicate_op169_writereq_state2 == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
-        m_axi_gmem_out_0_AWADDR = sext_ln498_fu_451_p1;
+        m_axi_gmem_out_0_AWADDR = sext_ln504_fu_451_p1;
     end else if (((1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9))) begin
         m_axi_gmem_out_0_AWADDR = grp_compute_output_Pipeline_1_fu_379_m_axi_gmem_out_0_AWADDR;
     end else begin
@@ -2830,9 +2670,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        out_local_address0_local = zext_ln481_fu_467_p1;
+        out_local_address0_local = zext_ln487_fu_467_p1;
     end else if ((1'b1 == ap_CS_fsm_state5)) begin
-        out_local_address0_local = zext_ln489_fu_462_p1;
+        out_local_address0_local = zext_ln495_fu_462_p1;
     end else begin
         out_local_address0_local = 'bx;
     end
@@ -3554,11 +3394,11 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((1'b0 == ap_block_state2_io) & (grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+            if (((1'b0 == ap_block_state2_io) & (grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_state6;
-            end else if (((1'b0 == ap_block_state2_io) & (1'b1 == ap_CS_fsm_state2) & (((grp_fu_390_p2 == 1'd1) & (icmp_ln480_reg_489 == 1'd0)) | ((grp_fu_390_p2 == 1'd1) & (icmp_ln480_reg_489 == 1'd1))))) begin
+            end else if (((1'b0 == ap_block_state2_io) & (1'b1 == ap_CS_fsm_state2) & (((grp_fu_390_p2 == 1'd1) & (icmp_ln486_reg_489 == 1'd0)) | ((grp_fu_390_p2 == 1'd1) & (icmp_ln486_reg_489 == 1'd1))))) begin
                 ap_NS_fsm = ap_ST_fsm_state9;
-            end else if (((1'b0 == ap_block_state2_io) & (grp_fu_390_p2 == 1'd0) & (icmp_ln480_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+            end else if (((1'b0 == ap_block_state2_io) & (grp_fu_390_p2 == 1'd0) & (icmp_ln486_reg_489 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_state3;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state2;
@@ -3853,24 +3693,8 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    ap_predicate_op169_writereq_state2 = (((grp_fu_390_p2 == 1'd1) & (icmp_ln480_reg_489 == 1'd0)) | ((grp_fu_390_p2 == 1'd1) & (icmp_ln480_reg_489 == 1'd1)));
+    ap_predicate_op169_writereq_state2 = (((grp_fu_390_p2 == 1'd1) & (icmp_ln486_reg_489 == 1'd0)) | ((grp_fu_390_p2 == 1'd1) & (icmp_ln486_reg_489 == 1'd1)));
 end
-
-assign gate_cache_0_address1 = grp_mac_blocks_down_q4k5_fu_349_gate_0_address1;
-
-assign gate_cache_1_address1 = grp_mac_blocks_down_q4k5_fu_349_gate_1_address1;
-
-assign gate_cache_2_address1 = grp_mac_blocks_down_q4k5_fu_349_gate_2_address1;
-
-assign gate_cache_3_address1 = grp_mac_blocks_down_q4k5_fu_349_gate_3_address1;
-
-assign gate_cache_4_address1 = grp_mac_blocks_down_q4k5_fu_349_gate_4_address1;
-
-assign gate_cache_5_address1 = grp_mac_blocks_down_q4k5_fu_349_gate_5_address1;
-
-assign gate_cache_6_address1 = grp_mac_blocks_down_q4k5_fu_349_gate_6_address1;
-
-assign gate_cache_7_address1 = grp_mac_blocks_down_q4k5_fu_349_gate_7_address1;
 
 assign grp_compute_output_Pipeline_1_fu_379_ap_start = grp_compute_output_Pipeline_1_fu_379_ap_start_reg;
 
@@ -3886,7 +3710,7 @@ assign grp_mac_blocks_down_q4k5_fu_349_ap_start = grp_mac_blocks_down_q4k5_fu_34
 
 assign grp_mac_blocks_down_q6k_fu_311_ap_start = grp_mac_blocks_down_q6k_fu_311_ap_start_reg;
 
-assign icmp_ln480_fu_406_p2 = ((down_quant_mode == 32'd0) ? 1'b1 : 1'b0);
+assign icmp_ln486_fu_406_p2 = ((down_quant_mode == 32'd0) ? 1'b1 : 1'b0);
 
 assign m_axi_gmem_Wd_0_AWADDR = 64'd0;
 
@@ -3962,16 +3786,16 @@ assign m_axi_gmem_out_0_WSTRB = grp_compute_output_Pipeline_1_fu_379_m_axi_gmem_
 
 assign m_axi_gmem_out_0_WUSER = grp_compute_output_Pipeline_1_fu_379_m_axi_gmem_out_0_WUSER;
 
-assign sext_ln498_fu_451_p1 = trunc_ln_fu_442_p4;
+assign sext_ln504_fu_451_p1 = trunc_ln_fu_442_p4;
 
-assign trunc_ln485_fu_432_p1 = out_i_fu_212[10:0];
+assign trunc_ln491_fu_432_p1 = out_i_fu_212[10:0];
 
-assign trunc_ln493_fu_422_p1 = out_i_fu_212[10:0];
+assign trunc_ln499_fu_422_p1 = out_i_fu_212[10:0];
 
 assign trunc_ln_fu_442_p4 = {{out_batch_read_reg_472[63:2]}};
 
-assign zext_ln481_fu_467_p1 = reg_402;
+assign zext_ln487_fu_467_p1 = reg_402;
 
-assign zext_ln489_fu_462_p1 = reg_402;
+assign zext_ln495_fu_462_p1 = reg_402;
 
 endmodule //swiglu_compute_output

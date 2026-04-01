@@ -2690,7 +2690,7 @@
 					<Obj>
 						<type>0</type>
 						<id>58</id>
-						<name>tmp_860</name>
+						<name>tmp_846</name>
 						<fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
 						<fileDirectory>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath</fileDirectory>
 						<lineNumber>18</lineNumber>
@@ -3456,7 +3456,7 @@
 					<Obj>
 						<type>0</type>
 						<id>67</id>
-						<name>tmp_556</name>
+						<name>tmp_260</name>
 						<fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
 						<fileDirectory>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath</fileDirectory>
 						<lineNumber>21</lineNumber>
@@ -3884,7 +3884,7 @@
 					<Obj>
 						<type>0</type>
 						<id>72</id>
-						<name>tmp_861</name>
+						<name>tmp_847</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>288</lineNumber>
@@ -4056,7 +4056,7 @@
 					<Obj>
 						<type>0</type>
 						<id>75</id>
-						<name>tmp_862</name>
+						<name>tmp_848</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>289</lineNumber>
@@ -16724,7 +16724,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_556_fu_471</first>
+			<first>tmp_260_fu_471</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -16756,7 +16756,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_860_fu_415</first>
+			<first>tmp_846_fu_415</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -16764,7 +16764,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_861_fu_507</first>
+			<first>tmp_847_fu_507</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -16772,7 +16772,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_862_fu_527</first>
+			<first>tmp_848_fu_527</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

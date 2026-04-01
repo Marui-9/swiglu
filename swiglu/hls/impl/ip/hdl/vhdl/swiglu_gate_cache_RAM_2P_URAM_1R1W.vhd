@@ -27,7 +27,6 @@ entity swiglu_gate_cache_RAM_2P_URAM_1R1W  is
         i_we1      : in  std_logic;
         i_address1 : in  std_logic_vector(AddressWidth-1 downto 0);
         i_d1       : in  std_logic_vector(DataWidth-1 downto 0);
-        i_q1       : out std_logic_vector(DataWidth-1 downto 0);
         -- target"
         t_ce       : in  std_logic;
         t_read     : in  std_logic;
@@ -39,7 +38,6 @@ entity swiglu_gate_cache_RAM_2P_URAM_1R1W  is
         t_we1      : in  std_logic;
         t_address1 : in  std_logic_vector(AddressWidth-1 downto 0);
         t_d1       : in  std_logic_vector(DataWidth-1 downto 0);
-        t_q1       : out std_logic_vector(DataWidth-1 downto 0);
         -- system signals
         clk        : in std_logic;
         reset      : in std_logic
@@ -57,7 +55,6 @@ port (
     address1 : in  std_logic_vector(AddressWidth-1 downto 0);
     we1      : in  std_logic;
     d1       : in  std_logic_vector(DataWidth-1 downto 0);
-    q1       : out std_logic_vector(DataWidth-1 downto 0);      
     clk      : in  std_logic;
     reset    : in  std_logic
 );
@@ -91,7 +88,6 @@ signal buf_ce1 : BitArray;
 signal buf_we1 : BitArrayWe;
 signal buf_a1  : AddrArray;
 signal buf_d1  : DataArray;
-signal buf_q1  : DataArray;
 
 begin
     ----------------- instantiate buffers -----------------
@@ -105,7 +101,6 @@ begin
             we1      => buf_we1(i),
             address1 => buf_a1(i),
             d1       => buf_d1(i),
-            q1       => buf_q1(i),
             clk      => clk,
             reset    => reset
         );
@@ -133,8 +128,6 @@ begin
     ----------------- output ------------------------------
     i_q0      <= buf_q0(to_integer(prev_iptr));
     t_q0      <= reg_q0 when reg_valid0 = '1' else buf_q0(to_integer(prev_tptr));
-    i_q1      <= buf_q1(to_integer(prev_iptr));
-    t_q1      <= reg_q1 when reg_valid1 = '1' else buf_q1(to_integer(prev_tptr));
     i_full_n  <= full_n;
     t_empty_n <= empty_n;
 
@@ -181,20 +174,6 @@ begin
                 reg_valid0  <= '1';
             elsif t_ce0 = '1' then
                 reg_valid0  <= '0';
-            end if;
-        end if;
-    end process;
--- reg_q1 and reg_valid1
-    process(clk) begin
-        if (clk'event and clk='1') then
-            if (reset = '1') then
-                reg_q1<= (others => '0');
-                reg_valid1<= '0';
-            elsif (t_ce1='0' and reg_valid1='0') then
-                reg_q1      <= buf_q1(to_integer(prev_tptr));
-                reg_valid1  <= '1';
-            elsif t_ce1 = '1' then
-                reg_valid1  <= '0';
             end if;
         end if;
     end process;

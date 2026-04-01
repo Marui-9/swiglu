@@ -25,7 +25,6 @@ module swiglu_gate_cache_RAM_2P_URAM_1R1W
     input  wire                     i_we1,
     input  wire [AddressWidth-1:0] i_address1,
     input  wire [DataWidth-1:0]    i_d1,
-    output wire [DataWidth-1:0]    i_q1,
     // target
     input  wire                    t_ce,
     input  wire                    t_read,
@@ -34,10 +33,9 @@ module swiglu_gate_cache_RAM_2P_URAM_1R1W
     input  wire [AddressWidth-1:0] t_address0,
     output wire [DataWidth-1:0]    t_q0,
     input  wire                    t_ce1,
-    input  wire                    t_we1,
+    input  wire                     t_we1,
     input  wire [AddressWidth-1:0] t_address1,
     input  wire [DataWidth-1:0]    t_d1,
-    output wire [DataWidth-1:0]    t_q1,
     // system signals
     input  wire                    clk,
     input  wire                    reset
@@ -67,7 +65,6 @@ wire                    buf_ce1[0:BufferCount-1];
 wire                    buf_we1[0:BufferCount-1];
 wire [AddressWidth-1:0] buf_a1[0:BufferCount-1];
 wire [DataWidth-1:0]    buf_d1[0:BufferCount-1];
-wire [DataWidth-1:0]    buf_q1[0:BufferCount-1];
 //------------------------Instantiation------------------
 genvar i;
 generate
@@ -80,7 +77,6 @@ generate
             .we1      ( buf_we1[i] ),
             .address1 ( buf_a1[i] ),
             .d1       ( buf_d1[i] ),
-            .q1       ( buf_q1[i] ),
             .clk      ( clk ),
             .reset    ( reset )
         );
@@ -106,8 +102,6 @@ endgenerate
 //------------------------Body---------------------------
 assign i_q0      = buf_q0[prev_iptr];
 assign t_q0      = reg_valid0 ? reg_q0 : buf_q0[prev_tptr];
-assign i_q1      = buf_q1[prev_iptr];
-assign t_q1      = reg_valid1 ? reg_q1 : buf_q1[prev_tptr];
 
 //++++++++++++++++++++++++output+++++++++++++++++++++++++
 assign i_full_n  = full_n;
@@ -170,18 +164,6 @@ always @(posedge clk) begin
         reg_valid0 <= 1'b1;
     end else if (t_ce0) begin
         reg_valid0 <= 1'b0;
-    end
-end
-// reg_q1 and reg_valid1
-always @(posedge clk) begin
-    if (reset == 1'b1) begin
-        reg_q1     <= 1'b0;
-        reg_valid1 <= 1'b0;
-    end else if (!t_ce1 && !reg_valid1) begin
-        reg_q1     <= buf_q1[prev_tptr];
-        reg_valid1 <= 1'b1;
-    end else if (t_ce1) begin
-        reg_valid1 <= 1'b0;
     end
 end
 

@@ -2000,7 +2000,7 @@ entry:129 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %x_local
 
 <Node id="263" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-entry:130 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %gmem_W, void @empty_39, i32 0, i32 0, void @empty_36, i32 64, i32 589824, void @empty_0, void @empty_34, void @empty_36, i32 2, i32 16, i32 256, i32 16, void @empty_36, void @empty_36, i32 4294967295, i32 0, i32 0
+entry:130 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %gmem_W, void @empty_33, i32 0, i32 0, void @empty_29, i32 64, i32 589824, void @empty_3, void @empty, void @empty_29, i32 2, i32 16, i32 256, i32 16, void @empty_29, void @empty_29, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -2534,7 +2534,7 @@ for.inc.split:2 %speclooptripcount_ln232 = speclooptripcount void @_ssdm_op_Spec
 
 <Node id="293" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.inc.split:3 %specloopname_ln231 = specloopname void @_ssdm_op_SpecLoopName, void @empty_6
+for.inc.split:3 %specloopname_ln231 = specloopname void @_ssdm_op_SpecLoopName, void @empty_31
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln231"/></StgValue>
@@ -4415,23 +4415,23 @@ for.inc.split:9 %br_ln231 = br void %for.inc
 </dataflow>
 <dataflow id="966" from="gmem_W" to="specinterface_ln0" fromId="180" toId="136">
 </dataflow>
-<dataflow id="968" from="empty_39" to="specinterface_ln0" fromId="967" toId="136">
+<dataflow id="968" from="empty_33" to="specinterface_ln0" fromId="967" toId="136">
 </dataflow>
 <dataflow id="970" from="StgValue_969" to="specinterface_ln0" fromId="969" toId="136">
 </dataflow>
 <dataflow id="971" from="StgValue_969" to="specinterface_ln0" fromId="969" toId="136">
 </dataflow>
-<dataflow id="973" from="empty_36" to="specinterface_ln0" fromId="972" toId="136">
+<dataflow id="973" from="empty_29" to="specinterface_ln0" fromId="972" toId="136">
 </dataflow>
 <dataflow id="975" from="StgValue_974" to="specinterface_ln0" fromId="974" toId="136">
 </dataflow>
 <dataflow id="977" from="StgValue_976" to="specinterface_ln0" fromId="976" toId="136">
 </dataflow>
-<dataflow id="979" from="empty_0" to="specinterface_ln0" fromId="978" toId="136">
+<dataflow id="979" from="empty_3" to="specinterface_ln0" fromId="978" toId="136">
 </dataflow>
-<dataflow id="981" from="empty_34" to="specinterface_ln0" fromId="980" toId="136">
+<dataflow id="981" from="empty" to="specinterface_ln0" fromId="980" toId="136">
 </dataflow>
-<dataflow id="982" from="empty_36" to="specinterface_ln0" fromId="972" toId="136">
+<dataflow id="982" from="empty_29" to="specinterface_ln0" fromId="972" toId="136">
 </dataflow>
 <dataflow id="984" from="StgValue_983" to="specinterface_ln0" fromId="983" toId="136">
 </dataflow>
@@ -4441,9 +4441,9 @@ for.inc.split:9 %br_ln231 = br void %for.inc
 </dataflow>
 <dataflow id="989" from="StgValue_985" to="specinterface_ln0" fromId="985" toId="136">
 </dataflow>
-<dataflow id="990" from="empty_36" to="specinterface_ln0" fromId="972" toId="136">
+<dataflow id="990" from="empty_29" to="specinterface_ln0" fromId="972" toId="136">
 </dataflow>
-<dataflow id="991" from="empty_36" to="specinterface_ln0" fromId="972" toId="136">
+<dataflow id="991" from="empty_29" to="specinterface_ln0" fromId="972" toId="136">
 </dataflow>
 <dataflow id="993" from="StgValue_992" to="specinterface_ln0" fromId="992" toId="136">
 </dataflow>
@@ -4919,7 +4919,7 @@ for.inc.split:9 %br_ln231 = br void %for.inc
 </dataflow>
 <dataflow id="1241" from="_ssdm_op_SpecLoopName" to="specloopname_ln231" fromId="1240" toId="170">
 </dataflow>
-<dataflow id="1243" from="empty_6" to="specloopname_ln231" fromId="1242" toId="170">
+<dataflow id="1243" from="empty_31" to="specloopname_ln231" fromId="1242" toId="170">
 </dataflow>
 <dataflow id="1244" from="mac_blocks_wv" to="row_result" fromId="1090" toId="171">
 </dataflow>

@@ -513,7 +513,7 @@ end
     .def_WIDTH( 8 ),
     .sel_WIDTH( 3 ),
     .dout_WIDTH( 8 ))
-sparsemux_9_3_8_1_1_U1418(
+sparsemux_9_3_8_1_1_U1420(
     .din0(gate_0_q0),
     .din1(gate_2_q0),
     .din2(gate_4_q0),
@@ -521,76 +521,6 @@ sparsemux_9_3_8_1_1_U1418(
     .def(tmp_41_fu_912_p9),
     .sel(empty),
     .dout(tmp_41_fu_912_p11)
-);
-
-(* dissolve_hierarchy = "yes" *) swiglu_sparsemux_33_4_128_1_1 #(
-    .ID( 1 ),
-    .NUM_STAGE( 1 ),
-    .CASE0( 4'h0 ),
-    .din0_WIDTH( 128 ),
-    .CASE1( 4'h1 ),
-    .din1_WIDTH( 128 ),
-    .CASE2( 4'h2 ),
-    .din2_WIDTH( 128 ),
-    .CASE3( 4'h3 ),
-    .din3_WIDTH( 128 ),
-    .CASE4( 4'h4 ),
-    .din4_WIDTH( 128 ),
-    .CASE5( 4'h5 ),
-    .din5_WIDTH( 128 ),
-    .CASE6( 4'h6 ),
-    .din6_WIDTH( 128 ),
-    .CASE7( 4'h7 ),
-    .din7_WIDTH( 128 ),
-    .CASE8( 4'h8 ),
-    .din8_WIDTH( 128 ),
-    .CASE9( 4'h9 ),
-    .din9_WIDTH( 128 ),
-    .CASE10( 4'hA ),
-    .din10_WIDTH( 128 ),
-    .CASE11( 4'hB ),
-    .din11_WIDTH( 128 ),
-    .CASE12( 4'hC ),
-    .din12_WIDTH( 128 ),
-    .CASE13( 4'hD ),
-    .din13_WIDTH( 128 ),
-    .CASE14( 4'hE ),
-    .din14_WIDTH( 128 ),
-    .CASE15( 4'hF ),
-    .din15_WIDTH( 128 ),
-    .def_WIDTH( 128 ),
-    .sel_WIDTH( 4 ),
-    .dout_WIDTH( 128 ))
-sparsemux_33_4_128_1_1_U1419(
-    .din0(rb_0_q0),
-    .din1(rb_1_q0),
-    .din2(rb_2_q0),
-    .din3(rb_3_q0),
-    .din4(rb_4_q0),
-    .din5(rb_5_q0),
-    .din6(rb_6_q0),
-    .din7(rb_7_q0),
-    .din8(rb_8_q0),
-    .din9(rb_9_q0),
-    .din10(rb_10_q0),
-    .din11(rb_11_q0),
-    .din12(rb_12_q0),
-    .din13(rb_13_q0),
-    .din14(rb_14_q0),
-    .din15(rb_15_q0),
-    .def(tmp_36_fu_1039_p33),
-    .sel(trunc_ln55_5_reg_1632),
-    .dout(tmp_36_fu_1039_p35)
-);
-
-swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
-    .DATAWIDTH( 128 ),
-    .ADDRWIDTH( 7 ),
-    .DATA1WIDTH( 8 ))
-partselect_8ns_128ns_7ns_8_1_1_U1420(
-    .din(tmp_36_fu_1039_p35),
-    .sel(tmp_37_fu_1110_p2),
-    .dout(tmp_37_fu_1110_p3)
 );
 
 (* dissolve_hierarchy = "yes" *) swiglu_sparsemux_33_4_128_1_1 #(
@@ -648,9 +578,9 @@ sparsemux_33_4_128_1_1_U1421(
     .din13(rb_13_q0),
     .din14(rb_14_q0),
     .din15(rb_15_q0),
-    .def(tmp_38_fu_1221_p33),
-    .sel(trunc_ln55_6_reg_1732),
-    .dout(tmp_38_fu_1221_p35)
+    .def(tmp_36_fu_1039_p33),
+    .sel(trunc_ln55_5_reg_1632),
+    .dout(tmp_36_fu_1039_p35)
 );
 
 swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
@@ -658,9 +588,9 @@ swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
     .ADDRWIDTH( 7 ),
     .DATA1WIDTH( 8 ))
 partselect_8ns_128ns_7ns_8_1_1_U1422(
-    .din(tmp_38_fu_1221_p35),
-    .sel(tmp_39_fu_1292_p2),
-    .dout(tmp_39_fu_1292_p3)
+    .din(tmp_36_fu_1039_p35),
+    .sel(tmp_37_fu_1110_p2),
+    .dout(tmp_37_fu_1110_p3)
 );
 
 (* dissolve_hierarchy = "yes" *) swiglu_sparsemux_33_4_128_1_1 #(
@@ -718,6 +648,76 @@ sparsemux_33_4_128_1_1_U1423(
     .din13(rb_13_q0),
     .din14(rb_14_q0),
     .din15(rb_15_q0),
+    .def(tmp_38_fu_1221_p33),
+    .sel(trunc_ln55_6_reg_1732),
+    .dout(tmp_38_fu_1221_p35)
+);
+
+swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
+    .DATAWIDTH( 128 ),
+    .ADDRWIDTH( 7 ),
+    .DATA1WIDTH( 8 ))
+partselect_8ns_128ns_7ns_8_1_1_U1424(
+    .din(tmp_38_fu_1221_p35),
+    .sel(tmp_39_fu_1292_p2),
+    .dout(tmp_39_fu_1292_p3)
+);
+
+(* dissolve_hierarchy = "yes" *) swiglu_sparsemux_33_4_128_1_1 #(
+    .ID( 1 ),
+    .NUM_STAGE( 1 ),
+    .CASE0( 4'h0 ),
+    .din0_WIDTH( 128 ),
+    .CASE1( 4'h1 ),
+    .din1_WIDTH( 128 ),
+    .CASE2( 4'h2 ),
+    .din2_WIDTH( 128 ),
+    .CASE3( 4'h3 ),
+    .din3_WIDTH( 128 ),
+    .CASE4( 4'h4 ),
+    .din4_WIDTH( 128 ),
+    .CASE5( 4'h5 ),
+    .din5_WIDTH( 128 ),
+    .CASE6( 4'h6 ),
+    .din6_WIDTH( 128 ),
+    .CASE7( 4'h7 ),
+    .din7_WIDTH( 128 ),
+    .CASE8( 4'h8 ),
+    .din8_WIDTH( 128 ),
+    .CASE9( 4'h9 ),
+    .din9_WIDTH( 128 ),
+    .CASE10( 4'hA ),
+    .din10_WIDTH( 128 ),
+    .CASE11( 4'hB ),
+    .din11_WIDTH( 128 ),
+    .CASE12( 4'hC ),
+    .din12_WIDTH( 128 ),
+    .CASE13( 4'hD ),
+    .din13_WIDTH( 128 ),
+    .CASE14( 4'hE ),
+    .din14_WIDTH( 128 ),
+    .CASE15( 4'hF ),
+    .din15_WIDTH( 128 ),
+    .def_WIDTH( 128 ),
+    .sel_WIDTH( 4 ),
+    .dout_WIDTH( 128 ))
+sparsemux_33_4_128_1_1_U1425(
+    .din0(rb_0_q0),
+    .din1(rb_1_q0),
+    .din2(rb_2_q0),
+    .din3(rb_3_q0),
+    .din4(rb_4_q0),
+    .din5(rb_5_q0),
+    .din6(rb_6_q0),
+    .din7(rb_7_q0),
+    .din8(rb_8_q0),
+    .din9(rb_9_q0),
+    .din10(rb_10_q0),
+    .din11(rb_11_q0),
+    .din12(rb_12_q0),
+    .din13(rb_13_q0),
+    .din14(rb_14_q0),
+    .din15(rb_15_q0),
     .def(tmp_40_fu_1435_p33),
     .sel(trunc_ln55_7_reg_1847),
     .dout(tmp_40_fu_1435_p35)
@@ -727,7 +727,7 @@ swiglu_partselect_8ns_128ns_7ns_8_1_1 #(
     .DATAWIDTH( 128 ),
     .ADDRWIDTH( 7 ),
     .DATA1WIDTH( 8 ))
-partselect_8ns_128ns_7ns_8_1_1_U1424(
+partselect_8ns_128ns_7ns_8_1_1_U1426(
     .din(tmp_40_fu_1435_p35),
     .sel(scale_fu_1506_p2),
     .dout(scale_fu_1506_p3)
@@ -755,7 +755,7 @@ partselect_8ns_128ns_7ns_8_1_1_U1424(
     .def_WIDTH( 32 ),
     .sel_WIDTH( 3 ),
     .dout_WIDTH( 32 ))
-sparsemux_17_3_32_1_1_U1425(
+sparsemux_17_3_32_1_1_U1427(
     .din0(acc_i),
     .din1(acc_1_i),
     .din2(acc_2_i),

@@ -57,3 +57,16 @@ Interface                                     Slave Interface    Address Block  
 Network 1 (/zynq_ultra_ps_e_0/Data)
 /swiglu_0/s_axi_CTRL     -------------      s_axi_CTRL         Reg              0xA000_0000       64K      0xA000_FFFF
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ON BOARD:
+udmabuf_phys_base : 0x3C100000 is below 0x40000000, 
+but that's not actually a problem. The driver never accesses the raw udmabuf_phys_base — it always adds an offset. Let me check the minimum actual address used:
+The smallest offset in the layout is SWG_VEC_OFF = 0x06C50000 (the x input buffer):
+phys_x = 0x3C100000 + 0x06C50000 = 0x42D50000
+That's above 0x40000000. All actual addresses the IP will ever issue land in:
+Region	Physical address
+x / out	~0x42D50000
+W (layer 0)	0x42E00000
+V (layer 0)	0x4BE00000
+W_down (layer 0)	0x54E00000
+W_down (layer 15, largest)	~0x62000000
+Every access is in the range [0x42D50000, 0x62000000] — well above the 0x40000000 floor for HP2. 

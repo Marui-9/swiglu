@@ -226,7 +226,7 @@ newFuncRoot:12 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %
 
 <Node id="24" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-newFuncRoot:13 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %gmem_Wd, void @empty_39, i32 0, i32 0, void @empty_36, i32 64, i32 860160, void @empty_3, void @empty_34, void @empty_36, i32 2, i32 16, i32 256, i32 16, void @empty_36, void @empty_36, i32 4294967295, i32 0, i32 0
+newFuncRoot:13 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %gmem_Wd, void @empty_33, i32 0, i32 0, void @empty_29, i32 64, i32 860160, void @empty_1, void @empty, void @empty_29, i32 2, i32 16, i32 256, i32 16, void @empty_29, void @empty_29, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -774,7 +774,7 @@ for.inc10:23 %rb_7_addr = getelementptr i128 %rb_7, i64 0, i64 %zext_ln334_2
 
 <Node id="59" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-for.inc10:24 %specpipeline_ln333 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_36
+for.inc10:24 %specpipeline_ln333 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_29
 
 ]]></Node>
 <StgValue><ssdm name="specpipeline_ln333"/></StgValue>

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'compute_output_Pipeline_1'
 ================================================================
-* Date:           Tue Mar 31 16:00:54 2026
+* Date:           Wed Apr  1 12:45:19 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -87,10 +87,10 @@ IsGatedGlobalClock: 0
 
 State 1 <SV = 0> <Delay = 1.66>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%loop_index_i = alloca i32 1"   --->   Operation 6 'alloca' 'loop_index_i' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln498_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln498"   --->   Operation 7 'read' 'sext_ln498_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%sext_ln498_cast = sext i62 %sext_ln498_read"   --->   Operation 8 'sext' 'sext_ln498_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln504_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln504"   --->   Operation 7 'read' 'sext_ln504_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%sext_ln504_cast = sext i62 %sext_ln504_read"   --->   Operation 8 'sext' 'sext_ln504_cast' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %out_local, i64 666, i64 19, i64 18446744073709551615"   --->   Operation 9 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_39, i32 0, i32 0, void @empty_36, i32 64, i32 2048, void @empty_5, void @empty_34, void @empty_36, i32 16, i32 2, i32 16, i32 256, void @empty_36, void @empty_36, i32 4294967295, i32 0, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_33, i32 0, i32 0, void @empty_29, i32 64, i32 2048, void @empty_26, void @empty, void @empty_29, i32 16, i32 2, i32 16, i32 256, void @empty_29, void @empty_29, i32 4294967295, i32 0, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 11 [1/1] (0.42ns)   --->   "%store_ln0 = store i12 0, i12 %loop_index_i"   --->   Operation 11 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop.i"   --->   Operation 12 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%loop_index_i_load = load i12 %loop_index_i"   --->   Operation 13 'load' 'loop_index_i_load' <Predicate = true> <Delay = 0.00>
@@ -107,11 +107,11 @@ ST_2 : Operation 21 [1/2] ( I:0.67ns O:0.67ns )   --->   "%out_local_load = load
 ST_2 : Operation 28 [1/1] (0.42ns)   --->   "%ret_ln0 = ret"   --->   Operation 28 'ret' 'ret_ln0' <Predicate = (exitcond4_i)> <Delay = 0.42>
 
 State 3 <SV = 2> <Delay = 8.00>
-ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln498_cast" [swiglu.cpp:498->swiglu.cpp:593]   --->   Operation 22 'getelementptr' 'gmem_out_addr' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_36"   --->   Operation 23 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln504_cast" [swiglu.cpp:504->swiglu.cpp:599]   --->   Operation 22 'getelementptr' 'gmem_out_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_29"   --->   Operation 23 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2048, i64 2048, i64 2048"   --->   Operation 24 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%empty_762 = bitcast i32 %out_local_load"   --->   Operation 25 'bitcast' 'empty_762' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 26 [1/1] (8.00ns)   --->   "%write_ln498 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_out_addr, i32 %empty_762, i4 15" [swiglu.cpp:498->swiglu.cpp:593]   --->   Operation 26 'write' 'write_ln498' <Predicate = true> <Delay = 8.00> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%empty_760 = bitcast i32 %out_local_load"   --->   Operation 25 'bitcast' 'empty_760' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (8.00ns)   --->   "%write_ln504 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_out_addr, i32 %empty_760, i4 15" [swiglu.cpp:504->swiglu.cpp:599]   --->   Operation 26 'write' 'write_ln504' <Predicate = true> <Delay = 8.00> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop.i"   --->   Operation 27 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 
 
@@ -127,7 +127,7 @@ STG Binding:
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
 Port [ gmem_out]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
-Port [ sext_ln498]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ sext_ln504]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ out_local]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
 ---------------- STG Properties END ------------------
 
@@ -136,8 +136,8 @@ Port [ out_local]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; 
 <LifeTime>
 <method=bitvector/>
 loop_index_i          (alloca           ) [ 0100]
-sext_ln498_read       (read             ) [ 0000]
-sext_ln498_cast       (sext             ) [ 0111]
+sext_ln504_read       (read             ) [ 0000]
+sext_ln504_cast       (sext             ) [ 0111]
 specmemcore_ln0       (specmemcore      ) [ 0000]
 specinterface_ln0     (specinterface    ) [ 0000]
 store_ln0             (store            ) [ 0000]
@@ -153,8 +153,8 @@ out_local_load        (load             ) [ 0101]
 gmem_out_addr         (getelementptr    ) [ 0000]
 specpipeline_ln0      (specpipeline     ) [ 0000]
 speclooptripcount_ln0 (speclooptripcount) [ 0000]
-empty_762             (bitcast          ) [ 0000]
-write_ln498           (write            ) [ 0000]
+empty_760             (bitcast          ) [ 0000]
+write_ln504           (write            ) [ 0000]
 br_ln0                (br               ) [ 0000]
 ret_ln0               (ret              ) [ 0000]
 </LifeTime>
@@ -172,12 +172,12 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="2" class="1000" name="sext_ln498">
+<comp id="2" class="1000" name="sext_ln504">
 <pin_list>
 <pin id="3" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="sext_ln498"/></StgValue>
+<StgValue><ssdm name="sext_ln504"/></StgValue>
 </bind>
 </comp>
 
@@ -259,7 +259,7 @@ ret_ln0               (ret              ) [ 0000]
 <pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_39"/></StgValue>
+<StgValue><ssdm name="empty_33"/></StgValue>
 </bind>
 </comp>
 
@@ -277,7 +277,7 @@ ret_ln0               (ret              ) [ 0000]
 <pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_36"/></StgValue>
+<StgValue><ssdm name="empty_29"/></StgValue>
 </bind>
 </comp>
 
@@ -304,7 +304,7 @@ ret_ln0               (ret              ) [ 0000]
 <pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_5"/></StgValue>
+<StgValue><ssdm name="empty_26"/></StgValue>
 </bind>
 </comp>
 
@@ -313,7 +313,7 @@ ret_ln0               (ret              ) [ 0000]
 <pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_34"/></StgValue>
+<StgValue><ssdm name="empty"/></StgValue>
 </bind>
 </comp>
 
@@ -445,7 +445,7 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="64" class="1004" name="sext_ln498_read_read_fu_64">
+<comp id="64" class="1004" name="sext_ln504_read_read_fu_64">
 <pin_list>
 <pin id="65" dir="0" index="0" bw="62" slack="0"/>
 <pin id="66" dir="0" index="1" bw="62" slack="0"/>
@@ -453,7 +453,7 @@ ret_ln0               (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="sext_ln498_read/1 "/>
+<opset="sext_ln504_read/1 "/>
 </bind>
 </comp>
 
@@ -483,7 +483,7 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="83" class="1004" name="write_ln498_write_fu_83">
+<comp id="83" class="1004" name="write_ln504_write_fu_83">
 <pin_list>
 <pin id="84" dir="0" index="0" bw="0" slack="0"/>
 <pin id="85" dir="0" index="1" bw="32" slack="0"/>
@@ -493,18 +493,18 @@ ret_ln0               (ret              ) [ 0000]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln498/3 "/>
+<opset="write_ln504/3 "/>
 </bind>
 </comp>
 
-<comp id="91" class="1004" name="sext_ln498_cast_fu_91">
+<comp id="91" class="1004" name="sext_ln504_cast_fu_91">
 <pin_list>
 <pin id="92" dir="0" index="0" bw="62" slack="0"/>
 <pin id="93" dir="1" index="1" bw="64" slack="2"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
-<opset="sext_ln498_cast/1 "/>
+<opset="sext_ln504_cast/1 "/>
 </bind>
 </comp>
 
@@ -590,14 +590,14 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="131" class="1004" name="empty_762_fu_131">
+<comp id="131" class="1004" name="empty_760_fu_131">
 <pin_list>
 <pin id="132" dir="0" index="0" bw="32" slack="1"/>
 <pin id="133" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
-<opset="empty_762/3 "/>
+<opset="empty_760/3 "/>
 </bind>
 </comp>
 
@@ -611,13 +611,13 @@ ret_ln0               (ret              ) [ 0000]
 </bind>
 </comp>
 
-<comp id="142" class="1005" name="sext_ln498_cast_reg_142">
+<comp id="142" class="1005" name="sext_ln504_cast_reg_142">
 <pin_list>
 <pin id="143" dir="0" index="0" bw="64" slack="2"/>
 <pin id="144" dir="1" index="1" bw="64" slack="2"/>
 </pin_list>
 <bind>
-<opset="sext_ln498_cast "/>
+<opset="sext_ln504_cast "/>
 </bind>
 </comp>
 
@@ -725,7 +725,7 @@ ret_ln0               (ret              ) [ 0000]
   - Output states:
 	Port: gmem_out | {3 }
  - Input state : 
-	Port: compute_output_Pipeline_1 : sext_ln498 | {1 }
+	Port: compute_output_Pipeline_1 : sext_ln504 | {1 }
 	Port: compute_output_Pipeline_1 : out_local | {1 2 }
   - Chain level:
 	State 1
@@ -740,7 +740,7 @@ ret_ln0               (ret              ) [ 0000]
 		store_ln0 : 3
 	State 2
 	State 3
-		write_ln498 : 1
+		write_ln504 : 1
 
 
 ============================================================
@@ -755,11 +755,11 @@ ret_ln0               (ret              ) [ 0000]
 |----------|----------------------------|---------|---------|
 |    add   |        empty_fu_109        |    0    |    19   |
 |----------|----------------------------|---------|---------|
-|   read   | sext_ln498_read_read_fu_64 |    0    |    0    |
+|   read   | sext_ln504_read_read_fu_64 |    0    |    0    |
 |----------|----------------------------|---------|---------|
-|   write  |   write_ln498_write_fu_83  |    0    |    0    |
+|   write  |   write_ln504_write_fu_83  |    0    |    0    |
 |----------|----------------------------|---------|---------|
-|   sext   |    sext_ln498_cast_fu_91   |    0    |    0    |
+|   sext   |    sext_ln504_cast_fu_91   |    0    |    0    |
 |----------|----------------------------|---------|---------|
 |   zext   |  loop_index_i_cast_fu_115  |    0    |    0    |
 |----------|----------------------------|---------|---------|
@@ -777,7 +777,7 @@ N/A
 |  loop_index_i_reg_135 |   12   |
 | out_local_addr_reg_151|   11   |
 | out_local_load_reg_156|   32   |
-|sext_ln498_cast_reg_142|   64   |
+|sext_ln504_cast_reg_142|   64   |
 +-----------------------+--------+
 |         Total         |   120  |
 +-----------------------+--------+

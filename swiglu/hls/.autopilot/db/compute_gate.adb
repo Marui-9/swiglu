@@ -1253,7 +1253,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fadd_32ns_32ns_32_4_full_dsp_1_U1358</rtlName>
+              <rtlName>fadd_32ns_32ns_32_4_full_dsp_1_U1360</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -1309,7 +1309,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fmul_32ns_32ns_32_3_max_dsp_1_U1359</rtlName>
+              <rtlName>fmul_32ns_32ns_32_3_max_dsp_1_U1361</rtlName>
               <control>auto</control>
               <opType>setne</opType>
               <implIndex>auto</implIndex>
@@ -1480,7 +1480,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1357</rtlName>
+              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1359</rtlName>
               <control>auto</control>
               <opType>fcmp</opType>
               <implIndex>auto</implIndex>
@@ -1594,7 +1594,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>max_abs</originalName>
-              <rtlName>fadd_32ns_32ns_32_4_full_dsp_1_U1358</rtlName>
+              <rtlName>fadd_32ns_32ns_32_4_full_dsp_1_U1360</rtlName>
               <control>auto</control>
               <opType>select</opType>
               <implIndex>auto_sel</implIndex>
@@ -1652,7 +1652,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fmul_32ns_32ns_32_3_max_dsp_1_U1359</rtlName>
+              <rtlName>fmul_32ns_32ns_32_3_max_dsp_1_U1361</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -2393,7 +2393,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1357</rtlName>
+              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1359</rtlName>
               <control>auto</control>
               <opType>fcmp</opType>
               <implIndex>auto</implIndex>
@@ -3135,7 +3135,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fmul_32ns_32ns_32_3_max_dsp_1_U1360</rtlName>
+              <rtlName>fmul_32ns_32ns_32_3_max_dsp_1_U1362</rtlName>
               <control>auto</control>
               <opType>seteq</opType>
               <implIndex>auto</implIndex>
@@ -3192,7 +3192,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fmul_32ns_32ns_32_3_max_dsp_1_U1361</rtlName>
+              <rtlName>fmul_32ns_32ns_32_3_max_dsp_1_U1363</rtlName>
               <control>auto</control>
               <opType>or</opType>
               <implIndex>auto</implIndex>
@@ -3306,7 +3306,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1357</rtlName>
+              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1359</rtlName>
               <control>auto</control>
               <opType>fcmp</opType>
               <implIndex>auto</implIndex>
@@ -3478,7 +3478,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fmul_32ns_32ns_32_3_max_dsp_1_U1360</rtlName>
+              <rtlName>fmul_32ns_32ns_32_3_max_dsp_1_U1362</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -3534,7 +3534,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fmul_32ns_32ns_32_3_max_dsp_1_U1361</rtlName>
+              <rtlName>fmul_32ns_32ns_32_3_max_dsp_1_U1363</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -3649,7 +3649,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>bitcast_ln298_6_fu_407_p1</rtlName>
+              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1359</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -3934,7 +3934,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1357</rtlName>
+              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1359</rtlName>
               <control>auto</control>
               <opType>or</opType>
               <implIndex>auto</implIndex>
@@ -4219,7 +4219,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1357</rtlName>
+              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1359</rtlName>
               <control>auto</control>
               <opType>fcmp</opType>
               <implIndex>auto</implIndex>
@@ -5132,7 +5132,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1357</rtlName>
+              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1359</rtlName>
               <control>auto</control>
               <opType>fcmp</opType>
               <implIndex>auto</implIndex>
@@ -6045,7 +6045,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1357</rtlName>
+              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1359</rtlName>
               <control>auto</control>
               <opType>fcmp</opType>
               <implIndex>auto</implIndex>
@@ -6958,7 +6958,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1357</rtlName>
+              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1359</rtlName>
               <control>auto</control>
               <opType>fcmp</opType>
               <implIndex>auto</implIndex>
@@ -7871,7 +7871,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1357</rtlName>
+              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1359</rtlName>
               <control>auto</control>
               <opType>fcmp</opType>
               <implIndex>auto</implIndex>
@@ -8385,7 +8385,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1357</rtlName>
+              <rtlName>fcmp_32ns_32ns_1_2_no_dsp_1_U1359</rtlName>
               <control>auto</control>
               <opType>fcmp</opType>
               <implIndex>auto</implIndex>
@@ -8499,7 +8499,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>fdiv_32ns_32ns_32_9_no_dsp_1_U1356</rtlName>
+              <rtlName>fdiv_32ns_32ns_32_9_no_dsp_1_U1358</rtlName>
               <control>auto</control>
               <opType>fdiv</opType>
               <implIndex>fabric</implIndex>
@@ -8614,7 +8614,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>inv_gs</originalName>
-              <rtlName>fdiv_32ns_32ns_32_9_no_dsp_1_U1356</rtlName>
+              <rtlName>fdiv_32ns_32ns_32_9_no_dsp_1_U1358</rtlName>
               <control>auto</control>
               <opType>fdiv</opType>
               <implIndex>fabric</implIndex>
@@ -11497,8 +11497,8 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>16450</mMinLatency>
-        <mMaxLatency>16450</mMaxLatency>
+        <mMinLatency>16456</mMinLatency>
+        <mMaxLatency>16456</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"></mDfPipe>
       </item>
@@ -13108,7 +13108,7 @@
         <count>8</count>
         <item_version>0</item_version>
         <item class_id="36" tracking_level="0" version="0">
-          <first>fadd_32ns_32ns_32_4_full_dsp_1_U1358 (fadd_32ns_32ns_32_4_full_dsp_1)</first>
+          <first>fadd_32ns_32ns_32_4_full_dsp_1_U1360 (fadd_32ns_32ns_32_4_full_dsp_1)</first>
           <second class_id="37" tracking_level="0" version="0">
             <count>3</count>
             <item_version>0</item_version>
@@ -13127,59 +13127,59 @@
           </second>
         </item>
         <item>
-          <first>fcmp_32ns_32ns_1_2_no_dsp_1_U1357 (fcmp_32ns_32ns_1_2_no_dsp_1)</first>
+          <first>fcmp_32ns_32ns_1_2_no_dsp_1_U1359 (fcmp_32ns_32ns_1_2_no_dsp_1)</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>fdiv_32ns_32ns_32_9_no_dsp_1_U1356 (fdiv_32ns_32ns_32_9_no_dsp_1)</first>
+          <first>fdiv_32ns_32ns_32_9_no_dsp_1_U1358 (fdiv_32ns_32ns_32_9_no_dsp_1)</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
-          </second>
-        </item>
-        <item>
-          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1359 (fmul_32ns_32ns_32_3_max_dsp_1)</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>DSP</first>
-              <second>3</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>128</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>135</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1360 (fmul_32ns_32ns_32_3_max_dsp_1)</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>DSP</first>
-              <second>3</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>128</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>135</second>
-            </item>
           </second>
         </item>
         <item>
           <first>fmul_32ns_32ns_32_3_max_dsp_1_U1361 (fmul_32ns_32ns_32_3_max_dsp_1)</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>DSP</first>
+              <second>3</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>128</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>135</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1362 (fmul_32ns_32ns_32_3_max_dsp_1)</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>DSP</first>
+              <second>3</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>128</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>135</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1363 (fmul_32ns_32ns_32_3_max_dsp_1)</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -13219,15 +13219,15 @@
             <item_version>0</item_version>
             <item>
               <first>DSP</first>
-              <second>3</second>
+              <second>5</second>
             </item>
             <item>
               <first>FF</first>
-              <second>760</second>
+              <second>1088</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>1802</second>
+              <second>2129</second>
             </item>
           </second>
         </item>
@@ -15563,7 +15563,7 @@
             <item_version>0</item_version>
             <item>
               <first>(0Size)</first>
-              <second>2</second>
+              <second>3</second>
             </item>
             <item>
               <first>(1Bits)</first>
@@ -15571,34 +15571,7 @@
             </item>
             <item>
               <first>(2Count)</first>
-              <second>2</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>9</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>grp_fu_138_opcode</first>
-          <second>
-            <count>5</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(0Size)</first>
               <second>3</second>
-            </item>
-            <item>
-              <first>(1Bits)</first>
-              <second>5</second>
-            </item>
-            <item>
-              <first>(2Count)</first>
-              <second>15</second>
             </item>
             <item>
               <first>FF</first>
@@ -15611,7 +15584,61 @@
           </second>
         </item>
         <item>
+          <first>grp_fu_138_opcode</first>
+          <second>
+            <count>5</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0Size)</first>
+              <second>4</second>
+            </item>
+            <item>
+              <first>(1Bits)</first>
+              <second>5</second>
+            </item>
+            <item>
+              <first>(2Count)</first>
+              <second>20</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>20</second>
+            </item>
+          </second>
+        </item>
+        <item>
           <first>grp_fu_138_p0</first>
+          <second>
+            <count>5</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0Size)</first>
+              <second>12</second>
+            </item>
+            <item>
+              <first>(1Bits)</first>
+              <second>32</second>
+            </item>
+            <item>
+              <first>(2Count)</first>
+              <second>384</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>65</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>grp_fu_138_p1</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -15634,33 +15661,6 @@
             <item>
               <first>LUT</first>
               <second>59</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>grp_fu_138_p1</first>
-          <second>
-            <count>5</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(0Size)</first>
-              <second>10</second>
-            </item>
-            <item>
-              <first>(1Bits)</first>
-              <second>32</second>
-            </item>
-            <item>
-              <first>(2Count)</first>
-              <second>320</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>54</second>
             </item>
           </second>
         </item>
@@ -16050,35 +16050,21 @@
         <count>8</count>
         <item_version>0</item_version>
         <item>
-          <first>fadd_32ns_32ns_32_4_full_dsp_1_U1358</first>
+          <first>fadd_32ns_32ns_32_4_full_dsp_1_U1360</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>fcmp_32ns_32ns_1_2_no_dsp_1_U1357</first>
+          <first>fcmp_32ns_32ns_1_2_no_dsp_1_U1359</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>fdiv_32ns_32ns_32_9_no_dsp_1_U1356</first>
-          <second>
-            <count>0</count>
-            <item_version>0</item_version>
-          </second>
-        </item>
-        <item>
-          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1359</first>
-          <second>
-            <count>0</count>
-            <item_version>0</item_version>
-          </second>
-        </item>
-        <item>
-          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1360</first>
+          <first>fdiv_32ns_32ns_32_9_no_dsp_1_U1358</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -16086,6 +16072,20 @@
         </item>
         <item>
           <first>fmul_32ns_32ns_32_3_max_dsp_1_U1361</first>
+          <second>
+            <count>0</count>
+            <item_version>0</item_version>
+          </second>
+        </item>
+        <item>
+          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1362</first>
+          <second>
+            <count>0</count>
+            <item_version>0</item_version>
+          </second>
+        </item>
+        <item>
+          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1363</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -16110,7 +16110,7 @@
         <count>8</count>
         <item_version>0</item_version>
         <item class_id="40" tracking_level="0" version="0">
-          <first>fadd_32ns_32ns_32_4_full_dsp_1_U1358 (fadd_32ns_32ns_32_4_full_dsp_1)</first>
+          <first>fadd_32ns_32ns_32_4_full_dsp_1_U1360 (fadd_32ns_32ns_32_4_full_dsp_1)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>
@@ -16119,13 +16119,14 @@
           </second>
         </item>
         <item>
-          <first>fcmp_32ns_32ns_1_2_no_dsp_1_U1357 (fcmp_32ns_32ns_1_2_no_dsp_1)</first>
+          <first>fcmp_32ns_32ns_1_2_no_dsp_1_U1359 (fcmp_32ns_32ns_1_2_no_dsp_1)</first>
           <second>
-            <count>10</count>
+            <count>11</count>
             <item_version>0</item_version>
             <item>46</item>
             <item>62</item>
             <item>78</item>
+            <item>84</item>
             <item>89</item>
             <item>94</item>
             <item>110</item>
@@ -16136,7 +16137,7 @@
           </second>
         </item>
         <item>
-          <first>fdiv_32ns_32ns_32_9_no_dsp_1_U1356 (fdiv_32ns_32ns_32_9_no_dsp_1)</first>
+          <first>fdiv_32ns_32ns_32_9_no_dsp_1_U1358 (fdiv_32ns_32ns_32_9_no_dsp_1)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>
@@ -16145,7 +16146,7 @@
           </second>
         </item>
         <item>
-          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1359 (fmul_32ns_32ns_32_3_max_dsp_1)</first>
+          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1361 (fmul_32ns_32ns_32_3_max_dsp_1)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>
@@ -16154,7 +16155,7 @@
           </second>
         </item>
         <item>
-          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1360 (fmul_32ns_32ns_32_3_max_dsp_1)</first>
+          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1362 (fmul_32ns_32ns_32_3_max_dsp_1)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>
@@ -16163,7 +16164,7 @@
           </second>
         </item>
         <item>
-          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1361 (fmul_32ns_32ns_32_3_max_dsp_1)</first>
+          <first>fmul_32ns_32ns_32_3_max_dsp_1_U1363 (fmul_32ns_32ns_32_3_max_dsp_1)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>

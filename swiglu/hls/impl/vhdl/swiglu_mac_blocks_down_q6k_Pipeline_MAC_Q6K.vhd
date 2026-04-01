@@ -603,7 +603,7 @@ attribute shreg_extract : string;
 
 
 begin
-    sparsemux_9_3_8_1_1_U1418 : component swiglu_sparsemux_9_3_8_1_1
+    sparsemux_9_3_8_1_1_U1420 : component swiglu_sparsemux_9_3_8_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -627,7 +627,7 @@ begin
         sel => empty,
         dout => tmp_41_fu_912_p11);
 
-    sparsemux_33_4_128_1_1_U1419 : component swiglu_sparsemux_33_4_128_1_1
+    sparsemux_33_4_128_1_1_U1421 : component swiglu_sparsemux_33_4_128_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -687,7 +687,7 @@ begin
         sel => trunc_ln55_5_reg_1632,
         dout => tmp_36_fu_1039_p35);
 
-    partselect_8ns_128ns_7ns_8_1_1_U1420 : component swiglu_partselect_8ns_128ns_7ns_8_1_1
+    partselect_8ns_128ns_7ns_8_1_1_U1422 : component swiglu_partselect_8ns_128ns_7ns_8_1_1
     generic map (
         DATAWIDTH => 128,
         ADDRWIDTH => 7,
@@ -697,7 +697,7 @@ begin
         sel => tmp_37_fu_1110_p2,
         dout => tmp_37_fu_1110_p3);
 
-    sparsemux_33_4_128_1_1_U1421 : component swiglu_sparsemux_33_4_128_1_1
+    sparsemux_33_4_128_1_1_U1423 : component swiglu_sparsemux_33_4_128_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -757,7 +757,7 @@ begin
         sel => trunc_ln55_6_reg_1732,
         dout => tmp_38_fu_1221_p35);
 
-    partselect_8ns_128ns_7ns_8_1_1_U1422 : component swiglu_partselect_8ns_128ns_7ns_8_1_1
+    partselect_8ns_128ns_7ns_8_1_1_U1424 : component swiglu_partselect_8ns_128ns_7ns_8_1_1
     generic map (
         DATAWIDTH => 128,
         ADDRWIDTH => 7,
@@ -767,7 +767,7 @@ begin
         sel => tmp_39_fu_1292_p2,
         dout => tmp_39_fu_1292_p3);
 
-    sparsemux_33_4_128_1_1_U1423 : component swiglu_sparsemux_33_4_128_1_1
+    sparsemux_33_4_128_1_1_U1425 : component swiglu_sparsemux_33_4_128_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -827,7 +827,7 @@ begin
         sel => trunc_ln55_7_reg_1847,
         dout => tmp_40_fu_1435_p35);
 
-    partselect_8ns_128ns_7ns_8_1_1_U1424 : component swiglu_partselect_8ns_128ns_7ns_8_1_1
+    partselect_8ns_128ns_7ns_8_1_1_U1426 : component swiglu_partselect_8ns_128ns_7ns_8_1_1
     generic map (
         DATAWIDTH => 128,
         ADDRWIDTH => 7,
@@ -837,7 +837,7 @@ begin
         sel => scale_fu_1506_p2,
         dout => scale_fu_1506_p3);
 
-    sparsemux_17_3_32_1_1_U1425 : component swiglu_sparsemux_17_3_32_1_1
+    sparsemux_17_3_32_1_1_U1427 : component swiglu_sparsemux_17_3_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,

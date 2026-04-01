@@ -277,6 +277,10 @@ attribute shreg_extract : string;
     signal grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_din0 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_din1 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_ce : STD_LOGIC;
+    signal grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_opcode : STD_LOGIC_VECTOR (4 downto 0);
+    signal grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_ce : STD_LOGIC;
     signal grp_compute_gate_Pipeline_GATE_PASS1_fu_86_ap_start_reg : STD_LOGIC := '0';
     signal ap_block_state1_ignore_call19 : BOOLEAN;
     signal ap_CS_fsm_state2 : STD_LOGIC;
@@ -578,7 +582,12 @@ attribute shreg_extract : string;
         grp_fu_1057_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
         grp_fu_1057_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
         grp_fu_1057_p_dout0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        grp_fu_1057_p_ce : OUT STD_LOGIC );
+        grp_fu_1057_p_ce : OUT STD_LOGIC;
+        grp_fu_138_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        grp_fu_138_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        grp_fu_138_p_opcode : OUT STD_LOGIC_VECTOR (4 downto 0);
+        grp_fu_138_p_dout0 : IN STD_LOGIC_VECTOR (0 downto 0);
+        grp_fu_138_p_ce : OUT STD_LOGIC );
     end component;
 
 
@@ -801,9 +810,14 @@ begin
         grp_fu_1057_p_din0 => grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_din0,
         grp_fu_1057_p_din1 => grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_din1,
         grp_fu_1057_p_dout0 => grp_fu_1057_p2,
-        grp_fu_1057_p_ce => grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_ce);
+        grp_fu_1057_p_ce => grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_1057_p_ce,
+        grp_fu_138_p_din0 => grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din0,
+        grp_fu_138_p_din1 => grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din1,
+        grp_fu_138_p_opcode => grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_opcode,
+        grp_fu_138_p_dout0 => grp_fu_138_p2,
+        grp_fu_138_p_ce => grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_ce);
 
-    fdiv_32ns_32ns_32_9_no_dsp_1_U1356 : component swiglu_fdiv_32ns_32ns_32_9_no_dsp_1
+    fdiv_32ns_32ns_32_9_no_dsp_1_U1358 : component swiglu_fdiv_32ns_32ns_32_9_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 9,
@@ -818,7 +832,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_131_p2);
 
-    fcmp_32ns_32ns_1_2_no_dsp_1_U1357 : component swiglu_fcmp_32ns_32ns_1_2_no_dsp_1
+    fcmp_32ns_32ns_1_2_no_dsp_1_U1359 : component swiglu_fcmp_32ns_32ns_1_2_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,
@@ -834,7 +848,7 @@ begin
         opcode => grp_fu_138_opcode,
         dout => grp_fu_138_p2);
 
-    fadd_32ns_32ns_32_4_full_dsp_1_U1358 : component swiglu_fadd_32ns_32ns_32_4_full_dsp_1
+    fadd_32ns_32ns_32_4_full_dsp_1_U1360 : component swiglu_fadd_32ns_32ns_32_4_full_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -849,7 +863,7 @@ begin
         ce => grp_fu_1045_ce,
         dout => grp_fu_1045_p2);
 
-    fmul_32ns_32ns_32_3_max_dsp_1_U1359 : component swiglu_fmul_32ns_32ns_32_3_max_dsp_1
+    fmul_32ns_32ns_32_3_max_dsp_1_U1361 : component swiglu_fmul_32ns_32ns_32_3_max_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 3,
@@ -864,7 +878,7 @@ begin
         ce => grp_fu_1049_ce,
         dout => grp_fu_1049_p2);
 
-    fmul_32ns_32ns_32_3_max_dsp_1_U1360 : component swiglu_fmul_32ns_32ns_32_3_max_dsp_1
+    fmul_32ns_32ns_32_3_max_dsp_1_U1362 : component swiglu_fmul_32ns_32ns_32_3_max_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 3,
@@ -879,7 +893,7 @@ begin
         ce => grp_fu_1053_ce,
         dout => grp_fu_1053_p2);
 
-    fmul_32ns_32ns_32_3_max_dsp_1_U1361 : component swiglu_fmul_32ns_32ns_32_3_max_dsp_1
+    fmul_32ns_32ns_32_3_max_dsp_1_U1363 : component swiglu_fmul_32ns_32ns_32_3_max_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 3,
@@ -1534,9 +1548,11 @@ begin
     end process;
 
 
-    grp_fu_138_ce_assign_proc : process(grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_ce, ap_CS_fsm_state2)
+    grp_fu_138_ce_assign_proc : process(grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_ce, grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_ce, ap_CS_fsm_state2, ap_CS_fsm_state30)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
+        if ((ap_const_logic_1 = ap_CS_fsm_state30)) then 
+            grp_fu_138_ce <= grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_ce;
+        elsif ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
             grp_fu_138_ce <= grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_ce;
         else 
             grp_fu_138_ce <= ap_const_logic_1;
@@ -1544,9 +1560,11 @@ begin
     end process;
 
 
-    grp_fu_138_opcode_assign_proc : process(ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9, ap_CS_fsm_state10, ap_CS_fsm_state12, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_opcode, ap_CS_fsm_state2, ap_CS_fsm_state3)
+    grp_fu_138_opcode_assign_proc : process(ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9, ap_CS_fsm_state10, ap_CS_fsm_state12, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_opcode, grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_opcode, ap_CS_fsm_state2, ap_CS_fsm_state30, ap_CS_fsm_state3)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
+        if ((ap_const_logic_1 = ap_CS_fsm_state30)) then 
+            grp_fu_138_opcode <= grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_opcode;
+        elsif ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
             grp_fu_138_opcode <= grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_opcode;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state12) or (ap_const_logic_1 = ap_CS_fsm_state10) or (ap_const_logic_1 = ap_CS_fsm_state9) or (ap_const_logic_1 = ap_CS_fsm_state8) or (ap_const_logic_1 = ap_CS_fsm_state7) or (ap_const_logic_1 = ap_CS_fsm_state6) or (ap_const_logic_1 = ap_CS_fsm_state5) or (ap_const_logic_1 = ap_CS_fsm_state4))) then 
             grp_fu_138_opcode <= ap_const_lv5_2;
@@ -1556,9 +1574,11 @@ begin
     end process;
 
 
-    grp_fu_138_p0_assign_proc : process(ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9, ap_CS_fsm_state10, max_abs_7_reg_1013, ap_CS_fsm_state12, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_2_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_4_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_6_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_8_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_10_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_12_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_14_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_din0, ap_CS_fsm_state2, ap_CS_fsm_state3)
+    grp_fu_138_p0_assign_proc : process(ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9, ap_CS_fsm_state10, max_abs_7_reg_1013, ap_CS_fsm_state12, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_2_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_4_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_6_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_8_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_10_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_12_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_max_abs_14_out, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_din0, grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din0, ap_CS_fsm_state2, ap_CS_fsm_state30, ap_CS_fsm_state3)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
+        if ((ap_const_logic_1 = ap_CS_fsm_state30)) then 
+            grp_fu_138_p0 <= grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din0;
+        elsif ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
             grp_fu_138_p0 <= grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_din0;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state12)) then 
             grp_fu_138_p0 <= max_abs_7_reg_1013;
@@ -1584,9 +1604,11 @@ begin
     end process;
 
 
-    grp_fu_138_p1_assign_proc : process(max_abs_fu_192_p3, ap_CS_fsm_state4, max_abs_1_fu_286_p3, ap_CS_fsm_state5, max_abs_2_fu_379_p3, ap_CS_fsm_state6, max_abs_3_fu_472_p3, ap_CS_fsm_state7, max_abs_4_fu_565_p3, ap_CS_fsm_state8, max_abs_5_fu_658_p3, ap_CS_fsm_state9, max_abs_6_fu_751_p3, ap_CS_fsm_state10, ap_CS_fsm_state12, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_din1, ap_CS_fsm_state2, ap_CS_fsm_state3)
+    grp_fu_138_p1_assign_proc : process(max_abs_fu_192_p3, ap_CS_fsm_state4, max_abs_1_fu_286_p3, ap_CS_fsm_state5, max_abs_2_fu_379_p3, ap_CS_fsm_state6, max_abs_3_fu_472_p3, ap_CS_fsm_state7, max_abs_4_fu_565_p3, ap_CS_fsm_state8, max_abs_5_fu_658_p3, ap_CS_fsm_state9, max_abs_6_fu_751_p3, ap_CS_fsm_state10, ap_CS_fsm_state12, grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_din1, grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din1, ap_CS_fsm_state2, ap_CS_fsm_state30, ap_CS_fsm_state3)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
+        if ((ap_const_logic_1 = ap_CS_fsm_state30)) then 
+            grp_fu_138_p1 <= grp_compute_gate_Pipeline_GATE_PASS2_fu_104_grp_fu_138_p_din1;
+        elsif ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
             grp_fu_138_p1 <= grp_compute_gate_Pipeline_GATE_PASS1_fu_86_grp_fu_138_p_din1;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state10)) then 
             grp_fu_138_p1 <= max_abs_6_fu_751_p3;

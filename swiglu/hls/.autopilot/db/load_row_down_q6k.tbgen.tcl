@@ -343,7 +343,7 @@ set ArgLastReadFirstWriteLatency {
 		rb_15 {Type O LastRead -1 FirstWrite 2}}
 	load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K {
 		gmem_Wd {Type I LastRead 1 FirstWrite -1}
-		sext_ln436 {Type I LastRead 0 FirstWrite -1}
+		sext_ln442 {Type I LastRead 0 FirstWrite -1}
 		rb_15 {Type O LastRead -1 FirstWrite 2}
 		rb_14 {Type O LastRead -1 FirstWrite 2}
 		rb_13 {Type O LastRead -1 FirstWrite 2}

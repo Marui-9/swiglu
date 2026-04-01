@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'swiglu'" level="0">
-<item name = "Date">Tue Mar 31 16:01:31 2026
+<item name = "Date">Wed Apr  1 12:45:39 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">7141722, 59287898, 71.417 ms, 0.593 sec, 3883010, 55388235, dataflow</column>
+<column name="">7141728, 59287904, 71.417 ms, 0.593 sec, 3883010, 55388235, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -34,7 +34,7 @@
 <column name="load_x_local_U0">load_x_local, 202, 202, 2.020 us, 2.020 us, 128, 128, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 <column name="compute_X1_U0">compute_X1, 3883009, 3883009, 38.830 ms, 38.830 ms, 3883009, 3883009, no</column>
 <column name="compute_X2_U0">compute_X2, 3883009, 3883009, 38.830 ms, 38.830 ms, 3883009, 3883009, no</column>
-<column name="compute_gate_U0">compute_gate, 16450, 16450, 0.165 ms, 0.165 ms, 16450, 16450, no</column>
+<column name="compute_gate_U0">compute_gate, 16456, 16456, 0.165 ms, 0.165 ms, 16456, 16456, no</column>
 <column name="compute_output_U0">compute_output, 3242058, 55388234, 32.421 ms, 0.554 sec, 3242058, 55388234, no</column>
 </table>
 </item>
@@ -54,12 +54,12 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 40, -</column>
 <column name="FIFO">-, -, 99, 67, -</column>
-<column name="Instance">34, 333, 79363, 98100, 0</column>
+<column name="Instance">34, 95, 62829, 74455, 0</column>
 <column name="Memory">-, -, 4096, 1024, 24</column>
 <column name="Multiplexer">-, -, 0, 72, -</column>
 <column name="Register">-, -, 8, -, -</column>
 <specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
-<specialColumn name="Utilization (%)">11, 26, 35, 84, 37</specialColumn>
+<specialColumn name="Utilization (%)">11, 7, 28, 64, 37</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -69,8 +69,8 @@
 <column name="CTRL_s_axi_U">CTRL_s_axi, 0, 0, 462, 808, 0</column>
 <column name="compute_X1_U0">compute_X1, 0, 26, 10561, 12456, 0</column>
 <column name="compute_X2_U0">compute_X2, 0, 26, 10561, 12456, 0</column>
-<column name="compute_gate_U0">compute_gate, 0, 14, 2596, 7397, 0</column>
-<column name="compute_output_U0">compute_output, 0, 267, 50930, 60805, 0</column>
+<column name="compute_gate_U0">compute_gate, 0, 16, 2924, 7746, 0</column>
+<column name="compute_output_U0">compute_output, 0, 27, 34068, 36811, 0</column>
 <column name="gmem_V_m_axi_U">gmem_V_m_axi, 8, 0, 774, 843, 0</column>
 <column name="gmem_W_m_axi_U">gmem_W_m_axi, 8, 0, 774, 843, 0</column>
 <column name="gmem_Wd_m_axi_U">gmem_Wd_m_axi, 8, 0, 774, 843, 0</column>

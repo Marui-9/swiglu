@@ -7284,7 +7284,7 @@ static void mac_blocks_wv(const ap_uint<128> rb[8][9],
 #pragma HLS PIPELINE II=1
 #pragma HLS LATENCY min=2
  VITIS_LOOP_189_2: for (int b = 0; b < 8; b++) {
-#pragma HLS UNROLL factor=4
+#pragma HLS UNROLL
 
  ap_int<8> xi8 = (ap_int<8>) x[b][n];
             ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
@@ -7409,7 +7409,7 @@ static void compute_gate(
             if (idx > 4095) idx = 4095;
             float g = z * sigmoid_lut[idx] * x2;
             float fq = g * inv_gs;
-            int iq = (int)fq;
+            int iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
             if (iq > 127) iq = 127;
             if (iq < -128) iq = -128;
             gate_cache[n][j >> 8][j & 255] = (int8_t)iq;
@@ -7491,19 +7491,25 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[32][9],
 
 
 
-    MAC_BLOCKS_ALL: for (int n = 0; n < 256; n++) {
-#pragma HLS PIPELINE II=2
+
+
+
+    VITIS_LOOP_400_2: for (int g = 0; g < 4; g++) {
+        MAC_GROUP: for (int n = 0; n < 256; n++) {
+#pragma HLS PIPELINE II=1
 #pragma HLS LATENCY min=2
-#pragma HLS UNROLL factor=4
- VITIS_LOOP_401_2: for (int b = 0; b < 32; b++) {
-            ap_int<8> gi8 = (ap_int<8>) gate[b][n];
-            ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
-                                             >> ((n & 32) ? 4 : 0)) & 0xF);
-            int sub = n >> 5; int k = n & 7;
-            ap_uint<6> sc6u = (ap_uint<6>) sc6[b][sub];
-            ap_uint<6> mn6u = (ap_uint<6>) mn6[b][sub];
-            int_acc_w[b][k] += (int32_t)(gi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
-            int_acc_m[b][k] += (int32_t)(gi8 * (ap_int<7>)mn6u);
+ VITIS_LOOP_404_3: for (int bs = 0; bs < 8; bs++) {
+#pragma HLS UNROLL
+ int b = g * 8 + bs;
+                ap_int<8> gi8 = (ap_int<8>) gate[b][n];
+                ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
+                                                 >> ((n & 32) ? 4 : 0)) & 0xF);
+                int sub = n >> 5; int k = n & 7;
+                ap_uint<6> sc6u = (ap_uint<6>) sc6[b][sub];
+                ap_uint<6> mn6u = (ap_uint<6>) mn6[b][sub];
+                int_acc_w[b][k] += (int32_t)(gi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
+                int_acc_m[b][k] += (int32_t)(gi8 * (ap_int<7>)mn6u);
+            }
         }
     }
 
@@ -7511,9 +7517,9 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[32][9],
     float total = 0.f;
 #pragma HLS BALANCE variable=total
  REDUCE_DOWN_Q4K: for (int b = 0; b < 32; b++) {
-#pragma HLS UNROLL factor=4
+#pragma HLS UNROLL factor=8
  int32_t sw = 0, sm = 0;
-        VITIS_LOOP_419_3: for (int k = 0; k < 8; k++) {
+        VITIS_LOOP_425_4: for (int k = 0; k < 8; k++) {
 #pragma HLS UNROLL
  sw += int_acc_w[b][k];
             sm += int_acc_m[b][k];
@@ -7545,13 +7551,13 @@ static void mac_blocks_down_q6k(const ap_uint<128> rb[((32 * 210) / 16)],
 #pragma HLS ARRAY_PARTITION variable=gate dim=1 complete
  float block_sums[32];
 #pragma HLS ARRAY_PARTITION variable=block_sums complete
- VITIS_LOOP_451_1: for (int b = 0; b < 32; b++) {
+ VITIS_LOOP_457_1: for (int b = 0; b < 32; b++) {
 #pragma HLS UNROLL factor=2
 
  block_sums[b] = decode_mac_q6k(rb, b * 210, gate[b], gate_scale, 0);
     }
     float acc = 0.0f;
-    VITIS_LOOP_457_2: for (int b = 0; b < 32; b++) {
+    VITIS_LOOP_463_2: for (int b = 0; b < 32; b++) {
 #pragma HLS UNROLL
  acc += block_sums[b];
     }
@@ -7612,7 +7618,7 @@ static void load_x_local(
         LOAD_X_VEC: for (int i = 0; i < 2048 / 16; i++) {
 #pragma HLS PIPELINE II=1
  ap_uint<128> wide_val = x_wide[n * (2048 / 16) + i];
-            VITIS_LOOP_518_1: for (int j = 0; j < 16; j++) {
+            VITIS_LOOP_524_1: for (int j = 0; j < 16; j++) {
 #pragma HLS UNROLL
  int8_t val = (int8_t)wide_val.range(j*8+7, j*8);
                 int elem = i * 16 + j;
@@ -7640,7 +7646,7 @@ __attribute__((sdx_kernel("swiglu", 0))) void swiglu(
 {
 #line 1 "directive"
 #pragma HLSDIRECTIVE TOP name=swiglu
-# 543 "swiglu.cpp"
+# 549 "swiglu.cpp"
 
 #pragma HLS INTERFACE mode=m_axi port=W bundle=gmem_W offset=slave depth=9437184 max_read_burst_length=256 latency=64 num_read_outstanding=2 max_widen_bitwidth=128
 #pragma HLS INTERFACE mode=m_axi port=V bundle=gmem_V offset=slave depth=9437184 max_read_burst_length=256 latency=64 num_read_outstanding=2 max_widen_bitwidth=128

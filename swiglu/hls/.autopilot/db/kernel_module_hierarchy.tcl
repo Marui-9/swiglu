@@ -73,9 +73,9 @@ set ModuleHierarchy {[{
 					"SubInsts" : [
 					{"Name" : "fp16_to_fp32", "RefName" : "fp16_to_fp32","ID" : "42","Type" : "pipeline"},
 					{"Name" : "grp_fp16_to_fp32_fu_7859", "RefName" : "fp16_to_fp32","ID" : "43","Type" : "pipeline"},]},]},
-				{"Name" : "grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012", "RefName" : "mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL","ID" : "44","Type" : "sequential",
+				{"Name" : "grp_mac_blocks_down_q4k5_Pipeline_VITIS_LOOP_400_2_MAC_GROUP_fu_5012", "RefName" : "mac_blocks_down_q4k5_Pipeline_VITIS_LOOP_400_2_MAC_GROUP","ID" : "44","Type" : "sequential",
 					"SubLoops" : [
-					{"Name" : "MAC_BLOCKS_ALL","RefName" : "MAC_BLOCKS_ALL","ID" : "45","Type" : "pipeline"},]},
+					{"Name" : "VITIS_LOOP_400_2_MAC_GROUP","RefName" : "VITIS_LOOP_400_2_MAC_GROUP","ID" : "45","Type" : "pipeline"},]},
 				{"Name" : "grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072", "RefName" : "mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K","ID" : "46","Type" : "sequential",
 					"SubLoops" : [
 					{"Name" : "REDUCE_DOWN_Q4K","RefName" : "REDUCE_DOWN_Q4K","ID" : "47","Type" : "pipeline"},]},]},]},
@@ -88,7 +88,7 @@ set ModuleHierarchy {[{
 					{"Name" : "LOAD_DOWN_Q6K","RefName" : "LOAD_DOWN_Q6K","ID" : "51","Type" : "pipeline"},]},]},
 		{"Name" : "grp_mac_blocks_down_q6k_fu_311", "RefName" : "mac_blocks_down_q6k","ID" : "52","Type" : "sequential",
 				"SubLoops" : [
-				{"Name" : "VITIS_LOOP_451_1","RefName" : "VITIS_LOOP_451_1","ID" : "53","Type" : "no",
+				{"Name" : "VITIS_LOOP_457_1","RefName" : "VITIS_LOOP_457_1","ID" : "53","Type" : "no",
 				"SubInsts" : [
 				{"Name" : "grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_706", "RefName" : "mac_blocks_down_q6k_Pipeline_MAC_Q6K","ID" : "54","Type" : "sequential",
 						"SubLoops" : [

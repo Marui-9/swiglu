@@ -445,7 +445,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_wv_XLX_SEP_ PragmaOptions=factor=4_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_wv_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -1001,11 +1001,11 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>398</integer>
+      <integer>402</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=II=2_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -1017,7 +1017,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>399</integer>
+      <integer>403</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1033,71 +1033,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>400</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=factor=4_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>swiglu.cpp</string>
-      <key>line</key>
-      <integer>415</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>unknown HLS pragma ignored</string>
-      <key>ID</key>
-      <integer>5590</integer>
-      <key>WarningOption</key>
-      <string>invalid-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>swiglu.cpp</string>
-      <key>line</key>
-      <integer>415</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=0_XLX_SEP_ PragmaType=balance_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=variable_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>swiglu.cpp</string>
-      <key>line</key>
-      <integer>417</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=factor=4_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>swiglu.cpp</string>
-      <key>line</key>
-      <integer>420</integer>
+      <integer>405</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1113,7 +1049,71 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>434</integer>
+      <integer>421</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>unknown HLS pragma ignored</string>
+      <key>ID</key>
+      <integer>5590</integer>
+      <key>WarningOption</key>
+      <string>invalid-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>421</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=0_XLX_SEP_ PragmaType=balance_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=variable_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>423</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=factor=8_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>426</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mac_blocks_down_q4k_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>440</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1129,7 +1129,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>435</integer>
+      <integer>441</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1145,7 +1145,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>437</integer>
+      <integer>443</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1161,7 +1161,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>446</integer>
+      <integer>452</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1177,7 +1177,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>447</integer>
+      <integer>453</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1193,7 +1193,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>448</integer>
+      <integer>454</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1209,7 +1209,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>450</integer>
+      <integer>456</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1225,7 +1225,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>452</integer>
+      <integer>458</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1241,7 +1241,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>458</integer>
+      <integer>464</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1257,7 +1257,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>472</integer>
+      <integer>478</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1273,7 +1273,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>473</integer>
+      <integer>479</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1289,7 +1289,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>477</integer>
+      <integer>483</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1305,7 +1305,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>483</integer>
+      <integer>489</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1321,7 +1321,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>484</integer>
+      <integer>490</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1337,7 +1337,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>491</integer>
+      <integer>497</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1353,7 +1353,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>492</integer>
+      <integer>498</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1369,7 +1369,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>510</integer>
+      <integer>516</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1385,7 +1385,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>511</integer>
+      <integer>517</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1401,7 +1401,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>512</integer>
+      <integer>518</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1417,7 +1417,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>516</integer>
+      <integer>522</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1433,7 +1433,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>519</integer>
+      <integer>525</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1465,7 +1465,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>544</integer>
+      <integer>550</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1481,7 +1481,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>545</integer>
+      <integer>551</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1497,7 +1497,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>546</integer>
+      <integer>552</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1513,7 +1513,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>547</integer>
+      <integer>553</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1529,7 +1529,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>548</integer>
+      <integer>554</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1545,7 +1545,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>550</integer>
+      <integer>556</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1561,7 +1561,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>551</integer>
+      <integer>557</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1577,7 +1577,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>552</integer>
+      <integer>558</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1593,7 +1593,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>553</integer>
+      <integer>559</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1609,7 +1609,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>554</integer>
+      <integer>560</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1625,7 +1625,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>555</integer>
+      <integer>561</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1641,7 +1641,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>556</integer>
+      <integer>562</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1657,7 +1657,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>557</integer>
+      <integer>563</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1673,7 +1673,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>562</integer>
+      <integer>568</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1689,7 +1689,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>563</integer>
+      <integer>569</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1705,7 +1705,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>566</integer>
+      <integer>572</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1721,7 +1721,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>567</integer>
+      <integer>573</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1737,7 +1737,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>573</integer>
+      <integer>579</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1753,7 +1753,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>574</integer>
+      <integer>580</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1769,7 +1769,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>577</integer>
+      <integer>583</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1785,7 +1785,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>578</integer>
+      <integer>584</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1801,7 +1801,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>582</integer>
+      <integer>588</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -1817,7 +1817,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>588</integer>
+      <integer>594</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>

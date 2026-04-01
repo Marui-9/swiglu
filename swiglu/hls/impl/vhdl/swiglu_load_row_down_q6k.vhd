@@ -340,12 +340,12 @@ attribute shreg_extract : string;
     attribute fsm_encoding of ap_CS_fsm_state73 : signal is "none";
     signal ap_CS_fsm_state74 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state74 : signal is "none";
-    signal sext_ln436_fu_176_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sext_ln442_fu_176_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal empty_fu_150_p0 : STD_LOGIC_VECTOR (10 downto 0);
     signal empty_fu_150_p1 : STD_LOGIC_VECTOR (13 downto 0);
     signal empty_fu_150_p2 : STD_LOGIC_VECTOR (23 downto 0);
     signal p_cast_fu_156_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal empty_758_fu_160_p2 : STD_LOGIC_VECTOR (63 downto 0);
+    signal empty_756_fu_160_p2 : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (73 downto 0);
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
     signal ap_ST_fsm_state2_blk : STD_LOGIC;
@@ -478,7 +478,7 @@ attribute shreg_extract : string;
         m_axi_gmem_Wd_0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem_Wd_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem_Wd_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        sext_ln436 : IN STD_LOGIC_VECTOR (59 downto 0);
+        sext_ln442 : IN STD_LOGIC_VECTOR (59 downto 0);
         rb_15_address0 : OUT STD_LOGIC_VECTOR (4 downto 0);
         rb_15_ce0 : OUT STD_LOGIC;
         rb_15_we0 : OUT STD_LOGIC;
@@ -616,7 +616,7 @@ begin
         m_axi_gmem_Wd_0_BRESP => ap_const_lv2_0,
         m_axi_gmem_Wd_0_BID => ap_const_lv1_0,
         m_axi_gmem_Wd_0_BUSER => ap_const_lv1_0,
-        sext_ln436 => trunc_ln_reg_186,
+        sext_ln442 => trunc_ln_reg_186,
         rb_15_address0 => grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_15_address0,
         rb_15_ce0 => grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_15_ce0,
         rb_15_we0 => grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_15_we0,
@@ -682,7 +682,7 @@ begin
         rb_0_we0 => grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_0_we0,
         rb_0_d0 => grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_0_d0);
 
-    mul_11ns_14ns_24_1_1_U1394 : component swiglu_mul_11ns_14ns_24_1_1
+    mul_11ns_14ns_24_1_1_U1396 : component swiglu_mul_11ns_14ns_24_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -729,7 +729,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state1)) then
-                trunc_ln_reg_186 <= empty_758_fu_160_p2(63 downto 4);
+                trunc_ln_reg_186 <= empty_756_fu_160_p2(63 downto 4);
             end if;
         end if;
     end process;
@@ -1036,7 +1036,7 @@ begin
         end if; 
     end process;
 
-    empty_758_fu_160_p2 <= std_logic_vector(unsigned(p_cast_fu_156_p1) + unsigned(W_down_wide));
+    empty_756_fu_160_p2 <= std_logic_vector(unsigned(p_cast_fu_156_p1) + unsigned(W_down_wide));
     empty_fu_150_p0 <= empty_fu_150_p00(11 - 1 downto 0);
     empty_fu_150_p00 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(out_i),24));
     empty_fu_150_p1 <= ap_const_lv24_1A40(14 - 1 downto 0);
@@ -1052,10 +1052,10 @@ begin
 
     grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_start <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_ap_start_reg;
 
-    m_axi_gmem_Wd_0_ARADDR_assign_proc : process(m_axi_gmem_Wd_0_ARREADY, ap_CS_fsm_state2, grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARADDR, ap_CS_fsm_state73, ap_CS_fsm_state74, sext_ln436_fu_176_p1)
+    m_axi_gmem_Wd_0_ARADDR_assign_proc : process(m_axi_gmem_Wd_0_ARREADY, ap_CS_fsm_state2, grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARADDR, ap_CS_fsm_state73, ap_CS_fsm_state74, sext_ln442_fu_176_p1)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state2) and (m_axi_gmem_Wd_0_ARREADY = ap_const_logic_1))) then 
-            m_axi_gmem_Wd_0_ARADDR <= sext_ln436_fu_176_p1;
+            m_axi_gmem_Wd_0_ARADDR <= sext_ln442_fu_176_p1;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state74) or (ap_const_logic_1 = ap_CS_fsm_state73))) then 
             m_axi_gmem_Wd_0_ARADDR <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_m_axi_gmem_Wd_0_ARADDR;
         else 
@@ -1271,6 +1271,6 @@ begin
     rb_9_ce0 <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_9_ce0;
     rb_9_d0 <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_9_d0;
     rb_9_we0 <= grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107_rb_9_we0;
-        sext_ln436_fu_176_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln_reg_186),64));
+        sext_ln442_fu_176_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln_reg_186),64));
 
 end behav;

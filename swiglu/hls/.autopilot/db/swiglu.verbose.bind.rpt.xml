@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'swiglu'" level="0">
-<item name = "Date">Tue Mar 31 16:00:55 2026
+<item name = "Date">Wed Apr  1 12:45:19 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">7141722, 59287898, 71.417 ms, 0.593 sec, 3883010, 55388235, dataflow</column>
+<column name="">7141728, 59287904, 71.417 ms, 0.593 sec, 3883010, 55388235, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -34,7 +34,7 @@
 <column name="grp_load_x_local_fu_1232">load_x_local, 202, 202, 2.020 us, 2.020 us, 128, 128, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 <column name="grp_compute_X1_fu_1752">compute_X1, 3883009, 3883009, 38.830 ms, 38.830 ms, 3883009, 3883009, no</column>
 <column name="grp_compute_X2_fu_1889">compute_X2, 3883009, 3883009, 38.830 ms, 38.830 ms, 3883009, 3883009, no</column>
-<column name="grp_compute_gate_fu_2026">compute_gate, 16450, 16450, 0.165 ms, 0.165 ms, 16450, 16450, no</column>
+<column name="grp_compute_gate_fu_2026">compute_gate, 16456, 16456, 0.165 ms, 0.165 ms, 16456, 16456, no</column>
 <column name="grp_compute_output_fu_2042">compute_output, 3242058, 55388234, 32.421 ms, 0.554 sec, 3242058, 55388234, no</column>
 </table>
 </item>

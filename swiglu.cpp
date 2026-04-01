@@ -187,7 +187,7 @@ static void mac_blocks_wv(const ap_uint<128> rb[WV_BLOCKS_PER_ROW][Q4_K_WORDS],
         #pragma HLS PIPELINE II=1
         #pragma HLS LATENCY min=2
         for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
-            #pragma HLS UNROLL factor=6
+            #pragma HLS UNROLL
             // Stage 1: nibble/scalar decode
             ap_int<8>  xi8   = (ap_int<8>) x[b][n];
             ap_uint<4> nib4  = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
@@ -312,7 +312,7 @@ static void compute_gate(
             if (idx > 4095) idx = 4095;
             float g      = z * sigmoid_lut[idx] * x2;
             float fq     = g * inv_gs;
-            int   iq     = (int)fq;
+            int   iq     = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
             if (iq >  127) iq =  127;
             if (iq < -128) iq = -128;
             gate_cache[n][j >> 8][j & 255] = (int8_t)iq;
@@ -392,21 +392,27 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
         }
     }
 
-    // 4-group × 8-block fold to reduce LUT pressure and routing congestion.
-    // Cost: 4 × 256 = 1024 cycles/row (vs 512 for 2×16 fold).
-    MAC_BLOCKS_ALL: for (int n = 0; n < 256; n++) {
-        #pragma HLS PIPELINE II=1
-        #pragma HLS LATENCY min=2
-        #pragma HLS UNROLL factor=6
-        for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
-            ap_int<8>  gi8  = (ap_int<8>) gate[b][n];
-            ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
-                                             >> ((n & 32) ? 4 : 0)) & 0xF);
-            int sub = n >> 5; int k = n & 7;
-            ap_uint<6> sc6u = (ap_uint<6>) sc6[b][sub];
-            ap_uint<6> mn6u = (ap_uint<6>) mn6[b][sub];
-            int_acc_w[b][k] += (int32_t)(gi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
-            int_acc_m[b][k] += (int32_t)(gi8 * (ap_int<7>)mn6u);
+    // 4-group × 8-block fold: g-loop is sequential; MAC_GROUP is PIPELINE II=1 with
+    // 8 fully-unrolled blocks inside. g is loop-invariant within MAC_GROUP so HLS
+    // hoists g*8 and treats each bs-unrolled access as a constant bank offset.
+    // rb and gate use cyclic factor=8: bs=0..7 maps to banks 0..7, no port conflicts.
+    // Cost: 4 × 256 = 1024 cycles/row with 8 parallel INT32 pipelines per group.
+    for (int g = 0; g < 4; g++) {
+        MAC_GROUP: for (int n = 0; n < 256; n++) {
+            #pragma HLS PIPELINE II=1
+            #pragma HLS LATENCY min=2
+            for (int bs = 0; bs < 8; bs++) {
+                #pragma HLS UNROLL
+                int b = g * 8 + bs;
+                ap_int<8>  gi8  = (ap_int<8>) gate[b][n];
+                ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
+                                                 >> ((n & 32) ? 4 : 0)) & 0xF);
+                int sub = n >> 5; int k = n & 7;
+                ap_uint<6> sc6u = (ap_uint<6>) sc6[b][sub];
+                ap_uint<6> mn6u = (ap_uint<6>) mn6[b][sub];
+                int_acc_w[b][k] += (int32_t)(gi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
+                int_acc_m[b][k] += (int32_t)(gi8 * (ap_int<7>)mn6u);
+            }
         }
     }
 

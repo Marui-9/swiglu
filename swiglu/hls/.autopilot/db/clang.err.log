@@ -10,7 +10,7 @@ swiglu.cpp:207:9: warning: unknown HLS pragma ignored [-Winvalid-hls-pragmas]
 swiglu.cpp:348:9: warning: missing argument for 'variable' [-Winvalid-hls-pragmas]
 #pragma HLS BIND_OP op=mul impl=dsp
         ^
-swiglu.cpp:415:9: warning: unknown HLS pragma ignored [-Winvalid-hls-pragmas]
+swiglu.cpp:421:9: warning: unknown HLS pragma ignored [-Winvalid-hls-pragmas]
 #pragma HLS BALANCE variable=total
         ^
 5 warnings generated.

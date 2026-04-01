@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q6k'" level="0">
-<item name = "Date">Tue Mar 31 16:01:07 2026
+<item name = "Date">Wed Apr  1 12:45:28 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -38,7 +38,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_451_1">26416, 26416, 1651, -, -, 16, no</column>
+<column name="- VITIS_LOOP_457_1">26416, 26416, 1651, -, -, 16, no</column>
 </table>
 </item>
 </section>
@@ -67,14 +67,14 @@
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_706">mac_blocks_down_q6k_Pipeline_MAC_Q6K, 0, 0, 426, 1129, 0</column>
 <column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_767">mac_blocks_down_q6k_Pipeline_MAC_Q6K9, 0, 0, 426, 1176, 0</column>
-<column name="mul_5ns_9ns_13_1_1_U1505">mul_5ns_9ns_13_1_1, 0, 0, 0, 50, 0</column>
-<column name="partselect_8ns_128ns_7ns_8_1_1_U1507">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
-<column name="partselect_8ns_128ns_7ns_8_1_1_U1508">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
+<column name="mul_5ns_9ns_13_1_1_U1507">mul_5ns_9ns_13_1_1, 0, 0, 0, 50, 0</column>
+<column name="partselect_8ns_128ns_7ns_8_1_1_U1509">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
 <column name="partselect_8ns_128ns_7ns_8_1_1_U1510">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
-<column name="partselect_8ns_128ns_7ns_8_1_1_U1511">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
-<column name="sitofp_32s_32_3_no_dsp_1_U1512">sitofp_32s_32_3_no_dsp_1, 0, 0, 0, 0, 0</column>
-<column name="sparsemux_33_4_128_1_1_U1506">sparsemux_33_4_128_1_1, 0, 0, 0, 65, 0</column>
-<column name="sparsemux_33_4_128_1_1_U1509">sparsemux_33_4_128_1_1, 0, 0, 0, 65, 0</column>
+<column name="partselect_8ns_128ns_7ns_8_1_1_U1512">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
+<column name="partselect_8ns_128ns_7ns_8_1_1_U1513">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
+<column name="sitofp_32s_32_3_no_dsp_1_U1514">sitofp_32s_32_3_no_dsp_1, 0, 0, 0, 0, 0</column>
+<column name="sparsemux_33_4_128_1_1_U1508">sparsemux_33_4_128_1_1, 0, 0, 0, 65, 0</column>
+<column name="sparsemux_33_4_128_1_1_U1511">sparsemux_33_4_128_1_1, 0, 0, 0, 65, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -91,7 +91,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln451_fu_1575_p2">+, 0, 0, 13, 6, 2</column>
+<column name="add_ln457_fu_1575_p2">+, 0, 0, 13, 6, 2</column>
 <column name="add_ln55_1_fu_1288_p2">+, 0, 0, 20, 13, 9</column>
 <column name="add_ln55_fu_978_p2">+, 0, 0, 20, 13, 8</column>
 <column name="ap_predicate_pred1679_state40">and, 0, 0, 2, 1, 1</column>
@@ -215,37 +215,37 @@
 <column name="ap_predicate_pred1679_state79">1, 0, 1, 0</column>
 <column name="ap_return_preg">32, 0, 32, 0</column>
 <column name="b_fu_200">6, 0, 6, 0</column>
-<column name="empty_723_fu_208">32, 0, 32, 0</column>
-<column name="empty_724_fu_212">32, 0, 32, 0</column>
-<column name="empty_725_fu_216">32, 0, 32, 0</column>
-<column name="empty_726_fu_220">32, 0, 32, 0</column>
-<column name="empty_727_fu_224">32, 0, 32, 0</column>
-<column name="empty_728_fu_228">32, 0, 32, 0</column>
-<column name="empty_729_fu_232">32, 0, 32, 0</column>
-<column name="empty_730_fu_236">32, 0, 32, 0</column>
-<column name="empty_731_fu_240">32, 0, 32, 0</column>
-<column name="empty_732_fu_244">32, 0, 32, 0</column>
-<column name="empty_733_fu_248">32, 0, 32, 0</column>
-<column name="empty_734_fu_252">32, 0, 32, 0</column>
-<column name="empty_735_fu_256">32, 0, 32, 0</column>
-<column name="empty_736_fu_260">32, 0, 32, 0</column>
-<column name="empty_737_fu_264">32, 0, 32, 0</column>
-<column name="empty_738_fu_268">32, 0, 32, 0</column>
-<column name="empty_739_fu_272">32, 0, 32, 0</column>
-<column name="empty_740_fu_276">32, 0, 32, 0</column>
-<column name="empty_741_fu_280">32, 0, 32, 0</column>
-<column name="empty_742_fu_284">32, 0, 32, 0</column>
-<column name="empty_743_fu_288">32, 0, 32, 0</column>
-<column name="empty_744_fu_292">32, 0, 32, 0</column>
-<column name="empty_745_fu_296">32, 0, 32, 0</column>
-<column name="empty_746_fu_300">32, 0, 32, 0</column>
-<column name="empty_747_fu_304">32, 0, 32, 0</column>
-<column name="empty_748_fu_308">32, 0, 32, 0</column>
-<column name="empty_749_fu_312">32, 0, 32, 0</column>
-<column name="empty_750_fu_316">32, 0, 32, 0</column>
-<column name="empty_751_fu_320">32, 0, 32, 0</column>
-<column name="empty_752_fu_324">32, 0, 32, 0</column>
-<column name="empty_753_fu_328">32, 0, 32, 0</column>
+<column name="empty_719_fu_208">32, 0, 32, 0</column>
+<column name="empty_720_fu_212">32, 0, 32, 0</column>
+<column name="empty_721_fu_216">32, 0, 32, 0</column>
+<column name="empty_722_fu_220">32, 0, 32, 0</column>
+<column name="empty_723_fu_224">32, 0, 32, 0</column>
+<column name="empty_724_fu_228">32, 0, 32, 0</column>
+<column name="empty_725_fu_232">32, 0, 32, 0</column>
+<column name="empty_726_fu_236">32, 0, 32, 0</column>
+<column name="empty_727_fu_240">32, 0, 32, 0</column>
+<column name="empty_728_fu_244">32, 0, 32, 0</column>
+<column name="empty_729_fu_248">32, 0, 32, 0</column>
+<column name="empty_730_fu_252">32, 0, 32, 0</column>
+<column name="empty_731_fu_256">32, 0, 32, 0</column>
+<column name="empty_732_fu_260">32, 0, 32, 0</column>
+<column name="empty_733_fu_264">32, 0, 32, 0</column>
+<column name="empty_734_fu_268">32, 0, 32, 0</column>
+<column name="empty_735_fu_272">32, 0, 32, 0</column>
+<column name="empty_736_fu_276">32, 0, 32, 0</column>
+<column name="empty_737_fu_280">32, 0, 32, 0</column>
+<column name="empty_738_fu_284">32, 0, 32, 0</column>
+<column name="empty_739_fu_288">32, 0, 32, 0</column>
+<column name="empty_740_fu_292">32, 0, 32, 0</column>
+<column name="empty_741_fu_296">32, 0, 32, 0</column>
+<column name="empty_742_fu_300">32, 0, 32, 0</column>
+<column name="empty_743_fu_304">32, 0, 32, 0</column>
+<column name="empty_744_fu_308">32, 0, 32, 0</column>
+<column name="empty_745_fu_312">32, 0, 32, 0</column>
+<column name="empty_746_fu_316">32, 0, 32, 0</column>
+<column name="empty_747_fu_320">32, 0, 32, 0</column>
+<column name="empty_748_fu_324">32, 0, 32, 0</column>
+<column name="empty_749_fu_328">32, 0, 32, 0</column>
 <column name="empty_fu_204">32, 0, 32, 0</column>
 <column name="grp_fp16_to_fp32_fu_762_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_767_ap_start_reg">1, 0, 1, 0</column>
@@ -259,8 +259,8 @@
 <column name="tmp_56_reg_2115">2, 0, 10, 8</column>
 <column name="tmp_57_reg_2089">2, 0, 2, 0</column>
 <column name="tmp_s_reg_2105">8, 0, 8, 0</column>
-<column name="trunc_ln451_1_reg_1992">5, 0, 5, 0</column>
-<column name="trunc_ln451_reg_2099">3, 0, 3, 0</column>
+<column name="trunc_ln457_1_reg_1992">5, 0, 5, 0</column>
+<column name="trunc_ln457_reg_2099">3, 0, 3, 0</column>
 <column name="trunc_ln55_2_reg_2004">4, 0, 4, 0</column>
 <column name="trunc_ln55_reg_2206">4, 0, 4, 0</column>
 <column name="trunc_ln55_s_reg_2121">4, 0, 4, 0</column>

@@ -12,7 +12,7 @@ module swiglu_gate_cache_RAM_2P_URAM_1R1W_memcore (
       
     address1, ce1,
     d1, we1, 
-    q1, 
+    
      
     reset, clk);
 
@@ -24,13 +24,13 @@ input[AddressWidth-1:0] address0;
 input ce0;
 
 output reg[DataWidth-1:0] q0; 
-  
+ 
 input[AddressWidth-1:0] address1;
 input ce1;
 input[DataWidth-1:0] d1;
 input we1; 
-output reg[DataWidth-1:0] q1; 
- 
+
+
 input reset;
 input clk;
 
@@ -51,20 +51,16 @@ end
  
   
 
-
-
-
-
-
 always @(posedge clk)  
 begin 
     if (ce1) begin
         if (we1) 
             ram[address1] <= d1; 
-        else 
-            q1 <= ram[address1];
     end
 end 
+
+
+
  
  
 

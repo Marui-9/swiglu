@@ -352,12 +352,12 @@ wire    ap_CS_fsm_state73;
 wire    ap_CS_fsm_state74;
 wire  signed [63:0] sext_ln101_fu_170_p1;
 wire   [22:0] tmp_fu_120_p3;
-wire   [19:0] tmp_841_fu_132_p3;
+wire   [19:0] tmp_827_fu_132_p3;
 wire   [23:0] p_shl_fu_128_p1;
 wire   [23:0] p_shl55_fu_140_p1;
 wire   [23:0] empty_fu_144_p2;
 wire   [63:0] p_cast_fu_150_p1;
-wire   [63:0] empty_756_fu_154_p2;
+wire   [63:0] empty_754_fu_154_p2;
 reg   [73:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 reg    ap_ST_fsm_state2_blk;
@@ -551,7 +551,7 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state1)) begin
-        trunc_ln_reg_180 <= {{empty_756_fu_154_p2[63:4]}};
+        trunc_ln_reg_180 <= {{empty_754_fu_154_p2[63:4]}};
     end
 end
 
@@ -1113,7 +1113,7 @@ assign ap_CS_fsm_state73 = ap_CS_fsm[32'd72];
 
 assign ap_CS_fsm_state74 = ap_CS_fsm[32'd73];
 
-assign empty_756_fu_154_p2 = (p_cast_fu_150_p1 + W_wide);
+assign empty_754_fu_154_p2 = (p_cast_fu_150_p1 + W_wide);
 
 assign empty_fu_144_p2 = (p_shl_fu_128_p1 + p_shl55_fu_140_p1);
 
@@ -1159,7 +1159,7 @@ assign m_axi_gmem_V_0_WVALID = 1'b0;
 
 assign p_cast_fu_150_p1 = empty_fu_144_p2;
 
-assign p_shl55_fu_140_p1 = tmp_841_fu_132_p3;
+assign p_shl55_fu_140_p1 = tmp_827_fu_132_p3;
 
 assign p_shl_fu_128_p1 = tmp_fu_120_p3;
 
@@ -1229,7 +1229,7 @@ assign rb_7_we0 = grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1_fu_97_rb_7_w
 
 assign sext_ln101_fu_170_p1 = $signed(trunc_ln_reg_180);
 
-assign tmp_841_fu_132_p3 = {{row}, {7'd0}};
+assign tmp_827_fu_132_p3 = {{row}, {7'd0}};
 
 assign tmp_fu_120_p3 = {{row}, {10'd0}};
 

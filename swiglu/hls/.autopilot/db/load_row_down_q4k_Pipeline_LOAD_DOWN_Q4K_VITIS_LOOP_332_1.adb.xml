@@ -226,7 +226,7 @@ newFuncRoot:12 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %
 
 <Node id="24" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-newFuncRoot:13 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %gmem_Wd, void @empty_39, i32 0, i32 0, void @empty_36, i32 64, i32 860160, void @empty_3, void @empty_34, void @empty_36, i32 2, i32 16, i32 256, i32 16, void @empty_36, void @empty_36, i32 4294967295, i32 0, i32 0
+newFuncRoot:13 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %gmem_Wd, void @empty_33, i32 0, i32 0, void @empty_29, i32 64, i32 860160, void @empty_1, void @empty, void @empty_29, i32 2, i32 16, i32 256, i32 16, void @empty_29, void @empty_29, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -774,7 +774,7 @@ for.inc10:23 %rb_7_addr = getelementptr i128 %rb_7, i64 0, i64 %zext_ln334_2
 
 <Node id="59" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-for.inc10:24 %specpipeline_ln333 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_36
+for.inc10:24 %specpipeline_ln333 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_29
 
 ]]></Node>
 <StgValue><ssdm name="specpipeline_ln333"/></StgValue>
@@ -1254,23 +1254,23 @@ arrayidx911.exit:4 %br_ln332 = br void %for.inc
 </dataflow>
 <dataflow id="153" from="gmem_Wd" to="specinterface_ln0" fromId="89" toId="19">
 </dataflow>
-<dataflow id="155" from="empty_39" to="specinterface_ln0" fromId="154" toId="19">
+<dataflow id="155" from="empty_33" to="specinterface_ln0" fromId="154" toId="19">
 </dataflow>
 <dataflow id="157" from="StgValue_156" to="specinterface_ln0" fromId="156" toId="19">
 </dataflow>
 <dataflow id="158" from="StgValue_156" to="specinterface_ln0" fromId="156" toId="19">
 </dataflow>
-<dataflow id="160" from="empty_36" to="specinterface_ln0" fromId="159" toId="19">
+<dataflow id="160" from="empty_29" to="specinterface_ln0" fromId="159" toId="19">
 </dataflow>
 <dataflow id="162" from="StgValue_161" to="specinterface_ln0" fromId="161" toId="19">
 </dataflow>
 <dataflow id="164" from="StgValue_163" to="specinterface_ln0" fromId="163" toId="19">
 </dataflow>
-<dataflow id="166" from="empty_3" to="specinterface_ln0" fromId="165" toId="19">
+<dataflow id="166" from="empty_1" to="specinterface_ln0" fromId="165" toId="19">
 </dataflow>
-<dataflow id="168" from="empty_34" to="specinterface_ln0" fromId="167" toId="19">
+<dataflow id="168" from="empty" to="specinterface_ln0" fromId="167" toId="19">
 </dataflow>
-<dataflow id="169" from="empty_36" to="specinterface_ln0" fromId="159" toId="19">
+<dataflow id="169" from="empty_29" to="specinterface_ln0" fromId="159" toId="19">
 </dataflow>
 <dataflow id="171" from="StgValue_170" to="specinterface_ln0" fromId="170" toId="19">
 </dataflow>
@@ -1280,9 +1280,9 @@ arrayidx911.exit:4 %br_ln332 = br void %for.inc
 </dataflow>
 <dataflow id="176" from="StgValue_172" to="specinterface_ln0" fromId="172" toId="19">
 </dataflow>
-<dataflow id="177" from="empty_36" to="specinterface_ln0" fromId="159" toId="19">
+<dataflow id="177" from="empty_29" to="specinterface_ln0" fromId="159" toId="19">
 </dataflow>
-<dataflow id="178" from="empty_36" to="specinterface_ln0" fromId="159" toId="19">
+<dataflow id="178" from="empty_29" to="specinterface_ln0" fromId="159" toId="19">
 </dataflow>
 <dataflow id="180" from="StgValue_179" to="specinterface_ln0" fromId="179" toId="19">
 </dataflow>
@@ -1448,7 +1448,7 @@ arrayidx911.exit:4 %br_ln332 = br void %for.inc
 </dataflow>
 <dataflow id="280" from="StgValue_156" to="specpipeline_ln333" fromId="156" toId="54">
 </dataflow>
-<dataflow id="281" from="empty_36" to="specpipeline_ln333" fromId="159" toId="54">
+<dataflow id="281" from="empty_29" to="specpipeline_ln333" fromId="159" toId="54">
 </dataflow>
 <dataflow id="282" from="trunc_ln331" to="switch_ln334" fromId="39" toId="55">
 </dataflow>

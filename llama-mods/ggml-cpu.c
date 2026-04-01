@@ -45,8 +45,10 @@
 
 // ---------------- SwiGLU HW offload state (m_axi, no DMA) ----------------
 static int udmabuf_fd __attribute__((unused)) = -1;
-static int sync_device_fd = -1;
-static int sync_cpu_fd    = -1;
+static int sync_device_fd  = -1;
+static int sync_cpu_fd     = -1;
+static int sync_offset_fd  = -1;
+static int sync_size_fd    = -1;
 static uint64_t udmabuf_phys_base = 0;
 static void    *udmabuf_vptr      = NULL;
 
@@ -82,7 +84,7 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_OUTPUT_SIZE     8192U        // 2048 floats
 
 // IP CTRL register offsets
-#define SWIGLU_IP_BASE   0xA0000000 
+#define SWIGLU_IP_BASE   0xA0000000UL
 #define SWG_CTRL_AP_CTRL 0x00
 #define SWG_CTRL_GIE     0x04
 #define SWG_CTRL_IER     0x08
@@ -99,6 +101,30 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_CTRL_OUT_HI  0x44
 #define SWG_CTRL_MODE    0x4C  // 0=Q4_K 1=Q6_K
 #define SWG_CTRL_XSCALE  0x54  // float bits
+
+static void udmabuf_sync_to_device(uint32_t offset, uint32_t size) {
+    if (sync_offset_fd >= 0 && sync_size_fd >= 0) {
+        char buf[32];
+        int n;
+        n = snprintf(buf, sizeof(buf), "%u", offset);
+        (void)write(sync_offset_fd, buf, n);
+        n = snprintf(buf, sizeof(buf), "%u", size);
+        (void)write(sync_size_fd, buf, n);
+    }
+    if (sync_device_fd >= 0) (void)write(sync_device_fd, "1", 1);
+}
+
+static void udmabuf_sync_to_cpu(uint32_t offset, uint32_t size) {
+    if (sync_offset_fd >= 0 && sync_size_fd >= 0) {
+        char buf[32];
+        int n;
+        n = snprintf(buf, sizeof(buf), "%u", offset);
+        (void)write(sync_offset_fd, buf, n);
+        n = snprintf(buf, sizeof(buf), "%u", size);
+        (void)write(sync_size_fd, buf, n);
+    }
+    if (sync_cpu_fd >= 0) (void)write(sync_cpu_fd, "1", 1);
+}
 
 // Find /dev/uioN whose map0 addr matches target
 static int open_uio_by_addr(unsigned long target_addr) {
@@ -139,6 +165,8 @@ static void init_hardware_offload(void) {
     }
     sync_device_fd = open("/sys/class/u-dma-buf/udmabuf0/sync_for_device", O_WRONLY);
     sync_cpu_fd    = open("/sys/class/u-dma-buf/udmabuf0/sync_for_cpu",    O_WRONLY);
+    sync_offset_fd = open("/sys/class/u-dma-buf/udmabuf0/sync_offset",     O_WRONLY);
+    sync_size_fd   = open("/sys/class/u-dma-buf/udmabuf0/sync_size",       O_WRONLY);
 
     udmabuf_vptr = mmap(NULL, UDMABUF_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, udmabuf_fd, 0);
     if (udmabuf_vptr == MAP_FAILED) {
@@ -159,14 +187,13 @@ static void init_swiglu_offload(void) {
         fprintf(stderr, "[SWG_INIT] mmap CTRL registers failed at 0x%08lX\n", (unsigned long)SWIGLU_IP_BASE);
         exit(1);
     }
-    swg_ip_regs[SWG_CTRL_GIE / 4] = 0x1;
-    swg_ip_regs[SWG_CTRL_IER / 4] = 0x1;
-
     swiglu_uio_fd = open_uio_by_addr(SWIGLU_IP_BASE);
     if (swiglu_uio_fd >= 0) {
         uint32_t uio_enable = 1;
         (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
     }
+    swg_ip_regs[SWG_CTRL_GIE / 4] = 0x1;
+    swg_ip_regs[SWG_CTRL_IER / 4] = 0x1;
 }
 
 #ifdef GGML_USE_OPENMP
@@ -1876,6 +1903,13 @@ static void ggml_compute_forward_swiglu_fused_hw(
         memcpy((char*)udmabuf_vptr + SWG_LAYER_WD_OFF(layer), W_down->data, down_bytes);
         swg_layer_Wd_loaded[layer] = true;
     }
+    // Flush weights: covers W, V, Wd for this layer only.
+    // W starts at SWG_LAYER_W_OFF(layer); Wd ends at SWG_LAYER_WD_OFF(layer)+down_bytes.
+    {
+        uint32_t flush_start = SWG_LAYER_W_OFF(layer);
+        uint32_t flush_end   = SWG_LAYER_WD_OFF(layer) + (uint32_t)down_bytes;
+        udmabuf_sync_to_device(flush_start, flush_end - flush_start);
+    }
 
     uint64_t phys_W  = udmabuf_phys_base + SWG_LAYER_W_OFF(layer);
     uint64_t phys_V  = udmabuf_phys_base + SWG_LAYER_V_OFF(layer);
@@ -1905,8 +1939,6 @@ static void ggml_compute_forward_swiglu_fused_hw(
             x_dst[i] = (int8_t)iq;
         }
 
-        if (sync_device_fd >= 0) (void)write(sync_device_fd, "1", 1);
-
         bool need_prog_wvw = (layer != swg_last_prog_layer) || (mode != swg_last_prog_mode);
         if (need_prog_wvw) {
             swg_ip_regs[SWG_CTRL_W_LO   / 4] = (uint32_t)phys_W;
@@ -1932,6 +1964,7 @@ static void ggml_compute_forward_swiglu_fused_hw(
         swg_ip_regs[SWG_CTRL_XSCALE / 4] = xscale_bits;
         __asm__ __volatile__("" ::: "memory");
 
+        udmabuf_sync_to_device(SWG_VEC_OFF, (uint32_t)(bsz * 2048));
         swg_ip_regs[SWG_CTRL_AP_CTRL / 4] = 0x01;
         __asm__ __volatile__("" ::: "memory");
 
@@ -1941,6 +1974,7 @@ static void ggml_compute_forward_swiglu_fused_hw(
             if (pr > 0) {
                 uint32_t irq_count;
                 (void)read(swiglu_uio_fd, &irq_count, sizeof(irq_count));
+                swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done bit (TOW)
                 uint32_t uio_enable = 1;
                 (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
             } else {
@@ -1952,6 +1986,7 @@ static void ggml_compute_forward_swiglu_fused_hw(
                     fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n", swiglu_call_count, layer);
                     GGML_ASSERT(false);
                 }
+                swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done (TOW)
             }
         } else {
             int tmo = 7000;
@@ -1962,8 +1997,10 @@ static void ggml_compute_forward_swiglu_fused_hw(
                 fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n", swiglu_call_count, layer);
                 GGML_ASSERT(false);
             }
+            swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done (TOW)
         }
 
+        udmabuf_sync_to_cpu(SWG_OUT_OFF, (uint32_t)(bsz * 2048 * sizeof(float)));
         memcpy((char*)dst->data + (size_t)c * 2048 * sizeof(float),
                (char*)udmabuf_vptr + SWG_OUT_OFF,
                (size_t)bsz * 2048 * sizeof(float));

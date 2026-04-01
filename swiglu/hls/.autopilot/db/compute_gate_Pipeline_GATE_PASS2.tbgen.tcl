@@ -60,7 +60,7 @@ set C_modelArgMapList {[
  	{ "Name" : "inv_gs", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "sigmoid_lut", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY", "extern" : 0} ]}
 # RTL Port declarations: 
-set portNum 65
+set portNum 70
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -127,6 +127,11 @@ set portList {
 	{ grp_fu_1057_p_din1 sc_out sc_lv 32 signal -1 } 
 	{ grp_fu_1057_p_dout0 sc_in sc_lv 32 signal -1 } 
 	{ grp_fu_1057_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_138_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_138_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_138_p_opcode sc_out sc_lv 5 signal -1 } 
+	{ grp_fu_138_p_dout0 sc_in sc_lv 1 signal -1 } 
+	{ grp_fu_138_p_ce sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -193,28 +198,33 @@ set NewPortList {[
  	{ "name": "grp_fu_1057_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1057_p_din0", "role": "default" }} , 
  	{ "name": "grp_fu_1057_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1057_p_din1", "role": "default" }} , 
  	{ "name": "grp_fu_1057_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1057_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_1057_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_1057_p_ce", "role": "default" }}  ]}
+ 	{ "name": "grp_fu_1057_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_1057_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_138_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_138_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_138_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_138_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_138_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "grp_fu_138_p_opcode", "role": "default" }} , 
+ 	{ "name": "grp_fu_138_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_138_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_138_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_138_p_ce", "role": "default" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	compute_gate_Pipeline_GATE_PASS2 {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 10 FirstWrite -1}
-		gate_cache_7 {Type O LastRead -1 FirstWrite 18}
-		gate_cache_6 {Type O LastRead -1 FirstWrite 18}
-		gate_cache_5 {Type O LastRead -1 FirstWrite 18}
-		gate_cache_4 {Type O LastRead -1 FirstWrite 18}
-		gate_cache_3 {Type O LastRead -1 FirstWrite 18}
-		gate_cache_2 {Type O LastRead -1 FirstWrite 18}
-		gate_cache_1 {Type O LastRead -1 FirstWrite 18}
-		gate_cache_0 {Type O LastRead -1 FirstWrite 18}
+		gate_cache_7 {Type O LastRead -1 FirstWrite 24}
+		gate_cache_6 {Type O LastRead -1 FirstWrite 24}
+		gate_cache_5 {Type O LastRead -1 FirstWrite 24}
+		gate_cache_4 {Type O LastRead -1 FirstWrite 24}
+		gate_cache_3 {Type O LastRead -1 FirstWrite 24}
+		gate_cache_2 {Type O LastRead -1 FirstWrite 24}
+		gate_cache_1 {Type O LastRead -1 FirstWrite 24}
+		gate_cache_0 {Type O LastRead -1 FirstWrite 24}
 		inv_gs {Type I LastRead 0 FirstWrite -1}
 		sigmoid_lut {Type I LastRead 8 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "8211", "Max" : "8211"}
-	, {"Name" : "Interval", "Min" : "8211", "Max" : "8211"}
+	{"Name" : "Latency", "Min" : "8217", "Max" : "8217"}
+	, {"Name" : "Interval", "Min" : "8217", "Max" : "8217"}
 ]}
 
 set PipelineEnableSignalInfo {[

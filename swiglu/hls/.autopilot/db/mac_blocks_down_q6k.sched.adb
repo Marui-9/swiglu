@@ -923,7 +923,7 @@
 						<name>b</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>451</lineNumber>
+						<lineNumber>457</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -939,7 +939,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>451</second>
+										<second>457</second>
 									</item>
 								</second>
 							</item>
@@ -1018,7 +1018,7 @@
 					<Obj>
 						<type>0</type>
 						<id>28</id>
-						<name>empty_723</name>
+						<name>empty_719</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1060,7 +1060,7 @@
 					<Obj>
 						<type>0</type>
 						<id>29</id>
-						<name>empty_724</name>
+						<name>empty_720</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1102,7 +1102,7 @@
 					<Obj>
 						<type>0</type>
 						<id>30</id>
-						<name>empty_725</name>
+						<name>empty_721</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1144,7 +1144,7 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>empty_726</name>
+						<name>empty_722</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1186,7 +1186,7 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>empty_727</name>
+						<name>empty_723</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1228,7 +1228,7 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>empty_728</name>
+						<name>empty_724</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1270,7 +1270,7 @@
 					<Obj>
 						<type>0</type>
 						<id>34</id>
-						<name>empty_729</name>
+						<name>empty_725</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1312,7 +1312,7 @@
 					<Obj>
 						<type>0</type>
 						<id>35</id>
-						<name>empty_730</name>
+						<name>empty_726</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1354,7 +1354,7 @@
 					<Obj>
 						<type>0</type>
 						<id>36</id>
-						<name>empty_731</name>
+						<name>empty_727</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1396,7 +1396,7 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>empty_732</name>
+						<name>empty_728</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1438,7 +1438,7 @@
 					<Obj>
 						<type>0</type>
 						<id>38</id>
-						<name>empty_733</name>
+						<name>empty_729</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1480,7 +1480,7 @@
 					<Obj>
 						<type>0</type>
 						<id>39</id>
-						<name>empty_734</name>
+						<name>empty_730</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1522,7 +1522,7 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>empty_735</name>
+						<name>empty_731</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1564,7 +1564,7 @@
 					<Obj>
 						<type>0</type>
 						<id>41</id>
-						<name>empty_736</name>
+						<name>empty_732</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1606,7 +1606,7 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>empty_737</name>
+						<name>empty_733</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1648,7 +1648,7 @@
 					<Obj>
 						<type>0</type>
 						<id>43</id>
-						<name>empty_738</name>
+						<name>empty_734</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1690,7 +1690,7 @@
 					<Obj>
 						<type>0</type>
 						<id>44</id>
-						<name>empty_739</name>
+						<name>empty_735</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1732,7 +1732,7 @@
 					<Obj>
 						<type>0</type>
 						<id>45</id>
-						<name>empty_740</name>
+						<name>empty_736</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1774,7 +1774,7 @@
 					<Obj>
 						<type>0</type>
 						<id>46</id>
-						<name>empty_741</name>
+						<name>empty_737</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1816,7 +1816,7 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>empty_742</name>
+						<name>empty_738</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1858,7 +1858,7 @@
 					<Obj>
 						<type>0</type>
 						<id>48</id>
-						<name>empty_743</name>
+						<name>empty_739</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1900,7 +1900,7 @@
 					<Obj>
 						<type>0</type>
 						<id>49</id>
-						<name>empty_744</name>
+						<name>empty_740</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1942,7 +1942,7 @@
 					<Obj>
 						<type>0</type>
 						<id>50</id>
-						<name>empty_745</name>
+						<name>empty_741</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1984,7 +1984,7 @@
 					<Obj>
 						<type>0</type>
 						<id>51</id>
-						<name>empty_746</name>
+						<name>empty_742</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2026,7 +2026,7 @@
 					<Obj>
 						<type>0</type>
 						<id>52</id>
-						<name>empty_747</name>
+						<name>empty_743</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2068,7 +2068,7 @@
 					<Obj>
 						<type>0</type>
 						<id>53</id>
-						<name>empty_748</name>
+						<name>empty_744</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2110,7 +2110,7 @@
 					<Obj>
 						<type>0</type>
 						<id>54</id>
-						<name>empty_749</name>
+						<name>empty_745</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2152,7 +2152,7 @@
 					<Obj>
 						<type>0</type>
 						<id>55</id>
-						<name>empty_750</name>
+						<name>empty_746</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2194,7 +2194,7 @@
 					<Obj>
 						<type>0</type>
 						<id>56</id>
-						<name>empty_751</name>
+						<name>empty_747</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2236,7 +2236,7 @@
 					<Obj>
 						<type>0</type>
 						<id>57</id>
-						<name>empty_752</name>
+						<name>empty_748</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2278,7 +2278,7 @@
 					<Obj>
 						<type>0</type>
 						<id>58</id>
-						<name>empty_753</name>
+						<name>empty_749</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2389,7 +2389,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -2452,7 +2452,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -2515,7 +2515,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -2578,7 +2578,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -2641,7 +2641,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -2704,7 +2704,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -2767,7 +2767,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -2830,7 +2830,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -2867,10 +2867,10 @@
 					<Obj>
 						<type>0</type>
 						<id>92</id>
-						<name>b_write_ln451</name>
+						<name>b_write_ln457</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>451</lineNumber>
+						<lineNumber>457</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -2886,7 +2886,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>451</second>
+										<second>457</second>
 									</item>
 								</second>
 							</item>
@@ -2924,10 +2924,10 @@
 					<Obj>
 						<type>0</type>
 						<id>93</id>
-						<name>br_ln451</name>
+						<name>br_ln457</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>451</lineNumber>
+						<lineNumber>457</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -2943,7 +2943,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>451</second>
+										<second>457</second>
 									</item>
 								</second>
 							</item>
@@ -2983,7 +2983,7 @@
 						<name>b_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>451</lineNumber>
+						<lineNumber>457</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -2999,7 +2999,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>451</second>
+										<second>457</second>
 									</item>
 								</second>
 							</item>
@@ -3040,7 +3040,7 @@
 						<name>tmp_162</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>451</lineNumber>
+						<lineNumber>457</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -3056,7 +3056,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>451</second>
+										<second>457</second>
 									</item>
 								</second>
 							</item>
@@ -3095,10 +3095,10 @@
 					<Obj>
 						<type>0</type>
 						<id>97</id>
-						<name>br_ln451</name>
+						<name>br_ln457</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>451</lineNumber>
+						<lineNumber>457</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -3114,7 +3114,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>451</second>
+										<second>457</second>
 									</item>
 								</second>
 							</item>
@@ -3153,10 +3153,10 @@
 					<Obj>
 						<type>0</type>
 						<id>99</id>
-						<name>trunc_ln451</name>
+						<name>trunc_ln457</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>451</lineNumber>
+						<lineNumber>457</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -3172,7 +3172,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>451</second>
+										<second>457</second>
 									</item>
 								</second>
 							</item>
@@ -3209,10 +3209,10 @@
 					<Obj>
 						<type>0</type>
 						<id>100</id>
-						<name>trunc_ln451_1</name>
+						<name>trunc_ln457_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>451</lineNumber>
+						<lineNumber>457</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -3228,7 +3228,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>451</second>
+										<second>457</second>
 									</item>
 								</second>
 							</item>
@@ -3298,7 +3298,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -3368,7 +3368,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -3439,7 +3439,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -3510,7 +3510,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -3583,7 +3583,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -3656,7 +3656,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -3726,7 +3726,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -3798,7 +3798,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -3870,7 +3870,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -3942,7 +3942,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4014,7 +4014,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4086,7 +4086,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4158,7 +4158,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4230,7 +4230,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4302,7 +4302,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4374,7 +4374,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4446,7 +4446,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4518,7 +4518,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4590,7 +4590,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4662,7 +4662,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4734,7 +4734,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4806,7 +4806,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4878,7 +4878,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -4948,7 +4948,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5018,7 +5018,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5088,7 +5088,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5158,7 +5158,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5228,7 +5228,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5298,7 +5298,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5368,7 +5368,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5438,7 +5438,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5508,7 +5508,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5578,7 +5578,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5648,7 +5648,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5718,7 +5718,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5788,7 +5788,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5858,7 +5858,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5928,7 +5928,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -5968,7 +5968,7 @@
 						<name>lshr_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>451</lineNumber>
+						<lineNumber>457</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -5984,7 +5984,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>451</second>
+										<second>457</second>
 									</item>
 								</second>
 							</item>
@@ -6050,7 +6050,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -6459,7 +6459,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -6585,7 +6585,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -6657,7 +6657,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -6761,7 +6761,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -6833,7 +6833,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -6906,7 +6906,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -6978,7 +6978,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7043,7 +7043,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7108,7 +7108,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7172,7 +7172,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7236,7 +7236,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7300,7 +7300,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7364,7 +7364,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7428,7 +7428,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7492,7 +7492,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7556,7 +7556,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7620,7 +7620,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7684,7 +7684,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7748,7 +7748,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7812,7 +7812,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7876,7 +7876,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -7940,7 +7940,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8004,7 +8004,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8068,7 +8068,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8132,7 +8132,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8196,7 +8196,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8234,10 +8234,10 @@
 					<Obj>
 						<type>0</type>
 						<id>177</id>
-						<name>_ln454</name>
+						<name>_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -8253,7 +8253,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8321,7 +8321,7 @@
 					<Obj>
 						<type>0</type>
 						<id>179</id>
-						<name>empty_750_write_ln88</name>
+						<name>empty_746_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -8347,7 +8347,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8385,10 +8385,10 @@
 					<Obj>
 						<type>0</type>
 						<id>180</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -8404,7 +8404,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8441,7 +8441,7 @@
 					<Obj>
 						<type>0</type>
 						<id>182</id>
-						<name>empty_748_write_ln88</name>
+						<name>empty_744_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -8467,7 +8467,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8505,10 +8505,10 @@
 					<Obj>
 						<type>0</type>
 						<id>183</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -8524,7 +8524,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8561,7 +8561,7 @@
 					<Obj>
 						<type>0</type>
 						<id>185</id>
-						<name>empty_746_write_ln88</name>
+						<name>empty_742_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -8587,7 +8587,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8625,10 +8625,10 @@
 					<Obj>
 						<type>0</type>
 						<id>186</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -8644,7 +8644,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8681,7 +8681,7 @@
 					<Obj>
 						<type>0</type>
 						<id>188</id>
-						<name>empty_744_write_ln88</name>
+						<name>empty_740_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -8707,7 +8707,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8745,10 +8745,10 @@
 					<Obj>
 						<type>0</type>
 						<id>189</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -8764,7 +8764,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8801,7 +8801,7 @@
 					<Obj>
 						<type>0</type>
 						<id>191</id>
-						<name>empty_742_write_ln88</name>
+						<name>empty_738_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -8827,7 +8827,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8865,10 +8865,10 @@
 					<Obj>
 						<type>0</type>
 						<id>192</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -8884,7 +8884,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8921,7 +8921,7 @@
 					<Obj>
 						<type>0</type>
 						<id>194</id>
-						<name>empty_740_write_ln88</name>
+						<name>empty_736_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -8947,7 +8947,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -8985,10 +8985,10 @@
 					<Obj>
 						<type>0</type>
 						<id>195</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9004,7 +9004,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9041,7 +9041,7 @@
 					<Obj>
 						<type>0</type>
 						<id>197</id>
-						<name>empty_738_write_ln88</name>
+						<name>empty_734_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -9067,7 +9067,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9105,10 +9105,10 @@
 					<Obj>
 						<type>0</type>
 						<id>198</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9124,7 +9124,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9161,7 +9161,7 @@
 					<Obj>
 						<type>0</type>
 						<id>200</id>
-						<name>empty_736_write_ln88</name>
+						<name>empty_732_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -9187,7 +9187,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9225,10 +9225,10 @@
 					<Obj>
 						<type>0</type>
 						<id>201</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9244,7 +9244,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9281,7 +9281,7 @@
 					<Obj>
 						<type>0</type>
 						<id>203</id>
-						<name>empty_734_write_ln88</name>
+						<name>empty_730_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -9307,7 +9307,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9345,10 +9345,10 @@
 					<Obj>
 						<type>0</type>
 						<id>204</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9364,7 +9364,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9401,7 +9401,7 @@
 					<Obj>
 						<type>0</type>
 						<id>206</id>
-						<name>empty_732_write_ln88</name>
+						<name>empty_728_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -9427,7 +9427,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9465,10 +9465,10 @@
 					<Obj>
 						<type>0</type>
 						<id>207</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9484,7 +9484,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9521,7 +9521,7 @@
 					<Obj>
 						<type>0</type>
 						<id>209</id>
-						<name>empty_730_write_ln88</name>
+						<name>empty_726_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -9547,7 +9547,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9585,10 +9585,10 @@
 					<Obj>
 						<type>0</type>
 						<id>210</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9604,7 +9604,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9641,7 +9641,7 @@
 					<Obj>
 						<type>0</type>
 						<id>212</id>
-						<name>empty_728_write_ln88</name>
+						<name>empty_724_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -9667,7 +9667,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9705,10 +9705,10 @@
 					<Obj>
 						<type>0</type>
 						<id>213</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9724,7 +9724,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9761,7 +9761,7 @@
 					<Obj>
 						<type>0</type>
 						<id>215</id>
-						<name>empty_726_write_ln88</name>
+						<name>empty_722_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -9787,7 +9787,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9825,10 +9825,10 @@
 					<Obj>
 						<type>0</type>
 						<id>216</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9844,7 +9844,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9881,7 +9881,7 @@
 					<Obj>
 						<type>0</type>
 						<id>218</id>
-						<name>empty_724_write_ln88</name>
+						<name>empty_720_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -9907,7 +9907,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -9945,10 +9945,10 @@
 					<Obj>
 						<type>0</type>
 						<id>219</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9964,7 +9964,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10027,7 +10027,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10065,10 +10065,10 @@
 					<Obj>
 						<type>0</type>
 						<id>222</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -10084,7 +10084,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10121,7 +10121,7 @@
 					<Obj>
 						<type>0</type>
 						<id>224</id>
-						<name>empty_752_write_ln88</name>
+						<name>empty_748_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -10147,7 +10147,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10185,10 +10185,10 @@
 					<Obj>
 						<type>0</type>
 						<id>225</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -10204,7 +10204,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10274,7 +10274,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10345,7 +10345,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10418,7 +10418,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10491,7 +10491,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10561,7 +10561,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10633,7 +10633,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10705,7 +10705,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10777,7 +10777,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10849,7 +10849,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10921,7 +10921,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -10993,7 +10993,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11065,7 +11065,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11137,7 +11137,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11209,7 +11209,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11281,7 +11281,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11353,7 +11353,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11425,7 +11425,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11497,7 +11497,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11569,7 +11569,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11641,7 +11641,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11713,7 +11713,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11784,7 +11784,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11855,7 +11855,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11926,7 +11926,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -11997,7 +11997,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -12068,7 +12068,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -12139,7 +12139,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -12210,7 +12210,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -12281,7 +12281,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -12352,7 +12352,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -12423,7 +12423,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -12494,7 +12494,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -12565,7 +12565,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -12636,7 +12636,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -12707,7 +12707,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -12778,7 +12778,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -13210,7 +13210,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -13370,7 +13370,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -13443,7 +13443,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -13515,7 +13515,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -13619,7 +13619,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -13691,7 +13691,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -13761,7 +13761,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -13833,7 +13833,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -13898,7 +13898,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -13963,7 +13963,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14027,7 +14027,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14093,7 +14093,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14157,7 +14157,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14223,7 +14223,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14287,7 +14287,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14353,7 +14353,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14417,7 +14417,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14483,7 +14483,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14547,7 +14547,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14613,7 +14613,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14677,7 +14677,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14743,7 +14743,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14807,7 +14807,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14873,7 +14873,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -14937,7 +14937,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15003,7 +15003,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15067,7 +15067,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15105,10 +15105,10 @@
 					<Obj>
 						<type>0</type>
 						<id>298</id>
-						<name>_ln454</name>
+						<name>_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15124,7 +15124,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15192,7 +15192,7 @@
 					<Obj>
 						<type>0</type>
 						<id>300</id>
-						<name>empty_751_write_ln88</name>
+						<name>empty_747_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -15218,7 +15218,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15256,10 +15256,10 @@
 					<Obj>
 						<type>0</type>
 						<id>301</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15275,7 +15275,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15312,7 +15312,7 @@
 					<Obj>
 						<type>0</type>
 						<id>303</id>
-						<name>empty_749_write_ln88</name>
+						<name>empty_745_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -15338,7 +15338,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15376,10 +15376,10 @@
 					<Obj>
 						<type>0</type>
 						<id>304</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15395,7 +15395,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15432,7 +15432,7 @@
 					<Obj>
 						<type>0</type>
 						<id>306</id>
-						<name>empty_747_write_ln88</name>
+						<name>empty_743_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -15458,7 +15458,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15496,10 +15496,10 @@
 					<Obj>
 						<type>0</type>
 						<id>307</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15515,7 +15515,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15552,7 +15552,7 @@
 					<Obj>
 						<type>0</type>
 						<id>309</id>
-						<name>empty_745_write_ln88</name>
+						<name>empty_741_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -15578,7 +15578,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15616,10 +15616,10 @@
 					<Obj>
 						<type>0</type>
 						<id>310</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15635,7 +15635,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15672,7 +15672,7 @@
 					<Obj>
 						<type>0</type>
 						<id>312</id>
-						<name>empty_743_write_ln88</name>
+						<name>empty_739_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -15698,7 +15698,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15736,10 +15736,10 @@
 					<Obj>
 						<type>0</type>
 						<id>313</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15755,7 +15755,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15792,7 +15792,7 @@
 					<Obj>
 						<type>0</type>
 						<id>315</id>
-						<name>empty_741_write_ln88</name>
+						<name>empty_737_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -15818,7 +15818,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15856,10 +15856,10 @@
 					<Obj>
 						<type>0</type>
 						<id>316</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15875,7 +15875,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15912,7 +15912,7 @@
 					<Obj>
 						<type>0</type>
 						<id>318</id>
-						<name>empty_739_write_ln88</name>
+						<name>empty_735_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -15938,7 +15938,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -15976,10 +15976,10 @@
 					<Obj>
 						<type>0</type>
 						<id>319</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15995,7 +15995,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16032,7 +16032,7 @@
 					<Obj>
 						<type>0</type>
 						<id>321</id>
-						<name>empty_737_write_ln88</name>
+						<name>empty_733_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -16058,7 +16058,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16096,10 +16096,10 @@
 					<Obj>
 						<type>0</type>
 						<id>322</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16115,7 +16115,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16152,7 +16152,7 @@
 					<Obj>
 						<type>0</type>
 						<id>324</id>
-						<name>empty_735_write_ln88</name>
+						<name>empty_731_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -16178,7 +16178,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16216,10 +16216,10 @@
 					<Obj>
 						<type>0</type>
 						<id>325</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16235,7 +16235,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16272,7 +16272,7 @@
 					<Obj>
 						<type>0</type>
 						<id>327</id>
-						<name>empty_733_write_ln88</name>
+						<name>empty_729_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -16298,7 +16298,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16336,10 +16336,10 @@
 					<Obj>
 						<type>0</type>
 						<id>328</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16355,7 +16355,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16392,7 +16392,7 @@
 					<Obj>
 						<type>0</type>
 						<id>330</id>
-						<name>empty_731_write_ln88</name>
+						<name>empty_727_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -16418,7 +16418,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16456,10 +16456,10 @@
 					<Obj>
 						<type>0</type>
 						<id>331</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16475,7 +16475,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16512,7 +16512,7 @@
 					<Obj>
 						<type>0</type>
 						<id>333</id>
-						<name>empty_729_write_ln88</name>
+						<name>empty_725_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -16538,7 +16538,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16576,10 +16576,10 @@
 					<Obj>
 						<type>0</type>
 						<id>334</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16595,7 +16595,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16632,7 +16632,7 @@
 					<Obj>
 						<type>0</type>
 						<id>336</id>
-						<name>empty_727_write_ln88</name>
+						<name>empty_723_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -16658,7 +16658,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16696,10 +16696,10 @@
 					<Obj>
 						<type>0</type>
 						<id>337</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16715,7 +16715,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16752,7 +16752,7 @@
 					<Obj>
 						<type>0</type>
 						<id>339</id>
-						<name>empty_725_write_ln88</name>
+						<name>empty_721_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -16778,7 +16778,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16816,10 +16816,10 @@
 					<Obj>
 						<type>0</type>
 						<id>340</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16835,7 +16835,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16872,7 +16872,7 @@
 					<Obj>
 						<type>0</type>
 						<id>342</id>
-						<name>empty_723_write_ln88</name>
+						<name>empty_719_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -16898,7 +16898,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16936,10 +16936,10 @@
 					<Obj>
 						<type>0</type>
 						<id>343</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16955,7 +16955,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -16992,7 +16992,7 @@
 					<Obj>
 						<type>0</type>
 						<id>345</id>
-						<name>empty_753_write_ln88</name>
+						<name>empty_749_write_ln88</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -17018,7 +17018,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -17056,10 +17056,10 @@
 					<Obj>
 						<type>0</type>
 						<id>346</id>
-						<name>br_ln454</name>
+						<name>br_ln460</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>454</lineNumber>
+						<lineNumber>460</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17075,7 +17075,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>454</second>
+										<second>460</second>
 									</item>
 								</second>
 							</item>
@@ -17112,10 +17112,10 @@
 					<Obj>
 						<type>0</type>
 						<id>348</id>
-						<name>add_ln451</name>
+						<name>add_ln457</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>451</lineNumber>
+						<lineNumber>457</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17131,7 +17131,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>451</second>
+										<second>457</second>
 									</item>
 								</second>
 							</item>
@@ -17169,10 +17169,10 @@
 					<Obj>
 						<type>0</type>
 						<id>349</id>
-						<name>b_write_ln451</name>
+						<name>b_write_ln457</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>451</lineNumber>
+						<lineNumber>457</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17188,7 +17188,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>451</second>
+										<second>457</second>
 									</item>
 								</second>
 							</item>
@@ -17228,10 +17228,10 @@
 					<Obj>
 						<type>0</type>
 						<id>350</id>
-						<name>br_ln451</name>
+						<name>br_ln457</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>451</lineNumber>
+						<lineNumber>457</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17247,7 +17247,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>451</second>
+										<second>457</second>
 									</item>
 								</second>
 							</item>
@@ -17287,7 +17287,7 @@
 						<name>p_load889</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17303,7 +17303,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -17343,7 +17343,7 @@
 						<name>p_load888</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17359,7 +17359,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -17399,7 +17399,7 @@
 						<name>p_load887</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17415,7 +17415,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -17455,7 +17455,7 @@
 						<name>p_load886</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17471,7 +17471,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -17511,7 +17511,7 @@
 						<name>p_load885</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17527,7 +17527,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -17567,7 +17567,7 @@
 						<name>p_load884</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17583,7 +17583,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -17623,7 +17623,7 @@
 						<name>p_load883</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17639,7 +17639,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -17679,7 +17679,7 @@
 						<name>p_load882</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17695,7 +17695,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -17735,7 +17735,7 @@
 						<name>p_load881</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17751,7 +17751,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -17791,7 +17791,7 @@
 						<name>p_load880</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17807,7 +17807,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -17847,7 +17847,7 @@
 						<name>p_load879</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17863,7 +17863,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -17903,7 +17903,7 @@
 						<name>p_load878</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17919,7 +17919,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -17959,7 +17959,7 @@
 						<name>p_load877</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17975,7 +17975,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18015,7 +18015,7 @@
 						<name>p_load876</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18031,7 +18031,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18071,7 +18071,7 @@
 						<name>p_load875</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18087,7 +18087,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18127,7 +18127,7 @@
 						<name>p_load874</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18143,7 +18143,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18183,7 +18183,7 @@
 						<name>p_load873</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18199,7 +18199,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18239,7 +18239,7 @@
 						<name>p_load872</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18255,7 +18255,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18295,7 +18295,7 @@
 						<name>p_load871</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18311,7 +18311,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18351,7 +18351,7 @@
 						<name>p_load870</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18367,7 +18367,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18407,7 +18407,7 @@
 						<name>p_load869</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18423,7 +18423,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18463,7 +18463,7 @@
 						<name>p_load868</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18479,7 +18479,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18519,7 +18519,7 @@
 						<name>p_load867</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18535,7 +18535,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18575,7 +18575,7 @@
 						<name>p_load866</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18591,7 +18591,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18631,7 +18631,7 @@
 						<name>p_load865</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18647,7 +18647,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18687,7 +18687,7 @@
 						<name>p_load864</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18703,7 +18703,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18743,7 +18743,7 @@
 						<name>p_load863</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18759,7 +18759,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18799,7 +18799,7 @@
 						<name>p_load862</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18815,7 +18815,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18855,7 +18855,7 @@
 						<name>p_load861</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18871,7 +18871,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18911,7 +18911,7 @@
 						<name>p_load860</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18927,7 +18927,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -18967,7 +18967,7 @@
 						<name>p_load859</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -18983,7 +18983,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19023,7 +19023,7 @@
 						<name>p_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19039,7 +19039,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19079,7 +19079,7 @@
 						<name>acc_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19095,7 +19095,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19136,7 +19136,7 @@
 						<name>acc_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19152,7 +19152,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19193,7 +19193,7 @@
 						<name>acc_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19209,7 +19209,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19250,7 +19250,7 @@
 						<name>acc_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19266,7 +19266,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19307,7 +19307,7 @@
 						<name>acc_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19323,7 +19323,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19364,7 +19364,7 @@
 						<name>acc_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19380,7 +19380,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19421,7 +19421,7 @@
 						<name>acc_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19437,7 +19437,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19478,7 +19478,7 @@
 						<name>acc_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19494,7 +19494,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19535,7 +19535,7 @@
 						<name>acc_16</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19551,7 +19551,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19592,7 +19592,7 @@
 						<name>acc_17</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19608,7 +19608,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19649,7 +19649,7 @@
 						<name>acc_18</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19665,7 +19665,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19706,7 +19706,7 @@
 						<name>acc_19</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19722,7 +19722,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19763,7 +19763,7 @@
 						<name>acc_20</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19779,7 +19779,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19820,7 +19820,7 @@
 						<name>acc_21</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19836,7 +19836,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19877,7 +19877,7 @@
 						<name>acc_22</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19893,7 +19893,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19934,7 +19934,7 @@
 						<name>acc_23</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -19950,7 +19950,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -19991,7 +19991,7 @@
 						<name>acc_24</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20007,7 +20007,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20048,7 +20048,7 @@
 						<name>acc_25</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20064,7 +20064,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20105,7 +20105,7 @@
 						<name>acc_26</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20121,7 +20121,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20162,7 +20162,7 @@
 						<name>acc_27</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20178,7 +20178,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20219,7 +20219,7 @@
 						<name>acc_28</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20235,7 +20235,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20276,7 +20276,7 @@
 						<name>acc_29</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20292,7 +20292,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20333,7 +20333,7 @@
 						<name>acc_30</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20349,7 +20349,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20390,7 +20390,7 @@
 						<name>acc_31</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20406,7 +20406,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20447,7 +20447,7 @@
 						<name>acc_32</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20463,7 +20463,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20504,7 +20504,7 @@
 						<name>acc_33</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20520,7 +20520,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20561,7 +20561,7 @@
 						<name>acc_34</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20577,7 +20577,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20618,7 +20618,7 @@
 						<name>acc_35</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20634,7 +20634,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20675,7 +20675,7 @@
 						<name>acc_36</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20691,7 +20691,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20732,7 +20732,7 @@
 						<name>acc_37</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20748,7 +20748,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20789,7 +20789,7 @@
 						<name>acc_38</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20805,7 +20805,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20846,7 +20846,7 @@
 						<name>acc_39</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>459</lineNumber>
+						<lineNumber>465</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20862,7 +20862,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>459</second>
+										<second>465</second>
 									</item>
 								</second>
 							</item>
@@ -20900,10 +20900,10 @@
 					<Obj>
 						<type>0</type>
 						<id>416</id>
-						<name>_ln462</name>
+						<name>_ln468</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>462</lineNumber>
+						<lineNumber>468</lineNumber>
 						<contextFuncName>mac_blocks_down_q6k</contextFuncName>
 						<contextNormFuncName>mac_blocks_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -20919,7 +20919,7 @@
 											<first>swiglu.cpp</first>
 											<second>mac_blocks_down_q6k</second>
 										</first>
-										<second>462</second>
+										<second>468</second>
 									</item>
 								</second>
 							</item>
@@ -30730,8 +30730,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_1390">
 			<mId>3</mId>
-			<mTag>VITIS_LOOP_451_1</mTag>
-			<mNormTag>VITIS_LOOP_451_1</mNormTag>
+			<mTag>VITIS_LOOP_457_1</mTag>
+			<mNormTag>VITIS_LOOP_457_1</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>0</count>

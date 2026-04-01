@@ -52,7 +52,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>sext_ln498</name>
+						<name>sext_ln504</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -170,7 +170,7 @@
 					<Obj>
 						<type>0</type>
 						<id>5</id>
-						<name>sext_ln498_read</name>
+						<name>sext_ln504_read</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -213,7 +213,7 @@
 					<Obj>
 						<type>0</type>
 						<id>6</id>
-						<name>sext_ln498_cast</name>
+						<name>sext_ln504_cast</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -516,7 +516,7 @@
 						<name>gmem_out_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>498</lineNumber>
+						<lineNumber>504</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -532,14 +532,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>593</second>
+										<second>599</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>498</second>
+										<second>504</second>
 									</item>
 								</second>
 							</item>
@@ -705,7 +705,7 @@
 					<Obj>
 						<type>0</type>
 						<id>23</id>
-						<name>empty_762</name>
+						<name>empty_760</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -747,10 +747,10 @@
 					<Obj>
 						<type>0</type>
 						<id>24</id>
-						<name>gmem_out_addr_write_ln498</name>
+						<name>gmem_out_addr_write_ln504</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>498</lineNumber>
+						<lineNumber>504</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -766,14 +766,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>593</second>
+										<second>599</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>498</second>
+										<second>504</second>
 									</item>
 								</second>
 							</item>
@@ -2103,7 +2103,7 @@
 		<count>8</count>
 		<item_version>0</item_version>
 		<item class_id="48" tracking_level="0" version="0">
-			<first>empty_762_fu_131</first>
+			<first>empty_760_fu_131</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2159,7 +2159,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln498_cast_fu_91</first>
+			<first>sext_ln504_cast_fu_91</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2183,7 +2183,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln498_read_read_fu_64</first>
+			<first>sext_ln504_read_read_fu_64</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2207,7 +2207,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln498_write_fu_83</first>
+			<first>write_ln504_write_fu_83</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2315,7 +2315,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln498_cast_reg_142</first>
+			<first>sext_ln504_cast_reg_142</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2366,7 +2366,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln498</first>
+			<first>sext_ln504</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
