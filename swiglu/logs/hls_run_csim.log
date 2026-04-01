@@ -31,21 +31,22 @@ INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
    Compiling ../../../../swiglu_tb.cpp in debug mode
-   Compiling ../../../../swiglu.cpp in debug mode
    Generating csim.exe
-In file included from ../../../../swiglu.cpp:5:
-In file included from C:/Xilinx/2025.1/Vitis/include/ap_int.h:10:
-In file included from C:/Xilinx/2025.1/Vitis/include/etc/ap_common.h:677:
-In file included from C:/Xilinx/2025.1/Vitis/include/etc/ap_private.h:68:
-In file included from C:/Xilinx/2025.1/Vitis/include/hls_half.h:26:
-In file included from C:/Xilinx/2025.1/Vitis/include/etc/hls_half_fpo.h:19:
-In file included from C:/Xilinx/2025.1/Vitis/include/hls_fpo.h:140:
-In file included from C:/Xilinx/2025.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:150:
-C:/Xilinx/2025.1/Vitis/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
-#define __GMP_LIBGMP_DLL  0
-        ^
-C:/Xilinx/2025.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
-#define __GMP_LIBGMP_DLL 1
-        ^
-1 warning generated.
 === Mock token sanity ===
+Mock token max abs err: 0
+=== T1: Q4_K down, batch=1, normal fp16 ===
+T1: PASSED  (batch=1)
+=== T2: Q4_K down, batch=1, subnormal d in W (0x00A4 ~9.8e-6) ===
+T2: PASSED  (batch=1)
+=== T3: Q4_K down, batch=1, subnormal dmin in V (0x817E) ===
+T3: PASSED  (batch=1)
+=== T4: Q6_K down, batch=1, normal fp16 (mode=1) ===
+T4: PASSED  (batch=1)
+=== T5: Q6_K down, batch=1, subnormal d in W_down (0x00A4) ===
+T5: PASSED  (batch=1)
+
+All tests PASSED.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 124.451 seconds; peak allocated memory: 181.246 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 2m 8s

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_output_Pipeline_1'" level="0">
-<item name = "Date">Mon Mar 30 15:06:18 2026
+<item name = "Date">Tue Mar 31 16:01:29 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -163,7 +163,7 @@
 <column name="m_axi_gmem_out_0_BRESP">in, 2, m_axi, gmem_out, pointer</column>
 <column name="m_axi_gmem_out_0_BID">in, 1, m_axi, gmem_out, pointer</column>
 <column name="m_axi_gmem_out_0_BUSER">in, 1, m_axi, gmem_out, pointer</column>
-<column name="sext_ln534">in, 62, ap_none, sext_ln534, scalar</column>
+<column name="sext_ln498">in, 62, ap_none, sext_ln498, scalar</column>
 <column name="out_local_address0">out, 11, ap_memory, out_local, array</column>
 <column name="out_local_ce0">out, 1, ap_memory, out_local, array</column>
 <column name="out_local_q0">in, 32, ap_memory, out_local, array</column>

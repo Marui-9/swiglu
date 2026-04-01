@@ -7282,15 +7282,18 @@ static void mac_blocks_wv(const ap_uint<128> rb[8][9],
 # 186 "swiglu.cpp"
     MAC_ALL_BLOCKS: for (int n = 0; n < 256; n++) {
 #pragma HLS PIPELINE II=1
- VITIS_LOOP_188_2: for (int b = 0; b < 8; b++) {
-#pragma HLS UNROLL
+#pragma HLS LATENCY min=2
+ VITIS_LOOP_189_2: for (int b = 0; b < 8; b++) {
+#pragma HLS UNROLL factor=4
+
  ap_int<8> xi8 = (ap_int<8>) x[b][n];
             ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
-                                             >> ((n & 32) ? 4 : 0)) & 0xF);
+                                              >> ((n & 32) ? 4 : 0)) & 0xF);
             int sub = n >> 5;
             int k = n & 7;
             ap_uint<6> sc6u = (ap_uint<6>) sc6[b][sub];
             ap_uint<6> mn6u = (ap_uint<6>) mn6[b][sub];
+
             int_acc_w[b][k] += (int32_t)(xi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
             int_acc_m[b][k] += (int32_t)(xi8 * (ap_int<7>)mn6u);
         }
@@ -7298,10 +7301,11 @@ static void mac_blocks_wv(const ap_uint<128> rb[8][9],
 
 
     float total = 0.f;
-    REDUCE_WV: for (int b = 0; b < 8; b++) {
+#pragma HLS BALANCE variable=total
+ REDUCE_WV: for (int b = 0; b < 8; b++) {
 #pragma HLS UNROLL
  int32_t sw = 0, sm = 0;
-        VITIS_LOOP_207_3: for (int k = 0; k < 8; k++) {
+        VITIS_LOOP_211_3: for (int k = 0; k < 8; k++) {
 #pragma HLS UNROLL
  sw += int_acc_w[b][k];
             sm += int_acc_m[b][k];
@@ -7386,7 +7390,7 @@ static void compute_gate(
         }
 
         float max_abs = 0.f;
-        VITIS_LOOP_292_1: for (int k = 0; k < 8; k++) {
+        VITIS_LOOP_296_1: for (int k = 0; k < 8; k++) {
 #pragma HLS UNROLL
  if (pmax[k] > max_abs) max_abs = pmax[k];
         }
@@ -7422,7 +7426,7 @@ static void load_row_down_q4k(const ap_uint<128> *W_down_wide, int out_i,
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=rb dim=1 cyclic factor=8
  LOAD_DOWN_Q4K: for (int b = 0; b < 32; b++) {
-        VITIS_LOOP_328_1: for (int w = 0; w < 9; w++) {
+        VITIS_LOOP_332_1: for (int w = 0; w < 9; w++) {
 #pragma HLS PIPELINE II=1
  rb[b][w] = W_down_wide[(ap_uint<64>)out_i * ((32 * 144) / 16) + b * 9 + w];
         }
@@ -7478,7 +7482,7 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[32][9],
 
  INIT_ACC_DOWN: for (int b = 0; b < 32; b++) {
 #pragma HLS UNROLL
- VITIS_LOOP_384_1: for (int k = 0; k < 8; k++) {
+ VITIS_LOOP_388_1: for (int k = 0; k < 8; k++) {
 #pragma HLS UNROLL
  int_acc_w[b][k] = 0;
             int_acc_m[b][k] = 0;
@@ -7487,11 +7491,12 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[32][9],
 
 
 
-    MAC_BLOCKS_G0: for (int n = 0; n < 256; n++) {
-#pragma HLS PIPELINE II=1
- VITIS_LOOP_395_2: for (int b = 0; b < 8; b++) {
-#pragma HLS UNROLL
- ap_int<8> gi8 = (ap_int<8>) gate[b][n];
+    MAC_BLOCKS_ALL: for (int n = 0; n < 256; n++) {
+#pragma HLS PIPELINE II=2
+#pragma HLS LATENCY min=2
+#pragma HLS UNROLL factor=4
+ VITIS_LOOP_401_2: for (int b = 0; b < 32; b++) {
+            ap_int<8> gi8 = (ap_int<8>) gate[b][n];
             ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
                                              >> ((n & 32) ? 4 : 0)) & 0xF);
             int sub = n >> 5; int k = n & 7;
@@ -7501,55 +7506,14 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[32][9],
             int_acc_m[b][k] += (int32_t)(gi8 * (ap_int<7>)mn6u);
         }
     }
-    MAC_BLOCKS_G1: for (int n = 0; n < 256; n++) {
-#pragma HLS PIPELINE II=1
- VITIS_LOOP_409_3: for (int b = 0; b < 8; b++) {
-#pragma HLS UNROLL
- ap_int<8> gi8 = (ap_int<8>) gate[b + 8][n];
-            ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b + 8], 16 + (n & 31) + ((n & 0xC0) >> 1))
-                                             >> ((n & 32) ? 4 : 0)) & 0xF);
-            int sub = n >> 5; int k = n & 7;
-            ap_uint<6> sc6u = (ap_uint<6>) sc6[b + 8][sub];
-            ap_uint<6> mn6u = (ap_uint<6>) mn6[b + 8][sub];
-            int_acc_w[b + 8][k] += (int32_t)(gi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
-            int_acc_m[b + 8][k] += (int32_t)(gi8 * (ap_int<7>)mn6u);
-        }
-    }
-    MAC_BLOCKS_G2: for (int n = 0; n < 256; n++) {
-#pragma HLS PIPELINE II=1
- VITIS_LOOP_423_4: for (int b = 0; b < 8; b++) {
-#pragma HLS UNROLL
- ap_int<8> gi8 = (ap_int<8>) gate[b + 16][n];
-            ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b + 16], 16 + (n & 31) + ((n & 0xC0) >> 1))
-                                             >> ((n & 32) ? 4 : 0)) & 0xF);
-            int sub = n >> 5; int k = n & 7;
-            ap_uint<6> sc6u = (ap_uint<6>) sc6[b + 16][sub];
-            ap_uint<6> mn6u = (ap_uint<6>) mn6[b + 16][sub];
-            int_acc_w[b + 16][k] += (int32_t)(gi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
-            int_acc_m[b + 16][k] += (int32_t)(gi8 * (ap_int<7>)mn6u);
-        }
-    }
-    MAC_BLOCKS_G3: for (int n = 0; n < 256; n++) {
-#pragma HLS PIPELINE II=1
- VITIS_LOOP_437_5: for (int b = 0; b < 8; b++) {
-#pragma HLS UNROLL
- ap_int<8> gi8 = (ap_int<8>) gate[b + 24][n];
-            ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b + 24], 16 + (n & 31) + ((n & 0xC0) >> 1))
-                                             >> ((n & 32) ? 4 : 0)) & 0xF);
-            int sub = n >> 5; int k = n & 7;
-            ap_uint<6> sc6u = (ap_uint<6>) sc6[b + 24][sub];
-            ap_uint<6> mn6u = (ap_uint<6>) mn6[b + 24][sub];
-            int_acc_w[b + 24][k] += (int32_t)(gi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
-            int_acc_m[b + 24][k] += (int32_t)(gi8 * (ap_int<7>)mn6u);
-        }
-    }
 
 
     float total = 0.f;
-    REDUCE_DOWN_Q4K: for (int b = 0; b < 32; b++) {
-#pragma HLS UNROLL
+#pragma HLS BALANCE variable=total
+ REDUCE_DOWN_Q4K: for (int b = 0; b < 32; b++) {
+#pragma HLS UNROLL factor=4
  int32_t sw = 0, sm = 0;
-        VITIS_LOOP_455_6: for (int k = 0; k < 8; k++) {
+        VITIS_LOOP_419_3: for (int k = 0; k < 8; k++) {
 #pragma HLS UNROLL
  sw += int_acc_w[b][k];
             sm += int_acc_m[b][k];
@@ -7581,13 +7545,13 @@ static void mac_blocks_down_q6k(const ap_uint<128> rb[((32 * 210) / 16)],
 #pragma HLS ARRAY_PARTITION variable=gate dim=1 complete
  float block_sums[32];
 #pragma HLS ARRAY_PARTITION variable=block_sums complete
- VITIS_LOOP_487_1: for (int b = 0; b < 32; b++) {
+ VITIS_LOOP_451_1: for (int b = 0; b < 32; b++) {
 #pragma HLS UNROLL factor=2
 
  block_sums[b] = decode_mac_q6k(rb, b * 210, gate[b], gate_scale, 0);
     }
     float acc = 0.0f;
-    VITIS_LOOP_493_2: for (int b = 0; b < 32; b++) {
+    VITIS_LOOP_457_2: for (int b = 0; b < 32; b++) {
 #pragma HLS UNROLL
  acc += block_sums[b];
     }
@@ -7648,7 +7612,7 @@ static void load_x_local(
         LOAD_X_VEC: for (int i = 0; i < 2048 / 16; i++) {
 #pragma HLS PIPELINE II=1
  ap_uint<128> wide_val = x_wide[n * (2048 / 16) + i];
-            VITIS_LOOP_554_1: for (int j = 0; j < 16; j++) {
+            VITIS_LOOP_518_1: for (int j = 0; j < 16; j++) {
 #pragma HLS UNROLL
  int8_t val = (int8_t)wide_val.range(j*8+7, j*8);
                 int elem = i * 16 + j;
@@ -7676,7 +7640,7 @@ __attribute__((sdx_kernel("swiglu", 0))) void swiglu(
 {
 #line 1 "directive"
 #pragma HLSDIRECTIVE TOP name=swiglu
-# 579 "swiglu.cpp"
+# 543 "swiglu.cpp"
 
 #pragma HLS INTERFACE mode=m_axi port=W bundle=gmem_W offset=slave depth=9437184 max_read_burst_length=256 latency=64 num_read_outstanding=2 max_widen_bitwidth=128
 #pragma HLS INTERFACE mode=m_axi port=V bundle=gmem_V offset=slave depth=9437184 max_read_burst_length=256 latency=64 num_read_outstanding=2 max_widen_bitwidth=128

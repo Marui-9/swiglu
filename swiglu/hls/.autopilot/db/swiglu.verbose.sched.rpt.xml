@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'swiglu'" level="0">
-<item name = "Date">Mon Mar 30 15:05:50 2026
+<item name = "Date">Tue Mar 31 16:00:55 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">7162202, 59287898, 71.622 ms, 0.593 sec, 3883010, 55388235, dataflow</column>
+<column name="">7141722, 59287898, 71.417 ms, 0.593 sec, 3883010, 55388235, dataflow</column>
 </table>
 </item>
 <item name = "Detail">

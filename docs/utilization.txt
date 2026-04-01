@@ -1,0 +1,8 @@
+Gemini ha detto
+Resource     Utilization     Available     Utilization %
+LUT          77611           117120        66.27
+LUTRAM       10572           57600         18.35
+FF           95397           234240        40.73
+BRAM         8.50            144           5.90
+URAM         24              64            37.50
+DSP          336             1248          26.92

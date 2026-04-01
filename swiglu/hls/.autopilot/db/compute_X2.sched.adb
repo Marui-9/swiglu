@@ -4775,7 +4775,7 @@
 						<name>row</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -4791,7 +4791,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -4917,7 +4917,7 @@
 						<name>row_buf</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>249</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -4933,7 +4933,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>249</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -4973,7 +4973,7 @@
 						<name>row_buf_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>249</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -4989,7 +4989,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>249</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5029,7 +5029,7 @@
 						<name>row_buf_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>249</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5045,7 +5045,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>249</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5085,7 +5085,7 @@
 						<name>row_buf_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>249</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5101,7 +5101,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>249</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5141,7 +5141,7 @@
 						<name>row_buf_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>249</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5157,7 +5157,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>249</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5197,7 +5197,7 @@
 						<name>row_buf_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>249</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5213,7 +5213,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>249</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5253,7 +5253,7 @@
 						<name>row_buf_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>249</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5269,7 +5269,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>249</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5309,7 +5309,7 @@
 						<name>row_buf_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>249</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5325,7 +5325,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>249</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5362,10 +5362,10 @@
 					<Obj>
 						<type>0</type>
 						<id>282</id>
-						<name>row_write_ln248</name>
+						<name>row_write_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5381,7 +5381,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5419,10 +5419,10 @@
 					<Obj>
 						<type>0</type>
 						<id>283</id>
-						<name>br_ln248</name>
+						<name>br_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5438,7 +5438,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5478,7 +5478,7 @@
 						<name>row_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5494,7 +5494,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5532,10 +5532,10 @@
 					<Obj>
 						<type>0</type>
 						<id>286</id>
-						<name>icmp_ln248</name>
+						<name>icmp_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5551,7 +5551,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5589,10 +5589,10 @@
 					<Obj>
 						<type>0</type>
 						<id>287</id>
-						<name>add_ln248</name>
+						<name>add_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5608,7 +5608,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5646,10 +5646,10 @@
 					<Obj>
 						<type>0</type>
 						<id>288</id>
-						<name>br_ln248</name>
+						<name>br_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5665,7 +5665,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5704,10 +5704,10 @@
 					<Obj>
 						<type>0</type>
 						<id>290</id>
-						<name>zext_ln248</name>
+						<name>zext_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5723,7 +5723,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5763,7 +5763,7 @@
 						<name>X2_cache_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>255</lineNumber>
+						<lineNumber>259</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5779,7 +5779,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>255</second>
+										<second>259</second>
 									</item>
 								</second>
 							</item>
@@ -5818,10 +5818,10 @@
 					<Obj>
 						<type>0</type>
 						<id>294</id>
-						<name>trunc_ln252</name>
+						<name>trunc_ln256</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>252</lineNumber>
+						<lineNumber>256</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5837,7 +5837,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>252</second>
+										<second>256</second>
 									</item>
 								</second>
 							</item>
@@ -5874,10 +5874,10 @@
 					<Obj>
 						<type>0</type>
 						<id>295</id>
-						<name>_ln252</name>
+						<name>_ln256</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>252</lineNumber>
+						<lineNumber>256</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5893,7 +5893,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>252</second>
+										<second>256</second>
 									</item>
 								</second>
 							</item>
@@ -5944,7 +5944,7 @@
 						<name>row_result</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>254</lineNumber>
+						<lineNumber>258</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5960,7 +5960,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>254</second>
+										<second>258</second>
 									</item>
 								</second>
 							</item>
@@ -6136,10 +6136,10 @@
 					<Obj>
 						<type>0</type>
 						<id>297</id>
-						<name>X2_cache_addr_write_ln255</name>
+						<name>X2_cache_addr_write_ln259</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>255</lineNumber>
+						<lineNumber>259</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6155,7 +6155,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>255</second>
+										<second>259</second>
 									</item>
 								</second>
 							</item>
@@ -6193,10 +6193,10 @@
 					<Obj>
 						<type>0</type>
 						<id>298</id>
-						<name>row_write_ln248</name>
+						<name>row_write_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6212,7 +6212,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -6252,10 +6252,10 @@
 					<Obj>
 						<type>0</type>
 						<id>299</id>
-						<name>br_ln248</name>
+						<name>br_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>248</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6271,7 +6271,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>248</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -6308,10 +6308,10 @@
 					<Obj>
 						<type>0</type>
 						<id>301</id>
-						<name>_ln257</name>
+						<name>_ln261</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>257</lineNumber>
+						<lineNumber>261</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6327,7 +6327,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>257</second>
+										<second>261</second>
 									</item>
 								</second>
 							</item>

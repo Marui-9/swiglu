@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 30
+set cdfgNum 28
 set C_modelName {mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -2385,13 +2385,13 @@ set portList {
 	{ d_2_out_ap_vld sc_out sc_logic 1 outvld 582 } 
 	{ d_out sc_out sc_lv 32 signal 583 } 
 	{ d_out_ap_vld sc_out sc_logic 1 outvld 583 } 
-	{ grp_fp16_to_fp32_fu_23667_p_din1 sc_out sc_lv 16 signal -1 } 
-	{ grp_fp16_to_fp32_fu_23667_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fp16_to_fp32_fu_23667_p_ce sc_out sc_logic 1 signal -1 } 
-	{ grp_fp16_to_fp32_fu_23667_p_start sc_out sc_logic 1 signal -1 } 
-	{ grp_fp16_to_fp32_fu_23667_p_ready sc_in sc_logic 1 signal -1 } 
-	{ grp_fp16_to_fp32_fu_23667_p_done sc_in sc_logic 1 signal -1 } 
-	{ grp_fp16_to_fp32_fu_23667_p_idle sc_in sc_logic 1 signal -1 } 
+	{ grp_fp16_to_fp32_fu_20813_p_din1 sc_out sc_lv 16 signal -1 } 
+	{ grp_fp16_to_fp32_fu_20813_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fp16_to_fp32_fu_20813_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fp16_to_fp32_fu_20813_p_start sc_out sc_logic 1 signal -1 } 
+	{ grp_fp16_to_fp32_fu_20813_p_ready sc_in sc_logic 1 signal -1 } 
+	{ grp_fp16_to_fp32_fu_20813_p_done sc_in sc_logic 1 signal -1 } 
+	{ grp_fp16_to_fp32_fu_20813_p_idle sc_in sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -3576,13 +3576,13 @@ set NewPortList {[
  	{ "name": "d_2_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "d_2_out", "role": "ap_vld" }} , 
  	{ "name": "d_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "d_out", "role": "default" }} , 
  	{ "name": "d_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "d_out", "role": "ap_vld" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_23667_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_23667_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_23667_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_23667_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_23667_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_23667_p_ce", "role": "default" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_23667_p_start", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_23667_p_start", "role": "default" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_23667_p_ready", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_23667_p_ready", "role": "default" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_23667_p_done", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_23667_p_done", "role": "default" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_23667_p_idle", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_23667_p_idle", "role": "default" }}  ]}
+ 	{ "name": "grp_fp16_to_fp32_fu_20813_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_20813_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fp16_to_fp32_fu_20813_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_20813_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fp16_to_fp32_fu_20813_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_20813_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fp16_to_fp32_fu_20813_p_start", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_20813_p_start", "role": "default" }} , 
+ 	{ "name": "grp_fp16_to_fp32_fu_20813_p_ready", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_20813_p_ready", "role": "default" }} , 
+ 	{ "name": "grp_fp16_to_fp32_fu_20813_p_done", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_20813_p_done", "role": "default" }} , 
+ 	{ "name": "grp_fp16_to_fp32_fu_20813_p_idle", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_20813_p_idle", "role": "default" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN {

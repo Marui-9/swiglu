@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_gate_Pipeline_GATE_PASS1'" level="0">
-<item name = "Date">Mon Mar 30 15:05:58 2026
+<item name = "Date">Tue Mar 31 16:01:03 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -80,13 +80,13 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln278_fu_348_p2">+, 0, 0, 21, 14, 1</column>
+<column name="add_ln282_fu_348_p2">+, 0, 0, 21, 14, 1</column>
 <column name="add_ln317_fu_409_p2">+, 0, 0, 16, 9, 8</column>
 <column name="result_7_fu_489_p2">-, 0, 0, 39, 1, 32</column>
 <column name="sub_ln18_fu_423_p2">-, 0, 0, 15, 7, 8</column>
-<column name="and_ln287_fu_591_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln288_1_fu_774_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln288_fu_768_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln291_fu_591_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln292_1_fu_774_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln292_fu_768_p2">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_931">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_934">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_937">and, 0, 0, 2, 1, 1</column>
@@ -95,18 +95,18 @@
 <column name="ap_condition_946">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_949">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_952">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln278_fu_342_p2">icmp, 0, 0, 22, 14, 15</column>
-<column name="icmp_ln285_fu_537_p2">icmp, 0, 0, 26, 19, 1</column>
-<column name="icmp_ln287_1_fu_579_p2">icmp, 0, 0, 30, 23, 1</column>
-<column name="icmp_ln287_fu_573_p2">icmp, 0, 0, 15, 8, 2</column>
-<column name="icmp_ln288_1_fu_746_p2">icmp, 0, 0, 15, 8, 2</column>
-<column name="icmp_ln288_2_fu_752_p2">icmp, 0, 0, 30, 23, 1</column>
-<column name="icmp_ln288_3_fu_717_p2">icmp, 0, 0, 15, 8, 2</column>
-<column name="icmp_ln288_4_fu_723_p2">icmp, 0, 0, 30, 23, 1</column>
+<column name="icmp_ln282_fu_342_p2">icmp, 0, 0, 22, 14, 15</column>
+<column name="icmp_ln289_fu_537_p2">icmp, 0, 0, 26, 19, 1</column>
+<column name="icmp_ln291_1_fu_579_p2">icmp, 0, 0, 30, 23, 1</column>
+<column name="icmp_ln291_fu_573_p2">icmp, 0, 0, 15, 8, 2</column>
+<column name="icmp_ln292_1_fu_746_p2">icmp, 0, 0, 15, 8, 2</column>
+<column name="icmp_ln292_2_fu_752_p2">icmp, 0, 0, 30, 23, 1</column>
+<column name="icmp_ln292_3_fu_717_p2">icmp, 0, 0, 15, 8, 2</column>
+<column name="icmp_ln292_4_fu_723_p2">icmp, 0, 0, 30, 23, 1</column>
 <column name="lshr_ln18_fu_449_p2">lshr, 0, 0, 240, 79, 79</column>
-<column name="or_ln287_fu_585_p2">or, 0, 0, 2, 1, 1</column>
-<column name="or_ln288_1_fu_764_p2">or, 0, 0, 2, 1, 1</column>
-<column name="or_ln288_fu_758_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln291_fu_585_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln292_1_fu_764_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln292_fu_758_p2">or, 0, 0, 2, 1, 1</column>
 <column name="abs_g_fu_627_p3">select, 0, 0, 32, 1, 32</column>
 <column name="idx_3_fu_515_p3">select, 0, 0, 31, 1, 1</column>
 <column name="idx_4_fu_543_p3">select, 0, 0, 11, 1, 2</column>
@@ -115,7 +115,7 @@
 <column name="val_fu_481_p3">select, 0, 0, 32, 1, 32</column>
 <column name="shl_ln18_fu_455_p2">shl, 0, 0, 240, 79, 79</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
-<column name="xor_ln287_fu_605_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln291_fu_605_p2">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -183,9 +183,9 @@
 <column name="ap_loop_exit_ready_pp0_iter9_reg">1, 0, 1, 0</column>
 <column name="g_reg_993">32, 0, 32, 0</column>
 <column name="g_reg_993_pp0_iter15_reg">32, 0, 32, 0</column>
-<column name="icmp_ln278_reg_932">1, 0, 1, 0</column>
-<column name="icmp_ln288_3_reg_1019">1, 0, 1, 0</column>
-<column name="icmp_ln288_4_reg_1024">1, 0, 1, 0</column>
+<column name="icmp_ln282_reg_932">1, 0, 1, 0</column>
+<column name="icmp_ln292_3_reg_1019">1, 0, 1, 0</column>
+<column name="icmp_ln292_4_reg_1024">1, 0, 1, 0</column>
 <column name="j_fu_134">14, 0, 14, 0</column>
 <column name="mul_reg_988">32, 0, 32, 0</column>
 <column name="pmax_1_fu_162">32, 0, 32, 0</column>
@@ -197,14 +197,14 @@
 <column name="pmax_7_fu_138">32, 0, 32, 0</column>
 <column name="pmax_fu_166">32, 0, 32, 0</column>
 <column name="scaled_reg_963">32, 0, 32, 0</column>
-<column name="trunc_ln288_reg_946">3, 0, 3, 0</column>
+<column name="trunc_ln292_reg_946">3, 0, 3, 0</column>
 <column name="x2_reg_983">32, 0, 32, 0</column>
 <column name="z_reg_952">32, 0, 32, 0</column>
-<column name="zext_ln278_reg_936">14, 0, 64, 50</column>
-<column name="icmp_ln278_reg_932">64, 32, 1, 0</column>
-<column name="trunc_ln288_reg_946">64, 32, 3, 0</column>
+<column name="zext_ln282_reg_936">14, 0, 64, 50</column>
+<column name="icmp_ln282_reg_932">64, 32, 1, 0</column>
+<column name="trunc_ln292_reg_946">64, 32, 3, 0</column>
 <column name="z_reg_952">64, 32, 32, 0</column>
-<column name="zext_ln278_reg_936">64, 32, 64, 50</column>
+<column name="zext_ln282_reg_936">64, 32, 64, 50</column>
 </table>
 </item>
 </section>

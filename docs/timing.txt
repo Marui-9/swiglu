@@ -1,0 +1,63 @@
+Setup
+Worst Negative Slack (WNS):    3.909 ns
+Total Negative Slack (TNS):    0.000 ns
+Number of Failing Endpoints:   0
+Total Number of Endpoints:     386377
+
+Hold
+Worst Hold Slack (WHS):        -0.082 ns
+Total Hold Slack (THS):        -2804.785 ns
+Number of Failing Endpoints:   110785
+Total Number of Endpoints:     386377
+
+Pulse Width
+Worst Pulse Width Slack (WPWS):            3.550 ns
+Total Pulse Width Negative Slack (TPWS):   0.000 ns
+Number of Failing Endpoints:               0
+Total Number of Endpoints:                 116002
+
+Timing constraints are not met.
+
+notes from vivado docs:
+The Vivado router performs optimization during routing 
+to resolve hold time violations and balance compile time, 
+maximum clock frequency, and congestion. While Xilinx/AMD 
+provides predefined strategies that tune the implementation 
+tools, you can also apply specific directives to the route_design 
+step to alter this behavior.
+Here are the specific routing strategies and directives detailed 
+in the methodology guide, along with when to choose them:
+General Routing Directives
+Default: The router balances compile time with achieving the design's 
+operating clock frequency and alleviating congestion. You should 
+always use the default directive initially when starting a design.
+
+AlternateCLBRouting: This directive forces the router to work harder 
+to access more routing resources to relieve congestion in interconnect 
+tiles. Choose this if you are targeting an UltraScale device and are 
+experiencing long short congestion, or a combination of short and long 
+congestion.
+Explore/Aggressive Directives: While specific names are not exhaustively
+listed listed for routing, the guide notes that some directives will 
+deliberately sacrifice compile time to aggressively reduce congestion or 
+push for a better maximum clock frequency. Choose these other directives 
+only when your design nears completion to explore the solution space if 
+defaults fail to close timing.
+
+Incremental Implementation Route Directives 
+When using the incremental implementation flow to reuse existing placement 
+and routing data, you can apply specific incremental directives to define 
+your target Worst Negative Slack (WNS):
+RuntimeOptimized: Targets the WNS from your reference checkpoint to maintain
+ consistency. Choose this to improve placer and router run time by at least
+2x when you do not need to push for better timing than the reference
+.
+TimingClosure: Targets a WNS of 0.000 ns and can improve WNS by up to 250 ps on difficult designs
+. Choose this when your reference run is very close to meeting timing and you are 
+willing to trade off runtime and consistency for extra effort to close timing.
+Quick: A flow that is not timing-driven, where placement is driven by related logic
+.
+Additional Routing Options
+route_design -ultrathreads: This option gives the router extra freedom to execute multiple 
+threads simultaneously. Choose this only if your environment does not require strictly 
+repeatable results and you want to significantly reduce router compile time.

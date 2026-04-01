@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_row_down_q6k'" level="0">
-<item name = "Date">Mon Mar 30 15:05:59 2026
+<item name = "Date">Tue Mar 31 16:01:06 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -80,7 +80,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="empty_762_fu_160_p2">+, 0, 0, 71, 64, 64</column>
+<column name="empty_758_fu_160_p2">+, 0, 0, 71, 64, 64</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">

@@ -6,6 +6,9 @@
  * Hand-edited 2026-03-23: removed axi_dma_1 (SwiGLU DMA replaced by m_axi
  * masters on swiglu_0); updated swiglu_0 interrupt offset 93→92 (xlconcat
  * resized from 5 to 4 inputs; swiglu moves from In4 to In3).
+ * Hand-edited 2026-03-31: remove legacy axi_dma_0/linear_projection_0 nodes;
+ * swiglu_0 CTRL base now 0xA0000000 (matches Vivado address export and
+ * ggml-cpu.c SWIGLU_IP_BASE); ap_done still on GIC SPI 124 (DT offset 92).
  *
  * Hand-edited 2026-03-24 (Phase B weight cache): udmabuf must be 640 MB.
  * Update the u-dma-buf node in the board DTS (e.g. zynqmp-smk-k26-revA.dts
@@ -49,38 +52,14 @@
 		resets = <&zynqmp_reset 116>, <&zynqmp_reset 117>, <&zynqmp_reset 118>, <&zynqmp_reset 119>;
 	};
 };
+
 &amba {
 	#address-cells = <2>;
 	#size-cells = <2>;
-	axi_dma_0: dma@a0000000 {
-		/* generic-uio: prevents kernel dmaengine driver from claiming the device,
-		 * which would conflict with our userspace /dev/mem register access.
-		 * Exposes the S2MM completion interrupt as /dev/uioN for blocking read().
-		 * Address 0xa0000000 confirmed from working C code (DMA at this address). */
-		compatible = "generic-uio";
-		reg = <0x0 0xa0000000 0x0 0x10000>;
-		interrupt-parent = <&gic>;
-		/* s2mm_introut first (pl_ps_irq0[1] = GIC SPI 122 → DT offset 90),
-		 * mm2s_introut second (pl_ps_irq0[0] = GIC SPI 121 → DT offset 89).
-		 * generic-uio uses the first listed interrupt for blocking read(). */
-		interrupts = <0 90 4>, <0 89 4>;
-		interrupt-names = "s2mm_introut", "mm2s_introut";
-		clocks = <&zynqmp_clk 71>;
-	};
-	linear_projection_0: linear_projection@a0010000 {
-		compatible = "generic-uio";
-		reg = <0x0 0xa0010000 0x0 0x10000>;
-		interrupt-parent = <&gic>;
-		/* ap_done interrupt (pl_ps_irq0[2] = GIC SPI 123 → DT offset 91).
-		 * Level-high (4): cleared by writing 1 to ISR register (offset 0x0C). */
-		interrupts = <0 91 4>;
-		interrupt-names = "interrupt";
-		clocks = <&zynqmp_clk 71>;
-	};
-	swiglu_0: swiglu@a0020000 {
+	swiglu_0: swiglu@a0000000 {
 		/* SwiGLU HLS IP with m_axi interface. generic-uio exposes both the
 		 * AXI-Lite CTRL registers (mmap) and the ap_done interrupt (blocking
-		 * read on /dev/uioN).  open_uio_by_addr(0xa0020000) finds this device.
+		 * read on /dev/uioN).  open_uio_by_addr(0xa0000000) finds this device.
 		 *
 		 * Before writing ap_start the driver programs seven CTRL registers
 		 * (confirmed from xswiglu_hw.h; HLS inserts a reserved word after
@@ -102,10 +81,10 @@
 		 * smartconnect_0 → S_AXI_HP0_FPD → DDR.  No DTS entry needed for
 		 * those ports — they are pure AXI master connections in the fabric. */
 		compatible = "generic-uio";
-		reg = <0x0 0xa0020000 0x0 0x10000>;
+		reg = <0x0 0xa0000000 0x0 0x10000>;
 		interrupt-parent = <&gic>;
 		/* ap_done interrupt: xlconcat In3 (pl_ps_irq0[3] = GIC SPI 124 → DT offset 92).
-		 * xlconcat resized to 4 inputs after axi_dma_1 removal; swiglu moved
+		 * xlconcat resized to 4 inputs after DMA removal; swiglu moved
 		 * from In4 (offset 93) to In3 (offset 92).
 		 * Level-high (4): ACK by writing 0x1 to ISR (CTRL+0x0C, bit 0 TOW). */
 		interrupts = <0 92 4>;

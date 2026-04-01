@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_X1'" level="0">
-<item name = "Date">Mon Mar 30 15:05:57 2026
+<item name = "Date">Tue Mar 31 16:01:03 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -90,8 +90,8 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln227_fu_691_p2">+, 0, 0, 21, 14, 1</column>
-<column name="icmp_ln227_fu_685_p2">icmp, 0, 0, 22, 14, 15</column>
+<column name="add_ln231_fu_691_p2">+, 0, 0, 21, 14, 1</column>
+<column name="icmp_ln231_fu_685_p2">icmp, 0, 0, 22, 14, 15</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
@@ -135,7 +135,7 @@
 <column name="grp_mac_blocks_wv_fu_407_ap_start_reg">1, 0, 1, 0</column>
 <column name="row_2_reg_728">14, 0, 14, 0</column>
 <column name="row_fu_326">14, 0, 14, 0</column>
-<column name="trunc_ln231_reg_736">13, 0, 13, 0</column>
+<column name="trunc_ln235_reg_736">13, 0, 13, 0</column>
 <column name="x_scale_read_reg_718">32, 0, 32, 0</column>
 </table>
 </item>

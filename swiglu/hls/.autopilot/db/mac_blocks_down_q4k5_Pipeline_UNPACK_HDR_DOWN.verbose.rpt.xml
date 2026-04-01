@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN'" level="0">
-<item name = "Date">Mon Mar 30 15:06:03 2026
+<item name = "Date">Tue Mar 31 16:01:09 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -82,8 +82,8 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln357_fu_7878_p2">+, 0, 0, 13, 6, 1</column>
-<column name="icmp_ln357_fu_7872_p2">icmp, 0, 0, 14, 6, 7</column>
+<column name="add_ln361_fu_7878_p2">+, 0, 0, 13, 6, 1</column>
+<column name="icmp_ln361_fu_7872_p2">icmp, 0, 0, 14, 6, 7</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -201,7 +201,7 @@
 <column name="dmin_fu_1542">32, 0, 32, 0</column>
 <column name="grp_fp16_to_fp32_fu_7854_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_fp16_to_fp32_fu_7859_ap_start_reg">1, 0, 1, 0</column>
-<column name="icmp_ln357_reg_19113">1, 0, 1, 0</column>
+<column name="icmp_ln361_reg_19113">1, 0, 1, 0</column>
 <column name="mn6_136_fu_2698">6, 0, 8, 2</column>
 <column name="mn6_137_fu_2702">6, 0, 8, 2</column>
 <column name="mn6_138_fu_2706">6, 0, 8, 2</column>
@@ -714,8 +714,8 @@
 <column name="sc6_389_fu_2686">6, 0, 8, 2</column>
 <column name="sc6_390_fu_2690">6, 0, 8, 2</column>
 <column name="sc6_fu_1670">6, 0, 8, 2</column>
-<column name="trunc_ln357_512_reg_19117">3, 0, 3, 0</column>
-<column name="trunc_ln357_513_reg_19122">5, 0, 5, 0</column>
+<column name="trunc_ln361_512_reg_19117">3, 0, 3, 0</column>
+<column name="trunc_ln361_513_reg_19122">5, 0, 5, 0</column>
 </table>
 </item>
 </section>
@@ -731,13 +731,13 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
-<column name="grp_fp16_to_fp32_fu_23667_p_din1">out, 16, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
-<column name="grp_fp16_to_fp32_fu_23667_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
-<column name="grp_fp16_to_fp32_fu_23667_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
-<column name="grp_fp16_to_fp32_fu_23667_p_start">out, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
-<column name="grp_fp16_to_fp32_fu_23667_p_ready">in, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
-<column name="grp_fp16_to_fp32_fu_23667_p_done">in, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
-<column name="grp_fp16_to_fp32_fu_23667_p_idle">in, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
+<column name="grp_fp16_to_fp32_fu_20813_p_din1">out, 16, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
+<column name="grp_fp16_to_fp32_fu_20813_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
+<column name="grp_fp16_to_fp32_fu_20813_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
+<column name="grp_fp16_to_fp32_fu_20813_p_start">out, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
+<column name="grp_fp16_to_fp32_fu_20813_p_ready">in, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
+<column name="grp_fp16_to_fp32_fu_20813_p_done">in, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
+<column name="grp_fp16_to_fp32_fu_20813_p_idle">in, 1, ap_ctrl_hs, mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, return value</column>
 <column name="rb_0_address0">out, 6, ap_memory, rb_0, array</column>
 <column name="rb_0_ce0">out, 1, ap_memory, rb_0, array</column>
 <column name="rb_0_q0">in, 128, ap_memory, rb_0, array</column>

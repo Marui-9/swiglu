@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN'
 ================================================================
-* Date:           Mon Mar 30 15:06:03 2026
+* Date:           Tue Mar 31 16:01:09 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -98,8 +98,8 @@
     +-----------------------+----------+----+---+----+------------+------------+
     |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +-----------------------+----------+----+---+----+------------+------------+
-    |add_ln357_fu_7878_p2   |         +|   0|  0|  13|           6|           1|
-    |icmp_ln357_fu_7872_p2  |      icmp|   0|  0|  14|           6|           7|
+    |add_ln361_fu_7878_p2   |         +|   0|  0|  13|           6|           1|
+    |icmp_ln361_fu_7872_p2  |      icmp|   0|  0|  14|           6|           7|
     |ap_enable_pp0          |       xor|   0|  0|   2|           1|           2|
     +-----------------------+----------+----+---+----+------------+------------+
     |Total                  |          |   0|  0|  29|          13|          10|
@@ -225,7 +225,7 @@
     |dmin_fu_1542                           |  32|   0|   32|          0|
     |grp_fp16_to_fp32_fu_7854_ap_start_reg  |   1|   0|    1|          0|
     |grp_fp16_to_fp32_fu_7859_ap_start_reg  |   1|   0|    1|          0|
-    |icmp_ln357_reg_19113                   |   1|   0|    1|          0|
+    |icmp_ln361_reg_19113                   |   1|   0|    1|          0|
     |mn6_136_fu_2698                        |   6|   0|    8|          2|
     |mn6_137_fu_2702                        |   6|   0|    8|          2|
     |mn6_138_fu_2706                        |   6|   0|    8|          2|
@@ -738,8 +738,8 @@
     |sc6_389_fu_2686                        |   6|   0|    8|          2|
     |sc6_390_fu_2690                        |   6|   0|    8|          2|
     |sc6_fu_1670                            |   6|   0|    8|          2|
-    |trunc_ln357_512_reg_19117              |   3|   0|    3|          0|
-    |trunc_ln357_513_reg_19122              |   5|   0|    5|          0|
+    |trunc_ln361_512_reg_19117              |   3|   0|    3|          0|
+    |trunc_ln361_513_reg_19122              |   5|   0|    5|          0|
     +---------------------------------------+----+----+-----+-----------+
     |Total                                  |5174|   0| 6198|       1024|
     +---------------------------------------+----+----+-----+-----------+
@@ -759,13 +759,13 @@
 |ap_done                            |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
 |ap_idle                            |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
 |ap_ready                           |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
-|grp_fp16_to_fp32_fu_23667_p_din1   |  out|   16|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
-|grp_fp16_to_fp32_fu_23667_p_dout0  |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
-|grp_fp16_to_fp32_fu_23667_p_ce     |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
-|grp_fp16_to_fp32_fu_23667_p_start  |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
-|grp_fp16_to_fp32_fu_23667_p_ready  |   in|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
-|grp_fp16_to_fp32_fu_23667_p_done   |   in|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
-|grp_fp16_to_fp32_fu_23667_p_idle   |   in|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
+|grp_fp16_to_fp32_fu_20813_p_din1   |  out|   16|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
+|grp_fp16_to_fp32_fu_20813_p_dout0  |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
+|grp_fp16_to_fp32_fu_20813_p_ce     |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
+|grp_fp16_to_fp32_fu_20813_p_start  |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
+|grp_fp16_to_fp32_fu_20813_p_ready  |   in|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
+|grp_fp16_to_fp32_fu_20813_p_done   |   in|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
+|grp_fp16_to_fp32_fu_20813_p_idle   |   in|    1|  ap_ctrl_hs|  mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN|  return value|
 |rb_0_address0                      |  out|    6|   ap_memory|                                           rb_0|         array|
 |rb_0_ce0                           |  out|    1|   ap_memory|                                           rb_0|         array|
 |rb_0_q0                            |   in|  128|   ap_memory|                                           rb_0|         array|

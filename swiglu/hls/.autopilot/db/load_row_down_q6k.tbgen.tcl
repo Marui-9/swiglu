@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 30
+set cdfgNum 28
 set C_modelName {load_row_down_q6k}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -343,7 +343,7 @@ set ArgLastReadFirstWriteLatency {
 		rb_15 {Type O LastRead -1 FirstWrite 2}}
 	load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K {
 		gmem_Wd {Type I LastRead 1 FirstWrite -1}
-		sext_ln472 {Type I LastRead 0 FirstWrite -1}
+		sext_ln436 {Type I LastRead 0 FirstWrite -1}
 		rb_15 {Type O LastRead -1 FirstWrite 2}
 		rb_14 {Type O LastRead -1 FirstWrite 2}
 		rb_13 {Type O LastRead -1 FirstWrite 2}

@@ -62,45 +62,39 @@ set ModuleHierarchy {[{
 		"SubInsts" : [
 		{"Name" : "grp_load_row_down_q4k_fu_295", "RefName" : "load_row_down_q4k","ID" : "36","Type" : "sequential",
 				"SubInsts" : [
-				{"Name" : "grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97", "RefName" : "load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1","ID" : "37","Type" : "sequential",
+				{"Name" : "grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97", "RefName" : "load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1","ID" : "37","Type" : "sequential",
 					"SubLoops" : [
-					{"Name" : "LOAD_DOWN_Q4K_VITIS_LOOP_328_1","RefName" : "LOAD_DOWN_Q4K_VITIS_LOOP_328_1","ID" : "38","Type" : "pipeline"},]},]},
+					{"Name" : "LOAD_DOWN_Q4K_VITIS_LOOP_332_1","RefName" : "LOAD_DOWN_Q4K_VITIS_LOOP_332_1","ID" : "38","Type" : "pipeline"},]},]},
 		{"Name" : "grp_mac_blocks_down_q4k5_fu_349", "RefName" : "mac_blocks_down_q4k5","ID" : "39","Type" : "sequential",
 				"SubInsts" : [
-				{"Name" : "grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420", "RefName" : "mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN","ID" : "40","Type" : "sequential",
+				{"Name" : "grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416", "RefName" : "mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN","ID" : "40","Type" : "sequential",
 					"SubLoops" : [
 					{"Name" : "UNPACK_HDR_DOWN","RefName" : "UNPACK_HDR_DOWN","ID" : "41","Type" : "pipeline",
 					"SubInsts" : [
 					{"Name" : "fp16_to_fp32", "RefName" : "fp16_to_fp32","ID" : "42","Type" : "pipeline"},
 					{"Name" : "grp_fp16_to_fp32_fu_7859", "RefName" : "fp16_to_fp32","ID" : "43","Type" : "pipeline"},]},]},
-				{"Name" : "grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016", "RefName" : "mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0","ID" : "44","Type" : "sequential",
+				{"Name" : "grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012", "RefName" : "mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL","ID" : "44","Type" : "sequential",
 					"SubLoops" : [
-					{"Name" : "MAC_BLOCKS_G0","RefName" : "MAC_BLOCKS_G0","ID" : "45","Type" : "pipeline"},]},
-				{"Name" : "grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308", "RefName" : "mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1","ID" : "46","Type" : "sequential",
+					{"Name" : "MAC_BLOCKS_ALL","RefName" : "MAC_BLOCKS_ALL","ID" : "45","Type" : "pipeline"},]},
+				{"Name" : "grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072", "RefName" : "mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K","ID" : "46","Type" : "sequential",
 					"SubLoops" : [
-					{"Name" : "MAC_BLOCKS_G1","RefName" : "MAC_BLOCKS_G1","ID" : "47","Type" : "pipeline"},]},
-				{"Name" : "grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600", "RefName" : "mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2","ID" : "48","Type" : "sequential",
-					"SubLoops" : [
-					{"Name" : "MAC_BLOCKS_G2","RefName" : "MAC_BLOCKS_G2","ID" : "49","Type" : "pipeline"},]},
-				{"Name" : "grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892", "RefName" : "mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3","ID" : "50","Type" : "sequential",
-					"SubLoops" : [
-					{"Name" : "MAC_BLOCKS_G3","RefName" : "MAC_BLOCKS_G3","ID" : "51","Type" : "pipeline"},]},]},]},
-		{"Name" : "DOWN_Q6K","RefName" : "DOWN_Q6K","ID" : "52","Type" : "no",
+					{"Name" : "REDUCE_DOWN_Q4K","RefName" : "REDUCE_DOWN_Q4K","ID" : "47","Type" : "pipeline"},]},]},]},
+		{"Name" : "DOWN_Q6K","RefName" : "DOWN_Q6K","ID" : "48","Type" : "no",
 		"SubInsts" : [
-		{"Name" : "grp_load_row_down_q6k_fu_271", "RefName" : "load_row_down_q6k","ID" : "53","Type" : "sequential",
+		{"Name" : "grp_load_row_down_q6k_fu_271", "RefName" : "load_row_down_q6k","ID" : "49","Type" : "sequential",
 				"SubInsts" : [
-				{"Name" : "grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107", "RefName" : "load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K","ID" : "54","Type" : "sequential",
+				{"Name" : "grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107", "RefName" : "load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K","ID" : "50","Type" : "sequential",
 					"SubLoops" : [
-					{"Name" : "LOAD_DOWN_Q6K","RefName" : "LOAD_DOWN_Q6K","ID" : "55","Type" : "pipeline"},]},]},
-		{"Name" : "grp_mac_blocks_down_q6k_fu_311", "RefName" : "mac_blocks_down_q6k","ID" : "56","Type" : "sequential",
+					{"Name" : "LOAD_DOWN_Q6K","RefName" : "LOAD_DOWN_Q6K","ID" : "51","Type" : "pipeline"},]},]},
+		{"Name" : "grp_mac_blocks_down_q6k_fu_311", "RefName" : "mac_blocks_down_q6k","ID" : "52","Type" : "sequential",
 				"SubLoops" : [
-				{"Name" : "VITIS_LOOP_487_1","RefName" : "VITIS_LOOP_487_1","ID" : "57","Type" : "no",
+				{"Name" : "VITIS_LOOP_451_1","RefName" : "VITIS_LOOP_451_1","ID" : "53","Type" : "no",
 				"SubInsts" : [
-				{"Name" : "grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_706", "RefName" : "mac_blocks_down_q6k_Pipeline_MAC_Q6K","ID" : "58","Type" : "sequential",
+				{"Name" : "grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K_fu_706", "RefName" : "mac_blocks_down_q6k_Pipeline_MAC_Q6K","ID" : "54","Type" : "sequential",
 						"SubLoops" : [
-						{"Name" : "MAC_Q6K","RefName" : "MAC_Q6K","ID" : "59","Type" : "pipeline"},]},
-				{"Name" : "fp16_to_fp32", "RefName" : "fp16_to_fp32","ID" : "60","Type" : "pipeline"},
-				{"Name" : "grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_767", "RefName" : "mac_blocks_down_q6k_Pipeline_MAC_Q6K9","ID" : "61","Type" : "sequential",
+						{"Name" : "MAC_Q6K","RefName" : "MAC_Q6K","ID" : "55","Type" : "pipeline"},]},
+				{"Name" : "fp16_to_fp32", "RefName" : "fp16_to_fp32","ID" : "56","Type" : "pipeline"},
+				{"Name" : "grp_mac_blocks_down_q6k_Pipeline_MAC_Q6K9_fu_767", "RefName" : "mac_blocks_down_q6k_Pipeline_MAC_Q6K9","ID" : "57","Type" : "sequential",
 						"SubLoops" : [
-						{"Name" : "MAC_Q6K","RefName" : "MAC_Q6K","ID" : "62","Type" : "pipeline"},]},]},]},]},]},]
+						{"Name" : "MAC_Q6K","RefName" : "MAC_Q6K","ID" : "58","Type" : "pipeline"},]},]},]},]},]},]
 }]}

@@ -718,6 +718,7 @@ static const struct ggml_type_traits type_traits[GGML_TYPE_COUNT] = {
         .to_float                 = (ggml_to_float_t) dequantize_row_mxfp4,
         .from_float_ref           = (ggml_from_float_t)quantize_row_mxfp4_ref,
     },
+#ifdef QK_NVFP4
     [GGML_TYPE_NVFP4] = {
         .type_name                = "nvfp4",
         .blck_size                = QK_NVFP4,
@@ -726,6 +727,7 @@ static const struct ggml_type_traits type_traits[GGML_TYPE_COUNT] = {
         .to_float                 = (ggml_to_float_t) dequantize_row_nvfp4,
         .from_float_ref           = (ggml_from_float_t)quantize_row_nvfp4_ref,
     },
+#endif
     [GGML_TYPE_Q2_K] = {
         .type_name                = "q2_K",
         .blck_size                = QK_K,
@@ -952,7 +954,7 @@ struct ggml_context {
 static const char * GGML_OP_NAME[GGML_OP_COUNT] = {
     "NONE",
 //modified here
-    "SWIGLU_FUSED_HW"
+    "SWIGLU_FUSED_HW",
 ///////
     "DUP",
     "ADD",
@@ -1059,7 +1061,7 @@ static const char * GGML_OP_NAME[GGML_OP_COUNT] = {
     "GLU",
 };
 
-static_assert(GGML_OP_COUNT == 96, "GGML_OP_COUNT != 96");
+static_assert(GGML_OP_COUNT == 97, "GGML_OP_COUNT != 97");
 
 static const char * GGML_OP_SYMBOL[GGML_OP_COUNT] = {
     "none",
@@ -1169,7 +1171,7 @@ static const char * GGML_OP_SYMBOL[GGML_OP_COUNT] = {
     "glu(x)",
 };
 
-static_assert(GGML_OP_COUNT == 96, "GGML_OP_COUNT != 96");
+static_assert(GGML_OP_COUNT == 97, "GGML_OP_COUNT != 97");
 
 static_assert(GGML_OP_POOL_COUNT == 2, "GGML_OP_POOL_COUNT != 2");
 
@@ -1390,7 +1392,9 @@ enum ggml_type ggml_ftype_to_ggml_type(enum ggml_ftype ftype) {
         case GGML_FTYPE_MOSTLY_Q5_1:          wtype = GGML_TYPE_Q5_1;  break;
         case GGML_FTYPE_MOSTLY_Q8_0:          wtype = GGML_TYPE_Q8_0;  break;
         case GGML_FTYPE_MOSTLY_MXFP4:         wtype = GGML_TYPE_MXFP4; break;
+#ifdef QK_NVFP4
         case GGML_FTYPE_MOSTLY_NVFP4:         wtype = GGML_TYPE_NVFP4; break;
+#endif
         case GGML_FTYPE_MOSTLY_Q2_K:          wtype = GGML_TYPE_Q2_K;  break;
         case GGML_FTYPE_MOSTLY_Q3_K:          wtype = GGML_TYPE_Q3_K;  break;
         case GGML_FTYPE_MOSTLY_Q4_K:          wtype = GGML_TYPE_Q4_K;  break;
@@ -2918,40 +2922,29 @@ struct ggml_tensor * ggml_round_inplace(
 //   w_gate : [n_embd*4, n_embd]   (ff_dim, n_embd)
 //   w_up   : [n_embd*4, n_embd]
 //   w_down : [n_embd,   n_embd*4]
-// Biases are optional; set to NULL if unused.
 struct ggml_tensor * ggml_swiglu_fused_hw(
-        struct ggml_context * ctx,
-        struct ggml_tensor  * x,
-        struct ggml_tensor  * w_gate,
-        struct ggml_tensor  * w_up,
-        struct ggml_tensor  * w_down,
-        struct ggml_tensor  * b_gate,
-        struct ggml_tensor  * b_up,
-        struct ggml_tensor  * b_down) {
+                struct ggml_context * ctx,
+                struct ggml_tensor  * x,
+                struct ggml_tensor  * w_gate,
+                struct ggml_tensor  * w_up,
+                struct ggml_tensor  * w_down) {
 
-    GGML_ASSERT(x->ne[0] == w_down->ne[1]);   // n_embd matches
-    GGML_ASSERT(w_gate->ne[0] == w_up->ne[0]);
-    GGML_ASSERT(w_down->ne[0] == x->ne[0]);   // output = n_embd
-    // Optional: assert quantized types for weights, F32 for x.
+                    GGML_ASSERT(x->ne[0] == w_down->ne[1]);   // n_embd matches
+                    GGML_ASSERT(w_gate->ne[0] == w_up->ne[0]);
+                    GGML_ASSERT(w_down->ne[0] == x->ne[0]);   // output = n_embd
+                    // Optional: assert quantized types for weights, F32 for x.
 
-    const int64_t ne[4] = { w_down->ne[0], x->ne[1], x->ne[2], x->ne[3] };
-    struct ggml_tensor * result = ggml_new_tensor(ctx, GGML_TYPE_F32, 4, ne);
+                    const int64_t ne[4] = { w_down->ne[0], x->ne[1], x->ne[2], x->ne[3] };
+                    struct ggml_tensor * result = ggml_new_tensor(ctx, GGML_TYPE_F32, 4, ne);
 
-    result->op     = GGML_OP_SWIGLU_FUSED_HW;
-    result->src[0] = x;
-    result->src[1] = w_gate;
-    result->src[2] = w_up;
-    result->src[3] = w_down;
-    result->src[4] = b_gate;
-    result->src[5] = b_up;
-    result->src[6] = b_down;
+                    result->op     = GGML_OP_SWIGLU_FUSED_HW;
+                    result->src[0] = x;
+                    result->src[1] = w_gate;
+                    result->src[2] = w_up;
+                    result->src[3] = w_down;
 
-    // Store bias-present flags in op_params (bits 0/1/2).
-    uint32_t flags = (b_gate ? 1u : 0u) | (b_up ? 2u : 0u) | (b_down ? 4u : 0u);
-    ggml_set_op_params_i32(result, 0, (int32_t)flags);
-
-    return result;
-}
+                    return result;
+                }
 //////////////////////////////////
 
 //ggml_trunc
@@ -7703,7 +7696,9 @@ size_t ggml_quantize_chunk(
         case GGML_TYPE_Q5_1:    result = quantize_q5_1(src + start, (char *) dst + start_row * row_size, nrows, n_per_row, imatrix); break;
         case GGML_TYPE_Q8_0:    result = quantize_q8_0(src + start, (char *) dst + start_row * row_size, nrows, n_per_row, imatrix); break;
         case GGML_TYPE_MXFP4:   result = quantize_mxfp4(src + start, (char *) dst + start_row * row_size, nrows, n_per_row, imatrix); break;
+#ifdef QK_NVFP4
         case GGML_TYPE_NVFP4:   result = quantize_nvfp4(src + start, (char *) dst + start_row * row_size, nrows, n_per_row, imatrix); break;
+#endif
         case GGML_TYPE_Q2_K:    result = quantize_q2_K(src + start, (char *) dst + start_row * row_size, nrows, n_per_row, imatrix); break;
         case GGML_TYPE_Q3_K:    result = quantize_q3_K(src + start, (char *) dst + start_row * row_size, nrows, n_per_row, imatrix); break;
         case GGML_TYPE_Q4_K:    result = quantize_q4_K(src + start, (char *) dst + start_row * row_size, nrows, n_per_row, imatrix); break;

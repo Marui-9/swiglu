@@ -1,0 +1,84 @@
+General pragma purposes (where they appear):
+- DATAFLOW: overlaps independent tasks; used once at top level.
+- ARRAY_PARTITION: creates multiple banks for parallel reads/writes; 
+    placed on local buffers (x_local, rb, gate_cache) to match 
+    unroll width.
+- INLINE off: keeps functions as separate dataflow processes; used on 
+    load/compute functions.
+- BIND_OP op=mul impl=dsp: forces multiplies into DSP slices for 
+    speed/area predictability; used in MAC kernels.
+- LATENCY min=2: allows insertion of a pipeline register between 
+    decode and accumulate to shorten critical paths; applied inside hot 
+    loops.
+- UNROLL / UNROLL factor=8: replicates loop iterations for parallelism; 
+    tuned to factor 8 now to ease timing.
+- BALANCE: asks HLS to balance adder trees, reducing depth; used on 
+    accumulation variables.
+- PIPELINE II=1: one iteration per clock; ubiquitous in inner loops 
+    and loaders.
+
+
+Top level: swiglu (Phase 0–5 orchestration)
+#pragma HLS INTERFACE ... m_axi on W, V, W_down, x_batch, out_batch: 
+creates AXI master ports for bulk DDR access.
+#pragma HLS INTERFACE ... s_axilite on args/return: exposes control 
+regs for software.
+#pragma HLS DATAFLOW (after local buffer declarations): lets the 
+subfunctions (load_x_local, compute_X1, compute_X2, compute_gate, 
+compute_output) run concurrently as a pipeline when dependencies 
+allow—crucial for overlapping Phases 0–5.
+Local buffers use #pragma HLS BIND_STORAGE (e.g., LUTRAM/URAM) and 
+ARRAY_PARTITION to increase read bandwidth from on‑chip memory, 
+matching downstream parallelism.
+Why: DATAFLOW gives throughput; port/buffer pragmas expose the 
+needed AXI and on‑chip memory bandwidth.
+
+Phase 0: load_x_local
+Function has #pragma HLS INLINE off: keeps it as its own dataflow task, 
+not inlined into swiglu.
+#pragma HLS ARRAY_PARTITION on x_local_1/2 dim=2 complete: splits the 
+8 blocks so compute_X1/2 can read all 8 in parallel.
+needed for 8-way banking to feed W/V MACs. Correct.
+Inner loop #pragma HLS PIPELINE II=1: one 128‑bit burst word per cycle.
+Why: provide 8-way parallel BRAM banks to feed both projectors at II=1.
+
+Phases 1 & 2: compute_X1 / compute_X2
+Functions INLINE off: keep as separate dataflow tasks.
+ARRAY_PARTITION on x_local_* dim=2 complete: matches 8 blocks per row.
+BIND_STORAGE on row buffers to LUTRAM: low‑latency scratch for each row.
+load_row_wv: PIPELINE II=1 loads one 128‑bit word per cycle; 
+ARRAY_PARTITION on rb dim=1 complete to provide per‑block banking.
+
+mac_blocks_wv:
+BIND_OP op=mul impl=dsp: force multiplies into DSPs.
+PIPELINE II=1 + LATENCY min=2: allow a register stage between decode 
+and MAC to help timing.
+ARRAY_PARTITION on accum arrays and headers: parallel per‑block access.
+UNROLL in outer reductions to sum block accumulators in parallel.
+BALANCE variable=total: ask HLS to balance the reduction tree.
+Why: sustain II=1 through 8 blocks with manageable logic depth.
+Phases 3 & 4: compute_gate
+Function INLINE off: its own dataflow stage.
+Two passes:
+Pass 1: PIPELINE II=1 to scan X1/X2 and find max; small 8‑lane partial max arrays 
+(no explicit pragmas beyond default; partitioning of pmax implied by UNROLL).
+Pass 2: PIPELINE II=1 to recompute, quantize to INT8, and write gate_cache.
+ARRAY_PARTITION on gate_cache dim=2 cyclic factor=8: 8 banks for downstream 8‑way groups.
+Why: keep gate production at one element per cycle, feed wide downstream MACs.
+
+Phase 5: compute_output (Q4_K path shown)
+ARRAY_PARTITION on gate_cache dim=2 cyclic factor=8: matches 8‑way unroll.
+load_row_down_q4k:
+INLINE off
+ARRAY_PARTITION rb dim=1 cyclic factor=8
+PIPELINE II=1 inside: stream a row with banking for parallel MACs.
+mac_blocks_down_q4k:
+BIND_OP op=mul impl=dsp: use DSPs for products.
+ARRAY_PARTITION on rb (cyclic 8) and gate (cyclic 8): allow 8 blocks in parallel.
+Single loop over blocks with UNROLL factor=8: processes 8 of 32 blocks per cycle 
+(reduced from full 32 to ease timing).
+PIPELINE II=1 + LATENCY min=2: keep throughput, add a register stage between decode and MAC.
+BALANCE variable=total and UNROLL factor=8 on reduction: shape the adder tree for timing.
+Q6_K path uses similar partitioning and DSP binding; no unroll on blocks (computed sequentially 
+per block) but partitions rb cyclic for bandwidth.
+Why: throttle parallelism to factor 8 to meet timing while preserving II=1 streaming.

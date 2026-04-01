@@ -805,14 +805,11 @@ extern "C" {
     GGML_API size_t  ggml_get_max_tensor_size(const struct ggml_context * ctx);
 
     ///////modified here
-    struct ggml_tensor * ggml_swiglu_fused_hw(struct ggml_context * ctx,
+    GGML_API struct ggml_tensor * ggml_swiglu_fused_hw(struct ggml_context * ctx,
                                           struct ggml_tensor  * x,
                                           struct ggml_tensor  * w_gate,
                                           struct ggml_tensor  * w_up,
-                                          struct ggml_tensor  * w_down,
-                                          struct ggml_tensor  * b_gate,
-                                          struct ggml_tensor  * b_up,
-                                          struct ggml_tensor  * b_down);
+                                          struct ggml_tensor  * w_down);
 //////////////////////////////////////
 
     GGML_API struct ggml_tensor * ggml_new_tensor(

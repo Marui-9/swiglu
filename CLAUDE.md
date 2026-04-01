@@ -11,6 +11,17 @@ as the reference for all HLS and software driver patterns.
 
 ---
 
+## Recent changes (2026-04-01)
+
+- llama.cpp graph wiring: added `GGML_OP_SWIGLU_FUSED_HW` fused op to emit the hardware node at graph-build time instead of intercepting at MUL_MAT level. Changes made:
+  - `ggml.h` line 474: `GGML_OP_SWIGLU_FUSED_HW` added to `enum ggml_op` (value 1, right after GGML_OP_NONE).
+  - `ggml.h` line 808: `GGML_API struct ggml_tensor * ggml_swiglu_fused_hw(ctx, x, w_gate, w_up, w_down)` declared (4 params, no biases — LFM2 has no FFN biases).
+  - `ggml.c` line 955: `"SWIGLU_FUSED_HW"` added to `GGML_OP_NAME` array (with trailing comma).
+  - `ggml.c` line 2922: builder function `ggml_swiglu_fused_hw()` added — sets `result->op`, wires `src[0..3]`, returns result. No bias params, no op_params needed.
+  - `ggml-cpu.c` line 2191: `case GGML_OP_SWIGLU_FUSED_HW: n_tasks = 1;` in n_tasks switch.
+  - `ggml-cpu.c` line 1700: `case GGML_OP_SWIGLU_FUSED_HW:` dispatches to `ggml_compute_forward_swiglu_fused_hw`.
+- Next step: find the LFM2 model file under `src/models/` in the llama.cpp tree and replace the `build_ffn()` call with `ggml_swiglu_fused_hw()` when `LLAMA_SWIHW=1` and shapes/types match.
+
 ## Recent changes (2026-03-30)
 
 - HLS: moved all hot scratch buffers to BRAM (row_buf in X1/X2/output, out_local, x_local_1/2, sigmoid_lut ROM) and kept cache arrays in URAM; Q4 down-path inner unroll restored to 2; DSP binding applied to hot muls; AXI outstanding depth reduced to 2 to curb LUTRAM FIFO growth.
@@ -338,6 +349,21 @@ Full decode call (Q4K layers): compute_X1 ∥ compute_X2 (~7.3ms) + gate (~1ms) 
 | + RC8 (300 MHz clock)                       | ~12–15ms  | ~4.1  | ← target
 
 ## What Remains To Be Done
+
+### 0. Wire fused op into graph construction (NEXT STEP)
+
+`ggml_swiglu_fused_hw()` is now declared and built (ggml.h/ggml.c), and dispatched in
+ggml-cpu.c. The missing piece: no code in the llama.cpp model layer currently calls it,
+so no `GGML_OP_SWIGLU_FUSED_HW` nodes ever appear in the graph.
+
+**Plan:**
+- Locate the LFM2 architecture file under `src/models/` in the llama.cpp tree.
+- Find the `build_ffn()` call site for the SwiGLU layers.
+- Add a guard: if `LLAMA_SWIHW=1` env var is set AND shapes/types match (x F32 [2048,1],
+  w_gate/w_up Q4_K [2048,8192], w_down Q4_K or Q6_K [8192,2048]), emit
+  `ggml_swiglu_fused_hw(ctx, x, w_gate, w_up, w_down)` instead of the standard chain.
+- No post-build rewrite pass — emit at build time only.
+- Verify: `LLAMA_SWIHW=1 SWIGLU_DEBUG=1 ./llama-bench ...` → `[SWG]` log lines appear.
 
 ### 1. Run C-Simulation (HIGH PRIORITY)
 

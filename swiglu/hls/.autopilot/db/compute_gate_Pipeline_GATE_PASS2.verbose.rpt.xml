@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_gate_Pipeline_GATE_PASS2'" level="0">
-<item name = "Date">Mon Mar 30 15:05:58 2026
+<item name = "Date">Tue Mar 31 16:01:04 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -79,17 +79,17 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln301_fu_363_p2">+, 0, 0, 21, 14, 1</column>
+<column name="add_ln305_fu_363_p2">+, 0, 0, 21, 14, 1</column>
 <column name="add_ln317_1_fu_637_p2">+, 0, 0, 16, 9, 8</column>
 <column name="add_ln317_fu_462_p2">+, 0, 0, 16, 9, 8</column>
 <column name="result_2_fu_542_p2">-, 0, 0, 39, 1, 32</column>
 <column name="result_5_fu_726_p2">-, 0, 0, 39, 1, 32</column>
 <column name="sub_ln18_1_fu_651_p2">-, 0, 0, 15, 7, 8</column>
 <column name="sub_ln18_fu_476_p2">-, 0, 0, 15, 7, 8</column>
-<column name="icmp_ln301_fu_357_p2">icmp, 0, 0, 22, 14, 15</column>
-<column name="icmp_ln308_fu_590_p2">icmp, 0, 0, 26, 19, 1</column>
-<column name="icmp_ln312_fu_749_p2">icmp, 0, 0, 32, 25, 1</column>
-<column name="icmp_ln313_fu_763_p2">icmp, 0, 0, 39, 32, 9</column>
+<column name="icmp_ln305_fu_357_p2">icmp, 0, 0, 22, 14, 15</column>
+<column name="icmp_ln312_fu_590_p2">icmp, 0, 0, 26, 19, 1</column>
+<column name="icmp_ln316_fu_749_p2">icmp, 0, 0, 32, 25, 1</column>
+<column name="icmp_ln317_fu_763_p2">icmp, 0, 0, 39, 32, 9</column>
 <column name="lshr_ln18_1_fu_687_p2">lshr, 0, 0, 240, 79, 79</column>
 <column name="lshr_ln18_fu_502_p2">lshr, 0, 0, 240, 79, 79</column>
 <column name="idx_1_fu_568_p3">select, 0, 0, 31, 1, 1</column>
@@ -99,7 +99,7 @@
 <column name="result_fu_548_p3">select, 0, 0, 32, 1, 32</column>
 <column name="select_ln18_2_fu_673_p3">select, 0, 0, 9, 1, 9</column>
 <column name="select_ln18_fu_486_p3">select, 0, 0, 9, 1, 9</column>
-<column name="select_ln314_fu_773_p3">select, 0, 0, 9, 1, 9</column>
+<column name="select_ln318_fu_773_p3">select, 0, 0, 9, 1, 9</column>
 <column name="val_16_fu_719_p3">select, 0, 0, 32, 1, 32</column>
 <column name="val_fu_534_p3">select, 0, 0, 32, 1, 32</column>
 <column name="shl_ln18_1_fu_693_p2">shl, 0, 0, 240, 79, 79</column>
@@ -158,23 +158,23 @@
 <column name="ap_loop_exit_ready_pp0_iter9_reg">1, 0, 1, 0</column>
 <column name="g_reg_888">32, 0, 32, 0</column>
 <column name="j_fu_140">14, 0, 14, 0</column>
-<column name="lshr_ln314_1_reg_842">2, 0, 2, 0</column>
+<column name="lshr_ln318_1_reg_842">2, 0, 2, 0</column>
 <column name="mul9_reg_883">32, 0, 32, 0</column>
 <column name="scaled_reg_858">32, 0, 32, 0</column>
 <column name="sub_ln18_1_reg_914">8, 0, 8, 0</column>
-<column name="tmp_712_reg_908">1, 0, 1, 0</column>
-<column name="trunc_ln314_1_reg_833">8, 0, 8, 0</column>
-<column name="trunc_ln314_4_reg_838">3, 0, 3, 0</column>
+<column name="tmp_857_reg_908">1, 0, 1, 0</column>
+<column name="trunc_ln318_1_reg_833">8, 0, 8, 0</column>
+<column name="trunc_ln318_4_reg_838">3, 0, 3, 0</column>
 <column name="trunc_ln342_1_reg_898">23, 0, 23, 0</column>
 <column name="x2_reg_878">32, 0, 32, 0</column>
 <column name="xs_sign_1_reg_893">1, 0, 1, 0</column>
 <column name="z_reg_847">32, 0, 32, 0</column>
-<column name="zext_ln301_reg_823">14, 0, 64, 50</column>
-<column name="lshr_ln314_1_reg_842">64, 32, 2, 0</column>
-<column name="trunc_ln314_1_reg_833">64, 32, 8, 0</column>
-<column name="trunc_ln314_4_reg_838">64, 32, 3, 0</column>
+<column name="zext_ln305_reg_823">14, 0, 64, 50</column>
+<column name="lshr_ln318_1_reg_842">64, 32, 2, 0</column>
+<column name="trunc_ln318_1_reg_833">64, 32, 8, 0</column>
+<column name="trunc_ln318_4_reg_838">64, 32, 3, 0</column>
 <column name="z_reg_847">64, 32, 32, 0</column>
-<column name="zext_ln301_reg_823">64, 32, 64, 50</column>
+<column name="zext_ln305_reg_823">64, 32, 64, 50</column>
 </table>
 </item>
 </section>

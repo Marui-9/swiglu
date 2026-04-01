@@ -917,7 +917,7 @@
             <Obj>
               <type>0</type>
               <id>42</id>
-              <name>empty_762</name>
+              <name>empty_758</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -928,7 +928,7 @@
                 <item_version>0</item_version>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>empty_762_fu_160_p2</rtlName>
+              <rtlName>empty_758_fu_160_p2</rtlName>
               <control>auto</control>
               <opType>add</opType>
               <implIndex>fabric</implIndex>
@@ -963,7 +963,7 @@
               <name>trunc_ln</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>472</lineNumber>
+              <lineNumber>436</lineNumber>
               <contextFuncName>load_row_down_q6k</contextFuncName>
               <contextNormFuncName>load_row_down_q6k</contextNormFuncName>
               <inlineStackInfo>
@@ -979,7 +979,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_down_q6k</second>
                       </first>
-                      <second>472</second>
+                      <second>436</second>
                     </item>
                   </second>
                 </item>
@@ -1019,10 +1019,10 @@
             <Obj>
               <type>0</type>
               <id>44</id>
-              <name>sext_ln472</name>
+              <name>sext_ln436</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>472</lineNumber>
+              <lineNumber>436</lineNumber>
               <contextFuncName>load_row_down_q6k</contextFuncName>
               <contextNormFuncName>load_row_down_q6k</contextNormFuncName>
               <inlineStackInfo>
@@ -1038,13 +1038,13 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_down_q6k</second>
                       </first>
-                      <second>472</second>
+                      <second>436</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>sext_ln472_fu_176_p1</rtlName>
+              <rtlName>sext_ln436_fu_176_p1</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -1078,7 +1078,7 @@
               <name>gmem_Wd_addr</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>472</lineNumber>
+              <lineNumber>436</lineNumber>
               <contextFuncName>load_row_down_q6k</contextFuncName>
               <contextNormFuncName>load_row_down_q6k</contextNormFuncName>
               <inlineStackInfo>
@@ -1094,7 +1094,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_down_q6k</second>
                       </first>
-                      <second>472</second>
+                      <second>436</second>
                     </item>
                   </second>
                 </item>
@@ -1132,10 +1132,10 @@
             <Obj>
               <type>0</type>
               <id>46</id>
-              <name>empty_763</name>
+              <name>empty_759</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>472</lineNumber>
+              <lineNumber>436</lineNumber>
               <contextFuncName>load_row_down_q6k</contextFuncName>
               <contextNormFuncName>load_row_down_q6k</contextNormFuncName>
               <inlineStackInfo>
@@ -1151,7 +1151,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_down_q6k</second>
                       </first>
-                      <second>472</second>
+                      <second>436</second>
                     </item>
                   </second>
                 </item>
@@ -1190,10 +1190,10 @@
             <Obj>
               <type>0</type>
               <id>47</id>
-              <name>_ln472</name>
+              <name>_ln436</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>472</lineNumber>
+              <lineNumber>436</lineNumber>
               <contextFuncName>load_row_down_q6k</contextFuncName>
               <contextNormFuncName>load_row_down_q6k</contextNormFuncName>
               <inlineStackInfo>
@@ -1209,7 +1209,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_down_q6k</second>
                       </first>
-                      <second>472</second>
+                      <second>436</second>
                     </item>
                   </second>
                 </item>
@@ -1265,10 +1265,10 @@
             <Obj>
               <type>0</type>
               <id>48</id>
-              <name>_ln476</name>
+              <name>_ln440</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>476</lineNumber>
+              <lineNumber>440</lineNumber>
               <contextFuncName>load_row_down_q6k</contextFuncName>
               <contextNormFuncName>load_row_down_q6k</contextNormFuncName>
               <inlineStackInfo>
@@ -1284,7 +1284,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_down_q6k</second>
                       </first>
-                      <second>476</second>
+                      <second>440</second>
                     </item>
                   </second>
                 </item>
@@ -3971,7 +3971,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item>
-          <first>empty_762_fu_160_p2 ( + ) </first>
+          <first>empty_758_fu_160_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -4514,7 +4514,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item>
-          <first>empty_762_fu_160_p2 ( + ) </first>
+          <first>empty_758_fu_160_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -4801,7 +4801,7 @@
       <count>7</count>
       <item_version>0</item_version>
       <item class_id="52" tracking_level="0" version="0">
-        <first>empty_762_fu_160</first>
+        <first>empty_758_fu_160</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -4841,7 +4841,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln472_fu_176</first>
+        <first>sext_ln436_fu_176</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

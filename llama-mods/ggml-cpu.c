@@ -55,6 +55,8 @@ static volatile uint32_t *swg_ip_regs = NULL;
 static int swiglu_uio_fd = -1;
 static int swiglu_uio_idx = -1;
 static int swiglu_call_count = 0;
+// Debug toggle: set SWIGLU_DEBUG=1 to log offload activity to stderr
+static int swiglu_dbg_enabled = -1;
 
 #define SWG_NUM_LAYERS 16
 static bool swg_layer_W_loaded [SWG_NUM_LAYERS];
@@ -80,7 +82,7 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_OUTPUT_SIZE     8192U        // 2048 floats
 
 // IP CTRL register offsets
-#define SWIGLU_IP_BASE   0xA0020000UL
+#define SWIGLU_IP_BASE   0xA0000000 
 #define SWG_CTRL_AP_CTRL 0x00
 #define SWG_CTRL_GIE     0x04
 #define SWG_CTRL_IER     0x08
@@ -399,12 +401,14 @@ static const struct ggml_type_traits_cpu type_traits_cpu[GGML_TYPE_COUNT] = {
         .vec_dot_type             = GGML_TYPE_Q8_0,
         .nrows                    = 1,
     },
+#ifdef QK_NVFP4
     [GGML_TYPE_NVFP4] = {
         .from_float               = quantize_row_nvfp4,
         .vec_dot                  = ggml_vec_dot_nvfp4_q8_0,
         .vec_dot_type             = GGML_TYPE_Q8_0,
         .nrows                    = 1,
     },
+#endif
     [GGML_TYPE_Q2_K] = {
         .from_float               = quantize_row_q2_K,
         .vec_dot                  = ggml_vec_dot_q2_K_q8_K,
@@ -1819,6 +1823,11 @@ static void ggml_compute_forward_swiglu_fused_hw(
 
     if (params->ith != 0) return; // n_tasks set to 1
 
+    if (swiglu_dbg_enabled == -1) {
+        const char *env = getenv("SWIGLU_DEBUG");
+        swiglu_dbg_enabled = (env && env[0] == '1') ? 1 : 0;
+    }
+
     struct ggml_tensor * x      = dst->src[0];
     struct ggml_tensor * W_gate = dst->src[1];
     struct ggml_tensor * W_up   = dst->src[2];
@@ -1832,8 +1841,8 @@ static void ggml_compute_forward_swiglu_fused_hw(
         x->ne[0] != 2048 || W_gate->ne[0] != 2048 || W_gate->ne[1] != 8192 ||
         W_up->ne[0]   != 2048 || W_up->ne[1]   != 8192 ||
         W_down->ne[0] != 8192 || W_down->ne[1] != 2048) {
-        fprintf(stderr, "[SWG] unsupported shapes/types, fallback CPU\n");
-        return;
+        fprintf(stderr, "[SWG] unsupported shapes/types in fused hw kernel; aborting to avoid bad output\n");
+        GGML_ASSERT(false);
     }
 
     // lazy init
@@ -1846,8 +1855,12 @@ static void ggml_compute_forward_swiglu_fused_hw(
 
     int total_tokens = (int)x->ne[1];
     int layer = swiglu_call_count % SWG_NUM_LAYERS;
-    size_t down_bytes = W_down->nb[3];
+    size_t down_bytes = ggml_nbytes(W_down);
     uint32_t mode = (down_bytes > 9437184UL) ? 1 : 0; // Q6_K threshold
+    if (swiglu_dbg_enabled) {
+        fprintf(stderr, "[SWG] call #%d layer=%d mode=%s tokens=%d\n",
+                swiglu_call_count, layer, mode ? "Q6_K" : "Q4_K", total_tokens);
+    }
 
     size_t gate_bytes = ggml_nbytes(W_gate);
     size_t up_bytes   = ggml_nbytes(W_up);
@@ -1949,6 +1962,9 @@ static void ggml_compute_forward_swiglu_fused_hw(
     }
 
     swiglu_call_count++;
+    if (swiglu_dbg_enabled) {
+        fprintf(stderr, "[SWG] done call #%d layer=%d\n", swiglu_call_count, layer);
+    }
 }
 
 static void ggml_compute_forward(struct ggml_compute_params * params, struct ggml_tensor * tensor) {
@@ -1966,6 +1982,13 @@ static void ggml_compute_forward(struct ggml_compute_params * params, struct ggm
     switch (tensor->op) {
 //modified here
         case GGML_OP_SWIGLU_FUSED_HW: {
+                if (swiglu_dbg_enabled == -1) {
+                    const char *env = getenv("SWIGLU_DEBUG");
+                    swiglu_dbg_enabled = (env && env[0] == '1') ? 1 : 0;
+                }
+                if (swiglu_dbg_enabled && params->ith == 0) {
+                    fprintf(stderr, "[SWG] dispatch fused op\n");
+                }
                 ggml_compute_forward_swiglu_fused_hw(params, tensor);
         } break;
 /////////////////S
@@ -2302,7 +2325,7 @@ static void ggml_compute_forward(struct ggml_compute_params * params, struct ggm
             } break;
         case GGML_OP_GATED_DELTA_NET:
             {
-                ggml_compute_forward_gated_delta_net(params, tensor);
+                GGML_ASSERT(false && "GGML_OP_GATED_DELTA_NET not supported in this build");
             } break;
         case GGML_OP_MAP_CUSTOM1:
             {
@@ -2490,7 +2513,7 @@ static int ggml_get_n_tasks(struct ggml_tensor * node, int n_threads) {
         case GGML_OP_SOLVE_TRI:
         case GGML_OP_GATED_DELTA_NET:
             {
-                n_tasks = n_threads;
+                n_tasks = 1;
             } break;
         case GGML_OP_REPEAT:
         case GGML_OP_REPEAT_BACK:
@@ -3200,8 +3223,7 @@ struct ggml_cplan ggml_graph_plan(
                     } break;
                 case GGML_OP_GATED_DELTA_NET:
                     {
-                        const int64_t S_v = node->src[2]->ne[0];
-                        cur = S_v * sizeof(float) * n_tasks;
+                        cur = 0;
                     } break;
                 case GGML_OP_COUNT:
                     {

@@ -419,21 +419,21 @@
                <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_fu_295_activity.dataflowTxWaveData.Cycles</obj_property>
                <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_fu_295_activity.dataflowTxWaveData.OutStanding</obj_property>
                <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_fu_295_activity.dataflowTxTooltipData</obj_property>
-               <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_activity">
-                  <obj_property name="label">grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_activity</obj_property>
+               <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97_activity">
+                  <obj_property name="label">grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97_activity</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
                   <obj_property name="UseFullPath">true</obj_property>
-                  <obj_property name="ElementShortName">grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_activity</obj_property>
-                  <obj_property name="ObjectShortName">grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_activity</obj_property>
+                  <obj_property name="ElementShortName">grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97_activity</obj_property>
                   <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
                   <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
                   <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
                   <obj_property name="UseCustomSignalColor">true</obj_property>
                   <obj_property name="CustomSignalColor">turquoise</obj_property>
                   <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-                  <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_activity.dataflowTxWaveData.Cycles</obj_property>
-                  <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_activity.dataflowTxWaveData.OutStanding</obj_property>
-                  <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_activity.dataflowTxTooltipData</obj_property>
+                  <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97_activity.dataflowTxTooltipData</obj_property>
                </wvobject>
             </wvobject>
             <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q6k_fu_311/grp_mac_blocks_down_q6k_fu_311_activity">
@@ -499,22 +499,22 @@
                <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_fu_349_activity.dataflowTxWaveData.Cycles</obj_property>
                <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_fu_349_activity.dataflowTxWaveData.OutStanding</obj_property>
                <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_fu_349_activity.dataflowTxTooltipData</obj_property>
-               <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420_activity">
-                  <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420_activity</obj_property>
+               <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416_activity">
+                  <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416_activity</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
                   <obj_property name="UseFullPath">true</obj_property>
-                  <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420_activity</obj_property>
-                  <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420_activity</obj_property>
+                  <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416_activity</obj_property>
                   <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
                   <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
                   <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
                   <obj_property name="UseCustomSignalColor">true</obj_property>
                   <obj_property name="CustomSignalColor">turquoise</obj_property>
                   <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-                  <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420_activity.dataflowTxWaveData.Cycles</obj_property>
-                  <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420_activity.dataflowTxWaveData.OutStanding</obj_property>
-                  <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420_activity.dataflowTxTooltipData</obj_property>
-                  <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_fp16_to_fp32_fu_7859/grp_fp16_to_fp32_fu_7859_activity">
+                  <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416_activity.dataflowTxTooltipData</obj_property>
+                  <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_fp16_to_fp32_fu_7859/grp_fp16_to_fp32_fu_7859_activity">
                      <obj_property name="label">grp_fp16_to_fp32_fu_7859_activity</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                      <obj_property name="UseFullPath">true</obj_property>
@@ -526,74 +526,42 @@
                      <obj_property name="UseCustomSignalColor">true</obj_property>
                      <obj_property name="CustomSignalColor">turquoise</obj_property>
                      <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-                     <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_fp16_to_fp32_fu_7859/grp_fp16_to_fp32_fu_7859_activity.dataflowTxWaveData.Cycles</obj_property>
-                     <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_fp16_to_fp32_fu_7859/grp_fp16_to_fp32_fu_7859_activity.dataflowTxWaveData.OutStanding</obj_property>
-                     <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_fp16_to_fp32_fu_7859/grp_fp16_to_fp32_fu_7859_activity.dataflowTxTooltipData</obj_property>
+                     <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_fp16_to_fp32_fu_7859/grp_fp16_to_fp32_fu_7859_activity.dataflowTxWaveData.Cycles</obj_property>
+                     <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_fp16_to_fp32_fu_7859/grp_fp16_to_fp32_fu_7859_activity.dataflowTxWaveData.OutStanding</obj_property>
+                     <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_fp16_to_fp32_fu_7859/grp_fp16_to_fp32_fu_7859_activity.dataflowTxTooltipData</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016_activity">
-                  <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016_activity</obj_property>
+               <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012_activity">
+                  <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012_activity</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
                   <obj_property name="UseFullPath">true</obj_property>
-                  <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016_activity</obj_property>
-                  <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016_activity</obj_property>
+                  <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012_activity</obj_property>
                   <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
                   <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
                   <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
                   <obj_property name="UseCustomSignalColor">true</obj_property>
                   <obj_property name="CustomSignalColor">turquoise</obj_property>
                   <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-                  <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016_activity.dataflowTxWaveData.Cycles</obj_property>
-                  <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016_activity.dataflowTxWaveData.OutStanding</obj_property>
-                  <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016_activity.dataflowTxTooltipData</obj_property>
+                  <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012_activity.dataflowTxTooltipData</obj_property>
                </wvobject>
-               <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308_activity">
-                  <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308_activity</obj_property>
+               <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072_activity">
+                  <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072_activity</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
                   <obj_property name="UseFullPath">true</obj_property>
-                  <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308_activity</obj_property>
-                  <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308_activity</obj_property>
+                  <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072_activity</obj_property>
                   <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
                   <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
                   <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
                   <obj_property name="UseCustomSignalColor">true</obj_property>
                   <obj_property name="CustomSignalColor">turquoise</obj_property>
                   <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-                  <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308_activity.dataflowTxWaveData.Cycles</obj_property>
-                  <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308_activity.dataflowTxWaveData.OutStanding</obj_property>
-                  <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308_activity.dataflowTxTooltipData</obj_property>
-               </wvobject>
-               <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600_activity">
-                  <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600_activity</obj_property>
-                  <obj_property name="DisplayName">label</obj_property>
-                  <obj_property name="UseFullPath">true</obj_property>
-                  <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600_activity</obj_property>
-                  <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600_activity</obj_property>
-                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-                  <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
-                  <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
-                  <obj_property name="UseCustomSignalColor">true</obj_property>
-                  <obj_property name="CustomSignalColor">turquoise</obj_property>
-                  <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-                  <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600_activity.dataflowTxWaveData.Cycles</obj_property>
-                  <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600_activity.dataflowTxWaveData.OutStanding</obj_property>
-                  <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600_activity.dataflowTxTooltipData</obj_property>
-               </wvobject>
-               <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892_activity">
-                  <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892_activity</obj_property>
-                  <obj_property name="DisplayName">label</obj_property>
-                  <obj_property name="UseFullPath">true</obj_property>
-                  <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892_activity</obj_property>
-                  <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892_activity</obj_property>
-                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-                  <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
-                  <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
-                  <obj_property name="UseCustomSignalColor">true</obj_property>
-                  <obj_property name="CustomSignalColor">turquoise</obj_property>
-                  <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-                  <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892_activity.dataflowTxWaveData.Cycles</obj_property>
-                  <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892_activity.dataflowTxWaveData.OutStanding</obj_property>
-                  <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892_activity.dataflowTxTooltipData</obj_property>
+                  <obj_property name="Render_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072_activity.dataflowTxTooltipData</obj_property>
                </wvobject>
             </wvobject>
             <wvobject type="group" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_compute_output_Pipeline_1_fu_379/grp_compute_output_Pipeline_1_fu_379_activity">
@@ -13542,9 +13510,9 @@
          <wvobject type="group" fp_name="grp_load_row_down_q4k_fu_295_group">
             <obj_property name="label">grp_load_row_down_q4k_fu_295</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="protoinst" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_activity">
-               <obj_property name="ElementShortName">grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_activity</obj_property>
-               <obj_property name="ObjectShortName">grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_activity</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97_activity">
+               <obj_property name="ElementShortName">grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97_activity</obj_property>
             </wvobject>
             <wvobject type="group" fp_name="grp_load_row_down_q4k_fu_295_Handshake_group">
                <obj_property name="label">Block-level handshake</obj_property>
@@ -13562,21 +13530,21 @@
                   <obj_property name="ObjectShortName">ap_done</obj_property>
                </wvobject>
             </wvobject>
-            <wvobject type="group" fp_name="grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_group">
-               <obj_property name="label">grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97</obj_property>
+            <wvobject type="group" fp_name="grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97_group">
+               <obj_property name="label">grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="group" fp_name="grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97_Handshake_group">
+               <wvobject type="group" fp_name="grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97_Handshake_group">
                   <obj_property name="label">Block-level handshake</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97/ap_start">
+                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97/ap_start">
                      <obj_property name="ElementShortName">ap_start</obj_property>
                      <obj_property name="ObjectShortName">ap_start</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_328_1_fu_97/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_load_row_down_q4k_fu_295/grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1_fu_97/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                   </wvobject>
@@ -13654,25 +13622,17 @@
          <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_fu_349_group">
             <obj_property name="label">grp_mac_blocks_down_q4k5_fu_349</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="protoinst" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420_activity">
-               <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420_activity</obj_property>
-               <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420_activity</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416_activity">
+               <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416_activity</obj_property>
             </wvobject>
-            <wvobject type="protoinst" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016_activity">
-               <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016_activity</obj_property>
-               <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016_activity</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012_activity">
+               <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012_activity</obj_property>
             </wvobject>
-            <wvobject type="protoinst" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308_activity">
-               <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308_activity</obj_property>
-               <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308_activity</obj_property>
-            </wvobject>
-            <wvobject type="protoinst" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600_activity">
-               <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600_activity</obj_property>
-               <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600_activity</obj_property>
-            </wvobject>
-            <wvobject type="protoinst" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892_activity">
-               <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892_activity</obj_property>
-               <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892_activity</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072_activity">
+               <obj_property name="ElementShortName">grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072_activity</obj_property>
             </wvobject>
             <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_fu_349_Handshake_group">
                <obj_property name="label">Block-level handshake</obj_property>
@@ -13690,25 +13650,25 @@
                   <obj_property name="ObjectShortName">ap_done</obj_property>
                </wvobject>
             </wvobject>
-            <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420_group">
-               <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420</obj_property>
+            <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416_group">
+               <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="protoinst" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_fp16_to_fp32_fu_7859/grp_fp16_to_fp32_fu_7859_activity">
+               <wvobject type="protoinst" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_fp16_to_fp32_fu_7859/grp_fp16_to_fp32_fu_7859_activity">
                   <obj_property name="ElementShortName">grp_fp16_to_fp32_fu_7859_activity</obj_property>
                   <obj_property name="ObjectShortName">grp_fp16_to_fp32_fu_7859_activity</obj_property>
                </wvobject>
-               <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420_Handshake_group">
+               <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416_Handshake_group">
                   <obj_property name="label">Block-level handshake</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/ap_start">
+                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/ap_start">
                      <obj_property name="ElementShortName">ap_start</obj_property>
                      <obj_property name="ObjectShortName">ap_start</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                   </wvobject>
@@ -13719,96 +13679,56 @@
                   <wvobject type="group" fp_name="grp_fp16_to_fp32_fu_7859_Handshake_group">
                      <obj_property name="label">Block-level handshake</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
-                     <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_fp16_to_fp32_fu_7859/ap_start">
+                     <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_fp16_to_fp32_fu_7859/ap_start">
                         <obj_property name="ElementShortName">ap_start</obj_property>
                         <obj_property name="ObjectShortName">ap_start</obj_property>
                      </wvobject>
-                     <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_fp16_to_fp32_fu_7859/ap_ready">
+                     <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_fp16_to_fp32_fu_7859/ap_ready">
                         <obj_property name="ElementShortName">ap_ready</obj_property>
                         <obj_property name="ObjectShortName">ap_ready</obj_property>
                      </wvobject>
-                     <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420/grp_fp16_to_fp32_fu_7859/ap_done">
+                     <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416/grp_fp16_to_fp32_fu_7859/ap_done">
                         <obj_property name="ElementShortName">ap_done</obj_property>
                         <obj_property name="ObjectShortName">ap_done</obj_property>
                      </wvobject>
                   </wvobject>
                </wvobject>
             </wvobject>
-            <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016_group">
-               <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016</obj_property>
+            <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012_group">
+               <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016_Handshake_group">
+               <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012_Handshake_group">
                   <obj_property name="label">Block-level handshake</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016/ap_start">
+                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012/ap_start">
                      <obj_property name="ElementShortName">ap_start</obj_property>
                      <obj_property name="ObjectShortName">ap_start</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                   </wvobject>
                </wvobject>
             </wvobject>
-            <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308_group">
-               <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308</obj_property>
+            <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072_group">
+               <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308_Handshake_group">
+               <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072_Handshake_group">
                   <obj_property name="label">Block-level handshake</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308/ap_start">
+                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072/ap_start">
                      <obj_property name="ElementShortName">ap_start</obj_property>
                      <obj_property name="ObjectShortName">ap_start</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308/ap_done">
-                     <obj_property name="ElementShortName">ap_done</obj_property>
-                     <obj_property name="ObjectShortName">ap_done</obj_property>
-                  </wvobject>
-               </wvobject>
-            </wvobject>
-            <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600_group">
-               <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600</obj_property>
-               <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600_Handshake_group">
-                  <obj_property name="label">Block-level handshake</obj_property>
-                  <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600/ap_start">
-                     <obj_property name="ElementShortName">ap_start</obj_property>
-                     <obj_property name="ObjectShortName">ap_start</obj_property>
-                  </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600/ap_ready">
-                     <obj_property name="ElementShortName">ap_ready</obj_property>
-                     <obj_property name="ObjectShortName">ap_ready</obj_property>
-                  </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600/ap_done">
-                     <obj_property name="ElementShortName">ap_done</obj_property>
-                     <obj_property name="ObjectShortName">ap_done</obj_property>
-                  </wvobject>
-               </wvobject>
-            </wvobject>
-            <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892_group">
-               <obj_property name="label">grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892</obj_property>
-               <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="group" fp_name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892_Handshake_group">
-                  <obj_property name="label">Block-level handshake</obj_property>
-                  <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892/ap_start">
-                     <obj_property name="ElementShortName">ap_start</obj_property>
-                     <obj_property name="ObjectShortName">ap_start</obj_property>
-                  </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892/ap_ready">
-                     <obj_property name="ElementShortName">ap_ready</obj_property>
-                     <obj_property name="ObjectShortName">ap_ready</obj_property>
-                  </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_swiglu_top/AESL_inst_swiglu/compute_output_U0/grp_mac_blocks_down_q4k5_fu_349/grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                   </wvobject>

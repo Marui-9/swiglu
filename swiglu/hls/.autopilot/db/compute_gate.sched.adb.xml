@@ -397,10 +397,10 @@ entry:21 %max_abs_2_loc_load = load i32 %max_abs_2_loc
 
 <Node id="40" bw="32" op_0_bw="32">
 <![CDATA[
-entry:28 %bitcast_ln294 = bitcast i32 %max_abs_loc_load
+entry:28 %bitcast_ln298 = bitcast i32 %max_abs_loc_load
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298"/></StgValue>
 </operation>
 
 <operation id="45" st_id="4" stage="1" lat="1">
@@ -412,7 +412,7 @@ entry:28 %bitcast_ln294 = bitcast i32 %max_abs_loc_load
 
 <Node id="41" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:29 %tmp_45 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294, i32 23, i32 30
+entry:29 %tmp_45 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_45"/></StgValue>
@@ -427,10 +427,10 @@ entry:29 %tmp_45 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitca
 
 <Node id="42" bw="23" op_0_bw="32">
 <![CDATA[
-entry:30 %trunc_ln294 = trunc i32 %bitcast_ln294
+entry:30 %trunc_ln298 = trunc i32 %bitcast_ln298
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294"/></StgValue>
+<StgValue><ssdm name="trunc_ln298"/></StgValue>
 </operation>
 
 <operation id="47" st_id="4" stage="1" lat="1">
@@ -442,10 +442,10 @@ entry:30 %trunc_ln294 = trunc i32 %bitcast_ln294
 
 <Node id="43" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:31 %icmp_ln294 = icmp_ne  i8 %tmp_45, i8 255
+entry:31 %icmp_ln298 = icmp_ne  i8 %tmp_45, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294"/></StgValue>
+<StgValue><ssdm name="icmp_ln298"/></StgValue>
 </operation>
 
 <operation id="48" st_id="4" stage="1" lat="1">
@@ -457,10 +457,10 @@ entry:31 %icmp_ln294 = icmp_ne  i8 %tmp_45, i8 255
 
 <Node id="44" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:32 %icmp_ln294_1 = icmp_eq  i23 %trunc_ln294, i23 0
+entry:32 %icmp_ln298_1 = icmp_eq  i23 %trunc_ln298, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_1"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_1"/></StgValue>
 </operation>
 
 <operation id="49" st_id="4" stage="1" lat="1">
@@ -472,10 +472,10 @@ entry:32 %icmp_ln294_1 = icmp_eq  i23 %trunc_ln294, i23 0
 
 <Node id="45" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:33 %or_ln294 = or i1 %icmp_ln294_1, i1 %icmp_ln294
+entry:33 %or_ln298 = or i1 %icmp_ln298_1, i1 %icmp_ln298
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294"/></StgValue>
+<StgValue><ssdm name="or_ln298"/></StgValue>
 </operation>
 
 <operation id="50" st_id="4" stage="1" lat="2">
@@ -502,10 +502,10 @@ entry:34 %tmp_46 = fcmp_ogt  i32 %max_abs_loc_load, i32 0
 
 <Node id="47" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:35 %and_ln294 = and i1 %or_ln294, i1 %tmp_46
+entry:35 %and_ln298 = and i1 %or_ln298, i1 %tmp_46
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294"/></StgValue>
+<StgValue><ssdm name="and_ln298"/></StgValue>
 </operation>
 
 <operation id="52" st_id="4" stage="1" lat="1">
@@ -517,7 +517,7 @@ entry:35 %and_ln294 = and i1 %or_ln294, i1 %tmp_46
 
 <Node id="48" bw="32" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-entry:36 %max_abs = select i1 %and_ln294, i32 %max_abs_loc_load, i32 0
+entry:36 %max_abs = select i1 %and_ln298, i32 %max_abs_loc_load, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="max_abs"/></StgValue>
@@ -565,10 +565,10 @@ entry:22 %max_abs_4_loc_load = load i32 %max_abs_4_loc
 
 <Node id="49" bw="32" op_0_bw="32">
 <![CDATA[
-entry:37 %bitcast_ln294_1 = bitcast i32 %max_abs_2_loc_load
+entry:37 %bitcast_ln298_1 = bitcast i32 %max_abs_2_loc_load
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_1"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_1"/></StgValue>
 </operation>
 
 <operation id="56" st_id="5" stage="1" lat="1">
@@ -580,7 +580,7 @@ entry:37 %bitcast_ln294_1 = bitcast i32 %max_abs_2_loc_load
 
 <Node id="50" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:38 %tmp_47 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_1, i32 23, i32 30
+entry:38 %tmp_47 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_1, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_47"/></StgValue>
@@ -595,10 +595,10 @@ entry:38 %tmp_47 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitca
 
 <Node id="51" bw="23" op_0_bw="32">
 <![CDATA[
-entry:39 %trunc_ln294_1 = trunc i32 %bitcast_ln294_1
+entry:39 %trunc_ln298_1 = trunc i32 %bitcast_ln298_1
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_1"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_1"/></StgValue>
 </operation>
 
 <operation id="58" st_id="5" stage="1" lat="1">
@@ -610,10 +610,10 @@ entry:39 %trunc_ln294_1 = trunc i32 %bitcast_ln294_1
 
 <Node id="52" bw="32" op_0_bw="32">
 <![CDATA[
-entry:40 %bitcast_ln294_2 = bitcast i32 %max_abs
+entry:40 %bitcast_ln298_2 = bitcast i32 %max_abs
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_2"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_2"/></StgValue>
 </operation>
 
 <operation id="59" st_id="5" stage="1" lat="1">
@@ -625,7 +625,7 @@ entry:40 %bitcast_ln294_2 = bitcast i32 %max_abs
 
 <Node id="53" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:41 %tmp_48 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_2, i32 23, i32 30
+entry:41 %tmp_48 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_2, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_48"/></StgValue>
@@ -640,10 +640,10 @@ entry:41 %tmp_48 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitca
 
 <Node id="54" bw="23" op_0_bw="32">
 <![CDATA[
-entry:42 %trunc_ln294_2 = trunc i32 %bitcast_ln294_2
+entry:42 %trunc_ln298_2 = trunc i32 %bitcast_ln298_2
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_2"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_2"/></StgValue>
 </operation>
 
 <operation id="61" st_id="5" stage="1" lat="1">
@@ -655,10 +655,10 @@ entry:42 %trunc_ln294_2 = trunc i32 %bitcast_ln294_2
 
 <Node id="55" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:43 %icmp_ln294_2 = icmp_ne  i8 %tmp_47, i8 255
+entry:43 %icmp_ln298_2 = icmp_ne  i8 %tmp_47, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_2"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_2"/></StgValue>
 </operation>
 
 <operation id="62" st_id="5" stage="1" lat="1">
@@ -670,10 +670,10 @@ entry:43 %icmp_ln294_2 = icmp_ne  i8 %tmp_47, i8 255
 
 <Node id="56" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:44 %icmp_ln294_3 = icmp_eq  i23 %trunc_ln294_1, i23 0
+entry:44 %icmp_ln298_3 = icmp_eq  i23 %trunc_ln298_1, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_3"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_3"/></StgValue>
 </operation>
 
 <operation id="63" st_id="5" stage="1" lat="1">
@@ -685,10 +685,10 @@ entry:44 %icmp_ln294_3 = icmp_eq  i23 %trunc_ln294_1, i23 0
 
 <Node id="57" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:45 %or_ln294_1 = or i1 %icmp_ln294_3, i1 %icmp_ln294_2
+entry:45 %or_ln298_1 = or i1 %icmp_ln298_3, i1 %icmp_ln298_2
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_1"/></StgValue>
+<StgValue><ssdm name="or_ln298_1"/></StgValue>
 </operation>
 
 <operation id="64" st_id="5" stage="1" lat="1">
@@ -700,10 +700,10 @@ entry:45 %or_ln294_1 = or i1 %icmp_ln294_3, i1 %icmp_ln294_2
 
 <Node id="58" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:46 %icmp_ln294_4 = icmp_ne  i8 %tmp_48, i8 255
+entry:46 %icmp_ln298_4 = icmp_ne  i8 %tmp_48, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_4"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_4"/></StgValue>
 </operation>
 
 <operation id="65" st_id="5" stage="1" lat="1">
@@ -715,10 +715,10 @@ entry:46 %icmp_ln294_4 = icmp_ne  i8 %tmp_48, i8 255
 
 <Node id="59" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:47 %icmp_ln294_5 = icmp_eq  i23 %trunc_ln294_2, i23 0
+entry:47 %icmp_ln298_5 = icmp_eq  i23 %trunc_ln298_2, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_5"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_5"/></StgValue>
 </operation>
 
 <operation id="66" st_id="5" stage="1" lat="1">
@@ -730,10 +730,10 @@ entry:47 %icmp_ln294_5 = icmp_eq  i23 %trunc_ln294_2, i23 0
 
 <Node id="60" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:48 %or_ln294_2 = or i1 %icmp_ln294_5, i1 %icmp_ln294_4
+entry:48 %or_ln298_2 = or i1 %icmp_ln298_5, i1 %icmp_ln298_4
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_2"/></StgValue>
+<StgValue><ssdm name="or_ln298_2"/></StgValue>
 </operation>
 
 <operation id="67" st_id="5" stage="1" lat="1">
@@ -745,10 +745,10 @@ entry:48 %or_ln294_2 = or i1 %icmp_ln294_5, i1 %icmp_ln294_4
 
 <Node id="61" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:49 %and_ln294_1 = and i1 %or_ln294_1, i1 %or_ln294_2
+entry:49 %and_ln298_1 = and i1 %or_ln298_1, i1 %or_ln298_2
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_1"/></StgValue>
+<StgValue><ssdm name="and_ln298_1"/></StgValue>
 </operation>
 
 <operation id="68" st_id="5" stage="1" lat="2">
@@ -775,10 +775,10 @@ entry:50 %tmp_49 = fcmp_ogt  i32 %max_abs_2_loc_load, i32 %max_abs
 
 <Node id="63" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:51 %and_ln294_2 = and i1 %and_ln294_1, i1 %tmp_49
+entry:51 %and_ln298_2 = and i1 %and_ln298_1, i1 %tmp_49
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_2"/></StgValue>
+<StgValue><ssdm name="and_ln298_2"/></StgValue>
 </operation>
 
 <operation id="70" st_id="5" stage="1" lat="1">
@@ -790,7 +790,7 @@ entry:51 %and_ln294_2 = and i1 %and_ln294_1, i1 %tmp_49
 
 <Node id="64" bw="32" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-entry:52 %max_abs_1 = select i1 %and_ln294_2, i32 %max_abs_2_loc_load, i32 %max_abs
+entry:52 %max_abs_1 = select i1 %and_ln298_2, i32 %max_abs_2_loc_load, i32 %max_abs
 
 ]]></Node>
 <StgValue><ssdm name="max_abs_1"/></StgValue>
@@ -838,10 +838,10 @@ entry:23 %max_abs_6_loc_load = load i32 %max_abs_6_loc
 
 <Node id="65" bw="32" op_0_bw="32">
 <![CDATA[
-entry:53 %bitcast_ln294_3 = bitcast i32 %max_abs_4_loc_load
+entry:53 %bitcast_ln298_3 = bitcast i32 %max_abs_4_loc_load
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_3"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_3"/></StgValue>
 </operation>
 
 <operation id="74" st_id="6" stage="1" lat="1">
@@ -853,7 +853,7 @@ entry:53 %bitcast_ln294_3 = bitcast i32 %max_abs_4_loc_load
 
 <Node id="66" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:54 %tmp_50 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_3, i32 23, i32 30
+entry:54 %tmp_50 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_3, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_50"/></StgValue>
@@ -868,10 +868,10 @@ entry:54 %tmp_50 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitca
 
 <Node id="67" bw="23" op_0_bw="32">
 <![CDATA[
-entry:55 %trunc_ln294_3 = trunc i32 %bitcast_ln294_3
+entry:55 %trunc_ln298_3 = trunc i32 %bitcast_ln298_3
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_3"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_3"/></StgValue>
 </operation>
 
 <operation id="76" st_id="6" stage="1" lat="1">
@@ -883,10 +883,10 @@ entry:55 %trunc_ln294_3 = trunc i32 %bitcast_ln294_3
 
 <Node id="68" bw="32" op_0_bw="32">
 <![CDATA[
-entry:56 %bitcast_ln294_4 = bitcast i32 %max_abs_1
+entry:56 %bitcast_ln298_4 = bitcast i32 %max_abs_1
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_4"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_4"/></StgValue>
 </operation>
 
 <operation id="77" st_id="6" stage="1" lat="1">
@@ -898,7 +898,7 @@ entry:56 %bitcast_ln294_4 = bitcast i32 %max_abs_1
 
 <Node id="69" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:57 %tmp_51 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_4, i32 23, i32 30
+entry:57 %tmp_51 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_4, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_51"/></StgValue>
@@ -913,10 +913,10 @@ entry:57 %tmp_51 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitca
 
 <Node id="70" bw="23" op_0_bw="32">
 <![CDATA[
-entry:58 %trunc_ln294_4 = trunc i32 %bitcast_ln294_4
+entry:58 %trunc_ln298_4 = trunc i32 %bitcast_ln298_4
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_4"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_4"/></StgValue>
 </operation>
 
 <operation id="79" st_id="6" stage="1" lat="1">
@@ -928,10 +928,10 @@ entry:58 %trunc_ln294_4 = trunc i32 %bitcast_ln294_4
 
 <Node id="71" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:59 %icmp_ln294_6 = icmp_ne  i8 %tmp_50, i8 255
+entry:59 %icmp_ln298_6 = icmp_ne  i8 %tmp_50, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_6"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_6"/></StgValue>
 </operation>
 
 <operation id="80" st_id="6" stage="1" lat="1">
@@ -943,10 +943,10 @@ entry:59 %icmp_ln294_6 = icmp_ne  i8 %tmp_50, i8 255
 
 <Node id="72" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:60 %icmp_ln294_7 = icmp_eq  i23 %trunc_ln294_3, i23 0
+entry:60 %icmp_ln298_7 = icmp_eq  i23 %trunc_ln298_3, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_7"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_7"/></StgValue>
 </operation>
 
 <operation id="81" st_id="6" stage="1" lat="1">
@@ -958,10 +958,10 @@ entry:60 %icmp_ln294_7 = icmp_eq  i23 %trunc_ln294_3, i23 0
 
 <Node id="73" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:61 %or_ln294_3 = or i1 %icmp_ln294_7, i1 %icmp_ln294_6
+entry:61 %or_ln298_3 = or i1 %icmp_ln298_7, i1 %icmp_ln298_6
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_3"/></StgValue>
+<StgValue><ssdm name="or_ln298_3"/></StgValue>
 </operation>
 
 <operation id="82" st_id="6" stage="1" lat="1">
@@ -973,10 +973,10 @@ entry:61 %or_ln294_3 = or i1 %icmp_ln294_7, i1 %icmp_ln294_6
 
 <Node id="74" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:62 %icmp_ln294_8 = icmp_ne  i8 %tmp_51, i8 255
+entry:62 %icmp_ln298_8 = icmp_ne  i8 %tmp_51, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_8"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_8"/></StgValue>
 </operation>
 
 <operation id="83" st_id="6" stage="1" lat="1">
@@ -988,10 +988,10 @@ entry:62 %icmp_ln294_8 = icmp_ne  i8 %tmp_51, i8 255
 
 <Node id="75" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:63 %icmp_ln294_9 = icmp_eq  i23 %trunc_ln294_4, i23 0
+entry:63 %icmp_ln298_9 = icmp_eq  i23 %trunc_ln298_4, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_9"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_9"/></StgValue>
 </operation>
 
 <operation id="84" st_id="6" stage="1" lat="1">
@@ -1003,10 +1003,10 @@ entry:63 %icmp_ln294_9 = icmp_eq  i23 %trunc_ln294_4, i23 0
 
 <Node id="76" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:64 %or_ln294_4 = or i1 %icmp_ln294_9, i1 %icmp_ln294_8
+entry:64 %or_ln298_4 = or i1 %icmp_ln298_9, i1 %icmp_ln298_8
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_4"/></StgValue>
+<StgValue><ssdm name="or_ln298_4"/></StgValue>
 </operation>
 
 <operation id="85" st_id="6" stage="1" lat="1">
@@ -1018,10 +1018,10 @@ entry:64 %or_ln294_4 = or i1 %icmp_ln294_9, i1 %icmp_ln294_8
 
 <Node id="77" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:65 %and_ln294_3 = and i1 %or_ln294_3, i1 %or_ln294_4
+entry:65 %and_ln298_3 = and i1 %or_ln298_3, i1 %or_ln298_4
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_3"/></StgValue>
+<StgValue><ssdm name="and_ln298_3"/></StgValue>
 </operation>
 
 <operation id="86" st_id="6" stage="1" lat="2">
@@ -1048,10 +1048,10 @@ entry:66 %tmp_52 = fcmp_ogt  i32 %max_abs_4_loc_load, i32 %max_abs_1
 
 <Node id="79" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:67 %and_ln294_4 = and i1 %and_ln294_3, i1 %tmp_52
+entry:67 %and_ln298_4 = and i1 %and_ln298_3, i1 %tmp_52
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_4"/></StgValue>
+<StgValue><ssdm name="and_ln298_4"/></StgValue>
 </operation>
 
 <operation id="88" st_id="6" stage="1" lat="1">
@@ -1063,7 +1063,7 @@ entry:67 %and_ln294_4 = and i1 %and_ln294_3, i1 %tmp_52
 
 <Node id="80" bw="32" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-entry:68 %max_abs_2 = select i1 %and_ln294_4, i32 %max_abs_4_loc_load, i32 %max_abs_1
+entry:68 %max_abs_2 = select i1 %and_ln298_4, i32 %max_abs_4_loc_load, i32 %max_abs_1
 
 ]]></Node>
 <StgValue><ssdm name="max_abs_2"/></StgValue>
@@ -1111,10 +1111,10 @@ entry:24 %max_abs_8_loc_load = load i32 %max_abs_8_loc
 
 <Node id="81" bw="32" op_0_bw="32">
 <![CDATA[
-entry:69 %bitcast_ln294_5 = bitcast i32 %max_abs_6_loc_load
+entry:69 %bitcast_ln298_5 = bitcast i32 %max_abs_6_loc_load
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_5"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_5"/></StgValue>
 </operation>
 
 <operation id="92" st_id="7" stage="1" lat="1">
@@ -1126,7 +1126,7 @@ entry:69 %bitcast_ln294_5 = bitcast i32 %max_abs_6_loc_load
 
 <Node id="82" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:70 %tmp_53 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_5, i32 23, i32 30
+entry:70 %tmp_53 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_5, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_53"/></StgValue>
@@ -1141,10 +1141,10 @@ entry:70 %tmp_53 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitca
 
 <Node id="83" bw="23" op_0_bw="32">
 <![CDATA[
-entry:71 %trunc_ln294_5 = trunc i32 %bitcast_ln294_5
+entry:71 %trunc_ln298_5 = trunc i32 %bitcast_ln298_5
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_5"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_5"/></StgValue>
 </operation>
 
 <operation id="94" st_id="7" stage="1" lat="1">
@@ -1156,10 +1156,10 @@ entry:71 %trunc_ln294_5 = trunc i32 %bitcast_ln294_5
 
 <Node id="84" bw="32" op_0_bw="32">
 <![CDATA[
-entry:72 %bitcast_ln294_6 = bitcast i32 %max_abs_2
+entry:72 %bitcast_ln298_6 = bitcast i32 %max_abs_2
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_6"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_6"/></StgValue>
 </operation>
 
 <operation id="95" st_id="7" stage="1" lat="1">
@@ -1171,7 +1171,7 @@ entry:72 %bitcast_ln294_6 = bitcast i32 %max_abs_2
 
 <Node id="85" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:73 %tmp_54 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_6, i32 23, i32 30
+entry:73 %tmp_54 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_6, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_54"/></StgValue>
@@ -1186,10 +1186,10 @@ entry:73 %tmp_54 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitca
 
 <Node id="86" bw="23" op_0_bw="32">
 <![CDATA[
-entry:74 %trunc_ln294_6 = trunc i32 %bitcast_ln294_6
+entry:74 %trunc_ln298_6 = trunc i32 %bitcast_ln298_6
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_6"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_6"/></StgValue>
 </operation>
 
 <operation id="97" st_id="7" stage="1" lat="1">
@@ -1201,10 +1201,10 @@ entry:74 %trunc_ln294_6 = trunc i32 %bitcast_ln294_6
 
 <Node id="87" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:75 %icmp_ln294_10 = icmp_ne  i8 %tmp_53, i8 255
+entry:75 %icmp_ln298_10 = icmp_ne  i8 %tmp_53, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_10"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_10"/></StgValue>
 </operation>
 
 <operation id="98" st_id="7" stage="1" lat="1">
@@ -1216,10 +1216,10 @@ entry:75 %icmp_ln294_10 = icmp_ne  i8 %tmp_53, i8 255
 
 <Node id="88" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:76 %icmp_ln294_11 = icmp_eq  i23 %trunc_ln294_5, i23 0
+entry:76 %icmp_ln298_11 = icmp_eq  i23 %trunc_ln298_5, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_11"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_11"/></StgValue>
 </operation>
 
 <operation id="99" st_id="7" stage="1" lat="1">
@@ -1231,10 +1231,10 @@ entry:76 %icmp_ln294_11 = icmp_eq  i23 %trunc_ln294_5, i23 0
 
 <Node id="89" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:77 %or_ln294_5 = or i1 %icmp_ln294_11, i1 %icmp_ln294_10
+entry:77 %or_ln298_5 = or i1 %icmp_ln298_11, i1 %icmp_ln298_10
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_5"/></StgValue>
+<StgValue><ssdm name="or_ln298_5"/></StgValue>
 </operation>
 
 <operation id="100" st_id="7" stage="1" lat="1">
@@ -1246,10 +1246,10 @@ entry:77 %or_ln294_5 = or i1 %icmp_ln294_11, i1 %icmp_ln294_10
 
 <Node id="90" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:78 %icmp_ln294_12 = icmp_ne  i8 %tmp_54, i8 255
+entry:78 %icmp_ln298_12 = icmp_ne  i8 %tmp_54, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_12"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_12"/></StgValue>
 </operation>
 
 <operation id="101" st_id="7" stage="1" lat="1">
@@ -1261,10 +1261,10 @@ entry:78 %icmp_ln294_12 = icmp_ne  i8 %tmp_54, i8 255
 
 <Node id="91" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:79 %icmp_ln294_13 = icmp_eq  i23 %trunc_ln294_6, i23 0
+entry:79 %icmp_ln298_13 = icmp_eq  i23 %trunc_ln298_6, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_13"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_13"/></StgValue>
 </operation>
 
 <operation id="102" st_id="7" stage="1" lat="1">
@@ -1276,10 +1276,10 @@ entry:79 %icmp_ln294_13 = icmp_eq  i23 %trunc_ln294_6, i23 0
 
 <Node id="92" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:80 %or_ln294_6 = or i1 %icmp_ln294_13, i1 %icmp_ln294_12
+entry:80 %or_ln298_6 = or i1 %icmp_ln298_13, i1 %icmp_ln298_12
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_6"/></StgValue>
+<StgValue><ssdm name="or_ln298_6"/></StgValue>
 </operation>
 
 <operation id="103" st_id="7" stage="1" lat="1">
@@ -1291,10 +1291,10 @@ entry:80 %or_ln294_6 = or i1 %icmp_ln294_13, i1 %icmp_ln294_12
 
 <Node id="93" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:81 %and_ln294_5 = and i1 %or_ln294_5, i1 %or_ln294_6
+entry:81 %and_ln298_5 = and i1 %or_ln298_5, i1 %or_ln298_6
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_5"/></StgValue>
+<StgValue><ssdm name="and_ln298_5"/></StgValue>
 </operation>
 
 <operation id="104" st_id="7" stage="1" lat="2">
@@ -1321,10 +1321,10 @@ entry:82 %tmp_55 = fcmp_ogt  i32 %max_abs_6_loc_load, i32 %max_abs_2
 
 <Node id="95" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:83 %and_ln294_6 = and i1 %and_ln294_5, i1 %tmp_55
+entry:83 %and_ln298_6 = and i1 %and_ln298_5, i1 %tmp_55
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_6"/></StgValue>
+<StgValue><ssdm name="and_ln298_6"/></StgValue>
 </operation>
 
 <operation id="106" st_id="7" stage="1" lat="1">
@@ -1336,7 +1336,7 @@ entry:83 %and_ln294_6 = and i1 %and_ln294_5, i1 %tmp_55
 
 <Node id="96" bw="32" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-entry:84 %max_abs_3 = select i1 %and_ln294_6, i32 %max_abs_6_loc_load, i32 %max_abs_2
+entry:84 %max_abs_3 = select i1 %and_ln298_6, i32 %max_abs_6_loc_load, i32 %max_abs_2
 
 ]]></Node>
 <StgValue><ssdm name="max_abs_3"/></StgValue>
@@ -1384,10 +1384,10 @@ entry:25 %max_abs_10_loc_load = load i32 %max_abs_10_loc
 
 <Node id="97" bw="32" op_0_bw="32">
 <![CDATA[
-entry:85 %bitcast_ln294_7 = bitcast i32 %max_abs_8_loc_load
+entry:85 %bitcast_ln298_7 = bitcast i32 %max_abs_8_loc_load
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_7"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_7"/></StgValue>
 </operation>
 
 <operation id="110" st_id="8" stage="1" lat="1">
@@ -1399,7 +1399,7 @@ entry:85 %bitcast_ln294_7 = bitcast i32 %max_abs_8_loc_load
 
 <Node id="98" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:86 %tmp_56 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_7, i32 23, i32 30
+entry:86 %tmp_56 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_7, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_56"/></StgValue>
@@ -1414,10 +1414,10 @@ entry:86 %tmp_56 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitca
 
 <Node id="99" bw="23" op_0_bw="32">
 <![CDATA[
-entry:87 %trunc_ln294_7 = trunc i32 %bitcast_ln294_7
+entry:87 %trunc_ln298_7 = trunc i32 %bitcast_ln298_7
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_7"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_7"/></StgValue>
 </operation>
 
 <operation id="112" st_id="8" stage="1" lat="1">
@@ -1429,10 +1429,10 @@ entry:87 %trunc_ln294_7 = trunc i32 %bitcast_ln294_7
 
 <Node id="100" bw="32" op_0_bw="32">
 <![CDATA[
-entry:88 %bitcast_ln294_8 = bitcast i32 %max_abs_3
+entry:88 %bitcast_ln298_8 = bitcast i32 %max_abs_3
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_8"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_8"/></StgValue>
 </operation>
 
 <operation id="113" st_id="8" stage="1" lat="1">
@@ -1444,7 +1444,7 @@ entry:88 %bitcast_ln294_8 = bitcast i32 %max_abs_3
 
 <Node id="101" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:89 %tmp_57 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_8, i32 23, i32 30
+entry:89 %tmp_57 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_8, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_57"/></StgValue>
@@ -1459,10 +1459,10 @@ entry:89 %tmp_57 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitca
 
 <Node id="102" bw="23" op_0_bw="32">
 <![CDATA[
-entry:90 %trunc_ln294_8 = trunc i32 %bitcast_ln294_8
+entry:90 %trunc_ln298_8 = trunc i32 %bitcast_ln298_8
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_8"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_8"/></StgValue>
 </operation>
 
 <operation id="115" st_id="8" stage="1" lat="1">
@@ -1474,10 +1474,10 @@ entry:90 %trunc_ln294_8 = trunc i32 %bitcast_ln294_8
 
 <Node id="103" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:91 %icmp_ln294_14 = icmp_ne  i8 %tmp_56, i8 255
+entry:91 %icmp_ln298_14 = icmp_ne  i8 %tmp_56, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_14"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_14"/></StgValue>
 </operation>
 
 <operation id="116" st_id="8" stage="1" lat="1">
@@ -1489,10 +1489,10 @@ entry:91 %icmp_ln294_14 = icmp_ne  i8 %tmp_56, i8 255
 
 <Node id="104" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:92 %icmp_ln294_15 = icmp_eq  i23 %trunc_ln294_7, i23 0
+entry:92 %icmp_ln298_15 = icmp_eq  i23 %trunc_ln298_7, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_15"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_15"/></StgValue>
 </operation>
 
 <operation id="117" st_id="8" stage="1" lat="1">
@@ -1504,10 +1504,10 @@ entry:92 %icmp_ln294_15 = icmp_eq  i23 %trunc_ln294_7, i23 0
 
 <Node id="105" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:93 %or_ln294_7 = or i1 %icmp_ln294_15, i1 %icmp_ln294_14
+entry:93 %or_ln298_7 = or i1 %icmp_ln298_15, i1 %icmp_ln298_14
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_7"/></StgValue>
+<StgValue><ssdm name="or_ln298_7"/></StgValue>
 </operation>
 
 <operation id="118" st_id="8" stage="1" lat="1">
@@ -1519,10 +1519,10 @@ entry:93 %or_ln294_7 = or i1 %icmp_ln294_15, i1 %icmp_ln294_14
 
 <Node id="106" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:94 %icmp_ln294_16 = icmp_ne  i8 %tmp_57, i8 255
+entry:94 %icmp_ln298_16 = icmp_ne  i8 %tmp_57, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_16"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_16"/></StgValue>
 </operation>
 
 <operation id="119" st_id="8" stage="1" lat="1">
@@ -1534,10 +1534,10 @@ entry:94 %icmp_ln294_16 = icmp_ne  i8 %tmp_57, i8 255
 
 <Node id="107" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:95 %icmp_ln294_17 = icmp_eq  i23 %trunc_ln294_8, i23 0
+entry:95 %icmp_ln298_17 = icmp_eq  i23 %trunc_ln298_8, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_17"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_17"/></StgValue>
 </operation>
 
 <operation id="120" st_id="8" stage="1" lat="1">
@@ -1549,10 +1549,10 @@ entry:95 %icmp_ln294_17 = icmp_eq  i23 %trunc_ln294_8, i23 0
 
 <Node id="108" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:96 %or_ln294_8 = or i1 %icmp_ln294_17, i1 %icmp_ln294_16
+entry:96 %or_ln298_8 = or i1 %icmp_ln298_17, i1 %icmp_ln298_16
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_8"/></StgValue>
+<StgValue><ssdm name="or_ln298_8"/></StgValue>
 </operation>
 
 <operation id="121" st_id="8" stage="1" lat="1">
@@ -1564,10 +1564,10 @@ entry:96 %or_ln294_8 = or i1 %icmp_ln294_17, i1 %icmp_ln294_16
 
 <Node id="109" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:97 %and_ln294_7 = and i1 %or_ln294_7, i1 %or_ln294_8
+entry:97 %and_ln298_7 = and i1 %or_ln298_7, i1 %or_ln298_8
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_7"/></StgValue>
+<StgValue><ssdm name="and_ln298_7"/></StgValue>
 </operation>
 
 <operation id="122" st_id="8" stage="1" lat="2">
@@ -1594,10 +1594,10 @@ entry:98 %tmp_58 = fcmp_ogt  i32 %max_abs_8_loc_load, i32 %max_abs_3
 
 <Node id="111" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:99 %and_ln294_8 = and i1 %and_ln294_7, i1 %tmp_58
+entry:99 %and_ln298_8 = and i1 %and_ln298_7, i1 %tmp_58
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_8"/></StgValue>
+<StgValue><ssdm name="and_ln298_8"/></StgValue>
 </operation>
 
 <operation id="124" st_id="8" stage="1" lat="1">
@@ -1609,7 +1609,7 @@ entry:99 %and_ln294_8 = and i1 %and_ln294_7, i1 %tmp_58
 
 <Node id="112" bw="32" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-entry:100 %max_abs_4 = select i1 %and_ln294_8, i32 %max_abs_8_loc_load, i32 %max_abs_3
+entry:100 %max_abs_4 = select i1 %and_ln298_8, i32 %max_abs_8_loc_load, i32 %max_abs_3
 
 ]]></Node>
 <StgValue><ssdm name="max_abs_4"/></StgValue>
@@ -1657,10 +1657,10 @@ entry:26 %max_abs_12_loc_load = load i32 %max_abs_12_loc
 
 <Node id="113" bw="32" op_0_bw="32">
 <![CDATA[
-entry:101 %bitcast_ln294_9 = bitcast i32 %max_abs_10_loc_load
+entry:101 %bitcast_ln298_9 = bitcast i32 %max_abs_10_loc_load
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_9"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_9"/></StgValue>
 </operation>
 
 <operation id="128" st_id="9" stage="1" lat="1">
@@ -1672,7 +1672,7 @@ entry:101 %bitcast_ln294_9 = bitcast i32 %max_abs_10_loc_load
 
 <Node id="114" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:102 %tmp_59 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_9, i32 23, i32 30
+entry:102 %tmp_59 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_9, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_59"/></StgValue>
@@ -1687,10 +1687,10 @@ entry:102 %tmp_59 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitc
 
 <Node id="115" bw="23" op_0_bw="32">
 <![CDATA[
-entry:103 %trunc_ln294_9 = trunc i32 %bitcast_ln294_9
+entry:103 %trunc_ln298_9 = trunc i32 %bitcast_ln298_9
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_9"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_9"/></StgValue>
 </operation>
 
 <operation id="130" st_id="9" stage="1" lat="1">
@@ -1702,10 +1702,10 @@ entry:103 %trunc_ln294_9 = trunc i32 %bitcast_ln294_9
 
 <Node id="116" bw="32" op_0_bw="32">
 <![CDATA[
-entry:104 %bitcast_ln294_10 = bitcast i32 %max_abs_4
+entry:104 %bitcast_ln298_10 = bitcast i32 %max_abs_4
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_10"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_10"/></StgValue>
 </operation>
 
 <operation id="131" st_id="9" stage="1" lat="1">
@@ -1717,7 +1717,7 @@ entry:104 %bitcast_ln294_10 = bitcast i32 %max_abs_4
 
 <Node id="117" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:105 %tmp_60 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_10, i32 23, i32 30
+entry:105 %tmp_60 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_10, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_60"/></StgValue>
@@ -1732,10 +1732,10 @@ entry:105 %tmp_60 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitc
 
 <Node id="118" bw="23" op_0_bw="32">
 <![CDATA[
-entry:106 %trunc_ln294_10 = trunc i32 %bitcast_ln294_10
+entry:106 %trunc_ln298_10 = trunc i32 %bitcast_ln298_10
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_10"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_10"/></StgValue>
 </operation>
 
 <operation id="133" st_id="9" stage="1" lat="1">
@@ -1747,10 +1747,10 @@ entry:106 %trunc_ln294_10 = trunc i32 %bitcast_ln294_10
 
 <Node id="119" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:107 %icmp_ln294_18 = icmp_ne  i8 %tmp_59, i8 255
+entry:107 %icmp_ln298_18 = icmp_ne  i8 %tmp_59, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_18"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_18"/></StgValue>
 </operation>
 
 <operation id="134" st_id="9" stage="1" lat="1">
@@ -1762,10 +1762,10 @@ entry:107 %icmp_ln294_18 = icmp_ne  i8 %tmp_59, i8 255
 
 <Node id="120" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:108 %icmp_ln294_19 = icmp_eq  i23 %trunc_ln294_9, i23 0
+entry:108 %icmp_ln298_19 = icmp_eq  i23 %trunc_ln298_9, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_19"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_19"/></StgValue>
 </operation>
 
 <operation id="135" st_id="9" stage="1" lat="1">
@@ -1777,10 +1777,10 @@ entry:108 %icmp_ln294_19 = icmp_eq  i23 %trunc_ln294_9, i23 0
 
 <Node id="121" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:109 %or_ln294_9 = or i1 %icmp_ln294_19, i1 %icmp_ln294_18
+entry:109 %or_ln298_9 = or i1 %icmp_ln298_19, i1 %icmp_ln298_18
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_9"/></StgValue>
+<StgValue><ssdm name="or_ln298_9"/></StgValue>
 </operation>
 
 <operation id="136" st_id="9" stage="1" lat="1">
@@ -1792,10 +1792,10 @@ entry:109 %or_ln294_9 = or i1 %icmp_ln294_19, i1 %icmp_ln294_18
 
 <Node id="122" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:110 %icmp_ln294_20 = icmp_ne  i8 %tmp_60, i8 255
+entry:110 %icmp_ln298_20 = icmp_ne  i8 %tmp_60, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_20"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_20"/></StgValue>
 </operation>
 
 <operation id="137" st_id="9" stage="1" lat="1">
@@ -1807,10 +1807,10 @@ entry:110 %icmp_ln294_20 = icmp_ne  i8 %tmp_60, i8 255
 
 <Node id="123" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:111 %icmp_ln294_21 = icmp_eq  i23 %trunc_ln294_10, i23 0
+entry:111 %icmp_ln298_21 = icmp_eq  i23 %trunc_ln298_10, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_21"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_21"/></StgValue>
 </operation>
 
 <operation id="138" st_id="9" stage="1" lat="1">
@@ -1822,10 +1822,10 @@ entry:111 %icmp_ln294_21 = icmp_eq  i23 %trunc_ln294_10, i23 0
 
 <Node id="124" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:112 %or_ln294_10 = or i1 %icmp_ln294_21, i1 %icmp_ln294_20
+entry:112 %or_ln298_10 = or i1 %icmp_ln298_21, i1 %icmp_ln298_20
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_10"/></StgValue>
+<StgValue><ssdm name="or_ln298_10"/></StgValue>
 </operation>
 
 <operation id="139" st_id="9" stage="1" lat="1">
@@ -1837,10 +1837,10 @@ entry:112 %or_ln294_10 = or i1 %icmp_ln294_21, i1 %icmp_ln294_20
 
 <Node id="125" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:113 %and_ln294_9 = and i1 %or_ln294_9, i1 %or_ln294_10
+entry:113 %and_ln298_9 = and i1 %or_ln298_9, i1 %or_ln298_10
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_9"/></StgValue>
+<StgValue><ssdm name="and_ln298_9"/></StgValue>
 </operation>
 
 <operation id="140" st_id="9" stage="1" lat="2">
@@ -1867,10 +1867,10 @@ entry:114 %tmp_61 = fcmp_ogt  i32 %max_abs_10_loc_load, i32 %max_abs_4
 
 <Node id="127" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:115 %and_ln294_10 = and i1 %and_ln294_9, i1 %tmp_61
+entry:115 %and_ln298_10 = and i1 %and_ln298_9, i1 %tmp_61
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_10"/></StgValue>
+<StgValue><ssdm name="and_ln298_10"/></StgValue>
 </operation>
 
 <operation id="142" st_id="9" stage="1" lat="1">
@@ -1882,7 +1882,7 @@ entry:115 %and_ln294_10 = and i1 %and_ln294_9, i1 %tmp_61
 
 <Node id="128" bw="32" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-entry:116 %max_abs_5 = select i1 %and_ln294_10, i32 %max_abs_10_loc_load, i32 %max_abs_4
+entry:116 %max_abs_5 = select i1 %and_ln298_10, i32 %max_abs_10_loc_load, i32 %max_abs_4
 
 ]]></Node>
 <StgValue><ssdm name="max_abs_5"/></StgValue>
@@ -1930,10 +1930,10 @@ entry:27 %max_abs_14_loc_load = load i32 %max_abs_14_loc
 
 <Node id="129" bw="32" op_0_bw="32">
 <![CDATA[
-entry:117 %bitcast_ln294_11 = bitcast i32 %max_abs_12_loc_load
+entry:117 %bitcast_ln298_11 = bitcast i32 %max_abs_12_loc_load
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_11"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_11"/></StgValue>
 </operation>
 
 <operation id="146" st_id="10" stage="1" lat="1">
@@ -1945,7 +1945,7 @@ entry:117 %bitcast_ln294_11 = bitcast i32 %max_abs_12_loc_load
 
 <Node id="130" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:118 %tmp_62 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_11, i32 23, i32 30
+entry:118 %tmp_62 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_11, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_62"/></StgValue>
@@ -1960,10 +1960,10 @@ entry:118 %tmp_62 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitc
 
 <Node id="131" bw="23" op_0_bw="32">
 <![CDATA[
-entry:119 %trunc_ln294_11 = trunc i32 %bitcast_ln294_11
+entry:119 %trunc_ln298_11 = trunc i32 %bitcast_ln298_11
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_11"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_11"/></StgValue>
 </operation>
 
 <operation id="148" st_id="10" stage="1" lat="1">
@@ -1975,10 +1975,10 @@ entry:119 %trunc_ln294_11 = trunc i32 %bitcast_ln294_11
 
 <Node id="132" bw="32" op_0_bw="32">
 <![CDATA[
-entry:120 %bitcast_ln294_12 = bitcast i32 %max_abs_5
+entry:120 %bitcast_ln298_12 = bitcast i32 %max_abs_5
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_12"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_12"/></StgValue>
 </operation>
 
 <operation id="149" st_id="10" stage="1" lat="1">
@@ -1990,7 +1990,7 @@ entry:120 %bitcast_ln294_12 = bitcast i32 %max_abs_5
 
 <Node id="133" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:121 %tmp_63 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_12, i32 23, i32 30
+entry:121 %tmp_63 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_12, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_63"/></StgValue>
@@ -2005,10 +2005,10 @@ entry:121 %tmp_63 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitc
 
 <Node id="134" bw="23" op_0_bw="32">
 <![CDATA[
-entry:122 %trunc_ln294_12 = trunc i32 %bitcast_ln294_12
+entry:122 %trunc_ln298_12 = trunc i32 %bitcast_ln298_12
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_12"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_12"/></StgValue>
 </operation>
 
 <operation id="151" st_id="10" stage="1" lat="1">
@@ -2020,10 +2020,10 @@ entry:122 %trunc_ln294_12 = trunc i32 %bitcast_ln294_12
 
 <Node id="135" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:123 %icmp_ln294_22 = icmp_ne  i8 %tmp_62, i8 255
+entry:123 %icmp_ln298_22 = icmp_ne  i8 %tmp_62, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_22"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_22"/></StgValue>
 </operation>
 
 <operation id="152" st_id="10" stage="1" lat="1">
@@ -2035,10 +2035,10 @@ entry:123 %icmp_ln294_22 = icmp_ne  i8 %tmp_62, i8 255
 
 <Node id="136" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:124 %icmp_ln294_23 = icmp_eq  i23 %trunc_ln294_11, i23 0
+entry:124 %icmp_ln298_23 = icmp_eq  i23 %trunc_ln298_11, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_23"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_23"/></StgValue>
 </operation>
 
 <operation id="153" st_id="10" stage="1" lat="1">
@@ -2050,10 +2050,10 @@ entry:124 %icmp_ln294_23 = icmp_eq  i23 %trunc_ln294_11, i23 0
 
 <Node id="137" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:125 %or_ln294_11 = or i1 %icmp_ln294_23, i1 %icmp_ln294_22
+entry:125 %or_ln298_11 = or i1 %icmp_ln298_23, i1 %icmp_ln298_22
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_11"/></StgValue>
+<StgValue><ssdm name="or_ln298_11"/></StgValue>
 </operation>
 
 <operation id="154" st_id="10" stage="1" lat="1">
@@ -2065,10 +2065,10 @@ entry:125 %or_ln294_11 = or i1 %icmp_ln294_23, i1 %icmp_ln294_22
 
 <Node id="138" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:126 %icmp_ln294_24 = icmp_ne  i8 %tmp_63, i8 255
+entry:126 %icmp_ln298_24 = icmp_ne  i8 %tmp_63, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_24"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_24"/></StgValue>
 </operation>
 
 <operation id="155" st_id="10" stage="1" lat="1">
@@ -2080,10 +2080,10 @@ entry:126 %icmp_ln294_24 = icmp_ne  i8 %tmp_63, i8 255
 
 <Node id="139" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:127 %icmp_ln294_25 = icmp_eq  i23 %trunc_ln294_12, i23 0
+entry:127 %icmp_ln298_25 = icmp_eq  i23 %trunc_ln298_12, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_25"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_25"/></StgValue>
 </operation>
 
 <operation id="156" st_id="10" stage="1" lat="1">
@@ -2095,10 +2095,10 @@ entry:127 %icmp_ln294_25 = icmp_eq  i23 %trunc_ln294_12, i23 0
 
 <Node id="140" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:128 %or_ln294_12 = or i1 %icmp_ln294_25, i1 %icmp_ln294_24
+entry:128 %or_ln298_12 = or i1 %icmp_ln298_25, i1 %icmp_ln298_24
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_12"/></StgValue>
+<StgValue><ssdm name="or_ln298_12"/></StgValue>
 </operation>
 
 <operation id="157" st_id="10" stage="1" lat="1">
@@ -2110,10 +2110,10 @@ entry:128 %or_ln294_12 = or i1 %icmp_ln294_25, i1 %icmp_ln294_24
 
 <Node id="141" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:129 %and_ln294_11 = and i1 %or_ln294_11, i1 %or_ln294_12
+entry:129 %and_ln298_11 = and i1 %or_ln298_11, i1 %or_ln298_12
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_11"/></StgValue>
+<StgValue><ssdm name="and_ln298_11"/></StgValue>
 </operation>
 
 <operation id="158" st_id="10" stage="1" lat="2">
@@ -2140,10 +2140,10 @@ entry:130 %tmp_64 = fcmp_ogt  i32 %max_abs_12_loc_load, i32 %max_abs_5
 
 <Node id="143" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:131 %and_ln294_12 = and i1 %and_ln294_11, i1 %tmp_64
+entry:131 %and_ln298_12 = and i1 %and_ln298_11, i1 %tmp_64
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_12"/></StgValue>
+<StgValue><ssdm name="and_ln298_12"/></StgValue>
 </operation>
 
 <operation id="160" st_id="10" stage="1" lat="1">
@@ -2155,7 +2155,7 @@ entry:131 %and_ln294_12 = and i1 %and_ln294_11, i1 %tmp_64
 
 <Node id="144" bw="32" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-entry:132 %max_abs_6 = select i1 %and_ln294_12, i32 %max_abs_12_loc_load, i32 %max_abs_5
+entry:132 %max_abs_6 = select i1 %and_ln298_12, i32 %max_abs_12_loc_load, i32 %max_abs_5
 
 ]]></Node>
 <StgValue><ssdm name="max_abs_6"/></StgValue>
@@ -2188,10 +2188,10 @@ entry:146 %tmp_67 = fcmp_ogt  i32 %max_abs_14_loc_load, i32 %max_abs_6
 
 <Node id="145" bw="32" op_0_bw="32">
 <![CDATA[
-entry:133 %bitcast_ln294_13 = bitcast i32 %max_abs_14_loc_load
+entry:133 %bitcast_ln298_13 = bitcast i32 %max_abs_14_loc_load
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_13"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_13"/></StgValue>
 </operation>
 
 <operation id="163" st_id="11" stage="1" lat="1">
@@ -2203,7 +2203,7 @@ entry:133 %bitcast_ln294_13 = bitcast i32 %max_abs_14_loc_load
 
 <Node id="146" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:134 %tmp_65 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_13, i32 23, i32 30
+entry:134 %tmp_65 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_13, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_65"/></StgValue>
@@ -2218,10 +2218,10 @@ entry:134 %tmp_65 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitc
 
 <Node id="147" bw="23" op_0_bw="32">
 <![CDATA[
-entry:135 %trunc_ln294_13 = trunc i32 %bitcast_ln294_13
+entry:135 %trunc_ln298_13 = trunc i32 %bitcast_ln298_13
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_13"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_13"/></StgValue>
 </operation>
 
 <operation id="165" st_id="11" stage="1" lat="1">
@@ -2233,10 +2233,10 @@ entry:135 %trunc_ln294_13 = trunc i32 %bitcast_ln294_13
 
 <Node id="148" bw="32" op_0_bw="32">
 <![CDATA[
-entry:136 %bitcast_ln294_14 = bitcast i32 %max_abs_6
+entry:136 %bitcast_ln298_14 = bitcast i32 %max_abs_6
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln294_14"/></StgValue>
+<StgValue><ssdm name="bitcast_ln298_14"/></StgValue>
 </operation>
 
 <operation id="166" st_id="11" stage="1" lat="1">
@@ -2248,7 +2248,7 @@ entry:136 %bitcast_ln294_14 = bitcast i32 %max_abs_6
 
 <Node id="149" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:137 %tmp_66 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294_14, i32 23, i32 30
+entry:137 %tmp_66 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln298_14, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_66"/></StgValue>
@@ -2263,10 +2263,10 @@ entry:137 %tmp_66 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitc
 
 <Node id="150" bw="23" op_0_bw="32">
 <![CDATA[
-entry:138 %trunc_ln294_14 = trunc i32 %bitcast_ln294_14
+entry:138 %trunc_ln298_14 = trunc i32 %bitcast_ln298_14
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln294_14"/></StgValue>
+<StgValue><ssdm name="trunc_ln298_14"/></StgValue>
 </operation>
 
 <operation id="168" st_id="11" stage="1" lat="1">
@@ -2278,10 +2278,10 @@ entry:138 %trunc_ln294_14 = trunc i32 %bitcast_ln294_14
 
 <Node id="151" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:139 %icmp_ln294_26 = icmp_ne  i8 %tmp_65, i8 255
+entry:139 %icmp_ln298_26 = icmp_ne  i8 %tmp_65, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_26"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_26"/></StgValue>
 </operation>
 
 <operation id="169" st_id="11" stage="1" lat="1">
@@ -2293,10 +2293,10 @@ entry:139 %icmp_ln294_26 = icmp_ne  i8 %tmp_65, i8 255
 
 <Node id="152" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:140 %icmp_ln294_27 = icmp_eq  i23 %trunc_ln294_13, i23 0
+entry:140 %icmp_ln298_27 = icmp_eq  i23 %trunc_ln298_13, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_27"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_27"/></StgValue>
 </operation>
 
 <operation id="170" st_id="11" stage="1" lat="1">
@@ -2308,10 +2308,10 @@ entry:140 %icmp_ln294_27 = icmp_eq  i23 %trunc_ln294_13, i23 0
 
 <Node id="153" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:141 %or_ln294_13 = or i1 %icmp_ln294_27, i1 %icmp_ln294_26
+entry:141 %or_ln298_13 = or i1 %icmp_ln298_27, i1 %icmp_ln298_26
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_13"/></StgValue>
+<StgValue><ssdm name="or_ln298_13"/></StgValue>
 </operation>
 
 <operation id="171" st_id="11" stage="1" lat="1">
@@ -2323,10 +2323,10 @@ entry:141 %or_ln294_13 = or i1 %icmp_ln294_27, i1 %icmp_ln294_26
 
 <Node id="154" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:142 %icmp_ln294_28 = icmp_ne  i8 %tmp_66, i8 255
+entry:142 %icmp_ln298_28 = icmp_ne  i8 %tmp_66, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_28"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_28"/></StgValue>
 </operation>
 
 <operation id="172" st_id="11" stage="1" lat="1">
@@ -2338,10 +2338,10 @@ entry:142 %icmp_ln294_28 = icmp_ne  i8 %tmp_66, i8 255
 
 <Node id="155" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:143 %icmp_ln294_29 = icmp_eq  i23 %trunc_ln294_14, i23 0
+entry:143 %icmp_ln298_29 = icmp_eq  i23 %trunc_ln298_14, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln294_29"/></StgValue>
+<StgValue><ssdm name="icmp_ln298_29"/></StgValue>
 </operation>
 
 <operation id="173" st_id="11" stage="1" lat="1">
@@ -2353,10 +2353,10 @@ entry:143 %icmp_ln294_29 = icmp_eq  i23 %trunc_ln294_14, i23 0
 
 <Node id="156" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:144 %or_ln294_14 = or i1 %icmp_ln294_29, i1 %icmp_ln294_28
+entry:144 %or_ln298_14 = or i1 %icmp_ln298_29, i1 %icmp_ln298_28
 
 ]]></Node>
-<StgValue><ssdm name="or_ln294_14"/></StgValue>
+<StgValue><ssdm name="or_ln298_14"/></StgValue>
 </operation>
 
 <operation id="174" st_id="11" stage="1" lat="1">
@@ -2368,10 +2368,10 @@ entry:144 %or_ln294_14 = or i1 %icmp_ln294_29, i1 %icmp_ln294_28
 
 <Node id="157" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:145 %and_ln294_13 = and i1 %or_ln294_13, i1 %or_ln294_14
+entry:145 %and_ln298_13 = and i1 %or_ln298_13, i1 %or_ln298_14
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_13"/></StgValue>
+<StgValue><ssdm name="and_ln298_13"/></StgValue>
 </operation>
 
 <operation id="175" st_id="11" stage="1" lat="2">
@@ -2398,10 +2398,10 @@ entry:146 %tmp_67 = fcmp_ogt  i32 %max_abs_14_loc_load, i32 %max_abs_6
 
 <Node id="159" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:147 %and_ln294_14 = and i1 %and_ln294_13, i1 %tmp_67
+entry:147 %and_ln298_14 = and i1 %and_ln298_13, i1 %tmp_67
 
 ]]></Node>
-<StgValue><ssdm name="and_ln294_14"/></StgValue>
+<StgValue><ssdm name="and_ln298_14"/></StgValue>
 </operation>
 
 <operation id="177" st_id="11" stage="1" lat="1">
@@ -2413,7 +2413,7 @@ entry:147 %and_ln294_14 = and i1 %and_ln294_13, i1 %tmp_67
 
 <Node id="160" bw="32" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-entry:148 %max_abs_7 = select i1 %and_ln294_14, i32 %max_abs_14_loc_load, i32 %max_abs_6
+entry:148 %max_abs_7 = select i1 %and_ln298_14, i32 %max_abs_14_loc_load, i32 %max_abs_6
 
 ]]></Node>
 <StgValue><ssdm name="max_abs_7"/></StgValue>
@@ -2431,10 +2431,10 @@ entry:148 %max_abs_7 = select i1 %and_ln294_14, i32 %max_abs_14_loc_load, i32 %m
 
 <Node id="161" bw="32" op_0_bw="32">
 <![CDATA[
-entry:149 %bitcast_ln296 = bitcast i32 %max_abs_7
+entry:149 %bitcast_ln300 = bitcast i32 %max_abs_7
 
 ]]></Node>
-<StgValue><ssdm name="bitcast_ln296"/></StgValue>
+<StgValue><ssdm name="bitcast_ln300"/></StgValue>
 </operation>
 
 <operation id="179" st_id="12" stage="1" lat="1">
@@ -2446,7 +2446,7 @@ entry:149 %bitcast_ln296 = bitcast i32 %max_abs_7
 
 <Node id="162" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:150 %tmp_68 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln296, i32 23, i32 30
+entry:150 %tmp_68 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln300, i32 23, i32 30
 
 ]]></Node>
 <StgValue><ssdm name="tmp_68"/></StgValue>
@@ -2461,10 +2461,10 @@ entry:150 %tmp_68 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitc
 
 <Node id="163" bw="23" op_0_bw="32">
 <![CDATA[
-entry:151 %trunc_ln296 = trunc i32 %bitcast_ln296
+entry:151 %trunc_ln300 = trunc i32 %bitcast_ln300
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln296"/></StgValue>
+<StgValue><ssdm name="trunc_ln300"/></StgValue>
 </operation>
 
 <operation id="181" st_id="12" stage="1" lat="1">
@@ -2476,10 +2476,10 @@ entry:151 %trunc_ln296 = trunc i32 %bitcast_ln296
 
 <Node id="164" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-entry:152 %icmp_ln296 = icmp_ne  i8 %tmp_68, i8 255
+entry:152 %icmp_ln300 = icmp_ne  i8 %tmp_68, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln296"/></StgValue>
+<StgValue><ssdm name="icmp_ln300"/></StgValue>
 </operation>
 
 <operation id="182" st_id="12" stage="1" lat="1">
@@ -2491,10 +2491,10 @@ entry:152 %icmp_ln296 = icmp_ne  i8 %tmp_68, i8 255
 
 <Node id="165" bw="1" op_0_bw="23" op_1_bw="23">
 <![CDATA[
-entry:153 %icmp_ln296_1 = icmp_eq  i23 %trunc_ln296, i23 0
+entry:153 %icmp_ln300_1 = icmp_eq  i23 %trunc_ln300, i23 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln296_1"/></StgValue>
+<StgValue><ssdm name="icmp_ln300_1"/></StgValue>
 </operation>
 
 <operation id="183" st_id="12" stage="2" lat="2">
@@ -2680,10 +2680,10 @@ entry:157 %div = fdiv i32 %max_abs_7, i32 127
 
 <Node id="166" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:154 %or_ln296 = or i1 %icmp_ln296_1, i1 %icmp_ln296
+entry:154 %or_ln300 = or i1 %icmp_ln300_1, i1 %icmp_ln300
 
 ]]></Node>
-<StgValue><ssdm name="or_ln296"/></StgValue>
+<StgValue><ssdm name="or_ln300"/></StgValue>
 </operation>
 
 <operation id="194" st_id="20" stage="1" lat="1">
@@ -2695,10 +2695,10 @@ entry:154 %or_ln296 = or i1 %icmp_ln296_1, i1 %icmp_ln296
 
 <Node id="168" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-entry:156 %and_ln296 = and i1 %or_ln296, i1 %tmp_69
+entry:156 %and_ln300 = and i1 %or_ln300, i1 %tmp_69
 
 ]]></Node>
-<StgValue><ssdm name="and_ln296"/></StgValue>
+<StgValue><ssdm name="and_ln300"/></StgValue>
 </operation>
 
 <operation id="195" st_id="20" stage="1" lat="9">
@@ -2725,7 +2725,7 @@ entry:157 %div = fdiv i32 %max_abs_7, i32 127
 
 <Node id="170" bw="32" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-entry:158 %gs = select i1 %and_ln296, i32 %div, i32 1
+entry:158 %gs = select i1 %and_ln300, i32 %div, i32 1
 
 ]]></Node>
 <StgValue><ssdm name="gs"/></StgValue>
@@ -2902,10 +2902,10 @@ entry:159 %inv_gs = fdiv i32 1, i32 %gs
 
 <Node id="172" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="8" op_4_bw="8" op_5_bw="8" op_6_bw="8" op_7_bw="8" op_8_bw="8" op_9_bw="8" op_10_bw="8" op_11_bw="32" op_12_bw="32" op_13_bw="0" op_14_bw="0">
 <![CDATA[
-entry:160 %call_ln297 = call void @compute_gate_Pipeline_GATE_PASS2, i32 %X1_cache, i32 %X2_cache, i8 %gate_cache_7, i8 %gate_cache_6, i8 %gate_cache_5, i8 %gate_cache_4, i8 %gate_cache_3, i8 %gate_cache_2, i8 %gate_cache_1, i8 %gate_cache_0, i32 %inv_gs, i32 %sigmoid_lut
+entry:160 %call_ln301 = call void @compute_gate_Pipeline_GATE_PASS2, i32 %X1_cache, i32 %X2_cache, i8 %gate_cache_7, i8 %gate_cache_6, i8 %gate_cache_5, i8 %gate_cache_4, i8 %gate_cache_3, i8 %gate_cache_2, i8 %gate_cache_1, i8 %gate_cache_0, i32 %inv_gs, i32 %sigmoid_lut
 
 ]]></Node>
-<StgValue><ssdm name="call_ln297"/></StgValue>
+<StgValue><ssdm name="call_ln301"/></StgValue>
 </operation>
 </state>
 
@@ -3085,10 +3085,10 @@ entry:18 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %X1_cach
 
 <Node id="172" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="8" op_4_bw="8" op_5_bw="8" op_6_bw="8" op_7_bw="8" op_8_bw="8" op_9_bw="8" op_10_bw="8" op_11_bw="32" op_12_bw="32" op_13_bw="0" op_14_bw="0">
 <![CDATA[
-entry:160 %call_ln297 = call void @compute_gate_Pipeline_GATE_PASS2, i32 %X1_cache, i32 %X2_cache, i8 %gate_cache_7, i8 %gate_cache_6, i8 %gate_cache_5, i8 %gate_cache_4, i8 %gate_cache_3, i8 %gate_cache_2, i8 %gate_cache_1, i8 %gate_cache_0, i32 %inv_gs, i32 %sigmoid_lut
+entry:160 %call_ln301 = call void @compute_gate_Pipeline_GATE_PASS2, i32 %X1_cache, i32 %X2_cache, i8 %gate_cache_7, i8 %gate_cache_6, i8 %gate_cache_5, i8 %gate_cache_4, i8 %gate_cache_3, i8 %gate_cache_2, i8 %gate_cache_1, i8 %gate_cache_0, i32 %inv_gs, i32 %sigmoid_lut
 
 ]]></Node>
-<StgValue><ssdm name="call_ln297"/></StgValue>
+<StgValue><ssdm name="call_ln301"/></StgValue>
 </operation>
 
 <operation id="219" st_id="30" stage="1" lat="1">
@@ -3100,10 +3100,10 @@ entry:160 %call_ln297 = call void @compute_gate_Pipeline_GATE_PASS2, i32 %X1_cac
 
 <Node id="173" bw="0" op_0_bw="32">
 <![CDATA[
-entry:161 %ret_ln317 = ret i32 %gs
+entry:161 %ret_ln321 = ret i32 %gs
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln317"/></StgValue>
+<StgValue><ssdm name="ret_ln321"/></StgValue>
 </operation>
 </state>
 </state_list>

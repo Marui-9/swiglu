@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:71~swiglu.cpp:490</SourceLocation>
+<SourceLocation>swiglu.cpp:71~swiglu.cpp:454</SourceLocation>
 <SummaryOfLoopViolations>
 <MAC_Q6K>
 <Name>MAC_Q6K</Name>
 <IssueType>II Violation</IssueType>
 <ViolationType>Resource Limitation</ViolationType>
-<SourceLocation>swiglu.cpp:71~swiglu.cpp:490</SourceLocation>
+<SourceLocation>swiglu.cpp:71~swiglu.cpp:454</SourceLocation>
 </MAC_Q6K>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q4k5'" level="0">
-<item name = "Date">Mon Mar 30 15:05:49 2026
+<item name = "Date">Tue Mar 31 16:00:54 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,18 +24,16 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1224, 1224, 12.240 us, 12.240 us, 1224, 1224, no</column>
+<column name="">1214, 1214, 12.140 us, 12.140 us, 1214, 1214, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4420">mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, 35, 35, 0.350 us, 0.350 us, 33, 33, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0_fu_5016">mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G0, 261, 261, 2.610 us, 2.610 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1_fu_5308">mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G1, 261, 261, 2.610 us, 2.610 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2_fu_5600">mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G2, 261, 261, 2.610 us, 2.610 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3_fu_5892">mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_G3, 261, 261, 2.610 us, 2.610 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN_fu_4416">mac_blocks_down_q4k5_Pipeline_UNPACK_HDR_DOWN, 35, 35, 0.350 us, 0.350 us, 33, 33, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL_fu_5012">mac_blocks_down_q4k5_Pipeline_MAC_BLOCKS_ALL, 1029, 1029, 10.290 us, 10.290 us, 1028, 1028, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K_fu_6072">mac_blocks_down_q4k5_Pipeline_REDUCE_DOWN_Q4K, 144, 144, 1.440 us, 1.440 us, 143, 143, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

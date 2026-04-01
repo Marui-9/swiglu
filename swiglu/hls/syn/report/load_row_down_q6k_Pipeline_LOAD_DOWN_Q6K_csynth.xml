@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:472</SourceLocation>
+<SourceLocation>swiglu.cpp:436</SourceLocation>
 <SummaryOfLoopViolations>
 <LOAD_DOWN_Q6K>
 <Name>LOAD_DOWN_Q6K</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:472</SourceLocation>
+<SourceLocation>swiglu.cpp:436</SourceLocation>
 </LOAD_DOWN_Q6K>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -652,8 +652,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sext_ln472</name>
-<Object>sext_ln472</Object>
+<name>sext_ln436</name>
+<Object>sext_ln436</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

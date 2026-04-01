@@ -48,3 +48,21 @@ The only staging/copy to shared memory is the initial x load; outputs go directl
   It’s normal: quantization reduces bandwidth and storage, but most high-performance kernels still accumulate in FP32 (or at least INT32) 
   to keep accuracy. In your HLS, you dequantize on the fly and accumulate in FP32—this is standard for int4/int8 GEMMs (e.g., x86 AVX2/AVX512 
   int8 GEMM accumulates to int32, then often to float). So seeing FP32 math inside a quantized model is expected.
+
+The fused SwiGLU path in ggml-cpu.c is invoked by graph construction for the feed‑forward block in both execution modes, so it will 
+run during prefill (context build) and during token‑by‑token decode. The hardware call is agnostic to mode: it just consumes the incoming 
+activation slice x and the layer’s W/V/W_down weights and returns the 2048‑float output.
+
+Current caveats:
+
+Batch is forced to SWG_MAX_BATCH = 1, so it handles a single token at a time (which matches llama.cpp’s decode path but also works for 
+prefill as long as batch=1). Prefill with batch>1 would need kernel and host changes (buffer strides, XSCALE per token, and IP support).
+n_tasks is pinned to 1 for this op, so only one CPU thread drives the accelerator while others idle or run other graph nodes.
+Mode selection for W_down (Q4_K vs Q6_K) is already handled in ggml-cpu.c; W and V are assumed Q4_K as per model.
+So: prefill and decode both work, but only with batch=1; enabling larger batch would require coordinated updates to the IP and host code.
+
+FLOATS
+FP16 ↔ FP32 conversions
+The only FP16 use is in the quantization headers (d, dmin) stored as half in GGML Q4_K/Q6_K blocks. fp16_to_fp32 converts those header values 
+to FP32 so accumulation can run in float. The activations and accumulations are FP32; the quantized weights/data remain INT4/INT8 with scale 
+factors in FP16. There’s no FP32→FP16 round-trip in the math—just decoding half-precision scales from the quantized weight format.

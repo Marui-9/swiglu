@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_x_local'" level="0">
-<item name = "Date">Mon Mar 30 15:05:51 2026
+<item name = "Date">Tue Mar 31 16:00:55 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -82,7 +82,7 @@
 <column name="ap_block_state2_io_grp1">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_2571">and, 0, 0, 2, 1, 1</column>
 <column name="first_iter_0_fu_3984_p2">icmp, 0, 0, 14, 7, 1</column>
-<column name="icmp_ln551_fu_4028_p2">icmp, 0, 0, 14, 7, 2</column>
+<column name="icmp_ln515_fu_4028_p2">icmp, 0, 0, 14, 7, 2</column>
 <column name="ap_block_pp0_stage0_11001">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage0_11001_grp0">or, 0, 0, 2, 1, 1</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
@@ -251,8 +251,8 @@
 <column name="ap_loop_exit_ready_pp0_iter9_reg">1, 0, 1, 0</column>
 <column name="first_iter_0_reg_4505">1, 0, 1, 0</column>
 <column name="i1536_fu_626">7, 0, 7, 0</column>
-<column name="trunc_ln558_2_reg_4514">3, 0, 3, 0</column>
-<column name="trunc_ln558_reg_4509">4, 0, 4, 0</column>
+<column name="trunc_ln522_2_reg_4514">3, 0, 3, 0</column>
+<column name="trunc_ln522_reg_4509">4, 0, 4, 0</column>
 <column name="val_10_reg_4731">8, 0, 8, 0</column>
 <column name="val_11_reg_4751">8, 0, 8, 0</column>
 <column name="val_12_reg_4771">8, 0, 8, 0</column>
@@ -270,8 +270,8 @@
 <column name="val_9_reg_4711">8, 0, 8, 0</column>
 <column name="val_reg_4531">8, 0, 8, 0</column>
 <column name="x_batch_read_reg_4500">64, 0, 64, 0</column>
-<column name="trunc_ln558_2_reg_4514">64, 32, 3, 0</column>
-<column name="trunc_ln558_reg_4509">64, 32, 4, 0</column>
+<column name="trunc_ln522_2_reg_4514">64, 32, 3, 0</column>
+<column name="trunc_ln522_reg_4509">64, 32, 4, 0</column>
 </table>
 </item>
 </section>

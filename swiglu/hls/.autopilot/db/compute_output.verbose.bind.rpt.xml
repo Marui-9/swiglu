@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_output'" level="0">
-<item name = "Date">Mon Mar 30 15:05:50 2026
+<item name = "Date">Tue Mar 31 16:00:54 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">3262538, 55388234, 32.625 ms, 0.554 sec, 3262538, 55388234, no</column>
+<column name="">3242058, 55388234, 32.421 ms, 0.554 sec, 3242058, 55388234, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -34,13 +34,13 @@
 <column name="grp_load_row_down_q6k_fu_271">load_row_down_q6k, 496, 496, 4.960 us, 4.960 us, 496, 496, no</column>
 <column name="grp_load_row_down_q4k_fu_295">load_row_down_q4k, 364, 364, 3.640 us, 3.640 us, 364, 364, no</column>
 <column name="grp_mac_blocks_down_q6k_fu_311">mac_blocks_down_q6k, 26544, 26544, 0.265 ms, 0.265 ms, 26544, 26544, no</column>
-<column name="grp_mac_blocks_down_q4k5_fu_349">mac_blocks_down_q4k5, 1224, 1224, 12.240 us, 12.240 us, 1224, 1224, no</column>
+<column name="grp_mac_blocks_down_q4k5_fu_349">mac_blocks_down_q4k5, 1214, 1214, 12.140 us, 12.140 us, 1214, 1214, no</column>
 <column name="grp_compute_output_Pipeline_1_fu_379">compute_output_Pipeline_1, 2051, 2051, 20.510 us, 20.510 us, 2049, 2049, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- DOWN_Q4K">3260416, 3260416, 1592, -, -, 2048, no</column>
+<column name="- DOWN_Q4K">3239936, 3239936, 1582, -, -, 2048, no</column>
 <column name="- DOWN_Q6K">55386112, 55386112, 27044, -, -, 2048, no</column>
 </table>
 </item>

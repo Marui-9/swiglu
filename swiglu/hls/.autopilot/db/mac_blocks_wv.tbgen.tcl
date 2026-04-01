@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 30
+set cdfgNum 28
 set C_modelName {mac_blocks_wv}
 set C_modelType { float 32 }
 set ap_memory_interface_dict [dict create]
@@ -1587,9 +1587,6 @@ set ArgLastReadFirstWriteLatency {
 		x_0_14 {Type I LastRead 0 FirstWrite -1}
 		x_0_15 {Type I LastRead 0 FirstWrite -1}
 		rb_0 {Type I LastRead 0 FirstWrite -1}
-		empty_37 {Type I LastRead 0 FirstWrite -1}
-		empty_38 {Type I LastRead 0 FirstWrite -1}
-		empty_39 {Type I LastRead 0 FirstWrite -1}
 		empty_40 {Type I LastRead 0 FirstWrite -1}
 		empty_41 {Type I LastRead 0 FirstWrite -1}
 		empty_42 {Type I LastRead 0 FirstWrite -1}
@@ -1603,6 +1600,9 @@ set ArgLastReadFirstWriteLatency {
 		empty_50 {Type I LastRead 0 FirstWrite -1}
 		empty_51 {Type I LastRead 0 FirstWrite -1}
 		empty_52 {Type I LastRead 0 FirstWrite -1}
+		empty_53 {Type I LastRead 0 FirstWrite -1}
+		empty_54 {Type I LastRead 0 FirstWrite -1}
+		empty_55 {Type I LastRead 0 FirstWrite -1}
 		x_1_0 {Type I LastRead 0 FirstWrite -1}
 		x_1_1 {Type I LastRead 0 FirstWrite -1}
 		x_1_2 {Type I LastRead 0 FirstWrite -1}
@@ -1722,9 +1722,6 @@ set ArgLastReadFirstWriteLatency {
 		x_7_14 {Type I LastRead 0 FirstWrite -1}
 		x_7_15 {Type I LastRead 0 FirstWrite -1}
 		rb_7 {Type I LastRead 0 FirstWrite -1}
-		empty_53 {Type I LastRead 0 FirstWrite -1}
-		empty_54 {Type I LastRead 0 FirstWrite -1}
-		empty_55 {Type I LastRead 0 FirstWrite -1}
 		empty_56 {Type I LastRead 0 FirstWrite -1}
 		empty_57 {Type I LastRead 0 FirstWrite -1}
 		empty_58 {Type I LastRead 0 FirstWrite -1}
@@ -1833,6 +1830,9 @@ set ArgLastReadFirstWriteLatency {
 		empty_161 {Type I LastRead 0 FirstWrite -1}
 		empty_162 {Type I LastRead 0 FirstWrite -1}
 		empty_163 {Type I LastRead 0 FirstWrite -1}
+		empty_164 {Type I LastRead 0 FirstWrite -1}
+		empty_165 {Type I LastRead 0 FirstWrite -1}
+		empty_166 {Type I LastRead 0 FirstWrite -1}
 		empty {Type I LastRead 0 FirstWrite -1}
 		sw_out {Type O LastRead -1 FirstWrite 3}
 		int_acc_w_1_load_out {Type O LastRead -1 FirstWrite 3}

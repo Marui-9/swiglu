@@ -914,8 +914,8 @@ reg    ap_block_state1;
 reg   [63:0] V_read_reg_723;
 reg   [13:0] row_1_reg_728;
 wire    ap_CS_fsm_state2;
-wire   [12:0] trunc_ln252_fu_697_p1;
-reg   [12:0] trunc_ln252_reg_736;
+wire   [12:0] trunc_ln256_fu_697_p1;
+reg   [12:0] trunc_ln256_reg_736;
 reg   [3:0] row_buf_address0;
 reg    row_buf_ce0;
 reg    row_buf_we0;
@@ -1294,14 +1294,14 @@ wire   [3:0] grp_mac_blocks_wv_fu_407_x_7_15_address0;
 wire    grp_mac_blocks_wv_fu_407_x_7_15_ce0;
 wire   [31:0] grp_mac_blocks_wv_fu_407_ap_return;
 reg    grp_load_row_wv_fu_391_ap_start_reg;
-wire   [0:0] icmp_ln248_fu_685_p2;
+wire   [0:0] icmp_ln252_fu_685_p2;
 wire    ap_CS_fsm_state3;
 reg    grp_mac_blocks_wv_fu_407_ap_start_reg;
 wire    ap_CS_fsm_state4;
 wire    ap_CS_fsm_state5;
-wire   [63:0] zext_ln248_fu_707_p1;
+wire   [63:0] zext_ln252_fu_707_p1;
 reg   [13:0] row_fu_326;
-wire   [13:0] add_ln248_fu_691_p2;
+wire   [13:0] add_ln252_fu_691_p2;
 reg    X2_cache_we1_local;
 reg    X2_cache_ce1_local;
 reg   [4:0] ap_NS_fsm;
@@ -1487,7 +1487,7 @@ swiglu_load_row_wv grp_load_row_wv_fu_391(
     .m_axi_gmem_V_0_BID(1'd0),
     .m_axi_gmem_V_0_BUSER(1'd0),
     .W_wide(V_read_reg_723),
-    .row(trunc_ln252_reg_736),
+    .row(trunc_ln256_reg_736),
     .rb_0_address0(grp_load_row_wv_fu_391_rb_0_address0),
     .rb_0_ce0(grp_load_row_wv_fu_391_rb_0_ce0),
     .rb_0_we0(grp_load_row_wv_fu_391_rb_0_we0),
@@ -1955,7 +1955,7 @@ always @ (posedge ap_clk) begin
     end else begin
         if ((ap_continue == 1'b1)) begin
             ap_done_reg <= 1'b0;
-        end else if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln248_fu_685_p2 == 1'd1))) begin
+        end else if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln252_fu_685_p2 == 1'd1))) begin
             ap_done_reg <= 1'b1;
         end
     end
@@ -1965,7 +1965,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_load_row_wv_fu_391_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln248_fu_685_p2 == 1'd0))) begin
+        if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln252_fu_685_p2 == 1'd0))) begin
             grp_load_row_wv_fu_391_ap_start_reg <= 1'b1;
         end else if ((grp_load_row_wv_fu_391_ap_ready == 1'b1)) begin
             grp_load_row_wv_fu_391_ap_start_reg <= 1'b0;
@@ -1988,8 +1988,8 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_state1) & (1'b1 == ap_CS_fsm_state1))) begin
         row_fu_326 <= 14'd0;
-    end else if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln248_fu_685_p2 == 1'd0))) begin
-        row_fu_326 <= add_ln248_fu_691_p2;
+    end else if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln252_fu_685_p2 == 1'd0))) begin
+        row_fu_326 <= add_ln252_fu_691_p2;
     end
 end
 
@@ -2003,7 +2003,7 @@ end
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
         row_1_reg_728 <= row_fu_326;
-        trunc_ln252_reg_736 <= trunc_ln252_fu_697_p1;
+        trunc_ln256_reg_736 <= trunc_ln256_fu_697_p1;
     end
 end
 
@@ -2052,7 +2052,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln248_fu_685_p2 == 1'd1))) begin
+    if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln252_fu_685_p2 == 1'd1))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = ap_done_reg;
@@ -2068,7 +2068,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln248_fu_685_p2 == 1'd1))) begin
+    if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln252_fu_685_p2 == 1'd1))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -2309,7 +2309,7 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln248_fu_685_p2 == 1'd1))) begin
+            if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln252_fu_685_p2 == 1'd1))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
@@ -2338,7 +2338,7 @@ always @ (*) begin
     endcase
 end
 
-assign X2_cache_address1 = zext_ln248_fu_707_p1;
+assign X2_cache_address1 = zext_ln252_fu_707_p1;
 
 assign X2_cache_ce1 = X2_cache_ce1_local;
 
@@ -2346,7 +2346,7 @@ assign X2_cache_d1 = grp_mac_blocks_wv_fu_407_ap_return;
 
 assign X2_cache_we1 = X2_cache_we1_local;
 
-assign add_ln248_fu_691_p2 = (row_fu_326 + 14'd1);
+assign add_ln252_fu_691_p2 = (row_fu_326 + 14'd1);
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
@@ -2366,7 +2366,7 @@ assign grp_load_row_wv_fu_391_ap_start = grp_load_row_wv_fu_391_ap_start_reg;
 
 assign grp_mac_blocks_wv_fu_407_ap_start = grp_mac_blocks_wv_fu_407_ap_start_reg;
 
-assign icmp_ln248_fu_685_p2 = ((row_fu_326 == 14'd8192) ? 1'b1 : 1'b0);
+assign icmp_ln252_fu_685_p2 = ((row_fu_326 == 14'd8192) ? 1'b1 : 1'b0);
 
 assign m_axi_gmem_V_0_ARADDR = grp_load_row_wv_fu_391_m_axi_gmem_V_0_ARADDR;
 
@@ -2432,7 +2432,7 @@ assign m_axi_gmem_V_0_WUSER = 1'd0;
 
 assign m_axi_gmem_V_0_WVALID = 1'b0;
 
-assign trunc_ln252_fu_697_p1 = row_fu_326[12:0];
+assign trunc_ln256_fu_697_p1 = row_fu_326[12:0];
 
 assign x_local_2_0_0_address0 = grp_mac_blocks_wv_fu_407_x_0_0_address0;
 
@@ -2946,6 +2946,6 @@ assign x_local_2_7_9_address0 = grp_mac_blocks_wv_fu_407_x_7_9_address0;
 
 assign x_local_2_7_9_ce0 = grp_mac_blocks_wv_fu_407_x_7_9_ce0;
 
-assign zext_ln248_fu_707_p1 = row_1_reg_728;
+assign zext_ln252_fu_707_p1 = row_1_reg_728;
 
 endmodule //swiglu_compute_X2

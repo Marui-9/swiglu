@@ -185,15 +185,18 @@ static void mac_blocks_wv(const ap_uint<128> rb[WV_BLOCKS_PER_ROW][Q4_K_WORDS],
     //     shift  = (n & 32) ? 4 : 0
     MAC_ALL_BLOCKS: for (int n = 0; n < 256; n++) {
         #pragma HLS PIPELINE II=1
+        #pragma HLS LATENCY min=2
         for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
-            #pragma HLS UNROLL
-            ap_int<8>  xi8  = (ap_int<8>) x[b][n];
-            ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
-                                             >> ((n & 32) ? 4 : 0)) & 0xF);
-            int        sub  = n >> 5;
-            int        k    = n & 7;
-            ap_uint<6> sc6u = (ap_uint<6>) sc6[b][sub];
-            ap_uint<6> mn6u = (ap_uint<6>) mn6[b][sub];
+            #pragma HLS UNROLL factor=6
+            // Stage 1: nibble/scalar decode
+            ap_int<8>  xi8   = (ap_int<8>) x[b][n];
+            ap_uint<4> nib4  = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
+                                              >> ((n & 32) ? 4 : 0)) & 0xF);
+            int        sub   = n >> 5;
+            int        k     = n & 7;
+            ap_uint<6> sc6u  = (ap_uint<6>) sc6[b][sub];
+            ap_uint<6> mn6u  = (ap_uint<6>) mn6[b][sub];
+            // Stage 2: multiply-accumulate (registered by LATENCY pragma)
             int_acc_w[b][k] += (int32_t)(xi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
             int_acc_m[b][k] += (int32_t)(xi8 * (ap_int<7>)mn6u);
         }
@@ -201,6 +204,7 @@ static void mac_blocks_wv(const ap_uint<128> rb[WV_BLOCKS_PER_ROW][Q4_K_WORDS],
 
     // FP32 reduction: INT32 sums → float, then scale by x_scale × d/dmin.
     float total = 0.f;
+    #pragma HLS BALANCE variable=total
     REDUCE_WV: for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
         #pragma HLS UNROLL
         int32_t sw = 0, sm = 0;
@@ -390,10 +394,11 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
 
     // 4-group × 8-block fold to reduce LUT pressure and routing congestion.
     // Cost: 4 × 256 = 1024 cycles/row (vs 512 for 2×16 fold).
-    MAC_BLOCKS_G0: for (int n = 0; n < 256; n++) {
+    MAC_BLOCKS_ALL: for (int n = 0; n < 256; n++) {
         #pragma HLS PIPELINE II=1
-        for (int b = 0; b < 8; b++) {
-            #pragma HLS UNROLL
+        #pragma HLS LATENCY min=2
+        #pragma HLS UNROLL factor=6
+        for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
             ap_int<8>  gi8  = (ap_int<8>) gate[b][n];
             ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
                                              >> ((n & 32) ? 4 : 0)) & 0xF);
@@ -404,53 +409,12 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
             int_acc_m[b][k] += (int32_t)(gi8 * (ap_int<7>)mn6u);
         }
     }
-    MAC_BLOCKS_G1: for (int n = 0; n < 256; n++) {
-        #pragma HLS PIPELINE II=1
-        for (int b = 0; b < 8; b++) {
-            #pragma HLS UNROLL
-            ap_int<8>  gi8  = (ap_int<8>) gate[b + 8][n];
-            ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b + 8], 16 + (n & 31) + ((n & 0xC0) >> 1))
-                                             >> ((n & 32) ? 4 : 0)) & 0xF);
-            int sub = n >> 5; int k = n & 7;
-            ap_uint<6> sc6u = (ap_uint<6>) sc6[b + 8][sub];
-            ap_uint<6> mn6u = (ap_uint<6>) mn6[b + 8][sub];
-            int_acc_w[b + 8][k] += (int32_t)(gi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
-            int_acc_m[b + 8][k] += (int32_t)(gi8 * (ap_int<7>)mn6u);
-        }
-    }
-    MAC_BLOCKS_G2: for (int n = 0; n < 256; n++) {
-        #pragma HLS PIPELINE II=1
-        for (int b = 0; b < 8; b++) {
-            #pragma HLS UNROLL
-            ap_int<8>  gi8  = (ap_int<8>) gate[b + 16][n];
-            ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b + 16], 16 + (n & 31) + ((n & 0xC0) >> 1))
-                                             >> ((n & 32) ? 4 : 0)) & 0xF);
-            int sub = n >> 5; int k = n & 7;
-            ap_uint<6> sc6u = (ap_uint<6>) sc6[b + 16][sub];
-            ap_uint<6> mn6u = (ap_uint<6>) mn6[b + 16][sub];
-            int_acc_w[b + 16][k] += (int32_t)(gi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
-            int_acc_m[b + 16][k] += (int32_t)(gi8 * (ap_int<7>)mn6u);
-        }
-    }
-    MAC_BLOCKS_G3: for (int n = 0; n < 256; n++) {
-        #pragma HLS PIPELINE II=1
-        for (int b = 0; b < 8; b++) {
-            #pragma HLS UNROLL
-            ap_int<8>  gi8  = (ap_int<8>) gate[b + 24][n];
-            ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b + 24], 16 + (n & 31) + ((n & 0xC0) >> 1))
-                                             >> ((n & 32) ? 4 : 0)) & 0xF);
-            int sub = n >> 5; int k = n & 7;
-            ap_uint<6> sc6u = (ap_uint<6>) sc6[b + 24][sub];
-            ap_uint<6> mn6u = (ap_uint<6>) mn6[b + 24][sub];
-            int_acc_w[b + 24][k] += (int32_t)(gi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
-            int_acc_m[b + 24][k] += (int32_t)(gi8 * (ap_int<7>)mn6u);
-        }
-    }
 
     // FP32 reduction: INT32 sums → float, then scale by gate_scale × d/dmin.
     float total = 0.f;
+    #pragma HLS BALANCE variable=total
     REDUCE_DOWN_Q4K: for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
-        #pragma HLS UNROLL
+        #pragma HLS UNROLL factor=8
         int32_t sw = 0, sm = 0;
         for (int k = 0; k < 8; k++) {
             #pragma HLS UNROLL
