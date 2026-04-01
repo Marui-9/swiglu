@@ -2929,12 +2929,11 @@ struct ggml_tensor * ggml_swiglu_fused_hw(
                 struct ggml_tensor  * w_up,
                 struct ggml_tensor  * w_down) {
 
-                    GGML_ASSERT(x->ne[0] == w_down->ne[1]);   // n_embd matches
-                    GGML_ASSERT(w_gate->ne[0] == w_up->ne[0]);
-                    GGML_ASSERT(w_down->ne[0] == x->ne[0]);   // output = n_embd
-                    // Optional: assert quantized types for weights, F32 for x.
+                    GGML_ASSERT(x->ne[0] == w_down->ne[1]);      // n_embd: x input dim == w_down output dim
+                    GGML_ASSERT(w_gate->ne[0] == w_up->ne[0]);  // gate and up share same input dim
+                    GGML_ASSERT(w_gate->ne[1] == w_down->ne[0]); // ffn_dim: gate/up output == w_down input
 
-                    const int64_t ne[4] = { w_down->ne[0], x->ne[1], x->ne[2], x->ne[3] };
+                    const int64_t ne[4] = { w_down->ne[1], x->ne[1], x->ne[2], x->ne[3] };
                     struct ggml_tensor * result = ggml_new_tensor(ctx, GGML_TYPE_F32, 4, ne);
 
                     result->op     = GGML_OP_SWIGLU_FUSED_HW;

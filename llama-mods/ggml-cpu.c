@@ -1948,11 +1948,19 @@ static void ggml_compute_forward_swiglu_fused_hw(
                 while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
                     usleep(1000);
                 }
+                if ((swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
+                    fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n", swiglu_call_count, layer);
+                    GGML_ASSERT(false);
+                }
             }
         } else {
             int tmo = 7000;
             while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
                 usleep(1000);
+            }
+            if ((swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
+                fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n", swiglu_call_count, layer);
+                GGML_ASSERT(false);
             }
         }
 
@@ -1963,7 +1971,7 @@ static void ggml_compute_forward_swiglu_fused_hw(
 
     swiglu_call_count++;
     if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG] done call #%d layer=%d\n", swiglu_call_count, layer);
+        fprintf(stderr, "[SWG] done call #%d layer=%d\n", swiglu_call_count - 1, layer);
     }
 }
 

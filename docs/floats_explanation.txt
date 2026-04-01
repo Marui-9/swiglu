@@ -1,0 +1,12 @@
+What's actually integer (W4A8)
+mac_blocks_wv (used for both X1 and X2 phases):
+
+Inner hot loop (line 200–201): INT8 × INT4 × UINT6 → INT32 — pure integer MACs
+8 partial int32_t accumulators per block — no FP adder latency constraints
+FP32 only appears once per block at line 216: d[b] * (x_scale * (float)sw) — a single multiply to apply the fp16 per-block scale
+Why FP32 can't be avoided there
+Q4_K stores two fp16 values per 256-element block: d (scale) and dmin (minimum-subtraction scale). The final result for each block is:
+
+
+result = d × (x_scale × Σ(xi × qi × sci)) − dmin × (x_scale × Σ(xi × mni))
+The d and dmin are fp16 with arbitrary magnitude — you can't represent them faithfully in a fixed integer range. So one FP32 multiply per block (not per element) is unavoidable.
