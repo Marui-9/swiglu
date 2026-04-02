@@ -14,16 +14,16 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 40
+set cdfgNum 43
 set C_modelName {compute_gate_Pipeline_GATE_PASS115}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
-dict set ap_memory_interface_dict X1_cache { MEM_WIDTH 32 MEM_SIZE 131072 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
-dict set ap_memory_interface_dict X2_cache { MEM_WIDTH 32 MEM_SIZE 131072 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
+dict set ap_memory_interface_dict X1_cache { MEM_WIDTH 8 MEM_SIZE 32768 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
+dict set ap_memory_interface_dict X2_cache { MEM_WIDTH 8 MEM_SIZE 32768 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 dict set ap_memory_interface_dict sigmoid_lut { MEM_WIDTH 32 MEM_SIZE 16384 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 set C_modelArgList {
-	{ X1_cache float 32 regular {array 32768 { 1 3 } 1 1 }  }
-	{ X2_cache float 32 regular {array 32768 { 1 3 } 1 1 }  }
+	{ X1_cache int 8 regular {array 32768 { 1 3 } 1 1 }  }
+	{ X2_cache int 8 regular {array 32768 { 1 3 } 1 1 }  }
 	{ pmax_7 float 32 regular {pointer 2}  }
 	{ pmax_6 float 32 regular {pointer 2}  }
 	{ pmax_5 float 32 regular {pointer 2}  }
@@ -38,8 +38,8 @@ set hasAXIMCache 0
 set l_AXIML2Cache [list]
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
-	{ "Name" : "X1_cache", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "X2_cache", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+	{ "Name" : "X1_cache", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
+ 	{ "Name" : "X2_cache", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
  	{ "Name" : "pmax_7", "interface" : "wire", "bitwidth" : 32, "direction" : "READWRITE"} , 
  	{ "Name" : "pmax_6", "interface" : "wire", "bitwidth" : 32, "direction" : "READWRITE"} , 
  	{ "Name" : "pmax_5", "interface" : "wire", "bitwidth" : 32, "direction" : "READWRITE"} , 
@@ -50,7 +50,7 @@ set C_modelArgMapList {[
  	{ "Name" : "pmax", "interface" : "wire", "bitwidth" : 32, "direction" : "READWRITE"} , 
  	{ "Name" : "sigmoid_lut", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY", "extern" : 0} ]}
 # RTL Port declarations: 
-set portNum 72
+set portNum 86
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -60,10 +60,10 @@ set portList {
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ X1_cache_address0 sc_out sc_lv 15 signal 0 } 
 	{ X1_cache_ce0 sc_out sc_logic 1 signal 0 } 
-	{ X1_cache_q0 sc_in sc_lv 32 signal 0 } 
+	{ X1_cache_q0 sc_in sc_lv 8 signal 0 } 
 	{ X2_cache_address0 sc_out sc_lv 15 signal 1 } 
 	{ X2_cache_ce0 sc_out sc_logic 1 signal 1 } 
-	{ X2_cache_q0 sc_in sc_lv 32 signal 1 } 
+	{ X2_cache_q0 sc_in sc_lv 8 signal 1 } 
 	{ pmax_7_i sc_in sc_lv 32 signal 2 } 
 	{ pmax_7_o sc_out sc_lv 32 signal 2 } 
 	{ pmax_7_o_ap_vld sc_out sc_logic 1 outvld 2 } 
@@ -91,39 +91,53 @@ set portList {
 	{ sigmoid_lut_address0 sc_out sc_lv 12 signal 10 } 
 	{ sigmoid_lut_ce0 sc_out sc_logic 1 signal 10 } 
 	{ sigmoid_lut_q0 sc_in sc_lv 32 signal 10 } 
-	{ grp_fu_3869_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_3869_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_3869_p_opcode sc_out sc_lv 2 signal -1 } 
-	{ grp_fu_3869_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fu_3869_p_ce sc_out sc_logic 1 signal -1 } 
-	{ grp_fu_3873_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_3873_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_3873_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fu_3873_p_ce sc_out sc_logic 1 signal -1 } 
-	{ grp_fu_3877_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_3877_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_3877_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fu_3877_p_ce sc_out sc_logic 1 signal -1 } 
-	{ grp_fu_3881_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_3881_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_3881_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fu_3881_p_ce sc_out sc_logic 1 signal -1 } 
-	{ grp_fu_344_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_344_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_344_p_opcode sc_out sc_lv 5 signal -1 } 
-	{ grp_fu_344_p_dout0 sc_in sc_lv 1 signal -1 } 
-	{ grp_fu_344_p_ce sc_out sc_logic 1 signal -1 } 
-	{ grp_fu_3885_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_3885_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_3885_p_opcode sc_out sc_lv 5 signal -1 } 
-	{ grp_fu_3885_p_dout0 sc_in sc_lv 1 signal -1 } 
-	{ grp_fu_3885_p_ce sc_out sc_logic 1 signal -1 } 
-	{ grp_p_hls_fptosi_float_i32_fu_3889_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_p_hls_fptosi_float_i32_fu_3889_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_p_hls_fptosi_float_i32_fu_3889_p_start sc_out sc_logic 1 signal -1 } 
-	{ grp_p_hls_fptosi_float_i32_fu_3889_p_ready sc_in sc_logic 1 signal -1 } 
-	{ grp_p_hls_fptosi_float_i32_fu_3889_p_done sc_in sc_logic 1 signal -1 } 
-	{ grp_p_hls_fptosi_float_i32_fu_3889_p_idle sc_in sc_logic 1 signal -1 } 
+	{ grp_fu_3871_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3871_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3871_p_opcode sc_out sc_lv 2 signal -1 } 
+	{ grp_fu_3871_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_3871_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_3875_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3875_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3875_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_3875_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_3879_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3879_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3879_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_3879_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_3883_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3883_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3883_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_3883_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_3887_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3887_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3887_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_3887_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_3891_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3891_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3891_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_3891_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_3895_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3895_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_3895_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_3898_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3898_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_3898_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_346_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_346_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_346_p_opcode sc_out sc_lv 5 signal -1 } 
+	{ grp_fu_346_p_dout0 sc_in sc_lv 1 signal -1 } 
+	{ grp_fu_346_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_3901_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3901_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3901_p_opcode sc_out sc_lv 5 signal -1 } 
+	{ grp_fu_3901_p_dout0 sc_in sc_lv 1 signal -1 } 
+	{ grp_fu_3901_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_p_hls_fptosi_float_i32_fu_3905_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_p_hls_fptosi_float_i32_fu_3905_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_p_hls_fptosi_float_i32_fu_3905_p_start sc_out sc_logic 1 signal -1 } 
+	{ grp_p_hls_fptosi_float_i32_fu_3905_p_ready sc_in sc_logic 1 signal -1 } 
+	{ grp_p_hls_fptosi_float_i32_fu_3905_p_done sc_in sc_logic 1 signal -1 } 
+	{ grp_p_hls_fptosi_float_i32_fu_3905_p_idle sc_in sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -134,10 +148,10 @@ set NewPortList {[
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "X1_cache_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":15, "type": "signal", "bundle":{"name": "X1_cache", "role": "address0" }} , 
  	{ "name": "X1_cache_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "X1_cache", "role": "ce0" }} , 
- 	{ "name": "X1_cache_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "X1_cache", "role": "q0" }} , 
+ 	{ "name": "X1_cache_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "X1_cache", "role": "q0" }} , 
  	{ "name": "X2_cache_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":15, "type": "signal", "bundle":{"name": "X2_cache", "role": "address0" }} , 
  	{ "name": "X2_cache_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "X2_cache", "role": "ce0" }} , 
- 	{ "name": "X2_cache_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "X2_cache", "role": "q0" }} , 
+ 	{ "name": "X2_cache_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "X2_cache", "role": "q0" }} , 
  	{ "name": "pmax_7_i", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "pmax_7", "role": "i" }} , 
  	{ "name": "pmax_7_o", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "pmax_7", "role": "o" }} , 
  	{ "name": "pmax_7_o_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "pmax_7", "role": "o_ap_vld" }} , 
@@ -165,59 +179,73 @@ set NewPortList {[
  	{ "name": "sigmoid_lut_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":12, "type": "signal", "bundle":{"name": "sigmoid_lut", "role": "address0" }} , 
  	{ "name": "sigmoid_lut_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "sigmoid_lut", "role": "ce0" }} , 
  	{ "name": "sigmoid_lut_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "sigmoid_lut", "role": "q0" }} , 
- 	{ "name": "grp_fu_3869_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3869_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_3869_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3869_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_3869_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "grp_fu_3869_p_opcode", "role": "default" }} , 
- 	{ "name": "grp_fu_3869_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3869_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_3869_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3869_p_ce", "role": "default" }} , 
- 	{ "name": "grp_fu_3873_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3873_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_3873_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3873_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_3873_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3873_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_3873_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3873_p_ce", "role": "default" }} , 
- 	{ "name": "grp_fu_3877_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3877_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_3877_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3877_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_3877_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3877_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_3877_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3877_p_ce", "role": "default" }} , 
- 	{ "name": "grp_fu_3881_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3881_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_3881_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3881_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_3881_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3881_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_3881_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3881_p_ce", "role": "default" }} , 
- 	{ "name": "grp_fu_344_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_344_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_344_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_344_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_344_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "grp_fu_344_p_opcode", "role": "default" }} , 
- 	{ "name": "grp_fu_344_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_344_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_344_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_344_p_ce", "role": "default" }} , 
- 	{ "name": "grp_fu_3885_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3885_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_3885_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3885_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_3885_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "grp_fu_3885_p_opcode", "role": "default" }} , 
- 	{ "name": "grp_fu_3885_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3885_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_3885_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3885_p_ce", "role": "default" }} , 
- 	{ "name": "grp_p_hls_fptosi_float_i32_fu_3889_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_p_hls_fptosi_float_i32_fu_3889_p_din1", "role": "default" }} , 
- 	{ "name": "grp_p_hls_fptosi_float_i32_fu_3889_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_p_hls_fptosi_float_i32_fu_3889_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_p_hls_fptosi_float_i32_fu_3889_p_start", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_p_hls_fptosi_float_i32_fu_3889_p_start", "role": "default" }} , 
- 	{ "name": "grp_p_hls_fptosi_float_i32_fu_3889_p_ready", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_p_hls_fptosi_float_i32_fu_3889_p_ready", "role": "default" }} , 
- 	{ "name": "grp_p_hls_fptosi_float_i32_fu_3889_p_done", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_p_hls_fptosi_float_i32_fu_3889_p_done", "role": "default" }} , 
- 	{ "name": "grp_p_hls_fptosi_float_i32_fu_3889_p_idle", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_p_hls_fptosi_float_i32_fu_3889_p_idle", "role": "default" }}  ]}
+ 	{ "name": "grp_fu_3871_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3871_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3871_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3871_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_3871_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "grp_fu_3871_p_opcode", "role": "default" }} , 
+ 	{ "name": "grp_fu_3871_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3871_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3871_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3871_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_3875_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3875_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3875_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3875_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_3875_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3875_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3875_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3875_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_3879_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3879_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3879_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3879_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_3879_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3879_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3879_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3879_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_3883_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3883_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3883_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3883_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_3883_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3883_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3883_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3883_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_3887_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3887_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3887_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3887_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_3887_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3887_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3887_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3887_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_3891_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3891_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3891_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3891_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_3891_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3891_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3891_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3891_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_3895_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3895_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3895_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3895_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3895_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3895_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_3898_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3898_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3898_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3898_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3898_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3898_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_346_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_346_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_346_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_346_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_346_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "grp_fu_346_p_opcode", "role": "default" }} , 
+ 	{ "name": "grp_fu_346_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_346_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_346_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_346_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_3901_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3901_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3901_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3901_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_3901_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "grp_fu_3901_p_opcode", "role": "default" }} , 
+ 	{ "name": "grp_fu_3901_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3901_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3901_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_3901_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_p_hls_fptosi_float_i32_fu_3905_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_p_hls_fptosi_float_i32_fu_3905_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_p_hls_fptosi_float_i32_fu_3905_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_p_hls_fptosi_float_i32_fu_3905_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_p_hls_fptosi_float_i32_fu_3905_p_start", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_p_hls_fptosi_float_i32_fu_3905_p_start", "role": "default" }} , 
+ 	{ "name": "grp_p_hls_fptosi_float_i32_fu_3905_p_ready", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_p_hls_fptosi_float_i32_fu_3905_p_ready", "role": "default" }} , 
+ 	{ "name": "grp_p_hls_fptosi_float_i32_fu_3905_p_done", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_p_hls_fptosi_float_i32_fu_3905_p_done", "role": "default" }} , 
+ 	{ "name": "grp_p_hls_fptosi_float_i32_fu_3905_p_idle", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_p_hls_fptosi_float_i32_fu_3905_p_idle", "role": "default" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	compute_gate_Pipeline_GATE_PASS115 {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 26 FirstWrite -1}
-		pmax_7 {Type IO LastRead 36 FirstWrite 39}
-		pmax_6 {Type IO LastRead 36 FirstWrite 39}
-		pmax_5 {Type IO LastRead 36 FirstWrite 39}
-		pmax_4 {Type IO LastRead 36 FirstWrite 39}
-		pmax_3 {Type IO LastRead 36 FirstWrite 39}
-		pmax_2 {Type IO LastRead 36 FirstWrite 39}
-		pmax_1 {Type IO LastRead 36 FirstWrite 39}
-		pmax {Type IO LastRead 36 FirstWrite 39}
-		sigmoid_lut {Type I LastRead 20 FirstWrite -1}}}
+		pmax_7 {Type IO LastRead 49 FirstWrite 52}
+		pmax_6 {Type IO LastRead 49 FirstWrite 52}
+		pmax_5 {Type IO LastRead 49 FirstWrite 52}
+		pmax_4 {Type IO LastRead 49 FirstWrite 52}
+		pmax_3 {Type IO LastRead 49 FirstWrite 52}
+		pmax_2 {Type IO LastRead 49 FirstWrite 52}
+		pmax_1 {Type IO LastRead 49 FirstWrite 52}
+		pmax {Type IO LastRead 49 FirstWrite 52}
+		sigmoid_lut {Type I LastRead 33 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "8232", "Max" : "8232"}
-	, {"Name" : "Interval", "Min" : "8232", "Max" : "8232"}
+	{"Name" : "Latency", "Min" : "8245", "Max" : "8245"}
+	, {"Name" : "Interval", "Min" : "8245", "Max" : "8245"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -225,8 +253,8 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	X1_cache { ap_memory {  { X1_cache_address0 mem_address 1 15 }  { X1_cache_ce0 mem_ce 1 1 }  { X1_cache_q0 mem_dout 0 32 } } }
-	X2_cache { ap_memory {  { X2_cache_address0 mem_address 1 15 }  { X2_cache_ce0 mem_ce 1 1 }  { X2_cache_q0 mem_dout 0 32 } } }
+	X1_cache { ap_memory {  { X1_cache_address0 mem_address 1 15 }  { X1_cache_ce0 mem_ce 1 1 }  { X1_cache_q0 mem_dout 0 8 } } }
+	X2_cache { ap_memory {  { X2_cache_address0 mem_address 1 15 }  { X2_cache_ce0 mem_ce 1 1 }  { X2_cache_q0 mem_dout 0 8 } } }
 	pmax_7 { ap_ovld {  { pmax_7_i in_data 0 32 }  { pmax_7_o out_data 1 32 }  { pmax_7_o_ap_vld out_vld 1 1 } } }
 	pmax_6 { ap_ovld {  { pmax_6_i in_data 0 32 }  { pmax_6_o out_data 1 32 }  { pmax_6_o_ap_vld out_vld 1 1 } } }
 	pmax_5 { ap_ovld {  { pmax_5_i in_data 0 32 }  { pmax_5_o out_data 1 32 }  { pmax_5_o_ap_vld out_vld 1 1 } } }

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'fp16_to_fp32'" level="0">
-<item name = "Date">Thu Apr  2 09:23:52 2026
+<item name = "Date">Thu Apr  2 13:36:48 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -61,7 +61,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="sparsemux_9_3_32_1_1_U1735">sparsemux_9_3_32_1_1, 0, 0, 0, 14, 0</column>
+<column name="sparsemux_9_3_32_1_1_U280">sparsemux_9_3_32_1_1, 0, 0, 0, 14, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -78,7 +78,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln46_fu_431_p2">+, 0, 0, 38, 31, 30</column>
+<column name="add_ln53_fu_431_p2">+, 0, 0, 38, 31, 30</column>
 <column name="e_11_fu_371_p2">+, 0, 0, 13, 6, 2</column>
 <column name="e_13_fu_399_p2">+, 0, 0, 13, 6, 2</column>
 <column name="e_15_fu_482_p2">+, 0, 0, 13, 6, 2</column>
@@ -87,12 +87,12 @@
 <column name="e_5_fu_266_p2">+, 0, 0, 13, 6, 2</column>
 <column name="e_7_fu_302_p2">+, 0, 0, 13, 6, 2</column>
 <column name="e_9_fu_332_p2">+, 0, 0, 13, 6, 2</column>
-<column name="and_ln36_1_fu_596_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln36_fu_585_p2">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln34_fu_142_p2">icmp, 0, 0, 17, 10, 1</column>
-<column name="icmp_ln36_1_fu_591_p2">icmp, 0, 0, 12, 5, 2</column>
-<column name="icmp_ln36_fu_575_p2">icmp, 0, 0, 12, 5, 1</column>
-<column name="or_ln34_fu_118_p2">or, 0, 0, 5, 5, 5</column>
+<column name="and_ln43_1_fu_596_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln43_fu_585_p2">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln41_fu_142_p2">icmp, 0, 0, 17, 10, 1</column>
+<column name="icmp_ln43_1_fu_591_p2">icmp, 0, 0, 12, 5, 2</column>
+<column name="icmp_ln43_fu_575_p2">icmp, 0, 0, 12, 5, 1</column>
+<column name="or_ln41_fu_118_p2">or, 0, 0, 5, 5, 5</column>
 <column name="e_10_fu_338_p3">select, 0, 0, 6, 1, 6</column>
 <column name="e_12_fu_384_p3">select, 0, 0, 6, 1, 6</column>
 <column name="e_14_fu_405_p3">select, 0, 0, 6, 1, 6</column>
@@ -112,9 +112,9 @@
 <column name="m_5_fu_242_p3">select, 0, 0, 10, 1, 10</column>
 <column name="m_7_fu_277_p3">select, 0, 0, 10, 1, 10</column>
 <column name="m_9_fu_308_p3">select, 0, 0, 10, 1, 10</column>
-<column name="select_ln37_fu_540_p3">select, 0, 0, 6, 1, 6</column>
-<column name="select_ln40_fu_532_p3">select, 0, 0, 9, 1, 9</column>
-<column name="xor_ln34_fu_580_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="select_ln44_fu_540_p3">select, 0, 0, 6, 1, 6</column>
+<column name="select_ln47_fu_532_p3">select, 0, 0, 9, 1, 9</column>
+<column name="xor_ln41_fu_580_p2">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -129,19 +129,19 @@
 <column name="e_5_reg_683">6, 0, 6, 0</column>
 <column name="exp_reg_653">5, 0, 5, 0</column>
 <column name="h_int_reg">16, 0, 16, 0</column>
-<column name="icmp_ln34_reg_660">1, 0, 1, 0</column>
+<column name="icmp_ln41_reg_660">1, 0, 1, 0</column>
 <column name="m_13_reg_705">10, 0, 10, 0</column>
 <column name="m_5_reg_666">10, 0, 10, 0</column>
 <column name="m_9_reg_688">10, 0, 10, 0</column>
 <column name="mant_reg_639">10, 0, 10, 0</column>
-<column name="tmp_529_reg_645">1, 0, 1, 0</column>
-<column name="tmp_533_reg_677">1, 0, 1, 0</column>
-<column name="tmp_535_reg_694">1, 0, 1, 0</column>
-<column name="tmp_537_reg_711">1, 0, 1, 0</column>
+<column name="tmp_1000_reg_645">1, 0, 1, 0</column>
+<column name="tmp_1004_reg_677">1, 0, 1, 0</column>
+<column name="tmp_1006_reg_694">1, 0, 1, 0</column>
+<column name="tmp_1008_reg_711">1, 0, 1, 0</column>
 <column name="exp_reg_653">64, 32, 5, 0</column>
-<column name="icmp_ln34_reg_660">64, 32, 1, 0</column>
+<column name="icmp_ln41_reg_660">64, 32, 1, 0</column>
 <column name="mant_reg_639">64, 32, 10, 0</column>
-<column name="tmp_529_reg_645">64, 32, 1, 0</column>
+<column name="tmp_1000_reg_645">64, 32, 1, 0</column>
 </table>
 </item>
 </section>

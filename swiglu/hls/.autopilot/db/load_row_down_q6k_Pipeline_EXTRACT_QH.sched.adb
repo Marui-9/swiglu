@@ -1168,7 +1168,7 @@
 					<Obj>
 						<type>1</type>
 						<id>33</id>
-						<name>empty_550</name>
+						<name>empty_807</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1823,7 +1823,7 @@
 						<name>k_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>582</lineNumber>
+						<lineNumber>484</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1839,7 +1839,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>582</second>
+										<second>484</second>
 									</item>
 								</second>
 							</item>
@@ -1919,7 +1919,7 @@
 					<Obj>
 						<type>0</type>
 						<id>101</id>
-						<name>tmp_523</name>
+						<name>tmp_994</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1962,10 +1962,10 @@
 					<Obj>
 						<type>0</type>
 						<id>102</id>
-						<name>k_1_write_ln582</name>
+						<name>k_1_write_ln484</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>582</lineNumber>
+						<lineNumber>484</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1981,7 +1981,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>582</second>
+										<second>484</second>
 									</item>
 								</second>
 							</item>
@@ -2064,7 +2064,7 @@
 						<name>k</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>582</lineNumber>
+						<lineNumber>484</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -2080,7 +2080,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>582</second>
+										<second>484</second>
 									</item>
 								</second>
 							</item>
@@ -2118,10 +2118,10 @@
 					<Obj>
 						<type>0</type>
 						<id>106</id>
-						<name>icmp_ln582</name>
+						<name>icmp_ln484</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>582</lineNumber>
+						<lineNumber>484</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -2137,7 +2137,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>582</second>
+										<second>484</second>
 									</item>
 								</second>
 							</item>
@@ -2175,10 +2175,10 @@
 					<Obj>
 						<type>0</type>
 						<id>107</id>
-						<name>add_ln582</name>
+						<name>add_ln484</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>582</lineNumber>
+						<lineNumber>484</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -2194,7 +2194,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>582</second>
+										<second>484</second>
 									</item>
 								</second>
 							</item>
@@ -2232,10 +2232,10 @@
 					<Obj>
 						<type>0</type>
 						<id>108</id>
-						<name>br_ln582</name>
+						<name>br_ln484</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>582</lineNumber>
+						<lineNumber>484</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -2251,7 +2251,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>582</second>
+										<second>484</second>
 									</item>
 								</second>
 							</item>
@@ -2290,10 +2290,10 @@
 					<Obj>
 						<type>0</type>
 						<id>110</id>
-						<name>zext_ln582</name>
+						<name>zext_ln484</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>582</lineNumber>
+						<lineNumber>484</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -2309,7 +2309,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>582</second>
+										<second>484</second>
 									</item>
 								</second>
 							</item>
@@ -2346,10 +2346,10 @@
 					<Obj>
 						<type>0</type>
 						<id>114</id>
-						<name>trunc_ln587</name>
+						<name>trunc_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -2365,7 +2365,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -2402,10 +2402,10 @@
 					<Obj>
 						<type>0</type>
 						<id>115</id>
-						<name>zext_ln53</name>
+						<name>zext_ln60</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>53</lineNumber>
+						<lineNumber>60</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -2421,14 +2421,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>53</second>
+										<second>60</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -2465,10 +2465,10 @@
 					<Obj>
 						<type>0</type>
 						<id>116</id>
-						<name>zext_ln53_1</name>
+						<name>zext_ln60_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>53</lineNumber>
+						<lineNumber>60</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -2484,14 +2484,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>53</second>
+										<second>60</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -2528,10 +2528,10 @@
 					<Obj>
 						<type>0</type>
 						<id>117</id>
-						<name>zext_ln55_17</name>
+						<name>zext_ln62_106</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -2547,14 +2547,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -2591,10 +2591,10 @@
 					<Obj>
 						<type>0</type>
 						<id>118</id>
-						<name>zext_ln55_18_cast</name>
+						<name>zext_ln62_107_cast</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -2610,14 +2610,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -2656,10 +2656,10 @@
 					<Obj>
 						<type>0</type>
 						<id>119</id>
-						<name>zext_ln55</name>
+						<name>zext_ln62</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -2675,14 +2675,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -2719,10 +2719,10 @@
 					<Obj>
 						<type>0</type>
 						<id>120</id>
-						<name>add_ln55</name>
+						<name>add_ln62</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -2738,14 +2738,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -2783,10 +2783,10 @@
 					<Obj>
 						<type>0</type>
 						<id>121</id>
-						<name>trunc_ln55_1</name>
+						<name>trunc_ln62_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -2802,14 +2802,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -2849,10 +2849,10 @@
 					<Obj>
 						<type>0</type>
 						<id>122</id>
-						<name>lshr_ln55_9</name>
+						<name>lshr_ln62_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -2868,14 +2868,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -2915,10 +2915,10 @@
 					<Obj>
 						<type>0</type>
 						<id>123</id>
-						<name>zext_ln55_4</name>
+						<name>zext_ln62_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -2934,14 +2934,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -2978,10 +2978,10 @@
 					<Obj>
 						<type>0</type>
 						<id>124</id>
-						<name>trunc_ln55</name>
+						<name>trunc_ln62</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -2997,14 +2997,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3041,10 +3041,10 @@
 					<Obj>
 						<type>0</type>
 						<id>125</id>
-						<name>shl_ln55_4</name>
+						<name>shl_ln62_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3060,14 +3060,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3109,7 +3109,7 @@
 						<name>flat_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3125,14 +3125,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3174,7 +3174,7 @@
 						<name>flat_16_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3190,14 +3190,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3239,7 +3239,7 @@
 						<name>flat_17_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3255,14 +3255,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3304,7 +3304,7 @@
 						<name>flat_18_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3320,14 +3320,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3369,7 +3369,7 @@
 						<name>flat_19_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3385,14 +3385,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3434,7 +3434,7 @@
 						<name>flat_20_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3450,14 +3450,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3499,7 +3499,7 @@
 						<name>flat_21_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3515,14 +3515,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3564,7 +3564,7 @@
 						<name>flat_22_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3580,14 +3580,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3629,7 +3629,7 @@
 						<name>flat_23_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3645,14 +3645,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3694,7 +3694,7 @@
 						<name>flat_24_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3710,14 +3710,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3759,7 +3759,7 @@
 						<name>flat_25_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3775,14 +3775,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3824,7 +3824,7 @@
 						<name>flat_26_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3840,14 +3840,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3889,7 +3889,7 @@
 						<name>flat_27_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3905,14 +3905,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -3954,7 +3954,7 @@
 						<name>flat_28_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -3970,14 +3970,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4019,7 +4019,7 @@
 						<name>flat_29_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4035,14 +4035,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4084,7 +4084,7 @@
 						<name>flat_30_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4100,14 +4100,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4149,7 +4149,7 @@
 						<name>flat_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4165,14 +4165,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4212,7 +4212,7 @@
 						<name>flat_16_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4228,14 +4228,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4275,7 +4275,7 @@
 						<name>flat_17_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4291,14 +4291,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4338,7 +4338,7 @@
 						<name>flat_18_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4354,14 +4354,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4401,7 +4401,7 @@
 						<name>flat_19_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4417,14 +4417,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4464,7 +4464,7 @@
 						<name>flat_20_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4480,14 +4480,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4527,7 +4527,7 @@
 						<name>flat_21_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4543,14 +4543,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4590,7 +4590,7 @@
 						<name>flat_22_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4606,14 +4606,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4653,7 +4653,7 @@
 						<name>flat_23_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4669,14 +4669,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4716,7 +4716,7 @@
 						<name>flat_24_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4732,14 +4732,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4779,7 +4779,7 @@
 						<name>flat_25_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4795,14 +4795,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4842,7 +4842,7 @@
 						<name>flat_26_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4858,14 +4858,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4905,7 +4905,7 @@
 						<name>flat_27_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4921,14 +4921,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -4968,7 +4968,7 @@
 						<name>flat_28_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -4984,14 +4984,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5031,7 +5031,7 @@
 						<name>flat_29_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -5047,14 +5047,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5094,7 +5094,7 @@
 						<name>flat_30_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -5110,14 +5110,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5157,7 +5157,7 @@
 						<name>tmp_s</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -5173,14 +5173,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5251,10 +5251,10 @@
 					<Obj>
 						<type>0</type>
 						<id>159</id>
-						<name>tmp_733</name>
+						<name>tmp_475</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -5270,14 +5270,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5319,7 +5319,7 @@
 						<name>qh_buf_0_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -5335,7 +5335,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5377,7 +5377,7 @@
 						<name>qh_buf_4_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -5393,7 +5393,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5435,7 +5435,7 @@
 						<name>qh_buf_8_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -5451,7 +5451,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5493,7 +5493,7 @@
 						<name>qh_buf_12_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -5509,7 +5509,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5551,7 +5551,7 @@
 						<name>qh_buf_16_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -5567,7 +5567,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5609,7 +5609,7 @@
 						<name>qh_buf_20_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -5625,7 +5625,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5667,7 +5667,7 @@
 						<name>qh_buf_24_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -5683,7 +5683,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5725,7 +5725,7 @@
 						<name>qh_buf_28_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -5741,7 +5741,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5780,10 +5780,10 @@
 					<Obj>
 						<type>0</type>
 						<id>168</id>
-						<name>add_ln55_7</name>
+						<name>add_ln62_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -5799,14 +5799,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5844,10 +5844,10 @@
 					<Obj>
 						<type>0</type>
 						<id>169</id>
-						<name>zext_ln55_19</name>
+						<name>zext_ln62_108</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -5863,14 +5863,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5907,10 +5907,10 @@
 					<Obj>
 						<type>0</type>
 						<id>170</id>
-						<name>add_ln55_8</name>
+						<name>add_ln62_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -5926,14 +5926,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -5971,10 +5971,10 @@
 					<Obj>
 						<type>0</type>
 						<id>171</id>
-						<name>trunc_ln55_3</name>
+						<name>trunc_ln62_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -5990,14 +5990,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6037,10 +6037,10 @@
 					<Obj>
 						<type>0</type>
 						<id>172</id>
-						<name>lshr_ln55_s</name>
+						<name>lshr_ln62_s</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6056,14 +6056,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6103,10 +6103,10 @@
 					<Obj>
 						<type>0</type>
 						<id>173</id>
-						<name>zext_ln55_5</name>
+						<name>zext_ln62_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6122,14 +6122,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6166,10 +6166,10 @@
 					<Obj>
 						<type>0</type>
 						<id>174</id>
-						<name>trunc_ln55_11</name>
+						<name>trunc_ln62_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6185,14 +6185,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6229,10 +6229,10 @@
 					<Obj>
 						<type>0</type>
 						<id>175</id>
-						<name>shl_ln55_5</name>
+						<name>shl_ln62_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6248,14 +6248,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6297,7 +6297,7 @@
 						<name>flat_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6313,14 +6313,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6362,7 +6362,7 @@
 						<name>flat_16_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6378,14 +6378,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6427,7 +6427,7 @@
 						<name>flat_17_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6443,14 +6443,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6492,7 +6492,7 @@
 						<name>flat_18_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6508,14 +6508,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6557,7 +6557,7 @@
 						<name>flat_19_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6573,14 +6573,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6622,7 +6622,7 @@
 						<name>flat_20_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6638,14 +6638,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6687,7 +6687,7 @@
 						<name>flat_21_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6703,14 +6703,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6752,7 +6752,7 @@
 						<name>flat_22_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6768,14 +6768,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6817,7 +6817,7 @@
 						<name>flat_23_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6833,14 +6833,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6882,7 +6882,7 @@
 						<name>flat_24_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6898,14 +6898,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -6947,7 +6947,7 @@
 						<name>flat_25_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -6963,14 +6963,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7012,7 +7012,7 @@
 						<name>flat_26_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -7028,14 +7028,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7077,7 +7077,7 @@
 						<name>flat_27_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -7093,14 +7093,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7142,7 +7142,7 @@
 						<name>flat_28_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -7158,14 +7158,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7207,7 +7207,7 @@
 						<name>flat_29_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -7223,14 +7223,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7272,7 +7272,7 @@
 						<name>flat_30_addr_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -7288,14 +7288,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7337,7 +7337,7 @@
 						<name>qh_buf_1_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -7353,7 +7353,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7395,7 +7395,7 @@
 						<name>qh_buf_5_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -7411,7 +7411,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7453,7 +7453,7 @@
 						<name>qh_buf_9_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -7469,7 +7469,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7511,7 +7511,7 @@
 						<name>qh_buf_13_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -7527,7 +7527,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7569,7 +7569,7 @@
 						<name>qh_buf_17_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -7585,7 +7585,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7627,7 +7627,7 @@
 						<name>qh_buf_21_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -7643,7 +7643,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7685,7 +7685,7 @@
 						<name>qh_buf_25_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -7701,7 +7701,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7743,7 +7743,7 @@
 						<name>qh_buf_29_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -7759,7 +7759,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7798,10 +7798,10 @@
 					<Obj>
 						<type>0</type>
 						<id>200</id>
-						<name>add_ln55_11</name>
+						<name>add_ln62_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -7817,14 +7817,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7862,10 +7862,10 @@
 					<Obj>
 						<type>0</type>
 						<id>201</id>
-						<name>zext_ln55_20</name>
+						<name>zext_ln62_109</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -7881,14 +7881,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7925,10 +7925,10 @@
 					<Obj>
 						<type>0</type>
 						<id>202</id>
-						<name>add_ln55_9</name>
+						<name>add_ln62_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -7944,14 +7944,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -7989,10 +7989,10 @@
 					<Obj>
 						<type>0</type>
 						<id>203</id>
-						<name>trunc_ln55_4</name>
+						<name>trunc_ln62_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8008,14 +8008,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8055,10 +8055,10 @@
 					<Obj>
 						<type>0</type>
 						<id>204</id>
-						<name>lshr_ln55_2</name>
+						<name>lshr_ln62_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8074,14 +8074,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8121,10 +8121,10 @@
 					<Obj>
 						<type>0</type>
 						<id>205</id>
-						<name>zext_ln55_6</name>
+						<name>zext_ln62_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8140,14 +8140,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8184,10 +8184,10 @@
 					<Obj>
 						<type>0</type>
 						<id>206</id>
-						<name>trunc_ln55_12</name>
+						<name>trunc_ln62_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8203,14 +8203,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8247,10 +8247,10 @@
 					<Obj>
 						<type>0</type>
 						<id>207</id>
-						<name>shl_ln55_6</name>
+						<name>shl_ln62_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8266,14 +8266,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8315,7 +8315,7 @@
 						<name>flat_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8331,14 +8331,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8380,7 +8380,7 @@
 						<name>flat_16_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8396,14 +8396,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8445,7 +8445,7 @@
 						<name>flat_17_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8461,14 +8461,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8510,7 +8510,7 @@
 						<name>flat_18_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8526,14 +8526,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8575,7 +8575,7 @@
 						<name>flat_19_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8591,14 +8591,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8640,7 +8640,7 @@
 						<name>flat_20_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8656,14 +8656,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8705,7 +8705,7 @@
 						<name>flat_21_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8721,14 +8721,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8770,7 +8770,7 @@
 						<name>flat_22_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8786,14 +8786,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8835,7 +8835,7 @@
 						<name>flat_23_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8851,14 +8851,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8900,7 +8900,7 @@
 						<name>flat_24_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8916,14 +8916,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -8965,7 +8965,7 @@
 						<name>flat_25_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -8981,14 +8981,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9030,7 +9030,7 @@
 						<name>flat_26_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -9046,14 +9046,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9095,7 +9095,7 @@
 						<name>flat_27_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -9111,14 +9111,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9160,7 +9160,7 @@
 						<name>flat_28_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -9176,14 +9176,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9225,7 +9225,7 @@
 						<name>flat_29_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -9241,14 +9241,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9290,7 +9290,7 @@
 						<name>flat_30_addr_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -9306,14 +9306,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9355,7 +9355,7 @@
 						<name>qh_buf_2_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9371,7 +9371,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9413,7 +9413,7 @@
 						<name>qh_buf_6_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9429,7 +9429,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9471,7 +9471,7 @@
 						<name>qh_buf_10_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9487,7 +9487,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9529,7 +9529,7 @@
 						<name>qh_buf_14_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9545,7 +9545,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9587,7 +9587,7 @@
 						<name>qh_buf_18_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9603,7 +9603,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9645,7 +9645,7 @@
 						<name>qh_buf_22_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9661,7 +9661,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9703,7 +9703,7 @@
 						<name>qh_buf_26_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9719,7 +9719,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9761,7 +9761,7 @@
 						<name>qh_buf_30_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -9777,7 +9777,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9816,10 +9816,10 @@
 					<Obj>
 						<type>0</type>
 						<id>232</id>
-						<name>add_ln55_12</name>
+						<name>add_ln62_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -9835,14 +9835,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9880,10 +9880,10 @@
 					<Obj>
 						<type>0</type>
 						<id>233</id>
-						<name>zext_ln55_21</name>
+						<name>zext_ln62_110</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -9899,14 +9899,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -9943,10 +9943,10 @@
 					<Obj>
 						<type>0</type>
 						<id>234</id>
-						<name>add_ln55_10</name>
+						<name>add_ln62_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -9962,14 +9962,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10007,10 +10007,10 @@
 					<Obj>
 						<type>0</type>
 						<id>235</id>
-						<name>trunc_ln55_6</name>
+						<name>trunc_ln62_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10026,14 +10026,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10073,10 +10073,10 @@
 					<Obj>
 						<type>0</type>
 						<id>236</id>
-						<name>lshr_ln55_4</name>
+						<name>lshr_ln62_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10092,14 +10092,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10139,10 +10139,10 @@
 					<Obj>
 						<type>0</type>
 						<id>237</id>
-						<name>zext_ln55_7</name>
+						<name>zext_ln62_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10158,14 +10158,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10202,10 +10202,10 @@
 					<Obj>
 						<type>0</type>
 						<id>238</id>
-						<name>trunc_ln55_13</name>
+						<name>trunc_ln62_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10221,14 +10221,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10265,10 +10265,10 @@
 					<Obj>
 						<type>0</type>
 						<id>239</id>
-						<name>shl_ln55_7</name>
+						<name>shl_ln62_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10284,14 +10284,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10333,7 +10333,7 @@
 						<name>flat_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10349,14 +10349,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10398,7 +10398,7 @@
 						<name>flat_16_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10414,14 +10414,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10463,7 +10463,7 @@
 						<name>flat_17_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10479,14 +10479,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10528,7 +10528,7 @@
 						<name>flat_18_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10544,14 +10544,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10593,7 +10593,7 @@
 						<name>flat_19_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10609,14 +10609,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10658,7 +10658,7 @@
 						<name>flat_20_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10674,14 +10674,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10723,7 +10723,7 @@
 						<name>flat_21_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10739,14 +10739,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10788,7 +10788,7 @@
 						<name>flat_22_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10804,14 +10804,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10853,7 +10853,7 @@
 						<name>flat_23_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10869,14 +10869,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10918,7 +10918,7 @@
 						<name>flat_24_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10934,14 +10934,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -10983,7 +10983,7 @@
 						<name>flat_25_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -10999,14 +10999,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11048,7 +11048,7 @@
 						<name>flat_26_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11064,14 +11064,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11113,7 +11113,7 @@
 						<name>flat_27_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11129,14 +11129,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11178,7 +11178,7 @@
 						<name>flat_28_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11194,14 +11194,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11243,7 +11243,7 @@
 						<name>flat_29_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11259,14 +11259,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11308,7 +11308,7 @@
 						<name>flat_30_addr_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11324,14 +11324,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11373,7 +11373,7 @@
 						<name>flat_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11389,14 +11389,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11436,7 +11436,7 @@
 						<name>flat_16_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11452,14 +11452,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11499,7 +11499,7 @@
 						<name>flat_17_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11515,14 +11515,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11562,7 +11562,7 @@
 						<name>flat_18_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11578,14 +11578,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11625,7 +11625,7 @@
 						<name>flat_19_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11641,14 +11641,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11688,7 +11688,7 @@
 						<name>flat_20_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11704,14 +11704,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11751,7 +11751,7 @@
 						<name>flat_21_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11767,14 +11767,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11814,7 +11814,7 @@
 						<name>flat_22_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11830,14 +11830,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11877,7 +11877,7 @@
 						<name>flat_23_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11893,14 +11893,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -11940,7 +11940,7 @@
 						<name>flat_24_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -11956,14 +11956,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12003,7 +12003,7 @@
 						<name>flat_25_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12019,14 +12019,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12066,7 +12066,7 @@
 						<name>flat_26_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12082,14 +12082,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12129,7 +12129,7 @@
 						<name>flat_27_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12145,14 +12145,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12192,7 +12192,7 @@
 						<name>flat_28_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12208,14 +12208,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12255,7 +12255,7 @@
 						<name>flat_29_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12271,14 +12271,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12318,7 +12318,7 @@
 						<name>flat_30_load_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12334,14 +12334,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12378,10 +12378,10 @@
 					<Obj>
 						<type>0</type>
 						<id>272</id>
-						<name>tmp_734</name>
+						<name>tmp_476</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12397,14 +12397,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12475,10 +12475,10 @@
 					<Obj>
 						<type>0</type>
 						<id>273</id>
-						<name>tmp_735</name>
+						<name>tmp_477</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12494,14 +12494,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12543,7 +12543,7 @@
 						<name>flat_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12559,14 +12559,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12606,7 +12606,7 @@
 						<name>flat_16_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12622,14 +12622,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12669,7 +12669,7 @@
 						<name>flat_17_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12685,14 +12685,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12732,7 +12732,7 @@
 						<name>flat_18_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12748,14 +12748,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12795,7 +12795,7 @@
 						<name>flat_19_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12811,14 +12811,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12858,7 +12858,7 @@
 						<name>flat_20_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12874,14 +12874,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12921,7 +12921,7 @@
 						<name>flat_21_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -12937,14 +12937,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -12984,7 +12984,7 @@
 						<name>flat_22_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13000,14 +13000,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13047,7 +13047,7 @@
 						<name>flat_23_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13063,14 +13063,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13110,7 +13110,7 @@
 						<name>flat_24_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13126,14 +13126,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13173,7 +13173,7 @@
 						<name>flat_25_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13189,14 +13189,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13236,7 +13236,7 @@
 						<name>flat_26_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13252,14 +13252,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13299,7 +13299,7 @@
 						<name>flat_27_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13315,14 +13315,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13362,7 +13362,7 @@
 						<name>flat_28_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13378,14 +13378,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13425,7 +13425,7 @@
 						<name>flat_29_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13441,14 +13441,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13488,7 +13488,7 @@
 						<name>flat_30_load_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13504,14 +13504,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13548,10 +13548,10 @@
 					<Obj>
 						<type>0</type>
 						<id>290</id>
-						<name>tmp_736</name>
+						<name>tmp_478</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13567,14 +13567,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13645,10 +13645,10 @@
 					<Obj>
 						<type>0</type>
 						<id>291</id>
-						<name>tmp_737</name>
+						<name>tmp_479</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13664,14 +13664,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13713,7 +13713,7 @@
 						<name>flat_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13729,14 +13729,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13776,7 +13776,7 @@
 						<name>flat_16_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13792,14 +13792,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13839,7 +13839,7 @@
 						<name>flat_17_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13855,14 +13855,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13902,7 +13902,7 @@
 						<name>flat_18_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13918,14 +13918,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -13965,7 +13965,7 @@
 						<name>flat_19_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -13981,14 +13981,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14028,7 +14028,7 @@
 						<name>flat_20_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14044,14 +14044,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14091,7 +14091,7 @@
 						<name>flat_21_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14107,14 +14107,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14154,7 +14154,7 @@
 						<name>flat_22_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14170,14 +14170,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14217,7 +14217,7 @@
 						<name>flat_23_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14233,14 +14233,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14280,7 +14280,7 @@
 						<name>flat_24_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14296,14 +14296,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14343,7 +14343,7 @@
 						<name>flat_25_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14359,14 +14359,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14406,7 +14406,7 @@
 						<name>flat_26_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14422,14 +14422,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14469,7 +14469,7 @@
 						<name>flat_27_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14485,14 +14485,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14532,7 +14532,7 @@
 						<name>flat_28_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14548,14 +14548,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14595,7 +14595,7 @@
 						<name>flat_29_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14611,14 +14611,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14658,7 +14658,7 @@
 						<name>flat_30_load_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14674,14 +14674,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14718,10 +14718,10 @@
 					<Obj>
 						<type>0</type>
 						<id>308</id>
-						<name>tmp_738</name>
+						<name>tmp_480</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14737,14 +14737,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14815,10 +14815,10 @@
 					<Obj>
 						<type>0</type>
 						<id>309</id>
-						<name>tmp_739</name>
+						<name>tmp_481</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>get_byte</contextFuncName>
 						<contextNormFuncName>get_byte</contextNormFuncName>
 						<inlineStackInfo>
@@ -14834,14 +14834,14 @@
 											<first>swiglu.cpp</first>
 											<second>get_byte</second>
 										</first>
-										<second>55</second>
+										<second>62</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14883,7 +14883,7 @@
 						<name>qh_buf_3_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -14899,7 +14899,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14941,7 +14941,7 @@
 						<name>qh_buf_7_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -14957,7 +14957,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -14999,7 +14999,7 @@
 						<name>qh_buf_11_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15015,7 +15015,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15057,7 +15057,7 @@
 						<name>qh_buf_15_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15073,7 +15073,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15115,7 +15115,7 @@
 						<name>qh_buf_19_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15131,7 +15131,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15173,7 +15173,7 @@
 						<name>qh_buf_23_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15189,7 +15189,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15231,7 +15231,7 @@
 						<name>qh_buf_27_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15247,7 +15247,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15289,7 +15289,7 @@
 						<name>qh_buf_31_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15305,7 +15305,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15344,10 +15344,10 @@
 					<Obj>
 						<type>0</type>
 						<id>318</id>
-						<name>_ln587</name>
+						<name>_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15363,7 +15363,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15415,10 +15415,10 @@
 					<Obj>
 						<type>0</type>
 						<id>320</id>
-						<name>qh_buf_24_addr_write_ln587</name>
+						<name>qh_buf_24_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15434,7 +15434,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15472,10 +15472,10 @@
 					<Obj>
 						<type>0</type>
 						<id>321</id>
-						<name>qh_buf_25_addr_write_ln587</name>
+						<name>qh_buf_25_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15491,7 +15491,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15529,10 +15529,10 @@
 					<Obj>
 						<type>0</type>
 						<id>322</id>
-						<name>qh_buf_26_addr_write_ln587</name>
+						<name>qh_buf_26_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15548,7 +15548,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15586,10 +15586,10 @@
 					<Obj>
 						<type>0</type>
 						<id>323</id>
-						<name>qh_buf_27_addr_write_ln587</name>
+						<name>qh_buf_27_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15605,7 +15605,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15643,10 +15643,10 @@
 					<Obj>
 						<type>0</type>
 						<id>324</id>
-						<name>br_ln587</name>
+						<name>br_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15662,7 +15662,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15699,10 +15699,10 @@
 					<Obj>
 						<type>0</type>
 						<id>326</id>
-						<name>qh_buf_20_addr_write_ln587</name>
+						<name>qh_buf_20_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15718,7 +15718,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15756,10 +15756,10 @@
 					<Obj>
 						<type>0</type>
 						<id>327</id>
-						<name>qh_buf_21_addr_write_ln587</name>
+						<name>qh_buf_21_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15775,7 +15775,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15813,10 +15813,10 @@
 					<Obj>
 						<type>0</type>
 						<id>328</id>
-						<name>qh_buf_22_addr_write_ln587</name>
+						<name>qh_buf_22_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15832,7 +15832,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15870,10 +15870,10 @@
 					<Obj>
 						<type>0</type>
 						<id>329</id>
-						<name>qh_buf_23_addr_write_ln587</name>
+						<name>qh_buf_23_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15889,7 +15889,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15927,10 +15927,10 @@
 					<Obj>
 						<type>0</type>
 						<id>330</id>
-						<name>br_ln587</name>
+						<name>br_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -15946,7 +15946,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -15983,10 +15983,10 @@
 					<Obj>
 						<type>0</type>
 						<id>332</id>
-						<name>qh_buf_16_addr_write_ln587</name>
+						<name>qh_buf_16_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16002,7 +16002,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16040,10 +16040,10 @@
 					<Obj>
 						<type>0</type>
 						<id>333</id>
-						<name>qh_buf_17_addr_write_ln587</name>
+						<name>qh_buf_17_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16059,7 +16059,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16097,10 +16097,10 @@
 					<Obj>
 						<type>0</type>
 						<id>334</id>
-						<name>qh_buf_18_addr_write_ln587</name>
+						<name>qh_buf_18_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16116,7 +16116,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16154,10 +16154,10 @@
 					<Obj>
 						<type>0</type>
 						<id>335</id>
-						<name>qh_buf_19_addr_write_ln587</name>
+						<name>qh_buf_19_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16173,7 +16173,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16211,10 +16211,10 @@
 					<Obj>
 						<type>0</type>
 						<id>336</id>
-						<name>br_ln587</name>
+						<name>br_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16230,7 +16230,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16267,10 +16267,10 @@
 					<Obj>
 						<type>0</type>
 						<id>338</id>
-						<name>qh_buf_12_addr_write_ln587</name>
+						<name>qh_buf_12_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16286,7 +16286,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16324,10 +16324,10 @@
 					<Obj>
 						<type>0</type>
 						<id>339</id>
-						<name>qh_buf_13_addr_write_ln587</name>
+						<name>qh_buf_13_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16343,7 +16343,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16381,10 +16381,10 @@
 					<Obj>
 						<type>0</type>
 						<id>340</id>
-						<name>qh_buf_14_addr_write_ln587</name>
+						<name>qh_buf_14_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16400,7 +16400,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16438,10 +16438,10 @@
 					<Obj>
 						<type>0</type>
 						<id>341</id>
-						<name>qh_buf_15_addr_write_ln587</name>
+						<name>qh_buf_15_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16457,7 +16457,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16495,10 +16495,10 @@
 					<Obj>
 						<type>0</type>
 						<id>342</id>
-						<name>br_ln587</name>
+						<name>br_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16514,7 +16514,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16551,10 +16551,10 @@
 					<Obj>
 						<type>0</type>
 						<id>344</id>
-						<name>qh_buf_8_addr_write_ln587</name>
+						<name>qh_buf_8_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16570,7 +16570,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16608,10 +16608,10 @@
 					<Obj>
 						<type>0</type>
 						<id>345</id>
-						<name>qh_buf_9_addr_write_ln587</name>
+						<name>qh_buf_9_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16627,7 +16627,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16665,10 +16665,10 @@
 					<Obj>
 						<type>0</type>
 						<id>346</id>
-						<name>qh_buf_10_addr_write_ln587</name>
+						<name>qh_buf_10_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16684,7 +16684,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16722,10 +16722,10 @@
 					<Obj>
 						<type>0</type>
 						<id>347</id>
-						<name>qh_buf_11_addr_write_ln587</name>
+						<name>qh_buf_11_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16741,7 +16741,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16779,10 +16779,10 @@
 					<Obj>
 						<type>0</type>
 						<id>348</id>
-						<name>br_ln587</name>
+						<name>br_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16798,7 +16798,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16835,10 +16835,10 @@
 					<Obj>
 						<type>0</type>
 						<id>350</id>
-						<name>qh_buf_4_addr_write_ln587</name>
+						<name>qh_buf_4_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16854,7 +16854,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16892,10 +16892,10 @@
 					<Obj>
 						<type>0</type>
 						<id>351</id>
-						<name>qh_buf_5_addr_write_ln587</name>
+						<name>qh_buf_5_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16911,7 +16911,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -16949,10 +16949,10 @@
 					<Obj>
 						<type>0</type>
 						<id>352</id>
-						<name>qh_buf_6_addr_write_ln587</name>
+						<name>qh_buf_6_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -16968,7 +16968,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17006,10 +17006,10 @@
 					<Obj>
 						<type>0</type>
 						<id>353</id>
-						<name>qh_buf_7_addr_write_ln587</name>
+						<name>qh_buf_7_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17025,7 +17025,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17063,10 +17063,10 @@
 					<Obj>
 						<type>0</type>
 						<id>354</id>
-						<name>br_ln587</name>
+						<name>br_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17082,7 +17082,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17119,10 +17119,10 @@
 					<Obj>
 						<type>0</type>
 						<id>356</id>
-						<name>qh_buf_0_addr_write_ln587</name>
+						<name>qh_buf_0_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17138,7 +17138,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17176,10 +17176,10 @@
 					<Obj>
 						<type>0</type>
 						<id>357</id>
-						<name>qh_buf_1_addr_write_ln587</name>
+						<name>qh_buf_1_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17195,7 +17195,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17233,10 +17233,10 @@
 					<Obj>
 						<type>0</type>
 						<id>358</id>
-						<name>qh_buf_2_addr_write_ln587</name>
+						<name>qh_buf_2_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17252,7 +17252,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17290,10 +17290,10 @@
 					<Obj>
 						<type>0</type>
 						<id>359</id>
-						<name>qh_buf_3_addr_write_ln587</name>
+						<name>qh_buf_3_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17309,7 +17309,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17347,10 +17347,10 @@
 					<Obj>
 						<type>0</type>
 						<id>360</id>
-						<name>br_ln587</name>
+						<name>br_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17366,7 +17366,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17403,10 +17403,10 @@
 					<Obj>
 						<type>0</type>
 						<id>362</id>
-						<name>qh_buf_28_addr_write_ln587</name>
+						<name>qh_buf_28_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17422,7 +17422,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17460,10 +17460,10 @@
 					<Obj>
 						<type>0</type>
 						<id>363</id>
-						<name>qh_buf_29_addr_write_ln587</name>
+						<name>qh_buf_29_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17479,7 +17479,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17517,10 +17517,10 @@
 					<Obj>
 						<type>0</type>
 						<id>364</id>
-						<name>qh_buf_30_addr_write_ln587</name>
+						<name>qh_buf_30_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17536,7 +17536,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17574,10 +17574,10 @@
 					<Obj>
 						<type>0</type>
 						<id>365</id>
-						<name>qh_buf_31_addr_write_ln587</name>
+						<name>qh_buf_31_addr_write_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17593,7 +17593,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17631,10 +17631,10 @@
 					<Obj>
 						<type>0</type>
 						<id>366</id>
-						<name>br_ln587</name>
+						<name>br_ln489</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>587</lineNumber>
+						<lineNumber>489</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17650,7 +17650,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>587</second>
+										<second>489</second>
 									</item>
 								</second>
 							</item>
@@ -17687,10 +17687,10 @@
 					<Obj>
 						<type>0</type>
 						<id>368</id>
-						<name>k_1_write_ln582</name>
+						<name>k_1_write_ln484</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>582</lineNumber>
+						<lineNumber>484</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17706,7 +17706,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>582</second>
+										<second>484</second>
 									</item>
 								</second>
 							</item>
@@ -17746,10 +17746,10 @@
 					<Obj>
 						<type>0</type>
 						<id>369</id>
-						<name>br_ln582</name>
+						<name>br_ln484</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>582</lineNumber>
+						<lineNumber>484</lineNumber>
 						<contextFuncName>load_row_down_q6k</contextFuncName>
 						<contextNormFuncName>load_row_down_q6k</contextNormFuncName>
 						<inlineStackInfo>
@@ -17765,7 +17765,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q6k</second>
 										</first>
-										<second>582</second>
+										<second>484</second>
 									</item>
 								</second>
 							</item>
@@ -19032,7 +19032,7 @@
 				<Obj>
 					<type>3</type>
 					<id>109</id>
-					<name>VITIS_LOOP_584_3</name>
+					<name>VITIS_LOOP_486_3</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -19066,7 +19066,7 @@
 				<Obj>
 					<type>3</type>
 					<id>319</id>
-					<name>VITIS_LOOP_584_3.split</name>
+					<name>VITIS_LOOP_486_3.split</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -19614,7 +19614,7 @@
 				<Obj>
 					<type>3</type>
 					<id>372</id>
-					<name>VITIS_LOOP_592_4.preheader.exitStub</name>
+					<name>VITIS_LOOP_494_4.preheader.exitStub</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>

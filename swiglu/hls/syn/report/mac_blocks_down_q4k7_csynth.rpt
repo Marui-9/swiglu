@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'mac_blocks_down_q4k7'
 ================================================================
-* Date:           Thu Apr  2 09:24:19 2026
+* Date:           Thu Apr  2 13:37:17 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |   Interval  | Pipeline|
     |   min   |   max   |    min   |    max   |  min |  max |   Type  |
     +---------+---------+----------+----------+------+------+---------+
-    |     2453|     2453|  9.812 us|  9.812 us|  2453|  2453|       no|
+    |     1429|     1429|  5.716 us|  5.716 us|  1429|  1429|       no|
     +---------+---------+----------+----------+------+------+---------+
 
     + Detail: 
@@ -39,8 +39,8 @@
         |                               Instance                               |                          Module                          |   min   |   max   |    min   |    max   |  min |  max |                      Type                      |
         +----------------------------------------------------------------------+----------------------------------------------------------+---------+---------+----------+----------+------+------+------------------------------------------------+
         |grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416             |mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN             |       39|       39|  0.156 us|  0.156 us|    33|    33|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_504_2_MAC_GROUP_fu_5012  |mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_504_2_MAC_GROUP  |     2055|     2055|  8.220 us|  8.220 us|  2049|  2049|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072             |mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K             |      353|      353|  1.412 us|  1.412 us|   352|   352|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP_fu_5012  |mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP  |     1031|     1031|  4.124 us|  4.124 us|  1025|  1025|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072             |mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K             |      353|      353|  1.412 us|  1.412 us|   340|   340|  loop auto-rewind stp (delay=0 clock cycles(s))|
         +----------------------------------------------------------------------+----------------------------------------------------------+---------+---------+----------+----------+------+------+------------------------------------------------+
 
         * Loop: 
@@ -58,16 +58,16 @@
 |DSP              |        -|     -|       -|       -|    -|
 |Expression       |        -|     -|       -|       -|    -|
 |FIFO             |        -|     -|       -|       -|    -|
-|Instance         |        -|    10|   62409|   41270|    -|
+|Instance         |        -|    18|   60036|   37157|    -|
 |Memory           |        -|     -|       -|       -|    -|
 |Multiplexer      |        -|     -|       0|     294|    -|
 |Register         |        -|     -|      10|       -|    -|
 +-----------------+---------+------+--------+--------+-----+
-|Total            |        0|    10|   62419|   41564|    0|
+|Total            |        0|    18|   60046|   37451|    0|
 +-----------------+---------+------+--------+--------+-----+
 |Available        |      288|  1248|  234240|  117120|   64|
 +-----------------+---------+------+--------+--------+-----+
-|Utilization (%)  |        0|    ~0|      26|      35|    0|
+|Utilization (%)  |        0|     1|      25|      31|    0|
 +-----------------+---------+------+--------+--------+-----+
 
 + Detail: 
@@ -75,11 +75,11 @@
     +----------------------------------------------------------------------+----------------------------------------------------------+---------+----+-------+-------+-----+
     |                               Instance                               |                          Module                          | BRAM_18K| DSP|   FF  |  LUT  | URAM|
     +----------------------------------------------------------------------+----------------------------------------------------------+---------+----+-------+-------+-----+
-    |grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072             |mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K             |        0|   2|   3949|   7952|    0|
+    |grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072             |mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K             |        0|   2|   1396|   3911|    0|
     |grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416             |mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN             |        0|   0|  41180|  16556|    0|
-    |grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_504_2_MAC_GROUP_fu_5012  |mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_504_2_MAC_GROUP  |        0|   8|  17280|  16762|    0|
+    |grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP_fu_5012  |mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP  |        0|  16|  17460|  16690|    0|
     +----------------------------------------------------------------------+----------------------------------------------------------+---------+----+-------+-------+-----+
-    |Total                                                                 |                                                          |        0|  10|  62409|  41270|    0|
+    |Total                                                                 |                                                          |        0|  18|  60036|  37157|    0|
     +----------------------------------------------------------------------+----------------------------------------------------------+---------+----+-------+-------+-----+
 
     * DSP: 
@@ -129,7 +129,7 @@
     |ap_CS_fsm                                                                          |  7|   0|    7|          0|
     |grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072_ap_start_reg             |  1|   0|    1|          0|
     |grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416_ap_start_reg             |  1|   0|    1|          0|
-    |grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_504_2_MAC_GROUP_fu_5012_ap_start_reg  |  1|   0|    1|          0|
+    |grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP_fu_5012_ap_start_reg  |  1|   0|    1|          0|
     +-----------------------------------------------------------------------------------+---+----+-----+-----------+
     |Total                                                                              | 10|   0|   10|          0|
     +-----------------------------------------------------------------------------------+---+----+-----+-----------+
@@ -150,22 +150,22 @@
 |ap_idle                           |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
 |ap_ready                          |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
 |ap_return                         |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|grp_fp16_to_fp32_fu_1620_p_din1   |  out|   16|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|grp_fp16_to_fp32_fu_1620_p_dout0  |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
 |grp_fp16_to_fp32_fu_1624_p_din1   |  out|   16|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
 |grp_fp16_to_fp32_fu_1624_p_dout0  |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fp16_to_fp32_fu_1628_p_din1   |  out|   16|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fp16_to_fp32_fu_1628_p_dout0  |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|grp_fu_1628_p_din0                |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|grp_fu_1628_p_din1                |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|grp_fu_1628_p_opcode              |  out|    2|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|grp_fu_1628_p_dout0               |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|grp_fu_1628_p_ce                  |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
 |grp_fu_1632_p_din0                |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
 |grp_fu_1632_p_din1                |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1632_p_opcode              |  out|    2|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
 |grp_fu_1632_p_dout0               |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
 |grp_fu_1632_p_ce                  |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
 |grp_fu_1636_p_din0                |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1636_p_din1                |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
 |grp_fu_1636_p_dout0               |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
 |grp_fu_1636_p_ce                  |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1640_p_din0                |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1640_p_dout0               |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1640_p_ce                  |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
 |rb_0_address0                     |  out|    6|   ap_memory|                  rb_0|         array|
 |rb_0_ce0                          |  out|    1|   ap_memory|                  rb_0|         array|
 |rb_0_q0                           |   in|  128|   ap_memory|                  rb_0|         array|

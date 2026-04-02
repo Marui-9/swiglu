@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_x_local'" level="0">
-<item name = "Date">Thu Apr  2 09:23:34 2026
+<item name = "Date">Thu Apr  2 13:36:47 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -78,20 +78,20 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln735_1_fu_4039_p2">+, 0, 0, 16, 9, 1</column>
-<column name="add_ln735_fu_4085_p2">+, 0, 0, 10, 3, 1</column>
+<column name="add_ln638_1_fu_4039_p2">+, 0, 0, 16, 9, 1</column>
+<column name="add_ln638_fu_4085_p2">+, 0, 0, 10, 3, 1</column>
 <column name="i_fu_4267_p2">+, 0, 0, 15, 8, 1</column>
 <column name="ap_block_state2_io">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_2742">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_2744">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_5160">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_5171">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln735_fu_4048_p2">icmp, 0, 0, 16, 9, 2</column>
-<column name="icmp_ln736_fu_4273_p2">icmp, 0, 0, 16, 8, 9</column>
+<column name="icmp_ln638_fu_4048_p2">icmp, 0, 0, 16, 9, 2</column>
+<column name="icmp_ln639_fu_4273_p2">icmp, 0, 0, 16, 8, 9</column>
 <column name="ap_block_pp0_stage0_11001">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage0_11001_grp0">or, 0, 0, 2, 1, 1</column>
 <column name="n_fu_4099_p3">select, 0, 0, 3, 1, 3</column>
-<column name="select_ln735_fu_4091_p3">select, 0, 0, 8, 1, 1</column>
+<column name="select_ln638_fu_4091_p3">select, 0, 0, 8, 1, 1</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -99,7 +99,7 @@
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_done_int">9, 2, 1, 2</column>
 <column name="ap_loop_exit_ready_pp0_iter73_reg">9, 2, 1, 2</column>
-<column name="ap_phi_mux_icmp_ln7361539_phi_fu_4013_p4">9, 2, 1, 2</column>
+<column name="ap_phi_mux_icmp_ln6391539_phi_fu_4013_p4">9, 2, 1, 2</column>
 <column name="ap_sig_allocacmp_indvar_flatten1536_load">9, 2, 9, 18</column>
 <column name="ap_sig_allocacmp_indvar_flatten1536_load_1">9, 2, 9, 18</column>
 <column name="gmem_x_blk_n_AR">9, 2, 1, 2</column>
@@ -406,13 +406,13 @@
 <column name="ap_loop_init_pp0_iter9_reg">1, 0, 1, 0</column>
 <column name="first_iter_0_reg_3998">1, 0, 1, 0</column>
 <column name="i1538_fu_648">8, 0, 8, 0</column>
-<column name="icmp_ln735_reg_4633">1, 0, 1, 0</column>
-<column name="icmp_ln736_reg_4980">1, 0, 1, 0</column>
+<column name="icmp_ln638_reg_4633">1, 0, 1, 0</column>
+<column name="icmp_ln639_reg_4980">1, 0, 1, 0</column>
 <column name="indvar_flatten1536_fu_640">9, 0, 9, 0</column>
 <column name="n1537_fu_644">3, 0, 3, 0</column>
-<column name="trunc_ln737_reg_4643">2, 0, 2, 0</column>
-<column name="trunc_ln743_2_reg_4673">3, 0, 3, 0</column>
-<column name="trunc_ln743_reg_4668">4, 0, 4, 0</column>
+<column name="trunc_ln640_reg_4643">2, 0, 2, 0</column>
+<column name="trunc_ln646_2_reg_4673">3, 0, 3, 0</column>
+<column name="trunc_ln646_reg_4668">4, 0, 4, 0</column>
 <column name="val_10_reg_4860">8, 0, 8, 0</column>
 <column name="val_11_reg_4880">8, 0, 8, 0</column>
 <column name="val_12_reg_4900">8, 0, 8, 0</column>
@@ -430,7 +430,7 @@
 <column name="val_9_reg_4840">8, 0, 8, 0</column>
 <column name="val_reg_4648">8, 0, 8, 0</column>
 <column name="x_batch_read_reg_4628">64, 0, 64, 0</column>
-<column name="icmp_ln735_reg_4633">64, 32, 1, 0</column>
+<column name="icmp_ln638_reg_4633">64, 32, 1, 0</column>
 </table>
 </item>
 </section>

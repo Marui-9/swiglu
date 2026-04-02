@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:582</SourceLocation>
+<SourceLocation>swiglu.cpp:484</SourceLocation>
 <SummaryOfLoopViolations>
 <EXTRACT_QH>
 <Name>EXTRACT_QH</Name>
 <IssueType>II Violation</IssueType>
 <ViolationType>Resource Limitation</ViolationType>
-<SourceLocation>swiglu.cpp:582</SourceLocation>
+<SourceLocation>swiglu.cpp:484</SourceLocation>
 </EXTRACT_QH>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -1554,8 +1554,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>empty_550</name>
-<Object>empty_550</Object>
+<name>empty_807</name>
+<Object>empty_807</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

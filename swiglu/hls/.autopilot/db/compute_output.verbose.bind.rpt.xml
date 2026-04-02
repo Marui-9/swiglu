@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_output'" level="0">
-<item name = "Date">Thu Apr  2 09:23:31 2026
+<item name = "Date">Thu Apr  2 13:36:46 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">5779530, 17883210, 23.118 ms, 71.533 ms, 5779530, 17883210, no</column>
+<column name="">3682378, 17891402, 14.730 ms, 71.566 ms, 3682378, 17891402, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -33,15 +33,15 @@
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="grp_load_row_down_q4k_fu_719">load_row_down_q4k, 364, 364, 1.456 us, 1.456 us, 364, 364, no</column>
 <column name="grp_load_row_down_q6k_fu_735">load_row_down_q6k, 7354, 7354, 29.416 us, 29.416 us, 7354, 7354, no</column>
-<column name="grp_mac_blocks_down_q6k_fu_871">mac_blocks_down_q6k, 1371, 1371, 5.484 us, 5.484 us, 1371, 1371, no</column>
-<column name="grp_mac_blocks_down_q4k7_fu_1020">mac_blocks_down_q4k7, 2453, 2453, 9.812 us, 9.812 us, 2453, 2453, no</column>
-<column name="grp_compute_output_Pipeline_1_fu_1050">compute_output_Pipeline_1, 2051, 2051, 8.204 us, 8.204 us, 2049, 2049, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q6k_fu_871">mac_blocks_down_q6k, 1376, 1376, 5.504 us, 5.504 us, 1376, 1376, no</column>
+<column name="grp_mac_blocks_down_q4k7_fu_1021">mac_blocks_down_q4k7, 1429, 1429, 5.716 us, 5.716 us, 1429, 1429, no</column>
+<column name="grp_compute_output_Pipeline_1_fu_1051">compute_output_Pipeline_1, 2051, 2051, 8.204 us, 8.204 us, 2049, 2049, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- DOWN_Q4K">5777408, 5777408, 2821, -, -, 2048, no</column>
-<column name="- DOWN_Q6K">17881088, 17881088, 8731, -, -, 2048, no</column>
+<column name="- DOWN_Q4K">3680256, 3680256, 1797, -, -, 2048, no</column>
+<column name="- DOWN_Q6K">17889280, 17889280, 8735, -, -, 2048, no</column>
 </table>
 </item>
 </section>

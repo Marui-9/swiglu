@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_output'" level="0">
-<item name = "Date">Thu Apr  2 09:23:31 2026
+<item name = "Date">Thu Apr  2 13:36:46 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">5779530, 17883210, 23.118 ms, 71.533 ms, 5779530, 17883210, no</column>
+<column name="">3682378, 17891402, 14.730 ms, 71.566 ms, 3682378, 17891402, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,8 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- DOWN_Q4K">5777408, 5777408, 2821, -, -, 2048, no</column>
-<column name="- DOWN_Q6K">17881088, 17881088, 8731, -, -, 2048, no</column>
+<column name="- DOWN_Q4K">3680256, 3680256, 1797, -, -, 2048, no</column>
+<column name="- DOWN_Q6K">17889280, 17889280, 8735, -, -, 2048, no</column>
 </table>
 </item>
 </section>

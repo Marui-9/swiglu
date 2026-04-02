@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_gate'" level="0">
-<item name = "Date">Thu Apr  2 09:23:04 2026
+<item name = "Date">Thu Apr  2 13:36:28 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 2.913 ns, 1.08 ns</column>
+<column name="ap_clk">4.00 ns, 3.239 ns, 1.08 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">66275, 66275, 0.265 ms, 0.265 ms, 66275, 66275, no</column>
+<column name="">66379, 66379, 0.266 ms, 0.266 ms, 66379, 66379, no</column>
 </table>
 </item>
 <item name = "Detail">

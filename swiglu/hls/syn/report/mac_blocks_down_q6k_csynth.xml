@@ -22,28 +22,28 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>1371</Best-caseLatency>
-<Average-caseLatency>1371</Average-caseLatency>
-<Worst-caseLatency>1371</Worst-caseLatency>
-<Best-caseRealTimeLatency>5.484 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>5.484 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>5.484 us</Worst-caseRealTimeLatency>
-<Interval-min>1371</Interval-min>
-<Interval-max>1371</Interval-max>
+<Best-caseLatency>1376</Best-caseLatency>
+<Average-caseLatency>1376</Average-caseLatency>
+<Worst-caseLatency>1376</Worst-caseLatency>
+<Best-caseRealTimeLatency>5.504 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>5.504 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>5.504 us</Worst-caseRealTimeLatency>
+<Interval-min>1376</Interval-min>
+<Interval-max>1376</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
 <SummaryOfViolations>
-<IssueType>Timing Violation</IssueType>
+<IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:669</SourceLocation>
+<SourceLocation>swiglu.cpp:577</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <DSP>8</DSP>
-<FF>10108</FF>
-<LUT>17474</LUT>
+<FF>9170</FF>
+<LUT>9455</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>
@@ -135,6 +135,61 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
+<name>grp_fu_1628_p_din0</name>
+<Object>mac_blocks_down_q6k</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>32</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_1628_p_din1</name>
+<Object>mac_blocks_down_q6k</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>32</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_1628_p_opcode</name>
+<Object>mac_blocks_down_q6k</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_1628_p_dout0</name>
+<Object>mac_blocks_down_q6k</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>32</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_1628_p_ce</name>
+<Object>mac_blocks_down_q6k</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
 <name>grp_fu_1632_p_din0</name>
 <Object>mac_blocks_down_q6k</Object>
 <Type>return value</Type>
@@ -154,17 +209,6 @@
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>
-<Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>grp_fu_1632_p_opcode</name>
-<Object>mac_blocks_down_q6k</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>1</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -201,17 +245,6 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1636_p_din1</name>
-<Object>mac_blocks_down_q6k</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>32</Bits>
-<Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
 <name>grp_fu_1636_p_dout0</name>
 <Object>mac_blocks_down_q6k</Object>
 <Type>return value</Type>
@@ -224,39 +257,6 @@
 </RtlPorts>
 <RtlPorts>
 <name>grp_fu_1636_p_ce</name>
-<Object>mac_blocks_down_q6k</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>grp_fu_1640_p_din0</name>
-<Object>mac_blocks_down_q6k</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>32</Bits>
-<Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>grp_fu_1640_p_dout0</name>
-<Object>mac_blocks_down_q6k</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>32</Bits>
-<Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>grp_fu_1640_p_ce</name>
 <Object>mac_blocks_down_q6k</Object>
 <Type>return value</Type>
 <Scope></Scope>

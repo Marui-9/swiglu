@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'compute_output_Pipeline_1'
 ================================================================
-* Date:           Thu Apr  2 09:23:31 2026
+* Date:           Thu Apr  2 13:36:46 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -87,10 +87,10 @@ IsGatedGlobalClock: 0
 
 State 1 <SV = 0> <Delay = 1.66>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%loop_index_i = alloca i32 1"   --->   Operation 6 'alloca' 'loop_index_i' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln719_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln719"   --->   Operation 7 'read' 'sext_ln719_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%sext_ln719_cast = sext i62 %sext_ln719_read"   --->   Operation 8 'sext' 'sext_ln719_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln622_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln622"   --->   Operation 7 'read' 'sext_ln622_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%sext_ln622_cast = sext i62 %sext_ln622_read"   --->   Operation 8 'sext' 'sext_ln622_cast' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %out_local, i64 666, i64 19, i64 18446744073709551615"   --->   Operation 9 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_34, i32 0, i32 0, void @empty_26, i32 64, i32 8192, void @empty_2, void @empty_36, void @empty_26, i32 16, i32 2, i32 16, i32 256, void @empty_26, void @empty_26, i32 4294967295, i32 0, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_35, i32 0, i32 0, void @empty_31, i32 64, i32 8192, void @empty_1, void @empty_38, void @empty_31, i32 16, i32 2, i32 16, i32 256, void @empty_31, void @empty_31, i32 4294967295, i32 0, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 11 [1/1] (0.42ns)   --->   "%store_ln0 = store i12 0, i12 %loop_index_i"   --->   Operation 11 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop.i"   --->   Operation 12 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%loop_index_i_load = load i12 %loop_index_i"   --->   Operation 13 'load' 'loop_index_i_load' <Predicate = true> <Delay = 0.00>
@@ -107,11 +107,11 @@ ST_2 : Operation 21 [1/2] ( I:0.67ns O:0.67ns )   --->   "%out_local_load = load
 ST_2 : Operation 28 [1/1] (0.42ns)   --->   "%ret_ln0 = ret"   --->   Operation 28 'ret' 'ret_ln0' <Predicate = (exitcond4_i)> <Delay = 0.42>
 
 State 3 <SV = 2> <Delay = 2.92>
-ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln719_cast" [swiglu.cpp:719->swiglu.cpp:814]   --->   Operation 22 'getelementptr' 'gmem_out_addr' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_26"   --->   Operation 23 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln622_cast" [swiglu.cpp:622->swiglu.cpp:717]   --->   Operation 22 'getelementptr' 'gmem_out_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_31"   --->   Operation 23 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2048, i64 2048, i64 2048"   --->   Operation 24 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%empty_593 = bitcast i32 %out_local_load"   --->   Operation 25 'bitcast' 'empty_593' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 26 [1/1] (2.92ns)   --->   "%write_ln719 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_out_addr, i32 %empty_593, i4 15" [swiglu.cpp:719->swiglu.cpp:814]   --->   Operation 26 'write' 'write_ln719' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%empty_849 = bitcast i32 %out_local_load"   --->   Operation 25 'bitcast' 'empty_849' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (2.92ns)   --->   "%write_ln622 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_out_addr, i32 %empty_849, i4 15" [swiglu.cpp:622->swiglu.cpp:717]   --->   Operation 26 'write' 'write_ln622' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop.i"   --->   Operation 27 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 
 
@@ -124,7 +124,7 @@ Target clock period: 4.000ns, clock uncertainty: 1.080ns.
 The critical path consists of the following:
 	'store' operation 0 bit ('store_ln0') of constant 0 on local variable 'loop_index_i' [9]  (0.427 ns)
 	'load' operation 12 bit ('loop_index_i_load') on local variable 'loop_index_i' [12]  (0.000 ns)
-	'add' operation 12 bit ('empty') [14]  (0.809 ns)
+	'icmp' operation 1 bit ('exitcond4_i') [13]  (0.809 ns)
 	'store' operation 0 bit ('store_ln0') of variable 'empty' on local variable 'loop_index_i' [25]  (0.427 ns)
 
  <State 2>: 0.677ns
@@ -133,8 +133,8 @@ The critical path consists of the following:
 
  <State 3>: 2.920ns
 The critical path consists of the following:
-	'getelementptr' operation 32 bit ('gmem_out_addr', swiglu.cpp:719->swiglu.cpp:814) [17]  (0.000 ns)
-	bus write operation ('write_ln719', swiglu.cpp:719->swiglu.cpp:814) on port 'gmem_out' (swiglu.cpp:719->swiglu.cpp:814) [24]  (2.920 ns)
+	'getelementptr' operation 32 bit ('gmem_out_addr', swiglu.cpp:622->swiglu.cpp:717) [17]  (0.000 ns)
+	bus write operation ('write_ln622', swiglu.cpp:622->swiglu.cpp:717) on port 'gmem_out' (swiglu.cpp:622->swiglu.cpp:717) [24]  (2.920 ns)
 
 
 ============================================================

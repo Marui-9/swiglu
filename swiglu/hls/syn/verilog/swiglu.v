@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=13907323,HLS_SYN_TPT=11831371,HLS_SYN_MEM=34,HLS_SYN_DSP=0,HLS_SYN_FF=263954,HLS_SYN_LUT=281915,HLS_VERSION=2025_1}" *)
+(* CORE_GENERATION_INFO="swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=14122467,HLS_SYN_TPT=10786891,HLS_SYN_MEM=98,HLS_SYN_DSP=0,HLS_SYN_FF=187812,HLS_SYN_LUT=171019,HLS_VERSION=2025_1}" *)
 
 module swiglu (
         ap_clk,
@@ -1084,10 +1084,10 @@ wire   [7:0] x_local_2_126_i_q0;
 wire   [7:0] x_local_2_126_t_q0;
 wire   [7:0] x_local_2_127_i_q0;
 wire   [7:0] x_local_2_127_t_q0;
-wire   [31:0] X1_cache_i_q0;
-wire   [31:0] X1_cache_t_q0;
-wire   [31:0] X2_cache_i_q0;
-wire   [31:0] X2_cache_t_q0;
+wire   [7:0] X1_cache_i_q0;
+wire   [7:0] X1_cache_t_q0;
+wire   [7:0] X2_cache_i_q0;
+wire   [7:0] X2_cache_t_q0;
 wire   [7:0] gate_cache_i_q0;
 wire   [7:0] gate_cache_t_q0;
 wire   [7:0] gate_cache_1_i_q0;
@@ -2534,7 +2534,7 @@ wire    compute_X1_U0_x_local_1_7_15_ce0;
 wire   [14:0] compute_X1_U0_X1_cache_address1;
 wire    compute_X1_U0_X1_cache_ce1;
 wire    compute_X1_U0_X1_cache_we1;
-wire   [31:0] compute_X1_U0_X1_cache_d1;
+wire   [7:0] compute_X1_U0_X1_cache_d1;
 wire    compute_X2_U0_ap_start;
 wire    compute_X2_U0_ap_done;
 wire    compute_X2_U0_ap_continue;
@@ -2831,7 +2831,7 @@ wire    compute_X2_U0_x_local_2_7_15_ce0;
 wire   [14:0] compute_X2_U0_X2_cache_address1;
 wire    compute_X2_U0_X2_cache_ce1;
 wire    compute_X2_U0_X2_cache_we1;
-wire   [31:0] compute_X2_U0_X2_cache_d1;
+wire   [7:0] compute_X2_U0_X2_cache_d1;
 wire    compute_gate_U0_ap_start;
 wire    compute_gate_U0_ap_done;
 wire    compute_gate_U0_ap_continue;
@@ -9926,8 +9926,8 @@ x_local_2_127_U(
     .t_read(compute_X2_U0_ap_ready)
 );
 
-swiglu_X1_cache_RAM_2P_URAM_1R1W #(
-    .DataWidth( 32 ),
+swiglu_X1_cache_RAM_2P_BRAM_1R1W #(
+    .DataWidth( 8 ),
     .AddressRange( 32768 ),
     .AddressWidth( 15 ))
 X1_cache_U(
@@ -9946,7 +9946,7 @@ X1_cache_U(
     .t_address1(15'd0),
     .t_ce1(1'b0),
     .t_we1(1'b0),
-    .t_d1(32'd0),
+    .t_d1(8'd0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(X1_cache_i_full_n),
@@ -9955,8 +9955,8 @@ X1_cache_U(
     .t_read(compute_gate_U0_ap_ready)
 );
 
-swiglu_X1_cache_RAM_2P_URAM_1R1W #(
-    .DataWidth( 32 ),
+swiglu_X1_cache_RAM_2P_BRAM_1R1W #(
+    .DataWidth( 8 ),
     .AddressRange( 32768 ),
     .AddressWidth( 15 ))
 X2_cache_U(
@@ -9975,7 +9975,7 @@ X2_cache_U(
     .t_address1(15'd0),
     .t_ce1(1'b0),
     .t_we1(1'b0),
-    .t_d1(32'd0),
+    .t_d1(8'd0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(X2_cache_i_full_n),

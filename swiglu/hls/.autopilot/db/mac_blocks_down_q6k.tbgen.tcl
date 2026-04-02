@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 40
+set cdfgNum 43
 set C_modelName {mac_blocks_down_q6k}
 set C_modelType { float 32 }
 set ap_memory_interface_dict [dict create]
@@ -758,18 +758,18 @@ set portList {
 	{ gate_7_q0 sc_in sc_lv 8 signal 135 } 
 	{ gate_scale sc_in sc_lv 32 signal 136 } 
 	{ ap_return sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_1628_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_1628_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_1628_p_opcode sc_out sc_lv 1 signal -1 } 
+	{ grp_fu_1628_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_1628_p_ce sc_out sc_logic 1 signal -1 } 
 	{ grp_fu_1632_p_din0 sc_out sc_lv 32 signal -1 } 
 	{ grp_fu_1632_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_1632_p_opcode sc_out sc_lv 1 signal -1 } 
 	{ grp_fu_1632_p_dout0 sc_in sc_lv 32 signal -1 } 
 	{ grp_fu_1632_p_ce sc_out sc_logic 1 signal -1 } 
 	{ grp_fu_1636_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_1636_p_din1 sc_out sc_lv 32 signal -1 } 
 	{ grp_fu_1636_p_dout0 sc_in sc_lv 32 signal -1 } 
 	{ grp_fu_1636_p_ce sc_out sc_logic 1 signal -1 } 
-	{ grp_fu_1640_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_1640_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fu_1640_p_ce sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -1124,18 +1124,18 @@ set NewPortList {[
  	{ "name": "gate_7_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "gate_7", "role": "q0" }} , 
  	{ "name": "gate_scale", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "gate_scale", "role": "default" }} , 
  	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }} , 
+ 	{ "name": "grp_fu_1628_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1628_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_1628_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1628_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_1628_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_1628_p_opcode", "role": "default" }} , 
+ 	{ "name": "grp_fu_1628_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1628_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_1628_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_1628_p_ce", "role": "default" }} , 
  	{ "name": "grp_fu_1632_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1632_p_din0", "role": "default" }} , 
  	{ "name": "grp_fu_1632_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1632_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_1632_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_1632_p_opcode", "role": "default" }} , 
  	{ "name": "grp_fu_1632_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1632_p_dout0", "role": "default" }} , 
  	{ "name": "grp_fu_1632_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_1632_p_ce", "role": "default" }} , 
  	{ "name": "grp_fu_1636_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1636_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_1636_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1636_p_din1", "role": "default" }} , 
  	{ "name": "grp_fu_1636_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1636_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_1636_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_1636_p_ce", "role": "default" }} , 
- 	{ "name": "grp_fu_1640_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1640_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_1640_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_1640_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_1640_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_1640_p_ce", "role": "default" }}  ]}
+ 	{ "name": "grp_fu_1636_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_1636_p_ce", "role": "default" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	mac_blocks_down_q6k {
@@ -1235,38 +1235,38 @@ set ArgLastReadFirstWriteLatency {
 		sc_buf_29 {Type I LastRead 0 FirstWrite -1}
 		sc_buf_30 {Type I LastRead 0 FirstWrite -1}
 		sc_buf_31 {Type I LastRead 0 FirstWrite -1}
-		d_buf_0_val {Type I LastRead 16 FirstWrite -1}
-		d_buf_1_val {Type I LastRead 26 FirstWrite -1}
-		d_buf_2_val {Type I LastRead 36 FirstWrite -1}
-		d_buf_3_val {Type I LastRead 46 FirstWrite -1}
-		d_buf_4_val {Type I LastRead 56 FirstWrite -1}
-		d_buf_5_val {Type I LastRead 66 FirstWrite -1}
-		d_buf_6_val {Type I LastRead 76 FirstWrite -1}
-		d_buf_7_val {Type I LastRead 86 FirstWrite -1}
-		d_buf_8_val {Type I LastRead 96 FirstWrite -1}
-		d_buf_9_val {Type I LastRead 106 FirstWrite -1}
-		d_buf_10_val {Type I LastRead 116 FirstWrite -1}
-		d_buf_11_val {Type I LastRead 126 FirstWrite -1}
-		d_buf_12_val {Type I LastRead 136 FirstWrite -1}
-		d_buf_13_val {Type I LastRead 146 FirstWrite -1}
-		d_buf_14_val {Type I LastRead 156 FirstWrite -1}
-		d_buf_15_val {Type I LastRead 166 FirstWrite -1}
-		d_buf_16_val {Type I LastRead 176 FirstWrite -1}
-		d_buf_17_val {Type I LastRead 186 FirstWrite -1}
-		d_buf_18_val {Type I LastRead 196 FirstWrite -1}
-		d_buf_19_val {Type I LastRead 206 FirstWrite -1}
-		d_buf_20_val {Type I LastRead 216 FirstWrite -1}
-		d_buf_21_val {Type I LastRead 226 FirstWrite -1}
-		d_buf_22_val {Type I LastRead 236 FirstWrite -1}
-		d_buf_23_val {Type I LastRead 246 FirstWrite -1}
-		d_buf_24_val {Type I LastRead 256 FirstWrite -1}
-		d_buf_25_val {Type I LastRead 266 FirstWrite -1}
-		d_buf_26_val {Type I LastRead 276 FirstWrite -1}
-		d_buf_27_val {Type I LastRead 286 FirstWrite -1}
-		d_buf_28_val {Type I LastRead 296 FirstWrite -1}
-		d_buf_29_val {Type I LastRead 306 FirstWrite -1}
-		d_buf_30_val {Type I LastRead 316 FirstWrite -1}
-		d_buf_31_val {Type I LastRead 326 FirstWrite -1}
+		d_buf_0_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_1_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_2_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_3_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_4_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_5_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_6_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_7_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_8_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_9_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_10_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_11_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_12_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_13_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_14_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_15_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_16_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_17_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_18_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_19_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_20_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_21_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_22_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_23_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_24_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_25_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_26_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_27_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_28_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_29_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_30_val {Type I LastRead 2 FirstWrite -1}
+		d_buf_31_val {Type I LastRead 2 FirstWrite -1}
 		gate_0 {Type I LastRead 1 FirstWrite -1}
 		gate_1 {Type I LastRead 1 FirstWrite -1}
 		gate_2 {Type I LastRead 1 FirstWrite -1}
@@ -1275,8 +1275,8 @@ set ArgLastReadFirstWriteLatency {
 		gate_5 {Type I LastRead 1 FirstWrite -1}
 		gate_6 {Type I LastRead 1 FirstWrite -1}
 		gate_7 {Type I LastRead 1 FirstWrite -1}
-		gate_scale {Type I LastRead 10 FirstWrite -1}}
-	mac_blocks_down_q6k_Pipeline_VITIS_LOOP_641_2_Q6K_MAC_GROUP {
+		gate_scale {Type I LastRead 2 FirstWrite -1}}
+	mac_blocks_down_q6k_Pipeline_VITIS_LOOP_543_2_Q6K_MAC_GROUP {
 		gate_0 {Type I LastRead 1 FirstWrite -1}
 		gate_1 {Type I LastRead 1 FirstWrite -1}
 		gate_2 {Type I LastRead 1 FirstWrite -1}
@@ -1381,7 +1381,7 @@ set ArgLastReadFirstWriteLatency {
 		sc_buf_15 {Type I LastRead 0 FirstWrite -1}
 		sc_buf_23 {Type I LastRead 0 FirstWrite -1}
 		sc_buf_31 {Type I LastRead 0 FirstWrite -1}
-		sw_out {Type O LastRead -1 FirstWrite 4}
+		acc_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_1_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_2_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_3_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1389,7 +1389,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_5_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_6_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_7_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_65_out {Type O LastRead -1 FirstWrite 4}
+		acc_8_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_9_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_10_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_11_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1397,7 +1397,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_13_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_14_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_15_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_67_out {Type O LastRead -1 FirstWrite 4}
+		acc_16_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_17_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_18_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_19_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1405,7 +1405,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_21_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_22_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_23_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_69_out {Type O LastRead -1 FirstWrite 4}
+		acc_24_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_25_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_26_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_27_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1413,7 +1413,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_29_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_30_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_31_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_71_out {Type O LastRead -1 FirstWrite 4}
+		acc_32_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_33_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_34_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_35_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1421,7 +1421,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_37_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_38_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_39_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_73_out {Type O LastRead -1 FirstWrite 4}
+		acc_40_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_41_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_42_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_43_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1429,7 +1429,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_45_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_46_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_47_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_75_out {Type O LastRead -1 FirstWrite 4}
+		acc_48_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_49_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_50_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_51_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1437,7 +1437,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_53_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_54_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_55_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_77_out {Type O LastRead -1 FirstWrite 4}
+		acc_56_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_57_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_58_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_59_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1445,7 +1445,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_61_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_62_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_63_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_79_out {Type O LastRead -1 FirstWrite 4}
+		acc_64_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_65_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_66_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_67_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1453,7 +1453,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_69_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_70_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_71_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_81_out {Type O LastRead -1 FirstWrite 4}
+		acc_72_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_73_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_74_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_75_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1461,7 +1461,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_77_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_78_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_79_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_83_out {Type O LastRead -1 FirstWrite 4}
+		acc_80_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_81_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_82_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_83_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1469,7 +1469,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_85_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_86_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_87_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_85_out {Type O LastRead -1 FirstWrite 4}
+		acc_88_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_89_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_90_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_91_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1477,7 +1477,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_93_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_94_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_95_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_87_out {Type O LastRead -1 FirstWrite 4}
+		acc_96_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_97_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_98_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_99_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1485,7 +1485,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_101_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_102_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_103_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_89_out {Type O LastRead -1 FirstWrite 4}
+		acc_104_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_105_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_106_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_107_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1493,7 +1493,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_109_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_110_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_111_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_91_out {Type O LastRead -1 FirstWrite 4}
+		acc_112_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_113_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_114_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_115_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1501,7 +1501,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_117_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_118_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_119_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_93_out {Type O LastRead -1 FirstWrite 4}
+		acc_120_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_121_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_122_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_123_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1509,7 +1509,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_125_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_126_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_127_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_95_out {Type O LastRead -1 FirstWrite 4}
+		acc_128_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_129_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_130_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_131_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1517,7 +1517,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_133_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_134_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_135_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_97_out {Type O LastRead -1 FirstWrite 4}
+		acc_136_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_137_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_138_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_139_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1525,7 +1525,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_141_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_142_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_143_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_99_out {Type O LastRead -1 FirstWrite 4}
+		acc_144_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_145_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_146_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_147_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1533,7 +1533,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_149_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_150_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_151_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_101_out {Type O LastRead -1 FirstWrite 4}
+		acc_152_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_153_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_154_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_155_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1541,7 +1541,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_157_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_158_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_159_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_103_out {Type O LastRead -1 FirstWrite 4}
+		acc_160_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_161_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_162_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_163_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1549,7 +1549,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_165_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_166_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_167_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_105_out {Type O LastRead -1 FirstWrite 4}
+		acc_168_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_169_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_170_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_171_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1557,7 +1557,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_173_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_174_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_175_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_107_out {Type O LastRead -1 FirstWrite 4}
+		acc_176_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_177_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_178_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_179_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1565,7 +1565,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_181_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_182_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_183_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_109_out {Type O LastRead -1 FirstWrite 4}
+		acc_184_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_185_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_186_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_187_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1573,7 +1573,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_189_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_190_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_191_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_111_out {Type O LastRead -1 FirstWrite 4}
+		acc_192_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_193_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_194_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_195_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1581,7 +1581,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_197_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_198_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_199_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_113_out {Type O LastRead -1 FirstWrite 4}
+		acc_200_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_201_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_202_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_203_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1589,7 +1589,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_205_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_206_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_207_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_115_out {Type O LastRead -1 FirstWrite 4}
+		acc_208_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_209_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_210_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_211_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1597,7 +1597,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_213_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_214_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_215_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_117_out {Type O LastRead -1 FirstWrite 4}
+		acc_216_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_217_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_218_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_219_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1605,7 +1605,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_221_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_222_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_223_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_119_out {Type O LastRead -1 FirstWrite 4}
+		acc_224_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_225_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_226_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_227_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1613,7 +1613,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_229_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_230_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_231_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_121_out {Type O LastRead -1 FirstWrite 4}
+		acc_232_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_233_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_234_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_235_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1621,7 +1621,7 @@ set ArgLastReadFirstWriteLatency {
 		acc_237_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_238_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_239_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_123_out {Type O LastRead -1 FirstWrite 4}
+		acc_240_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_241_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_242_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_243_load_out {Type O LastRead -1 FirstWrite 4}
@@ -1629,20 +1629,311 @@ set ArgLastReadFirstWriteLatency {
 		acc_245_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_246_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_247_load_out {Type O LastRead -1 FirstWrite 4}
-		sw_125_out {Type O LastRead -1 FirstWrite 4}
+		acc_248_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_249_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_250_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_251_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_252_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_253_load_out {Type O LastRead -1 FirstWrite 4}
 		acc_254_load_out {Type O LastRead -1 FirstWrite 4}
-		acc_255_load_out {Type O LastRead -1 FirstWrite 4}}}
+		acc_255_load_out {Type O LastRead -1 FirstWrite 4}}
+	mac_blocks_down_q6k_Pipeline_REDUCE_Q6K {
+		acc_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_16_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_32_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_48_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_64_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_80_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_96_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_112_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_128_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_144_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_160_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_176_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_192_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_208_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_224_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_240_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_1_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_17_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_33_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_49_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_65_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_81_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_97_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_113_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_129_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_145_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_161_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_177_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_193_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_209_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_225_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_241_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_2_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_18_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_34_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_50_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_66_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_82_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_98_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_114_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_130_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_146_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_162_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_178_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_194_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_210_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_226_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_242_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_3_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_19_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_35_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_51_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_67_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_83_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_99_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_115_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_131_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_147_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_163_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_179_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_195_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_211_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_227_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_243_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_4_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_20_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_36_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_52_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_68_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_84_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_100_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_116_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_132_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_148_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_164_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_180_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_196_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_212_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_228_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_244_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_5_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_21_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_37_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_53_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_69_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_85_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_101_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_117_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_133_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_149_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_165_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_181_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_197_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_213_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_229_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_245_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_6_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_22_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_38_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_54_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_70_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_86_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_102_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_118_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_134_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_150_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_166_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_182_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_198_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_214_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_230_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_246_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_7_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_23_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_39_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_55_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_71_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_87_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_103_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_119_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_135_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_151_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_167_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_183_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_199_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_215_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_231_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_247_load_reload {Type I LastRead 0 FirstWrite -1}
+		d_buf_0_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_2_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_4_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_6_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_8_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_10_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_12_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_14_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_16_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_18_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_20_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_22_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_24_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_26_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_28_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_30_val {Type I LastRead 0 FirstWrite -1}
+		gate_scale {Type I LastRead 0 FirstWrite -1}
+		acc_8_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_24_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_40_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_56_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_72_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_88_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_104_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_120_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_136_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_152_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_168_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_184_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_200_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_216_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_232_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_248_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_9_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_25_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_41_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_57_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_73_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_89_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_105_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_121_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_137_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_153_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_169_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_185_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_201_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_217_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_233_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_249_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_10_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_26_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_42_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_58_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_74_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_90_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_106_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_122_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_138_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_154_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_170_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_186_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_202_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_218_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_234_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_250_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_11_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_27_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_43_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_59_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_75_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_91_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_107_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_123_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_139_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_155_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_171_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_187_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_203_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_219_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_235_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_251_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_12_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_28_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_44_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_60_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_76_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_92_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_108_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_124_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_140_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_156_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_172_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_188_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_204_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_220_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_236_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_252_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_13_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_29_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_45_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_61_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_77_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_93_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_109_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_125_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_141_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_157_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_173_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_189_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_205_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_221_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_237_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_253_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_14_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_30_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_46_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_62_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_78_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_94_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_110_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_126_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_142_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_158_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_174_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_190_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_206_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_222_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_238_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_254_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_15_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_31_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_47_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_63_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_79_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_95_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_111_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_127_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_143_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_159_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_175_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_191_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_207_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_223_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_239_load_reload {Type I LastRead 0 FirstWrite -1}
+		acc_255_load_reload {Type I LastRead 0 FirstWrite -1}
+		d_buf_1_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_3_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_5_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_7_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_9_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_11_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_13_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_15_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_17_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_19_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_21_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_23_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_25_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_27_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_29_val {Type I LastRead 0 FirstWrite -1}
+		d_buf_31_val {Type I LastRead 0 FirstWrite -1}
+		total_out {Type O LastRead -1 FirstWrite 20}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "1371", "Max" : "1371"}
-	, {"Name" : "Interval", "Min" : "1371", "Max" : "1371"}
+	{"Name" : "Latency", "Min" : "1376", "Max" : "1376"}
+	, {"Name" : "Interval", "Min" : "1376", "Max" : "1376"}
 ]}
 
 set PipelineEnableSignalInfo {[

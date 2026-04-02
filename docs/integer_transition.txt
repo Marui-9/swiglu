@@ -1,0 +1,278 @@
+INT8 X1/X2 Intermediate Cache — Implementation Plan
+=====================================================
+Date: 2026-04-02
+Status: Plan (not yet implemented)
+
+Goal
+----
+Change X1_cache and X2_cache from float[1][8192] (32 KB each, URAM) to
+int8_t[1][8192] (8 KB each, BRAM). This frees 2 URAM blocks and reduces
+routing pressure from the cache arrays, which previously showed up as
+congestion-prone wide URAM read ports feeding compute_gate.
+
+The change is entirely internal to the HLS IP. The external interface is
+unchanged: int8_t *x_batch in, float *out_batch out, same AXI-Lite registers.
+No changes to ggml-cpu.c, ggml.h, ggml.c, or lfm2.cpp.
+
+
+Precision Analysis
+------------------
+LFM2 X1/X2 activations typically satisfy |X1[j]|, |X2[j]| <= 10 (confirmed
+from the model's activation statistics at Q4K weight precision).
+
+Fixed scale:  X12_SCALE_RANGE = 10.0f
+              X12_INV_SCALE   = 127.0f / 10.0f  = 12.7f   (quantize: float->INT8)
+              X12_QUANT_SCALE = 10.0f  / 127.0f ~= 0.0787f (dequantize: INT8->float)
+
+Quantization error: +-0.5 LSB = +-(10/127)/2 ~= +-0.039 at the extremes.
+Relative error at |X1| = 10:  0.04/10 = 0.4%.
+Relative error at |X1| = 1:   0.04/1  = 4%.
+
+This is negligible vs. the existing ~6% relative error from Q4_K weight
+quantization. SiLU must remain FP32 (non-linear; INT8 sigmoid LUT has ~0.4%
+LUT error that compounds differently — no change needed there).
+
+Why fixed scale (not dynamic two-pass like compute_gate):
+  - Dynamic two-pass would require buffering 8192 floats (32 KB — negates
+    the memory saving) OR re-reading W/V over AXI (2 x 9 MB extra per call).
+  - Fixed scale avoids both: single-pass, zero extra AXI traffic.
+  - The fixed scale 10/127 is conservative for LFM2; values >10 would be
+    clamped to +-127, but this never occurs in practice at this model size.
+
+
+Summary of All Changes
+-----------------------
+File: swiglu.cpp only. Five locations change:
+
+  1. New constants  (near line 25, after DOWN_Q6K_WORDS)
+  2. compute_X1     (lines 310-335): signature + quantize before store
+  3. compute_X2     (lines 339-364): identical to compute_X1
+  4. compute_gate   (lines 371-424): signature + dequant at start of each pass
+  5. swiglu() body  (lines 792-798): cache type + storage binding
+
+
+=============================================================================
+CHANGE 1 — New constants  (insert after line 25, before fp16_to_fp32 block)
+=============================================================================
+
+Add immediately after the "#define DOWN_Q6K_WORDS" line:
+
+    // --- INT8 quantisation scale for X1/X2 intermediate caches ---------------
+    // Fixed scale chosen to cover |X1|, |X2| <= 10 for LFM2 activations.
+    // Single-pass: no need to buffer floats or re-read weights a second time.
+    #define X12_SCALE_RANGE  10.0f
+    #define X12_INV_SCALE    (127.0f / X12_SCALE_RANGE)   // 12.7f -- multiply to quantize
+    #define X12_QUANT_SCALE  (X12_SCALE_RANGE / 127.0f)   // ~0.0787f -- multiply to dequant
+
+No other constants change.
+
+
+=============================================================================
+CHANGE 2 — compute_X1 (currently lines 310-335)
+=============================================================================
+
+Signature lines 313-314:
+    float          x_scale,
+    float          X1_cache[MAX_BATCH][FFN_DIM])
+
+Change last parameter to:
+    float          x_scale,
+    int8_t         X1_cache[MAX_BATCH][FFN_DIM])
+
+No change to the pragma on line 317:
+    #pragma HLS ARRAY_PARTITION variable=x_local_1 dim=2 complete
+
+No change to the COMPUTE_X1 loop header or the four load_row_wv calls.
+No change to mac_blocks_wv_k4 call (still returns float results[4]).
+
+Current store block (lines 330-333):
+    X1_cache[0][row + 0] = row_results[0];
+    X1_cache[0][row + 1] = row_results[1];
+    X1_cache[0][row + 2] = row_results[2];
+    X1_cache[0][row + 3] = row_results[3];
+
+Replace with (quantize float->INT8 before storing):
+    for (int kr = 0; kr < 4; kr++) {
+    #pragma HLS UNROLL
+        float fq = row_results[kr] * X12_INV_SCALE;
+        int   iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
+        if (iq >  127) iq =  127;
+        if (iq < -128) iq = -128;
+        X1_cache[0][row + kr] = (int8_t)iq;
+    }
+
+The UNROLL ensures all 4 quantizations are synthesized in parallel (4 FP->INT
+converts and 4 byte stores, all outside the inner pipeline -- negligible cost).
+
+
+=============================================================================
+CHANGE 3 — compute_X2 (currently lines 339-364)
+=============================================================================
+
+Identical structure to compute_X1. Apply the same two changes:
+
+Signature line 343:
+    float          X2_cache[MAX_BATCH][FFN_DIM])
+->
+    int8_t         X2_cache[MAX_BATCH][FFN_DIM])
+
+Store block lines 359-362, same replacement as compute_X1:
+    for (int kr = 0; kr < 4; kr++) {
+    #pragma HLS UNROLL
+        float fq = row_results[kr] * X12_INV_SCALE;
+        int   iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
+        if (iq >  127) iq =  127;
+        if (iq < -128) iq = -128;
+        X2_cache[0][row + kr] = (int8_t)iq;
+    }
+
+
+=============================================================================
+CHANGE 4 — compute_gate (currently lines 371-424)
+=============================================================================
+
+Current signature lines 371-375:
+  static void compute_gate(
+      const float X1_cache[MAX_BATCH][FFN_DIM],
+      const float X2_cache[MAX_BATCH][FFN_DIM],
+      int8_t      gate_cache[MAX_BATCH][DOWN_BLOCKS_PER_ROW][256],
+      float       gate_scale_out[MAX_BATCH])
+
+New signature:
+  static void compute_gate(
+      const int8_t X1_cache[MAX_BATCH][FFN_DIM],
+      const int8_t X2_cache[MAX_BATCH][FFN_DIM],
+      int8_t       gate_cache[MAX_BATCH][DOWN_BLOCKS_PER_ROW][256],
+      float        gate_scale_out[MAX_BATCH])
+
+Inside GATE_PASS1 (lines 387-388):
+  Current:
+      float z      = X1_cache[n][j];
+      float x2     = X2_cache[n][j];
+  New:
+      float z      = (float)X1_cache[n][j] * X12_QUANT_SCALE;
+      float x2     = (float)X2_cache[n][j] * X12_QUANT_SCALE;
+
+Inside GATE_PASS2 (lines 410-411):
+  Current:
+      float z      = X1_cache[n][j];
+      float x2     = X2_cache[n][j];
+  New:
+      float z      = (float)X1_cache[n][j] * X12_QUANT_SCALE;
+      float x2     = (float)X2_cache[n][j] * X12_QUANT_SCALE;
+
+All other lines in compute_gate are unchanged:
+  - pmax[] tracking, SiLU LUT lookup, abs_g computation: unchanged
+  - max_abs reduction, gs/inv_gs, gate_scale_out: unchanged
+  - gate quantization to INT8: unchanged
+
+HLS pipeline impact: the two new float multiplies (INT8->FP32 cast + multiply
+by constant) add no new FP latency vs the old array reads. Both are single-
+cycle operations preceding the 4-cycle sigmoid LUT lookup; no II change.
+
+
+=============================================================================
+CHANGE 5 — swiglu() top-level body (currently lines 792-798)
+=============================================================================
+
+Current:
+    float X1_cache[MAX_BATCH][FFN_DIM];
+    float X2_cache[MAX_BATCH][FFN_DIM];
+    #pragma HLS BIND_STORAGE variable=X1_cache type=ram_2p impl=uram
+    #pragma HLS BIND_STORAGE variable=X2_cache type=ram_2p impl=uram
+
+New:
+    int8_t X1_cache[MAX_BATCH][FFN_DIM];
+    int8_t X2_cache[MAX_BATCH][FFN_DIM];
+    #pragma HLS BIND_STORAGE variable=X1_cache type=ram_2p impl=bram
+    #pragma HLS BIND_STORAGE variable=X2_cache type=ram_2p impl=bram
+
+Rationale for BRAM vs URAM:
+  - int8_t[1][8192] = 8 KB. URAM block = 36 KB -> wasteful (22% utilization).
+  - BRAM_18K holds 2K x 8-bit = 2 KB -> 4 BRAM_18K per cache, 8 total for both.
+  - BRAM is lower-routing-complexity than URAM on the fabric; this also
+    reduces the routing pressure that caused hold violations at 300 MHz.
+  - ram_2p still required so DATAFLOW ping-pong works correctly.
+
+No change to gate_cache declaration (already int8_t, already URAM):
+    int8_t gate_cache[MAX_BATCH][DOWN_BLOCKS_PER_ROW][256];
+    #pragma HLS BIND_STORAGE variable=gate_cache type=ram_2p impl=uram
+    #pragma HLS ARRAY_PARTITION variable=gate_cache dim=2 cyclic factor=8
+
+No change to gate_scale, x_local_1, x_local_2, sigmoid_lut, DATAFLOW call site.
+
+
+=============================================================================
+What Does NOT Change
+=============================================================================
+
+- swiglu.h:                    unchanged (external interface is identical)
+- sigmoid_lut.h:               unchanged
+- swiglu_tb.cpp:               unchanged (testbench passes float in/out at top)
+- ggml-cpu.c:                  unchanged (IP still takes INT8 x_batch, float out)
+- ggml.h, ggml.c:              unchanged
+- lfm2.cpp:                    unchanged
+- pl.dtsi:                     unchanged
+- All HLS pragmas on mac_blocks_*: unchanged
+- mac_blocks_wv, mac_blocks_wv_k4: unchanged (still return float results[])
+- mac_blocks_down_q4k, mac_blocks_down_q6k: unchanged (gate_cache unchanged)
+- load_x_local, load_row_wv, load_row_down_q4k, load_row_down_q6k: unchanged
+- The decode path inside mac_blocks_wv_k4 (INT32 accumulate, float reduce):
+  unchanged -- the float returned by mac_blocks_wv_k4 is what we then quantize.
+
+
+=============================================================================
+Expected Resource Impact
+=============================================================================
+
+Before:
+  X1_cache:   float[1][8192]  = 32 KB -> 1 URAM block (ram_2p, 36 KB)
+  X2_cache:   float[1][8192]  = 32 KB -> 1 URAM block
+  gate_cache: int8_t[1][32][256] = 8 KB -> 1 URAM block
+  Total: 3 URAM blocks
+
+After:
+  X1_cache:   int8_t[1][8192] = 8 KB -> 4 BRAM_18K (ram_2p)
+  X2_cache:   int8_t[1][8192] = 8 KB -> 4 BRAM_18K (ram_2p)
+  gate_cache: int8_t[1][32][256] = 8 KB -> 1 URAM block (unchanged)
+  Total: 1 URAM block + 8 BRAM_18K
+
+URAM freed: 2 blocks -> available for future K=4 output row-parallelism if
+the Q4K down-path is extended to process 4 output rows simultaneously.
+(gate_cache is read-only in Phase 5 and shared across all output rows, so
+K=4 output needs no extra URAM for gate -- only 4x row_buf in LUTRAM.)
+
+
+=============================================================================
+C-Simulation Verification Plan
+=============================================================================
+
+The existing swiglu_tb.cpp is already updated for the INT8 x_batch interface.
+After applying the changes above, re-run C-sim and check:
+
+1. All 5 test cases pass (same pass/fail as before this change).
+2. Q4K output path: relative error vs reference stays below ~8% (existing
+   Q4K weight quantization error dominates; INT8 X1/X2 adds <=1% at the top).
+3. Q6K output path: same criterion.
+4. Edge case: if any |X1| or |X2| exceeds 10 in the testbench's random
+   weights, the clamping fires. Verify clamping doesn't cause >2x output
+   error (it shouldn't -- the test uses synthetic weights with small scales).
+
+After C-sim passes: synthesize, check BRAM_18K count (expect +8, URAM -2),
+then export IP, upgrade in Vivado, regenerate bitstream.
+
+
+=============================================================================
+Implementation Order
+=============================================================================
+
+Apply all changes to swiglu.cpp in one edit, in this order to minimize risk
+of partial states:
+
+  Step A: Add X12_SCALE_RANGE / X12_INV_SCALE / X12_QUANT_SCALE constants.
+  Step B: Change compute_X1 signature and store block.
+  Step C: Change compute_X2 signature and store block (copy of B).
+  Step D: Change compute_gate signature and two dequant lines.
+  Step E: Change swiglu() X1_cache / X2_cache declarations.
+
+Then run C-sim before synthesis.

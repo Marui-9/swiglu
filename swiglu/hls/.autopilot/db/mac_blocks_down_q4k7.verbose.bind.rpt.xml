@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q4k7'" level="0">
-<item name = "Date">Thu Apr  2 09:23:30 2026
+<item name = "Date">Thu Apr  2 13:36:45 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">2453, 2453, 9.812 us, 9.812 us, 2453, 2453, no</column>
+<column name="">1429, 1429, 5.716 us, 5.716 us, 1429, 1429, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -32,8 +32,8 @@
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416">mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN, 39, 39, 0.156 us, 0.156 us, 33, 33, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_504_2_MAC_GROUP_fu_5012">mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_504_2_MAC_GROUP, 2055, 2055, 8.220 us, 8.220 us, 2049, 2049, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072">mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K, 353, 353, 1.412 us, 1.412 us, 352, 352, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP_fu_5012">mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP, 1031, 1031, 4.124 us, 4.124 us, 1025, 1025, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072">mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K, 353, 353, 1.412 us, 1.412 us, 340, 340, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

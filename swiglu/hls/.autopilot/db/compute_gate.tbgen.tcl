@@ -14,12 +14,12 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 40
+set cdfgNum 43
 set C_modelName {compute_gate}
 set C_modelType { float 32 }
 set ap_memory_interface_dict [dict create]
-dict set ap_memory_interface_dict X1_cache { MEM_WIDTH 32 MEM_SIZE 131072 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
-dict set ap_memory_interface_dict X2_cache { MEM_WIDTH 32 MEM_SIZE 131072 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
+dict set ap_memory_interface_dict X1_cache { MEM_WIDTH 8 MEM_SIZE 32768 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
+dict set ap_memory_interface_dict X2_cache { MEM_WIDTH 8 MEM_SIZE 32768 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 dict set ap_memory_interface_dict gate_cache_0 { MEM_WIDTH 8 MEM_SIZE 4096 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 dict set ap_memory_interface_dict gate_cache_1 { MEM_WIDTH 8 MEM_SIZE 4096 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 dict set ap_memory_interface_dict gate_cache_2 { MEM_WIDTH 8 MEM_SIZE 4096 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
@@ -29,8 +29,8 @@ dict set ap_memory_interface_dict gate_cache_5 { MEM_WIDTH 8 MEM_SIZE 4096 MASTE
 dict set ap_memory_interface_dict gate_cache_6 { MEM_WIDTH 8 MEM_SIZE 4096 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 dict set ap_memory_interface_dict gate_cache_7 { MEM_WIDTH 8 MEM_SIZE 4096 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 set C_modelArgList {
-	{ X1_cache float 32 regular {array 32768 { 1 3 } 1 1 }  }
-	{ X2_cache float 32 regular {array 32768 { 1 3 } 1 1 }  }
+	{ X1_cache int 8 regular {array 32768 { 1 3 } 1 1 }  }
+	{ X2_cache int 8 regular {array 32768 { 1 3 } 1 1 }  }
 	{ gate_cache_0 int 8 regular {array 4096 { 3 0 } 0 1 }  }
 	{ gate_cache_1 int 8 regular {array 4096 { 3 0 } 0 1 }  }
 	{ gate_cache_2 int 8 regular {array 4096 { 3 0 } 0 1 }  }
@@ -44,8 +44,8 @@ set hasAXIMCache 0
 set l_AXIML2Cache [list]
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
-	{ "Name" : "X1_cache", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "X2_cache", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
+	{ "Name" : "X1_cache", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
+ 	{ "Name" : "X2_cache", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
  	{ "Name" : "gate_cache_0", "interface" : "memory", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
  	{ "Name" : "gate_cache_1", "interface" : "memory", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
  	{ "Name" : "gate_cache_2", "interface" : "memory", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
@@ -67,10 +67,10 @@ set portList {
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ X1_cache_address0 sc_out sc_lv 15 signal 0 } 
 	{ X1_cache_ce0 sc_out sc_logic 1 signal 0 } 
-	{ X1_cache_q0 sc_in sc_lv 32 signal 0 } 
+	{ X1_cache_q0 sc_in sc_lv 8 signal 0 } 
 	{ X2_cache_address0 sc_out sc_lv 15 signal 1 } 
 	{ X2_cache_ce0 sc_out sc_logic 1 signal 1 } 
-	{ X2_cache_q0 sc_in sc_lv 32 signal 1 } 
+	{ X2_cache_q0 sc_in sc_lv 8 signal 1 } 
 	{ gate_cache_0_address1 sc_out sc_lv 12 signal 2 } 
 	{ gate_cache_0_ce1 sc_out sc_logic 1 signal 2 } 
 	{ gate_cache_0_we1 sc_out sc_logic 1 signal 2 } 
@@ -115,10 +115,10 @@ set NewPortList {[
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "X1_cache_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":15, "type": "signal", "bundle":{"name": "X1_cache", "role": "address0" }} , 
  	{ "name": "X1_cache_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "X1_cache", "role": "ce0" }} , 
- 	{ "name": "X1_cache_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "X1_cache", "role": "q0" }} , 
+ 	{ "name": "X1_cache_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "X1_cache", "role": "q0" }} , 
  	{ "name": "X2_cache_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":15, "type": "signal", "bundle":{"name": "X2_cache", "role": "address0" }} , 
  	{ "name": "X2_cache_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "X2_cache", "role": "ce0" }} , 
- 	{ "name": "X2_cache_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "X2_cache", "role": "q0" }} , 
+ 	{ "name": "X2_cache_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "X2_cache", "role": "q0" }} , 
  	{ "name": "gate_cache_0_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":12, "type": "signal", "bundle":{"name": "gate_cache_0", "role": "address1" }} , 
  	{ "name": "gate_cache_0_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "gate_cache_0", "role": "ce1" }} , 
  	{ "name": "gate_cache_0_we1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "gate_cache_0", "role": "we1" }} , 
@@ -157,14 +157,14 @@ set ArgLastReadFirstWriteLatency {
 	compute_gate {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 26 FirstWrite -1}
-		gate_cache_0 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_1 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_2 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_3 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_4 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_5 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_6 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_7 {Type O LastRead -1 FirstWrite 55}
+		gate_cache_0 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_1 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_2 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_3 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_4 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_5 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_6 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_7 {Type O LastRead -1 FirstWrite 68}
 		sigmoid_lut {Type I LastRead -1 FirstWrite -1}}
 	compute_gate_Pipeline_1 {
 		pmax {Type O LastRead -1 FirstWrite 0}
@@ -178,28 +178,28 @@ set ArgLastReadFirstWriteLatency {
 	compute_gate_Pipeline_GATE_PASS1 {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 26 FirstWrite -1}
-		pmax_7 {Type IO LastRead 36 FirstWrite 39}
-		pmax_6 {Type IO LastRead 36 FirstWrite 39}
-		pmax_5 {Type IO LastRead 36 FirstWrite 39}
-		pmax_4 {Type IO LastRead 36 FirstWrite 39}
-		pmax_3 {Type IO LastRead 36 FirstWrite 39}
-		pmax_2 {Type IO LastRead 36 FirstWrite 39}
-		pmax_1 {Type IO LastRead 36 FirstWrite 39}
-		pmax {Type IO LastRead 36 FirstWrite 39}
-		sigmoid_lut {Type I LastRead 20 FirstWrite -1}}
+		pmax_7 {Type IO LastRead 49 FirstWrite 52}
+		pmax_6 {Type IO LastRead 49 FirstWrite 52}
+		pmax_5 {Type IO LastRead 49 FirstWrite 52}
+		pmax_4 {Type IO LastRead 49 FirstWrite 52}
+		pmax_3 {Type IO LastRead 49 FirstWrite 52}
+		pmax_2 {Type IO LastRead 49 FirstWrite 52}
+		pmax_1 {Type IO LastRead 49 FirstWrite 52}
+		pmax {Type IO LastRead 49 FirstWrite 52}
+		sigmoid_lut {Type I LastRead 33 FirstWrite -1}}
 	compute_gate_Pipeline_GATE_PASS2 {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 26 FirstWrite -1}
-		gate_cache_7 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_6 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_5 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_4 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_3 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_2 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_1 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_0 {Type O LastRead -1 FirstWrite 55}
+		gate_cache_7 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_6 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_5 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_4 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_3 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_2 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_1 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_0 {Type O LastRead -1 FirstWrite 68}
 		inv_gs {Type I LastRead 0 FirstWrite -1}
-		sigmoid_lut {Type I LastRead 20 FirstWrite -1}}
+		sigmoid_lut {Type I LastRead 33 FirstWrite -1}}
 	compute_gate_Pipeline_4 {
 		pmax {Type O LastRead -1 FirstWrite 0}
 		pmax_1 {Type O LastRead -1 FirstWrite 0}
@@ -212,28 +212,28 @@ set ArgLastReadFirstWriteLatency {
 	compute_gate_Pipeline_GATE_PASS111 {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 26 FirstWrite -1}
-		pmax_7 {Type IO LastRead 36 FirstWrite 39}
-		pmax_6 {Type IO LastRead 36 FirstWrite 39}
-		pmax_5 {Type IO LastRead 36 FirstWrite 39}
-		pmax_4 {Type IO LastRead 36 FirstWrite 39}
-		pmax_3 {Type IO LastRead 36 FirstWrite 39}
-		pmax_2 {Type IO LastRead 36 FirstWrite 39}
-		pmax_1 {Type IO LastRead 36 FirstWrite 39}
-		pmax {Type IO LastRead 36 FirstWrite 39}
-		sigmoid_lut {Type I LastRead 20 FirstWrite -1}}
+		pmax_7 {Type IO LastRead 49 FirstWrite 52}
+		pmax_6 {Type IO LastRead 49 FirstWrite 52}
+		pmax_5 {Type IO LastRead 49 FirstWrite 52}
+		pmax_4 {Type IO LastRead 49 FirstWrite 52}
+		pmax_3 {Type IO LastRead 49 FirstWrite 52}
+		pmax_2 {Type IO LastRead 49 FirstWrite 52}
+		pmax_1 {Type IO LastRead 49 FirstWrite 52}
+		pmax {Type IO LastRead 49 FirstWrite 52}
+		sigmoid_lut {Type I LastRead 33 FirstWrite -1}}
 	compute_gate_Pipeline_GATE_PASS212 {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 26 FirstWrite -1}
-		gate_cache_7 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_6 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_5 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_4 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_3 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_2 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_1 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_0 {Type O LastRead -1 FirstWrite 55}
+		gate_cache_7 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_6 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_5 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_4 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_3 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_2 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_1 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_0 {Type O LastRead -1 FirstWrite 68}
 		inv_gs_1 {Type I LastRead 0 FirstWrite -1}
-		sigmoid_lut {Type I LastRead 20 FirstWrite -1}}
+		sigmoid_lut {Type I LastRead 33 FirstWrite -1}}
 	compute_gate_Pipeline_7 {
 		pmax {Type O LastRead -1 FirstWrite 0}
 		pmax_1 {Type O LastRead -1 FirstWrite 0}
@@ -246,28 +246,28 @@ set ArgLastReadFirstWriteLatency {
 	compute_gate_Pipeline_GATE_PASS113 {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 26 FirstWrite -1}
-		pmax_7 {Type IO LastRead 36 FirstWrite 39}
-		pmax_6 {Type IO LastRead 36 FirstWrite 39}
-		pmax_5 {Type IO LastRead 36 FirstWrite 39}
-		pmax_4 {Type IO LastRead 36 FirstWrite 39}
-		pmax_3 {Type IO LastRead 36 FirstWrite 39}
-		pmax_2 {Type IO LastRead 36 FirstWrite 39}
-		pmax_1 {Type IO LastRead 36 FirstWrite 39}
-		pmax {Type IO LastRead 36 FirstWrite 39}
-		sigmoid_lut {Type I LastRead 20 FirstWrite -1}}
+		pmax_7 {Type IO LastRead 49 FirstWrite 52}
+		pmax_6 {Type IO LastRead 49 FirstWrite 52}
+		pmax_5 {Type IO LastRead 49 FirstWrite 52}
+		pmax_4 {Type IO LastRead 49 FirstWrite 52}
+		pmax_3 {Type IO LastRead 49 FirstWrite 52}
+		pmax_2 {Type IO LastRead 49 FirstWrite 52}
+		pmax_1 {Type IO LastRead 49 FirstWrite 52}
+		pmax {Type IO LastRead 49 FirstWrite 52}
+		sigmoid_lut {Type I LastRead 33 FirstWrite -1}}
 	compute_gate_Pipeline_GATE_PASS214 {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 26 FirstWrite -1}
-		gate_cache_7 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_6 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_5 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_4 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_3 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_2 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_1 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_0 {Type O LastRead -1 FirstWrite 55}
+		gate_cache_7 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_6 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_5 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_4 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_3 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_2 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_1 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_0 {Type O LastRead -1 FirstWrite 68}
 		inv_gs_2 {Type I LastRead 0 FirstWrite -1}
-		sigmoid_lut {Type I LastRead 20 FirstWrite -1}}
+		sigmoid_lut {Type I LastRead 33 FirstWrite -1}}
 	compute_gate_Pipeline_10 {
 		pmax {Type O LastRead -1 FirstWrite 0}
 		pmax_1 {Type O LastRead -1 FirstWrite 0}
@@ -280,28 +280,28 @@ set ArgLastReadFirstWriteLatency {
 	compute_gate_Pipeline_GATE_PASS115 {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 26 FirstWrite -1}
-		pmax_7 {Type IO LastRead 36 FirstWrite 39}
-		pmax_6 {Type IO LastRead 36 FirstWrite 39}
-		pmax_5 {Type IO LastRead 36 FirstWrite 39}
-		pmax_4 {Type IO LastRead 36 FirstWrite 39}
-		pmax_3 {Type IO LastRead 36 FirstWrite 39}
-		pmax_2 {Type IO LastRead 36 FirstWrite 39}
-		pmax_1 {Type IO LastRead 36 FirstWrite 39}
-		pmax {Type IO LastRead 36 FirstWrite 39}
-		sigmoid_lut {Type I LastRead 20 FirstWrite -1}}
+		pmax_7 {Type IO LastRead 49 FirstWrite 52}
+		pmax_6 {Type IO LastRead 49 FirstWrite 52}
+		pmax_5 {Type IO LastRead 49 FirstWrite 52}
+		pmax_4 {Type IO LastRead 49 FirstWrite 52}
+		pmax_3 {Type IO LastRead 49 FirstWrite 52}
+		pmax_2 {Type IO LastRead 49 FirstWrite 52}
+		pmax_1 {Type IO LastRead 49 FirstWrite 52}
+		pmax {Type IO LastRead 49 FirstWrite 52}
+		sigmoid_lut {Type I LastRead 33 FirstWrite -1}}
 	compute_gate_Pipeline_GATE_PASS216 {
 		X1_cache {Type I LastRead 0 FirstWrite -1}
 		X2_cache {Type I LastRead 26 FirstWrite -1}
-		gate_cache_7 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_6 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_5 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_4 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_3 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_2 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_1 {Type O LastRead -1 FirstWrite 55}
-		gate_cache_0 {Type O LastRead -1 FirstWrite 55}
+		gate_cache_7 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_6 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_5 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_4 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_3 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_2 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_1 {Type O LastRead -1 FirstWrite 68}
+		gate_cache_0 {Type O LastRead -1 FirstWrite 68}
 		inv_gs_3 {Type I LastRead 0 FirstWrite -1}
-		sigmoid_lut {Type I LastRead 20 FirstWrite -1}}
+		sigmoid_lut {Type I LastRead 33 FirstWrite -1}}
 	p_hls_fptosi_float_i32 {
 		x {Type I LastRead 0 FirstWrite -1}}
 	p_hls_fptosi_float_i32 {
@@ -310,16 +310,16 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "66275", "Max" : "66275"}
-	, {"Name" : "Interval", "Min" : "66275", "Max" : "66275"}
+	{"Name" : "Latency", "Min" : "66379", "Max" : "66379"}
+	, {"Name" : "Interval", "Min" : "66379", "Max" : "66379"}
 ]}
 
 set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	X1_cache { ap_memory {  { X1_cache_address0 mem_address 1 15 }  { X1_cache_ce0 mem_ce 1 1 }  { X1_cache_q0 mem_dout 0 32 } } }
-	X2_cache { ap_memory {  { X2_cache_address0 mem_address 1 15 }  { X2_cache_ce0 mem_ce 1 1 }  { X2_cache_q0 mem_dout 0 32 } } }
+	X1_cache { ap_memory {  { X1_cache_address0 mem_address 1 15 }  { X1_cache_ce0 mem_ce 1 1 }  { X1_cache_q0 mem_dout 0 8 } } }
+	X2_cache { ap_memory {  { X2_cache_address0 mem_address 1 15 }  { X2_cache_ce0 mem_ce 1 1 }  { X2_cache_q0 mem_dout 0 8 } } }
 	gate_cache_0 { ap_memory {  { gate_cache_0_address1 MemPortADDR2 1 12 }  { gate_cache_0_ce1 MemPortCE2 1 1 }  { gate_cache_0_we1 MemPortWE2 1 1 }  { gate_cache_0_d1 MemPortDIN2 1 8 } } }
 	gate_cache_1 { ap_memory {  { gate_cache_1_address1 MemPortADDR2 1 12 }  { gate_cache_1_ce1 MemPortCE2 1 1 }  { gate_cache_1_we1 MemPortWE2 1 1 }  { gate_cache_1_d1 MemPortDIN2 1 8 } } }
 	gate_cache_2 { ap_memory {  { gate_cache_2_address1 MemPortADDR2 1 12 }  { gate_cache_2_ce1 MemPortCE2 1 1 }  { gate_cache_2_we1 MemPortWE2 1 1 }  { gate_cache_2_d1 MemPortDIN2 1 8 } } }

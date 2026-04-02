@@ -2,63 +2,63 @@
     <item name="Total Instructions per Compilation Phase">
         <table>
             <keys size="4">Phase, Step, Instructions, Description</keys>
-            <column name="Compile/Link">, 19018, After all functions are compiled and linked into a single design</column>
+            <column name="Compile/Link">, 21826, After all functions are compiled and linked into a single design</column>
             <column name="">, , </column>
             <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
-            <column name="">(1) unroll, 43573, user unroll pragmas are applied</column>
-            <column name="">(2) simplification, 31729, simplification of applied user unroll pragmas</column>
-            <column name="">(3) inline, 31364, user inline pragmas are applied</column>
-            <column name="">(4) simplification, 31032, simplification of applied user inline pragmas</column>
+            <column name="">(1) unroll, 17433, user unroll pragmas are applied</column>
+            <column name="">(2) simplification, 12693, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline, 12432, user inline pragmas are applied</column>
+            <column name="">(4) simplification, 11996, simplification of applied user inline pragmas</column>
             <column name="">, , </column>
             <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(1) array partition, 58531, user array partition pragmas are applied</column>
-            <column name="">(2) simplification, 45157, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
-            <column name="">(3) aggregate/disaggregate , 45157, user struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(4) array reshape, 45156, apply array reshape pragmas</column>
-            <column name="">(5) access patterns, 45751, array access pattern optmizations</column>
+            <column name="">(1) array partition, 34675, user array partition pragmas are applied</column>
+            <column name="">(2) simplification, 26620, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate , 26620, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape, 26619, apply array reshape pragmas</column>
+            <column name="">(5) access patterns, 27788, array access pattern optmizations</column>
             <column name="">, , </column>
             <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
-            <column name="">(1) loop simplification, 45731, loop and instruction simplification</column>
-            <column name="">(2) parallelization, 45154, loops are unrolled or pipelined to meet performance targets</column>
-            <column name="">(3) array partition, 54838, arrays are partitioned to meet performance targets</column>
-            <column name="">(4) simplification, 48734, simplification of design after performance transformations</column>
+            <column name="">(1) loop simplification, 27768, loop and instruction simplification</column>
+            <column name="">(2) parallelization, 26612, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition, 36288, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification, 30184, simplification of design after performance transformations</column>
             <column name="">, , </column>
             <column name="HW Transforms">, , After hardware transfomations</column>
-            <column name="">(1) lowering, 48772, initial conversion to HW specific instructions</column>
-            <column name="">(2) optimizations, 43770, high level synthesis optimizations</column>
+            <column name="">(1) lowering, 30210, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations, 26768, high level synthesis optimizations</column>
         </table>
     </item>
     <item name="Instructions per Function for each Compilation Phase">
         <hiertable>
             <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
-                <row id="0" col0="swiglu" col1="swiglu.cpp:756" col2="19018" col3="31032" col4="45751" col5="48734" col6="43770">
-                    <row id="16" col0="load_x_local" col1="swiglu.cpp:726" col2="104" col3="147" col4="787" col5="1415" col6="1421"/>
-                    <row id="15" col0="compute_X1" col1="swiglu.cpp:310" col2="4193" col3="12940" col4="15109" col5="15479" col6="13940">
-                        <row id="6" col0="load_row_wv" col1="swiglu.cpp:65" col2="1452" col2_disp="1,452 (4 calls)" col3="80" col3_disp="   80 (4 calls)" col4="252" col4_disp="  252 (4 calls)" col5="248" col5_disp="  248 (4 calls)" col6="280" col6_disp="  280 (4 calls)"/>
-                        <row id="11" col0="mac_blocks_wv_k4" col1="swiglu.cpp:197" col2="2667" col3="12802" col4="14458" col5="14704" col6="13238">
-                            <row id="3" col0="get_byte" col1="swiglu.cpp:53" col2="1392" col2_disp="1,392 (29 calls)" col3="" col4="" col5="" col6=""/>
-                            <row id="17" col0="fp16_to_fp32" col1="swiglu.cpp:28" col2="134" col2_disp="  134 (2 calls)" col3="5824" col3_disp="5,824 (64 calls)" col4="5824" col4_disp="5,824 (64 calls)" col5="5824" col5_disp="5,824 (64 calls)" col6="5888" col6_disp="5,888 (64 calls)"/>
+                <row id="0" col0="swiglu" col1="swiglu.cpp:659" col2="21826" col3="11996" col4="27788" col5="30184" col6="26768">
+                    <row id="13" col0="load_x_local" col1="swiglu.cpp:629" col2="104" col3="147" col4="787" col5="1415" col6="1421"/>
+                    <row id="4" col0="compute_X1" col1="swiglu.cpp:208" col2="5593" col3="3794" col4="6343" col5="6420" col6="5653">
+                        <row id="5" col0="load_row_wv" col1="swiglu.cpp:72" col2="726" col2_disp="  726 (2 calls)" col3="40" col3_disp="   40 (2 calls)" col4="126" col4_disp="  126 (2 calls)" col5="124" col5_disp="  124 (2 calls)" col6="140" col6_disp="  140 (2 calls)"/>
+                        <row id="12" col0="mac_blocks_wv_k2" col1="swiglu.cpp:92" col2="2667" col3="3650" col4="5976" col5="5935" col6="5200">
+                            <row id="19" col0="get_byte" col1="swiglu.cpp:60" col2="1392" col2_disp="1,392 (29 calls)" col3="" col4="" col5="" col6=""/>
+                            <row id="16" col0="fp16_to_fp32" col1="swiglu.cpp:35" col2="134" col2_disp="  134 (2 calls)" col3="1456" col3_disp="1,456 (16 calls)" col4="1456" col4_disp="1,456 (16 calls)" col5="1456" col5_disp="1,456 (16 calls)" col6="1472" col6_disp="1,472 (16 calls)"/>
                         </row>
                     </row>
-                    <row id="19" col0="compute_X2" col1="swiglu.cpp:339" col2="4193" col3="12940" col4="15109" col5="15479" col6="13940">
-                        <row id="6" col0="load_row_wv" col1="swiglu.cpp:65" col2="1452" col2_disp="1,452 (4 calls)" col3="80" col3_disp="   80 (4 calls)" col4="252" col4_disp="  252 (4 calls)" col5="248" col5_disp="  248 (4 calls)" col6="280" col6_disp="  280 (4 calls)"/>
-                        <row id="11" col0="mac_blocks_wv_k4" col1="swiglu.cpp:197" col2="2667" col3="12802" col4="14458" col5="14704" col6="13238">
-                            <row id="3" col0="get_byte" col1="swiglu.cpp:53" col2="1392" col2_disp="1,392 (29 calls)" col3="" col4="" col5="" col6=""/>
-                            <row id="17" col0="fp16_to_fp32" col1="swiglu.cpp:28" col2="134" col2_disp="  134 (2 calls)" col3="5824" col3_disp="5,824 (64 calls)" col4="5824" col4_disp="5,824 (64 calls)" col5="5824" col5_disp="5,824 (64 calls)" col6="5888" col6_disp="5,888 (64 calls)"/>
+                    <row id="6" col0="compute_X2" col1="swiglu.cpp:239" col2="5593" col3="3794" col4="6343" col5="6420" col6="5653">
+                        <row id="5" col0="load_row_wv" col1="swiglu.cpp:72" col2="726" col2_disp="  726 (2 calls)" col3="40" col3_disp="   40 (2 calls)" col4="126" col4_disp="  126 (2 calls)" col5="124" col5_disp="  124 (2 calls)" col6="140" col6_disp="  140 (2 calls)"/>
+                        <row id="12" col0="mac_blocks_wv_k2" col1="swiglu.cpp:92" col2="2667" col3="3650" col4="5976" col5="5935" col6="5200">
+                            <row id="19" col0="get_byte" col1="swiglu.cpp:60" col2="1392" col2_disp="1,392 (29 calls)" col3="" col4="" col5="" col6=""/>
+                            <row id="16" col0="fp16_to_fp32" col1="swiglu.cpp:35" col2="134" col2_disp="  134 (2 calls)" col3="1456" col3_disp="1,456 (16 calls)" col4="1456" col4_disp="1,456 (16 calls)" col5="1456" col5_disp="1,456 (16 calls)" col6="1472" col6_disp="1,472 (16 calls)"/>
                         </row>
                     </row>
-                    <row id="9" col0="compute_gate" col1="swiglu.cpp:371" col2="6549" col3="739" col4="1201" col5="1197" col6=""/>
-                    <row id="12" col0="compute_output" col1="swiglu.cpp:677" col2="3909" col3="4214" col4="13332" col5="12739" col6="">
-                        <row id="13" col0="load_row_down_q6k" col1="swiglu.cpp:546" col2="693" col3="644" col4="1744" col5="1741" col6="">
-                            <row id="3" col0="get_byte" col1="swiglu.cpp:53" col2="240" col2_disp="  240 (5 calls)" col3="" col4="" col5="" col6=""/>
-                            <row id="17" col0="fp16_to_fp32" col1="swiglu.cpp:28" col2="67" col3="364" col3_disp="  364 (4 calls)" col4="364" col4_disp="  364 (4 calls)" col5="364" col5_disp="  364 (4 calls)" col6=""/>
+                    <row id="18" col0="compute_gate" col1="swiglu.cpp:273" col2="6557" col3="771" col4="1233" col5="1229" col6=""/>
+                    <row id="14" col0="compute_output" col1="swiglu.cpp:580" col2="3909" col3="3438" col4="12869" col5="12275" col6="">
+                        <row id="11" col0="load_row_down_q6k" col1="swiglu.cpp:448" col2="693" col3="644" col4="1744" col5="1741" col6="">
+                            <row id="19" col0="get_byte" col1="swiglu.cpp:60" col2="240" col2_disp="  240 (5 calls)" col3="" col4="" col5="" col6=""/>
+                            <row id="16" col0="fp16_to_fp32" col1="swiglu.cpp:35" col2="67" col3="364" col3_disp="  364 (4 calls)" col4="364" col4_disp="  364 (4 calls)" col5="364" col5_disp="  364 (4 calls)" col6=""/>
                         </row>
-                        <row id="5" col0="mac_blocks_down_q6k" col1="swiglu.cpp:612" col2="235" col3="1444" col4="2661" col5="2629" col6=""/>
-                        <row id="18" col0="load_row_down_q4k" col1="swiglu.cpp:430" col2="363" col3="20" col4="65" col5="64" col6=""/>
-                        <row id="8" col0="mac_blocks_down_q4k" col1="swiglu.cpp:446" col2="2525" col3="2025" col4="7919" col5="7342" col6="">
-                            <row id="3" col0="get_byte" col1="swiglu.cpp:53" col2="1392" col2_disp="1,392 (29 calls)" col3="" col4="" col5="" col6=""/>
-                            <row id="17" col0="fp16_to_fp32" col1="swiglu.cpp:28" col2="134" col2_disp="  134 (2 calls)" col3="182" col3_disp="  182 (2 calls)" col4="182" col4_disp="  182 (2 calls)" col5="182" col5_disp="  182 (2 calls)" col6=""/>
+                        <row id="8" col0="mac_blocks_down_q6k" col1="swiglu.cpp:514" col2="235" col3="838" col4="2356" col5="2323" col6=""/>
+                        <row id="10" col0="load_row_down_q4k" col1="swiglu.cpp:332" col2="363" col3="20" col4="65" col5="64" col6=""/>
+                        <row id="15" col0="mac_blocks_down_q4k" col1="swiglu.cpp:348" col2="2525" col3="1855" col4="7761" col5="7184" col6="">
+                            <row id="19" col0="get_byte" col1="swiglu.cpp:60" col2="1392" col2_disp="1,392 (29 calls)" col3="" col4="" col5="" col6=""/>
+                            <row id="16" col0="fp16_to_fp32" col1="swiglu.cpp:35" col2="134" col2_disp="  134 (2 calls)" col3="182" col3_disp="  182 (2 calls)" col4="182" col4_disp="  182 (2 calls)" col5="182" col5_disp="  182 (2 calls)" col6=""/>
                         </row>
                     </row>
                 </row>

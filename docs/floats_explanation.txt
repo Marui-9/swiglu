@@ -43,3 +43,22 @@ path does — even though integers are cheaper to compute. Only the weights
 output) stay FP32 end-to-end because the rest of the pipeline expects FP32.
 Attempting an all-integer activation path would require a different
 quantization/activation scheme and revalidation of the entire inference stack.
+
+
+These aren't for the nonlinearity—they're actually part of the Q4K dequantization that happens during the W/V projection phases. The compute_gate function does have FP32 SiLU computation with the sigmoid lookup table, plus necessary dequantization of the inputs before applying the nonlinearity and max tracking for gate quantization. Then there's another FP32 reduction in the down projection that also involves Q4K dequantization scaling.
+
+Looking at the broader picture, FP32 isn't just being used for the nonlinearity itself—it's also handling Q4K and Q6K dequantization reductions where INT32 MAC results get converted to FP32 and scaled, plus the gate quantization step that tracks max values. Now I'm reviewing the swiglu.cpp file to verify all the K=2 changes are applied consistently across the modified functions—checking that the MAC blocks use K=2 throughout, the loop steps match, and the quantization logic aligns with the reduction factor.
+
+FP32 remains in three distinct places, not just the nonlinearity:
+
+Location	                    Why FP32	                                                            Avoidable?
+REDUCE_WV_K2 (compute_X1/X2)	Q4_K dequant: d[kr][b] * x_scale * sw - dmin[kr][b] * x_scale * sm      No — d/dmin are stored as fp16 in the GGUF weight format
+compute_gate	                INT8 dequant of X1/X2, then SiLU (z * sigmoid_lut[idx] * x2),           No — sigmoid is non-linear; must stay FP32
+                                then gate quantisation
+REDUCE_DOWN_Q4K / REDUCE_Q6K    Q4_K / Q6_K dequant of W_down: 
+(compute_output)	             d[b] * gate_scale * sw - dmin[b] * gate_scale * sm                 	No — same fp16 scale factors in GGUF
+
+The SiLU itself (compute_gate, 9K LUTs) is actually the smallest FP user. The dominant LUT cost in the previous synthesis came from the FP reduction trees inside REDUCE_WV_K2 
+(compute_X1/X2) and REDUCE_DOWN_Q4K/REDUCE_Q6K (compute_output) — these are Q4K/Q6K dequantisation steps that are equally unavoidable since the weight scale factors are fp16.
+
+The three FP locations are all irreducible: the GGUF format mandates fp16 scale factors, and SiLU is non-linear by definition.

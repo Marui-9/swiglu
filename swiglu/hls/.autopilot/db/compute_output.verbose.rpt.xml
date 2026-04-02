@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_output'" level="0">
-<item name = "Date">Thu Apr  2 09:24:20 2026
+<item name = "Date">Thu Apr  2 13:37:18 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">5779530, 17883210, 23.118 ms, 71.533 ms, 5779530, 17883210, no</column>
+<column name="">3682378, 17891402, 14.730 ms, 71.566 ms, 3682378, 17891402, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -33,15 +33,15 @@
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="grp_load_row_down_q4k_fu_719">load_row_down_q4k, 364, 364, 1.456 us, 1.456 us, 364, 364, no</column>
 <column name="grp_load_row_down_q6k_fu_735">load_row_down_q6k, 7354, 7354, 29.416 us, 29.416 us, 7354, 7354, no</column>
-<column name="grp_mac_blocks_down_q6k_fu_871">mac_blocks_down_q6k, 1371, 1371, 5.484 us, 5.484 us, 1371, 1371, no</column>
-<column name="grp_mac_blocks_down_q4k7_fu_1020">mac_blocks_down_q4k7, 2453, 2453, 9.812 us, 9.812 us, 2453, 2453, no</column>
-<column name="grp_compute_output_Pipeline_1_fu_1050">compute_output_Pipeline_1, 2051, 2051, 8.204 us, 8.204 us, 2049, 2049, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q6k_fu_871">mac_blocks_down_q6k, 1376, 1376, 5.504 us, 5.504 us, 1376, 1376, no</column>
+<column name="grp_mac_blocks_down_q4k7_fu_1021">mac_blocks_down_q4k7, 1429, 1429, 5.716 us, 5.716 us, 1429, 1429, no</column>
+<column name="grp_compute_output_Pipeline_1_fu_1051">compute_output_Pipeline_1, 2051, 2051, 8.204 us, 8.204 us, 2049, 2049, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- DOWN_Q4K">5777408, 5777408, 2821, -, -, 2048, no</column>
-<column name="- DOWN_Q6K">17881088, 17881088, 8731, -, -, 2048, no</column>
+<column name="- DOWN_Q4K">3680256, 3680256, 1797, -, -, 2048, no</column>
+<column name="- DOWN_Q6K">17889280, 17889280, 8735, -, -, 2048, no</column>
 </table>
 </item>
 </section>
@@ -56,28 +56,28 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 84, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, 24, 77683, 69186, -</column>
+<column name="Instance">-, 32, 74372, 57054, -</column>
 <column name="Memory">-, -, 1824, 2432, -</column>
-<column name="Multiplexer">-, -, 0, 5068, -</column>
-<column name="Register">-, -, 1423, -, -</column>
+<column name="Multiplexer">-, -, 0, 5064, -</column>
+<column name="Register">-, -, 1390, -, -</column>
 <specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
-<specialColumn name="Utilization (%)">0, 1, 34, 65, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 2, 33, 55, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_compute_output_Pipeline_1_fu_1050">compute_output_Pipeline_1, 0, 0, 49, 88, 0</column>
-<column name="faddfsub_32ns_32ns_32_10_full_dsp_1_U6016">faddfsub_32ns_32ns_32_10_full_dsp_1, 0, 2, 365, 238, 0</column>
-<column name="fmul_32ns_32ns_32_6_max_dsp_1_U6017">fmul_32ns_32ns_32_6_max_dsp_1, 0, 3, 165, 146, 0</column>
+<column name="grp_compute_output_Pipeline_1_fu_1051">compute_output_Pipeline_1, 0, 0, 49, 88, 0</column>
+<column name="faddfsub_32ns_32ns_32_10_full_dsp_1_U6141">faddfsub_32ns_32ns_32_10_full_dsp_1, 0, 2, 365, 238, 0</column>
+<column name="fmul_32ns_32ns_32_6_max_dsp_1_U6142">fmul_32ns_32ns_32_6_max_dsp_1, 0, 3, 165, 146, 0</column>
+<column name="grp_fp16_to_fp32_fu_1620">fp16_to_fp32, 0, 0, 346, 501, 0</column>
 <column name="grp_fp16_to_fp32_fu_1624">fp16_to_fp32, 0, 0, 346, 501, 0</column>
-<column name="grp_fp16_to_fp32_fu_1628">fp16_to_fp32, 0, 0, 346, 501, 0</column>
 <column name="grp_load_row_down_q4k_fu_719">load_row_down_q4k, 0, 0, 288, 803, 0</column>
 <column name="grp_load_row_down_q6k_fu_735">load_row_down_q6k, 0, 1, 3597, 7871, 0</column>
-<column name="grp_mac_blocks_down_q4k7_fu_1020">mac_blocks_down_q4k7, 0, 10, 62419, 41564, 0</column>
-<column name="grp_mac_blocks_down_q6k_fu_871">mac_blocks_down_q6k, 0, 8, 10108, 17474, 0</column>
-<column name="sitofp_32ns_32_7_no_dsp_1_U6018">sitofp_32ns_32_7_no_dsp_1, 0, 0, 0, 0, 0</column>
+<column name="grp_mac_blocks_down_q4k7_fu_1021">mac_blocks_down_q4k7, 0, 18, 60046, 37451, 0</column>
+<column name="grp_mac_blocks_down_q6k_fu_871">mac_blocks_down_q6k, 0, 8, 9170, 9455, 0</column>
+<column name="sitofp_32ns_32_7_no_dsp_1_U6143">sitofp_32ns_32_7_no_dsp_1, 0, 0, 0, 0, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -199,17 +199,17 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="grp_fu_1067_p2">+, 0, 0, 19, 12, 1</column>
+<column name="grp_fu_1068_p2">+, 0, 0, 19, 12, 1</column>
 <column name="ap_block_state2_io">and, 0, 0, 2, 1, 1</column>
-<column name="grp_fu_1061_p2">icmp, 0, 0, 20, 12, 13</column>
-<column name="icmp_ln692_fu_1077_p2">icmp, 0, 0, 39, 32, 1</column>
+<column name="grp_fu_1062_p2">icmp, 0, 0, 20, 12, 13</column>
+<column name="icmp_ln595_fu_1078_p2">icmp, 0, 0, 39, 32, 1</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
-<column name="ap_predicate_op360_writereq_state2">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op359_writereq_state2">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">427, 81, 1, 81</column>
+<column name="ap_NS_fsm">423, 80, 1, 80</column>
 <column name="ap_done">9, 2, 1, 2</column>
 <column name="gate_cache_0_address0">14, 3, 12, 36</column>
 <column name="gate_cache_0_ce0">14, 3, 1, 3</column>
@@ -229,17 +229,17 @@
 <column name="gate_cache_7_ce0">14, 3, 1, 3</column>
 <column name="gmem_out_blk_n_AW">9, 2, 1, 2</column>
 <column name="gmem_out_blk_n_B">9, 2, 1, 2</column>
+<column name="grp_fp16_to_fp32_fu_1620_h">14, 3, 16, 48</column>
 <column name="grp_fp16_to_fp32_fu_1624_h">14, 3, 16, 48</column>
-<column name="grp_fp16_to_fp32_fu_1628_h">14, 3, 16, 48</column>
+<column name="grp_fu_1628_ce">14, 3, 1, 3</column>
+<column name="grp_fu_1628_opcode">14, 3, 2, 6</column>
+<column name="grp_fu_1628_p0">14, 3, 32, 96</column>
+<column name="grp_fu_1628_p1">14, 3, 32, 96</column>
 <column name="grp_fu_1632_ce">14, 3, 1, 3</column>
-<column name="grp_fu_1632_opcode">14, 3, 2, 6</column>
 <column name="grp_fu_1632_p0">14, 3, 32, 96</column>
 <column name="grp_fu_1632_p1">14, 3, 32, 96</column>
 <column name="grp_fu_1636_ce">14, 3, 1, 3</column>
 <column name="grp_fu_1636_p0">14, 3, 32, 96</column>
-<column name="grp_fu_1636_p1">14, 3, 32, 96</column>
-<column name="grp_fu_1640_ce">14, 3, 1, 3</column>
-<column name="grp_fu_1640_p0">14, 3, 32, 96</column>
 <column name="m_axi_gmem_Wd_0_ARADDR">14, 3, 64, 192</column>
 <column name="m_axi_gmem_Wd_0_ARBURST">14, 3, 2, 6</column>
 <column name="m_axi_gmem_Wd_0_ARCACHE">14, 3, 4, 12</column>
@@ -588,11 +588,10 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="W_down_read_reg_1275">64, 0, 64, 0</column>
-<column name="add_ln701_reg_1495">12, 0, 12, 0</column>
-<column name="ap_CS_fsm">80, 0, 80, 0</column>
+<column name="W_down_read_reg_1276">64, 0, 64, 0</column>
+<column name="add_ln604_reg_1496">12, 0, 12, 0</column>
+<column name="ap_CS_fsm">79, 0, 79, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
-<column name="call_ret2_reg_1619">32, 0, 32, 0</column>
 <column name="d_buf_10_fu_572">32, 0, 32, 0</column>
 <column name="d_buf_11_fu_576">32, 0, 32, 0</column>
 <column name="d_buf_12_fu_580">32, 0, 32, 0</column>
@@ -625,19 +624,19 @@
 <column name="d_buf_8_fu_564">32, 0, 32, 0</column>
 <column name="d_buf_9_fu_568">32, 0, 32, 0</column>
 <column name="d_buf_fu_532">32, 0, 32, 0</column>
-<column name="grp_compute_output_Pipeline_1_fu_1050_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_compute_output_Pipeline_1_fu_1051_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_load_row_down_q4k_fu_719_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_load_row_down_q6k_fu_735_ap_start_reg">1, 0, 1, 0</column>
-<column name="grp_mac_blocks_down_q4k7_fu_1020_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_mac_blocks_down_q4k7_fu_1021_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_mac_blocks_down_q6k_fu_871_ap_start_reg">1, 0, 1, 0</column>
-<column name="icmp_ln692_reg_1479">1, 0, 1, 0</column>
-<column name="out_batch_read_reg_1270">64, 0, 64, 0</column>
+<column name="icmp_ln595_reg_1480">1, 0, 1, 0</column>
+<column name="out_batch_read_reg_1271">64, 0, 64, 0</column>
 <column name="out_i_fu_660">12, 0, 12, 0</column>
-<column name="p_read_1_reg_1281">32, 0, 32, 0</column>
-<column name="reg_1073">12, 0, 12, 0</column>
-<column name="trunc_ln697_reg_1503">11, 0, 11, 0</column>
-<column name="trunc_ln713_reg_1518">11, 0, 11, 0</column>
-<column name="trunc_ln_reg_1508">62, 0, 62, 0</column>
+<column name="p_read_1_reg_1282">32, 0, 32, 0</column>
+<column name="reg_1074">12, 0, 12, 0</column>
+<column name="trunc_ln600_reg_1504">11, 0, 11, 0</column>
+<column name="trunc_ln616_reg_1519">11, 0, 11, 0</column>
+<column name="trunc_ln_reg_1509">62, 0, 62, 0</column>
 </table>
 </item>
 </section>

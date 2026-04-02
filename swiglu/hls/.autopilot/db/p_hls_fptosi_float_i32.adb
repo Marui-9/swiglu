@@ -1008,7 +1008,7 @@
             <Obj>
               <type>0</type>
               <id>15</id>
-              <name>sext_ln18_1</name>
+              <name>sext_ln18_7</name>
               <fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
               <fileDirectory>../../../../../../scratch/2025.1/hls_product/640/2025.1/src/shared/hls/clib/hlsmath</fileDirectory>
               <lineNumber>18</lineNumber>
@@ -1047,7 +1047,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>sext_ln18_1_fu_114_p1</rtlName>
+              <rtlName>sext_ln18_7_fu_114_p1</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -1363,7 +1363,7 @@
             <Obj>
               <type>0</type>
               <id>20</id>
-              <name>tmp_887</name>
+              <name>tmp_511</name>
               <fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
               <fileDirectory>../../../../../../scratch/2025.1/hls_product/640/2025.1/src/shared/hls/clib/hlsmath</fileDirectory>
               <lineNumber>21</lineNumber>
@@ -1402,7 +1402,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_887_reg_187</rtlName>
+              <rtlName>tmp_511_reg_187</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -1508,7 +1508,7 @@
             <Obj>
               <type>0</type>
               <id>22</id>
-              <name>result_1</name>
+              <name>result_16</name>
               <fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
               <fileDirectory>../../../../../../scratch/2025.1/hls_product/640/2025.1/src/shared/hls/clib/hlsmath</fileDirectory>
               <lineNumber>59</lineNumber>
@@ -1547,7 +1547,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>result</originalName>
-              <rtlName>result_1_fu_159_p2</rtlName>
+              <rtlName>result_16_fu_159_p2</rtlName>
               <control>auto</control>
               <opType>sub</opType>
               <implIndex>fabric</implIndex>
@@ -1579,7 +1579,7 @@
             <Obj>
               <type>0</type>
               <id>23</id>
-              <name>result_2</name>
+              <name>result_17</name>
               <fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
               <fileDirectory>../../../../../../scratch/2025.1/hls_product/640/2025.1/src/shared/hls/clib/hlsmath</fileDirectory>
               <lineNumber>59</lineNumber>
@@ -2666,7 +2666,7 @@
           </second>
         </item>
         <item>
-          <first>result_1_fu_159_p2 ( - ) </first>
+          <first>result_16_fu_159_p2 ( - ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -2843,7 +2843,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_887_reg_187</first>
+          <first>tmp_511_reg_187</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -2955,7 +2955,7 @@
           </second>
         </item>
         <item>
-          <first>result_1_fu_159_p2 ( - ) </first>
+          <first>result_16_fu_159_p2 ( - ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -3420,7 +3420,7 @@
         </second>
       </item>
       <item>
-        <first>result_1_fu_159</first>
+        <first>result_16_fu_159</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3428,7 +3428,7 @@
         </second>
       </item>
       <item>
-        <first>result_2_fu_165</first>
+        <first>result_17_fu_165</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3444,7 +3444,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln18_1_fu_114</first>
+        <first>sext_ln18_7_fu_114</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3476,7 +3476,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_887_fu_144</first>
+        <first>tmp_511_fu_144</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3628,7 +3628,7 @@
       <count>4</count>
       <item_version>0</item_version>
       <item>
-        <first>tmp_887_reg_187</first>
+        <first>tmp_511_reg_187</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

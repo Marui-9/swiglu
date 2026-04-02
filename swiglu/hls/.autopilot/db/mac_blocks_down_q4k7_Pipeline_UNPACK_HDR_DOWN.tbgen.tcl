@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 40
+set cdfgNum 43
 set C_modelName {mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -547,7 +547,6 @@ set C_modelArgList {
 	{ sc6_257_out int 6 regular {pointer 1}  }
 	{ sc6_256_out int 6 regular {pointer 1}  }
 	{ sc6_out int 6 regular {pointer 1}  }
-	{ dmin_63_out float 32 regular {pointer 1}  }
 	{ dmin_62_out float 32 regular {pointer 1}  }
 	{ dmin_61_out float 32 regular {pointer 1}  }
 	{ dmin_60_out float 32 regular {pointer 1}  }
@@ -578,8 +577,8 @@ set C_modelArgList {
 	{ dmin_35_out float 32 regular {pointer 1}  }
 	{ dmin_34_out float 32 regular {pointer 1}  }
 	{ dmin_33_out float 32 regular {pointer 1}  }
+	{ dmin_32_out float 32 regular {pointer 1}  }
 	{ dmin_out float 32 regular {pointer 1}  }
-	{ d_63_out float 32 regular {pointer 1}  }
 	{ d_62_out float 32 regular {pointer 1}  }
 	{ d_61_out float 32 regular {pointer 1}  }
 	{ d_60_out float 32 regular {pointer 1}  }
@@ -610,6 +609,7 @@ set C_modelArgList {
 	{ d_35_out float 32 regular {pointer 1}  }
 	{ d_34_out float 32 regular {pointer 1}  }
 	{ d_33_out float 32 regular {pointer 1}  }
+	{ d_32_out float 32 regular {pointer 1}  }
 	{ d_out float 32 regular {pointer 1}  }
 }
 set hasAXIMCache 0
@@ -1136,7 +1136,6 @@ set C_modelArgMapList {[
  	{ "Name" : "sc6_257_out", "interface" : "wire", "bitwidth" : 6, "direction" : "WRITEONLY"} , 
  	{ "Name" : "sc6_256_out", "interface" : "wire", "bitwidth" : 6, "direction" : "WRITEONLY"} , 
  	{ "Name" : "sc6_out", "interface" : "wire", "bitwidth" : 6, "direction" : "WRITEONLY"} , 
- 	{ "Name" : "dmin_63_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "dmin_62_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "dmin_61_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "dmin_60_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
@@ -1167,8 +1166,8 @@ set C_modelArgMapList {[
  	{ "Name" : "dmin_35_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "dmin_34_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "dmin_33_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
+ 	{ "Name" : "dmin_32_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "dmin_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
- 	{ "Name" : "d_63_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "d_62_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "d_61_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "d_60_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
@@ -1199,6 +1198,7 @@ set C_modelArgMapList {[
  	{ "Name" : "d_35_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "d_34_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "d_33_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
+ 	{ "Name" : "d_32_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "d_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
 set portNum 1186
@@ -2257,132 +2257,132 @@ set portList {
 	{ sc6_256_out_ap_vld sc_out sc_logic 1 outvld 518 } 
 	{ sc6_out sc_out sc_lv 6 signal 519 } 
 	{ sc6_out_ap_vld sc_out sc_logic 1 outvld 519 } 
-	{ dmin_63_out sc_out sc_lv 32 signal 520 } 
-	{ dmin_63_out_ap_vld sc_out sc_logic 1 outvld 520 } 
-	{ dmin_62_out sc_out sc_lv 32 signal 521 } 
-	{ dmin_62_out_ap_vld sc_out sc_logic 1 outvld 521 } 
-	{ dmin_61_out sc_out sc_lv 32 signal 522 } 
-	{ dmin_61_out_ap_vld sc_out sc_logic 1 outvld 522 } 
-	{ dmin_60_out sc_out sc_lv 32 signal 523 } 
-	{ dmin_60_out_ap_vld sc_out sc_logic 1 outvld 523 } 
-	{ dmin_59_out sc_out sc_lv 32 signal 524 } 
-	{ dmin_59_out_ap_vld sc_out sc_logic 1 outvld 524 } 
-	{ dmin_58_out sc_out sc_lv 32 signal 525 } 
-	{ dmin_58_out_ap_vld sc_out sc_logic 1 outvld 525 } 
-	{ dmin_57_out sc_out sc_lv 32 signal 526 } 
-	{ dmin_57_out_ap_vld sc_out sc_logic 1 outvld 526 } 
-	{ dmin_56_out sc_out sc_lv 32 signal 527 } 
-	{ dmin_56_out_ap_vld sc_out sc_logic 1 outvld 527 } 
-	{ dmin_55_out sc_out sc_lv 32 signal 528 } 
-	{ dmin_55_out_ap_vld sc_out sc_logic 1 outvld 528 } 
-	{ dmin_54_out sc_out sc_lv 32 signal 529 } 
-	{ dmin_54_out_ap_vld sc_out sc_logic 1 outvld 529 } 
-	{ dmin_53_out sc_out sc_lv 32 signal 530 } 
-	{ dmin_53_out_ap_vld sc_out sc_logic 1 outvld 530 } 
-	{ dmin_52_out sc_out sc_lv 32 signal 531 } 
-	{ dmin_52_out_ap_vld sc_out sc_logic 1 outvld 531 } 
-	{ dmin_51_out sc_out sc_lv 32 signal 532 } 
-	{ dmin_51_out_ap_vld sc_out sc_logic 1 outvld 532 } 
-	{ dmin_50_out sc_out sc_lv 32 signal 533 } 
-	{ dmin_50_out_ap_vld sc_out sc_logic 1 outvld 533 } 
-	{ dmin_49_out sc_out sc_lv 32 signal 534 } 
-	{ dmin_49_out_ap_vld sc_out sc_logic 1 outvld 534 } 
-	{ dmin_48_out sc_out sc_lv 32 signal 535 } 
-	{ dmin_48_out_ap_vld sc_out sc_logic 1 outvld 535 } 
-	{ dmin_47_out sc_out sc_lv 32 signal 536 } 
-	{ dmin_47_out_ap_vld sc_out sc_logic 1 outvld 536 } 
-	{ dmin_46_out sc_out sc_lv 32 signal 537 } 
-	{ dmin_46_out_ap_vld sc_out sc_logic 1 outvld 537 } 
-	{ dmin_45_out sc_out sc_lv 32 signal 538 } 
-	{ dmin_45_out_ap_vld sc_out sc_logic 1 outvld 538 } 
-	{ dmin_44_out sc_out sc_lv 32 signal 539 } 
-	{ dmin_44_out_ap_vld sc_out sc_logic 1 outvld 539 } 
-	{ dmin_43_out sc_out sc_lv 32 signal 540 } 
-	{ dmin_43_out_ap_vld sc_out sc_logic 1 outvld 540 } 
-	{ dmin_42_out sc_out sc_lv 32 signal 541 } 
-	{ dmin_42_out_ap_vld sc_out sc_logic 1 outvld 541 } 
-	{ dmin_41_out sc_out sc_lv 32 signal 542 } 
-	{ dmin_41_out_ap_vld sc_out sc_logic 1 outvld 542 } 
-	{ dmin_40_out sc_out sc_lv 32 signal 543 } 
-	{ dmin_40_out_ap_vld sc_out sc_logic 1 outvld 543 } 
-	{ dmin_39_out sc_out sc_lv 32 signal 544 } 
-	{ dmin_39_out_ap_vld sc_out sc_logic 1 outvld 544 } 
-	{ dmin_38_out sc_out sc_lv 32 signal 545 } 
-	{ dmin_38_out_ap_vld sc_out sc_logic 1 outvld 545 } 
-	{ dmin_37_out sc_out sc_lv 32 signal 546 } 
-	{ dmin_37_out_ap_vld sc_out sc_logic 1 outvld 546 } 
-	{ dmin_36_out sc_out sc_lv 32 signal 547 } 
-	{ dmin_36_out_ap_vld sc_out sc_logic 1 outvld 547 } 
-	{ dmin_35_out sc_out sc_lv 32 signal 548 } 
-	{ dmin_35_out_ap_vld sc_out sc_logic 1 outvld 548 } 
-	{ dmin_34_out sc_out sc_lv 32 signal 549 } 
-	{ dmin_34_out_ap_vld sc_out sc_logic 1 outvld 549 } 
-	{ dmin_33_out sc_out sc_lv 32 signal 550 } 
-	{ dmin_33_out_ap_vld sc_out sc_logic 1 outvld 550 } 
+	{ dmin_62_out sc_out sc_lv 32 signal 520 } 
+	{ dmin_62_out_ap_vld sc_out sc_logic 1 outvld 520 } 
+	{ dmin_61_out sc_out sc_lv 32 signal 521 } 
+	{ dmin_61_out_ap_vld sc_out sc_logic 1 outvld 521 } 
+	{ dmin_60_out sc_out sc_lv 32 signal 522 } 
+	{ dmin_60_out_ap_vld sc_out sc_logic 1 outvld 522 } 
+	{ dmin_59_out sc_out sc_lv 32 signal 523 } 
+	{ dmin_59_out_ap_vld sc_out sc_logic 1 outvld 523 } 
+	{ dmin_58_out sc_out sc_lv 32 signal 524 } 
+	{ dmin_58_out_ap_vld sc_out sc_logic 1 outvld 524 } 
+	{ dmin_57_out sc_out sc_lv 32 signal 525 } 
+	{ dmin_57_out_ap_vld sc_out sc_logic 1 outvld 525 } 
+	{ dmin_56_out sc_out sc_lv 32 signal 526 } 
+	{ dmin_56_out_ap_vld sc_out sc_logic 1 outvld 526 } 
+	{ dmin_55_out sc_out sc_lv 32 signal 527 } 
+	{ dmin_55_out_ap_vld sc_out sc_logic 1 outvld 527 } 
+	{ dmin_54_out sc_out sc_lv 32 signal 528 } 
+	{ dmin_54_out_ap_vld sc_out sc_logic 1 outvld 528 } 
+	{ dmin_53_out sc_out sc_lv 32 signal 529 } 
+	{ dmin_53_out_ap_vld sc_out sc_logic 1 outvld 529 } 
+	{ dmin_52_out sc_out sc_lv 32 signal 530 } 
+	{ dmin_52_out_ap_vld sc_out sc_logic 1 outvld 530 } 
+	{ dmin_51_out sc_out sc_lv 32 signal 531 } 
+	{ dmin_51_out_ap_vld sc_out sc_logic 1 outvld 531 } 
+	{ dmin_50_out sc_out sc_lv 32 signal 532 } 
+	{ dmin_50_out_ap_vld sc_out sc_logic 1 outvld 532 } 
+	{ dmin_49_out sc_out sc_lv 32 signal 533 } 
+	{ dmin_49_out_ap_vld sc_out sc_logic 1 outvld 533 } 
+	{ dmin_48_out sc_out sc_lv 32 signal 534 } 
+	{ dmin_48_out_ap_vld sc_out sc_logic 1 outvld 534 } 
+	{ dmin_47_out sc_out sc_lv 32 signal 535 } 
+	{ dmin_47_out_ap_vld sc_out sc_logic 1 outvld 535 } 
+	{ dmin_46_out sc_out sc_lv 32 signal 536 } 
+	{ dmin_46_out_ap_vld sc_out sc_logic 1 outvld 536 } 
+	{ dmin_45_out sc_out sc_lv 32 signal 537 } 
+	{ dmin_45_out_ap_vld sc_out sc_logic 1 outvld 537 } 
+	{ dmin_44_out sc_out sc_lv 32 signal 538 } 
+	{ dmin_44_out_ap_vld sc_out sc_logic 1 outvld 538 } 
+	{ dmin_43_out sc_out sc_lv 32 signal 539 } 
+	{ dmin_43_out_ap_vld sc_out sc_logic 1 outvld 539 } 
+	{ dmin_42_out sc_out sc_lv 32 signal 540 } 
+	{ dmin_42_out_ap_vld sc_out sc_logic 1 outvld 540 } 
+	{ dmin_41_out sc_out sc_lv 32 signal 541 } 
+	{ dmin_41_out_ap_vld sc_out sc_logic 1 outvld 541 } 
+	{ dmin_40_out sc_out sc_lv 32 signal 542 } 
+	{ dmin_40_out_ap_vld sc_out sc_logic 1 outvld 542 } 
+	{ dmin_39_out sc_out sc_lv 32 signal 543 } 
+	{ dmin_39_out_ap_vld sc_out sc_logic 1 outvld 543 } 
+	{ dmin_38_out sc_out sc_lv 32 signal 544 } 
+	{ dmin_38_out_ap_vld sc_out sc_logic 1 outvld 544 } 
+	{ dmin_37_out sc_out sc_lv 32 signal 545 } 
+	{ dmin_37_out_ap_vld sc_out sc_logic 1 outvld 545 } 
+	{ dmin_36_out sc_out sc_lv 32 signal 546 } 
+	{ dmin_36_out_ap_vld sc_out sc_logic 1 outvld 546 } 
+	{ dmin_35_out sc_out sc_lv 32 signal 547 } 
+	{ dmin_35_out_ap_vld sc_out sc_logic 1 outvld 547 } 
+	{ dmin_34_out sc_out sc_lv 32 signal 548 } 
+	{ dmin_34_out_ap_vld sc_out sc_logic 1 outvld 548 } 
+	{ dmin_33_out sc_out sc_lv 32 signal 549 } 
+	{ dmin_33_out_ap_vld sc_out sc_logic 1 outvld 549 } 
+	{ dmin_32_out sc_out sc_lv 32 signal 550 } 
+	{ dmin_32_out_ap_vld sc_out sc_logic 1 outvld 550 } 
 	{ dmin_out sc_out sc_lv 32 signal 551 } 
 	{ dmin_out_ap_vld sc_out sc_logic 1 outvld 551 } 
-	{ d_63_out sc_out sc_lv 32 signal 552 } 
-	{ d_63_out_ap_vld sc_out sc_logic 1 outvld 552 } 
-	{ d_62_out sc_out sc_lv 32 signal 553 } 
-	{ d_62_out_ap_vld sc_out sc_logic 1 outvld 553 } 
-	{ d_61_out sc_out sc_lv 32 signal 554 } 
-	{ d_61_out_ap_vld sc_out sc_logic 1 outvld 554 } 
-	{ d_60_out sc_out sc_lv 32 signal 555 } 
-	{ d_60_out_ap_vld sc_out sc_logic 1 outvld 555 } 
-	{ d_59_out sc_out sc_lv 32 signal 556 } 
-	{ d_59_out_ap_vld sc_out sc_logic 1 outvld 556 } 
-	{ d_58_out sc_out sc_lv 32 signal 557 } 
-	{ d_58_out_ap_vld sc_out sc_logic 1 outvld 557 } 
-	{ d_57_out sc_out sc_lv 32 signal 558 } 
-	{ d_57_out_ap_vld sc_out sc_logic 1 outvld 558 } 
-	{ d_56_out sc_out sc_lv 32 signal 559 } 
-	{ d_56_out_ap_vld sc_out sc_logic 1 outvld 559 } 
-	{ d_55_out sc_out sc_lv 32 signal 560 } 
-	{ d_55_out_ap_vld sc_out sc_logic 1 outvld 560 } 
-	{ d_54_out sc_out sc_lv 32 signal 561 } 
-	{ d_54_out_ap_vld sc_out sc_logic 1 outvld 561 } 
-	{ d_53_out sc_out sc_lv 32 signal 562 } 
-	{ d_53_out_ap_vld sc_out sc_logic 1 outvld 562 } 
-	{ d_52_out sc_out sc_lv 32 signal 563 } 
-	{ d_52_out_ap_vld sc_out sc_logic 1 outvld 563 } 
-	{ d_51_out sc_out sc_lv 32 signal 564 } 
-	{ d_51_out_ap_vld sc_out sc_logic 1 outvld 564 } 
-	{ d_50_out sc_out sc_lv 32 signal 565 } 
-	{ d_50_out_ap_vld sc_out sc_logic 1 outvld 565 } 
-	{ d_49_out sc_out sc_lv 32 signal 566 } 
-	{ d_49_out_ap_vld sc_out sc_logic 1 outvld 566 } 
-	{ d_48_out sc_out sc_lv 32 signal 567 } 
-	{ d_48_out_ap_vld sc_out sc_logic 1 outvld 567 } 
-	{ d_47_out sc_out sc_lv 32 signal 568 } 
-	{ d_47_out_ap_vld sc_out sc_logic 1 outvld 568 } 
-	{ d_46_out sc_out sc_lv 32 signal 569 } 
-	{ d_46_out_ap_vld sc_out sc_logic 1 outvld 569 } 
-	{ d_45_out sc_out sc_lv 32 signal 570 } 
-	{ d_45_out_ap_vld sc_out sc_logic 1 outvld 570 } 
-	{ d_44_out sc_out sc_lv 32 signal 571 } 
-	{ d_44_out_ap_vld sc_out sc_logic 1 outvld 571 } 
-	{ d_43_out sc_out sc_lv 32 signal 572 } 
-	{ d_43_out_ap_vld sc_out sc_logic 1 outvld 572 } 
-	{ d_42_out sc_out sc_lv 32 signal 573 } 
-	{ d_42_out_ap_vld sc_out sc_logic 1 outvld 573 } 
-	{ d_41_out sc_out sc_lv 32 signal 574 } 
-	{ d_41_out_ap_vld sc_out sc_logic 1 outvld 574 } 
-	{ d_40_out sc_out sc_lv 32 signal 575 } 
-	{ d_40_out_ap_vld sc_out sc_logic 1 outvld 575 } 
-	{ d_39_out sc_out sc_lv 32 signal 576 } 
-	{ d_39_out_ap_vld sc_out sc_logic 1 outvld 576 } 
-	{ d_38_out sc_out sc_lv 32 signal 577 } 
-	{ d_38_out_ap_vld sc_out sc_logic 1 outvld 577 } 
-	{ d_37_out sc_out sc_lv 32 signal 578 } 
-	{ d_37_out_ap_vld sc_out sc_logic 1 outvld 578 } 
-	{ d_36_out sc_out sc_lv 32 signal 579 } 
-	{ d_36_out_ap_vld sc_out sc_logic 1 outvld 579 } 
-	{ d_35_out sc_out sc_lv 32 signal 580 } 
-	{ d_35_out_ap_vld sc_out sc_logic 1 outvld 580 } 
-	{ d_34_out sc_out sc_lv 32 signal 581 } 
-	{ d_34_out_ap_vld sc_out sc_logic 1 outvld 581 } 
-	{ d_33_out sc_out sc_lv 32 signal 582 } 
-	{ d_33_out_ap_vld sc_out sc_logic 1 outvld 582 } 
+	{ d_62_out sc_out sc_lv 32 signal 552 } 
+	{ d_62_out_ap_vld sc_out sc_logic 1 outvld 552 } 
+	{ d_61_out sc_out sc_lv 32 signal 553 } 
+	{ d_61_out_ap_vld sc_out sc_logic 1 outvld 553 } 
+	{ d_60_out sc_out sc_lv 32 signal 554 } 
+	{ d_60_out_ap_vld sc_out sc_logic 1 outvld 554 } 
+	{ d_59_out sc_out sc_lv 32 signal 555 } 
+	{ d_59_out_ap_vld sc_out sc_logic 1 outvld 555 } 
+	{ d_58_out sc_out sc_lv 32 signal 556 } 
+	{ d_58_out_ap_vld sc_out sc_logic 1 outvld 556 } 
+	{ d_57_out sc_out sc_lv 32 signal 557 } 
+	{ d_57_out_ap_vld sc_out sc_logic 1 outvld 557 } 
+	{ d_56_out sc_out sc_lv 32 signal 558 } 
+	{ d_56_out_ap_vld sc_out sc_logic 1 outvld 558 } 
+	{ d_55_out sc_out sc_lv 32 signal 559 } 
+	{ d_55_out_ap_vld sc_out sc_logic 1 outvld 559 } 
+	{ d_54_out sc_out sc_lv 32 signal 560 } 
+	{ d_54_out_ap_vld sc_out sc_logic 1 outvld 560 } 
+	{ d_53_out sc_out sc_lv 32 signal 561 } 
+	{ d_53_out_ap_vld sc_out sc_logic 1 outvld 561 } 
+	{ d_52_out sc_out sc_lv 32 signal 562 } 
+	{ d_52_out_ap_vld sc_out sc_logic 1 outvld 562 } 
+	{ d_51_out sc_out sc_lv 32 signal 563 } 
+	{ d_51_out_ap_vld sc_out sc_logic 1 outvld 563 } 
+	{ d_50_out sc_out sc_lv 32 signal 564 } 
+	{ d_50_out_ap_vld sc_out sc_logic 1 outvld 564 } 
+	{ d_49_out sc_out sc_lv 32 signal 565 } 
+	{ d_49_out_ap_vld sc_out sc_logic 1 outvld 565 } 
+	{ d_48_out sc_out sc_lv 32 signal 566 } 
+	{ d_48_out_ap_vld sc_out sc_logic 1 outvld 566 } 
+	{ d_47_out sc_out sc_lv 32 signal 567 } 
+	{ d_47_out_ap_vld sc_out sc_logic 1 outvld 567 } 
+	{ d_46_out sc_out sc_lv 32 signal 568 } 
+	{ d_46_out_ap_vld sc_out sc_logic 1 outvld 568 } 
+	{ d_45_out sc_out sc_lv 32 signal 569 } 
+	{ d_45_out_ap_vld sc_out sc_logic 1 outvld 569 } 
+	{ d_44_out sc_out sc_lv 32 signal 570 } 
+	{ d_44_out_ap_vld sc_out sc_logic 1 outvld 570 } 
+	{ d_43_out sc_out sc_lv 32 signal 571 } 
+	{ d_43_out_ap_vld sc_out sc_logic 1 outvld 571 } 
+	{ d_42_out sc_out sc_lv 32 signal 572 } 
+	{ d_42_out_ap_vld sc_out sc_logic 1 outvld 572 } 
+	{ d_41_out sc_out sc_lv 32 signal 573 } 
+	{ d_41_out_ap_vld sc_out sc_logic 1 outvld 573 } 
+	{ d_40_out sc_out sc_lv 32 signal 574 } 
+	{ d_40_out_ap_vld sc_out sc_logic 1 outvld 574 } 
+	{ d_39_out sc_out sc_lv 32 signal 575 } 
+	{ d_39_out_ap_vld sc_out sc_logic 1 outvld 575 } 
+	{ d_38_out sc_out sc_lv 32 signal 576 } 
+	{ d_38_out_ap_vld sc_out sc_logic 1 outvld 576 } 
+	{ d_37_out sc_out sc_lv 32 signal 577 } 
+	{ d_37_out_ap_vld sc_out sc_logic 1 outvld 577 } 
+	{ d_36_out sc_out sc_lv 32 signal 578 } 
+	{ d_36_out_ap_vld sc_out sc_logic 1 outvld 578 } 
+	{ d_35_out sc_out sc_lv 32 signal 579 } 
+	{ d_35_out_ap_vld sc_out sc_logic 1 outvld 579 } 
+	{ d_34_out sc_out sc_lv 32 signal 580 } 
+	{ d_34_out_ap_vld sc_out sc_logic 1 outvld 580 } 
+	{ d_33_out sc_out sc_lv 32 signal 581 } 
+	{ d_33_out_ap_vld sc_out sc_logic 1 outvld 581 } 
+	{ d_32_out sc_out sc_lv 32 signal 582 } 
+	{ d_32_out_ap_vld sc_out sc_logic 1 outvld 582 } 
 	{ d_out sc_out sc_lv 32 signal 583 } 
 	{ d_out_ap_vld sc_out sc_logic 1 outvld 583 } 
 	{ grp_fp16_to_fp32_fu_20813_p_din1 sc_out sc_lv 16 signal -1 } 
@@ -3445,8 +3445,6 @@ set NewPortList {[
  	{ "name": "sc6_256_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "sc6_256_out", "role": "ap_vld" }} , 
  	{ "name": "sc6_out", "direction": "out", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "sc6_out", "role": "default" }} , 
  	{ "name": "sc6_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "sc6_out", "role": "ap_vld" }} , 
- 	{ "name": "dmin_63_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "dmin_63_out", "role": "default" }} , 
- 	{ "name": "dmin_63_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "dmin_63_out", "role": "ap_vld" }} , 
  	{ "name": "dmin_62_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "dmin_62_out", "role": "default" }} , 
  	{ "name": "dmin_62_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "dmin_62_out", "role": "ap_vld" }} , 
  	{ "name": "dmin_61_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "dmin_61_out", "role": "default" }} , 
@@ -3507,10 +3505,10 @@ set NewPortList {[
  	{ "name": "dmin_34_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "dmin_34_out", "role": "ap_vld" }} , 
  	{ "name": "dmin_33_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "dmin_33_out", "role": "default" }} , 
  	{ "name": "dmin_33_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "dmin_33_out", "role": "ap_vld" }} , 
+ 	{ "name": "dmin_32_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "dmin_32_out", "role": "default" }} , 
+ 	{ "name": "dmin_32_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "dmin_32_out", "role": "ap_vld" }} , 
  	{ "name": "dmin_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "dmin_out", "role": "default" }} , 
  	{ "name": "dmin_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "dmin_out", "role": "ap_vld" }} , 
- 	{ "name": "d_63_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "d_63_out", "role": "default" }} , 
- 	{ "name": "d_63_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "d_63_out", "role": "ap_vld" }} , 
  	{ "name": "d_62_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "d_62_out", "role": "default" }} , 
  	{ "name": "d_62_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "d_62_out", "role": "ap_vld" }} , 
  	{ "name": "d_61_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "d_61_out", "role": "default" }} , 
@@ -3571,6 +3569,8 @@ set NewPortList {[
  	{ "name": "d_34_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "d_34_out", "role": "ap_vld" }} , 
  	{ "name": "d_33_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "d_33_out", "role": "default" }} , 
  	{ "name": "d_33_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "d_33_out", "role": "ap_vld" }} , 
+ 	{ "name": "d_32_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "d_32_out", "role": "default" }} , 
+ 	{ "name": "d_32_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "d_32_out", "role": "ap_vld" }} , 
  	{ "name": "d_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "d_out", "role": "default" }} , 
  	{ "name": "d_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "d_out", "role": "ap_vld" }} , 
  	{ "name": "grp_fp16_to_fp32_fu_20813_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_20813_p_din1", "role": "default" }} , 
@@ -4100,7 +4100,6 @@ set ArgLastReadFirstWriteLatency {
 		sc6_257_out {Type O LastRead -1 FirstWrite 5}
 		sc6_256_out {Type O LastRead -1 FirstWrite 5}
 		sc6_out {Type O LastRead -1 FirstWrite 5}
-		dmin_63_out {Type O LastRead -1 FirstWrite 5}
 		dmin_62_out {Type O LastRead -1 FirstWrite 5}
 		dmin_61_out {Type O LastRead -1 FirstWrite 5}
 		dmin_60_out {Type O LastRead -1 FirstWrite 5}
@@ -4131,8 +4130,8 @@ set ArgLastReadFirstWriteLatency {
 		dmin_35_out {Type O LastRead -1 FirstWrite 5}
 		dmin_34_out {Type O LastRead -1 FirstWrite 5}
 		dmin_33_out {Type O LastRead -1 FirstWrite 5}
+		dmin_32_out {Type O LastRead -1 FirstWrite 5}
 		dmin_out {Type O LastRead -1 FirstWrite 5}
-		d_63_out {Type O LastRead -1 FirstWrite 5}
 		d_62_out {Type O LastRead -1 FirstWrite 5}
 		d_61_out {Type O LastRead -1 FirstWrite 5}
 		d_60_out {Type O LastRead -1 FirstWrite 5}
@@ -4163,6 +4162,7 @@ set ArgLastReadFirstWriteLatency {
 		d_35_out {Type O LastRead -1 FirstWrite 5}
 		d_34_out {Type O LastRead -1 FirstWrite 5}
 		d_33_out {Type O LastRead -1 FirstWrite 5}
+		d_32_out {Type O LastRead -1 FirstWrite 5}
 		d_out {Type O LastRead -1 FirstWrite 5}}}
 
 set hasDtUnsupportedChannel 0
@@ -4697,7 +4697,6 @@ set Spec2ImplPortList {
 	sc6_257_out { ap_vld {  { sc6_257_out out_data 1 6 }  { sc6_257_out_ap_vld out_vld 1 1 } } }
 	sc6_256_out { ap_vld {  { sc6_256_out out_data 1 6 }  { sc6_256_out_ap_vld out_vld 1 1 } } }
 	sc6_out { ap_vld {  { sc6_out out_data 1 6 }  { sc6_out_ap_vld out_vld 1 1 } } }
-	dmin_63_out { ap_vld {  { dmin_63_out out_data 1 32 }  { dmin_63_out_ap_vld out_vld 1 1 } } }
 	dmin_62_out { ap_vld {  { dmin_62_out out_data 1 32 }  { dmin_62_out_ap_vld out_vld 1 1 } } }
 	dmin_61_out { ap_vld {  { dmin_61_out out_data 1 32 }  { dmin_61_out_ap_vld out_vld 1 1 } } }
 	dmin_60_out { ap_vld {  { dmin_60_out out_data 1 32 }  { dmin_60_out_ap_vld out_vld 1 1 } } }
@@ -4728,8 +4727,8 @@ set Spec2ImplPortList {
 	dmin_35_out { ap_vld {  { dmin_35_out out_data 1 32 }  { dmin_35_out_ap_vld out_vld 1 1 } } }
 	dmin_34_out { ap_vld {  { dmin_34_out out_data 1 32 }  { dmin_34_out_ap_vld out_vld 1 1 } } }
 	dmin_33_out { ap_vld {  { dmin_33_out out_data 1 32 }  { dmin_33_out_ap_vld out_vld 1 1 } } }
+	dmin_32_out { ap_vld {  { dmin_32_out out_data 1 32 }  { dmin_32_out_ap_vld out_vld 1 1 } } }
 	dmin_out { ap_vld {  { dmin_out out_data 1 32 }  { dmin_out_ap_vld out_vld 1 1 } } }
-	d_63_out { ap_vld {  { d_63_out out_data 1 32 }  { d_63_out_ap_vld out_vld 1 1 } } }
 	d_62_out { ap_vld {  { d_62_out out_data 1 32 }  { d_62_out_ap_vld out_vld 1 1 } } }
 	d_61_out { ap_vld {  { d_61_out out_data 1 32 }  { d_61_out_ap_vld out_vld 1 1 } } }
 	d_60_out { ap_vld {  { d_60_out out_data 1 32 }  { d_60_out_ap_vld out_vld 1 1 } } }
@@ -4760,5 +4759,6 @@ set Spec2ImplPortList {
 	d_35_out { ap_vld {  { d_35_out out_data 1 32 }  { d_35_out_ap_vld out_vld 1 1 } } }
 	d_34_out { ap_vld {  { d_34_out out_data 1 32 }  { d_34_out_ap_vld out_vld 1 1 } } }
 	d_33_out { ap_vld {  { d_33_out out_data 1 32 }  { d_33_out_ap_vld out_vld 1 1 } } }
+	d_32_out { ap_vld {  { d_32_out out_data 1 32 }  { d_32_out_ap_vld out_vld 1 1 } } }
 	d_out { ap_vld {  { d_out out_data 1 32 }  { d_out_ap_vld out_vld 1 1 } } }
 }

@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 40
+set cdfgNum 43
 set C_modelName {load_row_wv}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -245,9 +245,9 @@ set ArgLastReadFirstWriteLatency {
 		rb_5 {Type O LastRead -1 FirstWrite 2}
 		rb_6 {Type O LastRead -1 FirstWrite 2}
 		rb_7 {Type O LastRead -1 FirstWrite 2}}
-	load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_71_1 {
+	load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_78_1 {
 		gmem_V {Type I LastRead 1 FirstWrite -1}
-		sext_ln70 {Type I LastRead 0 FirstWrite -1}
+		sext_ln77 {Type I LastRead 0 FirstWrite -1}
 		rb_7 {Type O LastRead -1 FirstWrite 2}
 		rb_6 {Type O LastRead -1 FirstWrite 2}
 		rb_5 {Type O LastRead -1 FirstWrite 2}

@@ -59,7 +59,7 @@ module swiglu_load_row_down_q6k_Pipeline_LOAD_Q6K_FLAT (
         m_axi_gmem_Wd_0_BRESP,
         m_axi_gmem_Wd_0_BID,
         m_axi_gmem_Wd_0_BUSER,
-        sext_ln561,
+        sext_ln463,
         flat_30_address0,
         flat_30_ce0,
         flat_30_we0,
@@ -180,7 +180,7 @@ output   m_axi_gmem_Wd_0_BREADY;
 input  [1:0] m_axi_gmem_Wd_0_BRESP;
 input  [0:0] m_axi_gmem_Wd_0_BID;
 input  [0:0] m_axi_gmem_Wd_0_BUSER;
-input  [59:0] sext_ln561;
+input  [59:0] sext_ln463;
 output  [4:0] flat_30_address0;
 output   flat_30_ce0;
 output   flat_30_we0;
@@ -256,7 +256,7 @@ reg    ap_enable_reg_pp0_iter1;
 reg    ap_enable_reg_pp0_iter2;
 reg    ap_idle_pp0;
 reg    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln561_fu_363_p2;
+wire   [0:0] icmp_ln463_fu_363_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
@@ -264,16 +264,16 @@ reg    gmem_Wd_blk_n_R;
 wire    ap_block_pp0_stage0_grp1;
 reg    ap_block_pp0_stage0_11001_grp1;
 reg    ap_block_pp0_stage0_11001;
-wire   [3:0] trunc_ln561_fu_375_p1;
-reg   [3:0] trunc_ln561_reg_469;
-reg   [3:0] trunc_ln561_reg_469_pp0_iter1_reg;
+wire   [3:0] trunc_ln463_fu_375_p1;
+reg   [3:0] trunc_ln463_reg_469;
+reg   [3:0] trunc_ln463_reg_469_pp0_iter1_reg;
 reg   [4:0] lshr_ln_reg_473;
 reg   [4:0] lshr_ln_reg_473_pp0_iter1_reg;
 reg   [127:0] gmem_Wd_addr_read_reg_478;
-wire   [63:0] zext_ln561_fu_434_p1;
+wire   [63:0] zext_ln463_fu_434_p1;
 wire    ap_block_pp0_stage0_grp0;
 reg   [8:0] i_fu_128;
-wire   [8:0] add_ln561_fu_369_p2;
+wire   [8:0] add_ln463_fu_369_p2;
 wire    ap_loop_init;
 reg   [8:0] ap_sig_allocacmp_i_1;
 wire    ap_block_pp0_stage0;
@@ -404,8 +404,8 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((icmp_ln561_fu_363_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            i_fu_128 <= add_ln561_fu_369_p2;
+        if (((icmp_ln463_fu_363_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
+            i_fu_128 <= add_ln463_fu_369_p2;
         end else if ((ap_loop_init == 1'b1)) begin
             i_fu_128 <= 9'd0;
         end
@@ -417,8 +417,8 @@ always @ (posedge ap_clk) begin
         ap_loop_exit_ready_pp0_iter1_reg <= ap_loop_exit_ready;
         lshr_ln_reg_473 <= {{ap_sig_allocacmp_i_1[8:4]}};
         lshr_ln_reg_473_pp0_iter1_reg <= lshr_ln_reg_473;
-        trunc_ln561_reg_469 <= trunc_ln561_fu_375_p1;
-        trunc_ln561_reg_469_pp0_iter1_reg <= trunc_ln561_reg_469;
+        trunc_ln463_reg_469 <= trunc_ln463_fu_375_p1;
+        trunc_ln463_reg_469_pp0_iter1_reg <= trunc_ln463_reg_469;
     end
 end
 
@@ -429,7 +429,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (*) begin
-    if (((icmp_ln561_fu_363_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln463_fu_363_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -485,7 +485,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd1))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd1))) begin
         flat_16_we0_local = 1'b1;
     end else begin
         flat_16_we0_local = 1'b0;
@@ -501,7 +501,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd2))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd2))) begin
         flat_17_we0_local = 1'b1;
     end else begin
         flat_17_we0_local = 1'b0;
@@ -517,7 +517,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd3))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd3))) begin
         flat_18_we0_local = 1'b1;
     end else begin
         flat_18_we0_local = 1'b0;
@@ -533,7 +533,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd4))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd4))) begin
         flat_19_we0_local = 1'b1;
     end else begin
         flat_19_we0_local = 1'b0;
@@ -549,7 +549,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd5))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd5))) begin
         flat_20_we0_local = 1'b1;
     end else begin
         flat_20_we0_local = 1'b0;
@@ -565,7 +565,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd6))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd6))) begin
         flat_21_we0_local = 1'b1;
     end else begin
         flat_21_we0_local = 1'b0;
@@ -581,7 +581,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd7))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd7))) begin
         flat_22_we0_local = 1'b1;
     end else begin
         flat_22_we0_local = 1'b0;
@@ -597,7 +597,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd8))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd8))) begin
         flat_23_we0_local = 1'b1;
     end else begin
         flat_23_we0_local = 1'b0;
@@ -613,7 +613,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd9))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd9))) begin
         flat_24_we0_local = 1'b1;
     end else begin
         flat_24_we0_local = 1'b0;
@@ -629,7 +629,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd10))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd10))) begin
         flat_25_we0_local = 1'b1;
     end else begin
         flat_25_we0_local = 1'b0;
@@ -645,7 +645,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd11))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd11))) begin
         flat_26_we0_local = 1'b1;
     end else begin
         flat_26_we0_local = 1'b0;
@@ -661,7 +661,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd12))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd12))) begin
         flat_27_we0_local = 1'b1;
     end else begin
         flat_27_we0_local = 1'b0;
@@ -677,7 +677,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd13))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd13))) begin
         flat_28_we0_local = 1'b1;
     end else begin
         flat_28_we0_local = 1'b0;
@@ -693,7 +693,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd14))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd14))) begin
         flat_29_we0_local = 1'b1;
     end else begin
         flat_29_we0_local = 1'b0;
@@ -709,7 +709,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd15))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd15))) begin
         flat_30_we0_local = 1'b1;
     end else begin
         flat_30_we0_local = 1'b0;
@@ -725,7 +725,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln561_reg_469_pp0_iter1_reg == 4'd0))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (trunc_ln463_reg_469_pp0_iter1_reg == 4'd0))) begin
         flat_we0_local = 1'b1;
     end else begin
         flat_we0_local = 1'b0;
@@ -759,7 +759,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln561_fu_369_p2 = (ap_sig_allocacmp_i_1 + 9'd1);
+assign add_ln463_fu_369_p2 = (ap_sig_allocacmp_i_1 + 9'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -795,7 +795,7 @@ assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
 assign ap_ready = ap_ready_sig;
 
-assign flat_16_address0 = zext_ln561_fu_434_p1;
+assign flat_16_address0 = zext_ln463_fu_434_p1;
 
 assign flat_16_ce0 = flat_16_ce0_local;
 
@@ -803,7 +803,7 @@ assign flat_16_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_16_we0 = flat_16_we0_local;
 
-assign flat_17_address0 = zext_ln561_fu_434_p1;
+assign flat_17_address0 = zext_ln463_fu_434_p1;
 
 assign flat_17_ce0 = flat_17_ce0_local;
 
@@ -811,7 +811,7 @@ assign flat_17_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_17_we0 = flat_17_we0_local;
 
-assign flat_18_address0 = zext_ln561_fu_434_p1;
+assign flat_18_address0 = zext_ln463_fu_434_p1;
 
 assign flat_18_ce0 = flat_18_ce0_local;
 
@@ -819,7 +819,7 @@ assign flat_18_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_18_we0 = flat_18_we0_local;
 
-assign flat_19_address0 = zext_ln561_fu_434_p1;
+assign flat_19_address0 = zext_ln463_fu_434_p1;
 
 assign flat_19_ce0 = flat_19_ce0_local;
 
@@ -827,7 +827,7 @@ assign flat_19_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_19_we0 = flat_19_we0_local;
 
-assign flat_20_address0 = zext_ln561_fu_434_p1;
+assign flat_20_address0 = zext_ln463_fu_434_p1;
 
 assign flat_20_ce0 = flat_20_ce0_local;
 
@@ -835,7 +835,7 @@ assign flat_20_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_20_we0 = flat_20_we0_local;
 
-assign flat_21_address0 = zext_ln561_fu_434_p1;
+assign flat_21_address0 = zext_ln463_fu_434_p1;
 
 assign flat_21_ce0 = flat_21_ce0_local;
 
@@ -843,7 +843,7 @@ assign flat_21_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_21_we0 = flat_21_we0_local;
 
-assign flat_22_address0 = zext_ln561_fu_434_p1;
+assign flat_22_address0 = zext_ln463_fu_434_p1;
 
 assign flat_22_ce0 = flat_22_ce0_local;
 
@@ -851,7 +851,7 @@ assign flat_22_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_22_we0 = flat_22_we0_local;
 
-assign flat_23_address0 = zext_ln561_fu_434_p1;
+assign flat_23_address0 = zext_ln463_fu_434_p1;
 
 assign flat_23_ce0 = flat_23_ce0_local;
 
@@ -859,7 +859,7 @@ assign flat_23_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_23_we0 = flat_23_we0_local;
 
-assign flat_24_address0 = zext_ln561_fu_434_p1;
+assign flat_24_address0 = zext_ln463_fu_434_p1;
 
 assign flat_24_ce0 = flat_24_ce0_local;
 
@@ -867,7 +867,7 @@ assign flat_24_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_24_we0 = flat_24_we0_local;
 
-assign flat_25_address0 = zext_ln561_fu_434_p1;
+assign flat_25_address0 = zext_ln463_fu_434_p1;
 
 assign flat_25_ce0 = flat_25_ce0_local;
 
@@ -875,7 +875,7 @@ assign flat_25_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_25_we0 = flat_25_we0_local;
 
-assign flat_26_address0 = zext_ln561_fu_434_p1;
+assign flat_26_address0 = zext_ln463_fu_434_p1;
 
 assign flat_26_ce0 = flat_26_ce0_local;
 
@@ -883,7 +883,7 @@ assign flat_26_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_26_we0 = flat_26_we0_local;
 
-assign flat_27_address0 = zext_ln561_fu_434_p1;
+assign flat_27_address0 = zext_ln463_fu_434_p1;
 
 assign flat_27_ce0 = flat_27_ce0_local;
 
@@ -891,7 +891,7 @@ assign flat_27_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_27_we0 = flat_27_we0_local;
 
-assign flat_28_address0 = zext_ln561_fu_434_p1;
+assign flat_28_address0 = zext_ln463_fu_434_p1;
 
 assign flat_28_ce0 = flat_28_ce0_local;
 
@@ -899,7 +899,7 @@ assign flat_28_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_28_we0 = flat_28_we0_local;
 
-assign flat_29_address0 = zext_ln561_fu_434_p1;
+assign flat_29_address0 = zext_ln463_fu_434_p1;
 
 assign flat_29_ce0 = flat_29_ce0_local;
 
@@ -907,7 +907,7 @@ assign flat_29_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_29_we0 = flat_29_we0_local;
 
-assign flat_30_address0 = zext_ln561_fu_434_p1;
+assign flat_30_address0 = zext_ln463_fu_434_p1;
 
 assign flat_30_ce0 = flat_30_ce0_local;
 
@@ -915,7 +915,7 @@ assign flat_30_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_30_we0 = flat_30_we0_local;
 
-assign flat_address0 = zext_ln561_fu_434_p1;
+assign flat_address0 = zext_ln463_fu_434_p1;
 
 assign flat_ce0 = flat_ce0_local;
 
@@ -923,7 +923,7 @@ assign flat_d0 = gmem_Wd_addr_read_reg_478;
 
 assign flat_we0 = flat_we0_local;
 
-assign icmp_ln561_fu_363_p2 = ((ap_sig_allocacmp_i_1 == 9'd420) ? 1'b1 : 1'b0);
+assign icmp_ln463_fu_363_p2 = ((ap_sig_allocacmp_i_1 == 9'd420) ? 1'b1 : 1'b0);
 
 assign m_axi_gmem_Wd_0_ARADDR = 64'd0;
 
@@ -987,8 +987,8 @@ assign m_axi_gmem_Wd_0_WUSER = 1'd0;
 
 assign m_axi_gmem_Wd_0_WVALID = 1'b0;
 
-assign trunc_ln561_fu_375_p1 = ap_sig_allocacmp_i_1[3:0];
+assign trunc_ln463_fu_375_p1 = ap_sig_allocacmp_i_1[3:0];
 
-assign zext_ln561_fu_434_p1 = lshr_ln_reg_473_pp0_iter1_reg;
+assign zext_ln463_fu_434_p1 = lshr_ln_reg_473_pp0_iter1_reg;
 
 endmodule //swiglu_load_row_down_q6k_Pipeline_LOAD_Q6K_FLAT

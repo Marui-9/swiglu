@@ -9,7 +9,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>87</integer>
+      <integer>97</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -25,7 +25,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>176</integer>
+      <integer>191</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -41,7 +41,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>202</integer>
+      <integer>353</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -57,7 +57,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>293</integer>
+      <integer>427</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -73,7 +73,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>451</integer>
+      <integer>522</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -89,39 +89,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>525</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>unknown HLS pragma ignored</string>
-      <key>ID</key>
-      <integer>5590</integer>
-      <key>WarningOption</key>
-      <string>invalid-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>swiglu.cpp</string>
-      <key>line</key>
-      <integer>620</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>missing argument for &apos;variable&apos;</string>
-      <key>ID</key>
-      <integer>5562</integer>
-      <key>WarningOption</key>
-      <string>invalid-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>swiglu.cpp</string>
-      <key>line</key>
-      <integer>663</integer>
+      <integer>566</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>

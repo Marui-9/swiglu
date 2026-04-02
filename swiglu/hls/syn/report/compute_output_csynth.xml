@@ -22,14 +22,14 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>5779530</Best-caseLatency>
-<Average-caseLatency>11831370</Average-caseLatency>
-<Worst-caseLatency>17883210</Worst-caseLatency>
-<Best-caseRealTimeLatency>23.118 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>47.325 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>71.533 ms</Worst-caseRealTimeLatency>
-<Interval-min>5779530</Interval-min>
-<Interval-max>17883210</Interval-max>
+<Best-caseLatency>3682378</Best-caseLatency>
+<Average-caseLatency>10786890</Average-caseLatency>
+<Worst-caseLatency>17891402</Worst-caseLatency>
+<Best-caseRealTimeLatency>14.730 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>43.148 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>71.566 ms</Worst-caseRealTimeLatency>
+<Interval-min>3682378</Interval-min>
+<Interval-max>17891402</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
@@ -37,9 +37,9 @@
 <Slack>2.92</Slack>
 <TripCount>2048</TripCount>
 <isPerfectNested>0</isPerfectNested>
-<Latency>5777408</Latency>
-<AbsoluteTimeLatency>23109632</AbsoluteTimeLatency>
-<IterationLatency>2821</IterationLatency>
+<Latency>3680256</Latency>
+<AbsoluteTimeLatency>14721024</AbsoluteTimeLatency>
+<IterationLatency>1797</IterationLatency>
 <PerformancePragma>-</PerformancePragma>
 <InstanceList>
 </InstanceList>
@@ -48,9 +48,9 @@
 <Slack>2.92</Slack>
 <TripCount>2048</TripCount>
 <isPerfectNested>0</isPerfectNested>
-<Latency>17881088</Latency>
-<AbsoluteTimeLatency>71524352</AbsoluteTimeLatency>
-<IterationLatency>8731</IterationLatency>
+<Latency>17889280</Latency>
+<AbsoluteTimeLatency>71557120</AbsoluteTimeLatency>
+<IterationLatency>8735</IterationLatency>
 <PerformancePragma>-</PerformancePragma>
 <InstanceList>
 </InstanceList>
@@ -59,19 +59,19 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:688~swiglu.cpp:814</SourceLocation>
+<SourceLocation>swiglu.cpp:591~swiglu.cpp:717</SourceLocation>
 <SummaryOfLoopViolations>
 <DOWN_Q4K>
 <Name>DOWN_Q4K</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:693~swiglu.cpp:814</SourceLocation>
+<SourceLocation>swiglu.cpp:596~swiglu.cpp:717</SourceLocation>
 </DOWN_Q4K>
 <DOWN_Q6K>
 <Name>DOWN_Q6K</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:701~swiglu.cpp:814</SourceLocation>
+<SourceLocation>swiglu.cpp:604~swiglu.cpp:717</SourceLocation>
 </DOWN_Q6K>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -79,9 +79,9 @@
 
 <AreaEstimates>
 <Resources>
-<DSP>24</DSP>
-<FF>80930</FF>
-<LUT>76770</LUT>
+<DSP>32</DSP>
+<FF>77586</FF>
+<LUT>64634</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>

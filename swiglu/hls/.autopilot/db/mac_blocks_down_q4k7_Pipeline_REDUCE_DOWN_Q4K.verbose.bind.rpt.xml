@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K'" level="0">
-<item name = "Date">Thu Apr  2 09:23:27 2026
+<item name = "Date">Thu Apr  2 13:36:44 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">353, 353, 1.412 us, 1.412 us, 352, 352, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">353, 353, 1.412 us, 1.412 us, 340, 340, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- REDUCE_DOWN_Q4K">351, 351, 112, 80, 1, 4, yes</column>
+<column name="- REDUCE_DOWN_Q4K">351, 351, 52, 20, 1, 16, yes</column>
 </table>
 </item>
 </section>

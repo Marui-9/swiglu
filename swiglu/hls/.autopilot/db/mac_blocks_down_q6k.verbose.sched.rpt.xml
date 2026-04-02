@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q6k'" level="0">
-<item name = "Date">Thu Apr  2 09:23:14 2026
+<item name = "Date">Thu Apr  2 13:36:36 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1371, 1371, 5.484 us, 5.484 us, 1371, 1371, no</column>
+<column name="">1376, 1376, 5.504 us, 5.504 us, 1376, 1376, no</column>
 </table>
 </item>
 <item name = "Detail">

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q4k7'" level="0">
-<item name = "Date">Thu Apr  2 09:24:19 2026
+<item name = "Date">Thu Apr  2 13:37:17 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">2453, 2453, 9.812 us, 9.812 us, 2453, 2453, no</column>
+<column name="">1429, 1429, 5.716 us, 5.716 us, 1429, 1429, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -32,8 +32,8 @@
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416">mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN, 39, 39, 0.156 us, 0.156 us, 33, 33, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_504_2_MAC_GROUP_fu_5012">mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_504_2_MAC_GROUP, 2055, 2055, 8.220 us, 8.220 us, 2049, 2049, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072">mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K, 353, 353, 1.412 us, 1.412 us, 352, 352, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP_fu_5012">mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP, 1031, 1031, 4.124 us, 4.124 us, 1025, 1025, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072">mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K, 353, 353, 1.412 us, 1.412 us, 340, 340, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -52,21 +52,21 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, -, -, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, 10, 62409, 41270, -</column>
+<column name="Instance">-, 18, 60036, 37157, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, 0, 294, -</column>
 <column name="Register">-, -, 10, -, -</column>
 <specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
-<specialColumn name="Utilization (%)">0, ~0, 26, 35, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 1, 25, 31, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072">mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K, 0, 2, 3949, 7952, 0</column>
+<column name="grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072">mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K, 0, 2, 1396, 3911, 0</column>
 <column name="grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416">mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN, 0, 0, 41180, 16556, 0</column>
-<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_504_2_MAC_GROUP_fu_5012">mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_504_2_MAC_GROUP, 0, 8, 17280, 16762, 0</column>
+<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP_fu_5012">mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP, 0, 16, 17460, 16690, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -114,7 +114,7 @@
 <column name="ap_CS_fsm">7, 0, 7, 0</column>
 <column name="grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416_ap_start_reg">1, 0, 1, 0</column>
-<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_504_2_MAC_GROUP_fu_5012_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP_fu_5012_ap_start_reg">1, 0, 1, 0</column>
 </table>
 </item>
 </section>
@@ -131,22 +131,22 @@
 <column name="ap_idle">out, 1, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="ap_return">out, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
+<column name="grp_fp16_to_fp32_fu_1620_p_din1">out, 16, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
+<column name="grp_fp16_to_fp32_fu_1620_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fp16_to_fp32_fu_1624_p_din1">out, 16, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fp16_to_fp32_fu_1624_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
-<column name="grp_fp16_to_fp32_fu_1628_p_din1">out, 16, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
-<column name="grp_fp16_to_fp32_fu_1628_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
+<column name="grp_fu_1628_p_din0">out, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
+<column name="grp_fu_1628_p_din1">out, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
+<column name="grp_fu_1628_p_opcode">out, 2, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
+<column name="grp_fu_1628_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
+<column name="grp_fu_1628_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fu_1632_p_din0">out, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fu_1632_p_din1">out, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
-<column name="grp_fu_1632_p_opcode">out, 2, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fu_1632_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fu_1632_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fu_1636_p_din0">out, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
-<column name="grp_fu_1636_p_din1">out, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fu_1636_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fu_1636_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
-<column name="grp_fu_1640_p_din0">out, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
-<column name="grp_fu_1640_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
-<column name="grp_fu_1640_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="rb_0_address0">out, 6, ap_memory, rb_0, array</column>
 <column name="rb_0_ce0">out, 1, ap_memory, rb_0, array</column>
 <column name="rb_0_q0">in, 128, ap_memory, rb_0, array</column>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_gate_Pipeline_GATE_PASS115'" level="0">
-<item name = "Date">Thu Apr  2 09:23:02 2026
+<item name = "Date">Thu Apr  2 13:36:26 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 2.782 ns, 1.08 ns</column>
+<column name="ap_clk">4.00 ns, 3.239 ns, 1.08 ns</column>
 </table>
 </item>
 </section>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">8232, 8232, 32.928 us, 32.928 us, 8193, 8193, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">8245, 8245, 32.980 us, 32.980 us, 8193, 8193, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_p_hls_fptosi_float_i32_fu_265">p_hls_fptosi_float_i32, 1, 1, 4.000 ns, 4.000 ns, 1, 1, yes</column>
+<column name="grp_p_hls_fptosi_float_i32_fu_267">p_hls_fptosi_float_i32, 1, 1, 4.000 ns, 4.000 ns, 1, 1, yes</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- GATE_PASS1">8230, 8230, 40, 1, 1, 8192, yes</column>
+<column name="- GATE_PASS1">8243, 8243, 53, 1, 1, 8192, yes</column>
 </table>
 </item>
 </section>

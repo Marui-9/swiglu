@@ -1,8 +1,35 @@
-Gemini ha detto
+
+
 Resource     Utilization     Available     Utilization %
-LUT          77611           117120        66.27
-LUTRAM       10572           57600         18.35
-FF           95397           234240        40.73
-BRAM         8.50            144           5.90
-URAM         24              64            37.50
-DSP          336             1248          26.92
+LUT          133677          117120        114.14
+FF           144178          234240        61.55
+BRAM         40.50           144           28.13
+URAM         16              64            25.00
+DSP          394             1248          31.57
+
+Name                                                                          Used
+design_1_wrapper                                                               133677
+design_1_i (design_1)                                                        133677
+swiglu_0 (design_1_swiglu_0_11)                                            124630
+U0 (design_1_swiglu_0_11_swiglu)                                         124630
+compute_output_U0 (design_1_swiglu_0_11_swiglu_compute_output)         55044
+compute_X1_U0 (design_1_swiglu_0_11_swiglu_compute_X1)                 25640
+compute_X2_U0 (design_1_swiglu_0_11_swiglu_compute_X2)                 25479
+compute_gate_U0 (design_1_swiglu_0_11_swiglu_compute_gate)             9527
+Leaf Cells (4630)                                                      4630
+gmem_out_m_axi_U (design_1_swiglu_0_11_swiglu_gmem_out_m_axi)          881
+
+Four changes made (targeting the FP-heavy reduction loops):
+
+Change	Location	What	Why
+1	UNPACK_HDR_WV_K2 kr loop	Removed UNROLL	Was 16 simultaneous fp16_to_fp32 (2 kr × 8 b); now 8. MAC_ALL_K2 still keeps both kr and b UNROLL'd (safe — UNPACK always completes before MAC starts).
+2	REDUCE_WV_K2 b loop	UNROLL → factor=2	Reduces parallel FP chains from 8 to 2. kr is already sequential; 2 kr × 4 b-passes × 2 simultaneous = same arithmetic, ~48 extra cycles per call (negligible vs 256 MAC).
+3	REDUCE_DOWN_Q4K	factor=8 → factor=2	32 blocks in 16 sequential passes of 2 instead of 4 passes of 8. Adds ~80 cycles of FP reduction per output row vs 1024 MAC cycles.
+4	REDUCE_Q6K	factor=8 → factor=2	Same rationale as above for Q6K path.
+Empirical calibration: removing the kr UNROLL from REDUCE_WV_K2 saved 4,393 LUTs by removing 8 FP chains → ~550 LUTs/chain. These four changes remove approximately:
+
+UNPACK kr: ~8 fp16_to_fp32 × 2 modules ≈ 3,200–6,400 LUTs
+REDUCE_WV_K2 b factor=2: 6 chains × 2 modules ≈ 6,600 LUTs
+REDUCE_DOWN_Q4K factor=2: 6 chains ≈ 3,300 LUTs
+REDUCE_Q6K factor=2: 6 chains ≈ 2,640 LUTs
+Expected total: ~16K–19K savings → ~115K–118K LUTs. Tight, but should land just under 117,120.

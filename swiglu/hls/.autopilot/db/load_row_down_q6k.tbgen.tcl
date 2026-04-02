@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 40
+set cdfgNum 43
 set C_modelName {load_row_down_q6k}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -887,10 +887,10 @@ set portList {
 	{ d_buf_30_ap_vld sc_out sc_logic 1 outvld 129 } 
 	{ d_buf_31 sc_out sc_lv 32 signal 130 } 
 	{ d_buf_31_ap_vld sc_out sc_logic 1 outvld 130 } 
+	{ grp_fp16_to_fp32_fu_1620_p_din1 sc_out sc_lv 16 signal -1 } 
+	{ grp_fp16_to_fp32_fu_1620_p_dout0 sc_in sc_lv 32 signal -1 } 
 	{ grp_fp16_to_fp32_fu_1624_p_din1 sc_out sc_lv 16 signal -1 } 
 	{ grp_fp16_to_fp32_fu_1624_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fp16_to_fp32_fu_1628_p_din1 sc_out sc_lv 16 signal -1 } 
-	{ grp_fp16_to_fp32_fu_1628_p_dout0 sc_in sc_lv 32 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -1395,10 +1395,10 @@ set NewPortList {[
  	{ "name": "d_buf_30_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "d_buf_30", "role": "ap_vld" }} , 
  	{ "name": "d_buf_31", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "d_buf_31", "role": "default" }} , 
  	{ "name": "d_buf_31_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "d_buf_31", "role": "ap_vld" }} , 
+ 	{ "name": "grp_fp16_to_fp32_fu_1620_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_1620_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fp16_to_fp32_fu_1620_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_1620_p_dout0", "role": "default" }} , 
  	{ "name": "grp_fp16_to_fp32_fu_1624_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_1624_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_1624_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_1624_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_1628_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_1628_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fp16_to_fp32_fu_1628_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_1628_p_dout0", "role": "default" }}  ]}
+ 	{ "name": "grp_fp16_to_fp32_fu_1624_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fp16_to_fp32_fu_1624_p_dout0", "role": "default" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	load_row_down_q6k {
@@ -1535,7 +1535,7 @@ set ArgLastReadFirstWriteLatency {
 		d_buf_31 {Type O LastRead -1 FirstWrite 90}}
 	load_row_down_q6k_Pipeline_LOAD_Q6K_FLAT {
 		gmem_Wd {Type I LastRead 1 FirstWrite -1}
-		sext_ln561 {Type I LastRead 0 FirstWrite -1}
+		sext_ln463 {Type I LastRead 0 FirstWrite -1}
 		flat_30 {Type O LastRead -1 FirstWrite 2}
 		flat_29 {Type O LastRead -1 FirstWrite 2}
 		flat_28 {Type O LastRead -1 FirstWrite 2}
@@ -1585,7 +1585,7 @@ set ArgLastReadFirstWriteLatency {
 		ql_buf_2 {Type O LastRead -1 FirstWrite 3}
 		ql_buf_1 {Type O LastRead -1 FirstWrite 2}
 		ql_buf_0 {Type O LastRead -1 FirstWrite 1}
-		empty_549 {Type I LastRead 0 FirstWrite -1}
+		empty_806 {Type I LastRead 0 FirstWrite -1}
 		flat {Type I LastRead 3 FirstWrite -1}
 		flat_16 {Type I LastRead 3 FirstWrite -1}
 		flat_17 {Type I LastRead 3 FirstWrite -1}
@@ -1602,9 +1602,9 @@ set ArgLastReadFirstWriteLatency {
 		flat_28 {Type I LastRead 3 FirstWrite -1}
 		flat_29 {Type I LastRead 3 FirstWrite -1}
 		flat_30 {Type I LastRead 3 FirstWrite -1}
-		add_ln579 {Type I LastRead 0 FirstWrite -1}
-		add_ln579_1 {Type I LastRead 0 FirstWrite -1}
-		add_ln579_2 {Type I LastRead 0 FirstWrite -1}
+		add_ln481 {Type I LastRead 0 FirstWrite -1}
+		add_ln481_1 {Type I LastRead 0 FirstWrite -1}
+		add_ln481_2 {Type I LastRead 0 FirstWrite -1}
 		empty {Type I LastRead 0 FirstWrite -1}}
 	load_row_down_q6k_Pipeline_EXTRACT_QH {
 		qh_buf_31 {Type O LastRead -1 FirstWrite 4}
@@ -1639,7 +1639,7 @@ set ArgLastReadFirstWriteLatency {
 		qh_buf_2 {Type O LastRead -1 FirstWrite 3}
 		qh_buf_1 {Type O LastRead -1 FirstWrite 2}
 		qh_buf_0 {Type O LastRead -1 FirstWrite 1}
-		empty_550 {Type I LastRead 0 FirstWrite -1}
+		empty_807 {Type I LastRead 0 FirstWrite -1}
 		flat {Type I LastRead 3 FirstWrite -1}
 		flat_16 {Type I LastRead 3 FirstWrite -1}
 		flat_17 {Type I LastRead 3 FirstWrite -1}
@@ -1690,7 +1690,7 @@ set ArgLastReadFirstWriteLatency {
 		sc_buf_2 {Type O LastRead -1 FirstWrite 3}
 		sc_buf_1 {Type O LastRead -1 FirstWrite 2}
 		sc_buf_0 {Type O LastRead -1 FirstWrite 1}
-		empty_548 {Type I LastRead 0 FirstWrite -1}
+		empty_805 {Type I LastRead 0 FirstWrite -1}
 		flat {Type I LastRead 3 FirstWrite -1}
 		flat_16 {Type I LastRead 3 FirstWrite -1}
 		flat_17 {Type I LastRead 3 FirstWrite -1}

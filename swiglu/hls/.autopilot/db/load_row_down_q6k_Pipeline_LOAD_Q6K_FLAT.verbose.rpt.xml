@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_row_down_q6k_Pipeline_LOAD_Q6K_FLAT'" level="0">
-<item name = "Date">Thu Apr  2 09:24:04 2026
+<item name = "Date">Thu Apr  2 13:37:01 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -78,9 +78,9 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln561_fu_369_p2">+, 0, 0, 16, 9, 1</column>
+<column name="add_ln463_fu_369_p2">+, 0, 0, 16, 9, 1</column>
 <column name="ap_block_pp0_stage0_11001">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln561_fu_363_p2">icmp, 0, 0, 16, 9, 8</column>
+<column name="icmp_ln463_fu_363_p2">icmp, 0, 0, 16, 9, 8</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -105,8 +105,8 @@
 <column name="i_fu_128">9, 0, 9, 0</column>
 <column name="lshr_ln_reg_473">5, 0, 5, 0</column>
 <column name="lshr_ln_reg_473_pp0_iter1_reg">5, 0, 5, 0</column>
-<column name="trunc_ln561_reg_469">4, 0, 4, 0</column>
-<column name="trunc_ln561_reg_469_pp0_iter1_reg">4, 0, 4, 0</column>
+<column name="trunc_ln463_reg_469">4, 0, 4, 0</column>
+<column name="trunc_ln463_reg_469_pp0_iter1_reg">4, 0, 4, 0</column>
 </table>
 </item>
 </section>
@@ -168,7 +168,7 @@
 <column name="m_axi_gmem_Wd_0_BRESP">in, 2, m_axi, gmem_Wd, pointer</column>
 <column name="m_axi_gmem_Wd_0_BID">in, 1, m_axi, gmem_Wd, pointer</column>
 <column name="m_axi_gmem_Wd_0_BUSER">in, 1, m_axi, gmem_Wd, pointer</column>
-<column name="sext_ln561">in, 60, ap_none, sext_ln561, scalar</column>
+<column name="sext_ln463">in, 60, ap_none, sext_ln463, scalar</column>
 <column name="flat_30_address0">out, 5, ap_memory, flat_30, array</column>
 <column name="flat_30_ce0">out, 1, ap_memory, flat_30, array</column>
 <column name="flat_30_we0">out, 1, ap_memory, flat_30, array</column>

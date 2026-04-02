@@ -319,17 +319,17 @@ end;
 architecture behav of swiglu is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=13907323,HLS_SYN_TPT=11831371,HLS_SYN_MEM=34,HLS_SYN_DSP=0,HLS_SYN_FF=263954,HLS_SYN_LUT=281915,HLS_VERSION=2025_1}";
+    "swiglu_swiglu,hls_ip_2025_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck26-sfvc784-2LV-c,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.239000,HLS_SYN_LAT=14122467,HLS_SYN_TPT=10786891,HLS_SYN_MEM=98,HLS_SYN_DSP=0,HLS_SYN_FF=187812,HLS_SYN_LUT=171019,HLS_VERSION=2025_1}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant C_S_AXI_DATA_WIDTH : INTEGER := 32;
     constant C_M_AXI_DATA_WIDTH : INTEGER := 32;
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_const_lv8_0 : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
-    constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_lv15_0 : STD_LOGIC_VECTOR (14 downto 0) := "000000000000000";
     constant ap_const_lv12_0 : STD_LOGIC_VECTOR (11 downto 0) := "000000000000";
     constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
+    constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
     constant ap_const_lv128_lc_1 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv16_0 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000000";
@@ -849,10 +849,10 @@ architecture behav of swiglu is
     signal x_local_2_126_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
     signal x_local_2_127_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
     signal x_local_2_127_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal X1_cache_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal X1_cache_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal X2_cache_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal X2_cache_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal X1_cache_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal X1_cache_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal X2_cache_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal X2_cache_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
     signal gate_cache_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
     signal gate_cache_t_q0 : STD_LOGIC_VECTOR (7 downto 0);
     signal gate_cache_1_i_q0 : STD_LOGIC_VECTOR (7 downto 0);
@@ -2299,7 +2299,7 @@ architecture behav of swiglu is
     signal compute_X1_U0_X1_cache_address1 : STD_LOGIC_VECTOR (14 downto 0);
     signal compute_X1_U0_X1_cache_ce1 : STD_LOGIC;
     signal compute_X1_U0_X1_cache_we1 : STD_LOGIC;
-    signal compute_X1_U0_X1_cache_d1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal compute_X1_U0_X1_cache_d1 : STD_LOGIC_VECTOR (7 downto 0);
     signal compute_X2_U0_ap_start : STD_LOGIC;
     signal compute_X2_U0_ap_done : STD_LOGIC;
     signal compute_X2_U0_ap_continue : STD_LOGIC;
@@ -2596,7 +2596,7 @@ architecture behav of swiglu is
     signal compute_X2_U0_X2_cache_address1 : STD_LOGIC_VECTOR (14 downto 0);
     signal compute_X2_U0_X2_cache_ce1 : STD_LOGIC;
     signal compute_X2_U0_X2_cache_we1 : STD_LOGIC;
-    signal compute_X2_U0_X2_cache_d1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal compute_X2_U0_X2_cache_d1 : STD_LOGIC_VECTOR (7 downto 0);
     signal compute_gate_U0_ap_start : STD_LOGIC;
     signal compute_gate_U0_ap_done : STD_LOGIC;
     signal compute_gate_U0_ap_continue : STD_LOGIC;
@@ -4806,7 +4806,7 @@ architecture behav of swiglu is
         X1_cache_address1 : OUT STD_LOGIC_VECTOR (14 downto 0);
         X1_cache_ce1 : OUT STD_LOGIC;
         X1_cache_we1 : OUT STD_LOGIC;
-        X1_cache_d1 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+        X1_cache_d1 : OUT STD_LOGIC_VECTOR (7 downto 0) );
     end component;
 
 
@@ -5254,7 +5254,7 @@ architecture behav of swiglu is
         X2_cache_address1 : OUT STD_LOGIC_VECTOR (14 downto 0);
         X2_cache_ce1 : OUT STD_LOGIC;
         X2_cache_we1 : OUT STD_LOGIC;
-        X2_cache_d1 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+        X2_cache_d1 : OUT STD_LOGIC_VECTOR (7 downto 0) );
     end component;
 
 
@@ -5269,10 +5269,10 @@ architecture behav of swiglu is
         ap_ready : OUT STD_LOGIC;
         X1_cache_address0 : OUT STD_LOGIC_VECTOR (14 downto 0);
         X1_cache_ce0 : OUT STD_LOGIC;
-        X1_cache_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
+        X1_cache_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         X2_cache_address0 : OUT STD_LOGIC_VECTOR (14 downto 0);
         X2_cache_ce0 : OUT STD_LOGIC;
-        X2_cache_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
+        X2_cache_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         gate_cache_0_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
         gate_cache_0_ce1 : OUT STD_LOGIC;
         gate_cache_0_we1 : OUT STD_LOGIC;
@@ -5468,7 +5468,7 @@ architecture behav of swiglu is
     end component;
 
 
-    component swiglu_X1_cache_RAM_2P_URAM_1R1W IS
+    component swiglu_X1_cache_RAM_2P_BRAM_1R1W IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -5478,18 +5478,18 @@ architecture behav of swiglu is
         reset : IN STD_LOGIC;
         i_address0 : IN STD_LOGIC_VECTOR (14 downto 0);
         i_ce0 : IN STD_LOGIC;
-        i_q0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        i_q0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         i_address1 : IN STD_LOGIC_VECTOR (14 downto 0);
         i_ce1 : IN STD_LOGIC;
         i_we1 : IN STD_LOGIC;
-        i_d1 : IN STD_LOGIC_VECTOR (31 downto 0);
+        i_d1 : IN STD_LOGIC_VECTOR (7 downto 0);
         t_address0 : IN STD_LOGIC_VECTOR (14 downto 0);
         t_ce0 : IN STD_LOGIC;
-        t_q0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        t_q0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         t_address1 : IN STD_LOGIC_VECTOR (14 downto 0);
         t_ce1 : IN STD_LOGIC;
         t_we1 : IN STD_LOGIC;
-        t_d1 : IN STD_LOGIC_VECTOR (31 downto 0);
+        t_d1 : IN STD_LOGIC_VECTOR (7 downto 0);
         i_ce : IN STD_LOGIC;
         t_ce : IN STD_LOGIC;
         i_full_n : OUT STD_LOGIC;
@@ -12459,9 +12459,9 @@ begin
         t_empty_n => x_local_2_127_t_empty_n,
         t_read => compute_X2_U0_ap_ready);
 
-    X1_cache_U : component swiglu_X1_cache_RAM_2P_URAM_1R1W
+    X1_cache_U : component swiglu_X1_cache_RAM_2P_BRAM_1R1W
     generic map (
-        DataWidth => 32,
+        DataWidth => 8,
         AddressRange => 32768,
         AddressWidth => 15)
     port map (
@@ -12480,7 +12480,7 @@ begin
         t_address1 => ap_const_lv15_0,
         t_ce1 => ap_const_logic_0,
         t_we1 => ap_const_logic_0,
-        t_d1 => ap_const_lv32_0,
+        t_d1 => ap_const_lv8_0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
         i_full_n => X1_cache_i_full_n,
@@ -12488,9 +12488,9 @@ begin
         t_empty_n => X1_cache_t_empty_n,
         t_read => compute_gate_U0_ap_ready);
 
-    X2_cache_U : component swiglu_X1_cache_RAM_2P_URAM_1R1W
+    X2_cache_U : component swiglu_X1_cache_RAM_2P_BRAM_1R1W
     generic map (
-        DataWidth => 32,
+        DataWidth => 8,
         AddressRange => 32768,
         AddressWidth => 15)
     port map (
@@ -12509,7 +12509,7 @@ begin
         t_address1 => ap_const_lv15_0,
         t_ce1 => ap_const_logic_0,
         t_we1 => ap_const_logic_0,
-        t_d1 => ap_const_lv32_0,
+        t_d1 => ap_const_lv8_0,
         i_ce => ap_const_logic_1,
         t_ce => ap_const_logic_1,
         i_full_n => X2_cache_i_full_n,

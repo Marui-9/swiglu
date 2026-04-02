@@ -7129,7 +7129,7 @@ operator/(const complex<ap_ufixed<_AP_W, _AP_I, _AP_Q, _AP_O, _AP_N>> &__x, cons
 # 370 "C:/Xilinx/2025.1/Vitis/common/technology/autopilot\\ap_fixed.h" 2
 # 365 "C:/Xilinx/2025.1/Vitis/common/technology/autopilot\\ap_int.h" 2
 # 6 "swiglu.cpp" 2
-# 28 "swiglu.cpp"
+# 35 "swiglu.cpp"
 static float fp16_to_fp32(uint16_t h) {
 #pragma HLS INLINE off
  uint32_t sign = ((uint32_t)(h >> 15)) << 31;
@@ -7140,7 +7140,7 @@ static float fp16_to_fp32(uint16_t h) {
         f32 = sign;
     } else if (exp == 0) {
         uint32_t m = mant, e = 112;
-        VITIS_LOOP_38_1: for (int i = 0; i < 10; i++) {
+        VITIS_LOOP_45_1: for (int i = 0; i < 10; i++) {
 #pragma HLS UNROLL
  if (!(m & 0x200)) { m <<= 1; e--; }
         }
@@ -7173,137 +7173,36 @@ static void load_row_wv(const ap_uint<128> *W_wide, int row,
 #pragma HLS ARRAY_PARTITION variable=rb dim=1 complete
 
  LOAD_WV: for (int b = 0; b < 8; b++) {
-        VITIS_LOOP_71_1: for (int w = 0; w < 9; w++) {
+        VITIS_LOOP_78_1: for (int w = 0; w < 9; w++) {
 #pragma HLS PIPELINE II=1
  rb[b][w] = W_wide[(ap_uint<64>)row * ((8 * 144) / 16) + b * 9 + w];
         }
     }
 }
-
-
-
-
-
-static void mac_blocks_wv(const ap_uint<128> rb[8][9],
-                            const int8_t x[8][256],
-                            float x_scale,
-                            float *result) {
-#pragma HLS INLINE off
-#pragma HLS BIND_OP op=mul impl=dsp
-#pragma HLS ARRAY_PARTITION variable=rb dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=x dim=1 complete
-
- float d [8];
-    float dmin[8];
-    uint8_t sc6 [8][8];
-    uint8_t mn6 [8][8];
-#pragma HLS ARRAY_PARTITION variable=d complete
-#pragma HLS ARRAY_PARTITION variable=dmin complete
-#pragma HLS ARRAY_PARTITION variable=sc6 dim=0 complete
-#pragma HLS ARRAY_PARTITION variable=mn6 dim=0 complete
-
- UNPACK_HDR_WV: for (int b = 0; b < 8; b++) {
-        d[b] = fp16_to_fp32((uint16_t)get_byte(rb[b], 0) |
-                               ((uint16_t)get_byte(rb[b], 1) << 8));
-        dmin[b] = fp16_to_fp32((uint16_t)get_byte(rb[b], 2) |
-                               ((uint16_t)get_byte(rb[b], 3) << 8));
-        sc6[b][0] = get_byte(rb[b], 4) & 0x3F;
-        sc6[b][1] = get_byte(rb[b], 5) & 0x3F;
-        sc6[b][2] = get_byte(rb[b], 6) & 0x3F;
-        sc6[b][3] = get_byte(rb[b], 7) & 0x3F;
-        mn6[b][0] = get_byte(rb[b], 8) & 0x3F;
-        mn6[b][1] = get_byte(rb[b], 9) & 0x3F;
-        mn6[b][2] = get_byte(rb[b], 10) & 0x3F;
-        mn6[b][3] = get_byte(rb[b], 11) & 0x3F;
-        sc6[b][4] = (get_byte(rb[b], 12) & 0x0F) |
-                    (uint8_t)((get_byte(rb[b], 4) >> 6) << 4);
-        sc6[b][5] = (get_byte(rb[b], 13) & 0x0F) |
-                    (uint8_t)((get_byte(rb[b], 5) >> 6) << 4);
-        sc6[b][6] = (get_byte(rb[b], 14) & 0x0F) |
-                    (uint8_t)((get_byte(rb[b], 6) >> 6) << 4);
-        sc6[b][7] = (get_byte(rb[b], 15) & 0x0F) |
-                    (uint8_t)((get_byte(rb[b], 7) >> 6) << 4);
-        mn6[b][4] = (get_byte(rb[b], 12) >> 4) |
-                    (uint8_t)((get_byte(rb[b], 8) >> 6) << 4);
-        mn6[b][5] = (get_byte(rb[b], 13) >> 4) |
-                    (uint8_t)((get_byte(rb[b], 9) >> 6) << 4);
-        mn6[b][6] = (get_byte(rb[b], 14) >> 4) |
-                    (uint8_t)((get_byte(rb[b], 10) >> 6) << 4);
-        mn6[b][7] = (get_byte(rb[b], 15) >> 4) |
-                    (uint8_t)((get_byte(rb[b], 11) >> 6) << 4);
-    }
-
-
-    int32_t int_acc_w[8][8];
-    int32_t int_acc_m[8][8];
-#pragma HLS ARRAY_PARTITION variable=int_acc_w dim=0 complete
-#pragma HLS ARRAY_PARTITION variable=int_acc_m dim=0 complete
- INIT_ACC_WV: for (int b = 0; b < 8; b++) {
-#pragma HLS UNROLL
- VITIS_LOOP_138_1: for (int k = 0; k < 8; k++) {
-#pragma HLS UNROLL
- int_acc_w[b][k] = 0;
-            int_acc_m[b][k] = 0;
-        }
-    }
-# 155 "swiglu.cpp"
-    MAC_ALL_BLOCKS: for (int n = 0; n < 256; n++) {
-#pragma HLS PIPELINE II=1
-#pragma HLS LATENCY min=2
- VITIS_LOOP_158_2: for (int b = 0; b < 8; b++) {
-#pragma HLS UNROLL
-
- ap_int<8> xi8 = (ap_int<8>) x[b][n];
-            ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
-                                              >> ((n & 32) ? 4 : 0)) & 0xF);
-            int sub = n >> 5;
-            int k = n & 7;
-            ap_uint<6> sc6u = (ap_uint<6>) sc6[b][sub];
-            ap_uint<6> mn6u = (ap_uint<6>) mn6[b][sub];
-
-            int_acc_w[b][k] += (int32_t)(xi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
-            int_acc_m[b][k] += (int32_t)(xi8 * (ap_int<7>)mn6u);
-        }
-    }
-
-
-    float total = 0.f;
-#pragma HLS BALANCE variable=total
- REDUCE_WV: for (int b = 0; b < 8; b++) {
-#pragma HLS UNROLL
- int32_t sw = 0, sm = 0;
-        VITIS_LOOP_180_3: for (int k = 0; k < 8; k++) {
-#pragma HLS UNROLL
- sw += int_acc_w[b][k];
-            sm += int_acc_m[b][k];
-        }
-        total += d[b] * (x_scale * (float)sw) - dmin[b] * (x_scale * (float)sm);
-    }
-    *result = total;
-}
-# 197 "swiglu.cpp"
-static void mac_blocks_wv_k4(const ap_uint<128> rb[4][8][9],
+# 92 "swiglu.cpp"
+static void mac_blocks_wv_k2(const ap_uint<128> rb[2][8][9],
                               const int8_t x[8][256],
                               float x_scale,
-                              float results[4]) {
+                              float results[2]) {
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
 #pragma HLS ARRAY_PARTITION variable=rb dim=1 complete
 #pragma HLS ARRAY_PARTITION variable=rb dim=2 complete
 #pragma HLS ARRAY_PARTITION variable=x dim=1 complete
 
- float d [4][8];
-    float dmin[4][8];
-    uint8_t sc6 [4][8][8];
-    uint8_t mn6 [4][8][8];
+ float d [2][8];
+    float dmin[2][8];
+    uint8_t sc6 [2][8][8];
+    uint8_t mn6 [2][8][8];
 #pragma HLS ARRAY_PARTITION variable=d dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=dmin dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=sc6 dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=mn6 dim=0 complete
 
- UNPACK_HDR_WV_K4: for (int kr = 0; kr < 4; kr++) {
-#pragma HLS UNROLL
- VITIS_LOOP_218_1: for (int b = 0; b < 8; b++) {
+
+
+ UNPACK_HDR_WV_K2: for (int kr = 0; kr < 2; kr++) {
+        VITIS_LOOP_114_1: for (int b = 0; b < 8; b++) {
 #pragma HLS UNROLL
  d[kr][b] = fp16_to_fp32((uint16_t)get_byte(rb[kr][b], 0) |
                                        ((uint16_t)get_byte(rb[kr][b], 1) << 8));
@@ -7336,16 +7235,16 @@ static void mac_blocks_wv_k4(const ap_uint<128> rb[4][8][9],
         }
     }
 
-    int32_t int_acc_w[4][8][8];
-    int32_t int_acc_m[4][8][8];
+    int32_t int_acc_w[2][8][8];
+    int32_t int_acc_m[2][8][8];
 #pragma HLS ARRAY_PARTITION variable=int_acc_w dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=int_acc_m dim=0 complete
 
- INIT_ACC_WV_K4: for (int kr = 0; kr < 4; kr++) {
+ INIT_ACC_WV_K2: for (int kr = 0; kr < 2; kr++) {
 #pragma HLS UNROLL
- VITIS_LOOP_258_2: for (int b = 0; b < 8; b++) {
+ VITIS_LOOP_154_2: for (int b = 0; b < 8; b++) {
 #pragma HLS UNROLL
- VITIS_LOOP_260_3: for (int k = 0; k < 8; k++) {
+ VITIS_LOOP_156_3: for (int k = 0; k < 8; k++) {
 #pragma HLS UNROLL
  int_acc_w[kr][b][k] = 0;
                 int_acc_m[kr][b][k] = 0;
@@ -7355,12 +7254,12 @@ static void mac_blocks_wv_k4(const ap_uint<128> rb[4][8][9],
 
 
 
-    MAC_ALL_K4: for (int n = 0; n < 256; n++) {
+    MAC_ALL_K2: for (int n = 0; n < 256; n++) {
 #pragma HLS PIPELINE II=1
 #pragma HLS LATENCY min=2
- VITIS_LOOP_273_4: for (int b = 0; b < 8; b++) {
+ VITIS_LOOP_169_4: for (int b = 0; b < 8; b++) {
 #pragma HLS UNROLL
- VITIS_LOOP_275_5: for (int kr = 0; kr < 4; kr++) {
+ VITIS_LOOP_171_5: for (int kr = 0; kr < 2; kr++) {
 #pragma HLS UNROLL
  ap_int<8> xi8 = (ap_int<8>) x[b][n];
                 ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[kr][b], 16 + (n & 31) + ((n & 0xC0) >> 1))
@@ -7375,14 +7274,16 @@ static void mac_blocks_wv_k4(const ap_uint<128> rb[4][8][9],
         }
     }
 
-    REDUCE_WV_K4: for (int kr = 0; kr < 4; kr++) {
-#pragma HLS UNROLL
- float total = 0.f;
+
+
+
+    REDUCE_WV_K2: for (int kr = 0; kr < 2; kr++) {
+        float total = 0.f;
 #pragma HLS BALANCE variable=total
- VITIS_LOOP_294_6: for (int b = 0; b < 8; b++) {
-#pragma HLS UNROLL
+ VITIS_LOOP_192_6: for (int b = 0; b < 8; b++) {
+#pragma HLS UNROLL factor=2
  int32_t sw = 0, sm = 0;
-            VITIS_LOOP_297_7: for (int k = 0; k < 8; k++) {
+            VITIS_LOOP_195_7: for (int k = 0; k < 8; k++) {
 #pragma HLS UNROLL
  sw += int_acc_w[kr][b][k];
                 sm += int_acc_m[kr][b][k];
@@ -7399,26 +7300,28 @@ static void compute_X1(
     const uint8_t *W,
     const int8_t x_local_1[4][8][256],
     float x_scale,
-    float X1_cache[4][8192])
+    int8_t X1_cache[4][8192])
 {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=x_local_1 dim=2 complete
  const ap_uint<128> *W_wide = (const ap_uint<128>*)W;
-    COMPUTE_X1: for (int row = 0; row < 8192; row += 4) {
-        ap_uint<128> row_buf[4][8][9];
+    COMPUTE_X1: for (int row = 0; row < 8192; row += 2) {
+        ap_uint<128> row_buf[2][8][9];
 #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 complete
 #pragma HLS ARRAY_PARTITION variable=row_buf dim=2 complete
 #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
  load_row_wv(W_wide, row + 0, row_buf[0]);
         load_row_wv(W_wide, row + 1, row_buf[1]);
-        load_row_wv(W_wide, row + 2, row_buf[2]);
-        load_row_wv(W_wide, row + 3, row_buf[3]);
-        float row_results[4];
-        mac_blocks_wv_k4(row_buf, x_local_1[0], x_scale, row_results);
-        X1_cache[0][row + 0] = row_results[0];
-        X1_cache[0][row + 1] = row_results[1];
-        X1_cache[0][row + 2] = row_results[2];
-        X1_cache[0][row + 3] = row_results[3];
+        float row_results[2];
+        mac_blocks_wv_k2(row_buf, x_local_1[0], x_scale, row_results);
+        VITIS_LOOP_226_1: for (int kr = 0; kr < 2; kr++) {
+#pragma HLS UNROLL
+ float fq = row_results[kr] * (127.0f / 10.0f);
+            int iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
+            if (iq > 127) iq = 127;
+            if (iq < -128) iq = -128;
+            X1_cache[0][row + kr] = (int8_t)iq;
+        }
     }
 }
 
@@ -7428,26 +7331,28 @@ static void compute_X2(
     const uint8_t *V,
     const int8_t x_local_2[4][8][256],
     float x_scale,
-    float X2_cache[4][8192])
+    int8_t X2_cache[4][8192])
 {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=x_local_2 dim=2 complete
  const ap_uint<128> *V_wide = (const ap_uint<128>*)V;
-    COMPUTE_X2: for (int row = 0; row < 8192; row += 4) {
-        ap_uint<128> row_buf[4][8][9];
+    COMPUTE_X2: for (int row = 0; row < 8192; row += 2) {
+        ap_uint<128> row_buf[2][8][9];
 #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 complete
 #pragma HLS ARRAY_PARTITION variable=row_buf dim=2 complete
 #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
  load_row_wv(V_wide, row + 0, row_buf[0]);
         load_row_wv(V_wide, row + 1, row_buf[1]);
-        load_row_wv(V_wide, row + 2, row_buf[2]);
-        load_row_wv(V_wide, row + 3, row_buf[3]);
-        float row_results[4];
-        mac_blocks_wv_k4(row_buf, x_local_2[0], x_scale, row_results);
-        X2_cache[0][row + 0] = row_results[0];
-        X2_cache[0][row + 1] = row_results[1];
-        X2_cache[0][row + 2] = row_results[2];
-        X2_cache[0][row + 3] = row_results[3];
+        float row_results[2];
+        mac_blocks_wv_k2(row_buf, x_local_2[0], x_scale, row_results);
+        VITIS_LOOP_257_1: for (int kr = 0; kr < 2; kr++) {
+#pragma HLS UNROLL
+ float fq = row_results[kr] * (127.0f / 10.0f);
+            int iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
+            if (iq > 127) iq = 127;
+            if (iq < -128) iq = -128;
+            X2_cache[0][row + kr] = (int8_t)iq;
+        }
     }
 }
 
@@ -7457,8 +7362,8 @@ static void compute_X2(
 
 
 static void compute_gate(
-    const float X1_cache[4][8192],
-    const float X2_cache[4][8192],
+    const int8_t X1_cache[4][8192],
+    const int8_t X2_cache[4][8192],
     int8_t gate_cache[4][32][256],
     float gate_scale_out[4])
 {
@@ -7472,8 +7377,8 @@ static void compute_gate(
 
  GATE_PASS1: for (int j = 0; j < 8192; j++) {
 #pragma HLS PIPELINE II=1
- float z = X1_cache[n][j];
-            float x2 = X2_cache[n][j];
+ float z = (float)X1_cache[n][j] * (10.0f / 127.0f);
+            float x2 = (float)X2_cache[n][j] * (10.0f / 127.0f);
             float scaled = (z + 8.0f) * 256.0f;
             int idx = (int)scaled;
             if (idx < 0) idx = 0;
@@ -7484,7 +7389,7 @@ static void compute_gate(
         }
 
         float max_abs = 0.f;
-        VITIS_LOOP_399_1: for (int k = 0; k < 8; k++) {
+        VITIS_LOOP_301_1: for (int k = 0; k < 8; k++) {
 #pragma HLS UNROLL
  if (pmax[k] > max_abs) max_abs = pmax[k];
         }
@@ -7495,8 +7400,8 @@ static void compute_gate(
 
         GATE_PASS2: for (int j = 0; j < 8192; j++) {
 #pragma HLS PIPELINE II=1
- float z = X1_cache[n][j];
-            float x2 = X2_cache[n][j];
+ float z = (float)X1_cache[n][j] * (10.0f / 127.0f);
+            float x2 = (float)X2_cache[n][j] * (10.0f / 127.0f);
             float scaled = (z + 8.0f) * 256.0f;
             int idx = (int)scaled;
             if (idx < 0) idx = 0;
@@ -7520,7 +7425,7 @@ static void load_row_down_q4k(const ap_uint<128> *W_down_wide, int out_i,
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=rb dim=1 cyclic factor=8
  LOAD_DOWN_Q4K: for (int b = 0; b < 32; b++) {
-        VITIS_LOOP_435_1: for (int w = 0; w < 9; w++) {
+        VITIS_LOOP_337_1: for (int w = 0; w < 9; w++) {
 #pragma HLS PIPELINE II=1
  rb[b][w] = W_down_wide[(ap_uint<64>)out_i * ((32 * 144) / 16) + b * 9 + w];
         }
@@ -7537,8 +7442,8 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[32][9],
                                   float *result) {
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
-#pragma HLS ARRAY_PARTITION variable=rb dim=1 cyclic factor=4
-#pragma HLS ARRAY_PARTITION variable=gate dim=1 cyclic factor=4
+#pragma HLS ARRAY_PARTITION variable=rb dim=1 cyclic factor=8
+#pragma HLS ARRAY_PARTITION variable=gate dim=1 cyclic factor=8
 
  float d [32];
     float dmin[32];
@@ -7576,7 +7481,7 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[32][9],
 
  INIT_ACC_DOWN: for (int b = 0; b < 32; b++) {
 #pragma HLS UNROLL
- VITIS_LOOP_491_1: for (int k = 0; k < 8; k++) {
+ VITIS_LOOP_393_1: for (int k = 0; k < 8; k++) {
 #pragma HLS UNROLL
  int_acc_w[b][k] = 0;
             int_acc_m[b][k] = 0;
@@ -7588,14 +7493,13 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[32][9],
 
 
 
-
-    VITIS_LOOP_504_2: for (int g = 0; g < 8; g++) {
+    VITIS_LOOP_405_2: for (int g = 0; g < 4; g++) {
         MAC_GROUP: for (int n = 0; n < 256; n++) {
 #pragma HLS PIPELINE II=1
 #pragma HLS LATENCY min=2
- VITIS_LOOP_508_3: for (int bs = 0; bs < 4; bs++) {
+ VITIS_LOOP_409_3: for (int bs = 0; bs < 8; bs++) {
 #pragma HLS UNROLL
- int b = g * 4 + bs;
+ int b = g * 8 + bs;
                 ap_int<8> gi8 = (ap_int<8>) gate[b][n];
                 ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
                                                  >> ((n & 32) ? 4 : 0)) & 0xF);
@@ -7609,12 +7513,13 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[32][9],
     }
 
 
+
     float total = 0.f;
 #pragma HLS BALANCE variable=total
  REDUCE_DOWN_Q4K: for (int b = 0; b < 32; b++) {
-#pragma HLS UNROLL factor=8
+#pragma HLS UNROLL factor=2
  int32_t sw = 0, sm = 0;
-        VITIS_LOOP_529_4: for (int k = 0; k < 8; k++) {
+        VITIS_LOOP_431_4: for (int k = 0; k < 8; k++) {
 #pragma HLS UNROLL
  sw += int_acc_w[b][k];
             sm += int_acc_m[b][k];
@@ -7623,7 +7528,7 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[32][9],
     }
     *result = total;
 }
-# 546 "swiglu.cpp"
+# 448 "swiglu.cpp"
 static void load_row_down_q6k(const ap_uint<128> *W_down_wide, int out_i,
                                 uint8_t ql_buf[32][128],
                                 uint8_t qh_buf[32][64],
@@ -7643,11 +7548,11 @@ static void load_row_down_q6k(const ap_uint<128> *W_down_wide, int out_i,
 #pragma HLS PIPELINE II=1
  flat[i] = W_down_wide[(ap_uint<64>)out_i * ((32 * 210) / 16) + i];
     }
-# 573 "swiglu.cpp"
-    VITIS_LOOP_573_1: for (int bg = 0; bg < 32 / 4; bg++) {
+# 475 "swiglu.cpp"
+    VITIS_LOOP_475_1: for (int bg = 0; bg < 32 / 4; bg++) {
         EXTRACT_QL: for (int k = 0; k < 128; k++) {
 #pragma HLS PIPELINE II=1
- VITIS_LOOP_576_2: for (int bi = 0; bi < 4; bi++) {
+ VITIS_LOOP_478_2: for (int bi = 0; bi < 4; bi++) {
 #pragma HLS UNROLL
  int b = bg * 4 + bi;
                 ql_buf[b][k] = get_byte(flat, b * 210 + k);
@@ -7655,7 +7560,7 @@ static void load_row_down_q6k(const ap_uint<128> *W_down_wide, int out_i,
         }
         EXTRACT_QH: for (int k = 0; k < 64; k++) {
 #pragma HLS PIPELINE II=1
- VITIS_LOOP_584_3: for (int bi = 0; bi < 4; bi++) {
+ VITIS_LOOP_486_3: for (int bi = 0; bi < 4; bi++) {
 #pragma HLS UNROLL
  int b = bg * 4 + bi;
                 qh_buf[b][k] = get_byte(flat, b * 210 + 128 + k);
@@ -7663,13 +7568,13 @@ static void load_row_down_q6k(const ap_uint<128> *W_down_wide, int out_i,
         }
         EXTRACT_SC: for (int k = 0; k < 16; k++) {
 #pragma HLS PIPELINE II=1
- VITIS_LOOP_592_4: for (int bi = 0; bi < 4; bi++) {
+ VITIS_LOOP_494_4: for (int bi = 0; bi < 4; bi++) {
 #pragma HLS UNROLL
  int b = bg * 4 + bi;
                 sc_buf[b][k] = get_byte(flat, b * 210 + 192 + k);
             }
         }
-        VITIS_LOOP_598_5: for (int bi = 0; bi < 4; bi++) {
+        VITIS_LOOP_500_5: for (int bi = 0; bi < 4; bi++) {
 #pragma HLS UNROLL
  int b = bg * 4 + bi;
             uint16_t d_raw = (uint16_t)get_byte(flat, b * 210 + 208) |
@@ -7703,7 +7608,7 @@ static void mac_blocks_down_q6k(const uint8_t ql_buf[32][128],
 
  INIT_Q6K: for (int b = 0; b < 32; b++) {
 #pragma HLS UNROLL
- VITIS_LOOP_632_1: for (int k = 0; k < 8; k++) {
+ VITIS_LOOP_534_1: for (int k = 0; k < 8; k++) {
 #pragma HLS UNROLL
  acc[b][k] = 0;
         }
@@ -7712,11 +7617,11 @@ static void mac_blocks_down_q6k(const uint8_t ql_buf[32][128],
 
 
 
-    VITIS_LOOP_641_2: for (int g = 0; g < 4; g++) {
+    VITIS_LOOP_543_2: for (int g = 0; g < 4; g++) {
         Q6K_MAC_GROUP: for (int n = 0; n < 256; n++) {
 #pragma HLS PIPELINE II=1
 #pragma HLS LATENCY min=2
- VITIS_LOOP_645_3: for (int bs = 0; bs < 8; bs++) {
+ VITIS_LOOP_547_3: for (int bs = 0; bs < 8; bs++) {
 #pragma HLS UNROLL
  int b = g * 8 + bs;
                 uint8_t ql_byte = ql_buf[b][n >> 1];
@@ -7733,12 +7638,13 @@ static void mac_blocks_down_q6k(const uint8_t ql_buf[32][128],
     }
 
 
+
     float total = 0.f;
 #pragma HLS BALANCE variable=total
  REDUCE_Q6K: for (int b = 0; b < 32; b++) {
-#pragma HLS UNROLL
+#pragma HLS UNROLL factor=2
  int32_t sw = 0;
-        VITIS_LOOP_667_4: for (int k = 0; k < 8; k++) {
+        VITIS_LOOP_570_4: for (int k = 0; k < 8; k++) {
 #pragma HLS UNROLL
  sw += acc[b][k];
         }
@@ -7810,7 +7716,7 @@ static void load_x_local(
         LOAD_X_VEC: for (int i = 0; i < 2048 / 16; i++) {
 #pragma HLS PIPELINE II=1
  ap_uint<128> wide_val = x_wide[n * (2048 / 16) + i];
-            VITIS_LOOP_739_1: for (int j = 0; j < 16; j++) {
+            VITIS_LOOP_642_1: for (int j = 0; j < 16; j++) {
 #pragma HLS UNROLL
  int8_t val = (int8_t)wide_val.range(j*8+7, j*8);
                 int elem = i * 16 + j;
@@ -7838,7 +7744,7 @@ __attribute__((sdx_kernel("swiglu", 0))) void swiglu(
 {
 #line 1 "directive"
 #pragma HLSDIRECTIVE TOP name=swiglu
-# 764 "swiglu.cpp"
+# 667 "swiglu.cpp"
 
 #pragma HLS INTERFACE mode=m_axi port=W bundle=gmem_W offset=slave depth=9437184 max_read_burst_length=256 latency=64 num_read_outstanding=2 max_widen_bitwidth=128
 #pragma HLS INTERFACE mode=m_axi port=V bundle=gmem_V offset=slave depth=9437184 max_read_burst_length=256 latency=64 num_read_outstanding=2 max_widen_bitwidth=128
@@ -7867,10 +7773,10 @@ __attribute__((sdx_kernel("swiglu", 0))) void swiglu(
 
 
 
- float X1_cache[4][8192];
-    float X2_cache[4][8192];
-#pragma HLS BIND_STORAGE variable=X1_cache type=ram_2p impl=uram
-#pragma HLS BIND_STORAGE variable=X2_cache type=ram_2p impl=uram
+ int8_t X1_cache[4][8192];
+    int8_t X2_cache[4][8192];
+#pragma HLS BIND_STORAGE variable=X1_cache type=ram_2p impl=bram
+#pragma HLS BIND_STORAGE variable=X2_cache type=ram_2p impl=bram
 
  int8_t gate_cache[4][32][256];
 #pragma HLS BIND_STORAGE variable=gate_cache type=ram_2p impl=uram

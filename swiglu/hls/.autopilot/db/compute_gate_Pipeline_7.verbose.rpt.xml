@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_gate_Pipeline_7'" level="0">
-<item name = "Date">Thu Apr  2 09:24:01 2026
+<item name = "Date">Thu Apr  2 13:36:57 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -78,7 +78,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="empty_595_fu_136_p2">+, 0, 0, 12, 4, 1</column>
+<column name="empty_851_fu_136_p2">+, 0, 0, 12, 4, 1</column>
 <column name="exitcond54_i7_fu_130_p2">icmp, 0, 0, 12, 4, 5</column>
 </table>
 </item>
