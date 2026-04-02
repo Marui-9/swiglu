@@ -48,31 +48,33 @@ Per‑op parallelism: before execution, ggml chooses n_tasks for that op
             added GGML_OP_SWIGLU_FUSED_HW at line 474.
     added function declaration as one of the struct ggml_tensor
             added ggml_swiglu_fused_hw at line 808.
-      GGML_API struct ggml_tensor * ggml_swiglu_fused_hw* ggml_swiglu_fused_hw(struct ggml_context * ctx,
+      GGML_API struct ggml_tensor * ggml_swiglu_fused_hw(struct ggml_context * ctx,
                                           struct ggml_tensor  * x,
                                           struct ggml_tensor  * w_gate,
                                           struct ggml_tensor  * w_up,
-                                          struct ggml_tensor  * w_down);
+                                          struct ggml_tensor  * w_down,
+                                          int32_t               layer_id);
 
 2. add a string in ggml/src/ggml.c in function ggml_op_name for logging.
     inside (array of pointers to char) GGML_OP_NAME line 952.   
             added SWIGLU_FUSED_HW at line 955.
-3. in ggml.c, add a function for building the tensor alognside others
-    add the switch case to call the FPGA accelerator 
-            added ggml_swiglu_fused_hw at line 2922.
+3. in ggml.c, add a function for building the graph node alongside others.
+    This function does NOT call the FPGA — it only wires the compute graph node.
+    The FPGA call lives in ggml-cpu.c and is dispatched at execution time.
+            added ggml_swiglu_fused_hw at line 2925.
                 struct ggml_tensor * ggml_swiglu_fused_hw(
                 struct ggml_context * ctx,
                 struct ggml_tensor  * x,
                 struct ggml_tensor  * w_gate,
                 struct ggml_tensor  * w_up,
-                struct ggml_tensor  * w_down) {
+                struct ggml_tensor  * w_down,
+                int32_t               layer_id) {
 
-                    GGML_ASSERT(x->ne[0] == w_down->ne[1]);   // n_embd matches
-                    GGML_ASSERT(w_gate->ne[0] == w_up->ne[0]);
-                    GGML_ASSERT(w_down->ne[0] == x->ne[0]);   // output = n_embd
-                    // Optional: assert quantized types for weights, F32 for x.
+                    GGML_ASSERT(x->ne[0] == w_down->ne[1]);      // n_embd: x input dim == w_down output dim
+                    GGML_ASSERT(w_gate->ne[0] == w_up->ne[0]);   // gate and up share same input dim
+                    GGML_ASSERT(w_gate->ne[1] == w_down->ne[0]); // ffn_dim: gate/up output == w_down input
 
-                    const int64_t ne[4] = { w_down->ne[0], x->ne[1], x->ne[2], x->ne[3] };
+                    const int64_t ne[4] = { w_down->ne[1], x->ne[1], x->ne[2], x->ne[3] };
                     struct ggml_tensor * result = ggml_new_tensor(ctx, GGML_TYPE_F32, 4, ne);
 
                     result->op     = GGML_OP_SWIGLU_FUSED_HW;
@@ -81,15 +83,13 @@ Per‑op parallelism: before execution, ggml chooses n_tasks for that op
                     result->src[2] = w_up;
                     result->src[3] = w_down;
 
-
-                    // Store bias-present flags in op_params (bits 0/1/2).
-                    uint32_t flags = (b_gate ? 1u : 0u) | (b_up ? 2u : 0u) | (b_down ? 4u : 0u);
-                    ggml_set_op_params_i32(result, 0, (int32_t)flags);
+                    ggml_set_op_params_i32(result, 0, layer_id);  // layer index for weight cache slot
 
                     return result;
                 }
-           
-            and add it to the n_tasks selection so it can use threads. (TBD)
+
+            n_tasks is set to 1 in the ggml_get_n_tasks switch (ggml-cpu.c ~line 2191):
+            the offload kernel is single-threaded (all other CPU threads idle during FPGA execution).
   4. modified ggml-cpu.c to also have the operation inside switch for
      at line 2191 (inside the ggml_get_n_tasks switch)
                         case GGML_OP_SWIGLU_FUSED_HW: {
@@ -125,7 +125,9 @@ Skeleton fused kernel
 Add ggml_compute_forward_swiglu_fused_hw with these steps (all blocking/synchronous):
 Validate shapes/types (hidden=2048, W/V/Wd dims, Q4_K/Q6_K weights, F32 x). If ne[1] > 1 and FPGA doesn’t support batch, jump to CPU fallback.
 Lazy init: call init_hardware_offload() + init_swiglu_offload() once.
-Determine layer index (e.g., swiglu_call_count % 16) and mode (Q4_K/Q6_K from nb[3]).
+Determine layer index from op_params[0] (set at graph-build time by ggml_swiglu_fused_hw
+  via the layer_id argument, which lfm2.cpp passes as il). Mode (Q4_K/Q6_K) inferred
+  from ggml_nbytes(W_down): >9 MB → Q6_K.
 Weight cache: copy W, V, Wd into their udmabuf slots only if not yet loaded for that layer.
 Quantize/copy x → SWG_VEC_OFF; compute x_scale; write to udmabuf.
 Program CTRL regs (W/V/Wd/x/out, mode, xscale).
@@ -178,6 +180,8 @@ Otherwise risk routing mismatched architectures through the hardware path.
             cur,
             model.layers[il].ffn_gate,
             model.layers[il].ffn_up,
-            model.layers[il].ffn_down);
+            model.layers[il].ffn_down,
+            (int32_t)il);   // il is the lambda parameter (layer loop index 0..15)
+                             // → stored in op_params[0] → used by driver for weight cache slot
     }
 

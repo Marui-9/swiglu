@@ -69,7 +69,7 @@ static uint32_t swg_last_prog_mode  = 0;
 
 // udmabuf layout (640 MB pool)
 #define UDMABUF_SIZE        671088640U
-#define SWG_MAX_BATCH       1
+#define SWG_MAX_BATCH       4
 #define SWG_VEC_OFF         0x06C50000U  // x INT8
 #define SWG_OUT_OFF         0x06C60000U  // out F32
 #define SWG_LAYER_W_BASE    0x06D00000U  // gate
@@ -187,13 +187,32 @@ static void init_swiglu_offload(void) {
         fprintf(stderr, "[SWG_INIT] mmap CTRL registers failed at 0x%08lX\n", (unsigned long)SWIGLU_IP_BASE);
         exit(1);
     }
+    // Correct init sequence to avoid stale-interrupt on call #0.
+    // Wrong prior order (ISR clear → open UIO → drain → GIE/IER arm):
+    // arming GIE/IER with ISR still set causes an immediate hardware IRQ that
+    // arrives after the drain loop → call #0 poll() returns in 0ms with the
+    // IP still running → stale URAM output.
+    // Correct order: open → drain old count → arm GIE/IER → clear ISR →
+    // drain window between arm and clear → re-arm for first real interrupt.
     swiglu_uio_fd = open_uio_by_addr(SWIGLU_IP_BASE);
     if (swiglu_uio_fd >= 0) {
+        int saved_flags = fcntl(swiglu_uio_fd, F_GETFL, 0);
+        fcntl(swiglu_uio_fd, F_SETFL, saved_flags | O_NONBLOCK);
+        uint32_t drain;
+        // Drain accumulated UIO counter from prior sessions.
+        while (read(swiglu_uio_fd, &drain, sizeof(drain)) > 0) {}
+        // Arm interrupts.
+        swg_ip_regs[SWG_CTRL_GIE / 4] = 0x1;
+        swg_ip_regs[SWG_CTRL_IER / 4] = 0x1;
+        // Clear ISR (toggle-on-write) — de-asserts hardware IRQ line.
+        swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;
+        // Drain any interrupt that fired in the GIE-arm → ISR-clear window.
+        while (read(swiglu_uio_fd, &drain, sizeof(drain)) > 0) {}
+        fcntl(swiglu_uio_fd, F_SETFL, saved_flags);
+        // Re-arm for first real interrupt.
         uint32_t uio_enable = 1;
         (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
     }
-    swg_ip_regs[SWG_CTRL_GIE / 4] = 0x1;
-    swg_ip_regs[SWG_CTRL_IER / 4] = 0x1;
 }
 
 #ifdef GGML_USE_OPENMP
@@ -1867,7 +1886,8 @@ static void ggml_compute_forward_swiglu_fused_hw(
         (W_down->type != GGML_TYPE_Q4_K && W_down->type != GGML_TYPE_Q6_K) ||
         x->ne[0] != 2048 || W_gate->ne[0] != 2048 || W_gate->ne[1] != 8192 ||
         W_up->ne[0]   != 2048 || W_up->ne[1]   != 8192 ||
-        W_down->ne[0] != 8192 || W_down->ne[1] != 2048) {
+        W_down->ne[0] != 8192 || W_down->ne[1] != 2048 ||
+        x->ne[1] < 1  || x->ne[1] > SWG_MAX_BATCH) {
         fprintf(stderr, "[SWG] unsupported shapes/types in fused hw kernel; aborting to avoid bad output\n");
         GGML_ASSERT(false);
     }
@@ -1881,35 +1901,57 @@ static void ggml_compute_forward_swiglu_fused_hw(
     }
 
     int total_tokens = (int)x->ne[1];
-    int layer = swiglu_call_count % SWG_NUM_LAYERS;
+    int layer = ggml_get_op_params_i32(dst, 0);
+    if (layer < 0 || layer >= SWG_NUM_LAYERS) {
+        fprintf(stderr, "[SWG] invalid layer id %d in op_params\n", layer);
+        GGML_ASSERT(false);
+    }
     size_t down_bytes = ggml_nbytes(W_down);
     uint32_t mode = (down_bytes > 9437184UL) ? 1 : 0; // Q6_K threshold
-    if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG] call #%d layer=%d mode=%s tokens=%d\n",
-                swiglu_call_count, layer, mode ? "Q6_K" : "Q4_K", total_tokens);
-    }
-
     size_t gate_bytes = ggml_nbytes(W_gate);
     size_t up_bytes   = ggml_nbytes(W_up);
+
+    if (swiglu_dbg_enabled) {
+        fprintf(stderr, "[SWG] ===== HW call #%d layer=%d mode=%s tokens=%d =====\n",
+                swiglu_call_count, layer, mode ? "Q6_K" : "Q4_K", total_tokens);
+        fprintf(stderr, "[SWG]   W_gate ptr=%p  ne=[%d,%d] type=%d  nbytes=%zu\n",
+                W_gate->data, (int)W_gate->ne[0], (int)W_gate->ne[1], (int)W_gate->type, gate_bytes);
+        fprintf(stderr, "[SWG]   W_up   ptr=%p  ne=[%d,%d] type=%d  nbytes=%zu\n",
+                W_up->data,   (int)W_up->ne[0],   (int)W_up->ne[1],   (int)W_up->type,   up_bytes);
+        fprintf(stderr, "[SWG]   W_down ptr=%p  ne=[%d,%d] type=%d  nbytes=%zu\n",
+                W_down->data, (int)W_down->ne[0], (int)W_down->ne[1], (int)W_down->type, down_bytes);
+        fprintf(stderr, "[SWG]   x      ptr=%p  ne=[%d,%d] type=%d\n",
+                x->data, (int)x->ne[0], (int)x->ne[1], (int)x->type);
+    }
+
+    bool copied_W = false, copied_V = false, copied_Wd = false;
     if (!swg_layer_W_loaded[layer]) {
+        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   COPY W  layer %d (%zu bytes) → udmabuf+0x%08X\n", layer, gate_bytes, SWG_LAYER_W_OFF(layer));
         memcpy((char*)udmabuf_vptr + SWG_LAYER_W_OFF(layer), W_gate->data, gate_bytes);
         swg_layer_W_loaded[layer] = true;
+        copied_W = true;
+    } else if (swiglu_dbg_enabled) {
+        fprintf(stderr, "[SWG]   W  layer %d: already cached\n", layer);
     }
     if (!swg_layer_V_loaded[layer]) {
+        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   COPY V  layer %d (%zu bytes) → udmabuf+0x%08X\n", layer, up_bytes, SWG_LAYER_V_OFF(layer));
         memcpy((char*)udmabuf_vptr + SWG_LAYER_V_OFF(layer), W_up->data, up_bytes);
         swg_layer_V_loaded[layer] = true;
+        copied_V = true;
+    } else if (swiglu_dbg_enabled) {
+        fprintf(stderr, "[SWG]   V  layer %d: already cached\n", layer);
     }
     if (!swg_layer_Wd_loaded[layer]) {
+        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   COPY Wd layer %d (%zu bytes) → udmabuf+0x%08X\n", layer, down_bytes, SWG_LAYER_WD_OFF(layer));
         memcpy((char*)udmabuf_vptr + SWG_LAYER_WD_OFF(layer), W_down->data, down_bytes);
         swg_layer_Wd_loaded[layer] = true;
+        copied_Wd = true;
+    } else if (swiglu_dbg_enabled) {
+        fprintf(stderr, "[SWG]   Wd layer %d: already cached\n", layer);
     }
-    // Flush weights: covers W, V, Wd for this layer only.
-    // W starts at SWG_LAYER_W_OFF(layer); Wd ends at SWG_LAYER_WD_OFF(layer)+down_bytes.
-    {
-        uint32_t flush_start = SWG_LAYER_W_OFF(layer);
-        uint32_t flush_end   = SWG_LAYER_WD_OFF(layer) + (uint32_t)down_bytes;
-        udmabuf_sync_to_device(flush_start, flush_end - flush_start);
-    }
+    if (copied_W)  udmabuf_sync_to_device(SWG_LAYER_W_OFF(layer),  (uint32_t)gate_bytes);
+    if (copied_V)  udmabuf_sync_to_device(SWG_LAYER_V_OFF(layer),  (uint32_t)up_bytes);
+    if (copied_Wd) udmabuf_sync_to_device(SWG_LAYER_WD_OFF(layer), (uint32_t)down_bytes);
 
     uint64_t phys_W  = udmabuf_phys_base + SWG_LAYER_W_OFF(layer);
     uint64_t phys_V  = udmabuf_phys_base + SWG_LAYER_V_OFF(layer);
@@ -1917,6 +1959,15 @@ static void ggml_compute_forward_swiglu_fused_hw(
 
     uint64_t phys_x_base   = udmabuf_phys_base + SWG_VEC_OFF;
     uint64_t phys_out_base = udmabuf_phys_base + SWG_OUT_OFF;
+
+    if (swiglu_dbg_enabled) {
+        fprintf(stderr, "[SWG]   phys W=0x%016llX  V=0x%016llX  Wd=0x%016llX\n",
+                (unsigned long long)phys_W, (unsigned long long)phys_V, (unsigned long long)phys_Wd);
+        fprintf(stderr, "[SWG]   phys x=0x%016llX  out=0x%016llX\n",
+                (unsigned long long)phys_x_base, (unsigned long long)phys_out_base);
+        fprintf(stderr, "[SWG]   AP_CTRL before start = 0x%08X\n",
+                swg_ip_regs[SWG_CTRL_AP_CTRL / 4]);
+    }
 
     for (int c = 0; c < total_tokens; c += SWG_MAX_BATCH) {
         int bsz = (c + SWG_MAX_BATCH <= total_tokens) ? SWG_MAX_BATCH : (total_tokens - c);
@@ -1938,8 +1989,16 @@ static void ggml_compute_forward_swiglu_fused_hw(
             if (iq < -128) iq = -128;
             x_dst[i] = (int8_t)iq;
         }
+        if (swiglu_dbg_enabled) {
+            fprintf(stderr, "[SWG]   token chunk c=%d bsz=%d  max_abs=%.4f  x_scale=%.6f\n",
+                    c, bsz, max_abs, x_scale);
+            fprintf(stderr, "[SWG]   x[0..3] (INT8): %d %d %d %d\n",
+                    (int)x_dst[0], (int)x_dst[1], (int)x_dst[2], (int)x_dst[3]);
+        }
 
         bool need_prog_wvw = (layer != swg_last_prog_layer) || (mode != swg_last_prog_mode);
+        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   reprogram W/V/Wd: %s (last_layer=%d last_mode=%u)\n",
+                need_prog_wvw ? "YES" : "NO (cached)", swg_last_prog_layer, swg_last_prog_mode);
         if (need_prog_wvw) {
             swg_ip_regs[SWG_CTRL_W_LO   / 4] = (uint32_t)phys_W;
             swg_ip_regs[SWG_CTRL_W_HI   / 4] = (uint32_t)(phys_W >> 32);
@@ -1962,54 +2021,89 @@ static void ggml_compute_forward_swiglu_fused_hw(
         uint32_t xscale_bits;
         memcpy(&xscale_bits, &x_scale, sizeof(float));
         swg_ip_regs[SWG_CTRL_XSCALE / 4] = xscale_bits;
-        __asm__ __volatile__("" ::: "memory");
 
+        if (swiglu_dbg_enabled) {
+            fprintf(stderr, "[SWG]   regs: W=0x%08X|%08X  V=0x%08X|%08X  Wd=0x%08X|%08X\n",
+                    swg_ip_regs[SWG_CTRL_W_HI/4],  swg_ip_regs[SWG_CTRL_W_LO/4],
+                    swg_ip_regs[SWG_CTRL_V_HI/4],  swg_ip_regs[SWG_CTRL_V_LO/4],
+                    swg_ip_regs[SWG_CTRL_WD_HI/4], swg_ip_regs[SWG_CTRL_WD_LO/4]);
+            fprintf(stderr, "[SWG]   regs: x=0x%08X|%08X  out=0x%08X|%08X  mode=%u  xscale_bits=0x%08X (%.6f)\n",
+                    swg_ip_regs[SWG_CTRL_X_HI/4],   swg_ip_regs[SWG_CTRL_X_LO/4],
+                    swg_ip_regs[SWG_CTRL_OUT_HI/4], swg_ip_regs[SWG_CTRL_OUT_LO/4],
+                    swg_ip_regs[SWG_CTRL_MODE/4], xscale_bits, x_scale);
+        }
+
+        __asm__ __volatile__("" ::: "memory");
         udmabuf_sync_to_device(SWG_VEC_OFF, (uint32_t)(bsz * 2048));
+
+        struct timespec t0, t1;
+        clock_gettime(CLOCK_MONOTONIC, &t0);
+        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   >>> writing ap_start\n");
         swg_ip_regs[SWG_CTRL_AP_CTRL / 4] = 0x01;
         __asm__ __volatile__("" ::: "memory");
 
         if (swiglu_uio_fd >= 0) {
+            if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   waiting via UIO poll (fd=%d, timeout=7000ms)\n", swiglu_uio_fd);
             struct pollfd pfd = { .fd = swiglu_uio_fd, .events = POLLIN };
             int pr = poll(&pfd, 1, 7000);
+            clock_gettime(CLOCK_MONOTONIC, &t1);
+            long elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
             if (pr > 0) {
                 uint32_t irq_count;
                 (void)read(swiglu_uio_fd, &irq_count, sizeof(irq_count));
+                if (swiglu_dbg_enabled) {
+                    fprintf(stderr, "[SWG]   <<< UIO interrupt  irq_count=%u  elapsed=%ldms\n", irq_count, elapsed_ms);
+                    fprintf(stderr, "[SWG]   AP_CTRL after done = 0x%08X\n", swg_ip_regs[SWG_CTRL_AP_CTRL / 4]);
+                }
                 swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done bit (TOW)
                 uint32_t uio_enable = 1;
                 (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
             } else {
+                if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   poll() returned %d after %ldms — falling back to register poll\n", pr, elapsed_ms);
                 int tmo = 7000;
                 while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
                     usleep(1000);
                 }
+                clock_gettime(CLOCK_MONOTONIC, &t1);
+                elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
                 if ((swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
                     fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n", swiglu_call_count, layer);
                     GGML_ASSERT(false);
                 }
+                if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   <<< register poll done  AP_CTRL=0x%08X  elapsed=%ldms\n",
+                        swg_ip_regs[SWG_CTRL_AP_CTRL / 4], elapsed_ms);
                 swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done (TOW)
             }
         } else {
+            if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   no UIO fd — polling AP_CTRL directly\n");
             int tmo = 7000;
             while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
                 usleep(1000);
             }
+            clock_gettime(CLOCK_MONOTONIC, &t1);
+            long elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
             if ((swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
                 fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n", swiglu_call_count, layer);
                 GGML_ASSERT(false);
             }
+            if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   <<< register poll done  AP_CTRL=0x%08X  elapsed=%ldms\n",
+                    swg_ip_regs[SWG_CTRL_AP_CTRL / 4], elapsed_ms);
             swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done (TOW)
         }
 
         udmabuf_sync_to_cpu(SWG_OUT_OFF, (uint32_t)(bsz * 2048 * sizeof(float)));
+        if (swiglu_dbg_enabled) {
+            const float *out_check = (const float *)((char*)udmabuf_vptr + SWG_OUT_OFF);
+            fprintf(stderr, "[SWG]   out[0..3] (F32): %.4f  %.4f  %.4f  %.4f\n",
+                    out_check[0], out_check[1], out_check[2], out_check[3]);
+        }
         memcpy((char*)dst->data + (size_t)c * 2048 * sizeof(float),
                (char*)udmabuf_vptr + SWG_OUT_OFF,
                (size_t)bsz * 2048 * sizeof(float));
     }
 
     swiglu_call_count++;
-    if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG] done call #%d layer=%d\n", swiglu_call_count - 1, layer);
-    }
+    if (swiglu_dbg_enabled) fprintf(stderr, "[SWG] ===== call #%d done =====\n", swiglu_call_count - 1);
 }
 
 static void ggml_compute_forward(struct ggml_compute_params * params, struct ggml_tensor * tensor) {
@@ -2030,9 +2124,6 @@ static void ggml_compute_forward(struct ggml_compute_params * params, struct ggm
                 if (swiglu_dbg_enabled == -1) {
                     const char *env = getenv("SWIGLU_DEBUG");
                     swiglu_dbg_enabled = (env && env[0] == '1') ? 1 : 0;
-                }
-                if (swiglu_dbg_enabled && params->ith == 0) {
-                    fprintf(stderr, "[SWG] dispatch fused op\n");
                 }
                 ggml_compute_forward_swiglu_fused_hw(params, tensor);
         } break;

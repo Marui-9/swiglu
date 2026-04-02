@@ -273,18 +273,18 @@ __xlx_W_down__tmp_vec.push_back(((Byte<16>*)__xlx_apatb_param_W_down)[i]);
   int __xlx_offset_byte_param_W_down = 0*16;
   // Collect __xlx_x_batch__tmp_vec
 std::vector<Byte<16>> __xlx_x_batch__tmp_vec;
-for (size_t i = 0; i < 128; ++i){
+for (size_t i = 0; i < 512; ++i){
 __xlx_x_batch__tmp_vec.push_back(((Byte<16>*)__xlx_apatb_param_x_batch)[i]);
 }
-  int __xlx_size_param_x_batch = 128;
+  int __xlx_size_param_x_batch = 512;
   int __xlx_offset_param_x_batch = 0;
   int __xlx_offset_byte_param_x_batch = 0*16;
   // Collect __xlx_out_batch__tmp_vec
 std::vector<Byte<4>> __xlx_out_batch__tmp_vec;
-for (size_t i = 0; i < 2048; ++i){
+for (size_t i = 0; i < 8192; ++i){
 __xlx_out_batch__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_out_batch)[i]);
 }
-  int __xlx_size_param_out_batch = 2048;
+  int __xlx_size_param_out_batch = 8192;
   int __xlx_offset_param_out_batch = 0;
   int __xlx_offset_byte_param_out_batch = 0*4;
   // DUT call

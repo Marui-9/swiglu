@@ -1,6 +1,7 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch CLANG as the compiler.
    Compiling ../../../../swiglu_tb.cpp in debug mode
+   Compiling ../../../../swiglu.cpp in debug mode
    Generating csim.exe
 === Mock token sanity ===
 Mock token max abs err: 0

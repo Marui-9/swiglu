@@ -12,8 +12,8 @@ entity swiglu_gate_cache_RAM_2P_URAM_1R1W_memcore is
     generic(
         MEM_TYPE        : string    := "hls_ultra"; 
         DataWidth       : integer   := 8; 
-        AddressWidth    : integer   := 10;
-        AddressRange    : integer   := 1024
+        AddressWidth    : integer   := 12;
+        AddressRange    : integer   := 4096
     ); 
     port (
         address0    : in std_logic_vector(AddressWidth-1 downto 0); 

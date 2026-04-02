@@ -32,7 +32,7 @@
 	resets = <&zynqmp_reset 116>;
 	clocking0: clocking0 {
 		#clock-cells = <0>;
-		assigned-clock-rates = <99999001>;
+		assigned-clock-rates = <247000000>;
 		assigned-clocks = <&zynqmp_clk 71>;
 		clock-output-names = "fabric_clk";
 		clocks = <&zynqmp_clk 71>;
@@ -40,7 +40,7 @@
 	};
 	clocking1: clocking1 {
 		#clock-cells = <0>;
-		assigned-clock-rates = <99999001>;
+		assigned-clock-rates = <247000000>;
 		assigned-clocks = <&zynqmp_clk 72>;
 		clock-output-names = "fabric_clk";
 		clocks = <&zynqmp_clk 72>;
@@ -69,8 +69,8 @@
 		 *   0x28/0x2C  W_down    — phys addr [31:0] / [63:32]
 		 *   0x34/0x38  x_batch   — phys addr [31:0] / [63:32]
 		 *   0x40/0x44  out_batch — phys addr [31:0] / [63:32]
-		 *   0x4C  batch_size
-		 *   0x54  down_quant_mode  (0=Q4_K, 1=Q6_K)
+		 *   0x4C  down_quant_mode  (0=Q4_K, 1=Q6_K)
+		 *   0x54  x_scale          (float bits, written via memcpy to avoid aliasing UB)
 		 * Then write 0x1 to offset 0x00 (ap_start).
 		 *
 		 * Completion: poll() on /dev/uioN; read() clears the UIO interrupt

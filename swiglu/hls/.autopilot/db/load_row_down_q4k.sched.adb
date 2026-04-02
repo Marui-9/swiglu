@@ -588,7 +588,7 @@
 					<Obj>
 						<type>0</type>
 						<id>25</id>
-						<name>tmp_828</name>
+						<name>tmp_528</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -759,7 +759,7 @@
 					<Obj>
 						<type>0</type>
 						<id>29</id>
-						<name>empty_758</name>
+						<name>empty_591</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -805,7 +805,7 @@
 						<name>trunc_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>331</lineNumber>
+						<lineNumber>434</lineNumber>
 						<contextFuncName>load_row_down_q4k</contextFuncName>
 						<contextNormFuncName>load_row_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -821,7 +821,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q4k</second>
 										</first>
-										<second>331</second>
+										<second>434</second>
 									</item>
 								</second>
 							</item>
@@ -861,10 +861,10 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>sext_ln331</name>
+						<name>sext_ln434</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>331</lineNumber>
+						<lineNumber>434</lineNumber>
 						<contextFuncName>load_row_down_q4k</contextFuncName>
 						<contextNormFuncName>load_row_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -880,7 +880,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q4k</second>
 										</first>
-										<second>331</second>
+										<second>434</second>
 									</item>
 								</second>
 							</item>
@@ -920,7 +920,7 @@
 						<name>gmem_Wd_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>331</lineNumber>
+						<lineNumber>434</lineNumber>
 						<contextFuncName>load_row_down_q4k</contextFuncName>
 						<contextNormFuncName>load_row_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -936,7 +936,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q4k</second>
 										</first>
-										<second>331</second>
+										<second>434</second>
 									</item>
 								</second>
 							</item>
@@ -974,10 +974,10 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>empty_759</name>
+						<name>empty_592</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>331</lineNumber>
+						<lineNumber>434</lineNumber>
 						<contextFuncName>load_row_down_q4k</contextFuncName>
 						<contextNormFuncName>load_row_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -993,7 +993,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q4k</second>
 										</first>
-										<second>331</second>
+										<second>434</second>
 									</item>
 								</second>
 							</item>
@@ -1023,7 +1023,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>8.00</m_delay>
+				<m_delay>2.92</m_delay>
 				<m_topoIndex>13</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -1032,10 +1032,10 @@
 					<Obj>
 						<type>0</type>
 						<id>34</id>
-						<name>_ln331</name>
+						<name>_ln434</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>331</lineNumber>
+						<lineNumber>434</lineNumber>
 						<contextFuncName>load_row_down_q4k</contextFuncName>
 						<contextNormFuncName>load_row_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1051,7 +1051,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q4k</second>
 										</first>
-										<second>331</second>
+										<second>434</second>
 									</item>
 								</second>
 							</item>
@@ -1099,10 +1099,10 @@
 					<Obj>
 						<type>0</type>
 						<id>35</id>
-						<name>_ln337</name>
+						<name>_ln440</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>337</lineNumber>
+						<lineNumber>440</lineNumber>
 						<contextFuncName>load_row_down_q4k</contextFuncName>
 						<contextNormFuncName>load_row_down_q4k</contextNormFuncName>
 						<inlineStackInfo>
@@ -1118,7 +1118,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_down_q4k</second>
 										</first>
-										<second>337</second>
+										<second>440</second>
 									</item>
 								</second>
 							</item>
@@ -1313,7 +1313,7 @@
 					<Obj>
 						<type>2</type>
 						<id>75</id>
-						<name>load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1</name>
+						<name>load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_435_1</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1337,7 +1337,7 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_332_1&gt;</content>
+				<content>&lt;constant:load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_435_1&gt;</content>
 			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">

@@ -3,9 +3,7 @@
 
 #include <stdint.h>
 
-#define MAX_BATCH 1   // single-token decode only; driver batch guard enforces ne[1]==1
-                      // (was 8: gate_cache[8][8192]+x_local[8][2048] cost 320 BRAM_18K;
-                      //  total 474 vs 288 budget. With MAX_BATCH=1: ~40 BRAM_18K; total ~194)
+#define MAX_BATCH 4   // enable small prefill batches (prefill and decode up to 4 tokens)
 
 void swiglu(
     const uint8_t *W,            // ffn_gate  Q4_K  [8192 rows × 8 blocks × 144 B]

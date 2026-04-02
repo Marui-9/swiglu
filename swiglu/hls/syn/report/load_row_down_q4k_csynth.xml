@@ -9,8 +9,8 @@
 <ProductFamily>zynquplus</ProductFamily>
 <Part>xck26-sfvc784-2LV-c</Part>
 <TopModelName>load_row_down_q4k</TopModelName>
-<TargetClockPeriod>10.00</TargetClockPeriod>
-<ClockUncertainty>2.00</ClockUncertainty>
+<TargetClockPeriod>4.00</TargetClockPeriod>
+<ClockUncertainty>1.08</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,16 +18,16 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>8.000</EstimatedClockPeriod>
+<EstimatedClockPeriod>2.920</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>364</Best-caseLatency>
 <Average-caseLatency>364</Average-caseLatency>
 <Worst-caseLatency>364</Worst-caseLatency>
-<Best-caseRealTimeLatency>3.640 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>3.640 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>3.640 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>1.456 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.456 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>1.456 us</Worst-caseRealTimeLatency>
 <Interval-min>364</Interval-min>
 <Interval-max>364</Interval-max>
 <PerformancePragma>-</PerformancePragma>
@@ -35,7 +35,7 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:331</SourceLocation>
+<SourceLocation>swiglu.cpp:434</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 

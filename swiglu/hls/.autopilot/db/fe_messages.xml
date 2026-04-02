@@ -1,17 +1,26 @@
 <xilinx:hls_fe_msgs>
-    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5562" msg_severity="WARNING" msg_loc="swiglu.cpp:64:9" msg_body="missing argument for 'variable'">
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5562" msg_severity="WARNING" msg_loc="swiglu.cpp:87:9" msg_body="missing argument for 'variable'">
         <args ClangWarningOption="invalid-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5562" msg_severity="WARNING" msg_loc="swiglu.cpp:118:9" msg_body="missing argument for 'variable'">
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5590" msg_severity="WARNING" msg_loc="swiglu.cpp:176:9" msg_body="unknown HLS pragma ignored">
         <args ClangWarningOption="invalid-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5590" msg_severity="WARNING" msg_loc="swiglu.cpp:207:9" msg_body="unknown HLS pragma ignored">
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5562" msg_severity="WARNING" msg_loc="swiglu.cpp:202:9" msg_body="missing argument for 'variable'">
         <args ClangWarningOption="invalid-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5562" msg_severity="WARNING" msg_loc="swiglu.cpp:348:9" msg_body="missing argument for 'variable'">
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5590" msg_severity="WARNING" msg_loc="swiglu.cpp:293:9" msg_body="unknown HLS pragma ignored">
         <args ClangWarningOption="invalid-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5590" msg_severity="WARNING" msg_loc="swiglu.cpp:421:9" msg_body="unknown HLS pragma ignored">
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5562" msg_severity="WARNING" msg_loc="swiglu.cpp:451:9" msg_body="missing argument for 'variable'">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5590" msg_severity="WARNING" msg_loc="swiglu.cpp:525:9" msg_body="unknown HLS pragma ignored">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5562" msg_severity="WARNING" msg_loc="swiglu.cpp:620:9" msg_body="missing argument for 'variable'">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5590" msg_severity="WARNING" msg_loc="swiglu.cpp:663:9" msg_body="unknown HLS pragma ignored">
         <args ClangWarningOption="invalid-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:29:9" msg_body="HLS pragma dump">
@@ -23,395 +32,584 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:54:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="get_byte" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:63:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="decode_mac_q6k" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:64:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="decode_mac_q6k" ARG_PragmaIsValid="0" ARG_PragmaOptions="op=mul impl=dsp" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:69:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="decode_mac_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=acc complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:72:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="decode_mac_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:85:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="decode_mac_q6k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:98:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:67:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="load_row_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:99:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:68:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="load_row_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=rb dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:103:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:72:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="load_row_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:117:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:86:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:118:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:87:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="0" ARG_PragmaOptions="op=mul impl=dsp" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:119:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:88:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=rb dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:120:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:89:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:126:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:95:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=d complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:127:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:96:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=dmin complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:128:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:97:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sc6 dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:129:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:98:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=mn6 dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:165:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:134:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=int_acc_w dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:166:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:135:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=int_acc_m dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:168:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:137:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:170:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:139:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:187:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:156:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:188:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:157:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=2" ARG_PragmaType="latency" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:190:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:159:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:207:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:176:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="balance" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:209:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:178:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:181:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:201:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:202:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="0" ARG_PragmaOptions="op=mul impl=dsp" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:203:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=rb dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:204:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=rb dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:205:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:211:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=d dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:212:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_wv" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=dmin dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:228:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_X1" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:213:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sc6 dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:229:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_X1" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x_local_1 dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:214:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=mn6 dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:233:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_X1" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:217:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:234:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_X1" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:219:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:249:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_X2" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:250:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_X2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x_local_2 dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:253:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=int_acc_w dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:254:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_X2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=int_acc_m dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:255:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_X2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:257:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:259:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:261:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:271:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:272:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=2" ARG_PragmaType="latency" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:274:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_gate" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:276:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_gate" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:278:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_gate" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=pmax complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:291:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:283:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_gate" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:293:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="balance" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:297:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_gate" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:295:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:306:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_gate" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:298:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_wv_k4" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:329:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="load_row_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:316:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_X1" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:330:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="load_row_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=rb dim=1 cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:317:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_X1" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x_local_1 dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:333:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="load_row_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:321:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_X1" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:347:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:322:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_X1" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:348:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="0" ARG_PragmaOptions="op=mul impl=dsp" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:323:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_X1" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:349:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=rb dim=1 cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:345:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_X2" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:346:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_X2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x_local_2 dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:350:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=gate dim=1 cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="compute_X2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:356:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=d complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:351:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_X2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:357:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=dmin complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:352:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_X2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:358:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sc6 dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:377:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_gate" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:359:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=mn6 dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:379:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_gate" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:383:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=int_acc_w dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:381:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_gate" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=pmax complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:384:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=int_acc_m dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:386:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_gate" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:387:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:400:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_gate" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:389:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:409:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_gate" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:402:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:432:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:403:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=2" ARG_PragmaType="latency" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:433:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=rb dim=1 cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:405:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:436:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:421:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="balance" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:450:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:423:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=8" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:426:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:440:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:441:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=rb cyclic factor=16" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:443:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:451:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="0" ARG_PragmaOptions="op=mul impl=dsp" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:452:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=rb dim=1 cyclic factor=4" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:453:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=rb cyclic factor=16" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=gate dim=1 cyclic factor=4" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:454:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=gate dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:459:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=d complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:456:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=block_sums complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:460:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=dmin complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:458:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:461:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sc6 dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:464:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:462:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=mn6 dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:478:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:486:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=int_acc_w dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:479:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=gate_cache dim=2 cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:483:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_local type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:489:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf dim=1 cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:487:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=int_acc_m dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:490:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:497:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf cyclic factor=16" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:492:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:498:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:506:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:516:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="load_x_local" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:507:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=2" ARG_PragmaType="latency" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:517:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="load_x_local" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x_local_1 dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:518:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="load_x_local" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x_local_2 dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:522:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="load_x_local" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:509:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:525:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="balance" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:527:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=8" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:530:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q4k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:551:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:552:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=ql_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:553:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=qh_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:554:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sc_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:555:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=d_buf complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:558:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=flat cyclic factor=16" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:559:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=flat type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:562:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:575:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:577:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:583:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:585:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:591:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:593:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:599:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_row_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:619:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:620:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="0" ARG_PragmaOptions="op=mul impl=dsp" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:621:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=ql_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:622:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=qh_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:623:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sc_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:624:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=d_buf complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:625:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=gate dim=1 cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:628:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=acc dim=0 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:631:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:633:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:643:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:644:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=2" ARG_PragmaType="latency" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:646:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:663:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="0" ARG_PragmaOptions="variable" ARG_PragmaType="balance" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:665:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:668:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mac_blocks_down_q6k" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:684:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:685:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=gate_cache dim=2 cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:689:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_local type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:695:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf dim=1 cyclic factor=4" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:696:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_buf type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:706:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=ql_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:707:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=qh_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:708:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sc_buf dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:709:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=d_buf complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:710:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=ql_buf type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:711:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=qh_buf type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:712:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sc_buf type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:731:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_x_local" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:732:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_x_local" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x_local_1 dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:733:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_x_local" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x_local_2 dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:737:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_x_local" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:740:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="load_x_local" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=swiglu" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:550:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:765:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=W bundle=gmem_W offset=slave depth=9437184 max_read_burst_length=256 latency=64 num_read_outstanding=2 max_widen_bitwidth=128" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:551:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:766:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=V bundle=gmem_V offset=slave depth=9437184 max_read_burst_length=256 latency=64 num_read_outstanding=2 max_widen_bitwidth=128" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:552:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:767:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=W_down bundle=gmem_Wd offset=slave depth=13762560 max_read_burst_length=256 latency=64 num_read_outstanding=2 max_widen_bitwidth=128" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:553:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=x_batch bundle=gmem_x offset=slave depth=2048 max_read_burst_length=256 latency=64 num_read_outstanding=2 max_widen_bitwidth=128" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:768:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=x_batch bundle=gmem_x offset=slave depth=8192 max_read_burst_length=256 latency=64 num_read_outstanding=2 max_widen_bitwidth=128" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:554:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=out_batch bundle=gmem_out offset=slave depth=2048 max_write_burst_length=256 latency=64 num_write_outstanding=2" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:769:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=out_batch bundle=gmem_out offset=slave depth=8192 max_write_burst_length=256 latency=64 num_write_outstanding=2" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:556:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:771:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=W bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:557:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:772:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=V bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:558:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:773:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=W_down bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:559:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:774:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=x_batch bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:560:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:775:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=out_batch bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:561:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:776:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=down_quant_mode bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:562:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:777:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=x_scale bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:563:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:778:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=return bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:568:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:783:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x_local_1 type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:569:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:784:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x_local_1 dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:572:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:787:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x_local_2 type=ram_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:573:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:788:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=x_local_2 dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:579:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:794:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=X1_cache type=ram_2p impl=uram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:580:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:795:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=X2_cache type=ram_2p impl=uram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:583:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:798:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=gate_cache type=ram_2p impl=uram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:584:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:799:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=gate_cache dim=2 cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:588:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:803:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sigmoid_lut type=rom_1p impl=lutram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:594:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="swiglu.cpp:809:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="swiglu" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="swiglu.cpp:132:39" msg_body="Inlining function 'get_byte(ap_uint&lt;128&gt; const*, int)' into 'mac_blocks_wv(ap_uint&lt;128&gt; const (*) [9], signed char const (*) [256], float, float*)'">
-        <args Callee="get_byte(ap_uint&lt;128&gt; const*, int)" Callee-DebugLoc="File swiglu.cpp Line 53 Column 0" Caller="mac_blocks_wv(ap_uint&lt;128&gt; const (*) [9], signed char const (*) [256], float, float*)" Caller-DebugLoc="File swiglu.cpp Line 116 Column 0"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="swiglu.cpp:220:36" msg_body="Inlining function 'get_byte(ap_uint&lt;128&gt; const*, int)' into 'mac_blocks_wv_k4(ap_uint&lt;128&gt; const (*) [8][9], signed char const (*) [256], float, float*)'">
+        <args Callee="get_byte(ap_uint&lt;128&gt; const*, int)" Callee-DebugLoc="File swiglu.cpp Line 53 Column 0" Caller="mac_blocks_wv_k4(ap_uint&lt;128&gt; const (*) [8][9], signed char const (*) [256], float, float*)" Caller-DebugLoc="File swiglu.cpp Line 200 Column 0"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="swiglu.cpp:362:39" msg_body="Inlining function 'get_byte(ap_uint&lt;128&gt; const*, int)' into 'mac_blocks_down_q4k(ap_uint&lt;128&gt; const (*) [9], signed char const (*) [256], float, float*)'">
-        <args Callee="get_byte(ap_uint&lt;128&gt; const*, int)" Callee-DebugLoc="File swiglu.cpp Line 53 Column 0" Caller="mac_blocks_down_q4k(ap_uint&lt;128&gt; const (*) [9], signed char const (*) [256], float, float*)" Caller-DebugLoc="File swiglu.cpp Line 346 Column 0"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="swiglu.cpp:465:39" msg_body="Inlining function 'get_byte(ap_uint&lt;128&gt; const*, int)' into 'mac_blocks_down_q4k(ap_uint&lt;128&gt; const (*) [9], signed char const (*) [256], float, float*)'">
+        <args Callee="get_byte(ap_uint&lt;128&gt; const*, int)" Callee-DebugLoc="File swiglu.cpp Line 53 Column 0" Caller="mac_blocks_down_q4k(ap_uint&lt;128&gt; const (*) [9], signed char const (*) [256], float, float*)" Caller-DebugLoc="File swiglu.cpp Line 449 Column 0"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="swiglu.cpp:65:35" msg_body="Inlining function 'get_byte(ap_uint&lt;128&gt; const*, int)' into 'decode_mac_q6k(ap_uint&lt;128&gt; const*, int, signed char const*, float, int)'">
-        <args Callee="get_byte(ap_uint&lt;128&gt; const*, int)" Callee-DebugLoc="File swiglu.cpp Line 53 Column 0" Caller="decode_mac_q6k(ap_uint&lt;128&gt; const*, int, signed char const*, float, int)" Caller-DebugLoc="File swiglu.cpp Line 62 Column 0"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="swiglu.cpp:602:41" msg_body="Inlining function 'get_byte(ap_uint&lt;128&gt; const*, int)' into 'load_row_down_q6k(ap_uint&lt;128&gt; const*, int, unsigned char (*) [128], unsigned char (*) [64], unsigned char (*) [16], float*)'">
+        <args Callee="get_byte(ap_uint&lt;128&gt; const*, int)" Callee-DebugLoc="File swiglu.cpp Line 53 Column 0" Caller="load_row_down_q6k(ap_uint&lt;128&gt; const*, int, unsigned char (*) [128], unsigned char (*) [64], unsigned char (*) [16], float*)" Caller-DebugLoc="File swiglu.cpp Line 550 Column 0"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="swiglu.cpp:460:18" msg_body="Inlining function 'decode_mac_q6k(ap_uint&lt;128&gt; const*, int, signed char const*, float, int)' into 'mac_blocks_down_q6k(ap_uint&lt;128&gt; const*, signed char const (*) [256], float, float*)'">
-        <args Callee="decode_mac_q6k(ap_uint&lt;128&gt; const*, int, signed char const*, float, int)" Callee-DebugLoc="File swiglu.cpp Line 62 Column 0" Caller="mac_blocks_down_q6k(ap_uint&lt;128&gt; const*, signed char const (*) [256], float, float*)" Caller-DebugLoc="File swiglu.cpp Line 451 Column 0"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="swiglu.cpp:645:20" msg_body="Loop 'VITIS_LOOP_645_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_645_3"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="swiglu.cpp:404:20" msg_body="Loop 'VITIS_LOOP_404_3' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_404_3"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="swiglu.cpp:576:20" msg_body="Loop 'VITIS_LOOP_576_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_576_2"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="swiglu.cpp:189:20" msg_body="Loop 'VITIS_LOOP_189_2' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_189_2"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="swiglu.cpp:584:20" msg_body="Loop 'VITIS_LOOP_584_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_584_3"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="swiglu.cpp:524:31" msg_body="Loop 'VITIS_LOOP_524_1' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_524_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="swiglu.cpp:592:20" msg_body="Loop 'VITIS_LOOP_592_4' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_592_4"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:451:0" msg_body="Unrolling loop 'VITIS_LOOP_463_2' (swiglu.cpp:463:23) in function 'mac_blocks_down_q6k' completely with a factor of 32">
-        <args Factor="32" LoopLoc="swiglu.cpp:463:23" LoopName="VITIS_LOOP_463_2"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="swiglu.cpp:508:20" msg_body="Loop 'VITIS_LOOP_508_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_508_3"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="swiglu.cpp:451:0" msg_body="Unrolling loop 'VITIS_LOOP_457_1' (swiglu.cpp:457:20) in function 'mac_blocks_down_q6k' partially with a factor of 2">
-        <args Factor="2" LoopLoc="swiglu.cpp:457:20" LoopName="VITIS_LOOP_457_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="swiglu.cpp:273:20" msg_body="Loop 'VITIS_LOOP_273_4' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_273_4"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:451:0" msg_body="Unrolling loop 'REDUCE_Q6K' (swiglu.cpp:84:17) in function 'mac_blocks_down_q6k' completely with a factor of 8">
-        <args Factor="8" LoopLoc="swiglu.cpp:84:17" LoopName="REDUCE_Q6K"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="swiglu.cpp:275:20" msg_body="Loop 'VITIS_LOOP_275_5' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_275_5"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="swiglu.cpp:346:0" msg_body="Unrolling loop 'REDUCE_DOWN_Q4K' (swiglu.cpp:422:19) in function 'mac_blocks_down_q4k' partially with a factor of 8">
-        <args Factor="8" LoopLoc="swiglu.cpp:422:19" LoopName="REDUCE_DOWN_Q4K"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="swiglu.cpp:739:31" msg_body="Loop 'VITIS_LOOP_739_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_739_1"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:346:0" msg_body="Unrolling loop 'VITIS_LOOP_425_4' (swiglu.cpp:425:27) in function 'mac_blocks_down_q4k' completely with a factor of 8">
-        <args Factor="8" LoopLoc="swiglu.cpp:425:27" LoopName="VITIS_LOOP_425_4"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:618:0" msg_body="Unrolling loop 'REDUCE_Q6K' (swiglu.cpp:664:14) in function 'mac_blocks_down_q6k' completely with a factor of 32">
+        <args Factor="32" LoopLoc="swiglu.cpp:664:14" LoopName="REDUCE_Q6K"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:346:0" msg_body="Unrolling loop 'VITIS_LOOP_404_3' (swiglu.cpp:404:20) in function 'mac_blocks_down_q4k' completely with a factor of 8">
-        <args Factor="8" LoopLoc="swiglu.cpp:404:20" LoopName="VITIS_LOOP_404_3"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:618:0" msg_body="Unrolling loop 'VITIS_LOOP_667_4' (swiglu.cpp:667:27) in function 'mac_blocks_down_q6k' completely with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:667:27" LoopName="VITIS_LOOP_667_4"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:346:0" msg_body="Unrolling loop 'INIT_ACC_DOWN' (swiglu.cpp:386:17) in function 'mac_blocks_down_q4k' completely with a factor of 32">
-        <args Factor="32" LoopLoc="swiglu.cpp:386:17" LoopName="INIT_ACC_DOWN"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:618:0" msg_body="Unrolling loop 'VITIS_LOOP_645_3' (swiglu.cpp:645:20) in function 'mac_blocks_down_q6k' completely with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:645:20" LoopName="VITIS_LOOP_645_3"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:346:0" msg_body="Unrolling loop 'VITIS_LOOP_388_1' (swiglu.cpp:388:20) in function 'mac_blocks_down_q4k' completely with a factor of 8">
-        <args Factor="8" LoopLoc="swiglu.cpp:388:20" LoopName="VITIS_LOOP_388_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:618:0" msg_body="Unrolling loop 'INIT_Q6K' (swiglu.cpp:630:12) in function 'mac_blocks_down_q6k' completely with a factor of 32">
+        <args Factor="32" LoopLoc="swiglu.cpp:630:12" LoopName="INIT_Q6K"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:273:0" msg_body="Unrolling loop 'SWISH_GATE' (swiglu.cpp:275:14) in function 'compute_gate' completely with a factor of 1">
-        <args Factor="1" LoopLoc="swiglu.cpp:275:14" LoopName="SWISH_GATE"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:618:0" msg_body="Unrolling loop 'VITIS_LOOP_632_1' (swiglu.cpp:632:20) in function 'mac_blocks_down_q6k' completely with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:632:20" LoopName="VITIS_LOOP_632_1"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:273:0" msg_body="Unrolling loop 'VITIS_LOOP_296_1' (swiglu.cpp:296:27) in function 'compute_gate' completely with a factor of 8">
-        <args Factor="8" LoopLoc="swiglu.cpp:296:27" LoopName="VITIS_LOOP_296_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:550:0" msg_body="Unrolling loop 'VITIS_LOOP_576_2' (swiglu.cpp:576:20) in function 'load_row_down_q6k' completely with a factor of 4">
+        <args Factor="4" LoopLoc="swiglu.cpp:576:20" LoopName="VITIS_LOOP_576_2"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:116:0" msg_body="Unrolling loop 'REDUCE_WV' (swiglu.cpp:208:13) in function 'mac_blocks_wv' completely with a factor of 8">
-        <args Factor="8" LoopLoc="swiglu.cpp:208:13" LoopName="REDUCE_WV"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:550:0" msg_body="Unrolling loop 'VITIS_LOOP_584_3' (swiglu.cpp:584:20) in function 'load_row_down_q6k' completely with a factor of 4">
+        <args Factor="4" LoopLoc="swiglu.cpp:584:20" LoopName="VITIS_LOOP_584_3"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:116:0" msg_body="Unrolling loop 'VITIS_LOOP_211_3' (swiglu.cpp:211:27) in function 'mac_blocks_wv' completely with a factor of 8">
-        <args Factor="8" LoopLoc="swiglu.cpp:211:27" LoopName="VITIS_LOOP_211_3"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:550:0" msg_body="Unrolling loop 'VITIS_LOOP_592_4' (swiglu.cpp:592:20) in function 'load_row_down_q6k' completely with a factor of 4">
+        <args Factor="4" LoopLoc="swiglu.cpp:592:20" LoopName="VITIS_LOOP_592_4"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:116:0" msg_body="Unrolling loop 'VITIS_LOOP_189_2' (swiglu.cpp:189:20) in function 'mac_blocks_wv' completely with a factor of 8">
-        <args Factor="8" LoopLoc="swiglu.cpp:189:20" LoopName="VITIS_LOOP_189_2"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:550:0" msg_body="Unrolling loop 'VITIS_LOOP_598_5' (swiglu.cpp:598:27) in function 'load_row_down_q6k' completely with a factor of 4">
+        <args Factor="4" LoopLoc="swiglu.cpp:598:27" LoopName="VITIS_LOOP_598_5"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:116:0" msg_body="Unrolling loop 'INIT_ACC_WV' (swiglu.cpp:167:15) in function 'mac_blocks_wv' completely with a factor of 8">
-        <args Factor="8" LoopLoc="swiglu.cpp:167:15" LoopName="INIT_ACC_WV"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="swiglu.cpp:449:0" msg_body="Unrolling loop 'REDUCE_DOWN_Q4K' (swiglu.cpp:526:19) in function 'mac_blocks_down_q4k' partially with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:526:19" LoopName="REDUCE_DOWN_Q4K"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:116:0" msg_body="Unrolling loop 'VITIS_LOOP_169_1' (swiglu.cpp:169:20) in function 'mac_blocks_wv' completely with a factor of 8">
-        <args Factor="8" LoopLoc="swiglu.cpp:169:20" LoopName="VITIS_LOOP_169_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:449:0" msg_body="Unrolling loop 'VITIS_LOOP_529_4' (swiglu.cpp:529:27) in function 'mac_blocks_down_q4k' completely with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:529:27" LoopName="VITIS_LOOP_529_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:449:0" msg_body="Unrolling loop 'VITIS_LOOP_508_3' (swiglu.cpp:508:20) in function 'mac_blocks_down_q4k' completely with a factor of 4">
+        <args Factor="4" LoopLoc="swiglu.cpp:508:20" LoopName="VITIS_LOOP_508_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:449:0" msg_body="Unrolling loop 'INIT_ACC_DOWN' (swiglu.cpp:489:17) in function 'mac_blocks_down_q4k' completely with a factor of 32">
+        <args Factor="32" LoopLoc="swiglu.cpp:489:17" LoopName="INIT_ACC_DOWN"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:449:0" msg_body="Unrolling loop 'VITIS_LOOP_491_1' (swiglu.cpp:491:20) in function 'mac_blocks_down_q4k' completely with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:491:20" LoopName="VITIS_LOOP_491_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:376:0" msg_body="Unrolling loop 'SWISH_GATE' (swiglu.cpp:378:14) in function 'compute_gate' completely with a factor of 4">
+        <args Factor="4" LoopLoc="swiglu.cpp:378:14" LoopName="SWISH_GATE"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:376:0" msg_body="Unrolling loop 'VITIS_LOOP_399_1' (swiglu.cpp:399:27) in function 'compute_gate' completely with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:399:27" LoopName="VITIS_LOOP_399_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:200:0" msg_body="Unrolling loop 'REDUCE_WV_K4' (swiglu.cpp:290:19) in function 'mac_blocks_wv_k4' completely with a factor of 4">
+        <args Factor="4" LoopLoc="swiglu.cpp:290:19" LoopName="REDUCE_WV_K4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:200:0" msg_body="Unrolling loop 'VITIS_LOOP_294_6' (swiglu.cpp:294:20) in function 'mac_blocks_wv_k4' completely with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:294:20" LoopName="VITIS_LOOP_294_6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:200:0" msg_body="Unrolling loop 'VITIS_LOOP_297_7' (swiglu.cpp:297:31) in function 'mac_blocks_wv_k4' completely with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:297:31" LoopName="VITIS_LOOP_297_7"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:200:0" msg_body="Unrolling loop 'VITIS_LOOP_273_4' (swiglu.cpp:273:20) in function 'mac_blocks_wv_k4' completely with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:273:20" LoopName="VITIS_LOOP_273_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:200:0" msg_body="Unrolling loop 'VITIS_LOOP_275_5' (swiglu.cpp:275:20) in function 'mac_blocks_wv_k4' completely with a factor of 4">
+        <args Factor="4" LoopLoc="swiglu.cpp:275:20" LoopName="VITIS_LOOP_275_5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:200:0" msg_body="Unrolling loop 'INIT_ACC_WV_K4' (swiglu.cpp:256:18) in function 'mac_blocks_wv_k4' completely with a factor of 4">
+        <args Factor="4" LoopLoc="swiglu.cpp:256:18" LoopName="INIT_ACC_WV_K4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:200:0" msg_body="Unrolling loop 'VITIS_LOOP_258_2' (swiglu.cpp:258:20) in function 'mac_blocks_wv_k4' completely with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:258:20" LoopName="VITIS_LOOP_258_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:200:0" msg_body="Unrolling loop 'VITIS_LOOP_260_3' (swiglu.cpp:260:20) in function 'mac_blocks_wv_k4' completely with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:260:20" LoopName="VITIS_LOOP_260_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:200:0" msg_body="Unrolling loop 'UNPACK_HDR_WV_K4' (swiglu.cpp:216:20) in function 'mac_blocks_wv_k4' completely with a factor of 4">
+        <args Factor="4" LoopLoc="swiglu.cpp:216:20" LoopName="UNPACK_HDR_WV_K4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:200:0" msg_body="Unrolling loop 'VITIS_LOOP_218_1' (swiglu.cpp:218:20) in function 'mac_blocks_wv_k4' completely with a factor of 8">
+        <args Factor="8" LoopLoc="swiglu.cpp:218:20" LoopName="VITIS_LOOP_218_1"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:28:0" msg_body="Unrolling loop 'VITIS_LOOP_38_1' (swiglu.cpp:38:26) in function 'fp16_to_fp32' completely with a factor of 10">
         <args Factor="10" LoopLoc="swiglu.cpp:38:26" LoopName="VITIS_LOOP_38_1"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:515:0" msg_body="Unrolling loop 'VITIS_LOOP_524_1' (swiglu.cpp:524:31) in function 'load_x_local' completely with a factor of 16">
-        <args Factor="16" LoopLoc="swiglu.cpp:524:31" LoopName="VITIS_LOOP_524_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="swiglu.cpp:730:0" msg_body="Unrolling loop 'VITIS_LOOP_739_1' (swiglu.cpp:739:31) in function 'load_x_local' completely with a factor of 16">
+        <args Factor="16" LoopLoc="swiglu.cpp:739:31" LoopName="VITIS_LOOP_739_1"/>
     </msg>
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::fp_struct(float)' into 'int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)'">
         <args Callee="fp_struct&lt;float&gt;::fp_struct(float)" Callee-DebugLoc="File {C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 283 Column 0" Caller="int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)" Caller-DebugLoc="File {C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 12 Column 0"/>
@@ -431,229 +629,259 @@
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51:0" msg_body="Inlining function 'int generic_cast_IEEE754&lt;int, float&gt;(float, bool)' into '__hls_fptosi_float_i32'">
         <args Callee="int generic_cast_IEEE754&lt;int, float&gt;(float, bool)" Callee-DebugLoc="File {C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 116 Column 0" Caller="__hls_fptosi_float_i32" Caller-DebugLoc="File {C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp} Line 51 Column 0"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-464" msg_severity="WARNING" msg_loc="swiglu.cpp:549:0" msg_body="Skipping array undecay on variable length array 'x_batch'.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-464" msg_severity="WARNING" msg_loc="swiglu.cpp:764:0" msg_body="Skipping array undecay on variable length array 'x_batch'.">
         <args ArrayName="x_batch"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:122:8" msg_body="Applying array_partition to 'd': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:207:8" msg_body="Applying array_partition to 'd': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
+        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="d"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:208:11" msg_body="Applying array_partition to 'dmin': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
+        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="dmin"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:209:13" msg_body="Applying array_partition to 'sc6': Complete partitioning on dimension 1. Complete partitioning on dimension 2. Complete partitioning on dimension 3.">
+        <args Dim="islist 1 2 3" Mode="islist Complete Complete Complete" UOName="sc6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:210:13" msg_body="Applying array_partition to 'mn6': Complete partitioning on dimension 1. Complete partitioning on dimension 2. Complete partitioning on dimension 3.">
+        <args Dim="islist 1 2 3" Mode="islist Complete Complete Complete" UOName="mn6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:251:13" msg_body="Applying array_partition to 'int_acc_w': Complete partitioning on dimension 1. Complete partitioning on dimension 2. Complete partitioning on dimension 3.">
+        <args Dim="islist 1 2 3" Mode="islist Complete Complete Complete" UOName="int_acc_w"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:252:13" msg_body="Applying array_partition to 'int_acc_m': Complete partitioning on dimension 1. Complete partitioning on dimension 2. Complete partitioning on dimension 3.">
+        <args Dim="islist 1 2 3" Mode="islist Complete Complete Complete" UOName="int_acc_m"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:320:22" msg_body="Applying array_partition to 'row_buf': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
+        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="row_buf"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:349:22" msg_body="Applying array_partition to 'row_buf': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
+        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="row_buf"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:455:8" msg_body="Applying array_partition to 'd': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="d"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:123:11" msg_body="Applying array_partition to 'dmin': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:456:11" msg_body="Applying array_partition to 'dmin': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="dmin"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:124:13" msg_body="Applying array_partition to 'sc6': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:457:13" msg_body="Applying array_partition to 'sc6': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
         <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="sc6"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:125:13" msg_body="Applying array_partition to 'mn6': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:458:13" msg_body="Applying array_partition to 'mn6': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
         <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="mn6"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:163:13" msg_body="Applying array_partition to 'int_acc_w': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:484:13" msg_body="Applying array_partition to 'int_acc_w': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
         <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="int_acc_w"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:164:13" msg_body="Applying array_partition to 'int_acc_m': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:485:13" msg_body="Applying array_partition to 'int_acc_m': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
         <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="int_acc_m"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:232:22" msg_body="Applying array_partition to 'row_buf': Complete partitioning on dimension 1.">
-        <args Dim="1" Mode="Complete" UOName="row_buf"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:557:15" msg_body="Applying array_partition to 'flat': Cyclic partitioning with factor 16 on dimension 1.">
+        <args Dim="1" Factor="16" Mode="Cyclic" UOName="flat"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:253:22" msg_body="Applying array_partition to 'row_buf': Complete partitioning on dimension 1.">
-        <args Dim="1" Mode="Complete" UOName="row_buf"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:627:10" msg_body="Applying array_partition to 'acc': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
+        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="acc"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:277:8" msg_body="Applying array_partition to 'pmax': Complete partitioning on dimension 1.">
-        <args Dim="1" Mode="Complete" UOName="pmax"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:352:8" msg_body="Applying array_partition to 'd': Complete partitioning on dimension 1.">
-        <args Dim="1" Mode="Complete" UOName="d"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:353:11" msg_body="Applying array_partition to 'dmin': Complete partitioning on dimension 1.">
-        <args Dim="1" Mode="Complete" UOName="dmin"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:354:13" msg_body="Applying array_partition to 'sc6': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
-        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="sc6"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:355:13" msg_body="Applying array_partition to 'mn6': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
-        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="mn6"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:381:13" msg_body="Applying array_partition to 'int_acc_w': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
-        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="int_acc_w"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:382:13" msg_body="Applying array_partition to 'int_acc_m': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
-        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="int_acc_m"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:68:11" msg_body="Applying array_partition to 'acc.i': Complete partitioning on dimension 1.">
-        <args Dim="1" Mode="Complete" UOName="acc.i"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:455:8" msg_body="Applying array_partition to 'block_sums': Complete partitioning on dimension 1.">
-        <args Dim="1" Mode="Complete" UOName="block_sums"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:488:26" msg_body="Applying array_partition to 'row_buf': Cyclic partitioning with factor 8 on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:694:26" msg_body="Applying array_partition to 'row_buf': Cyclic partitioning with factor 8 on dimension 1.">
         <args Dim="1" Factor="8" Mode="Cyclic" UOName="row_buf"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:496:26" msg_body="Applying array_partition to 'row_buf11': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="row_buf11"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:702:21" msg_body="Applying array_partition to 'ql_buf': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="ql_buf"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="Applying array_partition to 'x_local_1': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
-        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="x_local_1"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:703:21" msg_body="Applying array_partition to 'qh_buf': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="qh_buf"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="Applying array_partition to 'x_local_2': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
-        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="x_local_2"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:704:21" msg_body="Applying array_partition to 'sc_buf': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="sc_buf"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:582:9" msg_body="Applying array_partition to 'gate_cache': Complete partitioning on dimension 1. Cyclic partitioning with factor 8 on dimension 2.">
-        <args Dim="islist 1 2" Factor="8" Mode="islist Complete Cyclic" UOName="gate_cache"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:705:19" msg_body="Applying array_partition to 'd_buf': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="d_buf"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-449" msg_severity="INFO" msg_loc="swiglu.cpp:586:8" msg_body="Automatically partitioning array 'gate_scale' dimension 1 completely based on constant index.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="Applying array_partition to 'x_local_1': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="x_local_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="Applying array_partition to 'x_local_2': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="x_local_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:797:9" msg_body="Applying array_partition to 'gate_cache': Cyclic partitioning with factor 8 on dimension 2.">
+        <args Dim="2" Factor="8" Mode="Cyclic" UOName="gate_cache"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-449" msg_severity="INFO" msg_loc="swiglu.cpp:801:8" msg_body="Automatically partitioning array 'gate_scale' dimension 1 completely based on constant index.">
         <args Dim="1" Value="gate_scale"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_1_0 1 swiglu swiglu.cpp:567:9 swiglu.cpp:522:9x_local_1_0">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_1_0" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_1_0" varLoc="swiglu.cpp:567:9"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-449" msg_severity="INFO" msg_loc="swiglu.cpp:328:15" msg_body="Automatically partitioning array 'row_results' dimension 1 completely based on constant index.">
+        <args Dim="1" Value="row_results"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_0' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_1_0" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-449" msg_severity="INFO" msg_loc="swiglu.cpp:357:15" msg_body="Automatically partitioning array 'row_results' dimension 1 completely based on constant index.">
+        <args Dim="1" Value="row_results"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_1_1 1 swiglu swiglu.cpp:567:9 swiglu.cpp:522:9x_local_1_1">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_1_1" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_1_1" varLoc="swiglu.cpp:567:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:328:15" msg_body="array_partition dim=1 type=complete  variable=row_results 1 compute_X1 swiglu.cpp:328:15 row_results">
+        <args PragmaFunction="compute_X1" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=row_results" PragmaType="array_partition" VarName="row_results" varLoc="swiglu.cpp:328:15"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_1' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_1_1" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:328:15" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'row_results' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="row_results" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_1_2 1 swiglu swiglu.cpp:567:9 swiglu.cpp:522:9x_local_1_2">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_1_2" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_1_2" varLoc="swiglu.cpp:567:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:357:15" msg_body="array_partition dim=1 type=complete  variable=row_results 1 compute_X2 swiglu.cpp:357:15 row_results">
+        <args PragmaFunction="compute_X2" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=row_results" PragmaType="array_partition" VarName="row_results" varLoc="swiglu.cpp:357:15"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_2' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_1_2" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:357:15" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'row_results' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="row_results" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_1_3 1 swiglu swiglu.cpp:567:9 swiglu.cpp:522:9x_local_1_3">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_1_3" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_1_3" varLoc="swiglu.cpp:567:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_1_0 1 swiglu swiglu.cpp:782:9 swiglu.cpp:737:9x_local_1_0">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_1_0" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_1_0" varLoc="swiglu.cpp:782:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_3' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_1_3" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_1_0' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_1_0" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_1_4 1 swiglu swiglu.cpp:567:9 swiglu.cpp:522:9x_local_1_4">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_1_4" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_1_4" varLoc="swiglu.cpp:567:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_1_1 1 swiglu swiglu.cpp:782:9 swiglu.cpp:737:9x_local_1_1">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_1_1" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_1_1" varLoc="swiglu.cpp:782:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_4' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_1_4" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_1_1' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_1_1" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_1_5 1 swiglu swiglu.cpp:567:9 swiglu.cpp:522:9x_local_1_5">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_1_5" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_1_5" varLoc="swiglu.cpp:567:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_1_2 1 swiglu swiglu.cpp:782:9 swiglu.cpp:737:9x_local_1_2">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_1_2" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_1_2" varLoc="swiglu.cpp:782:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_5' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_1_5" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_1_2' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_1_2" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_1_6 1 swiglu swiglu.cpp:567:9 swiglu.cpp:522:9x_local_1_6">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_1_6" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_1_6" varLoc="swiglu.cpp:567:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_1_3 1 swiglu swiglu.cpp:782:9 swiglu.cpp:737:9x_local_1_3">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_1_3" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_1_3" varLoc="swiglu.cpp:782:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_6' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_1_6" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_1_3' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_1_3" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_1_7 1 swiglu swiglu.cpp:567:9 swiglu.cpp:522:9x_local_1_7">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_1_7" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_1_7" varLoc="swiglu.cpp:567:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_1_4 1 swiglu swiglu.cpp:782:9 swiglu.cpp:737:9x_local_1_4">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_1_4" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_1_4" varLoc="swiglu.cpp:782:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_7' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_1_7" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_1_4' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_1_4" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_2_0 1 swiglu swiglu.cpp:571:9 swiglu.cpp:522:9x_local_2_0">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_2_0" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_2_0" varLoc="swiglu.cpp:571:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_1_5 1 swiglu swiglu.cpp:782:9 swiglu.cpp:737:9x_local_1_5">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_1_5" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_1_5" varLoc="swiglu.cpp:782:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_0' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_2_0" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_1_5' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_1_5" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_2_1 1 swiglu swiglu.cpp:571:9 swiglu.cpp:522:9x_local_2_1">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_2_1" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_2_1" varLoc="swiglu.cpp:571:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_1_6 1 swiglu swiglu.cpp:782:9 swiglu.cpp:737:9x_local_1_6">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_1_6" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_1_6" varLoc="swiglu.cpp:782:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_1' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_2_1" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_1_6' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_1_6" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_2_2 1 swiglu swiglu.cpp:571:9 swiglu.cpp:522:9x_local_2_2">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_2_2" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_2_2" varLoc="swiglu.cpp:571:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_1_7 1 swiglu swiglu.cpp:782:9 swiglu.cpp:737:9x_local_1_7">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_1_7" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_1_7" varLoc="swiglu.cpp:782:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_2' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_2_2" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_1_7' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_1_7" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_2_3 1 swiglu swiglu.cpp:571:9 swiglu.cpp:522:9x_local_2_3">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_2_3" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_2_3" varLoc="swiglu.cpp:571:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_2_0 1 swiglu swiglu.cpp:786:9 swiglu.cpp:737:9x_local_2_0">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_2_0" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_2_0" varLoc="swiglu.cpp:786:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_3' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_2_3" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_2_0' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_2_0" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_2_4 1 swiglu swiglu.cpp:571:9 swiglu.cpp:522:9x_local_2_4">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_2_4" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_2_4" varLoc="swiglu.cpp:571:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_2_1 1 swiglu swiglu.cpp:786:9 swiglu.cpp:737:9x_local_2_1">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_2_1" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_2_1" varLoc="swiglu.cpp:786:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_4' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_2_4" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_2_1' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_2_1" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_2_5 1 swiglu swiglu.cpp:571:9 swiglu.cpp:522:9x_local_2_5">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_2_5" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_2_5" varLoc="swiglu.cpp:571:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_2_2 1 swiglu swiglu.cpp:786:9 swiglu.cpp:737:9x_local_2_2">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_2_2" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_2_2" varLoc="swiglu.cpp:786:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_5' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_2_5" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_2_2' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_2_2" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_2_6 1 swiglu swiglu.cpp:571:9 swiglu.cpp:522:9x_local_2_6">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_2_6" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_2_6" varLoc="swiglu.cpp:571:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_2_3 1 swiglu swiglu.cpp:786:9 swiglu.cpp:737:9x_local_2_3">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_2_3" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_2_3" varLoc="swiglu.cpp:786:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_6' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_2_6" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_2_3' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_2_3" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="array_partition dim=1 type=cyclic factor=16 variable=x_local_2_7 1 swiglu swiglu.cpp:571:9 swiglu.cpp:522:9x_local_2_7">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=x_local_2_7" PragmaSrcLoc="swiglu.cpp:522:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 522 Column 9" PragmaType="array_partition" VarName="x_local_2_7" varLoc="swiglu.cpp:571:9"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_2_4 1 swiglu swiglu.cpp:786:9 swiglu.cpp:737:9x_local_2_4">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_2_4" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_2_4" varLoc="swiglu.cpp:786:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:522:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_7' due to pipeline pragma">
-        <args Dim="1" Factor="16" Mode="cyclic" Name="x_local_2_7" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_2_4' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_2_4" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:586:8" msg_body="array_partition dim=1 type=complete  variable=gate_scale 1 swiglu swiglu.cpp:586:8 gate_scale">
-        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=gate_scale" PragmaType="array_partition" VarName="gate_scale" varLoc="swiglu.cpp:586:8"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_2_5 1 swiglu swiglu.cpp:786:9 swiglu.cpp:737:9x_local_2_5">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_2_5" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_2_5" varLoc="swiglu.cpp:786:9"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:586:8" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'gate_scale' due to pipeline pragma">
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_2_5' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_2_5" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_2_6 1 swiglu swiglu.cpp:786:9 swiglu.cpp:737:9x_local_2_6">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_2_6" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_2_6" varLoc="swiglu.cpp:786:9"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_2_6' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_2_6" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="array_partition dim=2 type=cyclic factor=16 variable=x_local_2_7 1 swiglu swiglu.cpp:786:9 swiglu.cpp:737:9x_local_2_7">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=16 variable=x_local_2_7" PragmaSrcLoc="swiglu.cpp:737:9" PragmaSrcLoc-DebugLoc="File swiglu.cpp Line 737 Column 9" PragmaType="array_partition" VarName="x_local_2_7" varLoc="swiglu.cpp:786:9"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:737:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=2' for array 'x_local_2_7' due to pipeline pragma">
+        <args Dim="2" Factor="16" Mode="cyclic" Name="x_local_2_7" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="swiglu.cpp:801:8" msg_body="array_partition dim=1 type=complete  variable=gate_scale 1 swiglu swiglu.cpp:801:8 gate_scale">
+        <args PragmaFunction="swiglu" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=gate_scale" PragmaType="array_partition" VarName="gate_scale" varLoc="swiglu.cpp:801:8"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="swiglu.cpp:801:8" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'gate_scale' due to pipeline pragma">
         <args Dim="1" Mode="complete" Name="gate_scale" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="Applying array_partition to 'x_local_1_0': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_1_0"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:328:15" msg_body="Applying array_partition to 'row_results': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="row_results"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="Applying array_partition to 'x_local_1_1': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_1_1"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:357:15" msg_body="Applying array_partition to 'row_results': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="row_results"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="Applying array_partition to 'x_local_1_2': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_1_2"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="Applying array_partition to 'x_local_1_0': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_1_0"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="Applying array_partition to 'x_local_1_3': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_1_3"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="Applying array_partition to 'x_local_1_1': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_1_1"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="Applying array_partition to 'x_local_1_4': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_1_4"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="Applying array_partition to 'x_local_1_2': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_1_2"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="Applying array_partition to 'x_local_1_5': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_1_5"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="Applying array_partition to 'x_local_1_3': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_1_3"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="Applying array_partition to 'x_local_1_6': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_1_6"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="Applying array_partition to 'x_local_1_4': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_1_4"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:567:9" msg_body="Applying array_partition to 'x_local_1_7': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_1_7"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="Applying array_partition to 'x_local_1_5': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_1_5"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="Applying array_partition to 'x_local_2_0': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_2_0"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="Applying array_partition to 'x_local_1_6': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_1_6"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="Applying array_partition to 'x_local_2_1': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_2_1"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:782:9" msg_body="Applying array_partition to 'x_local_1_7': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_1_7"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="Applying array_partition to 'x_local_2_2': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_2_2"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="Applying array_partition to 'x_local_2_0': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_2_0"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="Applying array_partition to 'x_local_2_3': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_2_3"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="Applying array_partition to 'x_local_2_1': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_2_1"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="Applying array_partition to 'x_local_2_4': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_2_4"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="Applying array_partition to 'x_local_2_2': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_2_2"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="Applying array_partition to 'x_local_2_5': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_2_5"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="Applying array_partition to 'x_local_2_3': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_2_3"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="Applying array_partition to 'x_local_2_6': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_2_6"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="Applying array_partition to 'x_local_2_4': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_2_4"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:571:9" msg_body="Applying array_partition to 'x_local_2_7': Cyclic partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Cyclic" UOName="x_local_2_7"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="Applying array_partition to 'x_local_2_5': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_2_5"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:586:8" msg_body="Applying array_partition to 'gate_scale': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="Applying array_partition to 'x_local_2_6': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_2_6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:786:9" msg_body="Applying array_partition to 'x_local_2_7': Cyclic partitioning with factor 16 on dimension 2.">
+        <args Dim="2" Factor="16" Mode="Cyclic" UOName="x_local_2_7"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="swiglu.cpp:801:8" msg_body="Applying array_partition to 'gate_scale': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="gate_scale"/>
     </msg>
 </xilinx:hls_fe_msgs>

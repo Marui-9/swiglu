@@ -11,7 +11,17 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler swiglu_compute_output_row_buf_8_RAM_1P_LUTRAM_1R1W BINDTYPE {storage} TYPE {ram_1p} IMPL {lutram} LATENCY 2 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler swiglu_compute_output_ql_buf_RAM_1P_LUTRAM_1R1W BINDTYPE {storage} TYPE {ram_1p} IMPL {lutram} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler swiglu_compute_output_qh_buf_RAM_1P_LUTRAM_1R1W BINDTYPE {storage} TYPE {ram_1p} IMPL {lutram} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler swiglu_compute_output_sc_buf_RAM_1P_LUTRAM_1R1W BINDTYPE {storage} TYPE {ram_1p} IMPL {lutram} LATENCY 2 ALLOW_PRAGMA 1
 }
 
 
@@ -26,14 +36,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4140 \
+    id 6027 \
     name gate_cache_0 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename gate_cache_0 \
     op interface \
-    ports { gate_cache_0_address0 { O 10 vector } gate_cache_0_ce0 { O 1 bit } gate_cache_0_q0 { I 8 vector } } \
+    ports { gate_cache_0_address0 { O 12 vector } gate_cache_0_ce0 { O 1 bit } gate_cache_0_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'gate_cache_0'"
@@ -45,14 +55,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4141 \
+    id 6028 \
     name gate_cache_1 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename gate_cache_1 \
     op interface \
-    ports { gate_cache_1_address0 { O 10 vector } gate_cache_1_ce0 { O 1 bit } gate_cache_1_q0 { I 8 vector } } \
+    ports { gate_cache_1_address0 { O 12 vector } gate_cache_1_ce0 { O 1 bit } gate_cache_1_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'gate_cache_1'"
@@ -64,14 +74,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4142 \
+    id 6029 \
     name gate_cache_2 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename gate_cache_2 \
     op interface \
-    ports { gate_cache_2_address0 { O 10 vector } gate_cache_2_ce0 { O 1 bit } gate_cache_2_q0 { I 8 vector } } \
+    ports { gate_cache_2_address0 { O 12 vector } gate_cache_2_ce0 { O 1 bit } gate_cache_2_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'gate_cache_2'"
@@ -83,14 +93,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4143 \
+    id 6030 \
     name gate_cache_3 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename gate_cache_3 \
     op interface \
-    ports { gate_cache_3_address0 { O 10 vector } gate_cache_3_ce0 { O 1 bit } gate_cache_3_q0 { I 8 vector } } \
+    ports { gate_cache_3_address0 { O 12 vector } gate_cache_3_ce0 { O 1 bit } gate_cache_3_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'gate_cache_3'"
@@ -102,14 +112,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4144 \
+    id 6031 \
     name gate_cache_4 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename gate_cache_4 \
     op interface \
-    ports { gate_cache_4_address0 { O 10 vector } gate_cache_4_ce0 { O 1 bit } gate_cache_4_q0 { I 8 vector } } \
+    ports { gate_cache_4_address0 { O 12 vector } gate_cache_4_ce0 { O 1 bit } gate_cache_4_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'gate_cache_4'"
@@ -121,14 +131,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4145 \
+    id 6032 \
     name gate_cache_5 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename gate_cache_5 \
     op interface \
-    ports { gate_cache_5_address0 { O 10 vector } gate_cache_5_ce0 { O 1 bit } gate_cache_5_q0 { I 8 vector } } \
+    ports { gate_cache_5_address0 { O 12 vector } gate_cache_5_ce0 { O 1 bit } gate_cache_5_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'gate_cache_5'"
@@ -140,14 +150,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4146 \
+    id 6033 \
     name gate_cache_6 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename gate_cache_6 \
     op interface \
-    ports { gate_cache_6_address0 { O 10 vector } gate_cache_6_ce0 { O 1 bit } gate_cache_6_q0 { I 8 vector } } \
+    ports { gate_cache_6_address0 { O 12 vector } gate_cache_6_ce0 { O 1 bit } gate_cache_6_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'gate_cache_6'"
@@ -159,14 +169,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4147 \
+    id 6034 \
     name gate_cache_7 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename gate_cache_7 \
     op interface \
-    ports { gate_cache_7_address0 { O 10 vector } gate_cache_7_ce0 { O 1 bit } gate_cache_7_q0 { I 8 vector } } \
+    ports { gate_cache_7_address0 { O 12 vector } gate_cache_7_ce0 { O 1 bit } gate_cache_7_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'gate_cache_7'"
@@ -177,7 +187,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 4137 \
+    id 6024 \
     name p_read \
     type other \
     dir I \
@@ -192,7 +202,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 4138 \
+    id 6025 \
     name gmem_Wd \
     type other \
     dir I \
@@ -207,7 +217,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 4139 \
+    id 6026 \
     name W_down \
     type other \
     dir I \
@@ -222,7 +232,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 4148 \
+    id 6035 \
     name gmem_out \
     type other \
     dir O \
@@ -237,7 +247,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 4149 \
+    id 6036 \
     name out_batch \
     type other \
     dir I \
@@ -252,7 +262,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 4150 \
+    id 6037 \
     name down_quant_mode \
     type other \
     dir I \

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_output'" level="0">
-<item name = "Date">Wed Apr  1 12:45:19 2026
+<item name = "Date">Thu Apr  2 09:23:31 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 8.000 ns, 2.00 ns</column>
+<column name="ap_clk">4.00 ns, 3.239 ns, 1.08 ns</column>
 </table>
 </item>
 </section>
@@ -24,24 +24,24 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">3242058, 55388234, 32.421 ms, 0.554 sec, 3242058, 55388234, no</column>
+<column name="">5779530, 17883210, 23.118 ms, 71.533 ms, 5779530, 17883210, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_row_down_q6k_fu_271">load_row_down_q6k, 496, 496, 4.960 us, 4.960 us, 496, 496, no</column>
-<column name="grp_load_row_down_q4k_fu_295">load_row_down_q4k, 364, 364, 3.640 us, 3.640 us, 364, 364, no</column>
-<column name="grp_mac_blocks_down_q6k_fu_311">mac_blocks_down_q6k, 26544, 26544, 0.265 ms, 0.265 ms, 26544, 26544, no</column>
-<column name="grp_mac_blocks_down_q4k5_fu_349">mac_blocks_down_q4k5, 1214, 1214, 12.140 us, 12.140 us, 1214, 1214, no</column>
-<column name="grp_compute_output_Pipeline_1_fu_379">compute_output_Pipeline_1, 2051, 2051, 20.510 us, 20.510 us, 2049, 2049, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_row_down_q4k_fu_719">load_row_down_q4k, 364, 364, 1.456 us, 1.456 us, 364, 364, no</column>
+<column name="grp_load_row_down_q6k_fu_735">load_row_down_q6k, 7354, 7354, 29.416 us, 29.416 us, 7354, 7354, no</column>
+<column name="grp_mac_blocks_down_q6k_fu_871">mac_blocks_down_q6k, 1371, 1371, 5.484 us, 5.484 us, 1371, 1371, no</column>
+<column name="grp_mac_blocks_down_q4k7_fu_1020">mac_blocks_down_q4k7, 2453, 2453, 9.812 us, 9.812 us, 2453, 2453, no</column>
+<column name="grp_compute_output_Pipeline_1_fu_1050">compute_output_Pipeline_1, 2051, 2051, 8.204 us, 8.204 us, 2049, 2049, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- DOWN_Q4K">3239936, 3239936, 1582, -, -, 2048, no</column>
-<column name="- DOWN_Q6K">55386112, 55386112, 27044, -, -, 2048, no</column>
+<column name="- DOWN_Q4K">5777408, 5777408, 2821, -, -, 2048, no</column>
+<column name="- DOWN_Q6K">17881088, 17881088, 8731, -, -, 2048, no</column>
 </table>
 </item>
 </section>

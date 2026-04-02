@@ -9,8 +9,8 @@
 <ProductFamily>zynquplus</ProductFamily>
 <Part>xck26-sfvc784-2LV-c</Part>
 <TopModelName>compute_output_Pipeline_1</TopModelName>
-<TargetClockPeriod>10.00</TargetClockPeriod>
-<ClockUncertainty>2.00</ClockUncertainty>
+<TargetClockPeriod>4.00</TargetClockPeriod>
+<ClockUncertainty>1.08</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,27 +18,27 @@
 <PipelineType>loop auto-rewind stp (delay=0 cycles)</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>8.000</EstimatedClockPeriod>
+<EstimatedClockPeriod>2.920</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>2051</Best-caseLatency>
 <Average-caseLatency>2051</Average-caseLatency>
 <Worst-caseLatency>2051</Worst-caseLatency>
-<Best-caseRealTimeLatency>20.510 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>20.510 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>20.510 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>8.204 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>8.204 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>8.204 us</Worst-caseRealTimeLatency>
 <Interval-min>2049</Interval-min>
 <Interval-max>2049</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <Loop1>
-<Slack>8.00</Slack>
+<Slack>2.92</Slack>
 <TripCount>2048</TripCount>
 <isPerfectNested>0</isPerfectNested>
 <Latency>2049</Latency>
-<AbsoluteTimeLatency>20490</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>8196</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>3</PipelineDepth>
 <PerformancePragma>-</PerformancePragma>
@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:504~swiglu.cpp:599</SourceLocation>
+<SourceLocation>swiglu.cpp:719~swiglu.cpp:814</SourceLocation>
 <SummaryOfLoopViolations>
 <Loop1>
 <Name>Loop 1</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:504~swiglu.cpp:599</SourceLocation>
+<SourceLocation>swiglu.cpp:719~swiglu.cpp:814</SourceLocation>
 </Loop1>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -652,8 +652,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sext_ln504</name>
-<Object>sext_ln504</Object>
+<name>sext_ln719</name>
+<Object>sext_ln719</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

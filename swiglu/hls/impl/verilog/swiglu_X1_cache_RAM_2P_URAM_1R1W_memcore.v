@@ -17,8 +17,8 @@ module swiglu_X1_cache_RAM_2P_URAM_1R1W_memcore (
     reset, clk);
 
 parameter DataWidth = 32;
-parameter AddressWidth = 13;
-parameter AddressRange = 8192;
+parameter AddressWidth = 15;
+parameter AddressRange = 32768;
  
 input[AddressWidth-1:0] address0;
 input ce0;

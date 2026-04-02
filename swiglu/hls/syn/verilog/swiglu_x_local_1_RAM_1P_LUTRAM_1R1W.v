@@ -8,8 +8,8 @@
 module swiglu_x_local_1_RAM_1P_LUTRAM_1R1W
 #(parameter
     DataWidth    = 8,
-    AddressRange = 16,
-    AddressWidth = 4,
+    AddressRange = 64,
+    AddressWidth = 6,
     BufferCount  = 2,
     IndexWidth   = 1
 ) (

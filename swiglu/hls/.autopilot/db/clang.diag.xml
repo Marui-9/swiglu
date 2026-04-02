@@ -9,7 +9,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>64</integer>
+      <integer>87</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -25,23 +25,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>118</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>missing argument for &apos;variable&apos;</string>
-      <key>ID</key>
-      <integer>5562</integer>
-      <key>WarningOption</key>
-      <string>invalid-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>swiglu.cpp</string>
-      <key>line</key>
-      <integer>207</integer>
+      <integer>176</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -57,7 +41,7 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>348</integer>
+      <integer>202</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -73,7 +57,71 @@
       <key>filename</key>
       <string>swiglu.cpp</string>
       <key>line</key>
-      <integer>421</integer>
+      <integer>293</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>unknown HLS pragma ignored</string>
+      <key>ID</key>
+      <integer>5590</integer>
+      <key>WarningOption</key>
+      <string>invalid-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>451</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>missing argument for &apos;variable&apos;</string>
+      <key>ID</key>
+      <integer>5562</integer>
+      <key>WarningOption</key>
+      <string>invalid-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>525</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>unknown HLS pragma ignored</string>
+      <key>ID</key>
+      <integer>5590</integer>
+      <key>WarningOption</key>
+      <string>invalid-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>620</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>missing argument for &apos;variable&apos;</string>
+      <key>ID</key>
+      <integer>5562</integer>
+      <key>WarningOption</key>
+      <string>invalid-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>swiglu.cpp</string>
+      <key>line</key>
+      <integer>663</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>

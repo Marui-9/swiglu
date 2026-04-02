@@ -9,8 +9,8 @@
 <ProductFamily>zynquplus</ProductFamily>
 <Part>xck26-sfvc784-2LV-c</Part>
 <TopModelName>swiglu</TopModelName>
-<TargetClockPeriod>10.00</TargetClockPeriod>
-<ClockUncertainty>2.00</ClockUncertainty>
+<TargetClockPeriod>4.00</TargetClockPeriod>
+<ClockUncertainty>1.08</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,40 +18,40 @@
 <PipelineType>dataflow</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>8.000</EstimatedClockPeriod>
+<EstimatedClockPeriod>3.239</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>7141728</Best-caseLatency>
-<Average-caseLatency>33214816</Average-caseLatency>
-<Worst-caseLatency>59287904</Worst-caseLatency>
-<Best-caseRealTimeLatency>71.417 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.332 sec</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.593 sec</Worst-caseRealTimeLatency>
+<Best-caseLatency>7855483</Best-caseLatency>
+<Average-caseLatency>13907323</Average-caseLatency>
+<Worst-caseLatency>19959163</Worst-caseLatency>
+<Best-caseRealTimeLatency>31.422 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>55.629 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>79.837 ms</Worst-caseRealTimeLatency>
 <DataflowPipelineThroughput>
 <range>
-<min>3883010</min>
-<max>55388235</max>
+<min>5779531</min>
+<max>17883211</max>
 </range>
 </DataflowPipelineThroughput>
-<Interval-min>3883010</Interval-min>
-<Interval-max>55388235</Interval-max>
+<Interval-min>5779531</Interval-min>
+<Interval-max>17883211</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:594</SourceLocation>
+<SourceLocation>swiglu.cpp:809</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <BRAM_18K>34</BRAM_18K>
-<DSP>95</DSP>
-<FF>67032</FF>
-<LUT>75658</LUT>
-<URAM>24</URAM>
+<DSP>680</DSP>
+<FF>263954</FF>
+<LUT>281915</LUT>
+<URAM>48</URAM>
 </Resources>
 <AvailableResources>
 <BRAM_18K>288</BRAM_18K>

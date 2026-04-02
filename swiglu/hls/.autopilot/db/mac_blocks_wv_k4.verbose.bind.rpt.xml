@@ -1,0 +1,110 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'mac_blocks_wv_k4'" level="0">
+<item name = "Date">Thu Apr  2 09:22:52 2026
+</item>
+<item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
+<item name = "Project">swiglu</item>
+<item name = "Solution">hls (Vivado IP Flow Target)</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xck26-sfvc784-2LV-c</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">4.00 ns, 3.239 ns, 1.08 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">375, 375, 1.500 us, 1.500 us, 375, 375, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_mac_blocks_wv_k4_Pipeline_MAC_ALL_K4_fu_2956">mac_blocks_wv_k4_Pipeline_MAC_ALL_K4, 262, 262, 1.048 us, 1.048 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_fp16_to_fp32_fu_4304">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4309">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4314">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4319">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4324">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4329">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4334">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4339">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4344">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4349">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4354">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4359">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4364">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4369">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4374">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4379">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4384">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4389">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4394">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4399">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4404">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4409">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4414">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4419">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4424">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4429">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4434">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4439">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4444">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4449">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4454">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4459">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4464">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4469">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4474">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4479">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4484">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4489">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4494">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4499">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4504">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4509">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4514">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4519">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4524">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4529">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4534">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4539">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4544">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4549">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4554">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4559">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4564">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4569">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4574">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4579">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4584">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4589">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4594">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4599">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4604">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4609">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4614">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_4619">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

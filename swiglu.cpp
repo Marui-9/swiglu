@@ -56,37 +56,6 @@ static inline uint8_t get_byte(const ap_uint<128>* data, int byte_idx) {
                                                (byte_idx & 0xF) * 8);
 }
 
-// ─── Q6_K block decode + dot product ──────────────────────────────────────────
-// gate is INT8; gate_scale converts back to FP32 in the inner loop.
-static float decode_mac_q6k(const ap_uint<128>* row_wide, int byte_offset,
-                             const int8_t* vec, float gate_scale, int v_base) {
-#pragma HLS INLINE
-#pragma HLS BIND_OP op=mul impl=dsp
-    float d = fp16_to_fp32((uint16_t)get_byte(row_wide, byte_offset+208) |
-                            ((uint16_t)get_byte(row_wide, byte_offset+209) << 8));
-
-    float acc[8] = {0,0,0,0,0,0,0,0};
-    #pragma HLS ARRAY_PARTITION variable=acc complete
-
-    MAC_Q6K: for (int n = 0; n < 256; n++) {
-        #pragma HLS PIPELINE II=1
-        uint8_t ql    = (n & 1) ? (get_byte(row_wide, byte_offset + (n >> 1)) >> 4)
-                                 : (get_byte(row_wide, byte_offset + (n >> 1)) & 0x0F);
-        uint8_t qh    = (get_byte(row_wide, byte_offset + 128 + (n >> 2))
-                         >> ((n & 3) << 1)) & 0x03;
-        int8_t  q     = (int8_t)((uint8_t)((qh << 4) | ql)) - 32;
-        int8_t  scale = (int8_t)get_byte(row_wide, byte_offset + 192 + (n >> 4));
-        float   v     = (float)vec[v_base + n] * gate_scale;  // dequantize INT8 gate
-        acc[n & 7]   += v * (float)q * (float)scale;
-    }
-
-    float sum = 0.f;
-    REDUCE_Q6K: for (int k = 0; k < 8; k++) {
-        #pragma HLS UNROLL
-        sum += acc[k];
-    }
-    return d * sum;
-}
 
 // ─── DATAFLOW sub-functions ───────────────────────────────────────────────────
 
@@ -218,7 +187,126 @@ static void mac_blocks_wv(const ap_uint<128> rb[WV_BLOCKS_PER_ROW][Q4_K_WORDS],
     *result = total;
 }
 
+// ─── mac_blocks_wv_k4: K=4 output-row parallelism ────────────────────────────
+// Process 4 consecutive rows simultaneously, all sharing the same x vector.
+// 4 rows × 8 blocks = 32 parallel INT32 MAC chains in the 256-cycle pipeline.
+// Load cost: 4 × 72 = 288 cycles (sequential AXI, single gmem_W port).
+// MAC cost:  256 cycles (all 4 rows computed together).
+// Total per 4 rows: ~544 cycles = 136 cycles/row vs 342 previously (~2.5×).
+// Resource: int_acc_w/m[4][8][8] = 512 INT32 registers (vs 128 at K=1).
+static void mac_blocks_wv_k4(const ap_uint<128> rb[4][WV_BLOCKS_PER_ROW][Q4_K_WORDS],
+                              const int8_t x[WV_BLOCKS_PER_ROW][256],
+                              float x_scale,
+                              float results[4]) {
+#pragma HLS INLINE off
+#pragma HLS BIND_OP op=mul impl=dsp
+#pragma HLS ARRAY_PARTITION variable=rb  dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=rb  dim=2 complete
+#pragma HLS ARRAY_PARTITION variable=x   dim=1 complete
+
+    float   d   [4][WV_BLOCKS_PER_ROW];
+    float   dmin[4][WV_BLOCKS_PER_ROW];
+    uint8_t sc6 [4][WV_BLOCKS_PER_ROW][8];
+    uint8_t mn6 [4][WV_BLOCKS_PER_ROW][8];
+    #pragma HLS ARRAY_PARTITION variable=d    dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=dmin dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=sc6  dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=mn6  dim=0 complete
+
+    UNPACK_HDR_WV_K4: for (int kr = 0; kr < 4; kr++) {
+        #pragma HLS UNROLL
+        for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
+            #pragma HLS UNROLL
+            d[kr][b]    = fp16_to_fp32((uint16_t)get_byte(rb[kr][b], 0) |
+                                       ((uint16_t)get_byte(rb[kr][b], 1) << 8));
+            dmin[kr][b] = fp16_to_fp32((uint16_t)get_byte(rb[kr][b], 2) |
+                                       ((uint16_t)get_byte(rb[kr][b], 3) << 8));
+            sc6[kr][b][0] = get_byte(rb[kr][b],  4) & 0x3F;
+            sc6[kr][b][1] = get_byte(rb[kr][b],  5) & 0x3F;
+            sc6[kr][b][2] = get_byte(rb[kr][b],  6) & 0x3F;
+            sc6[kr][b][3] = get_byte(rb[kr][b],  7) & 0x3F;
+            mn6[kr][b][0] = get_byte(rb[kr][b],  8) & 0x3F;
+            mn6[kr][b][1] = get_byte(rb[kr][b],  9) & 0x3F;
+            mn6[kr][b][2] = get_byte(rb[kr][b], 10) & 0x3F;
+            mn6[kr][b][3] = get_byte(rb[kr][b], 11) & 0x3F;
+            sc6[kr][b][4] = (get_byte(rb[kr][b], 12) & 0x0F) |
+                            (uint8_t)((get_byte(rb[kr][b],  4) >> 6) << 4);
+            sc6[kr][b][5] = (get_byte(rb[kr][b], 13) & 0x0F) |
+                            (uint8_t)((get_byte(rb[kr][b],  5) >> 6) << 4);
+            sc6[kr][b][6] = (get_byte(rb[kr][b], 14) & 0x0F) |
+                            (uint8_t)((get_byte(rb[kr][b],  6) >> 6) << 4);
+            sc6[kr][b][7] = (get_byte(rb[kr][b], 15) & 0x0F) |
+                            (uint8_t)((get_byte(rb[kr][b],  7) >> 6) << 4);
+            mn6[kr][b][4] = (get_byte(rb[kr][b], 12) >> 4) |
+                            (uint8_t)((get_byte(rb[kr][b],  8) >> 6) << 4);
+            mn6[kr][b][5] = (get_byte(rb[kr][b], 13) >> 4) |
+                            (uint8_t)((get_byte(rb[kr][b],  9) >> 6) << 4);
+            mn6[kr][b][6] = (get_byte(rb[kr][b], 14) >> 4) |
+                            (uint8_t)((get_byte(rb[kr][b], 10) >> 6) << 4);
+            mn6[kr][b][7] = (get_byte(rb[kr][b], 15) >> 4) |
+                            (uint8_t)((get_byte(rb[kr][b], 11) >> 6) << 4);
+        }
+    }
+
+    int32_t int_acc_w[4][WV_BLOCKS_PER_ROW][8];
+    int32_t int_acc_m[4][WV_BLOCKS_PER_ROW][8];
+    #pragma HLS ARRAY_PARTITION variable=int_acc_w dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=int_acc_m dim=0 complete
+
+    INIT_ACC_WV_K4: for (int kr = 0; kr < 4; kr++) {
+        #pragma HLS UNROLL
+        for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
+            #pragma HLS UNROLL
+            for (int k = 0; k < 8; k++) {
+                #pragma HLS UNROLL
+                int_acc_w[kr][b][k] = 0;
+                int_acc_m[kr][b][k] = 0;
+            }
+        }
+    }
+
+    // 32 parallel MAC chains: b-loop (8 blocks) and kr-loop (4 rows) both unrolled
+    // inside the 256-cycle pipeline. All 32 instances share the same x[b][n] value.
+    MAC_ALL_K4: for (int n = 0; n < 256; n++) {
+        #pragma HLS PIPELINE II=1
+        #pragma HLS LATENCY min=2
+        for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
+            #pragma HLS UNROLL
+            for (int kr = 0; kr < 4; kr++) {
+                #pragma HLS UNROLL
+                ap_int<8>  xi8  = (ap_int<8>) x[b][n];
+                ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[kr][b], 16 + (n & 31) + ((n & 0xC0) >> 1))
+                                                 >> ((n & 32) ? 4 : 0)) & 0xF);
+                int        sub  = n >> 5;
+                int        k    = n & 7;
+                ap_uint<6> sc6u = (ap_uint<6>) sc6[kr][b][sub];
+                ap_uint<6> mn6u = (ap_uint<6>) mn6[kr][b][sub];
+                int_acc_w[kr][b][k] += (int32_t)(xi8 * (ap_int<5>)nib4 * (ap_int<7>)sc6u);
+                int_acc_m[kr][b][k] += (int32_t)(xi8 * (ap_int<7>)mn6u);
+            }
+        }
+    }
+
+    REDUCE_WV_K4: for (int kr = 0; kr < 4; kr++) {
+        #pragma HLS UNROLL
+        float total = 0.f;
+        #pragma HLS BALANCE variable=total
+        for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
+            #pragma HLS UNROLL
+            int32_t sw = 0, sm = 0;
+            for (int k = 0; k < 8; k++) {
+                #pragma HLS UNROLL
+                sw += int_acc_w[kr][b][k];
+                sm += int_acc_m[kr][b][k];
+            }
+            total += d[kr][b] * (x_scale * (float)sw) - dmin[kr][b] * (x_scale * (float)sm);
+        }
+        results[kr] = total;
+    }
+}
+
 // ─── Phase 2: X1 = x @ W.T  (Q4_K) ──────────────────────────────────────────
+// K=4: load 4 rows sequentially then compute all 4 in one 256-cycle pipeline.
 static void compute_X1(
     const uint8_t  *W,
     const int8_t   x_local_1[MAX_BATCH][WV_BLOCKS_PER_ROW][256],
@@ -228,18 +316,26 @@ static void compute_X1(
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=x_local_1 dim=2 complete
     const ap_uint<128> *W_wide = (const ap_uint<128>*)W;
-    COMPUTE_X1: for (int row = 0; row < FFN_DIM; row++) {
-        ap_uint<128> row_buf[WV_BLOCKS_PER_ROW][Q4_K_WORDS];
+    COMPUTE_X1: for (int row = 0; row < FFN_DIM; row += 4) {
+        ap_uint<128> row_buf[4][WV_BLOCKS_PER_ROW][Q4_K_WORDS];
         #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=row_buf dim=2 complete
         #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
-        load_row_wv(W_wide, row, row_buf);
-        float row_result;
-        mac_blocks_wv(row_buf, x_local_1[0], x_scale, &row_result);
-        X1_cache[0][row] = row_result;
+        load_row_wv(W_wide, row + 0, row_buf[0]);
+        load_row_wv(W_wide, row + 1, row_buf[1]);
+        load_row_wv(W_wide, row + 2, row_buf[2]);
+        load_row_wv(W_wide, row + 3, row_buf[3]);
+        float row_results[4];
+        mac_blocks_wv_k4(row_buf, x_local_1[0], x_scale, row_results);
+        X1_cache[0][row + 0] = row_results[0];
+        X1_cache[0][row + 1] = row_results[1];
+        X1_cache[0][row + 2] = row_results[2];
+        X1_cache[0][row + 3] = row_results[3];
     }
 }
 
 // ─── Phase 3: X2 = x @ V.T  (Q4_K) ──────────────────────────────────────────
+// K=4: identical structure to compute_X1, operating on V weights.
 static void compute_X2(
     const uint8_t  *V,
     const int8_t   x_local_2[MAX_BATCH][WV_BLOCKS_PER_ROW][256],
@@ -249,14 +345,21 @@ static void compute_X2(
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=x_local_2 dim=2 complete
     const ap_uint<128> *V_wide = (const ap_uint<128>*)V;
-    COMPUTE_X2: for (int row = 0; row < FFN_DIM; row++) {
-        ap_uint<128> row_buf[WV_BLOCKS_PER_ROW][Q4_K_WORDS];
+    COMPUTE_X2: for (int row = 0; row < FFN_DIM; row += 4) {
+        ap_uint<128> row_buf[4][WV_BLOCKS_PER_ROW][Q4_K_WORDS];
         #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=row_buf dim=2 complete
         #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
-        load_row_wv(V_wide, row, row_buf);
-        float row_result;
-        mac_blocks_wv(row_buf, x_local_2[0], x_scale, &row_result);
-        X2_cache[0][row] = row_result;
+        load_row_wv(V_wide, row + 0, row_buf[0]);
+        load_row_wv(V_wide, row + 1, row_buf[1]);
+        load_row_wv(V_wide, row + 2, row_buf[2]);
+        load_row_wv(V_wide, row + 3, row_buf[3]);
+        float row_results[4];
+        mac_blocks_wv_k4(row_buf, x_local_2[0], x_scale, row_results);
+        X2_cache[0][row + 0] = row_results[0];
+        X2_cache[0][row + 1] = row_results[1];
+        X2_cache[0][row + 2] = row_results[2];
+        X2_cache[0][row + 3] = row_results[3];
     }
 }
 
@@ -346,8 +449,8 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
                                   float *result) {
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
-#pragma HLS ARRAY_PARTITION variable=rb   dim=1 cyclic factor=8
-#pragma HLS ARRAY_PARTITION variable=gate dim=1 cyclic factor=8
+#pragma HLS ARRAY_PARTITION variable=rb   dim=1 cyclic factor=4
+#pragma HLS ARRAY_PARTITION variable=gate dim=1 cyclic factor=4
 
     float   d   [DOWN_BLOCKS_PER_ROW];
     float   dmin[DOWN_BLOCKS_PER_ROW];
@@ -392,18 +495,19 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
         }
     }
 
-    // 4-group × 8-block fold: g-loop is sequential; MAC_GROUP is PIPELINE II=1 with
-    // 8 fully-unrolled blocks inside. g is loop-invariant within MAC_GROUP so HLS
-    // hoists g*8 and treats each bs-unrolled access as a constant bank offset.
-    // rb and gate use cyclic factor=8: bs=0..7 maps to banks 0..7, no port conflicts.
-    // Cost: 4 × 256 = 1024 cycles/row with 8 parallel INT32 pipelines per group.
-    for (int g = 0; g < 4; g++) {
+    // 8-group × 4-block fold: g-loop is sequential; MAC_GROUP is PIPELINE II=1 with
+    // 4 fully-unrolled blocks inside. g is loop-invariant within MAC_GROUP so HLS
+    // hoists g*4 and treats each bs-unrolled access as a constant bank offset.
+    // rb and gate use cyclic factor=4: bs=0..3 maps to banks 0..3, no port conflicts.
+    // Cost: 8 × 256 = 2048 cycles/row with 4 parallel INT32 pipelines per group.
+    // (Reduced from 4×8 to ease routing congestion.)
+    for (int g = 0; g < 8; g++) {
         MAC_GROUP: for (int n = 0; n < 256; n++) {
             #pragma HLS PIPELINE II=1
             #pragma HLS LATENCY min=2
-            for (int bs = 0; bs < 8; bs++) {
+            for (int bs = 0; bs < 4; bs++) {
                 #pragma HLS UNROLL
-                int b = g * 8 + bs;
+                int b = g * 4 + bs;
                 ap_int<8>  gi8  = (ap_int<8>) gate[b][n];
                 ap_uint<4> nib4 = (ap_uint<4>)((get_byte(rb[b], 16 + (n & 31) + ((n & 0xC0) >> 1))
                                                  >> ((n & 32) ? 4 : 0)) & 0xF);
@@ -431,40 +535,142 @@ static void mac_blocks_down_q4k(const ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_
     }
     *result = total;
 }
-// ─── Phase 5 sub-functions: Q6K output path ──────────────────────────────────
-// Q6K blocks are 210 bytes = 13.125 × 128-bit words (non-integer stride).
-// Cannot use clean 2D rb layout. Keep 1D rb + sequential block loop.
-// gate is 2D [32][256]: pass gate[b] pointer to decode_mac_q6k with v_base=0.
+// ─── Phase 5 sub-functions: Q6K output path (loop-inverted) ──────────────────
+// Q6_K: 210 bytes/block = 13.125 × 128-bit words (non-integer stride).
+// Root cause of prior slowness: three concurrent get_byte accesses into a flat
+// 1D rb array for ql/qh/sc could not be proven bank-independent by HLS →
+// serialized to II≥3 inside decode_mac_q6k.
+// Fix: split into three separate byte arrays, each dim=1 complete (32 banks).
+// Each array has exactly 1 read per cycle per bank → no port conflicts at all.
+// Load cost: ~6720 byte-copy cycles/row; MAC: 4×256 = 1024 cycles/row (same as Q4K).
 static void load_row_down_q6k(const ap_uint<128> *W_down_wide, int out_i,
-                                ap_uint<128> rb[DOWN_Q6K_WORDS]) {
+                                uint8_t ql_buf[DOWN_BLOCKS_PER_ROW][128],
+                                uint8_t qh_buf[DOWN_BLOCKS_PER_ROW][64],
+                                uint8_t sc_buf[DOWN_BLOCKS_PER_ROW][16],
+                                float   d_buf [DOWN_BLOCKS_PER_ROW]) {
 #pragma HLS INLINE off
-#pragma HLS ARRAY_PARTITION variable=rb cyclic factor=16
-    LOAD_DOWN_Q6K: for (int i = 0; i < DOWN_Q6K_WORDS; i++) {
+#pragma HLS ARRAY_PARTITION variable=ql_buf dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=qh_buf dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=sc_buf dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=d_buf  complete
+
+    ap_uint<128> flat[DOWN_Q6K_WORDS];
+    #pragma HLS ARRAY_PARTITION variable=flat cyclic factor=16
+    #pragma HLS BIND_STORAGE variable=flat type=ram_1p impl=lutram
+
+    LOAD_Q6K_FLAT: for (int i = 0; i < DOWN_Q6K_WORDS; i++) {
         #pragma HLS PIPELINE II=1
-        rb[i] = W_down_wide[(ap_uint<64>)out_i * DOWN_Q6K_WORDS + i];
+        flat[i] = W_down_wide[(ap_uint<64>)out_i * DOWN_Q6K_WORDS + i];
+    }
+
+    // Extract 4 blocks at a time with unrolled inner loop.
+    // With bi fully unrolled, b*Q6_K_BYTES = (bg*4+bi)*210 splits into:
+    //   constant part: bi*210 ∈ {0, 210, 420, 630} — known at synthesis time
+    //   variable part: bg*840 = bg*(512+256+64+8) — computed as shift-add, no divider
+    // 8 groups × (128 + 64 + 16) = 1664 cycles vs 32 × 208 = 6656 previously (~4×).
+    // 4 simultaneous flat reads per cycle; flat cyclic factor=16 ensures no bank conflicts
+    // since consecutive 210-byte blocks land on different banks (210/16 = 13.125, non-integer).
+    for (int bg = 0; bg < DOWN_BLOCKS_PER_ROW / 4; bg++) {
+        EXTRACT_QL: for (int k = 0; k < 128; k++) {
+            #pragma HLS PIPELINE II=1
+            for (int bi = 0; bi < 4; bi++) {
+                #pragma HLS UNROLL
+                int b = bg * 4 + bi;
+                ql_buf[b][k] = get_byte(flat, b * Q6_K_BYTES + k);
+            }
+        }
+        EXTRACT_QH: for (int k = 0; k < 64; k++) {
+            #pragma HLS PIPELINE II=1
+            for (int bi = 0; bi < 4; bi++) {
+                #pragma HLS UNROLL
+                int b = bg * 4 + bi;
+                qh_buf[b][k] = get_byte(flat, b * Q6_K_BYTES + 128 + k);
+            }
+        }
+        EXTRACT_SC: for (int k = 0; k < 16; k++) {
+            #pragma HLS PIPELINE II=1
+            for (int bi = 0; bi < 4; bi++) {
+                #pragma HLS UNROLL
+                int b = bg * 4 + bi;
+                sc_buf[b][k] = get_byte(flat, b * Q6_K_BYTES + 192 + k);
+            }
+        }
+        for (int bi = 0; bi < 4; bi++) {
+            #pragma HLS UNROLL
+            int b = bg * 4 + bi;
+            uint16_t d_raw = (uint16_t)get_byte(flat, b * Q6_K_BYTES + 208) |
+                             ((uint16_t)get_byte(flat, b * Q6_K_BYTES + 209) << 8);
+            d_buf[b] = fp16_to_fp32(d_raw);
+        }
     }
 }
 
-static void mac_blocks_down_q6k(const ap_uint<128> rb[DOWN_Q6K_WORDS],
-                                  const int8_t gate[DOWN_BLOCKS_PER_ROW][256],
+// mac_blocks_down_q6k: loop-inverted, 4-group × 8-block structure (mirrors Q4K down path).
+// W4A8 integer datapath: INT8 gate × INT6 q × INT8 scale → INT32 accumulators.
+// 8 partial accumulators per block (k = n & 7) satisfy the revisit-period constraint.
+// No dmin path (Q6_K uses a single scale per sub-block, not a min-subtraction).
+static void mac_blocks_down_q6k(const uint8_t ql_buf[DOWN_BLOCKS_PER_ROW][128],
+                                  const uint8_t qh_buf[DOWN_BLOCKS_PER_ROW][64],
+                                  const uint8_t sc_buf[DOWN_BLOCKS_PER_ROW][16],
+                                  const float   d_buf [DOWN_BLOCKS_PER_ROW],
+                                  const int8_t  gate  [DOWN_BLOCKS_PER_ROW][256],
                                   float gate_scale,
                                   float *result) {
 #pragma HLS INLINE off
-#pragma HLS ARRAY_PARTITION variable=rb cyclic factor=16
-#pragma HLS ARRAY_PARTITION variable=gate dim=1 complete
-    float block_sums[DOWN_BLOCKS_PER_ROW];
-    #pragma HLS ARRAY_PARTITION variable=block_sums complete
-    for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
-        #pragma HLS UNROLL factor=2
-        // gate[b] is INT8; decode_mac_q6k dequantizes each element by gate_scale.
-        block_sums[b] = decode_mac_q6k(rb, b * Q6_K_BYTES, gate[b], gate_scale, 0);
-    }
-    float acc = 0.0f;
-    for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
+#pragma HLS BIND_OP op=mul impl=dsp
+#pragma HLS ARRAY_PARTITION variable=ql_buf dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=qh_buf dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=sc_buf dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=d_buf  complete
+#pragma HLS ARRAY_PARTITION variable=gate   dim=1 cyclic factor=8
+
+    int32_t acc[DOWN_BLOCKS_PER_ROW][8];
+    #pragma HLS ARRAY_PARTITION variable=acc dim=0 complete
+
+    INIT_Q6K: for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
         #pragma HLS UNROLL
-        acc += block_sums[b];
+        for (int k = 0; k < 8; k++) {
+            #pragma HLS UNROLL
+            acc[b][k] = 0;
+        }
     }
-    *result = acc;
+
+    // Loop inversion: 4 sequential groups × 8 fully-unrolled blocks × 256-element pipeline.
+    // ql_buf/qh_buf/sc_buf are distinct arrays → ql[b], qh[b], sc[b] accesses go to
+    // three independent physical memories, zero port conflicts.
+    for (int g = 0; g < 4; g++) {
+        Q6K_MAC_GROUP: for (int n = 0; n < 256; n++) {
+            #pragma HLS PIPELINE II=1
+            #pragma HLS LATENCY min=2
+            for (int bs = 0; bs < 8; bs++) {
+                #pragma HLS UNROLL
+                int b = g * 8 + bs;
+                uint8_t ql_byte = ql_buf[b][n >> 1];
+                uint8_t ql      = (n & 1) ? (ql_byte >> 4) : (ql_byte & 0x0F);
+                uint8_t qh_byte = qh_buf[b][n >> 2];
+                uint8_t qh      = (qh_byte >> ((n & 3) << 1)) & 0x03;
+                int8_t  q       = (int8_t)((uint8_t)((qh << 4) | ql)) - 32;
+                int8_t  sc      = (int8_t)sc_buf[b][n >> 4];
+                int8_t  gv      = gate[b][n];
+                acc[b][n & 7]  += (int32_t)(ap_int<8>)gv * (int32_t)(ap_int<7>)q
+                                   * (int32_t)(ap_int<8>)sc;
+            }
+        }
+    }
+
+    // FP32 reduction: INT32 sums → float, scale by gate_scale × d.
+    float total = 0.f;
+    #pragma HLS BALANCE variable=total
+    REDUCE_Q6K: for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
+        #pragma HLS UNROLL
+        int32_t sw = 0;
+        for (int k = 0; k < 8; k++) {
+            #pragma HLS UNROLL
+            sw += acc[b][k];
+        }
+        total += d_buf[b] * (gate_scale * (float)sw);
+    }
+    *result = total;
 }
 
 // ─── Phase 5: output = gate @ W_down.T  (Q4_K or Q6_K) ──────────────────────
@@ -486,18 +692,27 @@ static void compute_output(
     if (down_quant_mode == 0) {
         DOWN_Q4K: for (int out_i = 0; out_i < VECTOR_DIM; out_i++) {
             ap_uint<128> row_buf[DOWN_BLOCKS_PER_ROW][Q4_K_WORDS];
-            #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 cyclic factor=8
+            #pragma HLS ARRAY_PARTITION variable=row_buf dim=1 cyclic factor=4
             #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
             load_row_down_q4k(W_down_wide, out_i, row_buf);
             mac_blocks_down_q4k(row_buf, gate_cache[0], gate_scale, &out_local[out_i]);
         }
     } else {
         DOWN_Q6K: for (int out_i = 0; out_i < VECTOR_DIM; out_i++) {
-            ap_uint<128> row_buf[DOWN_Q6K_WORDS];
-            #pragma HLS ARRAY_PARTITION variable=row_buf cyclic factor=16
-            #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
-            load_row_down_q6k(W_down_wide, out_i, row_buf);
-            mac_blocks_down_q6k(row_buf, gate_cache[0], gate_scale, &out_local[out_i]);
+            uint8_t ql_buf[DOWN_BLOCKS_PER_ROW][128];
+            uint8_t qh_buf[DOWN_BLOCKS_PER_ROW][64];
+            uint8_t sc_buf[DOWN_BLOCKS_PER_ROW][16];
+            float   d_buf [DOWN_BLOCKS_PER_ROW];
+            #pragma HLS ARRAY_PARTITION variable=ql_buf dim=1 complete
+            #pragma HLS ARRAY_PARTITION variable=qh_buf dim=1 complete
+            #pragma HLS ARRAY_PARTITION variable=sc_buf dim=1 complete
+            #pragma HLS ARRAY_PARTITION variable=d_buf  complete
+            #pragma HLS BIND_STORAGE variable=ql_buf type=ram_1p impl=lutram
+            #pragma HLS BIND_STORAGE variable=qh_buf type=ram_1p impl=lutram
+            #pragma HLS BIND_STORAGE variable=sc_buf type=ram_1p impl=lutram
+            load_row_down_q6k(W_down_wide, out_i, ql_buf, qh_buf, sc_buf, d_buf);
+            mac_blocks_down_q6k(ql_buf, qh_buf, sc_buf, d_buf,
+                                 gate_cache[0], gate_scale, &out_local[out_i]);
         }
     }
 
@@ -550,8 +765,8 @@ void swiglu(
     #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W   offset=slave depth=9437184  max_read_burst_length=256  latency=64 num_read_outstanding=2 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V   offset=slave depth=9437184  max_read_burst_length=256  latency=64 num_read_outstanding=2 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd  offset=slave depth=13762560 max_read_burst_length=256  latency=64 num_read_outstanding=2 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x   offset=slave depth=2048     max_read_burst_length=256  latency=64 num_read_outstanding=2 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out offset=slave depth=2048     max_write_burst_length=256 latency=64 num_write_outstanding=2
+    #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x   offset=slave depth=8192     max_read_burst_length=256  latency=64 num_read_outstanding=2 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out offset=slave depth=8192     max_write_burst_length=256 latency=64 num_write_outstanding=2
 
     #pragma HLS INTERFACE mode=s_axilite port=W               bundle=CTRL
     #pragma HLS INTERFACE mode=s_axilite port=V               bundle=CTRL

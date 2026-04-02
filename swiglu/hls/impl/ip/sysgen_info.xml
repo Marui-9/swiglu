@@ -3,12 +3,12 @@
   <CTypeInfo>
   </CTypeInfo>
   <DesignConstraint>
-    <clk_period>10</clk_period>
+    <clk_period>4</clk_period>
   </DesignConstraint>
   <Machine>64</Machine>
   <modelParameters>
     <combinational>0</combinational>
-    <latency>7141728</latency>
-    <II>3883010 ~ 55388235</II>
+    <latency>7855483</latency>
+    <II>5779531 ~ 17883211</II>
   </modelParameters>
 </AdditionalInfo>

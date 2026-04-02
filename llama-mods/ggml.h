@@ -806,10 +806,11 @@ extern "C" {
 
     ///////modified here
     GGML_API struct ggml_tensor * ggml_swiglu_fused_hw(struct ggml_context * ctx,
-                                          struct ggml_tensor  * x,
-                                          struct ggml_tensor  * w_gate,
-                                          struct ggml_tensor  * w_up,
-                                          struct ggml_tensor  * w_down);
+                                         struct ggml_tensor  * x,
+                                         struct ggml_tensor  * w_gate,
+                                         struct ggml_tensor  * w_up,
+                                         struct ggml_tensor  * w_down,
+                                         int32_t               layer_id);
 //////////////////////////////////////
 
     GGML_API struct ggml_tensor * ggml_new_tensor(

@@ -1450,7 +1450,7 @@ void apatb_swiglu_hw(void* __xlx_apatb_param_W, void* __xlx_apatb_param_V, void*
   };
   port10.param = { __xlx_apatb_param_out_batch };
   port10.mname = { "out_batch" };
-  port10.nbytes = { 8192 };
+  port10.nbytes = { 32768 };
 
 #ifdef USE_BINARY_TV_FILE
   static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port11 {
@@ -1475,7 +1475,7 @@ void apatb_swiglu_hw(void* __xlx_apatb_param_W, void* __xlx_apatb_param_V, void*
   };
   port11.param = { __xlx_apatb_param_x_batch };
   port11.mname = { "x_batch" };
-  port11.nbytes = { 2048 };
+  port11.nbytes = { 8192 };
 
   try {
 #ifdef POST_CHECK

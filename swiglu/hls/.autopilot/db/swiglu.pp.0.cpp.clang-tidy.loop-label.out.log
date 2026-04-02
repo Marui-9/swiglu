@@ -1,123 +1,202 @@
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:3185:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:3183:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
     for (unsigned i = low; i != high+1; ++i) {
     ^~~
     VITIS_LOOP_676_1: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:3185:5: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:3199:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:3183:5: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:3197:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
     for (unsigned i = low; i != high+1; ++i) {
     ^~~
     VITIS_LOOP_690_1: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:3199:5: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:3213:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:3197:5: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:3211:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
     for (unsigned i = low; i != high+1; ++i) {
     ^~~
     VITIS_LOOP_704_1: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:3213:5: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:5181:7: warning: Added loop label VITIS_LOOP_1248_1:   [xilinx-label-all-loops]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:3211:5: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:5179:7: warning: Added loop label VITIS_LOOP_1248_1:   [xilinx-label-all-loops]
       for (i = 0; i < __N - 1; ++i) {
       ^~~
       VITIS_LOOP_1248_1: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:5181:7: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7145:9: warning: Added loop label VITIS_LOOP_38_1:   [xilinx-label-all-loops]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:5179:7: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7143:9: warning: Added loop label VITIS_LOOP_38_1:   [xilinx-label-all-loops]
         for (int i = 0; i < 10; i++) {
         ^~~
         VITIS_LOOP_38_1: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7145:9: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7209:9: warning: Added loop label VITIS_LOOP_102_1:   [xilinx-label-all-loops]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7143:9: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7176:9: warning: Added loop label VITIS_LOOP_71_1:   [xilinx-label-all-loops]
         for (int w = 0; w < 9; w++) {
         ^~~
-        VITIS_LOOP_102_1: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7209:9: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7276:2: warning: Added loop label VITIS_LOOP_169_1:   [xilinx-label-all-loops]
+        VITIS_LOOP_71_1: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7176:9: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7243:2: warning: Added loop label VITIS_LOOP_138_1:   [xilinx-label-all-loops]
  for (int k = 0; k < 8; k++) {
  ^~~
- VITIS_LOOP_169_1: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7276:2: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7286:2: warning: Added loop label VITIS_LOOP_189_2:   [xilinx-label-all-loops]
+ VITIS_LOOP_138_1: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7243:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7253:2: warning: Added loop label VITIS_LOOP_158_2:   [xilinx-label-all-loops]
  for (int b = 0; b < 8; b++) {
  ^~~
- VITIS_LOOP_189_2: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7286:2: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7308:9: warning: Added loop label VITIS_LOOP_211_3:   [xilinx-label-all-loops]
+ VITIS_LOOP_158_2: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7253:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7275:9: warning: Added loop label VITIS_LOOP_180_3:   [xilinx-label-all-loops]
         for (int k = 0; k < 8; k++) {
         ^~~
-        VITIS_LOOP_211_3: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7308:9: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7331:48: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
-#pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
-                                               ^
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7352:48: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
-#pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
-                                               ^
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7393:9: warning: Added loop label VITIS_LOOP_296_1:   [xilinx-label-all-loops]
-        for (int k = 0; k < 8; k++) {
-        ^~~
-        VITIS_LOOP_296_1: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7393:9: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7429:9: warning: Added loop label VITIS_LOOP_332_1:   [xilinx-label-all-loops]
-        for (int w = 0; w < 9; w++) {
-        ^~~
-        VITIS_LOOP_332_1: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7429:9: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7485:2: warning: Added loop label VITIS_LOOP_388_1:   [xilinx-label-all-loops]
+        VITIS_LOOP_180_3: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7275:9: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7306:2: warning: Added loop label VITIS_LOOP_218_1:   [xilinx-label-all-loops]
+ for (int b = 0; b < 8; b++) {
+ ^~~
+ VITIS_LOOP_218_1: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7306:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7346:2: warning: Added loop label VITIS_LOOP_258_2:   [xilinx-label-all-loops]
+ for (int b = 0; b < 8; b++) {
+ ^~~
+ VITIS_LOOP_258_2: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7346:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7348:2: warning: Added loop label VITIS_LOOP_260_3:   [xilinx-label-all-loops]
  for (int k = 0; k < 8; k++) {
  ^~~
- VITIS_LOOP_388_1: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7485:2: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7497:5: warning: Added loop label VITIS_LOOP_400_2:   [xilinx-label-all-loops]
-    for (int g = 0; g < 4; g++) {
-    ^~~
-    VITIS_LOOP_400_2: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7497:5: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7501:2: warning: Added loop label VITIS_LOOP_404_3:   [xilinx-label-all-loops]
- for (int bs = 0; bs < 8; bs++) {
+ VITIS_LOOP_260_3: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7348:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7361:2: warning: Added loop label VITIS_LOOP_273_4:   [xilinx-label-all-loops]
+ for (int b = 0; b < 8; b++) {
  ^~~
- VITIS_LOOP_404_3: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7501:2: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7522:9: warning: Added loop label VITIS_LOOP_425_4:   [xilinx-label-all-loops]
+ VITIS_LOOP_273_4: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7361:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7363:2: warning: Added loop label VITIS_LOOP_275_5:   [xilinx-label-all-loops]
+ for (int kr = 0; kr < 4; kr++) {
+ ^~~
+ VITIS_LOOP_275_5: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7363:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7382:2: warning: Added loop label VITIS_LOOP_294_6:   [xilinx-label-all-loops]
+ for (int b = 0; b < 8; b++) {
+ ^~~
+ VITIS_LOOP_294_6: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7382:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7385:13: warning: Added loop label VITIS_LOOP_297_7:   [xilinx-label-all-loops]
+            for (int k = 0; k < 8; k++) {
+            ^~~
+            VITIS_LOOP_297_7: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7385:13: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7411:48: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
+                                               ^
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7440:48: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
+                                               ^
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7487:9: warning: Added loop label VITIS_LOOP_399_1:   [xilinx-label-all-loops]
         for (int k = 0; k < 8; k++) {
         ^~~
-        VITIS_LOOP_425_4: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7522:9: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7554:2: warning: Added loop label VITIS_LOOP_457_1:   [xilinx-label-all-loops]
- for (int b = 0; b < 32; b++) {
+        VITIS_LOOP_399_1: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7487:9: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7523:9: warning: Added loop label VITIS_LOOP_435_1:   [xilinx-label-all-loops]
+        for (int w = 0; w < 9; w++) {
+        ^~~
+        VITIS_LOOP_435_1: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7523:9: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7579:2: warning: Added loop label VITIS_LOOP_491_1:   [xilinx-label-all-loops]
+ for (int k = 0; k < 8; k++) {
  ^~~
- VITIS_LOOP_457_1: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7554:2: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7560:5: warning: Added loop label VITIS_LOOP_463_2:   [xilinx-label-all-loops]
-    for (int b = 0; b < 32; b++) {
+ VITIS_LOOP_491_1: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7579:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7592:5: warning: Added loop label VITIS_LOOP_504_2:   [xilinx-label-all-loops]
+    for (int g = 0; g < 8; g++) {
     ^~~
-    VITIS_LOOP_463_2: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7560:5: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7580:50: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+    VITIS_LOOP_504_2: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7592:5: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7596:2: warning: Added loop label VITIS_LOOP_508_3:   [xilinx-label-all-loops]
+ for (int bs = 0; bs < 4; bs++) {
+ ^~~
+ VITIS_LOOP_508_3: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7596:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7617:9: warning: Added loop label VITIS_LOOP_529_4:   [xilinx-label-all-loops]
+        for (int k = 0; k < 8; k++) {
+        ^~~
+        VITIS_LOOP_529_4: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7617:9: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7640:45: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=flat type=ram_1p impl=lutram
+                                            ^
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7647:5: warning: Added loop label VITIS_LOOP_573_1:   [xilinx-label-all-loops]
+    for (int bg = 0; bg < 32 / 4; bg++) {
+    ^~~
+    VITIS_LOOP_573_1: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7647:5: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7650:2: warning: Added loop label VITIS_LOOP_576_2:   [xilinx-label-all-loops]
+ for (int bi = 0; bi < 4; bi++) {
+ ^~~
+ VITIS_LOOP_576_2: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7650:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7658:2: warning: Added loop label VITIS_LOOP_584_3:   [xilinx-label-all-loops]
+ for (int bi = 0; bi < 4; bi++) {
+ ^~~
+ VITIS_LOOP_584_3: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7658:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7666:2: warning: Added loop label VITIS_LOOP_592_4:   [xilinx-label-all-loops]
+ for (int bi = 0; bi < 4; bi++) {
+ ^~~
+ VITIS_LOOP_592_4: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7666:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7672:9: warning: Added loop label VITIS_LOOP_598_5:   [xilinx-label-all-loops]
+        for (int bi = 0; bi < 4; bi++) {
+        ^~~
+        VITIS_LOOP_598_5: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7672:9: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7706:2: warning: Added loop label VITIS_LOOP_632_1:   [xilinx-label-all-loops]
+ for (int k = 0; k < 8; k++) {
+ ^~~
+ VITIS_LOOP_632_1: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7706:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7715:5: warning: Added loop label VITIS_LOOP_641_2:   [xilinx-label-all-loops]
+    for (int g = 0; g < 4; g++) {
+    ^~~
+    VITIS_LOOP_641_2: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7715:5: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7719:2: warning: Added loop label VITIS_LOOP_645_3:   [xilinx-label-all-loops]
+ for (int bs = 0; bs < 8; bs++) {
+ ^~~
+ VITIS_LOOP_645_3: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7719:2: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7741:9: warning: Added loop label VITIS_LOOP_667_4:   [xilinx-label-all-loops]
+        for (int k = 0; k < 8; k++) {
+        ^~~
+        VITIS_LOOP_667_4: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7741:9: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7763:50: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
 #pragma HLS BIND_STORAGE variable=out_local type=ram_1p impl=lutram
                                                  ^
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7587:48: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7770:48: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
 #pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
                                                ^
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7595:48: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
-#pragma HLS BIND_STORAGE variable=row_buf type=ram_1p impl=lutram
-                                               ^
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7621:13: warning: Added loop label VITIS_LOOP_524_1:   [xilinx-label-all-loops]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7784:47: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=ql_buf type=ram_1p impl=lutram
+                                              ^
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7785:47: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=qh_buf type=ram_1p impl=lutram
+                                              ^
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7786:47: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=sc_buf type=ram_1p impl=lutram
+                                              ^
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7813:13: warning: Added loop label VITIS_LOOP_739_1:   [xilinx-label-all-loops]
             for (int j = 0; j < 16; j++) {
             ^~~
-            VITIS_LOOP_524_1: 
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7621:13: note: FIX-IT applied suggested code changes
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7669:50: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+            VITIS_LOOP_739_1: 
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7813:13: note: FIX-IT applied suggested code changes
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7861:50: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
 #pragma HLS BIND_STORAGE variable=x_local_1 type=ram_1p impl=lutram
                                                  ^
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7673:50: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7865:50: error: Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
 #pragma HLS BIND_STORAGE variable=x_local_2 type=ram_1p impl=lutram
                                                  ^
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7680:49: error: Invalid Directive: for current device, ram_2p + uram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7872:49: error: Invalid Directive: for current device, ram_2p + uram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
 #pragma HLS BIND_STORAGE variable=X1_cache type=ram_2p impl=uram
                                                 ^
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7681:49: error: Invalid Directive: for current device, ram_2p + uram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7873:49: error: Invalid Directive: for current device, ram_2p + uram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
 #pragma HLS BIND_STORAGE variable=X2_cache type=ram_2p impl=uram
                                                 ^
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7684:51: error: Invalid Directive: for current device, ram_2p + uram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7876:51: error: Invalid Directive: for current device, ram_2p + uram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
 #pragma HLS BIND_STORAGE variable=gate_cache type=ram_2p impl=uram
                                                   ^
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7689:52: error: Invalid Directive: for current device, rom_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp:7881:52: error: Invalid Directive: for current device, rom_1p + lutram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
 #pragma HLS BIND_STORAGE variable=sigmoid_lut type=rom_1p impl=lutram
                                                    ^

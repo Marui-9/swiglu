@@ -1,11 +1,5 @@
 # This script segment is generated automatically by AutoPilot
 
-set name swiglu_fcmp_32ns_32ns_1_2_no_dsp_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fcmp} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
-}
-
-
 # clear list
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
@@ -17,14 +11,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1328 \
+    id 2344 \
     name X1_cache \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename X1_cache \
     op interface \
-    ports { X1_cache_address0 { O 13 vector } X1_cache_ce0 { O 1 bit } X1_cache_q0 { I 32 vector } } \
+    ports { X1_cache_address0 { O 15 vector } X1_cache_ce0 { O 1 bit } X1_cache_q0 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'X1_cache'"
@@ -36,14 +30,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1329 \
+    id 2345 \
     name X2_cache \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename X2_cache \
     op interface \
-    ports { X2_cache_address0 { O 13 vector } X2_cache_ce0 { O 1 bit } X2_cache_q0 { I 32 vector } } \
+    ports { X2_cache_address0 { O 15 vector } X2_cache_ce0 { O 1 bit } X2_cache_q0 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'X2_cache'"
@@ -55,7 +49,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1338 \
+    id 2354 \
     name sigmoid_lut \
     reset_level 1 \
     sync_rst true \
@@ -73,120 +67,120 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1330 \
-    name max_abs_out \
+    id 2346 \
+    name pmax_7 \
     type other \
-    dir O \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_max_abs_out \
+    corename dc_pmax_7 \
     op interface \
-    ports { max_abs_out { O 32 vector } max_abs_out_ap_vld { O 1 bit } } \
+    ports { pmax_7_i { I 32 vector } pmax_7_o { O 32 vector } pmax_7_o_ap_vld { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1331 \
-    name max_abs_2_out \
+    id 2347 \
+    name pmax_6 \
     type other \
-    dir O \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_max_abs_2_out \
+    corename dc_pmax_6 \
     op interface \
-    ports { max_abs_2_out { O 32 vector } max_abs_2_out_ap_vld { O 1 bit } } \
+    ports { pmax_6_i { I 32 vector } pmax_6_o { O 32 vector } pmax_6_o_ap_vld { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1332 \
-    name max_abs_4_out \
+    id 2348 \
+    name pmax_5 \
     type other \
-    dir O \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_max_abs_4_out \
+    corename dc_pmax_5 \
     op interface \
-    ports { max_abs_4_out { O 32 vector } max_abs_4_out_ap_vld { O 1 bit } } \
+    ports { pmax_5_i { I 32 vector } pmax_5_o { O 32 vector } pmax_5_o_ap_vld { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1333 \
-    name max_abs_6_out \
+    id 2349 \
+    name pmax_4 \
     type other \
-    dir O \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_max_abs_6_out \
+    corename dc_pmax_4 \
     op interface \
-    ports { max_abs_6_out { O 32 vector } max_abs_6_out_ap_vld { O 1 bit } } \
+    ports { pmax_4_i { I 32 vector } pmax_4_o { O 32 vector } pmax_4_o_ap_vld { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1334 \
-    name max_abs_8_out \
+    id 2350 \
+    name pmax_3 \
     type other \
-    dir O \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_max_abs_8_out \
+    corename dc_pmax_3 \
     op interface \
-    ports { max_abs_8_out { O 32 vector } max_abs_8_out_ap_vld { O 1 bit } } \
+    ports { pmax_3_i { I 32 vector } pmax_3_o { O 32 vector } pmax_3_o_ap_vld { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1335 \
-    name max_abs_10_out \
+    id 2351 \
+    name pmax_2 \
     type other \
-    dir O \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_max_abs_10_out \
+    corename dc_pmax_2 \
     op interface \
-    ports { max_abs_10_out { O 32 vector } max_abs_10_out_ap_vld { O 1 bit } } \
+    ports { pmax_2_i { I 32 vector } pmax_2_o { O 32 vector } pmax_2_o_ap_vld { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1336 \
-    name max_abs_12_out \
+    id 2352 \
+    name pmax_1 \
     type other \
-    dir O \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_max_abs_12_out \
+    corename dc_pmax_1 \
     op interface \
-    ports { max_abs_12_out { O 32 vector } max_abs_12_out_ap_vld { O 1 bit } } \
+    ports { pmax_1_i { I 32 vector } pmax_1_o { O 32 vector } pmax_1_o_ap_vld { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1337 \
-    name max_abs_14_out \
+    id 2353 \
+    name pmax \
     type other \
-    dir O \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_max_abs_14_out \
+    corename dc_pmax \
     op interface \
-    ports { max_abs_14_out { O 32 vector } max_abs_14_out_ap_vld { O 1 bit } } \
+    ports { pmax_i { I 32 vector } pmax_o { O 32 vector } pmax_o_ap_vld { O 1 bit } } \
 } "
 }
 

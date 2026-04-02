@@ -9,6 +9,10 @@ FW_DIR=/lib/firmware/xilinx/kria-accel
 UDMABUF_KO=/home/ubuntu/udmabuf/u-dma-buf.ko
 UDMABUF_SIZE=671088640
 
+echo "[0] set env vars LLAMA_SWIHW=1 & SWIGLU_DEBUG=1"
+export LLAMA_SWIHW=1
+export SWIGLU_DEBUG=1
+
 echo "[1] Copy bit/dtsi sources"
 cp -v "${SRC_MNT}/design_1_wrapper.bit.bin" "${SRC_MNT}/pl.dtsi" "${ACCEL_DIR}/"
 
@@ -30,7 +34,11 @@ echo "[6] Load app (programs bit & dtbo from shell.json)"
 sudo xmutil loadapp kria-accel
 
 echo "[7] Insert u-dma-buf (CMA must cover size)"
-sudo insmod "${UDMABUF_KO}" udmabuf0=${UDMABUF_SIZE} || true
+cd
+cd ~/udmabuf && sudo insmod u-dma-buf.ko udmabuf0=671088640 || true
+grep cma /proc/cmdline
+cat /sys/class/u-dma-buf/udmabuf0/phys_addr
+cat /sys/class/u-dma-buf/udmabuf0/size
 
 echo "[8] UIO sanity check"
 cat /sys/class/uio/uio*/maps/map0/addr

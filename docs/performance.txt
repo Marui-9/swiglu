@@ -1,0 +1,235 @@
+The poor performance is likely due to these factors rather than the call count:
+
+The fused op runs with n_tasks=1, so all other CPU threads idle while the FPGA work happens; the CPU baseline uses all threads.
+Prefill (batch>1) is still on CPU; only decode (batch=1) is offloaded, so most of bench test 3 may be CPU work.
+For batch=1, the copy/IRQ overhead over AXI can dominate at 100 MHz; the FPGA math is fast, but per-call overhead is large.
+The layer is inferred via swiglu_call_count % 16; it works for the simple per-token layer order, but a safer approach is to store the layer index in op_params when building the node.
+Quick actions to validate/fix:
+
+Instrument timing inside ggml_compute_forward_swiglu_fused_hw (start/end timestamps) to see per-call latency and whether weight copies happen only once.
+Pass the layer id from lfm2.cpp into ggml_set_op_params_i32(result, 0, il); and read it in the kernel instead of swiglu_call_count % 16, to avoid misalignment.
+Test decode-only with a short prompt and -t 1 vs -t 4 to see the effect of the single-threaded fused op; consider setting n_tasks = n_threads if you want the host to stay busy elsewhere.
+If most time is in prefill, either offload batch>1 (requires kernel changes) or measure decode separately.
+Bottom line: the high call number is expected; performance issues are likely overhead/scheduling, not the call count itself.
+
+Tokens to test: start small to sanity check (~32–64 tokens), then a realistic prompt (e.g., 256–512 tokens) and a short decode tail (e.g., 64–128 tokens). That will exercise all 16 layers multiple times and show weight caching behavior. For benchmarking, pick a fixed prompt length (prefill) and a fixed decode length to compare CPU vs offload.
+
+CPU threads during offload: the fused op runs with n_tasks=1; the other threads idle. Letting them sleep saves power. If you want them busy, you’d need a deeper scheduler change (overlap independent nodes) which ggml doesn’t provide today. Keeping them idle is simpler and avoids contention.
+
+Prefill vs decode: current offload handles decode (batch=1). Prefill (batch > 1) still hits the CPU path because the fused kernel requires cur->ne[1] == 1. So only decode is offloaded today. Offloading prefill would require:
+
+Kernel support for batch>1 (buffer striding, x_scale per token),
+Loosening the guard in the fused kernel and builder,
+Potentially larger bandwidth to handle multi-token x/out.
+Until those are done, prefill remains CPU-only.
+
+To offload prefill you’d:
+
+Allow cur->ne[1] > 1 in the builder and kernel.
+Add stride-aware copies for x/out (offset per token).
+Handle per-token x_scale (array of scales) and pass bsz to the IP.
+Keep the other shape/type checks (2048/8192, Q4_K/Q6_K) so you don’t offload unsupported layouts.
+Increasing bandwidth: you don’t “just add ports” unless you redesign the IP. Options:
+
+Raise the IP/memory clock (if timing allows).
+Increase AXI burst lengths / outstanding transactions (HLS interface pragmas).
+Add more AXI master ports (e.g., separate ports for W, V, Wd, x/out) and connect them to different HP ports to reduce contention—this is an IP/BD change.
+Improve on-chip buffering/tiling to reduce DDR traffic (reuse weights, stream x once).
+Ensure udmabuf/DDR placement isn’t throttling (aligned, large bursts).
+
+Systolic array? No, a classic systolic array does not apply cleanly:
+A standard weight-flow systolic array (like the TPU's) requires the weight tile to be regular 
+— INT8 values that can flow between adjacent PEs. Q4K/Q6K weights can't flow through PEs because 
+each 256-element block has its own unique decode context (d, dmin, sc6[8], mn6[8]). PE[i+1] can't 
+receive weight data from PE[i] without also receiving the entire block header. 
+The decode logic is inseparable from the data.
+
+─────────────────────────────────────────────────────────────
+Plan: Transition from MAX_BATCH=1 (decode only) to MAX_BATCH=N (prefill + decode)
+─────────────────────────────────────────────────────────────
+
+Current state
+─────────────
+Only decode (batch=1) is offloaded. Prefill (batch>1) falls through to CPU because:
+  1. lfm2.cpp guard: cur->ne[1] == 1 required to emit the fused hw node.
+  2. ggml-cpu.c guard: src1->ne[1] != 1 → goto cpu_compute_fallback.
+  3. swiglu.h: MAX_BATCH=1; all internal arrays sized [1][...].
+  4. ggml-cpu.c driver: copies only one x vector, programs x_batch/out_batch for
+     one token, does not pass bsz to the IP.
+
+Is the basic infrastructure already in place?
+─────────────────────────────────────────────
+Partially. swiglu.cpp already has a batch dimension throughout (MAX_BATCH, n loop in
+compute_gate, x_local/X1/X2/gate arrays all indexed [n][...]). The structure was
+designed to be batch-capable; only the constant was reduced to 1 to fit BRAM. So
+swiglu.cpp is the right shape — it needs widening, not a redesign.
+
+Changes are moderate, not large. Estimated effort: a few days of HLS + driver work.
+
+─────────────────────────────────────────────────────────────
+Step 1 — HLS (swiglu.h / swiglu.cpp)
+─────────────────────────────────────────────────────────────
+
+1a. Increase MAX_BATCH.
+    Set MAX_BATCH to the target prefill depth (e.g., 4 or 8). Verify BRAM/URAM
+    budget before committing to a value (see resource notes below).
+
+1b. x_scale becomes an array.
+    Currently x_scale is a single float AXI-Lite scalar. For batch>1, each token has
+    its own quantization scale. Change to:
+      float x_scale_arr[MAX_BATCH]  (AXI-Lite array, or pass inline with x_batch)
+    The simplest approach: pass x_scale as the first MAX_BATCH floats prepended to
+    the x_batch AXI-Stream buffer, then read them in load_x_local. Alternatively,
+    add a separate AXI-Lite scalar array port (HLS supports up to ~64 scalars on CTRL).
+
+1c. Compute loops already iterate over n=0..MAX_BATCH.
+    compute_X1/X2 call mac_blocks_wv for each token (n loop). compute_gate already
+    has a SWISH_GATE: for n loop. compute_output uses gate_cache[0] — change to
+    iterate over all n tokens, or change signature to receive per-token gate slices.
+    The output loop must write VECTOR_DIM floats × MAX_BATCH tokens.
+
+1d. out_batch pointer covers MAX_BATCH × VECTOR_DIM floats.
+    The m_axi depth pragma on out_batch: change from 2048 to MAX_BATCH × 2048.
+    Same for x_batch: depth = MAX_BATCH × 2048.
+
+─────────────────────────────────────────────────────────────
+Step 2 — Resource budget check (critical before synthesis)
+─────────────────────────────────────────────────────────────
+
+ZU5EV limits: 288 BRAM_18K, 16 URAM (288 KB each = 4.6 MB total URAM).
+
+With MAX_BATCH=1 (current): ~194 BRAM_18K estimated; URAM holds X1/X2/gate.
+
+Scaling to MAX_BATCH=8:
+  x_local_1/2: [8][8][256] INT8 = 16 KB each → 32 KB total → LUTRAM, fine.
+  X1_cache:    [8][8192] F32  = 256 KB → 1 URAM block (288 KB). OK.
+  X2_cache:    [8][8192] F32  = 256 KB → 1 URAM block. OK.
+  gate_cache:  [8][32][256] INT8 = 64 KB → 1 URAM block. OK.
+  BRAM impact: unchanged (row_buf arrays are per-row temporaries, not batch-scaled).
+  Total URAM: 3 blocks used out of 16 available. Comfortable.
+
+  Note: the original MAX_BATCH=8 crash was because gate_cache used ram_2p BRAM
+  (256 BRAM_18K alone). Solution is to keep BIND_STORAGE type=ram_2p impl=uram
+  for all three cache arrays — already correct in the current code.
+
+Recommended starting point: MAX_BATCH=4 (conservative, half the URAM headroom).
+
+─────────────────────────────────────────────────────────────
+Step 3 — ggml-cpu.c driver
+─────────────────────────────────────────────────────────────
+
+3a. Remove the batch guard:
+    Delete "if (src1->ne[1] != 1) goto cpu_compute_fallback;" (or replace with
+    "if (src1->ne[1] > MAX_BATCH) goto cpu_compute_fallback;" as a safety ceiling).
+
+3b. Read actual batch size:
+    bsz = (int)src1->ne[1];  // number of tokens in this call
+
+3c. Copy all tokens' x vectors to udmabuf:
+    for (int t = 0; t < bsz; t++) {
+        quantize_row_to_int8(x_data + t * VECTOR_DIM, x_int8_buf + t * VECTOR_DIM,
+                             &x_scales[t]);
+        memcpy(udmabuf_virt + SWG_VEC_OFF + t * VECTOR_DIM, x_int8_buf + ...);
+    }
+    flush_range(SWG_VEC_OFF, bsz * VECTOR_DIM);
+
+3d. Pass bsz and per-token x_scale to the IP.
+    If x_scale is embedded in the x_batch buffer (first bsz floats): write them
+    before the INT8 token data. If using a separate AXI-Lite array: program each
+    scale register before ap_start.
+
+3e. Copy bsz × VECTOR_DIM floats from output buffer back to out_batch:
+    The output tensor src1 has shape [VECTOR_DIM, bsz]; write each token's result
+    at out_f32 + t * VECTOR_DIM.
+
+3f. Weight caching is unaffected — W/V/Wd are per-layer constants. The layer index
+    (swiglu_call_count % 16) remains valid for sequential token batches.
+
+─────────────────────────────────────────────────────────────
+Step 4 — lfm2.cpp builder guard
+─────────────────────────────────────────────────────────────
+
+Change:
+  cur->ne[1] == 1
+to:
+  cur->ne[1] >= 1 && cur->ne[1] <= MAX_BATCH
+
+This allows the fused hw node to be emitted for any batch up to MAX_BATCH.
+Keep all other shape/type guards unchanged (2048, 8192, Q4_K/Q6_K).
+
+─────────────────────────────────────────────────────────────
+Step 5 — Re-synthesize and update bitstream
+─────────────────────────────────────────────────────────────
+
+After HLS changes:
+  - Re-run C-simulation with a batch=4 test case to verify multi-token output.
+  - Re-synthesize; check URAM utilization (expect ≤3 blocks for batch=4).
+  - Export IP → upgrade swiglu_0 in Vivado → validate → generate bitstream.
+  - No block design changes needed (AXI-Lite control and AXI-Stream DMA ports
+    are already sized to handle larger transfers; only software programs bsz).
+
+─────────────────────────────────────────────────────────────
+Performance vs CPU for prefill — realistic expectations
+─────────────────────────────────────────────────────────────
+
+At 100 MHz with batch=4 (conservative):
+  IP time per call ≈ (load x: ~4×128 cycles) + X1∥X2 (~2.2M cyc) + gate (~4K) +
+                     output Q4K (~2.1M) or Q6K (~8M after loop-inversion fix)
+  The X1/X2/output loops scale with rows (FFN_DIM=8192 or VECTOR_DIM=2048), NOT
+  with batch. X1/X2 are independent for each token but run sequentially on one
+  DATAFLOW pipeline → time scales linearly with batch. For batch=4: ~4×.
+
+  Q4K layer: ~4 × 70ms = 280ms per call.
+  Q6K layer (after fix): ~4 × ~80ms = ~320ms per call.
+  CPU baseline at batch=4 (4× A53 NEON): ~4 × 4 tokens / 4 t/s = 1s → ~250ms/call.
+  At 100 MHz, the IP is marginally competitive with CPU for batch=4.
+
+At 300 MHz with batch=4:
+  Q4K: ~4 × 23ms = 92ms. Q6K: ~4 × 27ms = 108ms.
+  Both well under CPU for batch=4. FPGA throughput advantage ~2.5–3×.
+
+Key insight: the FPGA advantage is larger at smaller batch (decode, batch=1) because
+CPU NEON throughput scales with batch while FPGA throughput scales linearly too but
+starts with lower per-token overhead at 300 MHz. Prefill offload is most beneficial
+when the prompt is moderate (batch ≤ MAX_BATCH ≤ 8) and 300 MHz is active.
+
+For large batch (batch > 8): CPU scales better (more NEON lanes, cache hits on
+reused weight rows). Keep the MAX_BATCH ceiling guard in the driver so oversized
+prefill chunks fall back gracefully to CPU.
+
+Step 6: output-row parallelism (broadcast SIMD)
+The structure that maps naturally to our problem is output-stationary SIMD — compute K output rows simultaneously, all sharing the same x vector:
+
+
+Current:  load W[row]  → mac(W[row], x) → X1_cache[row]      (1 row/iteration)
+K=4:      load W[row:row+4]  → mac(W[row+0], x) → X1_cache[row+0]
+                               mac(W[row+1], x) → X1_cache[row+1]
+                               mac(W[row+2], x) → X1_cache[row+2]
+                               mac(W[row+3], x) → X1_cache[row+3]
+W rows 0,1,2,3 are contiguous in memory (each 1152 bytes), so they burst in a single AXI transaction of 4608 bytes. x is broadcast to all 4 MAC instances (already on-chip, zero DDR cost). The outer loop shrinks from 8192 to 2048 iterations.
+
+Cycle count per K=4 iteration:
+
+Load 4 rows: 4 × 72 = 288 cycles (sequential burst, or 4 parallel if 4 AXI ports)
+Compute 4 rows: 270 cycles (fully parallel, 4 independent mac_blocks_wv instances)
+Current sequential: 4 × 342 = 1368 cycles
+With load-compute overlap (double-buffering across groups of 4): max(288, 270) ≈ 288 cycles per 4 rows → ~4.7× speedup on X1/X2 vs current single-row approach.
+
+Resource cost: K=4 needs 4 × 8 = 32 parallel INT32 MAC chains per phase. At ~1 DSP48E2 per chain: ~32 DSPs for X1, ~32 for X2, ~32 for the down path = ~96 DSPs total additional. ZU5EV has 1248 DSP48E2 — very comfortable.
+
+The weight-stationary systolic form: MAX_BATCH > 1
+When MAX_BATCH > 1, there IS a clean systolic structure: each weight row flows through N PEs, one PE per token:
+
+
+PE[0] ← x_batch[0]    ┐
+PE[1] ← x_batch[1]    ├ all receive same W[row], accumulate independently
+PE[2] ← x_batch[2]    │
+PE[3] ← x_batch[3]    ┘
+Each DDR byte of W is reused N times (once per token). This is the weight-stationary systolic arrangement and maps perfectly to batch decode/prefill — it's the natural implementation of what the batch plan already calls for.
+
+Summary
+Variant	Applicable?	Gain	Effort
+Classic weight-flow systolic	No — Q4K decode context isn't transferable between PEs	—	—
+Output-row parallelism (K=4)	Yes — multiply rows per burst, broadcast x	~4× on X1/X2	Moderate
+Weight-stationary (batch)	Yes — same W row × N tokens	N× compute reuse of DDR	Planned (batch work)
+The output-row parallelism with K=4 is the most impactful single change remaining after the 300 MHz clock. It's also synergistic with the timing problem: 4 parallel mac instances operating on independent data routes more locally and may actually help hold closure compared to a single deeply-unrolled pipeline.

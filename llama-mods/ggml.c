@@ -2927,7 +2927,8 @@ struct ggml_tensor * ggml_swiglu_fused_hw(
                 struct ggml_tensor  * x,
                 struct ggml_tensor  * w_gate,
                 struct ggml_tensor  * w_up,
-                struct ggml_tensor  * w_down) {
+                struct ggml_tensor  * w_down,
+                int32_t               layer_id) {
 
                     GGML_ASSERT(x->ne[0] == w_down->ne[1]);      // n_embd: x input dim == w_down output dim
                     GGML_ASSERT(w_gate->ne[0] == w_up->ne[0]);  // gate and up share same input dim
@@ -2936,14 +2937,16 @@ struct ggml_tensor * ggml_swiglu_fused_hw(
                     const int64_t ne[4] = { w_down->ne[1], x->ne[1], x->ne[2], x->ne[3] };
                     struct ggml_tensor * result = ggml_new_tensor(ctx, GGML_TYPE_F32, 4, ne);
 
-                    result->op     = GGML_OP_SWIGLU_FUSED_HW;
-                    result->src[0] = x;
-                    result->src[1] = w_gate;
-                    result->src[2] = w_up;
-                    result->src[3] = w_down;
+    result->op     = GGML_OP_SWIGLU_FUSED_HW;
+    result->src[0] = x;
+    result->src[1] = w_gate;
+    result->src[2] = w_up;
+    result->src[3] = w_down;
 
-                    return result;
-                }
+    ggml_set_op_params_i32(result, 0, layer_id);
+
+    return result;
+}
 //////////////////////////////////
 
 //ggml_trunc

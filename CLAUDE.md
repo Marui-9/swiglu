@@ -142,17 +142,17 @@ All five source files are complete. **C-simulation must be re-run** after the lo
 
 ## Vivado Block Design (completed, bitstream generated)
 
-### Confirmed Addresses (from Vivado Address Editor)
+### Confirmed Addresses (current simplified bitstream)
+
+After 2026-03-31 block design simplification: axi_dma_0, linear_projection_0, and
+axi_dma_1 removed. swiglu_0 is now the only AXI-Lite peripheral, shifted to first slot.
 
 | Peripheral            | Base Address  |
 |-----------------------|---------------|
-| axi_dma_0 S_AXI_LITE  | 0xA0000000    |
-| linear_projection_0   | 0xA0010000    |
-| swiglu_0 s_axi_CTRL   | 0xA0020000    |
-| axi_dma_1 S_AXI_LITE  | 0xA0030000    |
+| swiglu_0 s_axi_CTRL   | 0xA0000000    |
 
-Note: SWIGLU_DMA_BASE = 0xA0030000 (axi_dma_1), SWIGLU_IP_BASE = 0xA0020000 (swiglu_0).
-The placeholders in earlier notes had these swapped.
+SWIGLU_IP_BASE = 0xA0000000 — confirmed in both ggml-cpu.c and pl.dtsi.
+Original 4-IP table (dma_0/lp_0/swiglu_0/dma_1 at 0xA000/1000/2000/3000) is obsolete.
 
 ### Confirmed Block Design Connections
 
@@ -190,17 +190,18 @@ linear_projection_0
   interrupt  → xlconcat_0 In2
 ```
 
-### xlconcat Interrupt Mapping (5 inputs)
+### xlconcat Interrupt Mapping (current simplified bitstream — 1 input)
+
+After removing axi_dma_0, linear_projection_0, and axi_dma_1, xlconcat was resized.
+swiglu_0 is now on In3 (4-input xlconcat per 2026-03-23 edit, after dma_1 removal):
 
 | xlconcat | Signal                        | pl_ps_irq0 | GIC SPI | DT offset |
 |----------|-------------------------------|------------|---------|-----------|
-| In0      | axi_dma_0 mm2s_introut        | [0]        | 121     | 89        |
-| In1      | axi_dma_0 s2mm_introut        | [1]        | 122     | 90        |
-| In2      | linear_projection_0 interrupt | [2]        | 123     | 91        |
-| In3      | axi_dma_1 s2mm_introut        | [3]        | 124     | 92        |
-| In4      | swiglu_0 interrupt            | [4]        | 125     | 93        |
+| In3      | swiglu_0 interrupt            | [3]        | 124     | 92        |
 
-The `[0:0]` annotation on each xlconcat input in Vivado is just port-width notation (1-bit wide). Normal.
+interrupts = `<0 92 4>` in pl.dtsi. Confirmed by ggml-cpu.c open_uio_by_addr(0xA0000000).
+
+Original 5-input table (In0–In4 for dma_0/dma_0/lp_0/dma_1/swiglu_0) is obsolete.
 
 ### CRITICAL: axi_dma_1 Must Be Configured for Scatter-Gather Mode
 
@@ -223,8 +224,7 @@ Match axi_dma_0 configuration exactly: SG mode, 26-bit buffer length register,
 
 ```c
 #define UDMABUF_SIZE     671088640U     // 640 MB — Phase B per-layer weight cache (614 MB used)
-#define SWIGLU_DMA_BASE  0xA0030000UL  // axi_dma_1 S_AXI_LITE
-#define SWIGLU_IP_BASE   0xA0020000UL  // swiglu_0 s_axi_CTRL
+#define SWIGLU_IP_BASE   0xA0000000UL  // swiglu_0 s_axi_CTRL (sole peripheral after simplification)
 
 // udmabuf layout — LP SG descriptor area reused (first 1 MB), SwiGLU regions follow
 #define SWG_VEC_OFF      0x06C50000U   // x batch: up to MAX_BATCH × 2048 × F32
@@ -417,7 +417,7 @@ Discovered during SwiGLU bringup:
 13. **Fused GLU op**: llama.cpp uses GGML_OP_GLU (fused silu×up), NOT separate SILU+MUL nodes. Graph walk is one level shallower than expected — `dst->src[1]` is the GLU op; its `src[0]` and `src[1]` are the gate and up MUL_MAT ops directly.
 14. **Batch guard required**: The trigger condition matches during prefill (src1->ne[1] > 1) as well as decode. The accelerator handles only single-token decode (ne[1]==1). Add guard before hardware path; prefill falls back to CPU silently.
 15. **udmabuf must be 160 MB**: LP matrix occupies 110 MB at offset 0x300000, ending at 0x6C00000 (108 MB). SwiGLU needs 32 MB after that, requiring ~140 MB total. Use UDMABUF_SIZE = 167,772,160 and update the udmabuf DTS node accordingly.
-16. **Address swap**: swiglu_0 is at 0xA0020000 and axi_dma_1 is at 0xA0030000 — opposite of the placeholder values in the original plan.
+16. **Address swap (original 4-IP design)**: swiglu_0 was at 0xA0020000 and axi_dma_1 at 0xA0030000 — opposite of the original plan's placeholder values. After the 2026-03-31 simplification (dma_0, lp_0, dma_1 removed), swiglu_0 shifted to 0xA0000000 as the sole peripheral.
 17. **MM2S_DMACR IRQThreshold**: Use 0x00011001 for MM2S_DMACR too (not 0x1001). IRQThreshold=0 in bits[23:16] is invalid for both channels.
 
 Discovered from synthesis report analysis (performance optimization):

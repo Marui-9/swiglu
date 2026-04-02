@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_row_down_q6k'" level="0">
-<item name = "Date">Wed Apr  1 12:45:07 2026
+<item name = "Date">Thu Apr  2 09:23:10 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 8.000 ns, 2.00 ns</column>
+<column name="ap_clk">4.00 ns, 2.920 ns, 1.08 ns</column>
 </table>
 </item>
 </section>
@@ -24,18 +24,26 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">496, 496, 4.960 us, 4.960 us, 496, 496, no</column>
+<column name="">7354, 7354, 29.416 us, 29.416 us, 7354, 7354, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K_fu_107">load_row_down_q6k_Pipeline_LOAD_DOWN_Q6K, 423, 423, 4.230 us, 4.230 us, 421, 421, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_row_down_q6k_Pipeline_LOAD_Q6K_FLAT_fu_1285">load_row_down_q6k_Pipeline_LOAD_Q6K_FLAT, 423, 423, 1.692 us, 1.692 us, 421, 421, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_row_down_q6k_Pipeline_EXTRACT_QL_fu_1308">load_row_down_q6k_Pipeline_EXTRACT_QL, 515, 515, 2.060 us, 2.060 us, 514, 514, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_row_down_q6k_Pipeline_EXTRACT_QH_fu_1397">load_row_down_q6k_Pipeline_EXTRACT_QH, 259, 259, 1.036 us, 1.036 us, 258, 258, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_row_down_q6k_Pipeline_EXTRACT_SC_fu_1483">load_row_down_q6k_Pipeline_EXTRACT_SC, 67, 67, 0.268 us, 0.268 us, 66, 66, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_fp16_to_fp32_fu_1569">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_1582">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_1595">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="grp_fp16_to_fp32_fu_1608">fp16_to_fp32, 3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_573_1">6856, 6856, 857, -, -, 8, no</column>
 </table>
 </item>
 </section>

@@ -1,24 +1,45 @@
 What's actually integer (W4A8)
 mac_blocks_wv (used for both X1 and X2 phases):
 
-Inner hot loop (line 200–201): INT8 × INT4 × UINT6 → INT32 — pure integer MACs
+Inner hot loop: INT8 × INT4 × UINT6 → INT32 — pure integer MACs
 8 partial int32_t accumulators per block — no FP adder latency constraints
-FP32 only appears once per block at line 216: d[b] * (x_scale * (float)sw) — a single multiply to apply the fp16 per-block scale
+FP32 only appears once per block: d[b] * (x_scale * (float)sw) —
+a single multiply to apply the fp16 per-block scale
+
 Why FP32 can't be avoided there
-Q4_K stores two fp16 values per 256-element block: d (scale) and dmin (minimum-subtraction scale). The final result for each block is:
+Q4_K stores two fp16 values per 256-element block: d (scale) and dmin
+(minimum-subtraction scale). The final result for each block is:
+  result = d × (x_scale × Σ(xi × qi × sci)) − dmin × (x_scale × Σ(xi × mni))
+The d and dmin are fp16 with arbitrary magnitude — you can't represent them
+faithfully in a fixed integer range. So one FP32 multiply per block (not per
+element) is unavoidable.
 
+Why you see fp16 → fp32 conversions
+Q4_K/Q6_K blocks store their per-block scales (d, dmin) in fp16. The kernel
+reads those fp16 headers and widens them to fp32 before applying them to the
+integer MAC sums. That's the "passage" between fp16 and fp32 in swiglu.cpp:
+the per-block metadata is fp16, but all arithmetic and the final output must
+be fp32 to match the CPU reference.
 
-result = d × (x_scale × Σ(xi × qi × sci)) − dmin × (x_scale × Σ(xi × mni))
-The d and dmin are fp16 with arbitrary magnitude — you can't represent them faithfully in a fixed integer range. So one FP32 multiply per block (not per element) is unavoidable.
-
-Neural networks are trained in FP32/BF16, then the weights are quantized for storage. The activations (the tensors flowing between layers) remain FP32 throughout. You can confirm this in two ways:
+Why activations stay FP32 throughout
+Neural networks are trained in FP32/BF16, then the weights are quantized for
+storage. The activations (the tensors flowing between layers) remain FP32
+throughout. You can confirm this in two ways:
 
 In lfm2.cpp:
+  cur = ggml_add(ctx0, cur, ffn_out);   // residual add expects F32
+And in the ggml.c builder:
+  result = ggml_new_tensor(ctx, GGML_TYPE_F32, 4, ne);
 
+The next layer's build_norm (RMSnorm) and the residual add both consume FP32.
+The rule in llama.cpp is: weight tensors are quantized, activation tensors
+are always FP32. The GGUF dump confirms this — every F32 entry is a norm
+weight (small, cheap), every Q4_K/Q6_K is a projection weight.
 
-cur = ggml_add(ctx0, cur, ffn_out);   // line 201 — add expects F32
-And in the ggml.c builder you already have:
-
-
-result = ggml_new_tensor(ctx, GGML_TYPE_F32, 4, ne);
-The next layer's build_norm (RMSnorm) and the residual add both consume FP32. The rule in llama.cpp is: weight tensors are quantized, activation tensors are always FP32. The GGUF dump confirms this — every F32 entry in the dump is a norm weight (small, cheap), every Q4_K/Q6_K is a projection weight.
+Bottom line
+Floats are used inside swiglu.cpp for accuracy and to match what the CPU ggml
+path does — even though integers are cheaper to compute. Only the weights
+(W_gate, W_up, W_down) are stored quantized; activations (x, gate values,
+output) stay FP32 end-to-end because the rest of the pipeline expects FP32.
+Attempting an all-integer activation path would require a different
+quantization/activation scheme and revalidation of the entire inference stack.

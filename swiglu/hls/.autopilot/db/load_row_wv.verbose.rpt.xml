@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_row_wv'" level="0">
-<item name = "Date">Wed Apr  1 12:45:20 2026
+<item name = "Date">Thu Apr  2 09:23:36 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 8.000 ns, 2.00 ns</column>
+<column name="ap_clk">4.00 ns, 2.920 ns, 1.08 ns</column>
 </table>
 </item>
 </section>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">148, 148, 1.480 us, 1.480 us, 148, 148, no</column>
+<column name="">148, 148, 0.592 us, 0.592 us, 148, 148, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1_fu_97">load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1, 75, 75, 0.750 us, 0.750 us, 73, 73, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_71_1_fu_97">load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_71_1, 75, 75, 0.300 us, 0.300 us, 73, 73, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -62,7 +62,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1_fu_97">load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1, 0, 0, 149, 139, 0</column>
+<column name="grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_71_1_fu_97">load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_71_1, 0, 0, 149, 139, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -79,7 +79,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="empty_754_fu_154_p2">+, 0, 0, 71, 64, 64</column>
+<column name="empty_587_fu_154_p2">+, 0, 0, 71, 64, 64</column>
 <column name="empty_fu_144_p2">+, 0, 0, 31, 24, 24</column>
 </table>
 </item>
@@ -105,7 +105,7 @@
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">74, 0, 74, 0</column>
-<column name="grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_102_1_fu_97_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_71_1_fu_97_ap_start_reg">1, 0, 1, 0</column>
 <column name="trunc_ln_reg_180">60, 0, 60, 0</column>
 </table>
 </item>

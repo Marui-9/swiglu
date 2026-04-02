@@ -75,8 +75,9 @@ When the last AXI write completes (out_batch fully written to DDR), the HLS stat
   output port high
 
 The interrupt wire goes:
-  swiglu_0 interrupt pin → xlconcat In3 → pl_ps_irq0[3] → GIC SPI 124 → Linux UIO driver
-  (DT offset 92: <0 92 4> in pl.dtsi)
+  swiglu_0 interrupt pin → xlconcat In4 → pl_ps_irq0[4] → GIC SPI 125 → Linux UIO driver
+  (DT offset 93: <0 93 4> in pl.dtsi)
+  Note: In3/SPI 124/offset 92 is axi_dma_1 s2mm_introut — a common mix-up.
 Linux's UIO driver increments an internal counter and wakes any poll() waiting on /dev/uioN.
 
 6. Driver receive path
@@ -130,41 +131,19 @@ UIO opened first via open_uio_by_addr(SWIGLU_IP_BASE), THEN GIE/IER enabled. Cor
 (prevents losing the first interrupt if it fires before UIO fd is ready).
 UIO re-armed with write(..., 1) at init. Correct.
 
-Stage 3 — Weight caching (ggml-cpu.c ~line 1892)
+Stage 3 — Weight caching (ggml-cpu.c ~line 1908)
 gate_bytes, up_bytes, down_bytes via ggml_nbytes(). Correct.
+layer index read from op_params[0] via ggml_get_op_params_i32(dst, 0), written at
+  graph-build time by ggml_swiglu_fused_hw() which receives il from lfm2.cpp. Correct.
 swg_layer_W/V/Wd_loaded[layer] flags prevent re-copy after first load. Correct.
-After the three conditional memcpy blocks, sync_for_device fires unconditionally:
-  flush_start = SWG_LAYER_W_OFF(layer)
-  flush_end   = SWG_LAYER_WD_OFF(layer) + down_bytes
-  udmabuf_sync_to_device(flush_start, flush_end - flush_start)
-
-PERFORMANCE ISSUE 1 — flush range is too large:
-  W, V, and Wd for a given layer are NOT contiguous — they sit in three separate
-  regions spaced ~150 MB apart:
-    W[layer]  at ~0x06D00000 + layer*9MB
-    V[layer]  at ~0x0FD00000 + layer*9MB  (offset +150MB from W base)
-    Wd[layer] at ~0x18D00000 + layer*14MB (offset +285MB from W base)
-  The flush range [W_OFF(layer), WD_OFF(layer)+down_bytes) spans ~300 MB for
-  layer 0, and always crosses all of W, V, and Wd for all lower-numbered layers.
-  The three actual weight arrays (~31 MB total) are within the range so it is
-  functionally correct, but the scan covers an unnecessarily large region.
-  Fix: three separate udmabuf_sync_to_device calls, one per weight array:
-    udmabuf_sync_to_device(SWG_LAYER_W_OFF(layer),  gate_bytes)
-    udmabuf_sync_to_device(SWG_LAYER_V_OFF(layer),  up_bytes)
-    udmabuf_sync_to_device(SWG_LAYER_WD_OFF(layer), down_bytes)
-
-PERFORMANCE ISSUE 2 — flush fires even when no weights were copied:
-  The flush block is outside the if(!swg_layer_X_loaded) guards, so it runs on
-  every call — including all calls after the first 16 (when all weights are already
-  in DDR and cache lines are clean). A clean-line flush is a hardware no-op but the
-  driver still pays the sysfs write overhead and the kernel still scans the range.
-  Fix: add a bool did_copy flag, set it inside each conditional copy block, and
-  gate the flush on did_copy:
-    bool did_copy = false;
-    if (!swg_layer_W_loaded[layer])  { memcpy(...); swg_layer_W_loaded[layer]  = true; did_copy = true; }
-    if (!swg_layer_V_loaded[layer])  { memcpy(...); swg_layer_V_loaded[layer]  = true; did_copy = true; }
-    if (!swg_layer_Wd_loaded[layer]) { memcpy(...); swg_layer_Wd_loaded[layer] = true; did_copy = true; }
-    if (did_copy) { /* three separate flushes */ }
+Three conditional copies each set a copied_W/V/Wd bool; three targeted flushes fire
+  only when the corresponding copy happened:
+    if (copied_W)  udmabuf_sync_to_device(SWG_LAYER_W_OFF(layer),  gate_bytes);
+    if (copied_V)  udmabuf_sync_to_device(SWG_LAYER_V_OFF(layer),  up_bytes);
+    if (copied_Wd) udmabuf_sync_to_device(SWG_LAYER_WD_OFF(layer), down_bytes);
+  W, V, Wd sit in three separate regions (~150 MB apart); targeted flushes avoid
+  scanning the ~300 MB gap that a single range flush would cross. After all 16 layers
+  are cached (warmup), zero flushes run per decode token. Correct.
 
 Stage 4 — x quantization (ggml-cpu.c ~line 1924)
 x_dst correctly points to udmabuf_vptr + SWG_VEC_OFF. Correct.
