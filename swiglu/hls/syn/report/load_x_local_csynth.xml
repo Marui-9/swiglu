@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:630</SourceLocation>
+<SourceLocation>swiglu.cpp:604</SourceLocation>
 <SummaryOfLoopViolations>
 <LOAD_X_BATCH_LOAD_X_VEC>
 <Name>LOAD_X_BATCH_LOAD_X_VEC</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:639</SourceLocation>
+<SourceLocation>swiglu.cpp:613</SourceLocation>
 </LOAD_X_BATCH_LOAD_X_VEC>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>

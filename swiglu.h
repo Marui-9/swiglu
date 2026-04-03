@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#define MAX_BATCH 4   // enable small prefill batches (prefill and decode up to 4 tokens)
+#define MAX_BATCH 1   // enable small prefill batches (prefill and decode up to 4 tokens)
 
 void swiglu(
     const uint8_t *W,            // ffn_gate  Q4_K  [8192 rows × 8 blocks × 144 B]

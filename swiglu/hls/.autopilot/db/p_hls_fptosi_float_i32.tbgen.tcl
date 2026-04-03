@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 43
+set cdfgNum 42
 set C_modelName {__hls_fptosi_float_i32}
 set C_modelType { int 32 }
 set ap_memory_interface_dict [dict create]

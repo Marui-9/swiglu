@@ -46,10 +46,10 @@ newFuncRoot:0 %loop_index_i = alloca i32 1
 
 <Node id="5" bw="62" op_0_bw="62" op_1_bw="62">
 <![CDATA[
-newFuncRoot:1 %sext_ln622_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln622
+newFuncRoot:1 %sext_ln596_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln596
 
 ]]></Node>
-<StgValue><ssdm name="sext_ln622_read"/></StgValue>
+<StgValue><ssdm name="sext_ln596_read"/></StgValue>
 </operation>
 
 <operation id="8" st_id="1" stage="1" lat="1">
@@ -61,10 +61,10 @@ newFuncRoot:1 %sext_ln622_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_
 
 <Node id="6" bw="64" op_0_bw="62">
 <![CDATA[
-newFuncRoot:2 %sext_ln622_cast = sext i62 %sext_ln622_read
+newFuncRoot:2 %sext_ln596_cast = sext i62 %sext_ln596_read
 
 ]]></Node>
-<StgValue><ssdm name="sext_ln622_cast"/></StgValue>
+<StgValue><ssdm name="sext_ln596_cast"/></StgValue>
 </operation>
 
 <operation id="9" st_id="1" stage="1" lat="1">
@@ -91,7 +91,7 @@ newFuncRoot:3 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %ou
 
 <Node id="8" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-newFuncRoot:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_35, i32 0, i32 0, void @empty_31, i32 64, i32 8192, void @empty_1, void @empty_38, void @empty_31, i32 16, i32 2, i32 16, i32 256, void @empty_31, void @empty_31, i32 4294967295, i32 0, i32 0
+newFuncRoot:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem_out, void @empty_36, i32 0, i32 0, void @empty_32, i32 64, i32 8192, void @empty_2, void @empty_38, void @empty_32, i32 16, i32 2, i32 16, i32 256, void @empty_32, void @empty_32, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -297,7 +297,7 @@ _ZL14compute_outputPKhPA32_A256_KaPKfPfj.1.1.exit.exitStub:0 %ret_ln0 = ret
 
 <Node id="17" bw="32" op_0_bw="32" op_1_bw="64">
 <![CDATA[
-load-store-loop.split.i:0 %gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln622_cast
+load-store-loop.split.i:0 %gmem_out_addr = getelementptr i32 %gmem_out, i64 %sext_ln596_cast
 
 ]]></Node>
 <StgValue><ssdm name="gmem_out_addr"/></StgValue>
@@ -312,7 +312,7 @@ load-store-loop.split.i:0 %gmem_out_addr = getelementptr i32 %gmem_out, i64 %sex
 
 <Node id="19" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-load-store-loop.split.i:2 %specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_31
+load-store-loop.split.i:2 %specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_32
 
 ]]></Node>
 <StgValue><ssdm name="specpipeline_ln0"/></StgValue>
@@ -342,10 +342,10 @@ load-store-loop.split.i:3 %speclooptripcount_ln0 = speclooptripcount void @_ssdm
 
 <Node id="23" bw="32" op_0_bw="32">
 <![CDATA[
-load-store-loop.split.i:6 %empty_849 = bitcast i32 %out_local_load
+load-store-loop.split.i:6 %empty_593 = bitcast i32 %out_local_load
 
 ]]></Node>
-<StgValue><ssdm name="empty_849"/></StgValue>
+<StgValue><ssdm name="empty_593"/></StgValue>
 </operation>
 
 <operation id="26" st_id="3" stage="1" lat="1">
@@ -357,10 +357,10 @@ load-store-loop.split.i:6 %empty_849 = bitcast i32 %out_local_load
 
 <Node id="24" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="4">
 <![CDATA[
-load-store-loop.split.i:7 %write_ln622 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_out_addr, i32 %empty_849, i4 15
+load-store-loop.split.i:7 %write_ln596 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_out_addr, i32 %empty_593, i4 15
 
 ]]></Node>
-<StgValue><ssdm name="write_ln622"/></StgValue>
+<StgValue><ssdm name="write_ln596"/></StgValue>
 </operation>
 
 <operation id="27" st_id="3" stage="1" lat="1">

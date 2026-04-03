@@ -521,7 +521,7 @@
 					<Obj>
 						<type>0</type>
 						<id>15</id>
-						<name>empty_860</name>
+						<name>empty_604</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -608,7 +608,7 @@
 					<Obj>
 						<type>0</type>
 						<id>18</id>
-						<name>empty_861</name>
+						<name>empty_605</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>

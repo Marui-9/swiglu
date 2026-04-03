@@ -59,7 +59,7 @@ module swiglu_compute_output_Pipeline_1 (
         m_axi_gmem_out_0_BRESP,
         m_axi_gmem_out_0_BID,
         m_axi_gmem_out_0_BUSER,
-        sext_ln622,
+        sext_ln596,
         out_local_address0,
         out_local_ce0,
         out_local_q0
@@ -119,7 +119,7 @@ output   m_axi_gmem_out_0_BREADY;
 input  [1:0] m_axi_gmem_out_0_BRESP;
 input  [0:0] m_axi_gmem_out_0_BID;
 input  [0:0] m_axi_gmem_out_0_BUSER;
-input  [61:0] sext_ln622;
+input  [61:0] sext_ln596;
 output  [10:0] out_local_address0;
 output   out_local_ce0;
 input  [31:0] out_local_q0;

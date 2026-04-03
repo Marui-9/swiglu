@@ -1,19 +1,19 @@
-swiglu.cpp:97:9: warning: missing argument for 'variable' [-Winvalid-hls-pragmas]
+swiglu.cpp:96:9: warning: missing argument for 'variable' [-Winvalid-hls-pragmas]
 #pragma HLS BIND_OP op=mul impl=dsp
         ^
-swiglu.cpp:191:9: warning: unknown HLS pragma ignored [-Winvalid-hls-pragmas]
+swiglu.cpp:174:9: warning: unknown HLS pragma ignored [-Winvalid-hls-pragmas]
 #pragma HLS BALANCE variable=total
         ^
-swiglu.cpp:353:9: warning: missing argument for 'variable' [-Winvalid-hls-pragmas]
+swiglu.cpp:327:9: warning: missing argument for 'variable' [-Winvalid-hls-pragmas]
 #pragma HLS BIND_OP op=mul impl=dsp
         ^
-swiglu.cpp:427:9: warning: unknown HLS pragma ignored [-Winvalid-hls-pragmas]
+swiglu.cpp:401:9: warning: unknown HLS pragma ignored [-Winvalid-hls-pragmas]
 #pragma HLS BALANCE variable=total
         ^
-swiglu.cpp:522:9: warning: missing argument for 'variable' [-Winvalid-hls-pragmas]
+swiglu.cpp:496:9: warning: missing argument for 'variable' [-Winvalid-hls-pragmas]
 #pragma HLS BIND_OP op=mul impl=dsp
         ^
-swiglu.cpp:566:9: warning: unknown HLS pragma ignored [-Winvalid-hls-pragmas]
+swiglu.cpp:540:9: warning: unknown HLS pragma ignored [-Winvalid-hls-pragmas]
 #pragma HLS BALANCE variable=total
         ^
 6 warnings generated.

@@ -32,7 +32,7 @@
 	resets = <&zynqmp_reset 116>;
 	clocking0: clocking0 {
 		#clock-cells = <0>;
-		assigned-clock-rates = <247000000>;
+		assigned-clock-rates = <99999999>;
 		assigned-clocks = <&zynqmp_clk 71>;
 		clock-output-names = "fabric_clk";
 		clocks = <&zynqmp_clk 71>;
@@ -40,7 +40,7 @@
 	};
 	clocking1: clocking1 {
 		#clock-cells = <0>;
-		assigned-clock-rates = <247000000>;
+		assigned-clock-rates = <99999999>; 
 		assigned-clocks = <&zynqmp_clk 72>;
 		clock-output-names = "fabric_clk";
 		clocks = <&zynqmp_clk 72>;
@@ -87,7 +87,7 @@
 		 * xlconcat resized to 4 inputs after DMA removal; swiglu moved
 		 * from In4 (offset 93) to In3 (offset 92).
 		 * Level-high (4): ACK by writing 0x1 to ISR (CTRL+0x0C, bit 0 TOW). */
-		interrupts = <0 92 4>;
+		interrupts = <0 89 4>;
 		interrupt-names = "interrupt";
 		clocks = <&zynqmp_clk 71>;
 	};

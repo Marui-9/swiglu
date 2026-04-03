@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 43
+set cdfgNum 42
 set C_modelName {mac_blocks_down_q6k}
 set C_modelType { float 32 }
 set ap_memory_interface_dict [dict create]
@@ -1276,7 +1276,7 @@ set ArgLastReadFirstWriteLatency {
 		gate_6 {Type I LastRead 1 FirstWrite -1}
 		gate_7 {Type I LastRead 1 FirstWrite -1}
 		gate_scale {Type I LastRead 2 FirstWrite -1}}
-	mac_blocks_down_q6k_Pipeline_VITIS_LOOP_543_2_Q6K_MAC_GROUP {
+	mac_blocks_down_q6k_Pipeline_VITIS_LOOP_517_2_Q6K_MAC_GROUP {
 		gate_0 {Type I LastRead 1 FirstWrite -1}
 		gate_1 {Type I LastRead 1 FirstWrite -1}
 		gate_2 {Type I LastRead 1 FirstWrite -1}

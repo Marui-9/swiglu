@@ -699,7 +699,7 @@
 						<name>out_local</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>591</lineNumber>
+						<lineNumber>565</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -715,14 +715,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>591</second>
+										<second>565</second>
 									</item>
 								</second>
 							</item>
@@ -762,7 +762,7 @@
 						<name>row_buf</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>597</lineNumber>
+						<lineNumber>571</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -778,14 +778,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>597</second>
+										<second>571</second>
 									</item>
 								</second>
 							</item>
@@ -825,7 +825,7 @@
 						<name>row_buf_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>597</lineNumber>
+						<lineNumber>571</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -841,14 +841,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>597</second>
+										<second>571</second>
 									</item>
 								</second>
 							</item>
@@ -888,7 +888,7 @@
 						<name>row_buf_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>597</lineNumber>
+						<lineNumber>571</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -904,14 +904,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>597</second>
+										<second>571</second>
 									</item>
 								</second>
 							</item>
@@ -951,7 +951,7 @@
 						<name>row_buf_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>597</lineNumber>
+						<lineNumber>571</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -967,14 +967,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>597</second>
+										<second>571</second>
 									</item>
 								</second>
 							</item>
@@ -1014,7 +1014,7 @@
 						<name>row_buf_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>597</lineNumber>
+						<lineNumber>571</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1030,14 +1030,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>597</second>
+										<second>571</second>
 									</item>
 								</second>
 							</item>
@@ -1077,7 +1077,7 @@
 						<name>row_buf_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>597</lineNumber>
+						<lineNumber>571</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1093,14 +1093,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>597</second>
+										<second>571</second>
 									</item>
 								</second>
 							</item>
@@ -1140,7 +1140,7 @@
 						<name>row_buf_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>597</lineNumber>
+						<lineNumber>571</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1156,14 +1156,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>597</second>
+										<second>571</second>
 									</item>
 								</second>
 							</item>
@@ -1203,7 +1203,7 @@
 						<name>row_buf_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>597</lineNumber>
+						<lineNumber>571</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1219,14 +1219,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>597</second>
+										<second>571</second>
 									</item>
 								</second>
 							</item>
@@ -1266,7 +1266,7 @@
 						<name>ql_buf</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1282,14 +1282,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -1329,7 +1329,7 @@
 						<name>ql_buf_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1345,14 +1345,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -1392,7 +1392,7 @@
 						<name>ql_buf_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1408,14 +1408,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -1455,7 +1455,7 @@
 						<name>ql_buf_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1471,14 +1471,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -1518,7 +1518,7 @@
 						<name>ql_buf_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1534,14 +1534,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -1581,7 +1581,7 @@
 						<name>ql_buf_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1597,14 +1597,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -1644,7 +1644,7 @@
 						<name>ql_buf_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1660,14 +1660,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -1707,7 +1707,7 @@
 						<name>ql_buf_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1723,14 +1723,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -1770,7 +1770,7 @@
 						<name>ql_buf_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1786,14 +1786,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -1833,7 +1833,7 @@
 						<name>ql_buf_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1849,14 +1849,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -1896,7 +1896,7 @@
 						<name>ql_buf_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1912,14 +1912,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -1959,7 +1959,7 @@
 						<name>ql_buf_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1975,14 +1975,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2022,7 +2022,7 @@
 						<name>ql_buf_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2038,14 +2038,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2085,7 +2085,7 @@
 						<name>ql_buf_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2101,14 +2101,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2148,7 +2148,7 @@
 						<name>ql_buf_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2164,14 +2164,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2211,7 +2211,7 @@
 						<name>ql_buf_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2227,14 +2227,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2274,7 +2274,7 @@
 						<name>ql_buf_16</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2290,14 +2290,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2337,7 +2337,7 @@
 						<name>ql_buf_17</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2353,14 +2353,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2400,7 +2400,7 @@
 						<name>ql_buf_18</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2416,14 +2416,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2463,7 +2463,7 @@
 						<name>ql_buf_19</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2479,14 +2479,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2526,7 +2526,7 @@
 						<name>ql_buf_20</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2542,14 +2542,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2589,7 +2589,7 @@
 						<name>ql_buf_21</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2605,14 +2605,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2652,7 +2652,7 @@
 						<name>ql_buf_22</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2668,14 +2668,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2715,7 +2715,7 @@
 						<name>ql_buf_23</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2731,14 +2731,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2778,7 +2778,7 @@
 						<name>ql_buf_24</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2794,14 +2794,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2841,7 +2841,7 @@
 						<name>ql_buf_25</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2857,14 +2857,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2904,7 +2904,7 @@
 						<name>ql_buf_26</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2920,14 +2920,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -2967,7 +2967,7 @@
 						<name>ql_buf_27</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -2983,14 +2983,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -3030,7 +3030,7 @@
 						<name>ql_buf_28</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3046,14 +3046,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -3093,7 +3093,7 @@
 						<name>ql_buf_29</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3109,14 +3109,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -3156,7 +3156,7 @@
 						<name>ql_buf_30</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3172,14 +3172,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -3219,7 +3219,7 @@
 						<name>ql_buf_31</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>605</lineNumber>
+						<lineNumber>579</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3235,14 +3235,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>605</second>
+										<second>579</second>
 									</item>
 								</second>
 							</item>
@@ -3282,7 +3282,7 @@
 						<name>qh_buf</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3298,14 +3298,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -3345,7 +3345,7 @@
 						<name>qh_buf_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3361,14 +3361,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -3408,7 +3408,7 @@
 						<name>qh_buf_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3424,14 +3424,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -3471,7 +3471,7 @@
 						<name>qh_buf_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3487,14 +3487,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -3534,7 +3534,7 @@
 						<name>qh_buf_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3550,14 +3550,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -3597,7 +3597,7 @@
 						<name>qh_buf_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3613,14 +3613,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -3660,7 +3660,7 @@
 						<name>qh_buf_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3676,14 +3676,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -3723,7 +3723,7 @@
 						<name>qh_buf_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3739,14 +3739,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -3786,7 +3786,7 @@
 						<name>qh_buf_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3802,14 +3802,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -3849,7 +3849,7 @@
 						<name>qh_buf_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3865,14 +3865,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -3912,7 +3912,7 @@
 						<name>qh_buf_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3928,14 +3928,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -3975,7 +3975,7 @@
 						<name>qh_buf_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -3991,14 +3991,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4038,7 +4038,7 @@
 						<name>qh_buf_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4054,14 +4054,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4101,7 +4101,7 @@
 						<name>qh_buf_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4117,14 +4117,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4164,7 +4164,7 @@
 						<name>qh_buf_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4180,14 +4180,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4227,7 +4227,7 @@
 						<name>qh_buf_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4243,14 +4243,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4290,7 +4290,7 @@
 						<name>qh_buf_16</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4306,14 +4306,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4353,7 +4353,7 @@
 						<name>qh_buf_17</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4369,14 +4369,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4416,7 +4416,7 @@
 						<name>qh_buf_18</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4432,14 +4432,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4479,7 +4479,7 @@
 						<name>qh_buf_19</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4495,14 +4495,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4542,7 +4542,7 @@
 						<name>qh_buf_20</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4558,14 +4558,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4605,7 +4605,7 @@
 						<name>qh_buf_21</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4621,14 +4621,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4668,7 +4668,7 @@
 						<name>qh_buf_22</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4684,14 +4684,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4731,7 +4731,7 @@
 						<name>qh_buf_23</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4747,14 +4747,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4794,7 +4794,7 @@
 						<name>qh_buf_24</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4810,14 +4810,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4857,7 +4857,7 @@
 						<name>qh_buf_25</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4873,14 +4873,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4920,7 +4920,7 @@
 						<name>qh_buf_26</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4936,14 +4936,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -4983,7 +4983,7 @@
 						<name>qh_buf_27</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -4999,14 +4999,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -5046,7 +5046,7 @@
 						<name>qh_buf_28</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5062,14 +5062,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -5109,7 +5109,7 @@
 						<name>qh_buf_29</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5125,14 +5125,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -5172,7 +5172,7 @@
 						<name>qh_buf_30</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5188,14 +5188,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -5235,7 +5235,7 @@
 						<name>qh_buf_31</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>606</lineNumber>
+						<lineNumber>580</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5251,14 +5251,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>606</second>
+										<second>580</second>
 									</item>
 								</second>
 							</item>
@@ -5298,7 +5298,7 @@
 						<name>sc_buf</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5314,14 +5314,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -5361,7 +5361,7 @@
 						<name>sc_buf_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5377,14 +5377,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -5424,7 +5424,7 @@
 						<name>sc_buf_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5440,14 +5440,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -5487,7 +5487,7 @@
 						<name>sc_buf_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5503,14 +5503,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -5550,7 +5550,7 @@
 						<name>sc_buf_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5566,14 +5566,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -5613,7 +5613,7 @@
 						<name>sc_buf_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5629,14 +5629,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -5676,7 +5676,7 @@
 						<name>sc_buf_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5692,14 +5692,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -5739,7 +5739,7 @@
 						<name>sc_buf_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5755,14 +5755,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -5802,7 +5802,7 @@
 						<name>sc_buf_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5818,14 +5818,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -5865,7 +5865,7 @@
 						<name>sc_buf_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5881,14 +5881,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -5928,7 +5928,7 @@
 						<name>sc_buf_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -5944,14 +5944,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -5991,7 +5991,7 @@
 						<name>sc_buf_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6007,14 +6007,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6054,7 +6054,7 @@
 						<name>sc_buf_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6070,14 +6070,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6117,7 +6117,7 @@
 						<name>sc_buf_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6133,14 +6133,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6180,7 +6180,7 @@
 						<name>sc_buf_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6196,14 +6196,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6243,7 +6243,7 @@
 						<name>sc_buf_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6259,14 +6259,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6306,7 +6306,7 @@
 						<name>sc_buf_16</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6322,14 +6322,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6369,7 +6369,7 @@
 						<name>sc_buf_17</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6385,14 +6385,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6432,7 +6432,7 @@
 						<name>sc_buf_18</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6448,14 +6448,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6495,7 +6495,7 @@
 						<name>sc_buf_19</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6511,14 +6511,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6558,7 +6558,7 @@
 						<name>sc_buf_20</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6574,14 +6574,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6621,7 +6621,7 @@
 						<name>sc_buf_21</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6637,14 +6637,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6684,7 +6684,7 @@
 						<name>sc_buf_22</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6700,14 +6700,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6747,7 +6747,7 @@
 						<name>sc_buf_23</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6763,14 +6763,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6810,7 +6810,7 @@
 						<name>sc_buf_24</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6826,14 +6826,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6873,7 +6873,7 @@
 						<name>sc_buf_25</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6889,14 +6889,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6936,7 +6936,7 @@
 						<name>sc_buf_26</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -6952,14 +6952,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -6999,7 +6999,7 @@
 						<name>sc_buf_27</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7015,14 +7015,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -7062,7 +7062,7 @@
 						<name>sc_buf_28</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7078,14 +7078,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -7125,7 +7125,7 @@
 						<name>sc_buf_29</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7141,14 +7141,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -7188,7 +7188,7 @@
 						<name>sc_buf_30</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7204,14 +7204,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -7251,7 +7251,7 @@
 						<name>sc_buf_31</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>607</lineNumber>
+						<lineNumber>581</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7267,14 +7267,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>607</second>
+										<second>581</second>
 									</item>
 								</second>
 							</item>
@@ -7314,7 +7314,7 @@
 						<name>d_buf</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7330,14 +7330,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -7377,7 +7377,7 @@
 						<name>d_buf_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7393,14 +7393,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -7440,7 +7440,7 @@
 						<name>d_buf_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7456,14 +7456,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -7503,7 +7503,7 @@
 						<name>d_buf_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7519,14 +7519,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -7566,7 +7566,7 @@
 						<name>d_buf_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7582,14 +7582,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -7629,7 +7629,7 @@
 						<name>d_buf_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7645,14 +7645,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -7692,7 +7692,7 @@
 						<name>d_buf_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7708,14 +7708,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -7755,7 +7755,7 @@
 						<name>d_buf_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7771,14 +7771,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -7818,7 +7818,7 @@
 						<name>d_buf_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7834,14 +7834,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -7881,7 +7881,7 @@
 						<name>d_buf_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7897,14 +7897,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -7944,7 +7944,7 @@
 						<name>d_buf_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -7960,14 +7960,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8007,7 +8007,7 @@
 						<name>d_buf_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8023,14 +8023,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8070,7 +8070,7 @@
 						<name>d_buf_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8086,14 +8086,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8133,7 +8133,7 @@
 						<name>d_buf_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8149,14 +8149,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8196,7 +8196,7 @@
 						<name>d_buf_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8212,14 +8212,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8259,7 +8259,7 @@
 						<name>d_buf_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8275,14 +8275,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8322,7 +8322,7 @@
 						<name>d_buf_16</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8338,14 +8338,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8385,7 +8385,7 @@
 						<name>d_buf_17</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8401,14 +8401,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8448,7 +8448,7 @@
 						<name>d_buf_18</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8464,14 +8464,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8511,7 +8511,7 @@
 						<name>d_buf_19</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8527,14 +8527,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8574,7 +8574,7 @@
 						<name>d_buf_20</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8590,14 +8590,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8637,7 +8637,7 @@
 						<name>d_buf_21</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8653,14 +8653,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8700,7 +8700,7 @@
 						<name>d_buf_22</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8716,14 +8716,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8763,7 +8763,7 @@
 						<name>d_buf_23</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8779,14 +8779,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8826,7 +8826,7 @@
 						<name>d_buf_24</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8842,14 +8842,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8889,7 +8889,7 @@
 						<name>d_buf_25</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8905,14 +8905,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -8952,7 +8952,7 @@
 						<name>d_buf_26</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -8968,14 +8968,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -9015,7 +9015,7 @@
 						<name>d_buf_27</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9031,14 +9031,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -9078,7 +9078,7 @@
 						<name>d_buf_28</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9094,14 +9094,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -9141,7 +9141,7 @@
 						<name>d_buf_29</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9157,14 +9157,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -9204,7 +9204,7 @@
 						<name>d_buf_30</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9220,14 +9220,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -9267,7 +9267,7 @@
 						<name>d_buf_31</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>608</lineNumber>
+						<lineNumber>582</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9283,14 +9283,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>608</second>
+										<second>582</second>
 									</item>
 								</second>
 							</item>
@@ -9327,10 +9327,10 @@
 					<Obj>
 						<type>0</type>
 						<id>167</id>
-						<name>icmp_ln595</name>
+						<name>icmp_ln569</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>595</lineNumber>
+						<lineNumber>569</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9346,14 +9346,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>595</second>
+										<second>569</second>
 									</item>
 								</second>
 							</item>
@@ -9394,7 +9394,7 @@
 						<name>out_i</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>604</lineNumber>
+						<lineNumber>578</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9410,14 +9410,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>604</second>
+										<second>578</second>
 									</item>
 								</second>
 							</item>
@@ -9454,10 +9454,10 @@
 					<Obj>
 						<type>0</type>
 						<id>169</id>
-						<name>br_ln595</name>
+						<name>br_ln569</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>595</lineNumber>
+						<lineNumber>569</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9473,14 +9473,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>595</second>
+										<second>569</second>
 									</item>
 								</second>
 							</item>
@@ -9519,10 +9519,10 @@
 					<Obj>
 						<type>0</type>
 						<id>267</id>
-						<name>out_i_write_ln604</name>
+						<name>out_i_write_ln578</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>604</lineNumber>
+						<lineNumber>578</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9538,14 +9538,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>604</second>
+										<second>578</second>
 									</item>
 								</second>
 							</item>
@@ -9583,10 +9583,10 @@
 					<Obj>
 						<type>0</type>
 						<id>268</id>
-						<name>br_ln604</name>
+						<name>br_ln578</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>604</lineNumber>
+						<lineNumber>578</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9602,14 +9602,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>604</second>
+										<second>578</second>
 									</item>
 								</second>
 							</item>
@@ -9649,7 +9649,7 @@
 						<name>out_i_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>604</lineNumber>
+						<lineNumber>578</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9665,14 +9665,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>604</second>
+										<second>578</second>
 									</item>
 								</second>
 							</item>
@@ -9710,10 +9710,10 @@
 					<Obj>
 						<type>0</type>
 						<id>271</id>
-						<name>icmp_ln604</name>
+						<name>icmp_ln578</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>604</lineNumber>
+						<lineNumber>578</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9729,14 +9729,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>604</second>
+										<second>578</second>
 									</item>
 								</second>
 							</item>
@@ -9774,10 +9774,10 @@
 					<Obj>
 						<type>0</type>
 						<id>272</id>
-						<name>add_ln604</name>
+						<name>add_ln578</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>604</lineNumber>
+						<lineNumber>578</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9793,14 +9793,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>604</second>
+										<second>578</second>
 									</item>
 								</second>
 							</item>
@@ -9838,10 +9838,10 @@
 					<Obj>
 						<type>0</type>
 						<id>273</id>
-						<name>br_ln604</name>
+						<name>br_ln578</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>604</lineNumber>
+						<lineNumber>578</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9857,14 +9857,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>604</second>
+										<second>578</second>
 									</item>
 								</second>
 							</item>
@@ -9903,10 +9903,10 @@
 					<Obj>
 						<type>0</type>
 						<id>275</id>
-						<name>zext_ln604</name>
+						<name>zext_ln578</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>604</lineNumber>
+						<lineNumber>578</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9922,14 +9922,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>604</second>
+										<second>578</second>
 									</item>
 								</second>
 							</item>
@@ -9966,10 +9966,10 @@
 					<Obj>
 						<type>0</type>
 						<id>278</id>
-						<name>trunc_ln616</name>
+						<name>trunc_ln590</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>616</lineNumber>
+						<lineNumber>590</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -9985,14 +9985,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>616</second>
+										<second>590</second>
 									</item>
 								</second>
 							</item>
@@ -10029,10 +10029,10 @@
 					<Obj>
 						<type>0</type>
 						<id>279</id>
-						<name>_ln616</name>
+						<name>_ln590</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>616</lineNumber>
+						<lineNumber>590</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -10048,14 +10048,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>616</second>
+										<second>590</second>
 									</item>
 								</second>
 							</item>
@@ -10226,7 +10226,7 @@
 						<name>out_local_addr_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>618</lineNumber>
+						<lineNumber>592</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -10242,14 +10242,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>618</second>
+										<second>592</second>
 									</item>
 								</second>
 							</item>
@@ -11667,7 +11667,7 @@
 						<name>call_ret2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>617</lineNumber>
+						<lineNumber>591</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -11683,14 +11683,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>617</second>
+										<second>591</second>
 									</item>
 								</second>
 							</item>
@@ -11866,10 +11866,10 @@
 					<Obj>
 						<type>0</type>
 						<id>314</id>
-						<name>out_local_addr_1_write_ln617</name>
+						<name>out_local_addr_1_write_ln591</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>617</lineNumber>
+						<lineNumber>591</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -11885,14 +11885,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>617</second>
+										<second>591</second>
 									</item>
 								</second>
 							</item>
@@ -11930,10 +11930,10 @@
 					<Obj>
 						<type>0</type>
 						<id>315</id>
-						<name>out_i_write_ln604</name>
+						<name>out_i_write_ln578</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>604</lineNumber>
+						<lineNumber>578</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -11949,14 +11949,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>604</second>
+										<second>578</second>
 									</item>
 								</second>
 							</item>
@@ -11996,10 +11996,10 @@
 					<Obj>
 						<type>0</type>
 						<id>316</id>
-						<name>br_ln604</name>
+						<name>br_ln578</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>604</lineNumber>
+						<lineNumber>578</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12015,14 +12015,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>604</second>
+										<second>578</second>
 									</item>
 								</second>
 							</item>
@@ -12101,10 +12101,10 @@
 					<Obj>
 						<type>0</type>
 						<id>328</id>
-						<name>out_i_write_ln596</name>
+						<name>out_i_write_ln570</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>596</lineNumber>
+						<lineNumber>570</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12120,14 +12120,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>596</second>
+										<second>570</second>
 									</item>
 								</second>
 							</item>
@@ -12165,10 +12165,10 @@
 					<Obj>
 						<type>0</type>
 						<id>329</id>
-						<name>br_ln596</name>
+						<name>br_ln570</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>596</lineNumber>
+						<lineNumber>570</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12184,14 +12184,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>596</second>
+										<second>570</second>
 									</item>
 								</second>
 							</item>
@@ -12231,7 +12231,7 @@
 						<name>out_i_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>596</lineNumber>
+						<lineNumber>570</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12247,14 +12247,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>596</second>
+										<second>570</second>
 									</item>
 								</second>
 							</item>
@@ -12292,10 +12292,10 @@
 					<Obj>
 						<type>0</type>
 						<id>332</id>
-						<name>icmp_ln596</name>
+						<name>icmp_ln570</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>596</lineNumber>
+						<lineNumber>570</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12311,14 +12311,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>596</second>
+										<second>570</second>
 									</item>
 								</second>
 							</item>
@@ -12356,10 +12356,10 @@
 					<Obj>
 						<type>0</type>
 						<id>333</id>
-						<name>add_ln596</name>
+						<name>add_ln570</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>596</lineNumber>
+						<lineNumber>570</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12375,14 +12375,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>596</second>
+										<second>570</second>
 									</item>
 								</second>
 							</item>
@@ -12420,10 +12420,10 @@
 					<Obj>
 						<type>0</type>
 						<id>334</id>
-						<name>br_ln596</name>
+						<name>br_ln570</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>596</lineNumber>
+						<lineNumber>570</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12439,14 +12439,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>596</second>
+										<second>570</second>
 									</item>
 								</second>
 							</item>
@@ -12485,10 +12485,10 @@
 					<Obj>
 						<type>0</type>
 						<id>336</id>
-						<name>zext_ln596</name>
+						<name>zext_ln570</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>596</lineNumber>
+						<lineNumber>570</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12504,14 +12504,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>596</second>
+										<second>570</second>
 									</item>
 								</second>
 							</item>
@@ -12548,10 +12548,10 @@
 					<Obj>
 						<type>0</type>
 						<id>339</id>
-						<name>trunc_ln600</name>
+						<name>trunc_ln574</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>600</lineNumber>
+						<lineNumber>574</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12567,14 +12567,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>600</second>
+										<second>574</second>
 									</item>
 								</second>
 							</item>
@@ -12611,10 +12611,10 @@
 					<Obj>
 						<type>0</type>
 						<id>340</id>
-						<name>_ln600</name>
+						<name>_ln574</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>600</lineNumber>
+						<lineNumber>574</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12630,14 +12630,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>600</second>
+										<second>574</second>
 									</item>
 								</second>
 							</item>
@@ -12688,7 +12688,7 @@
 						<name>out_local_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>601</lineNumber>
+						<lineNumber>575</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12704,14 +12704,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>601</second>
+										<second>575</second>
 									</item>
 								</second>
 							</item>
@@ -12753,7 +12753,7 @@
 						<name>call_ret</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>601</lineNumber>
+						<lineNumber>575</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12769,14 +12769,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>601</second>
+										<second>575</second>
 									</item>
 								</second>
 							</item>
@@ -12832,10 +12832,10 @@
 					<Obj>
 						<type>0</type>
 						<id>343</id>
-						<name>out_local_addr_write_ln601</name>
+						<name>out_local_addr_write_ln575</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>601</lineNumber>
+						<lineNumber>575</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12851,14 +12851,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>601</second>
+										<second>575</second>
 									</item>
 								</second>
 							</item>
@@ -12896,10 +12896,10 @@
 					<Obj>
 						<type>0</type>
 						<id>344</id>
-						<name>out_i_write_ln596</name>
+						<name>out_i_write_ln570</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>596</lineNumber>
+						<lineNumber>570</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12915,14 +12915,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>596</second>
+										<second>570</second>
 									</item>
 								</second>
 							</item>
@@ -12962,10 +12962,10 @@
 					<Obj>
 						<type>0</type>
 						<id>345</id>
-						<name>br_ln596</name>
+						<name>br_ln570</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>596</lineNumber>
+						<lineNumber>570</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -12981,14 +12981,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>596</second>
+										<second>570</second>
 									</item>
 								</second>
 							</item>
@@ -13070,7 +13070,7 @@
 						<name>trunc_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>622</lineNumber>
+						<lineNumber>596</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -13086,14 +13086,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>622</second>
+										<second>596</second>
 									</item>
 								</second>
 							</item>
@@ -13133,10 +13133,10 @@
 					<Obj>
 						<type>0</type>
 						<id>350</id>
-						<name>sext_ln622</name>
+						<name>sext_ln596</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>622</lineNumber>
+						<lineNumber>596</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -13152,14 +13152,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>622</second>
+										<second>596</second>
 									</item>
 								</second>
 							</item>
@@ -13199,7 +13199,7 @@
 						<name>gmem_out_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>622</lineNumber>
+						<lineNumber>596</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -13215,14 +13215,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>622</second>
+										<second>596</second>
 									</item>
 								</second>
 							</item>
@@ -13263,7 +13263,7 @@
 						<name>empty</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>622</lineNumber>
+						<lineNumber>596</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -13279,14 +13279,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>622</second>
+										<second>596</second>
 									</item>
 								</second>
 							</item>
@@ -13325,10 +13325,10 @@
 					<Obj>
 						<type>0</type>
 						<id>353</id>
-						<name>_ln622</name>
+						<name>_ln596</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>622</lineNumber>
+						<lineNumber>596</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -13344,14 +13344,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>622</second>
+										<second>596</second>
 									</item>
 								</second>
 							</item>
@@ -13392,10 +13392,10 @@
 					<Obj>
 						<type>0</type>
 						<id>354</id>
-						<name>empty_850</name>
+						<name>empty_594</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>623</lineNumber>
+						<lineNumber>597</lineNumber>
 						<contextFuncName>compute_output</contextFuncName>
 						<contextNormFuncName>compute_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -13411,14 +13411,14 @@
 											<first>swiglu.cpp</first>
 											<second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
 										</first>
-										<second>717</second>
+										<second>691</second>
 									</item>
 									<item>
 										<first>
 											<first>swiglu.cpp</first>
 											<second>compute_output</second>
 										</first>
-										<second>623</second>
+										<second>597</second>
 									</item>
 								</second>
 							</item>

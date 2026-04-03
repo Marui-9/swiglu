@@ -169,7 +169,7 @@
             <Obj>
               <type>0</type>
               <id>4</id>
-              <name>tmp_1000</name>
+              <name>tmp_688</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>37</lineNumber>
@@ -194,7 +194,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_1000_reg_645</rtlName>
+              <rtlName>tmp_688_reg_645</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -802,7 +802,7 @@
             <Obj>
               <type>0</type>
               <id>15</id>
-              <name>tmp_268</name>
+              <name>tmp_188</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>53</lineNumber>
@@ -827,7 +827,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_268_fu_437_p4</rtlName>
+              <rtlName>tmp_188_fu_437_p4</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -921,7 +921,7 @@
             <Obj>
               <type>0</type>
               <id>17</id>
-              <name>tmp_1001</name>
+              <name>tmp_689</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>47</lineNumber>
@@ -946,7 +946,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_1001_fu_148_p3</rtlName>
+              <rtlName>tmp_689_fu_148_p3</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -1209,7 +1209,7 @@
             <Obj>
               <type>0</type>
               <id>22</id>
-              <name>tmp_1002</name>
+              <name>tmp_690</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>47</lineNumber>
@@ -1234,7 +1234,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_1002_fu_184_p3</rtlName>
+              <rtlName>tmp_690_fu_184_p3</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -1498,7 +1498,7 @@
             <Obj>
               <type>0</type>
               <id>27</id>
-              <name>tmp_1003</name>
+              <name>tmp_691</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>47</lineNumber>
@@ -1523,7 +1523,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_1003_fu_222_p3</rtlName>
+              <rtlName>tmp_691_fu_222_p3</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -1786,7 +1786,7 @@
             <Obj>
               <type>0</type>
               <id>32</id>
-              <name>tmp_1004</name>
+              <name>tmp_692</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>47</lineNumber>
@@ -1811,7 +1811,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_1004_reg_677</rtlName>
+              <rtlName>tmp_692_reg_677</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -2074,7 +2074,7 @@
             <Obj>
               <type>0</type>
               <id>37</id>
-              <name>tmp_1005</name>
+              <name>tmp_693</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>47</lineNumber>
@@ -2099,7 +2099,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_1005_fu_288_p3</rtlName>
+              <rtlName>tmp_693_fu_288_p3</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -2362,7 +2362,7 @@
             <Obj>
               <type>0</type>
               <id>42</id>
-              <name>tmp_1006</name>
+              <name>tmp_694</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>47</lineNumber>
@@ -2387,7 +2387,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_1006_reg_694</rtlName>
+              <rtlName>tmp_694_reg_694</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -2650,7 +2650,7 @@
             <Obj>
               <type>0</type>
               <id>47</id>
-              <name>tmp_1007</name>
+              <name>tmp_695</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>47</lineNumber>
@@ -2675,7 +2675,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_1007_fu_357_p3</rtlName>
+              <rtlName>tmp_695_fu_357_p3</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -2938,7 +2938,7 @@
             <Obj>
               <type>0</type>
               <id>52</id>
-              <name>tmp_1008</name>
+              <name>tmp_696</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>47</lineNumber>
@@ -2963,7 +2963,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_1008_reg_711</rtlName>
+              <rtlName>tmp_696_reg_711</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -3226,7 +3226,7 @@
             <Obj>
               <type>0</type>
               <id>57</id>
-              <name>tmp_1009</name>
+              <name>tmp_697</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>47</lineNumber>
@@ -3251,7 +3251,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_1009_fu_468_p3</rtlName>
+              <rtlName>tmp_697_fu_468_p3</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -3514,7 +3514,7 @@
             <Obj>
               <type>0</type>
               <id>62</id>
-              <name>tmp_1010</name>
+              <name>tmp_698</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>47</lineNumber>
@@ -3539,7 +3539,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_1010_fu_502_p3</rtlName>
+              <rtlName>tmp_698_fu_502_p3</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -4461,7 +4461,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>f32</originalName>
-              <rtlName>sparsemux_9_3_32_1_1_U280</rtlName>
+              <rtlName>sparsemux_9_3_32_1_0_U751</rtlName>
               <control>auto</control>
               <opType>sparsemux</opType>
               <implIndex>onehotencoding_realdef</implIndex>
@@ -4527,7 +4527,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>ap_return</rtlName>
+              <rtlName>bitcast_ln55_fu_635_p1</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -7426,7 +7426,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item class_id="36" tracking_level="0" version="0">
-          <first>sparsemux_9_3_32_1_1_U280 (sparsemux_9_3_32_1_1)</first>
+          <first>sparsemux_9_3_32_1_0_U751 (sparsemux_9_3_32_1_0)</first>
           <second class_id="37" tracking_level="0" version="0">
             <count>2</count>
             <item_version>0</item_version>
@@ -8389,12 +8389,77 @@
         <item_version>0</item_version>
       </dp_memory_resource>
       <dp_multiplexer_resource>
-        <count>0</count>
+        <count>1</count>
         <item_version>0</item_version>
+        <item>
+          <first>ap_return</first>
+          <second>
+            <count>5</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0Size)</first>
+              <second>3</second>
+            </item>
+            <item>
+              <first>(1Bits)</first>
+              <second>32</second>
+            </item>
+            <item>
+              <first>(2Count)</first>
+              <second>96</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>14</second>
+            </item>
+          </second>
+        </item>
       </dp_multiplexer_resource>
       <dp_register_resource>
-        <count>15</count>
+        <count>17</count>
         <item_version>0</item_version>
+        <item>
+          <first>ap_ce_reg</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>1</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>1</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>ap_return_int_reg</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>32</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>32</second>
+            </item>
+          </second>
+        </item>
         <item>
           <first>e_10_reg_699</first>
           <second>
@@ -8605,7 +8670,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_1000_reg_645</first>
+          <first>tmp_688_reg_645</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -8624,7 +8689,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_1004_reg_677</first>
+          <first>tmp_692_reg_677</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -8643,7 +8708,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_1006_reg_694</first>
+          <first>tmp_694_reg_694</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -8662,7 +8727,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_1008_reg_711</first>
+          <first>tmp_696_reg_711</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -8685,7 +8750,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item>
-          <first>sparsemux_9_3_32_1_1_U280</first>
+          <first>sparsemux_9_3_32_1_0_U751</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -8696,7 +8761,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item class_id="40" tracking_level="0" version="0">
-          <first>sparsemux_9_3_32_1_1_U280 (sparsemux_9_3_32_1_1)</first>
+          <first>sparsemux_9_3_32_1_0_U751 (sparsemux_9_3_32_1_0)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -10701,7 +10766,15 @@
         </second>
       </item>
       <item>
-        <first>tmp_1000_fu_96</first>
+        <first>tmp_188_fu_437</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>15</item>
+        </second>
+      </item>
+      <item>
+        <first>tmp_688_fu_96</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10709,7 +10782,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1001_fu_148</first>
+        <first>tmp_689_fu_148</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10717,7 +10790,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1002_fu_184</first>
+        <first>tmp_690_fu_184</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10725,7 +10798,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1003_fu_222</first>
+        <first>tmp_691_fu_222</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10733,7 +10806,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1004_fu_258</first>
+        <first>tmp_692_fu_258</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10741,7 +10814,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1005_fu_288</first>
+        <first>tmp_693_fu_288</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10749,7 +10822,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1006_fu_324</first>
+        <first>tmp_694_fu_324</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10757,7 +10830,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1007_fu_357</first>
+        <first>tmp_695_fu_357</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10765,7 +10838,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1008_fu_391</first>
+        <first>tmp_696_fu_391</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10773,7 +10846,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1009_fu_468</first>
+        <first>tmp_697_fu_468</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10781,19 +10854,11 @@
         </second>
       </item>
       <item>
-        <first>tmp_1010_fu_502</first>
+        <first>tmp_698_fu_502</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
           <item>62</item>
-        </second>
-      </item>
-      <item>
-        <first>tmp_268_fu_437</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>15</item>
         </second>
       </item>
       <item>
@@ -11085,7 +11150,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1000_reg_645</first>
+        <first>tmp_688_reg_645</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -11093,7 +11158,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1004_reg_677</first>
+        <first>tmp_692_reg_677</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -11101,7 +11166,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1006_reg_694</first>
+        <first>tmp_694_reg_694</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -11109,7 +11174,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_1008_reg_711</first>
+        <first>tmp_696_reg_711</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

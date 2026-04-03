@@ -49,14 +49,14 @@
 <SummaryOfViolations>
 <IssueType>Timing Violation</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:565</SourceLocation>
+<SourceLocation>swiglu.cpp:539</SourceLocation>
 <SummaryOfLoopViolations>
 <REDUCE_Q6K>
 <Name>REDUCE_Q6K</Name>
 <IssueType>II Violation</IssueType>
 <ViolationType>Memory Dependency</ViolationType>
 <IterationDistance>1</IterationDistance>
-<SourceLocation>swiglu.cpp:567</SourceLocation>
+<SourceLocation>swiglu.cpp:541</SourceLocation>
 </REDUCE_Q6K>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'compute_gate_Pipeline_GATE_PASS216'
 ================================================================
-* Date:           Thu Apr  2 13:36:28 2026
+* Date:           Thu Apr  2 14:55:47 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -158,7 +158,7 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 1.68>
-ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%j = alloca i32 1" [swiglu.cpp:310->swiglu.cpp:716]   --->   Operation 72 'alloca' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%j = alloca i32 1" [swiglu.cpp:284->swiglu.cpp:690]   --->   Operation 72 'alloca' 'j' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %X1_cache, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 73 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %X2_cache, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 74 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_7, i64 666, i64 24, i64 18446744073709551615"   --->   Operation 75 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
@@ -171,298 +171,298 @@ ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void
 ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %gate_cache_0, i64 666, i64 24, i64 18446744073709551615"   --->   Operation 82 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %sigmoid_lut, i64 666, i64 34, i64 18446744073709551615"   --->   Operation 83 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%inv_gs_3_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %inv_gs_3"   --->   Operation 84 'read' 'inv_gs_3_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 85 [1/1] (0.42ns)   --->   "%store_ln310 = store i14 0, i14 %j" [swiglu.cpp:310->swiglu.cpp:716]   --->   Operation 85 'store' 'store_ln310' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 85 [1/1] (0.42ns)   --->   "%store_ln284 = store i14 0, i14 %j" [swiglu.cpp:284->swiglu.cpp:690]   --->   Operation 85 'store' 'store_ln284' <Predicate = true> <Delay = 0.42>
 ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.body58.3.i"   --->   Operation 86 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%j_1 = load i14 %j" [swiglu.cpp:310->swiglu.cpp:716]   --->   Operation 87 'load' 'j_1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 88 [1/1] (0.83ns)   --->   "%icmp_ln310 = icmp_eq  i14 %j_1, i14 8192" [swiglu.cpp:310->swiglu.cpp:716]   --->   Operation 88 'icmp' 'icmp_ln310' <Predicate = true> <Delay = 0.83> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 89 [1/1] (0.83ns)   --->   "%add_ln310 = add i14 %j_1, i14 1" [swiglu.cpp:310->swiglu.cpp:716]   --->   Operation 89 'add' 'add_ln310' <Predicate = true> <Delay = 0.83> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%br_ln310 = br i1 %icmp_ln310, void %for.body58.3.i.split, void %_ZL12compute_gatePA8192_KaS1_PA32_A256_aPf.96.exit.exitStub" [swiglu.cpp:310->swiglu.cpp:716]   --->   Operation 90 'br' 'br_ln310' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%trunc_ln312 = trunc i14 %j_1" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 91 'trunc' 'trunc_ln312' <Predicate = (!icmp_ln310)> <Delay = 0.00>
-ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%add_ln312_1 = bitconcatenate i14 @_ssdm_op_BitConcatenate.i14.i1.i13, i1 1, i13 %trunc_ln312" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 92 'bitconcatenate' 'add_ln312_1' <Predicate = (!icmp_ln310)> <Delay = 0.00>
-ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%sext_ln312 = sext i14 %add_ln312_1" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 93 'sext' 'sext_ln312' <Predicate = (!icmp_ln310)> <Delay = 0.00>
-ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%zext_ln312 = zext i15 %sext_ln312" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 94 'zext' 'zext_ln312' <Predicate = (!icmp_ln310)> <Delay = 0.00>
-ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%X1_cache_addr = getelementptr i8 %X1_cache, i64 0, i64 %zext_ln312" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 95 'getelementptr' 'X1_cache_addr' <Predicate = (!icmp_ln310)> <Delay = 0.00>
-ST_1 : Operation 96 [2/2] (1.23ns)   --->   "%X1_cache_load = load i15 %X1_cache_addr" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 96 'load' 'X1_cache_load' <Predicate = (!icmp_ln310)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 93 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 32768> <RAM>
-ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%trunc_ln323_1 = trunc i14 %j_1" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 97 'trunc' 'trunc_ln323_1' <Predicate = (!icmp_ln310)> <Delay = 0.00>
-ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%trunc_ln323_s = partselect i3 @_ssdm_op_PartSelect.i3.i14.i32.i32, i14 %j_1, i32 8, i32 10" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 98 'partselect' 'trunc_ln323_s' <Predicate = (!icmp_ln310)> <Delay = 0.00>
-ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%tmp_s = partselect i2 @_ssdm_op_PartSelect.i2.i14.i32.i32, i14 %j_1, i32 11, i32 12" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 99 'partselect' 'tmp_s' <Predicate = (!icmp_ln310)> <Delay = 0.00>
-ST_1 : Operation 100 [1/1] (0.67ns)   --->   "%switch_ln323 = switch i3 %trunc_ln323_s, void %arrayidx1074.323.case.7.i, i3 0, void %arrayidx1074.323.case.0.i, i3 1, void %arrayidx1074.323.case.1.i, i3 2, void %arrayidx1074.323.case.2.i, i3 3, void %arrayidx1074.323.case.3.i, i3 4, void %arrayidx1074.323.case.4.i, i3 5, void %arrayidx1074.323.case.5.i, i3 6, void %arrayidx1074.323.case.6.i" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 100 'switch' 'switch_ln323' <Predicate = (!icmp_ln310)> <Delay = 0.67>
-ST_1 : Operation 101 [1/1] (0.42ns)   --->   "%store_ln310 = store i14 %add_ln310, i14 %j" [swiglu.cpp:310->swiglu.cpp:716]   --->   Operation 101 'store' 'store_ln310' <Predicate = (!icmp_ln310)> <Delay = 0.42>
-ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%br_ln310 = br void %for.body58.3.i" [swiglu.cpp:310->swiglu.cpp:716]   --->   Operation 102 'br' 'br_ln310' <Predicate = (!icmp_ln310)> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%j_1 = load i14 %j" [swiglu.cpp:284->swiglu.cpp:690]   --->   Operation 87 'load' 'j_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (0.83ns)   --->   "%icmp_ln284 = icmp_eq  i14 %j_1, i14 8192" [swiglu.cpp:284->swiglu.cpp:690]   --->   Operation 88 'icmp' 'icmp_ln284' <Predicate = true> <Delay = 0.83> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 89 [1/1] (0.83ns)   --->   "%add_ln284 = add i14 %j_1, i14 1" [swiglu.cpp:284->swiglu.cpp:690]   --->   Operation 89 'add' 'add_ln284' <Predicate = true> <Delay = 0.83> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%br_ln284 = br i1 %icmp_ln284, void %for.body58.3.i.split, void %_ZL12compute_gatePA8192_KaS1_PA32_A256_aPf.96.exit.exitStub" [swiglu.cpp:284->swiglu.cpp:690]   --->   Operation 90 'br' 'br_ln284' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%trunc_ln286 = trunc i14 %j_1" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 91 'trunc' 'trunc_ln286' <Predicate = (!icmp_ln284)> <Delay = 0.00>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%add_ln286_1 = bitconcatenate i14 @_ssdm_op_BitConcatenate.i14.i1.i13, i1 1, i13 %trunc_ln286" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 92 'bitconcatenate' 'add_ln286_1' <Predicate = (!icmp_ln284)> <Delay = 0.00>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%sext_ln286 = sext i14 %add_ln286_1" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 93 'sext' 'sext_ln286' <Predicate = (!icmp_ln284)> <Delay = 0.00>
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%zext_ln286 = zext i15 %sext_ln286" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 94 'zext' 'zext_ln286' <Predicate = (!icmp_ln284)> <Delay = 0.00>
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%X1_cache_addr = getelementptr i8 %X1_cache, i64 0, i64 %zext_ln286" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 95 'getelementptr' 'X1_cache_addr' <Predicate = (!icmp_ln284)> <Delay = 0.00>
+ST_1 : Operation 96 [2/2] (1.23ns)   --->   "%X1_cache_load = load i15 %X1_cache_addr" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 96 'load' 'X1_cache_load' <Predicate = (!icmp_ln284)> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 93 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 32768> <RAM>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%trunc_ln297_1 = trunc i14 %j_1" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 97 'trunc' 'trunc_ln297_1' <Predicate = (!icmp_ln284)> <Delay = 0.00>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%trunc_ln297_s = partselect i3 @_ssdm_op_PartSelect.i3.i14.i32.i32, i14 %j_1, i32 8, i32 10" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 98 'partselect' 'trunc_ln297_s' <Predicate = (!icmp_ln284)> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%tmp_s = partselect i2 @_ssdm_op_PartSelect.i2.i14.i32.i32, i14 %j_1, i32 11, i32 12" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 99 'partselect' 'tmp_s' <Predicate = (!icmp_ln284)> <Delay = 0.00>
+ST_1 : Operation 100 [1/1] (0.67ns)   --->   "%switch_ln297 = switch i3 %trunc_ln297_s, void %arrayidx1074.323.case.7.i, i3 0, void %arrayidx1074.323.case.0.i, i3 1, void %arrayidx1074.323.case.1.i, i3 2, void %arrayidx1074.323.case.2.i, i3 3, void %arrayidx1074.323.case.3.i, i3 4, void %arrayidx1074.323.case.4.i, i3 5, void %arrayidx1074.323.case.5.i, i3 6, void %arrayidx1074.323.case.6.i" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 100 'switch' 'switch_ln297' <Predicate = (!icmp_ln284)> <Delay = 0.67>
+ST_1 : Operation 101 [1/1] (0.42ns)   --->   "%store_ln284 = store i14 %add_ln284, i14 %j" [swiglu.cpp:284->swiglu.cpp:690]   --->   Operation 101 'store' 'store_ln284' <Predicate = (!icmp_ln284)> <Delay = 0.42>
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%br_ln284 = br void %for.body58.3.i" [swiglu.cpp:284->swiglu.cpp:690]   --->   Operation 102 'br' 'br_ln284' <Predicate = (!icmp_ln284)> <Delay = 0.00>
 
 State 2 <SV = 1> <Delay = 1.23>
-ST_2 : Operation 103 [1/2] ( I:1.23ns O:1.23ns )   --->   "%X1_cache_load = load i15 %X1_cache_addr" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 103 'load' 'X1_cache_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 93 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 32768> <RAM>
+ST_2 : Operation 103 [1/2] ( I:1.23ns O:1.23ns )   --->   "%X1_cache_load = load i15 %X1_cache_addr" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 103 'load' 'X1_cache_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 93 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 32768> <RAM>
 
 State 3 <SV = 2> <Delay = 3.23>
-ST_3 : Operation 104 [1/1] (0.00ns)   --->   "%sext_ln312_1 = sext i8 %X1_cache_load" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 104 'sext' 'sext_ln312_1' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 105 [7/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln312_1" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 105 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_3 : Operation 104 [1/1] (0.00ns)   --->   "%sext_ln286_1 = sext i8 %X1_cache_load" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 104 'sext' 'sext_ln286_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 105 [7/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln286_1" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 105 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
 
 State 4 <SV = 3> <Delay = 3.23>
-ST_4 : Operation 106 [6/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln312_1" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 106 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_4 : Operation 106 [6/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln286_1" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 106 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
 
 State 5 <SV = 4> <Delay = 3.23>
-ST_5 : Operation 107 [5/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln312_1" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 107 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_5 : Operation 107 [5/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln286_1" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 107 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
 
 State 6 <SV = 5> <Delay = 3.23>
-ST_6 : Operation 108 [4/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln312_1" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 108 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_6 : Operation 108 [4/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln286_1" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 108 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
 
 State 7 <SV = 6> <Delay = 3.23>
-ST_7 : Operation 109 [3/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln312_1" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 109 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_7 : Operation 109 [3/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln286_1" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 109 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
 
 State 8 <SV = 7> <Delay = 3.23>
-ST_8 : Operation 110 [2/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln312_1" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 110 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_8 : Operation 110 [2/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln286_1" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 110 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
 
 State 9 <SV = 8> <Delay = 3.23>
-ST_9 : Operation 111 [1/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln312_1" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 111 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_9 : Operation 111 [1/7] (3.23ns)   --->   "%conv64_3_i = sitofp i32 %sext_ln286_1" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 111 'sitofp' 'conv64_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
 
 State 10 <SV = 9> <Delay = 2.56>
-ST_10 : Operation 112 [6/6] (2.56ns)   --->   "%z = fmul i32 %conv64_3_i, i32 0.0787402" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 112 'fmul' 'z' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 112 [6/6] (2.56ns)   --->   "%z = fmul i32 %conv64_3_i, i32 0.0787402" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 112 'fmul' 'z' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 11 <SV = 10> <Delay = 2.56>
-ST_11 : Operation 113 [5/6] (2.56ns)   --->   "%z = fmul i32 %conv64_3_i, i32 0.0787402" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 113 'fmul' 'z' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 113 [5/6] (2.56ns)   --->   "%z = fmul i32 %conv64_3_i, i32 0.0787402" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 113 'fmul' 'z' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 12 <SV = 11> <Delay = 2.56>
-ST_12 : Operation 114 [4/6] (2.56ns)   --->   "%z = fmul i32 %conv64_3_i, i32 0.0787402" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 114 'fmul' 'z' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 114 [4/6] (2.56ns)   --->   "%z = fmul i32 %conv64_3_i, i32 0.0787402" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 114 'fmul' 'z' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 13 <SV = 12> <Delay = 2.56>
-ST_13 : Operation 115 [3/6] (2.56ns)   --->   "%z = fmul i32 %conv64_3_i, i32 0.0787402" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 115 'fmul' 'z' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 115 [3/6] (2.56ns)   --->   "%z = fmul i32 %conv64_3_i, i32 0.0787402" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 115 'fmul' 'z' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 14 <SV = 13> <Delay = 2.56>
-ST_14 : Operation 116 [2/6] (2.56ns)   --->   "%z = fmul i32 %conv64_3_i, i32 0.0787402" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 116 'fmul' 'z' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 116 [2/6] (2.56ns)   --->   "%z = fmul i32 %conv64_3_i, i32 0.0787402" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 116 'fmul' 'z' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 15 <SV = 14> <Delay = 2.56>
-ST_15 : Operation 117 [1/6] (2.56ns)   --->   "%z = fmul i32 %conv64_3_i, i32 0.0787402" [swiglu.cpp:312->swiglu.cpp:716]   --->   Operation 117 'fmul' 'z' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 117 [1/6] (2.56ns)   --->   "%z = fmul i32 %conv64_3_i, i32 0.0787402" [swiglu.cpp:286->swiglu.cpp:690]   --->   Operation 117 'fmul' 'z' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 16 <SV = 15> <Delay = 2.46>
-ST_16 : Operation 118 [10/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 118 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 118 [10/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 118 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 17 <SV = 16> <Delay = 2.46>
-ST_17 : Operation 119 [9/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 119 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 119 [9/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 119 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 18 <SV = 17> <Delay = 2.46>
-ST_18 : Operation 120 [8/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 120 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 120 [8/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 120 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 19 <SV = 18> <Delay = 2.46>
-ST_19 : Operation 121 [7/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 121 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 121 [7/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 121 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 20 <SV = 19> <Delay = 2.46>
-ST_20 : Operation 122 [6/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 122 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 122 [6/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 122 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 21 <SV = 20> <Delay = 2.46>
-ST_21 : Operation 123 [5/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 123 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 123 [5/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 123 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 22 <SV = 21> <Delay = 2.46>
-ST_22 : Operation 124 [4/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 124 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 124 [4/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 124 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 23 <SV = 22> <Delay = 2.46>
-ST_23 : Operation 125 [3/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 125 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 125 [3/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 125 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 24 <SV = 23> <Delay = 2.46>
-ST_24 : Operation 126 [2/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 126 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 126 [2/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 126 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 25 <SV = 24> <Delay = 2.46>
-ST_25 : Operation 127 [1/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 127 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 127 [1/10] (2.46ns)   --->   "%add74_3_i = fadd i32 %z, i32 8" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 127 'fadd' 'add74_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 26 <SV = 25> <Delay = 2.56>
-ST_26 : Operation 128 [6/6] (2.56ns)   --->   "%scaled = fmul i32 %add74_3_i, i32 256" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 128 'fmul' 'scaled' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 128 [6/6] (2.56ns)   --->   "%scaled = fmul i32 %add74_3_i, i32 256" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 128 'fmul' 'scaled' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 27 <SV = 26> <Delay = 2.56>
-ST_27 : Operation 129 [1/1] (0.00ns)   --->   "%X2_cache_addr = getelementptr i8 %X2_cache, i64 0, i64 %zext_ln312" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 129 'getelementptr' 'X2_cache_addr' <Predicate = true> <Delay = 0.00>
-ST_27 : Operation 130 [2/2] (1.23ns)   --->   "%X2_cache_load = load i15 %X2_cache_addr" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 130 'load' 'X2_cache_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 93 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 32768> <RAM>
-ST_27 : Operation 131 [5/6] (2.56ns)   --->   "%scaled = fmul i32 %add74_3_i, i32 256" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 131 'fmul' 'scaled' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 129 [1/1] (0.00ns)   --->   "%X2_cache_addr = getelementptr i8 %X2_cache, i64 0, i64 %zext_ln286" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 129 'getelementptr' 'X2_cache_addr' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 130 [2/2] (1.23ns)   --->   "%X2_cache_load = load i15 %X2_cache_addr" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 130 'load' 'X2_cache_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 93 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 32768> <RAM>
+ST_27 : Operation 131 [5/6] (2.56ns)   --->   "%scaled = fmul i32 %add74_3_i, i32 256" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 131 'fmul' 'scaled' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 28 <SV = 27> <Delay = 2.56>
-ST_28 : Operation 132 [1/2] ( I:1.23ns O:1.23ns )   --->   "%X2_cache_load = load i15 %X2_cache_addr" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 132 'load' 'X2_cache_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 93 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 32768> <RAM>
-ST_28 : Operation 133 [4/6] (2.56ns)   --->   "%scaled = fmul i32 %add74_3_i, i32 256" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 133 'fmul' 'scaled' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 132 [1/2] ( I:1.23ns O:1.23ns )   --->   "%X2_cache_load = load i15 %X2_cache_addr" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 132 'load' 'X2_cache_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM_2P_BRAM">   --->   Core 93 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 32768> <RAM>
+ST_28 : Operation 133 [4/6] (2.56ns)   --->   "%scaled = fmul i32 %add74_3_i, i32 256" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 133 'fmul' 'scaled' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 29 <SV = 28> <Delay = 3.23>
-ST_29 : Operation 134 [1/1] (0.00ns)   --->   "%sext_ln313 = sext i8 %X2_cache_load" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 134 'sext' 'sext_ln313' <Predicate = true> <Delay = 0.00>
-ST_29 : Operation 135 [7/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln313" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 135 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
-ST_29 : Operation 136 [3/6] (2.56ns)   --->   "%scaled = fmul i32 %add74_3_i, i32 256" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 136 'fmul' 'scaled' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 134 [1/1] (0.00ns)   --->   "%sext_ln287 = sext i8 %X2_cache_load" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 134 'sext' 'sext_ln287' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 135 [7/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln287" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 135 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_29 : Operation 136 [3/6] (2.56ns)   --->   "%scaled = fmul i32 %add74_3_i, i32 256" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 136 'fmul' 'scaled' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 30 <SV = 29> <Delay = 3.23>
-ST_30 : Operation 137 [6/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln313" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 137 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
-ST_30 : Operation 138 [2/6] (2.56ns)   --->   "%scaled = fmul i32 %add74_3_i, i32 256" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 138 'fmul' 'scaled' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 137 [6/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln287" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 137 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_30 : Operation 138 [2/6] (2.56ns)   --->   "%scaled = fmul i32 %add74_3_i, i32 256" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 138 'fmul' 'scaled' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 31 <SV = 30> <Delay = 3.23>
-ST_31 : Operation 139 [5/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln313" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 139 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
-ST_31 : Operation 140 [1/6] (2.56ns)   --->   "%scaled = fmul i32 %add74_3_i, i32 256" [swiglu.cpp:314->swiglu.cpp:716]   --->   Operation 140 'fmul' 'scaled' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 139 [5/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln287" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 139 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_31 : Operation 140 [1/6] (2.56ns)   --->   "%scaled = fmul i32 %add74_3_i, i32 256" [swiglu.cpp:288->swiglu.cpp:690]   --->   Operation 140 'fmul' 'scaled' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 32 <SV = 31> <Delay = 3.23>
-ST_32 : Operation 141 [4/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln313" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 141 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
-ST_32 : Operation 142 [2/2] (2.55ns)   --->   "%idx = call i32 @__hls_fptosi_float_i32, i32 %scaled" [swiglu.cpp:315->swiglu.cpp:716]   --->   Operation 142 'call' 'idx' <Predicate = (!icmp_ln310)> <Delay = 2.55> <CoreType = "Generic">   --->   Generic Core
+ST_32 : Operation 141 [4/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln287" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 141 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_32 : Operation 142 [2/2] (2.55ns)   --->   "%idx = call i32 @__hls_fptosi_float_i32, i32 %scaled" [swiglu.cpp:289->swiglu.cpp:690]   --->   Operation 142 'call' 'idx' <Predicate = (!icmp_ln284)> <Delay = 2.55> <CoreType = "Generic">   --->   Generic Core
 
 State 33 <SV = 32> <Delay = 3.23>
-ST_33 : Operation 143 [3/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln313" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 143 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
-ST_33 : Operation 144 [1/2] (1.91ns)   --->   "%idx = call i32 @__hls_fptosi_float_i32, i32 %scaled" [swiglu.cpp:315->swiglu.cpp:716]   --->   Operation 144 'call' 'idx' <Predicate = (!icmp_ln310)> <Delay = 1.91> <CoreType = "Generic">   --->   Generic Core
-ST_33 : Operation 145 [1/1] (0.00ns)   --->   "%trunc_ln315 = trunc i32 %idx" [swiglu.cpp:315->swiglu.cpp:716]   --->   Operation 145 'trunc' 'trunc_ln315' <Predicate = true> <Delay = 0.00>
-ST_33 : Operation 146 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i32.i32, i32 %idx, i32 31" [swiglu.cpp:316->swiglu.cpp:716]   --->   Operation 146 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
-ST_33 : Operation 147 [1/1] (0.41ns)   --->   "%idx_1 = select i1 %tmp, i31 0, i31 %trunc_ln315" [swiglu.cpp:316->swiglu.cpp:716]   --->   Operation 147 'select' 'idx_1' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_33 : Operation 148 [1/1] (0.00ns)   --->   "%trunc_ln315_1 = trunc i31 %idx_1" [swiglu.cpp:315->swiglu.cpp:716]   --->   Operation 148 'trunc' 'trunc_ln315_1' <Predicate = true> <Delay = 0.00>
-ST_33 : Operation 149 [1/1] (0.00ns)   --->   "%tmp_1011 = partselect i19 @_ssdm_op_PartSelect.i19.i31.i32.i32, i31 %idx_1, i32 12, i32 30" [swiglu.cpp:317->swiglu.cpp:716]   --->   Operation 149 'partselect' 'tmp_1011' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 143 [3/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln287" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 143 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_33 : Operation 144 [1/2] (1.91ns)   --->   "%idx = call i32 @__hls_fptosi_float_i32, i32 %scaled" [swiglu.cpp:289->swiglu.cpp:690]   --->   Operation 144 'call' 'idx' <Predicate = (!icmp_ln284)> <Delay = 1.91> <CoreType = "Generic">   --->   Generic Core
+ST_33 : Operation 145 [1/1] (0.00ns)   --->   "%trunc_ln289 = trunc i32 %idx" [swiglu.cpp:289->swiglu.cpp:690]   --->   Operation 145 'trunc' 'trunc_ln289' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 146 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i32.i32, i32 %idx, i32 31" [swiglu.cpp:290->swiglu.cpp:690]   --->   Operation 146 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 147 [1/1] (0.41ns)   --->   "%idx_1 = select i1 %tmp, i31 0, i31 %trunc_ln289" [swiglu.cpp:290->swiglu.cpp:690]   --->   Operation 147 'select' 'idx_1' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_33 : Operation 148 [1/1] (0.00ns)   --->   "%trunc_ln289_1 = trunc i31 %idx_1" [swiglu.cpp:289->swiglu.cpp:690]   --->   Operation 148 'trunc' 'trunc_ln289_1' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 149 [1/1] (0.00ns)   --->   "%tmp_699 = partselect i19 @_ssdm_op_PartSelect.i19.i31.i32.i32, i31 %idx_1, i32 12, i32 30" [swiglu.cpp:291->swiglu.cpp:690]   --->   Operation 149 'partselect' 'tmp_699' <Predicate = true> <Delay = 0.00>
 
 State 34 <SV = 33> <Delay = 3.23>
-ST_34 : Operation 150 [2/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln313" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 150 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
-ST_34 : Operation 151 [1/1] (0.88ns)   --->   "%icmp_ln317 = icmp_ne  i19 %tmp_1011, i19 0" [swiglu.cpp:317->swiglu.cpp:716]   --->   Operation 151 'icmp' 'icmp_ln317' <Predicate = true> <Delay = 0.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
-ST_34 : Operation 152 [1/1] (0.37ns)   --->   "%idx_2 = select i1 %icmp_ln317, i12 4095, i12 %trunc_ln315_1" [swiglu.cpp:317->swiglu.cpp:716]   --->   Operation 152 'select' 'idx_2' <Predicate = true> <Delay = 0.37> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_34 : Operation 153 [1/1] (0.00ns)   --->   "%zext_ln318 = zext i12 %idx_2" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 153 'zext' 'zext_ln318' <Predicate = true> <Delay = 0.00>
-ST_34 : Operation 154 [1/1] (0.00ns)   --->   "%sigmoid_lut_addr = getelementptr i32 %sigmoid_lut, i64 0, i64 %zext_ln318" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 154 'getelementptr' 'sigmoid_lut_addr' <Predicate = true> <Delay = 0.00>
-ST_34 : Operation 155 [2/2] (0.67ns)   --->   "%sigmoid_lut_load = load i12 %sigmoid_lut_addr" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 155 'load' 'sigmoid_lut_load' <Predicate = true> <Delay = 0.67> <CoreInst = "ROM_1P_LUTRAM">   --->   Core 102 'ROM_1P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load'> <Ports = 1> <Width = 32> <Depth = 4096> <ROM>
+ST_34 : Operation 150 [2/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln287" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 150 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_34 : Operation 151 [1/1] (0.88ns)   --->   "%icmp_ln291 = icmp_ne  i19 %tmp_699, i19 0" [swiglu.cpp:291->swiglu.cpp:690]   --->   Operation 151 'icmp' 'icmp_ln291' <Predicate = true> <Delay = 0.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 152 [1/1] (0.37ns)   --->   "%idx_2 = select i1 %icmp_ln291, i12 4095, i12 %trunc_ln289_1" [swiglu.cpp:291->swiglu.cpp:690]   --->   Operation 152 'select' 'idx_2' <Predicate = true> <Delay = 0.37> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_34 : Operation 153 [1/1] (0.00ns)   --->   "%zext_ln292 = zext i12 %idx_2" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 153 'zext' 'zext_ln292' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 154 [1/1] (0.00ns)   --->   "%sigmoid_lut_addr = getelementptr i32 %sigmoid_lut, i64 0, i64 %zext_ln292" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 154 'getelementptr' 'sigmoid_lut_addr' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 155 [2/2] (0.67ns)   --->   "%sigmoid_lut_load = load i12 %sigmoid_lut_addr" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 155 'load' 'sigmoid_lut_load' <Predicate = true> <Delay = 0.67> <CoreInst = "ROM_1P_LUTRAM">   --->   Core 102 'ROM_1P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load'> <Ports = 1> <Width = 32> <Depth = 4096> <ROM>
 
 State 35 <SV = 34> <Delay = 3.23>
-ST_35 : Operation 156 [1/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln313" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 156 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
-ST_35 : Operation 157 [1/2] ( I:0.67ns O:0.67ns )   --->   "%sigmoid_lut_load = load i12 %sigmoid_lut_addr" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 157 'load' 'sigmoid_lut_load' <Predicate = true> <Delay = 0.67> <CoreInst = "ROM_1P_LUTRAM">   --->   Core 102 'ROM_1P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load'> <Ports = 1> <Width = 32> <Depth = 4096> <ROM>
+ST_35 : Operation 156 [1/7] (3.23ns)   --->   "%conv71_3_i = sitofp i32 %sext_ln287" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 156 'sitofp' 'conv71_3_i' <Predicate = true> <Delay = 3.23> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 6> <II = 1> <Delay = 3.23> <FuncUnit> <Opcode : 'uitofp' 'sitofp'> <InPorts = 1> <OutPorts = 1>
+ST_35 : Operation 157 [1/2] ( I:0.67ns O:0.67ns )   --->   "%sigmoid_lut_load = load i12 %sigmoid_lut_addr" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 157 'load' 'sigmoid_lut_load' <Predicate = true> <Delay = 0.67> <CoreInst = "ROM_1P_LUTRAM">   --->   Core 102 'ROM_1P_LUTRAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load'> <Ports = 1> <Width = 32> <Depth = 4096> <ROM>
 
 State 36 <SV = 35> <Delay = 2.56>
-ST_36 : Operation 158 [6/6] (2.56ns)   --->   "%x2 = fmul i32 %conv71_3_i, i32 0.0787402" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 158 'fmul' 'x2' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
-ST_36 : Operation 159 [6/6] (2.56ns)   --->   "%mul87_3_i = fmul i32 %z, i32 %sigmoid_lut_load" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 159 'fmul' 'mul87_3_i' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 158 [6/6] (2.56ns)   --->   "%x2 = fmul i32 %conv71_3_i, i32 0.0787402" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 158 'fmul' 'x2' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 159 [6/6] (2.56ns)   --->   "%mul87_3_i = fmul i32 %z, i32 %sigmoid_lut_load" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 159 'fmul' 'mul87_3_i' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 37 <SV = 36> <Delay = 2.56>
-ST_37 : Operation 160 [5/6] (2.56ns)   --->   "%x2 = fmul i32 %conv71_3_i, i32 0.0787402" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 160 'fmul' 'x2' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
-ST_37 : Operation 161 [5/6] (2.56ns)   --->   "%mul87_3_i = fmul i32 %z, i32 %sigmoid_lut_load" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 161 'fmul' 'mul87_3_i' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 160 [5/6] (2.56ns)   --->   "%x2 = fmul i32 %conv71_3_i, i32 0.0787402" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 160 'fmul' 'x2' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 161 [5/6] (2.56ns)   --->   "%mul87_3_i = fmul i32 %z, i32 %sigmoid_lut_load" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 161 'fmul' 'mul87_3_i' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 38 <SV = 37> <Delay = 2.56>
-ST_38 : Operation 162 [4/6] (2.56ns)   --->   "%x2 = fmul i32 %conv71_3_i, i32 0.0787402" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 162 'fmul' 'x2' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
-ST_38 : Operation 163 [4/6] (2.56ns)   --->   "%mul87_3_i = fmul i32 %z, i32 %sigmoid_lut_load" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 163 'fmul' 'mul87_3_i' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 162 [4/6] (2.56ns)   --->   "%x2 = fmul i32 %conv71_3_i, i32 0.0787402" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 162 'fmul' 'x2' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 163 [4/6] (2.56ns)   --->   "%mul87_3_i = fmul i32 %z, i32 %sigmoid_lut_load" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 163 'fmul' 'mul87_3_i' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 39 <SV = 38> <Delay = 2.56>
-ST_39 : Operation 164 [3/6] (2.56ns)   --->   "%x2 = fmul i32 %conv71_3_i, i32 0.0787402" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 164 'fmul' 'x2' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
-ST_39 : Operation 165 [3/6] (2.56ns)   --->   "%mul87_3_i = fmul i32 %z, i32 %sigmoid_lut_load" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 165 'fmul' 'mul87_3_i' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 164 [3/6] (2.56ns)   --->   "%x2 = fmul i32 %conv71_3_i, i32 0.0787402" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 164 'fmul' 'x2' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 165 [3/6] (2.56ns)   --->   "%mul87_3_i = fmul i32 %z, i32 %sigmoid_lut_load" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 165 'fmul' 'mul87_3_i' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 40 <SV = 39> <Delay = 2.56>
-ST_40 : Operation 166 [2/6] (2.56ns)   --->   "%x2 = fmul i32 %conv71_3_i, i32 0.0787402" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 166 'fmul' 'x2' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
-ST_40 : Operation 167 [2/6] (2.56ns)   --->   "%mul87_3_i = fmul i32 %z, i32 %sigmoid_lut_load" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 167 'fmul' 'mul87_3_i' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 166 [2/6] (2.56ns)   --->   "%x2 = fmul i32 %conv71_3_i, i32 0.0787402" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 166 'fmul' 'x2' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 167 [2/6] (2.56ns)   --->   "%mul87_3_i = fmul i32 %z, i32 %sigmoid_lut_load" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 167 'fmul' 'mul87_3_i' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 41 <SV = 40> <Delay = 2.56>
-ST_41 : Operation 168 [1/6] (2.56ns)   --->   "%x2 = fmul i32 %conv71_3_i, i32 0.0787402" [swiglu.cpp:313->swiglu.cpp:716]   --->   Operation 168 'fmul' 'x2' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
-ST_41 : Operation 169 [1/6] (2.56ns)   --->   "%mul87_3_i = fmul i32 %z, i32 %sigmoid_lut_load" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 169 'fmul' 'mul87_3_i' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 168 [1/6] (2.56ns)   --->   "%x2 = fmul i32 %conv71_3_i, i32 0.0787402" [swiglu.cpp:287->swiglu.cpp:690]   --->   Operation 168 'fmul' 'x2' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 169 [1/6] (2.56ns)   --->   "%mul87_3_i = fmul i32 %z, i32 %sigmoid_lut_load" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 169 'fmul' 'mul87_3_i' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 42 <SV = 41> <Delay = 2.56>
-ST_42 : Operation 170 [6/6] (2.56ns)   --->   "%g = fmul i32 %mul87_3_i, i32 %x2" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 170 'fmul' 'g' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 170 [6/6] (2.56ns)   --->   "%g = fmul i32 %mul87_3_i, i32 %x2" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 170 'fmul' 'g' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 43 <SV = 42> <Delay = 2.56>
-ST_43 : Operation 171 [5/6] (2.56ns)   --->   "%g = fmul i32 %mul87_3_i, i32 %x2" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 171 'fmul' 'g' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 171 [5/6] (2.56ns)   --->   "%g = fmul i32 %mul87_3_i, i32 %x2" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 171 'fmul' 'g' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 44 <SV = 43> <Delay = 2.56>
-ST_44 : Operation 172 [4/6] (2.56ns)   --->   "%g = fmul i32 %mul87_3_i, i32 %x2" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 172 'fmul' 'g' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 172 [4/6] (2.56ns)   --->   "%g = fmul i32 %mul87_3_i, i32 %x2" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 172 'fmul' 'g' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 45 <SV = 44> <Delay = 2.56>
-ST_45 : Operation 173 [3/6] (2.56ns)   --->   "%g = fmul i32 %mul87_3_i, i32 %x2" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 173 'fmul' 'g' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 173 [3/6] (2.56ns)   --->   "%g = fmul i32 %mul87_3_i, i32 %x2" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 173 'fmul' 'g' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 46 <SV = 45> <Delay = 2.56>
-ST_46 : Operation 174 [2/6] (2.56ns)   --->   "%g = fmul i32 %mul87_3_i, i32 %x2" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 174 'fmul' 'g' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 174 [2/6] (2.56ns)   --->   "%g = fmul i32 %mul87_3_i, i32 %x2" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 174 'fmul' 'g' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 47 <SV = 46> <Delay = 2.56>
-ST_47 : Operation 175 [1/6] (2.56ns)   --->   "%g = fmul i32 %mul87_3_i, i32 %x2" [swiglu.cpp:318->swiglu.cpp:716]   --->   Operation 175 'fmul' 'g' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 175 [1/6] (2.56ns)   --->   "%g = fmul i32 %mul87_3_i, i32 %x2" [swiglu.cpp:292->swiglu.cpp:690]   --->   Operation 175 'fmul' 'g' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 48 <SV = 47> <Delay = 2.56>
-ST_48 : Operation 176 [6/6] (2.56ns)   --->   "%fq = fmul i32 %g, i32 %inv_gs_3_read" [swiglu.cpp:319->swiglu.cpp:716]   --->   Operation 176 'fmul' 'fq' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 176 [6/6] (2.56ns)   --->   "%fq = fmul i32 %g, i32 %inv_gs_3_read" [swiglu.cpp:293->swiglu.cpp:690]   --->   Operation 176 'fmul' 'fq' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 49 <SV = 48> <Delay = 2.56>
-ST_49 : Operation 177 [5/6] (2.56ns)   --->   "%fq = fmul i32 %g, i32 %inv_gs_3_read" [swiglu.cpp:319->swiglu.cpp:716]   --->   Operation 177 'fmul' 'fq' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_49 : Operation 177 [5/6] (2.56ns)   --->   "%fq = fmul i32 %g, i32 %inv_gs_3_read" [swiglu.cpp:293->swiglu.cpp:690]   --->   Operation 177 'fmul' 'fq' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 50 <SV = 49> <Delay = 2.56>
-ST_50 : Operation 178 [4/6] (2.56ns)   --->   "%fq = fmul i32 %g, i32 %inv_gs_3_read" [swiglu.cpp:319->swiglu.cpp:716]   --->   Operation 178 'fmul' 'fq' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 178 [4/6] (2.56ns)   --->   "%fq = fmul i32 %g, i32 %inv_gs_3_read" [swiglu.cpp:293->swiglu.cpp:690]   --->   Operation 178 'fmul' 'fq' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 51 <SV = 50> <Delay = 2.56>
-ST_51 : Operation 179 [3/6] (2.56ns)   --->   "%fq = fmul i32 %g, i32 %inv_gs_3_read" [swiglu.cpp:319->swiglu.cpp:716]   --->   Operation 179 'fmul' 'fq' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 179 [3/6] (2.56ns)   --->   "%fq = fmul i32 %g, i32 %inv_gs_3_read" [swiglu.cpp:293->swiglu.cpp:690]   --->   Operation 179 'fmul' 'fq' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 52 <SV = 51> <Delay = 2.56>
-ST_52 : Operation 180 [2/6] (2.56ns)   --->   "%fq = fmul i32 %g, i32 %inv_gs_3_read" [swiglu.cpp:319->swiglu.cpp:716]   --->   Operation 180 'fmul' 'fq' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 180 [2/6] (2.56ns)   --->   "%fq = fmul i32 %g, i32 %inv_gs_3_read" [swiglu.cpp:293->swiglu.cpp:690]   --->   Operation 180 'fmul' 'fq' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 53 <SV = 52> <Delay = 2.56>
-ST_53 : Operation 181 [1/6] (2.56ns)   --->   "%fq = fmul i32 %g, i32 %inv_gs_3_read" [swiglu.cpp:319->swiglu.cpp:716]   --->   Operation 181 'fmul' 'fq' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 181 [1/6] (2.56ns)   --->   "%fq = fmul i32 %g, i32 %inv_gs_3_read" [swiglu.cpp:293->swiglu.cpp:690]   --->   Operation 181 'fmul' 'fq' <Predicate = true> <Delay = 2.56> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 5> <II = 1> <Delay = 2.56> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
 
 State 54 <SV = 53> <Delay = 2.78>
-ST_54 : Operation 182 [2/2] (2.78ns)   --->   "%tmp_396 = fcmp_oge  i32 %fq, i32 0" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 182 'fcmp' 'tmp_396' <Predicate = true> <Delay = 2.78> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 182 [2/2] (2.78ns)   --->   "%tmp_316 = fcmp_oge  i32 %fq, i32 0" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 182 'fcmp' 'tmp_316' <Predicate = true> <Delay = 2.78> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
 
 State 55 <SV = 54> <Delay = 2.78>
-ST_55 : Operation 183 [1/1] (0.00ns)   --->   "%bitcast_ln320 = bitcast i32 %fq" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 183 'bitcast' 'bitcast_ln320' <Predicate = true> <Delay = 0.00>
-ST_55 : Operation 184 [1/1] (0.00ns)   --->   "%tmp_395 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln320, i32 23, i32 30" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 184 'partselect' 'tmp_395' <Predicate = true> <Delay = 0.00>
-ST_55 : Operation 185 [1/1] (0.00ns)   --->   "%trunc_ln320 = trunc i32 %bitcast_ln320" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 185 'trunc' 'trunc_ln320' <Predicate = true> <Delay = 0.00>
-ST_55 : Operation 186 [1/1] (0.76ns)   --->   "%icmp_ln320 = icmp_ne  i8 %tmp_395, i8 255" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 186 'icmp' 'icmp_ln320' <Predicate = true> <Delay = 0.76> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.76> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
-ST_55 : Operation 187 [1/1] (0.92ns)   --->   "%icmp_ln320_1 = icmp_eq  i23 %trunc_ln320, i23 0" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 187 'icmp' 'icmp_ln320_1' <Predicate = true> <Delay = 0.92> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
-ST_55 : Operation 188 [1/2] (2.78ns)   --->   "%tmp_396 = fcmp_oge  i32 %fq, i32 0" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 188 'fcmp' 'tmp_396' <Predicate = true> <Delay = 2.78> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 183 [1/1] (0.00ns)   --->   "%bitcast_ln294 = bitcast i32 %fq" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 183 'bitcast' 'bitcast_ln294' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 184 [1/1] (0.00ns)   --->   "%tmp_315 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln294, i32 23, i32 30" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 184 'partselect' 'tmp_315' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 185 [1/1] (0.00ns)   --->   "%trunc_ln294 = trunc i32 %bitcast_ln294" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 185 'trunc' 'trunc_ln294' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 186 [1/1] (0.76ns)   --->   "%icmp_ln294 = icmp_ne  i8 %tmp_315, i8 255" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 186 'icmp' 'icmp_ln294' <Predicate = true> <Delay = 0.76> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.76> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 187 [1/1] (0.92ns)   --->   "%icmp_ln294_1 = icmp_eq  i23 %trunc_ln294, i23 0" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 187 'icmp' 'icmp_ln294_1' <Predicate = true> <Delay = 0.92> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 188 [1/2] (2.78ns)   --->   "%tmp_316 = fcmp_oge  i32 %fq, i32 0" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 188 'fcmp' 'tmp_316' <Predicate = true> <Delay = 2.78> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
 
 State 56 <SV = 55> <Delay = 2.91>
-ST_56 : Operation 189 [1/1] (0.00ns) (grouped into LUT with out node select_ln320)   --->   "%or_ln320 = or i1 %icmp_ln320_1, i1 %icmp_ln320" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 189 'or' 'or_ln320' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_56 : Operation 190 [1/1] (0.00ns) (grouped into LUT with out node select_ln320)   --->   "%and_ln320 = and i1 %or_ln320, i1 %tmp_396" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 190 'and' 'and_ln320' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_56 : Operation 191 [1/1] (0.44ns) (out node of the LUT)   --->   "%select_ln320 = select i1 %and_ln320, i32 0.5, i32 -0.5" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 191 'select' 'select_ln320' <Predicate = true> <Delay = 0.44> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_56 : Operation 192 [10/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln320" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 192 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 189 [1/1] (0.00ns) (grouped into LUT with out node select_ln294)   --->   "%or_ln294 = or i1 %icmp_ln294_1, i1 %icmp_ln294" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 189 'or' 'or_ln294' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 190 [1/1] (0.00ns) (grouped into LUT with out node select_ln294)   --->   "%and_ln294 = and i1 %or_ln294, i1 %tmp_316" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 190 'and' 'and_ln294' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 191 [1/1] (0.44ns) (out node of the LUT)   --->   "%select_ln294 = select i1 %and_ln294, i32 0.5, i32 -0.5" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 191 'select' 'select_ln294' <Predicate = true> <Delay = 0.44> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_56 : Operation 192 [10/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln294" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 192 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 57 <SV = 56> <Delay = 2.46>
-ST_57 : Operation 193 [9/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln320" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 193 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_57 : Operation 193 [9/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln294" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 193 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 58 <SV = 57> <Delay = 2.46>
-ST_58 : Operation 194 [8/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln320" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 194 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_58 : Operation 194 [8/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln294" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 194 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 59 <SV = 58> <Delay = 2.46>
-ST_59 : Operation 195 [7/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln320" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 195 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_59 : Operation 195 [7/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln294" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 195 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 60 <SV = 59> <Delay = 2.46>
-ST_60 : Operation 196 [6/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln320" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 196 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_60 : Operation 196 [6/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln294" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 196 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 61 <SV = 60> <Delay = 2.46>
-ST_61 : Operation 197 [5/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln320" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 197 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_61 : Operation 197 [5/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln294" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 197 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 62 <SV = 61> <Delay = 2.46>
-ST_62 : Operation 198 [4/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln320" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 198 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_62 : Operation 198 [4/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln294" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 198 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 63 <SV = 62> <Delay = 2.46>
-ST_63 : Operation 199 [3/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln320" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 199 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_63 : Operation 199 [3/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln294" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 199 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 64 <SV = 63> <Delay = 2.46>
-ST_64 : Operation 200 [2/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln320" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 200 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_64 : Operation 200 [2/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln294" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 200 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 65 <SV = 64> <Delay = 2.46>
-ST_65 : Operation 201 [1/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln320" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 201 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_65 : Operation 201 [1/10] (2.46ns)   --->   "%add92_3_i = fadd i32 %fq, i32 %select_ln294" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 201 'fadd' 'add92_3_i' <Predicate = true> <Delay = 2.46> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 9> <II = 1> <Delay = 2.46> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 66 <SV = 65> <Delay = 2.55>
-ST_66 : Operation 202 [2/2] (2.55ns)   --->   "%iq = call i32 @__hls_fptosi_float_i32, i32 %add92_3_i" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 202 'call' 'iq' <Predicate = (!icmp_ln310)> <Delay = 2.55> <CoreType = "Generic">   --->   Generic Core
+ST_66 : Operation 202 [2/2] (2.55ns)   --->   "%iq = call i32 @__hls_fptosi_float_i32, i32 %add92_3_i" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 202 'call' 'iq' <Predicate = (!icmp_ln284)> <Delay = 2.55> <CoreType = "Generic">   --->   Generic Core
 
 State 67 <SV = 66> <Delay = 2.85>
-ST_67 : Operation 203 [1/2] (1.91ns)   --->   "%iq = call i32 @__hls_fptosi_float_i32, i32 %add92_3_i" [swiglu.cpp:320->swiglu.cpp:716]   --->   Operation 203 'call' 'iq' <Predicate = (!icmp_ln310)> <Delay = 1.91> <CoreType = "Generic">   --->   Generic Core
-ST_67 : Operation 204 [1/1] (0.00ns)   --->   "%tmp_1012 = partselect i25 @_ssdm_op_PartSelect.i25.i32.i32.i32, i32 %iq, i32 7, i32 31" [swiglu.cpp:321->swiglu.cpp:716]   --->   Operation 204 'partselect' 'tmp_1012' <Predicate = true> <Delay = 0.00>
-ST_67 : Operation 205 [1/1] (0.94ns)   --->   "%icmp_ln321 = icmp_sgt  i25 %tmp_1012, i25 0" [swiglu.cpp:321->swiglu.cpp:716]   --->   Operation 205 'icmp' 'icmp_ln321' <Predicate = true> <Delay = 0.94> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_67 : Operation 203 [1/2] (1.91ns)   --->   "%iq = call i32 @__hls_fptosi_float_i32, i32 %add92_3_i" [swiglu.cpp:294->swiglu.cpp:690]   --->   Operation 203 'call' 'iq' <Predicate = (!icmp_ln284)> <Delay = 1.91> <CoreType = "Generic">   --->   Generic Core
+ST_67 : Operation 204 [1/1] (0.00ns)   --->   "%tmp_700 = partselect i25 @_ssdm_op_PartSelect.i25.i32.i32.i32, i32 %iq, i32 7, i32 31" [swiglu.cpp:295->swiglu.cpp:690]   --->   Operation 204 'partselect' 'tmp_700' <Predicate = true> <Delay = 0.00>
+ST_67 : Operation 205 [1/1] (0.94ns)   --->   "%icmp_ln295 = icmp_sgt  i25 %tmp_700, i25 0" [swiglu.cpp:295->swiglu.cpp:690]   --->   Operation 205 'icmp' 'icmp_ln295' <Predicate = true> <Delay = 0.94> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
 
 State 68 <SV = 67> <Delay = 1.85>
-ST_68 : Operation 206 [1/1] (0.44ns)   --->   "%iq_1 = select i1 %icmp_ln321, i32 127, i32 %iq" [swiglu.cpp:321->swiglu.cpp:716]   --->   Operation 206 'select' 'iq_1' <Predicate = true> <Delay = 0.44> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_68 : Operation 207 [1/1] (1.01ns)   --->   "%icmp_ln322 = icmp_slt  i32 %iq_1, i32 4294967168" [swiglu.cpp:322->swiglu.cpp:716]   --->   Operation 207 'icmp' 'icmp_ln322' <Predicate = true> <Delay = 1.01> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
-ST_68 : Operation 208 [1/1] (0.00ns)   --->   "%trunc_ln323 = trunc i32 %iq_1" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 208 'trunc' 'trunc_ln323' <Predicate = true> <Delay = 0.00>
-ST_68 : Operation 209 [1/1] (0.39ns)   --->   "%select_ln323 = select i1 %icmp_ln322, i8 128, i8 %trunc_ln323" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 209 'select' 'select_ln323' <Predicate = true> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_68 : Operation 240 [1/1] (0.42ns)   --->   "%ret_ln0 = ret"   --->   Operation 240 'ret' 'ret_ln0' <Predicate = (icmp_ln310)> <Delay = 0.42>
+ST_68 : Operation 206 [1/1] (0.44ns)   --->   "%iq_1 = select i1 %icmp_ln295, i32 127, i32 %iq" [swiglu.cpp:295->swiglu.cpp:690]   --->   Operation 206 'select' 'iq_1' <Predicate = true> <Delay = 0.44> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_68 : Operation 207 [1/1] (1.01ns)   --->   "%icmp_ln296 = icmp_slt  i32 %iq_1, i32 4294967168" [swiglu.cpp:296->swiglu.cpp:690]   --->   Operation 207 'icmp' 'icmp_ln296' <Predicate = true> <Delay = 1.01> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 208 [1/1] (0.00ns)   --->   "%trunc_ln297 = trunc i32 %iq_1" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 208 'trunc' 'trunc_ln297' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 209 [1/1] (0.39ns)   --->   "%select_ln297 = select i1 %icmp_ln296, i8 128, i8 %trunc_ln297" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 209 'select' 'select_ln297' <Predicate = true> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_68 : Operation 240 [1/1] (0.42ns)   --->   "%ret_ln0 = ret"   --->   Operation 240 'ret' 'ret_ln0' <Predicate = (icmp_ln284)> <Delay = 0.42>
 
 State 69 <SV = 68> <Delay = 1.23>
-ST_69 : Operation 210 [1/1] (0.00ns)   --->   "%specpipeline_ln311 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_31" [swiglu.cpp:311->swiglu.cpp:716]   --->   Operation 210 'specpipeline' 'specpipeline_ln311' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 211 [1/1] (0.00ns)   --->   "%speclooptripcount_ln310 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 8192, i64 8192, i64 8192" [swiglu.cpp:310->swiglu.cpp:716]   --->   Operation 211 'speclooptripcount' 'speclooptripcount_ln310' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 212 [1/1] (0.00ns)   --->   "%specloopname_ln310 = specloopname void @_ssdm_op_SpecLoopName, void @empty_20" [swiglu.cpp:310->swiglu.cpp:716]   --->   Operation 212 'specloopname' 'specloopname_ln310' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 213 [1/1] (0.00ns)   --->   "%tmp_502 = bitconcatenate i11 @_ssdm_op_BitConcatenate.i11.i1.i2.i8, i1 1, i2 %tmp_s, i8 %trunc_ln323_1" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 213 'bitconcatenate' 'tmp_502' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 214 [1/1] (0.00ns)   --->   "%sext_ln323 = sext i11 %tmp_502" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 214 'sext' 'sext_ln323' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 215 [1/1] (0.00ns)   --->   "%zext_ln323 = zext i12 %sext_ln323" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 215 'zext' 'zext_ln323' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 216 [1/1] (0.00ns)   --->   "%gate_cache_0_addr = getelementptr i8 %gate_cache_0, i64 0, i64 %zext_ln323" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 216 'getelementptr' 'gate_cache_0_addr' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 217 [1/1] (0.00ns)   --->   "%gate_cache_1_addr = getelementptr i8 %gate_cache_1, i64 0, i64 %zext_ln323" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 217 'getelementptr' 'gate_cache_1_addr' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 218 [1/1] (0.00ns)   --->   "%gate_cache_2_addr = getelementptr i8 %gate_cache_2, i64 0, i64 %zext_ln323" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 218 'getelementptr' 'gate_cache_2_addr' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 219 [1/1] (0.00ns)   --->   "%gate_cache_3_addr = getelementptr i8 %gate_cache_3, i64 0, i64 %zext_ln323" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 219 'getelementptr' 'gate_cache_3_addr' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 220 [1/1] (0.00ns)   --->   "%gate_cache_4_addr = getelementptr i8 %gate_cache_4, i64 0, i64 %zext_ln323" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 220 'getelementptr' 'gate_cache_4_addr' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 221 [1/1] (0.00ns)   --->   "%gate_cache_5_addr = getelementptr i8 %gate_cache_5, i64 0, i64 %zext_ln323" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 221 'getelementptr' 'gate_cache_5_addr' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 222 [1/1] (0.00ns)   --->   "%gate_cache_6_addr = getelementptr i8 %gate_cache_6, i64 0, i64 %zext_ln323" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 222 'getelementptr' 'gate_cache_6_addr' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 223 [1/1] (0.00ns)   --->   "%gate_cache_7_addr = getelementptr i8 %gate_cache_7, i64 0, i64 %zext_ln323" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 223 'getelementptr' 'gate_cache_7_addr' <Predicate = true> <Delay = 0.00>
-ST_69 : Operation 224 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln323 = store i8 %select_ln323, i12 %gate_cache_6_addr" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 224 'store' 'store_ln323' <Predicate = (trunc_ln323_s == 6)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
-ST_69 : Operation 225 [1/1] (0.00ns)   --->   "%br_ln323 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 225 'br' 'br_ln323' <Predicate = (trunc_ln323_s == 6)> <Delay = 0.00>
-ST_69 : Operation 226 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln323 = store i8 %select_ln323, i12 %gate_cache_5_addr" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 226 'store' 'store_ln323' <Predicate = (trunc_ln323_s == 5)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
-ST_69 : Operation 227 [1/1] (0.00ns)   --->   "%br_ln323 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 227 'br' 'br_ln323' <Predicate = (trunc_ln323_s == 5)> <Delay = 0.00>
-ST_69 : Operation 228 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln323 = store i8 %select_ln323, i12 %gate_cache_4_addr" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 228 'store' 'store_ln323' <Predicate = (trunc_ln323_s == 4)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
-ST_69 : Operation 229 [1/1] (0.00ns)   --->   "%br_ln323 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 229 'br' 'br_ln323' <Predicate = (trunc_ln323_s == 4)> <Delay = 0.00>
-ST_69 : Operation 230 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln323 = store i8 %select_ln323, i12 %gate_cache_3_addr" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 230 'store' 'store_ln323' <Predicate = (trunc_ln323_s == 3)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
-ST_69 : Operation 231 [1/1] (0.00ns)   --->   "%br_ln323 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 231 'br' 'br_ln323' <Predicate = (trunc_ln323_s == 3)> <Delay = 0.00>
-ST_69 : Operation 232 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln323 = store i8 %select_ln323, i12 %gate_cache_2_addr" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 232 'store' 'store_ln323' <Predicate = (trunc_ln323_s == 2)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
-ST_69 : Operation 233 [1/1] (0.00ns)   --->   "%br_ln323 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 233 'br' 'br_ln323' <Predicate = (trunc_ln323_s == 2)> <Delay = 0.00>
-ST_69 : Operation 234 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln323 = store i8 %select_ln323, i12 %gate_cache_1_addr" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 234 'store' 'store_ln323' <Predicate = (trunc_ln323_s == 1)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
-ST_69 : Operation 235 [1/1] (0.00ns)   --->   "%br_ln323 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 235 'br' 'br_ln323' <Predicate = (trunc_ln323_s == 1)> <Delay = 0.00>
-ST_69 : Operation 236 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln323 = store i8 %select_ln323, i12 %gate_cache_0_addr" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 236 'store' 'store_ln323' <Predicate = (trunc_ln323_s == 0)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
-ST_69 : Operation 237 [1/1] (0.00ns)   --->   "%br_ln323 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 237 'br' 'br_ln323' <Predicate = (trunc_ln323_s == 0)> <Delay = 0.00>
-ST_69 : Operation 238 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln323 = store i8 %select_ln323, i12 %gate_cache_7_addr" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 238 'store' 'store_ln323' <Predicate = (trunc_ln323_s == 7)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
-ST_69 : Operation 239 [1/1] (0.00ns)   --->   "%br_ln323 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:323->swiglu.cpp:716]   --->   Operation 239 'br' 'br_ln323' <Predicate = (trunc_ln323_s == 7)> <Delay = 0.00>
+ST_69 : Operation 210 [1/1] (0.00ns)   --->   "%specpipeline_ln285 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_32" [swiglu.cpp:285->swiglu.cpp:690]   --->   Operation 210 'specpipeline' 'specpipeline_ln285' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 211 [1/1] (0.00ns)   --->   "%speclooptripcount_ln284 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 8192, i64 8192, i64 8192" [swiglu.cpp:284->swiglu.cpp:690]   --->   Operation 211 'speclooptripcount' 'speclooptripcount_ln284' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 212 [1/1] (0.00ns)   --->   "%specloopname_ln284 = specloopname void @_ssdm_op_SpecLoopName, void @empty_21" [swiglu.cpp:284->swiglu.cpp:690]   --->   Operation 212 'specloopname' 'specloopname_ln284' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 213 [1/1] (0.00ns)   --->   "%tmp_440 = bitconcatenate i11 @_ssdm_op_BitConcatenate.i11.i1.i2.i8, i1 1, i2 %tmp_s, i8 %trunc_ln297_1" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 213 'bitconcatenate' 'tmp_440' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 214 [1/1] (0.00ns)   --->   "%sext_ln297 = sext i11 %tmp_440" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 214 'sext' 'sext_ln297' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 215 [1/1] (0.00ns)   --->   "%zext_ln297 = zext i12 %sext_ln297" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 215 'zext' 'zext_ln297' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 216 [1/1] (0.00ns)   --->   "%gate_cache_0_addr = getelementptr i8 %gate_cache_0, i64 0, i64 %zext_ln297" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 216 'getelementptr' 'gate_cache_0_addr' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 217 [1/1] (0.00ns)   --->   "%gate_cache_1_addr = getelementptr i8 %gate_cache_1, i64 0, i64 %zext_ln297" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 217 'getelementptr' 'gate_cache_1_addr' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 218 [1/1] (0.00ns)   --->   "%gate_cache_2_addr = getelementptr i8 %gate_cache_2, i64 0, i64 %zext_ln297" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 218 'getelementptr' 'gate_cache_2_addr' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 219 [1/1] (0.00ns)   --->   "%gate_cache_3_addr = getelementptr i8 %gate_cache_3, i64 0, i64 %zext_ln297" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 219 'getelementptr' 'gate_cache_3_addr' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 220 [1/1] (0.00ns)   --->   "%gate_cache_4_addr = getelementptr i8 %gate_cache_4, i64 0, i64 %zext_ln297" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 220 'getelementptr' 'gate_cache_4_addr' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 221 [1/1] (0.00ns)   --->   "%gate_cache_5_addr = getelementptr i8 %gate_cache_5, i64 0, i64 %zext_ln297" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 221 'getelementptr' 'gate_cache_5_addr' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 222 [1/1] (0.00ns)   --->   "%gate_cache_6_addr = getelementptr i8 %gate_cache_6, i64 0, i64 %zext_ln297" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 222 'getelementptr' 'gate_cache_6_addr' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 223 [1/1] (0.00ns)   --->   "%gate_cache_7_addr = getelementptr i8 %gate_cache_7, i64 0, i64 %zext_ln297" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 223 'getelementptr' 'gate_cache_7_addr' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 224 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln297 = store i8 %select_ln297, i12 %gate_cache_6_addr" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 224 'store' 'store_ln297' <Predicate = (trunc_ln297_s == 6)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
+ST_69 : Operation 225 [1/1] (0.00ns)   --->   "%br_ln297 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 225 'br' 'br_ln297' <Predicate = (trunc_ln297_s == 6)> <Delay = 0.00>
+ST_69 : Operation 226 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln297 = store i8 %select_ln297, i12 %gate_cache_5_addr" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 226 'store' 'store_ln297' <Predicate = (trunc_ln297_s == 5)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
+ST_69 : Operation 227 [1/1] (0.00ns)   --->   "%br_ln297 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 227 'br' 'br_ln297' <Predicate = (trunc_ln297_s == 5)> <Delay = 0.00>
+ST_69 : Operation 228 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln297 = store i8 %select_ln297, i12 %gate_cache_4_addr" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 228 'store' 'store_ln297' <Predicate = (trunc_ln297_s == 4)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
+ST_69 : Operation 229 [1/1] (0.00ns)   --->   "%br_ln297 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 229 'br' 'br_ln297' <Predicate = (trunc_ln297_s == 4)> <Delay = 0.00>
+ST_69 : Operation 230 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln297 = store i8 %select_ln297, i12 %gate_cache_3_addr" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 230 'store' 'store_ln297' <Predicate = (trunc_ln297_s == 3)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
+ST_69 : Operation 231 [1/1] (0.00ns)   --->   "%br_ln297 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 231 'br' 'br_ln297' <Predicate = (trunc_ln297_s == 3)> <Delay = 0.00>
+ST_69 : Operation 232 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln297 = store i8 %select_ln297, i12 %gate_cache_2_addr" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 232 'store' 'store_ln297' <Predicate = (trunc_ln297_s == 2)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
+ST_69 : Operation 233 [1/1] (0.00ns)   --->   "%br_ln297 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 233 'br' 'br_ln297' <Predicate = (trunc_ln297_s == 2)> <Delay = 0.00>
+ST_69 : Operation 234 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln297 = store i8 %select_ln297, i12 %gate_cache_1_addr" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 234 'store' 'store_ln297' <Predicate = (trunc_ln297_s == 1)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
+ST_69 : Operation 235 [1/1] (0.00ns)   --->   "%br_ln297 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 235 'br' 'br_ln297' <Predicate = (trunc_ln297_s == 1)> <Delay = 0.00>
+ST_69 : Operation 236 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln297 = store i8 %select_ln297, i12 %gate_cache_0_addr" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 236 'store' 'store_ln297' <Predicate = (trunc_ln297_s == 0)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
+ST_69 : Operation 237 [1/1] (0.00ns)   --->   "%br_ln297 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 237 'br' 'br_ln297' <Predicate = (trunc_ln297_s == 0)> <Delay = 0.00>
+ST_69 : Operation 238 [1/1] ( I:1.23ns O:1.23ns )   --->   "%store_ln297 = store i8 %select_ln297, i12 %gate_cache_7_addr" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 238 'store' 'store_ln297' <Predicate = (trunc_ln297_s == 7)> <Delay = 1.23> <CoreInst = "RAM_2P_URAM">   --->   Core 94 'RAM_2P_URAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 4096> <RAM>
+ST_69 : Operation 239 [1/1] (0.00ns)   --->   "%br_ln297 = br void %arrayidx1074.323.exit.i" [swiglu.cpp:297->swiglu.cpp:690]   --->   Operation 239 'br' 'br_ln297' <Predicate = (trunc_ln297_s == 7)> <Delay = 0.00>
 
 
 ============================================================
@@ -507,41 +507,41 @@ specmemcore_ln0         (specmemcore      ) [ 0000000000000000000000000000000000
 specmemcore_ln0         (specmemcore      ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 specmemcore_ln0         (specmemcore      ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 inv_gs_3_read           (read             ) [ 0111111111111111111111111111111111111111111111111111110000000000000000]
-store_ln310             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+store_ln284             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 br_ln0                  (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 j_1                     (load             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-icmp_ln310              (icmp             ) [ 0111111111111111111111111111111111111111111111111111111111111111111110]
-add_ln310               (add              ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln310                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-trunc_ln312             (trunc            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-add_ln312_1             (bitconcatenate   ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-sext_ln312              (sext             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-zext_ln312              (zext             ) [ 0111111111111111111111111111000000000000000000000000000000000000000000]
+icmp_ln284              (icmp             ) [ 0111111111111111111111111111111111111111111111111111111111111111111110]
+add_ln284               (add              ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln284                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+trunc_ln286             (trunc            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+add_ln286_1             (bitconcatenate   ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+sext_ln286              (sext             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+zext_ln286              (zext             ) [ 0111111111111111111111111111000000000000000000000000000000000000000000]
 X1_cache_addr           (getelementptr    ) [ 0110000000000000000000000000000000000000000000000000000000000000000000]
-trunc_ln323_1           (trunc            ) [ 0111111111111111111111111111111111111111111111111111111111111111111111]
-trunc_ln323_s           (partselect       ) [ 0111111111111111111111111111111111111111111111111111111111111111111111]
+trunc_ln297_1           (trunc            ) [ 0111111111111111111111111111111111111111111111111111111111111111111111]
+trunc_ln297_s           (partselect       ) [ 0111111111111111111111111111111111111111111111111111111111111111111111]
 tmp_s                   (partselect       ) [ 0111111111111111111111111111111111111111111111111111111111111111111111]
-switch_ln323            (switch           ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-store_ln310             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln310                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+switch_ln297            (switch           ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+store_ln284             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln284                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 X1_cache_load           (load             ) [ 0101000000000000000000000000000000000000000000000000000000000000000000]
-sext_ln312_1            (sext             ) [ 0100111111000000000000000000000000000000000000000000000000000000000000]
+sext_ln286_1            (sext             ) [ 0100111111000000000000000000000000000000000000000000000000000000000000]
 conv64_3_i              (sitofp           ) [ 0100000000111111000000000000000000000000000000000000000000000000000000]
 z                       (fmul             ) [ 0100000000000000111111111111111111111111110000000000000000000000000000]
 add74_3_i               (fadd             ) [ 0100000000000000000000000011111100000000000000000000000000000000000000]
 X2_cache_addr           (getelementptr    ) [ 0100000000000000000000000000100000000000000000000000000000000000000000]
 X2_cache_load           (load             ) [ 0100000000000000000000000000010000000000000000000000000000000000000000]
-sext_ln313              (sext             ) [ 0100000000000000000000000000001111110000000000000000000000000000000000]
+sext_ln287              (sext             ) [ 0100000000000000000000000000001111110000000000000000000000000000000000]
 scaled                  (fmul             ) [ 0100000000000000000000000000000010000000000000000000000000000000000000]
 idx                     (call             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-trunc_ln315             (trunc            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+trunc_ln289             (trunc            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 tmp                     (bitselect        ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 idx_1                   (select           ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-trunc_ln315_1           (trunc            ) [ 0100000000000000000000000000000000100000000000000000000000000000000000]
-tmp_1011                (partselect       ) [ 0100000000000000000000000000000000100000000000000000000000000000000000]
-icmp_ln317              (icmp             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+trunc_ln289_1           (trunc            ) [ 0100000000000000000000000000000000100000000000000000000000000000000000]
+tmp_699                 (partselect       ) [ 0100000000000000000000000000000000100000000000000000000000000000000000]
+icmp_ln291              (icmp             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 idx_2                   (select           ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-zext_ln318              (zext             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+zext_ln292              (zext             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 sigmoid_lut_addr        (getelementptr    ) [ 0100000000000000000000000000000000010000000000000000000000000000000000]
 conv71_3_i              (sitofp           ) [ 0100000000000000000000000000000000001111110000000000000000000000000000]
 sigmoid_lut_load        (load             ) [ 0100000000000000000000000000000000001111110000000000000000000000000000]
@@ -549,29 +549,29 @@ x2                      (fmul             ) [ 0100000000000000000000000000000000
 mul87_3_i               (fmul             ) [ 0100000000000000000000000000000000000000001111110000000000000000000000]
 g                       (fmul             ) [ 0100000000000000000000000000000000000000000000001111110000000000000000]
 fq                      (fmul             ) [ 0100000000000000000000000000000000000000000000000000001111111111110000]
-bitcast_ln320           (bitcast          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-tmp_395                 (partselect       ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-trunc_ln320             (trunc            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-icmp_ln320              (icmp             ) [ 0100000000000000000000000000000000000000000000000000000010000000000000]
-icmp_ln320_1            (icmp             ) [ 0100000000000000000000000000000000000000000000000000000010000000000000]
-tmp_396                 (fcmp             ) [ 0100000000000000000000000000000000000000000000000000000010000000000000]
-or_ln320                (or               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-and_ln320               (and              ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-select_ln320            (select           ) [ 0100000000000000000000000000000000000000000000000000000001111111110000]
+bitcast_ln294           (bitcast          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+tmp_315                 (partselect       ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+trunc_ln294             (trunc            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+icmp_ln294              (icmp             ) [ 0100000000000000000000000000000000000000000000000000000010000000000000]
+icmp_ln294_1            (icmp             ) [ 0100000000000000000000000000000000000000000000000000000010000000000000]
+tmp_316                 (fcmp             ) [ 0100000000000000000000000000000000000000000000000000000010000000000000]
+or_ln294                (or               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+and_ln294               (and              ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+select_ln294            (select           ) [ 0100000000000000000000000000000000000000000000000000000001111111110000]
 add92_3_i               (fadd             ) [ 0100000000000000000000000000000000000000000000000000000000000000001000]
 iq                      (call             ) [ 0100000000000000000000000000000000000000000000000000000000000000000010]
-tmp_1012                (partselect       ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-icmp_ln321              (icmp             ) [ 0100000000000000000000000000000000000000000000000000000000000000000010]
+tmp_700                 (partselect       ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+icmp_ln295              (icmp             ) [ 0100000000000000000000000000000000000000000000000000000000000000000010]
 iq_1                    (select           ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-icmp_ln322              (icmp             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-trunc_ln323             (trunc            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-select_ln323            (select           ) [ 0100000000000000000000000000000000000000000000000000000000000000000001]
-specpipeline_ln311      (specpipeline     ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-speclooptripcount_ln310 (speclooptripcount) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-specloopname_ln310      (specloopname     ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-tmp_502                 (bitconcatenate   ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-sext_ln323              (sext             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-zext_ln323              (zext             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+icmp_ln296              (icmp             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+trunc_ln297             (trunc            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+select_ln297            (select           ) [ 0100000000000000000000000000000000000000000000000000000000000000000001]
+specpipeline_ln285      (specpipeline     ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+speclooptripcount_ln284 (speclooptripcount) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+specloopname_ln284      (specloopname     ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+tmp_440                 (bitconcatenate   ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+sext_ln297              (sext             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+zext_ln297              (zext             ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 gate_cache_0_addr       (getelementptr    ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 gate_cache_1_addr       (getelementptr    ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 gate_cache_2_addr       (getelementptr    ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
@@ -580,22 +580,22 @@ gate_cache_4_addr       (getelementptr    ) [ 0000000000000000000000000000000000
 gate_cache_5_addr       (getelementptr    ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 gate_cache_6_addr       (getelementptr    ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 gate_cache_7_addr       (getelementptr    ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-store_ln323             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln323                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-store_ln323             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln323                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-store_ln323             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln323                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-store_ln323             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln323                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-store_ln323             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln323                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-store_ln323             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln323                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-store_ln323             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln323                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-store_ln323             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln323                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+store_ln297             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln297                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+store_ln297             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln297                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+store_ln297             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln297                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+store_ln297             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln297                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+store_ln297             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln297                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+store_ln297             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln297                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+store_ln297             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln297                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+store_ln297             (store            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln297                (br               ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 ret_ln0                 (ret              ) [ 0000000000000000000000000000000000000000000000000000000000000000000000]
 </LifeTime>
 
@@ -1203,7 +1203,7 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 <pin id="131" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_31"/></StgValue>
+<StgValue><ssdm name="empty_32"/></StgValue>
 </bind>
 </comp>
 
@@ -1239,7 +1239,7 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 <pin id="139" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_20"/></StgValue>
+<StgValue><ssdm name="empty_21"/></StgValue>
 </bind>
 </comp>
 
@@ -1457,7 +1457,7 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="247" class="1004" name="store_ln323_access_fu_247">
+<comp id="247" class="1004" name="store_ln297_access_fu_247">
 <pin_list>
 <pin id="248" dir="0" index="0" bw="12" slack="2147483647"/>
 <pin id="249" dir="0" index="1" bw="8" slack="2147483647"/>
@@ -1470,11 +1470,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln323/69 "/>
+<opset="store_ln297/69 "/>
 </bind>
 </comp>
 
-<comp id="257" class="1004" name="store_ln323_access_fu_257">
+<comp id="257" class="1004" name="store_ln297_access_fu_257">
 <pin_list>
 <pin id="258" dir="0" index="0" bw="12" slack="2147483647"/>
 <pin id="259" dir="0" index="1" bw="8" slack="2147483647"/>
@@ -1487,11 +1487,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln323/69 "/>
+<opset="store_ln297/69 "/>
 </bind>
 </comp>
 
-<comp id="267" class="1004" name="store_ln323_access_fu_267">
+<comp id="267" class="1004" name="store_ln297_access_fu_267">
 <pin_list>
 <pin id="268" dir="0" index="0" bw="12" slack="2147483647"/>
 <pin id="269" dir="0" index="1" bw="8" slack="2147483647"/>
@@ -1504,11 +1504,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln323/69 "/>
+<opset="store_ln297/69 "/>
 </bind>
 </comp>
 
-<comp id="277" class="1004" name="store_ln323_access_fu_277">
+<comp id="277" class="1004" name="store_ln297_access_fu_277">
 <pin_list>
 <pin id="278" dir="0" index="0" bw="12" slack="2147483647"/>
 <pin id="279" dir="0" index="1" bw="8" slack="2147483647"/>
@@ -1521,11 +1521,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln323/69 "/>
+<opset="store_ln297/69 "/>
 </bind>
 </comp>
 
-<comp id="287" class="1004" name="store_ln323_access_fu_287">
+<comp id="287" class="1004" name="store_ln297_access_fu_287">
 <pin_list>
 <pin id="288" dir="0" index="0" bw="12" slack="2147483647"/>
 <pin id="289" dir="0" index="1" bw="8" slack="2147483647"/>
@@ -1538,11 +1538,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln323/69 "/>
+<opset="store_ln297/69 "/>
 </bind>
 </comp>
 
-<comp id="297" class="1004" name="store_ln323_access_fu_297">
+<comp id="297" class="1004" name="store_ln297_access_fu_297">
 <pin_list>
 <pin id="298" dir="0" index="0" bw="12" slack="2147483647"/>
 <pin id="299" dir="0" index="1" bw="8" slack="2147483647"/>
@@ -1555,11 +1555,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln323/69 "/>
+<opset="store_ln297/69 "/>
 </bind>
 </comp>
 
-<comp id="307" class="1004" name="store_ln323_access_fu_307">
+<comp id="307" class="1004" name="store_ln297_access_fu_307">
 <pin_list>
 <pin id="308" dir="0" index="0" bw="12" slack="2147483647"/>
 <pin id="309" dir="0" index="1" bw="8" slack="2147483647"/>
@@ -1572,11 +1572,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln323/69 "/>
+<opset="store_ln297/69 "/>
 </bind>
 </comp>
 
-<comp id="317" class="1004" name="store_ln323_access_fu_317">
+<comp id="317" class="1004" name="store_ln297_access_fu_317">
 <pin_list>
 <pin id="318" dir="0" index="0" bw="12" slack="2147483647"/>
 <pin id="319" dir="0" index="1" bw="8" slack="2147483647"/>
@@ -1589,7 +1589,7 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln323/69 "/>
+<opset="store_ln297/69 "/>
 </bind>
 </comp>
 
@@ -1743,11 +1743,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="fcmp(46) " fcode="fcmp"/>
-<opset="tmp_396/54 "/>
+<opset="tmp_316/54 "/>
 </bind>
 </comp>
 
-<comp id="384" class="1004" name="store_ln310_store_fu_384">
+<comp id="384" class="1004" name="store_ln284_store_fu_384">
 <pin_list>
 <pin id="385" dir="0" index="0" bw="1" slack="0"/>
 <pin id="386" dir="0" index="1" bw="14" slack="0"/>
@@ -1755,7 +1755,7 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln310/1 "/>
+<opset="store_ln284/1 "/>
 </bind>
 </comp>
 
@@ -1770,7 +1770,7 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="392" class="1004" name="icmp_ln310_fu_392">
+<comp id="392" class="1004" name="icmp_ln284_fu_392">
 <pin_list>
 <pin id="393" dir="0" index="0" bw="14" slack="0"/>
 <pin id="394" dir="0" index="1" bw="14" slack="0"/>
@@ -1778,11 +1778,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln310/1 "/>
+<opset="icmp_ln284/1 "/>
 </bind>
 </comp>
 
-<comp id="398" class="1004" name="add_ln310_fu_398">
+<comp id="398" class="1004" name="add_ln284_fu_398">
 <pin_list>
 <pin id="399" dir="0" index="0" bw="14" slack="0"/>
 <pin id="400" dir="0" index="1" bw="1" slack="0"/>
@@ -1790,22 +1790,22 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="add_ln310/1 "/>
+<opset="add_ln284/1 "/>
 </bind>
 </comp>
 
-<comp id="404" class="1004" name="trunc_ln312_fu_404">
+<comp id="404" class="1004" name="trunc_ln286_fu_404">
 <pin_list>
 <pin id="405" dir="0" index="0" bw="14" slack="0"/>
 <pin id="406" dir="1" index="1" bw="13" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="trunc_ln312/1 "/>
+<opset="trunc_ln286/1 "/>
 </bind>
 </comp>
 
-<comp id="408" class="1004" name="add_ln312_1_fu_408">
+<comp id="408" class="1004" name="add_ln286_1_fu_408">
 <pin_list>
 <pin id="409" dir="0" index="0" bw="14" slack="0"/>
 <pin id="410" dir="0" index="1" bw="1" slack="0"/>
@@ -1814,44 +1814,44 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
-<opset="add_ln312_1/1 "/>
+<opset="add_ln286_1/1 "/>
 </bind>
 </comp>
 
-<comp id="416" class="1004" name="sext_ln312_fu_416">
+<comp id="416" class="1004" name="sext_ln286_fu_416">
 <pin_list>
 <pin id="417" dir="0" index="0" bw="14" slack="0"/>
 <pin id="418" dir="1" index="1" bw="15" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
-<opset="sext_ln312/1 "/>
+<opset="sext_ln286/1 "/>
 </bind>
 </comp>
 
-<comp id="420" class="1004" name="zext_ln312_fu_420">
+<comp id="420" class="1004" name="zext_ln286_fu_420">
 <pin_list>
 <pin id="421" dir="0" index="0" bw="14" slack="0"/>
 <pin id="422" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
-<opset="zext_ln312/1 "/>
+<opset="zext_ln286/1 "/>
 </bind>
 </comp>
 
-<comp id="425" class="1004" name="trunc_ln323_1_fu_425">
+<comp id="425" class="1004" name="trunc_ln297_1_fu_425">
 <pin_list>
 <pin id="426" dir="0" index="0" bw="14" slack="0"/>
 <pin id="427" dir="1" index="1" bw="8" slack="68"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="trunc_ln323_1/1 "/>
+<opset="trunc_ln297_1/1 "/>
 </bind>
 </comp>
 
-<comp id="429" class="1004" name="trunc_ln323_s_fu_429">
+<comp id="429" class="1004" name="trunc_ln297_s_fu_429">
 <pin_list>
 <pin id="430" dir="0" index="0" bw="3" slack="0"/>
 <pin id="431" dir="0" index="1" bw="14" slack="0"/>
@@ -1861,7 +1861,7 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="trunc_ln323_s/1 "/>
+<opset="trunc_ln297_s/1 "/>
 </bind>
 </comp>
 
@@ -1879,7 +1879,7 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="449" class="1004" name="switch_ln323_fu_449">
+<comp id="449" class="1004" name="switch_ln297_fu_449">
 <pin_list>
 <pin id="450" dir="0" index="0" bw="3" slack="0"/>
 <pin id="451" dir="0" index="1" bw="1" slack="0"/>
@@ -1893,11 +1893,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="switch(3) " fcode="switch"/>
-<opset="switch_ln323/1 "/>
+<opset="switch_ln297/1 "/>
 </bind>
 </comp>
 
-<comp id="467" class="1004" name="store_ln310_store_fu_467">
+<comp id="467" class="1004" name="store_ln284_store_fu_467">
 <pin_list>
 <pin id="468" dir="0" index="0" bw="14" slack="0"/>
 <pin id="469" dir="0" index="1" bw="14" slack="0"/>
@@ -1905,40 +1905,40 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln310/1 "/>
+<opset="store_ln284/1 "/>
 </bind>
 </comp>
 
-<comp id="472" class="1004" name="sext_ln312_1_fu_472">
+<comp id="472" class="1004" name="sext_ln286_1_fu_472">
 <pin_list>
 <pin id="473" dir="0" index="0" bw="8" slack="1"/>
 <pin id="474" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
-<opset="sext_ln312_1/3 "/>
+<opset="sext_ln286_1/3 "/>
 </bind>
 </comp>
 
-<comp id="476" class="1004" name="sext_ln313_fu_476">
+<comp id="476" class="1004" name="sext_ln287_fu_476">
 <pin_list>
 <pin id="477" dir="0" index="0" bw="8" slack="1"/>
 <pin id="478" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
-<opset="sext_ln313/29 "/>
+<opset="sext_ln287/29 "/>
 </bind>
 </comp>
 
-<comp id="480" class="1004" name="trunc_ln315_fu_480">
+<comp id="480" class="1004" name="trunc_ln289_fu_480">
 <pin_list>
 <pin id="481" dir="0" index="0" bw="32" slack="0"/>
 <pin id="482" dir="1" index="1" bw="31" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="trunc_ln315/33 "/>
+<opset="trunc_ln289/33 "/>
 </bind>
 </comp>
 
@@ -1968,18 +1968,18 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="500" class="1004" name="trunc_ln315_1_fu_500">
+<comp id="500" class="1004" name="trunc_ln289_1_fu_500">
 <pin_list>
 <pin id="501" dir="0" index="0" bw="31" slack="0"/>
 <pin id="502" dir="1" index="1" bw="12" slack="1"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="trunc_ln315_1/33 "/>
+<opset="trunc_ln289_1/33 "/>
 </bind>
 </comp>
 
-<comp id="504" class="1004" name="tmp_1011_fu_504">
+<comp id="504" class="1004" name="tmp_699_fu_504">
 <pin_list>
 <pin id="505" dir="0" index="0" bw="19" slack="0"/>
 <pin id="506" dir="0" index="1" bw="31" slack="0"/>
@@ -1989,11 +1989,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_1011/33 "/>
+<opset="tmp_699/33 "/>
 </bind>
 </comp>
 
-<comp id="514" class="1004" name="icmp_ln317_fu_514">
+<comp id="514" class="1004" name="icmp_ln291_fu_514">
 <pin_list>
 <pin id="515" dir="0" index="0" bw="19" slack="1"/>
 <pin id="516" dir="0" index="1" bw="1" slack="0"/>
@@ -2001,7 +2001,7 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln317/34 "/>
+<opset="icmp_ln291/34 "/>
 </bind>
 </comp>
 
@@ -2018,29 +2018,29 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="526" class="1004" name="zext_ln318_fu_526">
+<comp id="526" class="1004" name="zext_ln292_fu_526">
 <pin_list>
 <pin id="527" dir="0" index="0" bw="12" slack="0"/>
 <pin id="528" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
-<opset="zext_ln318/34 "/>
+<opset="zext_ln292/34 "/>
 </bind>
 </comp>
 
-<comp id="531" class="1004" name="bitcast_ln320_fu_531">
+<comp id="531" class="1004" name="bitcast_ln294_fu_531">
 <pin_list>
 <pin id="532" dir="0" index="0" bw="32" slack="2"/>
 <pin id="533" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
-<opset="bitcast_ln320/55 "/>
+<opset="bitcast_ln294/55 "/>
 </bind>
 </comp>
 
-<comp id="534" class="1004" name="tmp_395_fu_534">
+<comp id="534" class="1004" name="tmp_315_fu_534">
 <pin_list>
 <pin id="535" dir="0" index="0" bw="8" slack="0"/>
 <pin id="536" dir="0" index="1" bw="32" slack="0"/>
@@ -2050,22 +2050,22 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_395/55 "/>
+<opset="tmp_315/55 "/>
 </bind>
 </comp>
 
-<comp id="544" class="1004" name="trunc_ln320_fu_544">
+<comp id="544" class="1004" name="trunc_ln294_fu_544">
 <pin_list>
 <pin id="545" dir="0" index="0" bw="32" slack="0"/>
 <pin id="546" dir="1" index="1" bw="23" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="trunc_ln320/55 "/>
+<opset="trunc_ln294/55 "/>
 </bind>
 </comp>
 
-<comp id="548" class="1004" name="icmp_ln320_fu_548">
+<comp id="548" class="1004" name="icmp_ln294_fu_548">
 <pin_list>
 <pin id="549" dir="0" index="0" bw="8" slack="0"/>
 <pin id="550" dir="0" index="1" bw="1" slack="0"/>
@@ -2073,11 +2073,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln320/55 "/>
+<opset="icmp_ln294/55 "/>
 </bind>
 </comp>
 
-<comp id="554" class="1004" name="icmp_ln320_1_fu_554">
+<comp id="554" class="1004" name="icmp_ln294_1_fu_554">
 <pin_list>
 <pin id="555" dir="0" index="0" bw="23" slack="0"/>
 <pin id="556" dir="0" index="1" bw="1" slack="0"/>
@@ -2085,11 +2085,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln320_1/55 "/>
+<opset="icmp_ln294_1/55 "/>
 </bind>
 </comp>
 
-<comp id="560" class="1004" name="or_ln320_fu_560">
+<comp id="560" class="1004" name="or_ln294_fu_560">
 <pin_list>
 <pin id="561" dir="0" index="0" bw="1" slack="1"/>
 <pin id="562" dir="0" index="1" bw="1" slack="1"/>
@@ -2097,11 +2097,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="or(24) " fcode="or"/>
-<opset="or_ln320/56 "/>
+<opset="or_ln294/56 "/>
 </bind>
 </comp>
 
-<comp id="564" class="1004" name="and_ln320_fu_564">
+<comp id="564" class="1004" name="and_ln294_fu_564">
 <pin_list>
 <pin id="565" dir="0" index="0" bw="1" slack="0"/>
 <pin id="566" dir="0" index="1" bw="1" slack="1"/>
@@ -2109,11 +2109,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="and(23) " fcode="and"/>
-<opset="and_ln320/56 "/>
+<opset="and_ln294/56 "/>
 </bind>
 </comp>
 
-<comp id="569" class="1004" name="select_ln320_fu_569">
+<comp id="569" class="1004" name="select_ln294_fu_569">
 <pin_list>
 <pin id="570" dir="0" index="0" bw="1" slack="0"/>
 <pin id="571" dir="0" index="1" bw="32" slack="0"/>
@@ -2122,11 +2122,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
-<opset="select_ln320/56 "/>
+<opset="select_ln294/56 "/>
 </bind>
 </comp>
 
-<comp id="578" class="1004" name="tmp_1012_fu_578">
+<comp id="578" class="1004" name="tmp_700_fu_578">
 <pin_list>
 <pin id="579" dir="0" index="0" bw="25" slack="0"/>
 <pin id="580" dir="0" index="1" bw="32" slack="0"/>
@@ -2136,11 +2136,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_1012/67 "/>
+<opset="tmp_700/67 "/>
 </bind>
 </comp>
 
-<comp id="588" class="1004" name="icmp_ln321_fu_588">
+<comp id="588" class="1004" name="icmp_ln295_fu_588">
 <pin_list>
 <pin id="589" dir="0" index="0" bw="25" slack="0"/>
 <pin id="590" dir="0" index="1" bw="1" slack="0"/>
@@ -2148,7 +2148,7 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln321/67 "/>
+<opset="icmp_ln295/67 "/>
 </bind>
 </comp>
 
@@ -2165,7 +2165,7 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="600" class="1004" name="icmp_ln322_fu_600">
+<comp id="600" class="1004" name="icmp_ln296_fu_600">
 <pin_list>
 <pin id="601" dir="0" index="0" bw="32" slack="0"/>
 <pin id="602" dir="0" index="1" bw="8" slack="0"/>
@@ -2173,22 +2173,22 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln322/68 "/>
+<opset="icmp_ln296/68 "/>
 </bind>
 </comp>
 
-<comp id="606" class="1004" name="trunc_ln323_fu_606">
+<comp id="606" class="1004" name="trunc_ln297_fu_606">
 <pin_list>
 <pin id="607" dir="0" index="0" bw="32" slack="0"/>
 <pin id="608" dir="1" index="1" bw="8" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="trunc_ln323/68 "/>
+<opset="trunc_ln297/68 "/>
 </bind>
 </comp>
 
-<comp id="610" class="1004" name="select_ln323_fu_610">
+<comp id="610" class="1004" name="select_ln297_fu_610">
 <pin_list>
 <pin id="611" dir="0" index="0" bw="1" slack="0"/>
 <pin id="612" dir="0" index="1" bw="8" slack="0"/>
@@ -2197,11 +2197,11 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
-<opset="select_ln323/68 "/>
+<opset="select_ln297/68 "/>
 </bind>
 </comp>
 
-<comp id="618" class="1004" name="tmp_502_fu_618">
+<comp id="618" class="1004" name="tmp_440_fu_618">
 <pin_list>
 <pin id="619" dir="0" index="0" bw="11" slack="0"/>
 <pin id="620" dir="0" index="1" bw="1" slack="0"/>
@@ -2211,29 +2211,29 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
-<opset="tmp_502/69 "/>
+<opset="tmp_440/69 "/>
 </bind>
 </comp>
 
-<comp id="626" class="1004" name="sext_ln323_fu_626">
+<comp id="626" class="1004" name="sext_ln297_fu_626">
 <pin_list>
 <pin id="627" dir="0" index="0" bw="11" slack="0"/>
 <pin id="628" dir="1" index="1" bw="12" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
-<opset="sext_ln323/69 "/>
+<opset="sext_ln297/69 "/>
 </bind>
 </comp>
 
-<comp id="630" class="1004" name="zext_ln323_fu_630">
+<comp id="630" class="1004" name="zext_ln297_fu_630">
 <pin_list>
 <pin id="631" dir="0" index="0" bw="11" slack="0"/>
 <pin id="632" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
-<opset="zext_ln323/69 "/>
+<opset="zext_ln297/69 "/>
 </bind>
 </comp>
 
@@ -2257,23 +2257,23 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="654" class="1005" name="icmp_ln310_reg_654">
+<comp id="654" class="1005" name="icmp_ln284_reg_654">
 <pin_list>
 <pin id="655" dir="0" index="0" bw="1" slack="31"/>
 <pin id="656" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<opset="icmp_ln310 "/>
+<opset="icmp_ln284 "/>
 </bind>
 </comp>
 
-<comp id="658" class="1005" name="zext_ln312_reg_658">
+<comp id="658" class="1005" name="zext_ln286_reg_658">
 <pin_list>
 <pin id="659" dir="0" index="0" bw="64" slack="26"/>
 <pin id="660" dir="1" index="1" bw="64" slack="26"/>
 </pin_list>
 <bind>
-<opset="zext_ln312 "/>
+<opset="zext_ln286 "/>
 </bind>
 </comp>
 
@@ -2287,23 +2287,23 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="668" class="1005" name="trunc_ln323_1_reg_668">
+<comp id="668" class="1005" name="trunc_ln297_1_reg_668">
 <pin_list>
 <pin id="669" dir="0" index="0" bw="8" slack="68"/>
 <pin id="670" dir="1" index="1" bw="8" slack="68"/>
 </pin_list>
 <bind>
-<opset="trunc_ln323_1 "/>
+<opset="trunc_ln297_1 "/>
 </bind>
 </comp>
 
-<comp id="673" class="1005" name="trunc_ln323_s_reg_673">
+<comp id="673" class="1005" name="trunc_ln297_s_reg_673">
 <pin_list>
 <pin id="674" dir="0" index="0" bw="3" slack="68"/>
 <pin id="675" dir="1" index="1" bw="3" slack="2147483647"/>
 </pin_list>
 <bind>
-<opset="trunc_ln323_s "/>
+<opset="trunc_ln297_s "/>
 </bind>
 </comp>
 
@@ -2327,13 +2327,13 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="687" class="1005" name="sext_ln312_1_reg_687">
+<comp id="687" class="1005" name="sext_ln286_1_reg_687">
 <pin_list>
 <pin id="688" dir="0" index="0" bw="32" slack="1"/>
 <pin id="689" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="sext_ln312_1 "/>
+<opset="sext_ln286_1 "/>
 </bind>
 </comp>
 
@@ -2387,13 +2387,13 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="718" class="1005" name="sext_ln313_reg_718">
+<comp id="718" class="1005" name="sext_ln287_reg_718">
 <pin_list>
 <pin id="719" dir="0" index="0" bw="32" slack="1"/>
 <pin id="720" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="sext_ln313 "/>
+<opset="sext_ln287 "/>
 </bind>
 </comp>
 
@@ -2407,23 +2407,23 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="728" class="1005" name="trunc_ln315_1_reg_728">
+<comp id="728" class="1005" name="trunc_ln289_1_reg_728">
 <pin_list>
 <pin id="729" dir="0" index="0" bw="12" slack="1"/>
 <pin id="730" dir="1" index="1" bw="12" slack="1"/>
 </pin_list>
 <bind>
-<opset="trunc_ln315_1 "/>
+<opset="trunc_ln289_1 "/>
 </bind>
 </comp>
 
-<comp id="733" class="1005" name="tmp_1011_reg_733">
+<comp id="733" class="1005" name="tmp_699_reg_733">
 <pin_list>
 <pin id="734" dir="0" index="0" bw="19" slack="1"/>
 <pin id="735" dir="1" index="1" bw="19" slack="1"/>
 </pin_list>
 <bind>
-<opset="tmp_1011 "/>
+<opset="tmp_699 "/>
 </bind>
 </comp>
 
@@ -2497,43 +2497,43 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="775" class="1005" name="icmp_ln320_reg_775">
+<comp id="775" class="1005" name="icmp_ln294_reg_775">
 <pin_list>
 <pin id="776" dir="0" index="0" bw="1" slack="1"/>
 <pin id="777" dir="1" index="1" bw="1" slack="1"/>
 </pin_list>
 <bind>
-<opset="icmp_ln320 "/>
+<opset="icmp_ln294 "/>
 </bind>
 </comp>
 
-<comp id="780" class="1005" name="icmp_ln320_1_reg_780">
+<comp id="780" class="1005" name="icmp_ln294_1_reg_780">
 <pin_list>
 <pin id="781" dir="0" index="0" bw="1" slack="1"/>
 <pin id="782" dir="1" index="1" bw="1" slack="1"/>
 </pin_list>
 <bind>
-<opset="icmp_ln320_1 "/>
+<opset="icmp_ln294_1 "/>
 </bind>
 </comp>
 
-<comp id="785" class="1005" name="tmp_396_reg_785">
+<comp id="785" class="1005" name="tmp_316_reg_785">
 <pin_list>
 <pin id="786" dir="0" index="0" bw="1" slack="1"/>
 <pin id="787" dir="1" index="1" bw="1" slack="1"/>
 </pin_list>
 <bind>
-<opset="tmp_396 "/>
+<opset="tmp_316 "/>
 </bind>
 </comp>
 
-<comp id="790" class="1005" name="select_ln320_reg_790">
+<comp id="790" class="1005" name="select_ln294_reg_790">
 <pin_list>
 <pin id="791" dir="0" index="0" bw="32" slack="1"/>
 <pin id="792" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="select_ln320 "/>
+<opset="select_ln294 "/>
 </bind>
 </comp>
 
@@ -2557,23 +2557,23 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="805" class="1005" name="icmp_ln321_reg_805">
+<comp id="805" class="1005" name="icmp_ln295_reg_805">
 <pin_list>
 <pin id="806" dir="0" index="0" bw="1" slack="1"/>
 <pin id="807" dir="1" index="1" bw="1" slack="1"/>
 </pin_list>
 <bind>
-<opset="icmp_ln321 "/>
+<opset="icmp_ln295 "/>
 </bind>
 </comp>
 
-<comp id="810" class="1005" name="select_ln323_reg_810">
+<comp id="810" class="1005" name="select_ln297_reg_810">
 <pin_list>
 <pin id="811" dir="0" index="0" bw="8" slack="1"/>
 <pin id="812" dir="1" index="1" bw="8" slack="1"/>
 </pin_list>
 <bind>
-<opset="select_ln323 "/>
+<opset="select_ln297 "/>
 </bind>
 </comp>
 
@@ -3020,22 +3020,22 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 	Port: compute_gate_Pipeline_GATE_PASS216 : sigmoid_lut | {34 35 }
   - Chain level:
 	State 1
-		store_ln310 : 1
+		store_ln284 : 1
 		j_1 : 1
-		icmp_ln310 : 2
-		add_ln310 : 2
-		br_ln310 : 3
-		trunc_ln312 : 2
-		add_ln312_1 : 3
-		sext_ln312 : 4
-		zext_ln312 : 5
+		icmp_ln284 : 2
+		add_ln284 : 2
+		br_ln284 : 3
+		trunc_ln286 : 2
+		add_ln286_1 : 3
+		sext_ln286 : 4
+		zext_ln286 : 5
 		X1_cache_addr : 6
 		X1_cache_load : 7
-		trunc_ln323_1 : 2
-		trunc_ln323_s : 2
+		trunc_ln297_1 : 2
+		trunc_ln297_s : 2
 		tmp_s : 2
-		switch_ln323 : 3
-		store_ln310 : 3
+		switch_ln297 : 3
+		store_ln284 : 3
 	State 2
 	State 3
 		conv64_3_i : 1
@@ -3071,14 +3071,14 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 	State 31
 	State 32
 	State 33
-		trunc_ln315 : 1
+		trunc_ln289 : 1
 		tmp : 1
 		idx_1 : 2
-		trunc_ln315_1 : 3
-		tmp_1011 : 3
+		trunc_ln289_1 : 3
+		tmp_699 : 3
 	State 34
 		idx_2 : 1
-		zext_ln318 : 2
+		zext_ln292 : 2
 		sigmoid_lut_addr : 3
 		sigmoid_lut_load : 4
 	State 35
@@ -3102,10 +3102,10 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 	State 53
 	State 54
 	State 55
-		tmp_395 : 1
-		trunc_ln320 : 1
-		icmp_ln320 : 2
-		icmp_ln320_1 : 2
+		tmp_315 : 1
+		trunc_ln294 : 1
+		icmp_ln294 : 2
+		icmp_ln294_1 : 2
 	State 56
 		add92_3_i : 1
 	State 57
@@ -3119,15 +3119,15 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 	State 65
 	State 66
 	State 67
-		tmp_1012 : 1
-		icmp_ln321 : 2
+		tmp_700 : 1
+		icmp_ln295 : 2
 	State 68
-		icmp_ln322 : 1
-		trunc_ln323 : 1
-		select_ln323 : 2
+		icmp_ln296 : 1
+		trunc_ln297 : 1
+		select_ln297 : 2
 	State 69
-		sext_ln323 : 1
-		zext_ln323 : 2
+		sext_ln297 : 1
+		zext_ln297 : 2
 		gate_cache_0_addr : 3
 		gate_cache_1_addr : 3
 		gate_cache_2_addr : 3
@@ -3136,14 +3136,14 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 		gate_cache_5_addr : 3
 		gate_cache_6_addr : 3
 		gate_cache_7_addr : 3
-		store_ln323 : 4
-		store_ln323 : 4
-		store_ln323 : 4
-		store_ln323 : 4
-		store_ln323 : 4
-		store_ln323 : 4
-		store_ln323 : 4
-		store_ln323 : 4
+		store_ln297 : 4
+		store_ln297 : 4
+		store_ln297 : 4
+		store_ln297 : 4
+		store_ln297 : 4
+		store_ln297 : 4
+		store_ln297 : 4
+		store_ln297 : 4
 
 
 ============================================================
@@ -3167,24 +3167,24 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 |   call   | grp_p_hls_fptosi_float_i32_fu_327 |    0    |    66   |   334   |
 |          | grp_p_hls_fptosi_float_i32_fu_332 |    0    |    66   |   334   |
 |----------|-----------------------------------|---------|---------|---------|
-|          |         icmp_ln310_fu_392         |    0    |    0    |    21   |
-|          |         icmp_ln317_fu_514         |    0    |    0    |    26   |
-|   icmp   |         icmp_ln320_fu_548         |    0    |    0    |    15   |
-|          |        icmp_ln320_1_fu_554        |    0    |    0    |    30   |
-|          |         icmp_ln321_fu_588         |    0    |    0    |    32   |
-|          |         icmp_ln322_fu_600         |    0    |    0    |    39   |
+|          |         icmp_ln284_fu_392         |    0    |    0    |    21   |
+|          |         icmp_ln291_fu_514         |    0    |    0    |    26   |
+|   icmp   |         icmp_ln294_fu_548         |    0    |    0    |    15   |
+|          |        icmp_ln294_1_fu_554        |    0    |    0    |    30   |
+|          |         icmp_ln295_fu_588         |    0    |    0    |    32   |
+|          |         icmp_ln296_fu_600         |    0    |    0    |    39   |
 |----------|-----------------------------------|---------|---------|---------|
 |          |            idx_1_fu_492           |    0    |    0    |    31   |
 |          |            idx_2_fu_519           |    0    |    0    |    11   |
-|  select  |        select_ln320_fu_569        |    0    |    0    |    32   |
+|  select  |        select_ln294_fu_569        |    0    |    0    |    32   |
 |          |            iq_1_fu_594            |    0    |    0    |    32   |
-|          |        select_ln323_fu_610        |    0    |    0    |    8    |
+|          |        select_ln297_fu_610        |    0    |    0    |    8    |
 |----------|-----------------------------------|---------|---------|---------|
-|    add   |          add_ln310_fu_398         |    0    |    0    |    21   |
+|    add   |          add_ln284_fu_398         |    0    |    0    |    21   |
 |----------|-----------------------------------|---------|---------|---------|
-|    or    |          or_ln320_fu_560          |    0    |    0    |    2    |
+|    or    |          or_ln294_fu_560          |    0    |    0    |    2    |
 |----------|-----------------------------------|---------|---------|---------|
-|    and   |          and_ln320_fu_564         |    0    |    0    |    2    |
+|    and   |          and_ln294_fu_564         |    0    |    0    |    2    |
 |----------|-----------------------------------|---------|---------|---------|
 |   read   |     inv_gs_3_read_read_fu_146     |    0    |    0    |    0    |
 |----------|-----------------------------------|---------|---------|---------|
@@ -3193,32 +3193,32 @@ ret_ln0                 (ret              ) [ 0000000000000000000000000000000000
 |----------|-----------------------------------|---------|---------|---------|
 |   fcmp   |             grp_fu_379            |    0    |    0    |    0    |
 |----------|-----------------------------------|---------|---------|---------|
-|          |         trunc_ln312_fu_404        |    0    |    0    |    0    |
-|          |        trunc_ln323_1_fu_425       |    0    |    0    |    0    |
-|   trunc  |         trunc_ln315_fu_480        |    0    |    0    |    0    |
-|          |        trunc_ln315_1_fu_500       |    0    |    0    |    0    |
-|          |         trunc_ln320_fu_544        |    0    |    0    |    0    |
-|          |         trunc_ln323_fu_606        |    0    |    0    |    0    |
+|          |         trunc_ln286_fu_404        |    0    |    0    |    0    |
+|          |        trunc_ln297_1_fu_425       |    0    |    0    |    0    |
+|   trunc  |         trunc_ln289_fu_480        |    0    |    0    |    0    |
+|          |        trunc_ln289_1_fu_500       |    0    |    0    |    0    |
+|          |         trunc_ln294_fu_544        |    0    |    0    |    0    |
+|          |         trunc_ln297_fu_606        |    0    |    0    |    0    |
 |----------|-----------------------------------|---------|---------|---------|
-|bitconcatenate|         add_ln312_1_fu_408        |    0    |    0    |    0    |
-|          |           tmp_502_fu_618          |    0    |    0    |    0    |
+|bitconcatenate|         add_ln286_1_fu_408        |    0    |    0    |    0    |
+|          |           tmp_440_fu_618          |    0    |    0    |    0    |
 |----------|-----------------------------------|---------|---------|---------|
-|          |         sext_ln312_fu_416         |    0    |    0    |    0    |
-|   sext   |        sext_ln312_1_fu_472        |    0    |    0    |    0    |
-|          |         sext_ln313_fu_476         |    0    |    0    |    0    |
-|          |         sext_ln323_fu_626         |    0    |    0    |    0    |
+|          |         sext_ln286_fu_416         |    0    |    0    |    0    |
+|   sext   |        sext_ln286_1_fu_472        |    0    |    0    |    0    |
+|          |         sext_ln287_fu_476         |    0    |    0    |    0    |
+|          |         sext_ln297_fu_626         |    0    |    0    |    0    |
 |----------|-----------------------------------|---------|---------|---------|
-|          |         zext_ln312_fu_420         |    0    |    0    |    0    |
-|   zext   |         zext_ln318_fu_526         |    0    |    0    |    0    |
-|          |         zext_ln323_fu_630         |    0    |    0    |    0    |
+|          |         zext_ln286_fu_420         |    0    |    0    |    0    |
+|   zext   |         zext_ln292_fu_526         |    0    |    0    |    0    |
+|          |         zext_ln297_fu_630         |    0    |    0    |    0    |
 |----------|-----------------------------------|---------|---------|---------|
-|          |        trunc_ln323_s_fu_429       |    0    |    0    |    0    |
+|          |        trunc_ln297_s_fu_429       |    0    |    0    |    0    |
 |          |            tmp_s_fu_439           |    0    |    0    |    0    |
-|partselect|          tmp_1011_fu_504          |    0    |    0    |    0    |
-|          |           tmp_395_fu_534          |    0    |    0    |    0    |
-|          |          tmp_1012_fu_578          |    0    |    0    |    0    |
+|partselect|           tmp_699_fu_504          |    0    |    0    |    0    |
+|          |           tmp_315_fu_534          |    0    |    0    |    0    |
+|          |           tmp_700_fu_578          |    0    |    0    |    0    |
 |----------|-----------------------------------|---------|---------|---------|
-|  switch  |        switch_ln323_fu_449        |    0    |    0    |    0    |
+|  switch  |        switch_ln297_fu_449        |    0    |    0    |    0    |
 |----------|-----------------------------------|---------|---------|---------|
 | bitselect|             tmp_fu_484            |    0    |    0    |    0    |
 |----------|-----------------------------------|---------|---------|---------|
@@ -3242,30 +3242,30 @@ N/A
 |   conv71_3_i_reg_743   |   32   |
 |       fq_reg_768       |   32   |
 |        g_reg_763       |   32   |
-|   icmp_ln310_reg_654   |    1   |
-|  icmp_ln320_1_reg_780  |    1   |
-|   icmp_ln320_reg_775   |    1   |
-|   icmp_ln321_reg_805   |    1   |
+|   icmp_ln284_reg_654   |    1   |
+|  icmp_ln294_1_reg_780  |    1   |
+|   icmp_ln294_reg_775   |    1   |
+|   icmp_ln295_reg_805   |    1   |
 |  inv_gs_3_read_reg_649 |   32   |
 |       iq_reg_800       |   32   |
 |        j_reg_642       |   14   |
 |    mul87_3_i_reg_758   |   32   |
 |     scaled_reg_723     |   32   |
-|  select_ln320_reg_790  |   32   |
-|  select_ln323_reg_810  |    8   |
-|  sext_ln312_1_reg_687  |   32   |
-|   sext_ln313_reg_718   |   32   |
+|  select_ln294_reg_790  |   32   |
+|  select_ln297_reg_810  |    8   |
+|  sext_ln286_1_reg_687  |   32   |
+|   sext_ln287_reg_718   |   32   |
 |sigmoid_lut_addr_reg_738|   12   |
 |sigmoid_lut_load_reg_748|   32   |
-|    tmp_1011_reg_733    |   19   |
-|     tmp_396_reg_785    |    1   |
+|     tmp_316_reg_785    |    1   |
+|     tmp_699_reg_733    |   19   |
 |      tmp_s_reg_677     |    2   |
-|  trunc_ln315_1_reg_728 |   12   |
-|  trunc_ln323_1_reg_668 |    8   |
-|  trunc_ln323_s_reg_673 |    3   |
+|  trunc_ln289_1_reg_728 |   12   |
+|  trunc_ln297_1_reg_668 |    8   |
+|  trunc_ln297_s_reg_673 |    3   |
 |       x2_reg_753       |   32   |
 |        z_reg_697       |   32   |
-|   zext_ln312_reg_658   |   64   |
+|   zext_ln286_reg_658   |   64   |
 +------------------------+--------+
 |          Total         |   705  |
 +------------------------+--------+

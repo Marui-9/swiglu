@@ -22,35 +22,35 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>7017955</Best-caseLatency>
-<Average-caseLatency>14122467</Average-caseLatency>
-<Worst-caseLatency>21226979</Worst-caseLatency>
-<Best-caseRealTimeLatency>28.072 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>56.490 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>84.908 ms</Worst-caseRealTimeLatency>
+<Best-caseLatency>8312291</Best-caseLatency>
+<Average-caseLatency>15416803</Average-caseLatency>
+<Worst-caseLatency>22521315</Worst-caseLatency>
+<Best-caseRealTimeLatency>33.249 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>61.667 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>90.085 ms</Worst-caseRealTimeLatency>
 <DataflowPipelineThroughput>
 <range>
-<min>3682379</min>
+<min>4562946</min>
 <max>17891403</max>
 </range>
 </DataflowPipelineThroughput>
-<Interval-min>3682379</Interval-min>
+<Interval-min>4562946</Interval-min>
 <Interval-max>17891403</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:712</SourceLocation>
+<SourceLocation>swiglu.cpp:686</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <BRAM_18K>98</BRAM_18K>
-<DSP>152</DSP>
-<FF>187812</FF>
-<LUT>171019</LUT>
+<DSP>110</DSP>
+<FF>131922</FF>
+<LUT>130725</LUT>
 <URAM>16</URAM>
 </Resources>
 <AvailableResources>

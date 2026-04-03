@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'fp16_to_fp32'" level="0">
-<item name = "Date">Thu Apr  2 13:36:48 2026
+<item name = "Date">Thu Apr  2 14:56:15 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -51,8 +51,8 @@
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, 0, 14, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, -, -, -</column>
-<column name="Register">-, -, 346, 128, -</column>
+<column name="Multiplexer">-, -, 0, 14, -</column>
+<column name="Register">-, -, 379, 128, -</column>
 <specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
@@ -61,7 +61,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="sparsemux_9_3_32_1_1_U280">sparsemux_9_3_32_1_1, 0, 0, 0, 14, 0</column>
+<column name="sparsemux_9_3_32_1_0_U751">sparsemux_9_3_32_1_0, 0, 0, 0, 14, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -119,10 +119,13 @@
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_return">14, 3, 32, 96</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_ce_reg">1, 0, 1, 0</column>
+<column name="ap_return_int_reg">32, 0, 32, 0</column>
 <column name="e_10_reg_699">6, 0, 6, 0</column>
 <column name="e_14_reg_716">6, 0, 6, 0</column>
 <column name="e_4_reg_672">6, 0, 6, 0</column>
@@ -134,14 +137,14 @@
 <column name="m_5_reg_666">10, 0, 10, 0</column>
 <column name="m_9_reg_688">10, 0, 10, 0</column>
 <column name="mant_reg_639">10, 0, 10, 0</column>
-<column name="tmp_1000_reg_645">1, 0, 1, 0</column>
-<column name="tmp_1004_reg_677">1, 0, 1, 0</column>
-<column name="tmp_1006_reg_694">1, 0, 1, 0</column>
-<column name="tmp_1008_reg_711">1, 0, 1, 0</column>
+<column name="tmp_688_reg_645">1, 0, 1, 0</column>
+<column name="tmp_692_reg_677">1, 0, 1, 0</column>
+<column name="tmp_694_reg_694">1, 0, 1, 0</column>
+<column name="tmp_696_reg_711">1, 0, 1, 0</column>
 <column name="exp_reg_653">64, 32, 5, 0</column>
 <column name="icmp_ln41_reg_660">64, 32, 1, 0</column>
 <column name="mant_reg_639">64, 32, 10, 0</column>
-<column name="tmp_1000_reg_645">64, 32, 1, 0</column>
+<column name="tmp_688_reg_645">64, 32, 1, 0</column>
 </table>
 </item>
 </section>
@@ -154,6 +157,7 @@
 <column name="ap_clk">in, 1, ap_ctrl_hs, fp16_to_fp32, return value</column>
 <column name="ap_rst">in, 1, ap_ctrl_hs, fp16_to_fp32, return value</column>
 <column name="ap_return">out, 32, ap_ctrl_hs, fp16_to_fp32, return value</column>
+<column name="ap_ce">in, 1, ap_ctrl_hs, fp16_to_fp32, return value</column>
 <column name="h">in, 16, ap_none, h, scalar</column>
 </table>
 </item>

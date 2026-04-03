@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q4k7'" level="0">
-<item name = "Date">Thu Apr  2 13:37:17 2026
+<item name = "Date">Thu Apr  2 14:56:58 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -32,7 +32,7 @@
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416">mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN, 39, 39, 0.156 us, 0.156 us, 33, 33, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP_fu_5012">mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP, 1031, 1031, 4.124 us, 4.124 us, 1025, 1025, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_379_2_MAC_GROUP_fu_5012">mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_379_2_MAC_GROUP, 1031, 1031, 4.124 us, 4.124 us, 1025, 1025, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 <column name="grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072">mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K, 353, 353, 1.412 us, 1.412 us, 340, 340, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
@@ -54,10 +54,10 @@
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, 18, 60036, 37157, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, 0, 294, -</column>
+<column name="Multiplexer">-, -, 0, 322, -</column>
 <column name="Register">-, -, 10, -, -</column>
 <specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
-<specialColumn name="Utilization (%)">0, 1, 25, 31, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 1, 25, 32, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -66,7 +66,7 @@
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072">mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K, 0, 2, 1396, 3911, 0</column>
 <column name="grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416">mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN, 0, 0, 41180, 16556, 0</column>
-<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP_fu_5012">mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP, 0, 16, 17460, 16690, 0</column>
+<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_379_2_MAC_GROUP_fu_5012">mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_379_2_MAC_GROUP, 0, 16, 17460, 16690, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -88,6 +88,8 @@
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_NS_fsm">43, 8, 1, 8</column>
+<column name="grp_fp16_to_fp32_fu_20813_ap_ce">14, 3, 1, 3</column>
+<column name="grp_fp16_to_fp32_fu_20817_ap_ce">14, 3, 1, 3</column>
 <column name="grp_fu_20821_ce">9, 2, 1, 2</column>
 <column name="grp_fu_20825_ce">9, 2, 1, 2</column>
 <column name="grp_fu_20829_ce">9, 2, 1, 2</column>
@@ -114,7 +116,7 @@
 <column name="ap_CS_fsm">7, 0, 7, 0</column>
 <column name="grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416_ap_start_reg">1, 0, 1, 0</column>
-<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_405_2_MAC_GROUP_fu_5012_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_379_2_MAC_GROUP_fu_5012_ap_start_reg">1, 0, 1, 0</column>
 </table>
 </item>
 </section>
@@ -133,8 +135,10 @@
 <column name="ap_return">out, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fp16_to_fp32_fu_1620_p_din1">out, 16, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fp16_to_fp32_fu_1620_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
+<column name="grp_fp16_to_fp32_fu_1620_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fp16_to_fp32_fu_1624_p_din1">out, 16, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fp16_to_fp32_fu_1624_p_dout0">in, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
+<column name="grp_fp16_to_fp32_fu_1624_p_ce">out, 1, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fu_1628_p_din0">out, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fu_1628_p_din1">out, 32, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>
 <column name="grp_fu_1628_p_opcode">out, 2, ap_ctrl_hs, mac_blocks_down_q4k7, return value</column>

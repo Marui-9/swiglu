@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'p_hls_fptosi_float_i32'" level="0">
-<item name = "Date">Thu Apr  2 13:36:55 2026
+<item name = "Date">Thu Apr  2 14:56:19 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -78,7 +78,7 @@
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
 <column name="add_ln317_fu_82_p2">+, 0, 0, 16, 9, 8</column>
-<column name="result_16_fu_159_p2">-, 0, 0, 39, 1, 32</column>
+<column name="result_5_fu_159_p2">-, 0, 0, 39, 1, 32</column>
 <column name="sub_ln18_fu_96_p2">-, 0, 0, 15, 7, 8</column>
 <column name="lshr_ln18_fu_122_p2">lshr, 0, 0, 240, 79, 79</column>
 <column name="ap_return">select, 0, 0, 32, 1, 32</column>
@@ -96,7 +96,7 @@
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
-<column name="tmp_511_reg_187">32, 0, 32, 0</column>
+<column name="tmp_443_reg_187">32, 0, 32, 0</column>
 <column name="tmp_reg_177">1, 0, 1, 0</column>
 <column name="tmp_s_reg_182">32, 0, 32, 0</column>
 <column name="xs_sign_reg_172">1, 0, 1, 0</column>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_gate_Pipeline_GATE_PASS216'" level="0">
-<item name = "Date">Thu Apr  2 13:37:00 2026
+<item name = "Date">Thu Apr  2 14:56:23 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -80,20 +80,20 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln310_fu_398_p2">+, 0, 0, 21, 14, 1</column>
-<column name="and_ln320_fu_564_p2">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln310_fu_392_p2">icmp, 0, 0, 22, 14, 15</column>
-<column name="icmp_ln317_fu_514_p2">icmp, 0, 0, 26, 19, 1</column>
-<column name="icmp_ln320_1_fu_554_p2">icmp, 0, 0, 30, 23, 1</column>
-<column name="icmp_ln320_fu_548_p2">icmp, 0, 0, 15, 8, 2</column>
-<column name="icmp_ln321_fu_588_p2">icmp, 0, 0, 32, 25, 1</column>
-<column name="icmp_ln322_fu_600_p2">icmp, 0, 0, 39, 32, 9</column>
-<column name="or_ln320_fu_560_p2">or, 0, 0, 2, 1, 1</column>
+<column name="add_ln284_fu_398_p2">+, 0, 0, 21, 14, 1</column>
+<column name="and_ln294_fu_564_p2">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln284_fu_392_p2">icmp, 0, 0, 22, 14, 15</column>
+<column name="icmp_ln291_fu_514_p2">icmp, 0, 0, 26, 19, 1</column>
+<column name="icmp_ln294_1_fu_554_p2">icmp, 0, 0, 30, 23, 1</column>
+<column name="icmp_ln294_fu_548_p2">icmp, 0, 0, 15, 8, 2</column>
+<column name="icmp_ln295_fu_588_p2">icmp, 0, 0, 32, 25, 1</column>
+<column name="icmp_ln296_fu_600_p2">icmp, 0, 0, 39, 32, 9</column>
+<column name="or_ln294_fu_560_p2">or, 0, 0, 2, 1, 1</column>
 <column name="idx_1_fu_492_p3">select, 0, 0, 31, 1, 1</column>
 <column name="idx_2_fu_519_p3">select, 0, 0, 11, 1, 2</column>
 <column name="iq_1_fu_594_p3">select, 0, 0, 32, 1, 7</column>
-<column name="select_ln320_fu_569_p3">select, 0, 0, 32, 1, 30</column>
-<column name="select_ln323_fu_610_p3">select, 0, 0, 9, 1, 9</column>
+<column name="select_ln294_fu_569_p3">select, 0, 0, 32, 1, 30</column>
+<column name="select_ln297_fu_610_p3">select, 0, 0, 9, 1, 9</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -254,32 +254,32 @@
 <column name="g_reg_763">32, 0, 32, 0</column>
 <column name="grp_p_hls_fptosi_float_i32_fu_327_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_p_hls_fptosi_float_i32_fu_332_ap_start_reg">1, 0, 1, 0</column>
-<column name="icmp_ln310_reg_654">1, 0, 1, 0</column>
-<column name="icmp_ln320_1_reg_780">1, 0, 1, 0</column>
-<column name="icmp_ln320_reg_775">1, 0, 1, 0</column>
-<column name="icmp_ln321_reg_805">1, 0, 1, 0</column>
+<column name="icmp_ln284_reg_654">1, 0, 1, 0</column>
+<column name="icmp_ln294_1_reg_780">1, 0, 1, 0</column>
+<column name="icmp_ln294_reg_775">1, 0, 1, 0</column>
+<column name="icmp_ln295_reg_805">1, 0, 1, 0</column>
 <column name="iq_reg_800">32, 0, 32, 0</column>
 <column name="j_fu_142">14, 0, 14, 0</column>
 <column name="mul87_3_i_reg_758">32, 0, 32, 0</column>
 <column name="scaled_reg_723">32, 0, 32, 0</column>
-<column name="select_ln323_reg_810">8, 0, 8, 0</column>
+<column name="select_ln297_reg_810">8, 0, 8, 0</column>
 <column name="sigmoid_lut_load_reg_748">32, 0, 32, 0</column>
-<column name="tmp_1011_reg_733">19, 0, 19, 0</column>
-<column name="tmp_396_reg_785">1, 0, 1, 0</column>
+<column name="tmp_316_reg_785">1, 0, 1, 0</column>
+<column name="tmp_699_reg_733">19, 0, 19, 0</column>
 <column name="tmp_s_reg_677">2, 0, 2, 0</column>
-<column name="trunc_ln315_1_reg_728">12, 0, 12, 0</column>
-<column name="trunc_ln323_1_reg_668">8, 0, 8, 0</column>
-<column name="trunc_ln323_s_reg_673">3, 0, 3, 0</column>
+<column name="trunc_ln289_1_reg_728">12, 0, 12, 0</column>
+<column name="trunc_ln297_1_reg_668">8, 0, 8, 0</column>
+<column name="trunc_ln297_s_reg_673">3, 0, 3, 0</column>
 <column name="x2_reg_753">32, 0, 32, 0</column>
 <column name="z_reg_697">32, 0, 32, 0</column>
-<column name="zext_ln312_reg_658">13, 0, 64, 51</column>
+<column name="zext_ln286_reg_658">13, 0, 64, 51</column>
 <column name="fq_reg_768">64, 32, 32, 0</column>
-<column name="icmp_ln310_reg_654">64, 32, 1, 0</column>
+<column name="icmp_ln284_reg_654">64, 32, 1, 0</column>
 <column name="tmp_s_reg_677">64, 32, 2, 0</column>
-<column name="trunc_ln323_1_reg_668">64, 32, 8, 0</column>
-<column name="trunc_ln323_s_reg_673">64, 32, 3, 0</column>
+<column name="trunc_ln297_1_reg_668">64, 32, 8, 0</column>
+<column name="trunc_ln297_s_reg_673">64, 32, 3, 0</column>
 <column name="z_reg_697">64, 32, 32, 0</column>
-<column name="zext_ln312_reg_658">64, 32, 64, 51</column>
+<column name="zext_ln286_reg_658">64, 32, 64, 51</column>
 </table>
 </item>
 </section>

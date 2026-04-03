@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_row_down_q4k'" level="0">
-<item name = "Date">Thu Apr  2 13:37:07 2026
+<item name = "Date">Thu Apr  2 14:56:36 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_337_1_fu_97">load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_337_1, 291, 291, 1.164 us, 1.164 us, 289, 289, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_311_1_fu_97">load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_311_1, 291, 291, 1.164 us, 1.164 us, 289, 289, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -62,7 +62,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_337_1_fu_97">load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_337_1, 0, 0, 153, 159, 0</column>
+<column name="grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_311_1_fu_97">load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_311_1, 0, 0, 153, 159, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -79,7 +79,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="empty_847_fu_154_p2">+, 0, 0, 71, 64, 64</column>
+<column name="empty_591_fu_154_p2">+, 0, 0, 71, 64, 64</column>
 <column name="empty_fu_144_p2">+, 0, 0, 31, 24, 24</column>
 </table>
 </item>
@@ -105,7 +105,7 @@
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">74, 0, 74, 0</column>
-<column name="grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_337_1_fu_97_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_311_1_fu_97_ap_start_reg">1, 0, 1, 0</column>
 <column name="trunc_ln_reg_180">60, 0, 60, 0</column>
 </table>
 </item>

@@ -70,3 +70,33 @@ V (layer 0)	0x4BE00000
 W_down (layer 0)	0x54E00000
 W_down (layer 15, largest)	~0x62000000
 Every access is in the range [0x42D50000, 0x62000000] — well above the 0x40000000 floor for HP2. 
+
+
+Offset	Expected	ggml-cpu.c	Match?
+0x00	AP_CTRL	SWG_CTRL_AP_CTRL	✓
+0x04	GIE	SWG_CTRL_GIE	✓
+0x08	IER	SWG_CTRL_IER	✓
+0x0C	ISR	SWG_CTRL_ISR	✓
+0x10	W LO	SWG_CTRL_W_LO	✓
+0x14	W HI	SWG_CTRL_W_HI	✓
+0x18	(reserved)	—	✓
+0x1C	V LO	SWG_CTRL_V_LO	✓
+0x20	V HI	SWG_CTRL_V_HI	✓
+0x24	(reserved)	—	✓
+0x28	W_down LO	SWG_CTRL_WD_LO	✓
+0x2C	W_down HI	SWG_CTRL_WD_HI	✓
+0x30	(reserved)	—	✓
+0x34	x_batch LO	SWG_CTRL_X_LO	✓
+0x38	x_batch HI	SWG_CTRL_X_HI	✓
+0x3C	(reserved)	—	✓
+0x40	out_batch LO	SWG_CTRL_OUT_LO	✓
+0x44	out_batch HI	SWG_CTRL_OUT_HI	✓
+0x48	(reserved)	—	✓
+0x4C	down_quant_mode	SWG_CTRL_MODE	✓
+0x50	(reserved)	—	✓
+0x54	x_scale	SWG_CTRL_XSCALE	✓
+All 12 offsets match. The old IP (v4.5) had batch_size at 0x4C and down_quant_mode at 0x54 — the new IP drops batch_size, so down_quant_mode slides to 0x4C and x_scale takes 0x54. The driver already reflects this correctly.
+
+udmabuf layout — also consistent: W stride 0x900000 = 9,437,184 bytes = exactly 8192 rows × 8 blocks × 144 bytes/block for Q4_K ✓. WD stride 0xE00000 = 14 MB padded to cover Q6_K's 13.1 MB (2048 × 32 × 210) ✓. High-water mark at 0x26D00000 = 620 MB < 640 MB ✓.
+
+No discrepancies found.

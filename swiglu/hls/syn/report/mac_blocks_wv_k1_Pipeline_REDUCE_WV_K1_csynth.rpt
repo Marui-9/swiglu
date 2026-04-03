@@ -1,0 +1,402 @@
+
+
+================================================================
+== Vitis HLS Report for 'mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1'
+================================================================
+* Date:           Thu Apr  2 14:56:15 2026
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        swiglu
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  3.239 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |      113|      113|  0.452 us|  0.452 us|  100|  100|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name   |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- REDUCE_WV_K1  |      111|      111|        52|         20|          1|     4|       yes|
+        +----------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|     994|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|     7|     895|    1342|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       0|     338|    -|
+|Register         |        -|     -|    1027|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|     7|    1922|    2674|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |      288|  1248|  234240|  117120|   64|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|    ~0|      ~0|       2|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------+-------------------------------------+---------+----+-----+-----+-----+
+    |                 Instance                 |                Module               | BRAM_18K| DSP|  FF | LUT | URAM|
+    +------------------------------------------+-------------------------------------+---------+----+-----+-----+-----+
+    |fadd_32ns_32ns_32_10_full_dsp_1_U755      |fadd_32ns_32ns_32_10_full_dsp_1      |        0|   2|  365|  238|    0|
+    |faddfsub_32ns_32ns_32_10_full_dsp_1_U754  |faddfsub_32ns_32ns_32_10_full_dsp_1  |        0|   2|  365|  238|    0|
+    |fmul_32ns_32ns_32_6_max_dsp_1_U756        |fmul_32ns_32ns_32_6_max_dsp_1        |        0|   3|  165|  146|    0|
+    |sitofp_32ns_32_7_no_dsp_1_U757            |sitofp_32ns_32_7_no_dsp_1            |        0|   0|    0|    0|    0|
+    |sparsemux_9_3_32_1_1_U758                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U759                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U760                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U761                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U762                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U763                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U764                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U765                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U766                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U767                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U768                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U769                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U770                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U771                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U772                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U773                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U774                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U775                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U776                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U777                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U778                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U779                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U780                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U781                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U782                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U783                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U784                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U785                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U786                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U787                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U788                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U789                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U790                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U791                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U792                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    |sparsemux_9_3_32_1_1_U793                 |sparsemux_9_3_32_1_1                 |        0|   0|    0|   20|    0|
+    +------------------------------------------+-------------------------------------+---------+----+-----+-----+-----+
+    |Total                                     |                                     |        0|   7|  895| 1342|    0|
+    +------------------------------------------+-------------------------------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+----+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |add_ln175_fu_2317_p2     |         +|   0|  0|  12|           4|           2|
+    |add_ln180_10_fu_2161_p2  |         +|   0|  0|  32|          32|          32|
+    |add_ln180_11_fu_2167_p2  |         +|   0|  0|  39|          32|          32|
+    |add_ln180_12_fu_2173_p2  |         +|   0|  0|  32|          32|          32|
+    |add_ln180_1_fu_1663_p2   |         +|   0|  0|  39|          32|          32|
+    |add_ln180_2_fu_2281_p2   |         +|   0|  0|  32|          32|          32|
+    |add_ln180_3_fu_1669_p2   |         +|   0|  0|  32|          32|          32|
+    |add_ln180_4_fu_1675_p2   |         +|   0|  0|  39|          32|          32|
+    |add_ln180_5_fu_1681_p2   |         +|   0|  0|  32|          32|          32|
+    |add_ln180_7_fu_2149_p2   |         +|   0|  0|  39|          32|          32|
+    |add_ln180_8_fu_2155_p2   |         +|   0|  0|  39|          32|          32|
+    |add_ln180_9_fu_2299_p2   |         +|   0|  0|  32|          32|          32|
+    |add_ln180_fu_1657_p2     |         +|   0|  0|  39|          32|          32|
+    |add_ln181_10_fu_2215_p2  |         +|   0|  0|  32|          32|          32|
+    |add_ln181_11_fu_2221_p2  |         +|   0|  0|  39|          32|          32|
+    |add_ln181_12_fu_2227_p2  |         +|   0|  0|  32|          32|          32|
+    |add_ln181_1_fu_1717_p2   |         +|   0|  0|  39|          32|          32|
+    |add_ln181_2_fu_2290_p2   |         +|   0|  0|  32|          32|          32|
+    |add_ln181_3_fu_1723_p2   |         +|   0|  0|  32|          32|          32|
+    |add_ln181_4_fu_1729_p2   |         +|   0|  0|  39|          32|          32|
+    |add_ln181_5_fu_1735_p2   |         +|   0|  0|  32|          32|          32|
+    |add_ln181_7_fu_2203_p2   |         +|   0|  0|  39|          32|          32|
+    |add_ln181_8_fu_2209_p2   |         +|   0|  0|  39|          32|          32|
+    |add_ln181_9_fu_2308_p2   |         +|   0|  0|  32|          32|          32|
+    |add_ln181_fu_1711_p2     |         +|   0|  0|  39|          32|          32|
+    |sm_1_fu_2294_p2          |         +|   0|  0|  32|          32|          32|
+    |sm_3_fu_2312_p2          |         +|   0|  0|  32|          32|          32|
+    |sw_1_fu_2285_p2          |         +|   0|  0|  32|          32|          32|
+    |sw_3_fu_2303_p2          |         +|   0|  0|  32|          32|          32|
+    |ap_enable_pp0            |       xor|   0|  0|   2|           1|           2|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |Total                    |          |   0|  0| 994|         901|         900|
+    +-------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------+-----+-----------+-----+-----------+
+    |               Name               | LUT | Input Size| Bits| Total Bits|
+    +----------------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                         |  106|         21|    1|         21|
+    |ap_done_int                       |    9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter0           |    9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1           |    9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2           |    9|          2|    1|          2|
+    |ap_loop_exit_ready_pp0_iter1_reg  |    9|          2|    1|          2|
+    |ap_sig_allocacmp_b_1              |    9|          2|    4|          8|
+    |b_fu_346                          |    9|          2|    4|          8|
+    |grp_fu_1227_opcode                |   14|          3|    2|          6|
+    |grp_fu_1227_p0                    |   20|          4|   32|        128|
+    |grp_fu_1227_p1                    |   20|          4|   32|        128|
+    |grp_fu_1235_p0                    |   49|          9|   32|        288|
+    |grp_fu_1235_p1                    |   31|          6|   32|        192|
+    |grp_fu_1239_p0                    |   26|          5|   32|        160|
+    |total_fu_342                      |    9|          2|   32|         64|
+    +----------------------------------+-----+-----------+-----+-----------+
+    |Total                             |  338|         68|  208|       1013|
+    +----------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+----+----+-----+-----------+
+    |               Name               | FF | LUT| Bits| Const Bits|
+    +----------------------------------+----+----+-----+-----------+
+    |add_ln180_12_reg_2419             |  32|   0|   32|          0|
+    |add_ln180_1_reg_2374              |  32|   0|   32|          0|
+    |add_ln180_5_reg_2379              |  32|   0|   32|          0|
+    |add_ln180_7_reg_2409              |  32|   0|   32|          0|
+    |add_ln180_8_reg_2414              |  32|   0|   32|          0|
+    |add_ln180_reg_2369                |  32|   0|   32|          0|
+    |add_ln181_12_reg_2434             |  32|   0|   32|          0|
+    |add_ln181_1_reg_2389              |  32|   0|   32|          0|
+    |add_ln181_5_reg_2394              |  32|   0|   32|          0|
+    |add_ln181_7_reg_2424              |  32|   0|   32|          0|
+    |add_ln181_8_reg_2429              |  32|   0|   32|          0|
+    |add_ln181_reg_2384                |  32|   0|   32|          0|
+    |ap_CS_fsm                         |  20|   0|   20|          0|
+    |ap_done_reg                       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0_reg       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
+    |b_1_reg_2360                      |   4|   0|    4|          0|
+    |b_fu_346                          |   4|   0|    4|          0|
+    |conv1_reg_2474                    |  32|   0|   32|          0|
+    |conv376_1_reg_2479                |  32|   0|   32|          0|
+    |conv380_1_reg_2484                |  32|   0|   32|          0|
+    |conv_reg_2469                     |  32|   0|   32|          0|
+    |reg_1242                          |  32|   0|   32|          0|
+    |reg_1248                          |  32|   0|   32|          0|
+    |reg_1254                          |  32|   0|   32|          0|
+    |reg_1260                          |  32|   0|   32|          0|
+    |reg_1266                          |  32|   0|   32|          0|
+    |sm_1_reg_2454                     |  32|   0|   32|          0|
+    |sm_3_reg_2464                     |  32|   0|   32|          0|
+    |sub383_1_reg_2494                 |  32|   0|   32|          0|
+    |sw_1_reg_2449                     |  32|   0|   32|          0|
+    |sw_3_reg_2459                     |  32|   0|   32|          0|
+    |tmp_14_reg_2399                   |  32|   0|   32|          0|
+    |tmp_15_reg_2404                   |  32|   0|   32|          0|
+    |tmp_30_reg_2439                   |  32|   0|   32|          0|
+    |tmp_31_reg_2444                   |  32|   0|   32|          0|
+    |tmp_reg_2365                      |   1|   0|    1|          0|
+    |tmp_reg_2365_pp0_iter1_reg        |   1|   0|    1|          0|
+    |total_fu_342                      |  32|   0|   32|          0|
+    +----------------------------------+----+----+-----+-----------+
+    |Total                             |1027|   0| 1027|          0|
+    +----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------+-----+-----+------------+----------------------------------------+--------------+
+|         RTL Ports        | Dir | Bits|  Protocol  |              Source Object             |    C Type    |
++--------------------------+-----+-----+------------+----------------------------------------+--------------+
+|ap_clk                    |   in|    1|  ap_ctrl_hs|  mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1|  return value|
+|ap_rst                    |   in|    1|  ap_ctrl_hs|  mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1|  return value|
+|ap_start                  |   in|    1|  ap_ctrl_hs|  mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1|  return value|
+|ap_done                   |  out|    1|  ap_ctrl_hs|  mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1|  return value|
+|ap_idle                   |  out|    1|  ap_ctrl_hs|  mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1|  return value|
+|ap_ready                  |  out|    1|  ap_ctrl_hs|  mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1|  return value|
+|int_acc_w_load_reload     |   in|   32|     ap_none|                   int_acc_w_load_reload|        scalar|
+|int_acc_w_16_load_reload  |   in|   32|     ap_none|                int_acc_w_16_load_reload|        scalar|
+|int_acc_w_32_load_reload  |   in|   32|     ap_none|                int_acc_w_32_load_reload|        scalar|
+|int_acc_w_48_load_reload  |   in|   32|     ap_none|                int_acc_w_48_load_reload|        scalar|
+|int_acc_m_load_reload     |   in|   32|     ap_none|                   int_acc_m_load_reload|        scalar|
+|int_acc_m_16_load_reload  |   in|   32|     ap_none|                int_acc_m_16_load_reload|        scalar|
+|int_acc_m_32_load_reload  |   in|   32|     ap_none|                int_acc_m_32_load_reload|        scalar|
+|int_acc_m_48_load_reload  |   in|   32|     ap_none|                int_acc_m_48_load_reload|        scalar|
+|int_acc_w_1_load_reload   |   in|   32|     ap_none|                 int_acc_w_1_load_reload|        scalar|
+|int_acc_w_17_load_reload  |   in|   32|     ap_none|                int_acc_w_17_load_reload|        scalar|
+|int_acc_w_33_load_reload  |   in|   32|     ap_none|                int_acc_w_33_load_reload|        scalar|
+|int_acc_w_49_load_reload  |   in|   32|     ap_none|                int_acc_w_49_load_reload|        scalar|
+|int_acc_m_1_load_reload   |   in|   32|     ap_none|                 int_acc_m_1_load_reload|        scalar|
+|int_acc_m_17_load_reload  |   in|   32|     ap_none|                int_acc_m_17_load_reload|        scalar|
+|int_acc_m_33_load_reload  |   in|   32|     ap_none|                int_acc_m_33_load_reload|        scalar|
+|int_acc_m_49_load_reload  |   in|   32|     ap_none|                int_acc_m_49_load_reload|        scalar|
+|int_acc_w_2_load_reload   |   in|   32|     ap_none|                 int_acc_w_2_load_reload|        scalar|
+|int_acc_w_18_load_reload  |   in|   32|     ap_none|                int_acc_w_18_load_reload|        scalar|
+|int_acc_w_34_load_reload  |   in|   32|     ap_none|                int_acc_w_34_load_reload|        scalar|
+|int_acc_w_50_load_reload  |   in|   32|     ap_none|                int_acc_w_50_load_reload|        scalar|
+|int_acc_m_2_load_reload   |   in|   32|     ap_none|                 int_acc_m_2_load_reload|        scalar|
+|int_acc_m_18_load_reload  |   in|   32|     ap_none|                int_acc_m_18_load_reload|        scalar|
+|int_acc_m_34_load_reload  |   in|   32|     ap_none|                int_acc_m_34_load_reload|        scalar|
+|int_acc_m_50_load_reload  |   in|   32|     ap_none|                int_acc_m_50_load_reload|        scalar|
+|int_acc_w_3_load_reload   |   in|   32|     ap_none|                 int_acc_w_3_load_reload|        scalar|
+|int_acc_w_19_load_reload  |   in|   32|     ap_none|                int_acc_w_19_load_reload|        scalar|
+|int_acc_w_35_load_reload  |   in|   32|     ap_none|                int_acc_w_35_load_reload|        scalar|
+|int_acc_w_51_load_reload  |   in|   32|     ap_none|                int_acc_w_51_load_reload|        scalar|
+|int_acc_m_3_load_reload   |   in|   32|     ap_none|                 int_acc_m_3_load_reload|        scalar|
+|int_acc_m_19_load_reload  |   in|   32|     ap_none|                int_acc_m_19_load_reload|        scalar|
+|int_acc_m_35_load_reload  |   in|   32|     ap_none|                int_acc_m_35_load_reload|        scalar|
+|int_acc_m_51_load_reload  |   in|   32|     ap_none|                int_acc_m_51_load_reload|        scalar|
+|int_acc_w_4_load_reload   |   in|   32|     ap_none|                 int_acc_w_4_load_reload|        scalar|
+|int_acc_w_20_load_reload  |   in|   32|     ap_none|                int_acc_w_20_load_reload|        scalar|
+|int_acc_w_36_load_reload  |   in|   32|     ap_none|                int_acc_w_36_load_reload|        scalar|
+|int_acc_w_52_load_reload  |   in|   32|     ap_none|                int_acc_w_52_load_reload|        scalar|
+|int_acc_m_4_load_reload   |   in|   32|     ap_none|                 int_acc_m_4_load_reload|        scalar|
+|int_acc_m_20_load_reload  |   in|   32|     ap_none|                int_acc_m_20_load_reload|        scalar|
+|int_acc_m_36_load_reload  |   in|   32|     ap_none|                int_acc_m_36_load_reload|        scalar|
+|int_acc_m_52_load_reload  |   in|   32|     ap_none|                int_acc_m_52_load_reload|        scalar|
+|int_acc_w_5_load_reload   |   in|   32|     ap_none|                 int_acc_w_5_load_reload|        scalar|
+|int_acc_w_21_load_reload  |   in|   32|     ap_none|                int_acc_w_21_load_reload|        scalar|
+|int_acc_w_37_load_reload  |   in|   32|     ap_none|                int_acc_w_37_load_reload|        scalar|
+|int_acc_w_53_load_reload  |   in|   32|     ap_none|                int_acc_w_53_load_reload|        scalar|
+|int_acc_m_5_load_reload   |   in|   32|     ap_none|                 int_acc_m_5_load_reload|        scalar|
+|int_acc_m_21_load_reload  |   in|   32|     ap_none|                int_acc_m_21_load_reload|        scalar|
+|int_acc_m_37_load_reload  |   in|   32|     ap_none|                int_acc_m_37_load_reload|        scalar|
+|int_acc_m_53_load_reload  |   in|   32|     ap_none|                int_acc_m_53_load_reload|        scalar|
+|int_acc_w_6_load_reload   |   in|   32|     ap_none|                 int_acc_w_6_load_reload|        scalar|
+|int_acc_w_22_load_reload  |   in|   32|     ap_none|                int_acc_w_22_load_reload|        scalar|
+|int_acc_w_38_load_reload  |   in|   32|     ap_none|                int_acc_w_38_load_reload|        scalar|
+|int_acc_w_54_load_reload  |   in|   32|     ap_none|                int_acc_w_54_load_reload|        scalar|
+|int_acc_m_6_load_reload   |   in|   32|     ap_none|                 int_acc_m_6_load_reload|        scalar|
+|int_acc_m_22_load_reload  |   in|   32|     ap_none|                int_acc_m_22_load_reload|        scalar|
+|int_acc_m_38_load_reload  |   in|   32|     ap_none|                int_acc_m_38_load_reload|        scalar|
+|int_acc_m_54_load_reload  |   in|   32|     ap_none|                int_acc_m_54_load_reload|        scalar|
+|int_acc_w_7_load_reload   |   in|   32|     ap_none|                 int_acc_w_7_load_reload|        scalar|
+|int_acc_w_23_load_reload  |   in|   32|     ap_none|                int_acc_w_23_load_reload|        scalar|
+|int_acc_w_39_load_reload  |   in|   32|     ap_none|                int_acc_w_39_load_reload|        scalar|
+|int_acc_w_55_load_reload  |   in|   32|     ap_none|                int_acc_w_55_load_reload|        scalar|
+|int_acc_m_7_load_reload   |   in|   32|     ap_none|                 int_acc_m_7_load_reload|        scalar|
+|int_acc_m_23_load_reload  |   in|   32|     ap_none|                int_acc_m_23_load_reload|        scalar|
+|int_acc_m_39_load_reload  |   in|   32|     ap_none|                int_acc_m_39_load_reload|        scalar|
+|int_acc_m_55_load_reload  |   in|   32|     ap_none|                int_acc_m_55_load_reload|        scalar|
+|d                         |   in|   32|     ap_none|                                       d|        scalar|
+|d_2                       |   in|   32|     ap_none|                                     d_2|        scalar|
+|d_4                       |   in|   32|     ap_none|                                     d_4|        scalar|
+|d_6                       |   in|   32|     ap_none|                                     d_6|        scalar|
+|x_scale                   |   in|   32|     ap_none|                                 x_scale|        scalar|
+|dmin                      |   in|   32|     ap_none|                                    dmin|        scalar|
+|dmin_2                    |   in|   32|     ap_none|                                  dmin_2|        scalar|
+|dmin_4                    |   in|   32|     ap_none|                                  dmin_4|        scalar|
+|dmin_6                    |   in|   32|     ap_none|                                  dmin_6|        scalar|
+|int_acc_w_8_load_reload   |   in|   32|     ap_none|                 int_acc_w_8_load_reload|        scalar|
+|int_acc_w_24_load_reload  |   in|   32|     ap_none|                int_acc_w_24_load_reload|        scalar|
+|int_acc_w_40_load_reload  |   in|   32|     ap_none|                int_acc_w_40_load_reload|        scalar|
+|int_acc_w_56_load_reload  |   in|   32|     ap_none|                int_acc_w_56_load_reload|        scalar|
+|int_acc_m_8_load_reload   |   in|   32|     ap_none|                 int_acc_m_8_load_reload|        scalar|
+|int_acc_m_24_load_reload  |   in|   32|     ap_none|                int_acc_m_24_load_reload|        scalar|
+|int_acc_m_40_load_reload  |   in|   32|     ap_none|                int_acc_m_40_load_reload|        scalar|
+|int_acc_m_56_load_reload  |   in|   32|     ap_none|                int_acc_m_56_load_reload|        scalar|
+|int_acc_w_9_load_reload   |   in|   32|     ap_none|                 int_acc_w_9_load_reload|        scalar|
+|int_acc_w_25_load_reload  |   in|   32|     ap_none|                int_acc_w_25_load_reload|        scalar|
+|int_acc_w_41_load_reload  |   in|   32|     ap_none|                int_acc_w_41_load_reload|        scalar|
+|int_acc_w_57_load_reload  |   in|   32|     ap_none|                int_acc_w_57_load_reload|        scalar|
+|int_acc_m_9_load_reload   |   in|   32|     ap_none|                 int_acc_m_9_load_reload|        scalar|
+|int_acc_m_25_load_reload  |   in|   32|     ap_none|                int_acc_m_25_load_reload|        scalar|
+|int_acc_m_41_load_reload  |   in|   32|     ap_none|                int_acc_m_41_load_reload|        scalar|
+|int_acc_m_57_load_reload  |   in|   32|     ap_none|                int_acc_m_57_load_reload|        scalar|
+|int_acc_w_10_load_reload  |   in|   32|     ap_none|                int_acc_w_10_load_reload|        scalar|
+|int_acc_w_26_load_reload  |   in|   32|     ap_none|                int_acc_w_26_load_reload|        scalar|
+|int_acc_w_42_load_reload  |   in|   32|     ap_none|                int_acc_w_42_load_reload|        scalar|
+|int_acc_w_58_load_reload  |   in|   32|     ap_none|                int_acc_w_58_load_reload|        scalar|
+|int_acc_m_10_load_reload  |   in|   32|     ap_none|                int_acc_m_10_load_reload|        scalar|
+|int_acc_m_26_load_reload  |   in|   32|     ap_none|                int_acc_m_26_load_reload|        scalar|
+|int_acc_m_42_load_reload  |   in|   32|     ap_none|                int_acc_m_42_load_reload|        scalar|
+|int_acc_m_58_load_reload  |   in|   32|     ap_none|                int_acc_m_58_load_reload|        scalar|
+|int_acc_w_11_load_reload  |   in|   32|     ap_none|                int_acc_w_11_load_reload|        scalar|
+|int_acc_w_27_load_reload  |   in|   32|     ap_none|                int_acc_w_27_load_reload|        scalar|
+|int_acc_w_43_load_reload  |   in|   32|     ap_none|                int_acc_w_43_load_reload|        scalar|
+|int_acc_w_59_load_reload  |   in|   32|     ap_none|                int_acc_w_59_load_reload|        scalar|
+|int_acc_m_11_load_reload  |   in|   32|     ap_none|                int_acc_m_11_load_reload|        scalar|
+|int_acc_m_27_load_reload  |   in|   32|     ap_none|                int_acc_m_27_load_reload|        scalar|
+|int_acc_m_43_load_reload  |   in|   32|     ap_none|                int_acc_m_43_load_reload|        scalar|
+|int_acc_m_59_load_reload  |   in|   32|     ap_none|                int_acc_m_59_load_reload|        scalar|
+|int_acc_w_12_load_reload  |   in|   32|     ap_none|                int_acc_w_12_load_reload|        scalar|
+|int_acc_w_28_load_reload  |   in|   32|     ap_none|                int_acc_w_28_load_reload|        scalar|
+|int_acc_w_44_load_reload  |   in|   32|     ap_none|                int_acc_w_44_load_reload|        scalar|
+|int_acc_w_60_load_reload  |   in|   32|     ap_none|                int_acc_w_60_load_reload|        scalar|
+|int_acc_m_12_load_reload  |   in|   32|     ap_none|                int_acc_m_12_load_reload|        scalar|
+|int_acc_m_28_load_reload  |   in|   32|     ap_none|                int_acc_m_28_load_reload|        scalar|
+|int_acc_m_44_load_reload  |   in|   32|     ap_none|                int_acc_m_44_load_reload|        scalar|
+|int_acc_m_60_load_reload  |   in|   32|     ap_none|                int_acc_m_60_load_reload|        scalar|
+|int_acc_w_13_load_reload  |   in|   32|     ap_none|                int_acc_w_13_load_reload|        scalar|
+|int_acc_w_29_load_reload  |   in|   32|     ap_none|                int_acc_w_29_load_reload|        scalar|
+|int_acc_w_45_load_reload  |   in|   32|     ap_none|                int_acc_w_45_load_reload|        scalar|
+|int_acc_w_61_load_reload  |   in|   32|     ap_none|                int_acc_w_61_load_reload|        scalar|
+|int_acc_m_13_load_reload  |   in|   32|     ap_none|                int_acc_m_13_load_reload|        scalar|
+|int_acc_m_29_load_reload  |   in|   32|     ap_none|                int_acc_m_29_load_reload|        scalar|
+|int_acc_m_45_load_reload  |   in|   32|     ap_none|                int_acc_m_45_load_reload|        scalar|
+|int_acc_m_61_load_reload  |   in|   32|     ap_none|                int_acc_m_61_load_reload|        scalar|
+|int_acc_w_14_load_reload  |   in|   32|     ap_none|                int_acc_w_14_load_reload|        scalar|
+|int_acc_w_30_load_reload  |   in|   32|     ap_none|                int_acc_w_30_load_reload|        scalar|
+|int_acc_w_46_load_reload  |   in|   32|     ap_none|                int_acc_w_46_load_reload|        scalar|
+|int_acc_w_62_load_reload  |   in|   32|     ap_none|                int_acc_w_62_load_reload|        scalar|
+|int_acc_m_14_load_reload  |   in|   32|     ap_none|                int_acc_m_14_load_reload|        scalar|
+|int_acc_m_30_load_reload  |   in|   32|     ap_none|                int_acc_m_30_load_reload|        scalar|
+|int_acc_m_46_load_reload  |   in|   32|     ap_none|                int_acc_m_46_load_reload|        scalar|
+|int_acc_m_62_load_reload  |   in|   32|     ap_none|                int_acc_m_62_load_reload|        scalar|
+|int_acc_w_15_load_reload  |   in|   32|     ap_none|                int_acc_w_15_load_reload|        scalar|
+|int_acc_w_31_load_reload  |   in|   32|     ap_none|                int_acc_w_31_load_reload|        scalar|
+|int_acc_w_47_load_reload  |   in|   32|     ap_none|                int_acc_w_47_load_reload|        scalar|
+|int_acc_w_63_load_reload  |   in|   32|     ap_none|                int_acc_w_63_load_reload|        scalar|
+|int_acc_m_15_load_reload  |   in|   32|     ap_none|                int_acc_m_15_load_reload|        scalar|
+|int_acc_m_31_load_reload  |   in|   32|     ap_none|                int_acc_m_31_load_reload|        scalar|
+|int_acc_m_47_load_reload  |   in|   32|     ap_none|                int_acc_m_47_load_reload|        scalar|
+|int_acc_m_63_load_reload  |   in|   32|     ap_none|                int_acc_m_63_load_reload|        scalar|
+|d_1                       |   in|   32|     ap_none|                                     d_1|        scalar|
+|d_3                       |   in|   32|     ap_none|                                     d_3|        scalar|
+|d_5                       |   in|   32|     ap_none|                                     d_5|        scalar|
+|d_7                       |   in|   32|     ap_none|                                     d_7|        scalar|
+|dmin_1                    |   in|   32|     ap_none|                                  dmin_1|        scalar|
+|dmin_3                    |   in|   32|     ap_none|                                  dmin_3|        scalar|
+|dmin_5                    |   in|   32|     ap_none|                                  dmin_5|        scalar|
+|dmin_7                    |   in|   32|     ap_none|                                  dmin_7|        scalar|
+|total_out                 |  out|   32|      ap_vld|                               total_out|       pointer|
+|total_out_ap_vld          |  out|    1|      ap_vld|                               total_out|       pointer|
++--------------------------+-----+-----+------------+----------------------------------------+--------------+
+

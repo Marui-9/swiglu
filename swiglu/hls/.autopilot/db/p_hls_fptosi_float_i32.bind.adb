@@ -1008,7 +1008,7 @@
 					<Obj>
 						<type>0</type>
 						<id>15</id>
-						<name>sext_ln18_7</name>
+						<name>sext_ln18_3</name>
 						<fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
 						<fileDirectory>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath</fileDirectory>
 						<lineNumber>18</lineNumber>
@@ -1363,7 +1363,7 @@
 					<Obj>
 						<type>0</type>
 						<id>20</id>
-						<name>tmp_511</name>
+						<name>tmp_443</name>
 						<fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
 						<fileDirectory>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath</fileDirectory>
 						<lineNumber>21</lineNumber>
@@ -1508,7 +1508,7 @@
 					<Obj>
 						<type>0</type>
 						<id>22</id>
-						<name>result_16</name>
+						<name>result_5</name>
 						<fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
 						<fileDirectory>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath</fileDirectory>
 						<lineNumber>59</lineNumber>
@@ -1579,7 +1579,7 @@
 					<Obj>
 						<type>0</type>
 						<id>23</id>
-						<name>result_17</name>
+						<name>result_6</name>
 						<fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
 						<fileDirectory>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath</fileDirectory>
 						<lineNumber>59</lineNumber>
@@ -2978,7 +2978,7 @@
 			</second>
 		</item>
 		<item>
-			<first>result_16_fu_159</first>
+			<first>result_5_fu_159</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2986,7 +2986,7 @@
 			</second>
 		</item>
 		<item>
-			<first>result_17_fu_165</first>
+			<first>result_6_fu_165</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3002,7 +3002,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln18_7_fu_114</first>
+			<first>sext_ln18_3_fu_114</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3034,7 +3034,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_511_fu_144</first>
+			<first>tmp_443_fu_144</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3178,7 +3178,7 @@
 		<count>4</count>
 		<item_version>0</item_version>
 		<item>
-			<first>tmp_511_reg_187</first>
+			<first>tmp_443_reg_187</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

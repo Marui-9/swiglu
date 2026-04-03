@@ -43,7 +43,7 @@ wire    ap_block_pp0_stage0_11001;
 wire   [0:0] tmp_fu_88_p3;
 reg   [0:0] tmp_reg_177;
 reg   [31:0] tmp_s_reg_182;
-reg   [31:0] tmp_511_reg_187;
+reg   [31:0] tmp_443_reg_187;
 wire    ap_block_pp0_stage0;
 wire   [31:0] data_fu_40_p1;
 wire   [22:0] trunc_ln342_fu_60_p1;
@@ -54,13 +54,13 @@ wire   [8:0] add_ln317_fu_82_p2;
 wire   [7:0] sub_ln18_fu_96_p2;
 wire  signed [8:0] sext_ln18_fu_102_p1;
 wire   [8:0] select_ln18_fu_106_p3;
-wire  signed [31:0] sext_ln18_7_fu_114_p1;
+wire  signed [31:0] sext_ln18_3_fu_114_p1;
 wire   [78:0] zext_ln15_fu_74_p1;
 wire   [78:0] zext_ln18_fu_118_p1;
 wire   [78:0] lshr_ln18_fu_122_p2;
 wire   [78:0] shl_ln18_fu_128_p2;
 wire   [31:0] val_fu_154_p3;
-wire   [31:0] result_16_fu_159_p2;
+wire   [31:0] result_5_fu_159_p2;
 reg   [0:0] ap_NS_fsm;
 reg    ap_idle_pp0_0to0;
 reg    ap_reset_idle_pp0;
@@ -93,7 +93,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        tmp_511_reg_187 <= {{shl_ln18_fu_128_p2[55:24]}};
+        tmp_443_reg_187 <= {{shl_ln18_fu_128_p2[55:24]}};
         tmp_reg_177 <= add_ln317_fu_82_p2[32'd8];
         tmp_s_reg_182 <= {{lshr_ln18_fu_122_p2[55:24]}};
         xs_sign_reg_172 <= data_fu_40_p1[32'd31];
@@ -173,7 +173,7 @@ assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
 
 assign ap_enable_reg_pp0_iter0 = ap_start;
 
-assign ap_return = ((xs_sign_reg_172[0:0] == 1'b1) ? result_16_fu_159_p2 : val_fu_154_p3);
+assign ap_return = ((xs_sign_reg_172[0:0] == 1'b1) ? result_5_fu_159_p2 : val_fu_154_p3);
 
 assign data_fu_40_p1 = x;
 
@@ -181,11 +181,11 @@ assign lshr_ln18_fu_122_p2 = zext_ln15_fu_74_p1 >> zext_ln18_fu_118_p1;
 
 assign mantissa_fu_64_p4 = {{{{1'd1}, {trunc_ln342_fu_60_p1}}}, {1'd0}};
 
-assign result_16_fu_159_p2 = (32'd0 - val_fu_154_p3);
+assign result_5_fu_159_p2 = (32'd0 - val_fu_154_p3);
 
 assign select_ln18_fu_106_p3 = ((tmp_fu_88_p3[0:0] == 1'b1) ? sext_ln18_fu_102_p1 : add_ln317_fu_82_p2);
 
-assign sext_ln18_7_fu_114_p1 = $signed(select_ln18_fu_106_p3);
+assign sext_ln18_3_fu_114_p1 = $signed(select_ln18_fu_106_p3);
 
 assign sext_ln18_fu_102_p1 = $signed(sub_ln18_fu_96_p2);
 
@@ -197,13 +197,13 @@ assign tmp_fu_88_p3 = add_ln317_fu_82_p2[32'd8];
 
 assign trunc_ln342_fu_60_p1 = data_fu_40_p1[22:0];
 
-assign val_fu_154_p3 = ((tmp_reg_177[0:0] == 1'b1) ? tmp_s_reg_182 : tmp_511_reg_187);
+assign val_fu_154_p3 = ((tmp_reg_177[0:0] == 1'b1) ? tmp_s_reg_182 : tmp_443_reg_187);
 
 assign xs_exp_fu_52_p3 = {{data_fu_40_p1[30:23]}};
 
 assign zext_ln15_fu_74_p1 = mantissa_fu_64_p4;
 
-assign zext_ln18_fu_118_p1 = $unsigned(sext_ln18_7_fu_114_p1);
+assign zext_ln18_fu_118_p1 = $unsigned(sext_ln18_3_fu_114_p1);
 
 assign zext_ln317_fu_78_p1 = xs_exp_fu_52_p3;
 

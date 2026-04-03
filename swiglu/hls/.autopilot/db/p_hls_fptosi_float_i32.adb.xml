@@ -220,10 +220,10 @@ entry:12 %select_ln18 = select i1 %tmp, i9 %sext_ln18, i9 %add_ln317
 
 <Node id="15" bw="32" op_0_bw="9">
 <![CDATA[
-entry:13 %sext_ln18_7 = sext i9 %select_ln18
+entry:13 %sext_ln18_3 = sext i9 %select_ln18
 
 ]]></Node>
-<StgValue><ssdm name="sext_ln18_7"/></StgValue>
+<StgValue><ssdm name="sext_ln18_3"/></StgValue>
 </operation>
 
 <operation id="17" st_id="1" stage="1" lat="1">
@@ -235,7 +235,7 @@ entry:13 %sext_ln18_7 = sext i9 %select_ln18
 
 <Node id="16" bw="79" op_0_bw="32">
 <![CDATA[
-entry:14 %zext_ln18 = zext i32 %sext_ln18_7
+entry:14 %zext_ln18 = zext i32 %sext_ln18_3
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln18"/></StgValue>
@@ -295,10 +295,10 @@ entry:17 %tmp_s = partselect i32 @_ssdm_op_PartSelect.i32.i79.i32.i32, i79 %lshr
 
 <Node id="20" bw="32" op_0_bw="32" op_1_bw="79" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-entry:18 %tmp_511 = partselect i32 @_ssdm_op_PartSelect.i32.i79.i32.i32, i79 %shl_ln18, i32 24, i32 55
+entry:18 %tmp_443 = partselect i32 @_ssdm_op_PartSelect.i32.i79.i32.i32, i79 %shl_ln18, i32 24, i32 55
 
 ]]></Node>
-<StgValue><ssdm name="tmp_511"/></StgValue>
+<StgValue><ssdm name="tmp_443"/></StgValue>
 </operation>
 </state>
 
@@ -313,7 +313,7 @@ entry:18 %tmp_511 = partselect i32 @_ssdm_op_PartSelect.i32.i79.i32.i32, i79 %sh
 
 <Node id="21" bw="32" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-entry:19 %val = select i1 %tmp, i32 %tmp_s, i32 %tmp_511
+entry:19 %val = select i1 %tmp, i32 %tmp_s, i32 %tmp_443
 
 ]]></Node>
 <StgValue><ssdm name="val"/></StgValue>
@@ -329,10 +329,10 @@ entry:19 %val = select i1 %tmp, i32 %tmp_s, i32 %tmp_511
 
 <Node id="22" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-entry:20 %result_16 = sub i32 0, i32 %val
+entry:20 %result_5 = sub i32 0, i32 %val
 
 ]]></Node>
-<StgValue><ssdm name="result_16"/></StgValue>
+<StgValue><ssdm name="result_5"/></StgValue>
 </operation>
 
 <operation id="24" st_id="2" stage="1" lat="1">
@@ -344,10 +344,10 @@ entry:20 %result_16 = sub i32 0, i32 %val
 
 <Node id="23" bw="32" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-entry:21 %result_17 = select i1 %xs_sign, i32 %result_16, i32 %val
+entry:21 %result_6 = select i1 %xs_sign, i32 %result_5, i32 %val
 
 ]]></Node>
-<StgValue><ssdm name="result_17"/></StgValue>
+<StgValue><ssdm name="result_6"/></StgValue>
 </operation>
 
 <operation id="25" st_id="2" stage="1" lat="1">
@@ -359,7 +359,7 @@ entry:21 %result_17 = select i1 %xs_sign, i32 %result_16, i32 %val
 
 <Node id="24" bw="0" op_0_bw="32">
 <![CDATA[
-entry:22 %ret_ln51 = ret i32 %result_17
+entry:22 %ret_ln51 = ret i32 %result_6
 
 ]]></Node>
 <StgValue><ssdm name="ret_ln51"/></StgValue>
@@ -430,9 +430,9 @@ entry:22 %ret_ln51 = ret i32 %result_17
 </dataflow>
 <dataflow id="68" from="add_ln317" to="select_ln18" fromId="11" toId="15">
 </dataflow>
-<dataflow id="69" from="select_ln18" to="sext_ln18_7" fromId="15" toId="16">
+<dataflow id="69" from="select_ln18" to="sext_ln18_3" fromId="15" toId="16">
 </dataflow>
-<dataflow id="70" from="sext_ln18_7" to="zext_ln18" fromId="16" toId="17">
+<dataflow id="70" from="sext_ln18_3" to="zext_ln18" fromId="16" toId="17">
 </dataflow>
 <dataflow id="71" from="zext_ln15" to="lshr_ln18" fromId="9" toId="18">
 </dataflow>
@@ -450,31 +450,31 @@ entry:22 %ret_ln51 = ret i32 %result_17
 </dataflow>
 <dataflow id="81" from="StgValue_80" to="tmp_s" fromId="80" toId="20">
 </dataflow>
-<dataflow id="82" from="_ssdm_op_PartSelect.i32.i79.i32.i32" to="tmp_511" fromId="75" toId="21">
+<dataflow id="82" from="_ssdm_op_PartSelect.i32.i79.i32.i32" to="tmp_443" fromId="75" toId="21">
 </dataflow>
-<dataflow id="83" from="shl_ln18" to="tmp_511" fromId="19" toId="21">
+<dataflow id="83" from="shl_ln18" to="tmp_443" fromId="19" toId="21">
 </dataflow>
-<dataflow id="84" from="StgValue_78" to="tmp_511" fromId="78" toId="21">
+<dataflow id="84" from="StgValue_78" to="tmp_443" fromId="78" toId="21">
 </dataflow>
-<dataflow id="85" from="StgValue_80" to="tmp_511" fromId="80" toId="21">
+<dataflow id="85" from="StgValue_80" to="tmp_443" fromId="80" toId="21">
 </dataflow>
 <dataflow id="86" from="tmp" to="val" fromId="12" toId="22">
 </dataflow>
 <dataflow id="87" from="tmp_s" to="val" fromId="20" toId="22">
 </dataflow>
-<dataflow id="88" from="tmp_511" to="val" fromId="21" toId="22">
+<dataflow id="88" from="tmp_443" to="val" fromId="21" toId="22">
 </dataflow>
-<dataflow id="90" from="StgValue_89" to="result_16" fromId="89" toId="23">
+<dataflow id="90" from="StgValue_89" to="result_5" fromId="89" toId="23">
 </dataflow>
-<dataflow id="91" from="val" to="result_16" fromId="22" toId="23">
+<dataflow id="91" from="val" to="result_5" fromId="22" toId="23">
 </dataflow>
-<dataflow id="92" from="xs_sign" to="result_17" fromId="5" toId="24">
+<dataflow id="92" from="xs_sign" to="result_6" fromId="5" toId="24">
 </dataflow>
-<dataflow id="93" from="result_16" to="result_17" fromId="23" toId="24">
+<dataflow id="93" from="result_5" to="result_6" fromId="23" toId="24">
 </dataflow>
-<dataflow id="94" from="val" to="result_17" fromId="22" toId="24">
+<dataflow id="94" from="val" to="result_6" fromId="22" toId="24">
 </dataflow>
-<dataflow id="95" from="result_17" to="ret_ln51" fromId="24" toId="25">
+<dataflow id="95" from="result_6" to="ret_ln51" fromId="24" toId="25">
 </dataflow>
 <dataflow id="96" from="xs_sign" to="StgValue_2" fromId="5" toId="2">
 </dataflow>

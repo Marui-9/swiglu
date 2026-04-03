@@ -1,0 +1,30 @@
+Interface                                     Slave Interface    Address Block    Offset Address    Range    High Address
+/testblock_0/Data_m_axi_gmem_V (64 address bits)
+/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_HIGH     0x8_0000_0000     32G      0xF_FFFF_FFFF
+/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_LOW      0x0               2G       0x7FFF_FFFF
+/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_QSPI         0xC000_0000       512M     0xDFFF_FFFF
+
+Network 1 (/testblock_0/Data_m_axi_gmem_W, /testblock_0/Data_m_axi_gmem_out, /testblock_0/Data_m_axi_gmem_x)
+/testblock_0/Data_m_axi_gmem_out (64 address bits)
+/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_LOW      0x0               2G       0x7FFF_FFFF
+/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_QSPI         0xC000_0000       512M     0xDFFF_FFFF
+/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_HIGH     0x8_0000_0000     32G      0xF_FFFF_FFFF
+
+/testblock_0/Data_m_axi_gmem_W (64 address bits)
+/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_LOW      0x0               2G       0x7FFF_FFFF
+/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_QSPI         0xC000_0000       512M     0xDFFF_FFFF
+/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_HIGH     0x8_0000_0000     32G      0xF_FFFF_FFFF
+
+/testblock_0/Data_m_axi_gmem_x (64 address bits)
+/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_LOW      0x0               2G       0x7FFF_FFFF
+/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_QSPI         0xC000_0000       512M     0xDFFF_FFFF
+/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_HIGH     0x8_0000_0000     32G      0xF_FFFF_FFFF
+
+Network 2 (/testblock_0/Data_m_axi_gmem_Wd)
+/testblock_0/Data_m_axi_gmem_Wd (64 address bits)
+/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_LOW      0x0               2G       0x7FFF_FFFF
+/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_QSPI         0xC000_0000       512M     0xDFFF_FFFF
+/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_HIGH     0x8_0000_0000     32G      0xF_FFFF_FFFF
+
+Network 3 (/zynq_ultra_ps_e_0/Data)
+/testblock_0/s_axi_CTRL                      s_axi_CTRL         Reg              0xA000_0000       64K      0xA000_FFFF

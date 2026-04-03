@@ -44,3 +44,14 @@ This summarizes the fused SwiGLU IP implementation, mapping each algorithm step 
 - Down Q4_K: block UNROLL=6 to balance timing/resource vs throughput; Q6_K reduction unroll=2.
 - Gate/output buffers in URAM/BRAM to fit ZU5EV limits; partitioning aligns with unroll factors.
 
+
+# HLS Implementation and Parallel Computation (summary-style)
+- **Data reuse & local buffering:** Two banked copies of x (`x_local_1/2`) sit in LUTRAM; weight rows are streamed a row at a time into small on-chip row buffers (`row_buf`) for W/V and Q4/Q6 down paths. Gate/X1/X2 caches live in URAM/BRAM for reuse across MAC/reduction stages.
+- **Parallel MACs:** W/V projections use K=2 row parallelism with full block unroll (8 blocks) and `PIPELINE II=1`; down-projection Q4_K uses block `UNROLL factor=6`, Q6_K uses factor=2 on reductions to meet timing. Multipliers are bound to DSPs; adders are balanced with `BALANCE` pragmas.
+- **Pipelining:** All inner MAC loops are `PIPELINE II=1` with `LATENCY min=2` to allow a decode→MAC register stage. Top-level `DATAFLOW` overlaps load_x → X1 → X2 → gate → output.
+- **Memory partitioning:** Extensive `ARRAY_PARTITION` (complete or cyclic) matches unroll factors, eliminating banking conflicts; caches are explicitly bound (`BIND_STORAGE`) to URAM/BRAM/LUTRAM to stay within ZU5EV resource limits.
+
+# AXI Interface and Integration
+- Five AXI4 m_axi ports: W, V, W_down (all read), x_batch (read), out_batch (write), each on its own bundle; burst length up to 256 beats, widened to 128 bits. Depths sized for MAX_BATCH=4 (8192 elements for x/out).
+- AXI4-Lite CTRL registers: pointers for W/V/Wd/x/out, mode (Q4_K/Q6_K), x_scale, ap_start/done/irq. Global interrupt enable supports UIO-driven completion on the PS.
+- The IP is integrated via SmartConnect to HP ports; host programs phys addresses and starts the core. Weight reuse is host-managed: weights are copied once per layer into fixed udmabuf slots; subsequent calls re-use cached weights.

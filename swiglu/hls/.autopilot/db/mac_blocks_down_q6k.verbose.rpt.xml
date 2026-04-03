@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q6k'" level="0">
-<item name = "Date">Thu Apr  2 13:37:06 2026
+<item name = "Date">Thu Apr  2 14:56:35 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_mac_blocks_down_q6k_Pipeline_VITIS_LOOP_543_2_Q6K_MAC_GROUP_fu_1518">mac_blocks_down_q6k_Pipeline_VITIS_LOOP_543_2_Q6K_MAC_GROUP, 1030, 1030, 4.120 us, 4.120 us, 1025, 1025, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_mac_blocks_down_q6k_Pipeline_VITIS_LOOP_517_2_Q6K_MAC_GROUP_fu_1518">mac_blocks_down_q6k_Pipeline_VITIS_LOOP_517_2_Q6K_MAC_GROUP, 1030, 1030, 4.120 us, 4.120 us, 1025, 1025, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 <column name="grp_mac_blocks_down_q6k_Pipeline_REDUCE_Q6K_fu_1986">mac_blocks_down_q6k_Pipeline_REDUCE_Q6K, 342, 342, 1.368 us, 1.368 us, 340, 340, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
@@ -64,7 +64,7 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="grp_mac_blocks_down_q6k_Pipeline_REDUCE_Q6K_fu_1986">mac_blocks_down_q6k_Pipeline_REDUCE_Q6K, 0, 0, 582, 1941, 0</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_VITIS_LOOP_543_2_Q6K_MAC_GROUP_fu_1518">mac_blocks_down_q6k_Pipeline_VITIS_LOOP_543_2_Q6K_MAC_GROUP, 0, 8, 8581, 7456, 0</column>
+<column name="grp_mac_blocks_down_q6k_Pipeline_VITIS_LOOP_517_2_Q6K_MAC_GROUP_fu_1518">mac_blocks_down_q6k_Pipeline_VITIS_LOOP_517_2_Q6K_MAC_GROUP, 0, 8, 8581, 7456, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -95,7 +95,7 @@
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">5, 0, 5, 0</column>
 <column name="grp_mac_blocks_down_q6k_Pipeline_REDUCE_Q6K_fu_1986_ap_start_reg">1, 0, 1, 0</column>
-<column name="grp_mac_blocks_down_q6k_Pipeline_VITIS_LOOP_543_2_Q6K_MAC_GROUP_fu_1518_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_mac_blocks_down_q6k_Pipeline_VITIS_LOOP_517_2_Q6K_MAC_GROUP_fu_1518_ap_start_reg">1, 0, 1, 0</column>
 </table>
 </item>
 </section>

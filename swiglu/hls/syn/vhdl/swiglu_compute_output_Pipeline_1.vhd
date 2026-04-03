@@ -62,7 +62,7 @@ port (
     m_axi_gmem_out_0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
     m_axi_gmem_out_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
     m_axi_gmem_out_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-    sext_ln622 : IN STD_LOGIC_VECTOR (61 downto 0);
+    sext_ln596 : IN STD_LOGIC_VECTOR (61 downto 0);
     out_local_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     out_local_ce0 : OUT STD_LOGIC;
     out_local_q0 : IN STD_LOGIC_VECTOR (31 downto 0) );

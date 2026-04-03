@@ -1,20 +1,22 @@
+
+Gemini ha detto
 Setup
-Worst Negative Slack (WNS):    0.526 ns
+Worst Negative Slack (WNS):    0.779 ns
 Total Negative Slack (TNS):    0.000 ns
 Number of Failing Endpoints:   0
-Total Number of Endpoints:     367280
+Total Number of Endpoints:     432368
 
 Hold
 Worst Hold Slack (WHS):        -0.082 ns
-Total Hold Slack (THS):        -2003.569 ns
-Number of Failing Endpoints:   70362
-Total Number of Endpoints:     367280
+Total Hold Slack (THS):        -2299.902 ns
+Number of Failing Endpoints:   83714
+Total Number of Endpoints:     432368
 
 Pulse Width
 Worst Pulse Width Slack (WPWS):            0.520 ns
 Total Pulse Width Negative Slack (TPWS):   0.000 ns
 Number of Failing Endpoints:               0
-Total Number of Endpoints:                 123354
+Total Number of Endpoints:                 148496
 
 Timing constraints are not met.
 

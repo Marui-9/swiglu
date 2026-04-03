@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_row_down_q6k_Pipeline_EXTRACT_QH'" level="0">
-<item name = "Date">Thu Apr  2 13:37:03 2026
+<item name = "Date">Thu Apr  2 14:56:27 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -62,14 +62,14 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="partselect_8ns_128ns_7ns_8_1_1_U2503">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
-<column name="partselect_8ns_128ns_7ns_8_1_1_U2505">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
-<column name="partselect_8ns_128ns_7ns_8_1_1_U2507">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
-<column name="partselect_8ns_128ns_7ns_8_1_1_U2509">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
-<column name="sparsemux_33_4_128_1_1_U2502">sparsemux_33_4_128_1_1, 0, 0, 0, 65, 0</column>
-<column name="sparsemux_33_4_128_1_1_U2504">sparsemux_33_4_128_1_1, 0, 0, 0, 65, 0</column>
-<column name="sparsemux_33_4_128_1_1_U2506">sparsemux_33_4_128_1_1, 0, 0, 0, 65, 0</column>
-<column name="sparsemux_33_4_128_1_1_U2508">sparsemux_33_4_128_1_1, 0, 0, 0, 65, 0</column>
+<column name="partselect_8ns_128ns_7ns_8_1_1_U1675">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
+<column name="partselect_8ns_128ns_7ns_8_1_1_U1677">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
+<column name="partselect_8ns_128ns_7ns_8_1_1_U1679">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
+<column name="partselect_8ns_128ns_7ns_8_1_1_U1681">partselect_8ns_128ns_7ns_8_1_1, 0, 0, 0, 34, 0</column>
+<column name="sparsemux_33_4_128_1_1_U1674">sparsemux_33_4_128_1_1, 0, 0, 0, 65, 0</column>
+<column name="sparsemux_33_4_128_1_1_U1676">sparsemux_33_4_128_1_1, 0, 0, 0, 65, 0</column>
+<column name="sparsemux_33_4_128_1_1_U1678">sparsemux_33_4_128_1_1, 0, 0, 0, 65, 0</column>
+<column name="sparsemux_33_4_128_1_1_U1680">sparsemux_33_4_128_1_1, 0, 0, 0, 65, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -86,7 +86,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln484_fu_1330_p2">+, 0, 0, 14, 7, 1</column>
+<column name="add_ln458_fu_1330_p2">+, 0, 0, 14, 7, 1</column>
 <column name="add_ln62_10_fu_1586_p2">+, 0, 0, 20, 13, 13</column>
 <column name="add_ln62_11_fu_1517_p2">+, 0, 0, 17, 10, 10</column>
 <column name="add_ln62_12_fu_1576_p2">+, 0, 0, 17, 10, 10</column>
@@ -94,7 +94,7 @@
 <column name="add_ln62_8_fu_1453_p2">+, 0, 0, 20, 13, 13</column>
 <column name="add_ln62_9_fu_1527_p2">+, 0, 0, 20, 13, 13</column>
 <column name="add_ln62_fu_1262_p2">+, 0, 0, 20, 13, 13</column>
-<column name="icmp_ln484_fu_1236_p2">icmp, 0, 0, 15, 7, 8</column>
+<column name="icmp_ln458_fu_1236_p2">icmp, 0, 0, 15, 7, 8</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -131,7 +131,7 @@
 <column name="ap_done_reg">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter0_reg">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
-<column name="icmp_ln484_reg_1933">1, 0, 1, 0</column>
+<column name="icmp_ln458_reg_1933">1, 0, 1, 0</column>
 <column name="k_1_fu_212">7, 0, 7, 0</column>
 <column name="k_reg_1927">7, 0, 7, 0</column>
 <column name="lshr_ln62_4_reg_2246">5, 0, 5, 0</column>
@@ -143,7 +143,7 @@
 <column name="qh_buf_31_addr_reg_2371">6, 0, 6, 0</column>
 <column name="qh_buf_3_addr_reg_2336">6, 0, 6, 0</column>
 <column name="qh_buf_7_addr_reg_2341">6, 0, 6, 0</column>
-<column name="trunc_ln489_reg_1937">6, 0, 6, 0</column>
+<column name="trunc_ln463_reg_1937">6, 0, 6, 0</column>
 <column name="trunc_ln62_11_reg_2066">4, 0, 4, 0</column>
 <column name="trunc_ln62_12_reg_2156">4, 0, 4, 0</column>
 <column name="trunc_ln62_13_reg_2251">4, 0, 4, 0</column>
@@ -152,7 +152,7 @@
 <column name="trunc_ln62_4_reg_2151">4, 0, 4, 0</column>
 <column name="trunc_ln62_6_reg_2241">4, 0, 4, 0</column>
 <column name="trunc_ln62_reg_1948">4, 0, 4, 0</column>
-<column name="zext_ln484_reg_2033">7, 0, 64, 57</column>
+<column name="zext_ln458_reg_2033">7, 0, 64, 57</column>
 </table>
 </item>
 </section>
@@ -296,7 +296,7 @@
 <column name="qh_buf_0_ce0">out, 1, ap_memory, qh_buf_0, array</column>
 <column name="qh_buf_0_we0">out, 1, ap_memory, qh_buf_0, array</column>
 <column name="qh_buf_0_d0">out, 8, ap_memory, qh_buf_0, array</column>
-<column name="empty_807">in, 13, ap_none, empty_807, scalar</column>
+<column name="empty_552">in, 13, ap_none, empty_552, scalar</column>
 <column name="flat_address0">out, 5, ap_memory, flat, array</column>
 <column name="flat_ce0">out, 1, ap_memory, flat, array</column>
 <column name="flat_q0">in, 128, ap_memory, flat, array</column>

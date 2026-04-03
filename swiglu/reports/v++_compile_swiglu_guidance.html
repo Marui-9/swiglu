@@ -3407,7 +3407,7 @@ window.onload = function () { addSorting(); }
 <center><h1>Design Guidance Report</h1></center><center><table class="header" border="0">
 <tr><td><b>Copyright</b></td><td>Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.</td></tr>
 <tr><td><b>Tool Version</b></td><td>xcd v.2025.1 (win64) Build 0 </td></tr>
-<tr><td><b>Date</b></td><td>Thu Apr  2 13:37:25 2026</td></tr>
+<tr><td><b>Date</b></td><td>Thu Apr  2 14:57:14 2026</td></tr>
 <tr><td><b>Host</b></td><td>marui-machine running 64-bit major release  (build 9200)</td></tr>
 <tr><td><b>Command</b></td><td>C:/Xilinx/2025.1/Vitis/bin/unwrapped/win64.o/v++.exe  -c --mode hls --config C:\Users\Jacob\Desktop\Vitis_projects\swiglu\hls_config.cfg --work_dir swiglu </td></tr>
 </table></center><br>
@@ -3416,7 +3416,7 @@ window.onload = function () { addSorting(); }
 <tr><td><a href="#VIOLATION DETAILS">2 VIOLATION DETAILS</a></tr></td>
 </table>
 <a name="REPORT SUMMARY"></a><h1>1 REPORT SUMMARY</h1>
-<pre>Violations found: 85
+<pre>Violations found: 84
 </pre>
 <pre>Rule Specs Violated: 3
 </pre>
@@ -3434,289 +3434,6 @@ window.onload = function () { addSorting(); }
 <th align="left" width="380">Resolution</th>
 </tr>
 <tr>
-<td align="left">84</td>
-<td align="left">Kernel</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">**** Loop Constraint Status: All loop constraints were NOT satisfied.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">76</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K' (loop 'REDUCE_DOWN_Q4K'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=436">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=436">swiglu.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">56</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_QH' (loop 'EXTRACT_QH'): Unable to schedule 'load' operation 128 bit ('flat_load_8', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=489">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'flat'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">44</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">45</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS115' consists of the following:
-	'sitofp' operation 32 bit ('conv_3_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=289">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=716">swiglu.cpp</a>) [35]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">22</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 53, loop 'GATE_PASS1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">26</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">51</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_QL' (loop 'EXTRACT_QL'): Unable to schedule 'load' operation 128 bit ('flat_load_4', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=481">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'flat'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">70</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_REDUCE_Q6K' consists of the following:
-	'sitofp' operation 32 bit ('conv', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=574">swiglu.cpp</a>) [611]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">67</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_down_q6k_Pipeline_REDUCE_Q6K' (loop 'REDUCE_Q6K'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=574">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=574">swiglu.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">14</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_wv_k2_Pipeline_REDUCE_WV_K2_VITIS_LOOP_192_6' (loop 'REDUCE_WV_K2_VITIS_LOOP_192_6'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=200">swiglu.cpp</a>) and 'select' operation 32 bit ('select_ln189', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=189">swiglu.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">78</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K' (loop 'REDUCE_DOWN_Q4K'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=436">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=436">swiglu.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">58</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_SC' (loop 'EXTRACT_SC'): Unable to schedule 'load' operation 128 bit ('flat_load', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=497">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'flat'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">31</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS111' consists of the following:
-	'sitofp' operation 32 bit ('conv_1_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=289">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=716">swiglu.cpp</a>) [34]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">79</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 20, Depth = 52, loop 'REDUCE_DOWN_Q4K'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">23</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">54</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_QH' (loop 'EXTRACT_QH'): Unable to schedule 'load' operation 128 bit ('flat_load', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=489">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'flat'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">1</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Multiple burst reads of length 512 and bit width 128 in loop 'LOAD_X_BATCH'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=638">swiglu.cpp</a>) has been inferred on bundle 'gmem_x'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=638">swiglu.cpp</a>)
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">62</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 6, loop 'VITIS_LOOP_543_2_Q6K_MAC_GROUP'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">69</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">68</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 20, Depth = 41, loop 'REDUCE_Q6K'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">49</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_Q6K_FLAT'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">80</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">63</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_down_q6k_Pipeline_REDUCE_Q6K' (loop 'REDUCE_Q6K'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=574">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=574">swiglu.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">19</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_wv_k2_Pipeline_REDUCE_WV_K2_VITIS_LOOP_192_6' consists of the following:
-	'sitofp' operation 32 bit ('conv', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=200">swiglu.cpp</a>) [675]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
 <td align="left">2</td>
 <td align="left">Interface</td>
 <td align="left">ADVISORY</td>
@@ -3728,57 +3445,215 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">15</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_wv_k2_Pipeline_REDUCE_WV_K2_VITIS_LOOP_192_6' (loop 'REDUCE_WV_K2_VITIS_LOOP_192_6'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=200">swiglu.cpp</a>) and 'select' operation 32 bit ('select_ln189', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=189">swiglu.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">36</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 53, loop 'GATE_PASS1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">73</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 7, loop 'VITIS_LOOP_405_2_MAC_GROUP'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Multiple burst writes of length 2048 and bit width 32 in loop 'anonymous'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=622">swiglu.cpp</a>) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=622">swiglu.cpp</a>)
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
 <td align="left">66</td>
 <td align="left">Throughput</td>
 <td align="left">WARNING</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_down_q6k_Pipeline_REDUCE_Q6K' (loop 'REDUCE_Q6K'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=574">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=574">swiglu.cpp</a>).
+<td align="left">The II Violation in module 'mac_blocks_down_q6k_Pipeline_REDUCE_Q6K' (loop 'REDUCE_Q6K'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=548">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=548">swiglu.cpp</a>).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">49</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_QL' (loop 'EXTRACT_QL'): Unable to schedule 'load' operation 128 bit ('flat_load', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=455">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'flat'.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">The II Violation in module 'mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1' (loop 'REDUCE_WV_K1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=183">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=183">swiglu.cpp</a>).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">74</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">The II Violation in module 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K' (loop 'REDUCE_DOWN_Q4K'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=410">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=410">swiglu.cpp</a>).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 20, Depth = 52, loop 'REDUCE_WV_K1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">70</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_DOWN_Q4K_VITIS_LOOP_311_1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">58</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_SC' (loop 'EXTRACT_SC'): Unable to schedule 'load' operation 128 bit ('flat_load_1', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'flat'.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">39</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">53</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_QH' (loop 'EXTRACT_QH'): Unable to schedule 'load' operation 128 bit ('flat_load', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=463">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'flat'.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'LOAD_X_BATCH_LOAD_X_VEC'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">33</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS212' consists of the following:
+	'sitofp' operation 32 bit ('conv64_1_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=286">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=690">swiglu.cpp</a>) [44]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">76</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">The II Violation in module 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K' (loop 'REDUCE_DOWN_Q4K'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=410">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=410">swiglu.cpp</a>).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 4, function 'fp16_to_fp32'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">29</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">78</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 20, Depth = 52, loop 'REDUCE_DOWN_Q4K'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">73</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">The II Violation in module 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K' (loop 'REDUCE_DOWN_Q4K'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=410">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=410">swiglu.cpp</a>).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">30</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS111' consists of the following:
+	'sitofp' operation 32 bit ('conv_1_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=263">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=690">swiglu.cpp</a>) [34]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">55</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_QH' (loop 'EXTRACT_QH'): Unable to schedule 'load' operation 128 bit ('flat_load_8', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=463">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'flat'.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">36</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3789,34 +3664,172 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_SC' (loop 'EXTRACT_SC'): Unable to schedule 'load' operation 128 bit ('flat_load_1', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=497">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'flat'.
+<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_SC' (loop 'EXTRACT_SC'): Unable to schedule 'load' operation 128 bit ('flat_load_2', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'flat'.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">50</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
+<td align="left">1</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_QL' (loop 'EXTRACT_QL'): Unable to schedule 'load' operation 128 bit ('flat_load', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=481">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'flat'.
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Multiple burst reads of length 512 and bit width 128 in loop 'LOAD_X_BATCH'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=612">swiglu.cpp</a>) has been inferred on bundle 'gmem_x'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=612">swiglu.cpp</a>)
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">77</td>
+<td align="left">82</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 6, loop 'MAC_ALL_K1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">15</td>
 <td align="left">Throughput</td>
 <td align="left">WARNING</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K' (loop 'REDUCE_DOWN_Q4K'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=436">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=436">swiglu.cpp</a>).
+<td align="left">The II Violation in module 'mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1' (loop 'REDUCE_WV_K1'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=183">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=183">swiglu.cpp</a>).
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">25</td>
+<td align="left">37</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS113' consists of the following:
+	'sitofp' operation 32 bit ('conv_2_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=263">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=690">swiglu.cpp</a>) [33]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">79</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">52</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 4, Depth = 5, loop 'EXTRACT_QL'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">31</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 69, loop 'GATE_PASS2'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">46</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">45</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 69, loop 'GATE_PASS2'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS1' consists of the following:
+	'sitofp' operation 32 bit ('conv_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=263">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=690">swiglu.cpp</a>) [32]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">20</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 2, function '__hls_fptosi_float_i32'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">18</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1' consists of the following:
+	'sitofp' operation 32 bit ('conv', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=183">swiglu.cpp</a>) [338]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">75</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">The II Violation in module 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K' (loop 'REDUCE_DOWN_Q4K'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=410">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=410">swiglu.cpp</a>).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">38</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
@@ -3833,80 +3846,69 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">57</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 4, Depth = 5, loop 'EXTRACT_QH'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">74</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K' (loop 'REDUCE_DOWN_Q4K'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=436">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=436">swiglu.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">83</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">52</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_QL' (loop 'EXTRACT_QL'): Unable to schedule 'load' operation 128 bit ('flat_load_5', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=481">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'flat'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">75</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K' (loop 'REDUCE_DOWN_Q4K'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=436">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=436">swiglu.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">27</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS2' consists of the following:
-	'sitofp' operation 32 bit ('conv64_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=312">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=716">swiglu.cpp</a>) [42]  (3.239 ns)
+<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS214' consists of the following:
+	'sitofp' operation 32 bit ('conv64_2_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=286">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=690">swiglu.cpp</a>) [43]  (3.239 ns)
 
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">43</td>
+<td align="left">14</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">The II Violation in module 'mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1' (loop 'REDUCE_WV_K1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=183">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=183">swiglu.cpp</a>).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Multiple burst reads of length 288 and bit width 128 in loop 'LOAD_DOWN_Q4K'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=310">swiglu.cpp</a>) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=310">swiglu.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">81</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'Loop 1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">32</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">51</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_QL' (loop 'EXTRACT_QL'): Unable to schedule 'load' operation 128 bit ('flat_load_5', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=455">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'flat'.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">35</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
@@ -3917,7 +3919,242 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">32</td>
+<td align="left">50</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_QL' (loop 'EXTRACT_QL'): Unable to schedule 'load' operation 128 bit ('flat_load_4', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=455">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'flat'.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">77</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">The II Violation in module 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K' (loop 'REDUCE_DOWN_Q4K'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=410">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=410">swiglu.cpp</a>).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">48</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_Q6K_FLAT'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">54</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_QH' (loop 'EXTRACT_QH'): Unable to schedule 'load' operation 128 bit ('flat_load_7', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=463">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'flat'.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">64</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">The II Violation in module 'mac_blocks_down_q6k_Pipeline_REDUCE_Q6K' (loop 'REDUCE_Q6K'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=548">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=548">swiglu.cpp</a>).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">42</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 53, loop 'GATE_PASS1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">80</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K' consists of the following:
+	'sitofp' operation 32 bit ('conv', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=410">swiglu.cpp</a>) [1202]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">27</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">68</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">83</td>
+<td align="left">Kernel</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">**** Loop Constraint Status: All loop constraints were NOT satisfied.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">17</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">63</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">The II Violation in module 'mac_blocks_down_q6k_Pipeline_REDUCE_Q6K' (loop 'REDUCE_Q6K'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=548">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=548">swiglu.cpp</a>).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">56</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 4, Depth = 5, loop 'EXTRACT_QH'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">69</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'mac_blocks_down_q6k_Pipeline_REDUCE_Q6K' consists of the following:
+	'sitofp' operation 32 bit ('conv', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=548">swiglu.cpp</a>) [611]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">62</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">The II Violation in module 'mac_blocks_down_q6k_Pipeline_REDUCE_Q6K' (loop 'REDUCE_Q6K'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=548">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=548">swiglu.cpp</a>).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">72</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 7, loop 'VITIS_LOOP_379_2_MAC_GROUP'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">The II Violation in module 'mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1' (loop 'REDUCE_WV_K1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=183">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=183">swiglu.cpp</a>).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Multiple burst reads of length 420 and bit width 128 in loop 'LOAD_Q6K_FLAT'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=437">swiglu.cpp</a>) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=437">swiglu.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_WV_VITIS_LOOP_78_1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">24</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
@@ -3928,7 +4165,143 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
+<td align="left">67</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 20, Depth = 41, loop 'REDUCE_Q6K'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">60</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 4, Depth = 5, loop 'EXTRACT_SC'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 53, loop 'GATE_PASS1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Multiple burst writes of length 2048 and bit width 32 in loop 'anonymous'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=596">swiglu.cpp</a>) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=596">swiglu.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">43</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">57</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_SC' (loop 'EXTRACT_SC'): Unable to schedule 'load' operation 128 bit ('flat_load', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=471">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'flat'.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">41</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
 <td align="left">28</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 53, loop 'GATE_PASS1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">71</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 7, loop 'UNPACK_HDR_DOWN'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">47</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS216' consists of the following:
+	'sitofp' operation 32 bit ('conv64_3_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=286">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=690">swiglu.cpp</a>) [45]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">26</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS2' consists of the following:
+	'sitofp' operation 32 bit ('conv64_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=286">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=690">swiglu.cpp</a>) [42]  (3.239 ns)
+
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">84</td>
+<td align="left">Kernel</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">**** Estimated Fmax: 308.74 MHz
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">34</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
@@ -3945,119 +4318,20 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_down_q6k_Pipeline_REDUCE_Q6K' (loop 'REDUCE_Q6K'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=574">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=574">swiglu.cpp</a>).
+<td align="left">The II Violation in module 'mac_blocks_down_q6k_Pipeline_REDUCE_Q6K' (loop 'REDUCE_Q6K'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=548">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=548">swiglu.cpp</a>).
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">21</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 2, function '__hls_fptosi_float_i32'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">9</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 4, function 'fp16_to_fp32'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Multiple burst reads of length 420 and bit width 128 in loop 'LOAD_Q6K_FLAT'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=463">swiglu.cpp</a>) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=463">swiglu.cpp</a>)
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">20</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">30</td>
+<td align="left">44</td>
 <td align="left">Kernel</td>
 <td align="left">WARNING</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">12</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_wv_k2_Pipeline_REDUCE_WV_K2_VITIS_LOOP_192_6' (loop 'REDUCE_WV_K2_VITIS_LOOP_192_6'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=200">swiglu.cpp</a>) and 'select' operation 32 bit ('select_ln189', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=189">swiglu.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">64</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_down_q6k_Pipeline_REDUCE_Q6K' (loop 'REDUCE_Q6K'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=574">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=574">swiglu.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">24</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS1' consists of the following:
-	'sitofp' operation 32 bit ('conv_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=289">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=716">swiglu.cpp</a>) [32]  (3.239 ns)
+<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS115' consists of the following:
+	'sitofp' operation 32 bit ('conv_3_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=263">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=690">swiglu.cpp</a>) [35]  (3.239 ns)
 
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">37</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">29</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 53, loop 'GATE_PASS1'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -4068,42 +4342,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Unable to schedule the whole 71 cycles bus request operation ('empty', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=638">swiglu.cpp</a>) on port 'gmem_x' (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=638">swiglu.cpp</a>) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">10</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 7, loop 'UNPACK_HDR_WV_K2'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">41</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS214' consists of the following:
-	'sitofp' operation 32 bit ('conv64_2_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=312">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=716">swiglu.cpp</a>) [43]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">17</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 20, Depth = 53, loop 'REDUCE_WV_K2_VITIS_LOOP_192_6'
+<td align="left">Unable to schedule the whole 71 cycles bus request operation ('empty', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=612">swiglu.cpp</a>) on port 'gmem_x' (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=612">swiglu.cpp</a>) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -4114,7 +4353,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 4, Depth = 5, loop 'EXTRACT_SC'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 6, loop 'VITIS_LOOP_517_2_Q6K_MAC_GROUP'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -4125,268 +4364,18 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_wv_k2_Pipeline_REDUCE_WV_K2_VITIS_LOOP_192_6' (loop 'REDUCE_WV_K2_VITIS_LOOP_192_6'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=200">swiglu.cpp</a>) and 'select' operation 32 bit ('select_ln189', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=189">swiglu.cpp</a>).
+<td align="left">The II Violation in module 'mac_blocks_wv_k1_Pipeline_REDUCE_WV_K1' (loop 'REDUCE_WV_K1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=183">swiglu.cpp</a>) and 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=183">swiglu.cpp</a>).
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">72</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 7, loop 'UNPACK_HDR_DOWN'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">71</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_DOWN_Q4K_VITIS_LOOP_337_1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Multiple burst reads of length 288 and bit width 128 in loop 'LOAD_DOWN_Q4K'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=336">swiglu.cpp</a>) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=336">swiglu.cpp</a>)
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">48</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS216' consists of the following:
-	'sitofp' operation 32 bit ('conv64_3_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=312">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=716">swiglu.cpp</a>) [45]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">7</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'LOAD_X_BATCH_LOAD_X_VEC'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">39</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 69, loop 'GATE_PASS2'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">42</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">38</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS113' consists of the following:
-	'sitofp' operation 32 bit ('conv_2_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=289">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=716">swiglu.cpp</a>) [33]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">81</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K' consists of the following:
-	'sitofp' operation 32 bit ('conv', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=436">swiglu.cpp</a>) [1202]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">55</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_QH' (loop 'EXTRACT_QH'): Unable to schedule 'load' operation 128 bit ('flat_load_7', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=489">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'flat'.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">11</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 6, loop 'MAC_ALL_K2'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">82</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'Loop 1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">34</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The critical path in module 'compute_gate_Pipeline_GATE_PASS212' consists of the following:
-	'sitofp' operation 32 bit ('conv64_1_i', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=312">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=716">swiglu.cpp</a>) [44]  (3.239 ns)
-
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">46</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 69, loop 'GATE_PASS2'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">8</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_WV_VITIS_LOOP_78_1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">16</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">The II Violation in module 'mac_blocks_wv_k2_Pipeline_REDUCE_WV_K2_VITIS_LOOP_192_6' (loop 'REDUCE_WV_K2_VITIS_LOOP_192_6'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1) between 'fadd' operation 32 bit ('total', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=200">swiglu.cpp</a>) and 'select' operation 32 bit ('select_ln189', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=189">swiglu.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">85</td>
-<td align="left">Kernel</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">**** Estimated Fmax: 308.74 MHz
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">53</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 4, Depth = 5, loop 'EXTRACT_QL'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">47</td>
+<td align="left">22</td>
 <td align="left">Kernel</td>
 <td align="left">WARNING</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.swiglu.Kernel</td>
 <td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">18</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">33</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">35</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">60</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">The II Violation in module 'load_row_down_q6k_Pipeline_EXTRACT_SC' (loop 'EXTRACT_SC'): Unable to schedule 'load' operation 128 bit ('flat_load_2', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=62">swiglu.cpp</a>-><a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=497">swiglu.cpp</a>) on array 'flat' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'flat'.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
