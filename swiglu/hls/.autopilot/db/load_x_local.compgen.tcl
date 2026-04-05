@@ -18,7 +18,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_0 \
     op interface \
-    ports { x_local_1_0_0_address0 { O 6 vector } x_local_1_0_0_ce0 { O 1 bit } x_local_1_0_0_we0 { O 1 bit } x_local_1_0_0_d0 { O 8 vector } } \
+    ports { x_local_1_0_0_address0 { O 4 vector } x_local_1_0_0_ce0 { O 1 bit } x_local_1_0_0_we0 { O 1 bit } x_local_1_0_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_0'"
@@ -37,7 +37,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_1 \
     op interface \
-    ports { x_local_1_0_1_address0 { O 6 vector } x_local_1_0_1_ce0 { O 1 bit } x_local_1_0_1_we0 { O 1 bit } x_local_1_0_1_d0 { O 8 vector } } \
+    ports { x_local_1_0_1_address0 { O 4 vector } x_local_1_0_1_ce0 { O 1 bit } x_local_1_0_1_we0 { O 1 bit } x_local_1_0_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_1'"
@@ -56,7 +56,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_2 \
     op interface \
-    ports { x_local_1_0_2_address0 { O 6 vector } x_local_1_0_2_ce0 { O 1 bit } x_local_1_0_2_we0 { O 1 bit } x_local_1_0_2_d0 { O 8 vector } } \
+    ports { x_local_1_0_2_address0 { O 4 vector } x_local_1_0_2_ce0 { O 1 bit } x_local_1_0_2_we0 { O 1 bit } x_local_1_0_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_2'"
@@ -75,7 +75,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_3 \
     op interface \
-    ports { x_local_1_0_3_address0 { O 6 vector } x_local_1_0_3_ce0 { O 1 bit } x_local_1_0_3_we0 { O 1 bit } x_local_1_0_3_d0 { O 8 vector } } \
+    ports { x_local_1_0_3_address0 { O 4 vector } x_local_1_0_3_ce0 { O 1 bit } x_local_1_0_3_we0 { O 1 bit } x_local_1_0_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_3'"
@@ -94,7 +94,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_4 \
     op interface \
-    ports { x_local_1_0_4_address0 { O 6 vector } x_local_1_0_4_ce0 { O 1 bit } x_local_1_0_4_we0 { O 1 bit } x_local_1_0_4_d0 { O 8 vector } } \
+    ports { x_local_1_0_4_address0 { O 4 vector } x_local_1_0_4_ce0 { O 1 bit } x_local_1_0_4_we0 { O 1 bit } x_local_1_0_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_4'"
@@ -113,7 +113,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_5 \
     op interface \
-    ports { x_local_1_0_5_address0 { O 6 vector } x_local_1_0_5_ce0 { O 1 bit } x_local_1_0_5_we0 { O 1 bit } x_local_1_0_5_d0 { O 8 vector } } \
+    ports { x_local_1_0_5_address0 { O 4 vector } x_local_1_0_5_ce0 { O 1 bit } x_local_1_0_5_we0 { O 1 bit } x_local_1_0_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_5'"
@@ -132,7 +132,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_6 \
     op interface \
-    ports { x_local_1_0_6_address0 { O 6 vector } x_local_1_0_6_ce0 { O 1 bit } x_local_1_0_6_we0 { O 1 bit } x_local_1_0_6_d0 { O 8 vector } } \
+    ports { x_local_1_0_6_address0 { O 4 vector } x_local_1_0_6_ce0 { O 1 bit } x_local_1_0_6_we0 { O 1 bit } x_local_1_0_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_6'"
@@ -151,7 +151,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_7 \
     op interface \
-    ports { x_local_1_0_7_address0 { O 6 vector } x_local_1_0_7_ce0 { O 1 bit } x_local_1_0_7_we0 { O 1 bit } x_local_1_0_7_d0 { O 8 vector } } \
+    ports { x_local_1_0_7_address0 { O 4 vector } x_local_1_0_7_ce0 { O 1 bit } x_local_1_0_7_we0 { O 1 bit } x_local_1_0_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_7'"
@@ -170,7 +170,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_8 \
     op interface \
-    ports { x_local_1_0_8_address0 { O 6 vector } x_local_1_0_8_ce0 { O 1 bit } x_local_1_0_8_we0 { O 1 bit } x_local_1_0_8_d0 { O 8 vector } } \
+    ports { x_local_1_0_8_address0 { O 4 vector } x_local_1_0_8_ce0 { O 1 bit } x_local_1_0_8_we0 { O 1 bit } x_local_1_0_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_8'"
@@ -189,7 +189,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_9 \
     op interface \
-    ports { x_local_1_0_9_address0 { O 6 vector } x_local_1_0_9_ce0 { O 1 bit } x_local_1_0_9_we0 { O 1 bit } x_local_1_0_9_d0 { O 8 vector } } \
+    ports { x_local_1_0_9_address0 { O 4 vector } x_local_1_0_9_ce0 { O 1 bit } x_local_1_0_9_we0 { O 1 bit } x_local_1_0_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_9'"
@@ -208,7 +208,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_10 \
     op interface \
-    ports { x_local_1_0_10_address0 { O 6 vector } x_local_1_0_10_ce0 { O 1 bit } x_local_1_0_10_we0 { O 1 bit } x_local_1_0_10_d0 { O 8 vector } } \
+    ports { x_local_1_0_10_address0 { O 4 vector } x_local_1_0_10_ce0 { O 1 bit } x_local_1_0_10_we0 { O 1 bit } x_local_1_0_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_10'"
@@ -227,7 +227,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_11 \
     op interface \
-    ports { x_local_1_0_11_address0 { O 6 vector } x_local_1_0_11_ce0 { O 1 bit } x_local_1_0_11_we0 { O 1 bit } x_local_1_0_11_d0 { O 8 vector } } \
+    ports { x_local_1_0_11_address0 { O 4 vector } x_local_1_0_11_ce0 { O 1 bit } x_local_1_0_11_we0 { O 1 bit } x_local_1_0_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_11'"
@@ -246,7 +246,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_12 \
     op interface \
-    ports { x_local_1_0_12_address0 { O 6 vector } x_local_1_0_12_ce0 { O 1 bit } x_local_1_0_12_we0 { O 1 bit } x_local_1_0_12_d0 { O 8 vector } } \
+    ports { x_local_1_0_12_address0 { O 4 vector } x_local_1_0_12_ce0 { O 1 bit } x_local_1_0_12_we0 { O 1 bit } x_local_1_0_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_12'"
@@ -265,7 +265,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_13 \
     op interface \
-    ports { x_local_1_0_13_address0 { O 6 vector } x_local_1_0_13_ce0 { O 1 bit } x_local_1_0_13_we0 { O 1 bit } x_local_1_0_13_d0 { O 8 vector } } \
+    ports { x_local_1_0_13_address0 { O 4 vector } x_local_1_0_13_ce0 { O 1 bit } x_local_1_0_13_we0 { O 1 bit } x_local_1_0_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_13'"
@@ -284,7 +284,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_14 \
     op interface \
-    ports { x_local_1_0_14_address0 { O 6 vector } x_local_1_0_14_ce0 { O 1 bit } x_local_1_0_14_we0 { O 1 bit } x_local_1_0_14_d0 { O 8 vector } } \
+    ports { x_local_1_0_14_address0 { O 4 vector } x_local_1_0_14_ce0 { O 1 bit } x_local_1_0_14_we0 { O 1 bit } x_local_1_0_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_14'"
@@ -303,7 +303,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_0_15 \
     op interface \
-    ports { x_local_1_0_15_address0 { O 6 vector } x_local_1_0_15_ce0 { O 1 bit } x_local_1_0_15_we0 { O 1 bit } x_local_1_0_15_d0 { O 8 vector } } \
+    ports { x_local_1_0_15_address0 { O 4 vector } x_local_1_0_15_ce0 { O 1 bit } x_local_1_0_15_we0 { O 1 bit } x_local_1_0_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_0_15'"
@@ -322,7 +322,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_0 \
     op interface \
-    ports { x_local_1_1_0_address0 { O 6 vector } x_local_1_1_0_ce0 { O 1 bit } x_local_1_1_0_we0 { O 1 bit } x_local_1_1_0_d0 { O 8 vector } } \
+    ports { x_local_1_1_0_address0 { O 4 vector } x_local_1_1_0_ce0 { O 1 bit } x_local_1_1_0_we0 { O 1 bit } x_local_1_1_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_0'"
@@ -341,7 +341,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_1 \
     op interface \
-    ports { x_local_1_1_1_address0 { O 6 vector } x_local_1_1_1_ce0 { O 1 bit } x_local_1_1_1_we0 { O 1 bit } x_local_1_1_1_d0 { O 8 vector } } \
+    ports { x_local_1_1_1_address0 { O 4 vector } x_local_1_1_1_ce0 { O 1 bit } x_local_1_1_1_we0 { O 1 bit } x_local_1_1_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_1'"
@@ -360,7 +360,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_2 \
     op interface \
-    ports { x_local_1_1_2_address0 { O 6 vector } x_local_1_1_2_ce0 { O 1 bit } x_local_1_1_2_we0 { O 1 bit } x_local_1_1_2_d0 { O 8 vector } } \
+    ports { x_local_1_1_2_address0 { O 4 vector } x_local_1_1_2_ce0 { O 1 bit } x_local_1_1_2_we0 { O 1 bit } x_local_1_1_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_2'"
@@ -379,7 +379,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_3 \
     op interface \
-    ports { x_local_1_1_3_address0 { O 6 vector } x_local_1_1_3_ce0 { O 1 bit } x_local_1_1_3_we0 { O 1 bit } x_local_1_1_3_d0 { O 8 vector } } \
+    ports { x_local_1_1_3_address0 { O 4 vector } x_local_1_1_3_ce0 { O 1 bit } x_local_1_1_3_we0 { O 1 bit } x_local_1_1_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_3'"
@@ -398,7 +398,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_4 \
     op interface \
-    ports { x_local_1_1_4_address0 { O 6 vector } x_local_1_1_4_ce0 { O 1 bit } x_local_1_1_4_we0 { O 1 bit } x_local_1_1_4_d0 { O 8 vector } } \
+    ports { x_local_1_1_4_address0 { O 4 vector } x_local_1_1_4_ce0 { O 1 bit } x_local_1_1_4_we0 { O 1 bit } x_local_1_1_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_4'"
@@ -417,7 +417,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_5 \
     op interface \
-    ports { x_local_1_1_5_address0 { O 6 vector } x_local_1_1_5_ce0 { O 1 bit } x_local_1_1_5_we0 { O 1 bit } x_local_1_1_5_d0 { O 8 vector } } \
+    ports { x_local_1_1_5_address0 { O 4 vector } x_local_1_1_5_ce0 { O 1 bit } x_local_1_1_5_we0 { O 1 bit } x_local_1_1_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_5'"
@@ -436,7 +436,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_6 \
     op interface \
-    ports { x_local_1_1_6_address0 { O 6 vector } x_local_1_1_6_ce0 { O 1 bit } x_local_1_1_6_we0 { O 1 bit } x_local_1_1_6_d0 { O 8 vector } } \
+    ports { x_local_1_1_6_address0 { O 4 vector } x_local_1_1_6_ce0 { O 1 bit } x_local_1_1_6_we0 { O 1 bit } x_local_1_1_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_6'"
@@ -455,7 +455,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_7 \
     op interface \
-    ports { x_local_1_1_7_address0 { O 6 vector } x_local_1_1_7_ce0 { O 1 bit } x_local_1_1_7_we0 { O 1 bit } x_local_1_1_7_d0 { O 8 vector } } \
+    ports { x_local_1_1_7_address0 { O 4 vector } x_local_1_1_7_ce0 { O 1 bit } x_local_1_1_7_we0 { O 1 bit } x_local_1_1_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_7'"
@@ -474,7 +474,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_8 \
     op interface \
-    ports { x_local_1_1_8_address0 { O 6 vector } x_local_1_1_8_ce0 { O 1 bit } x_local_1_1_8_we0 { O 1 bit } x_local_1_1_8_d0 { O 8 vector } } \
+    ports { x_local_1_1_8_address0 { O 4 vector } x_local_1_1_8_ce0 { O 1 bit } x_local_1_1_8_we0 { O 1 bit } x_local_1_1_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_8'"
@@ -493,7 +493,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_9 \
     op interface \
-    ports { x_local_1_1_9_address0 { O 6 vector } x_local_1_1_9_ce0 { O 1 bit } x_local_1_1_9_we0 { O 1 bit } x_local_1_1_9_d0 { O 8 vector } } \
+    ports { x_local_1_1_9_address0 { O 4 vector } x_local_1_1_9_ce0 { O 1 bit } x_local_1_1_9_we0 { O 1 bit } x_local_1_1_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_9'"
@@ -512,7 +512,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_10 \
     op interface \
-    ports { x_local_1_1_10_address0 { O 6 vector } x_local_1_1_10_ce0 { O 1 bit } x_local_1_1_10_we0 { O 1 bit } x_local_1_1_10_d0 { O 8 vector } } \
+    ports { x_local_1_1_10_address0 { O 4 vector } x_local_1_1_10_ce0 { O 1 bit } x_local_1_1_10_we0 { O 1 bit } x_local_1_1_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_10'"
@@ -531,7 +531,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_11 \
     op interface \
-    ports { x_local_1_1_11_address0 { O 6 vector } x_local_1_1_11_ce0 { O 1 bit } x_local_1_1_11_we0 { O 1 bit } x_local_1_1_11_d0 { O 8 vector } } \
+    ports { x_local_1_1_11_address0 { O 4 vector } x_local_1_1_11_ce0 { O 1 bit } x_local_1_1_11_we0 { O 1 bit } x_local_1_1_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_11'"
@@ -550,7 +550,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_12 \
     op interface \
-    ports { x_local_1_1_12_address0 { O 6 vector } x_local_1_1_12_ce0 { O 1 bit } x_local_1_1_12_we0 { O 1 bit } x_local_1_1_12_d0 { O 8 vector } } \
+    ports { x_local_1_1_12_address0 { O 4 vector } x_local_1_1_12_ce0 { O 1 bit } x_local_1_1_12_we0 { O 1 bit } x_local_1_1_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_12'"
@@ -569,7 +569,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_13 \
     op interface \
-    ports { x_local_1_1_13_address0 { O 6 vector } x_local_1_1_13_ce0 { O 1 bit } x_local_1_1_13_we0 { O 1 bit } x_local_1_1_13_d0 { O 8 vector } } \
+    ports { x_local_1_1_13_address0 { O 4 vector } x_local_1_1_13_ce0 { O 1 bit } x_local_1_1_13_we0 { O 1 bit } x_local_1_1_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_13'"
@@ -588,7 +588,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_14 \
     op interface \
-    ports { x_local_1_1_14_address0 { O 6 vector } x_local_1_1_14_ce0 { O 1 bit } x_local_1_1_14_we0 { O 1 bit } x_local_1_1_14_d0 { O 8 vector } } \
+    ports { x_local_1_1_14_address0 { O 4 vector } x_local_1_1_14_ce0 { O 1 bit } x_local_1_1_14_we0 { O 1 bit } x_local_1_1_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_14'"
@@ -607,7 +607,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_1_15 \
     op interface \
-    ports { x_local_1_1_15_address0 { O 6 vector } x_local_1_1_15_ce0 { O 1 bit } x_local_1_1_15_we0 { O 1 bit } x_local_1_1_15_d0 { O 8 vector } } \
+    ports { x_local_1_1_15_address0 { O 4 vector } x_local_1_1_15_ce0 { O 1 bit } x_local_1_1_15_we0 { O 1 bit } x_local_1_1_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_1_15'"
@@ -626,7 +626,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_0 \
     op interface \
-    ports { x_local_1_2_0_address0 { O 6 vector } x_local_1_2_0_ce0 { O 1 bit } x_local_1_2_0_we0 { O 1 bit } x_local_1_2_0_d0 { O 8 vector } } \
+    ports { x_local_1_2_0_address0 { O 4 vector } x_local_1_2_0_ce0 { O 1 bit } x_local_1_2_0_we0 { O 1 bit } x_local_1_2_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_0'"
@@ -645,7 +645,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_1 \
     op interface \
-    ports { x_local_1_2_1_address0 { O 6 vector } x_local_1_2_1_ce0 { O 1 bit } x_local_1_2_1_we0 { O 1 bit } x_local_1_2_1_d0 { O 8 vector } } \
+    ports { x_local_1_2_1_address0 { O 4 vector } x_local_1_2_1_ce0 { O 1 bit } x_local_1_2_1_we0 { O 1 bit } x_local_1_2_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_1'"
@@ -664,7 +664,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_2 \
     op interface \
-    ports { x_local_1_2_2_address0 { O 6 vector } x_local_1_2_2_ce0 { O 1 bit } x_local_1_2_2_we0 { O 1 bit } x_local_1_2_2_d0 { O 8 vector } } \
+    ports { x_local_1_2_2_address0 { O 4 vector } x_local_1_2_2_ce0 { O 1 bit } x_local_1_2_2_we0 { O 1 bit } x_local_1_2_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_2'"
@@ -683,7 +683,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_3 \
     op interface \
-    ports { x_local_1_2_3_address0 { O 6 vector } x_local_1_2_3_ce0 { O 1 bit } x_local_1_2_3_we0 { O 1 bit } x_local_1_2_3_d0 { O 8 vector } } \
+    ports { x_local_1_2_3_address0 { O 4 vector } x_local_1_2_3_ce0 { O 1 bit } x_local_1_2_3_we0 { O 1 bit } x_local_1_2_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_3'"
@@ -702,7 +702,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_4 \
     op interface \
-    ports { x_local_1_2_4_address0 { O 6 vector } x_local_1_2_4_ce0 { O 1 bit } x_local_1_2_4_we0 { O 1 bit } x_local_1_2_4_d0 { O 8 vector } } \
+    ports { x_local_1_2_4_address0 { O 4 vector } x_local_1_2_4_ce0 { O 1 bit } x_local_1_2_4_we0 { O 1 bit } x_local_1_2_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_4'"
@@ -721,7 +721,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_5 \
     op interface \
-    ports { x_local_1_2_5_address0 { O 6 vector } x_local_1_2_5_ce0 { O 1 bit } x_local_1_2_5_we0 { O 1 bit } x_local_1_2_5_d0 { O 8 vector } } \
+    ports { x_local_1_2_5_address0 { O 4 vector } x_local_1_2_5_ce0 { O 1 bit } x_local_1_2_5_we0 { O 1 bit } x_local_1_2_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_5'"
@@ -740,7 +740,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_6 \
     op interface \
-    ports { x_local_1_2_6_address0 { O 6 vector } x_local_1_2_6_ce0 { O 1 bit } x_local_1_2_6_we0 { O 1 bit } x_local_1_2_6_d0 { O 8 vector } } \
+    ports { x_local_1_2_6_address0 { O 4 vector } x_local_1_2_6_ce0 { O 1 bit } x_local_1_2_6_we0 { O 1 bit } x_local_1_2_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_6'"
@@ -759,7 +759,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_7 \
     op interface \
-    ports { x_local_1_2_7_address0 { O 6 vector } x_local_1_2_7_ce0 { O 1 bit } x_local_1_2_7_we0 { O 1 bit } x_local_1_2_7_d0 { O 8 vector } } \
+    ports { x_local_1_2_7_address0 { O 4 vector } x_local_1_2_7_ce0 { O 1 bit } x_local_1_2_7_we0 { O 1 bit } x_local_1_2_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_7'"
@@ -778,7 +778,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_8 \
     op interface \
-    ports { x_local_1_2_8_address0 { O 6 vector } x_local_1_2_8_ce0 { O 1 bit } x_local_1_2_8_we0 { O 1 bit } x_local_1_2_8_d0 { O 8 vector } } \
+    ports { x_local_1_2_8_address0 { O 4 vector } x_local_1_2_8_ce0 { O 1 bit } x_local_1_2_8_we0 { O 1 bit } x_local_1_2_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_8'"
@@ -797,7 +797,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_9 \
     op interface \
-    ports { x_local_1_2_9_address0 { O 6 vector } x_local_1_2_9_ce0 { O 1 bit } x_local_1_2_9_we0 { O 1 bit } x_local_1_2_9_d0 { O 8 vector } } \
+    ports { x_local_1_2_9_address0 { O 4 vector } x_local_1_2_9_ce0 { O 1 bit } x_local_1_2_9_we0 { O 1 bit } x_local_1_2_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_9'"
@@ -816,7 +816,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_10 \
     op interface \
-    ports { x_local_1_2_10_address0 { O 6 vector } x_local_1_2_10_ce0 { O 1 bit } x_local_1_2_10_we0 { O 1 bit } x_local_1_2_10_d0 { O 8 vector } } \
+    ports { x_local_1_2_10_address0 { O 4 vector } x_local_1_2_10_ce0 { O 1 bit } x_local_1_2_10_we0 { O 1 bit } x_local_1_2_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_10'"
@@ -835,7 +835,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_11 \
     op interface \
-    ports { x_local_1_2_11_address0 { O 6 vector } x_local_1_2_11_ce0 { O 1 bit } x_local_1_2_11_we0 { O 1 bit } x_local_1_2_11_d0 { O 8 vector } } \
+    ports { x_local_1_2_11_address0 { O 4 vector } x_local_1_2_11_ce0 { O 1 bit } x_local_1_2_11_we0 { O 1 bit } x_local_1_2_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_11'"
@@ -854,7 +854,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_12 \
     op interface \
-    ports { x_local_1_2_12_address0 { O 6 vector } x_local_1_2_12_ce0 { O 1 bit } x_local_1_2_12_we0 { O 1 bit } x_local_1_2_12_d0 { O 8 vector } } \
+    ports { x_local_1_2_12_address0 { O 4 vector } x_local_1_2_12_ce0 { O 1 bit } x_local_1_2_12_we0 { O 1 bit } x_local_1_2_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_12'"
@@ -873,7 +873,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_13 \
     op interface \
-    ports { x_local_1_2_13_address0 { O 6 vector } x_local_1_2_13_ce0 { O 1 bit } x_local_1_2_13_we0 { O 1 bit } x_local_1_2_13_d0 { O 8 vector } } \
+    ports { x_local_1_2_13_address0 { O 4 vector } x_local_1_2_13_ce0 { O 1 bit } x_local_1_2_13_we0 { O 1 bit } x_local_1_2_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_13'"
@@ -892,7 +892,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_14 \
     op interface \
-    ports { x_local_1_2_14_address0 { O 6 vector } x_local_1_2_14_ce0 { O 1 bit } x_local_1_2_14_we0 { O 1 bit } x_local_1_2_14_d0 { O 8 vector } } \
+    ports { x_local_1_2_14_address0 { O 4 vector } x_local_1_2_14_ce0 { O 1 bit } x_local_1_2_14_we0 { O 1 bit } x_local_1_2_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_14'"
@@ -911,7 +911,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_2_15 \
     op interface \
-    ports { x_local_1_2_15_address0 { O 6 vector } x_local_1_2_15_ce0 { O 1 bit } x_local_1_2_15_we0 { O 1 bit } x_local_1_2_15_d0 { O 8 vector } } \
+    ports { x_local_1_2_15_address0 { O 4 vector } x_local_1_2_15_ce0 { O 1 bit } x_local_1_2_15_we0 { O 1 bit } x_local_1_2_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_2_15'"
@@ -930,7 +930,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_0 \
     op interface \
-    ports { x_local_1_3_0_address0 { O 6 vector } x_local_1_3_0_ce0 { O 1 bit } x_local_1_3_0_we0 { O 1 bit } x_local_1_3_0_d0 { O 8 vector } } \
+    ports { x_local_1_3_0_address0 { O 4 vector } x_local_1_3_0_ce0 { O 1 bit } x_local_1_3_0_we0 { O 1 bit } x_local_1_3_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_0'"
@@ -949,7 +949,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_1 \
     op interface \
-    ports { x_local_1_3_1_address0 { O 6 vector } x_local_1_3_1_ce0 { O 1 bit } x_local_1_3_1_we0 { O 1 bit } x_local_1_3_1_d0 { O 8 vector } } \
+    ports { x_local_1_3_1_address0 { O 4 vector } x_local_1_3_1_ce0 { O 1 bit } x_local_1_3_1_we0 { O 1 bit } x_local_1_3_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_1'"
@@ -968,7 +968,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_2 \
     op interface \
-    ports { x_local_1_3_2_address0 { O 6 vector } x_local_1_3_2_ce0 { O 1 bit } x_local_1_3_2_we0 { O 1 bit } x_local_1_3_2_d0 { O 8 vector } } \
+    ports { x_local_1_3_2_address0 { O 4 vector } x_local_1_3_2_ce0 { O 1 bit } x_local_1_3_2_we0 { O 1 bit } x_local_1_3_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_2'"
@@ -987,7 +987,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_3 \
     op interface \
-    ports { x_local_1_3_3_address0 { O 6 vector } x_local_1_3_3_ce0 { O 1 bit } x_local_1_3_3_we0 { O 1 bit } x_local_1_3_3_d0 { O 8 vector } } \
+    ports { x_local_1_3_3_address0 { O 4 vector } x_local_1_3_3_ce0 { O 1 bit } x_local_1_3_3_we0 { O 1 bit } x_local_1_3_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_3'"
@@ -1006,7 +1006,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_4 \
     op interface \
-    ports { x_local_1_3_4_address0 { O 6 vector } x_local_1_3_4_ce0 { O 1 bit } x_local_1_3_4_we0 { O 1 bit } x_local_1_3_4_d0 { O 8 vector } } \
+    ports { x_local_1_3_4_address0 { O 4 vector } x_local_1_3_4_ce0 { O 1 bit } x_local_1_3_4_we0 { O 1 bit } x_local_1_3_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_4'"
@@ -1025,7 +1025,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_5 \
     op interface \
-    ports { x_local_1_3_5_address0 { O 6 vector } x_local_1_3_5_ce0 { O 1 bit } x_local_1_3_5_we0 { O 1 bit } x_local_1_3_5_d0 { O 8 vector } } \
+    ports { x_local_1_3_5_address0 { O 4 vector } x_local_1_3_5_ce0 { O 1 bit } x_local_1_3_5_we0 { O 1 bit } x_local_1_3_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_5'"
@@ -1044,7 +1044,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_6 \
     op interface \
-    ports { x_local_1_3_6_address0 { O 6 vector } x_local_1_3_6_ce0 { O 1 bit } x_local_1_3_6_we0 { O 1 bit } x_local_1_3_6_d0 { O 8 vector } } \
+    ports { x_local_1_3_6_address0 { O 4 vector } x_local_1_3_6_ce0 { O 1 bit } x_local_1_3_6_we0 { O 1 bit } x_local_1_3_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_6'"
@@ -1063,7 +1063,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_7 \
     op interface \
-    ports { x_local_1_3_7_address0 { O 6 vector } x_local_1_3_7_ce0 { O 1 bit } x_local_1_3_7_we0 { O 1 bit } x_local_1_3_7_d0 { O 8 vector } } \
+    ports { x_local_1_3_7_address0 { O 4 vector } x_local_1_3_7_ce0 { O 1 bit } x_local_1_3_7_we0 { O 1 bit } x_local_1_3_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_7'"
@@ -1082,7 +1082,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_8 \
     op interface \
-    ports { x_local_1_3_8_address0 { O 6 vector } x_local_1_3_8_ce0 { O 1 bit } x_local_1_3_8_we0 { O 1 bit } x_local_1_3_8_d0 { O 8 vector } } \
+    ports { x_local_1_3_8_address0 { O 4 vector } x_local_1_3_8_ce0 { O 1 bit } x_local_1_3_8_we0 { O 1 bit } x_local_1_3_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_8'"
@@ -1101,7 +1101,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_9 \
     op interface \
-    ports { x_local_1_3_9_address0 { O 6 vector } x_local_1_3_9_ce0 { O 1 bit } x_local_1_3_9_we0 { O 1 bit } x_local_1_3_9_d0 { O 8 vector } } \
+    ports { x_local_1_3_9_address0 { O 4 vector } x_local_1_3_9_ce0 { O 1 bit } x_local_1_3_9_we0 { O 1 bit } x_local_1_3_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_9'"
@@ -1120,7 +1120,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_10 \
     op interface \
-    ports { x_local_1_3_10_address0 { O 6 vector } x_local_1_3_10_ce0 { O 1 bit } x_local_1_3_10_we0 { O 1 bit } x_local_1_3_10_d0 { O 8 vector } } \
+    ports { x_local_1_3_10_address0 { O 4 vector } x_local_1_3_10_ce0 { O 1 bit } x_local_1_3_10_we0 { O 1 bit } x_local_1_3_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_10'"
@@ -1139,7 +1139,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_11 \
     op interface \
-    ports { x_local_1_3_11_address0 { O 6 vector } x_local_1_3_11_ce0 { O 1 bit } x_local_1_3_11_we0 { O 1 bit } x_local_1_3_11_d0 { O 8 vector } } \
+    ports { x_local_1_3_11_address0 { O 4 vector } x_local_1_3_11_ce0 { O 1 bit } x_local_1_3_11_we0 { O 1 bit } x_local_1_3_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_11'"
@@ -1158,7 +1158,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_12 \
     op interface \
-    ports { x_local_1_3_12_address0 { O 6 vector } x_local_1_3_12_ce0 { O 1 bit } x_local_1_3_12_we0 { O 1 bit } x_local_1_3_12_d0 { O 8 vector } } \
+    ports { x_local_1_3_12_address0 { O 4 vector } x_local_1_3_12_ce0 { O 1 bit } x_local_1_3_12_we0 { O 1 bit } x_local_1_3_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_12'"
@@ -1177,7 +1177,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_13 \
     op interface \
-    ports { x_local_1_3_13_address0 { O 6 vector } x_local_1_3_13_ce0 { O 1 bit } x_local_1_3_13_we0 { O 1 bit } x_local_1_3_13_d0 { O 8 vector } } \
+    ports { x_local_1_3_13_address0 { O 4 vector } x_local_1_3_13_ce0 { O 1 bit } x_local_1_3_13_we0 { O 1 bit } x_local_1_3_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_13'"
@@ -1196,7 +1196,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_14 \
     op interface \
-    ports { x_local_1_3_14_address0 { O 6 vector } x_local_1_3_14_ce0 { O 1 bit } x_local_1_3_14_we0 { O 1 bit } x_local_1_3_14_d0 { O 8 vector } } \
+    ports { x_local_1_3_14_address0 { O 4 vector } x_local_1_3_14_ce0 { O 1 bit } x_local_1_3_14_we0 { O 1 bit } x_local_1_3_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_14'"
@@ -1215,7 +1215,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_3_15 \
     op interface \
-    ports { x_local_1_3_15_address0 { O 6 vector } x_local_1_3_15_ce0 { O 1 bit } x_local_1_3_15_we0 { O 1 bit } x_local_1_3_15_d0 { O 8 vector } } \
+    ports { x_local_1_3_15_address0 { O 4 vector } x_local_1_3_15_ce0 { O 1 bit } x_local_1_3_15_we0 { O 1 bit } x_local_1_3_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_3_15'"
@@ -1234,7 +1234,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_0 \
     op interface \
-    ports { x_local_1_4_0_address0 { O 6 vector } x_local_1_4_0_ce0 { O 1 bit } x_local_1_4_0_we0 { O 1 bit } x_local_1_4_0_d0 { O 8 vector } } \
+    ports { x_local_1_4_0_address0 { O 4 vector } x_local_1_4_0_ce0 { O 1 bit } x_local_1_4_0_we0 { O 1 bit } x_local_1_4_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_0'"
@@ -1253,7 +1253,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_1 \
     op interface \
-    ports { x_local_1_4_1_address0 { O 6 vector } x_local_1_4_1_ce0 { O 1 bit } x_local_1_4_1_we0 { O 1 bit } x_local_1_4_1_d0 { O 8 vector } } \
+    ports { x_local_1_4_1_address0 { O 4 vector } x_local_1_4_1_ce0 { O 1 bit } x_local_1_4_1_we0 { O 1 bit } x_local_1_4_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_1'"
@@ -1272,7 +1272,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_2 \
     op interface \
-    ports { x_local_1_4_2_address0 { O 6 vector } x_local_1_4_2_ce0 { O 1 bit } x_local_1_4_2_we0 { O 1 bit } x_local_1_4_2_d0 { O 8 vector } } \
+    ports { x_local_1_4_2_address0 { O 4 vector } x_local_1_4_2_ce0 { O 1 bit } x_local_1_4_2_we0 { O 1 bit } x_local_1_4_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_2'"
@@ -1291,7 +1291,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_3 \
     op interface \
-    ports { x_local_1_4_3_address0 { O 6 vector } x_local_1_4_3_ce0 { O 1 bit } x_local_1_4_3_we0 { O 1 bit } x_local_1_4_3_d0 { O 8 vector } } \
+    ports { x_local_1_4_3_address0 { O 4 vector } x_local_1_4_3_ce0 { O 1 bit } x_local_1_4_3_we0 { O 1 bit } x_local_1_4_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_3'"
@@ -1310,7 +1310,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_4 \
     op interface \
-    ports { x_local_1_4_4_address0 { O 6 vector } x_local_1_4_4_ce0 { O 1 bit } x_local_1_4_4_we0 { O 1 bit } x_local_1_4_4_d0 { O 8 vector } } \
+    ports { x_local_1_4_4_address0 { O 4 vector } x_local_1_4_4_ce0 { O 1 bit } x_local_1_4_4_we0 { O 1 bit } x_local_1_4_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_4'"
@@ -1329,7 +1329,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_5 \
     op interface \
-    ports { x_local_1_4_5_address0 { O 6 vector } x_local_1_4_5_ce0 { O 1 bit } x_local_1_4_5_we0 { O 1 bit } x_local_1_4_5_d0 { O 8 vector } } \
+    ports { x_local_1_4_5_address0 { O 4 vector } x_local_1_4_5_ce0 { O 1 bit } x_local_1_4_5_we0 { O 1 bit } x_local_1_4_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_5'"
@@ -1348,7 +1348,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_6 \
     op interface \
-    ports { x_local_1_4_6_address0 { O 6 vector } x_local_1_4_6_ce0 { O 1 bit } x_local_1_4_6_we0 { O 1 bit } x_local_1_4_6_d0 { O 8 vector } } \
+    ports { x_local_1_4_6_address0 { O 4 vector } x_local_1_4_6_ce0 { O 1 bit } x_local_1_4_6_we0 { O 1 bit } x_local_1_4_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_6'"
@@ -1367,7 +1367,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_7 \
     op interface \
-    ports { x_local_1_4_7_address0 { O 6 vector } x_local_1_4_7_ce0 { O 1 bit } x_local_1_4_7_we0 { O 1 bit } x_local_1_4_7_d0 { O 8 vector } } \
+    ports { x_local_1_4_7_address0 { O 4 vector } x_local_1_4_7_ce0 { O 1 bit } x_local_1_4_7_we0 { O 1 bit } x_local_1_4_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_7'"
@@ -1386,7 +1386,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_8 \
     op interface \
-    ports { x_local_1_4_8_address0 { O 6 vector } x_local_1_4_8_ce0 { O 1 bit } x_local_1_4_8_we0 { O 1 bit } x_local_1_4_8_d0 { O 8 vector } } \
+    ports { x_local_1_4_8_address0 { O 4 vector } x_local_1_4_8_ce0 { O 1 bit } x_local_1_4_8_we0 { O 1 bit } x_local_1_4_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_8'"
@@ -1405,7 +1405,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_9 \
     op interface \
-    ports { x_local_1_4_9_address0 { O 6 vector } x_local_1_4_9_ce0 { O 1 bit } x_local_1_4_9_we0 { O 1 bit } x_local_1_4_9_d0 { O 8 vector } } \
+    ports { x_local_1_4_9_address0 { O 4 vector } x_local_1_4_9_ce0 { O 1 bit } x_local_1_4_9_we0 { O 1 bit } x_local_1_4_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_9'"
@@ -1424,7 +1424,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_10 \
     op interface \
-    ports { x_local_1_4_10_address0 { O 6 vector } x_local_1_4_10_ce0 { O 1 bit } x_local_1_4_10_we0 { O 1 bit } x_local_1_4_10_d0 { O 8 vector } } \
+    ports { x_local_1_4_10_address0 { O 4 vector } x_local_1_4_10_ce0 { O 1 bit } x_local_1_4_10_we0 { O 1 bit } x_local_1_4_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_10'"
@@ -1443,7 +1443,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_11 \
     op interface \
-    ports { x_local_1_4_11_address0 { O 6 vector } x_local_1_4_11_ce0 { O 1 bit } x_local_1_4_11_we0 { O 1 bit } x_local_1_4_11_d0 { O 8 vector } } \
+    ports { x_local_1_4_11_address0 { O 4 vector } x_local_1_4_11_ce0 { O 1 bit } x_local_1_4_11_we0 { O 1 bit } x_local_1_4_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_11'"
@@ -1462,7 +1462,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_12 \
     op interface \
-    ports { x_local_1_4_12_address0 { O 6 vector } x_local_1_4_12_ce0 { O 1 bit } x_local_1_4_12_we0 { O 1 bit } x_local_1_4_12_d0 { O 8 vector } } \
+    ports { x_local_1_4_12_address0 { O 4 vector } x_local_1_4_12_ce0 { O 1 bit } x_local_1_4_12_we0 { O 1 bit } x_local_1_4_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_12'"
@@ -1481,7 +1481,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_13 \
     op interface \
-    ports { x_local_1_4_13_address0 { O 6 vector } x_local_1_4_13_ce0 { O 1 bit } x_local_1_4_13_we0 { O 1 bit } x_local_1_4_13_d0 { O 8 vector } } \
+    ports { x_local_1_4_13_address0 { O 4 vector } x_local_1_4_13_ce0 { O 1 bit } x_local_1_4_13_we0 { O 1 bit } x_local_1_4_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_13'"
@@ -1500,7 +1500,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_14 \
     op interface \
-    ports { x_local_1_4_14_address0 { O 6 vector } x_local_1_4_14_ce0 { O 1 bit } x_local_1_4_14_we0 { O 1 bit } x_local_1_4_14_d0 { O 8 vector } } \
+    ports { x_local_1_4_14_address0 { O 4 vector } x_local_1_4_14_ce0 { O 1 bit } x_local_1_4_14_we0 { O 1 bit } x_local_1_4_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_14'"
@@ -1519,7 +1519,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_4_15 \
     op interface \
-    ports { x_local_1_4_15_address0 { O 6 vector } x_local_1_4_15_ce0 { O 1 bit } x_local_1_4_15_we0 { O 1 bit } x_local_1_4_15_d0 { O 8 vector } } \
+    ports { x_local_1_4_15_address0 { O 4 vector } x_local_1_4_15_ce0 { O 1 bit } x_local_1_4_15_we0 { O 1 bit } x_local_1_4_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_4_15'"
@@ -1538,7 +1538,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_0 \
     op interface \
-    ports { x_local_1_5_0_address0 { O 6 vector } x_local_1_5_0_ce0 { O 1 bit } x_local_1_5_0_we0 { O 1 bit } x_local_1_5_0_d0 { O 8 vector } } \
+    ports { x_local_1_5_0_address0 { O 4 vector } x_local_1_5_0_ce0 { O 1 bit } x_local_1_5_0_we0 { O 1 bit } x_local_1_5_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_0'"
@@ -1557,7 +1557,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_1 \
     op interface \
-    ports { x_local_1_5_1_address0 { O 6 vector } x_local_1_5_1_ce0 { O 1 bit } x_local_1_5_1_we0 { O 1 bit } x_local_1_5_1_d0 { O 8 vector } } \
+    ports { x_local_1_5_1_address0 { O 4 vector } x_local_1_5_1_ce0 { O 1 bit } x_local_1_5_1_we0 { O 1 bit } x_local_1_5_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_1'"
@@ -1576,7 +1576,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_2 \
     op interface \
-    ports { x_local_1_5_2_address0 { O 6 vector } x_local_1_5_2_ce0 { O 1 bit } x_local_1_5_2_we0 { O 1 bit } x_local_1_5_2_d0 { O 8 vector } } \
+    ports { x_local_1_5_2_address0 { O 4 vector } x_local_1_5_2_ce0 { O 1 bit } x_local_1_5_2_we0 { O 1 bit } x_local_1_5_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_2'"
@@ -1595,7 +1595,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_3 \
     op interface \
-    ports { x_local_1_5_3_address0 { O 6 vector } x_local_1_5_3_ce0 { O 1 bit } x_local_1_5_3_we0 { O 1 bit } x_local_1_5_3_d0 { O 8 vector } } \
+    ports { x_local_1_5_3_address0 { O 4 vector } x_local_1_5_3_ce0 { O 1 bit } x_local_1_5_3_we0 { O 1 bit } x_local_1_5_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_3'"
@@ -1614,7 +1614,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_4 \
     op interface \
-    ports { x_local_1_5_4_address0 { O 6 vector } x_local_1_5_4_ce0 { O 1 bit } x_local_1_5_4_we0 { O 1 bit } x_local_1_5_4_d0 { O 8 vector } } \
+    ports { x_local_1_5_4_address0 { O 4 vector } x_local_1_5_4_ce0 { O 1 bit } x_local_1_5_4_we0 { O 1 bit } x_local_1_5_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_4'"
@@ -1633,7 +1633,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_5 \
     op interface \
-    ports { x_local_1_5_5_address0 { O 6 vector } x_local_1_5_5_ce0 { O 1 bit } x_local_1_5_5_we0 { O 1 bit } x_local_1_5_5_d0 { O 8 vector } } \
+    ports { x_local_1_5_5_address0 { O 4 vector } x_local_1_5_5_ce0 { O 1 bit } x_local_1_5_5_we0 { O 1 bit } x_local_1_5_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_5'"
@@ -1652,7 +1652,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_6 \
     op interface \
-    ports { x_local_1_5_6_address0 { O 6 vector } x_local_1_5_6_ce0 { O 1 bit } x_local_1_5_6_we0 { O 1 bit } x_local_1_5_6_d0 { O 8 vector } } \
+    ports { x_local_1_5_6_address0 { O 4 vector } x_local_1_5_6_ce0 { O 1 bit } x_local_1_5_6_we0 { O 1 bit } x_local_1_5_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_6'"
@@ -1671,7 +1671,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_7 \
     op interface \
-    ports { x_local_1_5_7_address0 { O 6 vector } x_local_1_5_7_ce0 { O 1 bit } x_local_1_5_7_we0 { O 1 bit } x_local_1_5_7_d0 { O 8 vector } } \
+    ports { x_local_1_5_7_address0 { O 4 vector } x_local_1_5_7_ce0 { O 1 bit } x_local_1_5_7_we0 { O 1 bit } x_local_1_5_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_7'"
@@ -1690,7 +1690,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_8 \
     op interface \
-    ports { x_local_1_5_8_address0 { O 6 vector } x_local_1_5_8_ce0 { O 1 bit } x_local_1_5_8_we0 { O 1 bit } x_local_1_5_8_d0 { O 8 vector } } \
+    ports { x_local_1_5_8_address0 { O 4 vector } x_local_1_5_8_ce0 { O 1 bit } x_local_1_5_8_we0 { O 1 bit } x_local_1_5_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_8'"
@@ -1709,7 +1709,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_9 \
     op interface \
-    ports { x_local_1_5_9_address0 { O 6 vector } x_local_1_5_9_ce0 { O 1 bit } x_local_1_5_9_we0 { O 1 bit } x_local_1_5_9_d0 { O 8 vector } } \
+    ports { x_local_1_5_9_address0 { O 4 vector } x_local_1_5_9_ce0 { O 1 bit } x_local_1_5_9_we0 { O 1 bit } x_local_1_5_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_9'"
@@ -1728,7 +1728,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_10 \
     op interface \
-    ports { x_local_1_5_10_address0 { O 6 vector } x_local_1_5_10_ce0 { O 1 bit } x_local_1_5_10_we0 { O 1 bit } x_local_1_5_10_d0 { O 8 vector } } \
+    ports { x_local_1_5_10_address0 { O 4 vector } x_local_1_5_10_ce0 { O 1 bit } x_local_1_5_10_we0 { O 1 bit } x_local_1_5_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_10'"
@@ -1747,7 +1747,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_11 \
     op interface \
-    ports { x_local_1_5_11_address0 { O 6 vector } x_local_1_5_11_ce0 { O 1 bit } x_local_1_5_11_we0 { O 1 bit } x_local_1_5_11_d0 { O 8 vector } } \
+    ports { x_local_1_5_11_address0 { O 4 vector } x_local_1_5_11_ce0 { O 1 bit } x_local_1_5_11_we0 { O 1 bit } x_local_1_5_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_11'"
@@ -1766,7 +1766,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_12 \
     op interface \
-    ports { x_local_1_5_12_address0 { O 6 vector } x_local_1_5_12_ce0 { O 1 bit } x_local_1_5_12_we0 { O 1 bit } x_local_1_5_12_d0 { O 8 vector } } \
+    ports { x_local_1_5_12_address0 { O 4 vector } x_local_1_5_12_ce0 { O 1 bit } x_local_1_5_12_we0 { O 1 bit } x_local_1_5_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_12'"
@@ -1785,7 +1785,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_13 \
     op interface \
-    ports { x_local_1_5_13_address0 { O 6 vector } x_local_1_5_13_ce0 { O 1 bit } x_local_1_5_13_we0 { O 1 bit } x_local_1_5_13_d0 { O 8 vector } } \
+    ports { x_local_1_5_13_address0 { O 4 vector } x_local_1_5_13_ce0 { O 1 bit } x_local_1_5_13_we0 { O 1 bit } x_local_1_5_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_13'"
@@ -1804,7 +1804,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_14 \
     op interface \
-    ports { x_local_1_5_14_address0 { O 6 vector } x_local_1_5_14_ce0 { O 1 bit } x_local_1_5_14_we0 { O 1 bit } x_local_1_5_14_d0 { O 8 vector } } \
+    ports { x_local_1_5_14_address0 { O 4 vector } x_local_1_5_14_ce0 { O 1 bit } x_local_1_5_14_we0 { O 1 bit } x_local_1_5_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_14'"
@@ -1823,7 +1823,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_5_15 \
     op interface \
-    ports { x_local_1_5_15_address0 { O 6 vector } x_local_1_5_15_ce0 { O 1 bit } x_local_1_5_15_we0 { O 1 bit } x_local_1_5_15_d0 { O 8 vector } } \
+    ports { x_local_1_5_15_address0 { O 4 vector } x_local_1_5_15_ce0 { O 1 bit } x_local_1_5_15_we0 { O 1 bit } x_local_1_5_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_5_15'"
@@ -1842,7 +1842,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_0 \
     op interface \
-    ports { x_local_1_6_0_address0 { O 6 vector } x_local_1_6_0_ce0 { O 1 bit } x_local_1_6_0_we0 { O 1 bit } x_local_1_6_0_d0 { O 8 vector } } \
+    ports { x_local_1_6_0_address0 { O 4 vector } x_local_1_6_0_ce0 { O 1 bit } x_local_1_6_0_we0 { O 1 bit } x_local_1_6_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_0'"
@@ -1861,7 +1861,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_1 \
     op interface \
-    ports { x_local_1_6_1_address0 { O 6 vector } x_local_1_6_1_ce0 { O 1 bit } x_local_1_6_1_we0 { O 1 bit } x_local_1_6_1_d0 { O 8 vector } } \
+    ports { x_local_1_6_1_address0 { O 4 vector } x_local_1_6_1_ce0 { O 1 bit } x_local_1_6_1_we0 { O 1 bit } x_local_1_6_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_1'"
@@ -1880,7 +1880,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_2 \
     op interface \
-    ports { x_local_1_6_2_address0 { O 6 vector } x_local_1_6_2_ce0 { O 1 bit } x_local_1_6_2_we0 { O 1 bit } x_local_1_6_2_d0 { O 8 vector } } \
+    ports { x_local_1_6_2_address0 { O 4 vector } x_local_1_6_2_ce0 { O 1 bit } x_local_1_6_2_we0 { O 1 bit } x_local_1_6_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_2'"
@@ -1899,7 +1899,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_3 \
     op interface \
-    ports { x_local_1_6_3_address0 { O 6 vector } x_local_1_6_3_ce0 { O 1 bit } x_local_1_6_3_we0 { O 1 bit } x_local_1_6_3_d0 { O 8 vector } } \
+    ports { x_local_1_6_3_address0 { O 4 vector } x_local_1_6_3_ce0 { O 1 bit } x_local_1_6_3_we0 { O 1 bit } x_local_1_6_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_3'"
@@ -1918,7 +1918,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_4 \
     op interface \
-    ports { x_local_1_6_4_address0 { O 6 vector } x_local_1_6_4_ce0 { O 1 bit } x_local_1_6_4_we0 { O 1 bit } x_local_1_6_4_d0 { O 8 vector } } \
+    ports { x_local_1_6_4_address0 { O 4 vector } x_local_1_6_4_ce0 { O 1 bit } x_local_1_6_4_we0 { O 1 bit } x_local_1_6_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_4'"
@@ -1937,7 +1937,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_5 \
     op interface \
-    ports { x_local_1_6_5_address0 { O 6 vector } x_local_1_6_5_ce0 { O 1 bit } x_local_1_6_5_we0 { O 1 bit } x_local_1_6_5_d0 { O 8 vector } } \
+    ports { x_local_1_6_5_address0 { O 4 vector } x_local_1_6_5_ce0 { O 1 bit } x_local_1_6_5_we0 { O 1 bit } x_local_1_6_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_5'"
@@ -1956,7 +1956,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_6 \
     op interface \
-    ports { x_local_1_6_6_address0 { O 6 vector } x_local_1_6_6_ce0 { O 1 bit } x_local_1_6_6_we0 { O 1 bit } x_local_1_6_6_d0 { O 8 vector } } \
+    ports { x_local_1_6_6_address0 { O 4 vector } x_local_1_6_6_ce0 { O 1 bit } x_local_1_6_6_we0 { O 1 bit } x_local_1_6_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_6'"
@@ -1975,7 +1975,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_7 \
     op interface \
-    ports { x_local_1_6_7_address0 { O 6 vector } x_local_1_6_7_ce0 { O 1 bit } x_local_1_6_7_we0 { O 1 bit } x_local_1_6_7_d0 { O 8 vector } } \
+    ports { x_local_1_6_7_address0 { O 4 vector } x_local_1_6_7_ce0 { O 1 bit } x_local_1_6_7_we0 { O 1 bit } x_local_1_6_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_7'"
@@ -1994,7 +1994,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_8 \
     op interface \
-    ports { x_local_1_6_8_address0 { O 6 vector } x_local_1_6_8_ce0 { O 1 bit } x_local_1_6_8_we0 { O 1 bit } x_local_1_6_8_d0 { O 8 vector } } \
+    ports { x_local_1_6_8_address0 { O 4 vector } x_local_1_6_8_ce0 { O 1 bit } x_local_1_6_8_we0 { O 1 bit } x_local_1_6_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_8'"
@@ -2013,7 +2013,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_9 \
     op interface \
-    ports { x_local_1_6_9_address0 { O 6 vector } x_local_1_6_9_ce0 { O 1 bit } x_local_1_6_9_we0 { O 1 bit } x_local_1_6_9_d0 { O 8 vector } } \
+    ports { x_local_1_6_9_address0 { O 4 vector } x_local_1_6_9_ce0 { O 1 bit } x_local_1_6_9_we0 { O 1 bit } x_local_1_6_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_9'"
@@ -2032,7 +2032,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_10 \
     op interface \
-    ports { x_local_1_6_10_address0 { O 6 vector } x_local_1_6_10_ce0 { O 1 bit } x_local_1_6_10_we0 { O 1 bit } x_local_1_6_10_d0 { O 8 vector } } \
+    ports { x_local_1_6_10_address0 { O 4 vector } x_local_1_6_10_ce0 { O 1 bit } x_local_1_6_10_we0 { O 1 bit } x_local_1_6_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_10'"
@@ -2051,7 +2051,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_11 \
     op interface \
-    ports { x_local_1_6_11_address0 { O 6 vector } x_local_1_6_11_ce0 { O 1 bit } x_local_1_6_11_we0 { O 1 bit } x_local_1_6_11_d0 { O 8 vector } } \
+    ports { x_local_1_6_11_address0 { O 4 vector } x_local_1_6_11_ce0 { O 1 bit } x_local_1_6_11_we0 { O 1 bit } x_local_1_6_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_11'"
@@ -2070,7 +2070,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_12 \
     op interface \
-    ports { x_local_1_6_12_address0 { O 6 vector } x_local_1_6_12_ce0 { O 1 bit } x_local_1_6_12_we0 { O 1 bit } x_local_1_6_12_d0 { O 8 vector } } \
+    ports { x_local_1_6_12_address0 { O 4 vector } x_local_1_6_12_ce0 { O 1 bit } x_local_1_6_12_we0 { O 1 bit } x_local_1_6_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_12'"
@@ -2089,7 +2089,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_13 \
     op interface \
-    ports { x_local_1_6_13_address0 { O 6 vector } x_local_1_6_13_ce0 { O 1 bit } x_local_1_6_13_we0 { O 1 bit } x_local_1_6_13_d0 { O 8 vector } } \
+    ports { x_local_1_6_13_address0 { O 4 vector } x_local_1_6_13_ce0 { O 1 bit } x_local_1_6_13_we0 { O 1 bit } x_local_1_6_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_13'"
@@ -2108,7 +2108,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_14 \
     op interface \
-    ports { x_local_1_6_14_address0 { O 6 vector } x_local_1_6_14_ce0 { O 1 bit } x_local_1_6_14_we0 { O 1 bit } x_local_1_6_14_d0 { O 8 vector } } \
+    ports { x_local_1_6_14_address0 { O 4 vector } x_local_1_6_14_ce0 { O 1 bit } x_local_1_6_14_we0 { O 1 bit } x_local_1_6_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_14'"
@@ -2127,7 +2127,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_6_15 \
     op interface \
-    ports { x_local_1_6_15_address0 { O 6 vector } x_local_1_6_15_ce0 { O 1 bit } x_local_1_6_15_we0 { O 1 bit } x_local_1_6_15_d0 { O 8 vector } } \
+    ports { x_local_1_6_15_address0 { O 4 vector } x_local_1_6_15_ce0 { O 1 bit } x_local_1_6_15_we0 { O 1 bit } x_local_1_6_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_6_15'"
@@ -2146,7 +2146,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_0 \
     op interface \
-    ports { x_local_1_7_0_address0 { O 6 vector } x_local_1_7_0_ce0 { O 1 bit } x_local_1_7_0_we0 { O 1 bit } x_local_1_7_0_d0 { O 8 vector } } \
+    ports { x_local_1_7_0_address0 { O 4 vector } x_local_1_7_0_ce0 { O 1 bit } x_local_1_7_0_we0 { O 1 bit } x_local_1_7_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_0'"
@@ -2165,7 +2165,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_1 \
     op interface \
-    ports { x_local_1_7_1_address0 { O 6 vector } x_local_1_7_1_ce0 { O 1 bit } x_local_1_7_1_we0 { O 1 bit } x_local_1_7_1_d0 { O 8 vector } } \
+    ports { x_local_1_7_1_address0 { O 4 vector } x_local_1_7_1_ce0 { O 1 bit } x_local_1_7_1_we0 { O 1 bit } x_local_1_7_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_1'"
@@ -2184,7 +2184,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_2 \
     op interface \
-    ports { x_local_1_7_2_address0 { O 6 vector } x_local_1_7_2_ce0 { O 1 bit } x_local_1_7_2_we0 { O 1 bit } x_local_1_7_2_d0 { O 8 vector } } \
+    ports { x_local_1_7_2_address0 { O 4 vector } x_local_1_7_2_ce0 { O 1 bit } x_local_1_7_2_we0 { O 1 bit } x_local_1_7_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_2'"
@@ -2203,7 +2203,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_3 \
     op interface \
-    ports { x_local_1_7_3_address0 { O 6 vector } x_local_1_7_3_ce0 { O 1 bit } x_local_1_7_3_we0 { O 1 bit } x_local_1_7_3_d0 { O 8 vector } } \
+    ports { x_local_1_7_3_address0 { O 4 vector } x_local_1_7_3_ce0 { O 1 bit } x_local_1_7_3_we0 { O 1 bit } x_local_1_7_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_3'"
@@ -2222,7 +2222,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_4 \
     op interface \
-    ports { x_local_1_7_4_address0 { O 6 vector } x_local_1_7_4_ce0 { O 1 bit } x_local_1_7_4_we0 { O 1 bit } x_local_1_7_4_d0 { O 8 vector } } \
+    ports { x_local_1_7_4_address0 { O 4 vector } x_local_1_7_4_ce0 { O 1 bit } x_local_1_7_4_we0 { O 1 bit } x_local_1_7_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_4'"
@@ -2241,7 +2241,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_5 \
     op interface \
-    ports { x_local_1_7_5_address0 { O 6 vector } x_local_1_7_5_ce0 { O 1 bit } x_local_1_7_5_we0 { O 1 bit } x_local_1_7_5_d0 { O 8 vector } } \
+    ports { x_local_1_7_5_address0 { O 4 vector } x_local_1_7_5_ce0 { O 1 bit } x_local_1_7_5_we0 { O 1 bit } x_local_1_7_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_5'"
@@ -2260,7 +2260,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_6 \
     op interface \
-    ports { x_local_1_7_6_address0 { O 6 vector } x_local_1_7_6_ce0 { O 1 bit } x_local_1_7_6_we0 { O 1 bit } x_local_1_7_6_d0 { O 8 vector } } \
+    ports { x_local_1_7_6_address0 { O 4 vector } x_local_1_7_6_ce0 { O 1 bit } x_local_1_7_6_we0 { O 1 bit } x_local_1_7_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_6'"
@@ -2279,7 +2279,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_7 \
     op interface \
-    ports { x_local_1_7_7_address0 { O 6 vector } x_local_1_7_7_ce0 { O 1 bit } x_local_1_7_7_we0 { O 1 bit } x_local_1_7_7_d0 { O 8 vector } } \
+    ports { x_local_1_7_7_address0 { O 4 vector } x_local_1_7_7_ce0 { O 1 bit } x_local_1_7_7_we0 { O 1 bit } x_local_1_7_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_7'"
@@ -2298,7 +2298,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_8 \
     op interface \
-    ports { x_local_1_7_8_address0 { O 6 vector } x_local_1_7_8_ce0 { O 1 bit } x_local_1_7_8_we0 { O 1 bit } x_local_1_7_8_d0 { O 8 vector } } \
+    ports { x_local_1_7_8_address0 { O 4 vector } x_local_1_7_8_ce0 { O 1 bit } x_local_1_7_8_we0 { O 1 bit } x_local_1_7_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_8'"
@@ -2317,7 +2317,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_9 \
     op interface \
-    ports { x_local_1_7_9_address0 { O 6 vector } x_local_1_7_9_ce0 { O 1 bit } x_local_1_7_9_we0 { O 1 bit } x_local_1_7_9_d0 { O 8 vector } } \
+    ports { x_local_1_7_9_address0 { O 4 vector } x_local_1_7_9_ce0 { O 1 bit } x_local_1_7_9_we0 { O 1 bit } x_local_1_7_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_9'"
@@ -2336,7 +2336,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_10 \
     op interface \
-    ports { x_local_1_7_10_address0 { O 6 vector } x_local_1_7_10_ce0 { O 1 bit } x_local_1_7_10_we0 { O 1 bit } x_local_1_7_10_d0 { O 8 vector } } \
+    ports { x_local_1_7_10_address0 { O 4 vector } x_local_1_7_10_ce0 { O 1 bit } x_local_1_7_10_we0 { O 1 bit } x_local_1_7_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_10'"
@@ -2355,7 +2355,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_11 \
     op interface \
-    ports { x_local_1_7_11_address0 { O 6 vector } x_local_1_7_11_ce0 { O 1 bit } x_local_1_7_11_we0 { O 1 bit } x_local_1_7_11_d0 { O 8 vector } } \
+    ports { x_local_1_7_11_address0 { O 4 vector } x_local_1_7_11_ce0 { O 1 bit } x_local_1_7_11_we0 { O 1 bit } x_local_1_7_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_11'"
@@ -2374,7 +2374,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_12 \
     op interface \
-    ports { x_local_1_7_12_address0 { O 6 vector } x_local_1_7_12_ce0 { O 1 bit } x_local_1_7_12_we0 { O 1 bit } x_local_1_7_12_d0 { O 8 vector } } \
+    ports { x_local_1_7_12_address0 { O 4 vector } x_local_1_7_12_ce0 { O 1 bit } x_local_1_7_12_we0 { O 1 bit } x_local_1_7_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_12'"
@@ -2393,7 +2393,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_13 \
     op interface \
-    ports { x_local_1_7_13_address0 { O 6 vector } x_local_1_7_13_ce0 { O 1 bit } x_local_1_7_13_we0 { O 1 bit } x_local_1_7_13_d0 { O 8 vector } } \
+    ports { x_local_1_7_13_address0 { O 4 vector } x_local_1_7_13_ce0 { O 1 bit } x_local_1_7_13_we0 { O 1 bit } x_local_1_7_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_13'"
@@ -2412,7 +2412,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_14 \
     op interface \
-    ports { x_local_1_7_14_address0 { O 6 vector } x_local_1_7_14_ce0 { O 1 bit } x_local_1_7_14_we0 { O 1 bit } x_local_1_7_14_d0 { O 8 vector } } \
+    ports { x_local_1_7_14_address0 { O 4 vector } x_local_1_7_14_ce0 { O 1 bit } x_local_1_7_14_we0 { O 1 bit } x_local_1_7_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_14'"
@@ -2431,7 +2431,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_1_7_15 \
     op interface \
-    ports { x_local_1_7_15_address0 { O 6 vector } x_local_1_7_15_ce0 { O 1 bit } x_local_1_7_15_we0 { O 1 bit } x_local_1_7_15_d0 { O 8 vector } } \
+    ports { x_local_1_7_15_address0 { O 4 vector } x_local_1_7_15_ce0 { O 1 bit } x_local_1_7_15_we0 { O 1 bit } x_local_1_7_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_1_7_15'"
@@ -2450,7 +2450,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_0 \
     op interface \
-    ports { x_local_2_0_0_address0 { O 6 vector } x_local_2_0_0_ce0 { O 1 bit } x_local_2_0_0_we0 { O 1 bit } x_local_2_0_0_d0 { O 8 vector } } \
+    ports { x_local_2_0_0_address0 { O 4 vector } x_local_2_0_0_ce0 { O 1 bit } x_local_2_0_0_we0 { O 1 bit } x_local_2_0_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_0'"
@@ -2469,7 +2469,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_1 \
     op interface \
-    ports { x_local_2_0_1_address0 { O 6 vector } x_local_2_0_1_ce0 { O 1 bit } x_local_2_0_1_we0 { O 1 bit } x_local_2_0_1_d0 { O 8 vector } } \
+    ports { x_local_2_0_1_address0 { O 4 vector } x_local_2_0_1_ce0 { O 1 bit } x_local_2_0_1_we0 { O 1 bit } x_local_2_0_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_1'"
@@ -2488,7 +2488,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_2 \
     op interface \
-    ports { x_local_2_0_2_address0 { O 6 vector } x_local_2_0_2_ce0 { O 1 bit } x_local_2_0_2_we0 { O 1 bit } x_local_2_0_2_d0 { O 8 vector } } \
+    ports { x_local_2_0_2_address0 { O 4 vector } x_local_2_0_2_ce0 { O 1 bit } x_local_2_0_2_we0 { O 1 bit } x_local_2_0_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_2'"
@@ -2507,7 +2507,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_3 \
     op interface \
-    ports { x_local_2_0_3_address0 { O 6 vector } x_local_2_0_3_ce0 { O 1 bit } x_local_2_0_3_we0 { O 1 bit } x_local_2_0_3_d0 { O 8 vector } } \
+    ports { x_local_2_0_3_address0 { O 4 vector } x_local_2_0_3_ce0 { O 1 bit } x_local_2_0_3_we0 { O 1 bit } x_local_2_0_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_3'"
@@ -2526,7 +2526,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_4 \
     op interface \
-    ports { x_local_2_0_4_address0 { O 6 vector } x_local_2_0_4_ce0 { O 1 bit } x_local_2_0_4_we0 { O 1 bit } x_local_2_0_4_d0 { O 8 vector } } \
+    ports { x_local_2_0_4_address0 { O 4 vector } x_local_2_0_4_ce0 { O 1 bit } x_local_2_0_4_we0 { O 1 bit } x_local_2_0_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_4'"
@@ -2545,7 +2545,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_5 \
     op interface \
-    ports { x_local_2_0_5_address0 { O 6 vector } x_local_2_0_5_ce0 { O 1 bit } x_local_2_0_5_we0 { O 1 bit } x_local_2_0_5_d0 { O 8 vector } } \
+    ports { x_local_2_0_5_address0 { O 4 vector } x_local_2_0_5_ce0 { O 1 bit } x_local_2_0_5_we0 { O 1 bit } x_local_2_0_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_5'"
@@ -2564,7 +2564,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_6 \
     op interface \
-    ports { x_local_2_0_6_address0 { O 6 vector } x_local_2_0_6_ce0 { O 1 bit } x_local_2_0_6_we0 { O 1 bit } x_local_2_0_6_d0 { O 8 vector } } \
+    ports { x_local_2_0_6_address0 { O 4 vector } x_local_2_0_6_ce0 { O 1 bit } x_local_2_0_6_we0 { O 1 bit } x_local_2_0_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_6'"
@@ -2583,7 +2583,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_7 \
     op interface \
-    ports { x_local_2_0_7_address0 { O 6 vector } x_local_2_0_7_ce0 { O 1 bit } x_local_2_0_7_we0 { O 1 bit } x_local_2_0_7_d0 { O 8 vector } } \
+    ports { x_local_2_0_7_address0 { O 4 vector } x_local_2_0_7_ce0 { O 1 bit } x_local_2_0_7_we0 { O 1 bit } x_local_2_0_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_7'"
@@ -2602,7 +2602,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_8 \
     op interface \
-    ports { x_local_2_0_8_address0 { O 6 vector } x_local_2_0_8_ce0 { O 1 bit } x_local_2_0_8_we0 { O 1 bit } x_local_2_0_8_d0 { O 8 vector } } \
+    ports { x_local_2_0_8_address0 { O 4 vector } x_local_2_0_8_ce0 { O 1 bit } x_local_2_0_8_we0 { O 1 bit } x_local_2_0_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_8'"
@@ -2621,7 +2621,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_9 \
     op interface \
-    ports { x_local_2_0_9_address0 { O 6 vector } x_local_2_0_9_ce0 { O 1 bit } x_local_2_0_9_we0 { O 1 bit } x_local_2_0_9_d0 { O 8 vector } } \
+    ports { x_local_2_0_9_address0 { O 4 vector } x_local_2_0_9_ce0 { O 1 bit } x_local_2_0_9_we0 { O 1 bit } x_local_2_0_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_9'"
@@ -2640,7 +2640,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_10 \
     op interface \
-    ports { x_local_2_0_10_address0 { O 6 vector } x_local_2_0_10_ce0 { O 1 bit } x_local_2_0_10_we0 { O 1 bit } x_local_2_0_10_d0 { O 8 vector } } \
+    ports { x_local_2_0_10_address0 { O 4 vector } x_local_2_0_10_ce0 { O 1 bit } x_local_2_0_10_we0 { O 1 bit } x_local_2_0_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_10'"
@@ -2659,7 +2659,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_11 \
     op interface \
-    ports { x_local_2_0_11_address0 { O 6 vector } x_local_2_0_11_ce0 { O 1 bit } x_local_2_0_11_we0 { O 1 bit } x_local_2_0_11_d0 { O 8 vector } } \
+    ports { x_local_2_0_11_address0 { O 4 vector } x_local_2_0_11_ce0 { O 1 bit } x_local_2_0_11_we0 { O 1 bit } x_local_2_0_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_11'"
@@ -2678,7 +2678,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_12 \
     op interface \
-    ports { x_local_2_0_12_address0 { O 6 vector } x_local_2_0_12_ce0 { O 1 bit } x_local_2_0_12_we0 { O 1 bit } x_local_2_0_12_d0 { O 8 vector } } \
+    ports { x_local_2_0_12_address0 { O 4 vector } x_local_2_0_12_ce0 { O 1 bit } x_local_2_0_12_we0 { O 1 bit } x_local_2_0_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_12'"
@@ -2697,7 +2697,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_13 \
     op interface \
-    ports { x_local_2_0_13_address0 { O 6 vector } x_local_2_0_13_ce0 { O 1 bit } x_local_2_0_13_we0 { O 1 bit } x_local_2_0_13_d0 { O 8 vector } } \
+    ports { x_local_2_0_13_address0 { O 4 vector } x_local_2_0_13_ce0 { O 1 bit } x_local_2_0_13_we0 { O 1 bit } x_local_2_0_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_13'"
@@ -2716,7 +2716,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_14 \
     op interface \
-    ports { x_local_2_0_14_address0 { O 6 vector } x_local_2_0_14_ce0 { O 1 bit } x_local_2_0_14_we0 { O 1 bit } x_local_2_0_14_d0 { O 8 vector } } \
+    ports { x_local_2_0_14_address0 { O 4 vector } x_local_2_0_14_ce0 { O 1 bit } x_local_2_0_14_we0 { O 1 bit } x_local_2_0_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_14'"
@@ -2735,7 +2735,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_0_15 \
     op interface \
-    ports { x_local_2_0_15_address0 { O 6 vector } x_local_2_0_15_ce0 { O 1 bit } x_local_2_0_15_we0 { O 1 bit } x_local_2_0_15_d0 { O 8 vector } } \
+    ports { x_local_2_0_15_address0 { O 4 vector } x_local_2_0_15_ce0 { O 1 bit } x_local_2_0_15_we0 { O 1 bit } x_local_2_0_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_0_15'"
@@ -2754,7 +2754,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_0 \
     op interface \
-    ports { x_local_2_1_0_address0 { O 6 vector } x_local_2_1_0_ce0 { O 1 bit } x_local_2_1_0_we0 { O 1 bit } x_local_2_1_0_d0 { O 8 vector } } \
+    ports { x_local_2_1_0_address0 { O 4 vector } x_local_2_1_0_ce0 { O 1 bit } x_local_2_1_0_we0 { O 1 bit } x_local_2_1_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_0'"
@@ -2773,7 +2773,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_1 \
     op interface \
-    ports { x_local_2_1_1_address0 { O 6 vector } x_local_2_1_1_ce0 { O 1 bit } x_local_2_1_1_we0 { O 1 bit } x_local_2_1_1_d0 { O 8 vector } } \
+    ports { x_local_2_1_1_address0 { O 4 vector } x_local_2_1_1_ce0 { O 1 bit } x_local_2_1_1_we0 { O 1 bit } x_local_2_1_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_1'"
@@ -2792,7 +2792,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_2 \
     op interface \
-    ports { x_local_2_1_2_address0 { O 6 vector } x_local_2_1_2_ce0 { O 1 bit } x_local_2_1_2_we0 { O 1 bit } x_local_2_1_2_d0 { O 8 vector } } \
+    ports { x_local_2_1_2_address0 { O 4 vector } x_local_2_1_2_ce0 { O 1 bit } x_local_2_1_2_we0 { O 1 bit } x_local_2_1_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_2'"
@@ -2811,7 +2811,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_3 \
     op interface \
-    ports { x_local_2_1_3_address0 { O 6 vector } x_local_2_1_3_ce0 { O 1 bit } x_local_2_1_3_we0 { O 1 bit } x_local_2_1_3_d0 { O 8 vector } } \
+    ports { x_local_2_1_3_address0 { O 4 vector } x_local_2_1_3_ce0 { O 1 bit } x_local_2_1_3_we0 { O 1 bit } x_local_2_1_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_3'"
@@ -2830,7 +2830,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_4 \
     op interface \
-    ports { x_local_2_1_4_address0 { O 6 vector } x_local_2_1_4_ce0 { O 1 bit } x_local_2_1_4_we0 { O 1 bit } x_local_2_1_4_d0 { O 8 vector } } \
+    ports { x_local_2_1_4_address0 { O 4 vector } x_local_2_1_4_ce0 { O 1 bit } x_local_2_1_4_we0 { O 1 bit } x_local_2_1_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_4'"
@@ -2849,7 +2849,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_5 \
     op interface \
-    ports { x_local_2_1_5_address0 { O 6 vector } x_local_2_1_5_ce0 { O 1 bit } x_local_2_1_5_we0 { O 1 bit } x_local_2_1_5_d0 { O 8 vector } } \
+    ports { x_local_2_1_5_address0 { O 4 vector } x_local_2_1_5_ce0 { O 1 bit } x_local_2_1_5_we0 { O 1 bit } x_local_2_1_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_5'"
@@ -2868,7 +2868,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_6 \
     op interface \
-    ports { x_local_2_1_6_address0 { O 6 vector } x_local_2_1_6_ce0 { O 1 bit } x_local_2_1_6_we0 { O 1 bit } x_local_2_1_6_d0 { O 8 vector } } \
+    ports { x_local_2_1_6_address0 { O 4 vector } x_local_2_1_6_ce0 { O 1 bit } x_local_2_1_6_we0 { O 1 bit } x_local_2_1_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_6'"
@@ -2887,7 +2887,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_7 \
     op interface \
-    ports { x_local_2_1_7_address0 { O 6 vector } x_local_2_1_7_ce0 { O 1 bit } x_local_2_1_7_we0 { O 1 bit } x_local_2_1_7_d0 { O 8 vector } } \
+    ports { x_local_2_1_7_address0 { O 4 vector } x_local_2_1_7_ce0 { O 1 bit } x_local_2_1_7_we0 { O 1 bit } x_local_2_1_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_7'"
@@ -2906,7 +2906,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_8 \
     op interface \
-    ports { x_local_2_1_8_address0 { O 6 vector } x_local_2_1_8_ce0 { O 1 bit } x_local_2_1_8_we0 { O 1 bit } x_local_2_1_8_d0 { O 8 vector } } \
+    ports { x_local_2_1_8_address0 { O 4 vector } x_local_2_1_8_ce0 { O 1 bit } x_local_2_1_8_we0 { O 1 bit } x_local_2_1_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_8'"
@@ -2925,7 +2925,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_9 \
     op interface \
-    ports { x_local_2_1_9_address0 { O 6 vector } x_local_2_1_9_ce0 { O 1 bit } x_local_2_1_9_we0 { O 1 bit } x_local_2_1_9_d0 { O 8 vector } } \
+    ports { x_local_2_1_9_address0 { O 4 vector } x_local_2_1_9_ce0 { O 1 bit } x_local_2_1_9_we0 { O 1 bit } x_local_2_1_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_9'"
@@ -2944,7 +2944,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_10 \
     op interface \
-    ports { x_local_2_1_10_address0 { O 6 vector } x_local_2_1_10_ce0 { O 1 bit } x_local_2_1_10_we0 { O 1 bit } x_local_2_1_10_d0 { O 8 vector } } \
+    ports { x_local_2_1_10_address0 { O 4 vector } x_local_2_1_10_ce0 { O 1 bit } x_local_2_1_10_we0 { O 1 bit } x_local_2_1_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_10'"
@@ -2963,7 +2963,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_11 \
     op interface \
-    ports { x_local_2_1_11_address0 { O 6 vector } x_local_2_1_11_ce0 { O 1 bit } x_local_2_1_11_we0 { O 1 bit } x_local_2_1_11_d0 { O 8 vector } } \
+    ports { x_local_2_1_11_address0 { O 4 vector } x_local_2_1_11_ce0 { O 1 bit } x_local_2_1_11_we0 { O 1 bit } x_local_2_1_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_11'"
@@ -2982,7 +2982,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_12 \
     op interface \
-    ports { x_local_2_1_12_address0 { O 6 vector } x_local_2_1_12_ce0 { O 1 bit } x_local_2_1_12_we0 { O 1 bit } x_local_2_1_12_d0 { O 8 vector } } \
+    ports { x_local_2_1_12_address0 { O 4 vector } x_local_2_1_12_ce0 { O 1 bit } x_local_2_1_12_we0 { O 1 bit } x_local_2_1_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_12'"
@@ -3001,7 +3001,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_13 \
     op interface \
-    ports { x_local_2_1_13_address0 { O 6 vector } x_local_2_1_13_ce0 { O 1 bit } x_local_2_1_13_we0 { O 1 bit } x_local_2_1_13_d0 { O 8 vector } } \
+    ports { x_local_2_1_13_address0 { O 4 vector } x_local_2_1_13_ce0 { O 1 bit } x_local_2_1_13_we0 { O 1 bit } x_local_2_1_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_13'"
@@ -3020,7 +3020,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_14 \
     op interface \
-    ports { x_local_2_1_14_address0 { O 6 vector } x_local_2_1_14_ce0 { O 1 bit } x_local_2_1_14_we0 { O 1 bit } x_local_2_1_14_d0 { O 8 vector } } \
+    ports { x_local_2_1_14_address0 { O 4 vector } x_local_2_1_14_ce0 { O 1 bit } x_local_2_1_14_we0 { O 1 bit } x_local_2_1_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_14'"
@@ -3039,7 +3039,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_1_15 \
     op interface \
-    ports { x_local_2_1_15_address0 { O 6 vector } x_local_2_1_15_ce0 { O 1 bit } x_local_2_1_15_we0 { O 1 bit } x_local_2_1_15_d0 { O 8 vector } } \
+    ports { x_local_2_1_15_address0 { O 4 vector } x_local_2_1_15_ce0 { O 1 bit } x_local_2_1_15_we0 { O 1 bit } x_local_2_1_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_1_15'"
@@ -3058,7 +3058,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_0 \
     op interface \
-    ports { x_local_2_2_0_address0 { O 6 vector } x_local_2_2_0_ce0 { O 1 bit } x_local_2_2_0_we0 { O 1 bit } x_local_2_2_0_d0 { O 8 vector } } \
+    ports { x_local_2_2_0_address0 { O 4 vector } x_local_2_2_0_ce0 { O 1 bit } x_local_2_2_0_we0 { O 1 bit } x_local_2_2_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_0'"
@@ -3077,7 +3077,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_1 \
     op interface \
-    ports { x_local_2_2_1_address0 { O 6 vector } x_local_2_2_1_ce0 { O 1 bit } x_local_2_2_1_we0 { O 1 bit } x_local_2_2_1_d0 { O 8 vector } } \
+    ports { x_local_2_2_1_address0 { O 4 vector } x_local_2_2_1_ce0 { O 1 bit } x_local_2_2_1_we0 { O 1 bit } x_local_2_2_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_1'"
@@ -3096,7 +3096,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_2 \
     op interface \
-    ports { x_local_2_2_2_address0 { O 6 vector } x_local_2_2_2_ce0 { O 1 bit } x_local_2_2_2_we0 { O 1 bit } x_local_2_2_2_d0 { O 8 vector } } \
+    ports { x_local_2_2_2_address0 { O 4 vector } x_local_2_2_2_ce0 { O 1 bit } x_local_2_2_2_we0 { O 1 bit } x_local_2_2_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_2'"
@@ -3115,7 +3115,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_3 \
     op interface \
-    ports { x_local_2_2_3_address0 { O 6 vector } x_local_2_2_3_ce0 { O 1 bit } x_local_2_2_3_we0 { O 1 bit } x_local_2_2_3_d0 { O 8 vector } } \
+    ports { x_local_2_2_3_address0 { O 4 vector } x_local_2_2_3_ce0 { O 1 bit } x_local_2_2_3_we0 { O 1 bit } x_local_2_2_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_3'"
@@ -3134,7 +3134,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_4 \
     op interface \
-    ports { x_local_2_2_4_address0 { O 6 vector } x_local_2_2_4_ce0 { O 1 bit } x_local_2_2_4_we0 { O 1 bit } x_local_2_2_4_d0 { O 8 vector } } \
+    ports { x_local_2_2_4_address0 { O 4 vector } x_local_2_2_4_ce0 { O 1 bit } x_local_2_2_4_we0 { O 1 bit } x_local_2_2_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_4'"
@@ -3153,7 +3153,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_5 \
     op interface \
-    ports { x_local_2_2_5_address0 { O 6 vector } x_local_2_2_5_ce0 { O 1 bit } x_local_2_2_5_we0 { O 1 bit } x_local_2_2_5_d0 { O 8 vector } } \
+    ports { x_local_2_2_5_address0 { O 4 vector } x_local_2_2_5_ce0 { O 1 bit } x_local_2_2_5_we0 { O 1 bit } x_local_2_2_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_5'"
@@ -3172,7 +3172,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_6 \
     op interface \
-    ports { x_local_2_2_6_address0 { O 6 vector } x_local_2_2_6_ce0 { O 1 bit } x_local_2_2_6_we0 { O 1 bit } x_local_2_2_6_d0 { O 8 vector } } \
+    ports { x_local_2_2_6_address0 { O 4 vector } x_local_2_2_6_ce0 { O 1 bit } x_local_2_2_6_we0 { O 1 bit } x_local_2_2_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_6'"
@@ -3191,7 +3191,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_7 \
     op interface \
-    ports { x_local_2_2_7_address0 { O 6 vector } x_local_2_2_7_ce0 { O 1 bit } x_local_2_2_7_we0 { O 1 bit } x_local_2_2_7_d0 { O 8 vector } } \
+    ports { x_local_2_2_7_address0 { O 4 vector } x_local_2_2_7_ce0 { O 1 bit } x_local_2_2_7_we0 { O 1 bit } x_local_2_2_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_7'"
@@ -3210,7 +3210,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_8 \
     op interface \
-    ports { x_local_2_2_8_address0 { O 6 vector } x_local_2_2_8_ce0 { O 1 bit } x_local_2_2_8_we0 { O 1 bit } x_local_2_2_8_d0 { O 8 vector } } \
+    ports { x_local_2_2_8_address0 { O 4 vector } x_local_2_2_8_ce0 { O 1 bit } x_local_2_2_8_we0 { O 1 bit } x_local_2_2_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_8'"
@@ -3229,7 +3229,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_9 \
     op interface \
-    ports { x_local_2_2_9_address0 { O 6 vector } x_local_2_2_9_ce0 { O 1 bit } x_local_2_2_9_we0 { O 1 bit } x_local_2_2_9_d0 { O 8 vector } } \
+    ports { x_local_2_2_9_address0 { O 4 vector } x_local_2_2_9_ce0 { O 1 bit } x_local_2_2_9_we0 { O 1 bit } x_local_2_2_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_9'"
@@ -3248,7 +3248,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_10 \
     op interface \
-    ports { x_local_2_2_10_address0 { O 6 vector } x_local_2_2_10_ce0 { O 1 bit } x_local_2_2_10_we0 { O 1 bit } x_local_2_2_10_d0 { O 8 vector } } \
+    ports { x_local_2_2_10_address0 { O 4 vector } x_local_2_2_10_ce0 { O 1 bit } x_local_2_2_10_we0 { O 1 bit } x_local_2_2_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_10'"
@@ -3267,7 +3267,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_11 \
     op interface \
-    ports { x_local_2_2_11_address0 { O 6 vector } x_local_2_2_11_ce0 { O 1 bit } x_local_2_2_11_we0 { O 1 bit } x_local_2_2_11_d0 { O 8 vector } } \
+    ports { x_local_2_2_11_address0 { O 4 vector } x_local_2_2_11_ce0 { O 1 bit } x_local_2_2_11_we0 { O 1 bit } x_local_2_2_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_11'"
@@ -3286,7 +3286,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_12 \
     op interface \
-    ports { x_local_2_2_12_address0 { O 6 vector } x_local_2_2_12_ce0 { O 1 bit } x_local_2_2_12_we0 { O 1 bit } x_local_2_2_12_d0 { O 8 vector } } \
+    ports { x_local_2_2_12_address0 { O 4 vector } x_local_2_2_12_ce0 { O 1 bit } x_local_2_2_12_we0 { O 1 bit } x_local_2_2_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_12'"
@@ -3305,7 +3305,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_13 \
     op interface \
-    ports { x_local_2_2_13_address0 { O 6 vector } x_local_2_2_13_ce0 { O 1 bit } x_local_2_2_13_we0 { O 1 bit } x_local_2_2_13_d0 { O 8 vector } } \
+    ports { x_local_2_2_13_address0 { O 4 vector } x_local_2_2_13_ce0 { O 1 bit } x_local_2_2_13_we0 { O 1 bit } x_local_2_2_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_13'"
@@ -3324,7 +3324,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_14 \
     op interface \
-    ports { x_local_2_2_14_address0 { O 6 vector } x_local_2_2_14_ce0 { O 1 bit } x_local_2_2_14_we0 { O 1 bit } x_local_2_2_14_d0 { O 8 vector } } \
+    ports { x_local_2_2_14_address0 { O 4 vector } x_local_2_2_14_ce0 { O 1 bit } x_local_2_2_14_we0 { O 1 bit } x_local_2_2_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_14'"
@@ -3343,7 +3343,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_2_15 \
     op interface \
-    ports { x_local_2_2_15_address0 { O 6 vector } x_local_2_2_15_ce0 { O 1 bit } x_local_2_2_15_we0 { O 1 bit } x_local_2_2_15_d0 { O 8 vector } } \
+    ports { x_local_2_2_15_address0 { O 4 vector } x_local_2_2_15_ce0 { O 1 bit } x_local_2_2_15_we0 { O 1 bit } x_local_2_2_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_2_15'"
@@ -3362,7 +3362,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_0 \
     op interface \
-    ports { x_local_2_3_0_address0 { O 6 vector } x_local_2_3_0_ce0 { O 1 bit } x_local_2_3_0_we0 { O 1 bit } x_local_2_3_0_d0 { O 8 vector } } \
+    ports { x_local_2_3_0_address0 { O 4 vector } x_local_2_3_0_ce0 { O 1 bit } x_local_2_3_0_we0 { O 1 bit } x_local_2_3_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_0'"
@@ -3381,7 +3381,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_1 \
     op interface \
-    ports { x_local_2_3_1_address0 { O 6 vector } x_local_2_3_1_ce0 { O 1 bit } x_local_2_3_1_we0 { O 1 bit } x_local_2_3_1_d0 { O 8 vector } } \
+    ports { x_local_2_3_1_address0 { O 4 vector } x_local_2_3_1_ce0 { O 1 bit } x_local_2_3_1_we0 { O 1 bit } x_local_2_3_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_1'"
@@ -3400,7 +3400,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_2 \
     op interface \
-    ports { x_local_2_3_2_address0 { O 6 vector } x_local_2_3_2_ce0 { O 1 bit } x_local_2_3_2_we0 { O 1 bit } x_local_2_3_2_d0 { O 8 vector } } \
+    ports { x_local_2_3_2_address0 { O 4 vector } x_local_2_3_2_ce0 { O 1 bit } x_local_2_3_2_we0 { O 1 bit } x_local_2_3_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_2'"
@@ -3419,7 +3419,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_3 \
     op interface \
-    ports { x_local_2_3_3_address0 { O 6 vector } x_local_2_3_3_ce0 { O 1 bit } x_local_2_3_3_we0 { O 1 bit } x_local_2_3_3_d0 { O 8 vector } } \
+    ports { x_local_2_3_3_address0 { O 4 vector } x_local_2_3_3_ce0 { O 1 bit } x_local_2_3_3_we0 { O 1 bit } x_local_2_3_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_3'"
@@ -3438,7 +3438,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_4 \
     op interface \
-    ports { x_local_2_3_4_address0 { O 6 vector } x_local_2_3_4_ce0 { O 1 bit } x_local_2_3_4_we0 { O 1 bit } x_local_2_3_4_d0 { O 8 vector } } \
+    ports { x_local_2_3_4_address0 { O 4 vector } x_local_2_3_4_ce0 { O 1 bit } x_local_2_3_4_we0 { O 1 bit } x_local_2_3_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_4'"
@@ -3457,7 +3457,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_5 \
     op interface \
-    ports { x_local_2_3_5_address0 { O 6 vector } x_local_2_3_5_ce0 { O 1 bit } x_local_2_3_5_we0 { O 1 bit } x_local_2_3_5_d0 { O 8 vector } } \
+    ports { x_local_2_3_5_address0 { O 4 vector } x_local_2_3_5_ce0 { O 1 bit } x_local_2_3_5_we0 { O 1 bit } x_local_2_3_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_5'"
@@ -3476,7 +3476,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_6 \
     op interface \
-    ports { x_local_2_3_6_address0 { O 6 vector } x_local_2_3_6_ce0 { O 1 bit } x_local_2_3_6_we0 { O 1 bit } x_local_2_3_6_d0 { O 8 vector } } \
+    ports { x_local_2_3_6_address0 { O 4 vector } x_local_2_3_6_ce0 { O 1 bit } x_local_2_3_6_we0 { O 1 bit } x_local_2_3_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_6'"
@@ -3495,7 +3495,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_7 \
     op interface \
-    ports { x_local_2_3_7_address0 { O 6 vector } x_local_2_3_7_ce0 { O 1 bit } x_local_2_3_7_we0 { O 1 bit } x_local_2_3_7_d0 { O 8 vector } } \
+    ports { x_local_2_3_7_address0 { O 4 vector } x_local_2_3_7_ce0 { O 1 bit } x_local_2_3_7_we0 { O 1 bit } x_local_2_3_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_7'"
@@ -3514,7 +3514,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_8 \
     op interface \
-    ports { x_local_2_3_8_address0 { O 6 vector } x_local_2_3_8_ce0 { O 1 bit } x_local_2_3_8_we0 { O 1 bit } x_local_2_3_8_d0 { O 8 vector } } \
+    ports { x_local_2_3_8_address0 { O 4 vector } x_local_2_3_8_ce0 { O 1 bit } x_local_2_3_8_we0 { O 1 bit } x_local_2_3_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_8'"
@@ -3533,7 +3533,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_9 \
     op interface \
-    ports { x_local_2_3_9_address0 { O 6 vector } x_local_2_3_9_ce0 { O 1 bit } x_local_2_3_9_we0 { O 1 bit } x_local_2_3_9_d0 { O 8 vector } } \
+    ports { x_local_2_3_9_address0 { O 4 vector } x_local_2_3_9_ce0 { O 1 bit } x_local_2_3_9_we0 { O 1 bit } x_local_2_3_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_9'"
@@ -3552,7 +3552,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_10 \
     op interface \
-    ports { x_local_2_3_10_address0 { O 6 vector } x_local_2_3_10_ce0 { O 1 bit } x_local_2_3_10_we0 { O 1 bit } x_local_2_3_10_d0 { O 8 vector } } \
+    ports { x_local_2_3_10_address0 { O 4 vector } x_local_2_3_10_ce0 { O 1 bit } x_local_2_3_10_we0 { O 1 bit } x_local_2_3_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_10'"
@@ -3571,7 +3571,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_11 \
     op interface \
-    ports { x_local_2_3_11_address0 { O 6 vector } x_local_2_3_11_ce0 { O 1 bit } x_local_2_3_11_we0 { O 1 bit } x_local_2_3_11_d0 { O 8 vector } } \
+    ports { x_local_2_3_11_address0 { O 4 vector } x_local_2_3_11_ce0 { O 1 bit } x_local_2_3_11_we0 { O 1 bit } x_local_2_3_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_11'"
@@ -3590,7 +3590,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_12 \
     op interface \
-    ports { x_local_2_3_12_address0 { O 6 vector } x_local_2_3_12_ce0 { O 1 bit } x_local_2_3_12_we0 { O 1 bit } x_local_2_3_12_d0 { O 8 vector } } \
+    ports { x_local_2_3_12_address0 { O 4 vector } x_local_2_3_12_ce0 { O 1 bit } x_local_2_3_12_we0 { O 1 bit } x_local_2_3_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_12'"
@@ -3609,7 +3609,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_13 \
     op interface \
-    ports { x_local_2_3_13_address0 { O 6 vector } x_local_2_3_13_ce0 { O 1 bit } x_local_2_3_13_we0 { O 1 bit } x_local_2_3_13_d0 { O 8 vector } } \
+    ports { x_local_2_3_13_address0 { O 4 vector } x_local_2_3_13_ce0 { O 1 bit } x_local_2_3_13_we0 { O 1 bit } x_local_2_3_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_13'"
@@ -3628,7 +3628,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_14 \
     op interface \
-    ports { x_local_2_3_14_address0 { O 6 vector } x_local_2_3_14_ce0 { O 1 bit } x_local_2_3_14_we0 { O 1 bit } x_local_2_3_14_d0 { O 8 vector } } \
+    ports { x_local_2_3_14_address0 { O 4 vector } x_local_2_3_14_ce0 { O 1 bit } x_local_2_3_14_we0 { O 1 bit } x_local_2_3_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_14'"
@@ -3647,7 +3647,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_3_15 \
     op interface \
-    ports { x_local_2_3_15_address0 { O 6 vector } x_local_2_3_15_ce0 { O 1 bit } x_local_2_3_15_we0 { O 1 bit } x_local_2_3_15_d0 { O 8 vector } } \
+    ports { x_local_2_3_15_address0 { O 4 vector } x_local_2_3_15_ce0 { O 1 bit } x_local_2_3_15_we0 { O 1 bit } x_local_2_3_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_3_15'"
@@ -3666,7 +3666,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_0 \
     op interface \
-    ports { x_local_2_4_0_address0 { O 6 vector } x_local_2_4_0_ce0 { O 1 bit } x_local_2_4_0_we0 { O 1 bit } x_local_2_4_0_d0 { O 8 vector } } \
+    ports { x_local_2_4_0_address0 { O 4 vector } x_local_2_4_0_ce0 { O 1 bit } x_local_2_4_0_we0 { O 1 bit } x_local_2_4_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_0'"
@@ -3685,7 +3685,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_1 \
     op interface \
-    ports { x_local_2_4_1_address0 { O 6 vector } x_local_2_4_1_ce0 { O 1 bit } x_local_2_4_1_we0 { O 1 bit } x_local_2_4_1_d0 { O 8 vector } } \
+    ports { x_local_2_4_1_address0 { O 4 vector } x_local_2_4_1_ce0 { O 1 bit } x_local_2_4_1_we0 { O 1 bit } x_local_2_4_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_1'"
@@ -3704,7 +3704,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_2 \
     op interface \
-    ports { x_local_2_4_2_address0 { O 6 vector } x_local_2_4_2_ce0 { O 1 bit } x_local_2_4_2_we0 { O 1 bit } x_local_2_4_2_d0 { O 8 vector } } \
+    ports { x_local_2_4_2_address0 { O 4 vector } x_local_2_4_2_ce0 { O 1 bit } x_local_2_4_2_we0 { O 1 bit } x_local_2_4_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_2'"
@@ -3723,7 +3723,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_3 \
     op interface \
-    ports { x_local_2_4_3_address0 { O 6 vector } x_local_2_4_3_ce0 { O 1 bit } x_local_2_4_3_we0 { O 1 bit } x_local_2_4_3_d0 { O 8 vector } } \
+    ports { x_local_2_4_3_address0 { O 4 vector } x_local_2_4_3_ce0 { O 1 bit } x_local_2_4_3_we0 { O 1 bit } x_local_2_4_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_3'"
@@ -3742,7 +3742,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_4 \
     op interface \
-    ports { x_local_2_4_4_address0 { O 6 vector } x_local_2_4_4_ce0 { O 1 bit } x_local_2_4_4_we0 { O 1 bit } x_local_2_4_4_d0 { O 8 vector } } \
+    ports { x_local_2_4_4_address0 { O 4 vector } x_local_2_4_4_ce0 { O 1 bit } x_local_2_4_4_we0 { O 1 bit } x_local_2_4_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_4'"
@@ -3761,7 +3761,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_5 \
     op interface \
-    ports { x_local_2_4_5_address0 { O 6 vector } x_local_2_4_5_ce0 { O 1 bit } x_local_2_4_5_we0 { O 1 bit } x_local_2_4_5_d0 { O 8 vector } } \
+    ports { x_local_2_4_5_address0 { O 4 vector } x_local_2_4_5_ce0 { O 1 bit } x_local_2_4_5_we0 { O 1 bit } x_local_2_4_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_5'"
@@ -3780,7 +3780,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_6 \
     op interface \
-    ports { x_local_2_4_6_address0 { O 6 vector } x_local_2_4_6_ce0 { O 1 bit } x_local_2_4_6_we0 { O 1 bit } x_local_2_4_6_d0 { O 8 vector } } \
+    ports { x_local_2_4_6_address0 { O 4 vector } x_local_2_4_6_ce0 { O 1 bit } x_local_2_4_6_we0 { O 1 bit } x_local_2_4_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_6'"
@@ -3799,7 +3799,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_7 \
     op interface \
-    ports { x_local_2_4_7_address0 { O 6 vector } x_local_2_4_7_ce0 { O 1 bit } x_local_2_4_7_we0 { O 1 bit } x_local_2_4_7_d0 { O 8 vector } } \
+    ports { x_local_2_4_7_address0 { O 4 vector } x_local_2_4_7_ce0 { O 1 bit } x_local_2_4_7_we0 { O 1 bit } x_local_2_4_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_7'"
@@ -3818,7 +3818,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_8 \
     op interface \
-    ports { x_local_2_4_8_address0 { O 6 vector } x_local_2_4_8_ce0 { O 1 bit } x_local_2_4_8_we0 { O 1 bit } x_local_2_4_8_d0 { O 8 vector } } \
+    ports { x_local_2_4_8_address0 { O 4 vector } x_local_2_4_8_ce0 { O 1 bit } x_local_2_4_8_we0 { O 1 bit } x_local_2_4_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_8'"
@@ -3837,7 +3837,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_9 \
     op interface \
-    ports { x_local_2_4_9_address0 { O 6 vector } x_local_2_4_9_ce0 { O 1 bit } x_local_2_4_9_we0 { O 1 bit } x_local_2_4_9_d0 { O 8 vector } } \
+    ports { x_local_2_4_9_address0 { O 4 vector } x_local_2_4_9_ce0 { O 1 bit } x_local_2_4_9_we0 { O 1 bit } x_local_2_4_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_9'"
@@ -3856,7 +3856,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_10 \
     op interface \
-    ports { x_local_2_4_10_address0 { O 6 vector } x_local_2_4_10_ce0 { O 1 bit } x_local_2_4_10_we0 { O 1 bit } x_local_2_4_10_d0 { O 8 vector } } \
+    ports { x_local_2_4_10_address0 { O 4 vector } x_local_2_4_10_ce0 { O 1 bit } x_local_2_4_10_we0 { O 1 bit } x_local_2_4_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_10'"
@@ -3875,7 +3875,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_11 \
     op interface \
-    ports { x_local_2_4_11_address0 { O 6 vector } x_local_2_4_11_ce0 { O 1 bit } x_local_2_4_11_we0 { O 1 bit } x_local_2_4_11_d0 { O 8 vector } } \
+    ports { x_local_2_4_11_address0 { O 4 vector } x_local_2_4_11_ce0 { O 1 bit } x_local_2_4_11_we0 { O 1 bit } x_local_2_4_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_11'"
@@ -3894,7 +3894,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_12 \
     op interface \
-    ports { x_local_2_4_12_address0 { O 6 vector } x_local_2_4_12_ce0 { O 1 bit } x_local_2_4_12_we0 { O 1 bit } x_local_2_4_12_d0 { O 8 vector } } \
+    ports { x_local_2_4_12_address0 { O 4 vector } x_local_2_4_12_ce0 { O 1 bit } x_local_2_4_12_we0 { O 1 bit } x_local_2_4_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_12'"
@@ -3913,7 +3913,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_13 \
     op interface \
-    ports { x_local_2_4_13_address0 { O 6 vector } x_local_2_4_13_ce0 { O 1 bit } x_local_2_4_13_we0 { O 1 bit } x_local_2_4_13_d0 { O 8 vector } } \
+    ports { x_local_2_4_13_address0 { O 4 vector } x_local_2_4_13_ce0 { O 1 bit } x_local_2_4_13_we0 { O 1 bit } x_local_2_4_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_13'"
@@ -3932,7 +3932,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_14 \
     op interface \
-    ports { x_local_2_4_14_address0 { O 6 vector } x_local_2_4_14_ce0 { O 1 bit } x_local_2_4_14_we0 { O 1 bit } x_local_2_4_14_d0 { O 8 vector } } \
+    ports { x_local_2_4_14_address0 { O 4 vector } x_local_2_4_14_ce0 { O 1 bit } x_local_2_4_14_we0 { O 1 bit } x_local_2_4_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_14'"
@@ -3951,7 +3951,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_4_15 \
     op interface \
-    ports { x_local_2_4_15_address0 { O 6 vector } x_local_2_4_15_ce0 { O 1 bit } x_local_2_4_15_we0 { O 1 bit } x_local_2_4_15_d0 { O 8 vector } } \
+    ports { x_local_2_4_15_address0 { O 4 vector } x_local_2_4_15_ce0 { O 1 bit } x_local_2_4_15_we0 { O 1 bit } x_local_2_4_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_4_15'"
@@ -3970,7 +3970,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_0 \
     op interface \
-    ports { x_local_2_5_0_address0 { O 6 vector } x_local_2_5_0_ce0 { O 1 bit } x_local_2_5_0_we0 { O 1 bit } x_local_2_5_0_d0 { O 8 vector } } \
+    ports { x_local_2_5_0_address0 { O 4 vector } x_local_2_5_0_ce0 { O 1 bit } x_local_2_5_0_we0 { O 1 bit } x_local_2_5_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_0'"
@@ -3989,7 +3989,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_1 \
     op interface \
-    ports { x_local_2_5_1_address0 { O 6 vector } x_local_2_5_1_ce0 { O 1 bit } x_local_2_5_1_we0 { O 1 bit } x_local_2_5_1_d0 { O 8 vector } } \
+    ports { x_local_2_5_1_address0 { O 4 vector } x_local_2_5_1_ce0 { O 1 bit } x_local_2_5_1_we0 { O 1 bit } x_local_2_5_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_1'"
@@ -4008,7 +4008,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_2 \
     op interface \
-    ports { x_local_2_5_2_address0 { O 6 vector } x_local_2_5_2_ce0 { O 1 bit } x_local_2_5_2_we0 { O 1 bit } x_local_2_5_2_d0 { O 8 vector } } \
+    ports { x_local_2_5_2_address0 { O 4 vector } x_local_2_5_2_ce0 { O 1 bit } x_local_2_5_2_we0 { O 1 bit } x_local_2_5_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_2'"
@@ -4027,7 +4027,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_3 \
     op interface \
-    ports { x_local_2_5_3_address0 { O 6 vector } x_local_2_5_3_ce0 { O 1 bit } x_local_2_5_3_we0 { O 1 bit } x_local_2_5_3_d0 { O 8 vector } } \
+    ports { x_local_2_5_3_address0 { O 4 vector } x_local_2_5_3_ce0 { O 1 bit } x_local_2_5_3_we0 { O 1 bit } x_local_2_5_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_3'"
@@ -4046,7 +4046,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_4 \
     op interface \
-    ports { x_local_2_5_4_address0 { O 6 vector } x_local_2_5_4_ce0 { O 1 bit } x_local_2_5_4_we0 { O 1 bit } x_local_2_5_4_d0 { O 8 vector } } \
+    ports { x_local_2_5_4_address0 { O 4 vector } x_local_2_5_4_ce0 { O 1 bit } x_local_2_5_4_we0 { O 1 bit } x_local_2_5_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_4'"
@@ -4065,7 +4065,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_5 \
     op interface \
-    ports { x_local_2_5_5_address0 { O 6 vector } x_local_2_5_5_ce0 { O 1 bit } x_local_2_5_5_we0 { O 1 bit } x_local_2_5_5_d0 { O 8 vector } } \
+    ports { x_local_2_5_5_address0 { O 4 vector } x_local_2_5_5_ce0 { O 1 bit } x_local_2_5_5_we0 { O 1 bit } x_local_2_5_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_5'"
@@ -4084,7 +4084,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_6 \
     op interface \
-    ports { x_local_2_5_6_address0 { O 6 vector } x_local_2_5_6_ce0 { O 1 bit } x_local_2_5_6_we0 { O 1 bit } x_local_2_5_6_d0 { O 8 vector } } \
+    ports { x_local_2_5_6_address0 { O 4 vector } x_local_2_5_6_ce0 { O 1 bit } x_local_2_5_6_we0 { O 1 bit } x_local_2_5_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_6'"
@@ -4103,7 +4103,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_7 \
     op interface \
-    ports { x_local_2_5_7_address0 { O 6 vector } x_local_2_5_7_ce0 { O 1 bit } x_local_2_5_7_we0 { O 1 bit } x_local_2_5_7_d0 { O 8 vector } } \
+    ports { x_local_2_5_7_address0 { O 4 vector } x_local_2_5_7_ce0 { O 1 bit } x_local_2_5_7_we0 { O 1 bit } x_local_2_5_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_7'"
@@ -4122,7 +4122,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_8 \
     op interface \
-    ports { x_local_2_5_8_address0 { O 6 vector } x_local_2_5_8_ce0 { O 1 bit } x_local_2_5_8_we0 { O 1 bit } x_local_2_5_8_d0 { O 8 vector } } \
+    ports { x_local_2_5_8_address0 { O 4 vector } x_local_2_5_8_ce0 { O 1 bit } x_local_2_5_8_we0 { O 1 bit } x_local_2_5_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_8'"
@@ -4141,7 +4141,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_9 \
     op interface \
-    ports { x_local_2_5_9_address0 { O 6 vector } x_local_2_5_9_ce0 { O 1 bit } x_local_2_5_9_we0 { O 1 bit } x_local_2_5_9_d0 { O 8 vector } } \
+    ports { x_local_2_5_9_address0 { O 4 vector } x_local_2_5_9_ce0 { O 1 bit } x_local_2_5_9_we0 { O 1 bit } x_local_2_5_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_9'"
@@ -4160,7 +4160,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_10 \
     op interface \
-    ports { x_local_2_5_10_address0 { O 6 vector } x_local_2_5_10_ce0 { O 1 bit } x_local_2_5_10_we0 { O 1 bit } x_local_2_5_10_d0 { O 8 vector } } \
+    ports { x_local_2_5_10_address0 { O 4 vector } x_local_2_5_10_ce0 { O 1 bit } x_local_2_5_10_we0 { O 1 bit } x_local_2_5_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_10'"
@@ -4179,7 +4179,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_11 \
     op interface \
-    ports { x_local_2_5_11_address0 { O 6 vector } x_local_2_5_11_ce0 { O 1 bit } x_local_2_5_11_we0 { O 1 bit } x_local_2_5_11_d0 { O 8 vector } } \
+    ports { x_local_2_5_11_address0 { O 4 vector } x_local_2_5_11_ce0 { O 1 bit } x_local_2_5_11_we0 { O 1 bit } x_local_2_5_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_11'"
@@ -4198,7 +4198,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_12 \
     op interface \
-    ports { x_local_2_5_12_address0 { O 6 vector } x_local_2_5_12_ce0 { O 1 bit } x_local_2_5_12_we0 { O 1 bit } x_local_2_5_12_d0 { O 8 vector } } \
+    ports { x_local_2_5_12_address0 { O 4 vector } x_local_2_5_12_ce0 { O 1 bit } x_local_2_5_12_we0 { O 1 bit } x_local_2_5_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_12'"
@@ -4217,7 +4217,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_13 \
     op interface \
-    ports { x_local_2_5_13_address0 { O 6 vector } x_local_2_5_13_ce0 { O 1 bit } x_local_2_5_13_we0 { O 1 bit } x_local_2_5_13_d0 { O 8 vector } } \
+    ports { x_local_2_5_13_address0 { O 4 vector } x_local_2_5_13_ce0 { O 1 bit } x_local_2_5_13_we0 { O 1 bit } x_local_2_5_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_13'"
@@ -4236,7 +4236,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_14 \
     op interface \
-    ports { x_local_2_5_14_address0 { O 6 vector } x_local_2_5_14_ce0 { O 1 bit } x_local_2_5_14_we0 { O 1 bit } x_local_2_5_14_d0 { O 8 vector } } \
+    ports { x_local_2_5_14_address0 { O 4 vector } x_local_2_5_14_ce0 { O 1 bit } x_local_2_5_14_we0 { O 1 bit } x_local_2_5_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_14'"
@@ -4255,7 +4255,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_5_15 \
     op interface \
-    ports { x_local_2_5_15_address0 { O 6 vector } x_local_2_5_15_ce0 { O 1 bit } x_local_2_5_15_we0 { O 1 bit } x_local_2_5_15_d0 { O 8 vector } } \
+    ports { x_local_2_5_15_address0 { O 4 vector } x_local_2_5_15_ce0 { O 1 bit } x_local_2_5_15_we0 { O 1 bit } x_local_2_5_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_5_15'"
@@ -4274,7 +4274,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_0 \
     op interface \
-    ports { x_local_2_6_0_address0 { O 6 vector } x_local_2_6_0_ce0 { O 1 bit } x_local_2_6_0_we0 { O 1 bit } x_local_2_6_0_d0 { O 8 vector } } \
+    ports { x_local_2_6_0_address0 { O 4 vector } x_local_2_6_0_ce0 { O 1 bit } x_local_2_6_0_we0 { O 1 bit } x_local_2_6_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_0'"
@@ -4293,7 +4293,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_1 \
     op interface \
-    ports { x_local_2_6_1_address0 { O 6 vector } x_local_2_6_1_ce0 { O 1 bit } x_local_2_6_1_we0 { O 1 bit } x_local_2_6_1_d0 { O 8 vector } } \
+    ports { x_local_2_6_1_address0 { O 4 vector } x_local_2_6_1_ce0 { O 1 bit } x_local_2_6_1_we0 { O 1 bit } x_local_2_6_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_1'"
@@ -4312,7 +4312,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_2 \
     op interface \
-    ports { x_local_2_6_2_address0 { O 6 vector } x_local_2_6_2_ce0 { O 1 bit } x_local_2_6_2_we0 { O 1 bit } x_local_2_6_2_d0 { O 8 vector } } \
+    ports { x_local_2_6_2_address0 { O 4 vector } x_local_2_6_2_ce0 { O 1 bit } x_local_2_6_2_we0 { O 1 bit } x_local_2_6_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_2'"
@@ -4331,7 +4331,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_3 \
     op interface \
-    ports { x_local_2_6_3_address0 { O 6 vector } x_local_2_6_3_ce0 { O 1 bit } x_local_2_6_3_we0 { O 1 bit } x_local_2_6_3_d0 { O 8 vector } } \
+    ports { x_local_2_6_3_address0 { O 4 vector } x_local_2_6_3_ce0 { O 1 bit } x_local_2_6_3_we0 { O 1 bit } x_local_2_6_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_3'"
@@ -4350,7 +4350,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_4 \
     op interface \
-    ports { x_local_2_6_4_address0 { O 6 vector } x_local_2_6_4_ce0 { O 1 bit } x_local_2_6_4_we0 { O 1 bit } x_local_2_6_4_d0 { O 8 vector } } \
+    ports { x_local_2_6_4_address0 { O 4 vector } x_local_2_6_4_ce0 { O 1 bit } x_local_2_6_4_we0 { O 1 bit } x_local_2_6_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_4'"
@@ -4369,7 +4369,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_5 \
     op interface \
-    ports { x_local_2_6_5_address0 { O 6 vector } x_local_2_6_5_ce0 { O 1 bit } x_local_2_6_5_we0 { O 1 bit } x_local_2_6_5_d0 { O 8 vector } } \
+    ports { x_local_2_6_5_address0 { O 4 vector } x_local_2_6_5_ce0 { O 1 bit } x_local_2_6_5_we0 { O 1 bit } x_local_2_6_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_5'"
@@ -4388,7 +4388,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_6 \
     op interface \
-    ports { x_local_2_6_6_address0 { O 6 vector } x_local_2_6_6_ce0 { O 1 bit } x_local_2_6_6_we0 { O 1 bit } x_local_2_6_6_d0 { O 8 vector } } \
+    ports { x_local_2_6_6_address0 { O 4 vector } x_local_2_6_6_ce0 { O 1 bit } x_local_2_6_6_we0 { O 1 bit } x_local_2_6_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_6'"
@@ -4407,7 +4407,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_7 \
     op interface \
-    ports { x_local_2_6_7_address0 { O 6 vector } x_local_2_6_7_ce0 { O 1 bit } x_local_2_6_7_we0 { O 1 bit } x_local_2_6_7_d0 { O 8 vector } } \
+    ports { x_local_2_6_7_address0 { O 4 vector } x_local_2_6_7_ce0 { O 1 bit } x_local_2_6_7_we0 { O 1 bit } x_local_2_6_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_7'"
@@ -4426,7 +4426,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_8 \
     op interface \
-    ports { x_local_2_6_8_address0 { O 6 vector } x_local_2_6_8_ce0 { O 1 bit } x_local_2_6_8_we0 { O 1 bit } x_local_2_6_8_d0 { O 8 vector } } \
+    ports { x_local_2_6_8_address0 { O 4 vector } x_local_2_6_8_ce0 { O 1 bit } x_local_2_6_8_we0 { O 1 bit } x_local_2_6_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_8'"
@@ -4445,7 +4445,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_9 \
     op interface \
-    ports { x_local_2_6_9_address0 { O 6 vector } x_local_2_6_9_ce0 { O 1 bit } x_local_2_6_9_we0 { O 1 bit } x_local_2_6_9_d0 { O 8 vector } } \
+    ports { x_local_2_6_9_address0 { O 4 vector } x_local_2_6_9_ce0 { O 1 bit } x_local_2_6_9_we0 { O 1 bit } x_local_2_6_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_9'"
@@ -4464,7 +4464,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_10 \
     op interface \
-    ports { x_local_2_6_10_address0 { O 6 vector } x_local_2_6_10_ce0 { O 1 bit } x_local_2_6_10_we0 { O 1 bit } x_local_2_6_10_d0 { O 8 vector } } \
+    ports { x_local_2_6_10_address0 { O 4 vector } x_local_2_6_10_ce0 { O 1 bit } x_local_2_6_10_we0 { O 1 bit } x_local_2_6_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_10'"
@@ -4483,7 +4483,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_11 \
     op interface \
-    ports { x_local_2_6_11_address0 { O 6 vector } x_local_2_6_11_ce0 { O 1 bit } x_local_2_6_11_we0 { O 1 bit } x_local_2_6_11_d0 { O 8 vector } } \
+    ports { x_local_2_6_11_address0 { O 4 vector } x_local_2_6_11_ce0 { O 1 bit } x_local_2_6_11_we0 { O 1 bit } x_local_2_6_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_11'"
@@ -4502,7 +4502,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_12 \
     op interface \
-    ports { x_local_2_6_12_address0 { O 6 vector } x_local_2_6_12_ce0 { O 1 bit } x_local_2_6_12_we0 { O 1 bit } x_local_2_6_12_d0 { O 8 vector } } \
+    ports { x_local_2_6_12_address0 { O 4 vector } x_local_2_6_12_ce0 { O 1 bit } x_local_2_6_12_we0 { O 1 bit } x_local_2_6_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_12'"
@@ -4521,7 +4521,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_13 \
     op interface \
-    ports { x_local_2_6_13_address0 { O 6 vector } x_local_2_6_13_ce0 { O 1 bit } x_local_2_6_13_we0 { O 1 bit } x_local_2_6_13_d0 { O 8 vector } } \
+    ports { x_local_2_6_13_address0 { O 4 vector } x_local_2_6_13_ce0 { O 1 bit } x_local_2_6_13_we0 { O 1 bit } x_local_2_6_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_13'"
@@ -4540,7 +4540,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_14 \
     op interface \
-    ports { x_local_2_6_14_address0 { O 6 vector } x_local_2_6_14_ce0 { O 1 bit } x_local_2_6_14_we0 { O 1 bit } x_local_2_6_14_d0 { O 8 vector } } \
+    ports { x_local_2_6_14_address0 { O 4 vector } x_local_2_6_14_ce0 { O 1 bit } x_local_2_6_14_we0 { O 1 bit } x_local_2_6_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_14'"
@@ -4559,7 +4559,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_6_15 \
     op interface \
-    ports { x_local_2_6_15_address0 { O 6 vector } x_local_2_6_15_ce0 { O 1 bit } x_local_2_6_15_we0 { O 1 bit } x_local_2_6_15_d0 { O 8 vector } } \
+    ports { x_local_2_6_15_address0 { O 4 vector } x_local_2_6_15_ce0 { O 1 bit } x_local_2_6_15_we0 { O 1 bit } x_local_2_6_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_6_15'"
@@ -4578,7 +4578,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_0 \
     op interface \
-    ports { x_local_2_7_0_address0 { O 6 vector } x_local_2_7_0_ce0 { O 1 bit } x_local_2_7_0_we0 { O 1 bit } x_local_2_7_0_d0 { O 8 vector } } \
+    ports { x_local_2_7_0_address0 { O 4 vector } x_local_2_7_0_ce0 { O 1 bit } x_local_2_7_0_we0 { O 1 bit } x_local_2_7_0_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_0'"
@@ -4597,7 +4597,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_1 \
     op interface \
-    ports { x_local_2_7_1_address0 { O 6 vector } x_local_2_7_1_ce0 { O 1 bit } x_local_2_7_1_we0 { O 1 bit } x_local_2_7_1_d0 { O 8 vector } } \
+    ports { x_local_2_7_1_address0 { O 4 vector } x_local_2_7_1_ce0 { O 1 bit } x_local_2_7_1_we0 { O 1 bit } x_local_2_7_1_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_1'"
@@ -4616,7 +4616,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_2 \
     op interface \
-    ports { x_local_2_7_2_address0 { O 6 vector } x_local_2_7_2_ce0 { O 1 bit } x_local_2_7_2_we0 { O 1 bit } x_local_2_7_2_d0 { O 8 vector } } \
+    ports { x_local_2_7_2_address0 { O 4 vector } x_local_2_7_2_ce0 { O 1 bit } x_local_2_7_2_we0 { O 1 bit } x_local_2_7_2_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_2'"
@@ -4635,7 +4635,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_3 \
     op interface \
-    ports { x_local_2_7_3_address0 { O 6 vector } x_local_2_7_3_ce0 { O 1 bit } x_local_2_7_3_we0 { O 1 bit } x_local_2_7_3_d0 { O 8 vector } } \
+    ports { x_local_2_7_3_address0 { O 4 vector } x_local_2_7_3_ce0 { O 1 bit } x_local_2_7_3_we0 { O 1 bit } x_local_2_7_3_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_3'"
@@ -4654,7 +4654,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_4 \
     op interface \
-    ports { x_local_2_7_4_address0 { O 6 vector } x_local_2_7_4_ce0 { O 1 bit } x_local_2_7_4_we0 { O 1 bit } x_local_2_7_4_d0 { O 8 vector } } \
+    ports { x_local_2_7_4_address0 { O 4 vector } x_local_2_7_4_ce0 { O 1 bit } x_local_2_7_4_we0 { O 1 bit } x_local_2_7_4_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_4'"
@@ -4673,7 +4673,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_5 \
     op interface \
-    ports { x_local_2_7_5_address0 { O 6 vector } x_local_2_7_5_ce0 { O 1 bit } x_local_2_7_5_we0 { O 1 bit } x_local_2_7_5_d0 { O 8 vector } } \
+    ports { x_local_2_7_5_address0 { O 4 vector } x_local_2_7_5_ce0 { O 1 bit } x_local_2_7_5_we0 { O 1 bit } x_local_2_7_5_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_5'"
@@ -4692,7 +4692,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_6 \
     op interface \
-    ports { x_local_2_7_6_address0 { O 6 vector } x_local_2_7_6_ce0 { O 1 bit } x_local_2_7_6_we0 { O 1 bit } x_local_2_7_6_d0 { O 8 vector } } \
+    ports { x_local_2_7_6_address0 { O 4 vector } x_local_2_7_6_ce0 { O 1 bit } x_local_2_7_6_we0 { O 1 bit } x_local_2_7_6_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_6'"
@@ -4711,7 +4711,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_7 \
     op interface \
-    ports { x_local_2_7_7_address0 { O 6 vector } x_local_2_7_7_ce0 { O 1 bit } x_local_2_7_7_we0 { O 1 bit } x_local_2_7_7_d0 { O 8 vector } } \
+    ports { x_local_2_7_7_address0 { O 4 vector } x_local_2_7_7_ce0 { O 1 bit } x_local_2_7_7_we0 { O 1 bit } x_local_2_7_7_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_7'"
@@ -4730,7 +4730,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_8 \
     op interface \
-    ports { x_local_2_7_8_address0 { O 6 vector } x_local_2_7_8_ce0 { O 1 bit } x_local_2_7_8_we0 { O 1 bit } x_local_2_7_8_d0 { O 8 vector } } \
+    ports { x_local_2_7_8_address0 { O 4 vector } x_local_2_7_8_ce0 { O 1 bit } x_local_2_7_8_we0 { O 1 bit } x_local_2_7_8_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_8'"
@@ -4749,7 +4749,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_9 \
     op interface \
-    ports { x_local_2_7_9_address0 { O 6 vector } x_local_2_7_9_ce0 { O 1 bit } x_local_2_7_9_we0 { O 1 bit } x_local_2_7_9_d0 { O 8 vector } } \
+    ports { x_local_2_7_9_address0 { O 4 vector } x_local_2_7_9_ce0 { O 1 bit } x_local_2_7_9_we0 { O 1 bit } x_local_2_7_9_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_9'"
@@ -4768,7 +4768,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_10 \
     op interface \
-    ports { x_local_2_7_10_address0 { O 6 vector } x_local_2_7_10_ce0 { O 1 bit } x_local_2_7_10_we0 { O 1 bit } x_local_2_7_10_d0 { O 8 vector } } \
+    ports { x_local_2_7_10_address0 { O 4 vector } x_local_2_7_10_ce0 { O 1 bit } x_local_2_7_10_we0 { O 1 bit } x_local_2_7_10_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_10'"
@@ -4787,7 +4787,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_11 \
     op interface \
-    ports { x_local_2_7_11_address0 { O 6 vector } x_local_2_7_11_ce0 { O 1 bit } x_local_2_7_11_we0 { O 1 bit } x_local_2_7_11_d0 { O 8 vector } } \
+    ports { x_local_2_7_11_address0 { O 4 vector } x_local_2_7_11_ce0 { O 1 bit } x_local_2_7_11_we0 { O 1 bit } x_local_2_7_11_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_11'"
@@ -4806,7 +4806,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_12 \
     op interface \
-    ports { x_local_2_7_12_address0 { O 6 vector } x_local_2_7_12_ce0 { O 1 bit } x_local_2_7_12_we0 { O 1 bit } x_local_2_7_12_d0 { O 8 vector } } \
+    ports { x_local_2_7_12_address0 { O 4 vector } x_local_2_7_12_ce0 { O 1 bit } x_local_2_7_12_we0 { O 1 bit } x_local_2_7_12_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_12'"
@@ -4825,7 +4825,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_13 \
     op interface \
-    ports { x_local_2_7_13_address0 { O 6 vector } x_local_2_7_13_ce0 { O 1 bit } x_local_2_7_13_we0 { O 1 bit } x_local_2_7_13_d0 { O 8 vector } } \
+    ports { x_local_2_7_13_address0 { O 4 vector } x_local_2_7_13_ce0 { O 1 bit } x_local_2_7_13_we0 { O 1 bit } x_local_2_7_13_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_13'"
@@ -4844,7 +4844,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_14 \
     op interface \
-    ports { x_local_2_7_14_address0 { O 6 vector } x_local_2_7_14_ce0 { O 1 bit } x_local_2_7_14_we0 { O 1 bit } x_local_2_7_14_d0 { O 8 vector } } \
+    ports { x_local_2_7_14_address0 { O 4 vector } x_local_2_7_14_ce0 { O 1 bit } x_local_2_7_14_we0 { O 1 bit } x_local_2_7_14_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_14'"
@@ -4863,7 +4863,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename x_local_2_7_15 \
     op interface \
-    ports { x_local_2_7_15_address0 { O 6 vector } x_local_2_7_15_ce0 { O 1 bit } x_local_2_7_15_we0 { O 1 bit } x_local_2_7_15_d0 { O 8 vector } } \
+    ports { x_local_2_7_15_address0 { O 4 vector } x_local_2_7_15_ce0 { O 1 bit } x_local_2_7_15_we0 { O 1 bit } x_local_2_7_15_d0 { O 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_local_2_7_15'"
@@ -4966,9 +4966,9 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 
 # flow_control definition:
-set InstName swiglu_flow_control_loop_delay_pipe_U
-set CompName swiglu_flow_control_loop_delay_pipe
-set name flow_control_loop_delay_pipe
+set InstName swiglu_flow_control_loop_pipe_U
+set CompName swiglu_flow_control_loop_pipe
+set name flow_control_loop_pipe
 if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control] == "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control { \

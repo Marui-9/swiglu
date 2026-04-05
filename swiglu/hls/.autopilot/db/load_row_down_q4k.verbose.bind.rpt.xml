@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_row_down_q4k'" level="0">
-<item name = "Date">Thu Apr  2 14:55:59 2026
+<item name = "Date">Sun Apr  5 16:06:42 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 2.920 ns, 1.08 ns</column>
+<column name="ap_clk">3.33 ns, 2.433 ns, 0.90 ns</column>
 </table>
 </item>
 </section>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">364, 364, 1.456 us, 1.456 us, 364, 364, no</column>
+<column name="">364, 364, 1.213 us, 1.213 us, 364, 364, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_311_1_fu_97">load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_311_1, 291, 291, 1.164 us, 1.164 us, 289, 289, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_337_1_fu_97">load_row_down_q4k_Pipeline_LOAD_DOWN_Q4K_VITIS_LOOP_337_1, 291, 291, 0.970 us, 0.970 us, 289, 289, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

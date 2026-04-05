@@ -1,4 +1,4 @@
-6 warnings and 14 errors generated.
+4 warnings and 20 errors generated.
 Error while processing C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp.
-clang-tidy applied 25 of 25 suggested fixes.
-Suppressed 6 warnings (6 with check filters).
+clang-tidy applied 22 of 22 suggested fixes.
+Suppressed 4 warnings (4 with check filters).

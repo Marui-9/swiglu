@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'mac_blocks_down_q4k7'
 ================================================================
-* Date:           Thu Apr  2 14:56:58 2026
+* Date:           Sun Apr  5 16:07:29 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -20,7 +20,7 @@
     +--------+---------+----------+------------+
     |  Clock |  Target | Estimated| Uncertainty|
     +--------+---------+----------+------------+
-    |ap_clk  |  4.00 ns|  3.239 ns|     1.08 ns|
+    |ap_clk  |  3.33 ns|  2.431 ns|     0.90 ns|
     +--------+---------+----------+------------+
 
 + Latency: 
@@ -29,22 +29,27 @@
     |  Latency (cycles) |  Latency (absolute) |   Interval  | Pipeline|
     |   min   |   max   |    min   |    max   |  min |  max |   Type  |
     +---------+---------+----------+----------+------+------+---------+
-    |     1429|     1429|  5.716 us|  5.716 us|  1429|  1429|       no|
+    |     1209|     1209|  4.030 us|  4.030 us|  1209|  1209|       no|
     +---------+---------+----------+----------+------+------+---------+
 
     + Detail: 
         * Instance: 
-        +----------------------------------------------------------------------+----------------------------------------------------------+---------+---------+----------+----------+------+------+------------------------------------------------+
-        |                                                                      |                                                          |  Latency (cycles) |  Latency (absolute) |   Interval  |                    Pipeline                    |
-        |                               Instance                               |                          Module                          |   min   |   max   |    min   |    max   |  min |  max |                      Type                      |
-        +----------------------------------------------------------------------+----------------------------------------------------------+---------+---------+----------+----------+------+------+------------------------------------------------+
-        |grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416             |mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN             |       39|       39|  0.156 us|  0.156 us|    33|    33|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_379_2_MAC_GROUP_fu_5012  |mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_379_2_MAC_GROUP  |     1031|     1031|  4.124 us|  4.124 us|  1025|  1025|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072             |mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K             |      353|      353|  1.412 us|  1.412 us|   340|   340|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        +----------------------------------------------------------------------+----------------------------------------------------------+---------+---------+----------+----------+------+------+------------------------------------------------+
+        +-----------------------------------------------------------+-----------------------------------------------+---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+        |                                                           |                                               |  Latency (cycles) |   Latency (absolute)  |  Interval |                    Pipeline                    |
+        |                          Instance                         |                     Module                    |   min   |   max   |    min    |    max    | min | max |                      Type                      |
+        +-----------------------------------------------------------+-----------------------------------------------+---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+        |grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_2978  |mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN  |       40|       40|   0.133 us|   0.133 us|   33|   33|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_mac_blocks_down_q4k7_Pipeline_MAC_GROUP_fu_3574        |mac_blocks_down_q4k7_Pipeline_MAC_GROUP        |      264|      264|   0.880 us|   0.880 us|  257|  257|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_mac_blocks_down_q4k7_Pipeline_REDUCE_G_fu_4253         |mac_blocks_down_q4k7_Pipeline_REDUCE_G         |       20|       20|  66.660 ns|  66.660 ns|    9|    9|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        +-----------------------------------------------------------+-----------------------------------------------+---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
 
         * Loop: 
-        N/A
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_402_1  |     1156|     1156|       289|          -|          -|     4|        no|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
 
@@ -56,31 +61,34 @@
 |       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
 +-----------------+---------+------+--------+--------+-----+
 |DSP              |        -|     -|       -|       -|    -|
-|Expression       |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|    1098|    -|
 |FIFO             |        -|     -|       -|       -|    -|
-|Instance         |        -|    18|   60036|   37157|    -|
+|Instance         |        -|    31|   49471|   28294|    -|
 |Memory           |        -|     -|       -|       -|    -|
-|Multiplexer      |        -|     -|       0|     322|    -|
-|Register         |        -|     -|      10|       -|    -|
+|Multiplexer      |        -|     -|       0|     348|    -|
+|Register         |        -|     -|     526|       -|    -|
 +-----------------+---------+------+--------+--------+-----+
-|Total            |        0|    18|   60046|   37479|    0|
+|Total            |        0|    31|   49997|   29740|    0|
 +-----------------+---------+------+--------+--------+-----+
 |Available        |      288|  1248|  234240|  117120|   64|
 +-----------------+---------+------+--------+--------+-----+
-|Utilization (%)  |        0|     1|      25|      32|    0|
+|Utilization (%)  |        0|     2|      21|      25|    0|
 +-----------------+---------+------+--------+--------+-----+
 
 + Detail: 
     * Instance: 
-    +----------------------------------------------------------------------+----------------------------------------------------------+---------+----+-------+-------+-----+
-    |                               Instance                               |                          Module                          | BRAM_18K| DSP|   FF  |  LUT  | URAM|
-    +----------------------------------------------------------------------+----------------------------------------------------------+---------+----+-------+-------+-----+
-    |grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072             |mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K             |        0|   2|   1396|   3911|    0|
-    |grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416             |mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN             |        0|   0|  41180|  16556|    0|
-    |grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_379_2_MAC_GROUP_fu_5012  |mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_379_2_MAC_GROUP  |        0|  16|  17460|  16690|    0|
-    +----------------------------------------------------------------------+----------------------------------------------------------+---------+----+-------+-------+-----+
-    |Total                                                                 |                                                          |        0|  18|  60036|  37157|    0|
-    +----------------------------------------------------------------------+----------------------------------------------------------+---------+----+-------+-------+-----+
+    +-----------------------------------------------------------+-----------------------------------------------+---------+----+-------+-------+-----+
+    |                          Instance                         |                     Module                    | BRAM_18K| DSP|   FF  |  LUT  | URAM|
+    +-----------------------------------------------------------+-----------------------------------------------+---------+----+-------+-------+-----+
+    |bitselect_1ns_56ns_6ns_1_1_1_U3964                         |bitselect_1ns_56ns_6ns_1_1_1                   |        0|   0|      0|     17|    0|
+    |ctlz_56_56_1_1_U3963                                       |ctlz_56_56_1_1                                 |        0|   0|      0|     80|    0|
+    |fmul_32ns_32ns_32_7_max_dsp_1_U3962                        |fmul_32ns_32ns_32_7_max_dsp_1                  |        0|   3|    197|    123|    0|
+    |grp_mac_blocks_down_q4k7_Pipeline_MAC_GROUP_fu_3574        |mac_blocks_down_q4k7_Pipeline_MAC_GROUP        |        0|  16|   5160|   7137|    0|
+    |grp_mac_blocks_down_q4k7_Pipeline_REDUCE_G_fu_4253         |mac_blocks_down_q4k7_Pipeline_REDUCE_G         |        0|  12|   2154|   3351|    0|
+    |grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_2978  |mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN  |        0|   0|  41960|  17586|    0|
+    +-----------------------------------------------------------+-----------------------------------------------+---------+----+-------+-------+-----+
+    |Total                                                      |                                               |        0|  31|  49471|  28294|    0|
+    +-----------------------------------------------------------+-----------------------------------------------+---------+----+-------+-------+-----+
 
     * DSP: 
     N/A
@@ -92,49 +100,100 @@
     N/A
 
     * Expression: 
-    N/A
+    +---------------------------+----------+----+---+-----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT | Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+-----+------------+------------+
+    |add_ln402_fu_6208_p2       |         +|   0|  0|   10|           3|           1|
+    |add_ln449_1_fu_6948_p2     |         +|   0|  0|   13|           6|           6|
+    |add_ln449_2_fu_6996_p2     |         +|   0|  0|   64|          57|          57|
+    |add_ln449_3_fu_7041_p2     |         +|   0|  0|   15|           8|           8|
+    |add_ln449_fu_6857_p2       |         +|   0|  0|   14|           7|           6|
+    |sub_ln449_1_fu_6842_p2     |         -|   0|  0|   13|           5|           6|
+    |sub_ln449_2_fu_6966_p2     |         -|   0|  0|   13|           5|           6|
+    |sub_ln449_3_fu_7032_p2     |         -|   0|  0|   14|           6|           7|
+    |sub_ln449_4_fu_6848_p2     |         -|   0|  0|   13|           5|           6|
+    |sub_ln449_fu_6266_p2       |         -|   0|  0|   63|           1|          56|
+    |pi_assign_fu_7054_p5       |      1003|   0|  0|    2|          64|           9|
+    |and_ln449_fu_6892_p2       |       and|   0|  0|   56|          56|          56|
+    |phi_ln449_1_fu_6930_p2     |       and|   0|  0|    2|           1|           1|
+    |phi_ln449_fu_6903_p2       |       and|   0|  0|    2|           1|           1|
+    |icmp_ln402_fu_6202_p2      |      icmp|   0|  0|   12|           3|           4|
+    |icmp_ln449_1_fu_6877_p2    |      icmp|   0|  0|   13|           6|           1|
+    |icmp_ln449_2_fu_6897_p2    |      icmp|   0|  0|   63|          56|           1|
+    |icmp_ln449_3_fu_6942_p2    |      icmp|   0|  0|   14|           7|           1|
+    |icmp_ln449_fu_6252_p2      |      icmp|   0|  0|   63|          56|           1|
+    |lshr_ln449_2_fu_6886_p2    |      lshr|   0|  0|  162|           2|          56|
+    |lshr_ln449_fu_6961_p2      |      lshr|   0|  0|  162|          56|          56|
+    |or_ln449_fu_6936_p2        |        or|   0|  0|    2|           1|           1|
+    |cond49_i_i_in_fu_6984_p3   |    select|   0|  0|   55|           1|          56|
+    |retval_0_i_i_fu_7074_p3    |    select|   0|  0|   32|           1|           1|
+    |select_ln449_1_fu_7024_p3  |    select|   0|  0|    7|           1|           7|
+    |select_ln449_fu_6272_p3    |    select|   0|  0|   55|           1|          56|
+    |shl_ln449_fu_6979_p2       |       shl|   0|  0|  162|          56|          56|
+    |xor_ln449_fu_6917_p2       |       xor|   0|  0|    2|           1|           2|
+    +---------------------------+----------+----+---+-----+------------+------------+
+    |Total                      |          |   0|  0| 1098|         473|         525|
+    +---------------------------+----------+----+---+-----+------------+------------+
 
     * Multiplexer: 
-    +---------------------------------+----+-----------+-----+-----------+
-    |               Name              | LUT| Input Size| Bits| Total Bits|
-    +---------------------------------+----+-----------+-----+-----------+
-    |ap_NS_fsm                        |  43|          8|    1|          8|
-    |grp_fp16_to_fp32_fu_20813_ap_ce  |  14|          3|    1|          3|
-    |grp_fp16_to_fp32_fu_20817_ap_ce  |  14|          3|    1|          3|
-    |grp_fu_20821_ce                  |   9|          2|    1|          2|
-    |grp_fu_20825_ce                  |   9|          2|    1|          2|
-    |grp_fu_20829_ce                  |   9|          2|    1|          2|
-    |rb_0_address0                    |  14|          3|    6|         18|
-    |rb_0_ce0                         |  14|          3|    1|          3|
-    |rb_1_address0                    |  14|          3|    6|         18|
-    |rb_1_ce0                         |  14|          3|    1|          3|
-    |rb_2_address0                    |  14|          3|    6|         18|
-    |rb_2_ce0                         |  14|          3|    1|          3|
-    |rb_3_address0                    |  14|          3|    6|         18|
-    |rb_3_ce0                         |  14|          3|    1|          3|
-    |rb_4_address0                    |  14|          3|    6|         18|
-    |rb_4_ce0                         |  14|          3|    1|          3|
-    |rb_5_address0                    |  14|          3|    6|         18|
-    |rb_5_ce0                         |  14|          3|    1|          3|
-    |rb_6_address0                    |  14|          3|    6|         18|
-    |rb_6_ce0                         |  14|          3|    1|          3|
-    |rb_7_address0                    |  14|          3|    6|         18|
-    |rb_7_ce0                         |  14|          3|    1|          3|
-    +---------------------------------+----+-----------+-----+-----------+
-    |Total                            | 322|         68|   62|        188|
-    +---------------------------------+----+-----------+-----+-----------+
+    +---------------+----+-----------+-----+-----------+
+    |      Name     | LUT| Input Size| Bits| Total Bits|
+    +---------------+----+-----------+-----+-----------+
+    |ap_NS_fsm      |  97|         19|    1|         19|
+    |ap_return      |   9|          2|   32|         64|
+    |g_fu_148       |   9|          2|    3|          6|
+    |rb_0_address0  |  14|          3|    6|         18|
+    |rb_0_ce0       |  14|          3|    1|          3|
+    |rb_1_address0  |  14|          3|    6|         18|
+    |rb_1_ce0       |  14|          3|    1|          3|
+    |rb_2_address0  |  14|          3|    6|         18|
+    |rb_2_ce0       |  14|          3|    1|          3|
+    |rb_3_address0  |  14|          3|    6|         18|
+    |rb_3_ce0       |  14|          3|    1|          3|
+    |rb_4_address0  |  14|          3|    6|         18|
+    |rb_4_ce0       |  14|          3|    1|          3|
+    |rb_5_address0  |  14|          3|    6|         18|
+    |rb_5_ce0       |  14|          3|    1|          3|
+    |rb_6_address0  |  14|          3|    6|         18|
+    |rb_6_ce0       |  14|          3|    1|          3|
+    |rb_7_address0  |  14|          3|    6|         18|
+    |rb_7_ce0       |  14|          3|    1|          3|
+    |total_fu_144   |   9|          2|   56|        112|
+    +---------------+----+-----------+-----+-----------+
+    |Total          | 348|         73|  148|        369|
+    +---------------+----+-----------+-----+-----------+
 
     * Register: 
-    +-----------------------------------------------------------------------------------+---+----+-----+-----------+
-    |                                        Name                                       | FF| LUT| Bits| Const Bits|
-    +-----------------------------------------------------------------------------------+---+----+-----+-----------+
-    |ap_CS_fsm                                                                          |  7|   0|    7|          0|
-    |grp_mac_blocks_down_q4k7_Pipeline_REDUCE_DOWN_Q4K_fu_6072_ap_start_reg             |  1|   0|    1|          0|
-    |grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_4416_ap_start_reg             |  1|   0|    1|          0|
-    |grp_mac_blocks_down_q4k7_Pipeline_VITIS_LOOP_379_2_MAC_GROUP_fu_5012_ap_start_reg  |  1|   0|    1|          0|
-    +-----------------------------------------------------------------------------------+---+----+-----+-----------+
-    |Total                                                                              | 10|   0|   10|          0|
-    +-----------------------------------------------------------------------------------+---+----+-----+-----------+
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                  Name                                  | FF | LUT| Bits| Const Bits|
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+    |add_i_i69_lcssa_phi_fu_140                                              |  90|   0|   90|          0|
+    |add_i_i69_lcssa_phi_load_reg_13102                                      |  90|   0|   90|          0|
+    |ap_CS_fsm                                                               |  18|   0|   18|          0|
+    |ap_return_preg                                                          |  32|   0|   32|          0|
+    |g_fu_148                                                                |   3|   0|    3|          0|
+    |grp_mac_blocks_down_q4k7_Pipeline_MAC_GROUP_fu_3574_ap_start_reg        |   1|   0|    1|          0|
+    |grp_mac_blocks_down_q4k7_Pipeline_REDUCE_G_fu_4253_ap_start_reg         |   1|   0|    1|          0|
+    |grp_mac_blocks_down_q4k7_Pipeline_UNPACK_HDR_DOWN_fu_2978_ap_start_reg  |   1|   0|    1|          0|
+    |icmp_ln449_3_reg_13521                                                  |   1|   0|    1|          0|
+    |icmp_ln449_reg_13083                                                    |   1|   0|    1|          0|
+    |lshr_ln449_reg_13526                                                    |  56|   0|   56|          0|
+    |mul_ln79_1_cast_reg_13073                                               |   5|   0|    5|          0|
+    |or_ln449_reg_13516                                                      |   1|   0|    1|          0|
+    |retval_0_i_i_reg_13536                                                  |  32|   0|   32|          0|
+    |select_ln449_reg_13093                                                  |  56|   0|   56|          0|
+    |shl_ln449_reg_13531                                                     |  56|   0|   56|          0|
+    |sub_ln449_1_reg_13504                                                   |   6|   0|    6|          0|
+    |sub_ln449_4_reg_13511                                                   |   6|   0|    6|          0|
+    |tmp_227_reg_13078                                                       |   2|   0|   10|          8|
+    |tmp_229_reg_13494                                                       |   2|   0|    5|          3|
+    |tmp_reg_13088                                                           |   1|   0|    1|          0|
+    |total_fu_144                                                            |  56|   0|   56|          0|
+    |trunc_ln402_reg_13067                                                   |   2|   0|    2|          0|
+    |trunc_ln449_1_reg_13499                                                 |   7|   0|    7|          0|
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                   | 526|   0|  537|         11|
+    +------------------------------------------------------------------------+----+----+-----+-----------+
 
 
 
@@ -142,82 +201,64 @@
 == Interface
 ================================================================
 * Summary: 
-+----------------------------------+-----+-----+------------+----------------------+--------------+
-|             RTL Ports            | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
-+----------------------------------+-----+-----+------------+----------------------+--------------+
-|ap_clk                            |   in|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|ap_rst                            |   in|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|ap_start                          |   in|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|ap_done                           |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|ap_idle                           |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|ap_ready                          |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|ap_return                         |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fp16_to_fp32_fu_1620_p_din1   |  out|   16|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fp16_to_fp32_fu_1620_p_dout0  |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fp16_to_fp32_fu_1620_p_ce     |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fp16_to_fp32_fu_1624_p_din1   |  out|   16|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fp16_to_fp32_fu_1624_p_dout0  |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fp16_to_fp32_fu_1624_p_ce     |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1628_p_din0                |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1628_p_din1                |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1628_p_opcode              |  out|    2|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1628_p_dout0               |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1628_p_ce                  |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1632_p_din0                |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1632_p_din1                |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1632_p_dout0               |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1632_p_ce                  |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1636_p_din0                |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1636_p_dout0               |   in|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|grp_fu_1636_p_ce                  |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
-|rb_0_address0                     |  out|    6|   ap_memory|                  rb_0|         array|
-|rb_0_ce0                          |  out|    1|   ap_memory|                  rb_0|         array|
-|rb_0_q0                           |   in|  128|   ap_memory|                  rb_0|         array|
-|rb_1_address0                     |  out|    6|   ap_memory|                  rb_1|         array|
-|rb_1_ce0                          |  out|    1|   ap_memory|                  rb_1|         array|
-|rb_1_q0                           |   in|  128|   ap_memory|                  rb_1|         array|
-|rb_2_address0                     |  out|    6|   ap_memory|                  rb_2|         array|
-|rb_2_ce0                          |  out|    1|   ap_memory|                  rb_2|         array|
-|rb_2_q0                           |   in|  128|   ap_memory|                  rb_2|         array|
-|rb_3_address0                     |  out|    6|   ap_memory|                  rb_3|         array|
-|rb_3_ce0                          |  out|    1|   ap_memory|                  rb_3|         array|
-|rb_3_q0                           |   in|  128|   ap_memory|                  rb_3|         array|
-|rb_4_address0                     |  out|    6|   ap_memory|                  rb_4|         array|
-|rb_4_ce0                          |  out|    1|   ap_memory|                  rb_4|         array|
-|rb_4_q0                           |   in|  128|   ap_memory|                  rb_4|         array|
-|rb_5_address0                     |  out|    6|   ap_memory|                  rb_5|         array|
-|rb_5_ce0                          |  out|    1|   ap_memory|                  rb_5|         array|
-|rb_5_q0                           |   in|  128|   ap_memory|                  rb_5|         array|
-|rb_6_address0                     |  out|    6|   ap_memory|                  rb_6|         array|
-|rb_6_ce0                          |  out|    1|   ap_memory|                  rb_6|         array|
-|rb_6_q0                           |   in|  128|   ap_memory|                  rb_6|         array|
-|rb_7_address0                     |  out|    6|   ap_memory|                  rb_7|         array|
-|rb_7_ce0                          |  out|    1|   ap_memory|                  rb_7|         array|
-|rb_7_q0                           |   in|  128|   ap_memory|                  rb_7|         array|
-|gate_0_address0                   |  out|   12|   ap_memory|                gate_0|         array|
-|gate_0_ce0                        |  out|    1|   ap_memory|                gate_0|         array|
-|gate_0_q0                         |   in|    8|   ap_memory|                gate_0|         array|
-|gate_1_address0                   |  out|   12|   ap_memory|                gate_1|         array|
-|gate_1_ce0                        |  out|    1|   ap_memory|                gate_1|         array|
-|gate_1_q0                         |   in|    8|   ap_memory|                gate_1|         array|
-|gate_2_address0                   |  out|   12|   ap_memory|                gate_2|         array|
-|gate_2_ce0                        |  out|    1|   ap_memory|                gate_2|         array|
-|gate_2_q0                         |   in|    8|   ap_memory|                gate_2|         array|
-|gate_3_address0                   |  out|   12|   ap_memory|                gate_3|         array|
-|gate_3_ce0                        |  out|    1|   ap_memory|                gate_3|         array|
-|gate_3_q0                         |   in|    8|   ap_memory|                gate_3|         array|
-|gate_4_address0                   |  out|   12|   ap_memory|                gate_4|         array|
-|gate_4_ce0                        |  out|    1|   ap_memory|                gate_4|         array|
-|gate_4_q0                         |   in|    8|   ap_memory|                gate_4|         array|
-|gate_5_address0                   |  out|   12|   ap_memory|                gate_5|         array|
-|gate_5_ce0                        |  out|    1|   ap_memory|                gate_5|         array|
-|gate_5_q0                         |   in|    8|   ap_memory|                gate_5|         array|
-|gate_6_address0                   |  out|   12|   ap_memory|                gate_6|         array|
-|gate_6_ce0                        |  out|    1|   ap_memory|                gate_6|         array|
-|gate_6_q0                         |   in|    8|   ap_memory|                gate_6|         array|
-|gate_7_address0                   |  out|   12|   ap_memory|                gate_7|         array|
-|gate_7_ce0                        |  out|    1|   ap_memory|                gate_7|         array|
-|gate_7_q0                         |   in|    8|   ap_memory|                gate_7|         array|
-|gate_scale                        |   in|   32|     ap_none|            gate_scale|        scalar|
-+----------------------------------+-----+-----+------------+----------------------+--------------+
++-----------------+-----+-----+------------+----------------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++-----------------+-----+-----+------------+----------------------+--------------+
+|ap_clk           |   in|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|ap_rst           |   in|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|ap_start         |   in|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|ap_done          |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|ap_idle          |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|ap_ready         |  out|    1|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|ap_return        |  out|   32|  ap_ctrl_hs|  mac_blocks_down_q4k7|  return value|
+|rb_0_address0    |  out|    6|   ap_memory|                  rb_0|         array|
+|rb_0_ce0         |  out|    1|   ap_memory|                  rb_0|         array|
+|rb_0_q0          |   in|  128|   ap_memory|                  rb_0|         array|
+|rb_1_address0    |  out|    6|   ap_memory|                  rb_1|         array|
+|rb_1_ce0         |  out|    1|   ap_memory|                  rb_1|         array|
+|rb_1_q0          |   in|  128|   ap_memory|                  rb_1|         array|
+|rb_2_address0    |  out|    6|   ap_memory|                  rb_2|         array|
+|rb_2_ce0         |  out|    1|   ap_memory|                  rb_2|         array|
+|rb_2_q0          |   in|  128|   ap_memory|                  rb_2|         array|
+|rb_3_address0    |  out|    6|   ap_memory|                  rb_3|         array|
+|rb_3_ce0         |  out|    1|   ap_memory|                  rb_3|         array|
+|rb_3_q0          |   in|  128|   ap_memory|                  rb_3|         array|
+|rb_4_address0    |  out|    6|   ap_memory|                  rb_4|         array|
+|rb_4_ce0         |  out|    1|   ap_memory|                  rb_4|         array|
+|rb_4_q0          |   in|  128|   ap_memory|                  rb_4|         array|
+|rb_5_address0    |  out|    6|   ap_memory|                  rb_5|         array|
+|rb_5_ce0         |  out|    1|   ap_memory|                  rb_5|         array|
+|rb_5_q0          |   in|  128|   ap_memory|                  rb_5|         array|
+|rb_6_address0    |  out|    6|   ap_memory|                  rb_6|         array|
+|rb_6_ce0         |  out|    1|   ap_memory|                  rb_6|         array|
+|rb_6_q0          |   in|  128|   ap_memory|                  rb_6|         array|
+|rb_7_address0    |  out|    6|   ap_memory|                  rb_7|         array|
+|rb_7_ce0         |  out|    1|   ap_memory|                  rb_7|         array|
+|rb_7_q0          |   in|  128|   ap_memory|                  rb_7|         array|
+|gate_0_address0  |  out|   10|   ap_memory|                gate_0|         array|
+|gate_0_ce0       |  out|    1|   ap_memory|                gate_0|         array|
+|gate_0_q0        |   in|    8|   ap_memory|                gate_0|         array|
+|gate_1_address0  |  out|   10|   ap_memory|                gate_1|         array|
+|gate_1_ce0       |  out|    1|   ap_memory|                gate_1|         array|
+|gate_1_q0        |   in|    8|   ap_memory|                gate_1|         array|
+|gate_2_address0  |  out|   10|   ap_memory|                gate_2|         array|
+|gate_2_ce0       |  out|    1|   ap_memory|                gate_2|         array|
+|gate_2_q0        |   in|    8|   ap_memory|                gate_2|         array|
+|gate_3_address0  |  out|   10|   ap_memory|                gate_3|         array|
+|gate_3_ce0       |  out|    1|   ap_memory|                gate_3|         array|
+|gate_3_q0        |   in|    8|   ap_memory|                gate_3|         array|
+|gate_4_address0  |  out|   10|   ap_memory|                gate_4|         array|
+|gate_4_ce0       |  out|    1|   ap_memory|                gate_4|         array|
+|gate_4_q0        |   in|    8|   ap_memory|                gate_4|         array|
+|gate_5_address0  |  out|   10|   ap_memory|                gate_5|         array|
+|gate_5_ce0       |  out|    1|   ap_memory|                gate_5|         array|
+|gate_5_q0        |   in|    8|   ap_memory|                gate_5|         array|
+|gate_6_address0  |  out|   10|   ap_memory|                gate_6|         array|
+|gate_6_ce0       |  out|    1|   ap_memory|                gate_6|         array|
+|gate_6_q0        |   in|    8|   ap_memory|                gate_6|         array|
+|gate_7_address0  |  out|   10|   ap_memory|                gate_7|         array|
+|gate_7_ce0       |  out|    1|   ap_memory|                gate_7|         array|
+|gate_7_q0        |   in|    8|   ap_memory|                gate_7|         array|
+|gate_scale       |   in|   32|     ap_none|            gate_scale|        scalar|
++-----------------+-----+-----+------------+----------------------+--------------+
 

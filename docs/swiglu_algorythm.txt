@@ -1,18 +1,19 @@
+0. load the input x into two buffers 
 1. Compute the first linear projection: A=x*W+b (dimension 2048->8192)
-     A = x·W (+b) (gate projection 2048→8192): executed by the first 
+     A = x·W  (gate projection 2048→8192): executed by the first 
      GGML_OP_MUL_MAT node. Dispatch happens in the main op switch at 
      ggml-cpu.c:1813, which calls the matmul kernel defined at 
      ggml-cpu.c:1235 (ggml_compute_forward_mul_mat).
 2. Compute the second linear projection: B=x*V+c (dimension 2048->8192)
-     B = x·V (+c) (up projection 2048→8192): identical path to A, a second 
+     B = x·V  (up projection 2048→8192): identical path to A, a second 
      GGML_OP_MUL_MAT node using the same matmul kernel (ggml-cpu.c:1235), 
      dispatched via the same switch at ggml-cpu.c:1813.
+     first and second linear projection happen in parallel, with parallel
+     reads from their respective buffers holding x
 3. Apply the Swish activation only to A  sA=Swishβ(A) 
-    Swish on A: performed inside the fused GLU op. The executor dispatches 
-    GGML_OP_GLU at ggml-cpu.c:2002–2004, selecting subtype GGML_GLU_OP_SWIGLU 
-    (see subtype switch ggml-cpu.c:2258–2266). The activation itself is 
-    implemented inside ggml_compute_forward_glu (declared in ggml-cpu-impl.h, 
-    included at the top).
+    Swish on A: performed inside the fused GLU op. (The executor dispatches 
+    GGML_OP_GLU at ggml-cpu.c:2002–2004)
+    This is just a LUT
 4. Perform the element-wise multiplication: Y=sA⊙B  
     Elementwise multiply sA ⊙ B: also inside ggml_compute_forward_glu 
     invoked from the same GGML_OP_GLU dispatch (ggml-cpu.c:2002–2004).

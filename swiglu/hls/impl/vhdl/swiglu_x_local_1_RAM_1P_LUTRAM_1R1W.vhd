@@ -9,8 +9,8 @@ use ieee.numeric_std.all;
 entity swiglu_x_local_1_RAM_1P_LUTRAM_1R1W  is
     generic (
         DataWidth    : integer := 8;
-        AddressRange : integer := 64;
-        AddressWidth : integer := 6;
+        AddressRange : integer := 16;
+        AddressWidth : integer := 4;
         BufferCount  : integer := 2;
         MemLatency   : integer := 1;
         IndexWidth   : integer := 1
@@ -45,13 +45,13 @@ architecture rtl of swiglu_x_local_1_RAM_1P_LUTRAM_1R1W is
 component swiglu_x_local_1_RAM_1P_LUTRAM_1R1W_memcore is
 port (
     ce0      : in  std_logic;
-    address0 : in  std_logic_vector(6 downto 0);
+    address0 : in  std_logic_vector(4 downto 0);
     we0      : in  std_logic;
     d0       : in  std_logic_vector(DataWidth-1 downto 0);
     q0       : out std_logic_vector(DataWidth-1 downto 0);   
     
     ce1      : in  std_logic;
-    address1 : in  std_logic_vector(6 downto 0);
+    address1 : in  std_logic_vector(4 downto 0);
     we1      : in  std_logic;
     d1       : in  std_logic_vector(DataWidth-1 downto 0);
     q1       : out std_logic_vector(DataWidth-1 downto 0);   
@@ -71,8 +71,8 @@ signal push_buf : std_logic;        -- finish writing a buffer
 signal write_buf: std_logic;        -- write a buffer
 signal pop_buf  : std_logic;        -- finish reading a buffer
 
-signal memcore_iaddr: std_logic_vector(6 downto 0);
-signal memcore_taddr: std_logic_vector(6 downto 0);
+signal memcore_iaddr: std_logic_vector(4 downto 0);
+signal memcore_taddr: std_logic_vector(4 downto 0);
 
 begin 
 

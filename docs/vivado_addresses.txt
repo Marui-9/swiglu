@@ -1,62 +1,41 @@
 Interface                                     Slave Interface    Address Block    Offset Address    Range    High Address
+---
+**Network 0 (/swiglu_0/Data_m_axi_gmem_V, /swiglu_0/Data_m_axi_gmem_out, /swiglu_0/Data_m_axi_gmem_x)**
 /swiglu_0/Data_m_axi_gmem_out (64 bits)
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_LOW      0x0               512M     0x1FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_QSPI         0xC000_0000       128M     0xC7FF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_HIGH     0x8_0000_0000     8G       0x9_FFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_QSPI         0xC800_0000       128M     0xCFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_LOW      0x2000_0000       512M     0x3FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_HIGH     0xA_0000_0000     8G       0xB_FFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_QSPI         0xD000_0000       128M     0xD7FF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_LOW      0x4000_0000       512M     0x5FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_HIGH     0xC_0000_0000     8G       0xD_FFFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_QSPI         0xC000_0000       512M     0xDFFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_LOW      0x0               2G       0x7FFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_HIGH     0x8_0000_0000     32G      0xF_FFFF_FFFF
 
 /swiglu_0/Data_m_axi_gmem_V (64 bits)
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_LOW      0x0               512M     0x1FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_QSPI         0xC000_0000       128M     0xC7FF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_HIGH     0x8_0000_0000     8G       0x9_FFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_QSPI         0xC800_0000       128M     0xCFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_LOW      0x2000_0000       512M     0x3FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_HIGH     0xA_0000_0000     8G       0xB_FFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_QSPI         0xD000_0000       128M     0xD7FF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_LOW      0x4000_0000       512M     0x5FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_HIGH     0xC_0000_0000     8G       0xD_FFFF_FFFF
-
-/swiglu_0/Data_m_axi_gmem_W (64 bits)
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_LOW      0x0               512M     0x1FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_QSPI         0xC000_0000       128M     0xC7FF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_HIGH     0x8_0000_0000     8G       0x9_FFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_QSPI         0xC800_0000       128M     0xCFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_LOW      0x2000_0000       512M     0x3FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_HIGH     0xA_0000_0000     8G       0xB_FFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_QSPI         0xD000_0000       128M     0xD7FF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_LOW      0x4000_0000       512M     0x5FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_HIGH     0xC_0000_0000     8G       0xD_FFFF_FFFF
-
-/swiglu_0/Data_m_axi_gmem_Wd (64 bits)
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_LOW      0x0               512M     0x1FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_QSPI         0xC000_0000       128M     0xC7FF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_HIGH     0x8_0000_0000     8G       0x9_FFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_QSPI         0xC800_0000       128M     0xCFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_LOW      0x2000_0000       512M     0x3FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_HIGH     0xA_0000_0000     8G       0xB_FFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_QSPI         0xD000_0000       128M     0xD7FF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_LOW      0x4000_0000       512M     0x5FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_HIGH     0xC_0000_0000     8G       0xD_FFFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_QSPI         0xC000_0000       512M     0xDFFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_LOW      0x0               2G       0x7FFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_HIGH     0x8_0000_0000     32G      0xF_FFFF_FFFF
 
 /swiglu_0/Data_m_axi_gmem_x (64 bits)
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_LOW      0x0               512M     0x1FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_QSPI         0xC000_0000       128M     0xC7FF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_HIGH     0x8_0000_0000     8G       0x9_FFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_QSPI         0xC800_0000       128M     0xCFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_LOW      0x2000_0000       512M     0x3FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_HIGH     0xA_0000_0000     8G       0xB_FFFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_QSPI         0xD000_0000       128M     0xD7FF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_LOW      0x4000_0000       512M     0x5FFF_FFFF
-/zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_HIGH     0xC_0000_0000     8G       0xD_FFFF_FFFF
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-Network 1 (/zynq_ultra_ps_e_0/Data)
-/swiglu_0/s_axi_CTRL     -------------      s_axi_CTRL         Reg              0xA000_0000       64K      0xA000_FFFF
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_QSPI         0xC000_0000       512M     0xDFFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_LOW      0x0               2G       0x7FFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP2                   S_AXI_HP0_FPD      HP0_DDR_HIGH     0x8_0000_0000     32G      0xF_FFFF_FFFF
+
+**Network 1 (/swiglu_0/Data_m_axi_gmem_W)**
+/swiglu_0/Data_m_axi_gmem_W (64 bits)
+  /zynq_ultra_ps_e_0/SAXIGP5                   S_AXI_HP3_FPD      HP3_DDR_LOW      0x0               2G       0x7FFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP5                   S_AXI_HP3_FPD      HP3_DDR_HIGH     0x8_0000_0000     32G      0xF_FFFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP5                   S_AXI_HP3_FPD      HP3_QSPI         0xC000_0000       512M     0xDFFF_FFFF
+
+**Network 2 (/swiglu_0/Data_m_axi_gmem_Wd)**
+/swiglu_0/Data_m_axi_gmem_Wd (64 bits)
+  /zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_LOW      0x0               2G       0x7FFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_QSPI         0xC000_0000       512M     0xDFFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP3                   S_AXI_HP1_FPD      HP1_DDR_HIGH     0x8_0000_0000     32G      0xF_FFFF_FFFF
+
+**Network 3 (/swiglu_0/Data_m_axi_gmem_Wd2)**
+/swiglu_0/Data_m_axi_gmem_Wd2 (64 bits)
+  /zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_QSPI         0xC000_0000       512M     0xDFFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_LOW      0x0               2G       0x7FFF_FFFF
+  /zynq_ultra_ps_e_0/SAXIGP4                   S_AXI_HP2_FPD      HP2_DDR_HIGH     0x8_0000_0000     32G      0xF_FFFF_FFFF
+
+**Network 4 (/zynq_ultra_ps_e_0/Data)**
+  /swiglu_0/s_axi_CTRL                         s_axi_CTRL         Reg              0xA000_0000       64K      0xA000_FFFF
 ON BOARD:
 udmabuf_phys_base : 0x3C100000 is below 0x40000000, 
 but that's not actually a problem. The driver never accesses the raw udmabuf_phys_base — it always adds an offset. Let me check the minimum actual address used:
@@ -86,16 +65,20 @@ Offset	Expected	ggml-cpu.c	Match?
 0x28	W_down LO	SWG_CTRL_WD_LO	✓
 0x2C	W_down HI	SWG_CTRL_WD_HI	✓
 0x30	(reserved)	—	✓
-0x34	x_batch LO	SWG_CTRL_X_LO	✓
-0x38	x_batch HI	SWG_CTRL_X_HI	✓
+0x34	W_down2 LO	SWG_CTRL_WD2_LO	✓
+0x38	W_down2 HI	SWG_CTRL_WD2_HI	✓
 0x3C	(reserved)	—	✓
-0x40	out_batch LO	SWG_CTRL_OUT_LO	✓
-0x44	out_batch HI	SWG_CTRL_OUT_HI	✓
+0x40	x_batch LO	SWG_CTRL_X_LO	✓
+0x44	x_batch HI	SWG_CTRL_X_HI	✓
 0x48	(reserved)	—	✓
-0x4C	down_quant_mode	SWG_CTRL_MODE	✓
-0x50	(reserved)	—	✓
-0x54	x_scale	SWG_CTRL_XSCALE	✓
-All 12 offsets match. The old IP (v4.5) had batch_size at 0x4C and down_quant_mode at 0x54 — the new IP drops batch_size, so down_quant_mode slides to 0x4C and x_scale takes 0x54. The driver already reflects this correctly.
+0x4C	out_batch LO	SWG_CTRL_OUT_LO	✓
+0x50	out_batch HI	SWG_CTRL_OUT_HI	✓
+0x54	(reserved)	—	✓
+0x58	down_quant_mode	SWG_CTRL_MODE	✓
+0x5C	(reserved)	—	✓
+0x60	x_scale	SWG_CTRL_XSCALE	✓
+All 13 offsets match (confirmed from swiglu_CTRL_s_axi.v). W_down2 added at 0x34/0x38;
+all subsequent registers shifted +0x0C vs previous IP version.
 
 udmabuf layout — also consistent: W stride 0x900000 = 9,437,184 bytes = exactly 8192 rows × 8 blocks × 144 bytes/block for Q4_K ✓. WD stride 0xE00000 = 14 MB padded to cover Q6_K's 13.1 MB (2048 × 32 × 210) ✓. High-water mark at 0x26D00000 = 620 MB < 640 MB ✓.
 

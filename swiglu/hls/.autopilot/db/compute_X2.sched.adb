@@ -113,7 +113,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -149,7 +149,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -185,7 +185,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -221,7 +221,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -257,7 +257,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -293,7 +293,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -329,7 +329,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -365,7 +365,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -401,7 +401,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -437,7 +437,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -473,7 +473,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -509,7 +509,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -545,7 +545,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -581,7 +581,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -617,7 +617,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -653,7 +653,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -689,7 +689,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -725,7 +725,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -761,7 +761,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -797,7 +797,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -833,7 +833,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -869,7 +869,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -905,7 +905,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -941,7 +941,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -977,7 +977,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1013,7 +1013,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1049,7 +1049,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1085,7 +1085,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1121,7 +1121,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1157,7 +1157,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1193,7 +1193,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1229,7 +1229,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1265,7 +1265,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1301,7 +1301,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1337,7 +1337,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1373,7 +1373,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1409,7 +1409,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1445,7 +1445,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1481,7 +1481,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1517,7 +1517,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1553,7 +1553,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1589,7 +1589,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1625,7 +1625,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1661,7 +1661,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1697,7 +1697,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1733,7 +1733,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1769,7 +1769,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1805,7 +1805,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1841,7 +1841,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1877,7 +1877,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1913,7 +1913,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1949,7 +1949,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -1985,7 +1985,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2021,7 +2021,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2057,7 +2057,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2093,7 +2093,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2129,7 +2129,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2165,7 +2165,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2201,7 +2201,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2237,7 +2237,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2273,7 +2273,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2309,7 +2309,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2345,7 +2345,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2381,7 +2381,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2417,7 +2417,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2453,7 +2453,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2489,7 +2489,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2525,7 +2525,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2561,7 +2561,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2597,7 +2597,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2633,7 +2633,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2669,7 +2669,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2705,7 +2705,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2741,7 +2741,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2777,7 +2777,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2813,7 +2813,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2849,7 +2849,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2885,7 +2885,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2921,7 +2921,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2957,7 +2957,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -2993,7 +2993,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3029,7 +3029,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3065,7 +3065,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3101,7 +3101,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3137,7 +3137,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3173,7 +3173,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3209,7 +3209,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3245,7 +3245,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3281,7 +3281,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3317,7 +3317,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3353,7 +3353,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3389,7 +3389,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3425,7 +3425,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3461,7 +3461,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3497,7 +3497,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3533,7 +3533,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3569,7 +3569,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3605,7 +3605,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3641,7 +3641,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3677,7 +3677,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3713,7 +3713,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3749,7 +3749,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3785,7 +3785,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3821,7 +3821,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3857,7 +3857,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3893,7 +3893,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3929,7 +3929,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3965,7 +3965,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4001,7 +4001,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4037,7 +4037,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4073,7 +4073,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4109,7 +4109,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4145,7 +4145,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4181,7 +4181,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4217,7 +4217,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4253,7 +4253,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4289,7 +4289,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4325,7 +4325,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4361,7 +4361,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4397,7 +4397,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4433,7 +4433,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4469,7 +4469,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4505,7 +4505,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4541,7 +4541,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4577,7 +4577,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4613,7 +4613,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4649,7 +4649,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4685,7 +4685,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>64</array_size>
+				<array_size>16</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4757,7 +4757,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>32768</array_size>
+				<array_size>8192</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -4775,7 +4775,7 @@
 						<name>row</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>227</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -4791,7 +4791,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>227</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -4917,7 +4917,7 @@
 						<name>row_buf</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -4933,7 +4933,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>228</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -4973,7 +4973,7 @@
 						<name>row_buf_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -4989,7 +4989,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>228</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5029,7 +5029,7 @@
 						<name>row_buf_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5045,7 +5045,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>228</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5085,7 +5085,7 @@
 						<name>row_buf_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5101,7 +5101,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>228</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5141,7 +5141,7 @@
 						<name>row_buf_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5157,7 +5157,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>228</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5197,7 +5197,7 @@
 						<name>row_buf_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5213,7 +5213,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>228</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5253,7 +5253,7 @@
 						<name>row_buf_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5269,7 +5269,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>228</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5309,7 +5309,7 @@
 						<name>row_buf_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5325,7 +5325,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>228</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -5362,10 +5362,10 @@
 					<Obj>
 						<type>0</type>
 						<id>282</id>
-						<name>row_write_ln227</name>
+						<name>row_write_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>227</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5381,7 +5381,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>227</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5419,10 +5419,10 @@
 					<Obj>
 						<type>0</type>
 						<id>283</id>
-						<name>br_ln227</name>
+						<name>br_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>227</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5438,7 +5438,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>227</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5478,7 +5478,7 @@
 						<name>row_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>227</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5494,7 +5494,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>227</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5516,7 +5516,7 @@
 					<count>2</count>
 					<item_version>0</item_version>
 					<item>362</item>
-					<item>1385</item>
+					<item>1386</item>
 				</oprand_edges>
 				<opcode>load</opcode>
 				<m_Display>0</m_Display>
@@ -5532,10 +5532,10 @@
 					<Obj>
 						<type>0</type>
 						<id>286</id>
-						<name>icmp_ln227</name>
+						<name>icmp_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>227</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5551,7 +5551,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>227</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5589,10 +5589,10 @@
 					<Obj>
 						<type>0</type>
 						<id>287</id>
-						<name>add_ln227</name>
+						<name>add_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>227</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5608,7 +5608,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>227</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5646,10 +5646,10 @@
 					<Obj>
 						<type>0</type>
 						<id>288</id>
-						<name>br_ln227</name>
+						<name>br_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>227</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5665,7 +5665,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>227</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5704,10 +5704,10 @@
 					<Obj>
 						<type>0</type>
 						<id>290</id>
-						<name>zext_ln227</name>
+						<name>zext_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>227</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5723,7 +5723,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>227</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -5763,7 +5763,7 @@
 						<name>X2_cache_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>238</lineNumber>
+						<lineNumber>263</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5779,7 +5779,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>238</second>
+										<second>263</second>
 									</item>
 								</second>
 							</item>
@@ -5795,7 +5795,7 @@
 						<coreId>4294967295</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>15</bitwidth>
+					<bitwidth>13</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -5818,10 +5818,10 @@
 					<Obj>
 						<type>0</type>
 						<id>294</id>
-						<name>trunc_ln231</name>
+						<name>trunc_ln256</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>231</lineNumber>
+						<lineNumber>256</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5837,7 +5837,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>231</second>
+										<second>256</second>
 									</item>
 								</second>
 							</item>
@@ -5874,10 +5874,10 @@
 					<Obj>
 						<type>0</type>
 						<id>295</id>
-						<name>_ln231</name>
+						<name>_ln256</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>231</lineNumber>
+						<lineNumber>256</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5893,7 +5893,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>231</second>
+										<second>256</second>
 									</item>
 								</second>
 							</item>
@@ -5944,7 +5944,7 @@
 						<name>row_result</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>233</lineNumber>
+						<lineNumber>258</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -5960,7 +5960,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>233</second>
+										<second>258</second>
 									</item>
 								</second>
 							</item>
@@ -6119,16 +6119,16 @@
 					<item>527</item>
 					<item>528</item>
 					<item>529</item>
-					<item>1384</item>
-					<item>1388</item>
+					<item>1385</item>
+					<item>1389</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.27</m_delay>
-				<m_topoIndex>22</m_topoIndex>
+				<m_delay>2.41</m_delay>
+				<m_topoIndex>21</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_155">
@@ -6139,7 +6139,7 @@
 						<name>fq</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>234</lineNumber>
+						<lineNumber>259</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6155,7 +6155,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>234</second>
+										<second>259</second>
 									</item>
 								</second>
 							</item>
@@ -6184,8 +6184,8 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.56</m_delay>
-				<m_topoIndex>23</m_topoIndex>
+				<m_delay>2.41</m_delay>
+				<m_topoIndex>22</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_156">
@@ -6193,10 +6193,10 @@
 					<Obj>
 						<type>0</type>
 						<id>298</id>
-						<name>bitcast_ln235</name>
+						<name>bitcast_ln260</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>235</lineNumber>
+						<lineNumber>260</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6212,7 +6212,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -6249,10 +6249,10 @@
 					<Obj>
 						<type>0</type>
 						<id>299</id>
-						<name>tmp_317</name>
+						<name>tmp_105</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>235</lineNumber>
+						<lineNumber>260</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6268,7 +6268,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -6308,10 +6308,10 @@
 					<Obj>
 						<type>0</type>
 						<id>300</id>
-						<name>trunc_ln235</name>
+						<name>trunc_ln260</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>235</lineNumber>
+						<lineNumber>260</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6327,7 +6327,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -6364,10 +6364,10 @@
 					<Obj>
 						<type>0</type>
 						<id>301</id>
-						<name>icmp_ln235</name>
+						<name>icmp_ln260</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>235</lineNumber>
+						<lineNumber>260</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6383,7 +6383,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -6421,10 +6421,10 @@
 					<Obj>
 						<type>0</type>
 						<id>302</id>
-						<name>icmp_ln235_1</name>
+						<name>icmp_ln260_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>235</lineNumber>
+						<lineNumber>260</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6440,7 +6440,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -6478,10 +6478,10 @@
 					<Obj>
 						<type>0</type>
 						<id>303</id>
-						<name>or_ln235</name>
+						<name>or_ln260</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>235</lineNumber>
+						<lineNumber>260</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6497,7 +6497,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -6535,10 +6535,10 @@
 					<Obj>
 						<type>0</type>
 						<id>304</id>
-						<name>tmp_318</name>
+						<name>tmp_106</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>235</lineNumber>
+						<lineNumber>260</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6554,7 +6554,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -6583,7 +6583,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.78</m_delay>
+				<m_delay>2.31</m_delay>
 				<m_topoIndex>24</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -6592,10 +6592,10 @@
 					<Obj>
 						<type>0</type>
 						<id>305</id>
-						<name>and_ln235</name>
+						<name>and_ln260</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>235</lineNumber>
+						<lineNumber>260</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6611,7 +6611,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -6649,10 +6649,10 @@
 					<Obj>
 						<type>0</type>
 						<id>306</id>
-						<name>select_ln235</name>
+						<name>select_ln260</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>235</lineNumber>
+						<lineNumber>260</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6668,7 +6668,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -6710,7 +6710,7 @@
 						<name>dc</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>235</lineNumber>
+						<lineNumber>260</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -6726,7 +6726,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -6755,7 +6755,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.46</m_delay>
+				<m_delay>2.26</m_delay>
 				<m_topoIndex>33</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -6783,7 +6783,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -6874,7 +6874,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -6967,7 +6967,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -7060,7 +7060,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -7151,7 +7151,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -7211,7 +7211,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>38</m_topoIndex>
+				<m_topoIndex>44</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_171">
@@ -7238,7 +7238,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -7295,7 +7295,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>39</m_topoIndex>
+				<m_topoIndex>45</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_172">
@@ -7322,7 +7322,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -7386,7 +7386,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>40</m_topoIndex>
+				<m_topoIndex>38</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_173">
@@ -7413,7 +7413,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -7478,7 +7478,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.76</m_delay>
-				<m_topoIndex>41</m_topoIndex>
+				<m_topoIndex>39</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_174">
@@ -7505,7 +7505,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -7564,7 +7564,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>42</m_topoIndex>
+				<m_topoIndex>40</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_175">
@@ -7591,7 +7591,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -7649,7 +7649,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.76</m_delay>
-				<m_topoIndex>43</m_topoIndex>
+				<m_topoIndex>41</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_176">
@@ -7676,7 +7676,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -7733,7 +7733,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>44</m_topoIndex>
+				<m_topoIndex>42</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_177">
@@ -7760,7 +7760,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -7819,7 +7819,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.39</m_delay>
-				<m_topoIndex>45</m_topoIndex>
+				<m_topoIndex>43</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_178">
@@ -7827,7 +7827,7 @@
 					<Obj>
 						<type>0</type>
 						<id>320</id>
-						<name>sext_ln18_1</name>
+						<name>sext_ln18_5</name>
 						<fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
 						<fileDirectory>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath</fileDirectory>
 						<lineNumber>18</lineNumber>
@@ -7846,7 +7846,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -7930,7 +7930,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -8014,7 +8014,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -8099,7 +8099,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -8184,7 +8184,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -8252,7 +8252,7 @@
 					<Obj>
 						<type>0</type>
 						<id>325</id>
-						<name>tmp_441</name>
+						<name>tmp_251</name>
 						<fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
 						<fileDirectory>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath</fileDirectory>
 						<lineNumber>21</lineNumber>
@@ -8271,7 +8271,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -8358,7 +8358,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -8425,7 +8425,7 @@
 					<Obj>
 						<type>0</type>
 						<id>327</id>
-						<name>result_2</name>
+						<name>result_10</name>
 						<fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
 						<fileDirectory>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath</fileDirectory>
 						<lineNumber>59</lineNumber>
@@ -8444,7 +8444,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -8529,7 +8529,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>235</second>
+										<second>260</second>
 									</item>
 								</second>
 							</item>
@@ -8596,10 +8596,10 @@
 					<Obj>
 						<type>0</type>
 						<id>329</id>
-						<name>tmp_712</name>
+						<name>tmp_731</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>236</lineNumber>
+						<lineNumber>261</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -8615,7 +8615,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>236</second>
+										<second>261</second>
 									</item>
 								</second>
 							</item>
@@ -8655,10 +8655,10 @@
 					<Obj>
 						<type>0</type>
 						<id>330</id>
-						<name>icmp_ln236</name>
+						<name>icmp_ln261</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>236</lineNumber>
+						<lineNumber>261</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -8674,7 +8674,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>236</second>
+										<second>261</second>
 									</item>
 								</second>
 							</item>
@@ -8712,10 +8712,10 @@
 					<Obj>
 						<type>0</type>
 						<id>331</id>
-						<name>iq_4</name>
+						<name>iq_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>236</lineNumber>
+						<lineNumber>261</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -8731,7 +8731,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>236</second>
+										<second>261</second>
 									</item>
 								</second>
 							</item>
@@ -8770,10 +8770,10 @@
 					<Obj>
 						<type>0</type>
 						<id>332</id>
-						<name>icmp_ln237</name>
+						<name>icmp_ln262</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>237</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -8789,7 +8789,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>237</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -8827,10 +8827,10 @@
 					<Obj>
 						<type>0</type>
 						<id>333</id>
-						<name>trunc_ln238</name>
+						<name>trunc_ln263</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>238</lineNumber>
+						<lineNumber>263</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -8846,7 +8846,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>238</second>
+										<second>263</second>
 									</item>
 								</second>
 							</item>
@@ -8883,10 +8883,10 @@
 					<Obj>
 						<type>0</type>
 						<id>334</id>
-						<name>select_ln238</name>
+						<name>select_ln263</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>238</lineNumber>
+						<lineNumber>263</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -8902,7 +8902,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>238</second>
+										<second>263</second>
 									</item>
 								</second>
 							</item>
@@ -8941,10 +8941,10 @@
 					<Obj>
 						<type>0</type>
 						<id>335</id>
-						<name>X2_cache_addr_write_ln238</name>
+						<name>X2_cache_addr_write_ln263</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>238</lineNumber>
+						<lineNumber>263</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -8960,7 +8960,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>238</second>
+										<second>263</second>
 									</item>
 								</second>
 							</item>
@@ -8998,10 +8998,10 @@
 					<Obj>
 						<type>0</type>
 						<id>336</id>
-						<name>row_write_ln227</name>
+						<name>row_write_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>227</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -9017,7 +9017,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>227</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -9040,8 +9040,8 @@
 					<item_version>0</item_version>
 					<item>646</item>
 					<item>647</item>
-					<item>1386</item>
 					<item>1387</item>
+					<item>1388</item>
 				</oprand_edges>
 				<opcode>store</opcode>
 				<m_Display>0</m_Display>
@@ -9049,7 +9049,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.42</m_delay>
-				<m_topoIndex>20</m_topoIndex>
+				<m_topoIndex>23</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_195">
@@ -9057,10 +9057,10 @@
 					<Obj>
 						<type>0</type>
 						<id>337</id>
-						<name>br_ln227</name>
+						<name>br_ln252</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>227</lineNumber>
+						<lineNumber>252</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -9076,7 +9076,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>227</second>
+										<second>252</second>
 									</item>
 								</second>
 							</item>
@@ -9113,10 +9113,10 @@
 					<Obj>
 						<type>0</type>
 						<id>339</id>
-						<name>_ln240</name>
+						<name>_ln265</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>240</lineNumber>
+						<lineNumber>265</lineNumber>
 						<contextFuncName>compute_X2</contextFuncName>
 						<contextNormFuncName>compute_X2</contextNormFuncName>
 						<inlineStackInfo>
@@ -9132,7 +9132,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_X2</second>
 										</first>
-										<second>240</second>
+										<second>265</second>
 									</item>
 								</second>
 							</item>
@@ -9160,7 +9160,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>21</m_topoIndex>
+				<m_topoIndex>20</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 		</nodes>
@@ -12103,63 +12103,63 @@
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_490">
-				<id>1380</id>
+				<id>1381</id>
 				<edge_type>2</edge_type>
 				<source_obj>284</source_obj>
 				<sink_obj>289</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_491">
-				<id>1381</id>
+				<id>1382</id>
 				<edge_type>2</edge_type>
 				<source_obj>289</source_obj>
 				<sink_obj>340</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_492">
-				<id>1382</id>
+				<id>1383</id>
 				<edge_type>2</edge_type>
 				<source_obj>289</source_obj>
 				<sink_obj>338</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_493">
-				<id>1383</id>
+				<id>1384</id>
 				<edge_type>2</edge_type>
 				<source_obj>338</source_obj>
 				<sink_obj>289</sink_obj>
 				<is_back_edge>1</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_494">
-				<id>1384</id>
+				<id>1385</id>
 				<edge_type>4</edge_type>
 				<source_obj>295</source_obj>
 				<sink_obj>296</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_495">
-				<id>1385</id>
+				<id>1386</id>
 				<edge_type>4</edge_type>
 				<source_obj>282</source_obj>
 				<sink_obj>285</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_496">
-				<id>1386</id>
+				<id>1387</id>
 				<edge_type>4</edge_type>
 				<source_obj>282</source_obj>
 				<sink_obj>336</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_497">
-				<id>1387</id>
+				<id>1388</id>
 				<edge_type>4</edge_type>
 				<source_obj>285</source_obj>
 				<sink_obj>336</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_498">
-				<id>1388</id>
+				<id>1389</id>
 				<edge_type>4</edge_type>
 				<source_obj>295</source_obj>
 				<sink_obj>296</sink_obj>
@@ -12190,8 +12190,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>4562945</mMinLatency>
-			<mMaxLatency>4562945</mMaxLatency>
+			<mMinLatency>4055042</mMinLatency>
+			<mMaxLatency>4055042</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -12237,8 +12237,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>8192</mMinTripCount>
 			<mMaxTripCount>8192</mMaxTripCount>
-			<mMinLatency>4562944</mMinLatency>
-			<mMaxLatency>4562944</mMaxLatency>
+			<mMinLatency>4055041</mMinLatency>
+			<mMaxLatency>4055041</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -12379,343 +12379,343 @@
 		<item>
 			<first>287</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>288</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>290</first>
 			<second>
-				<first>25</first>
+				<first>32</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>291</first>
 			<second>
-				<first>25</first>
+				<first>32</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>294</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>295</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>296</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>297</first>
 			<second>
-				<first>4</first>
-				<second>5</second>
+				<first>6</first>
+				<second>6</second>
 			</second>
 		</item>
 		<item>
 			<first>298</first>
 			<second>
-				<first>11</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>299</first>
 			<second>
-				<first>11</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>300</first>
 			<second>
-				<first>11</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>301</first>
 			<second>
-				<first>11</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>302</first>
 			<second>
-				<first>11</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>303</first>
 			<second>
-				<first>12</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>304</first>
 			<second>
-				<first>10</first>
-				<second>1</second>
+				<first>13</first>
+				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>305</first>
 			<second>
-				<first>12</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>306</first>
 			<second>
-				<first>12</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>307</first>
 			<second>
-				<first>12</first>
-				<second>9</second>
+				<first>17</first>
+				<second>10</second>
 			</second>
 		</item>
 		<item>
 			<first>308</first>
 			<second>
-				<first>22</first>
+				<first>28</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>309</first>
 			<second>
-				<first>22</first>
+				<first>28</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>310</first>
 			<second>
-				<first>22</first>
+				<first>28</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>311</first>
 			<second>
-				<first>22</first>
+				<first>28</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>312</first>
 			<second>
-				<first>22</first>
+				<first>29</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>313</first>
 			<second>
-				<first>22</first>
+				<first>29</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>314</first>
 			<second>
-				<first>22</first>
+				<first>28</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>315</first>
 			<second>
-				<first>22</first>
+				<first>28</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>316</first>
 			<second>
-				<first>22</first>
+				<first>28</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>317</first>
 			<second>
-				<first>22</first>
+				<first>28</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>318</first>
 			<second>
-				<first>22</first>
+				<first>28</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>319</first>
 			<second>
-				<first>22</first>
+				<first>28</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>320</first>
 			<second>
-				<first>22</first>
+				<first>29</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>321</first>
 			<second>
-				<first>22</first>
+				<first>29</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>322</first>
 			<second>
-				<first>22</first>
+				<first>29</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>323</first>
 			<second>
-				<first>22</first>
+				<first>29</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>324</first>
 			<second>
-				<first>22</first>
+				<first>29</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>325</first>
 			<second>
-				<first>22</first>
+				<first>29</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>326</first>
 			<second>
-				<first>23</first>
+				<first>29</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>327</first>
 			<second>
-				<first>23</first>
+				<first>30</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>328</first>
 			<second>
-				<first>23</first>
+				<first>30</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>329</first>
 			<second>
-				<first>23</first>
+				<first>30</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>330</first>
 			<second>
-				<first>23</first>
+				<first>30</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>331</first>
 			<second>
-				<first>24</first>
+				<first>31</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>332</first>
 			<second>
-				<first>24</first>
+				<first>31</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>333</first>
 			<second>
-				<first>24</first>
+				<first>31</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>334</first>
 			<second>
-				<first>24</first>
+				<first>31</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>335</first>
 			<second>
-				<first>25</first>
+				<first>32</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>336</first>
 			<second>
-				<first>1</first>
+				<first>6</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>337</first>
 			<second>
-				<first>25</first>
+				<first>32</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>339</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -12734,21 +12734,21 @@
 			<first>289</first>
 			<second>
 				<first>1</first>
-				<second>1</second>
+				<second>2</second>
 			</second>
 		</item>
 		<item>
 			<first>338</first>
 			<second>
-				<first>1</first>
-				<second>25</second>
+				<first>2</first>
+				<second>32</second>
 			</second>
 		</item>
 		<item>
 			<first>340</first>
 			<second>
-				<first>1</first>
-				<second>1</second>
+				<first>2</first>
+				<second>2</second>
 			</second>
 		</item>
 	</bblk_ent_exit>

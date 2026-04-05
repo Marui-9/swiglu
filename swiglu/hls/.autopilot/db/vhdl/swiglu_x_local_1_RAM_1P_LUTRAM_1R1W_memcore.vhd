@@ -12,8 +12,8 @@ entity swiglu_x_local_1_RAM_1P_LUTRAM_1R1W_memcore is
     generic(
         MEM_TYPE        : string    := "distributed"; 
         DataWidth       : integer   := 8; 
-        AddressWidth    : integer   := 7;
-        AddressRange    : integer   := 128
+        AddressWidth    : integer   := 5;
+        AddressRange    : integer   := 32
     ); 
     port (
         address0    : in std_logic_vector(AddressWidth-1 downto 0); 

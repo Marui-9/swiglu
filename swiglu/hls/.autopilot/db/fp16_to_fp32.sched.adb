@@ -59,7 +59,7 @@
 						<name>h_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>36</lineNumber>
+						<lineNumber>53</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -75,7 +75,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>36</second>
+										<second>53</second>
 									</item>
 								</second>
 							</item>
@@ -116,7 +116,7 @@
 						<name>mant</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>36</lineNumber>
+						<lineNumber>53</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -132,7 +132,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>36</second>
+										<second>53</second>
 									</item>
 								</second>
 							</item>
@@ -169,10 +169,10 @@
 					<Obj>
 						<type>0</type>
 						<id>4</id>
-						<name>tmp_688</name>
+						<name>tmp_709</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>37</lineNumber>
+						<lineNumber>54</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -188,7 +188,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>37</second>
+										<second>54</second>
 									</item>
 								</second>
 							</item>
@@ -230,7 +230,7 @@
 						<name>sign</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>37</lineNumber>
+						<lineNumber>54</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -246,7 +246,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>37</second>
+										<second>54</second>
 									</item>
 								</second>
 							</item>
@@ -277,7 +277,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>48</m_topoIndex>
+				<m_topoIndex>60</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_6">
@@ -288,7 +288,7 @@
 						<name>exp</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>38</lineNumber>
+						<lineNumber>55</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -304,7 +304,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>38</second>
+										<second>55</second>
 									</item>
 								</second>
 							</item>
@@ -344,10 +344,10 @@
 					<Obj>
 						<type>0</type>
 						<id>7</id>
-						<name>trunc_ln41</name>
+						<name>trunc_ln58</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -363,7 +363,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -400,10 +400,10 @@
 					<Obj>
 						<type>0</type>
 						<id>8</id>
-						<name>or_ln41</name>
+						<name>or_ln58</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -419,7 +419,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -460,7 +460,7 @@
 						<name>tmp</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -476,7 +476,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -519,7 +519,7 @@
 						<name>or_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -535,7 +535,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -574,10 +574,10 @@
 					<Obj>
 						<type>0</type>
 						<id>11</id>
-						<name>icmp_ln41</name>
+						<name>icmp_ln58</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -593,7 +593,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -631,10 +631,10 @@
 					<Obj>
 						<type>0</type>
 						<id>12</id>
-						<name>shl_ln53_1</name>
+						<name>shl_ln70_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>53</lineNumber>
+						<lineNumber>70</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -650,7 +650,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>53</second>
+										<second>70</second>
 									</item>
 								</second>
 							</item>
@@ -681,7 +681,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>49</m_topoIndex>
+				<m_topoIndex>61</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_13">
@@ -689,10 +689,10 @@
 					<Obj>
 						<type>0</type>
 						<id>13</id>
-						<name>zext_ln53</name>
+						<name>zext_ln70</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>53</lineNumber>
+						<lineNumber>70</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -708,7 +708,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>53</second>
+										<second>70</second>
 									</item>
 								</second>
 							</item>
@@ -737,7 +737,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>50</m_topoIndex>
+				<m_topoIndex>62</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_14">
@@ -745,10 +745,10 @@
 					<Obj>
 						<type>0</type>
 						<id>14</id>
-						<name>add_ln53</name>
+						<name>add_ln70</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>53</lineNumber>
+						<lineNumber>70</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -764,7 +764,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>53</second>
+										<second>70</second>
 									</item>
 								</second>
 							</item>
@@ -794,7 +794,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.00</m_delay>
-				<m_topoIndex>51</m_topoIndex>
+				<m_topoIndex>63</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_15">
@@ -802,10 +802,10 @@
 					<Obj>
 						<type>0</type>
 						<id>15</id>
-						<name>tmp_188</name>
+						<name>tmp_72</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>53</lineNumber>
+						<lineNumber>70</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -821,7 +821,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>53</second>
+										<second>70</second>
 									</item>
 								</second>
 							</item>
@@ -853,7 +853,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>52</m_topoIndex>
+				<m_topoIndex>64</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_16">
@@ -864,7 +864,7 @@
 						<name>f32</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>53</lineNumber>
+						<lineNumber>70</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -880,7 +880,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>53</second>
+										<second>70</second>
 									</item>
 								</second>
 							</item>
@@ -913,7 +913,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>53</m_topoIndex>
+				<m_topoIndex>65</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_17">
@@ -921,10 +921,10 @@
 					<Obj>
 						<type>0</type>
 						<id>17</id>
-						<name>tmp_689</name>
+						<name>tmp_710</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -940,7 +940,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -979,10 +979,10 @@
 					<Obj>
 						<type>0</type>
 						<id>18</id>
-						<name>trunc_ln47</name>
+						<name>trunc_ln64</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -998,7 +998,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1038,7 +1038,7 @@
 						<name>shl_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1054,7 +1054,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1096,7 +1096,7 @@
 						<name>m_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1112,7 +1112,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1154,7 +1154,7 @@
 						<name>e</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1170,7 +1170,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1209,10 +1209,10 @@
 					<Obj>
 						<type>0</type>
 						<id>22</id>
-						<name>tmp_690</name>
+						<name>tmp_711</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1228,7 +1228,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1270,7 +1270,7 @@
 						<name>m_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1286,7 +1286,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1327,7 +1327,7 @@
 						<name>e_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1343,7 +1343,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1385,7 +1385,7 @@
 						<name>m_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1401,7 +1401,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1443,7 +1443,7 @@
 						<name>e_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1459,7 +1459,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1498,10 +1498,10 @@
 					<Obj>
 						<type>0</type>
 						<id>27</id>
-						<name>tmp_691</name>
+						<name>tmp_712</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1517,7 +1517,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1559,7 +1559,7 @@
 						<name>m_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1575,7 +1575,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1605,7 +1605,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>21</m_topoIndex>
+				<m_topoIndex>23</m_topoIndex>
 				<m_clusterGroupNumber>4</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_29">
@@ -1616,7 +1616,7 @@
 						<name>e_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1632,7 +1632,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1662,7 +1662,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>22</m_topoIndex>
+				<m_topoIndex>21</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_30">
@@ -1673,7 +1673,7 @@
 						<name>m_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1689,7 +1689,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1720,7 +1720,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.40</m_delay>
-				<m_topoIndex>23</m_topoIndex>
+				<m_topoIndex>24</m_topoIndex>
 				<m_clusterGroupNumber>4</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_31">
@@ -1731,7 +1731,7 @@
 						<name>e_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1747,7 +1747,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1778,7 +1778,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.38</m_delay>
-				<m_topoIndex>24</m_topoIndex>
+				<m_topoIndex>22</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_32">
@@ -1786,10 +1786,10 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>tmp_692</name>
+						<name>tmp_713</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1805,7 +1805,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1847,7 +1847,7 @@
 						<name>m_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1863,7 +1863,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1893,7 +1893,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>27</m_topoIndex>
+				<m_topoIndex>26</m_topoIndex>
 				<m_clusterGroupNumber>5</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_34">
@@ -1904,7 +1904,7 @@
 						<name>e_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1920,7 +1920,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1950,7 +1950,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>26</m_topoIndex>
+				<m_topoIndex>27</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_35">
@@ -1961,7 +1961,7 @@
 						<name>m_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1977,7 +1977,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2019,7 +2019,7 @@
 						<name>e_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2035,7 +2035,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2074,10 +2074,10 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>tmp_693</name>
+						<name>tmp_714</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2093,7 +2093,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2135,7 +2135,7 @@
 						<name>m_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2151,7 +2151,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2181,7 +2181,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>31</m_topoIndex>
+				<m_topoIndex>33</m_topoIndex>
 				<m_clusterGroupNumber>6</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_39">
@@ -2192,7 +2192,7 @@
 						<name>e_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2208,7 +2208,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2238,7 +2238,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>32</m_topoIndex>
+				<m_topoIndex>31</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_40">
@@ -2249,7 +2249,7 @@
 						<name>m_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2265,7 +2265,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2296,7 +2296,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.40</m_delay>
-				<m_topoIndex>33</m_topoIndex>
+				<m_topoIndex>34</m_topoIndex>
 				<m_clusterGroupNumber>6</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_41">
@@ -2307,7 +2307,7 @@
 						<name>e_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2323,7 +2323,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2354,7 +2354,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.38</m_delay>
-				<m_topoIndex>34</m_topoIndex>
+				<m_topoIndex>32</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_42">
@@ -2362,10 +2362,10 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>tmp_694</name>
+						<name>tmp_715</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2381,7 +2381,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2423,7 +2423,7 @@
 						<name>m_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2439,7 +2439,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2469,7 +2469,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>38</m_topoIndex>
+				<m_topoIndex>36</m_topoIndex>
 				<m_clusterGroupNumber>7</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_44">
@@ -2480,7 +2480,7 @@
 						<name>e_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2496,7 +2496,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2526,7 +2526,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>36</m_topoIndex>
+				<m_topoIndex>37</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_45">
@@ -2537,7 +2537,7 @@
 						<name>m_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2553,7 +2553,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2584,7 +2584,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.40</m_delay>
-				<m_topoIndex>39</m_topoIndex>
+				<m_topoIndex>38</m_topoIndex>
 				<m_clusterGroupNumber>7</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_46">
@@ -2595,7 +2595,7 @@
 						<name>e_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2611,7 +2611,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2642,7 +2642,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.38</m_delay>
-				<m_topoIndex>37</m_topoIndex>
+				<m_topoIndex>39</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_47">
@@ -2650,10 +2650,10 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>tmp_695</name>
+						<name>tmp_716</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2669,7 +2669,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2711,7 +2711,7 @@
 						<name>m_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2727,7 +2727,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2757,7 +2757,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>41</m_topoIndex>
+				<m_topoIndex>43</m_topoIndex>
 				<m_clusterGroupNumber>8</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_49">
@@ -2768,7 +2768,7 @@
 						<name>e_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2784,7 +2784,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2814,7 +2814,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>42</m_topoIndex>
+				<m_topoIndex>41</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_50">
@@ -2825,7 +2825,7 @@
 						<name>m_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2841,7 +2841,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2872,7 +2872,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.40</m_delay>
-				<m_topoIndex>43</m_topoIndex>
+				<m_topoIndex>44</m_topoIndex>
 				<m_clusterGroupNumber>8</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_51">
@@ -2883,7 +2883,7 @@
 						<name>e_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2899,7 +2899,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2930,7 +2930,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.38</m_delay>
-				<m_topoIndex>44</m_topoIndex>
+				<m_topoIndex>42</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_52">
@@ -2938,10 +2938,10 @@
 					<Obj>
 						<type>0</type>
 						<id>52</id>
-						<name>tmp_696</name>
+						<name>tmp_717</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2957,7 +2957,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2999,7 +2999,7 @@
 						<name>m_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3015,7 +3015,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3045,7 +3045,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>54</m_topoIndex>
+				<m_topoIndex>46</m_topoIndex>
 				<m_clusterGroupNumber>9</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_54">
@@ -3056,7 +3056,7 @@
 						<name>e_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3072,7 +3072,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3102,7 +3102,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>46</m_topoIndex>
+				<m_topoIndex>47</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_55">
@@ -3113,7 +3113,7 @@
 						<name>m_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3129,7 +3129,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3160,7 +3160,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.40</m_delay>
-				<m_topoIndex>55</m_topoIndex>
+				<m_topoIndex>48</m_topoIndex>
 				<m_clusterGroupNumber>9</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_56">
@@ -3171,7 +3171,7 @@
 						<name>e_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3187,7 +3187,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3218,7 +3218,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.38</m_delay>
-				<m_topoIndex>47</m_topoIndex>
+				<m_topoIndex>49</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_57">
@@ -3226,10 +3226,10 @@
 					<Obj>
 						<type>0</type>
 						<id>57</id>
-						<name>tmp_697</name>
+						<name>tmp_718</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3245,7 +3245,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3276,7 +3276,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>56</m_topoIndex>
+				<m_topoIndex>50</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_58">
@@ -3287,7 +3287,7 @@
 						<name>m_16</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3303,7 +3303,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3333,7 +3333,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>57</m_topoIndex>
+				<m_topoIndex>51</m_topoIndex>
 				<m_clusterGroupNumber>10</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_59">
@@ -3344,7 +3344,7 @@
 						<name>e_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3360,7 +3360,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3390,7 +3390,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>58</m_topoIndex>
+				<m_topoIndex>52</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_60">
@@ -3401,7 +3401,7 @@
 						<name>m_17</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3417,7 +3417,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3448,7 +3448,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.40</m_delay>
-				<m_topoIndex>59</m_topoIndex>
+				<m_topoIndex>53</m_topoIndex>
 				<m_clusterGroupNumber>10</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_61">
@@ -3459,7 +3459,7 @@
 						<name>e_16</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3475,7 +3475,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3506,7 +3506,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.38</m_delay>
-				<m_topoIndex>60</m_topoIndex>
+				<m_topoIndex>54</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_62">
@@ -3514,10 +3514,10 @@
 					<Obj>
 						<type>0</type>
 						<id>62</id>
-						<name>tmp_698</name>
+						<name>tmp_719</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3533,7 +3533,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3564,7 +3564,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>61</m_topoIndex>
+				<m_topoIndex>55</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_63">
@@ -3572,10 +3572,10 @@
 					<Obj>
 						<type>0</type>
 						<id>63</id>
-						<name>trunc_ln47_1</name>
+						<name>trunc_ln64_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3591,7 +3591,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3620,7 +3620,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>62</m_topoIndex>
+				<m_topoIndex>56</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_64">
@@ -3631,7 +3631,7 @@
 						<name>m_18</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3647,7 +3647,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3678,7 +3678,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>63</m_topoIndex>
+				<m_topoIndex>57</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_65">
@@ -3689,7 +3689,7 @@
 						<name>e_17</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3705,7 +3705,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3735,7 +3735,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>64</m_topoIndex>
+				<m_topoIndex>66</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_66">
@@ -3743,10 +3743,10 @@
 					<Obj>
 						<type>0</type>
 						<id>66</id>
-						<name>trunc_ln49</name>
+						<name>trunc_ln66</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>49</lineNumber>
+						<lineNumber>66</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3762,7 +3762,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>49</second>
+										<second>66</second>
 									</item>
 								</second>
 							</item>
@@ -3791,7 +3791,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>65</m_topoIndex>
+				<m_topoIndex>58</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_67">
@@ -3799,10 +3799,10 @@
 					<Obj>
 						<type>0</type>
 						<id>67</id>
-						<name>select_ln47</name>
+						<name>select_ln64</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3818,7 +3818,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3849,7 +3849,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.39</m_delay>
-				<m_topoIndex>66</m_topoIndex>
+				<m_topoIndex>59</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_68">
@@ -3857,10 +3857,10 @@
 					<Obj>
 						<type>0</type>
 						<id>68</id>
-						<name>select_ln44</name>
+						<name>select_ln61</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>44</lineNumber>
+						<lineNumber>61</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3876,7 +3876,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>44</second>
+										<second>61</second>
 									</item>
 								</second>
 							</item>
@@ -3915,10 +3915,10 @@
 					<Obj>
 						<type>0</type>
 						<id>69</id>
-						<name>sext_ln49</name>
+						<name>sext_ln66</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>49</lineNumber>
+						<lineNumber>66</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3934,7 +3934,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>49</second>
+										<second>66</second>
 									</item>
 								</second>
 							</item>
@@ -3974,7 +3974,7 @@
 						<name>f32_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>49</lineNumber>
+						<lineNumber>66</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3990,7 +3990,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>49</second>
+										<second>66</second>
 									</item>
 								</second>
 							</item>
@@ -4035,7 +4035,7 @@
 						<name>f32_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>51</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4051,7 +4051,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>51</second>
+										<second>68</second>
 									</item>
 								</second>
 							</item>
@@ -4092,10 +4092,10 @@
 					<Obj>
 						<type>0</type>
 						<id>72</id>
-						<name>icmp_ln43</name>
+						<name>icmp_ln60</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>43</lineNumber>
+						<lineNumber>60</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4111,7 +4111,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>43</second>
+										<second>60</second>
 									</item>
 								</second>
 							</item>
@@ -4149,10 +4149,10 @@
 					<Obj>
 						<type>0</type>
 						<id>73</id>
-						<name>xor_ln41</name>
+						<name>xor_ln58</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4168,7 +4168,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -4206,10 +4206,10 @@
 					<Obj>
 						<type>0</type>
 						<id>74</id>
-						<name>and_ln43</name>
+						<name>and_ln60</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>43</lineNumber>
+						<lineNumber>60</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4225,7 +4225,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>43</second>
+										<second>60</second>
 									</item>
 								</second>
 							</item>
@@ -4263,10 +4263,10 @@
 					<Obj>
 						<type>0</type>
 						<id>75</id>
-						<name>icmp_ln43_1</name>
+						<name>icmp_ln60_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>43</lineNumber>
+						<lineNumber>60</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4282,7 +4282,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>43</second>
+										<second>60</second>
 									</item>
 								</second>
 							</item>
@@ -4320,10 +4320,10 @@
 					<Obj>
 						<type>0</type>
 						<id>76</id>
-						<name>and_ln43_1</name>
+						<name>and_ln60_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>43</lineNumber>
+						<lineNumber>60</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4339,7 +4339,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>43</second>
+										<second>60</second>
 									</item>
 								</second>
 							</item>
@@ -4380,7 +4380,7 @@
 						<name>sel_tmp8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4396,7 +4396,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -4439,7 +4439,7 @@
 						<name>f32_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>37</lineNumber>
+						<lineNumber>54</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4455,7 +4455,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>37</second>
+										<second>54</second>
 									</item>
 								</second>
 							</item>
@@ -4502,10 +4502,10 @@
 					<Obj>
 						<type>0</type>
 						<id>79</id>
-						<name>bitcast_ln55</name>
+						<name>bitcast_ln72</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>72</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4521,7 +4521,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>55</second>
+										<second>72</second>
 									</item>
 								</second>
 							</item>
@@ -4558,10 +4558,10 @@
 					<Obj>
 						<type>0</type>
 						<id>80</id>
-						<name>_ln55</name>
+						<name>_ln72</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>72</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4577,7 +4577,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>55</second>
+										<second>72</second>
 									</item>
 								</second>
 							</item>
@@ -6934,11 +6934,11 @@
 				<item>81</item>
 			</basic_blocks>
 			<mII>1</mII>
-			<mDepth>4</mDepth>
+			<mDepth>5</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>3</mMinLatency>
-			<mMaxLatency>3</mMaxLatency>
+			<mMinLatency>4</mMinLatency>
+			<mMaxLatency>4</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -6972,7 +6972,7 @@
 		<item>
 			<first>5</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7021,35 +7021,35 @@
 		<item>
 			<first>12</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>13</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>14</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>15</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>16</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7133,7 +7133,7 @@
 		<item>
 			<first>28</first>
 			<second>
-				<first>0</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7147,7 +7147,7 @@
 		<item>
 			<first>30</first>
 			<second>
-				<first>0</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7161,7 +7161,7 @@
 		<item>
 			<first>32</first>
 			<second>
-				<first>0</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7175,7 +7175,7 @@
 		<item>
 			<first>34</first>
 			<second>
-				<first>0</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7203,7 +7203,7 @@
 		<item>
 			<first>38</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7217,7 +7217,7 @@
 		<item>
 			<first>40</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7231,7 +7231,7 @@
 		<item>
 			<first>42</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7245,7 +7245,7 @@
 		<item>
 			<first>44</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7259,7 +7259,7 @@
 		<item>
 			<first>46</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7273,7 +7273,7 @@
 		<item>
 			<first>48</first>
 			<second>
-				<first>2</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7287,7 +7287,7 @@
 		<item>
 			<first>50</first>
 			<second>
-				<first>2</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7301,7 +7301,7 @@
 		<item>
 			<first>52</first>
 			<second>
-				<first>2</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7315,7 +7315,7 @@
 		<item>
 			<first>54</first>
 			<second>
-				<first>2</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7329,7 +7329,7 @@
 		<item>
 			<first>56</first>
 			<second>
-				<first>2</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7392,7 +7392,7 @@
 		<item>
 			<first>65</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7413,91 +7413,91 @@
 		<item>
 			<first>68</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>69</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>70</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>71</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>72</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>73</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>74</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>75</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>76</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>77</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>78</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>79</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>80</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7509,7 +7509,7 @@
 			<first>81</first>
 			<second class_id="31" tracking_level="0" version="0">
 				<first>0</first>
-				<second>3</second>
+				<second>4</second>
 			</second>
 		</item>
 	</bblk_ent_exit>
@@ -7530,7 +7530,7 @@
 			<anchor_node>-1</anchor_node>
 			<region_type>8</region_type>
 			<interval>1</interval>
-			<pipe_depth>4</pipe_depth>
+			<pipe_depth>5</pipe_depth>
 			<mDBIIViolationVec class_id="34" tracking_level="0" version="0">
 				<count>0</count>
 				<item_version>0</item_version>

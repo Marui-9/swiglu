@@ -2,8 +2,8 @@ set clock_constraint { \
     name clk \
     module swiglu \
     port ap_clk \
-    period 4 \
-    uncertainty 1.08 \
+    period 3.333 \
+    uncertainty 0.9 \
 }
 
 set all_path {}

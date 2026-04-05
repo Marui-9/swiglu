@@ -4,7 +4,7 @@ target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:20
 target triple = "fpga64-xilinx-none"
 
 ; Function Attrs: noinline
-define void @apatb_swiglu_ir(i8* noalias nocapture nonnull readonly "maxi" %W, i8* noalias nocapture nonnull readonly "maxi" %V, i8* noalias nocapture nonnull readonly "maxi" %W_down, i8* noalias nocapture nonnull readonly "maxi" %x_batch, float* noalias nocapture nonnull "maxi" %out_batch, i32 %down_quant_mode, float %x_scale) local_unnamed_addr #0 {
+define void @apatb_swiglu_ir(i8* noalias nocapture nonnull readonly "maxi" %W, i8* noalias nocapture nonnull readonly "maxi" %V, i8* noalias nonnull readonly "maxi" %W_down, i8* noalias nonnull readonly "maxi" %W_down2, i8* noalias nocapture nonnull readonly "maxi" %x_batch, float* noalias nocapture nonnull "maxi" %out_batch, i32 %down_quant_mode, float %x_scale) local_unnamed_addr #0 {
 entry:
   %0 = bitcast i8* %W to [9437184 x i8]*
   %1 = call i8* @malloc(i64 9437184)
@@ -15,31 +15,36 @@ entry:
   %4 = bitcast i8* %W_down to [13762560 x i8]*
   %5 = call i8* @malloc(i64 13762560)
   %W_down_copy = bitcast i8* %5 to [13762560 x i8]*
-  %6 = bitcast i8* %x_batch to [8192 x i8]*
-  %7 = call i8* @malloc(i64 8192)
-  %x_batch_copy = bitcast i8* %7 to [8192 x i8]*
-  %8 = bitcast float* %out_batch to [8192 x float]*
-  %9 = call i8* @malloc(i64 32768)
-  %out_batch_copy = bitcast i8* %9 to [8192 x float]*
-  call fastcc void @copy_in([9437184 x i8]* nonnull %0, [9437184 x i8]* %W_copy, [9437184 x i8]* nonnull %2, [9437184 x i8]* %V_copy, [13762560 x i8]* nonnull %4, [13762560 x i8]* %W_down_copy, [8192 x i8]* nonnull %6, [8192 x i8]* %x_batch_copy, [8192 x float]* nonnull %8, [8192 x float]* %out_batch_copy)
-  call void @apatb_swiglu_hw([9437184 x i8]* %W_copy, [9437184 x i8]* %V_copy, [13762560 x i8]* %W_down_copy, i8* %7, [8192 x float]* %out_batch_copy, i32 %down_quant_mode, float %x_scale)
-  call void @copy_back([9437184 x i8]* %0, [9437184 x i8]* %W_copy, [9437184 x i8]* %2, [9437184 x i8]* %V_copy, [13762560 x i8]* %4, [13762560 x i8]* %W_down_copy, [8192 x i8]* %6, [8192 x i8]* %x_batch_copy, [8192 x float]* %8, [8192 x float]* %out_batch_copy)
+  %6 = bitcast i8* %W_down2 to [13762560 x i8]*
+  %7 = call i8* @malloc(i64 13762560)
+  %W_down2_copy = bitcast i8* %7 to [13762560 x i8]*
+  %8 = bitcast i8* %x_batch to [8192 x i8]*
+  %9 = call i8* @malloc(i64 8192)
+  %x_batch_copy = bitcast i8* %9 to [8192 x i8]*
+  %10 = bitcast float* %out_batch to [8192 x float]*
+  %11 = call i8* @malloc(i64 32768)
+  %out_batch_copy = bitcast i8* %11 to [8192 x float]*
+  call fastcc void @copy_in([9437184 x i8]* nonnull %0, [9437184 x i8]* %W_copy, [9437184 x i8]* nonnull %2, [9437184 x i8]* %V_copy, [13762560 x i8]* nonnull %4, [13762560 x i8]* %W_down_copy, [13762560 x i8]* nonnull %6, [13762560 x i8]* %W_down2_copy, [8192 x i8]* nonnull %8, [8192 x i8]* %x_batch_copy, [8192 x float]* nonnull %10, [8192 x float]* %out_batch_copy)
+  call void @apatb_swiglu_hw([9437184 x i8]* %W_copy, [9437184 x i8]* %V_copy, [13762560 x i8]* %W_down_copy, [13762560 x i8]* %W_down2_copy, i8* %9, [8192 x float]* %out_batch_copy, i32 %down_quant_mode, float %x_scale)
+  call void @copy_back([9437184 x i8]* %0, [9437184 x i8]* %W_copy, [9437184 x i8]* %2, [9437184 x i8]* %V_copy, [13762560 x i8]* %4, [13762560 x i8]* %W_down_copy, [13762560 x i8]* %6, [13762560 x i8]* %W_down2_copy, [8192 x i8]* %8, [8192 x i8]* %x_batch_copy, [8192 x float]* %10, [8192 x float]* %out_batch_copy)
   tail call void @free(i8* %1)
   tail call void @free(i8* %3)
   tail call void @free(i8* %5)
   tail call void @free(i8* %7)
   tail call void @free(i8* %9)
+  tail call void @free(i8* %11)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_in([9437184 x i8]* readonly, [9437184 x i8]*, [9437184 x i8]* readonly, [9437184 x i8]*, [13762560 x i8]* readonly, [13762560 x i8]*, [8192 x i8]* readonly, [8192 x i8]*, [8192 x float]* readonly, [8192 x float]*) unnamed_addr #1 {
+define internal fastcc void @copy_in([9437184 x i8]* readonly, [9437184 x i8]*, [9437184 x i8]* readonly, [9437184 x i8]*, [13762560 x i8]* readonly, [13762560 x i8]*, [13762560 x i8]* readonly, [13762560 x i8]*, [8192 x i8]* readonly, [8192 x i8]*, [8192 x float]* readonly, [8192 x float]*) unnamed_addr #1 {
 entry:
   call fastcc void @onebyonecpy_hls.p0a9437184i8([9437184 x i8]* %1, [9437184 x i8]* %0)
   call fastcc void @onebyonecpy_hls.p0a9437184i8([9437184 x i8]* %3, [9437184 x i8]* %2)
   call fastcc void @onebyonecpy_hls.p0a13762560i8([13762560 x i8]* %5, [13762560 x i8]* %4)
-  call fastcc void @onebyonecpy_hls.p0a8192i8([8192 x i8]* %7, [8192 x i8]* %6)
-  call fastcc void @onebyonecpy_hls.p0a8192f32([8192 x float]* %9, [8192 x float]* %8)
+  call fastcc void @onebyonecpy_hls.p0a13762560i8([13762560 x i8]* %7, [13762560 x i8]* %6)
+  call fastcc void @onebyonecpy_hls.p0a8192i8([8192 x i8]* %9, [8192 x i8]* %8)
+  call fastcc void @onebyonecpy_hls.p0a8192f32([8192 x float]* %11, [8192 x float]* %10)
   ret void
 }
 
@@ -236,13 +241,14 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_out([9437184 x i8]*, [9437184 x i8]* readonly, [9437184 x i8]*, [9437184 x i8]* readonly, [13762560 x i8]*, [13762560 x i8]* readonly, [8192 x i8]*, [8192 x i8]* readonly, [8192 x float]*, [8192 x float]* readonly) unnamed_addr #4 {
+define internal fastcc void @copy_out([9437184 x i8]*, [9437184 x i8]* readonly, [9437184 x i8]*, [9437184 x i8]* readonly, [13762560 x i8]*, [13762560 x i8]* readonly, [13762560 x i8]*, [13762560 x i8]* readonly, [8192 x i8]*, [8192 x i8]* readonly, [8192 x float]*, [8192 x float]* readonly) unnamed_addr #4 {
 entry:
   call fastcc void @onebyonecpy_hls.p0a9437184i8([9437184 x i8]* %0, [9437184 x i8]* %1)
   call fastcc void @onebyonecpy_hls.p0a9437184i8([9437184 x i8]* %2, [9437184 x i8]* %3)
   call fastcc void @onebyonecpy_hls.p0a13762560i8([13762560 x i8]* %4, [13762560 x i8]* %5)
-  call fastcc void @onebyonecpy_hls.p0a8192i8([8192 x i8]* %6, [8192 x i8]* %7)
-  call fastcc void @onebyonecpy_hls.p0a8192f32([8192 x float]* %8, [8192 x float]* %9)
+  call fastcc void @onebyonecpy_hls.p0a13762560i8([13762560 x i8]* %6, [13762560 x i8]* %7)
+  call fastcc void @onebyonecpy_hls.p0a8192i8([8192 x i8]* %8, [8192 x i8]* %9)
+  call fastcc void @onebyonecpy_hls.p0a8192f32([8192 x float]* %10, [8192 x float]* %11)
   ret void
 }
 
@@ -250,28 +256,29 @@ declare i8* @malloc(i64) local_unnamed_addr
 
 declare void @free(i8*) local_unnamed_addr
 
-declare void @apatb_swiglu_hw([9437184 x i8]*, [9437184 x i8]*, [13762560 x i8]*, i8*, [8192 x float]*, i32, float)
+declare void @apatb_swiglu_hw([9437184 x i8]*, [9437184 x i8]*, [13762560 x i8]*, [13762560 x i8]*, i8*, [8192 x float]*, i32, float)
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_back([9437184 x i8]*, [9437184 x i8]* readonly, [9437184 x i8]*, [9437184 x i8]* readonly, [13762560 x i8]*, [13762560 x i8]* readonly, [8192 x i8]*, [8192 x i8]* readonly, [8192 x float]*, [8192 x float]* readonly) unnamed_addr #4 {
+define internal fastcc void @copy_back([9437184 x i8]*, [9437184 x i8]* readonly, [9437184 x i8]*, [9437184 x i8]* readonly, [13762560 x i8]*, [13762560 x i8]* readonly, [13762560 x i8]*, [13762560 x i8]* readonly, [8192 x i8]*, [8192 x i8]* readonly, [8192 x float]*, [8192 x float]* readonly) unnamed_addr #4 {
 entry:
-  call fastcc void @onebyonecpy_hls.p0a8192f32([8192 x float]* %8, [8192 x float]* %9)
+  call fastcc void @onebyonecpy_hls.p0a8192f32([8192 x float]* %10, [8192 x float]* %11)
   ret void
 }
 
-declare void @swiglu_hw_stub(i8* noalias nocapture nonnull readonly, i8* noalias nocapture nonnull readonly, i8* noalias nocapture nonnull readonly, i8* noalias nocapture nonnull readonly, float* noalias nocapture nonnull, i32, float)
+declare void @swiglu_hw_stub(i8* noalias nocapture nonnull readonly, i8* noalias nocapture nonnull readonly, i8* noalias nonnull readonly, i8* noalias nonnull readonly, i8* noalias nocapture nonnull readonly, float* noalias nocapture nonnull, i32, float)
 
-define void @swiglu_hw_stub_wrapper([9437184 x i8]*, [9437184 x i8]*, [13762560 x i8]*, i8*, [8192 x float]*, i32, float) #5 {
+define void @swiglu_hw_stub_wrapper([9437184 x i8]*, [9437184 x i8]*, [13762560 x i8]*, [13762560 x i8]*, i8*, [8192 x float]*, i32, float) #5 {
 entry:
-  %7 = bitcast i8* %3 to [8192 x i8]*
-  call void @copy_out([9437184 x i8]* null, [9437184 x i8]* %0, [9437184 x i8]* null, [9437184 x i8]* %1, [13762560 x i8]* null, [13762560 x i8]* %2, [8192 x i8]* null, [8192 x i8]* %7, [8192 x float]* null, [8192 x float]* %4)
-  %8 = bitcast [9437184 x i8]* %0 to i8*
-  %9 = bitcast [9437184 x i8]* %1 to i8*
-  %10 = bitcast [13762560 x i8]* %2 to i8*
-  %11 = bitcast [8192 x i8]* %7 to i8*
-  %12 = bitcast [8192 x float]* %4 to float*
-  call void @swiglu_hw_stub(i8* %8, i8* %9, i8* %10, i8* %11, float* %12, i32 %5, float %6)
-  call void @copy_in([9437184 x i8]* null, [9437184 x i8]* %0, [9437184 x i8]* null, [9437184 x i8]* %1, [13762560 x i8]* null, [13762560 x i8]* %2, [8192 x i8]* null, [8192 x i8]* %7, [8192 x float]* null, [8192 x float]* %4)
+  %8 = bitcast i8* %4 to [8192 x i8]*
+  call void @copy_out([9437184 x i8]* null, [9437184 x i8]* %0, [9437184 x i8]* null, [9437184 x i8]* %1, [13762560 x i8]* null, [13762560 x i8]* %2, [13762560 x i8]* null, [13762560 x i8]* %3, [8192 x i8]* null, [8192 x i8]* %8, [8192 x float]* null, [8192 x float]* %5)
+  %9 = bitcast [9437184 x i8]* %0 to i8*
+  %10 = bitcast [9437184 x i8]* %1 to i8*
+  %11 = bitcast [13762560 x i8]* %2 to i8*
+  %12 = bitcast [13762560 x i8]* %3 to i8*
+  %13 = bitcast [8192 x i8]* %8 to i8*
+  %14 = bitcast [8192 x float]* %5 to float*
+  call void @swiglu_hw_stub(i8* %9, i8* %10, i8* %11, i8* %12, i8* %13, float* %14, i32 %6, float %7)
+  call void @copy_in([9437184 x i8]* null, [9437184 x i8]* %0, [9437184 x i8]* null, [9437184 x i8]* %1, [13762560 x i8]* null, [13762560 x i8]* %2, [13762560 x i8]* null, [13762560 x i8]* %3, [8192 x i8]* null, [8192 x i8]* %8, [8192 x float]* null, [8192 x float]* %5)
   ret void
 }
 

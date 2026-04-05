@@ -69,7 +69,8 @@ static uint32_t swg_last_prog_mode  = 0;
 
 // udmabuf layout (640 MB pool)
 #define UDMABUF_SIZE        671088640U
-#define SWG_MAX_BATCH       4
+#define SWG_MAX_BATCH       1    // tokens per IP call (must match HLS MAX_BATCH=1)
+#define SWG_MAX_TOKENS     64   // max tokens per fused op (looped in SWG_MAX_BATCH chunks)
 #define SWG_VEC_OFF         0x06C50000U  // x INT8
 #define SWG_OUT_OFF         0x06C60000U  // out F32
 #define SWG_LAYER_W_BASE    0x06D00000U  // gate
@@ -95,12 +96,14 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_CTRL_V_HI    0x20
 #define SWG_CTRL_WD_LO   0x28
 #define SWG_CTRL_WD_HI   0x2C
-#define SWG_CTRL_X_LO    0x34
-#define SWG_CTRL_X_HI    0x38
-#define SWG_CTRL_OUT_LO  0x40
-#define SWG_CTRL_OUT_HI  0x44
-#define SWG_CTRL_MODE    0x4C  // 0=Q4_K 1=Q6_K
-#define SWG_CTRL_XSCALE  0x54  // float bits
+#define SWG_CTRL_WD2_LO  0x34
+#define SWG_CTRL_WD2_HI  0x38
+#define SWG_CTRL_X_LO    0x40
+#define SWG_CTRL_X_HI    0x44
+#define SWG_CTRL_OUT_LO  0x4C
+#define SWG_CTRL_OUT_HI  0x50
+#define SWG_CTRL_MODE    0x58  // 0=Q4_K 1=Q6_K
+#define SWG_CTRL_XSCALE  0x60  // float bits
 
 static void udmabuf_sync_to_device(uint32_t offset, uint32_t size) {
     if (sync_offset_fd >= 0 && sync_size_fd >= 0) {
@@ -124,6 +127,30 @@ static void udmabuf_sync_to_cpu(uint32_t offset, uint32_t size) {
         (void)write(sync_size_fd, buf, n);
     }
     if (sync_cpu_fd >= 0) (void)write(sync_cpu_fd, "1", 1);
+}
+
+// Reformat Q6_K weight row from GGUF interleaved layout to field-split layout.
+// GGUF interleaved: [row0: blk0(210B) blk1(210B) ... blk31(210B)] [row1: ...]
+//   Each block: 128 ql | 64 qh | 16 sc | 2 d  (total 210 bytes)
+// Field-split: [row0: 32×128 ql | 32×64 qh | 32×16 sc | 32×2 d] [row1: ...]
+//   Offsets:   ql@0(4096B)  qh@4096(2048B)  sc@6144(512B)  d@6656(64B)
+// Row stride is 6720 bytes in both layouts — udmabuf slot size unchanged.
+// Called once per layer on first token; CPU overhead is ~2048×32 memcpy = negligible.
+static void reformat_q6k_to_fieldsplit(const uint8_t *src, uint8_t *dst, int n_rows) {
+    for (int row = 0; row < n_rows; row++) {
+        const uint8_t *src_row = src + (size_t)row * 6720;
+        uint8_t *dst_ql = dst + (size_t)row * 6720;
+        uint8_t *dst_qh = dst_ql + 4096;
+        uint8_t *dst_sc = dst_qh + 2048;
+        uint8_t *dst_d  = dst_sc +  512;
+        for (int b = 0; b < 32; b++) {
+            const uint8_t *blk = src_row + b * 210;
+            memcpy(dst_ql + b * 128, blk,       128);
+            memcpy(dst_qh + b * 64,  blk + 128,  64);
+            memcpy(dst_sc + b * 16,  blk + 192,  16);
+            memcpy(dst_d  + b * 2,   blk + 208,   2);
+        }
+    }
 }
 
 // Find /dev/uioN whose map0 addr matches target
@@ -1887,7 +1914,7 @@ static void ggml_compute_forward_swiglu_fused_hw(
         x->ne[0] != 2048 || W_gate->ne[0] != 2048 || W_gate->ne[1] != 8192 ||
         W_up->ne[0]   != 2048 || W_up->ne[1]   != 8192 ||
         W_down->ne[0] != 8192 || W_down->ne[1] != 2048 ||
-        x->ne[1] < 1  || x->ne[1] > SWG_MAX_BATCH) {
+        x->ne[1] < 1  || x->ne[1] > SWG_MAX_TOKENS) {
         fprintf(stderr, "[SWG] unsupported shapes/types in fused hw kernel; aborting to avoid bad output\n");
         GGML_ASSERT(false);
     }
@@ -1943,7 +1970,15 @@ static void ggml_compute_forward_swiglu_fused_hw(
     }
     if (!swg_layer_Wd_loaded[layer]) {
         if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   COPY Wd layer %d (%zu bytes) → udmabuf+0x%08X\n", layer, down_bytes, SWG_LAYER_WD_OFF(layer));
-        memcpy((char*)udmabuf_vptr + SWG_LAYER_WD_OFF(layer), W_down->data, down_bytes);
+        if (W_down->type == GGML_TYPE_Q6_K) {
+            // Reformat from GGUF interleaved blocks to field-split layout so the
+            // FPGA can burst ql/qh/sc/d directly without the 6656-cycle extraction loop.
+            reformat_q6k_to_fieldsplit((const uint8_t *)W_down->data,
+                                       (uint8_t *)udmabuf_vptr + SWG_LAYER_WD_OFF(layer),
+                                       (int)W_down->ne[1]);  // ne[1] = 2048 rows
+        } else {
+            memcpy((char*)udmabuf_vptr + SWG_LAYER_WD_OFF(layer), W_down->data, down_bytes);
+        }
         swg_layer_Wd_loaded[layer] = true;
         copied_Wd = true;
     } else if (swiglu_dbg_enabled) {
@@ -2006,6 +2041,8 @@ static void ggml_compute_forward_swiglu_fused_hw(
             swg_ip_regs[SWG_CTRL_V_HI   / 4] = (uint32_t)(phys_V >> 32);
             swg_ip_regs[SWG_CTRL_WD_LO  / 4] = (uint32_t)phys_Wd;
             swg_ip_regs[SWG_CTRL_WD_HI  / 4] = (uint32_t)(phys_Wd >> 32);
+            swg_ip_regs[SWG_CTRL_WD2_LO / 4] = (uint32_t)phys_Wd;
+            swg_ip_regs[SWG_CTRL_WD2_HI / 4] = (uint32_t)(phys_Wd >> 32);
             swg_last_prog_layer = layer;
             swg_last_prog_mode  = mode;
         }
@@ -2023,10 +2060,11 @@ static void ggml_compute_forward_swiglu_fused_hw(
         swg_ip_regs[SWG_CTRL_XSCALE / 4] = xscale_bits;
 
         if (swiglu_dbg_enabled) {
-            fprintf(stderr, "[SWG]   regs: W=0x%08X|%08X  V=0x%08X|%08X  Wd=0x%08X|%08X\n",
-                    swg_ip_regs[SWG_CTRL_W_HI/4],  swg_ip_regs[SWG_CTRL_W_LO/4],
-                    swg_ip_regs[SWG_CTRL_V_HI/4],  swg_ip_regs[SWG_CTRL_V_LO/4],
-                    swg_ip_regs[SWG_CTRL_WD_HI/4], swg_ip_regs[SWG_CTRL_WD_LO/4]);
+            fprintf(stderr, "[SWG]   regs: W=0x%08X|%08X  V=0x%08X|%08X  Wd=0x%08X|%08X  Wd2=0x%08X|%08X\n",
+                    swg_ip_regs[SWG_CTRL_W_HI/4],   swg_ip_regs[SWG_CTRL_W_LO/4],
+                    swg_ip_regs[SWG_CTRL_V_HI/4],   swg_ip_regs[SWG_CTRL_V_LO/4],
+                    swg_ip_regs[SWG_CTRL_WD_HI/4],  swg_ip_regs[SWG_CTRL_WD_LO/4],
+                    swg_ip_regs[SWG_CTRL_WD2_HI/4], swg_ip_regs[SWG_CTRL_WD2_LO/4]);
             fprintf(stderr, "[SWG]   regs: x=0x%08X|%08X  out=0x%08X|%08X  mode=%u  xscale_bits=0x%08X (%.6f)\n",
                     swg_ip_regs[SWG_CTRL_X_HI/4],   swg_ip_regs[SWG_CTRL_X_LO/4],
                     swg_ip_regs[SWG_CTRL_OUT_HI/4], swg_ip_regs[SWG_CTRL_OUT_LO/4],

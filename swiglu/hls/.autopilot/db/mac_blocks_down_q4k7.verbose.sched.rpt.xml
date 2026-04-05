@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mac_blocks_down_q4k7'" level="0">
-<item name = "Date">Thu Apr  2 14:56:05 2026
+<item name = "Date">Sun Apr  5 16:06:48 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 3.239 ns, 1.08 ns</column>
+<column name="ap_clk">3.33 ns, 2.431 ns, 0.90 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1429, 1429, 5.716 us, 5.716 us, 1429, 1429, no</column>
+<column name="">1209, 1209, 4.030 us, 4.030 us, 1209, 1209, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,6 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_402_1">1156, 1156, 289, -, -, 4, no</column>
 </table>
 </item>
 </section>

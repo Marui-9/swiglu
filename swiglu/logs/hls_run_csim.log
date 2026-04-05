@@ -19,20 +19,19 @@ INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1465] Applying config ini 'part=xck26-sfvc784-2LV-c' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(1)
 INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
-INFO: [HLS 200-1465] Applying config ini 'clock=3.33ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(7)
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.33ns.
-INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=0.90ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(14)
-INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.9ns.
+INFO: [HLS 200-1465] Applying config ini 'clock=5ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(7)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=1.35ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(17)
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.35ns.
 INFO: [HLS 200-1465] Applying config ini 'cosim.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(10)
-INFO: [HLS 200-1465] Applying config ini 'package.ip.version=10.0' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(17)
+INFO: [HLS 200-1465] Applying config ini 'package.ip.version=29.1' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(16)
 INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(5)
-INFO: [HLS 200-1465] Applying config ini 'vivado.flow=impl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(16)
-INFO: [HLS 200-1465] Applying config ini 'vivado.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(15)
+INFO: [HLS 200-1465] Applying config ini 'vivado.flow=impl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(15)
+INFO: [HLS 200-1465] Applying config ini 'vivado.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(14)
 INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/vitis-comp.json
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
-   Compiling ../../../../swiglu_tb.cpp in debug mode
    Compiling ../../../../swiglu.cpp in debug mode
    Generating csim.exe
 In file included from ../../../../swiglu.cpp:5:
@@ -64,7 +63,8 @@ T4: PASSED  (batch=1)
 T5: PASSED  (batch=1)
 
 All tests PASSED.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 9216
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 177.088 seconds; peak allocated memory: 179.531 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 3m 1s
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 2 seconds. Total elapsed time: 173.22 seconds; peak allocated memory: 182.465 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 2m 59s

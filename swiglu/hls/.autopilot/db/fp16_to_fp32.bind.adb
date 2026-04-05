@@ -59,7 +59,7 @@
 						<name>h_read</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>36</lineNumber>
+						<lineNumber>53</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -75,7 +75,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>36</second>
+										<second>53</second>
 									</item>
 								</second>
 							</item>
@@ -116,7 +116,7 @@
 						<name>mant</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>36</lineNumber>
+						<lineNumber>53</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -132,7 +132,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>36</second>
+										<second>53</second>
 									</item>
 								</second>
 							</item>
@@ -169,10 +169,10 @@
 					<Obj>
 						<type>0</type>
 						<id>4</id>
-						<name>tmp_688</name>
+						<name>tmp_709</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>37</lineNumber>
+						<lineNumber>54</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -188,7 +188,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>37</second>
+										<second>54</second>
 									</item>
 								</second>
 							</item>
@@ -230,7 +230,7 @@
 						<name>sign</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>37</lineNumber>
+						<lineNumber>54</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -246,7 +246,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>37</second>
+										<second>54</second>
 									</item>
 								</second>
 							</item>
@@ -277,7 +277,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>48</m_topoIndex>
+				<m_topoIndex>60</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_6">
@@ -288,7 +288,7 @@
 						<name>exp</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>38</lineNumber>
+						<lineNumber>55</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -304,7 +304,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>38</second>
+										<second>55</second>
 									</item>
 								</second>
 							</item>
@@ -344,10 +344,10 @@
 					<Obj>
 						<type>0</type>
 						<id>7</id>
-						<name>trunc_ln41</name>
+						<name>trunc_ln58</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -363,7 +363,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -400,10 +400,10 @@
 					<Obj>
 						<type>0</type>
 						<id>8</id>
-						<name>or_ln41</name>
+						<name>or_ln58</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -419,7 +419,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -460,7 +460,7 @@
 						<name>tmp</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -476,7 +476,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -519,7 +519,7 @@
 						<name>or_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -535,7 +535,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -574,10 +574,10 @@
 					<Obj>
 						<type>0</type>
 						<id>11</id>
-						<name>icmp_ln41</name>
+						<name>icmp_ln58</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -593,7 +593,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -631,10 +631,10 @@
 					<Obj>
 						<type>0</type>
 						<id>12</id>
-						<name>shl_ln53_1</name>
+						<name>shl_ln70_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>53</lineNumber>
+						<lineNumber>70</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -650,7 +650,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>53</second>
+										<second>70</second>
 									</item>
 								</second>
 							</item>
@@ -681,7 +681,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>49</m_topoIndex>
+				<m_topoIndex>61</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_13">
@@ -689,10 +689,10 @@
 					<Obj>
 						<type>0</type>
 						<id>13</id>
-						<name>zext_ln53</name>
+						<name>zext_ln70</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>53</lineNumber>
+						<lineNumber>70</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -708,7 +708,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>53</second>
+										<second>70</second>
 									</item>
 								</second>
 							</item>
@@ -737,7 +737,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>50</m_topoIndex>
+				<m_topoIndex>62</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_14">
@@ -745,10 +745,10 @@
 					<Obj>
 						<type>0</type>
 						<id>14</id>
-						<name>add_ln53</name>
+						<name>add_ln70</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>53</lineNumber>
+						<lineNumber>70</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -764,7 +764,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>53</second>
+										<second>70</second>
 									</item>
 								</second>
 							</item>
@@ -794,7 +794,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>1.00</m_delay>
-				<m_topoIndex>51</m_topoIndex>
+				<m_topoIndex>63</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_15">
@@ -802,10 +802,10 @@
 					<Obj>
 						<type>0</type>
 						<id>15</id>
-						<name>tmp_188</name>
+						<name>tmp_72</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>53</lineNumber>
+						<lineNumber>70</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -821,7 +821,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>53</second>
+										<second>70</second>
 									</item>
 								</second>
 							</item>
@@ -853,7 +853,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>52</m_topoIndex>
+				<m_topoIndex>64</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_16">
@@ -864,7 +864,7 @@
 						<name>f32</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>53</lineNumber>
+						<lineNumber>70</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -880,7 +880,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>53</second>
+										<second>70</second>
 									</item>
 								</second>
 							</item>
@@ -913,7 +913,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>53</m_topoIndex>
+				<m_topoIndex>65</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_17">
@@ -921,10 +921,10 @@
 					<Obj>
 						<type>0</type>
 						<id>17</id>
-						<name>tmp_689</name>
+						<name>tmp_710</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -940,7 +940,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -979,10 +979,10 @@
 					<Obj>
 						<type>0</type>
 						<id>18</id>
-						<name>trunc_ln47</name>
+						<name>trunc_ln64</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -998,7 +998,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1038,7 +1038,7 @@
 						<name>shl_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1054,7 +1054,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1096,7 +1096,7 @@
 						<name>m_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1112,7 +1112,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1154,7 +1154,7 @@
 						<name>e</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1170,7 +1170,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1209,10 +1209,10 @@
 					<Obj>
 						<type>0</type>
 						<id>22</id>
-						<name>tmp_690</name>
+						<name>tmp_711</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1228,7 +1228,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1270,7 +1270,7 @@
 						<name>m_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1286,7 +1286,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1327,7 +1327,7 @@
 						<name>e_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1343,7 +1343,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1385,7 +1385,7 @@
 						<name>m_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1401,7 +1401,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1443,7 +1443,7 @@
 						<name>e_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1459,7 +1459,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1498,10 +1498,10 @@
 					<Obj>
 						<type>0</type>
 						<id>27</id>
-						<name>tmp_691</name>
+						<name>tmp_712</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1517,7 +1517,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1559,7 +1559,7 @@
 						<name>m_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1575,7 +1575,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1605,7 +1605,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>21</m_topoIndex>
+				<m_topoIndex>23</m_topoIndex>
 				<m_clusterGroupNumber>4</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_29">
@@ -1616,7 +1616,7 @@
 						<name>e_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1632,7 +1632,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1662,7 +1662,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>22</m_topoIndex>
+				<m_topoIndex>21</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_30">
@@ -1673,7 +1673,7 @@
 						<name>m_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1689,7 +1689,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1720,7 +1720,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.40</m_delay>
-				<m_topoIndex>23</m_topoIndex>
+				<m_topoIndex>24</m_topoIndex>
 				<m_clusterGroupNumber>4</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_31">
@@ -1731,7 +1731,7 @@
 						<name>e_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1747,7 +1747,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1778,7 +1778,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.38</m_delay>
-				<m_topoIndex>24</m_topoIndex>
+				<m_topoIndex>22</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_32">
@@ -1786,10 +1786,10 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>tmp_692</name>
+						<name>tmp_713</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1805,7 +1805,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1847,7 +1847,7 @@
 						<name>m_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1863,7 +1863,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1893,7 +1893,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>27</m_topoIndex>
+				<m_topoIndex>26</m_topoIndex>
 				<m_clusterGroupNumber>5</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_34">
@@ -1904,7 +1904,7 @@
 						<name>e_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1920,7 +1920,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -1950,7 +1950,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>26</m_topoIndex>
+				<m_topoIndex>27</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_35">
@@ -1961,7 +1961,7 @@
 						<name>m_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -1977,7 +1977,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2019,7 +2019,7 @@
 						<name>e_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2035,7 +2035,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2074,10 +2074,10 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>tmp_693</name>
+						<name>tmp_714</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2093,7 +2093,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2135,7 +2135,7 @@
 						<name>m_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2151,7 +2151,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2181,7 +2181,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>31</m_topoIndex>
+				<m_topoIndex>33</m_topoIndex>
 				<m_clusterGroupNumber>6</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_39">
@@ -2192,7 +2192,7 @@
 						<name>e_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2208,7 +2208,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2238,7 +2238,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>32</m_topoIndex>
+				<m_topoIndex>31</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_40">
@@ -2249,7 +2249,7 @@
 						<name>m_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2265,7 +2265,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2296,7 +2296,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.40</m_delay>
-				<m_topoIndex>33</m_topoIndex>
+				<m_topoIndex>34</m_topoIndex>
 				<m_clusterGroupNumber>6</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_41">
@@ -2307,7 +2307,7 @@
 						<name>e_8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2323,7 +2323,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2354,7 +2354,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.38</m_delay>
-				<m_topoIndex>34</m_topoIndex>
+				<m_topoIndex>32</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_42">
@@ -2362,10 +2362,10 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>tmp_694</name>
+						<name>tmp_715</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2381,7 +2381,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2423,7 +2423,7 @@
 						<name>m_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2439,7 +2439,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2469,7 +2469,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>38</m_topoIndex>
+				<m_topoIndex>36</m_topoIndex>
 				<m_clusterGroupNumber>7</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_44">
@@ -2480,7 +2480,7 @@
 						<name>e_9</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2496,7 +2496,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2526,7 +2526,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>36</m_topoIndex>
+				<m_topoIndex>37</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_45">
@@ -2537,7 +2537,7 @@
 						<name>m_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2553,7 +2553,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2584,7 +2584,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.40</m_delay>
-				<m_topoIndex>39</m_topoIndex>
+				<m_topoIndex>38</m_topoIndex>
 				<m_clusterGroupNumber>7</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_46">
@@ -2595,7 +2595,7 @@
 						<name>e_10</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2611,7 +2611,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2642,7 +2642,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.38</m_delay>
-				<m_topoIndex>37</m_topoIndex>
+				<m_topoIndex>39</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_47">
@@ -2650,10 +2650,10 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>tmp_695</name>
+						<name>tmp_716</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2669,7 +2669,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2711,7 +2711,7 @@
 						<name>m_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2727,7 +2727,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2757,7 +2757,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>41</m_topoIndex>
+				<m_topoIndex>43</m_topoIndex>
 				<m_clusterGroupNumber>8</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_49">
@@ -2768,7 +2768,7 @@
 						<name>e_11</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2784,7 +2784,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2814,7 +2814,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>42</m_topoIndex>
+				<m_topoIndex>41</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_50">
@@ -2825,7 +2825,7 @@
 						<name>m_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2841,7 +2841,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2872,7 +2872,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.40</m_delay>
-				<m_topoIndex>43</m_topoIndex>
+				<m_topoIndex>44</m_topoIndex>
 				<m_clusterGroupNumber>8</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_51">
@@ -2883,7 +2883,7 @@
 						<name>e_12</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2899,7 +2899,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2930,7 +2930,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.38</m_delay>
-				<m_topoIndex>44</m_topoIndex>
+				<m_topoIndex>42</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_52">
@@ -2938,10 +2938,10 @@
 					<Obj>
 						<type>0</type>
 						<id>52</id>
-						<name>tmp_696</name>
+						<name>tmp_717</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -2957,7 +2957,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -2999,7 +2999,7 @@
 						<name>m_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3015,7 +3015,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3045,7 +3045,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>54</m_topoIndex>
+				<m_topoIndex>46</m_topoIndex>
 				<m_clusterGroupNumber>9</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_54">
@@ -3056,7 +3056,7 @@
 						<name>e_13</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3072,7 +3072,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3102,7 +3102,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>46</m_topoIndex>
+				<m_topoIndex>47</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_55">
@@ -3113,7 +3113,7 @@
 						<name>m_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3129,7 +3129,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3160,7 +3160,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.40</m_delay>
-				<m_topoIndex>55</m_topoIndex>
+				<m_topoIndex>48</m_topoIndex>
 				<m_clusterGroupNumber>9</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_56">
@@ -3171,7 +3171,7 @@
 						<name>e_14</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3187,7 +3187,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3218,7 +3218,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.38</m_delay>
-				<m_topoIndex>47</m_topoIndex>
+				<m_topoIndex>49</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_57">
@@ -3226,10 +3226,10 @@
 					<Obj>
 						<type>0</type>
 						<id>57</id>
-						<name>tmp_697</name>
+						<name>tmp_718</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3245,7 +3245,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3276,7 +3276,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>56</m_topoIndex>
+				<m_topoIndex>50</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_58">
@@ -3287,7 +3287,7 @@
 						<name>m_16</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3303,7 +3303,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3333,7 +3333,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>57</m_topoIndex>
+				<m_topoIndex>51</m_topoIndex>
 				<m_clusterGroupNumber>10</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_59">
@@ -3344,7 +3344,7 @@
 						<name>e_15</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3360,7 +3360,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3390,7 +3390,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>58</m_topoIndex>
+				<m_topoIndex>52</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_60">
@@ -3401,7 +3401,7 @@
 						<name>m_17</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3417,7 +3417,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3448,7 +3448,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.40</m_delay>
-				<m_topoIndex>59</m_topoIndex>
+				<m_topoIndex>53</m_topoIndex>
 				<m_clusterGroupNumber>10</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_61">
@@ -3459,7 +3459,7 @@
 						<name>e_16</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3475,7 +3475,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3506,7 +3506,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.38</m_delay>
-				<m_topoIndex>60</m_topoIndex>
+				<m_topoIndex>54</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_62">
@@ -3514,10 +3514,10 @@
 					<Obj>
 						<type>0</type>
 						<id>62</id>
-						<name>tmp_698</name>
+						<name>tmp_719</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3533,7 +3533,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3564,7 +3564,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>61</m_topoIndex>
+				<m_topoIndex>55</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_63">
@@ -3572,10 +3572,10 @@
 					<Obj>
 						<type>0</type>
 						<id>63</id>
-						<name>trunc_ln47_1</name>
+						<name>trunc_ln64_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3591,7 +3591,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3620,7 +3620,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>62</m_topoIndex>
+				<m_topoIndex>56</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_64">
@@ -3631,7 +3631,7 @@
 						<name>m_18</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3647,7 +3647,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3678,7 +3678,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>63</m_topoIndex>
+				<m_topoIndex>57</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_65">
@@ -3689,7 +3689,7 @@
 						<name>e_17</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3705,7 +3705,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3735,7 +3735,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.78</m_delay>
-				<m_topoIndex>64</m_topoIndex>
+				<m_topoIndex>66</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_66">
@@ -3743,10 +3743,10 @@
 					<Obj>
 						<type>0</type>
 						<id>66</id>
-						<name>trunc_ln49</name>
+						<name>trunc_ln66</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>49</lineNumber>
+						<lineNumber>66</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3762,7 +3762,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>49</second>
+										<second>66</second>
 									</item>
 								</second>
 							</item>
@@ -3791,7 +3791,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>65</m_topoIndex>
+				<m_topoIndex>58</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_67">
@@ -3799,10 +3799,10 @@
 					<Obj>
 						<type>0</type>
 						<id>67</id>
-						<name>select_ln47</name>
+						<name>select_ln64</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>47</lineNumber>
+						<lineNumber>64</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3818,7 +3818,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>47</second>
+										<second>64</second>
 									</item>
 								</second>
 							</item>
@@ -3849,7 +3849,7 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.39</m_delay>
-				<m_topoIndex>66</m_topoIndex>
+				<m_topoIndex>59</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 			<item class_id_reference="9" object_id="_68">
@@ -3857,10 +3857,10 @@
 					<Obj>
 						<type>0</type>
 						<id>68</id>
-						<name>select_ln44</name>
+						<name>select_ln61</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>44</lineNumber>
+						<lineNumber>61</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3876,7 +3876,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>44</second>
+										<second>61</second>
 									</item>
 								</second>
 							</item>
@@ -3915,10 +3915,10 @@
 					<Obj>
 						<type>0</type>
 						<id>69</id>
-						<name>sext_ln49</name>
+						<name>sext_ln66</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>49</lineNumber>
+						<lineNumber>66</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3934,7 +3934,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>49</second>
+										<second>66</second>
 									</item>
 								</second>
 							</item>
@@ -3974,7 +3974,7 @@
 						<name>f32_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>49</lineNumber>
+						<lineNumber>66</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -3990,7 +3990,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>49</second>
+										<second>66</second>
 									</item>
 								</second>
 							</item>
@@ -4035,7 +4035,7 @@
 						<name>f32_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>51</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4051,7 +4051,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>51</second>
+										<second>68</second>
 									</item>
 								</second>
 							</item>
@@ -4092,10 +4092,10 @@
 					<Obj>
 						<type>0</type>
 						<id>72</id>
-						<name>icmp_ln43</name>
+						<name>icmp_ln60</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>43</lineNumber>
+						<lineNumber>60</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4111,7 +4111,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>43</second>
+										<second>60</second>
 									</item>
 								</second>
 							</item>
@@ -4149,10 +4149,10 @@
 					<Obj>
 						<type>0</type>
 						<id>73</id>
-						<name>xor_ln41</name>
+						<name>xor_ln58</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4168,7 +4168,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -4206,10 +4206,10 @@
 					<Obj>
 						<type>0</type>
 						<id>74</id>
-						<name>and_ln43</name>
+						<name>and_ln60</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>43</lineNumber>
+						<lineNumber>60</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4225,7 +4225,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>43</second>
+										<second>60</second>
 									</item>
 								</second>
 							</item>
@@ -4263,10 +4263,10 @@
 					<Obj>
 						<type>0</type>
 						<id>75</id>
-						<name>icmp_ln43_1</name>
+						<name>icmp_ln60_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>43</lineNumber>
+						<lineNumber>60</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4282,7 +4282,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>43</second>
+										<second>60</second>
 									</item>
 								</second>
 							</item>
@@ -4320,10 +4320,10 @@
 					<Obj>
 						<type>0</type>
 						<id>76</id>
-						<name>and_ln43_1</name>
+						<name>and_ln60_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>43</lineNumber>
+						<lineNumber>60</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4339,7 +4339,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>43</second>
+										<second>60</second>
 									</item>
 								</second>
 							</item>
@@ -4380,7 +4380,7 @@
 						<name>sel_tmp8</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4396,7 +4396,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>41</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -4439,7 +4439,7 @@
 						<name>f32_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>37</lineNumber>
+						<lineNumber>54</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4455,7 +4455,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>37</second>
+										<second>54</second>
 									</item>
 								</second>
 							</item>
@@ -4502,10 +4502,10 @@
 					<Obj>
 						<type>0</type>
 						<id>79</id>
-						<name>bitcast_ln55</name>
+						<name>bitcast_ln72</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>72</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4521,7 +4521,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>55</second>
+										<second>72</second>
 									</item>
 								</second>
 							</item>
@@ -4558,10 +4558,10 @@
 					<Obj>
 						<type>0</type>
 						<id>80</id>
-						<name>_ln55</name>
+						<name>_ln72</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>55</lineNumber>
+						<lineNumber>72</lineNumber>
 						<contextFuncName>fp16_to_fp32</contextFuncName>
 						<contextNormFuncName>fp16_to_fp32</contextNormFuncName>
 						<inlineStackInfo>
@@ -4577,7 +4577,7 @@
 											<first>swiglu.cpp</first>
 											<second>fp16_to_fp32</second>
 										</first>
-										<second>55</second>
+										<second>72</second>
 									</item>
 								</second>
 							</item>
@@ -6934,23 +6934,23 @@
 				<item>81</item>
 			</basic_blocks>
 			<mII>1</mII>
-			<mDepth>4</mDepth>
+			<mDepth>5</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>3</mMinLatency>
-			<mMaxLatency>3</mMaxLatency>
+			<mMinLatency>4</mMinLatency>
+			<mMaxLatency>4</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
 	</cdfg_regions>
 	<fsm class_id="24" tracking_level="1" version="0" object_id="_299">
 		<states class_id="25" tracking_level="0" version="0">
-			<count>4</count>
+			<count>5</count>
 			<item_version>0</item_version>
 			<item class_id="26" tracking_level="1" version="0" object_id="_300">
 				<id>1</id>
 				<operations class_id="27" tracking_level="0" version="0">
-					<count>26</count>
+					<count>22</count>
 					<item_version>0</item_version>
 					<item class_id="28" tracking_level="1" version="0" object_id="_301">
 						<id>2</id>
@@ -7053,44 +7053,44 @@
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_321">
-						<id>28</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_322">
 						<id>29</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_323">
-						<id>30</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_324">
+					<item class_id_reference="28" object_id="_322">
 						<id>31</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_325">
-						<id>32</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_326">
-						<id>34</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 				</operations>
 			</item>
-			<item class_id_reference="26" object_id="_327">
+			<item class_id_reference="26" object_id="_323">
 				<id>2</id>
 				<operations>
-					<count>11</count>
+					<count>10</count>
 					<item_version>0</item_version>
-					<item class_id_reference="28" object_id="_328">
+					<item class_id_reference="28" object_id="_324">
+						<id>28</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_325">
+						<id>30</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_326">
+						<id>32</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_327">
 						<id>33</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_328">
+						<id>34</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
@@ -7110,54 +7110,54 @@
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_332">
-						<id>38</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_333">
 						<id>39</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_334">
-						<id>40</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_335">
+					<item class_id_reference="28" object_id="_333">
 						<id>41</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_336">
-						<id>42</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_337">
-						<id>44</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_338">
-						<id>46</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 				</operations>
 			</item>
-			<item class_id_reference="26" object_id="_339">
+			<item class_id_reference="26" object_id="_334">
 				<id>3</id>
 				<operations>
 					<count>10</count>
 					<item_version>0</item_version>
-					<item class_id_reference="28" object_id="_340">
+					<item class_id_reference="28" object_id="_335">
+						<id>38</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_336">
+						<id>40</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_337">
+						<id>42</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_338">
 						<id>43</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_341">
+					<item class_id_reference="28" object_id="_339">
+						<id>44</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_340">
 						<id>45</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_341">
+						<id>46</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
@@ -7167,203 +7167,210 @@
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_343">
-						<id>48</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_344">
 						<id>49</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_345">
-						<id>50</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_346">
+					<item class_id_reference="28" object_id="_344">
 						<id>51</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_347">
-						<id>52</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_348">
-						<id>54</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_349">
-						<id>56</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 				</operations>
 			</item>
-			<item class_id_reference="26" object_id="_350">
+			<item class_id_reference="26" object_id="_345">
 				<id>4</id>
 				<operations>
-					<count>32</count>
+					<count>17</count>
 					<item_version>0</item_version>
-					<item class_id_reference="28" object_id="_351">
-						<id>5</id>
+					<item class_id_reference="28" object_id="_346">
+						<id>48</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_352">
-						<id>12</id>
+					<item class_id_reference="28" object_id="_347">
+						<id>50</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_353">
-						<id>13</id>
+					<item class_id_reference="28" object_id="_348">
+						<id>52</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_354">
-						<id>14</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_355">
-						<id>15</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_356">
-						<id>16</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_357">
+					<item class_id_reference="28" object_id="_349">
 						<id>53</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_358">
+					<item class_id_reference="28" object_id="_350">
+						<id>54</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_351">
 						<id>55</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_359">
+					<item class_id_reference="28" object_id="_352">
+						<id>56</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_353">
 						<id>57</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_360">
+					<item class_id_reference="28" object_id="_354">
 						<id>58</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_361">
+					<item class_id_reference="28" object_id="_355">
 						<id>59</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_362">
+					<item class_id_reference="28" object_id="_356">
 						<id>60</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_363">
+					<item class_id_reference="28" object_id="_357">
 						<id>61</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_364">
+					<item class_id_reference="28" object_id="_358">
 						<id>62</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_365">
+					<item class_id_reference="28" object_id="_359">
 						<id>63</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_366">
+					<item class_id_reference="28" object_id="_360">
 						<id>64</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_367">
-						<id>65</id>
-						<stage>1</stage>
-						<latency>1</latency>
-					</item>
-					<item class_id_reference="28" object_id="_368">
+					<item class_id_reference="28" object_id="_361">
 						<id>66</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
-					<item class_id_reference="28" object_id="_369">
+					<item class_id_reference="28" object_id="_362">
 						<id>67</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
+				</operations>
+			</item>
+			<item class_id_reference="26" object_id="_363">
+				<id>5</id>
+				<operations>
+					<count>20</count>
+					<item_version>0</item_version>
+					<item class_id_reference="28" object_id="_364">
+						<id>5</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_365">
+						<id>12</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_366">
+						<id>13</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_367">
+						<id>14</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_368">
+						<id>15</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_369">
+						<id>16</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
 					<item class_id_reference="28" object_id="_370">
-						<id>68</id>
+						<id>65</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_371">
-						<id>69</id>
+						<id>68</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_372">
-						<id>70</id>
+						<id>69</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_373">
-						<id>71</id>
+						<id>70</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_374">
-						<id>72</id>
+						<id>71</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_375">
-						<id>73</id>
+						<id>72</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_376">
-						<id>74</id>
+						<id>73</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_377">
-						<id>75</id>
+						<id>74</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_378">
-						<id>76</id>
+						<id>75</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_379">
-						<id>77</id>
+						<id>76</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_380">
-						<id>78</id>
+						<id>77</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_381">
-						<id>79</id>
+						<id>78</id>
 						<stage>1</stage>
 						<latency>1</latency>
 					</item>
 					<item class_id_reference="28" object_id="_382">
+						<id>79</id>
+						<stage>1</stage>
+						<latency>1</latency>
+					</item>
+					<item class_id_reference="28" object_id="_383">
 						<id>80</id>
 						<stage>1</stage>
 						<latency>1</latency>
@@ -7372,9 +7379,9 @@
 			</item>
 		</states>
 		<transitions class_id="29" tracking_level="0" version="0">
-			<count>3</count>
+			<count>4</count>
 			<item_version>0</item_version>
-			<item class_id="30" tracking_level="1" version="0" object_id="_383">
+			<item class_id="30" tracking_level="1" version="0" object_id="_384">
 				<inState>1</inState>
 				<outState>2</outState>
 				<condition class_id="31" tracking_level="0" version="0">
@@ -7389,7 +7396,7 @@
 					</sop>
 				</condition>
 			</item>
-			<item class_id_reference="30" object_id="_384">
+			<item class_id_reference="30" object_id="_385">
 				<inState>2</inState>
 				<outState>3</outState>
 				<condition>
@@ -7404,9 +7411,24 @@
 					</sop>
 				</condition>
 			</item>
-			<item class_id_reference="30" object_id="_385">
+			<item class_id_reference="30" object_id="_386">
 				<inState>3</inState>
 				<outState>4</outState>
+				<condition>
+					<id>-1</id>
+					<sop>
+						<count>1</count>
+						<item_version>0</item_version>
+						<item>
+							<count>0</count>
+							<item_version>0</item_version>
+						</item>
+					</sop>
+				</condition>
+			</item>
+			<item class_id_reference="30" object_id="_387">
+				<inState>4</inState>
+				<outState>5</outState>
 				<condition>
 					<id>-1</id>
 					<sop>
@@ -7449,7 +7471,7 @@
 		<item>
 			<first>5</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7498,35 +7520,35 @@
 		<item>
 			<first>12</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>13</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>14</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>15</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>16</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7610,7 +7632,7 @@
 		<item>
 			<first>28</first>
 			<second>
-				<first>0</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7624,7 +7646,7 @@
 		<item>
 			<first>30</first>
 			<second>
-				<first>0</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7638,7 +7660,7 @@
 		<item>
 			<first>32</first>
 			<second>
-				<first>0</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7652,7 +7674,7 @@
 		<item>
 			<first>34</first>
 			<second>
-				<first>0</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7680,7 +7702,7 @@
 		<item>
 			<first>38</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7694,7 +7716,7 @@
 		<item>
 			<first>40</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7708,7 +7730,7 @@
 		<item>
 			<first>42</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7722,7 +7744,7 @@
 		<item>
 			<first>44</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7736,7 +7758,7 @@
 		<item>
 			<first>46</first>
 			<second>
-				<first>1</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7750,7 +7772,7 @@
 		<item>
 			<first>48</first>
 			<second>
-				<first>2</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7764,7 +7786,7 @@
 		<item>
 			<first>50</first>
 			<second>
-				<first>2</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7778,7 +7800,7 @@
 		<item>
 			<first>52</first>
 			<second>
-				<first>2</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7792,7 +7814,7 @@
 		<item>
 			<first>54</first>
 			<second>
-				<first>2</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7806,7 +7828,7 @@
 		<item>
 			<first>56</first>
 			<second>
-				<first>2</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7869,7 +7891,7 @@
 		<item>
 			<first>65</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7890,91 +7912,91 @@
 		<item>
 			<first>68</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>69</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>70</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>71</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>72</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>73</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>74</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>75</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>76</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>77</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>78</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>79</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>80</first>
 			<second>
-				<first>3</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -7986,14 +8008,14 @@
 			<first>81</first>
 			<second class_id="40" tracking_level="0" version="0">
 				<first>0</first>
-				<second>3</second>
+				<second>4</second>
 			</second>
 		</item>
 	</bblk_ent_exit>
 	<regions class_id="41" tracking_level="0" version="0">
 		<count>1</count>
 		<item_version>0</item_version>
-		<item class_id="42" tracking_level="1" version="0" object_id="_386">
+		<item class_id="42" tracking_level="1" version="0" object_id="_388">
 			<region_name>fp16_to_fp32</region_name>
 			<basic_blocks>
 				<count>1</count>
@@ -8007,7 +8029,7 @@
 			<anchor_node>-1</anchor_node>
 			<region_type>8</region_type>
 			<interval>1</interval>
-			<pipe_depth>4</pipe_depth>
+			<pipe_depth>5</pipe_depth>
 			<mDBIIViolationVec class_id="43" tracking_level="0" version="0">
 				<count>0</count>
 				<item_version>0</item_version>
@@ -8182,7 +8204,7 @@
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>28</item>
+				<item>29</item>
 			</second>
 		</item>
 		<item>
@@ -8190,11 +8212,19 @@
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>29</item>
+				<item>31</item>
 			</second>
 		</item>
 		<item>
-			<first>242</first>
+			<first>244</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>28</item>
+			</second>
+		</item>
+		<item>
+			<first>249</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8202,15 +8232,7 @@
 			</second>
 		</item>
 		<item>
-			<first>250</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>31</item>
-			</second>
-		</item>
-		<item>
-			<first>258</first>
+			<first>255</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8218,15 +8240,7 @@
 			</second>
 		</item>
 		<item>
-			<first>266</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>34</item>
-			</second>
-		</item>
-		<item>
-			<first>272</first>
+			<first>263</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8234,7 +8248,15 @@
 			</second>
 		</item>
 		<item>
-			<first>277</first>
+			<first>269</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>34</item>
+			</second>
+		</item>
+		<item>
+			<first>274</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8242,7 +8264,7 @@
 			</second>
 		</item>
 		<item>
-			<first>283</first>
+			<first>282</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8250,7 +8272,7 @@
 			</second>
 		</item>
 		<item>
-			<first>288</first>
+			<first>289</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8258,15 +8280,7 @@
 			</second>
 		</item>
 		<item>
-			<first>296</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>38</item>
-			</second>
-		</item>
-		<item>
-			<first>302</first>
+			<first>297</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8274,15 +8288,7 @@
 			</second>
 		</item>
 		<item>
-			<first>308</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>40</item>
-			</second>
-		</item>
-		<item>
-			<first>316</first>
+			<first>303</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8290,7 +8296,23 @@
 			</second>
 		</item>
 		<item>
-			<first>324</first>
+			<first>311</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>38</item>
+			</second>
+		</item>
+		<item>
+			<first>316</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>40</item>
+			</second>
+		</item>
+		<item>
+			<first>322</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8298,23 +8320,7 @@
 			</second>
 		</item>
 		<item>
-			<first>332</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>44</item>
-			</second>
-		</item>
-		<item>
-			<first>338</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>46</item>
-			</second>
-		</item>
-		<item>
-			<first>346</first>
+			<first>330</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8322,7 +8328,15 @@
 			</second>
 		</item>
 		<item>
-			<first>351</first>
+			<first>336</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>44</item>
+			</second>
+		</item>
+		<item>
+			<first>341</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8330,7 +8344,15 @@
 			</second>
 		</item>
 		<item>
-			<first>357</first>
+			<first>349</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>46</item>
+			</second>
+		</item>
+		<item>
+			<first>356</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8338,15 +8360,7 @@
 			</second>
 		</item>
 		<item>
-			<first>365</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>48</item>
-			</second>
-		</item>
-		<item>
-			<first>371</first>
+			<first>364</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8354,15 +8368,7 @@
 			</second>
 		</item>
 		<item>
-			<first>376</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>50</item>
-			</second>
-		</item>
-		<item>
-			<first>384</first>
+			<first>370</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8370,7 +8376,23 @@
 			</second>
 		</item>
 		<item>
-			<first>391</first>
+			<first>378</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>48</item>
+			</second>
+		</item>
+		<item>
+			<first>383</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>50</item>
+			</second>
+		</item>
+		<item>
+			<first>389</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8378,71 +8400,7 @@
 			</second>
 		</item>
 		<item>
-			<first>399</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>54</item>
-			</second>
-		</item>
-		<item>
-			<first>405</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>56</item>
-			</second>
-		</item>
-		<item>
-			<first>413</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>5</item>
-			</second>
-		</item>
-		<item>
-			<first>420</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>12</item>
-			</second>
-		</item>
-		<item>
-			<first>427</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>13</item>
-			</second>
-		</item>
-		<item>
-			<first>431</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>14</item>
-			</second>
-		</item>
-		<item>
-			<first>437</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>15</item>
-			</second>
-		</item>
-		<item>
-			<first>447</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>16</item>
-			</second>
-		</item>
-		<item>
-			<first>457</first>
+			<first>397</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8450,7 +8408,15 @@
 			</second>
 		</item>
 		<item>
-			<first>462</first>
+			<first>403</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>54</item>
+			</second>
+		</item>
+		<item>
+			<first>408</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8458,7 +8424,15 @@
 			</second>
 		</item>
 		<item>
-			<first>468</first>
+			<first>416</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>56</item>
+			</second>
+		</item>
+		<item>
+			<first>423</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8466,7 +8440,7 @@
 			</second>
 		</item>
 		<item>
-			<first>476</first>
+			<first>431</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8474,7 +8448,7 @@
 			</second>
 		</item>
 		<item>
-			<first>482</first>
+			<first>437</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8482,7 +8456,7 @@
 			</second>
 		</item>
 		<item>
-			<first>487</first>
+			<first>443</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8490,7 +8464,7 @@
 			</second>
 		</item>
 		<item>
-			<first>495</first>
+			<first>451</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8498,7 +8472,7 @@
 			</second>
 		</item>
 		<item>
-			<first>502</first>
+			<first>459</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8506,7 +8480,7 @@
 			</second>
 		</item>
 		<item>
-			<first>510</first>
+			<first>467</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8514,7 +8488,7 @@
 			</second>
 		</item>
 		<item>
-			<first>514</first>
+			<first>471</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8522,15 +8496,7 @@
 			</second>
 		</item>
 		<item>
-			<first>522</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>65</item>
-			</second>
-		</item>
-		<item>
-			<first>528</first>
+			<first>479</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8538,11 +8504,67 @@
 			</second>
 		</item>
 		<item>
-			<first>532</first>
+			<first>483</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
 				<item>67</item>
+			</second>
+		</item>
+		<item>
+			<first>491</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>5</item>
+			</second>
+		</item>
+		<item>
+			<first>498</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>12</item>
+			</second>
+		</item>
+		<item>
+			<first>505</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>13</item>
+			</second>
+		</item>
+		<item>
+			<first>509</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>14</item>
+			</second>
+		</item>
+		<item>
+			<first>515</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>15</item>
+			</second>
+		</item>
+		<item>
+			<first>525</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>16</item>
+			</second>
+		</item>
+		<item>
+			<first>535</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>65</item>
 			</second>
 		</item>
 		<item>
@@ -8554,7 +8576,7 @@
 			</second>
 		</item>
 		<item>
-			<first>548</first>
+			<first>546</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8562,7 +8584,7 @@
 			</second>
 		</item>
 		<item>
-			<first>552</first>
+			<first>550</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8570,7 +8592,7 @@
 			</second>
 		</item>
 		<item>
-			<first>565</first>
+			<first>562</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8578,7 +8600,7 @@
 			</second>
 		</item>
 		<item>
-			<first>575</first>
+			<first>572</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8586,7 +8608,7 @@
 			</second>
 		</item>
 		<item>
-			<first>580</first>
+			<first>577</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8594,7 +8616,7 @@
 			</second>
 		</item>
 		<item>
-			<first>585</first>
+			<first>582</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8602,7 +8624,7 @@
 			</second>
 		</item>
 		<item>
-			<first>591</first>
+			<first>588</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8610,7 +8632,7 @@
 			</second>
 		</item>
 		<item>
-			<first>596</first>
+			<first>593</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8618,7 +8640,7 @@
 			</second>
 		</item>
 		<item>
-			<first>602</first>
+			<first>599</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8626,7 +8648,7 @@
 			</second>
 		</item>
 		<item>
-			<first>611</first>
+			<first>608</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8634,7 +8656,7 @@
 			</second>
 		</item>
 		<item>
-			<first>635</first>
+			<first>632</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8646,7 +8668,7 @@
 		<count>77</count>
 		<item_version>0</item_version>
 		<item class_id="48" tracking_level="0" version="0">
-			<first>add_ln53_fu_431</first>
+			<first>add_ln70_fu_509</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8654,7 +8676,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln43_1_fu_596</first>
+			<first>and_ln60_1_fu_593</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8662,7 +8684,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln43_fu_585</first>
+			<first>and_ln60_fu_582</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8670,7 +8692,7 @@
 			</second>
 		</item>
 		<item>
-			<first>bitcast_ln55_fu_635</first>
+			<first>bitcast_ln72_fu_632</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8678,7 +8700,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_10_fu_338</first>
+			<first>e_10_fu_349</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8686,7 +8708,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_11_fu_371</first>
+			<first>e_11_fu_364</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8694,7 +8716,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_12_fu_384</first>
+			<first>e_12_fu_370</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8702,7 +8724,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_13_fu_399</first>
+			<first>e_13_fu_403</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8710,7 +8732,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_14_fu_405</first>
+			<first>e_14_fu_416</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8718,7 +8740,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_15_fu_482</first>
+			<first>e_15_fu_437</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8726,7 +8748,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_16_fu_495</first>
+			<first>e_16_fu_451</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8734,7 +8756,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_17_fu_522</first>
+			<first>e_17_fu_535</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8758,7 +8780,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_3_fu_236</first>
+			<first>e_3_fu_230</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8766,7 +8788,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_4_fu_250</first>
+			<first>e_4_fu_236</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8774,7 +8796,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_5_fu_266</first>
+			<first>e_5_fu_269</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8782,7 +8804,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_6_fu_283</first>
+			<first>e_6_fu_282</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8790,7 +8812,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_7_fu_302</first>
+			<first>e_7_fu_297</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8798,7 +8820,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_8_fu_316</first>
+			<first>e_8_fu_303</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8806,7 +8828,7 @@
 			</second>
 		</item>
 		<item>
-			<first>e_9_fu_332</first>
+			<first>e_9_fu_336</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8830,7 +8852,7 @@
 			</second>
 		</item>
 		<item>
-			<first>f32_1_fu_552</first>
+			<first>f32_1_fu_550</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8838,7 +8860,7 @@
 			</second>
 		</item>
 		<item>
-			<first>f32_2_fu_565</first>
+			<first>f32_2_fu_562</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8846,7 +8868,7 @@
 			</second>
 		</item>
 		<item>
-			<first>f32_4_fu_611</first>
+			<first>f32_4_fu_608</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8854,7 +8876,7 @@
 			</second>
 		</item>
 		<item>
-			<first>f32_fu_447</first>
+			<first>f32_fu_525</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8862,7 +8884,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln41_fu_142</first>
+			<first>icmp_ln58_fu_142</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8870,7 +8892,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln43_1_fu_591</first>
+			<first>icmp_ln60_1_fu_588</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8878,7 +8900,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln43_fu_575</first>
+			<first>icmp_ln60_fu_572</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8886,7 +8908,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_10_fu_346</first>
+			<first>m_10_fu_330</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8894,7 +8916,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_11_fu_351</first>
+			<first>m_11_fu_341</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8902,7 +8924,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_12_fu_365</first>
+			<first>m_12_fu_378</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8910,7 +8932,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_13_fu_376</first>
+			<first>m_13_fu_383</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8918,7 +8940,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_14_fu_457</first>
+			<first>m_14_fu_397</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8926,7 +8948,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_15_fu_462</first>
+			<first>m_15_fu_408</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8934,7 +8956,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_16_fu_476</first>
+			<first>m_16_fu_431</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8942,7 +8964,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_17_fu_487</first>
+			<first>m_17_fu_443</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8950,7 +8972,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_18_fu_514</first>
+			<first>m_18_fu_471</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8982,7 +9004,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_4_fu_230</first>
+			<first>m_4_fu_244</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8990,7 +9012,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_5_fu_242</first>
+			<first>m_5_fu_249</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8998,7 +9020,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_6_fu_272</first>
+			<first>m_6_fu_263</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9006,7 +9028,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_7_fu_277</first>
+			<first>m_7_fu_274</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9014,7 +9036,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_8_fu_296</first>
+			<first>m_8_fu_311</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9022,7 +9044,7 @@
 			</second>
 		</item>
 		<item>
-			<first>m_9_fu_308</first>
+			<first>m_9_fu_316</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9038,7 +9060,7 @@
 			</second>
 		</item>
 		<item>
-			<first>or_ln41_fu_118</first>
+			<first>or_ln58_fu_118</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9054,7 +9076,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sel_tmp8_fu_602</first>
+			<first>sel_tmp8_fu_599</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9062,7 +9084,7 @@
 			</second>
 		</item>
 		<item>
-			<first>select_ln44_fu_540</first>
+			<first>select_ln61_fu_540</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9070,7 +9092,7 @@
 			</second>
 		</item>
 		<item>
-			<first>select_ln47_fu_532</first>
+			<first>select_ln64_fu_483</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9078,7 +9100,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln49_fu_548</first>
+			<first>sext_ln66_fu_546</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9086,7 +9108,7 @@
 			</second>
 		</item>
 		<item>
-			<first>shl_ln53_1_fu_420</first>
+			<first>shl_ln70_1_fu_498</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9102,7 +9124,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sign_fu_413</first>
+			<first>sign_fu_491</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9110,15 +9132,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_188_fu_437</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>15</item>
-			</second>
-		</item>
-		<item>
-			<first>tmp_688_fu_96</first>
+			<first>tmp_709_fu_96</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9126,7 +9140,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_689_fu_148</first>
+			<first>tmp_710_fu_148</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9134,7 +9148,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_690_fu_184</first>
+			<first>tmp_711_fu_184</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9142,7 +9156,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_691_fu_222</first>
+			<first>tmp_712_fu_222</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9150,7 +9164,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_692_fu_258</first>
+			<first>tmp_713_fu_255</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9158,7 +9172,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_693_fu_288</first>
+			<first>tmp_714_fu_289</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9166,7 +9180,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_694_fu_324</first>
+			<first>tmp_715_fu_322</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9174,7 +9188,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_695_fu_357</first>
+			<first>tmp_716_fu_356</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9182,7 +9196,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_696_fu_391</first>
+			<first>tmp_717_fu_389</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9190,7 +9204,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_697_fu_468</first>
+			<first>tmp_718_fu_423</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9198,11 +9212,19 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_698_fu_502</first>
+			<first>tmp_719_fu_459</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
 				<item>62</item>
+			</second>
+		</item>
+		<item>
+			<first>tmp_72_fu_515</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>15</item>
 			</second>
 		</item>
 		<item>
@@ -9214,7 +9236,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln41_fu_114</first>
+			<first>trunc_ln58_fu_114</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9222,7 +9244,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln47_1_fu_510</first>
+			<first>trunc_ln64_1_fu_467</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9230,7 +9252,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln47_fu_156</first>
+			<first>trunc_ln64_fu_156</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9238,7 +9260,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln49_fu_528</first>
+			<first>trunc_ln66_fu_479</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9246,7 +9268,7 @@
 			</second>
 		</item>
 		<item>
-			<first>xor_ln41_fu_580</first>
+			<first>xor_ln58_fu_577</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9254,7 +9276,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln53_fu_427</first>
+			<first>zext_ln70_fu_505</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9287,10 +9309,10 @@
 		<item_version>0</item_version>
 	</dp_mem_port_nodes>
 	<dp_reg_nodes>
-		<count>14</count>
+		<count>16</count>
 		<item_version>0</item_version>
 		<item>
-			<first>639</first>
+			<first>636</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9298,7 +9320,7 @@
 			</second>
 		</item>
 		<item>
-			<first>645</first>
+			<first>642</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9306,7 +9328,7 @@
 			</second>
 		</item>
 		<item>
-			<first>653</first>
+			<first>650</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9314,7 +9336,7 @@
 			</second>
 		</item>
 		<item>
-			<first>660</first>
+			<first>657</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9322,15 +9344,23 @@
 			</second>
 		</item>
 		<item>
-			<first>666</first>
+			<first>663</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>30</item>
+				<item>25</item>
 			</second>
 		</item>
 		<item>
-			<first>672</first>
+			<first>669</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>27</item>
+			</second>
+		</item>
+		<item>
+			<first>674</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9338,91 +9368,99 @@
 			</second>
 		</item>
 		<item>
-			<first>677</first>
+			<first>680</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>32</item>
+				<item>35</item>
 			</second>
 		</item>
 		<item>
-			<first>683</first>
+			<first>686</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>34</item>
+				<item>37</item>
 			</second>
 		</item>
 		<item>
-			<first>688</first>
+			<first>691</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>40</item>
+				<item>41</item>
 			</second>
 		</item>
 		<item>
-			<first>694</first>
+			<first>697</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>42</item>
+				<item>45</item>
 			</second>
 		</item>
 		<item>
-			<first>699</first>
+			<first>703</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>46</item>
+				<item>47</item>
 			</second>
 		</item>
 		<item>
-			<first>705</first>
+			<first>708</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>50</item>
+				<item>51</item>
 			</second>
 		</item>
 		<item>
-			<first>711</first>
+			<first>714</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>52</item>
+				<item>61</item>
 			</second>
 		</item>
 		<item>
-			<first>716</first>
+			<first>720</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>56</item>
+				<item>62</item>
+			</second>
+		</item>
+		<item>
+			<first>725</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>67</item>
 			</second>
 		</item>
 	</dp_reg_nodes>
 	<dp_regname_nodes>
-		<count>14</count>
+		<count>16</count>
 		<item_version>0</item_version>
 		<item>
-			<first>e_10_reg_699</first>
+			<first>e_12_reg_708</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>46</item>
+				<item>51</item>
 			</second>
 		</item>
 		<item>
-			<first>e_14_reg_716</first>
+			<first>e_16_reg_714</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>56</item>
+				<item>61</item>
 			</second>
 		</item>
 		<item>
-			<first>e_4_reg_672</first>
+			<first>e_4_reg_674</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9430,15 +9468,15 @@
 			</second>
 		</item>
 		<item>
-			<first>e_5_reg_683</first>
+			<first>e_8_reg_691</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>34</item>
+				<item>41</item>
 			</second>
 		</item>
 		<item>
-			<first>exp_reg_653</first>
+			<first>exp_reg_650</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9446,7 +9484,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln41_reg_660</first>
+			<first>icmp_ln58_reg_657</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9454,31 +9492,31 @@
 			</second>
 		</item>
 		<item>
-			<first>m_13_reg_705</first>
+			<first>m_11_reg_697</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>50</item>
+				<item>45</item>
 			</second>
 		</item>
 		<item>
-			<first>m_5_reg_666</first>
+			<first>m_3_reg_663</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>30</item>
+				<item>25</item>
 			</second>
 		</item>
 		<item>
-			<first>m_9_reg_688</first>
+			<first>m_7_reg_680</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>40</item>
+				<item>35</item>
 			</second>
 		</item>
 		<item>
-			<first>mant_reg_639</first>
+			<first>mant_reg_636</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9486,7 +9524,15 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_688_reg_645</first>
+			<first>select_ln64_reg_725</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>67</item>
+			</second>
+		</item>
+		<item>
+			<first>tmp_709_reg_642</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -9494,27 +9540,35 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_692_reg_677</first>
+			<first>tmp_712_reg_669</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>32</item>
+				<item>27</item>
 			</second>
 		</item>
 		<item>
-			<first>tmp_694_reg_694</first>
+			<first>tmp_714_reg_686</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>42</item>
+				<item>37</item>
 			</second>
 		</item>
 		<item>
-			<first>tmp_696_reg_711</first>
+			<first>tmp_716_reg_703</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>52</item>
+				<item>47</item>
+			</second>
+		</item>
+		<item>
+			<first>tmp_719_reg_720</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>62</item>
 			</second>
 		</item>
 	</dp_regname_nodes>

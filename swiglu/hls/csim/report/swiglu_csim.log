@@ -1,6 +1,5 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch CLANG as the compiler.
-   Compiling ../../../../swiglu_tb.cpp in debug mode
    Compiling ../../../../swiglu.cpp in debug mode
    Generating csim.exe
 === Mock token sanity ===
@@ -17,5 +16,6 @@ T4: PASSED  (batch=1)
 T5: PASSED  (batch=1)
 
 All tests PASSED.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 9216
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

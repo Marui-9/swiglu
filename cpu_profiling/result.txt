@@ -1,0 +1,36 @@
+==============================================================================
+               LFM2.5-1.2B CPU PROFILE  (wall-clock normalised)
+==============================================================================
+  Total   wall-clock :    14889.3 ms  [NO WALL-CLOCK DATA — percentages are node-sum relative]
+  Node execution sum :    14889.3 ms
+------------------------------------------------------------------------------
+Architectural Block                      | Time (ms)    | % Wall-Clock
+------------------------------------------------------------------------------
+  SwiGLU FFN (MatMul)                    | 10136.8      | 68.08%
+  Final Linear Projection (LM Head)      | 1631.6       | 10.96%
+  Gated Short Convolution (LTC Weights)  | 1553.9       | 10.44%
+  GQA Attention (MatMul)                 | 1389.9       |  9.33%
+  Unmapped Nodes                         | 102.4        |  0.69%
+  Memory Ops & KV Cache                  | 28.3         |  0.19%
+  RMSNorm / LayerNorm                    | 27.3         |  0.18%
+  Residual Connections & Addition        | 11.4         |  0.08%
+  Input Embedding Lookup                 | 4.0          |  0.03%
+  Positional Encodings (RoPE)            | 1.8          |  0.01%
+  Gated Short Convolution                | 1.5          |  0.01%
+  Attention Math & Masking               | 0.3          |  0.00%
+------------------------------------------------------------------------------
+  TOTAL                                  | 14889.3      | 100.00%
+
+------------------------------------------------------------------------------
+  UNMAPPED NODES (top 10):
+------------------------------------------------------------------------------
+    ffn_swiglu-6 (GLU)                       6.0        ms   0.04%
+    ffn_swiglu-7 (GLU)                       6.0        ms   0.04%
+    ffn_swiglu-2 (GLU)                       6.0        ms   0.04%
+    ffn_swiglu-0 (GLU)                       5.8        ms   0.04%
+    ffn_swiglu-3 (GLU)                       5.8        ms   0.04%
+    ffn_swiglu-8 (GLU)                       5.8        ms   0.04%
+    ffn_swiglu-4 (GLU)                       5.8        ms   0.04%
+    ffn_swiglu-5 (GLU)                       5.8        ms   0.04%
+    ffn_swiglu-15 (GLU)                      5.7        ms   0.04%
+    ffn_swiglu-1 (GLU)                       5.7        ms   0.04%

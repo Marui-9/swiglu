@@ -17,8 +17,8 @@ module swiglu_x_local_1_RAM_1P_LUTRAM_1R1W_memcore (
     reset, clk);
 
 parameter DataWidth = 8;
-parameter AddressWidth = 7;
-parameter AddressRange = 128;
+parameter AddressWidth = 5;
+parameter AddressRange = 32;
  
 input[AddressWidth-1:0] address0;
 input ce0;

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_output_Pipeline_1'" level="0">
-<item name = "Date">Thu Apr  2 14:56:59 2026
+<item name = "Date">Sun Apr  5 16:07:13 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 2.920 ns, 1.08 ns</column>
+<column name="ap_clk">3.33 ns, 2.433 ns, 0.90 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">2051, 2051, 8.204 us, 8.204 us, 2049, 2049, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">2051, 2051, 6.836 us, 6.836 us, 2049, 2049, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
@@ -80,7 +80,7 @@
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
 <column name="empty_fu_109_p2">+, 0, 0, 19, 12, 1</column>
 <column name="ap_block_pp0_stage0_11001">and, 0, 0, 2, 1, 1</column>
-<column name="exitcond4_i_fu_103_p2">icmp, 0, 0, 20, 12, 13</column>
+<column name="exitcond473_i_fu_103_p2">icmp, 0, 0, 20, 12, 13</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -101,7 +101,7 @@
 <column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter1_reg">1, 0, 1, 0</column>
 <column name="loop_index_i_fu_60">12, 0, 12, 0</column>
-<column name="out_local_load_reg_156">32, 0, 32, 0</column>
+<column name="out_local_1_load_reg_156">32, 0, 32, 0</column>
 </table>
 </item>
 </section>
@@ -163,10 +163,10 @@
 <column name="m_axi_gmem_out_0_BRESP">in, 2, m_axi, gmem_out, pointer</column>
 <column name="m_axi_gmem_out_0_BID">in, 1, m_axi, gmem_out, pointer</column>
 <column name="m_axi_gmem_out_0_BUSER">in, 1, m_axi, gmem_out, pointer</column>
-<column name="sext_ln596">in, 62, ap_none, sext_ln596, scalar</column>
-<column name="out_local_address0">out, 11, ap_memory, out_local, array</column>
-<column name="out_local_ce0">out, 1, ap_memory, out_local, array</column>
-<column name="out_local_q0">in, 32, ap_memory, out_local, array</column>
+<column name="sext_ln703">in, 62, ap_none, sext_ln703, scalar</column>
+<column name="out_local_1_address0">out, 11, ap_memory, out_local_1, array</column>
+<column name="out_local_1_ce0">out, 1, ap_memory, out_local_1, array</column>
+<column name="out_local_1_q0">in, 32, ap_memory, out_local_1, array</column>
 </table>
 </item>
 </section>

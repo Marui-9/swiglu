@@ -21,12 +21,12 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler swiglu_gate_cache_RAM_2P_URAM_1R1W_memcore BINDTYPE {storage} TYPE {ram_2p} IMPL {uram} LATENCY 2 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler swiglu_gate_cache_RAM_1P_URAM_1R1W_memcore BINDTYPE {storage} TYPE {ram_1p} IMPL {uram} LATENCY 2 ALLOW_PRAGMA 1
 }
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler swiglu_gate_cache_RAM_2P_URAM_1R1W BINDTYPE {storage} TYPE {ram_2p} IMPL {uram} LATENCY 2 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler swiglu_gate_cache_RAM_1P_URAM_1R1W BINDTYPE {storage} TYPE {ram_1p} IMPL {uram} LATENCY 2 ALLOW_PRAGMA 1
 }
 
 
@@ -47,6 +47,11 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler swiglu_gmem_Wd_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler swiglu_gmem_Wd2_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
 }
 
 
@@ -93,7 +98,7 @@ W_down {
 	offset 40
 	offset_end 51
 }
-x_batch { 
+W_down2 { 
 	dir I
 	width 64
 	depth 1
@@ -101,7 +106,7 @@ x_batch {
 	offset 52
 	offset_end 63
 }
-out_batch { 
+x_batch { 
 	dir I
 	width 64
 	depth 1
@@ -109,21 +114,29 @@ out_batch {
 	offset 64
 	offset_end 75
 }
+out_batch { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 76
+	offset_end 87
+}
 down_quant_mode { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 76
-	offset_end 83
+	offset 88
+	offset_end 95
 }
 x_scale { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 84
-	offset_end 91
+	offset 96
+	offset_end 103
 }
 ap_start { }
 ap_done { }
@@ -139,7 +152,7 @@ dict set axilite_register_dict CTRL $port_CTRL
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 5339 \
+			id 4009 \
 			corename swiglu_CTRL_axilite \
 			name swiglu_CTRL_s_axi \
 			ports {$port_CTRL} \

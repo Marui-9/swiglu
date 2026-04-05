@@ -1,0 +1,139 @@
+  **** HLS Build v2025.1 6135595
+INFO: [HLS 200-2005] Using work_dir C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu 
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./swiglu.cpp' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./swiglu.h' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./sigmoid_lut.h' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(13)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/sigmoid_lut.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./swiglu_tb.cpp' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu_tb.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=swiglu' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xck26-sfvc784-2LV-c' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1465] Applying config ini 'clock=5.33ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(7)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5.33ns.
+INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=1.43ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(17)
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.43ns.
+INFO: [HLS 200-1465] Applying config ini 'cosim.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying config ini 'package.ip.version=24.1' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(16)
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(5)
+INFO: [HLS 200-1465] Applying config ini 'vivado.flow=impl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(15)
+INFO: [HLS 200-1465] Applying config ini 'vivado.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(14)
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/vitis-comp.json
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 2 seconds. CPU system time: 3 seconds. Elapsed time: 10.613 seconds; current allocated memory: 179.891 MB.
+INFO: [HLS 200-10] Analyzing design file 'swiglu.cpp' ... 
+WARNING: [HLS 207-5562] missing argument for 'variable' (swiglu.cpp:114:9)
+WARNING: [HLS 207-5562] missing argument for 'variable' (swiglu.cpp:348:9)
+WARNING: [HLS 207-5562] missing argument for 'variable' (swiglu.cpp:518:9)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 5.68 seconds; current allocated memory: 184.980 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 33,907 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 20,340 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 15,355 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 15,073 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 14,799 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 44,608 instructions in the design after the 'Array/Struct' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 34,526 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 34,526 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 34,524 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 35,743 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 35,700 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 34,525 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 43,769 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 37,665 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 37,699 instructions in the design after the 'HW Transforms' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 33,186 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function 'get_byte(ap_uint<128> const*, int)' into 'mac_blocks_wv_k1(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)' (swiglu.cpp:129:32)
+INFO: [HLS 214-131] Inlining function 'get_byte(ap_uint<128> const*, int)' into 'mac_blocks_down_q4k(ap_uint<128> const (*) [9], signed char const (*) [256], float, float*)' (swiglu.cpp:362:39)
+INFO: [HLS 214-131] Inlining function 'get_byte(ap_uint<128> const*, int)' into 'load_row_down_q6k(ap_uint<128> const*, int, unsigned char (*) [128], unsigned char (*) [64], unsigned char (*) [16], float*)' (swiglu.cpp:500:41)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_543_3' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:543:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_474_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:474:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_482_3' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:482:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_490_4' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:490:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_404_3' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:404:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_177_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:177:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_665_1' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:665:31)
+INFO: [HLS 214-188] Unrolling loop 'REDUCE_Q6K' (swiglu.cpp:562:17) in function 'mac_blocks_down_q6k' partially with a factor of 2 (swiglu.cpp:516:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_565_4' (swiglu.cpp:565:27) in function 'mac_blocks_down_q6k' completely with a factor of 8 (swiglu.cpp:516:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_543_3' (swiglu.cpp:543:20) in function 'mac_blocks_down_q6k' completely with a factor of 8 (swiglu.cpp:516:0)
+INFO: [HLS 214-186] Unrolling loop 'INIT_Q6K' (swiglu.cpp:528:12) in function 'mac_blocks_down_q6k' completely with a factor of 32 (swiglu.cpp:516:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_530_1' (swiglu.cpp:530:20) in function 'mac_blocks_down_q6k' completely with a factor of 8 (swiglu.cpp:516:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_474_2' (swiglu.cpp:474:20) in function 'load_row_down_q6k' completely with a factor of 4 (swiglu.cpp:448:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_482_3' (swiglu.cpp:482:20) in function 'load_row_down_q6k' completely with a factor of 4 (swiglu.cpp:448:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_490_4' (swiglu.cpp:490:20) in function 'load_row_down_q6k' completely with a factor of 4 (swiglu.cpp:448:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_496_5' (swiglu.cpp:496:27) in function 'load_row_down_q6k' completely with a factor of 4 (swiglu.cpp:448:0)
+INFO: [HLS 214-188] Unrolling loop 'REDUCE_DOWN_Q4K' (swiglu.cpp:423:22) in function 'mac_blocks_down_q4k' partially with a factor of 2 (swiglu.cpp:346:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_426_4' (swiglu.cpp:426:27) in function 'mac_blocks_down_q4k' completely with a factor of 8 (swiglu.cpp:346:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_404_3' (swiglu.cpp:404:20) in function 'mac_blocks_down_q4k' completely with a factor of 8 (swiglu.cpp:346:0)
+INFO: [HLS 214-186] Unrolling loop 'INIT_ACC_DOWN' (swiglu.cpp:386:17) in function 'mac_blocks_down_q4k' completely with a factor of 32 (swiglu.cpp:346:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_388_1' (swiglu.cpp:388:20) in function 'mac_blocks_down_q4k' completely with a factor of 8 (swiglu.cpp:346:0)
+INFO: [HLS 214-186] Unrolling loop 'SWISH_GATE' (swiglu.cpp:275:14) in function 'compute_gate' completely with a factor of 1 (swiglu.cpp:273:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_296_1' (swiglu.cpp:296:27) in function 'compute_gate' completely with a factor of 8 (swiglu.cpp:273:0)
+INFO: [HLS 214-188] Unrolling loop 'REDUCE_WV_K1' (swiglu.cpp:195:19) in function 'mac_blocks_wv_k1' partially with a factor of 2 (swiglu.cpp:112:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_198_3' (swiglu.cpp:198:27) in function 'mac_blocks_wv_k1' completely with a factor of 8 (swiglu.cpp:112:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_177_2' (swiglu.cpp:177:20) in function 'mac_blocks_wv_k1' completely with a factor of 8 (swiglu.cpp:112:0)
+INFO: [HLS 214-186] Unrolling loop 'INIT_ACC_WV_K1' (swiglu.cpp:164:18) in function 'mac_blocks_wv_k1' completely with a factor of 8 (swiglu.cpp:112:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_166_1' (swiglu.cpp:166:20) in function 'mac_blocks_wv_k1' completely with a factor of 8 (swiglu.cpp:112:0)
+INFO: [HLS 214-186] Unrolling loop 'UNPACK_HDR_WV_K1' (swiglu.cpp:127:20) in function 'mac_blocks_wv_k1' completely with a factor of 8 (swiglu.cpp:112:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_63_1' (swiglu.cpp:63:26) in function 'fp16_to_fp32' completely with a factor of 10 (swiglu.cpp:53:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_665_1' (swiglu.cpp:665:31) in function 'load_x_local' completely with a factor of 16 (swiglu.cpp:656:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::mantissa() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::expv() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::__signbit() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' into 'int generic_cast_IEEE754<int, float>(float, bool)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, float>(float, bool)' into '__hls_fptosi_float_i32' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_float_i32' into 'compute_X1(unsigned char const*, signed char const (*) [8][256], float, signed char (*) [8192])' (swiglu.cpp:218:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_float_i32' into 'compute_X2(unsigned char const*, signed char const (*) [8][256], float, signed char (*) [8192])' (swiglu.cpp:244:0)
+WARNING: [HLS 214-464] Skipping array undecay on variable length array 'x_batch'. (swiglu.cpp:691:0)
+INFO: [HLS 214-248] Applying array_partition to 'd': Complete partitioning on dimension 1. (swiglu.cpp:118:8)
+INFO: [HLS 214-248] Applying array_partition to 'dmin': Complete partitioning on dimension 1. (swiglu.cpp:119:11)
+INFO: [HLS 214-248] Applying array_partition to 'sc6': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:120:13)
+INFO: [HLS 214-248] Applying array_partition to 'mn6': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:121:13)
+INFO: [HLS 214-248] Applying array_partition to 'int_acc_w': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:159:13)
+INFO: [HLS 214-248] Applying array_partition to 'int_acc_m': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:160:13)
+INFO: [HLS 214-248] Applying array_partition to 'row_buf': Complete partitioning on dimension 1. (swiglu.cpp:223:22)
+INFO: [HLS 214-248] Applying array_partition to 'row_buf': Complete partitioning on dimension 1. (swiglu.cpp:249:22)
+INFO: [HLS 214-248] Applying array_partition to 'pmax': Complete partitioning on dimension 1. (swiglu.cpp:277:8)
+INFO: [HLS 214-248] Applying array_partition to 'd': Complete partitioning on dimension 1. (swiglu.cpp:352:8)
+INFO: [HLS 214-248] Applying array_partition to 'dmin': Complete partitioning on dimension 1. (swiglu.cpp:353:11)
+INFO: [HLS 214-248] Applying array_partition to 'sc6': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:354:13)
+INFO: [HLS 214-248] Applying array_partition to 'mn6': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:355:13)
+INFO: [HLS 214-248] Applying array_partition to 'int_acc_w': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:381:13)
+INFO: [HLS 214-248] Applying array_partition to 'int_acc_m': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:382:13)
+INFO: [HLS 214-248] Applying array_partition to 'flat': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:455:15)
+INFO: [HLS 214-248] Applying array_partition to 'acc': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:525:10)
+INFO: [HLS 214-248] Applying array_partition to 'row_buf0': Cyclic partitioning with factor 8 on dimension 1. (swiglu.cpp:601:26)
+INFO: [HLS 214-248] Applying array_partition to 'row_buf1': Cyclic partitioning with factor 8 on dimension 1. (swiglu.cpp:602:26)
+INFO: [HLS 214-248] Applying array_partition to 'ql_buf0': Complete partitioning on dimension 1. (swiglu.cpp:614:21)
+INFO: [HLS 214-248] Applying array_partition to 'qh_buf0': Complete partitioning on dimension 1. (swiglu.cpp:615:21)
+INFO: [HLS 214-248] Applying array_partition to 'sc_buf0': Complete partitioning on dimension 1. (swiglu.cpp:616:21)
+INFO: [HLS 214-248] Applying array_partition to 'd_buf0': Complete partitioning on dimension 1. (swiglu.cpp:617:19)
+INFO: [HLS 214-248] Applying array_partition to 'ql_buf1': Complete partitioning on dimension 1. (swiglu.cpp:618:21)
+INFO: [HLS 214-248] Applying array_partition to 'qh_buf1': Complete partitioning on dimension 1. (swiglu.cpp:619:21)
+INFO: [HLS 214-248] Applying array_partition to 'sc_buf1': Complete partitioning on dimension 1. (swiglu.cpp:620:21)
+INFO: [HLS 214-248] Applying array_partition to 'd_buf1': Complete partitioning on dimension 1. (swiglu.cpp:621:19)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:711:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:715:9)
+INFO: [HLS 214-248] Applying array_partition to 'gate_cache': Complete partitioning on dimension 1. Cyclic partitioning with factor 8 on dimension 2. (swiglu.cpp:726:9)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< REDUCE_Q6K> at swiglu.cpp:562:17 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< UNPACK_HDR_DOWN> at swiglu.cpp:361:19 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< REDUCE_DOWN_Q4K> at swiglu.cpp:423:22 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at swiglu.cpp:645:5 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at  
+INFO: [HLS 214-376] automatically set the pipeline for Loop< REDUCE_WV_K1> at swiglu.cpp:195:19 
+INFO: [HLS 214-449] Automatically partitioning array 'gate_scale' dimension 1 completely based on constant index. (swiglu.cpp:730:8)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_0' due to pipeline pragma (swiglu.cpp:663:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_1' due to pipeline pragma (swiglu.cpp:663:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_2' due to pipeline pragma (swiglu.cpp:663:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_3' due to pipeline pragma (swiglu.cpp:663:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_4' due to pipeline pragma (swiglu.cpp:663:9)

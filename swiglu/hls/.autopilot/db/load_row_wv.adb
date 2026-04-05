@@ -139,7 +139,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_LUTRAM</coreName>
+              <coreName>RAM_1P_BRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -175,7 +175,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_LUTRAM</coreName>
+              <coreName>RAM_1P_BRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -211,7 +211,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_LUTRAM</coreName>
+              <coreName>RAM_1P_BRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -247,7 +247,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_LUTRAM</coreName>
+              <coreName>RAM_1P_BRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -283,7 +283,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_LUTRAM</coreName>
+              <coreName>RAM_1P_BRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -319,7 +319,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_LUTRAM</coreName>
+              <coreName>RAM_1P_BRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -355,7 +355,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_LUTRAM</coreName>
+              <coreName>RAM_1P_BRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -391,7 +391,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_LUTRAM</coreName>
+              <coreName>RAM_1P_BRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -588,7 +588,7 @@
             <Obj>
               <type>0</type>
               <id>25</id>
-              <name>tmp_678</name>
+              <name>tmp_707</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -599,7 +599,7 @@
                 <item_version>0</item_version>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>tmp_678_fu_132_p3</rtlName>
+              <rtlName>tmp_707_fu_132_p3</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -759,7 +759,7 @@
             <Obj>
               <type>0</type>
               <id>29</id>
-              <name>empty_587</name>
+              <name>empty_735</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -770,7 +770,7 @@
                 <item_version>0</item_version>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>empty_587_fu_154_p2</rtlName>
+              <rtlName>empty_735_fu_154_p2</rtlName>
               <control>auto</control>
               <opType>add</opType>
               <implIndex>fabric</implIndex>
@@ -805,7 +805,7 @@
               <name>trunc_ln</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>77</lineNumber>
+              <lineNumber>94</lineNumber>
               <contextFuncName>load_row_wv</contextFuncName>
               <contextNormFuncName>load_row_wv</contextNormFuncName>
               <inlineStackInfo>
@@ -821,7 +821,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_wv</second>
                       </first>
-                      <second>77</second>
+                      <second>94</second>
                     </item>
                   </second>
                 </item>
@@ -861,10 +861,10 @@
             <Obj>
               <type>0</type>
               <id>31</id>
-              <name>sext_ln77</name>
+              <name>sext_ln94</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>77</lineNumber>
+              <lineNumber>94</lineNumber>
               <contextFuncName>load_row_wv</contextFuncName>
               <contextNormFuncName>load_row_wv</contextNormFuncName>
               <inlineStackInfo>
@@ -880,13 +880,13 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_wv</second>
                       </first>
-                      <second>77</second>
+                      <second>94</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>sext_ln77_fu_170_p1</rtlName>
+              <rtlName>sext_ln94_fu_170_p1</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -920,7 +920,7 @@
               <name>gmem_V_addr</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>77</lineNumber>
+              <lineNumber>94</lineNumber>
               <contextFuncName>load_row_wv</contextFuncName>
               <contextNormFuncName>load_row_wv</contextNormFuncName>
               <inlineStackInfo>
@@ -936,7 +936,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_wv</second>
                       </first>
-                      <second>77</second>
+                      <second>94</second>
                     </item>
                   </second>
                 </item>
@@ -974,10 +974,10 @@
             <Obj>
               <type>0</type>
               <id>33</id>
-              <name>empty_588</name>
+              <name>empty_736</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>77</lineNumber>
+              <lineNumber>94</lineNumber>
               <contextFuncName>load_row_wv</contextFuncName>
               <contextNormFuncName>load_row_wv</contextNormFuncName>
               <inlineStackInfo>
@@ -993,7 +993,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_wv</second>
                       </first>
-                      <second>77</second>
+                      <second>94</second>
                     </item>
                   </second>
                 </item>
@@ -1023,7 +1023,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>2.92</m_delay>
+          <m_delay>2.43</m_delay>
           <m_topoIndex>13</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -1032,10 +1032,10 @@
             <Obj>
               <type>0</type>
               <id>34</id>
-              <name>_ln77</name>
+              <name>_ln94</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>77</lineNumber>
+              <lineNumber>94</lineNumber>
               <contextFuncName>load_row_wv</contextFuncName>
               <contextNormFuncName>load_row_wv</contextNormFuncName>
               <inlineStackInfo>
@@ -1051,13 +1051,13 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_wv</second>
                       </first>
-                      <second>77</second>
+                      <second>94</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_78_1_fu_97</rtlName>
+              <rtlName>grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_95_1_fu_97</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -1099,10 +1099,10 @@
             <Obj>
               <type>0</type>
               <id>35</id>
-              <name>_ln83</name>
+              <name>_ln100</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>83</lineNumber>
+              <lineNumber>100</lineNumber>
               <contextFuncName>load_row_wv</contextFuncName>
               <contextNormFuncName>load_row_wv</contextNormFuncName>
               <inlineStackInfo>
@@ -1118,7 +1118,7 @@
                         <first>swiglu.cpp</first>
                         <second>load_row_wv</second>
                       </first>
-                      <second>83</second>
+                      <second>100</second>
                     </item>
                   </second>
                 </item>
@@ -1313,7 +1313,7 @@
             <Obj>
               <type>2</type>
               <id>75</id>
-              <name>load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_78_1</name>
+              <name>load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_95_1</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -1337,7 +1337,7 @@
             <bitwidth>0</bitwidth>
           </Value>
           <const_type>6</const_type>
-          <content>&lt;constant:load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_78_1&gt;</content>
+          <content>&lt;constant:load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_95_1&gt;</content>
         </item>
       </consts>
       <blocks class_id="17" tracking_level="0" version="0">
@@ -3755,17 +3755,17 @@
         <count>1</count>
         <item_version>0</item_version>
         <item class_id="36" tracking_level="0" version="0">
-          <first>grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_78_1_fu_97 (load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_78_1)</first>
+          <first>grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_95_1_fu_97 (load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_95_1)</first>
           <second class_id="37" tracking_level="0" version="0">
             <count>2</count>
             <item_version>0</item_version>
             <item class_id="38" tracking_level="0" version="0">
               <first>FF</first>
-              <second>149</second>
+              <second>156</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>139</second>
+              <second>141</second>
             </item>
           </second>
         </item>
@@ -3774,7 +3774,7 @@
         <count>2</count>
         <item_version>0</item_version>
         <item>
-          <first>empty_587_fu_154_p2 ( + ) </first>
+          <first>empty_735_fu_154_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -4260,7 +4260,7 @@
           </second>
         </item>
         <item>
-          <first>grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_78_1_fu_97_ap_start_reg</first>
+          <first>grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_95_1_fu_97_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -4302,7 +4302,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item>
-          <first>grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_78_1_fu_97</first>
+          <first>grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_95_1_fu_97</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -4313,7 +4313,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item class_id="40" tracking_level="0" version="0">
-          <first>grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_78_1_fu_97 (load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_78_1)</first>
+          <first>grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_95_1_fu_97 (load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_95_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -4325,7 +4325,7 @@
         <count>2</count>
         <item_version>0</item_version>
         <item>
-          <first>empty_587_fu_154_p2 ( + ) </first>
+          <first>empty_735_fu_154_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -4665,7 +4665,7 @@
       <count>10</count>
       <item_version>0</item_version>
       <item class_id="52" tracking_level="0" version="0">
-        <first>empty_587_fu_154</first>
+        <first>empty_735_fu_154</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -4713,7 +4713,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln77_fu_170</first>
+        <first>sext_ln94_fu_170</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -4721,7 +4721,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_678_fu_132</first>
+        <first>tmp_707_fu_132</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -4749,7 +4749,7 @@
       <count>1</count>
       <item_version>0</item_version>
       <item>
-        <first>grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_78_1_fu_97</first>
+        <first>grp_load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_95_1_fu_97</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -4976,56 +4976,56 @@
         <first>4</first>
         <second>
           <first>666</first>
-          <second>19</second>
+          <second>18</second>
         </second>
       </item>
       <item>
         <first>5</first>
         <second>
           <first>666</first>
-          <second>19</second>
+          <second>18</second>
         </second>
       </item>
       <item>
         <first>6</first>
         <second>
           <first>666</first>
-          <second>19</second>
+          <second>18</second>
         </second>
       </item>
       <item>
         <first>7</first>
         <second>
           <first>666</first>
-          <second>19</second>
+          <second>18</second>
         </second>
       </item>
       <item>
         <first>8</first>
         <second>
           <first>666</first>
-          <second>19</second>
+          <second>18</second>
         </second>
       </item>
       <item>
         <first>9</first>
         <second>
           <first>666</first>
-          <second>19</second>
+          <second>18</second>
         </second>
       </item>
       <item>
         <first>10</first>
         <second>
           <first>666</first>
-          <second>19</second>
+          <second>18</second>
         </second>
       </item>
       <item>
         <first>11</first>
         <second>
           <first>666</first>
-          <second>19</second>
+          <second>18</second>
         </second>
       </item>
     </port2core>

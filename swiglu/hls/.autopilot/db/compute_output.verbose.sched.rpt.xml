@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_output'" level="0">
-<item name = "Date">Thu Apr  2 14:56:07 2026
+<item name = "Date">Sun Apr  5 16:06:49 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 3.239 ns, 1.08 ns</column>
+<column name="ap_clk">3.33 ns, 2.433 ns, 0.90 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">3682378, 17891402, 14.730 ms, 71.566 ms, 3682378, 17891402, no</column>
+<column name="">2858058, 5431370, 9.526 ms, 18.103 ms, 2858058, 5431370, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,8 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- DOWN_Q4K">3680256, 3680256, 1797, -, -, 2048, no</column>
-<column name="- DOWN_Q6K">17889280, 17889280, 8735, -, -, 2048, no</column>
+<column name="- DOWN_Q6K">5429248, 5429248, 5302, -, -, 1024, no</column>
+<column name="- DOWN_Q4K">2855936, 2855936, 2789, -, -, 1024, no</column>
 </table>
 </item>
 </section>

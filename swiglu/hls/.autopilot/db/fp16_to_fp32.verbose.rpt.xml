@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'fp16_to_fp32'" level="0">
-<item name = "Date">Thu Apr  2 14:56:15 2026
+<item name = "Date">Sun Apr  5 16:06:52 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 2.806 ns, 1.08 ns</column>
+<column name="ap_clk">3.33 ns, 2.330 ns, 0.90 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="">4, 4, 13.332 ns, 13.332 ns, 1, 1, yes</column>
 </table>
 </item>
 <item name = "Detail">
@@ -52,7 +52,7 @@
 <column name="Instance">-, -, 0, 14, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, 0, 14, -</column>
-<column name="Register">-, -, 379, 128, -</column>
+<column name="Register">-, -, 389, 128, -</column>
 <specialColumn name="Available">288, 1248, 234240, 117120, 64</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
@@ -61,7 +61,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="sparsemux_9_3_32_1_0_U751">sparsemux_9_3_32_1_0, 0, 0, 0, 14, 0</column>
+<column name="sparsemux_9_3_32_1_0_U280">sparsemux_9_3_32_1_0, 0, 0, 0, 14, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -78,43 +78,43 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln53_fu_431_p2">+, 0, 0, 38, 31, 30</column>
-<column name="e_11_fu_371_p2">+, 0, 0, 13, 6, 2</column>
-<column name="e_13_fu_399_p2">+, 0, 0, 13, 6, 2</column>
-<column name="e_15_fu_482_p2">+, 0, 0, 13, 6, 2</column>
-<column name="e_17_fu_522_p2">+, 0, 0, 13, 6, 2</column>
-<column name="e_3_fu_236_p2">+, 0, 0, 13, 6, 2</column>
-<column name="e_5_fu_266_p2">+, 0, 0, 13, 6, 2</column>
-<column name="e_7_fu_302_p2">+, 0, 0, 13, 6, 2</column>
-<column name="e_9_fu_332_p2">+, 0, 0, 13, 6, 2</column>
-<column name="and_ln43_1_fu_596_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln43_fu_585_p2">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln41_fu_142_p2">icmp, 0, 0, 17, 10, 1</column>
-<column name="icmp_ln43_1_fu_591_p2">icmp, 0, 0, 12, 5, 2</column>
-<column name="icmp_ln43_fu_575_p2">icmp, 0, 0, 12, 5, 1</column>
-<column name="or_ln41_fu_118_p2">or, 0, 0, 5, 5, 5</column>
-<column name="e_10_fu_338_p3">select, 0, 0, 6, 1, 6</column>
-<column name="e_12_fu_384_p3">select, 0, 0, 6, 1, 6</column>
-<column name="e_14_fu_405_p3">select, 0, 0, 6, 1, 6</column>
-<column name="e_16_fu_495_p3">select, 0, 0, 6, 1, 6</column>
+<column name="add_ln70_fu_509_p2">+, 0, 0, 38, 31, 30</column>
+<column name="e_11_fu_364_p2">+, 0, 0, 13, 6, 2</column>
+<column name="e_13_fu_403_p2">+, 0, 0, 13, 6, 2</column>
+<column name="e_15_fu_437_p2">+, 0, 0, 13, 6, 2</column>
+<column name="e_17_fu_535_p2">+, 0, 0, 13, 6, 2</column>
+<column name="e_3_fu_230_p2">+, 0, 0, 13, 6, 2</column>
+<column name="e_5_fu_269_p2">+, 0, 0, 13, 6, 2</column>
+<column name="e_7_fu_297_p2">+, 0, 0, 13, 6, 2</column>
+<column name="e_9_fu_336_p2">+, 0, 0, 13, 6, 2</column>
+<column name="and_ln60_1_fu_593_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln60_fu_582_p2">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln58_fu_142_p2">icmp, 0, 0, 17, 10, 1</column>
+<column name="icmp_ln60_1_fu_588_p2">icmp, 0, 0, 12, 5, 2</column>
+<column name="icmp_ln60_fu_572_p2">icmp, 0, 0, 12, 5, 1</column>
+<column name="or_ln58_fu_118_p2">or, 0, 0, 5, 5, 5</column>
+<column name="e_10_fu_349_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_12_fu_370_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_14_fu_416_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_16_fu_451_p3">select, 0, 0, 6, 1, 6</column>
 <column name="e_1_fu_198_p3">select, 0, 0, 6, 1, 6</column>
 <column name="e_2_fu_214_p3">select, 0, 0, 6, 1, 6</column>
-<column name="e_4_fu_250_p3">select, 0, 0, 6, 1, 6</column>
-<column name="e_6_fu_283_p3">select, 0, 0, 6, 1, 6</column>
-<column name="e_8_fu_316_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_4_fu_236_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_6_fu_282_p3">select, 0, 0, 6, 1, 6</column>
+<column name="e_8_fu_303_p3">select, 0, 0, 6, 1, 6</column>
 <column name="e_fu_176_p3">select, 0, 0, 6, 1, 6</column>
-<column name="m_11_fu_351_p3">select, 0, 0, 10, 1, 10</column>
-<column name="m_13_fu_376_p3">select, 0, 0, 10, 1, 10</column>
-<column name="m_15_fu_462_p3">select, 0, 0, 10, 1, 10</column>
-<column name="m_17_fu_487_p3">select, 0, 0, 10, 1, 10</column>
+<column name="m_11_fu_341_p3">select, 0, 0, 10, 1, 10</column>
+<column name="m_13_fu_383_p3">select, 0, 0, 10, 1, 10</column>
+<column name="m_15_fu_408_p3">select, 0, 0, 10, 1, 10</column>
+<column name="m_17_fu_443_p3">select, 0, 0, 10, 1, 10</column>
 <column name="m_1_fu_168_p3">select, 0, 0, 10, 1, 10</column>
 <column name="m_3_fu_206_p3">select, 0, 0, 10, 1, 10</column>
-<column name="m_5_fu_242_p3">select, 0, 0, 10, 1, 10</column>
-<column name="m_7_fu_277_p3">select, 0, 0, 10, 1, 10</column>
-<column name="m_9_fu_308_p3">select, 0, 0, 10, 1, 10</column>
-<column name="select_ln44_fu_540_p3">select, 0, 0, 6, 1, 6</column>
-<column name="select_ln47_fu_532_p3">select, 0, 0, 9, 1, 9</column>
-<column name="xor_ln41_fu_580_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="m_5_fu_249_p3">select, 0, 0, 10, 1, 10</column>
+<column name="m_7_fu_274_p3">select, 0, 0, 10, 1, 10</column>
+<column name="m_9_fu_316_p3">select, 0, 0, 10, 1, 10</column>
+<column name="select_ln61_fu_540_p3">select, 0, 0, 6, 1, 6</column>
+<column name="select_ln64_fu_483_p3">select, 0, 0, 9, 1, 9</column>
+<column name="xor_ln58_fu_577_p2">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -126,25 +126,27 @@
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_ce_reg">1, 0, 1, 0</column>
 <column name="ap_return_int_reg">32, 0, 32, 0</column>
-<column name="e_10_reg_699">6, 0, 6, 0</column>
-<column name="e_14_reg_716">6, 0, 6, 0</column>
-<column name="e_4_reg_672">6, 0, 6, 0</column>
-<column name="e_5_reg_683">6, 0, 6, 0</column>
-<column name="exp_reg_653">5, 0, 5, 0</column>
+<column name="e_12_reg_708">6, 0, 6, 0</column>
+<column name="e_16_reg_714">6, 0, 6, 0</column>
+<column name="e_4_reg_674">6, 0, 6, 0</column>
+<column name="e_8_reg_691">6, 0, 6, 0</column>
+<column name="exp_reg_650">5, 0, 5, 0</column>
 <column name="h_int_reg">16, 0, 16, 0</column>
-<column name="icmp_ln41_reg_660">1, 0, 1, 0</column>
-<column name="m_13_reg_705">10, 0, 10, 0</column>
-<column name="m_5_reg_666">10, 0, 10, 0</column>
-<column name="m_9_reg_688">10, 0, 10, 0</column>
-<column name="mant_reg_639">10, 0, 10, 0</column>
-<column name="tmp_688_reg_645">1, 0, 1, 0</column>
-<column name="tmp_692_reg_677">1, 0, 1, 0</column>
-<column name="tmp_694_reg_694">1, 0, 1, 0</column>
-<column name="tmp_696_reg_711">1, 0, 1, 0</column>
-<column name="exp_reg_653">64, 32, 5, 0</column>
-<column name="icmp_ln41_reg_660">64, 32, 1, 0</column>
-<column name="mant_reg_639">64, 32, 10, 0</column>
-<column name="tmp_688_reg_645">64, 32, 1, 0</column>
+<column name="icmp_ln58_reg_657">1, 0, 1, 0</column>
+<column name="m_11_reg_697">10, 0, 10, 0</column>
+<column name="m_3_reg_663">10, 0, 10, 0</column>
+<column name="m_7_reg_680">10, 0, 10, 0</column>
+<column name="mant_reg_636">10, 0, 10, 0</column>
+<column name="select_ln64_reg_725">9, 0, 9, 0</column>
+<column name="tmp_709_reg_642">1, 0, 1, 0</column>
+<column name="tmp_712_reg_669">1, 0, 1, 0</column>
+<column name="tmp_714_reg_686">1, 0, 1, 0</column>
+<column name="tmp_716_reg_703">1, 0, 1, 0</column>
+<column name="tmp_719_reg_720">1, 0, 1, 0</column>
+<column name="exp_reg_650">64, 32, 5, 0</column>
+<column name="icmp_ln58_reg_657">64, 32, 1, 0</column>
+<column name="mant_reg_636">64, 32, 10, 0</column>
+<column name="tmp_709_reg_642">64, 32, 1, 0</column>
 </table>
 </item>
 </section>

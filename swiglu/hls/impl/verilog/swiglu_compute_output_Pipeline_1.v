@@ -59,10 +59,10 @@ module swiglu_compute_output_Pipeline_1 (
         m_axi_gmem_out_0_BRESP,
         m_axi_gmem_out_0_BID,
         m_axi_gmem_out_0_BUSER,
-        sext_ln596,
-        out_local_address0,
-        out_local_ce0,
-        out_local_q0
+        sext_ln703,
+        out_local_1_address0,
+        out_local_1_ce0,
+        out_local_1_q0
 );
 
 parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
@@ -119,10 +119,10 @@ output   m_axi_gmem_out_0_BREADY;
 input  [1:0] m_axi_gmem_out_0_BRESP;
 input  [0:0] m_axi_gmem_out_0_BID;
 input  [0:0] m_axi_gmem_out_0_BUSER;
-input  [61:0] sext_ln596;
-output  [10:0] out_local_address0;
-output   out_local_ce0;
-input  [31:0] out_local_q0;
+input  [61:0] sext_ln703;
+output  [10:0] out_local_1_address0;
+output   out_local_1_ce0;
+input  [31:0] out_local_1_q0;
 
 reg ap_idle;
 reg m_axi_gmem_out_0_WVALID;
@@ -134,7 +134,7 @@ reg    ap_enable_reg_pp0_iter1;
 reg    ap_enable_reg_pp0_iter2;
 reg    ap_idle_pp0;
 reg    ap_block_pp0_stage0_subdone;
-wire   [0:0] exitcond4_i_fu_103_p2;
+wire   [0:0] exitcond473_i_fu_103_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
@@ -142,7 +142,7 @@ reg    gmem_out_blk_n_W;
 wire    ap_block_pp0_stage0_grp1;
 reg    ap_block_pp0_stage0_11001_grp1;
 reg    ap_block_pp0_stage0_11001;
-reg   [31:0] out_local_load_reg_156;
+reg   [31:0] out_local_1_load_reg_156;
 wire   [63:0] loop_index_i_cast_fu_115_p1;
 wire    ap_block_pp0_stage0;
 wire    ap_block_pp0_stage0_01001_grp1;
@@ -150,7 +150,7 @@ reg   [11:0] loop_index_i_fu_60;
 wire   [11:0] empty_fu_109_p2;
 wire    ap_loop_init;
 reg   [11:0] ap_sig_allocacmp_loop_index_i_load;
-reg    out_local_ce0_local;
+reg    out_local_1_ce0_local;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -230,7 +230,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((exitcond4_i_fu_103_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
+        if (((exitcond473_i_fu_103_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
             loop_index_i_fu_60 <= empty_fu_109_p2;
         end else if ((ap_loop_init == 1'b1)) begin
             loop_index_i_fu_60 <= 12'd0;
@@ -241,12 +241,12 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_loop_exit_ready_pp0_iter1_reg <= ap_loop_exit_ready;
-        out_local_load_reg_156 <= out_local_q0;
+        out_local_1_load_reg_156 <= out_local_1_q0;
     end
 end
 
 always @ (*) begin
-    if (((exitcond4_i_fu_103_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((exitcond473_i_fu_103_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -311,9 +311,9 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        out_local_ce0_local = 1'b1;
+        out_local_1_ce0_local = 1'b1;
     end else begin
-        out_local_ce0_local = 1'b0;
+        out_local_1_ce0_local = 1'b0;
     end
 end
 
@@ -360,7 +360,7 @@ assign ap_ready = ap_ready_sig;
 
 assign empty_fu_109_p2 = (ap_sig_allocacmp_loop_index_i_load + 12'd1);
 
-assign exitcond4_i_fu_103_p2 = ((ap_sig_allocacmp_loop_index_i_load == 12'd2048) ? 1'b1 : 1'b0);
+assign exitcond473_i_fu_103_p2 = ((ap_sig_allocacmp_loop_index_i_load == 12'd2048) ? 1'b1 : 1'b0);
 
 assign loop_index_i_cast_fu_115_p1 = ap_sig_allocacmp_loop_index_i_load;
 
@@ -416,7 +416,7 @@ assign m_axi_gmem_out_0_BREADY = 1'b0;
 
 assign m_axi_gmem_out_0_RREADY = 1'b0;
 
-assign m_axi_gmem_out_0_WDATA = out_local_load_reg_156;
+assign m_axi_gmem_out_0_WDATA = out_local_1_load_reg_156;
 
 assign m_axi_gmem_out_0_WID = 1'd0;
 
@@ -426,8 +426,8 @@ assign m_axi_gmem_out_0_WSTRB = 4'd15;
 
 assign m_axi_gmem_out_0_WUSER = 1'd0;
 
-assign out_local_address0 = loop_index_i_cast_fu_115_p1;
+assign out_local_1_address0 = loop_index_i_cast_fu_115_p1;
 
-assign out_local_ce0 = out_local_ce0_local;
+assign out_local_1_ce0 = out_local_1_ce0_local;
 
 endmodule //swiglu_compute_output_Pipeline_1

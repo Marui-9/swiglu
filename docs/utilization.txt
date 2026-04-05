@@ -1,28 +1,31 @@
+Resource,Utilization,Available,Utilization %
+LUT,    50240,  117120, 42.90
+FF,     62424,  234240,26.65
+BRAM,   116.50, 144,80.90
+URAM,   8,      64,12.50
+DSP,    136,    1248,10.90
 
-Resource     Utilization     Available     Utilization %
-LUT          115133          117120        98.30
-FF           120843          234240        51.59
-BRAM         40.50           144           28.13
-URAM         16              64            25.00
-DSP          152             1248          12.18
-
-Four changes made (targeting the FP-heavy reduction loops):
-
-Change	Location	What	Why
-1	UNPACK_HDR_WV_K2 kr loop	Removed UNROLL	Was 16 simultaneous fp16_to_fp32 (2 kr × 8 b); now 8. MAC_ALL_K2 still keeps both kr and b UNROLL'd (safe — UNPACK always completes before MAC starts).
-2	REDUCE_WV_K2 b loop	UNROLL → factor=2	Reduces parallel FP chains from 8 to 2. kr is already sequential; 2 kr × 4 b-passes × 2 simultaneous = same arithmetic, ~48 extra cycles per call (negligible vs 256 MAC).
-3	REDUCE_DOWN_Q4K	factor=8 → factor=2	32 blocks in 16 sequential passes of 2 instead of 4 passes of 8. Adds ~80 cycles of FP reduction per output row vs 1024 MAC cycles.
-4	REDUCE_Q6K	factor=8 → factor=2	Same rationale as above for Q6K path.
-Empirical calibration: removing the kr UNROLL from REDUCE_WV_K2 saved 4,393 LUTs by removing 8 FP chains → ~550 LUTs/chain. These four changes remove approximately:
-
-UNPACK kr: ~8 fp16_to_fp32 × 2 modules ≈ 3,200–6,400 LUTs
-REDUCE_WV_K2 b factor=2: 6 chains × 2 modules ≈ 6,600 LUTs
-REDUCE_DOWN_Q4K factor=2: 6 chains ≈ 3,300 LUTs
-REDUCE_Q6K factor=2: 6 chains ≈ 2,640 LUTs
-Expected total: ~16K–19K savings → ~115K–118K LUTs. Tight, but should land just under 117,120.
-
-
-Directive:
-use input as straight output and profile single stages with different things
-1. input as straight output
-2. stage by stage add it to the test block. 
+Name,CLB LUTs (117120),CLB Registers (234240),CARRY8 (14640),F7 Muxes (58560),F8 Muxes (29280),Block RAM Tile (144),URAM (64),DSPs (1248),BUFG_PS (96),PS8 (1)
+design_1_wrapper,50240,62424,937,7262,1779,116.5,8,136,2,1
+design_1_i (design_1),50240,62424,937,7262,1779,116.5,8,136,2,1
+axi_smc (design_1_axi_smc_0),783,849,5,3,0,0,0,0,0,0
+smartconnect_0 (design_1_smartconnect_0_0),3324,6028,0,0,0,0,0,0,0,0
+smartconnect_1 (design_1_smartconnect_1_0),399,554,0,0,0,0,0,0,0,0
+smartconnect_2 (design_1_smartconnect_2_0),399,554,0,0,0,0,0,0,0,0
+smartconnect_3 (design_1_smartconnect_3_0),399,554,0,0,0,0,0,0,0,0
+swiglu_0 (design_1_swiglu_0_12),44653,53845,932,7259,1779,116.5,8,136,0,0
+U0 (design_1_swiglu_0_12_swiglu),44653,53845,932,7259,1779,116.5,8,136,0,0
+compute_gate_U0,3622,3642,208,52,23,4,0,22,0,0
+compute_output_U0,14498,20079,158,2516,572,62,0,42,0,0
+compute_X1_U0,8074,9897,106,2054,577,16,0,36,0,0
+compute_X2_U0,8069,9897,106,2054,577,16,0,36,0,0
+CTRL_s_axi_U,443,502,0,60,30,0,0,0,0,0
+gate_scale_U,24,70,0,0,0,0,0,0,0,0
+gmem_out_m_axi_U,1042,1181,41,94,0,0.5,0,0,0,0
+gmem_V_m_axi_U,884,960,26,92,0,2,0,0,0,0
+gmem_W_m_axi_U,884,960,26,92,0,2,0,0,0,0
+gmem_Wd2_m_axi_U,1010,960,26,92,0,2,0,0,0,0
+gmem_Wd_m_axi_U,883,960,26,92,0,2,0,0,0,0
+gmem_x_m_axi_U,695,842,22,61,0,2,0,0,0,0
+load_x_local_U0,90,223,0,0,0,0,0,0,0,0
+zynq_ultra_ps_e_0 (design_1_zynq_ultra_ps_e_0_0),264,0,0,0,0,0,0,0,2,1

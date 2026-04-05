@@ -9,8 +9,8 @@
 <ProductFamily>zynquplus</ProductFamily>
 <Part>xck26-sfvc784-2LV-c</Part>
 <TopModelName>load_row_down_q4k</TopModelName>
-<TargetClockPeriod>4.00</TargetClockPeriod>
-<ClockUncertainty>1.08</ClockUncertainty>
+<TargetClockPeriod>3.33</TargetClockPeriod>
+<ClockUncertainty>0.90</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,16 +18,16 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>2.920</EstimatedClockPeriod>
+<EstimatedClockPeriod>2.433</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>364</Best-caseLatency>
 <Average-caseLatency>364</Average-caseLatency>
 <Worst-caseLatency>364</Worst-caseLatency>
-<Best-caseRealTimeLatency>1.456 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>1.456 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>1.456 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>1.213 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.213 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>1.213 us</Worst-caseRealTimeLatency>
 <Interval-min>364</Interval-min>
 <Interval-max>364</Interval-max>
 <PerformancePragma>-</PerformancePragma>
@@ -35,14 +35,14 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:310</SourceLocation>
+<SourceLocation>swiglu.cpp:336</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<FF>288</FF>
-<LUT>803</LUT>
+<FF>297</FF>
+<LUT>805</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -125,7 +125,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWVALID</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -136,7 +136,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWREADY</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -147,7 +147,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWADDR</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -158,7 +158,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWID</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -169,7 +169,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWLEN</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -180,7 +180,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWSIZE</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -191,7 +191,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWBURST</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -202,7 +202,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWLOCK</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -213,7 +213,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWCACHE</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -224,7 +224,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWPROT</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -235,7 +235,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWQOS</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -246,7 +246,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWREGION</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -257,7 +257,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_AWUSER</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -268,7 +268,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_WVALID</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -279,7 +279,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_WREADY</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -290,7 +290,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_WDATA</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -301,7 +301,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_WSTRB</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -312,7 +312,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_WLAST</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -323,7 +323,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_WID</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -334,7 +334,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_WUSER</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -345,7 +345,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARVALID</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -356,7 +356,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARREADY</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -367,7 +367,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARADDR</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -378,7 +378,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARID</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -389,7 +389,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARLEN</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -400,7 +400,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARSIZE</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -411,7 +411,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARBURST</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -422,7 +422,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARLOCK</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -433,7 +433,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARCACHE</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -444,7 +444,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARPROT</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -455,7 +455,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARQOS</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -466,7 +466,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARREGION</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -477,7 +477,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_ARUSER</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -488,7 +488,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_RVALID</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -499,7 +499,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_RREADY</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -510,7 +510,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_RDATA</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -521,7 +521,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_RLAST</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -532,7 +532,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_RID</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -543,7 +543,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_RFIFONUM</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -554,7 +554,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_RUSER</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -565,7 +565,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_RRESP</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -576,7 +576,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_BVALID</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -587,7 +587,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_BREADY</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -598,7 +598,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_BRESP</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -609,7 +609,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_BID</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>
@@ -620,7 +620,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_Wd_0_BUSER</name>
-<Object>gmem_Wd</Object>
+<Object>gmem_Wd2</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>m_axi</IOProtocol>

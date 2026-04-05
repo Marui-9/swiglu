@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'fp16_to_fp32'" level="0">
-<item name = "Date">Thu Apr  2 14:55:33 2026
+<item name = "Date">Sun Apr  5 16:06:22 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 2.806 ns, 1.08 ns</column>
+<column name="ap_clk">3.33 ns, 2.330 ns, 0.90 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">3, 3, 12.000 ns, 12.000 ns, 1, 1, yes</column>
+<column name="">4, 4, 13.332 ns, 13.332 ns, 1, 1, yes</column>
 </table>
 </item>
 <item name = "Detail">

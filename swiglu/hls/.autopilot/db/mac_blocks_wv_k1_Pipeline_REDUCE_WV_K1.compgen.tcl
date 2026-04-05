@@ -1,31 +1,14 @@
 # This script segment is generated automatically by AutoPilot
 
-set name swiglu_faddfsub_32ns_32ns_32_10_full_dsp_1
+set name swiglu_fpext_32ns_64_2_no_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fsub} IMPL {fulldsp} LATENCY 9 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fpext} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
 }
 
 
-set name swiglu_fadd_32ns_32ns_32_10_full_dsp_1
+set name swiglu_mul_50s_32s_80_5_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fadd} IMPL {fulldsp} LATENCY 9 ALLOW_PRAGMA 1
-}
-
-
-set name swiglu_fmul_32ns_32ns_32_6_max_dsp_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fmul} IMPL {maxdsp} LATENCY 5 ALLOW_PRAGMA 1
-}
-
-
-set name swiglu_sitofp_32ns_32_7_no_dsp_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {sitofp} IMPL {auto} LATENCY 6 ALLOW_PRAGMA 1
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler swiglu_sparsemux_9_3_32_1_1 BINDTYPE {op} TYPE {sparsemux} IMPL {compactencoding_dontcare}
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 4 ALLOW_PRAGMA 1
 }
 
 
@@ -39,7 +22,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 799 \
+    id 934 \
     name int_acc_w_load_reload \
     type other \
     dir I \
@@ -54,1087 +37,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 800 \
-    name int_acc_w_16_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_16_load_reload \
-    op interface \
-    ports { int_acc_w_16_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 801 \
-    name int_acc_w_32_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_32_load_reload \
-    op interface \
-    ports { int_acc_w_32_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 802 \
-    name int_acc_w_48_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_48_load_reload \
-    op interface \
-    ports { int_acc_w_48_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 803 \
-    name int_acc_m_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_load_reload \
-    op interface \
-    ports { int_acc_m_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 804 \
-    name int_acc_m_16_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_16_load_reload \
-    op interface \
-    ports { int_acc_m_16_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 805 \
-    name int_acc_m_32_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_32_load_reload \
-    op interface \
-    ports { int_acc_m_32_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 806 \
-    name int_acc_m_48_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_48_load_reload \
-    op interface \
-    ports { int_acc_m_48_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 807 \
-    name int_acc_w_1_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_1_load_reload \
-    op interface \
-    ports { int_acc_w_1_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 808 \
-    name int_acc_w_17_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_17_load_reload \
-    op interface \
-    ports { int_acc_w_17_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 809 \
-    name int_acc_w_33_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_33_load_reload \
-    op interface \
-    ports { int_acc_w_33_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 810 \
-    name int_acc_w_49_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_49_load_reload \
-    op interface \
-    ports { int_acc_w_49_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 811 \
-    name int_acc_m_1_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_1_load_reload \
-    op interface \
-    ports { int_acc_m_1_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 812 \
-    name int_acc_m_17_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_17_load_reload \
-    op interface \
-    ports { int_acc_m_17_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 813 \
-    name int_acc_m_33_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_33_load_reload \
-    op interface \
-    ports { int_acc_m_33_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 814 \
-    name int_acc_m_49_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_49_load_reload \
-    op interface \
-    ports { int_acc_m_49_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 815 \
-    name int_acc_w_2_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_2_load_reload \
-    op interface \
-    ports { int_acc_w_2_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 816 \
-    name int_acc_w_18_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_18_load_reload \
-    op interface \
-    ports { int_acc_w_18_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 817 \
-    name int_acc_w_34_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_34_load_reload \
-    op interface \
-    ports { int_acc_w_34_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 818 \
-    name int_acc_w_50_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_50_load_reload \
-    op interface \
-    ports { int_acc_w_50_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 819 \
-    name int_acc_m_2_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_2_load_reload \
-    op interface \
-    ports { int_acc_m_2_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 820 \
-    name int_acc_m_18_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_18_load_reload \
-    op interface \
-    ports { int_acc_m_18_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 821 \
-    name int_acc_m_34_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_34_load_reload \
-    op interface \
-    ports { int_acc_m_34_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 822 \
-    name int_acc_m_50_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_50_load_reload \
-    op interface \
-    ports { int_acc_m_50_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 823 \
-    name int_acc_w_3_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_3_load_reload \
-    op interface \
-    ports { int_acc_w_3_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 824 \
-    name int_acc_w_19_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_19_load_reload \
-    op interface \
-    ports { int_acc_w_19_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 825 \
-    name int_acc_w_35_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_35_load_reload \
-    op interface \
-    ports { int_acc_w_35_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 826 \
-    name int_acc_w_51_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_51_load_reload \
-    op interface \
-    ports { int_acc_w_51_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 827 \
-    name int_acc_m_3_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_3_load_reload \
-    op interface \
-    ports { int_acc_m_3_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 828 \
-    name int_acc_m_19_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_19_load_reload \
-    op interface \
-    ports { int_acc_m_19_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 829 \
-    name int_acc_m_35_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_35_load_reload \
-    op interface \
-    ports { int_acc_m_35_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 830 \
-    name int_acc_m_51_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_51_load_reload \
-    op interface \
-    ports { int_acc_m_51_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 831 \
-    name int_acc_w_4_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_4_load_reload \
-    op interface \
-    ports { int_acc_w_4_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 832 \
-    name int_acc_w_20_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_20_load_reload \
-    op interface \
-    ports { int_acc_w_20_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 833 \
-    name int_acc_w_36_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_36_load_reload \
-    op interface \
-    ports { int_acc_w_36_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 834 \
-    name int_acc_w_52_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_52_load_reload \
-    op interface \
-    ports { int_acc_w_52_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 835 \
-    name int_acc_m_4_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_4_load_reload \
-    op interface \
-    ports { int_acc_m_4_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 836 \
-    name int_acc_m_20_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_20_load_reload \
-    op interface \
-    ports { int_acc_m_20_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 837 \
-    name int_acc_m_36_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_36_load_reload \
-    op interface \
-    ports { int_acc_m_36_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 838 \
-    name int_acc_m_52_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_52_load_reload \
-    op interface \
-    ports { int_acc_m_52_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 839 \
-    name int_acc_w_5_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_5_load_reload \
-    op interface \
-    ports { int_acc_w_5_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 840 \
-    name int_acc_w_21_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_21_load_reload \
-    op interface \
-    ports { int_acc_w_21_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 841 \
-    name int_acc_w_37_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_37_load_reload \
-    op interface \
-    ports { int_acc_w_37_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 842 \
-    name int_acc_w_53_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_53_load_reload \
-    op interface \
-    ports { int_acc_w_53_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 843 \
-    name int_acc_m_5_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_5_load_reload \
-    op interface \
-    ports { int_acc_m_5_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 844 \
-    name int_acc_m_21_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_21_load_reload \
-    op interface \
-    ports { int_acc_m_21_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 845 \
-    name int_acc_m_37_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_37_load_reload \
-    op interface \
-    ports { int_acc_m_37_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 846 \
-    name int_acc_m_53_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_53_load_reload \
-    op interface \
-    ports { int_acc_m_53_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 847 \
-    name int_acc_w_6_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_6_load_reload \
-    op interface \
-    ports { int_acc_w_6_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 848 \
-    name int_acc_w_22_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_22_load_reload \
-    op interface \
-    ports { int_acc_w_22_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 849 \
-    name int_acc_w_38_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_38_load_reload \
-    op interface \
-    ports { int_acc_w_38_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 850 \
-    name int_acc_w_54_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_54_load_reload \
-    op interface \
-    ports { int_acc_w_54_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 851 \
-    name int_acc_m_6_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_6_load_reload \
-    op interface \
-    ports { int_acc_m_6_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 852 \
-    name int_acc_m_22_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_22_load_reload \
-    op interface \
-    ports { int_acc_m_22_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 853 \
-    name int_acc_m_38_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_38_load_reload \
-    op interface \
-    ports { int_acc_m_38_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 854 \
-    name int_acc_m_54_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_54_load_reload \
-    op interface \
-    ports { int_acc_m_54_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 855 \
-    name int_acc_w_7_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_7_load_reload \
-    op interface \
-    ports { int_acc_w_7_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 856 \
-    name int_acc_w_23_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_23_load_reload \
-    op interface \
-    ports { int_acc_w_23_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 857 \
-    name int_acc_w_39_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_39_load_reload \
-    op interface \
-    ports { int_acc_w_39_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 858 \
-    name int_acc_w_55_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_w_55_load_reload \
-    op interface \
-    ports { int_acc_w_55_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 859 \
-    name int_acc_m_7_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_7_load_reload \
-    op interface \
-    ports { int_acc_m_7_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 860 \
-    name int_acc_m_23_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_23_load_reload \
-    op interface \
-    ports { int_acc_m_23_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 861 \
-    name int_acc_m_39_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_39_load_reload \
-    op interface \
-    ports { int_acc_m_39_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 862 \
-    name int_acc_m_55_load_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_int_acc_m_55_load_reload \
-    op interface \
-    ports { int_acc_m_55_load_reload { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 863 \
-    name d \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_d \
-    op interface \
-    ports { d { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 864 \
-    name d_2 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_d_2 \
-    op interface \
-    ports { d_2 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 865 \
-    name d_4 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_d_4 \
-    op interface \
-    ports { d_4 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 866 \
-    name d_6 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_d_6 \
-    op interface \
-    ports { d_6 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 867 \
-    name x_scale \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_x_scale \
-    op interface \
-    ports { x_scale { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 868 \
-    name dmin \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_dmin \
-    op interface \
-    ports { dmin { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 869 \
-    name dmin_2 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_dmin_2 \
-    op interface \
-    ports { dmin_2 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 870 \
-    name dmin_4 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_dmin_4 \
-    op interface \
-    ports { dmin_4 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 871 \
-    name dmin_6 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_dmin_6 \
-    op interface \
-    ports { dmin_6 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 872 \
+    id 935 \
     name int_acc_w_8_load_reload \
     type other \
     dir I \
@@ -1149,7 +52,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 873 \
+    id 936 \
+    name int_acc_w_16_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_16_load_reload \
+    op interface \
+    ports { int_acc_w_16_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 937 \
     name int_acc_w_24_load_reload \
     type other \
     dir I \
@@ -1164,7 +82,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 874 \
+    id 938 \
+    name int_acc_w_32_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_32_load_reload \
+    op interface \
+    ports { int_acc_w_32_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 939 \
     name int_acc_w_40_load_reload \
     type other \
     dir I \
@@ -1179,7 +112,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 875 \
+    id 940 \
+    name int_acc_w_48_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_48_load_reload \
+    op interface \
+    ports { int_acc_w_48_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 941 \
     name int_acc_w_56_load_reload \
     type other \
     dir I \
@@ -1194,7 +142,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 876 \
+    id 942 \
+    name int_acc_m_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_load_reload \
+    op interface \
+    ports { int_acc_m_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 943 \
     name int_acc_m_8_load_reload \
     type other \
     dir I \
@@ -1209,7 +172,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 877 \
+    id 944 \
+    name int_acc_m_16_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_16_load_reload \
+    op interface \
+    ports { int_acc_m_16_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 945 \
     name int_acc_m_24_load_reload \
     type other \
     dir I \
@@ -1224,7 +202,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 878 \
+    id 946 \
+    name int_acc_m_32_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_32_load_reload \
+    op interface \
+    ports { int_acc_m_32_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 947 \
     name int_acc_m_40_load_reload \
     type other \
     dir I \
@@ -1239,7 +232,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 879 \
+    id 948 \
+    name int_acc_m_48_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_48_load_reload \
+    op interface \
+    ports { int_acc_m_48_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 949 \
     name int_acc_m_56_load_reload \
     type other \
     dir I \
@@ -1254,7 +262,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 880 \
+    id 950 \
+    name int_acc_w_1_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_1_load_reload \
+    op interface \
+    ports { int_acc_w_1_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 951 \
     name int_acc_w_9_load_reload \
     type other \
     dir I \
@@ -1269,7 +292,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 881 \
+    id 952 \
+    name int_acc_w_17_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_17_load_reload \
+    op interface \
+    ports { int_acc_w_17_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 953 \
     name int_acc_w_25_load_reload \
     type other \
     dir I \
@@ -1284,7 +322,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 882 \
+    id 954 \
+    name int_acc_w_33_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_33_load_reload \
+    op interface \
+    ports { int_acc_w_33_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 955 \
     name int_acc_w_41_load_reload \
     type other \
     dir I \
@@ -1299,7 +352,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 883 \
+    id 956 \
+    name int_acc_w_49_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_49_load_reload \
+    op interface \
+    ports { int_acc_w_49_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 957 \
     name int_acc_w_57_load_reload \
     type other \
     dir I \
@@ -1314,7 +382,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 884 \
+    id 958 \
+    name int_acc_m_1_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_1_load_reload \
+    op interface \
+    ports { int_acc_m_1_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 959 \
     name int_acc_m_9_load_reload \
     type other \
     dir I \
@@ -1329,7 +412,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 885 \
+    id 960 \
+    name int_acc_m_17_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_17_load_reload \
+    op interface \
+    ports { int_acc_m_17_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 961 \
     name int_acc_m_25_load_reload \
     type other \
     dir I \
@@ -1344,7 +442,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 886 \
+    id 962 \
+    name int_acc_m_33_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_33_load_reload \
+    op interface \
+    ports { int_acc_m_33_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 963 \
     name int_acc_m_41_load_reload \
     type other \
     dir I \
@@ -1359,7 +472,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 887 \
+    id 964 \
+    name int_acc_m_49_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_49_load_reload \
+    op interface \
+    ports { int_acc_m_49_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 965 \
     name int_acc_m_57_load_reload \
     type other \
     dir I \
@@ -1374,7 +502,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 888 \
+    id 966 \
+    name int_acc_w_2_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_2_load_reload \
+    op interface \
+    ports { int_acc_w_2_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 967 \
     name int_acc_w_10_load_reload \
     type other \
     dir I \
@@ -1389,7 +532,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 889 \
+    id 968 \
+    name int_acc_w_18_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_18_load_reload \
+    op interface \
+    ports { int_acc_w_18_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 969 \
     name int_acc_w_26_load_reload \
     type other \
     dir I \
@@ -1404,7 +562,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 890 \
+    id 970 \
+    name int_acc_w_34_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_34_load_reload \
+    op interface \
+    ports { int_acc_w_34_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 971 \
     name int_acc_w_42_load_reload \
     type other \
     dir I \
@@ -1419,7 +592,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 891 \
+    id 972 \
+    name int_acc_w_50_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_50_load_reload \
+    op interface \
+    ports { int_acc_w_50_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 973 \
     name int_acc_w_58_load_reload \
     type other \
     dir I \
@@ -1434,7 +622,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 892 \
+    id 974 \
+    name int_acc_m_2_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_2_load_reload \
+    op interface \
+    ports { int_acc_m_2_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 975 \
     name int_acc_m_10_load_reload \
     type other \
     dir I \
@@ -1449,7 +652,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 893 \
+    id 976 \
+    name int_acc_m_18_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_18_load_reload \
+    op interface \
+    ports { int_acc_m_18_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 977 \
     name int_acc_m_26_load_reload \
     type other \
     dir I \
@@ -1464,7 +682,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 894 \
+    id 978 \
+    name int_acc_m_34_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_34_load_reload \
+    op interface \
+    ports { int_acc_m_34_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 979 \
     name int_acc_m_42_load_reload \
     type other \
     dir I \
@@ -1479,7 +712,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 895 \
+    id 980 \
+    name int_acc_m_50_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_50_load_reload \
+    op interface \
+    ports { int_acc_m_50_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 981 \
     name int_acc_m_58_load_reload \
     type other \
     dir I \
@@ -1494,7 +742,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 896 \
+    id 982 \
+    name int_acc_w_3_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_3_load_reload \
+    op interface \
+    ports { int_acc_w_3_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 983 \
     name int_acc_w_11_load_reload \
     type other \
     dir I \
@@ -1509,7 +772,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 897 \
+    id 984 \
+    name int_acc_w_19_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_19_load_reload \
+    op interface \
+    ports { int_acc_w_19_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 985 \
     name int_acc_w_27_load_reload \
     type other \
     dir I \
@@ -1524,7 +802,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 898 \
+    id 986 \
+    name int_acc_w_35_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_35_load_reload \
+    op interface \
+    ports { int_acc_w_35_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 987 \
     name int_acc_w_43_load_reload \
     type other \
     dir I \
@@ -1539,7 +832,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 899 \
+    id 988 \
+    name int_acc_w_51_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_51_load_reload \
+    op interface \
+    ports { int_acc_w_51_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 989 \
     name int_acc_w_59_load_reload \
     type other \
     dir I \
@@ -1554,7 +862,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 900 \
+    id 990 \
+    name int_acc_m_3_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_3_load_reload \
+    op interface \
+    ports { int_acc_m_3_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 991 \
     name int_acc_m_11_load_reload \
     type other \
     dir I \
@@ -1569,7 +892,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 901 \
+    id 992 \
+    name int_acc_m_19_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_19_load_reload \
+    op interface \
+    ports { int_acc_m_19_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 993 \
     name int_acc_m_27_load_reload \
     type other \
     dir I \
@@ -1584,7 +922,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 902 \
+    id 994 \
+    name int_acc_m_35_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_35_load_reload \
+    op interface \
+    ports { int_acc_m_35_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 995 \
     name int_acc_m_43_load_reload \
     type other \
     dir I \
@@ -1599,7 +952,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 903 \
+    id 996 \
+    name int_acc_m_51_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_51_load_reload \
+    op interface \
+    ports { int_acc_m_51_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 997 \
     name int_acc_m_59_load_reload \
     type other \
     dir I \
@@ -1614,7 +982,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 904 \
+    id 998 \
+    name int_acc_w_4_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_4_load_reload \
+    op interface \
+    ports { int_acc_w_4_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 999 \
     name int_acc_w_12_load_reload \
     type other \
     dir I \
@@ -1629,7 +1012,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 905 \
+    id 1000 \
+    name int_acc_w_20_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_20_load_reload \
+    op interface \
+    ports { int_acc_w_20_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1001 \
     name int_acc_w_28_load_reload \
     type other \
     dir I \
@@ -1644,7 +1042,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 906 \
+    id 1002 \
+    name int_acc_w_36_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_36_load_reload \
+    op interface \
+    ports { int_acc_w_36_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1003 \
     name int_acc_w_44_load_reload \
     type other \
     dir I \
@@ -1659,7 +1072,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 907 \
+    id 1004 \
+    name int_acc_w_52_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_52_load_reload \
+    op interface \
+    ports { int_acc_w_52_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1005 \
     name int_acc_w_60_load_reload \
     type other \
     dir I \
@@ -1674,7 +1102,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 908 \
+    id 1006 \
+    name int_acc_m_4_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_4_load_reload \
+    op interface \
+    ports { int_acc_m_4_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1007 \
     name int_acc_m_12_load_reload \
     type other \
     dir I \
@@ -1689,7 +1132,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 909 \
+    id 1008 \
+    name int_acc_m_20_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_20_load_reload \
+    op interface \
+    ports { int_acc_m_20_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1009 \
     name int_acc_m_28_load_reload \
     type other \
     dir I \
@@ -1704,7 +1162,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 910 \
+    id 1010 \
+    name int_acc_m_36_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_36_load_reload \
+    op interface \
+    ports { int_acc_m_36_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1011 \
     name int_acc_m_44_load_reload \
     type other \
     dir I \
@@ -1719,7 +1192,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 911 \
+    id 1012 \
+    name int_acc_m_52_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_52_load_reload \
+    op interface \
+    ports { int_acc_m_52_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1013 \
     name int_acc_m_60_load_reload \
     type other \
     dir I \
@@ -1734,7 +1222,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 912 \
+    id 1014 \
+    name int_acc_w_5_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_5_load_reload \
+    op interface \
+    ports { int_acc_w_5_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1015 \
     name int_acc_w_13_load_reload \
     type other \
     dir I \
@@ -1749,7 +1252,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 913 \
+    id 1016 \
+    name int_acc_w_21_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_21_load_reload \
+    op interface \
+    ports { int_acc_w_21_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1017 \
     name int_acc_w_29_load_reload \
     type other \
     dir I \
@@ -1764,7 +1282,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 914 \
+    id 1018 \
+    name int_acc_w_37_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_37_load_reload \
+    op interface \
+    ports { int_acc_w_37_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1019 \
     name int_acc_w_45_load_reload \
     type other \
     dir I \
@@ -1779,7 +1312,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 915 \
+    id 1020 \
+    name int_acc_w_53_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_53_load_reload \
+    op interface \
+    ports { int_acc_w_53_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1021 \
     name int_acc_w_61_load_reload \
     type other \
     dir I \
@@ -1794,7 +1342,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 916 \
+    id 1022 \
+    name int_acc_m_5_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_5_load_reload \
+    op interface \
+    ports { int_acc_m_5_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1023 \
     name int_acc_m_13_load_reload \
     type other \
     dir I \
@@ -1809,7 +1372,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 917 \
+    id 1024 \
+    name int_acc_m_21_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_21_load_reload \
+    op interface \
+    ports { int_acc_m_21_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1025 \
     name int_acc_m_29_load_reload \
     type other \
     dir I \
@@ -1824,7 +1402,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 918 \
+    id 1026 \
+    name int_acc_m_37_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_37_load_reload \
+    op interface \
+    ports { int_acc_m_37_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1027 \
     name int_acc_m_45_load_reload \
     type other \
     dir I \
@@ -1839,7 +1432,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 919 \
+    id 1028 \
+    name int_acc_m_53_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_53_load_reload \
+    op interface \
+    ports { int_acc_m_53_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1029 \
     name int_acc_m_61_load_reload \
     type other \
     dir I \
@@ -1854,7 +1462,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 920 \
+    id 1030 \
+    name int_acc_w_6_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_6_load_reload \
+    op interface \
+    ports { int_acc_w_6_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1031 \
     name int_acc_w_14_load_reload \
     type other \
     dir I \
@@ -1869,7 +1492,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 921 \
+    id 1032 \
+    name int_acc_w_22_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_22_load_reload \
+    op interface \
+    ports { int_acc_w_22_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1033 \
     name int_acc_w_30_load_reload \
     type other \
     dir I \
@@ -1884,7 +1522,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 922 \
+    id 1034 \
+    name int_acc_w_38_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_38_load_reload \
+    op interface \
+    ports { int_acc_w_38_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1035 \
     name int_acc_w_46_load_reload \
     type other \
     dir I \
@@ -1899,7 +1552,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 923 \
+    id 1036 \
+    name int_acc_w_54_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_54_load_reload \
+    op interface \
+    ports { int_acc_w_54_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1037 \
     name int_acc_w_62_load_reload \
     type other \
     dir I \
@@ -1914,7 +1582,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 924 \
+    id 1038 \
+    name int_acc_m_6_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_6_load_reload \
+    op interface \
+    ports { int_acc_m_6_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1039 \
     name int_acc_m_14_load_reload \
     type other \
     dir I \
@@ -1929,7 +1612,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 925 \
+    id 1040 \
+    name int_acc_m_22_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_22_load_reload \
+    op interface \
+    ports { int_acc_m_22_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1041 \
     name int_acc_m_30_load_reload \
     type other \
     dir I \
@@ -1944,7 +1642,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 926 \
+    id 1042 \
+    name int_acc_m_38_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_38_load_reload \
+    op interface \
+    ports { int_acc_m_38_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1043 \
     name int_acc_m_46_load_reload \
     type other \
     dir I \
@@ -1959,7 +1672,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 927 \
+    id 1044 \
+    name int_acc_m_54_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_54_load_reload \
+    op interface \
+    ports { int_acc_m_54_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1045 \
     name int_acc_m_62_load_reload \
     type other \
     dir I \
@@ -1974,7 +1702,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 928 \
+    id 1046 \
+    name int_acc_w_7_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_7_load_reload \
+    op interface \
+    ports { int_acc_w_7_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1047 \
     name int_acc_w_15_load_reload \
     type other \
     dir I \
@@ -1989,7 +1732,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 929 \
+    id 1048 \
+    name int_acc_w_23_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_23_load_reload \
+    op interface \
+    ports { int_acc_w_23_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1049 \
     name int_acc_w_31_load_reload \
     type other \
     dir I \
@@ -2004,7 +1762,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 930 \
+    id 1050 \
+    name int_acc_w_39_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_39_load_reload \
+    op interface \
+    ports { int_acc_w_39_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1051 \
     name int_acc_w_47_load_reload \
     type other \
     dir I \
@@ -2019,7 +1792,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 931 \
+    id 1052 \
+    name int_acc_w_55_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_w_55_load_reload \
+    op interface \
+    ports { int_acc_w_55_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1053 \
     name int_acc_w_63_load_reload \
     type other \
     dir I \
@@ -2034,7 +1822,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 932 \
+    id 1054 \
+    name int_acc_m_7_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_7_load_reload \
+    op interface \
+    ports { int_acc_m_7_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1055 \
     name int_acc_m_15_load_reload \
     type other \
     dir I \
@@ -2049,7 +1852,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 933 \
+    id 1056 \
+    name int_acc_m_23_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_23_load_reload \
+    op interface \
+    ports { int_acc_m_23_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1057 \
     name int_acc_m_31_load_reload \
     type other \
     dir I \
@@ -2064,7 +1882,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 934 \
+    id 1058 \
+    name int_acc_m_39_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_39_load_reload \
+    op interface \
+    ports { int_acc_m_39_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1059 \
     name int_acc_m_47_load_reload \
     type other \
     dir I \
@@ -2079,7 +1912,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 935 \
+    id 1060 \
+    name int_acc_m_55_load_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_int_acc_m_55_load_reload \
+    op interface \
+    ports { int_acc_m_55_load_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1061 \
     name int_acc_m_63_load_reload \
     type other \
     dir I \
@@ -2094,127 +1942,247 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 936 \
-    name d_1 \
+    id 1062 \
+    name mux_case_08251_reload \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_d_1 \
+    corename dc_mux_case_08251_reload \
     op interface \
-    ports { d_1 { I 32 vector } } \
+    ports { mux_case_08251_reload { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 937 \
-    name d_3 \
+    id 1063 \
+    name mux_case_18264_reload \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_d_3 \
+    corename dc_mux_case_18264_reload \
     op interface \
-    ports { d_3 { I 32 vector } } \
+    ports { mux_case_18264_reload { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 938 \
-    name d_5 \
+    id 1064 \
+    name mux_case_28277_reload \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_d_5 \
+    corename dc_mux_case_28277_reload \
     op interface \
-    ports { d_5 { I 32 vector } } \
+    ports { mux_case_28277_reload { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 939 \
-    name d_7 \
+    id 1065 \
+    name mux_case_382810_reload \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_d_7 \
+    corename dc_mux_case_382810_reload \
     op interface \
-    ports { d_7 { I 32 vector } } \
+    ports { mux_case_382810_reload { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 940 \
-    name dmin_1 \
+    id 1066 \
+    name mux_case_482913_reload \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_dmin_1 \
+    corename dc_mux_case_482913_reload \
     op interface \
-    ports { dmin_1 { I 32 vector } } \
+    ports { mux_case_482913_reload { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 941 \
-    name dmin_3 \
+    id 1067 \
+    name mux_case_583016_reload \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_dmin_3 \
+    corename dc_mux_case_583016_reload \
     op interface \
-    ports { dmin_3 { I 32 vector } } \
+    ports { mux_case_583016_reload { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 942 \
-    name dmin_5 \
+    id 1068 \
+    name mux_case_683119_reload \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_dmin_5 \
+    corename dc_mux_case_683119_reload \
     op interface \
-    ports { dmin_5 { I 32 vector } } \
+    ports { mux_case_683119_reload { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 943 \
-    name dmin_7 \
+    id 1069 \
+    name mux_case_783222_reload \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_dmin_7 \
+    corename dc_mux_case_783222_reload \
     op interface \
-    ports { dmin_7 { I 32 vector } } \
+    ports { mux_case_783222_reload { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 944 \
+    id 1070 \
+    name mux_case_083326_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_mux_case_083326_reload \
+    op interface \
+    ports { mux_case_083326_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1071 \
+    name mux_case_183429_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_mux_case_183429_reload \
+    op interface \
+    ports { mux_case_183429_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1072 \
+    name mux_case_283532_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_mux_case_283532_reload \
+    op interface \
+    ports { mux_case_283532_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1073 \
+    name mux_case_383635_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_mux_case_383635_reload \
+    op interface \
+    ports { mux_case_383635_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1074 \
+    name mux_case_483738_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_mux_case_483738_reload \
+    op interface \
+    ports { mux_case_483738_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1075 \
+    name mux_case_583841_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_mux_case_583841_reload \
+    op interface \
+    ports { mux_case_583841_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1076 \
+    name mux_case_683944_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_mux_case_683944_reload \
+    op interface \
+    ports { mux_case_683944_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1077 \
+    name mux_case_784047_reload \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_mux_case_784047_reload \
+    op interface \
+    ports { mux_case_784047_reload { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1078 \
     name total_out \
     type other \
     dir O \
@@ -2222,7 +2190,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_total_out \
     op interface \
-    ports { total_out { O 32 vector } total_out_ap_vld { O 1 bit } } \
+    ports { total_out { O 56 vector } total_out_ap_vld { O 1 bit } } \
 } "
 }
 

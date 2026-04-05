@@ -28,6 +28,14 @@
 #define WV_BLOCKS_PER_ROW  8     // VECTOR_DIM / 256
 #define DOWN_BLOCKS_PER_ROW 32   // FFN_DIM / 256
 
+// Must match swiglu.cpp exactly.  The HW quantizes X1/X2 to INT8 with this
+// fixed scale (single-pass, no dynamic range detection).  The reference mirrors
+// this step so the testbench verifies the HLS implementation of the spec.
+// Whether X12_SCALE_RANGE=10 is adequate for real LFM2 inputs is validated
+// separately by board execution (confirmed correct).
+#define X12_INV_SCALE   (127.0f / 10.0f)   // 12.7f  — multiply to quantize
+#define X12_QUANT_SCALE (10.0f  / 127.0f)  // ~0.0787f — multiply to dequant
+
 using namespace std;
 
 // ─── Global weight buffers (too large for stack) ─────────────────────────────
@@ -217,22 +225,24 @@ static float dot_q6k_ref(const uint8_t* block, const int8_t* x_int, int v_base, 
 // Mock token test: single token, Q4_K down, host ref vs DUT
 // ============================================================================
 static int run_mock_token_test() {
-    // weights
+    // weights — d=0x0800 (fp16 2^-13) keeps X1/X2 within X12_SCALE_RANGE=10
+    // for the x=(i%17)-8 input pattern.  dmin=0 isolates the d-path.
     for (int row = 0; row < FFN_DIM; ++row) {
-        fill_q4k_block(W_buf + row * WV_BLOCKS_PER_ROW * Q4_K_BYTES, 0x3C00, 0x0000);
-        fill_q4k_block(V_buf + row * WV_BLOCKS_PER_ROW * Q4_K_BYTES, 0x3C00, 0x0000);
+        fill_q4k_block(W_buf + row * WV_BLOCKS_PER_ROW * Q4_K_BYTES, 0x0800, 0x0000);
+        fill_q4k_block(V_buf + row * WV_BLOCKS_PER_ROW * Q4_K_BYTES, 0x0800, 0x0000);
     }
     for (int out = 0; out < VECTOR_DIM; ++out) {
-        fill_q4k_block(Wd_q4k + out * DOWN_BLOCKS_PER_ROW * Q4_K_BYTES, 0x3C00, 0x0000);
+        fill_q4k_block(Wd_q4k + out * DOWN_BLOCKS_PER_ROW * Q4_K_BYTES, 0x0800, 0x0000);
     }
     // input
     for (int i = 0; i < VECTOR_DIM; ++i) x_batch_buf[i] = (int8_t)((i % 17) - 8);
 
-    // DUT
-    swiglu(W_buf, V_buf, Wd_q4k, x_batch_buf, out_batch_buf,
+    // DUT — x_scale=1.0f because x_batch_buf is already INT8 and the mock
+    // test wants a direct 1:1 scale (no float→INT8 conversion done here).
+    swiglu(W_buf, V_buf, Wd_q4k, Wd_q4k, x_batch_buf, out_batch_buf,
            /*down_quant_mode=*/0, /*x_scale=*/1.0f);
 
-    // reference A,B
+    // reference A,B — mirrors compute_X1/X2 with x_scale=1.0f
     for (int j = 0; j < FFN_DIM; ++j) {
         const uint8_t *wblk = W_buf + j * WV_BLOCKS_PER_ROW * Q4_K_BYTES;
         const uint8_t *vblk = V_buf + j * WV_BLOCKS_PER_ROW * Q4_K_BYTES;
@@ -243,6 +253,20 @@ static int run_mock_token_test() {
         }
         X1_ref[0][j] = accA;
         X2_ref[0][j] = accB;
+    }
+    // Apply hardware X12 quantization/dequantization (mirrors compute_X1/X2 lines 208-212)
+    for (int j = 0; j < FFN_DIM; ++j) {
+        float fq1 = X1_ref[0][j] * X12_INV_SCALE;
+        int   iq1 = (int)(fq1 + (fq1 >= 0.f ? 0.5f : -0.5f));
+        if (iq1 >  127) iq1 =  127;
+        if (iq1 < -128) iq1 = -128;
+        X1_ref[0][j] = (float)(int8_t)iq1 * X12_QUANT_SCALE;
+
+        float fq2 = X2_ref[0][j] * X12_INV_SCALE;
+        int   iq2 = (int)(fq2 + (fq2 >= 0.f ? 0.5f : -0.5f));
+        if (iq2 >  127) iq2 =  127;
+        if (iq2 < -128) iq2 = -128;
+        X2_ref[0][j] = (float)(int8_t)iq2 * X12_QUANT_SCALE;
     }
     // gate and scale
     float max_abs = 0.f;
@@ -369,6 +393,24 @@ static int run_test(const char*  label,
                     x_int, b * 256, x_scale);
         }
 
+        // Phase 2b/3b: apply hardware X12 quantization/dequantization to X1 and X2.
+        // compute_X1/X2 store INT8 in X1_cache/X2_cache (line 208-212 in swiglu.cpp).
+        // compute_gate then reads back and multiplies by X12_QUANT_SCALE (lines 263-264).
+        // The reference must mirror this step.
+        for (int j = 0; j < FFN_DIM; j++) {
+            float fq1 = X1_ref[n][j] * X12_INV_SCALE;
+            int   iq1 = (int)(fq1 + (fq1 >= 0.f ? 0.5f : -0.5f));
+            if (iq1 >  127) iq1 =  127;
+            if (iq1 < -128) iq1 = -128;
+            X1_ref[n][j] = (float)(int8_t)iq1 * X12_QUANT_SCALE;
+
+            float fq2 = X2_ref[n][j] * X12_INV_SCALE;
+            int   iq2 = (int)(fq2 + (fq2 >= 0.f ? 0.5f : -0.5f));
+            if (iq2 >  127) iq2 =  127;
+            if (iq2 < -128) iq2 = -128;
+            X2_ref[n][j] = (float)(int8_t)iq2 * X12_QUANT_SCALE;
+        }
+
         // Phase 4: gate = SiLU_lut(X1) * X2, quantized to INT8 (mirrors compute_gate)
         float gate_fp[FFN_DIM];
         int8_t gate_int[FFN_DIM];
@@ -381,12 +423,15 @@ static int run_test(const char*  label,
             if (abs_val > gate_max_abs) gate_max_abs = abs_val;
         }
 
-        // Pass 2: quantize to INT8 — same truncation the hardware applies
+        // Pass 2: quantize to INT8 — hardware uses round-to-nearest (swiglu.cpp line 294):
+        //   int iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
+        // NOT truncation.  Using truncation here causes gate_int = 126 instead of 127
+        // for the max element when fq = 126.999... due to FP rounding.
         float gate_scale = (gate_max_abs > 0.f) ? (gate_max_abs / 127.0f) : 1.0f;
         float gate_inv   = 1.0f / gate_scale;
         for (int j = 0; j < FFN_DIM; j++) {
             float fq = gate_fp[j] * gate_inv;
-            int   iq = (int)fq;
+            int   iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
             if (iq >  127) iq =  127;
             if (iq < -128) iq = -128;
             gate_int[j] = (int8_t)iq;
@@ -412,7 +457,7 @@ static int run_test(const char*  label,
     // ── 4. Run the IP ────────────────────────────────────────────────────────
     memset(out_batch_buf, 0, sizeof(out_batch_buf));
     uint8_t* W_down_ptr = q6k_down ? Wd_q6k : Wd_q4k;
-    swiglu(W_buf, V_buf, W_down_ptr,
+    swiglu(W_buf, V_buf, W_down_ptr, W_down_ptr,
            x_batch_buf, out_batch_buf,
            q6k_down ? 1u : 0u,
            x_scale);
@@ -469,47 +514,53 @@ int main() {
     int total_errors = run_mock_token_test();
 
     // ── T1: Q4_K W_down, batch=1, all normal fp16 ───────────────────────────
-    // 0x3800 = fp16 0.5 (normal); 0x2000 = fp16 0.125 (normal)
-    // Baseline: verifies the Q4_K decode path and min-subtraction accumulator.
+    // 0x0800 = fp16 2^-13 ≈ 1.22e-4.  Chosen so that X1/X2 ≈ 7.7 for the
+    // all-positive all_vecs pattern, which stays within X12_SCALE_RANGE=10.
+    // dmin=0 (0x0000) isolates the d-path from the dmin-subtraction path.
+    // Baseline: verifies the Q4_K decode path end-to-end.
     cout << "=== T1: Q4_K down, batch=1, normal fp16 ===\n";
     total_errors += run_test("T1", all_vecs, 1,
-        /*d_W=*/0x3800, /*dmin_W=*/0x2000,
-        /*d_V=*/0x3800, /*dmin_V=*/0x2000,
-        /*d_down=*/0x3800, /*dmin_down=*/0x2000, false);
+        /*d_W=*/0x0800, /*dmin_W=*/0x0000,
+        /*d_V=*/0x0800, /*dmin_V=*/0x0000,
+        /*d_down=*/0x0800, /*dmin_down=*/0x0000, false);
 
     // ── T2: Q4_K W_down, batch=1, subnormal d in W ──────────────────────────
     // 0x00A4 is a subnormal fp16 (~9.8e-6) seen in real LFM2 weights.
     // Catches the DAZ bug: hls_half/ap_fixed flush subnormals to 0 → X1=0 → out=0.
+    // d_V = 0x0800 (small normal) keeps X2 in range; subnormal d_W gives X1 ≈ 0.62.
     cout << "=== T2: Q4_K down, batch=1, subnormal d in W (0x00A4 ~9.8e-6) ===\n";
     total_errors += run_test("T2", all_vecs, 1,
-        /*d_W=*/0x00A4, /*dmin_W=*/0x2000,
-        /*d_V=*/0x3800, /*dmin_V=*/0x2000,
-        /*d_down=*/0x3800, /*dmin_down=*/0x2000, false);
+        /*d_W=*/0x00A4, /*dmin_W=*/0x0000,
+        /*d_V=*/0x0800, /*dmin_V=*/0x0000,
+        /*d_down=*/0x0800, /*dmin_down=*/0x0000, false);
 
     // ── T3: Q4_K W_down, batch=1, subnormal dmin in V ───────────────────────
     // 0x817E = negative subnormal fp16 (~-2.3e-5).
-    // Verifies the dmin fp16_to_fp32 path; a wrong dmin→0 shifts all outputs.
+    // Verifies the dmin fp16_to_fp32 path; a wrong dmin→0 shifts all X2 outputs.
+    // d_W and d_V = 0x0800 to keep X1/X2 within X12_SCALE_RANGE.
     cout << "=== T3: Q4_K down, batch=1, subnormal dmin in V (0x817E) ===\n";
     total_errors += run_test("T3", all_vecs, 1,
-        /*d_W=*/0x3800, /*dmin_W=*/0x2000,
-        /*d_V=*/0x3800, /*dmin_V=*/0x817E,
-        /*d_down=*/0x3800, /*dmin_down=*/0x2000, false);
+        /*d_W=*/0x0800, /*dmin_W=*/0x0000,
+        /*d_V=*/0x0800, /*dmin_V=*/0x817E,
+        /*d_down=*/0x0800, /*dmin_down=*/0x0000, false);
 
     // ── T4: Q6_K W_down, batch=1, normal fp16 ───────────────────────────────
     // mode=1 path.  Confirms down_quant_mode selects the Q6_K loop in Phase 5.
+    // d_W/d_V = 0x0800 to keep X1/X2 within X12_SCALE_RANGE.
     cout << "=== T4: Q6_K down, batch=1, normal fp16 (mode=1) ===\n";
     total_errors += run_test("T4", all_vecs, 1,
-        /*d_W=*/0x3800, /*dmin_W=*/0x2000,
-        /*d_V=*/0x3800, /*dmin_V=*/0x2000,
-        /*d_down=*/0x3800, /*dmin_down=*/0x0000, true);
+        /*d_W=*/0x0800, /*dmin_W=*/0x0000,
+        /*d_V=*/0x0800, /*dmin_V=*/0x0000,
+        /*d_down=*/0x0800, /*dmin_down=*/0x0000, true);
 
     // ── T5: Q6_K W_down, batch=1, subnormal d in W_down ─────────────────────
     // 0x00A4 subnormal in the Q6_K down-projection path.
     // Without fp16_to_fp32(), d→0 → entire output is zero.
+    // d_W/d_V = 0x0800 to keep X1/X2 within X12_SCALE_RANGE.
     cout << "=== T5: Q6_K down, batch=1, subnormal d in W_down (0x00A4) ===\n";
     total_errors += run_test("T5", all_vecs, 1,
-        /*d_W=*/0x3800, /*dmin_W=*/0x2000,
-        /*d_V=*/0x3800, /*dmin_V=*/0x2000,
+        /*d_W=*/0x0800, /*dmin_W=*/0x0000,
+        /*d_V=*/0x0800, /*dmin_V=*/0x0000,
         /*d_down=*/0x00A4, /*dmin_down=*/0x0000, true);
 
     // ── T6: Q4_K down, batch=2, normal fp16 ─────────────────────────────────

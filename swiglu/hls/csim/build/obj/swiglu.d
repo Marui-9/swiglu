@@ -16,4 +16,5 @@ obj/swiglu.o: ../../../../swiglu.cpp ../../../../swiglu.h \
   C:/Xilinx/2025.1/Vitis/include/ap_fixed.h \
   C:/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h \
   C:/Xilinx/2025.1/Vitis/include/etc/ap_fixed_ref.h \
-  C:/Xilinx/2025.1/Vitis/include/etc/ap_fixed_special.h
+  C:/Xilinx/2025.1/Vitis/include/etc/ap_fixed_special.h \
+  C:/Xilinx/2025.1/Vitis/include/hls_stream.h

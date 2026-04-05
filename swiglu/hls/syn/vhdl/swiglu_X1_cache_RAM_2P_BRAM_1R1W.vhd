@@ -9,8 +9,8 @@ use ieee.numeric_std.all;
 entity swiglu_X1_cache_RAM_2P_BRAM_1R1W  is
     generic (
         DataWidth    : integer := 8;
-        AddressRange : integer := 32768;
-        AddressWidth : integer := 15;
+        AddressRange : integer := 8192;
+        AddressWidth : integer := 13;
         BufferCount  : integer := 2;
         MemLatency   : integer := 1;
         IndexWidth   : integer := 1

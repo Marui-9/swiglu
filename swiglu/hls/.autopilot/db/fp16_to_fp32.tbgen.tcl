@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 42
+set cdfgNum 39
 set C_modelName {fp16_to_fp32}
 set C_modelType { float 32 }
 set ap_memory_interface_dict [dict create]
@@ -50,7 +50,7 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "3", "Max" : "3"}
+	{"Name" : "Latency", "Min" : "4", "Max" : "4"}
 	, {"Name" : "Interval", "Min" : "1", "Max" : "1"}
 ]}
 

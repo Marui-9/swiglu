@@ -8,8 +8,8 @@
 module swiglu_X1_cache_RAM_2P_BRAM_1R1W
 #(parameter
     DataWidth    = 8,
-    AddressRange = 32768,
-    AddressWidth = 15,
+    AddressRange = 8192,
+    AddressWidth = 13,
     BufferCount  = 2,
     MemLatency   = 1,
     IndexWidth   = 1

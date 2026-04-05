@@ -52,7 +52,7 @@
             <Obj>
               <type>1</type>
               <id>2</id>
-              <name>sext_ln596</name>
+              <name>sext_ln703</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -88,7 +88,7 @@
             <Obj>
               <type>1</type>
               <id>3</id>
-              <name>out_local</name>
+              <name>out_local_1</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -103,7 +103,7 @@
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
-              <coreName>RAM_1P_LUTRAM</coreName>
+              <coreName>RAM_1P_BRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -170,7 +170,7 @@
             <Obj>
               <type>0</type>
               <id>5</id>
-              <name>sext_ln596_read</name>
+              <name>sext_ln703_read</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -213,7 +213,7 @@
             <Obj>
               <type>0</type>
               <id>6</id>
-              <name>sext_ln596_cast</name>
+              <name>sext_ln703_cast</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -383,7 +383,7 @@
             <Obj>
               <type>0</type>
               <id>13</id>
-              <name>exitcond4_i</name>
+              <name>exitcond473_i</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -394,7 +394,7 @@
                 <item_version>0</item_version>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>exitcond4_i_fu_103_p2</rtlName>
+              <rtlName>exitcond473_i_fu_103_p2</rtlName>
               <control>auto</control>
               <opType>seteq</opType>
               <implIndex>auto</implIndex>
@@ -516,7 +516,7 @@
               <name>gmem_out_addr</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>596</lineNumber>
+              <lineNumber>703</lineNumber>
               <contextFuncName>compute_output</contextFuncName>
               <contextNormFuncName>compute_output</contextNormFuncName>
               <inlineStackInfo>
@@ -530,16 +530,16 @@
                     <item class_id="13" tracking_level="0" version="0">
                       <first class_id="14" tracking_level="0" version="0">
                         <first>swiglu.cpp</first>
-                        <second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
+                        <second>_Z6swigluPKhS0_S0_S0_PKaPfjf_entry.aft</second>
                       </first>
-                      <second>691</second>
+                      <second>807</second>
                     </item>
                     <item>
                       <first>
                         <first>swiglu.cpp</first>
                         <second>compute_output</second>
                       </first>
-                      <second>596</second>
+                      <second>703</second>
                     </item>
                   </second>
                 </item>
@@ -619,7 +619,7 @@
             <Obj>
               <type>0</type>
               <id>21</id>
-              <name>out_local_addr</name>
+              <name>out_local_1_addr</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -663,7 +663,7 @@
             <Obj>
               <type>0</type>
               <id>22</id>
-              <name>out_local_load</name>
+              <name>out_local_1_load</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -677,11 +677,11 @@
               <rtlName></rtlName>
               <control>auto</control>
               <opType>ram_1p</opType>
-              <implIndex>lutram</implIndex>
-              <coreName>RAM_1P_LUTRAM</coreName>
+              <implIndex>bram</implIndex>
+              <coreName>RAM_1P_BRAM</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>88</coreId>
+              <coreId>89</coreId>
               <rtlModuleName></rtlModuleName>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -696,7 +696,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>0.67</m_delay>
+          <m_delay>1.23</m_delay>
           <m_topoIndex>12</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -705,7 +705,7 @@
             <Obj>
               <type>0</type>
               <id>23</id>
-              <name>empty_593</name>
+              <name>empty_756</name>
               <fileName></fileName>
               <fileDirectory></fileDirectory>
               <lineNumber>0</lineNumber>
@@ -747,10 +747,10 @@
             <Obj>
               <type>0</type>
               <id>24</id>
-              <name>gmem_out_addr_write_ln596</name>
+              <name>gmem_out_addr_write_ln703</name>
               <fileName>swiglu.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>596</lineNumber>
+              <lineNumber>703</lineNumber>
               <contextFuncName>compute_output</contextFuncName>
               <contextNormFuncName>compute_output</contextNormFuncName>
               <inlineStackInfo>
@@ -764,16 +764,16 @@
                     <item>
                       <first>
                         <first>swiglu.cpp</first>
-                        <second>_Z6swigluPKhS0_S0_PKaPfjf_entry.aft</second>
+                        <second>_Z6swigluPKhS0_S0_S0_PKaPfjf_entry.aft</second>
                       </first>
-                      <second>691</second>
+                      <second>807</second>
                     </item>
                     <item>
                       <first>
                         <first>swiglu.cpp</first>
                         <second>compute_output</second>
                       </first>
-                      <second>596</second>
+                      <second>703</second>
                     </item>
                   </second>
                 </item>
@@ -804,7 +804,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>2.92</m_delay>
+          <m_delay>2.43</m_delay>
           <m_topoIndex>17</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -1241,7 +1241,7 @@
           <Obj>
             <type>3</type>
             <id>29</id>
-            <name>_ZL14compute_outputPKhPA32_A256_KaPKfPfj.1.1.exit.exitStub</name>
+            <name>memcpy-split.i.exitStub</name>
             <fileName></fileName>
             <fileDirectory></fileDirectory>
             <lineNumber>0</lineNumber>
@@ -1879,7 +1879,7 @@
           </second>
         </item>
         <item>
-          <first>exitcond4_i_fu_103_p2 ( icmp ) </first>
+          <first>exitcond473_i_fu_103_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -2167,7 +2167,7 @@
           </second>
         </item>
         <item>
-          <first>out_local_load_reg_156</first>
+          <first>out_local_1_load_reg_156</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -2213,7 +2213,7 @@
           </second>
         </item>
         <item>
-          <first>exitcond4_i_fu_103_p2 ( icmp ) </first>
+          <first>exitcond473_i_fu_103_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -2538,7 +2538,7 @@
       <count>8</count>
       <item_version>0</item_version>
       <item class_id="54" tracking_level="0" version="0">
-        <first>empty_593_fu_131</first>
+        <first>empty_756_fu_131</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2554,7 +2554,7 @@
         </second>
       </item>
       <item>
-        <first>exitcond4_i_fu_103</first>
+        <first>exitcond473_i_fu_103</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2586,7 +2586,7 @@
         </second>
       </item>
       <item>
-        <first>out_local_addr_gep_fu_70</first>
+        <first>out_local_1_addr_gep_fu_70</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2594,7 +2594,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln596_cast_fu_91</first>
+        <first>sext_ln703_cast_fu_91</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2618,7 +2618,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln596_read_read_fu_64</first>
+        <first>sext_ln703_read_read_fu_64</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2642,7 +2642,7 @@
         </second>
       </item>
       <item>
-        <first>write_ln596_write_fu_83</first>
+        <first>write_ln703_write_fu_83</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2659,7 +2659,7 @@
       <item_version>0</item_version>
       <item class_id="56" tracking_level="0" version="0">
         <first class_id="57" tracking_level="0" version="0">
-          <first>out_local</first>
+          <first>out_local_1</first>
           <second>0</second>
         </first>
         <second>
@@ -2718,7 +2718,7 @@
       <count>5</count>
       <item_version>0</item_version>
       <item>
-        <first>exitcond4_i_reg_147</first>
+        <first>exitcond473_i_reg_147</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2734,7 +2734,7 @@
         </second>
       </item>
       <item>
-        <first>out_local_addr_reg_151</first>
+        <first>out_local_1_addr_reg_151</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2742,7 +2742,7 @@
         </second>
       </item>
       <item>
-        <first>out_local_load_reg_156</first>
+        <first>out_local_1_load_reg_156</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2750,7 +2750,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln596_cast_reg_142</first>
+        <first>sext_ln703_cast_reg_142</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2785,7 +2785,7 @@
         </second>
       </item>
       <item>
-        <first>out_local(p0)</first>
+        <first>out_local_1(p0)</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2801,7 +2801,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln596</first>
+        <first>sext_ln703</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2823,7 +2823,7 @@
         <first>3</first>
         <second>
           <first>666</first>
-          <second>19</second>
+          <second>18</second>
         </second>
       </item>
     </port2core>
@@ -2848,7 +2848,7 @@
         <first>22</first>
         <second>
           <first>666</first>
-          <second>19</second>
+          <second>18</second>
         </second>
       </item>
       <item>

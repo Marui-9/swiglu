@@ -35,6 +35,7 @@ module swiglu_CTRL_s_axi
     output wire [63:0]                   W,
     output wire [63:0]                   V,
     output wire [63:0]                   W_down,
+    output wire [63:0]                   W_down2,
     output wire [63:0]                   x_batch,
     output wire [63:0]                   out_batch,
     output wire [31:0]                   down_quant_mode,
@@ -81,22 +82,27 @@ module swiglu_CTRL_s_axi
 // 0x2c : Data signal of W_down
 //        bit 31~0 - W_down[63:32] (Read/Write)
 // 0x30 : reserved
-// 0x34 : Data signal of x_batch
-//        bit 31~0 - x_batch[31:0] (Read/Write)
-// 0x38 : Data signal of x_batch
-//        bit 31~0 - x_batch[63:32] (Read/Write)
+// 0x34 : Data signal of W_down2
+//        bit 31~0 - W_down2[31:0] (Read/Write)
+// 0x38 : Data signal of W_down2
+//        bit 31~0 - W_down2[63:32] (Read/Write)
 // 0x3c : reserved
-// 0x40 : Data signal of out_batch
-//        bit 31~0 - out_batch[31:0] (Read/Write)
-// 0x44 : Data signal of out_batch
-//        bit 31~0 - out_batch[63:32] (Read/Write)
+// 0x40 : Data signal of x_batch
+//        bit 31~0 - x_batch[31:0] (Read/Write)
+// 0x44 : Data signal of x_batch
+//        bit 31~0 - x_batch[63:32] (Read/Write)
 // 0x48 : reserved
-// 0x4c : Data signal of down_quant_mode
+// 0x4c : Data signal of out_batch
+//        bit 31~0 - out_batch[31:0] (Read/Write)
+// 0x50 : Data signal of out_batch
+//        bit 31~0 - out_batch[63:32] (Read/Write)
+// 0x54 : reserved
+// 0x58 : Data signal of down_quant_mode
 //        bit 31~0 - down_quant_mode[31:0] (Read/Write)
-// 0x50 : reserved
-// 0x54 : Data signal of x_scale
+// 0x5c : reserved
+// 0x60 : Data signal of x_scale
 //        bit 31~0 - x_scale[31:0] (Read/Write)
-// 0x58 : reserved
+// 0x64 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
@@ -114,16 +120,19 @@ localparam
     ADDR_W_DOWN_DATA_0          = 7'h28,
     ADDR_W_DOWN_DATA_1          = 7'h2c,
     ADDR_W_DOWN_CTRL            = 7'h30,
-    ADDR_X_BATCH_DATA_0         = 7'h34,
-    ADDR_X_BATCH_DATA_1         = 7'h38,
-    ADDR_X_BATCH_CTRL           = 7'h3c,
-    ADDR_OUT_BATCH_DATA_0       = 7'h40,
-    ADDR_OUT_BATCH_DATA_1       = 7'h44,
-    ADDR_OUT_BATCH_CTRL         = 7'h48,
-    ADDR_DOWN_QUANT_MODE_DATA_0 = 7'h4c,
-    ADDR_DOWN_QUANT_MODE_CTRL   = 7'h50,
-    ADDR_X_SCALE_DATA_0         = 7'h54,
-    ADDR_X_SCALE_CTRL           = 7'h58,
+    ADDR_W_DOWN2_DATA_0         = 7'h34,
+    ADDR_W_DOWN2_DATA_1         = 7'h38,
+    ADDR_W_DOWN2_CTRL           = 7'h3c,
+    ADDR_X_BATCH_DATA_0         = 7'h40,
+    ADDR_X_BATCH_DATA_1         = 7'h44,
+    ADDR_X_BATCH_CTRL           = 7'h48,
+    ADDR_OUT_BATCH_DATA_0       = 7'h4c,
+    ADDR_OUT_BATCH_DATA_1       = 7'h50,
+    ADDR_OUT_BATCH_CTRL         = 7'h54,
+    ADDR_DOWN_QUANT_MODE_DATA_0 = 7'h58,
+    ADDR_DOWN_QUANT_MODE_CTRL   = 7'h5c,
+    ADDR_X_SCALE_DATA_0         = 7'h60,
+    ADDR_X_SCALE_CTRL           = 7'h64,
     WRIDLE                      = 2'd0,
     WRDATA                      = 2'd1,
     WRRESP                      = 2'd2,
@@ -163,6 +172,7 @@ localparam
     reg  [63:0]                   int_W = 'b0;
     reg  [63:0]                   int_V = 'b0;
     reg  [63:0]                   int_W_down = 'b0;
+    reg  [63:0]                   int_W_down2 = 'b0;
     reg  [63:0]                   int_x_batch = 'b0;
     reg  [63:0]                   int_out_batch = 'b0;
     reg  [31:0]                   int_down_quant_mode = 'b0;
@@ -294,6 +304,12 @@ always @(posedge ACLK) begin
                 ADDR_W_DOWN_DATA_1: begin
                     rdata <= int_W_down[63:32];
                 end
+                ADDR_W_DOWN2_DATA_0: begin
+                    rdata <= int_W_down2[31:0];
+                end
+                ADDR_W_DOWN2_DATA_1: begin
+                    rdata <= int_W_down2[63:32];
+                end
                 ADDR_X_BATCH_DATA_0: begin
                     rdata <= int_x_batch[31:0];
                 end
@@ -327,6 +343,7 @@ assign auto_restart_done = auto_restart_status && (ap_idle && !int_ap_idle);
 assign W                 = int_W;
 assign V                 = int_V;
 assign W_down            = int_W_down;
+assign W_down2           = int_W_down2;
 assign x_batch           = int_x_batch;
 assign out_batch         = int_out_batch;
 assign down_quant_mode   = int_down_quant_mode;
@@ -520,6 +537,26 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_W_DOWN_DATA_1)
             int_W_down[63:32] <= (WDATA[31:0] & wmask) | (int_W_down[63:32] & ~wmask);
+    end
+end
+
+// int_W_down2[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_W_down2[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_W_DOWN2_DATA_0)
+            int_W_down2[31:0] <= (WDATA[31:0] & wmask) | (int_W_down2[31:0] & ~wmask);
+    end
+end
+
+// int_W_down2[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_W_down2[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_W_DOWN2_DATA_1)
+            int_W_down2[63:32] <= (WDATA[31:0] & wmask) | (int_W_down2[63:32] & ~wmask);
     end
 end
 

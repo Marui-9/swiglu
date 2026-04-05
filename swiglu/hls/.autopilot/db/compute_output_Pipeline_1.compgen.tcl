@@ -11,17 +11,17 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 5312 \
-    name out_local \
+    id 2347 \
+    name out_local_1 \
     reset_level 1 \
     sync_rst true \
     dir I \
-    corename out_local \
+    corename out_local_1 \
     op interface \
-    ports { out_local_address0 { O 11 vector } out_local_ce0 { O 1 bit } out_local_q0 { I 32 vector } } \
+    ports { out_local_1_address0 { O 11 vector } out_local_1_ce0 { O 1 bit } out_local_1_q0 { I 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'out_local'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'out_local_1'"
 }
 }
 
@@ -29,7 +29,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 5310 \
+    id 2345 \
     name gmem_out \
     type other \
     dir O \
@@ -44,15 +44,15 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 5311 \
-    name sext_ln596 \
+    id 2346 \
+    name sext_ln703 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_sext_ln596 \
+    corename dc_sext_ln703 \
     op interface \
-    ports { sext_ln596 { I 62 vector } } \
+    ports { sext_ln703 { I 62 vector } } \
 } "
 }
 

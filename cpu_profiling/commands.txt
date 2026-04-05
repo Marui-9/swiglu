@@ -1,0 +1,43 @@
+1. download LFM2.5-1.2B GGUF model (python script) and run it
+        from huggingface_hub import hf_hub_download
+        import shutil
+        import os
+
+        print("Downloading LFM2.5-1.2B...")
+        cached_path = hf_hub_download(
+            repo_id="LiquidAI/LFM2.5-1.2B-Thinking-GGUF",
+            filename="LFM2.5-1.2B-Thinking-Q4_K_M.gguf"
+        )
+        dest = os.path.expanduser("~/LFM2.5-1.2B-Thinking-Q4_K_M.gguf")
+        shutil.copy(cached_path, dest)
+        print(f"Model saved to: {dest}")
+
+2. modify ~/llama.cpp/ggml/src/ggml-cpu/ggml-cpu.cpp
+        line 2697
+        /// MODIFIED HERE!!
+        //     ggml_compute_forward(&params, node);
+        // --- INJECTED PROFILING TIMER START ---
+        int64_t t_start = ggml_time_us();
+                
+                ggml_compute_forward(&params, node);
+                
+                int64_t t_end = ggml_time_us();
+                if (params.ith == 0) {
+                    const char * actual_name = node->name;
+                    // If it's a temporary node, print the name of the weight tensor it's using!
+                    if (strncmp(node->name, "node_", 5) == 0 && node->src[0] != NULL) {
+                        actual_name = node->src[0]->name;
+                    }
+                    printf("LFM_PROFILE | %s | %s | %ld\n", actual_name, ggml_op_name(node->op), (long)(t_end - t_start));
+                    fflush(stdout);
+                }
+        // --- INJECTED PROFILING TIMER END ---
+3. compile and run 5-token profiling test to obtain a log
+    cd ~/llama.cpp
+    mkdir build && cd build
+    cmake .. -DCMAKE_BUILD_TYPE=Release
+    cmake --build . --config Release --target llama-cli -j $(nproc)
+
+    ./bin/llama-cli -m ~/LFM2.5-1.2B-Thinking-Q4_K_M.gguf -p "FPGA architecture is" -n 5 -t 4 > ~/llama.cpp/profile_output.log 2>&1
+
+    python3 parse_lfm.py profile_output.log
