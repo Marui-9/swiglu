@@ -18,7 +18,7 @@
 <PipelineType>loop auto-rewind stp (delay=0 cycles)</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>2.433</EstimatedClockPeriod>
+<EstimatedClockPeriod>2.430</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
@@ -38,7 +38,7 @@
 <TripCount>128</TripCount>
 <isPerfectNested>1</isPerfectNested>
 <Latency>200</Latency>
-<AbsoluteTimeLatency>666</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>665</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>74</PipelineDepth>
 <PerformancePragma>-</PerformancePragma>
@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:712</SourceLocation>
+<SourceLocation>swiglu.cpp:775</SourceLocation>
 <SummaryOfLoopViolations>
 <LOAD_X_VEC>
 <Name>LOAD_X_VEC</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:721</SourceLocation>
+<SourceLocation>swiglu.cpp:784</SourceLocation>
 </LOAD_X_VEC>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -582,7 +582,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>10</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>

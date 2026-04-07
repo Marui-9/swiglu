@@ -383,7 +383,7 @@
 						<name>j</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>287</lineNumber>
+						<lineNumber>329</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -399,7 +399,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>287</second>
+										<second>329</second>
 									</item>
 								</second>
 							</item>
@@ -439,7 +439,7 @@
 						<name>pmax_7</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>282</lineNumber>
+						<lineNumber>324</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -455,7 +455,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>282</second>
+										<second>324</second>
 									</item>
 								</second>
 							</item>
@@ -495,7 +495,7 @@
 						<name>pmax_6</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>282</lineNumber>
+						<lineNumber>324</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -511,7 +511,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>282</second>
+										<second>324</second>
 									</item>
 								</second>
 							</item>
@@ -551,7 +551,7 @@
 						<name>pmax_5</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>282</lineNumber>
+						<lineNumber>324</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -567,7 +567,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>282</second>
+										<second>324</second>
 									</item>
 								</second>
 							</item>
@@ -607,7 +607,7 @@
 						<name>pmax_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>282</lineNumber>
+						<lineNumber>324</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -623,7 +623,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>282</second>
+										<second>324</second>
 									</item>
 								</second>
 							</item>
@@ -663,7 +663,7 @@
 						<name>pmax_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>282</lineNumber>
+						<lineNumber>324</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -679,7 +679,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>282</second>
+										<second>324</second>
 									</item>
 								</second>
 							</item>
@@ -719,7 +719,7 @@
 						<name>pmax_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>282</lineNumber>
+						<lineNumber>324</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -735,7 +735,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>282</second>
+										<second>324</second>
 									</item>
 								</second>
 							</item>
@@ -775,7 +775,7 @@
 						<name>pmax_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>282</lineNumber>
+						<lineNumber>324</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -791,7 +791,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>282</second>
+										<second>324</second>
 									</item>
 								</second>
 							</item>
@@ -831,7 +831,7 @@
 						<name>pmax</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>282</lineNumber>
+						<lineNumber>324</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -847,7 +847,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>282</second>
+										<second>324</second>
 									</item>
 								</second>
 							</item>
@@ -1228,10 +1228,10 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>j_write_ln287</name>
+						<name>j_write_ln329</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>287</lineNumber>
+						<lineNumber>329</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1247,7 +1247,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>287</second>
+										<second>329</second>
 									</item>
 								</second>
 							</item>
@@ -1285,10 +1285,10 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>br_ln287</name>
+						<name>br_ln329</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>287</lineNumber>
+						<lineNumber>329</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1304,7 +1304,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>287</second>
+										<second>329</second>
 									</item>
 								</second>
 							</item>
@@ -1344,7 +1344,7 @@
 						<name>j_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>287</lineNumber>
+						<lineNumber>329</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1360,7 +1360,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>287</second>
+										<second>329</second>
 									</item>
 								</second>
 							</item>
@@ -1398,10 +1398,10 @@
 					<Obj>
 						<type>0</type>
 						<id>36</id>
-						<name>icmp_ln287</name>
+						<name>icmp_ln329</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>287</lineNumber>
+						<lineNumber>329</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1417,7 +1417,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>287</second>
+										<second>329</second>
 									</item>
 								</second>
 							</item>
@@ -1455,10 +1455,10 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>add_ln287</name>
+						<name>add_ln329</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>287</lineNumber>
+						<lineNumber>329</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1474,7 +1474,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>287</second>
+										<second>329</second>
 									</item>
 								</second>
 							</item>
@@ -1512,10 +1512,10 @@
 					<Obj>
 						<type>0</type>
 						<id>38</id>
-						<name>br_ln287</name>
+						<name>br_ln329</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>287</lineNumber>
+						<lineNumber>329</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1531,7 +1531,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>287</second>
+										<second>329</second>
 									</item>
 								</second>
 							</item>
@@ -1570,10 +1570,10 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>zext_ln287</name>
+						<name>zext_ln329</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>287</lineNumber>
+						<lineNumber>329</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1589,7 +1589,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>287</second>
+										<second>329</second>
 									</item>
 								</second>
 							</item>
@@ -1629,7 +1629,7 @@
 						<name>X1_cache_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>289</lineNumber>
+						<lineNumber>331</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1645,7 +1645,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>289</second>
+										<second>331</second>
 									</item>
 								</second>
 							</item>
@@ -1687,7 +1687,7 @@
 						<name>X2_cache_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>290</lineNumber>
+						<lineNumber>332</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1703,7 +1703,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>290</second>
+										<second>332</second>
 									</item>
 								</second>
 							</item>
@@ -1745,7 +1745,7 @@
 						<name>X1_cache_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>289</lineNumber>
+						<lineNumber>331</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1761,7 +1761,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>289</second>
+										<second>331</second>
 									</item>
 								</second>
 							</item>
@@ -1798,10 +1798,10 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>sext_ln289</name>
+						<name>sext_ln331</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>289</lineNumber>
+						<lineNumber>331</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1817,7 +1817,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>289</second>
+										<second>331</second>
 									</item>
 								</second>
 							</item>
@@ -1857,7 +1857,7 @@
 						<name>conv</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>289</lineNumber>
+						<lineNumber>331</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1873,7 +1873,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>289</second>
+										<second>331</second>
 									</item>
 								</second>
 							</item>
@@ -1913,7 +1913,7 @@
 						<name>z</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>289</lineNumber>
+						<lineNumber>331</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1929,7 +1929,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>289</second>
+										<second>331</second>
 									</item>
 								</second>
 							</item>
@@ -1970,7 +1970,7 @@
 						<name>X2_cache_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>290</lineNumber>
+						<lineNumber>332</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -1986,7 +1986,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>290</second>
+										<second>332</second>
 									</item>
 								</second>
 							</item>
@@ -2023,10 +2023,10 @@
 					<Obj>
 						<type>0</type>
 						<id>51</id>
-						<name>sext_ln290</name>
+						<name>sext_ln332</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>290</lineNumber>
+						<lineNumber>332</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -2042,7 +2042,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>290</second>
+										<second>332</second>
 									</item>
 								</second>
 							</item>
@@ -2082,7 +2082,7 @@
 						<name>conv1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>290</lineNumber>
+						<lineNumber>332</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -2098,7 +2098,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>290</second>
+										<second>332</second>
 									</item>
 								</second>
 							</item>
@@ -2138,7 +2138,7 @@
 						<name>x2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>290</lineNumber>
+						<lineNumber>332</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -2154,7 +2154,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>290</second>
+										<second>332</second>
 									</item>
 								</second>
 							</item>
@@ -2195,7 +2195,7 @@
 						<name>add</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>291</lineNumber>
+						<lineNumber>333</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -2211,7 +2211,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>291</second>
+										<second>333</second>
 									</item>
 								</second>
 							</item>
@@ -2252,7 +2252,7 @@
 						<name>scaled</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>291</lineNumber>
+						<lineNumber>333</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -2268,7 +2268,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>291</second>
+										<second>333</second>
 									</item>
 								</second>
 							</item>
@@ -2325,7 +2325,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -2416,7 +2416,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -2509,7 +2509,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -2602,7 +2602,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -2693,7 +2693,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -2780,7 +2780,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -2864,7 +2864,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -2955,7 +2955,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -3028,7 +3028,7 @@
 					<Obj>
 						<type>0</type>
 						<id>64</id>
-						<name>tmp_728</name>
+						<name>tmp_1439</name>
 						<fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
 						<fileDirectory>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath</fileDirectory>
 						<lineNumber>18</lineNumber>
@@ -3047,7 +3047,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -3133,7 +3133,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -3218,7 +3218,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -3302,7 +3302,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -3388,7 +3388,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -3472,7 +3472,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -3556,7 +3556,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -3641,7 +3641,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -3726,7 +3726,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -3794,7 +3794,7 @@
 					<Obj>
 						<type>0</type>
 						<id>73</id>
-						<name>tmp_250</name>
+						<name>tmp_400</name>
 						<fileName>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h</fileName>
 						<fileDirectory>C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath</fileDirectory>
 						<lineNumber>21</lineNumber>
@@ -3813,7 +3813,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -3900,7 +3900,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -3986,7 +3986,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -4071,7 +4071,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -4157,7 +4157,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -4222,10 +4222,10 @@
 					<Obj>
 						<type>0</type>
 						<id>78</id>
-						<name>tmp_729</name>
+						<name>tmp_1440</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>293</lineNumber>
+						<lineNumber>335</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4241,7 +4241,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>293</second>
+										<second>335</second>
 									</item>
 								</second>
 							</item>
@@ -4283,7 +4283,7 @@
 						<name>idx_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>293</lineNumber>
+						<lineNumber>335</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4299,7 +4299,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>293</second>
+										<second>335</second>
 									</item>
 								</second>
 							</item>
@@ -4338,10 +4338,10 @@
 					<Obj>
 						<type>0</type>
 						<id>80</id>
-						<name>trunc_ln292</name>
+						<name>trunc_ln334</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>292</lineNumber>
+						<lineNumber>334</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4357,7 +4357,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>292</second>
+										<second>334</second>
 									</item>
 								</second>
 							</item>
@@ -4394,10 +4394,10 @@
 					<Obj>
 						<type>0</type>
 						<id>81</id>
-						<name>tmp_730</name>
+						<name>tmp_1441</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>294</lineNumber>
+						<lineNumber>336</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4413,7 +4413,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>294</second>
+										<second>336</second>
 									</item>
 								</second>
 							</item>
@@ -4453,10 +4453,10 @@
 					<Obj>
 						<type>0</type>
 						<id>82</id>
-						<name>icmp_ln294</name>
+						<name>icmp_ln336</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>294</lineNumber>
+						<lineNumber>336</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4472,7 +4472,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>294</second>
+										<second>336</second>
 									</item>
 								</second>
 							</item>
@@ -4513,7 +4513,7 @@
 						<name>idx_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>294</lineNumber>
+						<lineNumber>336</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4529,7 +4529,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>294</second>
+										<second>336</second>
 									</item>
 								</second>
 							</item>
@@ -4568,10 +4568,10 @@
 					<Obj>
 						<type>0</type>
 						<id>84</id>
-						<name>zext_ln295</name>
+						<name>zext_ln337</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>295</lineNumber>
+						<lineNumber>337</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4587,7 +4587,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>295</second>
+										<second>337</second>
 									</item>
 								</second>
 							</item>
@@ -4627,7 +4627,7 @@
 						<name>sigmoid_lut_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>295</lineNumber>
+						<lineNumber>337</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4643,7 +4643,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>295</second>
+										<second>337</second>
 									</item>
 								</second>
 							</item>
@@ -4685,7 +4685,7 @@
 						<name>sigmoid_lut_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>295</lineNumber>
+						<lineNumber>337</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4701,7 +4701,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>295</second>
+										<second>337</second>
 									</item>
 								</second>
 							</item>
@@ -4741,7 +4741,7 @@
 						<name>mul</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>295</lineNumber>
+						<lineNumber>337</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4757,7 +4757,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>295</second>
+										<second>337</second>
 									</item>
 								</second>
 							</item>
@@ -4798,7 +4798,7 @@
 						<name>g</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>295</lineNumber>
+						<lineNumber>337</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4814,7 +4814,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>295</second>
+										<second>337</second>
 									</item>
 								</second>
 							</item>
@@ -4852,10 +4852,10 @@
 					<Obj>
 						<type>0</type>
 						<id>89</id>
-						<name>bitcast_ln296</name>
+						<name>bitcast_ln338</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4871,7 +4871,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -4908,10 +4908,10 @@
 					<Obj>
 						<type>0</type>
 						<id>90</id>
-						<name>tmp_98</name>
+						<name>tmp_401</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4927,7 +4927,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -4967,10 +4967,10 @@
 					<Obj>
 						<type>0</type>
 						<id>91</id>
-						<name>trunc_ln296</name>
+						<name>trunc_ln338</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -4986,7 +4986,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -5023,10 +5023,10 @@
 					<Obj>
 						<type>0</type>
 						<id>92</id>
-						<name>icmp_ln296</name>
+						<name>icmp_ln338</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5042,7 +5042,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -5080,10 +5080,10 @@
 					<Obj>
 						<type>0</type>
 						<id>93</id>
-						<name>icmp_ln296_1</name>
+						<name>icmp_ln338_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5099,7 +5099,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -5137,10 +5137,10 @@
 					<Obj>
 						<type>0</type>
 						<id>94</id>
-						<name>or_ln296</name>
+						<name>or_ln338</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5156,7 +5156,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -5194,10 +5194,10 @@
 					<Obj>
 						<type>0</type>
 						<id>95</id>
-						<name>tmp_99</name>
+						<name>tmp_402</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5213,7 +5213,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -5251,10 +5251,10 @@
 					<Obj>
 						<type>0</type>
 						<id>96</id>
-						<name>and_ln296</name>
+						<name>and_ln338</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5270,7 +5270,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -5311,7 +5311,7 @@
 						<name>bit_sel</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5327,7 +5327,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -5366,10 +5366,10 @@
 					<Obj>
 						<type>0</type>
 						<id>98</id>
-						<name>xor_ln296</name>
+						<name>xor_ln338</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5385,7 +5385,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -5423,10 +5423,10 @@
 					<Obj>
 						<type>0</type>
 						<id>99</id>
-						<name>trunc_ln296_1</name>
+						<name>trunc_ln338_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5442,7 +5442,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -5482,7 +5482,7 @@
 						<name>xor_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5498,7 +5498,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -5537,10 +5537,10 @@
 					<Obj>
 						<type>0</type>
 						<id>101</id>
-						<name>bitcast_ln296_1</name>
+						<name>bitcast_ln338_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5556,7 +5556,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -5596,7 +5596,7 @@
 						<name>abs_g</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>296</lineNumber>
+						<lineNumber>338</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5612,7 +5612,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>296</second>
+										<second>338</second>
 									</item>
 								</second>
 							</item>
@@ -5651,10 +5651,10 @@
 					<Obj>
 						<type>0</type>
 						<id>103</id>
-						<name>trunc_ln297</name>
+						<name>trunc_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5670,7 +5670,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -5710,7 +5710,7 @@
 						<name>pmax_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5726,7 +5726,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -5767,7 +5767,7 @@
 						<name>pmax_1_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5783,7 +5783,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -5824,7 +5824,7 @@
 						<name>pmax_2_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5840,7 +5840,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -5881,7 +5881,7 @@
 						<name>pmax_3_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5897,7 +5897,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -5938,7 +5938,7 @@
 						<name>pmax_4_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -5954,7 +5954,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -5995,7 +5995,7 @@
 						<name>pmax_5_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6011,7 +6011,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6052,7 +6052,7 @@
 						<name>pmax_6_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6068,7 +6068,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6109,7 +6109,7 @@
 						<name>pmax_7_load</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6125,7 +6125,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6166,7 +6166,7 @@
 						<name>tmp</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6182,7 +6182,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6237,10 +6237,10 @@
 					<Obj>
 						<type>0</type>
 						<id>113</id>
-						<name>bitcast_ln297</name>
+						<name>bitcast_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6256,7 +6256,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6293,10 +6293,10 @@
 					<Obj>
 						<type>0</type>
 						<id>114</id>
-						<name>tmp_100</name>
+						<name>tmp_403</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6312,7 +6312,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6352,10 +6352,10 @@
 					<Obj>
 						<type>0</type>
 						<id>115</id>
-						<name>trunc_ln297_1</name>
+						<name>trunc_ln339_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6371,7 +6371,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6408,10 +6408,10 @@
 					<Obj>
 						<type>0</type>
 						<id>116</id>
-						<name>bitcast_ln297_1</name>
+						<name>bitcast_ln339_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6427,7 +6427,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6464,10 +6464,10 @@
 					<Obj>
 						<type>0</type>
 						<id>117</id>
-						<name>tmp_101</name>
+						<name>tmp_404</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6483,7 +6483,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6523,10 +6523,10 @@
 					<Obj>
 						<type>0</type>
 						<id>118</id>
-						<name>trunc_ln297_2</name>
+						<name>trunc_ln339_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6542,7 +6542,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6579,10 +6579,10 @@
 					<Obj>
 						<type>0</type>
 						<id>119</id>
-						<name>icmp_ln297_1</name>
+						<name>icmp_ln339_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6598,7 +6598,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6636,10 +6636,10 @@
 					<Obj>
 						<type>0</type>
 						<id>120</id>
-						<name>icmp_ln297_2</name>
+						<name>icmp_ln339_2</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6655,7 +6655,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6693,10 +6693,10 @@
 					<Obj>
 						<type>0</type>
 						<id>121</id>
-						<name>or_ln297</name>
+						<name>or_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6712,7 +6712,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6750,10 +6750,10 @@
 					<Obj>
 						<type>0</type>
 						<id>122</id>
-						<name>icmp_ln297_3</name>
+						<name>icmp_ln339_3</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6769,7 +6769,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6807,10 +6807,10 @@
 					<Obj>
 						<type>0</type>
 						<id>123</id>
-						<name>icmp_ln297_4</name>
+						<name>icmp_ln339_4</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6826,7 +6826,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6864,10 +6864,10 @@
 					<Obj>
 						<type>0</type>
 						<id>124</id>
-						<name>or_ln297_1</name>
+						<name>or_ln339_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6883,7 +6883,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6921,10 +6921,10 @@
 					<Obj>
 						<type>0</type>
 						<id>125</id>
-						<name>tmp_102</name>
+						<name>tmp_405</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6940,7 +6940,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -6978,10 +6978,10 @@
 					<Obj>
 						<type>0</type>
 						<id>126</id>
-						<name>and_ln297</name>
+						<name>and_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -6997,7 +6997,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7035,10 +7035,10 @@
 					<Obj>
 						<type>0</type>
 						<id>127</id>
-						<name>and_ln297_1</name>
+						<name>and_ln339_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7054,7 +7054,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7092,10 +7092,10 @@
 					<Obj>
 						<type>0</type>
 						<id>128</id>
-						<name>br_ln297</name>
+						<name>br_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7111,7 +7111,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7150,10 +7150,10 @@
 					<Obj>
 						<type>0</type>
 						<id>130</id>
-						<name>_ln297</name>
+						<name>_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7169,7 +7169,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7221,10 +7221,10 @@
 					<Obj>
 						<type>0</type>
 						<id>132</id>
-						<name>pmax_6_write_ln297</name>
+						<name>pmax_6_write_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7240,7 +7240,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7280,10 +7280,10 @@
 					<Obj>
 						<type>0</type>
 						<id>133</id>
-						<name>br_ln297</name>
+						<name>br_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7299,7 +7299,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7336,10 +7336,10 @@
 					<Obj>
 						<type>0</type>
 						<id>135</id>
-						<name>pmax_5_write_ln297</name>
+						<name>pmax_5_write_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7355,7 +7355,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7395,10 +7395,10 @@
 					<Obj>
 						<type>0</type>
 						<id>136</id>
-						<name>br_ln297</name>
+						<name>br_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7414,7 +7414,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7451,10 +7451,10 @@
 					<Obj>
 						<type>0</type>
 						<id>138</id>
-						<name>pmax_4_write_ln297</name>
+						<name>pmax_4_write_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7470,7 +7470,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7510,10 +7510,10 @@
 					<Obj>
 						<type>0</type>
 						<id>139</id>
-						<name>br_ln297</name>
+						<name>br_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7529,7 +7529,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7566,10 +7566,10 @@
 					<Obj>
 						<type>0</type>
 						<id>141</id>
-						<name>pmax_3_write_ln297</name>
+						<name>pmax_3_write_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7585,7 +7585,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7625,10 +7625,10 @@
 					<Obj>
 						<type>0</type>
 						<id>142</id>
-						<name>br_ln297</name>
+						<name>br_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7644,7 +7644,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7681,10 +7681,10 @@
 					<Obj>
 						<type>0</type>
 						<id>144</id>
-						<name>pmax_2_write_ln297</name>
+						<name>pmax_2_write_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7700,7 +7700,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7740,10 +7740,10 @@
 					<Obj>
 						<type>0</type>
 						<id>145</id>
-						<name>br_ln297</name>
+						<name>br_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7759,7 +7759,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7796,10 +7796,10 @@
 					<Obj>
 						<type>0</type>
 						<id>147</id>
-						<name>pmax_1_write_ln297</name>
+						<name>pmax_1_write_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7815,7 +7815,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7855,10 +7855,10 @@
 					<Obj>
 						<type>0</type>
 						<id>148</id>
-						<name>br_ln297</name>
+						<name>br_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7874,7 +7874,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7911,10 +7911,10 @@
 					<Obj>
 						<type>0</type>
 						<id>150</id>
-						<name>pmax_write_ln297</name>
+						<name>pmax_write_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7930,7 +7930,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -7970,10 +7970,10 @@
 					<Obj>
 						<type>0</type>
 						<id>151</id>
-						<name>br_ln297</name>
+						<name>br_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -7989,7 +7989,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -8026,10 +8026,10 @@
 					<Obj>
 						<type>0</type>
 						<id>153</id>
-						<name>pmax_7_write_ln297</name>
+						<name>pmax_7_write_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8045,7 +8045,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -8085,10 +8085,10 @@
 					<Obj>
 						<type>0</type>
 						<id>154</id>
-						<name>br_ln297</name>
+						<name>br_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8104,7 +8104,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -8141,10 +8141,10 @@
 					<Obj>
 						<type>0</type>
 						<id>156</id>
-						<name>br_ln297</name>
+						<name>br_ln339</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>297</lineNumber>
+						<lineNumber>339</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8160,7 +8160,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>297</second>
+										<second>339</second>
 									</item>
 								</second>
 							</item>
@@ -8197,10 +8197,10 @@
 					<Obj>
 						<type>0</type>
 						<id>158</id>
-						<name>j_write_ln287</name>
+						<name>j_write_ln329</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>287</lineNumber>
+						<lineNumber>329</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8216,7 +8216,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>287</second>
+										<second>329</second>
 									</item>
 								</second>
 							</item>
@@ -8256,10 +8256,10 @@
 					<Obj>
 						<type>0</type>
 						<id>159</id>
-						<name>br_ln287</name>
+						<name>br_ln329</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>287</lineNumber>
+						<lineNumber>329</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8275,7 +8275,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>287</second>
+										<second>329</second>
 									</item>
 								</second>
 							</item>
@@ -8315,7 +8315,7 @@
 						<name>pmax_load_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8331,7 +8331,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -8372,7 +8372,7 @@
 						<name>pmax_1_load_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8388,7 +8388,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -8429,7 +8429,7 @@
 						<name>pmax_2_load_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8445,7 +8445,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -8486,7 +8486,7 @@
 						<name>pmax_3_load_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8502,7 +8502,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -8543,7 +8543,7 @@
 						<name>pmax_4_load_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8559,7 +8559,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -8600,7 +8600,7 @@
 						<name>pmax_5_load_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8616,7 +8616,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -8657,7 +8657,7 @@
 						<name>pmax_6_load_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8673,7 +8673,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -8714,7 +8714,7 @@
 						<name>pmax_7_load_1</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8730,7 +8730,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -8768,10 +8768,10 @@
 					<Obj>
 						<type>0</type>
 						<id>169</id>
-						<name>max_abs_out_write_ln303</name>
+						<name>max_abs_out_write_ln345</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8787,7 +8787,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -8826,10 +8826,10 @@
 					<Obj>
 						<type>0</type>
 						<id>170</id>
-						<name>max_abs_2_out_write_ln303</name>
+						<name>max_abs_2_out_write_ln345</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8845,7 +8845,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -8884,10 +8884,10 @@
 					<Obj>
 						<type>0</type>
 						<id>171</id>
-						<name>max_abs_4_out_write_ln303</name>
+						<name>max_abs_4_out_write_ln345</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8903,7 +8903,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -8942,10 +8942,10 @@
 					<Obj>
 						<type>0</type>
 						<id>172</id>
-						<name>max_abs_6_out_write_ln303</name>
+						<name>max_abs_6_out_write_ln345</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -8961,7 +8961,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -9000,10 +9000,10 @@
 					<Obj>
 						<type>0</type>
 						<id>173</id>
-						<name>max_abs_8_out_write_ln303</name>
+						<name>max_abs_8_out_write_ln345</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -9019,7 +9019,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -9058,10 +9058,10 @@
 					<Obj>
 						<type>0</type>
 						<id>174</id>
-						<name>max_abs_10_out_write_ln303</name>
+						<name>max_abs_10_out_write_ln345</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -9077,7 +9077,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -9116,10 +9116,10 @@
 					<Obj>
 						<type>0</type>
 						<id>175</id>
-						<name>max_abs_12_out_write_ln303</name>
+						<name>max_abs_12_out_write_ln345</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -9135,7 +9135,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -9174,10 +9174,10 @@
 					<Obj>
 						<type>0</type>
 						<id>176</id>
-						<name>max_abs_14_out_write_ln303</name>
+						<name>max_abs_14_out_write_ln345</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>303</lineNumber>
+						<lineNumber>345</lineNumber>
 						<contextFuncName>compute_gate</contextFuncName>
 						<contextNormFuncName>compute_gate</contextNormFuncName>
 						<inlineStackInfo>
@@ -9193,7 +9193,7 @@
 											<first>swiglu.cpp</first>
 											<second>compute_gate</second>
 										</first>
-										<second>303</second>
+										<second>345</second>
 									</item>
 								</second>
 							</item>
@@ -18161,14 +18161,6 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln287_fu_364</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>37</item>
-			</second>
-		</item>
-		<item>
 			<first>add_ln317_fu_419</first>
 			<second>
 				<count>1</count>
@@ -18177,7 +18169,15 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln296_fu_606</first>
+			<first>add_ln329_fu_364</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>37</item>
+			</second>
+		</item>
+		<item>
+			<first>and_ln338_fu_606</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18185,7 +18185,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln297_1_fu_785</first>
+			<first>and_ln339_1_fu_785</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18193,7 +18193,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln297_fu_779</first>
+			<first>and_ln339_fu_779</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18209,7 +18209,7 @@
 			</second>
 		</item>
 		<item>
-			<first>bitcast_ln296_1_fu_637</first>
+			<first>bitcast_ln338_1_fu_637</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18217,7 +18217,7 @@
 			</second>
 		</item>
 		<item>
-			<first>bitcast_ln296_fu_571</first>
+			<first>bitcast_ln338_fu_571</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18225,7 +18225,7 @@
 			</second>
 		</item>
 		<item>
-			<first>bitcast_ln297_1_fu_711</first>
+			<first>bitcast_ln339_1_fu_711</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18233,7 +18233,7 @@
 			</second>
 		</item>
 		<item>
-			<first>bitcast_ln297_fu_740</first>
+			<first>bitcast_ln339_fu_740</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18249,7 +18249,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln287_fu_358</first>
+			<first>icmp_ln329_fu_358</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18257,7 +18257,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln294_fu_555</first>
+			<first>icmp_ln336_fu_555</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18265,7 +18265,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln296_1_fu_594</first>
+			<first>icmp_ln338_1_fu_594</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18273,7 +18273,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln296_fu_588</first>
+			<first>icmp_ln338_fu_588</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18281,7 +18281,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln297_1_fu_757</first>
+			<first>icmp_ln339_1_fu_757</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18289,7 +18289,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln297_2_fu_763</first>
+			<first>icmp_ln339_2_fu_763</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18297,7 +18297,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln297_3_fu_728</first>
+			<first>icmp_ln339_3_fu_728</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18305,7 +18305,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln297_4_fu_734</first>
+			<first>icmp_ln339_4_fu_734</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18353,7 +18353,7 @@
 			</second>
 		</item>
 		<item>
-			<first>or_ln296_fu_600</first>
+			<first>or_ln338_fu_600</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18361,7 +18361,7 @@
 			</second>
 		</item>
 		<item>
-			<first>or_ln297_1_fu_775</first>
+			<first>or_ln339_1_fu_775</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18369,7 +18369,7 @@
 			</second>
 		</item>
 		<item>
-			<first>or_ln297_fu_769</first>
+			<first>or_ln339_fu_769</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18481,7 +18481,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln289_fu_384</first>
+			<first>sext_ln331_fu_384</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18489,7 +18489,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln290_fu_388</first>
+			<first>sext_ln332_fu_388</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18521,7 +18521,7 @@
 			</second>
 		</item>
 		<item>
-			<first>switch_ln297_fu_790</first>
+			<first>switch_ln339_fu_790</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18529,31 +18529,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_100_fu_743</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>114</item>
-			</second>
-		</item>
-		<item>
-			<first>tmp_101_fu_714</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>117</item>
-			</second>
-		</item>
-		<item>
-			<first>tmp_250_fu_493</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>73</item>
-			</second>
-		</item>
-		<item>
-			<first>tmp_728_fu_425</first>
+			<first>tmp_1439_fu_425</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18561,7 +18537,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_729_fu_525</first>
+			<first>tmp_1440_fu_525</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18569,7 +18545,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_730_fu_545</first>
+			<first>tmp_1441_fu_545</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18577,11 +18553,35 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_98_fu_574</first>
+			<first>tmp_400_fu_493</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>73</item>
+			</second>
+		</item>
+		<item>
+			<first>tmp_401_fu_574</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
 				<item>90</item>
+			</second>
+		</item>
+		<item>
+			<first>tmp_403_fu_743</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>114</item>
+			</second>
+		</item>
+		<item>
+			<first>tmp_404_fu_714</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>117</item>
 			</second>
 		</item>
 		<item>
@@ -18601,7 +18601,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln292_fu_541</first>
+			<first>trunc_ln334_fu_541</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18609,7 +18609,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln296_1_fu_625</first>
+			<first>trunc_ln338_1_fu_625</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18617,7 +18617,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln296_fu_584</first>
+			<first>trunc_ln338_fu_584</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18625,7 +18625,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln297_1_fu_753</first>
+			<first>trunc_ln339_1_fu_753</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18633,7 +18633,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln297_2_fu_724</first>
+			<first>trunc_ln339_2_fu_724</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18641,7 +18641,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln297_fu_375</first>
+			<first>trunc_ln339_fu_375</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18673,7 +18673,7 @@
 			</second>
 		</item>
 		<item>
-			<first>xor_ln296_fu_619</first>
+			<first>xor_ln338_fu_619</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18721,7 +18721,15 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln287_fu_370</first>
+			<first>zext_ln317_fu_415</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>62</item>
+			</second>
+		</item>
+		<item>
+			<first>zext_ln329_fu_370</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -18729,19 +18737,11 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln295_fu_567</first>
+			<first>zext_ln337_fu_567</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
 				<item>84</item>
-			</second>
-		</item>
-		<item>
-			<first>zext_ln317_fu_415</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>62</item>
 			</second>
 		</item>
 	</dp_fu_nodes_expression>
@@ -19089,7 +19089,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln287_store_fu_350</first>
+			<first>store_ln329_store_fu_350</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19097,7 +19097,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln287_store_fu_379</first>
+			<first>store_ln329_store_fu_379</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19105,7 +19105,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln297_store_fu_807</first>
+			<first>store_ln339_store_fu_807</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19113,7 +19113,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln297_store_fu_811</first>
+			<first>store_ln339_store_fu_811</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19121,7 +19121,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln297_store_fu_815</first>
+			<first>store_ln339_store_fu_815</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19129,7 +19129,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln297_store_fu_819</first>
+			<first>store_ln339_store_fu_819</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19137,7 +19137,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln297_store_fu_823</first>
+			<first>store_ln339_store_fu_823</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19145,7 +19145,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln297_store_fu_827</first>
+			<first>store_ln339_store_fu_827</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19153,7 +19153,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln297_store_fu_831</first>
+			<first>store_ln339_store_fu_831</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19161,7 +19161,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln297_store_fu_835</first>
+			<first>store_ln339_store_fu_835</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19169,7 +19169,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln303_write_fu_172</first>
+			<first>write_ln345_write_fu_172</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19177,7 +19177,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln303_write_fu_179</first>
+			<first>write_ln345_write_fu_179</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19185,7 +19185,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln303_write_fu_186</first>
+			<first>write_ln345_write_fu_186</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19193,7 +19193,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln303_write_fu_193</first>
+			<first>write_ln345_write_fu_193</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19201,7 +19201,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln303_write_fu_200</first>
+			<first>write_ln345_write_fu_200</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19209,7 +19209,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln303_write_fu_207</first>
+			<first>write_ln345_write_fu_207</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19217,7 +19217,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln303_write_fu_214</first>
+			<first>write_ln345_write_fu_214</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19225,7 +19225,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln303_write_fu_221</first>
+			<first>write_ln345_write_fu_221</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19693,7 +19693,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln287_reg_942</first>
+			<first>icmp_ln329_reg_942</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19701,7 +19701,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln297_3_reg_1106</first>
+			<first>icmp_ln339_3_reg_1106</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19709,7 +19709,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln297_4_reg_1111</first>
+			<first>icmp_ln339_4_reg_1111</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19821,7 +19821,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln289_reg_967</first>
+			<first>sext_ln331_reg_967</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19829,7 +19829,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln290_reg_998</first>
+			<first>sext_ln332_reg_998</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19853,15 +19853,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_102_reg_1116</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>125</item>
-			</second>
-		</item>
-		<item>
-			<first>tmp_728_reg_1018</first>
+			<first>tmp_1439_reg_1018</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19869,7 +19861,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_730_reg_1039</first>
+			<first>tmp_1441_reg_1039</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19877,11 +19869,19 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_99_reg_1081</first>
+			<first>tmp_402_reg_1081</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
 				<item>95</item>
+			</second>
+		</item>
+		<item>
+			<first>tmp_405_reg_1116</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>125</item>
 			</second>
 		</item>
 		<item>
@@ -19893,7 +19893,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln292_reg_1034</first>
+			<first>trunc_ln334_reg_1034</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19901,7 +19901,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln297_reg_956</first>
+			<first>trunc_ln339_reg_956</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -19949,7 +19949,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln287_reg_946</first>
+			<first>zext_ln329_reg_946</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

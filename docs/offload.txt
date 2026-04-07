@@ -116,6 +116,65 @@ overlap isn’t available without deeper changes.
 
 
 
+----------------------------------------------------------------------------------------------------------
+K=2 PORT CHANGES (2026-04-06)
+----------------------------------------------------------------------------------------------------------
+
+Two new AXI master ports were added to the HLS IP to enable K=2 row parallelism in
+compute_X1 and compute_X2. These ports read the same physical weight buffers as W and V
+but are used to fetch odd-numbered rows concurrently with even rows.
+
+New ports:
+  W2  (bundle=gmem_W2)  — second read port for ffn_gate weights; same physical address as W
+  V2  (bundle=gmem_V2)  — second read port for ffn_up   weights; same physical address as V
+
+Why two ports are needed:
+  In mac_blocks_wv_k2, both rb0 (even row) and rb1 (odd row) are loaded sequentially
+  (load_row_wv W row, then load_row_wv W2 row+1) before a single 256-cycle MAC loop
+  processes both rows in parallel (16 MAC chains instead of 8).
+  HLS requires distinct m_axi bundles to generate independent AXI master interfaces.
+  Without separate bundles, HLS would serialize all accesses on one port and the
+  pipeline structure would be identical to K=1 with no throughput gain.
+
+Vivado block design:
+  No new HP ports are available (HP0-HP3 all in use). W2 and V2 are connected to
+  existing smartconnects:
+    gmem_W2 → smartconnect on HP3  (same as gmem_W — adds a second slave port)
+    gmem_V2 → smartconnect on HP0  (same as gmem_V, gmem_out, gmem_x)
+  The loads are sequential within each row pair, so there is no actual simultaneous
+  contention on the shared HP port.
+
+ggml-cpu.c register programming:
+  W2 and V2 are programmed with the SAME physical address as W and V respectively.
+  The IP computes row offsets internally:
+    even row:  base + row       * WV_ROW_WORDS  (via W  / V  port)
+    odd  row:  base + (row+1)   * WV_ROW_WORDS  (via W2 / V2 port)
+  So both W_LO/HI and W2_LO/HI receive phys_W; both V_LO/HI and V2_LO/HI receive phys_V.
+
+CRITICAL — register address verification required:
+  Adding W2 and V2 shifts ALL register addresses that follow W in the AXI-Lite map.
+  The xswiglu_hw.h in docs/ is from the OLD K=1 synthesis and does NOT contain W2/V2.
+  After re-synthesizing and exporting the K=2 IP, locate the new:
+    swiglu/hls/impl/ip/drivers/swiglu_v1_0/src/xswiglu_hw.h
+  and verify every SWG_CTRL_* define in ggml-cpu.c matches.
+
+  Predicted K=2 register map (based on HLS sequential allocation, 12 bytes per 64-bit port):
+    0x10 / 0x14  W        (unchanged)
+    0x1C / 0x20  W2       ← new
+    0x28 / 0x2C  V        (was 0x1C/0x20)
+    0x34 / 0x38  V2       ← new
+    0x40 / 0x44  W_down   (was 0x28/0x2C)
+    0x4C / 0x50  W_down2  (was 0x34/0x38)
+    0x58 / 0x5C  x_batch  (was 0x40/0x44)
+    0x64 / 0x68  out_batch (was 0x4C/0x50)
+    0x70         down_quant_mode (was 0x58)
+    0x78         x_scale  (was 0x60)
+
+  If the actual xswiglu_hw.h differs from these predicted values, update the
+  SWG_CTRL_* defines in ggml-cpu.c before deploying the new bitstream.
+
+----------------------------------------------------------------------------------------------------------
+
 plan
 
 Copy over only the m_axi/UDMABUF/UIO pieces: static state, address/offset defines, init_hardware_offload(), init_swiglu_offload(), weight-cache flags.

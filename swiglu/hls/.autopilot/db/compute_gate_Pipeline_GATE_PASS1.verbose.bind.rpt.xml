@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_gate_Pipeline_GATE_PASS1'" level="0">
-<item name = "Date">Sun Apr  5 16:06:28 2026
+<item name = "Date">Tue Apr  7 16:24:49 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">8254, 8254, 27.511 us, 27.511 us, 8193, 8193, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">8254, 8254, 27.486 us, 27.486 us, 8193, 8193, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">

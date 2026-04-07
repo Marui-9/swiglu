@@ -42,7 +42,8 @@ using namespace std;
 static uint8_t W_buf  [FFN_DIM    * WV_BLOCKS_PER_ROW  * Q4_K_BYTES]; // 9.0 MB
 static uint8_t V_buf  [FFN_DIM    * WV_BLOCKS_PER_ROW  * Q4_K_BYTES]; // 9.0 MB
 static uint8_t Wd_q4k [VECTOR_DIM * DOWN_BLOCKS_PER_ROW * Q4_K_BYTES]; // 9.0 MB
-static uint8_t Wd_q6k [VECTOR_DIM * DOWN_BLOCKS_PER_ROW * Q6_K_BYTES]; // 13.1 MB
+static uint8_t Wd_q6k   [VECTOR_DIM * DOWN_BLOCKS_PER_ROW * Q6_K_BYTES]; // 13.1 MB raw GGML
+static uint8_t Wd_q6k_fs[VECTOR_DIM * DOWN_BLOCKS_PER_ROW * Q6_K_BYTES]; // 13.1 MB field-split
 
 static int8_t x_batch_buf [MAX_BATCH * VECTOR_DIM];
 static float out_batch_buf[MAX_BATCH * VECTOR_DIM];
@@ -200,6 +201,32 @@ static void fill_q6k_block(uint8_t* block, uint16_t d_raw) {
     }
 }
 
+// reformat_q6k_to_fieldsplit: convert VECTOR_DIM rows from raw GGML Q6_K block layout
+// (each 210-byte block has ql/qh/sc/d interleaved) to the field-split layout that
+// load_row_down_q6k expects:
+//   bytes   0.. 4095: all ql  for blocks 0..31 (32 × 128 bytes)
+//   bytes 4096.. 6143: all qh  for blocks 0..31 (32 × 64  bytes)
+//   bytes 6144.. 6655: all sc  for blocks 0..31 (32 × 16  bytes)
+//   bytes 6656.. 6719: all d   for blocks 0..31 (32 × 2   bytes)
+// Row stride is unchanged: 32 × 210 = 6720 bytes.
+static void reformat_q6k_to_fieldsplit(uint8_t* dst, const uint8_t* src) {
+    for (int out = 0; out < VECTOR_DIM; out++) {
+        uint8_t*       row_dst = dst + (size_t)out * DOWN_BLOCKS_PER_ROW * Q6_K_BYTES;
+        const uint8_t* row_src = src + (size_t)out * DOWN_BLOCKS_PER_ROW * Q6_K_BYTES;
+        uint8_t* ql_dst = row_dst;
+        uint8_t* qh_dst = row_dst + 32 * 128;
+        uint8_t* sc_dst = row_dst + 32 * 128 + 32 * 64;
+        uint8_t* d_dst  = row_dst + 32 * 128 + 32 * 64 + 32 * 16;
+        for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
+            const uint8_t* blk = row_src + b * Q6_K_BYTES;
+            memcpy(ql_dst + b * 128, blk,       128); // ql [0..127]
+            memcpy(qh_dst + b * 64,  blk + 128, 64);  // qh [128..191]
+            memcpy(sc_dst + b * 16,  blk + 192, 16);  // sc [192..207]
+            memcpy(d_dst  + b * 2,   blk + 208, 2);   // d  [208..209]
+        }
+    }
+}
+
 // dot_q6k_ref: 8-lane FP32 accumulator matching hardware decode_mac_q6k.
 // x_int is INT8; scale (gate_scale) dequantizes each element inside the loop.
 static float dot_q6k_ref(const uint8_t* block, const int8_t* x_int, int v_base, float scale) {
@@ -239,7 +266,7 @@ static int run_mock_token_test() {
 
     // DUT — x_scale=1.0f because x_batch_buf is already INT8 and the mock
     // test wants a direct 1:1 scale (no float→INT8 conversion done here).
-    swiglu(W_buf, V_buf, Wd_q4k, Wd_q4k, x_batch_buf, out_batch_buf,
+    swiglu(W_buf, V_buf, Wd_q4k, x_batch_buf, out_batch_buf,
            /*down_quant_mode=*/0, /*x_scale=*/1.0f);
 
     // reference A,B — mirrors compute_X1/X2 with x_scale=1.0f
@@ -350,6 +377,7 @@ static int run_test(const char*  label,
                 fill_q6k_block(
                     Wd_q6k + ((out * DOWN_BLOCKS_PER_ROW + b) * Q6_K_BYTES),
                     d_down);
+        reformat_q6k_to_fieldsplit(Wd_q6k_fs, Wd_q6k);
     }
 
     // ── 2. Quantize x vectors to INT8 ────────────────────────────────────────
@@ -456,8 +484,8 @@ static int run_test(const char*  label,
 
     // ── 4. Run the IP ────────────────────────────────────────────────────────
     memset(out_batch_buf, 0, sizeof(out_batch_buf));
-    uint8_t* W_down_ptr = q6k_down ? Wd_q6k : Wd_q4k;
-    swiglu(W_buf, V_buf, W_down_ptr, W_down_ptr,
+    uint8_t* W_down_ptr = q6k_down ? Wd_q6k_fs : Wd_q4k;
+    swiglu(W_buf, V_buf, W_down_ptr,
            x_batch_buf, out_batch_buf,
            q6k_down ? 1u : 0u,
            x_scale);

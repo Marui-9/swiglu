@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 39
+set cdfgNum 30
 set C_modelName {compute_gate}
 set C_modelType { float 32 }
 set ap_memory_interface_dict [dict create]

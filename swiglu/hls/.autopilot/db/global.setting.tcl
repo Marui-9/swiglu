@@ -1,6 +1,6 @@
 
 set TopModule "swiglu"
-set ClockPeriod 3.333
+set ClockPeriod 3.33
 set ClockList ap_clk
 set AxiliteClockList {}
 set HasVivadoClockPeriod 0

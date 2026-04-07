@@ -25,9 +25,9 @@
 <Best-caseLatency>8254</Best-caseLatency>
 <Average-caseLatency>8254</Average-caseLatency>
 <Worst-caseLatency>8254</Worst-caseLatency>
-<Best-caseRealTimeLatency>27.511 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>27.511 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>27.511 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>27.486 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>27.486 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>27.486 us</Worst-caseRealTimeLatency>
 <Interval-min>8193</Interval-min>
 <Interval-max>8193</Interval-max>
 <PerformancePragma>-</PerformancePragma>
@@ -38,7 +38,7 @@
 <TripCount>8192</TripCount>
 <isPerfectNested>0</isPerfectNested>
 <Latency>8252</Latency>
-<AbsoluteTimeLatency>27503</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>27479</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>62</PipelineDepth>
 <PerformancePragma>-</PerformancePragma>
@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>Timing Violation</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:287</SourceLocation>
+<SourceLocation>swiglu.cpp:329</SourceLocation>
 <SummaryOfLoopViolations>
 <GATE_PASS1>
 <Name>GATE_PASS1</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:287</SourceLocation>
+<SourceLocation>swiglu.cpp:329</SourceLocation>
 </GATE_PASS1>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>

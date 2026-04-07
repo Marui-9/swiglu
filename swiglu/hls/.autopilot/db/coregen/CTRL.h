@@ -32,27 +32,22 @@
 // 0x2c : Data signal of W_down
 //        bit 31~0 - W_down[63:32] (Read/Write)
 // 0x30 : reserved
-// 0x34 : Data signal of W_down2
-//        bit 31~0 - W_down2[31:0] (Read/Write)
-// 0x38 : Data signal of W_down2
-//        bit 31~0 - W_down2[63:32] (Read/Write)
-// 0x3c : reserved
-// 0x40 : Data signal of x_batch
+// 0x34 : Data signal of x_batch
 //        bit 31~0 - x_batch[31:0] (Read/Write)
-// 0x44 : Data signal of x_batch
+// 0x38 : Data signal of x_batch
 //        bit 31~0 - x_batch[63:32] (Read/Write)
-// 0x48 : reserved
-// 0x4c : Data signal of out_batch
+// 0x3c : reserved
+// 0x40 : Data signal of out_batch
 //        bit 31~0 - out_batch[31:0] (Read/Write)
-// 0x50 : Data signal of out_batch
+// 0x44 : Data signal of out_batch
 //        bit 31~0 - out_batch[63:32] (Read/Write)
-// 0x54 : reserved
-// 0x58 : Data signal of down_quant_mode
+// 0x48 : reserved
+// 0x4c : Data signal of down_quant_mode
 //        bit 31~0 - down_quant_mode[31:0] (Read/Write)
-// 0x5c : reserved
-// 0x60 : Data signal of x_scale
+// 0x50 : reserved
+// 0x54 : Data signal of x_scale
 //        bit 31~0 - x_scale[31:0] (Read/Write)
-// 0x64 : reserved
+// 0x58 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define CTRL_ADDR_AP_CTRL              0x00
@@ -65,13 +60,11 @@
 #define CTRL_BITS_V_DATA               64
 #define CTRL_ADDR_W_DOWN_DATA          0x28
 #define CTRL_BITS_W_DOWN_DATA          64
-#define CTRL_ADDR_W_DOWN2_DATA         0x34
-#define CTRL_BITS_W_DOWN2_DATA         64
-#define CTRL_ADDR_X_BATCH_DATA         0x40
+#define CTRL_ADDR_X_BATCH_DATA         0x34
 #define CTRL_BITS_X_BATCH_DATA         64
-#define CTRL_ADDR_OUT_BATCH_DATA       0x4c
+#define CTRL_ADDR_OUT_BATCH_DATA       0x40
 #define CTRL_BITS_OUT_BATCH_DATA       64
-#define CTRL_ADDR_DOWN_QUANT_MODE_DATA 0x58
+#define CTRL_ADDR_DOWN_QUANT_MODE_DATA 0x4c
 #define CTRL_BITS_DOWN_QUANT_MODE_DATA 32
-#define CTRL_ADDR_X_SCALE_DATA         0x60
+#define CTRL_ADDR_X_SCALE_DATA         0x54
 #define CTRL_BITS_X_SCALE_DATA         32

@@ -1,84 +1,293 @@
 General pragma purposes (where they appear):
 - DATAFLOW: overlaps independent tasks; used once at top level.
-- ARRAY_PARTITION: creates multiple banks for parallel reads/writes; 
-    placed on local buffers (x_local, rb, gate_cache) to match 
+- ARRAY_PARTITION: creates multiple banks for parallel reads/writes;
+    placed on local buffers (x_local, rb, gate_cache) to match
     unroll width.
-- INLINE off: keeps functions as separate dataflow processes; used on 
+- INLINE off: keeps functions as separate dataflow processes; used on
     load/compute functions.
-- BIND_OP op=mul impl=dsp: forces multiplies into DSP slices for 
+- BIND_OP op=mul impl=dsp: forces multiplies into DSP slices for
     speed/area predictability; used in MAC kernels.
-- LATENCY min=2: allows insertion of a pipeline register between 
-    decode and accumulate to shorten critical paths; applied inside hot 
-    loops.
-- UNROLL / UNROLL factor=8: replicates loop iterations for parallelism; 
-    tuned to factor 8 now to ease timing.
-- BALANCE: asks HLS to balance adder trees, reducing depth; used on 
-    accumulation variables.
-- PIPELINE II=1: one iteration per clock; ubiquitous in inner loops 
+- UNROLL: replicates loop iterations for parallelism; used on inner
+    block loops inside PIPELINE II=1 stages.
+- PIPELINE II=1: one iteration per clock; ubiquitous in inner loops
     and loaders.
+- BIND_STORAGE type=X impl=Y: forces specific memory primitive (BRAM,
+    LUTRAM, URAM) instead of HLS default inference.
 
 
 Top level: swiglu (Phase 0–5 orchestration)
-#pragma HLS INTERFACE ... m_axi on W, V, W_down, x_batch, out_batch: 
-creates AXI master ports for bulk DDR access.
-#pragma HLS INTERFACE ... s_axilite on args/return: exposes control 
-regs for software.
-#pragma HLS DATAFLOW (after local buffer declarations): lets the 
-subfunctions (load_x_local, compute_X1, compute_X2, compute_gate, 
-compute_output) run concurrently as a pipeline when dependencies 
-allow—crucial for overlapping Phases 0–5.
-Local buffers use #pragma HLS BIND_STORAGE (e.g., LUTRAM/URAM) and 
-ARRAY_PARTITION to increase read bandwidth from on‑chip memory, 
-matching downstream parallelism.
-Why: DATAFLOW gives throughput; port/buffer pragmas expose the 
-needed AXI and on‑chip memory bandwidth.
+Signature (7 params, W2/V2/Wd2 removed 2026-04):
+    void swiglu(const uint8_t *W, const uint8_t *V, const uint8_t *W_down,
+                const int8_t *x_batch, float *out_batch,
+                uint32_t down_quant_mode, float x_scale)
 
-Phase 0: load_x_local
-Function has #pragma HLS INLINE off: keeps it as its own dataflow task, 
-not inlined into swiglu.
-#pragma HLS ARRAY_PARTITION on x_local_1/2 dim=2 complete: splits the 
-8 blocks so compute_X1/2 can read all 8 in parallel.
-needed for 8-way banking to feed W/V MACs. Correct.
-Inner loop #pragma HLS PIPELINE II=1: one 128‑bit burst word per cycle.
-Why: provide 8-way parallel BRAM banks to feed both projectors at II=1.
+#pragma HLS INTERFACE mode=m_axi on W, V, W_down, x_batch, out_batch:
+    5 AXI master ports for bulk DDR access (W2/V2/Wd2 removed; K=2 row
+    parallelism now uses sequential loads from a single port per phase).
+    W  → bundle=gmem_W,   depth=9437184,  max_read_burst_length=128
+    V  → bundle=gmem_V,   depth=9437184,  max_read_burst_length=128
+    Wd → bundle=gmem_Wd,  depth=13762560, max_read_burst_length=256
+    x  → bundle=gmem_x,   depth=8192,     max_read_burst_length=128
+    out→ bundle=gmem_out, depth=8192,     max_write_burst_length=256
+    All: latency=64, num_outstanding=1, max_widen_bitwidth=128.
+    num_read_outstanding=1: sequential burst-then-MAC pattern means
+    a second outstanding request is never issued.
 
-Phases 1 & 2: compute_X1 / compute_X2
-Functions INLINE off: keep as separate dataflow tasks.
-ARRAY_PARTITION on x_local_* dim=2 complete: matches 8 blocks per row.
-BIND_STORAGE on row buffers to LUTRAM: low‑latency scratch for each row.
-load_row_wv: PIPELINE II=1 loads one 128‑bit word per cycle; 
-ARRAY_PARTITION on rb dim=1 complete to provide per‑block banking.
+#pragma HLS INTERFACE mode=s_axilite on all args/return:
+    Exposes control registers for ggml-cpu.c driver (bundle=CTRL).
 
-mac_blocks_wv:
-BIND_OP op=mul impl=dsp: force multiplies into DSPs.
-PIPELINE II=1 + LATENCY min=2: allow a register stage between decode 
-and MAC to help timing.
-ARRAY_PARTITION on accum arrays and headers: parallel per‑block access.
-UNROLL in outer reductions to sum block accumulators in parallel.
-BALANCE variable=total: ask HLS to balance the reduction tree.
-Why: sustain II=1 through 8 blocks with manageable logic depth.
-Phases 3 & 4: compute_gate
-Function INLINE off: its own dataflow stage.
-Two passes:
-Pass 1: PIPELINE II=1 to scan X1/X2 and find max; small 8‑lane partial max arrays 
-(no explicit pragmas beyond default; partitioning of pmax implied by UNROLL).
-Pass 2: PIPELINE II=1 to recompute, quantize to INT8, and write gate_cache.
-ARRAY_PARTITION on gate_cache dim=2 cyclic factor=8: 8 banks for downstream 8‑way groups.
-Why: keep gate production at one element per cycle, feed wide downstream MACs.
+#pragma HLS DATAFLOW:
+    Allows load_x_local, compute_X1, compute_X2, compute_gate,
+    compute_output to run as overlapping pipeline stages.
+    compute_X1 and compute_X2 run in parallel (no shared data).
+    compute_gate starts after both X caches are written.
+    compute_output starts after gate_cache is written.
 
-Phase 5: compute_output (Q4_K path shown)
-ARRAY_PARTITION on gate_cache dim=2 cyclic factor=8: matches 8‑way unroll.
-load_row_down_q4k:
-INLINE off
-ARRAY_PARTITION rb dim=1 cyclic factor=8
-PIPELINE II=1 inside: stream a row with banking for parallel MACs.
-mac_blocks_down_q4k:
-BIND_OP op=mul impl=dsp: use DSPs for products.
-ARRAY_PARTITION on rb (cyclic 8) and gate (cyclic 8): allow 8 blocks in parallel.
-Single loop over blocks with UNROLL factor=8: processes 8 of 32 blocks per cycle 
-(reduced from full 32 to ease timing).
-PIPELINE II=1 + LATENCY min=2: keep throughput, add a register stage between decode and MAC.
-BALANCE variable=total and UNROLL factor=8 on reduction: shape the adder tree for timing.
-Q6_K path uses similar partitioning and DSP binding; no unroll on blocks (computed sequentially 
-per block) but partitions rb cyclic for bandwidth.
-Why: throttle parallelism to factor 8 to meet timing while preserving II=1 streaming.
+
+Phase 1 — load_x_local
+        What: Reads INT8 x vector (2048 bytes) from DDR,
+        writes into two identical LUTRAM copies (x_local_1, x_local_2).
+        Why two copies: With a single x_local shared by compute_X1 and
+        compute_X2 in DATAFLOW, HLS inserts a Block_entry_x_local_rd_proc
+        serialiser — a broadcast module that forces sequential reads,
+        doubling latency. Two copies (one reader each) eliminates it.
+
+        Bit movement:
+        DDR (int8_t x_batch[2048])
+        → AXI burst, 128-bit words → 128 words × 16 bytes
+        → wide_val.range(j*8+7, j*8)  — extract byte j (8-bit slice)
+        → x_local_1[0][elem>>8][elem&255]   (int8_t)
+        → x_local_2[0][elem>>8][elem&255]   (int8_t)   same value, separate array
+
+        Pragmas:
+        x_local_1/2[1][8][256]  int8_t
+        BIND_STORAGE type=ram_1p impl=lutram   — single-port LUTRAM
+        ARRAY_PARTITION dim=2 complete         — 256 sub-banks on element dim
+                                                → all 256 INT8 values readable in 1 cycle
+        dim=2 complete needed so compute_X1/X2 MAC loop can read any
+        element of x within a block simultaneously with weight nibble decode.
+
+
+Phase 2/3 — compute_X1 / compute_X2
+        What: Matrix-vector multiply: X1 = x @ W_gate.T, X2 = x @ W_up.T.
+        Both Q4_K, [8192 rows × 2048 cols]. K=2: processes 2 rows per
+        iteration using a single AXI port (sequential loads from gmem_W
+        for X1, gmem_V for X2). W2/V2 ports removed — K=2 now loads row
+        and row+1 from the same bundle in two sequential load_row_wv calls.
+        Output quantized to INT8 and stored in BRAM cache.
+
+        K=2 row parallelism:
+        Each loop iteration loads row `row` then row `row+1` from the same
+        AXI port (sequential 72-word bursts). mac_blocks_wv_k2 processes
+        both rows in a single 256-cycle MAC pass with 16 parallel INT32
+        chains (8 blocks × 2 rows). This halves the outer loop iterations
+        vs K=1: 4096 → 2048 pairs.
+
+        load_row_wv (INLINE off, called twice per iteration):
+        Nested loops: outer b=0..7 (block, compile-time within inner loop),
+          inner w=0..8 (word, PIPELINE II=1).
+          Address = row*72 + b*9 + w — monotone within each inner burst.
+          HLS infers 8 separate 9-word AXI bursts per call (one per block).
+          b compile-time → direct BRAM bank write, no write-side demux.
+        Note: a flat 72-word burst approach (flat_buf) was attempted but
+          caused 85K+ LUT inflation in compute_output because flat_buf[72]
+          complete (9,216 FF) becomes a massive module port when INLINE off.
+          Nested loops avoid this: BRAM rb is a compact BRAM interface.
+
+        Bit movement per row (W path):
+        DDR (Q4K row: 1152 bytes = 72 × 128-bit words)
+        → AXI burst via gmem_W (both even and odd rows, sequential)
+        → rb0/rb1[8][9]  ap_uint<128>
+            ARRAY_PARTITION dim=1 complete     — 8 independent BRAM banks
+            BIND_STORAGE type=ram_1p impl=bram — 8 BRAM tiles per array
+
+        Header decode (UNPACK_HDR_K2, PIPELINE II=1, 8 cycles):
+            reads rb0[b] and rb1[b] simultaneously per iteration
+            (separate BRAM bank instances, no port conflict)
+            rb[b][0].range(15,0)   → fp16_to_fp32() → d[b]     (float)
+            rb[b][0].range(31,16)  → fp16_to_fp32() → dmin[b]  (float)
+            bytes 4–15 → sc6[b][0..7], mn6[b][0..7] via get_byte()
+            get_byte(rb[b], k) = rb[b][k>>4].range((k&0xF)*8+7, (k&0xF)*8)
+
+        MAC (MAC_ALL_K2, PIPELINE II=1, 256 cycles, b UNROLL × 2 rows):
+            x_local_1[0][b][n]          → ap_int<8>  xi8
+            rb[b][...] nibble decode    → ap_uint<4>  nib4  (row 0 and row 1)
+            sc6[b][n>>5]               → ap_uint<6>  sc6u
+            mn6[b][n>>5]               → ap_uint<6>  mn6u
+            int_acc_w0/1[b][k] += xi8 * nib4 * sc6u   (INT32, DSP-mapped)
+            int_acc_m0/1[b][k] += xi8 * mn6u           (INT32, DSP-mapped)
+            k = n & 3  (4 partial accumulators: INT32 DSP latency ≤4 → II=1)
+
+        REDUCE (REDUCE_K2, sequential, 8 cycles):
+            sw0/1 = sum(int_acc_w0/1[b][0..3])
+            sm0/1 = sum(int_acc_m0/1[b][0..3])
+            total0/1 += fxd_scale_t(d[b]) * fxd_accum_t(sw)
+                      - fxd_scale_t(dmin[b]) * fxd_accum_t(sm)
+            — fxd<32,8> × fxd<56,38>: sequential to avoid wide parallel adder tree
+
+        Quantize (both rows):
+            result = float(total) * x_scale
+            iq = clamp(round(result * 12.7f), -128, 127)
+            X1_cache[0][row] = int8_t(iq)
+            X1_cache[0][row+1] = int8_t(iq1)
+
+        Intermediate arrays:
+        int_acc_w0/w1/m0/m1[8][4]  int32_t
+        ARRAY_PARTITION dim=0 complete   — all 32 registers per array independent;
+                                            b and k both compile-time after UNROLL
+
+        X1_cache/X2_cache[1][8192]  int8_t
+        BIND_STORAGE type=ram_2p impl=bram  — ram_2p: written by compute_X1/X2,
+                                                read by compute_gate concurrently
+                                                in DATAFLOW → 2 ports needed
+
+        Why 4 partial accumulators (int_acc[b][k]): INT32 DSP add latency ≤4 cycles.
+        k = n & 3 revisits same slot every 4 cycles ≥ latency → II=1 maintained.
+        (FP/fixed-point needs 8 accumulators for ~5-cycle latency; INT32 needs only 4.)
+
+
+Phase 4 — compute_gate
+        What: Elementwise SiLU(X1) × X2, two-pass to find max-abs then
+        quantize to INT8 gate vector.
+
+        Bit movement:
+        X1_cache[0][j]  int8_t → float z  = val * X12_QUANT_SCALE (0.0787f)
+        X2_cache[0][j]  int8_t → float x2 = val * X12_QUANT_SCALE
+
+        Pass 1 (GATE_PASS1, PIPELINE II=1, 8192 cycles):
+        LUT index: idx = clamp((z + 8.0) * 256, 0, 4095)
+        g = z * sigmoid_lut[idx] * x2
+        pmax[j&7] = max(pmax[j&7], |g|)   — 8 partial maxima, revisit period 8 → II=1
+
+        Pass 2 (GATE_PASS2, PIPELINE II=1, 8192 cycles):
+        same g computation
+        gate_cache[0][j>>8][j&255] = int8_t(clamp(round(g / gate_scale), -128, 127))
+
+        Storage:
+        sigmoid_lut[4096]  float (ROM)
+        BIND_STORAGE type=rom_1p impl=bram   — 4096×32-bit = 128Kbit → 8 BRAM_18K
+
+        gate_cache[1][32][256]  int8_t
+        BIND_STORAGE type=ram_1p impl=uram   — sequential write→read in DATAFLOW → 1 port
+        ARRAY_PARTITION dim=2 cyclic factor=8 — 8 URAM banks on block dim (dim=2, 32 blocks)
+                                                blocks 0,8,16,24 → bank 0, etc.
+                                                each bank: 4 blocks × 256 elements = 1 URAM tile
+        Why dim=2 cyclic factor=8: Phase 5 Q4K MAC reads 8 blocks/cycle (b=0..7 UNROLL);
+        b%8 = 0..7 → all 8 distinct banks → no read conflict → II=1.
+
+
+Phase 5 — compute_output (Q4K branch)
+        What: output = gate @ W_down.T. K=2: processes 2 rows per iteration
+        from single AXI port gmem_Wd (W_down2/gmem_Wd2 removed).
+
+        Load (two sequential calls to load_row_down_q4k):
+        DDR (Q4K W_down row: 4608 bytes = 288 × 128-bit words, 32 blocks × 9 words)
+        → AXI burst via gmem_Wd (both even and odd rows, sequential)
+        → rb0/rb1[32][9]  ap_uint<128>
+            ARRAY_PARTITION dim=1 complete     — 32 independent banks
+            BIND_STORAGE type=ram_1p impl=lutram — avoids 4 BRAM tiles/bank at 128-bit width;
+                                                   32 banks × ~190 LUT each ≈ 6K LUT/array, 0 BRAM
+        Counter-based flat loop (288 iterations, PIPELINE II=1):
+            counter b/w track block and word index without i/9 division.
+            Monotone address out_i*288+i → one contiguous 288-word AXI burst per call.
+
+        Header decode (UNPACK_HDR_K2, PIPELINE II=1, 32 cycles):
+            b=0..31 runtime → 32-way LUTRAM bank mux per get_byte() call.
+            reads rb0[b] and rb1[b] simultaneously (separate LUTRAM instances).
+            → d0/d1[32], dmin0/dmin1[32], sc6_0/1[32][8], mn6_0/1[32][8]
+            all ARRAY_PARTITION complete → registers.
+            Note: 32-way mux is the dominant LUT cost in compute_output
+            (~68K LUT total). Moving UNPACK inside grp UNROLL was attempted
+            but increased LUT (4 replicated decode bodies > 1 shared 32-way mux).
+
+        MAC (mac_blocks_down_q4k_k2, 4-group structure):
+        Outer grp loop (0..3): UNROLL → grp is compile-time, babs=grp*8+b is constant.
+        Per group: local acc_w0/m0/w1/m1[8][4] int32_t, dim=0 complete.
+        MAC_GRP: PIPELINE II=1, 256 cycles, inner b=0..7 UNROLL → 16 parallel INT32 chains
+            (8 blocks × 2 rows per pass). 4 groups × 256 = 1024 MAC cycles total.
+        gate[babs][n] read from gate_cache with cyclic factor=8 partition.
+        rb0/rb1[babs]: LUTRAM, babs compile-time after grp UNROLL → no runtime MUX.
+        k = n & 3: 4 partial accumulators (INT32 latency ≤4 → II=1).
+
+        Why 4 groups of 8 blocks (not 2 or 1): full 32-block UNROLL with 2 rows = 64
+        parallel chains → LUT overflow on ZU5EV. 8 blocks × 2 rows = 16 chains per pass
+        fits within LUT budget. 2-group (16 chains × 2 rows = 32) also overflows.
+
+        REDUCE_GRP (sequential per group, 8 iterations):
+            total0/1 += fxd_scale_t(d0/1[babs]) * fxd_accum_t(sw0/1)
+                      - fxd_scale_t(dmin0/1[babs]) * fxd_accum_t(sm0/1)
+
+        out_local[out_i]   = float(total0) * gate_scale
+        out_local[out_i+1] = float(total1) * gate_scale
+
+
+Phase 5 — compute_output (Q6K branch)
+        Disabled (#ifdef ENABLE_Q6K, not defined). All 16 ffn_down layers in
+        the target LFM2-1.2B GGUF are Q4_K. Code preserved but not compiled.
+        Re-enable by adding #define ENABLE_Q6K before the includes.
+
+
+                URAM/BRAM/LUTRAM Bank Summary (current design, post 2026-04 changes)
+        Array               Type            Shape           Partition               Storage      Tiles
+        x_local_1/2         int8            [1][8][256]     dim=2 complete          LUTRAM       256 per array
+        X1_cache/X2_cache   int8            [1][8192]       none                    BRAM ram_2p  8 each
+        gate_cache          int8            [1][32][256]    dim=2 cyclic f=8        URAM ram_1p  8 total
+        sigmoid_lut         float           [4096]          none                    BRAM rom_1p  8
+        rb0/rb1 (W/V)       ap_uint<128>    [8][9]          dim=1 complete          BRAM ram_1p  8 per array (16 BRAM_18K/function)
+        rb0/rb1 (Wd Q4K)    ap_uint<128>    [32][9]         dim=1 complete          LUTRAM       ~6K LUT each, 0 BRAM
+        Q6K arrays          (disabled)      —               —                       —            —
+
+
+Performance summary (@300 MHz, all-Q4K model, current csynth):
+        Stage               Cycles          Time @ 300 MHz
+        load_x_local        202             0.67 us
+        compute_X1 ∥ X2     2,744,321       9.15 ms   ← DATAFLOW bottleneck
+        compute_gate        16,622          0.055 ms
+        compute_output Q4K  1,899,594       6.33 ms
+        Total/layer (Q4K)   2,744,322       9.15 ms  → ~6.8 t/s @ 300 MHz
+
+        compute_X1/X2 is the DATAFLOW bottleneck at K=2.
+        compute_output Q4K runs in parallel and completes first.
+        K=4 on X1/X2 was analysed but not implemented: requires ~58K LUT
+        per function (2×) + output at ~36K = ~170K total HLS estimate →
+        exceeds ZU5EV's 117K available. Device is LUT-limited for K>2.
+
+        Per-call breakdown (compute_X1, 4096 row-pairs):
+            load flat_buf:  72 cycles × 2 rows  = 144 cycles
+            DISTRIB:        9 cycles  × 2 calls  = 18 cycles
+            UNPACK_HDR_K2:  8 cycles
+            MAC_ALL_K2:     256 cycles
+            REDUCE_K2:      8 cycles
+            Total/pair:     ~434 cycles
+            4096 pairs:     ~1.78M cycles (HLS reports 2.74M including
+                            outer loop overhead and DATAFLOW channel latency)
+
+        Per-call breakdown (compute_output Q4K, 1024 row-pairs):
+            load ×2:        288 cycles × 2 = 576 cycles
+            UNPACK_HDR_K2:  32 cycles
+            4 × MAC_GRP:    4 × 256 = 1024 cycles
+            REDUCE_GRP ×4:  4 × 8 = 32 cycles
+            Total/pair:     ~1,664 cycles
+            1024 pairs:     ~1.70M cycles (HLS reports 1.90M)
+
+
+AXI-Lite register map (bundle=CTRL, predicted from 7-param signature):
+        Offset  Register
+        0x00    ap_ctrl        (start/done/idle/ready)
+        0x04    GIE
+        0x08    IER
+        0x0C    ISR
+        0x10    W_lo           (W base address bits [31:0])
+        0x14    W_hi           (W base address bits [63:32])
+        0x1C    V_lo
+        0x20    V_hi
+        0x28    W_down_lo
+        0x2C    W_down_hi
+        0x34    x_batch_lo
+        0x38    x_batch_hi
+        0x40    out_batch_lo
+        0x44    out_batch_hi
+        0x4C    down_quant_mode
+        0x54    x_scale
+        Note: verify against xswiglu_hw.h after re-export; offsets shift
+        if HLS reorders parameters.

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_x_local'" level="0">
-<item name = "Date">Sun Apr  5 16:06:22 2026
+<item name = "Date">Tue Apr  7 16:24:44 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33 ns, 2.433 ns, 0.90 ns</column>
+<column name="ap_clk">3.33 ns, 2.430 ns, 0.90 ns</column>
 </table>
 </item>
 </section>

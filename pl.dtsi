@@ -12,7 +12,7 @@
 	resets = <&zynqmp_reset 116>;
 	clocking0: clocking0 {
 		#clock-cells = <0>;
-		assigned-clock-rates = <299999999>;
+		assigned-clock-rates = <250000000>;
 		assigned-clocks = <&zynqmp_clk 71>;
 		clock-output-names = "fabric_clk";
 		clocks = <&zynqmp_clk 71>;
@@ -20,7 +20,7 @@
 	};
 	clocking1: clocking1 {
 		#clock-cells = <0>;
-		assigned-clock-rates = <299999999>;
+		assigned-clock-rates = <250000000>;
 		assigned-clocks = <&zynqmp_clk 72>;
 		clock-output-names = "fabric_clk";
 		clocks = <&zynqmp_clk 72>;

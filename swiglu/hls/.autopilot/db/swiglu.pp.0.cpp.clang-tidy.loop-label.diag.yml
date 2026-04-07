@@ -7,7 +7,7 @@ Diagnostics:
     FilePath:        'C:\Xilinx\2025.1\Vitis\common\technology\autopilot\etc\ap_int_ref.h'
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          359379
+        Offset:          359353
         Length:          0
         ReplacementText: 'VITIS_LOOP_676_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -16,7 +16,7 @@ Diagnostics:
     FilePath:        'C:\Xilinx\2025.1\Vitis\common\technology\autopilot\etc\ap_int_ref.h'
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          359845
+        Offset:          359819
         Length:          0
         ReplacementText: 'VITIS_LOOP_690_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -25,7 +25,7 @@ Diagnostics:
     FilePath:        'C:\Xilinx\2025.1\Vitis\common\technology\autopilot\etc\ap_int_ref.h'
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          360312
+        Offset:          360286
         Length:          0
         ReplacementText: 'VITIS_LOOP_704_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -34,269 +34,177 @@ Diagnostics:
     FilePath:        'C:\Xilinx\2025.1\Vitis\common\technology\autopilot\etc\ap_fixed_base.h'
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          654782
+        Offset:          654756
         Length:          0
         ReplacementText: 'VITIS_LOOP_1248_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_62_1:  '
-    FileOffset:      62
+    Message:         'Added loop label VITIS_LOOP_68_1:  '
+    FileOffset:      68
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1031258
+        Offset:          1031232
         Length:          0
-        ReplacementText: 'VITIS_LOOP_62_1: '
+        ReplacementText: 'VITIS_LOOP_68_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_95_1:  '
-    FileOffset:      95
+    Message:         'Added loop label VITIS_LOOP_192_1:  '
+    FileOffset:      192
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1032105
+        Offset:          1036490
         Length:          0
-        ReplacementText: 'VITIS_LOOP_95_1: '
+        ReplacementText: 'VITIS_LOOP_192_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_169_1:  '
-    FileOffset:      169
+    Message:         'Added loop label VITIS_LOOP_207_2:  '
+    FileOffset:      207
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1034793
+        Offset:          1036882
         Length:          0
-        ReplacementText: 'VITIS_LOOP_169_1: '
+        ReplacementText: 'VITIS_LOOP_207_2: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_180_2:  '
-    FileOffset:      180
+    Message:         'Added loop label VITIS_LOOP_226_3:  '
+    FileOffset:      226
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1034991
+        Offset:          1037851
         Length:          0
-        ReplacementText: 'VITIS_LOOP_180_2: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_200_3:  '
-    FileOffset:      200
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1035701
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_200_3: '
+        ReplacementText: 'VITIS_LOOP_226_3: '
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      229
+    FileOffset:      254
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      255
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_301_1:  '
-    FileOffset:      301
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1038614
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_301_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_337_1:  '
-    FileOffset:      337
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1039773
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_337_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_402_1:  '
-    FileOffset:      402
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1042060
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_402_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_410_2:  '
-    FileOffset:      410
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1042339
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_410_2: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_422_3:  '
-    FileOffset:      422
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1042551
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_422_3: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_440_4:  '
-    FileOffset:      440
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1043339
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_440_4: '
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      481
+    FileOffset:      256
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    Message:         'Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      289
+    FilePath:        swiglu.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      291
+    FilePath:        swiglu.cpp
+    Replacements:    
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_343_1:  '
+    FileOffset:      343
+    FilePath:        swiglu.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
+        Offset:          1041727
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_343_1: '
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      378
+    FilePath:        swiglu.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      405
+    FilePath:        swiglu.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      407
+    FilePath:        swiglu.cpp
+    Replacements:    
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_459_1:  '
+    FileOffset:      459
+    FilePath:        swiglu.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
+        Offset:          1047095
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_459_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_470_2:  '
+    FileOffset:      470
+    FilePath:        swiglu.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
+        Offset:          1047529
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_470_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_483_3:  '
     FileOffset:      483
     FilePath:        swiglu.cpp
     Replacements:    
+      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
+        Offset:          1047932
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_483_3: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_513_1:  '
-    FileOffset:      513
+    Message:         'Added loop label VITIS_LOOP_503_4:  '
+    FileOffset:      503
     FilePath:        swiglu.cpp
     Replacements:    
       - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1044888
+        Offset:          1049026
         Length:          0
-        ReplacementText: 'VITIS_LOOP_513_1: '
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      565
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      567
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_576_1:  '
-    FileOffset:      576
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1046561
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_576_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_582_2:  '
-    FileOffset:      582
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1046756
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_582_2: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_590_3:  '
-    FileOffset:      590
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1046936
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_590_3: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_614_4:  '
-    FileOffset:      614
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1048009
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_614_4: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_617_5:  '
-    FileOffset:      617
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1048118
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_617_5: '
+        ReplacementText: 'VITIS_LOOP_503_4: '
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      653
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      659
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      660
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      669
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      682
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      684
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      688
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      690
-    FilePath:        swiglu.cpp
-    Replacements:    
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_724_1:  '
-    FileOffset:      724
-    FilePath:        swiglu.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
-        Offset:          1052018
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_724_1: '
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      771
+    FileOffset:      713
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      775
+    FileOffset:      720
+    FilePath:        swiglu.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      722
+    FilePath:        swiglu.cpp
+    Replacements:    
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_787_1:  '
+    FileOffset:      787
+    FilePath:        swiglu.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\.autopilot\db\swiglu.pp.0.cpp'
+        Offset:          1051347
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_787_1: '
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      831
+    FilePath:        swiglu.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_1p + lutram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      835
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      782
+    FileOffset:      842
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      783
+    FileOffset:      843
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, ram_1p + uram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      791
+    FileOffset:      851
     FilePath:        swiglu.cpp
     Replacements:    
   - DiagnosticName:  clang-diagnostic-error
     Message:         'Invalid Directive: for current device, rom_1p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
-    FileOffset:      796
+    FileOffset:      856
     FilePath:        swiglu.cpp
     Replacements:    
 ...

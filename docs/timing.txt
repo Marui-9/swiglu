@@ -1,21 +1,22 @@
-
 Setup
-Worst Negative Slack (WNS):    0.739 ns
+Worst Negative Slack (WNS):    0.314 ns
 Total Negative Slack (TNS):    0.000 ns
 Number of Failing Endpoints:   0
-Total Number of Endpoints:     207631
+Total Number of Endpoints:     401494
 
 Hold
 Worst Hold Slack (WHS):        -0.082 ns
-Total Hold Slack (THS):        -1565.479 ns
-Number of Failing Endpoints:   56570
-Total Number of Endpoints:     207631
+Total Hold Slack (THS):        -2426.656 ns
+Number of Failing Endpoints:   97399
+Total Number of Endpoints:     401494
 
 Pulse Width
-Worst Pulse Width Slack (WPWS):            1.025 ns
+Worst Pulse Width Slack (WPWS):            0.183 ns
 Total Pulse Width Negative Slack (TPWS):   0.000 ns
 Number of Failing Endpoints:               0
-Total Number of Endpoints:                 76034
+Total Number of Endpoints:                 148876
+
+Timing constraints are not met.
 
 Timing constraints are not met.
 notes from vivado docs:

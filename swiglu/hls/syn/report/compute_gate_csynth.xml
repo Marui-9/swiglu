@@ -25,9 +25,9 @@
 <Best-caseLatency>16622</Best-caseLatency>
 <Average-caseLatency>16622</Average-caseLatency>
 <Worst-caseLatency>16622</Worst-caseLatency>
-<Best-caseRealTimeLatency>55.401 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>55.401 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>55.401 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>55.351 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>55.351 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>55.351 us</Worst-caseRealTimeLatency>
 <Interval-min>16622</Interval-min>
 <Interval-max>16622</Interval-max>
 <PerformancePragma>-</PerformancePragma>
@@ -35,7 +35,7 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:303</SourceLocation>
+<SourceLocation>swiglu.cpp:345</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 

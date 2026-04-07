@@ -38,7 +38,6 @@ port (
     W                     :out  STD_LOGIC_VECTOR(63 downto 0);
     V                     :out  STD_LOGIC_VECTOR(63 downto 0);
     W_down                :out  STD_LOGIC_VECTOR(63 downto 0);
-    W_down2               :out  STD_LOGIC_VECTOR(63 downto 0);
     x_batch               :out  STD_LOGIC_VECTOR(63 downto 0);
     out_batch             :out  STD_LOGIC_VECTOR(63 downto 0);
     down_quant_mode       :out  STD_LOGIC_VECTOR(31 downto 0);
@@ -87,27 +86,22 @@ end entity swiglu_CTRL_s_axi;
 -- 0x2c : Data signal of W_down
 --        bit 31~0 - W_down[63:32] (Read/Write)
 -- 0x30 : reserved
--- 0x34 : Data signal of W_down2
---        bit 31~0 - W_down2[31:0] (Read/Write)
--- 0x38 : Data signal of W_down2
---        bit 31~0 - W_down2[63:32] (Read/Write)
--- 0x3c : reserved
--- 0x40 : Data signal of x_batch
+-- 0x34 : Data signal of x_batch
 --        bit 31~0 - x_batch[31:0] (Read/Write)
--- 0x44 : Data signal of x_batch
+-- 0x38 : Data signal of x_batch
 --        bit 31~0 - x_batch[63:32] (Read/Write)
--- 0x48 : reserved
--- 0x4c : Data signal of out_batch
+-- 0x3c : reserved
+-- 0x40 : Data signal of out_batch
 --        bit 31~0 - out_batch[31:0] (Read/Write)
--- 0x50 : Data signal of out_batch
+-- 0x44 : Data signal of out_batch
 --        bit 31~0 - out_batch[63:32] (Read/Write)
--- 0x54 : reserved
--- 0x58 : Data signal of down_quant_mode
+-- 0x48 : reserved
+-- 0x4c : Data signal of down_quant_mode
 --        bit 31~0 - down_quant_mode[31:0] (Read/Write)
--- 0x5c : reserved
--- 0x60 : Data signal of x_scale
+-- 0x50 : reserved
+-- 0x54 : Data signal of x_scale
 --        bit 31~0 - x_scale[31:0] (Read/Write)
--- 0x64 : reserved
+-- 0x58 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of swiglu_CTRL_s_axi is
@@ -128,19 +122,16 @@ architecture behave of swiglu_CTRL_s_axi is
     constant ADDR_W_DOWN_DATA_0          : INTEGER := 16#28#;
     constant ADDR_W_DOWN_DATA_1          : INTEGER := 16#2c#;
     constant ADDR_W_DOWN_CTRL            : INTEGER := 16#30#;
-    constant ADDR_W_DOWN2_DATA_0         : INTEGER := 16#34#;
-    constant ADDR_W_DOWN2_DATA_1         : INTEGER := 16#38#;
-    constant ADDR_W_DOWN2_CTRL           : INTEGER := 16#3c#;
-    constant ADDR_X_BATCH_DATA_0         : INTEGER := 16#40#;
-    constant ADDR_X_BATCH_DATA_1         : INTEGER := 16#44#;
-    constant ADDR_X_BATCH_CTRL           : INTEGER := 16#48#;
-    constant ADDR_OUT_BATCH_DATA_0       : INTEGER := 16#4c#;
-    constant ADDR_OUT_BATCH_DATA_1       : INTEGER := 16#50#;
-    constant ADDR_OUT_BATCH_CTRL         : INTEGER := 16#54#;
-    constant ADDR_DOWN_QUANT_MODE_DATA_0 : INTEGER := 16#58#;
-    constant ADDR_DOWN_QUANT_MODE_CTRL   : INTEGER := 16#5c#;
-    constant ADDR_X_SCALE_DATA_0         : INTEGER := 16#60#;
-    constant ADDR_X_SCALE_CTRL           : INTEGER := 16#64#;
+    constant ADDR_X_BATCH_DATA_0         : INTEGER := 16#34#;
+    constant ADDR_X_BATCH_DATA_1         : INTEGER := 16#38#;
+    constant ADDR_X_BATCH_CTRL           : INTEGER := 16#3c#;
+    constant ADDR_OUT_BATCH_DATA_0       : INTEGER := 16#40#;
+    constant ADDR_OUT_BATCH_DATA_1       : INTEGER := 16#44#;
+    constant ADDR_OUT_BATCH_CTRL         : INTEGER := 16#48#;
+    constant ADDR_DOWN_QUANT_MODE_DATA_0 : INTEGER := 16#4c#;
+    constant ADDR_DOWN_QUANT_MODE_CTRL   : INTEGER := 16#50#;
+    constant ADDR_X_SCALE_DATA_0         : INTEGER := 16#54#;
+    constant ADDR_X_SCALE_CTRL           : INTEGER := 16#58#;
     constant ADDR_BITS         : INTEGER := 7;
 
     signal AWREADY_t           : STD_LOGIC;
@@ -173,7 +164,6 @@ architecture behave of swiglu_CTRL_s_axi is
     signal int_W               : UNSIGNED(63 downto 0) := (others => '0');
     signal int_V               : UNSIGNED(63 downto 0) := (others => '0');
     signal int_W_down          : UNSIGNED(63 downto 0) := (others => '0');
-    signal int_W_down2         : UNSIGNED(63 downto 0) := (others => '0');
     signal int_x_batch         : UNSIGNED(63 downto 0) := (others => '0');
     signal int_out_batch       : UNSIGNED(63 downto 0) := (others => '0');
     signal int_down_quant_mode : UNSIGNED(31 downto 0) := (others => '0');
@@ -319,10 +309,6 @@ begin
                         rdata_data <= RESIZE(int_W_down(31 downto 0), 32);
                     when ADDR_W_DOWN_DATA_1 =>
                         rdata_data <= RESIZE(int_W_down(63 downto 32), 32);
-                    when ADDR_W_DOWN2_DATA_0 =>
-                        rdata_data <= RESIZE(int_W_down2(31 downto 0), 32);
-                    when ADDR_W_DOWN2_DATA_1 =>
-                        rdata_data <= RESIZE(int_W_down2(63 downto 32), 32);
                     when ADDR_X_BATCH_DATA_0 =>
                         rdata_data <= RESIZE(int_x_batch(31 downto 0), 32);
                     when ADDR_X_BATCH_DATA_1 =>
@@ -352,7 +338,6 @@ begin
     W                    <= STD_LOGIC_VECTOR(int_W);
     V                    <= STD_LOGIC_VECTOR(int_V);
     W_down               <= STD_LOGIC_VECTOR(int_W_down);
-    W_down2              <= STD_LOGIC_VECTOR(int_W_down2);
     x_batch              <= STD_LOGIC_VECTOR(int_x_batch);
     out_batch            <= STD_LOGIC_VECTOR(int_out_batch);
     down_quant_mode      <= STD_LOGIC_VECTOR(int_down_quant_mode);
@@ -601,32 +586,6 @@ begin
             elsif (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_W_DOWN_DATA_1) then
                     int_W_down(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_W_down(63 downto 32));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_W_down2(31 downto 0) <= (others => '0');
-            elsif (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_W_DOWN2_DATA_0) then
-                    int_W_down2(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_W_down2(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_W_down2(63 downto 32) <= (others => '0');
-            elsif (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_W_DOWN2_DATA_1) then
-                    int_W_down2(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_W_down2(63 downto 32));
                 end if;
             end if;
         end if;

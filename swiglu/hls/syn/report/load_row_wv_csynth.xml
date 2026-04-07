@@ -18,7 +18,7 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>2.433</EstimatedClockPeriod>
+<EstimatedClockPeriod>2.430</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
@@ -35,7 +35,7 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:94</SourceLocation>
+<SourceLocation>swiglu.cpp:105</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
@@ -549,7 +549,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>10</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>

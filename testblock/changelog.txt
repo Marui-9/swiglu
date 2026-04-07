@@ -498,3 +498,160 @@
             But looking back at the actual performance numbers, the dim=1 complete partitioning did cut the compute time from 42.8 ms down to 18.1 ms per layer, which is substantial. The LUT overflow at 161% is the problem, not the approach itself. So the real question becomes whether I can achieve that same speedup without blowing out the LUT budget.
             The issue is that dim=1 complete forces the synthesis tool to use LUTRAM instead of BRAM because each cycle needs 16 simultaneous writes to different addresses within the same bank, and actual BRAM ports can only handle one write per cycle. So I need a partition strategy that gives me the multi-byte write parallelism without requiring that impossible BRAM configuration.
             I'm considering restructuring the buffer from a 2D array of bytes into a 2D array of 128-bit words instead. This way, each block writes one complete word every 8 cycles to a single bank address, which a BRAM port can easily handle in one cycle.
+
+25. new results: 1.77 t/s prefill, 1.55 t/s decode. 
+    CLAUDE: The synthesis DATAFLOW latency (not interval) drives per-token time:
+            Q4K layer: 6,929,927 cycles / 250M = 27.7 ms
+            Q6K layer: 9,504,263 cycles / 250M = 38.0 ms
+            16 layers (8×Q4K + 8×Q6K): 8×27.7 + 8×38.0 = 525 ms/token → 1.9 t/s
+            The 1.55 t/s observed accounts for non-SwiGLU overhead (attention, norms, etc. ~120ms). This is fully consistent.
+
+`   "C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu\hls\impl\ip\drivers\swiglu_v33_1\src\xswiglu_hw.h"
+26. for mac_blocks_down_q4k declare acc_w[32][8] and acc_m[32][8] directly, 
+    The remaining gap is the load latency — 288 AXI cycles per row just for loading rb, plus 32 UNPACK cycles, before the 256 MAC cycles. To actually hit 4 t/s requires either a higher clock or pipelining load+MAC across rows (prefetching next row while computing current).
+    On requantizing to all-Q4K: Run this on your host machine (requires the original F16 weights):
+
+
+./llama-quantize lfm2-1.2b-f16.gguf lfm2-1.2b-Q4_K_M.gguf Q4_K_M
+The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typically small (~0.1 ppl for LFM2 at this model size), but you can measure it with:
+
+
+./llama-perplexity -m lfm2-1.2b-Q4_K_M.gguf -f wikitext-2-raw/wik
+
+27. What now dominates:
+
+    For a complete Q4K layer at 200 MHz:
+
+    compute_X1 ∥ compute_X2: 9.73ms (these two overlap)
+    compute_gate: 0.08ms
+    compute_output: 13.38ms (sequential after gate)
+    Total latency: 23.19ms/layer × 16 = 371ms → ~2.7 t/s
+    compute_output is now the bottleneck (13.38ms > X1/X2 = 9.73ms). The biggest remaining gain would come from merging the two mac_blocks_down_q4k calls into a single mac_blocks_down_q4k_k2 that processes both rb0 and rb1 in one 256-cycle MAC pass (64 parallel INT32 chains instead of 32 × 2 sequential). This would:
+
+    Halve the MAC cost (one call instead of two)
+    Halve the function overhead (one UNPACK, one REDUCE instead of two)
+    Estimated per-pair: 576 (load) + ~360 (k2 MAC) + ~410 (one call overhead) ≈ 1,346 cycles
+    compute_output: ~1,346 × 1024 = 1.38M cycles = 6.9ms
+    That would make X1/X2 the bottleneck again at 9.73ms, giving: 9.73 + 0.08 + 6.9 = 16.7ms/layer × 16 = 267ms → ~3.7 t/s. Still under 4 t/s at 200 MHz, but close — and DSP budget allows it (current 94 DSPs in compute_output → ~188 for k2, total would be ~354 DSP48, still only 28% of ZU5EV's 1,248).
+    mac_blocks_down_q4k → mac_blocks_down_q4k_k2:
+
+    Step	    Before (2 calls)	    After (1 k2 call)
+    UNPACK	    2 × 32 = 64 cycles	    32 cycles (both rows per iteration)
+    MAC	        2 × 256 = 512 cycles	256 cycles (64 chains: 32 blocks × 2 rows)
+    REDUCE	    2 × 32×N ≈ 640 cycles	32×N cycles (both rows per iteration)
+    Total	    ~1,216 cycles	        ~600 cycles
+    Expected new compute_output Q4K: ~1024 pairs × (576 load + ~600 MAC) ≈ 1.21M cycles = 6.05ms @ 200 MHz.
+
+    Projected full layer time: 202 (load) + 1,945,601 (X1∥X2) + 16,536 (gate) + 1,527,882 (output) = 3,490,221 cycles
+
+28. DATAFLOW runs stages concurrently where possible, but compute_output depends on gate_cache → depends on compute_gate → depends on X1/X2
+    vivado synthesis fails for too many LUTs
+
+        The current situation:
+        2-group k2 design: 17.45ms/layer → 3.6 t/s (doesn't fit in Vivado)
+        4-group k2 design: ~18.5ms/layer → 3.4 t/s (should fit)
+        Target: >4 t/s = <15.6ms/layer
+        To get >4 t/s at 200 MHz, we need <15.6ms/layer. Currently:
+
+        X1/X2 (parallel): 9.73ms
+        gate: 0.08ms
+        output (Q4K): target must be < 15.6 - 9.73 - 0.08 = 5.79ms
+
+        CLAUDE: INT8 activations × INT4 weights (Q4_K nibbles) × INT6 scales, all accumulated in INT32, with a single fixed-point multiply at REDUCE. There's no float in the hot MAC loops.
+
+                On DSPs — we have 837 free (411/1248 = 33% used), but we can't deploy them productively. Here's why:
+
+                The bottleneck is compute_X1/X2 (72 DSPs each). To use more DSPs there we'd need K=4 (4 rows per MAC pass instead of 2), which would:
+
+                Double parallel MAC chains: 8 blocks × 4 rows = 32 chains → ~144 DSPs per function ✓ (fits)
+                Require 4 rb arrays ([8][9] each) at 128-bit width with BRAM: 4 arrays × 8 banks × 4 BRAM_18K/bank = 128 BRAM_18K per function × 2 = 256 BRAM → total design ~296 BRAM_18K, over the 288 limit ✗
+                If LUTRAM used for rb instead: saves BRAM but adds ~12K LUT → already over LUT budget ✗
+                So the free DSPs are inaccessible — the device runs out of BRAM (for K=4 with BRAM rb) or LUT (for K=4 with LUTRAM rb) before DSPs become the constraint.
+
+                The design is LUT-bound at the current parallelism level. 
+
+29. removed extra ports and used only Q4_K quantization:
+    prefill 2.79 t/s, decode 2.19 t/s
+        CLAUDE: 
+                    K=4 resource estimate
+            K=4 means processing 4 rows per call (rb0..rb3, 32 parallel INT32 MAC chains). The cost accumulates in the UNPACK loop:
+
+            At K=2, the UNPACK_HDR loop body (PIPELINE II=1, 8 iterations) decodes 2 rows of Q4K headers per cycle — already ~80 get_byte() calls worth of combinational logic per pipeline stage.
+
+            At K=4 that becomes ~160 get_byte() calls per stage — combinational logic roughly doubles inside one pipeline slot. That's the expensive part, since each get_byte() expands to a 128-bit slice + shift chain in LUT.
+
+            Resource	Now (K=2)	K=4 estimate	Budget
+            LUT	97.78% (114.5K)	~120-125K	117K max
+            DSP	324 (26%)	~540 (43%)	1248
+            FF	~53% (post rb fix)	~58%	234K
+            BRAM	~22.5 (post rb fix)	~22.5	144
+            LUT overflows regardless of the rb change. K=4 is not viable at current LUT utilization.
+
+            Ping-pong: is it worth it given the real bottleneck?
+            Before chasing it for X1/X2, check what the DATAFLOW ceiling actually is now:
+
+            Module	Estimated cycles (post rb fix)
+            compute_X1	~1.74M
+            compute_X2	~1.74M (parallel with X1)
+            compute_output Q4K	~2.69M
+            X1 and X2 run in parallel — their combined contribution is ~1.74M. compute_output is the DATAFLOW bottleneck at ~2.69M cycles. Even if ping-pong reduced X1/X2 to 1.15M cycles, overall latency stays at 2.69M — no observable improvement.
+
+            Ping-pong on X1/X2 only helps once compute_output is brought below 1.74M.
+
+            The real lever: compute_output parallelism
+            compute_output Q4K currently runs 4 sequential groups of 8 blocks (4 × 256 = 1024 cycles/row, 78% compute-bound). Reducing from 4 groups to 2 groups (16 blocks unrolled, 2 × 256 = 512 cycles/row) would:
+
+            Compute cycles: 2048 rows × 512 = ~1.05M → drops output below X1/X2's 1.74M
+            DSP: ~316 DSPs for compute_output alone (currently 158), total ~482 (~39%) — fine
+            LUT: 2× UNROLL in the 256-element MAC loop adds combinational logic for 8 more gate reads and accumulator mux — probably +8-12K LUT
+            That's the same LUT overflow problem. With 97.78% LUT the design has essentially no LUT headroom for any expansion.
+
+            Conclusion
+            Both optimizations are blocked by LUT. The next step has to be freeing LUT before pursuing either. 
+            The register rb change may have helped slightly (eliminating BRAM mux logic), but you'd need to re-synthesize to see the actual number. If csynth shows meaningful LUT reduction, revisit — otherwise the priority is identifying what's consuming the most LUT and trimming it.
+
+30. Why UNPACK_HDR_K2 is the LUT sink
+        The UNPACK loop runs b = 0..31 with PIPELINE II=1. The loop variable b is runtime:
+
+
+        UNPACK_HDR_K2: for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {  // b runtime 0..31
+            #pragma HLS PIPELINE II=1
+            d0[b] = fp16_to_fp32(get_byte(rb0[b], 0) | ...);   // rb0[b] → 32:1 mux on LUTRAM banks
+            sc6_0[b][0..7] = ...;                               // write to [32][8] register array → 32-way write demux
+            // × 2 rows (rb1)
+        Two compounding problems:
+
+        rb0[b] / rb1[b] with runtime b → 32-way mux on 128-bit LUTRAM bank outputs. Each get_byte() call expands into this mux tree first, then a 9:1 word mux. There are ~40 get_byte calls in the loop body = ~40 separate 32-way mux trees.
+        Writes to sc6_0[b][*], mn6_0[b][*], d0[b] with runtime b → 32-way write-enable demux for every register in these arrays (dim=0 complete = 256 + 256 + 32 + 32 registers per row set × 2 rows).
+        By contrast, in MAC_GRP, babs = grp*8+b is compile-time (both grp and b are UNROLLed). So rb0[babs] has no mux — the LUTRAM bank is selected at synthesis time. The only runtime index is sub = n>>5 (0..7) for sc6_0[babs][sub], which is just an 8:1 mux on 8-bit values — cheap.
+
+        The fix: eliminate UNPACK, compute headers on-the-fly in MAC_GRP
+        Since babs is already compile-time in MAC_GRP, sc6, mn6, d, and dmin can be computed directly from rb0[babs] there — no 32-way muxes:
+
+
+        // On-the-fly sc6 (2 get_byte calls, compile-time babs, runtime sub):
+        ap_uint<6> sc6u = (sub < 4)
+            ? (ap_uint<6>)(get_byte(rb0[babs], 4+sub) & 0x3F)
+            : (ap_uint<6>)((get_byte(rb0[babs], 8+sub) & 0x0F) | ((get_byte(rb0[babs], sub) >> 6) << 4));
+
+        // On-the-fly mn6:
+        ap_uint<6> mn6u = (sub < 4)
+            ? (ap_uint<6>)(get_byte(rb0[babs], 8+sub) & 0x3F)
+            : (ap_uint<6>)((get_byte(rb0[babs], 8+sub) >> 4) | ((get_byte(rb0[babs], 4+sub) >> 6) << 4));
+
+        // d/dmin: compute in REDUCE_GRP (babs compile-time, 4 get_byte calls):
+        float d0_local    = fp16_to_fp32(get_byte(rb0[babs],0) | (get_byte(rb0[babs],1)<<8));
+        float dmin0_local = fp16_to_fp32(get_byte(rb0[babs],2) | (get_byte(rb0[babs],3)<<8));
+        Each get_byte(rb0[babs], *) with compile-time babs = compile-time LUTRAM bank select + 9:1 word mux. Tiny.
+
+31. apply change
+    Original: sc6[b][4] = (rb[12] & 0x0F) | ((rb[4] >> 6) << 4) — byte 12 low nibble + byte 4 top 2 bits
+
+    New sub=4: (get_byte(rb, 8+4) & 0x0F) | ((get_byte(rb, 4) >> 6) << 4) = (rb[12] & 0x0F) | ((rb[4] >> 6) << 4) ✓
+
+    Original: mn6[b][4] = (rb[12] >> 4) | ((rb[8] >> 6) << 4) — byte 12 high nibble + byte 8 top 2 bits
+
+    One timing risk to watch: the on-the-fly sc6/mn6 computation adds 2–4 get_byte calls to the MAC_GRP critical path alongside 
+    the MAC itself. If HLS reports II > 1 after csynth, the fix is to add #pragma HLS DEPENDENCE variable=rb0 inter false or split 
+    the scale reads into a separate pipeline stage with a register intermediate. Re-run csynth and check MAC_GRP II before proceeding.
+

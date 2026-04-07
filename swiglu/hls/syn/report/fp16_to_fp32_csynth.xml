@@ -26,9 +26,9 @@
 <Best-caseLatency>4</Best-caseLatency>
 <Average-caseLatency>4</Average-caseLatency>
 <Worst-caseLatency>4</Worst-caseLatency>
-<Best-caseRealTimeLatency>13.332 ns</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>13.332 ns</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>13.332 ns</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>13.320 ns</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>13.320 ns</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>13.320 ns</Worst-caseRealTimeLatency>
 <PipelineInitiationInterval>1</PipelineInitiationInterval>
 <PipelineDepth>5</PipelineDepth>
 <Interval-min>1</Interval-min>
@@ -38,14 +38,14 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:53</SourceLocation>
+<SourceLocation>swiglu.cpp:59</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<FF>389</FF>
-<LUT>515</LUT>
+<FF>356</FF>
+<LUT>501</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -92,17 +92,6 @@
 <Dir>out</Dir>
 <Bits>32</Bits>
 <Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>ap_ce</name>
-<Object>fp16_to_fp32</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>h</name>

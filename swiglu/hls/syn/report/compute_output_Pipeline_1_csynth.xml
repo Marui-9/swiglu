@@ -18,16 +18,16 @@
 <PipelineType>loop auto-rewind stp (delay=0 cycles)</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>2.433</EstimatedClockPeriod>
+<EstimatedClockPeriod>2.430</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>2051</Best-caseLatency>
 <Average-caseLatency>2051</Average-caseLatency>
 <Worst-caseLatency>2051</Worst-caseLatency>
-<Best-caseRealTimeLatency>6.836 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>6.836 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>6.836 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>6.830 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>6.830 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>6.830 us</Worst-caseRealTimeLatency>
 <Interval-min>2049</Interval-min>
 <Interval-max>2049</Interval-max>
 <PerformancePragma>-</PerformancePragma>
@@ -38,7 +38,7 @@
 <TripCount>2048</TripCount>
 <isPerfectNested>0</isPerfectNested>
 <Latency>2049</Latency>
-<AbsoluteTimeLatency>6829</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>6823</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>3</PipelineDepth>
 <PerformancePragma>-</PerformancePragma>
@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:703~swiglu.cpp:807</SourceLocation>
+<SourceLocation>swiglu.cpp:728~swiglu.cpp:867</SourceLocation>
 <SummaryOfLoopViolations>
 <Loop1>
 <Name>Loop 1</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:703~swiglu.cpp:807</SourceLocation>
+<SourceLocation>swiglu.cpp:728~swiglu.cpp:867</SourceLocation>
 </Loop1>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -652,8 +652,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sext_ln703</name>
-<Object>sext_ln703</Object>
+<name>sext_ln728</name>
+<Object>sext_ln728</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -663,8 +663,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>out_local_1_address0</name>
-<Object>out_local_1</Object>
+<name>out_local_address0</name>
+<Object>out_local</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -674,8 +674,8 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>out_local_1_ce0</name>
-<Object>out_local_1</Object>
+<name>out_local_ce0</name>
+<Object>out_local</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -685,8 +685,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>out_local_1_q0</name>
-<Object>out_local_1</Object>
+<name>out_local_q0</name>
+<Object>out_local</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>

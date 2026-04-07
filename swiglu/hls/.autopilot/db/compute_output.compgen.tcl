@@ -6,17 +6,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler swiglu_compute_output_rb0_RAM_1P_BRAM_1R1W BINDTYPE {storage} TYPE {ram_1p} IMPL {bram} LATENCY 2 ALLOW_PRAGMA 1
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler swiglu_compute_output_ql_buf0_RAM_1P_URAM_1R1W BINDTYPE {storage} TYPE {ram_1p} IMPL {uram} LATENCY 2 ALLOW_PRAGMA 1
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler swiglu_compute_output_qh_buf0_RAM_1P_URAM_1R1W BINDTYPE {storage} TYPE {ram_1p} IMPL {uram} LATENCY 2 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler swiglu_compute_output_rb0_RAM_1P_LUTRAM_1R1W BINDTYPE {storage} TYPE {ram_1p} IMPL {lutram} LATENCY 2 ALLOW_PRAGMA 1
 }
 
 
@@ -31,7 +21,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 3994 \
+    id 6269 \
     name gate_cache_0 \
     reset_level 1 \
     sync_rst true \
@@ -50,7 +40,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 3995 \
+    id 6270 \
     name gate_cache_1 \
     reset_level 1 \
     sync_rst true \
@@ -69,7 +59,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 3996 \
+    id 6271 \
     name gate_cache_2 \
     reset_level 1 \
     sync_rst true \
@@ -88,7 +78,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 3997 \
+    id 6272 \
     name gate_cache_3 \
     reset_level 1 \
     sync_rst true \
@@ -107,7 +97,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 3998 \
+    id 6273 \
     name gate_cache_4 \
     reset_level 1 \
     sync_rst true \
@@ -126,7 +116,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 3999 \
+    id 6274 \
     name gate_cache_5 \
     reset_level 1 \
     sync_rst true \
@@ -145,7 +135,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4000 \
+    id 6275 \
     name gate_cache_6 \
     reset_level 1 \
     sync_rst true \
@@ -164,7 +154,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4001 \
+    id 6276 \
     name gate_cache_7 \
     reset_level 1 \
     sync_rst true \
@@ -182,7 +172,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 3989 \
+    id 6266 \
     name p_read \
     type other \
     dir I \
@@ -197,7 +187,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 3990 \
+    id 6267 \
     name gmem_Wd \
     type other \
     dir I \
@@ -205,14 +195,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_gmem_Wd \
     op interface \
-    ports { m_axi_gmem_Wd_0_AWVALID { O 1 bit } m_axi_gmem_Wd_0_AWREADY { I 1 bit } m_axi_gmem_Wd_0_AWADDR { O 64 vector } m_axi_gmem_Wd_0_AWID { O 1 vector } m_axi_gmem_Wd_0_AWLEN { O 32 vector } m_axi_gmem_Wd_0_AWSIZE { O 3 vector } m_axi_gmem_Wd_0_AWBURST { O 2 vector } m_axi_gmem_Wd_0_AWLOCK { O 2 vector } m_axi_gmem_Wd_0_AWCACHE { O 4 vector } m_axi_gmem_Wd_0_AWPROT { O 3 vector } m_axi_gmem_Wd_0_AWQOS { O 4 vector } m_axi_gmem_Wd_0_AWREGION { O 4 vector } m_axi_gmem_Wd_0_AWUSER { O 1 vector } m_axi_gmem_Wd_0_WVALID { O 1 bit } m_axi_gmem_Wd_0_WREADY { I 1 bit } m_axi_gmem_Wd_0_WDATA { O 128 vector } m_axi_gmem_Wd_0_WSTRB { O 16 vector } m_axi_gmem_Wd_0_WLAST { O 1 bit } m_axi_gmem_Wd_0_WID { O 1 vector } m_axi_gmem_Wd_0_WUSER { O 1 vector } m_axi_gmem_Wd_0_ARVALID { O 1 bit } m_axi_gmem_Wd_0_ARREADY { I 1 bit } m_axi_gmem_Wd_0_ARADDR { O 64 vector } m_axi_gmem_Wd_0_ARID { O 1 vector } m_axi_gmem_Wd_0_ARLEN { O 32 vector } m_axi_gmem_Wd_0_ARSIZE { O 3 vector } m_axi_gmem_Wd_0_ARBURST { O 2 vector } m_axi_gmem_Wd_0_ARLOCK { O 2 vector } m_axi_gmem_Wd_0_ARCACHE { O 4 vector } m_axi_gmem_Wd_0_ARPROT { O 3 vector } m_axi_gmem_Wd_0_ARQOS { O 4 vector } m_axi_gmem_Wd_0_ARREGION { O 4 vector } m_axi_gmem_Wd_0_ARUSER { O 1 vector } m_axi_gmem_Wd_0_RVALID { I 1 bit } m_axi_gmem_Wd_0_RREADY { O 1 bit } m_axi_gmem_Wd_0_RDATA { I 128 vector } m_axi_gmem_Wd_0_RLAST { I 1 bit } m_axi_gmem_Wd_0_RID { I 1 vector } m_axi_gmem_Wd_0_RFIFONUM { I 10 vector } m_axi_gmem_Wd_0_RUSER { I 1 vector } m_axi_gmem_Wd_0_RRESP { I 2 vector } m_axi_gmem_Wd_0_BVALID { I 1 bit } m_axi_gmem_Wd_0_BREADY { O 1 bit } m_axi_gmem_Wd_0_BRESP { I 2 vector } m_axi_gmem_Wd_0_BID { I 1 vector } m_axi_gmem_Wd_0_BUSER { I 1 vector } } \
+    ports { m_axi_gmem_Wd_0_AWVALID { O 1 bit } m_axi_gmem_Wd_0_AWREADY { I 1 bit } m_axi_gmem_Wd_0_AWADDR { O 64 vector } m_axi_gmem_Wd_0_AWID { O 1 vector } m_axi_gmem_Wd_0_AWLEN { O 32 vector } m_axi_gmem_Wd_0_AWSIZE { O 3 vector } m_axi_gmem_Wd_0_AWBURST { O 2 vector } m_axi_gmem_Wd_0_AWLOCK { O 2 vector } m_axi_gmem_Wd_0_AWCACHE { O 4 vector } m_axi_gmem_Wd_0_AWPROT { O 3 vector } m_axi_gmem_Wd_0_AWQOS { O 4 vector } m_axi_gmem_Wd_0_AWREGION { O 4 vector } m_axi_gmem_Wd_0_AWUSER { O 1 vector } m_axi_gmem_Wd_0_WVALID { O 1 bit } m_axi_gmem_Wd_0_WREADY { I 1 bit } m_axi_gmem_Wd_0_WDATA { O 128 vector } m_axi_gmem_Wd_0_WSTRB { O 16 vector } m_axi_gmem_Wd_0_WLAST { O 1 bit } m_axi_gmem_Wd_0_WID { O 1 vector } m_axi_gmem_Wd_0_WUSER { O 1 vector } m_axi_gmem_Wd_0_ARVALID { O 1 bit } m_axi_gmem_Wd_0_ARREADY { I 1 bit } m_axi_gmem_Wd_0_ARADDR { O 64 vector } m_axi_gmem_Wd_0_ARID { O 1 vector } m_axi_gmem_Wd_0_ARLEN { O 32 vector } m_axi_gmem_Wd_0_ARSIZE { O 3 vector } m_axi_gmem_Wd_0_ARBURST { O 2 vector } m_axi_gmem_Wd_0_ARLOCK { O 2 vector } m_axi_gmem_Wd_0_ARCACHE { O 4 vector } m_axi_gmem_Wd_0_ARPROT { O 3 vector } m_axi_gmem_Wd_0_ARQOS { O 4 vector } m_axi_gmem_Wd_0_ARREGION { O 4 vector } m_axi_gmem_Wd_0_ARUSER { O 1 vector } m_axi_gmem_Wd_0_RVALID { I 1 bit } m_axi_gmem_Wd_0_RREADY { O 1 bit } m_axi_gmem_Wd_0_RDATA { I 128 vector } m_axi_gmem_Wd_0_RLAST { I 1 bit } m_axi_gmem_Wd_0_RID { I 1 vector } m_axi_gmem_Wd_0_RFIFONUM { I 9 vector } m_axi_gmem_Wd_0_RUSER { I 1 vector } m_axi_gmem_Wd_0_RRESP { I 2 vector } m_axi_gmem_Wd_0_BVALID { I 1 bit } m_axi_gmem_Wd_0_BREADY { O 1 bit } m_axi_gmem_Wd_0_BRESP { I 2 vector } m_axi_gmem_Wd_0_BID { I 1 vector } m_axi_gmem_Wd_0_BUSER { I 1 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 3991 \
+    id 6268 \
     name W_down \
     type other \
     dir I \
@@ -227,37 +217,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 3992 \
-    name gmem_Wd2 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_gmem_Wd2 \
-    op interface \
-    ports { m_axi_gmem_Wd2_0_AWVALID { O 1 bit } m_axi_gmem_Wd2_0_AWREADY { I 1 bit } m_axi_gmem_Wd2_0_AWADDR { O 64 vector } m_axi_gmem_Wd2_0_AWID { O 1 vector } m_axi_gmem_Wd2_0_AWLEN { O 32 vector } m_axi_gmem_Wd2_0_AWSIZE { O 3 vector } m_axi_gmem_Wd2_0_AWBURST { O 2 vector } m_axi_gmem_Wd2_0_AWLOCK { O 2 vector } m_axi_gmem_Wd2_0_AWCACHE { O 4 vector } m_axi_gmem_Wd2_0_AWPROT { O 3 vector } m_axi_gmem_Wd2_0_AWQOS { O 4 vector } m_axi_gmem_Wd2_0_AWREGION { O 4 vector } m_axi_gmem_Wd2_0_AWUSER { O 1 vector } m_axi_gmem_Wd2_0_WVALID { O 1 bit } m_axi_gmem_Wd2_0_WREADY { I 1 bit } m_axi_gmem_Wd2_0_WDATA { O 128 vector } m_axi_gmem_Wd2_0_WSTRB { O 16 vector } m_axi_gmem_Wd2_0_WLAST { O 1 bit } m_axi_gmem_Wd2_0_WID { O 1 vector } m_axi_gmem_Wd2_0_WUSER { O 1 vector } m_axi_gmem_Wd2_0_ARVALID { O 1 bit } m_axi_gmem_Wd2_0_ARREADY { I 1 bit } m_axi_gmem_Wd2_0_ARADDR { O 64 vector } m_axi_gmem_Wd2_0_ARID { O 1 vector } m_axi_gmem_Wd2_0_ARLEN { O 32 vector } m_axi_gmem_Wd2_0_ARSIZE { O 3 vector } m_axi_gmem_Wd2_0_ARBURST { O 2 vector } m_axi_gmem_Wd2_0_ARLOCK { O 2 vector } m_axi_gmem_Wd2_0_ARCACHE { O 4 vector } m_axi_gmem_Wd2_0_ARPROT { O 3 vector } m_axi_gmem_Wd2_0_ARQOS { O 4 vector } m_axi_gmem_Wd2_0_ARREGION { O 4 vector } m_axi_gmem_Wd2_0_ARUSER { O 1 vector } m_axi_gmem_Wd2_0_RVALID { I 1 bit } m_axi_gmem_Wd2_0_RREADY { O 1 bit } m_axi_gmem_Wd2_0_RDATA { I 128 vector } m_axi_gmem_Wd2_0_RLAST { I 1 bit } m_axi_gmem_Wd2_0_RID { I 1 vector } m_axi_gmem_Wd2_0_RFIFONUM { I 10 vector } m_axi_gmem_Wd2_0_RUSER { I 1 vector } m_axi_gmem_Wd2_0_RRESP { I 2 vector } m_axi_gmem_Wd2_0_BVALID { I 1 bit } m_axi_gmem_Wd2_0_BREADY { O 1 bit } m_axi_gmem_Wd2_0_BRESP { I 2 vector } m_axi_gmem_Wd2_0_BID { I 1 vector } m_axi_gmem_Wd2_0_BUSER { I 1 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 3993 \
-    name W_down2 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_W_down2 \
-    op interface \
-    ports { W_down2 { I 64 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 4002 \
+    id 6277 \
     name gmem_out \
     type other \
     dir O \
@@ -272,7 +232,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 4003 \
+    id 6278 \
     name out_batch \
     type other \
     dir I \
@@ -287,7 +247,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 4004 \
+    id 6279 \
     name down_quant_mode \
     type other \
     dir I \

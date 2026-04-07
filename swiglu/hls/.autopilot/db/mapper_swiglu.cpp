@@ -244,8 +244,8 @@ class AESL_RUNTIME_BC {
 };
 using hls::sim::Byte;
 struct __cosim_s16__ { char data[16]; };
-extern "C" void swiglu(Byte<16>*, Byte<16>*, Byte<16>*, Byte<16>*, Byte<16>*, Byte<4>*, int, int, int, int, int, int, int, float);
-extern "C" void apatb_swiglu_hw(volatile void * __xlx_apatb_param_W, volatile void * __xlx_apatb_param_V, volatile void * __xlx_apatb_param_W_down, volatile void * __xlx_apatb_param_W_down2, volatile void * __xlx_apatb_param_x_batch, volatile void * __xlx_apatb_param_out_batch, int __xlx_apatb_param_down_quant_mode, float __xlx_apatb_param_x_scale) {
+extern "C" void swiglu(Byte<16>*, Byte<16>*, Byte<16>*, Byte<16>*, Byte<4>*, int, int, int, int, int, int, float);
+extern "C" void apatb_swiglu_hw(volatile void * __xlx_apatb_param_W, volatile void * __xlx_apatb_param_V, volatile void * __xlx_apatb_param_W_down, volatile void * __xlx_apatb_param_x_batch, volatile void * __xlx_apatb_param_out_batch, int __xlx_apatb_param_down_quant_mode, float __xlx_apatb_param_x_scale) {
 using hls::sim::createStream;
   // Collect __xlx_W__tmp_vec
 std::vector<Byte<16>> __xlx_W__tmp_vec;
@@ -271,14 +271,6 @@ __xlx_W_down__tmp_vec.push_back(((Byte<16>*)__xlx_apatb_param_W_down)[i]);
   int __xlx_size_param_W_down = 860160;
   int __xlx_offset_param_W_down = 0;
   int __xlx_offset_byte_param_W_down = 0*16;
-  // Collect __xlx_W_down2__tmp_vec
-std::vector<Byte<16>> __xlx_W_down2__tmp_vec;
-for (size_t i = 0; i < 860160; ++i){
-__xlx_W_down2__tmp_vec.push_back(((Byte<16>*)__xlx_apatb_param_W_down2)[i]);
-}
-  int __xlx_size_param_W_down2 = 860160;
-  int __xlx_offset_param_W_down2 = 0;
-  int __xlx_offset_byte_param_W_down2 = 0*16;
   // Collect __xlx_x_batch__tmp_vec
 std::vector<Byte<16>> __xlx_x_batch__tmp_vec;
 for (size_t i = 0; i < 512; ++i){
@@ -296,7 +288,7 @@ __xlx_out_batch__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_out_batch)[i]);
   int __xlx_offset_param_out_batch = 0;
   int __xlx_offset_byte_param_out_batch = 0*4;
   // DUT call
-  swiglu(__xlx_W__tmp_vec.data(), __xlx_V__tmp_vec.data(), __xlx_W_down__tmp_vec.data(), __xlx_W_down2__tmp_vec.data(), __xlx_x_batch__tmp_vec.data(), __xlx_out_batch__tmp_vec.data(), __xlx_offset_byte_param_W, __xlx_offset_byte_param_V, __xlx_offset_byte_param_W_down, __xlx_offset_byte_param_W_down2, __xlx_offset_byte_param_x_batch, __xlx_offset_byte_param_out_batch, __xlx_apatb_param_down_quant_mode, __xlx_apatb_param_x_scale);
+  swiglu(__xlx_W__tmp_vec.data(), __xlx_V__tmp_vec.data(), __xlx_W_down__tmp_vec.data(), __xlx_x_batch__tmp_vec.data(), __xlx_out_batch__tmp_vec.data(), __xlx_offset_byte_param_W, __xlx_offset_byte_param_V, __xlx_offset_byte_param_W_down, __xlx_offset_byte_param_x_batch, __xlx_offset_byte_param_out_batch, __xlx_apatb_param_down_quant_mode, __xlx_apatb_param_x_scale);
 // print __xlx_apatb_param_W
 for (size_t i = 0; i < __xlx_size_param_W; ++i) {
 ((Byte<16>*)__xlx_apatb_param_W)[i] = __xlx_W__tmp_vec[__xlx_offset_param_W+i];
@@ -308,10 +300,6 @@ for (size_t i = 0; i < __xlx_size_param_V; ++i) {
 // print __xlx_apatb_param_W_down
 for (size_t i = 0; i < __xlx_size_param_W_down; ++i) {
 ((Byte<16>*)__xlx_apatb_param_W_down)[i] = __xlx_W_down__tmp_vec[__xlx_offset_param_W_down+i];
-}
-// print __xlx_apatb_param_W_down2
-for (size_t i = 0; i < __xlx_size_param_W_down2; ++i) {
-((Byte<16>*)__xlx_apatb_param_W_down2)[i] = __xlx_W_down2__tmp_vec[__xlx_offset_param_W_down2+i];
 }
 // print __xlx_apatb_param_x_batch
 for (size_t i = 0; i < __xlx_size_param_x_batch; ++i) {

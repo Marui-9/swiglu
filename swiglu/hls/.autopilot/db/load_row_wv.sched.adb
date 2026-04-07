@@ -588,7 +588,7 @@
 					<Obj>
 						<type>0</type>
 						<id>25</id>
-						<name>tmp_707</name>
+						<name>tmp_1419</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -759,7 +759,7 @@
 					<Obj>
 						<type>0</type>
 						<id>29</id>
-						<name>empty_735</name>
+						<name>empty_1347</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -805,7 +805,7 @@
 						<name>trunc_ln</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>94</lineNumber>
+						<lineNumber>105</lineNumber>
 						<contextFuncName>load_row_wv</contextFuncName>
 						<contextNormFuncName>load_row_wv</contextNormFuncName>
 						<inlineStackInfo>
@@ -821,7 +821,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_wv</second>
 										</first>
-										<second>94</second>
+										<second>105</second>
 									</item>
 								</second>
 							</item>
@@ -861,10 +861,10 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>sext_ln94</name>
+						<name>sext_ln105</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>94</lineNumber>
+						<lineNumber>105</lineNumber>
 						<contextFuncName>load_row_wv</contextFuncName>
 						<contextNormFuncName>load_row_wv</contextNormFuncName>
 						<inlineStackInfo>
@@ -880,7 +880,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_wv</second>
 										</first>
-										<second>94</second>
+										<second>105</second>
 									</item>
 								</second>
 							</item>
@@ -920,7 +920,7 @@
 						<name>gmem_V_addr</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>94</lineNumber>
+						<lineNumber>105</lineNumber>
 						<contextFuncName>load_row_wv</contextFuncName>
 						<contextNormFuncName>load_row_wv</contextNormFuncName>
 						<inlineStackInfo>
@@ -936,7 +936,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_wv</second>
 										</first>
-										<second>94</second>
+										<second>105</second>
 									</item>
 								</second>
 							</item>
@@ -974,10 +974,10 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>empty_736</name>
+						<name>empty_1348</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>94</lineNumber>
+						<lineNumber>105</lineNumber>
 						<contextFuncName>load_row_wv</contextFuncName>
 						<contextNormFuncName>load_row_wv</contextNormFuncName>
 						<inlineStackInfo>
@@ -993,7 +993,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_wv</second>
 										</first>
-										<second>94</second>
+										<second>105</second>
 									</item>
 								</second>
 							</item>
@@ -1032,10 +1032,10 @@
 					<Obj>
 						<type>0</type>
 						<id>34</id>
-						<name>_ln94</name>
+						<name>_ln105</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>94</lineNumber>
+						<lineNumber>105</lineNumber>
 						<contextFuncName>load_row_wv</contextFuncName>
 						<contextNormFuncName>load_row_wv</contextNormFuncName>
 						<inlineStackInfo>
@@ -1051,7 +1051,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_wv</second>
 										</first>
-										<second>94</second>
+										<second>105</second>
 									</item>
 								</second>
 							</item>
@@ -1099,10 +1099,10 @@
 					<Obj>
 						<type>0</type>
 						<id>35</id>
-						<name>_ln100</name>
+						<name>_ln111</name>
 						<fileName>swiglu.cpp</fileName>
 						<fileDirectory>C:\Users\Jacob\Desktop\Vitis_projects\swiglu</fileDirectory>
-						<lineNumber>100</lineNumber>
+						<lineNumber>111</lineNumber>
 						<contextFuncName>load_row_wv</contextFuncName>
 						<contextNormFuncName>load_row_wv</contextNormFuncName>
 						<inlineStackInfo>
@@ -1118,7 +1118,7 @@
 											<first>swiglu.cpp</first>
 											<second>load_row_wv</second>
 										</first>
-										<second>100</second>
+										<second>111</second>
 									</item>
 								</second>
 							</item>
@@ -1313,7 +1313,7 @@
 					<Obj>
 						<type>2</type>
 						<id>75</id>
-						<name>load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_95_1</name>
+						<name>load_row_wv_Pipeline_LOAD_BLOCK_LOAD_WORD</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1337,7 +1337,7 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:load_row_wv_Pipeline_LOAD_WV_VITIS_LOOP_95_1&gt;</content>
+				<content>&lt;constant:load_row_wv_Pipeline_LOAD_BLOCK_LOAD_WORD&gt;</content>
 			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">

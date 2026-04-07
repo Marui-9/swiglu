@@ -12,9 +12,11 @@ swiglu_0 / testblock
 - s_axi_CTRL     → axi_smc M00_AXI
 - interrupt      → xlconcat In0
 - m_axi_gmem_W → smartconnect_3 S00_AXI
+- m_axi_gmem_W2 → smartconnect_3 S01_AXI
 - m_axi_gmem_x → smartconnect_0 S01_AXI
 - m_axi_gmem_out → smartconnect_0 S02_AXI
 - m_axi_gmem_V → smartconnect_0 S00_AXI
+- m_axi_gmem_V2 → smartconnect_0 S03_AXI
 - m_axi_gmem_Wd → smartconnect_1 S00_AXI
 - m_axi_gmem_Wd2 → smartconnect_2 S01_AXI  
 

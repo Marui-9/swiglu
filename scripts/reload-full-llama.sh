@@ -14,4 +14,5 @@ echo "[2] Rebuild llama-bench"
 cd "${LLAMA_SRC}"
 rm -rf build
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build --config Release --target llama-bench -j4
+cmake --build build --config Release --target llama-bench -j4  #or llama-quantize
+

@@ -1,5 +1,6 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../swiglu_tb.cpp in debug mode
    Compiling ../../../../swiglu.cpp in debug mode
    Generating csim.exe
 === Mock token sanity ===
@@ -11,11 +12,32 @@ T2: PASSED  (batch=1)
 === T3: Q4_K down, batch=1, subnormal dmin in V (0x817E) ===
 T3: PASSED  (batch=1)
 === T4: Q6_K down, batch=1, normal fp16 (mode=1) ===
-T4: PASSED  (batch=1)
+T4 [token 0 out[0]]  exp=-0.929974  got=-2.43636e+06  diff=2.43636e+06
+T4 [token 0 out[1]]  exp=-0.929974  got=-2.43636e+06  diff=2.43636e+06
+T4 [token 0 out[2]]  exp=-0.929974  got=-2.43636e+06  diff=2.43636e+06
+T4 [token 0 out[3]]  exp=-0.929974  got=-2.43636e+06  diff=2.43636e+06
+T4 [token 0 out[4]]  exp=-0.929974  got=-2.43636e+06  diff=2.43636e+06
+T4 [token 0 out[5]]  exp=-0.929974  got=-2.43636e+06  diff=2.43636e+06
+T4 [token 0 out[6]]  exp=-0.929974  got=-2.43636e+06  diff=2.43636e+06
+T4 [token 0 out[7]]  exp=-0.929974  got=-2.43636e+06  diff=2.43636e+06
+T4 [token 0 out[8]]  exp=-0.929974  got=-2.43636e+06  diff=2.43636e+06
+T4 [token 0 out[9]]  exp=-0.929974  got=-2.43636e+06  diff=2.43636e+06
+  (further errors suppressed)
+T4: FAILED  (batch=1, 10 error(s))
 === T5: Q6_K down, batch=1, subnormal d in W_down (0x00A4) ===
-T5: PASSED  (batch=1)
+T5 [token 0 out[0]]  exp=-0.0744705  got=-2.53059e+06  diff=2.53059e+06
+T5 [token 0 out[1]]  exp=-0.0744705  got=-2.53059e+06  diff=2.53059e+06
+T5 [token 0 out[2]]  exp=-0.0744705  got=-2.53059e+06  diff=2.53059e+06
+T5 [token 0 out[3]]  exp=-0.0744705  got=-2.53059e+06  diff=2.53059e+06
+T5 [token 0 out[4]]  exp=-0.0744705  got=-2.53059e+06  diff=2.53059e+06
+T5 [token 0 out[5]]  exp=-0.0744705  got=-2.53059e+06  diff=2.53059e+06
+T5 [token 0 out[6]]  exp=-0.0744705  got=-2.53059e+06  diff=2.53059e+06
+T5 [token 0 out[7]]  exp=-0.0744705  got=-2.53059e+06  diff=2.53059e+06
+T5 [token 0 out[8]]  exp=-0.0744705  got=-2.53059e+06  diff=2.53059e+06
+T5 [token 0 out[9]]  exp=-0.0744705  got=-2.53059e+06  diff=2.53059e+06
+  (further errors suppressed)
+T5: FAILED  (batch=1, 10 error(s))
 
-All tests PASSED.
-INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 9216
-INFO: [SIM 1] CSim done with 0 errors.
+FAILED: 20 error(s) across all tests.
+ERR: [SIM 100] 'csim_design' failed: nonzero return value.
 INFO: [SIM 3] *************** CSIM finish ***************

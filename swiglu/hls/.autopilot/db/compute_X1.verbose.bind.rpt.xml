@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_X1'" level="0">
-<item name = "Date">Sun Apr  5 16:06:27 2026
+<item name = "Date">Tue Apr  7 16:24:49 2026
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">swiglu</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">3.33 ns, 2.433 ns, 0.90 ns</column>
+<column name="ap_clk">3.33 ns, 2.430 ns, 0.90 ns</column>
 </table>
 </item>
 </section>
@@ -24,20 +24,20 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">4055042, 4055042, 13.515 ms, 13.515 ms, 4055042, 4055042, no</column>
+<column name="">2646017, 2646017, 8.811 ms, 8.811 ms, 2646017, 2646017, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_row_wv_fu_449">load_row_wv, 148, 148, 0.493 us, 0.493 us, 148, 148, no</column>
-<column name="grp_mac_blocks_wv_k1_fu_465">mac_blocks_wv_k1, 315, 315, 1.050 us, 1.050 us, 315, 315, no</column>
+<column name="grp_load_row_wv_fu_495">load_row_wv, 148, 148, 0.493 us, 0.493 us, 148, 148, no</column>
+<column name="grp_mac_blocks_wv_k2_fu_511">mac_blocks_wv_k2, 316, 316, 1.052 us, 1.052 us, 316, 316, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- COMPUTE_X1">4055041, 4055041, 495, -, -, 8192, no</column>
+<column name="- COMPUTE_X1">2646016, 2646016, 646, -, -, 4096, no</column>
 </table>
 </item>
 </section>

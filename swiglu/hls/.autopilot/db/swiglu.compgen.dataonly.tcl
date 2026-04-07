@@ -26,7 +26,7 @@ W_down {
 	offset 40
 	offset_end 51
 }
-W_down2 { 
+x_batch { 
 	dir I
 	width 64
 	depth 1
@@ -34,7 +34,7 @@ W_down2 {
 	offset 52
 	offset_end 63
 }
-x_batch { 
+out_batch { 
 	dir I
 	width 64
 	depth 1
@@ -42,29 +42,21 @@ x_batch {
 	offset 64
 	offset_end 75
 }
-out_batch { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 76
-	offset_end 87
-}
 down_quant_mode { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 88
-	offset_end 95
+	offset 76
+	offset_end 83
 }
 x_scale { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 96
-	offset_end 103
+	offset 84
+	offset_end 91
 }
 ap_start { }
 ap_done { }

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'swiglu'
 ================================================================
-* Date:           Sun Apr  5 16:07:33 2026
+* Date:           Tue Apr  7 16:14:58 2026
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        swiglu
@@ -25,12 +25,12 @@
 
 + Latency: 
     * Summary: 
-    +---------+---------+-----------+-----------+---------+---------+----------+
-    |  Latency (cycles) |   Latency (absolute)  |      Interval     | Pipeline |
-    |   min   |   max   |    min    |    max    |   min   |   max   |   Type   |
-    +---------+---------+-----------+-----------+---------+---------+----------+
-    |  6929927|  9503239|  23.097 ms|  31.674 ms|  4055043|  5431371|  dataflow|
-    +---------+---------+-----------+-----------+---------+---------+----------+
+    +---------+---------+----------+-----------+---------+---------+----------+
+    |  Latency (cycles) |  Latency (absolute)  |      Interval     | Pipeline |
+    |   min   |   max   |    min   |    max    |   min   |   max   |   Type   |
+    +---------+---------+----------+-----------+---------+---------+----------+
+    |  2761149|  4685318|  9.195 ms|  15.602 ms|  2744322|  2744322|  dataflow|
+    +---------+---------+----------+-----------+---------+---------+----------+
 
     + Detail: 
         * Instance: 
@@ -39,10 +39,10 @@
         |      Instance     |     Module     |   min   |   max   |    min    |    max    |   min   |   max   |                      Type                      |
         +-------------------+----------------+---------+---------+-----------+-----------+---------+---------+------------------------------------------------+
         |load_x_local_U0    |load_x_local    |      202|      202|   0.673 us|   0.673 us|      128|      128|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |compute_X1_U0      |compute_X1      |  4055042|  4055042|  13.515 ms|  13.515 ms|  4055042|  4055042|                                              no|
-        |compute_X2_U0      |compute_X2      |  4055042|  4055042|  13.515 ms|  13.515 ms|  4055042|  4055042|                                              no|
-        |compute_gate_U0    |compute_gate    |    16622|    16622|  55.401 us|  55.401 us|    16622|    16622|                                              no|
-        |compute_output_U0  |compute_output  |  2858058|  5431370|   9.526 ms|  18.103 ms|  2858058|  5431370|                                              no|
+        |compute_X1_U0      |compute_X1      |  2744321|  2744321|   9.139 ms|   9.139 ms|  2744321|  2744321|                                              no|
+        |compute_X2_U0      |compute_X2      |  2744321|  2744321|   9.139 ms|   9.139 ms|  2744321|  2744321|                                              no|
+        |compute_gate_U0    |compute_gate    |    16622|    16622|  55.351 us|  55.351 us|    16622|    16622|                                              no|
+        |compute_output_U0  |compute_output  |        1|  1924170|   3.330 ns|   6.407 ms|        1|  1924170|                                              no|
         +-------------------+----------------+---------+---------+-----------+-----------+---------+---------+------------------------------------------------+
 
         * Loop: 
@@ -60,38 +60,37 @@
 |DSP              |        -|     -|       -|       -|    -|
 |Expression       |        -|     -|       0|      40|    -|
 |FIFO             |        -|     -|      99|      67|    -|
-|Instance         |      186|   140|  137239|  103627|   64|
+|Instance         |      174|   324|  225050|  154541|    0|
 |Memory           |       16|     -|    4096|    1024|    8|
 |Multiplexer      |        -|     -|       0|      72|    -|
 |Register         |        -|     -|       8|       -|    -|
 +-----------------+---------+------+--------+--------+-----+
-|Total            |      202|   140|  141442|  104830|   72|
+|Total            |      190|   324|  229253|  155744|    8|
 +-----------------+---------+------+--------+--------+-----+
 |Available        |      288|  1248|  234240|  117120|   64|
 +-----------------+---------+------+--------+--------+-----+
-|Utilization (%)  |       70|    11|      60|      89|  112|
+|Utilization (%)  |       65|    25|      97|     132|   12|
 +-----------------+---------+------+--------+--------+-----+
 
 + Detail: 
     * Instance: 
-    +-------------------+----------------+---------+----+-------+-------+-----+
-    |      Instance     |     Module     | BRAM_18K| DSP|   FF  |  LUT  | URAM|
-    +-------------------+----------------+---------+----+-------+-------+-----+
-    |CTRL_s_axi_U       |CTRL_s_axi      |        0|   0|    532|    936|    0|
-    |compute_X1_U0      |compute_X1      |       32|  36|  20426|  17389|    0|
-    |compute_X2_U0      |compute_X2      |       32|  36|  20426|  17389|    0|
-    |compute_gate_U0    |compute_gate    |        8|  22|   4929|   6548|    0|
-    |compute_output_U0  |compute_output  |       72|  46|  85899|  56344|   64|
-    |gmem_V_m_axi_U     |gmem_V_m_axi    |        8|   0|    774|    843|    0|
-    |gmem_W_m_axi_U     |gmem_W_m_axi    |        8|   0|    774|    843|    0|
-    |gmem_Wd2_m_axi_U   |gmem_Wd2_m_axi  |        8|   0|    774|    843|    0|
-    |gmem_Wd_m_axi_U    |gmem_Wd_m_axi   |        8|   0|    774|    843|    0|
-    |gmem_out_m_axi_U   |gmem_out_m_axi  |        2|   0|    673|    636|    0|
-    |gmem_x_m_axi_U     |gmem_x_m_axi    |        8|   0|    774|    843|    0|
-    |load_x_local_U0    |load_x_local    |        0|   0|    484|    170|    0|
-    +-------------------+----------------+---------+----+-------+-------+-----+
-    |Total              |                |      186| 140| 137239| 103627|   64|
-    +-------------------+----------------+---------+----+-------+-------+-----+
+    +-------------------+----------------+---------+-----+--------+-------+-----+
+    |      Instance     |     Module     | BRAM_18K| DSP |   FF   |  LUT  | URAM|
+    +-------------------+----------------+---------+-----+--------+-------+-----+
+    |CTRL_s_axi_U       |CTRL_s_axi      |        0|    0|     462|    808|    0|
+    |compute_X1_U0      |compute_X1      |       64|   72|   45802|  28866|    0|
+    |compute_X2_U0      |compute_X2      |       64|   72|   45802|  28866|    0|
+    |compute_gate_U0    |compute_gate    |        8|   22|    4929|   6548|    0|
+    |compute_output_U0  |compute_output  |        4|  158|  123816|  85286|    0|
+    |gmem_V_m_axi_U     |gmem_V_m_axi    |        8|    0|     770|    839|    0|
+    |gmem_W_m_axi_U     |gmem_W_m_axi    |        8|    0|     770|    839|    0|
+    |gmem_Wd_m_axi_U    |gmem_Wd_m_axi   |        8|    0|     772|    844|    0|
+    |gmem_out_m_axi_U   |gmem_out_m_axi  |        2|    0|     673|    636|    0|
+    |gmem_x_m_axi_U     |gmem_x_m_axi    |        8|    0|     770|    839|    0|
+    |load_x_local_U0    |load_x_local    |        0|    0|     484|    170|    0|
+    +-------------------+----------------+---------+-----+--------+-------+-----+
+    |Total              |                |      174|  324|  225050| 154541|    0|
+    +-------------------+----------------+---------+-----+--------+-------+-----+
 
     * DSP: 
     N/A
@@ -603,51 +602,6 @@
 |m_axi_gmem_Wd_BRESP      |   in|    2|       m_axi|       gmem_Wd|       pointer|
 |m_axi_gmem_Wd_BID        |   in|    1|       m_axi|       gmem_Wd|       pointer|
 |m_axi_gmem_Wd_BUSER      |   in|    1|       m_axi|       gmem_Wd|       pointer|
-|m_axi_gmem_Wd2_AWVALID   |  out|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_AWREADY   |   in|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_AWADDR    |  out|   64|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_AWID      |  out|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_AWLEN     |  out|    8|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_AWSIZE    |  out|    3|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_AWBURST   |  out|    2|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_AWLOCK    |  out|    2|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_AWCACHE   |  out|    4|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_AWPROT    |  out|    3|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_AWQOS     |  out|    4|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_AWREGION  |  out|    4|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_AWUSER    |  out|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_WVALID    |  out|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_WREADY    |   in|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_WDATA     |  out|  128|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_WSTRB     |  out|   16|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_WLAST     |  out|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_WID       |  out|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_WUSER     |  out|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARVALID   |  out|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARREADY   |   in|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARADDR    |  out|   64|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARID      |  out|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARLEN     |  out|    8|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARSIZE    |  out|    3|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARBURST   |  out|    2|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARLOCK    |  out|    2|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARCACHE   |  out|    4|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARPROT    |  out|    3|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARQOS     |  out|    4|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARREGION  |  out|    4|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_ARUSER    |  out|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_RVALID    |   in|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_RREADY    |  out|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_RDATA     |   in|  128|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_RLAST     |   in|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_RID       |   in|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_RUSER     |   in|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_RRESP     |   in|    2|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_BVALID    |   in|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_BREADY    |  out|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_BRESP     |   in|    2|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_BID       |   in|    1|       m_axi|      gmem_Wd2|       pointer|
-|m_axi_gmem_Wd2_BUSER     |   in|    1|       m_axi|      gmem_Wd2|       pointer|
 |m_axi_gmem_out_AWVALID   |  out|    1|       m_axi|      gmem_out|       pointer|
 |m_axi_gmem_out_AWREADY   |   in|    1|       m_axi|      gmem_out|       pointer|
 |m_axi_gmem_out_AWADDR    |  out|   64|       m_axi|      gmem_out|       pointer|

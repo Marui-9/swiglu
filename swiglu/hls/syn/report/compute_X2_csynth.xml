@@ -18,28 +18,28 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>2.433</EstimatedClockPeriod>
+<EstimatedClockPeriod>2.430</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>4055042</Best-caseLatency>
-<Average-caseLatency>4055042</Average-caseLatency>
-<Worst-caseLatency>4055042</Worst-caseLatency>
-<Best-caseRealTimeLatency>13.515 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>13.515 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>13.515 ms</Worst-caseRealTimeLatency>
-<Interval-min>4055042</Interval-min>
-<Interval-max>4055042</Interval-max>
+<Best-caseLatency>2646017</Best-caseLatency>
+<Average-caseLatency>2646017</Average-caseLatency>
+<Worst-caseLatency>2646017</Worst-caseLatency>
+<Best-caseRealTimeLatency>8.811 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>8.811 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>8.811 ms</Worst-caseRealTimeLatency>
+<Interval-min>2646017</Interval-min>
+<Interval-max>2646017</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <COMPUTE_X2>
 <Slack>2.43</Slack>
-<TripCount>8192</TripCount>
+<TripCount>4096</TripCount>
 <isPerfectNested>0</isPerfectNested>
-<Latency>4055041</Latency>
-<AbsoluteTimeLatency>13515451</AbsoluteTimeLatency>
-<IterationLatency>495</IterationLatency>
+<Latency>2646016</Latency>
+<AbsoluteTimeLatency>8811233</AbsoluteTimeLatency>
+<IterationLatency>646</IterationLatency>
 <PerformancePragma>-</PerformancePragma>
 <InstanceList>
 </InstanceList>
@@ -48,13 +48,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:252</SourceLocation>
+<SourceLocation>swiglu.cpp:285</SourceLocation>
 <SummaryOfLoopViolations>
 <COMPUTE_X2>
 <Name>COMPUTE_X2</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>swiglu.cpp:252</SourceLocation>
+<SourceLocation>swiglu.cpp:285</SourceLocation>
 </COMPUTE_X2>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -62,10 +62,10 @@
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>32</BRAM_18K>
-<DSP>36</DSP>
-<FF>20426</FF>
-<LUT>17389</LUT>
+<BRAM_18K>64</BRAM_18K>
+<DSP>72</DSP>
+<FF>35687</FF>
+<LUT>28468</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -581,7 +581,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>10</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>

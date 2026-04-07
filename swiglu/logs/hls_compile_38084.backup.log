@@ -1,0 +1,74 @@
+  **** HLS Build v2025.1 6135595
+INFO: [HLS 200-2005] Using work_dir C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu 
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./swiglu.cpp' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./swiglu.h' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=./sigmoid_lut.h' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(13)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/sigmoid_lut.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./swiglu_tb.cpp' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu_tb.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=swiglu' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xck26-sfvc784-2LV-c' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1465] Applying config ini 'clock=4ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(7)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=1.09ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(16)
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.09ns.
+INFO: [HLS 200-1465] Applying config ini 'cosim.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying config ini 'package.ip.version=46.1' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(17)
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(5)
+INFO: [HLS 200-1465] Applying config ini 'vivado.flow=impl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(15)
+INFO: [HLS 200-1465] Applying config ini 'vivado.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(14)
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/vitis-comp.json
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.836 seconds; current allocated memory: 179.094 MB.
+INFO: [HLS 200-10] Analyzing design file 'swiglu.cpp' ... 
+WARNING: [HLS 207-5562] missing argument for 'variable' (swiglu.cpp:116:9)
+WARNING: [HLS 207-5562] missing argument for 'variable' (swiglu.cpp:316:9)
+WARNING: [HLS 207-5562] missing argument for 'variable' (swiglu.cpp:410:9)
+WARNING: [HLS 207-5562] missing argument for 'variable' (swiglu.cpp:641:9)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 4.075 seconds; current allocated memory: 184.496 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 46,646 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 17,771 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 13,050 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function 'get_byte(ap_uint<128> const*, int)' into 'mac_blocks_wv_k2(ap_uint<128> const (*) [9], ap_uint<128> const (*) [9], signed char const (*) [256], float, float*, float*)' (swiglu.cpp:138:33)
+INFO: [HLS 214-131] Inlining function 'get_byte(ap_uint<128> const*, int)' into 'mac_blocks_down_q4k_k2(ap_uint<128> const (*) [9], ap_uint<128> const (*) [9], signed char const (*) [256], float, float*, float*)' (swiglu.cpp:435:33)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_671_3' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:671:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_598_1' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:598:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_498_3' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:498:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_195_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:195:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_62_1' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:62:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_807_1' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:807:31)
+INFO: [HLS 214-186] Unrolling loop 'INIT_Q6K_G' (swiglu.cpp:661:14) in function 'mac_blocks_down_q6k' completely with a factor of 4 (swiglu.cpp:639:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_663_2' (swiglu.cpp:663:20) in function 'mac_blocks_down_q6k' completely with a factor of 8 (swiglu.cpp:639:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_671_3' (swiglu.cpp:671:20) in function 'mac_blocks_down_q6k' completely with a factor of 4 (swiglu.cpp:639:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_698_5' (swiglu.cpp:698:31) in function 'mac_blocks_down_q6k' completely with a factor of 8 (swiglu.cpp:639:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_598_1' (swiglu.cpp:598:27) in function 'load_row_down_q6k' completely with a factor of 8 (swiglu.cpp:556:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_474_1' (swiglu.cpp:474:23) in function 'mac_blocks_down_q4k_k2' completely with a factor of 4 (swiglu.cpp:408:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_518_4' (swiglu.cpp:518:31) in function 'mac_blocks_down_q4k_k2' completely with a factor of 4 (swiglu.cpp:408:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_498_3' (swiglu.cpp:498:31) in function 'mac_blocks_down_q4k_k2' completely with a factor of 8 (swiglu.cpp:408:0)
+INFO: [HLS 214-186] Unrolling loop 'INIT_GRP' (swiglu.cpp:483:12) in function 'mac_blocks_down_q4k_k2' completely with a factor of 8 (swiglu.cpp:408:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_485_2' (swiglu.cpp:485:20) in function 'mac_blocks_down_q4k_k2' completely with a factor of 4 (swiglu.cpp:408:0)
+INFO: [HLS 214-186] Unrolling loop 'SWISH_GATE' (swiglu.cpp:317:14) in function 'compute_gate' completely with a factor of 1 (swiglu.cpp:314:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_338_1' (swiglu.cpp:338:27) in function 'compute_gate' completely with a factor of 8 (swiglu.cpp:314:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_214_3' (swiglu.cpp:214:27) in function 'mac_blocks_wv_k2' completely with a factor of 4 (swiglu.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_195_2' (swiglu.cpp:195:27) in function 'mac_blocks_wv_k2' completely with a factor of 8 (swiglu.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'INIT_ACC_K2' (swiglu.cpp:178:15) in function 'mac_blocks_wv_k2' completely with a factor of 8 (swiglu.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_180_1' (swiglu.cpp:180:20) in function 'mac_blocks_wv_k2' completely with a factor of 4 (swiglu.cpp:114:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_62_1' (swiglu.cpp:62:26) in function 'fp16_to_fp32' completely with a factor of 10 (swiglu.cpp:52:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_807_1' (swiglu.cpp:807:31) in function 'load_x_local' completely with a factor of 16 (swiglu.cpp:798:0)
+ERROR: [HLS 214-326] in function 'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)': Invalid value for m_axi max_read/write_burst_length. It should be in [1, 256] and pow of 2, swiglu(unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'  (swiglu.cpp:851:9)
+ERROR: [HLS 214-326] in function 'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)': Invalid value for m_axi max_read/write_burst_length. It should be in [1, 256] and pow of 2, swiglu(unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'  (swiglu.cpp:852:9)
+ERROR: [HLS 214-326] in function 'swiglu(unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)': Invalid value for m_axi max_read/write_burst_length. It should be in [1, 256] and pow of 2, swiglu(unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, unsigned char const*, signed char const*, float*, unsigned int, float)'  (swiglu.cpp:854:9)
+ERROR: [HLS 200-1715] Encountered problem during source synthesis
+ERROR: Pre-synthesis failed.
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 16.535 seconds; peak allocated memory: 186.098 MB.

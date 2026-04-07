@@ -90,20 +90,22 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_CTRL_GIE     0x04
 #define SWG_CTRL_IER     0x08
 #define SWG_CTRL_ISR     0x0C
-#define SWG_CTRL_W_LO    0x10
-#define SWG_CTRL_W_HI    0x14
-#define SWG_CTRL_V_LO    0x1C
-#define SWG_CTRL_V_HI    0x20
-#define SWG_CTRL_WD_LO   0x28
-#define SWG_CTRL_WD_HI   0x2C
-#define SWG_CTRL_WD2_LO  0x34
-#define SWG_CTRL_WD2_HI  0x38
-#define SWG_CTRL_X_LO    0x40
-#define SWG_CTRL_X_HI    0x44
-#define SWG_CTRL_OUT_LO  0x4C
-#define SWG_CTRL_OUT_HI  0x50
-#define SWG_CTRL_MODE    0x58  // 0=Q4_K 1=Q6_K
-#define SWG_CTRL_XSCALE  0x60  // float bits
+// Register map for parameter order: W, V, W_down, x_batch, out_batch, mode, xscale
+// Each 64-bit pointer occupies 12 bytes (lo + hi + 4-byte reserved pad).
+// Each 32-bit scalar occupies 8 bytes (value + 4-byte reserved pad).
+// MUST be verified against xswiglu_hw.h after every re-synthesis.
+#define SWG_CTRL_W_LO    0x10  // gmem_W   base lo
+#define SWG_CTRL_W_HI    0x14  // gmem_W   base hi
+#define SWG_CTRL_V_LO    0x1C  // gmem_V   base lo
+#define SWG_CTRL_V_HI    0x20  // gmem_V   base hi
+#define SWG_CTRL_WD_LO   0x28  // gmem_Wd  base lo
+#define SWG_CTRL_WD_HI   0x2C  // gmem_Wd  base hi
+#define SWG_CTRL_X_LO    0x34  // gmem_x   base lo
+#define SWG_CTRL_X_HI    0x38  // gmem_x   base hi
+#define SWG_CTRL_OUT_LO  0x40  // gmem_out base lo
+#define SWG_CTRL_OUT_HI  0x44  // gmem_out base hi
+#define SWG_CTRL_MODE    0x4C  // 0=Q4_K (1=Q6_K requires ENABLE_Q6K build)
+#define SWG_CTRL_XSCALE  0x54  // float bits
 
 static void udmabuf_sync_to_device(uint32_t offset, uint32_t size) {
     if (sync_offset_fd >= 0 && sync_size_fd >= 0) {
@@ -2035,14 +2037,12 @@ static void ggml_compute_forward_swiglu_fused_hw(
         if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   reprogram W/V/Wd: %s (last_layer=%d last_mode=%u)\n",
                 need_prog_wvw ? "YES" : "NO (cached)", swg_last_prog_layer, swg_last_prog_mode);
         if (need_prog_wvw) {
-            swg_ip_regs[SWG_CTRL_W_LO   / 4] = (uint32_t)phys_W;
-            swg_ip_regs[SWG_CTRL_W_HI   / 4] = (uint32_t)(phys_W >> 32);
-            swg_ip_regs[SWG_CTRL_V_LO   / 4] = (uint32_t)phys_V;
-            swg_ip_regs[SWG_CTRL_V_HI   / 4] = (uint32_t)(phys_V >> 32);
-            swg_ip_regs[SWG_CTRL_WD_LO  / 4] = (uint32_t)phys_Wd;
-            swg_ip_regs[SWG_CTRL_WD_HI  / 4] = (uint32_t)(phys_Wd >> 32);
-            swg_ip_regs[SWG_CTRL_WD2_LO / 4] = (uint32_t)phys_Wd;
-            swg_ip_regs[SWG_CTRL_WD2_HI / 4] = (uint32_t)(phys_Wd >> 32);
+            swg_ip_regs[SWG_CTRL_W_LO  / 4] = (uint32_t)phys_W;
+            swg_ip_regs[SWG_CTRL_W_HI  / 4] = (uint32_t)(phys_W >> 32);
+            swg_ip_regs[SWG_CTRL_V_LO  / 4] = (uint32_t)phys_V;
+            swg_ip_regs[SWG_CTRL_V_HI  / 4] = (uint32_t)(phys_V >> 32);
+            swg_ip_regs[SWG_CTRL_WD_LO / 4] = (uint32_t)phys_Wd;
+            swg_ip_regs[SWG_CTRL_WD_HI / 4] = (uint32_t)(phys_Wd >> 32);
             swg_last_prog_layer = layer;
             swg_last_prog_mode  = mode;
         }
@@ -2060,11 +2060,10 @@ static void ggml_compute_forward_swiglu_fused_hw(
         swg_ip_regs[SWG_CTRL_XSCALE / 4] = xscale_bits;
 
         if (swiglu_dbg_enabled) {
-            fprintf(stderr, "[SWG]   regs: W=0x%08X|%08X  V=0x%08X|%08X  Wd=0x%08X|%08X  Wd2=0x%08X|%08X\n",
-                    swg_ip_regs[SWG_CTRL_W_HI/4],   swg_ip_regs[SWG_CTRL_W_LO/4],
-                    swg_ip_regs[SWG_CTRL_V_HI/4],   swg_ip_regs[SWG_CTRL_V_LO/4],
-                    swg_ip_regs[SWG_CTRL_WD_HI/4],  swg_ip_regs[SWG_CTRL_WD_LO/4],
-                    swg_ip_regs[SWG_CTRL_WD2_HI/4], swg_ip_regs[SWG_CTRL_WD2_LO/4]);
+            fprintf(stderr, "[SWG]   regs: W=0x%08X|%08X  V=0x%08X|%08X  Wd=0x%08X|%08X\n",
+                    swg_ip_regs[SWG_CTRL_W_HI/4],  swg_ip_regs[SWG_CTRL_W_LO/4],
+                    swg_ip_regs[SWG_CTRL_V_HI/4],  swg_ip_regs[SWG_CTRL_V_LO/4],
+                    swg_ip_regs[SWG_CTRL_WD_HI/4], swg_ip_regs[SWG_CTRL_WD_LO/4]);
             fprintf(stderr, "[SWG]   regs: x=0x%08X|%08X  out=0x%08X|%08X  mode=%u  xscale_bits=0x%08X (%.6f)\n",
                     swg_ip_regs[SWG_CTRL_X_HI/4],   swg_ip_regs[SWG_CTRL_X_LO/4],
                     swg_ip_regs[SWG_CTRL_OUT_HI/4], swg_ip_regs[SWG_CTRL_OUT_LO/4],
