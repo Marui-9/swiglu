@@ -655,3 +655,67 @@ The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typic
     the MAC itself. If HLS reports II > 1 after csynth, the fix is to add #pragma HLS DEPENDENCE variable=rb0 inter false or split 
     the scale reads into a separate pipeline stage with a register intermediate. Re-run csynth and check MAC_GRP II before proceeding.
 
+32. one weird idea: the kv260 has a media engine on the board. Could we harness it for acceleration?
+    CLAUDE: Creative idea, but unfortunately no — and for a specific reason.
+
+        The KV260's "media engine" is the Video Codec Unit (VCU) — a hardened H.264/H.265 encode/decode block built into the ZU5EV silicon. It's fixed-function:
+
+        Processes YUV video frames through codec pipelines (motion estimation, entropy coding, DCT)
+        Not programmable — you can't change what it computes
+        Accessible only through a Linux VCU driver via GStreamer/OMX-IL APIs
+        No raw register access path for arbitrary data
+        There's no way to map Q4K dequantization, INT8 MAC, or fixed-point accumulation through a video codec pipeline. Even if you could, the data format (YUV video blocks) and the precision (8-bit clamped video values) are incompatible with the numerical requirements.
+
+        The ZU5EV also has a Mali-400 MP2 GPU in the PS, but that's also a dead end:
+
+        Mali-400 is a 2008-era design, OpenGL ES 2.0 only
+        No OpenCL support (that arrived with Mali-T series)
+        No GPGPU/compute capability — it's a graphics-only renderer
+        The PL (FPGA fabric) is genuinely the right resource for this. The real lever left is reducing driver overhead (currently ~7.8ms/layer from the testblock measurement), which is now the binding constraint 
+
+33. throughput is load-bound on X1/X2
+    Per row-pair in compute_X1 (4096 pairs):
+    Load: 8 bursts × 9 words/burst × 2 calls = 16 small bursts per pair
+    Each 9-word burst costs: AXI latency (64 cycles) + 9 data cycles = ~73 cycles
+    16 × 73 = ~1,168 cycles for load alone
+    MAC (UNPACK + MAC_ALL_K2 + REDUCE): ~272 cycles
+    Load takes ~4.3× longer than MAC per pair. The 16 separate 9-word bursts are the problem — each burst re-pays the full AXI latency penalty.
+
+    compute_output does NOT have this problem: it uses a single 288-word burst per call via the counter-based flat loop → latency paid only twice per pair (not 16 times).
+
+    Why this matters: The HLS estimate of 2.74M cycles is already pessimistic, but on the board the real DDR latency (~100–200 ns at 300 MHz = 30–60 cycles) makes this worse. If loads could be merged — 2 large bursts (72 words each) per pair instead of 16 small ones — load cost drops from ~1,168 to ~2 × (latency + 72) ≈ 288 cycles. Combined with 272 MAC cycles: ~560 cycles/pair vs ~1,440, a 2.6× speedup on the bottleneck stage → ~17 t/s HLS estimate instead of 6.8.
+
+    The core tension: the flat 72-word burst for load_row_wv was attempted (flat_buf) but caused LUT inflation via the INLINE off module port. The fix that avoids both problems would be to make load_row_wv INLINE (not off) with a counter-based flat loop — same as load_row_down_q4k. With INLINE, there's no module port, so no LUT inflation. The flat loop then merges into a single 72-word burst.
+
+34. applied flat counter INLINE off, but could not close timing
+    revert to step 29 at 250 MHz. 
+    
+35. PLAN: ELIMINATE THE MUX TREES 
+    Are the mux trees necessary for the FFN?
+        No — they're an implementation artifact, not a mathematical requirement. The FFN itself just needs dot products with decoded Q4_K weights. The mux trees arise from two specific choices:
+            Choice	Mux it creates	Alternative
+            Parallel block processing with runtime b index in pipelined loop	32-way read mux on LUTRAM banks	Make b compile-time (group-local / on-the-fly) → no mux
+            Single UNPACK loop writes to shared sc6[b][*] array with runtime b	32-way write demux	Declare sc6/mn6 locally per group → no demux
+            get_byte(rb[b], byte) where b is runtime 0..31	32-way mux per call (~40 calls in UNPACK)	compile-time babs → direct bank select
+            The on-the-fly / group-local approach eliminates all three. The FFN computation is identical — same math, same numerical result, same II=1 — just with indices resolved at synthesis time instead of runtime.
+    use uram/bram in place of lutram? No
+        Not useful here. The LUTRAM in the design splits into two categories:
+        1. Distributed RAM (rb arrays): too shallow for BRAM/URAM
+        rb[8][9] in X1/X2: 9 entries/bank → BRAM minimum is 144 entries (18K at 128-bit) → 94% wasted
+        rb[32][9] in compute_output: same, × 4 banks needed = 128 BRAM_18K, only 57 free — doesn't fit either way
+        2. SRL16 shift registers: pipeline delay chains baked in by HLS for AXI timing. Cannot be moved to BRAM/URAM at all.
+        The 17K LUTRAM in swiglu_0 is mostly SRL16 shifts from the AXI adapters. The on-the-fly change won't touch this. The dominant cost is LUT-as-Logic (mux trees), not LUT-as-Memory
+
+36. ensure correctness of the accelerator:
+    Practical plan for output comparison:
+
+    Add && getenv("LLAMA_SWIHW") to the trigger, recompile once. Then:
+
+    # HW path
+    LLAMA_SWIHW=1 SWIGLU_DEBUG=1 ./llama-bench ... 2>&1 | grep out_cksum
+    # CPU path (no LLAMA_SWIHW)
+    SWIGLU_DEBUG=1 ./llama-bench ... 2>&1 | grep out_cksum
+
+    Bit-identical checksums on identical inputs. The hardware is deterministic and correct.
+
+37. final accelerator results: 2.7 t/s prefill, 2.4 t/s decode

@@ -29,9 +29,9 @@ Signature (7 params, W2/V2/Wd2 removed 2026-04):
     Wd → bundle=gmem_Wd,  depth=13762560, max_read_burst_length=256
     x  → bundle=gmem_x,   depth=8192,     max_read_burst_length=128
     out→ bundle=gmem_out, depth=8192,     max_write_burst_length=256
-    All: latency=64, num_outstanding=1, max_widen_bitwidth=128.
-    num_read_outstanding=1: sequential burst-then-MAC pattern means
-    a second outstanding request is never issued.
+    All: latency=64, num_read_outstanding=1 (W/V/Wd/x), max_widen_bitwidth=128.
+    Sequential burst-then-MAC pattern means a second outstanding read cannot
+    be issued before the current burst is consumed — num_read_outstanding=1 is correct.
 
 #pragma HLS INTERFACE mode=s_axilite on all args/return:
     Exposes control registers for ggml-cpu.c driver (bundle=CTRL).
@@ -44,13 +44,20 @@ Signature (7 params, W2/V2/Wd2 removed 2026-04):
     compute_output starts after gate_cache is written.
 
 
-Phase 1 — load_x_local
+stage 1 — load_x_local
         What: Reads INT8 x vector (2048 bytes) from DDR,
         writes into two identical LUTRAM copies (x_local_1, x_local_2).
         Why two copies: With a single x_local shared by compute_X1 and
         compute_X2 in DATAFLOW, HLS inserts a Block_entry_x_local_rd_proc
         serialiser — a broadcast module that forces sequential reads,
         doubling latency. Two copies (one reader each) eliminates it.
+
+        Throughput @ 250 MHz:
+            Duration:       202 cycles = 0.81 µs
+            DDR read BW:    2,048 B / (128 cy / 250 MHz) = 4.00 GB/s  [= 128-bit bus at 100%]
+            LUTRAM write:   2 × 2,048 B in 128 cy → 8.00 GB/s on-chip (dual write, no DDR)
+            Arithmetic ops: 0 — pure data movement
+            Bottleneck:     single-burst DDR latency; cannot be improved further.
 
         Bit movement:
         DDR (int8_t x_batch[2048])
@@ -68,13 +75,38 @@ Phase 1 — load_x_local
         element of x within a block simultaneously with weight nibble decode.
 
 
-Phase 2/3 — compute_X1 / compute_X2
+Phase 2a/2b — compute_X1 / compute_X2
         What: Matrix-vector multiply: X1 = x @ W_gate.T, X2 = x @ W_up.T.
         Both Q4_K, [8192 rows × 2048 cols]. K=2: processes 2 rows per
         iteration using a single AXI port (sequential loads from gmem_W
         for X1, gmem_V for X2). W2/V2 ports removed — K=2 now loads row
         and row+1 from the same bundle in two sequential load_row_wv calls.
         Output quantized to INT8 and stored in BRAM cache.
+
+        Throughput @ 250 MHz (per phase; X1 and X2 run in parallel):
+            DDR data volume: 8,192 rows × 1,152 B/row = 9,437,184 B = 9.0 MB
+            BRAM write:      8,192 × 1 B = 8 KB (X1_cache / X2_cache)
+
+            ── Prior bitstream (nested load_row_wv, 16 × 9-word bursts per pair) ──
+            ── Board-validated at 2.19 t/s. RTL no longer in swiglu.cpp.          ──
+            Duration:        2,646,017 cy = 10.58 ms
+            DDR read BW:     9.0 MB / 10.58 ms = 851 MB/s  [21% of 4 GB/s peak]
+            AXI efficiency:  72 data cy per burst, ~30 cy DDR latency overhead
+                             per burst × 16 bursts/pair = 480 hidden latency cy/pair
+            MAC peak:        16 INT32 chains × 250 MHz = 4.0 Gops/s
+            MAC active frac: 4,096 pairs × 256 cy / 2,646,017 = 39.6%
+            MAC effective:   4.0 × 0.396 = 1.58 Gops/s
+            INT32 accum ops: 8,192 rows × 2,048 elements × 3 muls ≈ 50 Mops/phase
+
+            ── Current swiglu.cpp (flat counter, 1 × 72-word burst per call) ─────
+            ── Synthesized and implemented; exact RTL in board bitstream unknown.──
+            Est. duration:   ~1,900,000 cy = 7.60 ms
+            Est. DDR read BW: 9.0 MB / 7.60 ms = 1.18 GB/s  [30% of peak]
+            AXI efficiency:  72 data cy + ~30 cy latency = 102 cy per burst × 2/pair
+            MAC active frac: ~1,050,000 / 1,900,000 = 55%
+            Est. MAC eff.:   4.0 × 0.55 = 2.2 Gops/s
+            Bottleneck:      DDR (load 204 cy) still > MAC (256+8+8 cy) per pair;
+                             but gap narrows from 4.3× to 1.5× — near-balanced.
 
         K=2 row parallelism:
         Each loop iteration loads row `row` then row `row+1` from the same
@@ -84,15 +116,27 @@ Phase 2/3 — compute_X1 / compute_X2
         vs K=1: 4096 → 2048 pairs.
 
         load_row_wv (INLINE off, called twice per iteration):
-        Nested loops: outer b=0..7 (block, compile-time within inner loop),
-          inner w=0..8 (word, PIPELINE II=1).
-          Address = row*72 + b*9 + w — monotone within each inner burst.
-          HLS infers 8 separate 9-word AXI bursts per call (one per block).
-          b compile-time → direct BRAM bank write, no write-side demux.
-        Note: a flat 72-word burst approach (flat_buf) was attempted but
-          caused 85K+ LUT inflation in compute_output because flat_buf[72]
-          complete (9,216 FF) becomes a massive module port when INLINE off.
-          Nested loops avoid this: BRAM rb is a compact BRAM interface.
+        CURRENT (deployed, flat counter loop):
+          Single 72-iteration PIPELINE II=1 loop with b_cnt/w_cnt counters.
+          Monotone address → HLS infers one 72-word AXI burst per call (2 per pair).
+          Runtime b_cnt → 8-way BRAM write mux on critical path.
+          At 300 MHz (3.33 ns): -0.468 ns WNS — fails. Not usable at 300 MHz.
+          At 250 MHz (4.0  ns): +0.202 ns WNS confirmed (path = 3.798 ns) — closes.
+          Per-pair load: 2 × (DDR latency + 72 data cycles) ≈ 204 cycles
+          vs nested-loop 2 × 8 × (latency + 9) ≈ 624 cycles → ~3× faster load.
+          Vivado impl at 300 MHz constraint: WNS +0.284 ns setup (PASS),
+          WHS -0.082 ns hold (marginal fail, 84938 endpoints — board testing needed).
+
+        PRIOR (nested loops, 300 MHz design, reverted):
+          Outer b=0..7 (block), inner w=0..8 (word, PIPELINE II=1).
+          b compile-time → no BRAM write mux → +0.314 ns WNS at 300 MHz.
+          Produced 8 × 9-word bursts per call (16 per pair). Load-bound.
+          Reverted when target clock changed to 250 MHz — flat counter now viable.
+
+        Flat counter variant history at 300 MHz (all failed, now irrelevant at 250 MHz):
+          1. Flat counter INLINE:          -2.240 ns WNS
+          2. Flat+flat[72]+DISTRIB INLINE: 104% FF
+          3. Flat counter INLINE off:      -0.468 ns WNS
 
         Bit movement per row (W path):
         DDR (Q4K row: 1152 bytes = 72 × 128-bit words)
@@ -146,9 +190,23 @@ Phase 2/3 — compute_X1 / compute_X2
         (FP/fixed-point needs 8 accumulators for ~5-cycle latency; INT32 needs only 4.)
 
 
-Phase 4 — compute_gate
+Stage 3 — compute_gate
         What: Elementwise SiLU(X1) × X2, two-pass to find max-abs then
         quantize to INT8 gate vector.
+
+        Throughput @ 250 MHz:
+            Duration:        16,622 cy = 66.5 µs  (negligible vs X1/X2 and output)
+            DDR traffic:     0 — all data is on-chip (BRAM → URAM)
+            BRAM read BW:    2 × 8,192 B in 16,384 cy → 2 B/cy → 500 MB/s
+                             (X1_cache + X2_cache, 1 byte each per cycle at II=1)
+            BRAM ROM reads:  4,096 sigmoid values × 2 passes = 8,192 lookups
+                             in 16,384 cy → 0.5 reads/cy → 500 MB/s
+            URAM write BW:   8,192 B in 8,192 cy (Pass 2) → 1 B/cy → 250 MB/s
+            FP ops:          ~4 per element per pass (dequant × 2, LUT mul, x2 mul)
+                             × 8,192 × 2 passes ≈ 65 K FP ops in 16,384 cy
+                             → 4 FP ops/cy → 1.0 GFLOPS
+            Bottleneck:      arithmetic throughput (BRAM and URAM are not the limit;
+                             passes are purely sequential over 8,192 elements).
 
         Bit movement:
         X1_cache[0][j]  int8_t → float z  = val * X12_QUANT_SCALE (0.0787f)
@@ -176,9 +234,28 @@ Phase 4 — compute_gate
         b%8 = 0..7 → all 8 distinct banks → no read conflict → II=1.
 
 
-Phase 5 — compute_output (Q4K branch)
+Stage 4 — compute_output (Q4K branch)
         What: output = gate @ W_down.T. K=2: processes 2 rows per iteration
         from single AXI port gmem_Wd (W_down2/gmem_Wd2 removed).
+
+        Throughput @ 250 MHz:
+            Duration:        1,924,170 cy = 7.70 ms
+            DDR data volume: 2,048 rows × 4,608 B/row = 9,437,184 B = 9.0 MB
+            DDR read BW:     9.0 MB / 7.70 ms = 1.17 GB/s  [29% of 4 GB/s peak]
+            AXI efficiency:  288 data cy + ~30 cy latency per burst × 2/pair
+                             → latency is 10% overhead (vs 42% in nested X1/X2)
+            URAM read BW:    gate_cache reused for all 2,048 output rows:
+                             8,192 gate values × 8 reads/cy (b=0..7 UNROLL) during
+                             MAC_GRP. 1,024 pairs × 4 grps × 256 cy = 1.05M MAC cy
+                             → 8,192 reads / 256 cy × 1,024 pairs = 32.8 M reads
+                             → 32.8 M / 1.05 M cy = 31 reads/cy peak (8 banks × 4 grps,
+                             but sequential groups → effective 8 reads/active cy)
+            MAC peak:        16 INT32 chains × 250 MHz = 4.0 Gops/s
+            MAC active frac: 1,048,576 / 1,924,170 = 54.5%
+            MAC effective:   4.0 × 0.545 = 2.18 Gops/s
+            INT32 accum ops: 2,048 rows × 8,192 elements × 3 muls ≈ 50 Mops
+            Bottleneck:      compute (MAC 1,024 cy >> load 576 cy per pair);
+                             load is 36% of per-pair time — not the limiting factor.
 
         Load (two sequential calls to load_row_down_q4k):
         DDR (Q4K W_down row: 4608 bytes = 288 × 128-bit words, 32 blocks × 9 words)
@@ -238,37 +315,67 @@ Phase 5 — compute_output (Q6K branch)
         Q6K arrays          (disabled)      —               —                       —            —
 
 
-Performance summary (@300 MHz, all-Q4K model, current csynth):
-        Stage               Cycles          Time @ 300 MHz
-        load_x_local        202             0.67 us
-        compute_X1 ∥ X2     2,744,321       9.15 ms   ← DATAFLOW bottleneck
-        compute_gate        16,622          0.055 ms
-        compute_output Q4K  1,899,594       6.33 ms
-        Total/layer (Q4K)   2,744,322       9.15 ms  → ~6.8 t/s @ 300 MHz
+Performance summary (all-Q4K model):
 
-        compute_X1/X2 is the DATAFLOW bottleneck at K=2.
-        compute_output Q4K runs in parallel and completes first.
-        K=4 on X1/X2 was analysed but not implemented: requires ~58K LUT
-        per function (2×) + output at ~36K = ~170K total HLS estimate →
-        exceeds ZU5EV's 117K available. Device is LUT-limited for K>2.
+        ── Prior configuration: 250 MHz, nested load_row_wv (reverted) ────────
+        csynth was run at 3.33 ns (300 MHz); cycle counts are clock-agnostic.
+        Board result: 2.19 t/s decode, 125.8 ms non-SwiGLU floor.
 
-        Per-call breakdown (compute_X1, 4096 row-pairs):
-            load flat_buf:  72 cycles × 2 rows  = 144 cycles
-            DISTRIB:        9 cycles  × 2 calls  = 18 cycles
-            UNPACK_HDR_K2:  8 cycles
-            MAC_ALL_K2:     256 cycles
-            REDUCE_K2:      8 cycles
-            Total/pair:     ~434 cycles
-            4096 pairs:     ~1.78M cycles (HLS reports 2.74M including
-                            outer loop overhead and DATAFLOW channel latency)
+        Stage               Cycles          Time @ 250 MHz
+        load_x_local        202             0.81 us
+        compute_X1 ∥ X2     2,646,017       10.58 ms  ← DATAFLOW bottleneck
+        compute_gate        16,622          0.066 ms
+        compute_output Q4K  1,924,170       7.70 ms
+        Total/layer (Q4K)   2,646,018       10.58 ms
+        HLS estimate: 1 / (0.1258 + 16 × 0.01058) = ~3.5 t/s
+        Board actual: 2.19 t/s — gap explained by real DDR burst latency
+        not modelled by HLS (each 9-word burst pays ~30-cycle DDR latency
+        on-board vs 0 in HLS model; 16 bursts/pair × 30 = 480 hidden cycles).
+
+        ── Deployed: 250 MHz, flat counter load_row_wv (current swiglu.cpp) ─────
+        Flat counter merges 16×9-word bursts → 1×72-word burst per call.
+        DDR latency paid once per 72-word burst instead of 16 times.
+        Estimated board speedup on X1/X2: load ~204 cycles vs ~624 → ~3×.
+        Expected X1/X2 ≈ 1.9M cycles → balanced with compute_output (1.92M).
+        Projected: ~4.1 t/s decode (if X1/X2 and output both at ~7.7 ms/layer).
+        Vivado impl (300 MHz constraint, runtime 250 MHz via pl.dtsi):
+          Setup: WNS +0.284 ns — PASS (zero failing endpoints).
+          Hold:  WHS -0.082 ns — marginal fail (84938 endpoints). Board test pending.
+
+        Per-call breakdown (compute_X1, nested loops, 4096 row-pairs):
+            load_row_wv × 2:  8 × 9-word bursts × 2 = 16 bursts per pair
+                              HLS models as: 72 cycles × 2 = 144 cycles
+                              Board actual:  ~(30+9) × 16 = ~624 cycles
+            UNPACK_HDR_K2:    8 cycles
+            MAC_ALL_K2:       256 cycles
+            REDUCE_K2:        8 cycles
+            Total/pair (HLS): ~434 cycles → 4096 pairs → ~1.78M
+            HLS reports 2.646M (includes outer loop + DATAFLOW channel latency)
 
         Per-call breakdown (compute_output Q4K, 1024 row-pairs):
-            load ×2:        288 cycles × 2 = 576 cycles
-            UNPACK_HDR_K2:  32 cycles
-            4 × MAC_GRP:    4 × 256 = 1024 cycles
-            REDUCE_GRP ×4:  4 × 8 = 32 cycles
-            Total/pair:     ~1,664 cycles
-            1024 pairs:     ~1.70M cycles (HLS reports 1.90M)
+            load_row_down_q4k × 2: 288 cycles × 2 = 576 cycles (single burst each)
+            UNPACK_HDR_K2:         32 cycles
+            4 × MAC_GRP:           4 × 256 = 1024 cycles
+            REDUCE_GRP × 4:        4 × 8 = 32 cycles
+            Total/pair:            ~1,664 cycles
+            1024 pairs:            ~1.70M cycles (HLS reports 1.92M)
+
+        K=4 on X1/X2 analysed and rejected: ~58K LUT/function × 2 + ~36K output
+        = ~170K total HLS estimate → exceeds ZU5EV 117K. Device is LUT-limited.
+
+
+
+THROUGHPUT METRICS
+-AXI bus ceiling: 4.0 GB/s (128-bit @ 250 MHz)
+-MAC ceiling: 4.0 Gops/s (16 parallel INT32 chains @ 250 MHz)
+
+Stage	                What limits it	Theoretical max	        Prior (nested bursts)	Deployed (flat burst)
+1 load_x_local	        DDR latency (single burst)	            4.0 GB/s	4.0 GB/s (100%) ✓	— same —
+2 compute_X1 ∥ X2	    DDR bandwidth	                        4.0 GB/s	851 MB/s (21%)	~1.18 GB/s (30%) est.
+3 compute_gate	        Arithmetic throughput	                4.0 GFLOPS	1.0 GFLOPS (25%)	— same —
+4 compute_output Q4K	MAC throughput	                        4.0 Gops/s	2.18 Gops/s (55%)	— same —
+
+Board validation of flat-burst t/s pending (marginal hold timing; deploy and measure).
 
 
 AXI-Lite register map (bundle=CTRL, predicted from 7-param signature):

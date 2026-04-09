@@ -1,0 +1,152 @@
+To power profile the kv260 running ubuntu
+in the terminal the argument platformstats with the -p flag to see a range of statistics for the SoM delimited by headers defining what each section is.
+
+root@xilinx-k26-starterkit-2020_2:~# xmutil platformstats -p
+Scroll down to the Power Utilization section to see the power, current, and voltage levels drawn by the system. It's also important to note that these power measurements are also strongly influenced by the environment the device is operating in. For example, changing the temperature in the room will cause the power reading to change.
+
+Sample output:
+        Power Utilization
+        SOM total power: 3540 mW
+
+        SOM total current: 718 mA
+
+        SOM total voltage: 5038 mV
+
+        AMS CTRL
+        System PLLs voltage measurement, VCC_PSLL: 1198 mV
+
+        PL internal voltage measurement, VCC_PSBATT: 718 mV
+
+        Voltage measurement for six DDR I/O PLLs, VCC_PSDDR_PLL: 1798 mV
+
+        VCC_PSINTFP_DDR voltage measurement: 842 mV
+
+        PS Sysmon
+        LPD temperature measurement: 28 C
+
+        FPD temperature measurement (REMOTE): 28 C
+
+        VCC PS FPD voltage measurement (supply 2): 844 mV
+
+        PS IO Bank 500 voltage measurement (supply 6): 1788 mV
+
+        VCC PS GTR voltage: 859 mV
+
+        VTT PS GTR voltage: 1797 mV
+
+        PL Sysmon
+        PL temperature: 27 C
+
+        Benchmarking the Smart Camera Accelerated Application
+Focusing on the Smart Camera application, the following steps walk through how to measure each available benchmark for it from the Linux console on the Kria KV260.
+
+1 - FPS Throughput
+When the Smart Camera application is ran using the smartcam command passing the -R flag, it will output the frames per second stats to the console.
+
+root@xilinx-k26-starterkit-2020_2:~# sudo smartcam --usb 0 -W 1920 -H 1080 -r 30 --target dp --aitask facedetect -R
+This allows users to measure the throughput in frames per second of the Smart Camera accelerated application (FPS). I did find that for the current embedded Linux image for the KV260 this feature only works when the output is targeted to a monitor and is not available when streaming the video signal over the wired ethernet.
+
+After observing the FPS throughput of the application in the console, kill the application using control+C from the Linux command line.
+
+2 - Power Draw
+To measure the power drawn by the Smart Camera app run it again, but in the background this time. To run the Smart Camera app, append the & symbol to the end of the command line:
+
+root@xilinx-k26-starterkit-2020_2:~# sudo smartcam --usb 0 -W 1920 -H 1080 -r 30 --target dp --aitask facedetect &
+Hit the enter key to regain control of the console.
+
+Then, as shown in the previous section, run the xmutil command with argument platformstats and observe the Power Utilization section in the output in the console.
+
+root@xilinx-k26-starterkit-2020_2:~# xmutil platformstats -p
+And kill the application since it's still running in the background:
+
+root@xilinx-k26-starterkit-2020_2:~# sudo killall -9 smartcam
+3 - End-to-End Latency
+Accelerated applications are most commonly benchmarked by the measurement of time that it takes a buffer of data to travel from one point in the pipeline to another. The latency from point A to point B in the pipeline is known as interlatency. To measure this, there are interlatency tracer applications such as GstShark can be used.
+
+The embedded Linux image for the KV260 does not already have GstShark installed, so connect the KV260 to the internet and use the dnf command to see what GstShark packages are available to install.
+
+root@xilinx-k26-starterkit-2020_2:~# dnf search GstShark
+Install the the libgstshark0 package:
+
+root@xilinx-k26-starterkit-2020_2:~# sudo dnf install libgstshark0.aarch64
+Say yes if prompted during the installation and wait for the console to output "Complete!".
+
+Run the Smart Camera app again but using the GstShark interlatency tracers this time. This is done by passing GST_DEBUG="GST_TRACER:7" GST_TRACERS=interlatency before the command to run the Smart Camera application. The application also needs to be run in the background as we did to measure the power since the log from GstShark needs to be opened while it is running. Thus, also append & to the end of the command.
+
+root@xilinx-k26-starterkit-2020_2:~# sudo GST_DEBUG="GST_TRACER:7" GST_TRACERS=interlatency smartcam --usb 0 -W 1920 -H 1080 -r 30 --target dp --aitask facedetect >& aa1-facedetect-log.txt &
+Again, press enter to regain control of the console. Then use grep to parse through and return all of the interlatency values of all the plugins in the Smart Camera application GStreamer pipeline from the GstShark log file.
+
+root@xilinx-k26-starterkit-2020_2:~# sudo grep -rn interlatency aa1-facedetect-log.txt | tail -n 20 | cut -d'=' -f2-4
+The total end-to-end latency of the Smart Camera application is measured from the first source plugin, videosrc_src which is the video feed from the camera itself, to the sink plugin, kmssink0_sink which is the video sink that is rendering the images in the direct rendering manager (DRM) of the Linux kernel.
+
+In my particular setup, using a Logitech USB web camera, the end-to-end latency of the Smart Camera measures at 0.61126 seconds or 611.26 milliseconds. Keep in mind that this reading will change upon any firmware/system updates.
+
+Again, after completing the measurement, kill the application since it's still running in the background:
+
+root@xilinx-k26-starterkit-2020_2:~# sudo killall -9 smartcam
+How to Change the Network Model Used by the Smart Camera Application
+There are three network models available to use in the Smart Camera application: face detect (facedetect), single shot detector (ssd), and refinement neural network for object detection (refinedet). To switch between network models, use the aitask flag with the desired network model facedetect, ssd, or refinedet when running the Smart Camera application.
+
+Running the Smart Camera application with the refinement neural network for object detection network model:
+
+root@xilinx-k26-starterkit-2020_2:~# sudo smartcam --usb 0 -W 1920 -H 1080 -r 30 --target dp --aitask refinedet
+Running the Smart Camera application with the single shot detector network model:
+
+root@xilinx-k26-starterkit-2020_2:~# sudo smartcam --usb 0 -W 1920 -H 1080 -r 30 --target dp --aitask ssd
+Running the Smart Camera application with the face detection network model:
+
+root@xilinx-k26-starterkit-2020_2:~# sudo smartcam --usb 0 -W 1920 -H 1080 -r 30 --target dp --aitask facedetect
+How to the Switch Video Source of the Smart Camera Application
+There are two interface options available for the Smart Camera application: USB and MIPI. The basic accessory pack Xilinx sells for the KV260 Starter Kit comes with a IAS AR1335 camera model that uses an MIPI interface.
+
+The benchmarks we walked through in the previous steps was all done using a Logitech USB web camera, so to gain a more intuitive understating of these benchmarks of the Smart Camera application, run them all again using an MIPI interface camera.
+
+The first flag passed to the smartcam command should be the video source specifier which is either mipi or usb. In the case of USB, the device node number also needs to be passed since the Kria KV260 baseboard contains more than one USB port.
+
+Running the Smart Camera application with a MIPI interface camera:
+
+root@xilinx-k26-starterkit-2020_2:~# sudo smartcam --mipi -W 1920 -H 1080 -r 30 --target dp --aitask facedetect
+Running the Smart Camera application with a USB interface camera:
+
+root@xilinx-k26-starterkit-2020_2:~# sudo smartcam --usb 0 -W 1920 -H 1080 -r 30 --target dp --aitask facedetect
+How to Switch Video Stream Output Target of the Smart Camera Application
+The final processed video stream with the selected network model can be output over the KV260's HDMI port or a wired Ethernet connection. This is specified by the target flag on the smartcam command. Passing dp will target the HDMI port while rtsp targets the Ethernet.
+
+Running the Smart Camera application outputting to an HDMI monitor:
+
+root@xilinx-k26-starterkit-2020_2:~# sudo smartcam --usb 0 -W 1920 -H 1080 -r 30 --target dp --aitask facedetect
+Running the Smart Camera application outputting over a wired Ethernet connection:
+
+root@xilinx-k26-starterkit-2020_2:~# sudo smartcam --usb 0 -W 1920 -H 1080 -r 30 --target rtsp --aitask facedetect
+You'll need to use an application on the host PC such as VLC player or ffplay to view the RTSP feed on its corresponding IP, port, and channel as specified via the console by the smartcam command.
+
+TO QUANTIFY
+1. How much the cpu load is reduced by using the accelerator?
+    Source of the 120ms/token figure
+            It came from the testblock measurement (entry 3, entry 11):
+            With testblock (dummy copy, SwiGLU ≈ 0ms): tg64 = 7.95 t/s → 1/7.95 = 125.8ms/token
+            That 125.8ms is the hard floor — attention, norms, embeddings, lm_head, token sampling — all the parts the accelerator never touches
+            The ≈120ms used since then is a rounded figure from the same measurement
+            Entry 674 also independently derived "~7.8ms/layer from testblock measurement" → 16 × 7.8 = 124.8ms, consistent.
+                At 2.19 t/s decode: 1 token = 457ms, IP si occupa di swiglu mentre la cpu e' in poll(). 
+    ~120ms/token la cpu e' attiva, 26%
+    CPU sleeping in poll(): ~337ms/token = 74% of token time
+2. how does power consumption change with or without using the accelerator?
+    power with vs without accelerator.
+
+    A) Define one fixed workload
+    Use the same command for both runs, e.g.:
+
+    BENCH="./build/bin/llama-bench -m ~/LFM2.5-1.2B-Thinking-Q4_K_M.gguf -p 1 -n 64 -t 4 -r 3"
+    B) CPU-only run
+
+    Load CPU-only app/bitstream (or disable offload env var).
+    Start power logging:
+    ( while true; do date +%s; xmutil platformstats -p | grep -E "SOM total power|SOM total current|SOM total voltage"; sleep 1; done ) | tee power_cpu.log
+    In another terminal run:
+    $BENCH | tee bench_cpu.log
+    Stop logger (Ctrl+C).
+
+3. Can the lack of LUTs be compensated by adding logic?
+4. can the offload overhead be quantified in terms of cycles? Including data transfer, polling, interrupts.
+5. Would it be worth offloading something else?

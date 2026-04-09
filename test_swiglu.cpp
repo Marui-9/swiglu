@@ -629,7 +629,11 @@ void swiglu(
     init_sigmoid_lut_csim();
 #endif
 
-#pragma HLS DATAFLOW
+// NOTE: No top-level DATAFLOW here. compute_X1/X2/compute_output each contain
+// their own DATAFLOW ping-pong loop (task-level pipelining inside a loop).
+// Nesting those inside a top-level DATAFLOW region causes channel deadlocks
+// in synthesis (Vitis HLS does not support nested DATAFLOW). X1 and X2 run
+// sequentially, but each benefits from load/MAC overlap within its own loop.
     load_x_local(x_batch, x_local_1, x_local_2);
     compute_X1(W, x_local_1, x_scale, X1_cache);
     compute_X2(V, x_local_2, x_scale, X2_cache);

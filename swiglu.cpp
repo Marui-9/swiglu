@@ -89,24 +89,29 @@ static inline uint8_t get_byte(const ap_uint<128>* data, int byte_idx) {
 
 // ─── DATAFLOW sub-functions ───────────────────────────────────────────────────
 
-// load_row_wv: read one Q4_K row directly into 2D rb[8][9] BRAM.
-// Nested loop: outer b=0..7 (block), inner w=0..8 (word within block).
-// Address = row*72 + b*9 + w — linear per (b,w) pair, monotone across full row.
-// HLS burst inference: with PIPELINE II=1 on the inner loop and a fixed outer
-// trip count, HLS merges consecutive inner-loop reads into one 9-word burst per
-// block = 8 bursts of 9 words. This avoids the flat_buf[72] register file
-// (9,216 FF as a module port when INLINE off) that caused 132% LUT inflation.
-// rb[b][w]: b compile-time (outer loop not pipelined) → direct BRAM bank write.
+// load_row_wv: read one Q4_K row as a single 72-word AXI burst into rb[8][9].
+// INLINE off: sub-module keeps the BRAM port interface compact.
+// Flat 72-iteration loop with monotone address → HLS infers single burst,
+// matching load_row_down_q4k's single-burst pattern (288 words).
+// b_cnt/w_cnt track the 2D position without division.
+// b_cnt is runtime (0..7) → 8-way BRAM write mux on critical path.
+//   At 300 MHz (3.33 ns): -0.468 ns WNS — fails.
+//   At 250 MHz (4.0  ns): +0.202 ns WNS — closes (same path = 3.798 ns).
+// Nested loops (prior approach) produced 8×9-word bursts per call = 16 per
+// row-pair, each paying full DDR latency (~30 cycles @ 250 MHz). This flat
+// version pays latency once per 72-word burst = 2× per row-pair → ~3× faster
+// load phase, making X1/X2 roughly balanced with compute_output.
 static void load_row_wv(const ap_uint<128> *W_wide, int row,
                          ap_uint<128> rb[WV_BLOCKS_PER_ROW][Q4_K_WORDS]) {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=rb dim=1 complete
 
-    LOAD_BLOCK: for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
-        LOAD_WORD: for (int w = 0; w < Q4_K_WORDS; w++) {
-            #pragma HLS PIPELINE II=1
-            rb[b][w] = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + b * Q4_K_WORDS + w];
-        }
+    int b_cnt = 0, w_cnt = 0;
+    LOAD_FLAT: for (int i = 0; i < WV_ROW_WORDS; i++) {
+        #pragma HLS PIPELINE II=1
+        rb[b_cnt][w_cnt] = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + i];
+        if (w_cnt == Q4_K_WORDS - 1) { w_cnt = 0; b_cnt++; }
+        else { w_cnt++; }
     }
 }
 

@@ -1,0 +1,35 @@
+all benchmarks were run with flags: -p 4 -n 64 -t 4 -r 10 
+
+[CPU]
+Power: mean=5206.52 mW, stdev=160.14 mW, min=4870.00 mW, max=6250.00 mW, n=187
+Average power: 5.2065 W
+Duration: 271.00 s
+Total energy: 1411.5600 J  (0.392100 Wh)
+LPD temp: mean=31.03 C, stdev=0.87 C, min=29.00 C, max=33.00 C, n=187
+FPD temp: mean=30.47 C, stdev=0.82 C, min=28.00 C, max=32.00 C, n=187
+PL temp: mean=29.68 C, stdev=0.79 C, min=28.00 C, max=32.00 C, n=187
+
+[ACCEL]
+Power: mean=5056.60 mW, stdev=143.54 mW, min=4400.00 mW, max=5870.00 mW, n=238
+Average power: 5.0566 W
+Duration: 331.00 s
+Total energy: 1674.8800 J  (0.465244 Wh)
+LPD temp: mean=30.61 C, stdev=0.80 C, min=29.00 C, max=32.00 C, n=238
+FPD temp: mean=29.93 C, stdev=0.89 C, min=28.00 C, max=32.00 C, n=238
+PL temp: mean=29.48 C, stdev=0.69 C, min=28.00 C, max=31.00 C, n=238
+
+[DELTA ACCEL - CPU]
+Power delta: -149.93 mW (-2.88%)
+
+Derived metrics (using measured mean power and provided throughput):
+
+| Mode | Phase | Throughput (tokens/s) | Latency/token (us) | Power (W) | Energy/token (J/token) | Perf/W (tokens/s/W) |
+|---|---|---:|---:|---:|---:|---:|
+| CPU | Prefill | 3.27 +- 0.21 | 305810 +- 19639 | 5.2065 | 1.5922 +- 0.1134 | 0.6281 +- 0.0447 |
+| CPU | Decode | 2.51 +- 0.03 | 398406 +- 4762 | 5.2065 | 2.0743 +- 0.0684 | 0.4821 +- 0.0159 |
+| ACCEL | Prefill | 2.47 +- 0.11 | 404858 +- 18030 | 5.0566 | 2.0472 +- 0.1081 | 0.4885 +- 0.0258 |
+| ACCEL | Decode | 2.08 +- 0.02 | 480769 +- 4623 | 5.0566 | 2.4311 +- 0.0729 | 0.4113 +- 0.0123 |
+
+Throughput inputs used:
+- CPU-only: prefill 3.27 +- 0.21 t/s, decode 2.51 +- 0.03 t/s
+- ACCEL: prefill 2.47 +- 0.11 t/s, decode 2.08 +- 0.02 t/s

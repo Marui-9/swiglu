@@ -1,0 +1,43 @@
+Run all commands from repo root (`.../swiglu`).
+
+1) Parse one or more raw power logs (auto-detect metrics in each file)
+
+python scripts/parse_power_logs.py scripts/results/power_cpu_T1.log
+python scripts/parse_power_logs.py scripts/results/power_accel_T1.log
+python scripts/parse_power_logs.py scripts/results/power_cpu_T1.log scripts/results/power_accel_T1.log
+
+
+2) Parse paired CPU/ACCEL logs and print deltas
+
+python scripts/parse_power_logs.py --power-cpu scripts/results/power_cpu_T1.log --power-accel scripts/results/power_accel_T1.log
+python scripts/parse_power_logs.py --power-cpu scripts/results/power_cpu_T2.log --power-accel scripts/results/power_accel_T2.log
+python scripts/parse_power_logs.py --power-cpu scripts/results/power_cpu_T3.log --power-accel scripts/results/power_accel_T3.log
+python scripts/parse_power_logs.py --power-cpu scripts/results/power_cpu_T4.log --power-accel scripts/results/power_accel_T4.log
+
+
+3) Parse paired logs + bench logs (if bench logs contain t/s)
+
+python scripts/parse_power_logs.py --power-cpu scripts/results/power_cpu_T4.log --power-accel scripts/results/power_accel_T4.log --bench-cpu scripts/results/bench_cpu_T4.log --bench-accel scripts/results/bench_accel_T4.log --tps-mode last
+
+
+4) Plot averaged efficiency curves (Prefill+Decode averaged per thread)
+
+python scripts/plot_power_summary.py --input scripts/results/power_summary_T1_T4.csv --output scripts/results/power_summary_T1_T4_avg.png
+
+
+5) Plot raw throughput curves (separate Prefill/Decode for CPU/FPGA)
+
+python scripts/plot_raw_performance.py --input scripts/results/power_summary_T1_T4.csv --output scripts/results/power_summary_T1_T4_raw_perf.png
+
+
+6) Plot only performance-per-watt curve
+
+python scripts/plot_perf_per_watt.py --input scripts/results/power_summary_T1_T4.csv --output scripts/results/power_summary_T1_T4_perf_w.png
+
+
+7) Quick syntax checks for scripts
+
+python -m py_compile scripts/parse_power_logs.py
+python -m py_compile scripts/plot_power_summary.py
+python -m py_compile scripts/plot_raw_performance.py
+python -m py_compile scripts/plot_perf_per_watt.py
