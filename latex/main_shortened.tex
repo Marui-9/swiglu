@@ -1,0 +1,138 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+%
+\documentclass[runningheads]{llncs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% ADDED BY CC %%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand*{\@fnsymbol}[1]{\ensuremath{\ifcase#1\or \ \or*\or \dagger\or \ddagger\or
+   \mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
+   \or \ddagger\ddagger \else\@ctrerr\fi}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+\usepackage{graphicx}
+\usepackage{amsmath}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+% \renewcommand\UrlFont{\color{blue}\rmfamily}
+
+\begin{document}
+%
+\title{Tiny Acceleration of Liquid Foundation Models\thanks{SIE 2026, June 24-26, 2026, L'Aquila, Italy}}
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\author{Jacopo Marchesin\inst{1} \and
+Roberto Passerone\inst{2,3}\orcidID{1111-2222-3333-4444} \and
+Danilo Pau\inst{3}\orcidID{2222--3333-4444-5555}}
+%
+\authorrunning{F. Author et al.}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+\institute{University of Trento, Trento , \and
+Springer Heidelberg, Tiergartenstr. 17, 69121 Heidelberg, Germany
+\email{lncs@springer.com}\\
+\url{http://www.springer.com/gp/computer-science/lncs} \and
+ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
+\email{\{abc,lncs\}@uni-heidelberg.de}}
+%
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract}
+This paper presents a systems-driven approach to conversational audio inference on resource-constrained edge platforms by selectively offloading the heaviest computation phase of LFM2.5-1.5B-Audio to FPGA. The integration is implemented in a modified \texttt{llama.cpp}/ggml flow through a fused operator, layer-aware weight caching, and interrupt-based CPU--FPGA synchronization. This work shows that FPGA+CPU improves performance-per-watt at low to moderate CPU thread counts, while higher thread counts remain limited by memory-transfer and orchestration overheads. These results indicate that selective feed-forward acceleration is a practical and energy-effective step toward conversational-level edge inference.
+
+\keywords{Edge AI \and FPGA acceleration \and LFM2 \and hardware offload}
+\end{abstract}
+
+\section{Introduction, Research Question, and Contributions}\label{sec:intro}
+Conversational audio inference at the edge must satisfy three constraints at once: low latency, low power, and local processing for privacy and reliability. Transformer-based backbones can provide the required reasoning quality, but their feed-forward computation remains expensive on embedded CPUs. This gap is critical for systems that must respond in real time without cloud offload.
+
+This work targets that gap on AMD-Xilinx Kria KV260 to accelerate the language backbone (LFM2.5-1.2B-Thinking) of the  LFM2.5-Audio-1.5B model in the \texttt{llama.cpp}/ggml stack. This specific model was chosen because of its balance between capabilities and resource consumption. Instead of mapping the full model to hardware, we profile the CPU execution and adopt selective acceleration of only the dominant computational block. This keeps integration practical and maintains compatibility with existing inference frameworks.
+
+The research question addressed is: \emph{how can conversational-level audio inference be made more energy-efficient on edge hardware while maintaining usable throughput under strict compute and memory limits?} 
+
+This paper makes three contributions:
+\begin{enumerate}
+    \item \textbf{Bottleneck-driven target selection.} We identify feed-forward SwiGLU as the main execution hotspot of the chosen LFM2 backbone on embedded CPU, motivating selective acceleration.
+    \item \textbf{Practical CPU+FPGA integration.} We implement a fused hardware operator in ggml with graph-level interception, layer-aware weight caching, and interrupt-based completion in a production inference flow.
+    \item \textbf{Quantified efficiency/performance trade-off.} We report CPU Only vs FPGA+CPU results across 1--4 threads, showing where offload improves performance-per-watt and where memory movement and orchestration dominate.
+\end{enumerate}
+
+\section{Method}\label{sec:method}
+\subsection{Profiling-Driven Offload Target}
+We first profile the LFM2.5-1.2B-Thinking execution path in a modified \texttt{llama.cpp} backend to identify where time is spent per token. The dominant hotspot is the feed-forward path (MatMul + SwiGLU), which accounts for roughly two-thirds of total runtime in our CPU baseline. Based on this result, we offload only the feed-forward SwiGLU computation and keep all other operators on CPU. This selective strategy limits integration complexity and avoids a full-model hardware rewrite.
+
+\subsection{CPU--FPGA Handoff in ggml}
+For each token, ggml executes a graph where the LFM2 builder swaps the standard feed-forward block with \texttt{ggml\_swiglu\_fused\_hw} when runtime guards pass. The ggml CPU kernel then performs the handoff: cache layer weights once in \texttt{udmabuf}, quantize the input activation (FP32$\rightarrow$INT8), program AXI-Lite registers, start the accelerator, and wait for interrupt completion (with timeout protection). The FP32 output is copied back to the destination tensor; otherwise, execution falls back to CPU Only.
+
+\subsection{Feed-Forward Accelerator Organization}
+The accelerator implements:
+$$ \text{FFN}(x) = (\text{SiLU}(x W) \odot (x V)) W_{down} $$
+
+The internal pipeline follows the same stage structure used in the full paper: \textbf{Stage 1} loads and replicates the INT8 input activation, \textbf{Stages 2a/2b} compute $X_1 = x W^{T}$ and $X_2 = x V^{T}$ in parallel, \textbf{Stage 3} applies gated activation ($\mathrm{SiLU}(X_1)\cdot X_2$) with requantization, and \textbf{Stage 4} performs the down projection with output write-back. Weights are streamed from external memory; intermediate tensors are buffered on-chip (BRAM/URAM) to sustain dataflow execution.
+
+The stage behavior is asymmetric: projection stages are strongly affected by memory movement and burst quality, while the down-projection stage is more compute-dominant. This compute-vs-bandwidth imbalance is central to the final system-level results and explains why kernel acceleration does not always translate into proportional end-to-end speedup at higher CPU thread counts.
+
+\section{Experiments and Results}\label{sec:results}
+\subsection{Experimental Setup}
+Experiments are run on Kria KV260 (quad-core Cortex-A53 at 1.3\,GHz) with FPGA logic at 250\,MHz and shared DDR memory. The software stack is a modified \texttt{llama.cpp}/ggml runtime with optional fused feed-forward offload activated by an environment variable. We benchmark the LFM2.5-1.2B-Thinking backbone of the audio model in Q4\_K format using \texttt{llama-bench}. Power is sampled from onboard telemetry (\texttt{xmutil}) during each run. We report throughput (tokens/s) and performance-per-watt (tokens/s/W) for both prefill and decode.
+
+\subsection{Main Results}
+\begin{table}[h]
+\centering
+\scriptsize
+\caption{CPU Only vs FPGA+CPU across thread counts.}
+\label{tab:short_results}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{c c c c c c}
+\hline
+Threads & Mode & Prefill (t/s) & Decode (t/s) & Prefill (t/s/W) & Decode (t/s/W) \\
+\hline
+T1 & CPU Only & 1.10 & 0.97 & 0.2300 & 0.2028 \\
+T1 & FPGA+CPU & 1.83 & 1.53 & 0.3768 & 0.3150 \\
+\hline
+T2 & CPU Only & 2.19 & 1.07 & 0.4298 & 0.2100 \\
+T2 & FPGA+CPU & 2.35 & 2.03 & 0.4683 & 0.4045 \\
+\hline
+T3 & CPU Only & 3.06 & 2.61 & 0.5102 & 0.4352 \\
+T3 & FPGA+CPU & 2.55 & 2.22 & 0.4461 & 0.3883 \\
+\hline
+T4 & CPU Only & 3.27 & 2.51 & 0.6281 & 0.4821 \\
+T4 & FPGA+CPU & 2.47 & 2.08 & 0.4885 & 0.4113 \\
+\hline
+\end{tabular}
+\end{table}
+
+The FPGA+CPU configuration improves both throughput and efficiency at low thread counts (T1/T2), but the trend reverses at higher host parallelism (T3/T4), where CPU Only becomes better in tokens/s and tokens/s/W. Since board-level power remains relatively close between modes, the dominant factor is effective throughput: when data transfer and handoff overheads are amortized poorly, kernel acceleration gains are partially hidden at system level. This matches the method-level observation that projection stages are memory-sensitive, while down-projection is more compute-oriented.
+
+\section{Discussion and Conclusion}\label{sec:discussion_conclusion}
+Selective feed-forward offload is effective when host parallelism is limited: FPGA+CPU improves performance-per-watt at T1/T2, while CPU Only is better at T3/T4 because transfer and orchestration overheads dominate. This matches the stage-level bottlenecks (projection stages are bandwidth-limited; down projection is more compute-limited) and the practical FPGA resource ceiling, where additional unrolling yields diminishing returns. Overall, the approach is viable for energy-efficient edge inference, and the next improvements should target overlap of transfer/compute, more regular memory access, and higher weight/activation reuse.
+
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+% \bibliographystyle{splncs04}
+% \bibliography{mybibliography}
+%
+\bibliography{bibliography.bib}
+\end{document}

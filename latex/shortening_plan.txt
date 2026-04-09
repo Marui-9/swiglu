@@ -1,0 +1,120 @@
+Shortening Plan: `latex/main_shortened.tex` -> ~3 pages (single-column)
+
+Scope and constraints
+- Keep `docs/main.tex` unchanged.
+- Apply all reductions only to `latex/main_shortened.tex`.
+- Preserve the current style/class already used in `main_shortened.tex` unless your advisor/template package explicitly requires a different class.
+- Important note: `latex/shortened_template.tex` appears to be a bibliography style file (`.bst` content), not a manuscript layout template. We can still follow the intended "short paper" structure below.
+
+Target structure (3-page version)
+1) Introduction + Research Question + Contributions (merged)
+2) Method (profiling + offload orchestration + accelerator overview)
+3) Experiments and Results
+4) Discussion + Conclusion (short)
+
+What to keep vs cut (action map)
+
+A) Front matter
+- Keep:
+  - Title, authors, abstract, keywords.
+- Condense:
+  - Abstract to 5-7 lines; avoid universal claims. State that gains are strongest at low/moderate thread counts.
+
+B) Introduction + Research question
+- Keep:
+  - Core motivation: edge conversational inference constraints.
+  - One paragraph problem statement (current research question).
+- Cut/summarize:
+  - Long general background narrative on TinyML and broad AI evolution.
+- Action:
+  - Merge `Introduction` and `Research question` into one compact section (~0.6-0.8 page total).
+
+C) State of the Art
+- Keep:
+  - Only references directly needed to justify:
+    1) why LFM2 was selected,
+    2) why feed-forward offload is the chosen target,
+    3) prior KV260 acceleration context.
+- Cut:
+  - Multi-subsection survey depth and long descriptive paragraphs.
+- Action:
+  - Replace current full SoTA with one short "Related Work" section (2-4 paragraphs max, ~0.4-0.5 page).
+
+D) Contribution
+- Keep:
+  - Contribution list format.
+- Condense:
+  - 4 bullets -> 3 concise bullets:
+    1) bottleneck identification,
+    2) llama.cpp/ggml offload integration,
+    3) efficiency/performance findings with compute-vs-memory insight.
+- Action:
+  - Keep as short section (~0.2 page).
+
+E) Proposed approach
+- Keep:
+  - CPU profiling evidence that motivates offload.
+  - Offload orchestration flow (graph -> fused op -> cache weights -> interrupt completion).
+  - High-level accelerator equation and 5-stage flow.
+- Cut:
+  - Excessive implementation detail:
+    - detailed algorithm listing,
+    - full stage-by-stage micro-metrics as long prose,
+    - very detailed memory banking text.
+- Optional:
+  - Remove algorithm block if space is tight.
+  - Keep one compact flow figure only if it earns space.
+- Action:
+  - Convert to one concise Method section (~0.8-1.0 page).
+
+F) Experiments + Results
+- Keep:
+  - Experimental setup (very short).
+  - Metrics list (short).
+  - Baseline sentence.
+  - Main results table (CPU Only vs FPGA+CPU).
+  - Single interpretation paragraph ("Key observations").
+  - One performance-per-watt figure.
+- Cut/move:
+  - Resource utilization figure from main body (move to appendix/supplement if needed).
+- Action:
+  - Results order:
+    1) one intro sentence,
+    2) results table,
+    3) key observations paragraph,
+    4) perf/W figure.
+
+G) Discussion + Conclusion
+- Keep:
+  - Core causal explanation:
+    - stage 2 more data-movement-limited,
+    - stage 4 more compute-dominant,
+    - resource saturation limits further unrolling.
+  - Practical conclusion and next steps.
+- Cut:
+  - Any repetition of numeric results already in Results section.
+- Action:
+  - Make Discussion short (1 paragraph) and Conclusion short (1 paragraph), or merge them if needed.
+
+Consistency rules to enforce in shortened version
+- Naming: use exactly `CPU Only` and `FPGA+CPU`.
+- Terminology: use `feed-forward` consistently.
+- Keep units/notation consistent (SI style, no mixed decimal separators).
+- Avoid repeated claims across sections.
+
+Execution order (for implementation)
+1) Create condensed section skeleton in `main_shortened.tex`.
+2) Rewrite Intro+RQ merged section.
+3) Replace SoTA with compact Related Work.
+4) Trim Contribution to 3 bullets.
+5) Compress Method (remove deep internals first).
+6) Keep only core Experiments/Results artifacts (table + one figure + one paragraph).
+7) Shorten Discussion/Conclusion and remove overlap.
+8) Final consistency pass (labels, terminology, units).
+
+Estimated page allocation (single-column target)
+- Intro+RQ+Contrib: 0.8 page
+- Related Work: 0.5 page
+- Method: 0.9 page
+- Experiments+Results: 0.6-0.7 page
+- Discussion+Conclusion: 0.2-0.3 page
