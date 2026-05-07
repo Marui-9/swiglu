@@ -8,6 +8,14 @@ FILES AND EXECUTION PROCESS OF LLAMA.cpp
             switch that dispatches the per-op kernels. Here are the functions called by the graph runner.
             the offload logic (UIO mmap, reg programming, IRQ wait, copy out) must live here in a kernel.
 
+
+ggml != llama.cpp:
+llama.cpp builds the model graph using ggml ops.
+Your custom fused op (e.g. ggml_swiglu_fused_hw) is defined/executed in the ggml CPU backend (ggml.c / ggml-cpu.c in your modified tree).
+When that op runs, backend code prepares buffers/registers and starts the FPGA IP.
+swiglu.cpp is the HLS kernel/IP implementation that actually computes the feed-forward block in hardware.
+So: ggml orchestrates and dispatches; swiglu.cpp computes on FPGA.
+
 End-to-end flow (CPU backend):
 
 1. Model is loaded from GGUF; llama.cpp (or the app) calls ggml factory functions (in ggml.c) to 

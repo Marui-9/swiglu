@@ -1,0 +1,6 @@
+cd testblock
+gcc -O2 -Wall -Wextra -o smoketest smoketest.c -lm
+sudo ./smoketest
+# or: sudo ./smoketest 0xA0000000
+
+sudo ./smoketest 0xA0000000 0 0

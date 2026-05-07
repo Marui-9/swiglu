@@ -1,0 +1,41 @@
+Setup
+Worst Negative Slack (WNS): -0.62 ns
+
+Total Negative Slack (TNS): -12164.402 ns
+
+Number of Failing Endpoints: 50239
+
+Total Number of Endpoints: 372721
+
+Hold
+Worst Hold Slack (WHS): 0.010 ns
+
+Total Hold Slack (THS): 0.000 ns
+
+Number of Failing Endpoints: 0
+
+Total Number of Endpoints: 372721
+
+Pulse Width
+Worst Pulse Width Slack (WPWS): 0.183 ns
+
+Total Pulse Width Negative Slack (TPWS): 0.000 ns
+
+Number of Failing Endpoints: 0
+
+Total Number of Endpoints: 137313
+
+Status: Timing constraints are not met.
+
+Name,Slack,Levels,Routes,High Fanout,From,To,Total Delay,Logic Delay,Net Delay,Requirement,Source Clock
+Path 1,-0.602,4,3,8,...DSP_OUTPUT_INST/CLK,...ALU_OUT[24],3.857,1.484,2.373,3.4,clk_pl_0
+Path 2,-0.602,4,3,8,...DSP_OUTPUT_INST/CLK,...ALU_OUT[25],3.857,1.484,2.373,3.4,clk_pl_0
+Path 3,-0.602,4,3,8,...DSP_OUTPUT_INST/CLK,...ALU_OUT[26],3.857,1.484,2.373,3.4,clk_pl_0
+Path 4,-0.602,4,3,8,...DSP_OUTPUT_INST/CLK,...ALU_OUT[27],3.857,1.484,2.373,3.4,clk_pl_0
+Path 5,-0.602,4,3,8,...DSP_OUTPUT_INST/CLK,...ALU_OUT[28],3.857,1.484,2.373,3.4,clk_pl_0
+Path 6,-0.602,4,3,8,...DSP_OUTPUT_INST/CLK,...ALU_OUT[29],3.857,1.484,2.373,3.4,clk_pl_0
+Path 7,-0.602,4,3,8,...DSP_OUTPUT_INST/CLK,...ALU_OUT[30],3.857,1.484,2.373,3.4,clk_pl_0
+Path 8,-0.602,4,3,8,...DSP_OUTPUT_INST/CLK,...ALU_OUT[31],3.857,1.484,2.373,3.4,clk_pl_0
+Path 9,-0.602,4,3,8,...DSP_OUTPUT_INST/CLK,...ALU_OUT[32],3.857,1.484,2.373,3.4,clk_pl_0
+Path 10,-0.602,4,3,8,...DSP_OUTPUT_INST/CLK,...ALU_OUT[33],3.857,1.484,2.373,3.4,clk_pl_0
+

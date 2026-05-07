@@ -1,0 +1,20 @@
+End-to-End Latency Deduction
+From power_results.txt (measured throughput):
+Calculation for the benchmark test (-p 4 -n 32):
+Prefill phase (4 tokens): 4 tokens × 405 ms = **1.6 seconds**
+Decode phase (32 tokens): 32 tokens × 481 ms = **15.4 seconds**
+Total end-to-end latency: ~17 seconds
+From hardware debug logs (per-layer timing):
+The [SWG] elapsed=19ms entries show:
+
+19ms per token per layer (consistent across tokens 1-4)
+16 layers total
+Per token through full model: ~19ms × 16 = 304ms/token (for decode)
+Note: The 481ms from throughput measurement includes DMA overhead, register programming, and polling delays that aren't captured in just the FPGA compute time.
+
+Duration metadata:
+From power log timestamps (1775669271 to 1775669298):
+
+Power measurements span ~27 seconds
+Full test run (10 iterations): ~331 seconds for ACCEL mode
+Per-run average: ~33 seconds (matches: 4 token prefill + 32 token decode with overhead)

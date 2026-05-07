@@ -41,11 +41,16 @@ danilo.pau@st.com}
 \maketitle
 
 \begin{abstract}
-This work presents a systems-driven approach to enabling conversational audio inference on resource-constrained edge devices. This is achieved through a custom FPGA accelerator for the LFM2.5-1.2B-Thinking model by Liquid AI designed to offload the heaviest part of inference to reduce latency and energy consumption. The proposed implementation enables a comprehensive evaluation of the interaction between computation and data movement in transformer feed-forward layers under edge constraints. Results show a significant reduction in energy consumption while maintaining compatibility with existing inference frameworks. These findings demonstrate that selectively accelerating feed-forward components provides an effective pathway toward conversational-level performance on embedded platforms.
+
+Edge conversational AI has recently shifted from cloud-centric deployment to on-device execution because of latency, privacy, and power constraints; however, transformer backbones remain difficult to run in real time on embedded hardware.
+This work presents a systems-driven approach to enabling conversational audio inference on resource-constrained edge devices. This is achieved through a custom FPGA accelerator for the LFM2.5-1.2B-Thinking model by Liquid AI designed to offload the heaviest part of inference to reduce latency and energy consumption. The proposed implementation enables a comprehensive evaluation of the interaction between computation and data movement in transformer feed-forward layers under edge constraints. Results show a significant reduction in energy consumption while maintaining compatibility with existing inference frameworks. In single and double-threaded execution the FPGA+CPU path reached performance-per-watt gains of +63.8\% and +55.3\% respectively over the CPU baseline.
+These findings demonstrate that selectively accelerating feed-forward components provides an effective pathway toward conversational-level performance on embedded platforms. 
+
+
 \end{abstract}
 
 \begin{IEEEkeywords}
-FPGA, Edge AI, LFM2, Hardware Acceleration
+FPGA, Edge AI, LFM2.5, Hardware Acceleration
 \end{IEEEkeywords}
 
 \section{Introduction}\label{introd}
@@ -113,10 +118,10 @@ Several architectures exceed practical memory and bandwidth limits for embedded 
 \end{figure}
 
 
-Based on this analysis, LFM2 was selected as the primary candidate for subsequent experiments by this work, as it lies closest to the efficiency–capability trade-off required for conversational inference under edge resource constraints.
+Based on this analysis, LFM2.5 was selected as the primary candidate for subsequent experiments by this work, as it lies closest to the efficiency–capability trade-off required for conversational inference under edge resource constraints.
 
 \subsection{Related work on the Kria KV260 platform}
-Following the identification of LFM2 as a suitable candidate for edge deployment, the next step is to map its computational workload onto an appropriate hardware platform. Field-Programmable Gate Arrays (FPGAs) provide a compelling target for edge AI acceleration due to their ability to exploit fine-grained parallelism, customize dataflow, and operate within tight power and latency budgets.
+Following the identification of LFM2.5 as a suitable candidate for edge deployment, the next step is to map its computational workload onto an appropriate hardware platform. Field-Programmable Gate Arrays (FPGAs) provide a compelling target for edge AI acceleration due to their ability to exploit fine-grained parallelism, customize dataflow, and operate within tight power and latency budgets.
 
 Recent work on the AMD-Xilinx Kria KV260 demonstrates the feasibility of accelerating transformer models. Several works identify the feed-forward network (FFN) as a major contributor to inference latency and bandwidth consumption, alongside attention mechanisms, and propose hardware accelerators that jointly target both components.
 
@@ -223,6 +228,14 @@ The CPU programs the accelerator via memory-mapped registers, asserts a start si
 \subsection{FPGA accelerator}
 The proposed accelerator implements the feed-forward block of the LFM2 language backbone. 
 $$ \text{FFN}(x) = (\text{SiLU}(x W) \odot (x V)) W_{down} $$
+\begin{subequations}\label{eq:swiglu_stage_set}
+\begin{align}
+X_1 &= x W^{T} \label{eq:swiglu_s2a}\\
+X_2 &= x V^{T} \label{eq:swiglu_s2b}\\
+G   &= \text{SiLU}(X_1)\odot X_2 \label{eq:swiglu_s3}\\
+\text{FFN}(x) &= G W_{down} \label{eq:swiglu_s4}
+\end{align}
+\end{subequations}
 
 where:
 \begin{itemize}
@@ -230,6 +243,10 @@ where:
     \item $W$ is the gating projection
     \item $V$ is the expansion projection
     \item $W_{down}$ is the output projection
+    \item Eq.~\eqref{eq:swiglu_s2a} is computed in Stage 2a (gate projection)
+    \item Eq.~\eqref{eq:swiglu_s2b} is computed in Stage 2b (up projection)
+    \item Eq.~\eqref{eq:swiglu_s3} is computed in Stage 3 (gated activation)
+    \item Eq.~\eqref{eq:swiglu_s4} is computed in Stage 4 (down projection)
     \item $\odot$ is element-wise multiplication
     \item $\text{SiLU}(z) = z \cdot \sigma(z)$
 \end{itemize}
@@ -291,39 +308,104 @@ Compute utilization at \SI{1.58}{Gops/s}: 39\% of peak (\SI{4.00}{Gops/s}).
 \end{itemize}
 \begin{figure}[htb!]
 \centering
+% \begin{tikzpicture}[
+%     font=\scriptsize,
+%     >=Latex,
+%     node distance=5mm,
+%     block/.style={draw, rounded corners, thick, align=center, minimum height=6mm, text width=2.6cm},
+%     mem/.style={draw, thick, align=center, minimum height=5mm, text width=2.4cm, fill=gray!10},
+%     line/.style={-Latex, thick}
+% ]
+
+% % Stage 1 (centered)
+% \node[block] (loadx) {\textbf{Stage 1}\\Load $x$ (INT8)};
+
+% % Split (tight + symmetric)
+% \node[mem, below left=3mm and 2mm of loadx] (x1buf) {$x_1$ bank};
+% \node[mem, below right=3mm and 2mm of loadx] (x2buf) {$x_2$ bank};
+
+% % Stage 2
+% \node[block, below=7mm of x1buf] (x1) {\textbf{Stage 2a}\\$X_1=xW_{gate}$};
+% \node[block, below=7mm of x2buf] (x2) {\textbf{Stage 2b}\\$X_2=xW_{up}$};
+
+% % Caches
+% \node[mem, below=of x1] (x1cache) {$X_1$};
+% \node[mem, below=of x2] (x2cache) {$X_2$};
+
+% % Stage 3 (left branch only)
+% \node[block, below=7mm of x1cache] (silu) {\textbf{Stage 3}\\SiLU($X_1$)};
+
+% % Stage 4 (CENTERED BETWEEN BRANCHES)
+% \node[block, below=10mm of $(silu)!0.5!(x2cache)$] (gate)
+% {\textbf{Stage 4}\\gate=SiLU($X_1$)$\cdot X_2$};
+
+% % Stage 5
+% \node[block, below=of gate] (down)
+% {\textbf{Stage 5}\\$gate \cdot W_{down}^{T}$};
+
+% % Output
+% \node[mem, below=of down] (out) {out};
+
+% % Connections
+% \draw[line] (loadx) -- (x1buf);
+% \draw[line] (loadx) -- (x2buf);
+
+% \draw[line] (x1buf) -- (x1);
+% \draw[line] (x2buf) -- (x2);
+
+% \draw[line] (x1) -- (x1cache);
+% \draw[line] (x2) -- (x2cache);
+
+% \draw[line] (x1cache) -- (silu);
+
+% % BOTH branches go DOWN into Stage 4
+% \draw[line] (silu.south) |- (gate.west);
+% \draw[line] (x2cache.south) |- (gate.east);
+
+% \draw[line] (gate) -- (down);
+% \draw[line] (down) -- (out);
+
+% \end{tikzpicture}
+% \caption{Compact dataflow of the SwiGLU accelerator.}
+% \label{fig:swiglu_compact}
+% \end{figure}
+
 \begin{tikzpicture}[
     font=\scriptsize,
     >=Latex,
     node distance=5mm,
     block/.style={draw, rounded corners, thick, align=center, minimum height=6mm, text width=2.6cm},
+    stageWorst/.style={block, fill=red!18, draw=red!60!black},
+    stageLow/.style={block, fill=orange!22, draw=orange!70!black},
+    stageStd/.style={block, fill=gray!10, draw=black},
     mem/.style={draw, thick, align=center, minimum height=5mm, text width=2.4cm, fill=gray!10},
     line/.style={-Latex, thick}
 ]
 
 % Stage 1 (centered)
-\node[block] (loadx) {\textbf{Stage 1}\\Load $x$ (INT8)};
+\node[stageStd] (loadx) {\textbf{Stage 1}\\Load $x$ (INT8)};
 
 % Split (tight + symmetric)
 \node[mem, below left=3mm and 2mm of loadx] (x1buf) {$x_1$ bank};
 \node[mem, below right=3mm and 2mm of loadx] (x2buf) {$x_2$ bank};
 
 % Stage 2
-\node[block, below=7mm of x1buf] (x1) {\textbf{Stage 2a}\\$X_1=xW_{gate}$};
-\node[block, below=7mm of x2buf] (x2) {\textbf{Stage 2b}\\$X_2=xW_{up}$};
+\node[stageWorst, below=7mm of x1buf] (x1) {\textbf{Stage 2a}\\$X_1=xW_{gate}$};
+\node[stageWorst, below=7mm of x2buf] (x2) {\textbf{Stage 2b}\\$X_2=xW_{up}$};
 
 % Caches
 \node[mem, below=of x1] (x1cache) {$X_1$};
 \node[mem, below=of x2] (x2cache) {$X_2$};
 
 % Stage 3 (left branch only)
-\node[block, below=7mm of x1cache] (silu) {\textbf{Stage 3}\\SiLU($X_1$)};
+\node[stageStd, below=7mm of x1cache] (silu) {\textbf{Stage 3}\\SiLU($X_1$)};
 
 % Stage 4 (CENTERED BETWEEN BRANCHES)
-\node[block, below=10mm of $(silu)!0.5!(x2cache)$] (gate)
+\node[stageLow, below=10mm of $(silu)!0.5!(x2cache)$] (gate)
 {\textbf{Stage 4}\\gate=SiLU($X_1$)$\cdot X_2$};
 
 % Stage 5
-\node[block, below=of gate] (down)
+\node[stageStd, below=of gate] (down)
 {\textbf{Stage 5}\\$gate \cdot W_{down}^{T}$};
 
 % Output
@@ -348,12 +430,15 @@ Compute utilization at \SI{1.58}{Gops/s}: 39\% of peak (\SI{4.00}{Gops/s}).
 \draw[line] (gate) -- (down);
 \draw[line] (down) -- (out);
 
+% Legend
+\node[draw, rounded corners, fill=white, align=left, anchor=north west, font=\scriptsize]
+at ($(out.south west)+(0mm,-6mm)$) {\fcolorbox{red!75!black}{red!18}{\strut\hspace{0.9em}}~Worst utilization\\
+\fcolorbox{orange!80!black}{orange!22}{\strut\hspace{0.9em}}~Low utilization};
+
 \end{tikzpicture}
 \caption{Compact dataflow of the SwiGLU accelerator.}
 \label{fig:swiglu_compact}
 \end{figure}
-
-
 
 \section{Experiments} \label{sec:experiments}
 
@@ -370,10 +455,10 @@ Compute utilization at \SI{1.58}{Gops/s}: 39\% of peak (\SI{4.00}{Gops/s}).
 The evaluation considers the following metrics:
 
 \begin{itemize}
-    \item \textbf{Latency per token} ($\mu$s)
+%    \item \textbf{Latency per token} ($\mu$s)
     \item \textbf{Throughput} (tokens/s)
     \item \textbf{Power consumption} (W)
-    \item \textbf{Energy per token} (J/token)
+%    \item \textbf{Energy per token} (J/token)
     \item \textbf{Performance per watt} (tokens/s/W)
     \item \textbf{FPGA resource utilization} (LUT, FF, BRAM, URAM, DSP)
 \end{itemize}
@@ -384,40 +469,40 @@ The baseline corresponds to CPU Only execution of the same model using identical
 
 \subsection{Results}
 
-This section compares CPU Only and FPGA+CPU execution across thread counts (T1--T4) using throughput and performance-per-watt. Table~\ref{tab:results} reports the main quantitative results, while Fig.~\ref{fig:perf_w} and Fig.~\ref{fig:utilization} provide complementary views of efficiency trends and hardware resource usage.
+This section compares CPU Only and FPGA+CPU execution across thread counts (T1--T4) using throughput and performance-per-watt. Table~\ref{tab:short_results} reports the main quantitative results, while Fig.~\ref{fig:utilization} provides a view of efficiency trends and hardware resource usage.
 
 \begin{table}[h]
 \centering
 \scriptsize
-\caption{CPU Only vs FPGA+CPU results across thread counts (KV260).}
-\label{tab:results}
+\caption{CPU Only vs CPU+FPGA across thread counts.}
+\label{tab:short_results}
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{c c c c c c}
 \hline
 Threads & Mode & Prefill (t/s) & Decode (t/s) & Prefill (t/s/W) & Decode (t/s/W) \\
 \hline
 T1 & CPU Only & 1.10 & 0.97 & 0.2300 & 0.2028 \\
-T1 & FPGA+CPU & 1.83 & 1.53 & 0.3768 & 0.3150 \\
+T1 & FPGA+CPU & \textbf{1.83} & \textbf{1.53} & \textbf{0.3768} & \textbf{0.3150} \\
 \hline
 T2 & CPU Only & 2.19 & 1.07 & 0.4298 & 0.2100 \\
-T2 & FPGA+CPU & 2.35 & 2.03 & 0.4683 & 0.4045 \\
+T2 & FPGA+CPU & \textbf{2.35} & \textbf{2.03} & \textbf{0.4683} & \textbf{0.4045} \\
 \hline
-T3 & CPU Only & 3.06 & 2.61 & 0.5102 & 0.4352 \\
+T3 & CPU Only & \textbf{3.06} & \textbf{2.61} & \textbf{0.5102} & \textbf{0.4352} \\
 T3 & FPGA+CPU & 2.55 & 2.22 & 0.4461 & 0.3883 \\
 \hline
-T4 & CPU Only & 3.27 & 2.51 & 0.6281 & 0.4821 \\
+T4 & CPU Only & \textbf{3.27} & \textbf{2.51} & \textbf{0.6281} & \textbf{0.4821} \\
 T4 & FPGA+CPU & 2.47 & 2.08 & 0.4885 & 0.4113 \\
 \hline
 \end{tabular}
 \end{table}
-\textbf{Key observations.} The FPGA+CPU path improves efficiency at lower thread counts, but not uniformly across all settings. At T1, performance-per-watt improves by +63.8\% (prefill) and +55.3\% (decode) versus CPU Only. At T2, gains are +9.0\% (prefill) and +92.6\% (decode). At higher thread counts, CPU Only remains superior in performance-per-watt: FPGA+CPU is lower by 12.6\%/10.8\% at T3 and 22.2\%/14.7\% at T4 (prefill/decode). Since board-level power remains close between modes, these trends indicate that end-to-end throughput is dominated by orchestration and memory movement effects rather than raw arithmetic scaling alone.
+Table~\ref{tab:short_results} reports the measured throughput and performance-per-watt values; their interpretation is discussed in Section~\ref{sec:discussion}.
 
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=\linewidth]{images/power_summary_T1_T4_perf_w.png}
-  \caption{Obtained performance-per-watt in llama-bench for CPU Only execution at various thread counts, compared with FPGA+CPU.}
-  \label{fig:perf_w}
-\end{figure}
+% \begin{figure}[!ht]
+%   \centering
+%   \includegraphics[width=\linewidth]{images/power_summary_T1_T4_perf_w.png}
+%   \caption{Obtained performance-per-watt in llama-bench for CPU Only execution at various thread counts, compared with FPGA+CPU.}
+%   \label{fig:perf_w}
+% \end{figure}
 
 \begin{figure}[!ht]
   \centering
@@ -427,12 +512,17 @@ T4 & FPGA+CPU & 2.47 & 2.08 & 0.4885 & 0.4113 \\
 \end{figure}
 
 \section{Discussion} \label{sec:discussion}
-The experimental results show that offloading the SwiGLU feed-forward block to FPGA improves energy efficiency, even when absolute throughput does not consistently surpass the CPU Only baseline at higher thread counts. This is consistent with the design target: SwiGLU is a dominant kernel, and accelerating it reduces compute energy per token, especially in low-to-moderate CPU-thread regimes (e.g., T1/T2), where the FPGA+CPU configuration achieves better performance-per-watt. At higher thread counts (T3/T4), CPU Only execution remains faster, indicating that host-side overheads and memory-transfer costs still limit end-to-end speedup.
+The FPGA+CPU solution improves efficiency at lower thread counts, not uniformly across all settings. At T1, performance-per-watt improves by +63.8\% (prefill) and +55.3\% (decode) versus CPU Only. At T2, gains are +9.0\% (prefill) and +92.6\% (decode). At higher thread counts, CPU Only remains superior in performance-per-watt: FPGA+CPU is lower by 12.6\%/10.8\% at T3 and 22.2\%/14.7\% at T4 (prefill/decode). Since board-level power remains similar across modes (~4.8–6.0 W in both modes), these trends are consistent with end-to-end throughput being constrained more by orchestration and memory movement than by arithmetic scaling alone.
 
-A key practical constraint is resource saturation in the programmable logic: most usable LUT/logic budget is already occupied, and additional parallelization attempts increase routing pressure and timing-closure difficulty rather than yielding proportional gains. The design is near the efficient frontier of this device for the current architecture. These findings reinforce that, for edge transformer inference, compute offload alone is not sufficient; optimizing weight movement, memory layout, and access/bandwidth orchestration is equally critical to convert kernel-level acceleration into full-system performance gains while preserving the observed energy-efficiency benefits.
+%The FPGA+CPU path improves efficiency at lower thread counts, but not uniformly across all settings. At T1, performance-per-watt improves by +63.8% (prefill) and +55.3% (decode) versus CPU Only, while at T2 the gains are +9.0% (prefill) and +92.6% (decode). However, at higher thread counts CPU Only remains superior in performance-per-watt, with FPGA+CPU lower by 12.6%/10.8% at T3 and 22.2%/14.7% at T4 (prefill/decode). Because board-level power remains relatively close between the two modes, these results suggest that end-to-end throughput is increasingly limited by orchestration overheads and memory movement rather than by arithmetic throughput alone. This behavior is consistent with prior accelerator studies showing that transformer sub-block specialization can improve efficiency, but that realized system-level gains depend strongly on dataflow, buffering, and host-device coordination rather than kernel speed in isolation [1]–[3]. It is also aligned with recent LLM inference work emphasizing that serving performance, especially in decode, is often constrained by memory layout, cache management, and transfer scheduling [4], [5].
+
+The results indicate that offloading the SwiGLU feed-forward block to FPGA is beneficial because it targets a compute-dominant kernel, much as prior transformer accelerators have focused on FFN/MLP and attention substructures as the most profitable hardware targets %\cite{FTRANS} 
+\cite{lu2020hw-mha}. In the present case, the FPGA+CPU configuration improves performance-per-watt most clearly at lower thread counts (T1/T2), indicating that the accelerator is effective when host-side contention is limited and the cost of orchestration can be amortized. By contrast, at T3/T4 the CPU Only path remains faster, which suggests that the incremental benefit of SwiGLU acceleration is offset by transfer overhead, synchronization, and the inability of the surrounding execution pipeline to supply data to the programmable logic efficiently enough. Results reported using larger FPGA platforms, greater memory bandwidth and fabric capacity help kernel-level gains and end-to-end speedup \cite{FTRANS}.
+
+A further practical observation is that the design operates close to the resource limit of the KV260 device: most usable LUT/logic budget is already occupied, and attempts to increase parallelism primarily intensify routing pressure and timing-closure difficulty rather than yielding proportional throughput gains. Consequently, the present results are better interpreted as characterizing the trade-off space of edge heterogeneous inference rather than as an isolated acceleration result. Similar to prior FPGA transformer studies, hardware efficiency is not determined only by the mapped operator, but also by whether the platform can sustain the required on-chip reuse and off-chip bandwidth without excessive control overhead \cite{FTRANS}. These observations suggest that for edge transformer inference, compute offload of a dominant block such as SwiGLU is valuable, but its system-level benefit depends on co-optimizing weight movement, memory layout, and access orchestration; otherwise, improvements in compute energy per token do not fully translate into proportional end-to-end throughput gains.
 \section{Conclusion} \label{sec:conclusion}
 This work presented a selective FPGA offload strategy for LFM2.5-1.2B-Thinking, targeting the SwiGLU feed-forward block to enable conversational audio inference pipelines on resource-constrained edge platforms. The implementation integrates with the existing llama.cpp/ggml flow and demonstrates measurable energy-efficiency gains, especially at low and moderate thread counts, while preserving framework compatibility. Although the FPGA path does not consistently exceed CPU Only throughput at higher thread counts, the results clarify the limiting factors: practical on-device performance is jointly determined by compute parallelism, weight/data movement, and host-device orchestration. Importantly, the design already operates near the usable logic and routing budget of the target FPGA, so further gains are less likely to come from naive parallel replication and more likely from memory-path restructuring, overlap of transfers with compute, and tighter stage-level balancing (notably in stages 2 and 4). Overall, the study confirms that selective feed-forward acceleration is a viable and energy-effective step toward conversational-level edge inference, and provides a concrete roadmap for next optimizations in LFM2-Audio-1.5B deployment.
-\bibliographystyle{IEEEtran}
-\bibliography{bibliography.bib}
 
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography} 
 \end{document}

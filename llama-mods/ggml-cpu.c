@@ -2133,6 +2133,10 @@ static void ggml_compute_forward_swiglu_fused_hw(
             const float *out_check = (const float *)((char*)udmabuf_vptr + SWG_OUT_OFF);
             fprintf(stderr, "[SWG]   out[0..3] (F32): %.4f  %.4f  %.4f  %.4f\n",
                     out_check[0], out_check[1], out_check[2], out_check[3]);
+            float cksum = 0.f;
+            for (int i = 0; i < (int)(bsz * 2048); i++) cksum += out_check[i];
+            fprintf(stderr, "[SWG]   out_cksum (sum of %d floats): %.6f\n",
+                    (int)(bsz * 2048), cksum);
         }
         memcpy((char*)dst->data + (size_t)c * 2048 * sizeof(float),
                (char*)udmabuf_vptr + SWG_OUT_OFF,

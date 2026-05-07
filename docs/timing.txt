@@ -1,20 +1,21 @@
+(this is the latest bitstream which was NOT working)
 Setup
-Worst Negative Slack (WNS): 0.284 ns
+Worst Negative Slack (WNS): -3.710 ns
 
-Total Negative Slack (TNS): 0.000 ns
+Total Negative Slack (TNS): -125602.121 ns
+
+Number of Failing Endpoints: 113743
+
+Total Number of Endpoints: 358025
+
+Hold
+Worst Hold Slack (WHS): 0.006 ns
+
+Total Hold Slack (THS): 0.000 ns
 
 Number of Failing Endpoints: 0
 
-Total Number of Endpoints: 360452
-
-Hold
-Worst Hold Slack (WHS): -0.082 ns
-
-Total Hold Slack (THS): -2224.846 ns
-
-Number of Failing Endpoints: 84938
-
-Total Number of Endpoints: 360452
+Total Number of Endpoints: 358025
 
 Pulse Width
 Worst Pulse Width Slack (WPWS): 0.183 ns
@@ -23,10 +24,9 @@ Total Pulse Width Negative Slack (TPWS): 0.000 ns
 
 Number of Failing Endpoints: 0
 
-Total Number of Endpoints: 133363
+Total Number of Endpoints: 131698
 
 Status: Timing constraints are not met.
-
 
 notes from vivado docs:
 The Vivado router performs optimization during routing 

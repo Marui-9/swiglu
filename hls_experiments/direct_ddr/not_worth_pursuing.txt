@@ -1,0 +1,25 @@
+the idea is to eliminate the weight copy
+
+What eliminating the weight copy would actually change
+Steady-state throughput: zero improvement.
+
+The swg_layer_W/V/Wd_loaded[16] flags in the driver already cache weights into udmabuf on the first call per layer and never re-copy. After the first token of a session, the per-token cost of the weight path is zero — only x (8 KB) and output (8 KB) transfer per token.
+
+Cold start (first token per session): saves ~100 ms.
+
+First call per layer copies 9 + 9 + 9–13 MB = 27–31 MB × 16 layers = ~450 MB total via memcpy. At ~4 GB/s on the A53: ~110 ms one-time cost. Direct DDR would skip this. One token faster per boot, then identical.
+
+Memory footprint: significant saving.
+
+The entire 614 MB of udmabuf weight regions goes away — udmabuf shrinks from 640 MB to ~26 MB (just the x and output bounce buffers). CMA reservation drops from 16% of total RAM to essentially nothing.
+
+Why it's not worth pursuing for performance
+Looking at the bottleneck table from pragmas.txt:
+
+Stage	What limits it	Efficiency
+compute_X1 ∥ X2	DDR bandwidth	30% of 4 GB/s
+compute_output	MAC throughput	55% of 4 Gops/s
+The load phases are DDR-bandwidth-bound at 30%, meaning the MAC compute already stalls waiting for DDR. The AXI master ports in the current design already read directly from DDR (no memcpy on the hot path). Moving weight storage from udmabuf to the original mmap'd pages doesn't change DDR bandwidth — the same 9 MB traversal happens at the same rate either way.
+
+Verdict
+The only real benefit is the 640 MB → 26 MB CMA reservation. If the board has memory pressure from running other applications alongside llama.cpp, that's worth doing. If it's dedicated to inference, it's not worth the virtual→physical address translation complexity. No t/s improvement to be expected in either case.
