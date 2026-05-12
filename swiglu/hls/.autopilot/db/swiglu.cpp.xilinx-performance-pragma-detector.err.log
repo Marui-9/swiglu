@@ -1,3 +1,0 @@
-C:\Users\Jacob\Desktop\Vitis_projects\swiglu\swiglu.cpp:6:10: fatal error: 'string.h' file not found
-#include <string.h>
-         ^~~~~~~~~~

@@ -720,4 +720,42 @@ The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typic
 
 37. final accelerator results: 2.7 t/s prefill, 2.4 t/s decode
     with the current swiglu.cpp synthesized at 333MHz
-    with vivado pl clock an pl.dtsi at 250
+    with vivado pl clock an pl.dtsi at 250MHz
+
+38. Notes from analysis by analyze_throughput.py
+    Prefill (4 tokens): 1.62s (5% of total) @ 2.47 t/s
+    Decode (64 tokens): 30.77s (95% of total) @ 2.08 t/s
+    Total: 32.39s per inference run
+    Where Time Goes
+    Component	Duration	% of Total
+    Hardware compute	20.76s	64.1%
+    Overhead (DMA/polling/AXI)	11.63s	35.9%
+
+    Critical Insight: The Bottleneck
+    The decode phase is consuming 36.5% overhead (11.23s of 30.77s):
+
+    Per-token overhead: 171.1 ms
+    Per-layer overhead: 10.7 ms
+    Hardware compute per token: 305.2 ms
+    This means for every 305 ms of actual FPGA work, you're spending 171 ms
+    on DMA transfers, interrupt polling, and register programming. 
+    That's nearly 1:1 overhead-to-computation ratio.
+
+    Why Prefill is Better
+    Prefill phase has only 24.6% overhead vs decode's 36.5% because the costs 
+    are amortized over larger batch sizes (4 tokens vs 1 token per call in effective pipeline state).
+
+    The decode phase is what you need to optimize first—reducing per-token latency 
+    from 171ms overhead to something sub-50ms would get you closer to the 4 t/s target 
+    mentioned in CLAUDE.md.
+
+39. actual calculation of throughput
+    Based on the model dimensions provided (input vector of 2048, feed-forward dimension of 8192):
+    Gate Projection ($W_{gate}$): $2048 \times 8192 \times 2 \approx 33.55$ Mega Operations (MOPs)
+    Up Projection ($W_{up}$): $2048 \times 8192 \times 2 \approx 33.55$ MOPs
+    Down Projection ($W_{down}$): $8192 \times 2048 \times 2 \approx 33.55$ MOPs
+    Total: approx 100.65 MOPs -> 0.1006  GOPs per token
+    
+    $Step 2: Calculate Effective System Throughput (GOPs)Multiply the operations per token by 
+    the highest achieved end-to-end system throughput. Using the optimal hybrid decode throughput of
+     2.08 tokens/s (at T4):$0.1006 \text{ GOPs/token} \times 2.08 \text{ tokens/s} = \mathbf{0.209 \text{ GOPs}}$

@@ -17,4 +17,4 @@ From power log timestamps (1775669271 to 1775669298):
 
 Power measurements span ~27 seconds
 Full test run (10 iterations): ~331 seconds for ACCEL mode
-Per-run average: ~33 seconds (matches: 4 token prefill + 32 token decode with overhead)
+Per-run average: ~33 seconds (matches: 4 token prefill + 32 token decode with overhead) 

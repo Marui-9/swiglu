@@ -3,19 +3,46 @@
 /export
 
 # Ignore object files and dependent files
-.o
-.d
+*.o
+*.d
 
 #Ignore logs folder and log files
 /logs
 .log
 
-#Ignore lock files
-.lock
+# Ignore lock files
+*.lock
 
-.bin
-.pdi
-.vitisWorkspace.json
+# Vivado/Vitis generated files
+*.bin
+*.pdi
+*.vitisWorkspace.json
+hs_err_pid*.dmp
 
+# IDE artifacts
 _ide/logs
 _ide/.wsdata
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+
+# HLS Synthesized files and build artifacts
+swiglu/hls/.autopilot/
+swiglu/hls/.debug/
+swiglu/hls/csim/build/
+swiglu/hls/csim/report/
+swiglu/hls/impl/
+swiglu/hls/syn/
+swiglu/hls/reports/
+swiglu/logs/
+
+# HLS summary files (project configuration, can be regenerated)
+*.hlscompile_summary
+*.hlsrun_csim_summary
+*.hlsrun_package_summary
+
+# Keep only source and config files in swiglu/hls/
+!swiglu/hls/
+!swiglu/hls/*.json
+!swiglu/hls/*.cmdline
