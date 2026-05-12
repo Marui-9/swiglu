@@ -759,3 +759,24 @@ The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typic
     $Step 2: Calculate Effective System Throughput (GOPs)Multiply the operations per token by 
     the highest achieved end-to-end system throughput. Using the optimal hybrid decode throughput of
      2.08 tokens/s (at T4):$0.1006 \text{ GOPs/token} \times 2.08 \text{ tokens/s} = \mathbf{0.209 \text{ GOPs}}$
+
+40. considerations on limitations and workload
+
+        The Core Problem
+        The final result is 2.4 t/s decode — barely matching the CPU baseline of ~2.9 t/s. 
+        the FPGA accelerator doesn't meaningfully beat the CPU. The fundamental issue:
+
+        Q4_K is a CPU-friendly format that maps poorly to FPGA fabric. The format requires irregular 
+        nibble extraction mux trees that consume >50% of the chip's LUTs as pure routing logic. The triple multiply (INT8 × INT4 × UINT6) 
+        can't map to DSP48E2 (single 27×18 multiplier only). Meanwhile, the CPU's NEON units chew through the same Q4_K kernels at ~41 GMAC/s 
+        peak vs the FPGA's ~3.2 GMAC/s.
+        The 1248 DSPs sit 84% idle because they're arithmetic units, and the bottleneck is mux logic.
+
+41. Proposed optimization change: Pre-decode Q4_K Weights to INT8 
+    currently, we need huge MUXes: Q4_K maps very well to the cpu but poorly to the fpga fabric, since the format requires irregular
+    nibble extraction that consumes a huge amount of LUTs.
+    The triple multiply (INT8 × INT4 × UINT6) can't map to DSP48E2 (single 27×18 multiplier only).
+    Meanwhile, the CPU's NEON units chew through the same Q4_K kernels at ~41 GMAC/s peak vs the FPGA's ~3.2 GMAC/s.
+
+    So we can make the fpga avoid that weird multiply by having the cpu pre-decode the weights once per layer. 
+    Then the fpga would have clean INT8 to use, so it can harness the MACs to do INT8*INT8

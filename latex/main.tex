@@ -1,44 +1,55 @@
-\documentclass[conference]{IEEEtran}
-\IEEEoverridecommandlockouts
-% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
-\usepackage{cite}
+\documentclass[manuscript, authordraft]{acmart}
+\AtBeginDocument{% 
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+\setcopyright{acmlicensed}
+\copyrightyear{2027}
+\acmYear{2027}
+\acmDOI{}
+\acmConference[HiPEAC '27]{HiPEAC 2027}{Glasgow, United Kingdom}{}
+
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{multirow}
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{float}
-\usepackage{siunitx} % Standard package for SI units
+\usepackage{siunitx}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning, fit, calc}
 \usepackage{textcomp}
 \usepackage{xcolor}
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-\begin{document}
 
 \title{Tiny Acceleration of Liquid Foundation Models}
 
-\author{\IEEEauthorblockN{Jacopo Marchesin}
-\IEEEauthorblockA{\textit{DISI} \\
-\textit{University of Trento}\\
-Trento, Italy \\
-marchesin.jacopo772@gmail.com}
-\and
-\IEEEauthorblockN{Roberto Passerone}
-\IEEEauthorblockA{\textit{DISI} \\
-\textit{University of Trento}\\
-Trento, Italy \\
-roberto.passerone@unitn.it}
-\and
-\IEEEauthorblockN{Danilo Pau}
-\IEEEauthorblockA{\textit{System Research and Applications} \\
-\textit{STMicroelectronics}\\
-Agrate Brianza, Italy \\
-danilo.pau@st.com}
-}
+% \author{Jacopo Marchesin}
+% \affiliation{% 
+%   \institution{DISI}
+%   \institution{University of Trento}
+%   \city{Trento}
+%   \country{Italy}}
+% \email{marchesin.jacopo772@gmail.com}
 
-\maketitle
+% \author{Roberto Passerone}
+% \affiliation{% 
+%   \institution{DISI}
+%   \institution{University of Trento}
+%   \city{Trento}
+%   \country{Italy}}
+% \email{roberto.passerone@unitn.it}
+
+% \author{Danilo Pau}
+% \affiliation{% 
+%   \institution{System Research and Applications}
+%   \institution{STMicroelectronics}
+%   \city{Agrate Brianza}
+%   \country{Italy}}
+% \email{danilo.pau@st.com}
+
+% \renewcommand{\shortauthors}{Marchesin et al.}
+
+\begin{document}
 
 \begin{abstract}
 
@@ -49,9 +60,9 @@ These findings demonstrate that selectively accelerating feed-forward components
 
 \end{abstract}
 
-\begin{IEEEkeywords}
-FPGA, Edge AI, LFM2.5, Hardware Acceleration
-\end{IEEEkeywords}
+\keywords{FPGA, Edge AI, LFM2.5, Hardware Acceleration}
+
+\maketitle
 
 \section{Introduction}\label{introd}
 The rapid growth of intelligent sensing devices is shifting AI from power hungry data centers and cloud-centric systems to low power edge platforms where perception, generation, reasoning, and control occur near the data source under challenging latency, energy, and privacy constraints \cite{reddi2025generative}. 
@@ -105,7 +116,7 @@ Addressing this challenge requires new approaches to model design, streaming inf
 
 \subsection{Profiling of Speech Models for Edge Deployment}
 To evaluate the feasibility of conversational inference on edge devices, several speech and multimodal models were profiled using a tool called gguf-parser-go \footnote{https://github.com/gpustack/gguf-parser-go}, which allows extraction of structural and resource information from models stored in the GGUF format. The profiling focuses on deployment-relevant metrics including parameter count, unified memory (UMA) footprint, memory bandwidth requirements, and estimated compute throughput.
-The resulting comparison, illustrated in \ref{fig:efficiency}, summarizes the resource characteristics of a representative set of models including LLM-based architectures, speech synthesis systems, and multimodal conversational models. 
+The resulting comparison, illustrated in fig. \ref{fig:efficiency}, summarizes the resource characteristics of a representative set of models including LLM-based architectures, speech synthesis systems, and multimodal conversational models. 
 In the visualization, model parameters and memory footprint represent the primary hardware constraints, while bandwidth and compute throughput indicate the expected runtime cost during inference. 
 The results highlight large variations in deployment requirements across the evaluated models. 
 Several architectures exceed practical memory and bandwidth limits for embedded platforms, despite offering strong conversational capabilities. In contrast, LFM2.5-Audio-1.5B \footnote{https://huggingface.co/LiquidAI/LFM2.5-Audio-1.5B} provides an interesting balance between model capacity and resource consumption, combining a relatively small memory footprint with moderate bandwidth requirements while maintaining a parameter scale suitable for conversational tasks.
@@ -138,7 +149,6 @@ The profiling results presented in  ~\ref{subsec:cpuexec} show that, for small m
 This shift in computational balance motivates a different design perspective, where the feed-forward path becomes the primary target for acceleration.
 Furthermore, the LFM2-1.2B variant operates using quantized weights without bias terms, simplifying the arithmetic structure of the model and making it particularly well suited for efficient FPGA implementation.
 %+coprocessing
-
 
 \section{Contribution}\label{sec:contribution}
 This paper makes four contributions.
@@ -308,68 +318,6 @@ Compute utilization at \SI{1.58}{Gops/s}: 39\% of peak (\SI{4.00}{Gops/s}).
 \end{itemize}
 \begin{figure}[htb!]
 \centering
-% \begin{tikzpicture}[
-%     font=\scriptsize,
-%     >=Latex,
-%     node distance=5mm,
-%     block/.style={draw, rounded corners, thick, align=center, minimum height=6mm, text width=2.6cm},
-%     mem/.style={draw, thick, align=center, minimum height=5mm, text width=2.4cm, fill=gray!10},
-%     line/.style={-Latex, thick}
-% ]
-
-% % Stage 1 (centered)
-% \node[block] (loadx) {\textbf{Stage 1}\\Load $x$ (INT8)};
-
-% % Split (tight + symmetric)
-% \node[mem, below left=3mm and 2mm of loadx] (x1buf) {$x_1$ bank};
-% \node[mem, below right=3mm and 2mm of loadx] (x2buf) {$x_2$ bank};
-
-% % Stage 2
-% \node[block, below=7mm of x1buf] (x1) {\textbf{Stage 2a}\\$X_1=xW_{gate}$};
-% \node[block, below=7mm of x2buf] (x2) {\textbf{Stage 2b}\\$X_2=xW_{up}$};
-
-% % Caches
-% \node[mem, below=of x1] (x1cache) {$X_1$};
-% \node[mem, below=of x2] (x2cache) {$X_2$};
-
-% % Stage 3 (left branch only)
-% \node[block, below=7mm of x1cache] (silu) {\textbf{Stage 3}\\SiLU($X_1$)};
-
-% % Stage 4 (CENTERED BETWEEN BRANCHES)
-% \node[block, below=10mm of $(silu)!0.5!(x2cache)$] (gate)
-% {\textbf{Stage 4}\\gate=SiLU($X_1$)$\cdot X_2$};
-
-% % Stage 5
-% \node[block, below=of gate] (down)
-% {\textbf{Stage 5}\\$gate \cdot W_{down}^{T}$};
-
-% % Output
-% \node[mem, below=of down] (out) {out};
-
-% % Connections
-% \draw[line] (loadx) -- (x1buf);
-% \draw[line] (loadx) -- (x2buf);
-
-% \draw[line] (x1buf) -- (x1);
-% \draw[line] (x2buf) -- (x2);
-
-% \draw[line] (x1) -- (x1cache);
-% \draw[line] (x2) -- (x2cache);
-
-% \draw[line] (x1cache) -- (silu);
-
-% % BOTH branches go DOWN into Stage 4
-% \draw[line] (silu.south) |- (gate.west);
-% \draw[line] (x2cache.south) |- (gate.east);
-
-% \draw[line] (gate) -- (down);
-% \draw[line] (down) -- (out);
-
-% \end{tikzpicture}
-% \caption{Compact dataflow of the SwiGLU accelerator.}
-% \label{fig:swiglu_compact}
-% \end{figure}
-
 \begin{tikzpicture}[
     font=\scriptsize,
     >=Latex,
@@ -516,13 +464,31 @@ The FPGA+CPU solution improves efficiency at lower thread counts, not uniformly 
 
 %The FPGA+CPU path improves efficiency at lower thread counts, but not uniformly across all settings. At T1, performance-per-watt improves by +63.8% (prefill) and +55.3% (decode) versus CPU Only, while at T2 the gains are +9.0% (prefill) and +92.6% (decode). However, at higher thread counts CPU Only remains superior in performance-per-watt, with FPGA+CPU lower by 12.6%/10.8% at T3 and 22.2%/14.7% at T4 (prefill/decode). Because board-level power remains relatively close between the two modes, these results suggest that end-to-end throughput is increasingly limited by orchestration overheads and memory movement rather than by arithmetic throughput alone. This behavior is consistent with prior accelerator studies showing that transformer sub-block specialization can improve efficiency, but that realized system-level gains depend strongly on dataflow, buffering, and host-device coordination rather than kernel speed in isolation [1]–[3]. It is also aligned with recent LLM inference work emphasizing that serving performance, especially in decode, is often constrained by memory layout, cache management, and transfer scheduling [4], [5].
 
-The results indicate that offloading the SwiGLU feed-forward block to FPGA is beneficial because it targets a compute-dominant kernel, much as prior transformer accelerators have focused on FFN/MLP and attention substructures as the most profitable hardware targets %\cite{FTRANS} 
-\cite{lu2020hw-mha}. In the present case, the FPGA+CPU configuration improves performance-per-watt most clearly at lower thread counts (T1/T2), indicating that the accelerator is effective when host-side contention is limited and the cost of orchestration can be amortized. By contrast, at T3/T4 the CPU Only path remains faster, which suggests that the incremental benefit of SwiGLU acceleration is offset by transfer overhead, synchronization, and the inability of the surrounding execution pipeline to supply data to the programmable logic efficiently enough. Results reported using larger FPGA platforms, greater memory bandwidth and fabric capacity help kernel-level gains and end-to-end speedup \cite{FTRANS}.
+The results indicate that offloading the SwiGLU feed-forward block to FPGA is beneficial because it targets a compute-dominant kernel, consistently with prior transformer accelerators that focus on FFN/MLP and attention substructures as the most advantageous hardware targets %\cite{FTRANS} 
+\cite{lu2020hw-mha}. In the present case, the FPGA+CPU configuration improves performance-per-watt most clearly at lower thread counts (T1/T2),yielding gains of +63.8\% (prefill) and +55.3\% (decode) at T1, and +9.0\% (prefill) and +92.6\% (decode) at T2, indicating that the accelerator is effective when host-side contention is limited and the cost of orchestration can be amortized.In contrast, at T3/T4 the CPU Only path remains faster, with the FPGA+CPU configuration exhibiting a performance-per-watt decrease of 12.6\%/10.8\% at T3, and 22.2\%/14.7\% at T4 (prefill/decode). This suggests that the incremental benefit of SwiGLU acceleration is offset by transfer overhead, synchronization, and the inability of the surrounding execution pipeline to supply data to the programmable logic efficiently enough. 
 
-A further practical observation is that the design operates close to the resource limit of the KV260 device: most usable LUT/logic budget is already occupied, and attempts to increase parallelism primarily intensify routing pressure and timing-closure difficulty rather than yielding proportional throughput gains. Consequently, the present results are better interpreted as characterizing the trade-off space of edge heterogeneous inference rather than as an isolated acceleration result. Similar to prior FPGA transformer studies, hardware efficiency is not determined only by the mapped operator, but also by whether the platform can sustain the required on-chip reuse and off-chip bandwidth without excessive control overhead \cite{FTRANS}. These observations suggest that for edge transformer inference, compute offload of a dominant block such as SwiGLU is valuable, but its system-level benefit depends on co-optimizing weight movement, memory layout, and access orchestration; otherwise, improvements in compute energy per token do not fully translate into proportional end-to-end throughput gains.
+Results reported using larger FPGA platforms suggest that greater memory bandwidth and fabric capacity help kernel-level gains and end-to-end speedup \cite{FTRANS}.
+Direct comparison with a recent deployment of a 6.6k-parameter Tiny Transformer on the same platform highlights the resource intensity of conversational architectures. While the Tiny Transformer maps its entire end-to-end pipeline using only 30\% of available Look-Up Tables (LUTs) and 37\% of Block RAM (BRAM) \cite{11310944tin}, accelerating just the feed-forward SwiGLU block of the 1.2B-parameter LFM2.5 model nearly saturates the same device at 90\% LUT and 60\% BRAM utilization.
+A Self-Attention accelerator on the KV260 highlights differing architectural trade-offs \cite{li2025fpgabasedhardware}. While our design uses mixed precision (INT8 activations, 4-bit weights) at 250 MHz and consuming 4.8–6.0 W, the attention-focused design processes DistilBERT-scale matrices using symmetric INT8 quantization at 100 MHz and approximately 3.3 W. Furthermore, whereas LFM2.5 heavily saturates logic, the attention accelerator prioritizes arithmetic and memory fabric (83\% DSPs, 88\% BRAM).
+Another comparable study conducted using the KV260 for matrix mutliplication acceleration reports similar severe processing system (PS) bottlenecks \cite{11311069}. In the BRAM-banked matrix multiplication implementation the effective system throughput of 13.52 GOPs amounts to 59\% utilization of the peak 22.83 GOPs. Our isolated FPGA accelerator operates between 39\% (stages 2a/2b) and 54\% (stage 4) of its maximum capacity, when computing the feedforward block kernel due to memory bandwidth starvation. This disparity reflects the architectural focus: the BRAM-banked design maximizes arithmetic density by dedicating 83.17\% of the DSP slices to an unrolled 32x32 INT8 multiplier array, whereas the LFM2.5 SwiGLU design utilizes only 26\% of DSP slices to process a mixed precision vector-matrix dataflow.
+
+Extending hardware acceleration beyond the SwiGLU block to the Final Linear Projection and Gated Short Convolution yields diminishing returns, as they account for only 10.96\% and 10.44\% of total execution time, respectively. Furthermore, simultaneous acceleration is physically infeasible on the KV260 platform, as the SwiGLU kernel alone leaves insufficient resources for additional hardware mapping.
+Attempts to increase parallelism primarily intensify routing pressure and timing-closure difficulty rather than yielding proportional throughput gains. 
+Consequently, the present results are better interpreted as characterizing the trade-off space of edge heterogeneous inference rather than as an isolated acceleration result. 
+Similar to prior FPGA transformer studies, hardware efficiency is not determined only by the mapped operator, but also by whether the platform can sustain the required on-chip reuse and off-chip bandwidth without excessive control overhead \cite{FTRANS}. These observations suggest that for edge transformer inference, compute offload of a dominant block such as SwiGLU can improve energy efficiency, but its system-level benefit depends also on the ability of the system to sustain efficient data movement and execution orchestration; otherwise, improvements in compute energy per token do not fully translate into proportional throughput gains.
 \section{Conclusion} \label{sec:conclusion}
 This work presented a selective FPGA offload strategy for LFM2.5-1.2B-Thinking, targeting the SwiGLU feed-forward block to enable conversational audio inference pipelines on resource-constrained edge platforms. The implementation integrates with the existing llama.cpp/ggml flow and demonstrates measurable energy-efficiency gains, especially at low and moderate thread counts, while preserving framework compatibility. Although the FPGA path does not consistently exceed CPU Only throughput at higher thread counts, the results clarify the limiting factors: practical on-device performance is jointly determined by compute parallelism, weight/data movement, and host-device orchestration. Importantly, the design already operates near the usable logic and routing budget of the target FPGA, so further gains are less likely to come from naive parallel replication and more likely from memory-path restructuring, overlap of transfers with compute, and tighter stage-level balancing (notably in stages 2 and 4). Overall, the study confirms that selective feed-forward acceleration is a viable and energy-effective step toward conversational-level edge inference, and provides a concrete roadmap for next optimizations in LFM2-Audio-1.5B deployment.
 
-\bibliographystyle{IEEEtran}
-\bibliography{bibliography} 
+\section{Future work}
+Despite efficiency improvements at lower thread counts, performance is constrained by several factors. 
+The design exhibits memory-bound behavior, achieving only 21–29\% of peak DDR bandwidth despite 39–54\% compute utilization. This aligns with known bottlenecks in auto-regressive decoding, where baseline bandwidth utilization often drops to 29–43\% even on higher-end platforms \cite{FlightLLM}. Closing this performance gap requires improved data movement strategies. Future work will therefore focus on memory-centric optimizations, including tiling, double-buffering, and layout restructuring, targeting higher sustained bandwidth utilization.
+At the system level, host–accelerator overhead limits scalability.
+In contrast, other co-designed frameworks achieve more stable scaling through tighter compiler–runtime integration \cite{cano}. Future work will investigate asynchronous execution and pipelined scheduling to reduce synchronization overhead and improve utilization.
+Extending hardware coverage beyond 85\% of runtime, and hence more kernels than just the feedforward SwiGLU layer, is also a key direction for improving end-to-end performance. However, this requires additional compute fabric on the FPGA.
+Importantly, the design already effectively utilizes the available resources on the KV260, and remaining inefficiencies stem primarily from memory and system-level constraints, rather than insufficient optimization effort. Similar work pushing the same platform to the limit required complex operator fusion and custom data arrangements to maximize memory bandwidth \cite{Li2025Pushing}.
+
+Overall, future improvements will require co-optimization of data movement, scheduling, and numerical representation, as well as evaluation on platforms with higher bandwidth and resources, bridging the gap between lightweight selective acceleration and more general co-design frameworks.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{bibliography}
 \end{document}
+
