@@ -780,3 +780,29 @@ The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typic
 
     So we can make the fpga avoid that weird multiply by having the cpu pre-decode the weights once per layer. 
     Then the fpga would have clean INT8 to use, so it can harness the MACs to do INT8*INT8
+	41. Proposed: CPU pre-decode Q4_K weights to flat INT8 format
+	    Goal: eliminate get_byte() mux trees and triple-multiply from FPGA.
+	    Full unpack: 288 bytes/block = 18 words (flat nibbles + flat sc6/mn6).
+
+	42. Experiment 1 — Full unpack (18 words)
+	    C-sim passes. HLS csynth: LUTs drop 31% (155K -> 107K), BRAM 190 -> 638 (221%).
+	    Vivado placement fails at 152K LUTs. Every fix (word-major, no-UNPACK, 32-word
+	    padding, explicit full-word reads, BIND_STORAGE variations) gives identical result.
+
+	43. Root cause — dimension sweep (original code, only Q4_K_WORDS changed)
+	      9 words: BRAM 64/64/4  (baseline)
+	     10 words: BRAM 64/64/4  (works)
+	     16 words: BRAM 64/64/4  (works)
+	     18 words: BRAM 96/96/388 (fails)
+	    Threshold between 16 and 18. Likely HLS heuristic: next-power-of-2 >= 32
+	    (array depth >= 17) triggers auto-BRAM regardless of BIND_STORAGE pragmas.
+
+	44. Hybrid approach — implemented (10 words = 160 bytes/block)
+	    Headers pre-decoded to flat INT8 (sc6/mn6), nibbles kept packed 4-bit.
+	    UNPACK_HDR_K2 simplified: ~40 get_byte() -> 4 simple reads. BRAM stays at 190.
+	    Partial pre-decode: headers on CPU, nibbles on FPGA. Block 11% larger than orig.
+
+	45. Full unpack via split arrays (not implemented)
+	    DDR: 18 words/block. On-chip: rb_hdr[32][2] + rb_nib[32][16], both <= 16 deep.
+	    BIND_STORAGE honored on each, BRAM stays at 190. Adds load-function demux.
+	    Marginal gain vs hybrid since MAC nibble access cost is similar either way.
