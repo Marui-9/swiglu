@@ -68,7 +68,7 @@ static int      swg_last_prog_layer = -1;
 static uint32_t swg_last_prog_mode  = 0;
 
 // udmabuf layout (640 MB pool)
-#define UDMABUF_SIZE        671088640U
+#define UDMABUF_SIZE        859832320U  // 820 MB (was 640 MB)
 #define SWG_MAX_BATCH       1    // tokens per IP call (must match HLS MAX_BATCH=1)
 #define SWG_MAX_TOKENS     64   // max tokens per fused op (looped in SWG_MAX_BATCH chunks)
 #define SWG_VEC_OFF         0x06C50000U  // x INT8
@@ -106,6 +106,19 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_CTRL_OUT_HI  0x44  // gmem_out base hi
 #define SWG_CTRL_MODE    0x4C  // 0=Q4_K (1=Q6_K requires ENABLE_Q6K build)
 #define SWG_CTRL_XSCALE  0x54  // float bits
+
+// Hybrid weight scratch region — single slot, reused per layer.
+// CMA is 1000 MB, udmabuf extended to 820 MB.
+// Hybrid per-block: 160 bytes (d/dmin fp16 + sc6/mn6 flat INT8 + padding + nibbles packed 4-bit).
+// Per matrix: 10 MB. Per layer: 3 × 10 MB = 30 MB → pad to 36 MB.
+#define SWG_SCRATCH_BASE       0x2A000000U
+#define SWG_SCRATCH_SIZE       0x02400000U   // 36 MB (12 MB per matrix, padded)
+#define SWG_SCRATCH_W_OFF      0x00000000U
+#define SWG_SCRATCH_V_OFF      0x00C00000U   // 12 MB
+#define SWG_SCRATCH_WD_OFF     0x01800000U   // 24 MB
+#define WV_BLOCKS_PER_ROW      8
+#define DOWN_BLOCKS_PER_ROW    32
+#define UNPACKED_BLOCK_BYTES   160
 
 static void udmabuf_sync_to_device(uint32_t offset, uint32_t size) {
     if (sync_offset_fd >= 0 && sync_size_fd >= 0) {
@@ -151,6 +164,50 @@ static void reformat_q6k_to_fieldsplit(const uint8_t *src, uint8_t *dst, int n_r
             memcpy(dst_qh + b * 64,  blk + 128,  64);
             memcpy(dst_sc + b * 16,  blk + 192,  16);
             memcpy(dst_d  + b * 2,   blk + 208,   2);
+        }
+    }
+}
+
+// unpack_q4k_to_int8: convert Q4_K packed weights to unpacked 288-byte block format.
+// Each block's nibbles are expanded to 1 INT8/byte, sc6/mn6 decoded to separate
+// INT8 arrays, d/dmin copied verbatim.  Run once per layer on first use.
+// Hybrid format: sc6/mn6 flat INT8 (no interleave), nibbles packed 4-bit (same layout).
+// Block layout: d(2)+dmin(2)+sc6[8](8)+mn6[8](8)+pad(12)+nibbles[128 packed]=160 bytes.
+static void unpack_q4k_to_int8(const uint8_t *src, uint8_t *dst,
+                                int n_rows, int blocks_per_row) {
+    const int src_block_bytes = 144;   // Q4_K packed
+    const int dst_block_bytes = UNPACKED_BLOCK_BYTES;   // 160
+    for (int row = 0; row < n_rows; row++) {
+        for (int b = 0; b < blocks_per_row; b++) {
+            const uint8_t *blk_src = src + ((size_t)row * blocks_per_row + b) * src_block_bytes;
+            uint8_t       *blk_dst = dst + ((size_t)row * blocks_per_row + b) * dst_block_bytes;
+
+            // d/dmin: copy verbatim (bytes 0-3)
+            blk_dst[0] = blk_src[0]; blk_dst[1] = blk_src[1];
+            blk_dst[2] = blk_src[2]; blk_dst[3] = blk_src[3];
+
+            // Decode sc6[0..7] and mn6[0..7] from Q4_K header (bytes 4-15)
+            // into flat INT8 arrays at dst[4..11] and dst[12..19]
+            uint8_t sc6[8], mn6[8];
+            for (int i = 0; i < 4; i++) {
+                sc6[i] = blk_src[4 + i] & 0x3F;
+                mn6[i] = blk_src[8 + i] & 0x3F;
+            }
+            for (int i = 4; i < 8; i++) {
+                int j = i - 4;
+                sc6[i] = (blk_src[12 + j] & 0x0F) | (uint8_t)((blk_src[4 + j] >> 6) << 4);
+                mn6[i] = (blk_src[12 + j] >> 4)   | (uint8_t)((blk_src[8 + j] >> 6) << 4);
+            }
+            for (int i = 0; i < 8; i++) {
+                blk_dst[4  + i] = sc6[i];
+                blk_dst[12 + i] = mn6[i];
+            }
+            // Padding: bytes 20-31 = 0
+            memset(blk_dst + 20, 0, 12);
+
+            // Nibbles: packed 4-bit, same GGML planar layout as original Q4_K.
+            // Copy src[16..143] verbatim to dst[32..159].
+            memcpy(blk_dst + 32, blk_src + 16, 128);
         }
     }
 }
@@ -1953,46 +2010,32 @@ static void ggml_compute_forward_swiglu_fused_hw(
                 x->data, (int)x->ne[0], (int)x->ne[1], (int)x->type);
     }
 
-    bool copied_W = false, copied_V = false, copied_Wd = false;
-    if (!swg_layer_W_loaded[layer]) {
-        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   COPY W  layer %d (%zu bytes) → udmabuf+0x%08X\n", layer, gate_bytes, SWG_LAYER_W_OFF(layer));
-        memcpy((char*)udmabuf_vptr + SWG_LAYER_W_OFF(layer), W_gate->data, gate_bytes);
-        swg_layer_W_loaded[layer] = true;
-        copied_W = true;
-    } else if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG]   W  layer %d: already cached\n", layer);
-    }
-    if (!swg_layer_V_loaded[layer]) {
-        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   COPY V  layer %d (%zu bytes) → udmabuf+0x%08X\n", layer, up_bytes, SWG_LAYER_V_OFF(layer));
-        memcpy((char*)udmabuf_vptr + SWG_LAYER_V_OFF(layer), W_up->data, up_bytes);
-        swg_layer_V_loaded[layer] = true;
-        copied_V = true;
-    } else if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG]   V  layer %d: already cached\n", layer);
-    }
-    if (!swg_layer_Wd_loaded[layer]) {
-        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   COPY Wd layer %d (%zu bytes) → udmabuf+0x%08X\n", layer, down_bytes, SWG_LAYER_WD_OFF(layer));
-        if (W_down->type == GGML_TYPE_Q6_K) {
-            // Reformat from GGUF interleaved blocks to field-split layout so the
-            // FPGA can burst ql/qh/sc/d directly without the 6656-cycle extraction loop.
-            reformat_q6k_to_fieldsplit((const uint8_t *)W_down->data,
-                                       (uint8_t *)udmabuf_vptr + SWG_LAYER_WD_OFF(layer),
-                                       (int)W_down->ne[1]);  // ne[1] = 2048 rows
-        } else {
-            memcpy((char*)udmabuf_vptr + SWG_LAYER_WD_OFF(layer), W_down->data, down_bytes);
-        }
-        swg_layer_Wd_loaded[layer] = true;
-        copied_Wd = true;
-    } else if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG]   Wd layer %d: already cached\n", layer);
-    }
-    if (copied_W)  udmabuf_sync_to_device(SWG_LAYER_W_OFF(layer),  (uint32_t)gate_bytes);
-    if (copied_V)  udmabuf_sync_to_device(SWG_LAYER_V_OFF(layer),  (uint32_t)up_bytes);
-    if (copied_Wd) udmabuf_sync_to_device(SWG_LAYER_WD_OFF(layer), (uint32_t)down_bytes);
+    // Unpack Q4_K to pre-decoded INT8 format. Single scratch slot, reused per layer.
+    // The A53 unpacks while the FPGA is idle (pre-ap_start), so unpack latency is
+    // directly on the critical path.  ~8-12 ms for all three matrices on the A53.
+    if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   UNPACK layer %d → scratch\n", layer);
 
-    uint64_t phys_W  = udmabuf_phys_base + SWG_LAYER_W_OFF(layer);
-    uint64_t phys_V  = udmabuf_phys_base + SWG_LAYER_V_OFF(layer);
-    uint64_t phys_Wd = udmabuf_phys_base + SWG_LAYER_WD_OFF(layer);
+    unpack_q4k_to_int8((const uint8_t *)W_gate->data,
+                       (uint8_t *)udmabuf_vptr + SWG_SCRATCH_BASE + SWG_SCRATCH_W_OFF,
+                       (int)W_gate->ne[1], WV_BLOCKS_PER_ROW);
+    unpack_q4k_to_int8((const uint8_t *)W_up->data,
+                       (uint8_t *)udmabuf_vptr + SWG_SCRATCH_BASE + SWG_SCRATCH_V_OFF,
+                       (int)W_up->ne[1], WV_BLOCKS_PER_ROW);
+    if (W_down->type == GGML_TYPE_Q6_K) {
+        reformat_q6k_to_fieldsplit((const uint8_t *)W_down->data,
+                                   (uint8_t *)udmabuf_vptr + SWG_SCRATCH_BASE + SWG_SCRATCH_WD_OFF,
+                                   (int)W_down->ne[1]);
+    } else {
+        unpack_q4k_to_int8((const uint8_t *)W_down->data,
+                           (uint8_t *)udmabuf_vptr + SWG_SCRATCH_BASE + SWG_SCRATCH_WD_OFF,
+                           (int)W_down->ne[1], DOWN_BLOCKS_PER_ROW);
+    }
+
+    udmabuf_sync_to_device(SWG_SCRATCH_BASE, SWG_SCRATCH_SIZE);
+
+    uint64_t phys_W  = udmabuf_phys_base + SWG_SCRATCH_BASE + SWG_SCRATCH_W_OFF;
+    uint64_t phys_V  = udmabuf_phys_base + SWG_SCRATCH_BASE + SWG_SCRATCH_V_OFF;
+    uint64_t phys_Wd = udmabuf_phys_base + SWG_SCRATCH_BASE + SWG_SCRATCH_WD_OFF;
 
     uint64_t phys_x_base   = udmabuf_phys_base + SWG_VEC_OFF;
     uint64_t phys_out_base = udmabuf_phys_base + SWG_OUT_OFF;

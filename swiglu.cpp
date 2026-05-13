@@ -1,8 +1,11 @@
 #include "swiglu.h"
 #include "sigmoid_lut.h"
 #include <stdint.h>
-// Q6K path disabled — all 16 ffn_down layers in the target GGUF are Q4_K.
-// Re-enable by uncommenting: #define ENABLE_Q6K
+// Q6K path: enabled for C-simulation only (validates full interface).
+// Disabled for synthesis — all 16 ffn_down layers in the target GGUF are Q4_K.
+#ifndef __SYNTHESIS__
+#define ENABLE_Q6K
+#endif
 #include <string.h>
 #include <ap_int.h>
 #include <ap_fixed.h>
@@ -47,6 +50,13 @@ typedef ap_fixed<56,38> fxd_accum_t;
 #define DOWN_Q6K_WORDS       (DOWN_ROW_Q6K_BYTES / 16)   // 420
 #endif
 
+// ─── Unpacked Q4_K block constants (CPU pre-decoded format) ────────────────────
+// The CPU unpacker converts each 144-byte Q4_K block into a 288-byte unpacked block:
+//   [0-1] d fp16, [2-3] dmin fp16, [4-11] sc6[8] INT8, [12-19] mn6[8] INT8,
+//   [20-31] padding, [32-287] nibbles[256] INT8 (one per byte, planar layout).
+#define UNPACKED_WV_ROW_BYTES    (WV_BLOCKS_PER_ROW   * UNPACKED_BLOCK_BYTES)   // 1280
+#define UNPACKED_DOWN_ROW_BYTES  (DOWN_BLOCKS_PER_ROW * UNPACKED_BLOCK_BYTES)   // 5120
+
 // ─── INT8 quantisation scale for X1/X2 intermediate caches ───────────────────
 // Fixed scale chosen to cover |X1|, |X2| <= 10 for LFM2 activations.
 // Single-pass: no need to buffer floats or re-read weights a second time.
@@ -78,8 +88,10 @@ static float fp16_to_fp32(uint16_t h) {
     union { uint32_t u; float f; } c; c.u = f32; return c.f;
 }
 
+
 // ─── Byte extractor for 128-bit packed row_buf ────────────────────────────────
-// byte_idx is local to the passed pointer (not a global row offset).
+// Used for nibble extraction in MAC loops (nibbles stay packed 4-bit per byte).
+// sc6/mn6 are flat INT8 in the hybrid format — no complex header decode needed.
 static inline uint8_t get_byte(const ap_uint<128>* data, int byte_idx) {
 #pragma HLS INLINE
     return (uint8_t)data[byte_idx >> 4].range((byte_idx & 0xF) * 8 + 7,
@@ -89,42 +101,30 @@ static inline uint8_t get_byte(const ap_uint<128>* data, int byte_idx) {
 
 // ─── DATAFLOW sub-functions ───────────────────────────────────────────────────
 
-// load_row_wv: read one Q4_K row as a single 72-word AXI burst into rb[8][9].
-// INLINE off: sub-module keeps the BRAM port interface compact.
-// Flat 72-iteration loop with monotone address → HLS infers single burst,
-// matching load_row_down_q4k's single-burst pattern (288 words).
-// b_cnt/w_cnt track the 2D position without division.
-// b_cnt is runtime (0..7) → 8-way BRAM write mux on critical path.
-//   At 300 MHz (3.33 ns): -0.468 ns WNS — fails.
-//   At 250 MHz (4.0  ns): +0.202 ns WNS — closes (same path = 3.798 ns).
-// Nested loops (prior approach) produced 8×9-word bursts per call = 16 per
-// row-pair, each paying full DDR latency (~30 cycles @ 250 MHz). This flat
-// version pays latency once per 72-word burst = 2× per row-pair → ~3× faster
-// load phase, making X1/X2 roughly balanced with compute_output.
+// load_row_wv: read one hybrid row as a single 80-word AXI burst into rb[8][10].
+// Hybrid format: nibbles packed 4-bit (128 B), sc6/mn6 flat INT8 (16 B), d/dmin fp16 (4 B).
+// 160 bytes/block = 10 words, 8 blocks/row = 80 words.
 static void load_row_wv(const ap_uint<128> *W_wide, int row,
-                         ap_uint<128> rb[WV_BLOCKS_PER_ROW][Q4_K_WORDS]) {
+                         ap_uint<128> rb[WV_BLOCKS_PER_ROW][UNPACKED_BLOCK_WORDS]) {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=rb dim=1 complete
 
     int b_cnt = 0, w_cnt = 0;
-    LOAD_FLAT: for (int i = 0; i < WV_ROW_WORDS; i++) {
+    LOAD_FLAT: for (int i = 0; i < UNPACKED_WV_ROW_WORDS; i++) {
         #pragma HLS PIPELINE II=1
-        rb[b_cnt][w_cnt] = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + i];
-        if (w_cnt == Q4_K_WORDS - 1) { w_cnt = 0; b_cnt++; }
+        rb[b_cnt][w_cnt] = W_wide[(ap_uint<64>)row * UNPACKED_WV_ROW_WORDS + i];
+        if (w_cnt == UNPACKED_BLOCK_WORDS - 1) { w_cnt = 0; b_cnt++; }
         else { w_cnt++; }
     }
 }
 
 // ─── mac_blocks_wv_k2: K=2 output-row parallelism ────────────────────────────
-// Process 2 rows per call. 8 parallel INT32 MAC chains per row (16 total).
-// rb0 = even row, rb1 = odd row. Both dim=1 complete → 8 independent BRAM banks each.
-// UNPACK: 8 cycles (reads rb0[b] and rb1[b] per iteration — separate banks, no conflict).
-// MAC: 256 cycles (b UNROLL × 2 rows = 16 parallel INT32 pipelines).
-// REDUCE: 8×2 sequential fxd muls (one instance reused per row).
-// Total per pair: ~270 cycles vs K=1 ~495 cycles/row × 2 = 990 → ~1.83× speedup.
-// Resource: 4 acc arrays [8][4] = 128 INT32 regs; rb uses 16 BRAM_18K per function.
-static void mac_blocks_wv_k2(const ap_uint<128> rb0[WV_BLOCKS_PER_ROW][Q4_K_WORDS],
-                              const ap_uint<128> rb1[WV_BLOCKS_PER_ROW][Q4_K_WORDS],
+// Hybrid format: sc6/mn6 flat INT8 (bytes 4-19), nibbles packed 4-bit (bytes 32-159).
+// UNPACK: 8 cycles reads flat sc6/mn6 (simple byte reads, no interleave decode).
+// MAC: 256 cycles, get_byte() for nibble extraction (original pattern, BRAM-compatible).
+// REDUCE: 8×2 sequential fxd muls.
+static void mac_blocks_wv_k2(const ap_uint<128> rb0[WV_BLOCKS_PER_ROW][UNPACKED_BLOCK_WORDS],
+                              const ap_uint<128> rb1[WV_BLOCKS_PER_ROW][UNPACKED_BLOCK_WORDS],
                               const int8_t x[WV_BLOCKS_PER_ROW][256],
                               float x_scale,
                               float *result0, float *result1) {
@@ -134,57 +134,26 @@ static void mac_blocks_wv_k2(const ap_uint<128> rb0[WV_BLOCKS_PER_ROW][Q4_K_WORD
 #pragma HLS ARRAY_PARTITION variable=rb1 dim=1 complete
 #pragma HLS ARRAY_PARTITION variable=x   dim=1 complete
 
-    float   d0[WV_BLOCKS_PER_ROW],    dmin0[WV_BLOCKS_PER_ROW];
-    float   d1[WV_BLOCKS_PER_ROW],    dmin1[WV_BLOCKS_PER_ROW];
+    // UNPACK: flat sc6/mn6 at bytes 4-19 — simple byte reads, no interleave decode
     uint8_t sc60[WV_BLOCKS_PER_ROW][8], mn60[WV_BLOCKS_PER_ROW][8];
     uint8_t sc61[WV_BLOCKS_PER_ROW][8], mn61[WV_BLOCKS_PER_ROW][8];
-    #pragma HLS ARRAY_PARTITION variable=d0    complete
-    #pragma HLS ARRAY_PARTITION variable=dmin0 complete
-    #pragma HLS ARRAY_PARTITION variable=d1    complete
-    #pragma HLS ARRAY_PARTITION variable=dmin1 complete
-    #pragma HLS ARRAY_PARTITION variable=sc60  dim=0 complete
-    #pragma HLS ARRAY_PARTITION variable=mn60  dim=0 complete
-    #pragma HLS ARRAY_PARTITION variable=sc61  dim=0 complete
-    #pragma HLS ARRAY_PARTITION variable=mn61  dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=sc60 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=mn60 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=sc61 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=mn61 dim=0 complete
 
-    // rb0[b] and rb1[b] are separate BRAM banks (dim=1 complete, 8 banks each).
-    // b is runtime 0..7 → 8-way mux on BRAM outputs (small; only 8 banks not 32).
-    // Reading both in the same pipeline stage: separate bank instances, no port conflict.
     UNPACK_HDR_K2: for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
         #pragma HLS PIPELINE II=1
-        d0[b]    = fp16_to_fp32((uint16_t)get_byte(rb0[b], 0) | ((uint16_t)get_byte(rb0[b], 1) << 8));
-        dmin0[b] = fp16_to_fp32((uint16_t)get_byte(rb0[b], 2) | ((uint16_t)get_byte(rb0[b], 3) << 8));
-        sc60[b][0] = get_byte(rb0[b],  4) & 0x3F; sc60[b][1] = get_byte(rb0[b],  5) & 0x3F;
-        sc60[b][2] = get_byte(rb0[b],  6) & 0x3F; sc60[b][3] = get_byte(rb0[b],  7) & 0x3F;
-        mn60[b][0] = get_byte(rb0[b],  8) & 0x3F; mn60[b][1] = get_byte(rb0[b],  9) & 0x3F;
-        mn60[b][2] = get_byte(rb0[b], 10) & 0x3F; mn60[b][3] = get_byte(rb0[b], 11) & 0x3F;
-        sc60[b][4] = (get_byte(rb0[b], 12) & 0x0F) | (uint8_t)((get_byte(rb0[b],  4) >> 6) << 4);
-        sc60[b][5] = (get_byte(rb0[b], 13) & 0x0F) | (uint8_t)((get_byte(rb0[b],  5) >> 6) << 4);
-        sc60[b][6] = (get_byte(rb0[b], 14) & 0x0F) | (uint8_t)((get_byte(rb0[b],  6) >> 6) << 4);
-        sc60[b][7] = (get_byte(rb0[b], 15) & 0x0F) | (uint8_t)((get_byte(rb0[b],  7) >> 6) << 4);
-        mn60[b][4] = (get_byte(rb0[b], 12) >> 4) | (uint8_t)((get_byte(rb0[b],  8) >> 6) << 4);
-        mn60[b][5] = (get_byte(rb0[b], 13) >> 4) | (uint8_t)((get_byte(rb0[b],  9) >> 6) << 4);
-        mn60[b][6] = (get_byte(rb0[b], 14) >> 4) | (uint8_t)((get_byte(rb0[b], 10) >> 6) << 4);
-        mn60[b][7] = (get_byte(rb0[b], 15) >> 4) | (uint8_t)((get_byte(rb0[b], 11) >> 6) << 4);
-
-        d1[b]    = fp16_to_fp32((uint16_t)get_byte(rb1[b], 0) | ((uint16_t)get_byte(rb1[b], 1) << 8));
-        dmin1[b] = fp16_to_fp32((uint16_t)get_byte(rb1[b], 2) | ((uint16_t)get_byte(rb1[b], 3) << 8));
-        sc61[b][0] = get_byte(rb1[b],  4) & 0x3F; sc61[b][1] = get_byte(rb1[b],  5) & 0x3F;
-        sc61[b][2] = get_byte(rb1[b],  6) & 0x3F; sc61[b][3] = get_byte(rb1[b],  7) & 0x3F;
-        mn61[b][0] = get_byte(rb1[b],  8) & 0x3F; mn61[b][1] = get_byte(rb1[b],  9) & 0x3F;
-        mn61[b][2] = get_byte(rb1[b], 10) & 0x3F; mn61[b][3] = get_byte(rb1[b], 11) & 0x3F;
-        sc61[b][4] = (get_byte(rb1[b], 12) & 0x0F) | (uint8_t)((get_byte(rb1[b],  4) >> 6) << 4);
-        sc61[b][5] = (get_byte(rb1[b], 13) & 0x0F) | (uint8_t)((get_byte(rb1[b],  5) >> 6) << 4);
-        sc61[b][6] = (get_byte(rb1[b], 14) & 0x0F) | (uint8_t)((get_byte(rb1[b],  6) >> 6) << 4);
-        sc61[b][7] = (get_byte(rb1[b], 15) & 0x0F) | (uint8_t)((get_byte(rb1[b],  7) >> 6) << 4);
-        mn61[b][4] = (get_byte(rb1[b], 12) >> 4) | (uint8_t)((get_byte(rb1[b],  8) >> 6) << 4);
-        mn61[b][5] = (get_byte(rb1[b], 13) >> 4) | (uint8_t)((get_byte(rb1[b],  9) >> 6) << 4);
-        mn61[b][6] = (get_byte(rb1[b], 14) >> 4) | (uint8_t)((get_byte(rb1[b], 10) >> 6) << 4);
-        mn61[b][7] = (get_byte(rb1[b], 15) >> 4) | (uint8_t)((get_byte(rb1[b], 11) >> 6) << 4);
+        for (int i = 0; i < 8; i++) {
+            #pragma HLS UNROLL
+            sc60[b][i] = get_byte(rb0[b],  4 + i);
+            mn60[b][i] = get_byte(rb0[b], 12 + i);
+            sc61[b][i] = get_byte(rb1[b],  4 + i);
+            mn61[b][i] = get_byte(rb1[b], 12 + i);
+        }
     }
 
     // 4 partial accumulators: INT32 DSP latency ≤4 cycles → II=1 safe with k=n&3.
-    // Saves ~1K LUT vs [8][8]: halves partition mux logic (4×[8][4] vs 4×[8][8]).
     int32_t int_acc_w0[WV_BLOCKS_PER_ROW][4], int_acc_m0[WV_BLOCKS_PER_ROW][4];
     int32_t int_acc_w1[WV_BLOCKS_PER_ROW][4], int_acc_m1[WV_BLOCKS_PER_ROW][4];
     #pragma HLS ARRAY_PARTITION variable=int_acc_w0 dim=0 complete
@@ -201,11 +170,10 @@ static void mac_blocks_wv_k2(const ap_uint<128> rb0[WV_BLOCKS_PER_ROW][Q4_K_WORD
         }
     }
 
-    // 16 parallel MAC chains: 8 blocks × 2 rows, all UNROLL'd in 256-cycle pipeline.
-    // rb0 and rb1 are separate BRAM arrays → 8+8 independent read ports per cycle.
+    // 16 parallel MAC chains. Nibbles via get_byte() (original BRAM-compatible pattern).
     MAC_ALL_K2: for (int n = 0; n < 256; n++) {
         #pragma HLS PIPELINE II=1
-        int nib_byte = 16 + (n & 31) + ((n & 0xC0) >> 1);
+        int nib_byte = 32 + (n & 31) + ((n & 0xC0) >> 1);
         int nib_shft = (n & 32) ? 4 : 0;
         int sub = n >> 5;
         int k   = n & 3;
@@ -227,21 +195,22 @@ static void mac_blocks_wv_k2(const ap_uint<128> rb0[WV_BLOCKS_PER_ROW][Q4_K_WORD
 
     fxd_accum_t total0 = 0, total1 = 0;
     REDUCE_K2: for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
+        float d0    = fp16_to_fp32((uint16_t)get_byte(rb0[b], 0) | ((uint16_t)get_byte(rb0[b], 1) << 8));
+        float dmin0 = fp16_to_fp32((uint16_t)get_byte(rb0[b], 2) | ((uint16_t)get_byte(rb0[b], 3) << 8));
+        float d1    = fp16_to_fp32((uint16_t)get_byte(rb1[b], 0) | ((uint16_t)get_byte(rb1[b], 1) << 8));
+        float dmin1 = fp16_to_fp32((uint16_t)get_byte(rb1[b], 2) | ((uint16_t)get_byte(rb1[b], 3) << 8));
         int32_t sw0 = 0, sm0 = 0, sw1 = 0, sm1 = 0;
         for (int k = 0; k < 4; k++) {
             #pragma HLS UNROLL
             sw0 += int_acc_w0[b][k]; sm0 += int_acc_m0[b][k];
             sw1 += int_acc_w1[b][k]; sm1 += int_acc_m1[b][k];
         }
-        total0 += (fxd_scale_t)d0[b] * (fxd_accum_t)sw0 - (fxd_scale_t)dmin0[b] * (fxd_accum_t)sm0;
-        total1 += (fxd_scale_t)d1[b] * (fxd_accum_t)sw1 - (fxd_scale_t)dmin1[b] * (fxd_accum_t)sm1;
+        total0 += (fxd_scale_t)d0 * (fxd_accum_t)sw0 - (fxd_scale_t)dmin0 * (fxd_accum_t)sm0;
+        total1 += (fxd_scale_t)d1 * (fxd_accum_t)sw1 - (fxd_scale_t)dmin1 * (fxd_accum_t)sm1;
     }
     *result0 = (float)total0 * x_scale;
     *result1 = (float)total1 * x_scale;
 }
-
-// ─── Phase 2: X1 = x @ W.T  (Q4_K) ──────────────────────────────────────────
-// K=2: two rows per iteration, both loaded from single AXI port (sequential).
 // MAC K=2: 256 cycles (16 parallel chains).
 static void compute_X1(
     const uint8_t  *W,
@@ -253,8 +222,8 @@ static void compute_X1(
 #pragma HLS ARRAY_PARTITION variable=x_local_1 dim=2 complete
     const ap_uint<128> *W_wide = (const ap_uint<128>*)W;
     COMPUTE_X1: for (int row = 0; row < FFN_DIM; row += 2) {
-        ap_uint<128> rb0[WV_BLOCKS_PER_ROW][Q4_K_WORDS];
-        ap_uint<128> rb1[WV_BLOCKS_PER_ROW][Q4_K_WORDS];
+        ap_uint<128> rb0[WV_BLOCKS_PER_ROW][UNPACKED_BLOCK_WORDS];
+        ap_uint<128> rb1[WV_BLOCKS_PER_ROW][UNPACKED_BLOCK_WORDS];
         #pragma HLS ARRAY_PARTITION variable=rb0 dim=1 complete
         #pragma HLS BIND_STORAGE    variable=rb0 type=ram_1p impl=bram
         #pragma HLS ARRAY_PARTITION variable=rb1 dim=1 complete
@@ -288,8 +257,8 @@ static void compute_X2(
 #pragma HLS ARRAY_PARTITION variable=x_local_2 dim=2 complete
     const ap_uint<128> *V_wide = (const ap_uint<128>*)V;
     COMPUTE_X2: for (int row = 0; row < FFN_DIM; row += 2) {
-        ap_uint<128> rb0[WV_BLOCKS_PER_ROW][Q4_K_WORDS];
-        ap_uint<128> rb1[WV_BLOCKS_PER_ROW][Q4_K_WORDS];
+        ap_uint<128> rb0[WV_BLOCKS_PER_ROW][UNPACKED_BLOCK_WORDS];
+        ap_uint<128> rb1[WV_BLOCKS_PER_ROW][UNPACKED_BLOCK_WORDS];
         #pragma HLS ARRAY_PARTITION variable=rb0 dim=1 complete
         #pragma HLS BIND_STORAGE    variable=rb0 type=ram_1p impl=bram
         #pragma HLS ARRAY_PARTITION variable=rb1 dim=1 complete
@@ -374,33 +343,29 @@ static void compute_gate(
 
 // ─── Phase 5 sub-functions: Q4K output path ──────────────────────────────────
 
-// load_row_down_q4k: read one Q4_K row (32 blocks) into 2D rb[32][9].
-// Counter-based single 288-word burst — no re-arbitration overhead.
+// load_row_down_q4k: read one hybrid row (32 blocks) into 2D rb[32][10].
+// Counter-based single 320-word burst.
 static void load_row_down_q4k(const ap_uint<128> *W_down_wide, int out_i,
-                                ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][Q4_K_WORDS]) {
+                                ap_uint<128> rb[DOWN_BLOCKS_PER_ROW][UNPACKED_BLOCK_WORDS]) {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=rb dim=1 complete
-#pragma HLS BIND_STORAGE    variable=rb type=ram_1p impl=lutram
 
     int b = 0, w = 0;
-    LOAD_DOWN_Q4K: for (int i = 0; i < DOWN_Q4K_WORDS; i++) {
+    LOAD_DOWN_Q4K: for (int i = 0; i < UNPACKED_DOWN_ROW_WORDS; i++) {
         #pragma HLS PIPELINE II=1
-        rb[b][w] = W_down_wide[(ap_uint<64>)out_i * DOWN_Q4K_WORDS + i];
-        if (w == Q4_K_WORDS - 1) { w = 0; b++; }
+        rb[b][w] = W_down_wide[(ap_uint<64>)out_i * UNPACKED_DOWN_ROW_WORDS + i];
+        if (w == UNPACKED_BLOCK_WORDS - 1) { w = 0; b++; }
         else w++;
     }
 }
 
-// mac_blocks_down_q4k_k2: 32 Q4_K blocks, K=2 rows, single global UNPACK.
-// UNPACK_HDR_K2: b=0..31 runtime → 32-way LUTRAM read mux per get_byte() call.
-// This is the dominant LUT cost in compute_output (~54K LUT), but is the minimum
-// achievable on ZU5EV — per-group UNPACK (inside grp UNROLL) was attempted and
-// produced higher LUT due to 4 replicated decode bodies costing more than the
-// shared 32-way mux. The single UNPACK produces ~109% HLS LUT → ~97% Vivado.
-// grp UNROLL → babs=grp*8+b compile-time in MAC_GRP → no runtime mux on rb reads.
+// mac_blocks_down_q4k_k2: 32 hybrid blocks, K=2 rows. LUTRAM for rb.
+// Hybrid format: sc6/mn6 flat INT8, nibbles packed 4-bit (same layout as original).
+// UNPACK: 32 cycles reads flat sc6/mn6 (no interleave decode).
+// 4-group MAC: grp UNROLL -> babs compile-time -> no runtime mux on rb reads.
 static void mac_blocks_down_q4k_k2(
-    const ap_uint<128> rb0[DOWN_BLOCKS_PER_ROW][Q4_K_WORDS],
-    const ap_uint<128> rb1[DOWN_BLOCKS_PER_ROW][Q4_K_WORDS],
+    const ap_uint<128> rb0[DOWN_BLOCKS_PER_ROW][UNPACKED_BLOCK_WORDS],
+    const ap_uint<128> rb1[DOWN_BLOCKS_PER_ROW][UNPACKED_BLOCK_WORDS],
     const int8_t gate[DOWN_BLOCKS_PER_ROW][256],
     float gate_scale,
     float *result0, float *result1) {
@@ -412,54 +377,26 @@ static void mac_blocks_down_q4k_k2(
 #pragma HLS BIND_STORAGE    variable=rb1  type=ram_1p impl=lutram
 #pragma HLS ARRAY_PARTITION variable=gate dim=1 complete
 
-    float   d0  [DOWN_BLOCKS_PER_ROW], d1  [DOWN_BLOCKS_PER_ROW];
-    float   dmin0[DOWN_BLOCKS_PER_ROW], dmin1[DOWN_BLOCKS_PER_ROW];
-    uint8_t sc6_0[DOWN_BLOCKS_PER_ROW][8], sc6_1[DOWN_BLOCKS_PER_ROW][8];
-    uint8_t mn6_0[DOWN_BLOCKS_PER_ROW][8], mn6_1[DOWN_BLOCKS_PER_ROW][8];
-    #pragma HLS ARRAY_PARTITION variable=d0    complete
-    #pragma HLS ARRAY_PARTITION variable=d1    complete
-    #pragma HLS ARRAY_PARTITION variable=dmin0 complete
-    #pragma HLS ARRAY_PARTITION variable=dmin1 complete
+    // UNPACK: flat sc6/mn6 — simple byte reads, no interleave decode
+    uint8_t sc6_0[DOWN_BLOCKS_PER_ROW][8], mn6_0[DOWN_BLOCKS_PER_ROW][8];
+    uint8_t sc6_1[DOWN_BLOCKS_PER_ROW][8], mn6_1[DOWN_BLOCKS_PER_ROW][8];
     #pragma HLS ARRAY_PARTITION variable=sc6_0 dim=0 complete
     #pragma HLS ARRAY_PARTITION variable=mn6_0 dim=0 complete
     #pragma HLS ARRAY_PARTITION variable=sc6_1 dim=0 complete
     #pragma HLS ARRAY_PARTITION variable=mn6_1 dim=0 complete
 
-    // Single 32-cycle UNPACK: b runtime 0..31.
-    // rb0[b]/rb1[b]: 32-way LUTRAM bank mux per get_byte() — unavoidable cost.
     UNPACK_HDR_K2: for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
         #pragma HLS PIPELINE II=1
-        d0[b]    = fp16_to_fp32((uint16_t)get_byte(rb0[b], 0) | ((uint16_t)get_byte(rb0[b], 1) << 8));
-        dmin0[b] = fp16_to_fp32((uint16_t)get_byte(rb0[b], 2) | ((uint16_t)get_byte(rb0[b], 3) << 8));
-        d1[b]    = fp16_to_fp32((uint16_t)get_byte(rb1[b], 0) | ((uint16_t)get_byte(rb1[b], 1) << 8));
-        dmin1[b] = fp16_to_fp32((uint16_t)get_byte(rb1[b], 2) | ((uint16_t)get_byte(rb1[b], 3) << 8));
-        sc6_0[b][0] = get_byte(rb0[b],  4) & 0x3F; sc6_0[b][1] = get_byte(rb0[b],  5) & 0x3F;
-        sc6_0[b][2] = get_byte(rb0[b],  6) & 0x3F; sc6_0[b][3] = get_byte(rb0[b],  7) & 0x3F;
-        mn6_0[b][0] = get_byte(rb0[b],  8) & 0x3F; mn6_0[b][1] = get_byte(rb0[b],  9) & 0x3F;
-        mn6_0[b][2] = get_byte(rb0[b], 10) & 0x3F; mn6_0[b][3] = get_byte(rb0[b], 11) & 0x3F;
-        sc6_0[b][4] = (get_byte(rb0[b], 12) & 0x0F) | (uint8_t)((get_byte(rb0[b],  4) >> 6) << 4);
-        sc6_0[b][5] = (get_byte(rb0[b], 13) & 0x0F) | (uint8_t)((get_byte(rb0[b],  5) >> 6) << 4);
-        sc6_0[b][6] = (get_byte(rb0[b], 14) & 0x0F) | (uint8_t)((get_byte(rb0[b],  6) >> 6) << 4);
-        sc6_0[b][7] = (get_byte(rb0[b], 15) & 0x0F) | (uint8_t)((get_byte(rb0[b],  7) >> 6) << 4);
-        mn6_0[b][4] = (get_byte(rb0[b], 12) >> 4) | (uint8_t)((get_byte(rb0[b],  8) >> 6) << 4);
-        mn6_0[b][5] = (get_byte(rb0[b], 13) >> 4) | (uint8_t)((get_byte(rb0[b],  9) >> 6) << 4);
-        mn6_0[b][6] = (get_byte(rb0[b], 14) >> 4) | (uint8_t)((get_byte(rb0[b], 10) >> 6) << 4);
-        mn6_0[b][7] = (get_byte(rb0[b], 15) >> 4) | (uint8_t)((get_byte(rb0[b], 11) >> 6) << 4);
-        sc6_1[b][0] = get_byte(rb1[b],  4) & 0x3F; sc6_1[b][1] = get_byte(rb1[b],  5) & 0x3F;
-        sc6_1[b][2] = get_byte(rb1[b],  6) & 0x3F; sc6_1[b][3] = get_byte(rb1[b],  7) & 0x3F;
-        mn6_1[b][0] = get_byte(rb1[b],  8) & 0x3F; mn6_1[b][1] = get_byte(rb1[b],  9) & 0x3F;
-        mn6_1[b][2] = get_byte(rb1[b], 10) & 0x3F; mn6_1[b][3] = get_byte(rb1[b], 11) & 0x3F;
-        sc6_1[b][4] = (get_byte(rb1[b], 12) & 0x0F) | (uint8_t)((get_byte(rb1[b],  4) >> 6) << 4);
-        sc6_1[b][5] = (get_byte(rb1[b], 13) & 0x0F) | (uint8_t)((get_byte(rb1[b],  5) >> 6) << 4);
-        sc6_1[b][6] = (get_byte(rb1[b], 14) & 0x0F) | (uint8_t)((get_byte(rb1[b],  6) >> 6) << 4);
-        sc6_1[b][7] = (get_byte(rb1[b], 15) & 0x0F) | (uint8_t)((get_byte(rb1[b],  7) >> 6) << 4);
-        mn6_1[b][4] = (get_byte(rb1[b], 12) >> 4) | (uint8_t)((get_byte(rb1[b],  8) >> 6) << 4);
-        mn6_1[b][5] = (get_byte(rb1[b], 13) >> 4) | (uint8_t)((get_byte(rb1[b],  9) >> 6) << 4);
-        mn6_1[b][6] = (get_byte(rb1[b], 14) >> 4) | (uint8_t)((get_byte(rb1[b], 10) >> 6) << 4);
-        mn6_1[b][7] = (get_byte(rb1[b], 15) >> 4) | (uint8_t)((get_byte(rb1[b], 11) >> 6) << 4);
+        for (int i = 0; i < 8; i++) {
+            #pragma HLS UNROLL
+            sc6_0[b][i] = get_byte(rb0[b],  4 + i);
+            mn6_0[b][i] = get_byte(rb0[b], 12 + i);
+            sc6_1[b][i] = get_byte(rb1[b],  4 + i);
+            mn6_1[b][i] = get_byte(rb1[b], 12 + i);
+        }
     }
 
-    // 4-group MAC: grp UNROLL → babs=grp*8+b compile-time → no runtime mux on rb/sc6/mn6.
+    // 4-group MAC: grp UNROLL -> babs=grp*8+b compile-time
     fxd_accum_t total0 = 0, total1 = 0;
     for (int grp = 0; grp < 4; grp++) {
         #pragma HLS UNROLL
@@ -481,13 +418,13 @@ static void mac_blocks_down_q4k_k2(
 
         MAC_GRP: for (int n = 0; n < 256; n++) {
             #pragma HLS PIPELINE II=1
-            int nib_byte = 16 + (n & 31) + ((n & 0xC0) >> 1);
+            int nib_byte = 32 + (n & 31) + ((n & 0xC0) >> 1);
             int nib_shft = (n & 32) ? 4 : 0;
             int sub = n >> 5;
             int k   = n & 3;
             for (int b = 0; b < 8; b++) {
                 #pragma HLS UNROLL
-                int babs = grp * 8 + b;   // compile-time after grp UNROLL
+                int babs = grp * 8 + b;
                 ap_int<8>  gi8    = (ap_int<8>)  gate[babs][n];
                 ap_uint<4> nib4_0 = (ap_uint<4>)((get_byte(rb0[babs], nib_byte) >> nib_shft) & 0xF);
                 ap_uint<4> nib4_1 = (ap_uint<4>)((get_byte(rb1[babs], nib_byte) >> nib_shft) & 0xF);
@@ -504,25 +441,25 @@ static void mac_blocks_down_q4k_k2(
 
         REDUCE_GRP: for (int b = 0; b < 8; b++) {
             int babs = grp * 8 + b;
+            float d0    = fp16_to_fp32((uint16_t)get_byte(rb0[babs], 0) | ((uint16_t)get_byte(rb0[babs], 1) << 8));
+            float dmin0 = fp16_to_fp32((uint16_t)get_byte(rb0[babs], 2) | ((uint16_t)get_byte(rb0[babs], 3) << 8));
+            float d1    = fp16_to_fp32((uint16_t)get_byte(rb1[babs], 0) | ((uint16_t)get_byte(rb1[babs], 1) << 8));
+            float dmin1 = fp16_to_fp32((uint16_t)get_byte(rb1[babs], 2) | ((uint16_t)get_byte(rb1[babs], 3) << 8));
             int32_t sw0 = 0, sm0 = 0, sw1 = 0, sm1 = 0;
             for (int k = 0; k < 4; k++) {
                 #pragma HLS UNROLL
                 sw0 += acc_w0[b][k]; sm0 += acc_m0[b][k];
                 sw1 += acc_w1[b][k]; sm1 += acc_m1[b][k];
             }
-            total0 += (fxd_scale_t)d0[babs]    * (fxd_accum_t)sw0
-                    - (fxd_scale_t)dmin0[babs]  * (fxd_accum_t)sm0;
-            total1 += (fxd_scale_t)d1[babs]    * (fxd_accum_t)sw1
-                    - (fxd_scale_t)dmin1[babs]  * (fxd_accum_t)sm1;
+            total0 += (fxd_scale_t)d0    * (fxd_accum_t)sw0
+                    - (fxd_scale_t)dmin0  * (fxd_accum_t)sm0;
+            total1 += (fxd_scale_t)d1    * (fxd_accum_t)sw1
+                    - (fxd_scale_t)dmin1  * (fxd_accum_t)sm1;
         }
     }
     *result0 = (float)total0 * gate_scale;
     *result1 = (float)total1 * gate_scale;
 }
-
-
-#ifdef ENABLE_Q6K
-// ─── Phase 5 sub-functions: Q6K output path ──────────────────────────────────
 // Weights stored in field-split layout by ggml-cpu.c reformat_q6k_to_fieldsplit():
 //   Row stride: 6720 bytes = 420 × 128-bit words (unchanged from GGUF total)
 //   Word offsets within a row:
@@ -540,6 +477,7 @@ static void mac_blocks_down_q4k_k2(
 // cyclic factor=8: 8 BRAM banks; blocks 0,8,16,24 share bank 0, etc.
 // Write: one full 128-bit word/cycle (II=1); no 16-byte UNROLL fanout → no LUTRAM.
 // MAC reads: 4 blocks UNROLL'd → banks (g*4)%8 .. (g*4+3)%8 → always 4 distinct.
+#ifdef ENABLE_Q6K
 static void load_row_down_q6k(const ap_uint<128> *W_down_wide, int out_i,
                                 ap_uint<128> ql_buf[DOWN_BLOCKS_PER_ROW][8],
                                 ap_uint<128> qh_buf[DOWN_BLOCKS_PER_ROW][4],
@@ -717,9 +655,9 @@ static void compute_output(
         float out_local[VECTOR_DIM];
         #pragma HLS BIND_STORAGE variable=out_local type=ram_1p impl=bram
         DOWN_Q4K: for (int out_i = 0; out_i < VECTOR_DIM; out_i += 2) {
-            ap_uint<128> rb0[DOWN_BLOCKS_PER_ROW][Q4_K_WORDS];
-            ap_uint<128> rb1[DOWN_BLOCKS_PER_ROW][Q4_K_WORDS];
-            // LUTRAM: avoids 4 BRAM18K/bank at 128-bit width. 32 banks × ~192 LUT = ~6K LUT/array.
+            ap_uint<128> rb0[DOWN_BLOCKS_PER_ROW][UNPACKED_BLOCK_WORDS];
+            ap_uint<128> rb1[DOWN_BLOCKS_PER_ROW][UNPACKED_BLOCK_WORDS];
+            // LUTRAM: avoids BRAM for 32-bank arrays. Hybrid format keeps 10 words/bank.
             // complete partition → all 32 block banks accessible simultaneously in MAC loop.
             #pragma HLS ARRAY_PARTITION variable=rb0 dim=1 complete
             #pragma HLS BIND_STORAGE    variable=rb0 type=ram_1p impl=lutram
@@ -815,9 +753,9 @@ void swiglu(
     uint32_t       down_quant_mode,
     float          x_scale)
 {
-    #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W    offset=slave depth=9437184  max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=9437184  max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd   offset=slave depth=13762560 max_read_burst_length=256  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W    offset=slave depth=10485760  max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=10485760  max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd   offset=slave depth=10485760 max_read_burst_length=256  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x    offset=slave depth=8192     max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out  offset=slave depth=8192     max_write_burst_length=256 latency=64 num_write_outstanding=1
 
@@ -862,6 +800,29 @@ void swiglu(
 
 #ifndef __SYNTHESIS__
     init_sigmoid_lut_csim();
+    // DEBUG: manually compute row 0's dot product from the hybrid buffer
+    // using exactly the same byte offsets the HLS UNPACK + MAC loops use.
+    {
+        const ap_uint<128> *Ww = (const ap_uint<128>*)W;
+        // Read the first block of row 0 manually (simulating load_row_wv for row 0)
+        // The first 8 blocks are 80 words. Read block 0 from words 0-9.
+        float d_val  = fp16_to_fp32((uint16_t)Ww[0].range(15, 0));
+        float dm_val = fp16_to_fp32((uint16_t)Ww[0].range(31, 16));
+        int32_t w_sum = 0, m_sum = 0;
+        for (int n = 0; n < 256; n++) {
+            int sub = n>>5, nib_b = 32 + (n&31) + ((n&0xC0)>>1), sh = (n&32)?4:0;
+            int w_idx = nib_b >> 4, b_in_w = nib_b & 0xF;
+            int32_t nib = (int32_t)((Ww[w_idx].range(b_in_w*8+7, b_in_w*8) >> sh) & 0xF);
+            int32_t xi  = (int32_t)x_batch[(n>>8)*256 + n];  // x_local_1[n>>8][n&255]
+            int32_t sc  = (int32_t)(uint8_t)Ww[0].range((4+sub)*8+7, (4+sub)*8);
+            int mn_byte = 12+sub, mn_w = mn_byte>>4, mn_lo = (mn_byte&0xF)*8;
+            int32_t mn  = (int32_t)(uint8_t)Ww[mn_w].range(mn_lo+7, mn_lo);
+            w_sum += xi * nib * sc;
+            m_sum += xi * mn;
+        }
+        float dot = d_val * (float)w_sum - dm_val * (float)m_sum;
+        printf("[HLS DEBUG] Row 0, block 0 manual dot: %f (d=%e, dmin=%e)\n", dot, d_val, dm_val);
+    }
 #endif
 
 #pragma HLS DATAFLOW

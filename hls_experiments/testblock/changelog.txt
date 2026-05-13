@@ -777,8 +777,6 @@ The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typic
     nibble extraction that consumes a huge amount of LUTs.
     The triple multiply (INT8 × INT4 × UINT6) can't map to DSP48E2 (single 27×18 multiplier only).
     Meanwhile, the CPU's NEON units chew through the same Q4_K kernels at ~41 GMAC/s peak vs the FPGA's ~3.2 GMAC/s.
-
-    So we can make the fpga avoid that weird multiply by having the cpu pre-decode the weights once per layer. 
     Then the fpga would have clean INT8 to use, so it can harness the MACs to do INT8*INT8
 	41. Proposed: CPU pre-decode Q4_K weights to flat INT8 format
 	    Goal: eliminate get_byte() mux trees and triple-multiply from FPGA.
@@ -806,3 +804,91 @@ The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typic
 	    DDR: 18 words/block. On-chip: rb_hdr[32][2] + rb_nib[32][16], both <= 16 deep.
 	    BIND_STORAGE honored on each, BRAM stays at 190. Adds load-function demux.
 	    Marginal gain vs hybrid since MAC nibble access cost is similar either way.
+
+    So we can make the fpga avoid that weird multiply by having the cpu pre-decode the weights once per layer.
+
+	42. Experiment 1 — Full unpack to INT8 (288 bytes/block = 18 words)
+	    FPGA reads nibbles as one INT8 per byte, sc6/mn6 as flat INT8 arrays. All get_byte()
+	    calls removed. C-simulation: T1-T3 pass, T4-T5 pass (Q6_K re-enabled for C-sim).
+	    HLS csynth: LUTs drop 31% (155K -> 107K), but BRAM explodes from 190 -> 638 (221%).
+	    Vivado placement fails identically at 152K LUTs — router overflows trying to
+	    compensate for impossible BRAM count. Every fix attempt (word-major loop,
+	    UNPACK/no-UNPACK, 32-word padding, explicit full-word reads) produces same result.
+
+	43. Experiment 2 — Isolate the root cause
+	    Reverted to ORIGINAL swiglu.cpp (get_byte(), original UNPACK/MAC/REDUCE, all
+	    original pragmas). Changed only Q4_K_WORDS 9->18. Result: 96/96/388 BRAM.
+	    Changed 18->10. Result: 64/64/4 BRAM (same as original 9).
+	    Conclusion: HLS has a BRAM inference threshold between 10 and 18 words per
+	    partition dimension. Crossing it causes all arrays to auto-infer as BRAM
+	    regardless of BIND_STORAGE pragmas.
+
+	44. Hybrid approach — selected solution
+	    Format: 160 bytes/block = 10 words (under the BRAM threshold).
+	    - sc6/mn6: flat INT8 arrays (16 B, CPU-pre-decoded from Q4_K interleaved header)
+	    - nibbles: packed 4-bit (128 B, verbatim copy from original Q4_K, same GGML layout)
+	    - d/dmin: fp16 (4 B, verbatim copy)
+	    - padding: 12 B
+
+	    HLS changes:
+	    - get_byte() kept for nibble extraction in MAC (original BRAM-compatible pattern)
+	    - UNPACK_HDR_K2 simplified from ~40 complex get_byte() calls with interleaved
+	      6-bit decode to 4 simple flat-byte get_byte() calls per block
+	    - MAC_ALL_K2 unchanged (same nib_byte/nib_shft formula, same get_byte() calls)
+	    - load_row_wv: 80 words/row (was 72), load_row_down_q4k: 320 words/row (was 288)
+	    - m_axi depth: 10,485,760 bytes per matrix
+
+	    Driver (ggml-cpu.c):
+	    - unpack_q4k_to_int8() produces 160-byte hybrid blocks
+	    - scratch region: 36 MB (3 x 12 MB)
+
+	    What this achieves:
+	    - UNPACK_HDR_K2 LUTs reduced: flat sc6/mn6 reads replace interleaved 6-bit decode
+	    - BRAM stays at original levels (under 10-word threshold)
+	    - MAC nibble extraction unchanged (same LUT cost as original)
+	    - Total block size only 11% larger than original (160 vs 144 bytes)
+
+	    This is a partial pre-decode: headers decoded on CPU, nibbles remain packed.
+	    The 10-word BRAM threshold makes full nibble unpacking impossible. Further
+	    LUT reduction in the MAC stage would require streaming/sequential nibble access. 
+
+	41. Proposed: CPU pre-decode Q4_K weights to flat INT8 format
+	    Goal: eliminate get_byte() mux trees and triple-multiply from FPGA.
+	    Full unpack: 288 bytes/block = 18 words (flat nibbles + flat sc6/mn6).
+
+	42. Experiment 1 — Full unpack (18 words)
+	    C-sim passes. HLS csynth: LUTs drop 31% (155K -> 107K), BRAM 190 -> 638 (221%).
+	    Vivado placement fails at 152K LUTs. Every fix (word-major, no-UNPACK, 32-word
+	    padding, explicit full-word reads, BIND_STORAGE variations) gives identical result.
+
+	43. Root cause — dimension sweep (original code, only Q4_K_WORDS changed)
+	      9 words: BRAM 64/64/4  (baseline)
+	     10 words: BRAM 64/64/4  (works)
+	     16 words: BRAM 64/64/4  (works)
+	     18 words: BRAM 96/96/388 (fails)
+	    Threshold between 16 and 18. Likely HLS heuristic: next-power-of-2 >= 32
+	    (array depth >= 17) triggers auto-BRAM regardless of BIND_STORAGE pragmas.
+
+	44. Hybrid approach — implemented (10 words = 160 bytes/block)
+	    Headers pre-decoded to flat INT8 (sc6/mn6), nibbles kept packed 4-bit.
+	    UNPACK_HDR_K2 simplified: ~40 get_byte() -> 4 simple reads. BRAM stays at 190.
+	    Partial pre-decode: headers on CPU, nibbles on FPGA. Block 11% larger than orig.
+
+	45. Full unpack via split arrays (not implemented, not needed)
+	    DDR: 18 words/block. On-chip: rb_hdr[32][2] + rb_nib[32][16], both <= 16 deep.
+	    BIND_STORAGE honored on each, BRAM stays at 190. Adds load-function demux.
+	    Marginal gain vs hybrid since MAC nibble access cost is similar either way.
+        the full 18-word version has no benefit over the 10-word hybrid. Here's why:
+
+        UNPACK: Both versions (10 and 18 words) get flat sc6/mn6 headers. Same gain.
+
+        MAC nibble access: The full-unpack version still needs word-indexed reads (nib_byte >> 4), 
+        just over 16 words instead of 8. A slightly wider mux, no LUT savings.
+
+        MAC multiply: The csynth numbers tell the story — the 18-word experiment showed fewer DSPs (56 vs 72 in X1/X2, 
+        94 vs 158 in output). The triple multiply maps worse to DSPs in the unpacked format because INT8 × INT8 × INT8 
+        isn't the native DSP48E2 pattern either — it's still a cascade. The original mixed-width INT8 × INT4 × UINT6 
+        actually maps equally well. More multiplies fell back to LUT fabric.
+
+        The hybrid is the optimal design: it captures the UNPACK simplification (the real win) while preserving the 
+        original MAC pipeline's DSP mapping. No more words would help.
