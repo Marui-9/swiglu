@@ -42,10 +42,10 @@ using namespace std;
 static uint8_t W_buf  [FFN_DIM    * WV_BLOCKS_PER_ROW  * Q4_K_BYTES]; // 9.0 MB
 static uint8_t V_buf  [FFN_DIM    * WV_BLOCKS_PER_ROW  * Q4_K_BYTES]; // 9.0 MB
 static uint8_t Wd_q4k [VECTOR_DIM * DOWN_BLOCKS_PER_ROW * Q4_K_BYTES]; // 9.0 MB
-// Hybrid weight buffers for the HLS IP (160 bytes/block)
-static uint8_t W_buf_up  [FFN_DIM    * WV_BLOCKS_PER_ROW  * UNPACKED_BLOCK_BYTES]; // 10.5 MB
-static uint8_t V_buf_up  [FFN_DIM    * WV_BLOCKS_PER_ROW  * UNPACKED_BLOCK_BYTES]; // 10.5 MB
-static uint8_t Wd_q4k_up [VECTOR_DIM * DOWN_BLOCKS_PER_ROW * UNPACKED_BLOCK_BYTES]; // 10.5 MB
+// Full-predecode weight buffers for the HLS IP (288 bytes/block)
+static uint8_t W_buf_up  [FFN_DIM    * WV_BLOCKS_PER_ROW  * UNPACKED_BLOCK_BYTES]; // 18.9 MB
+static uint8_t V_buf_up  [FFN_DIM    * WV_BLOCKS_PER_ROW  * UNPACKED_BLOCK_BYTES]; // 18.9 MB
+static uint8_t Wd_q4k_up [VECTOR_DIM * DOWN_BLOCKS_PER_ROW * UNPACKED_BLOCK_BYTES]; // 18.9 MB
 static uint8_t Wd_q6k   [VECTOR_DIM * DOWN_BLOCKS_PER_ROW * Q6_K_BYTES]; // 13.1 MB raw GGML
 static uint8_t Wd_q6k_fs[VECTOR_DIM * DOWN_BLOCKS_PER_ROW * Q6_K_BYTES]; // 13.1 MB field-split
 
@@ -135,8 +135,8 @@ static void fill_q4k_block(uint8_t* block, uint16_t d_raw, uint16_t dmin_raw) {
     }
 }
 
-// unpack_q4k_block_csim: convert Q4_K packed blocks to hybrid 160-byte format.
-// Hybrid: sc6/mn6 flat INT8 (no interleave), nibbles packed 4-bit (verbatim copy).
+// unpack_q4k_block_csim: convert Q4_K packed blocks to full-predecode 288-byte format.
+// Full pre-decode: sc6/mn6 flat INT8, nibbles as flat INT8 (one per byte).
 // Mirrors the CPU-side unpack_q4k_to_int8() in ggml-cpu.c exactly.
 static void unpack_q4k_block_csim(const uint8_t* src, uint8_t* dst,
                                    int n_rows, int blocks_per_row) {
@@ -167,8 +167,12 @@ static void unpack_q4k_block_csim(const uint8_t* src, uint8_t* dst,
             // Padding: bytes 20-31 = 0
             memset(blk_dst + 20, 0, 12);
 
-            // Nibbles: packed 4-bit, same GGML planar layout. Copy verbatim.
-            memcpy(blk_dst + 32, blk_src + 16, 128);
+            // Nibbles: flat INT8, one per byte, GGML planar layout
+            for (int n = 0; n < 256; n++) {
+                int q_byte = 16 + (n & 31) + ((n & 0xC0) >> 1);
+                int shift  = (n & 32) ? 4 : 0;
+                blk_dst[32 + n] = (blk_src[q_byte] >> shift) & 0xF;
+            }
         }
     }
 }
@@ -306,17 +310,6 @@ static int run_mock_token_test() {
     // input
     for (int i = 0; i < VECTOR_DIM; ++i) x_batch_buf[i] = (int8_t)((i % 17) - 8);
 
-    // DEBUG: verify unpack by dumping first block
-    cout << "[DEBUG] First Q4_K packed block bytes 0-19:";
-    for (int i = 0; i < 20; i++) cout << " " << hex << (int)W_buf[i];
-    cout << dec << endl;
-    cout << "[DEBUG] Packed nibble byte 16: " << hex << (int)W_buf[16] << dec
-         << " (n=0,1 nibbles=" << ((int)W_buf[16]&0xF) << "," << ((int)W_buf[16]>>4) << ")" << endl;
-    cout << "[DEBUG] Packed sc6 from header: ";
-    for (int i = 0; i < 4; i++) cout << (int)(W_buf[4+i]&0x3F) << " ";
-    cout << endl;
-
-    // Convert to unpacked format for the HLS IP
     unpack_q4k_block_csim(W_buf,  W_buf_up,  FFN_DIM,    WV_BLOCKS_PER_ROW);
     cout << "[DEBUG] First hybrid block bytes 0-19:";
     for (int i = 0; i < 20; i++) cout << " " << hex << (int)W_buf_up[i];
@@ -327,26 +320,6 @@ static int run_mock_token_test() {
          << " (nibbles=" << ((int)W_buf_up[32]&0xF) << "," << ((int)W_buf_up[32]>>4) << ")" << endl;
     unpack_q4k_block_csim(V_buf,  V_buf_up,  FFN_DIM,    WV_BLOCKS_PER_ROW);
     unpack_q4k_block_csim(Wd_q4k, Wd_q4k_up, VECTOR_DIM, DOWN_BLOCKS_PER_ROW);
-
-    // Sanity: compute one dot product from hybrid buffer manually
-    // Read d/dmin/sc6/mn6 from hybrid block 0, row 0, block 0
-    float d_up = fp16_ref((uint16_t)(W_buf_up[0] | ((uint16_t)W_buf_up[1] << 8)));
-    float dmin_up = fp16_ref((uint16_t)(W_buf_up[2] | ((uint16_t)W_buf_up[3] << 8)));
-    int32_t man_w = 0, man_m = 0;
-    for (int n = 0; n < 256; n++) {
-        int sub = n>>5, nib_byte = 32 + (n&31) + ((n&0xC0)>>1), shift = (n&32)?4:0;
-        int32_t nib = (W_buf_up[nib_byte] >> shift) & 0xF;
-        int32_t xi = (int32_t)x_batch_buf[n];
-        int32_t sc = (int32_t)W_buf_up[4 + sub];
-        int32_t mn = (int32_t)W_buf_up[12 + sub];
-        man_w += xi * nib * sc;
-        man_m += xi * mn;
-    }
-    float man_dot = d_up * (float)man_w - dmin_up * (float)man_m;
-    // Same from packed buffer
-    float ref_dot = dot_q4k_int32_ref(W_buf, x_batch_buf, 0, 1.0f);
-    cout << "[DEBUG] Manual hybrid dot (1st block, x_scale=1): " << man_dot << endl;
-    cout << "[DEBUG] Reference packed dot (1st block, x_scale=1): " << ref_dot << endl;
 
     // DUT — x_scale=1.0f because x_batch_buf is already INT8 and the mock
     // test wants a direct 1:1 scale (no float→INT8 conversion done here).
