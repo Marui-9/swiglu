@@ -890,5 +890,31 @@ The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typic
         isn't the native DSP48E2 pattern either — it's still a cascade. The original mixed-width INT8 × INT4 × UINT6 
         actually maps equally well. More multiplies fell back to LUT fabric.
 
-        The hybrid is the optimal design: it captures the UNPACK simplification (the real win) while preserving the 
+        The hybrid is the optimal design: it captures the UNPACK simplification (the real win) while preserving the
         original MAC pipeline's DSP mapping. No more words would help.
+
+	46. Final hybrid implementation — synthesis and utilization
+	    C-simulation: all 5 tests (T1-T5) pass. Vivado placement: succeeds at 103,202 LUTs (88.1%).
+
+	    Vivado post-P&R comparison (original vs hybrid):
+	        Module               Orig LUTs   Hyb LUTs   Delta
+	        compute_X1_U0         14,676      13,530     -1,146  (-7.8%)
+	        compute_X2_U0         14,597      13,529     -1,068  (-7.3%)
+	        compute_output_U0     59,686      58,378     -1,308  (-2.2%)
+	        compute_gate_U0        3,308       3,668     +360    (+10.9%, noise)
+	        swiglu_0 total       100,396      98,009     -2,387  (-2.4%)
+	        design_1_wrapper     104,874     103,202     -1,672  (-1.6%)
+
+	    BRAM: 86.5 (unchanged).  DSP: 324 (unchanged).  URAM: 8 (unchanged).
+
+	    LUT savings are modest (~1.6%) because the dominant LUT consumer — the MAC
+	    nibble extraction mux via get_byte() in the 256-cycle pipeline — is unchanged.
+	    The UNPACK_HDR_K2 simplification (flat sc6/mn6, no interleave decode) helps
+	    X1/X2 proportionally more (+8%) but barely moves compute_output, whose 60K LUTs
+	    are almost entirely in the 4-group MAC word-index mux, not the header decode.
+
+	    This is a correctness and headroom improvement, not a speedup. FPGA compute
+	    cycles are identical (same 256-cycle MAC passes, same triple multiply). DDR
+	    traffic is +11% (80 vs 72 words per W/V row). Driver path is unchanged. The
+	    chip runs slightly cooler at 88% LUT utilization, flat sc6/mn6 headers are
+	    cleaner, and the pre-decode infrastructure is in place for future work.
