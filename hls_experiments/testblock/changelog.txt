@@ -918,3 +918,24 @@ The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typic
 	    traffic is +11% (80 vs 72 words per W/V row). Driver path is unchanged. The
 	    chip runs slightly cooler at 88% LUT utilization, flat sc6/mn6 headers are
 	    cleaner, and the pre-decode infrastructure is in place for future work.
+
+	47. Permanent per-layer pre-decode cache — driver overhead eliminated
+	    Entry 38 identified that 171 ms (36%) of each token's 476 ms is driver overhead,
+	    and the hybrid pre-decode eliminated the UNPACK LUT cost but did nothing for
+	    throughput because the CPU pre-decode (unpack_q4k_to_int8) still ran on every
+	    layer call (~10 ms/layer x 16 = ~160 ms/token).
+
+	    The fix: replace the single rotating scratch slot with 16 permanent per-layer
+	    cache slots in udmabuf. Each slot holds one layer's pre-decoded W, V, and Wd
+	    matrices (36 MB/slot, 576 MB total, 683 MB max address within 820 MB). The
+	    pre-decode runs ONCE per layer on first use — subsequent tokens read the cached
+	    hybrid-format weights directly from udmabuf with zero CPU decode overhead.
+
+	    Estimated speedup (based on entry 38 breakdown):
+	        Before: 305 ms HW + 171 ms overhead = 476 ms -> 2.1 t/s decode
+	        After:  305 ms HW + ~15 ms overhead = ~320 ms -> ~3.1 t/s decode
+	        Speedup: ~1.5x from current decode throughput.
+
+	    The remaining ~15 ms overhead is from x quantization, udmabuf syncs (sysfs),
+	    UIO interrupt handling, and output memcpy — ~0.9 ms per layer, down from 10.7 ms.
+	    Only ggml-cpu.c changed. No HLS rebuild, no bitstream change needed.

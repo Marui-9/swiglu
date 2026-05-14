@@ -219,7 +219,6 @@ static void mac_blocks_wv_k2(
     *result1 = (float)total1 * x_scale;
 }
 
-}
 // MAC K=2: 256 cycles (16 parallel chains).
 static void compute_X1(
     const uint8_t  *W,
@@ -230,19 +229,19 @@ static void compute_X1(
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=x_local_1 dim=2 complete
     const ap_uint<128> *W_wide = (const ap_uint<128>*)W;
+    ap_uint<128> rb_hdr0_a[WV_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS];
+    ap_uint<128> rb_nib0_a[WV_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS];
+    ap_uint<128> rb_hdr1_a[WV_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS];
+    ap_uint<128> rb_nib1_a[WV_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS];
+    #pragma HLS ARRAY_PARTITION variable=rb_hdr0_a dim=1 complete
+    #pragma HLS ARRAY_PARTITION variable=rb_nib0_a dim=1 complete
+    #pragma HLS ARRAY_PARTITION variable=rb_hdr1_a dim=1 complete
+    #pragma HLS ARRAY_PARTITION variable=rb_nib1_a dim=1 complete
     COMPUTE_X1: for (int row = 0; row < FFN_DIM; row += 2) {
-        ap_uint<128> rb_hdr0[WV_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS];
-        ap_uint<128> rb_nib0[WV_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS];
-        ap_uint<128> rb_hdr1[WV_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS];
-        ap_uint<128> rb_nib1[WV_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS];
-        #pragma HLS ARRAY_PARTITION variable=rb_hdr0 dim=1 complete
-        #pragma HLS ARRAY_PARTITION variable=rb_nib0 dim=1 complete
-        #pragma HLS ARRAY_PARTITION variable=rb_hdr1 dim=1 complete
-        #pragma HLS ARRAY_PARTITION variable=rb_nib1 dim=1 complete
-        load_row_wv(W_wide, row,     rb_hdr0, rb_nib0);
-        load_row_wv(W_wide, row + 1, rb_hdr1, rb_nib1);
         float r0, r1;
-        mac_blocks_wv_k2(rb_hdr0, rb_hdr1, rb_nib0, rb_nib1, x_local_1[0], x_scale, &r0, &r1);
+        load_row_wv(W_wide, row,     rb_hdr0_a, rb_nib0_a);
+        load_row_wv(W_wide, row + 1, rb_hdr1_a, rb_nib1_a);
+        mac_blocks_wv_k2(rb_hdr0_a, rb_hdr1_a, rb_nib0_a, rb_nib1_a, x_local_1[0], x_scale, &r0, &r1);
         float fq0 = r0 * X12_INV_SCALE;
         int   iq0 = (int)(fq0 + (fq0 >= 0.f ? 0.5f : -0.5f));
         if (iq0 >  127) iq0 =  127;
@@ -267,19 +266,19 @@ static void compute_X2(
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=x_local_2 dim=2 complete
     const ap_uint<128> *V_wide = (const ap_uint<128>*)V;
+    ap_uint<128> rb_hdr0_a[WV_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS];
+    ap_uint<128> rb_nib0_a[WV_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS];
+    ap_uint<128> rb_hdr1_a[WV_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS];
+    ap_uint<128> rb_nib1_a[WV_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS];
+    #pragma HLS ARRAY_PARTITION variable=rb_hdr0_a dim=1 complete
+    #pragma HLS ARRAY_PARTITION variable=rb_nib0_a dim=1 complete
+    #pragma HLS ARRAY_PARTITION variable=rb_hdr1_a dim=1 complete
+    #pragma HLS ARRAY_PARTITION variable=rb_nib1_a dim=1 complete
     COMPUTE_X2: for (int row = 0; row < FFN_DIM; row += 2) {
-        ap_uint<128> rb_hdr0[WV_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS];
-        ap_uint<128> rb_nib0[WV_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS];
-        ap_uint<128> rb_hdr1[WV_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS];
-        ap_uint<128> rb_nib1[WV_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS];
-        #pragma HLS ARRAY_PARTITION variable=rb_hdr0 dim=1 complete
-        #pragma HLS ARRAY_PARTITION variable=rb_nib0 dim=1 complete
-        #pragma HLS ARRAY_PARTITION variable=rb_hdr1 dim=1 complete
-        #pragma HLS ARRAY_PARTITION variable=rb_nib1 dim=1 complete
-        load_row_wv(V_wide, row,     rb_hdr0, rb_nib0);
-        load_row_wv(V_wide, row + 1, rb_hdr1, rb_nib1);
         float r0, r1;
-        mac_blocks_wv_k2(rb_hdr0, rb_hdr1, rb_nib0, rb_nib1, x_local_2[0], x_scale, &r0, &r1);
+        load_row_wv(V_wide, row,     rb_hdr0_a, rb_nib0_a);
+        load_row_wv(V_wide, row + 1, rb_hdr1_a, rb_nib1_a);
+        mac_blocks_wv_k2(rb_hdr0_a, rb_hdr1_a, rb_nib0_a, rb_nib1_a, x_local_2[0], x_scale, &r0, &r1);
         float fq0 = r0 * X12_INV_SCALE;
         int   iq0 = (int)(fq0 + (fq0 >= 0.f ? 0.5f : -0.5f));
         if (iq0 >  127) iq0 =  127;
@@ -489,9 +488,6 @@ static void mac_blocks_down_q4k_k2(
     *result1 = (float)total1 * gate_scale;
 }
 
-
-    *result1 = (float)total1 * gate_scale;
-}
 // Weights stored in field-split layout by ggml-cpu.c reformat_q6k_to_fieldsplit():
 //   Row stride: 6720 bytes = 420 × 128-bit words (unchanged from GGUF total)
 //   Word offsets within a row:
@@ -686,19 +682,18 @@ static void compute_output(
     if (down_quant_mode == 0) {
         float out_local[VECTOR_DIM];
         #pragma HLS BIND_STORAGE variable=out_local type=ram_1p impl=bram
+        ap_uint<128> rb_hdr0_a[DOWN_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS];
+        ap_uint<128> rb_nib0_a[DOWN_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS];
+        ap_uint<128> rb_hdr1_a[DOWN_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS];
+        ap_uint<128> rb_nib1_a[DOWN_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS];
+        #pragma HLS ARRAY_PARTITION variable=rb_hdr0_a dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=rb_nib0_a dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=rb_hdr1_a dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=rb_nib1_a dim=1 complete
         DOWN_Q4K: for (int out_i = 0; out_i < VECTOR_DIM; out_i += 2) {
-            ap_uint<128> rb_hdr0[DOWN_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS];
-            ap_uint<128> rb_nib0[DOWN_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS];
-            ap_uint<128> rb_hdr1[DOWN_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS];
-            ap_uint<128> rb_nib1[DOWN_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS];
-            // Split on-chip arrays: hdr ≤2 words, nib ≤16 words — each under BRAM threshold.
-            #pragma HLS ARRAY_PARTITION variable=rb_hdr0 dim=1 complete
-            #pragma HLS ARRAY_PARTITION variable=rb_nib0 dim=1 complete
-            #pragma HLS ARRAY_PARTITION variable=rb_hdr1 dim=1 complete
-            #pragma HLS ARRAY_PARTITION variable=rb_nib1 dim=1 complete
-            load_row_down_q4k(W_down_wide, out_i,     rb_hdr0, rb_nib0);
-            load_row_down_q4k(W_down_wide, out_i + 1, rb_hdr1, rb_nib1);
-            mac_blocks_down_q4k_k2(rb_hdr0, rb_hdr1, rb_nib0, rb_nib1, gate_cache[0], gate_scale,
+            load_row_down_q4k(W_down_wide, out_i,     rb_hdr0_a, rb_nib0_a);
+            load_row_down_q4k(W_down_wide, out_i + 1, rb_hdr1_a, rb_nib1_a);
+            mac_blocks_down_q4k_k2(rb_hdr0_a, rb_hdr1_a, rb_nib0_a, rb_nib1_a, gate_cache[0], gate_scale,
                                     &out_local[out_i], &out_local[out_i + 1]);
         }
         memcpy(out_batch, out_local, VECTOR_DIM * sizeof(float));
