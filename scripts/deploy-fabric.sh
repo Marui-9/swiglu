@@ -35,6 +35,7 @@ sudo xmutil loadapp kria-accel
 
 echo "[7] Insert u-dma-buf (CMA must cover size)"
 cd
+sudo rmmod u-dma-buf 2>/dev/null || true
 cd ~/udmabuf && sudo insmod u-dma-buf.ko udmabuf0=671088640 || true
 grep cma /proc/cmdline
 cat /sys/class/u-dma-buf/udmabuf0/phys_addr
@@ -43,3 +44,6 @@ cat /sys/class/u-dma-buf/udmabuf0/size
 echo "[8] UIO sanity check"
 cat /sys/class/uio/uio*/maps/map0/addr
 cat /sys/class/uio/uio*/maps/map0/name
+
+echo "[9] PL clock:"
+sudo cat /sys/kernel/debug/clk/pl0_ref/clk_rate

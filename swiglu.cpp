@@ -178,28 +178,51 @@ static void mac_blocks_wv_k2(
     }
 
     // 16 parallel MAC chains. Flat INT8 nibbles from rb_nib — no get_byte().
-    MAC_ALL_K2: for (int n = 0; n < 256; n++) {
-        #pragma HLS PIPELINE II=1
-        int sub    = n >> 5;
-        int k      = n & 3;
-        int nib_w  = n >> 4;           // 0..15, runtime -> 16:1 LUTRAM word mux
-        int nib_lo = (n & 15) * 8;
+    // Sequential word-major MAC: outer w loop reads each nibble word once
+    // into registers, then extracts 16 nibbles from the register in inner pipeline.
+    // Eliminates the 16:1 x 128-bit word-index mux — dominant routing congestion source.
+    // C-sim may produce wrong results (HLS C++ model limitation). Validate with RTL co-sim.
+    ap_uint<128> nib_reg0[WV_BLOCKS_PER_ROW], nib_reg1[WV_BLOCKS_PER_ROW];
+    ap_int<8> sc6_reg0[WV_BLOCKS_PER_ROW], mn6_reg0[WV_BLOCKS_PER_ROW];
+    ap_int<8> sc6_reg1[WV_BLOCKS_PER_ROW], mn6_reg1[WV_BLOCKS_PER_ROW];
+    #pragma HLS ARRAY_PARTITION variable=nib_reg0 complete
+    #pragma HLS ARRAY_PARTITION variable=nib_reg1 complete
+    #pragma HLS ARRAY_PARTITION variable=sc6_reg0 complete
+    #pragma HLS ARRAY_PARTITION variable=mn6_reg0 complete
+    #pragma HLS ARRAY_PARTITION variable=sc6_reg1 complete
+    #pragma HLS ARRAY_PARTITION variable=mn6_reg1 complete
+
+    MAC_ALL_K2: for (int w = 0; w < 16; w++) {
+        // Stage 1: read nibble word w from each bank into registers
         for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
             #pragma HLS UNROLL
-            ap_int<8> xi8  = (ap_int<8>) x[b][n];
-            ap_int<8> sc6u = (ap_int<8>) sc60[b][sub];
-            ap_int<8> mn6u = (ap_int<8>) mn60[b][sub];
-            ap_int<8> nib0 = (ap_int<8>) rb_nib0[b][nib_w].range(nib_lo+7, nib_lo);
-            ap_int<8> nib1 = (ap_int<8>) rb_nib1[b][nib_w].range(nib_lo+7, nib_lo);
-
-            int_acc_w0[b][k] += (int32_t)(xi8 * nib0 * sc6u);
-            int_acc_m0[b][k] += (int32_t)(xi8 * mn6u);
-            int_acc_w1[b][k] += (int32_t)(xi8 * nib1 * sc6u);
-            int_acc_m1[b][k] += (int32_t)(xi8 * mn6u);
+            nib_reg0[b] = rb_nib0[b][w];
+            nib_reg1[b] = rb_nib1[b][w];
+        }
+        int sub_w = w >> 1;
+        for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
+            #pragma HLS UNROLL
+            sc6_reg0[b] = (ap_int<8>) sc60[b][sub_w];
+            mn6_reg0[b] = (ap_int<8>) mn60[b][sub_w];
+            sc6_reg1[b] = (ap_int<8>) sc61[b][sub_w];
+            mn6_reg1[b] = (ap_int<8>) mn61[b][sub_w];
+        }
+        // Stage 2: extract 16 nibbles from registers (PIPELINE II=1)
+        MAC_WORD: for (int j = 0; j < 16; j++) {
+            #pragma HLS PIPELINE II=1
+            int n = w * 16 + j, k = n & 3, nib_lo = j * 8;
+            for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
+                #pragma HLS UNROLL
+                ap_int<8> xi8  = (ap_int<8>) x[b][n];
+                ap_int<8> nib0 = (ap_int<8>) nib_reg0[b].range(nib_lo+7, nib_lo);
+                ap_int<8> nib1 = (ap_int<8>) nib_reg1[b].range(nib_lo+7, nib_lo);
+                int_acc_w0[b][k] += (int32_t)(xi8 * nib0 * sc6_reg0[b]);
+                int_acc_m0[b][k] += (int32_t)(xi8 * mn6_reg0[b]);
+                int_acc_w1[b][k] += (int32_t)(xi8 * nib1 * sc6_reg1[b]);
+                int_acc_m1[b][k] += (int32_t)(xi8 * mn6_reg1[b]);
+            }
         }
     }
-
-    fxd_accum_t total0 = 0, total1 = 0;
     REDUCE_K2: for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
         ap_uint<128> h0 = rb_hdr0[b][0], h1 = rb_hdr1[b][0];
         float d0    = fp16_to_fp32((uint16_t) h0.range(15, 0));
@@ -443,28 +466,44 @@ static void mac_blocks_down_q4k_k2(
             }
         }
 
-        MAC_GRP: for (int n = 0; n < 256; n++) {
-            #pragma HLS PIPELINE II=1
-            int sub    = n >> 5;
-            int k      = n & 3;
-            int nib_w  = n >> 4;           // 0..15
-            int nib_lo = (n & 15) * 8;
-            for (int b = 0; b < 8; b++) {
-                #pragma HLS UNROLL
-                int babs = grp * 8 + b;
-                ap_int<8> gi8  = (ap_int<8>) gate[babs][n];
-                ap_int<8> sc6u = (ap_int<8>) sc6_0[babs][sub];
-                ap_int<8> mn6u = (ap_int<8>) mn6_0[babs][sub];
-                ap_int<8> nib0 = (ap_int<8>) rb_nib0[babs][nib_w].range(nib_lo+7, nib_lo);
-                ap_int<8> nib1 = (ap_int<8>) rb_nib1[babs][nib_w].range(nib_lo+7, nib_lo);
+        // Word-major inside 4-group: register-based nibble extraction
+            ap_uint<128> nib_reg0[8], nib_reg1[8];
+            ap_int<8> sc6_reg[8], mn6_reg[8];
+            #pragma HLS ARRAY_PARTITION variable=nib_reg0 complete
+            #pragma HLS ARRAY_PARTITION variable=nib_reg1 complete
+            #pragma HLS ARRAY_PARTITION variable=sc6_reg complete
+            #pragma HLS ARRAY_PARTITION variable=mn6_reg complete
 
-                acc_w0[b][k] += (int32_t)(gi8 * nib0 * sc6u);
-                acc_m0[b][k] += (int32_t)(gi8 * mn6u);
-                acc_w1[b][k] += (int32_t)(gi8 * nib1 * sc6u);
-                acc_m1[b][k] += (int32_t)(gi8 * mn6u);
+            MAC_GRP: for (int w = 0; w < 16; w++) {
+                for (int b = 0; b < 8; b++) {
+                    #pragma HLS UNROLL
+                    int babs = grp * 8 + b;
+                    nib_reg0[b] = rb_nib0[babs][w];
+                    nib_reg1[b] = rb_nib1[babs][w];
+                }
+                int sub_w = w >> 1;
+                for (int b = 0; b < 8; b++) {
+                    #pragma HLS UNROLL
+                    int babs = grp * 8 + b;
+                    sc6_reg[b] = (ap_int<8>) sc6_0[babs][sub_w];
+                    mn6_reg[b] = (ap_int<8>) mn6_0[babs][sub_w];
+                }
+                MAC_WORD: for (int j = 0; j < 16; j++) {
+                    #pragma HLS PIPELINE II=1
+                    int n = w * 16 + j, k = n & 3, nib_lo = j * 8;
+                    for (int b = 0; b < 8; b++) {
+                        #pragma HLS UNROLL
+                        int babs = grp * 8 + b;
+                        ap_int<8> gi8  = (ap_int<8>) gate[babs][n];
+                        ap_int<8> nib0 = (ap_int<8>) nib_reg0[b].range(nib_lo+7, nib_lo);
+                        ap_int<8> nib1 = (ap_int<8>) nib_reg1[b].range(nib_lo+7, nib_lo);
+                        acc_w0[b][k] += (int32_t)(gi8 * nib0 * sc6_reg[b]);
+                        acc_m0[b][k] += (int32_t)(gi8 * mn6_reg[b]);
+                        acc_w1[b][k] += (int32_t)(gi8 * nib1 * sc6_reg[b]);
+                        acc_m1[b][k] += (int32_t)(gi8 * mn6_reg[b]);
+                    }
+                }
             }
-        }
-
         REDUCE_GRP: for (int b = 0; b < 8; b++) {
             int babs = grp * 8 + b;
             ap_uint<128> h0 = rb_hdr0[babs][0], h1 = rb_hdr1[babs][0];

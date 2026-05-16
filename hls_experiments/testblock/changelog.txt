@@ -732,22 +732,10 @@ The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typic
     Overhead (DMA/polling/AXI)	11.63s	35.9%
 
     Critical Insight: The Bottleneck
-    The decode phase is consuming 36.5% overhead (11.23s of 30.77s):
-
-    Per-token overhead: 171.1 ms
-    Per-layer overhead: 10.7 ms
-    Hardware compute per token: 305.2 ms
-    This means for every 305 ms of actual FPGA work, you're spending 171 ms
-    on DMA transfers, interrupt polling, and register programming. 
-    That's nearly 1:1 overhead-to-computation ratio.
-
-    Why Prefill is Better
-    Prefill phase has only 24.6% overhead vs decode's 36.5% because the costs 
-    are amortized over larger batch sizes (4 tokens vs 1 token per call in effective pipeline state).
-
-    The decode phase is what you need to optimize first—reducing per-token latency 
-    from 171ms overhead to something sub-50ms would get you closer to the 4 t/s target 
-    mentioned in CLAUDE.md.
+    The decode phase is consuming 36.5% non-SwiGLU time (11.23s of 30.77s).
+    This is NOT driver overhead — it's CPU attention/norms/residual ops (~126 ms/token
+    from testblock CLAUDE.md). The FPGA only handles the FFN block (~68% of total).
+    Per Amdahl's Law, the 2.08 t/s ceiling is set by FPGA FFN compute at 250 MHz.
 
 39. actual calculation of throughput
     Based on the model dimensions provided (input vector of 2048, feed-forward dimension of 8192):
@@ -919,23 +907,66 @@ The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typic
 	    chip runs slightly cooler at 88% LUT utilization, flat sc6/mn6 headers are
 	    cleaner, and the pre-decode infrastructure is in place for future work.
 
-	47. Permanent per-layer pre-decode cache — driver overhead eliminated
-	    Entry 38 identified that 171 ms (36%) of each token's 476 ms is driver overhead,
-	    and the hybrid pre-decode eliminated the UNPACK LUT cost but did nothing for
-	    throughput because the CPU pre-decode (unpack_q4k_to_int8) still ran on every
-	    layer call (~10 ms/layer x 16 = ~160 ms/token).
+	47. Permanent per-layer pre-decode cache
+	    Replaced the single rotating scratch slot with 16 permanent per-layer cache
+	    slots in udmabuf (30 MB/slot, 480 MB total, fits in 512 MB UDMABUF / 600 MB CMA).
+	    Each slot holds one layer's pre-decoded W, V, and Wd. Pre-decode runs ONCE per
+	    layer on first use — subsequent tokens read cached hybrid-format weights directly.
 
-	    The fix: replace the single rotating scratch slot with 16 permanent per-layer
-	    cache slots in udmabuf. Each slot holds one layer's pre-decoded W, V, and Wd
-	    matrices (36 MB/slot, 576 MB total, 683 MB max address within 820 MB). The
-	    pre-decode runs ONCE per layer on first use — subsequent tokens read the cached
-	    hybrid-format weights directly from udmabuf with zero CPU decode overhead.
-
-	    Estimated speedup (based on entry 38 breakdown):
-	        Before: 305 ms HW + 171 ms overhead = 476 ms -> 2.1 t/s decode
-	        After:  305 ms HW + ~15 ms overhead = ~320 ms -> ~3.1 t/s decode
-	        Speedup: ~1.5x from current decode throughput.
-
-	    The remaining ~15 ms overhead is from x quantization, udmabuf syncs (sysfs),
-	    UIO interrupt handling, and output memcpy — ~0.9 ms per layer, down from 10.7 ms.
+	    Board result (-t 4): 2.49 t/s prefill, 2.08 t/s decode. Unchanged from step 37.
+	    The permanent cache eliminates the CPU pre-decode (~10 ms/layer) but the 2.08 t/s
+	    decode ceiling is set by FPGA FFN compute at 250 MHz (~305 ms/token). Entry 38's
+	    "171 ms overhead" was misattributed — it's mostly CPU attention/norms between FPGA
+	    calls (~126 ms/token from testblock), not driver overhead. The actual driver
+	    overhead (syncs, UIO, output copy) is ~10-15 ms/token, which the permanent
+	    cache reduces further but doesn't shift the bottleneck.
 	    Only ggml-cpu.c changed. No HLS rebuild, no bitstream change needed.
+
+	48. Word-major MAC approach — deferred due to verification gap
+	    Replaces the 16:1 x 128-bit word-index mux (~1000 LUTs per MAC chain) with
+	    sequential word reads into registers + byte extraction from register.
+	    Estimated LUT savings: ~30-40K (design from ~100K to ~60-70K HLS LUTs),
+	    potentially closing timing at 250 MHz.
+
+	    Standalone C test: bit-identical to element-major. Synthesis: completed.
+	    C-sim: produces zeros (HLS C++ model can't handle register arrays inside
+	    non-pipelined outer loops). Only validation path is RTL co-sim or board test.
+	    Deferred — requires RTL co-sim infrastructure not currently available.
+
+	    Next steps to close timing if returned to:
+	    1. RTL co-sim to validate functional correctness (C-sim can't model this)
+	    2. If RTL co-sim passes, Vivado phys_opt to close -0.584 ns WNS:
+	         place_design -directive ExtraNetDelay_high
+	         phys_opt_design -directive Explore
+	         route_design -directive Explore
+	         phys_opt_design -directive AggressiveExplore
+	       The 63% net delay (DSP->logic routing) may improve with phys_opt
+	       register retiming and logic replication.
+	    3. If WNS still negative, reduce PL clock to 200 MHz (5.0 ns) in Vivado
+	       and pl.dtsi — 1.66 t/s at 200 MHz vs 2.08 t/s current hybrid.
+
+    
+
+	49. Word-major MAC revision — register arrays at function scope
+	    Same two-level sequential word-major structure as entry 48, but with
+	    register arrays (nib_reg, sc6_reg, mn6_reg) declared OUTSIDE the w-loop
+	    at function scope, not inside the loop body. The previous version (entry 48)
+	    had them inside the loop body — this caused C-sim zeros and likely
+	    contributed to synthesis routing pressure.
+
+	    Key changes from entry 48:
+	    - nib_reg0/1, sc6_reg0/1, mn6_reg0/1 arrays declared before MAC_ALL_K2,
+	      assigned inside the w-loop each iteration. Functions as hardware registers
+	      loaded once per state, stable across 16-cycle inner pipeline.
+	    - MAC_GRP uses babs=grp*8+b (compile-time, grp UNROLL'd) for nibble reads.
+	    - All flat INT8 nibble extraction via register .range() — no get_byte().
+	    - Load functions unchanged (conditional demux kept — negligible routing).
+	    - 875 lines, braces balanced, no element-major loops.
+
+	    Expected synthesis impact: word-index mux (16:1 x 128-bit, ~1000 LUTs/chain)
+	    eliminated. Sequential LUTRAM reads with counter generate cleaner routing.
+	    Register-based byte extraction local to CLB — no cross-chip mux fan-out.
+	    If RTL co-sim passes and timing closes, K=4 becomes feasible (~90K LUTs
+	    estimated, 4.1 t/s projected).
+
+	    Pending: RTL co-simulation.

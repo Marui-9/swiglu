@@ -64,8 +64,8 @@ static int swiglu_dbg_enabled = -1;
 static int      swg_last_prog_layer = -1;
 static uint32_t swg_last_prog_mode  = 0;
 
-// udmabuf layout (820 MB pool)
-#define UDMABUF_SIZE        859832320U  // 820 MB (was 640 MB)
+// udmabuf layout (512 MB pool — fits cma=600M, no boot script fix needed)
+#define UDMABUF_SIZE        536870912U
 #define SWG_MAX_BATCH       1    // tokens per IP call (must match HLS MAX_BATCH=1)
 #define SWG_MAX_TOKENS     64   // max tokens per fused op (looped in SWG_MAX_BATCH chunks)
 #define SWG_VEC_OFF         0x06C50000U  // x INT8
@@ -96,14 +96,14 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_CTRL_XSCALE  0x54  // float bits
 
 // Permanent per-layer pre-decode cache.  16 slots, populated on first use.
-// CMA is 1000 MB, udmabuf extended to 820 MB.
-// Hybrid per-block: 160 bytes. Per matrix: 10 MB. Per layer: ~30 MB → pad to 36 MB.
-// 16 layers × 36 MB = 576 MB.  One-time cost (~160 ms at startup).
-#define SWG_LAYER_BASE         0x06D00000U
-#define SWG_LAYER_STRIDE       0x02400000U   // 36 MB per layer
+// Fits within 512 MB UDMABUF (works with cma=600M — no boot script fix needed).
+// Hybrid per-block: 160 bytes. Per matrix: ~10 MB. Per layer: 30 MB (packed).
+// 16 layers × 30 MB = 480 MB.  Base at 16 MB → max ~496 MB.
+#define SWG_LAYER_BASE         0x01000000U
+#define SWG_LAYER_STRIDE       0x01E00000U   // 30 MB per layer
 #define SWG_LAYER_W_OFF(l)     (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x00000000U)
-#define SWG_LAYER_V_OFF(l)     (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x00C00000U)
-#define SWG_LAYER_WD_OFF(l)    (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x01800000U)
+#define SWG_LAYER_V_OFF(l)     (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x00A00000U)
+#define SWG_LAYER_WD_OFF(l)    (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x01400000U)
 #define WV_BLOCKS_PER_ROW      8
 #define DOWN_BLOCKS_PER_ROW    32
 #define UNPACKED_BLOCK_BYTES   160
@@ -2023,7 +2023,7 @@ static void ggml_compute_forward_swiglu_fused_hw(
                                (int)W_down->ne[1], DOWN_BLOCKS_PER_ROW);
         }
 
-        udmabuf_sync_to_device(SWG_LAYER_W_OFF(layer), 3 * 12 * 1024 * 1024);
+        udmabuf_sync_to_device(SWG_LAYER_W_OFF(layer), SWG_LAYER_STRIDE);
         swg_layer_cached[layer] = true;
     }
 
