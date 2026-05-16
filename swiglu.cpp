@@ -98,8 +98,8 @@ static void load_row_wv(const ap_uint<128> *W_wide, int row,
                          ap_uint<128> rb_hdr[WV_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS],
                          ap_uint<128> rb_nib[WV_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS]) {
 #pragma HLS INLINE off
-#pragma HLS ARRAY_PARTITION variable=rb_hdr dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=rb_nib dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=rb_hdr complete
+#pragma HLS ARRAY_PARTITION variable=rb_nib complete
 
     int b = 0, w = 0;
     LOAD_FLAT: for (int i = 0; i < UNPACKED_WV_ROW_WORDS; i++) {
@@ -127,11 +127,19 @@ static void mac_blocks_wv_k2(
     float *result0, float *result1) {
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
-#pragma HLS ARRAY_PARTITION variable=rb_hdr0 dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=rb_hdr1 dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=rb_nib0 dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=rb_nib1 dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=x   dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=rb_hdr0 complete
+#pragma HLS ARRAY_PARTITION variable=rb_hdr1 complete
+#pragma HLS ARRAY_PARTITION variable=rb_nib0 complete
+#pragma HLS ARRAY_PARTITION variable=rb_nib1 complete
+#pragma HLS ARRAY_PARTITION variable=x complete
+/* 
+changed because of 
+WARNING: [HLS 207-5562] missing argument for 'variable' (swiglu.cpp:129:9)
+ERROR: [HLS 207-3776] use of undeclared identifier 'total0' (swiglu.cpp:238:9)
+ERROR: [HLS 207-3776] use of undeclared identifier 'total1' (swiglu.cpp:239:9)
+ERROR: [HLS 207-3776] use of undeclared identifier 'total0' (swiglu.cpp:241:23)
+ERROR: [HLS 207-3776] use of undeclared identifier 'total1' (swiglu.cpp:242:23)
+*/
 
     // UNPACK: flat sc6/mn6 from rb_hdr (bytes 4-19 of word 0)
     uint8_t sc60[WV_BLOCKS_PER_ROW][8], mn60[WV_BLOCKS_PER_ROW][8];
@@ -384,12 +392,8 @@ static void load_row_down_q4k(const ap_uint<128> *W_down_wide, int out_i,
                                 ap_uint<128> rb_hdr[DOWN_BLOCKS_PER_ROW][UNPACKED_HDR_WORDS],
                                 ap_uint<128> rb_nib[DOWN_BLOCKS_PER_ROW][UNPACKED_NIB_WORDS]) {
 #pragma HLS INLINE off
-#pragma HLS ARRAY_PARTITION variable=rb_hdr dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=rb_nib dim=1 complete
-
-    int b = 0, w = 0;
-    LOAD_DOWN_Q4K: for (int i = 0; i < UNPACKED_DOWN_ROW_WORDS; i++) {
-        #pragma HLS PIPELINE II=1
+#pragma HLS ARRAY_PARTITION variable=rb_hdr complete
+#pragma HLS ARRAY_PARTITION variable=rb_nib complete
         ap_uint<128> word = W_down_wide[(ap_uint<64>)out_i * UNPACKED_DOWN_ROW_WORDS + i];
         if (w < UNPACKED_HDR_WORDS) { rb_hdr[b][w] = word; }
         else                          { rb_nib[b][w - UNPACKED_HDR_WORDS] = word; }
@@ -412,13 +416,13 @@ static void mac_blocks_down_q4k_k2(
     float *result0, float *result1) {
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
-#pragma HLS ARRAY_PARTITION variable=rb_hdr0 dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=rb_hdr1 dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=rb_nib0 dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=rb_hdr0 complete
+#pragma HLS ARRAY_PARTITION variable=rb_hdr1 complete
+#pragma HLS ARRAY_PARTITION variable=rb_nib0 complete
 #pragma HLS BIND_STORAGE    variable=rb_nib0 type=ram_1p impl=lutram
-#pragma HLS ARRAY_PARTITION variable=rb_nib1 dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=rb_nib1 complete
 #pragma HLS BIND_STORAGE    variable=rb_nib1 type=ram_1p impl=lutram
-#pragma HLS ARRAY_PARTITION variable=gate dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=gate complete
 
     // UNPACK: flat sc6/mn6 from rb_hdr
     uint8_t sc6_0[DOWN_BLOCKS_PER_ROW][8], mn6_0[DOWN_BLOCKS_PER_ROW][8];
