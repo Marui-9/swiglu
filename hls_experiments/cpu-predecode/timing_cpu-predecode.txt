@@ -1,43 +1,28 @@
 Setup
-Worst Negative Slack (WNS): -0.584 ns  
+Worst Negative Slack (WNS): -0.146 ns
 
-Total Negative Slack (TNS): -4429.230 ns  
+Total Negative Slack (TNS): -20.980 ns
 
-Number of Failing Endpoints: 24875  
+Number of Failing Endpoints: 512
 
-Total Number of Endpoints: 418753  
+Total Number of Endpoints: 420153
 
 Hold
-Worst Hold Slack (WHS): 0.010 ns  
+Worst Hold Slack (WHS): -0.082 ns
 
-Total Hold Slack (THS): 0.000 ns  
+Total Hold Slack (THS): -2212.144 ns
 
-Number of Failing Endpoints: 0  
+Number of Failing Endpoints: 86717
 
-Total Number of Endpoints: 418753  
+Total Number of Endpoints: 420153
 
 Pulse Width
-Worst Pulse Width Slack (WPWS): 0.520 ns  
+Worst Pulse Width Slack (WPWS): 0.520 ns
 
-Total Pulse Width Negative Slack (TPWS): 0.000 ns  
+Total Pulse Width Negative Slack (TPWS): 0.000 ns
 
-Number of Failing Endpoints: 0  
+Number of Failing Endpoints: 0
 
-Total Number of Endpoints: 145570  
+Total Number of Endpoints: 145694
 
 Status: Timing constraints are not met.
-
-
-Name,Slack,Levels,Routes,High Fanout,From,To,Total Delay,Logic Delay,Net Delay,Requirement
-Path 1,-0.584,5,4,8,...p_reg_reg/DSP_OUTPUT_INST/CLK,...ALU_OUT[20],4.493,1.677,2.816,4.0
-Path 2,-0.584,5,4,8,...p_reg_reg/DSP_OUTPUT_INST/CLK,...ALU_OUT[21],4.493,1.677,2.816,4.0
-Path 3,-0.584,5,4,8,...p_reg_reg/DSP_OUTPUT_INST/CLK,...ALU_OUT[22],4.493,1.677,2.816,4.0
-Path 4,-0.584,5,4,8,...p_reg_reg/DSP_OUTPUT_INST/CLK,...ALU_OUT[23],4.493,1.677,2.816,4.0
-Path 5,-0.584,5,4,8,...p_reg_reg/DSP_OUTPUT_INST/CLK,...ALU_OUT[24],4.493,1.677,2.816,4.0
-Path 6,-0.584,5,4,8,...p_reg_reg/DSP_OUTPUT_INST/CLK,...ALU_OUT[25],4.493,1.677,2.816,4.0
-Path 7,-0.584,5,4,8,...p_reg_reg/DSP_OUTPUT_INST/CLK,...ALU_OUT[26],4.493,1.677,2.816,4.0
-Path 8,-0.584,5,4,8,...p_reg_reg/DSP_OUTPUT_INST/CLK,...ALU_OUT[27],4.493,1.677,2.816,4.0
-Path 9,-0.584,5,4,8,...p_reg_reg/DSP_OUTPUT_INST/CLK,...ALU_OUT[28],4.493,1.677,2.816,4.0
-Path 10,-0.584,5,4,8,...p_reg_reg/DSP_OUTPUT_INST/CLK,...ALU_OUT[29],4.493,1.677,2.816,4.0
-
-All listed paths in image_b0fddb.png exhibit a constant slack of -0.584 ns. The Net Delay of 2.816 ns constitutes approximately 62.7% of the Total Delay (4.493 ns). These paths originate from a DSP output and terminate at ALU output registers. The high ratio of net delay to logic delay indicates that routing constraints or physical distance between the DSP and ALU logic are the primary causes of the timing violation

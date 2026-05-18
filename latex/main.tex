@@ -54,7 +54,7 @@
 \begin{abstract}
 
 Edge conversational AI has recently shifted from cloud-centric deployment to on-device execution because of latency, privacy, and power constraints; however, transformer backbones remain challenging to run in real time on embedded hardware.
-This work presents a systems-driven approach to enabling conversational audio inference on resource-constrained edge devices. This is achieved through a custom FPGA accelerator for the LFM2.5-1.2B-Thinking model by Liquid AI designed to offload the heaviest part of inference to reduce latency and energy consumption. The proposed implementation enables a comprehensive evaluation of the interaction between computation and data movement in transformer feed-forward layers under edge constraints. Results show a significant reduction in energy consumption while maintaining compatibility with existing inference frameworks. In single and double-threaded execution the FPGA+CPU path reached performance-per-watt gains of +63.8\% and +55.3\% respectively over the CPU baseline.
+This work presents a systems-driven approach to enabling conversational audio inference on resource-constrained edge devices. This is achieved through a custom FPGA accelerator for the LFM2.5-1.2B-Thinking model by Liquid AI designed to offload the heaviest part of inference to reduce latency and energy consumption. The proposed implementation enables a comprehensive evaluation of the interaction between computation and data movement in transformer feed-forward layers under edge constraints. Results show a significant reduction in energy consumption while maintaining compatibility with existing inference frameworks. In single-threaded execution the FPGA+CPU path reached performance-per-watt gains of +63.8\% (prefill) and +55.3\% (decode) over the CPU baseline.
 These findings demonstrate that selectively accelerating feed-forward components provides an effective pathway toward conversational-level performance on embedded platforms. 
 
 
@@ -76,9 +76,32 @@ This paper begins by formally defining the objectives of this work on the topic 
 
 \section{Research question} \label{sec:research_question}
 Conversational AI systems aim to provide rich, context-aware interactions through natural spoken dialogue. Achieving this capability requires models that can process audio input, understand and reason upon user intentions, and generate appropriate responses within strict real-time constraints. At the same time, conversational audio often contains sensitive and biometric information, making local processing desirable from both privacy and reliability perspectives.
-These requirements pose a challenge when targeting embedded platforms. Edge devices operate under strict limits in terms of compute capability, memory footprint, and energy consumption, yet meaningful conversational interaction typically relies on resource-intensive models.
-These considerations motivate a central research question: how can conversational-level audio inference be achieved within the constraints of the edge devices? 
-More precisely, how can conversational-quality performance be achieved while minimizing the computation, latency, memory, and energy resources required for deployment and execution?
+
+Conversational speech interfaces impose a well-established latency budget:
+end-to-end response times below 200\,ms are perceived as instantaneous, while
+delays between 200 and 500\,ms are tolerated in natural turn-taking dialogue;
+beyond 500\,ms, the gap is perceived as a system failure or unresponsiveness
+rather than a conversational pause. This leaves a narrow
+window for the entire pipeline---audio encoding, automatic speech recognition,
+language modelling, and text-to-speech synthesis---to complete on a per-utterance
+basis.
+Edge devices operate under strict limits in compute capability, memory footprint,
+and energy consumption, typically drawing between 3 and 10\,W of total board
+power for embedded platforms in the smart-assistant and IoT class. Yet meaningful
+conversational interaction relies on resource-intensive transformer-based language
+models whose autoregressive decoding generates one token at a time, with each
+token requiring tens to hundreds of millions of multiply-accumulate operations.
+
+A viable edge deployment must therefore satisfy three constraints simultaneously:
+(i)~per-token generation latency within the 200--500\,ms window such that the
+aggregate pipeline remains under the end-to-end budget,
+(ii)~total system power in the single-digit-watt range compatible with embedded
+and battery-backed operation, and
+(iii)~local-only execution that preserves the privacy of conversational data
+without reliance on cloud offload.
+The central question is whether a combination of model quantisation and selective
+hardware acceleration can bring a competitive conversational model within these
+constraints on a resource-limited edge platform.
 
 \section{State of the Art} \label{sec:sota}
 
@@ -480,7 +503,7 @@ This section compares CPU Only and FPGA+CPU execution across thread counts (T1--
 \begin{table}[h]
 \centering
 \scriptsize
-\caption{CPU Only vs CPU+FPGA across thread counts.}
+\caption{CPU Only versus FPGA+CPU across thread counts.}
 \label{tab:short_results}
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{c c c c c c}
@@ -526,9 +549,45 @@ The results indicate that offloading the SwiGLU feed-forward block to FPGA is be
 \cite{lu2020hw-mha}. In the present case, the FPGA+CPU configuration improves performance-per-watt most clearly at lower thread counts (T1/T2),yielding gains of +63.8\% (prefill) and +55.3\% (decode) at T1, and +9.0\% (prefill) and +92.6\% (decode) at T2, indicating that the accelerator is effective when host-side contention is limited and the cost of orchestration can be amortized.In contrast, at T3/T4 the CPU Only path remains faster, with the FPGA+CPU configuration exhibiting a performance-per-watt decrease of 12.6\%/10.8\% at T3, and 22.2\%/14.7\% at T4 (prefill/decode). This suggests that the incremental benefit of SwiGLU acceleration is offset by transfer overhead, synchronization, and the inability of the surrounding execution pipeline to supply data to the programmable logic efficiently enough. 
 
 Results reported using larger FPGA platforms suggest that greater memory bandwidth and fabric capacity help kernel-level gains and end-to-end speedup \cite{FTRANS}.
-Direct comparison with a recent deployment of a 6.6k-parameter Tiny Transformer on the same platform highlights the resource intensity of conversational architectures. While the Tiny Transformer maps its entire end-to-end pipeline using only 30\% of available Look-Up Tables (LUTs) and 37\% of Block RAM (BRAM) \cite{11310944tin}, accelerating just the feed-forward SwiGLU block of the 1.2B-parameter LFM2.5 model nearly saturates the same device at 90\% LUT and 60\% BRAM utilization.
-A Self-Attention accelerator on the KV260 highlights differing architectural trade-offs \cite{li2025fpgabasedhardware}. While our design uses mixed precision (INT8 activations, 4-bit weights) at 250 MHz and consuming 4.8–6.0 W, the attention-focused design processes DistilBERT-scale matrices using symmetric INT8 quantization at 100 MHz and approximately 3.3 W. Furthermore, whereas LFM2.5 heavily saturates logic, the attention accelerator prioritizes arithmetic and memory fabric (83\% DSPs, 88\% BRAM).
-Another comparable study conducted using the KV260 for matrix mutliplication acceleration reports similar severe processing system (PS) bottlenecks \cite{11311069}. In the BRAM-banked matrix multiplication implementation the effective system throughput of 13.52 GOPs amounts to 59\% utilization of the peak 22.83 GOPs. Our isolated FPGA accelerator operates between 39\% (stages 2a/2b) and 54\% (stage 4) of its maximum capacity, when computing the feedforward block kernel due to memory bandwidth starvation. This disparity reflects the architectural focus: the BRAM-banked design maximizes arithmetic density by dedicating 83.17\% of the DSP slices to an unrolled 32x32 INT8 multiplier array, whereas the LFM2.5 SwiGLU design utilizes only 26\% of DSP slices to process a mixed precision vector-matrix dataflow.
+Direct comparison with a recent deployment of a 6.6k-parameter Tiny Transformer on the same platform highlights the resource intensity of conversational architectures. While the Tiny Transformer maps its entire end-to-end pipeline using only 30\% of available Look-Up Tables (LUTs), 27\% of DSP slices, 37\% of Block RAM (BRAM), and 20\% of Flip-Flops (FF) at 77\,MHz \cite{11310944tin}, accelerating just the feed-forward SwiGLU block of the 1.2B-parameter LFM2.5 model nearly saturates the same device at 88\% LUT and 60\% BRAM utilization at 250\,MHz.
+A Self-Attention accelerator on the KV260 highlights differing architectural trade-offs \cite{li2025fpgabasedhardware}. While our design uses mixed precision (INT8 activations, 4-bit weights) at 250 MHz and consuming 4.8–6.0 W, the attention-focused design processes DistilBERT-scale matrices using symmetric INT8 quantization at 100 MHz and approximately 3.3 W. Furthermore, whereas LFM2.5 heavily saturates logic, the attention accelerator prioritises arithmetic and memory fabric, consuming 60\% LUT, 83\% DSP, 88\% BRAM, and 43\% FF.
+Another comparable study conducted using the KV260 for matrix multiplication acceleration reports similar severe processing system (PS) bottlenecks \cite{11311069}. In the BRAM-banked matrix multiplication implementation the effective system throughput of 13.52 GOPs amounts to 59\% utilization of the peak 22.83 GOPs. Our isolated FPGA accelerator operates between 39\% (stages 2a/2b) and 54\% (stage 4) of its maximum capacity, when computing the feedforward block kernel due to memory bandwidth starvation. This disparity reflects the architectural focus: the BRAM-banked design consumes 83.72\% LUT and 83.17\% DSP to sustain an unrolled $32{\times}32$ INT8 multiplier array, whereas the LFM2.5 SwiGLU design utilizes only 26\% of DSP slices to process a mixed precision vector-matrix dataflow.
+
+\begin{table}[h]
+\centering
+\caption{KV260 accelerator design comparison.}
+\label{tab:kv260_comparison}
+\setlength{\tabcolsep}{2.5pt}
+\footnotesize
+\begin{tabular}{l c c c c}
+\hline
+ & \textbf{Tiny Transf.} & \textbf{Self-Attn.} & \textbf{MatMul Accel.} & \textbf{This Work} \\
+ & \cite{11310944tin} & \cite{li2025fpgabasedhardware} & \cite{11311069} & \\
+\hline
+Accelerated function & Full E2E pipeline & Q/K/V projections & Matrix mult. & SwiGLU FFN \\
+Model / matrix size & 6.6k params. & DistilBERT & DistilBERT & LFM2.5 1.2B \\
+Precision & float32 & INT8 & INT8 & INT8 / INT4 \\
+Clock (MHz) & 77 & 100 & 100 & 250 \\
+\hline
+Ops/cycle (INT8 MAC) & --- & 1024 & 1024 & 32 \\
+Compute (GOPs/s)      & --- & 3.12 & 22.83 & 1.58--2.18\textsuperscript{a} \\
+\hline
+LUT (\%)          & 30 & 60 & 84 & 88 \\
+DSP (\%)          & 27 & 83 & 83 & 26 \\
+BRAM (\%)         & 37 & 88 & 71 & 60 \\
+FF (\%)           & 20 & 43 & 44 & 42 \\
+URAM (\%)         & --- & --- & --- & 13 \\
+\hline
+Power (W)         & --- & 3.3 & --- & 4.8--6.0 \\
+\hline
+\end{tabular}
+
+\par\vspace{4pt}
+{\footnotesize \textsuperscript{a}Sustained rate across all three FFN projections plus the
+gate operation; the other works time a single $(64,768){\times}(768,3072)$
+matrix multiply in isolation. Stage-level peak: 4.00\,GOPs/s.}
+
+\end{table}
 
 Extending hardware acceleration beyond the SwiGLU block to the Final Linear Projection and Gated Short Convolution yields diminishing returns, as they account for only 10.96\% and 10.44\% of total execution time, respectively. Furthermore, simultaneous acceleration is physically infeasible on the KV260 platform, as the SwiGLU kernel alone leaves insufficient resources for additional hardware mapping.
 Attempts to increase parallelism primarily intensify routing pressure and timing-closure challenges rather than yielding proportional throughput gains. 
