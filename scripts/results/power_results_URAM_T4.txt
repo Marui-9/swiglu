@@ -1,0 +1,42 @@
+all benchmarks were run with flags: -p 4 -n 64 -t 4 -r 10
+CPU baseline: 2.15 t/s prefill, 1.15 t/s decode (from predecode_results.txt CPU run)
+
+[ACCEL — URAM-transposed K=4, 250 MHz]
+Power: mean=4825.33 mW, stdev=252.50 mW, min=3920.00 mW, max=6070.00 mW, n=244
+Average power: 4.8253 W
+Duration: 339.00 s
+Total energy: 1635.78 J  (0.454383 Wh)
+LPD temp: mean=26.70 C, stdev=0.85 C, min=25.00 C, max=29.00 C, n=244
+FPD temp: mean=25.90 C, stdev=0.91 C, min=24.00 C, max=29.00 C, n=244
+PL temp: mean=25.47 C, stdev=0.80 C, min=24.00 C, max=27.00 C, n=244
+
+Derived metrics (using measured mean power and provided throughput):
+
+| Mode | Phase | Throughput (tokens/s) | Latency/token (us) | Power (W) | Energy/token (J/token) | Perf/W (tokens/s/W) |
+|---|---|---|---:|---:|---:|---:|---:|
+| ACCEL | Prefill | 2.59 | 386100 | 4.8253 | 1.8631 | 0.5368 |
+| ACCEL | Decode | 2.20 | 454545 | 4.8253 | 2.1933 | 0.4559 |
+
+Throughput inputs used:
+- ACCEL: prefill 2.59 t/s, decode 2.20 t/s
+
+Comparison vs. CPU (same flags, from predecode_results.txt):
+- CPU prefill: 2.15 t/s, CPU decode: 1.15 t/s
+- ACCEL vs CPU prefill: +0.44 t/s (+20.5%)
+- ACCEL vs CPU decode: +1.05 t/s (+91.3%)
+
+Comparison vs. previous ACCEL hybrid K=2 (250 MHz, predecode_results.txt):
+- Previous ACCEL: prefill 2.49 t/s, decode 2.08 t/s
+- URAM K=4 vs hybrid K=2 prefill: +0.10 t/s (+4.0%)
+- URAM K=4 vs hybrid K=2 decode: +0.12 t/s (+5.8%)
+
+URAM K=4 achieves a modest throughput improvement over hybrid K=2 at the same
+clock (250 MHz). The 5.8% decode improvement is below the projected 25% (2.6 t/s),
+suggesting the practical bottleneck has shifted from FFN compute time (~68% of
+total) further toward CPU-side attention/norms (~126 ms/token). Per Amdahl's
+Law, reducing FFN time from ~305 ms to ~230 ms only improves end-to-end from
+~431 ms to ~356 ms — a 17% reduction in FFN time yields ~5-6% end-to-end gain.
+
+Power is slightly lower than hybrid K=2 (4.83 W vs 5.01 W), consistent with
+URAM replacing LUTRAM-heavy mux trees. Thermal margins are healthy with all
+temperatures under 30 C.

@@ -39,15 +39,18 @@
 using namespace std;
 
 // ─── Global weight buffers (too large for stack) ─────────────────────────────
+// Raw Q4_K weights for reference computation
 static uint8_t W_buf  [FFN_DIM    * WV_BLOCKS_PER_ROW  * Q4_K_BYTES]; // 9.0 MB
 static uint8_t V_buf  [FFN_DIM    * WV_BLOCKS_PER_ROW  * Q4_K_BYTES]; // 9.0 MB
 static uint8_t Wd_q4k [VECTOR_DIM * DOWN_BLOCKS_PER_ROW * Q4_K_BYTES]; // 9.0 MB
-// Full-predecode weight buffers for the HLS IP (288 bytes/block)
-static uint8_t W_buf_up  [FFN_DIM    * WV_BLOCKS_PER_ROW  * UNPACKED_BLOCK_BYTES]; // 18.9 MB
-static uint8_t V_buf_up  [FFN_DIM    * WV_BLOCKS_PER_ROW  * UNPACKED_BLOCK_BYTES]; // 18.9 MB
-static uint8_t Wd_q4k_up [VECTOR_DIM * DOWN_BLOCKS_PER_ROW * UNPACKED_BLOCK_BYTES]; // 18.9 MB
-static uint8_t Wd_q6k   [VECTOR_DIM * DOWN_BLOCKS_PER_ROW * Q6_K_BYTES]; // 13.1 MB raw GGML
-static uint8_t Wd_q6k_fs[VECTOR_DIM * DOWN_BLOCKS_PER_ROW * Q6_K_BYTES]; // 13.1 MB field-split
+
+// URM-transposed weight buffers for the HLS IP
+// WV row: 8*32 + 256*4 = 1280 B.  Down row: 32*32 + 256*16 = 5120 B.
+#define URM_WV_ROW_BYTES   1280
+#define URM_DOWN_ROW_BYTES 5120
+static uint8_t W_urm  [FFN_DIM    * URM_WV_ROW_BYTES];     // 10.0 MB
+static uint8_t V_urm  [FFN_DIM    * URM_WV_ROW_BYTES];     // 10.0 MB
+static uint8_t Wd_urm [VECTOR_DIM * URM_DOWN_ROW_BYTES];   // 10.0 MB
 
 static int8_t x_batch_buf [MAX_BATCH * VECTOR_DIM];
 static float out_batch_buf[MAX_BATCH * VECTOR_DIM];
@@ -135,43 +138,57 @@ static void fill_q4k_block(uint8_t* block, uint16_t d_raw, uint16_t dmin_raw) {
     }
 }
 
-// unpack_q4k_block_csim: convert Q4_K packed blocks to full-predecode 288-byte format.
-// Full pre-decode: sc6/mn6 flat INT8, nibbles as flat INT8 (one per byte).
-// Mirrors the CPU-side unpack_q4k_to_int8() in ggml-cpu.c exactly.
-static void unpack_q4k_block_csim(const uint8_t* src, uint8_t* dst,
-                                   int n_rows, int blocks_per_row) {
+// transpose_q4k_to_urm_csim: convert Q4_K → URAM-transposed DDR layout.
+// Matches transpose_q4k_to_urm() in ggml-cpu.c exactly.
+static void transpose_q4k_to_urm_csim(const uint8_t* src, uint8_t* dst,
+                                       int n_rows, int blocks_per_row) {
+    const int groups = blocks_per_row / 8;
+    const int row_hdr = blocks_per_row * URM_HDR_BYTES;
+    const int row_nib = 256 * groups * 4;
+    const int row_stride = row_hdr + row_nib;
+
     for (int row = 0; row < n_rows; row++) {
+        // Headers: block-major, 32 bytes each
         for (int b = 0; b < blocks_per_row; b++) {
-            const uint8_t* blk_src = src + ((size_t)row * blocks_per_row + b) * Q4_K_BYTES;
-            uint8_t*       blk_dst = dst + ((size_t)row * blocks_per_row + b) * UNPACKED_BLOCK_BYTES;
-
-            // d/dmin: copy verbatim (bytes 0-3)
-            blk_dst[0] = blk_src[0]; blk_dst[1] = blk_src[1];
-            blk_dst[2] = blk_src[2]; blk_dst[3] = blk_src[3];
-
-            // Decode sc6[0..7] and mn6[0..7] from Q4_K header → flat INT8 arrays
-            uint8_t sc6[8], mn6[8];
+            const uint8_t* blk = src + ((size_t)row * blocks_per_row + b) * Q4_K_BYTES;
+            uint8_t* hdr = dst + (size_t)row * row_stride + (size_t)b * URM_HDR_BYTES;
+            hdr[0] = blk[0]; hdr[1] = blk[1];
+            hdr[2] = blk[2]; hdr[3] = blk[3];
             for (int i = 0; i < 4; i++) {
-                sc6[i] = blk_src[4 + i] & 0x3F;
-                mn6[i] = blk_src[8 + i] & 0x3F;
+                hdr[4 + i]  = blk[4 + i] & 0x3F;
+                hdr[12 + i] = blk[8 + i] & 0x3F;
             }
             for (int i = 4; i < 8; i++) {
                 int j = i - 4;
-                sc6[i] = (blk_src[12 + j] & 0x0F) | ((blk_src[4 + j] >> 6) << 4);
-                mn6[i] = (blk_src[12 + j] >> 4)   | ((blk_src[8 + j] >> 6) << 4);
+                hdr[4 + i]  = (blk[12 + j] & 0x0F) | (uint8_t)((blk[4 + j] >> 6) << 4);
+                hdr[12 + i] = (blk[12 + j] >> 4)   | (uint8_t)((blk[8 + j] >> 6) << 4);
             }
-            for (int i = 0; i < 8; i++) {
-                blk_dst[4  + i] = sc6[i];
-                blk_dst[12 + i] = mn6[i];
-            }
-            // Padding: bytes 20-31 = 0
-            memset(blk_dst + 20, 0, 12);
+            memset(hdr + 20, 0, 12);
+        }
 
-            // Nibbles: flat INT8, one per byte, GGML planar layout
+        // Nibbles: element-major, transposed across blocks
+        for (int g = 0; g < groups; g++) {
             for (int n = 0; n < 256; n++) {
-                int q_byte = 16 + (n & 31) + ((n & 0xC0) >> 1);
-                int shift  = (n & 32) ? 4 : 0;
-                blk_dst[32 + n] = (blk_src[q_byte] >> shift) & 0xF;
+                uint32_t nib32 = 0;
+                for (int b = 0; b < 8; b++) {
+                    const uint8_t* blk = src + ((size_t)row * blocks_per_row
+                                                + (size_t)g * 8 + (size_t)b) * Q4_K_BYTES;
+                    int q_byte = 16 + (n & 31) + ((n & 0xC0) >> 1);
+                    int shift  = (n & 32) ? 4 : 0;
+                    uint32_t nib = (blk[q_byte] >> shift) & 0xF;
+                    nib32 |= (nib << (b * 4));
+                }
+                if (groups == 1) {
+                    int e = n >> 2, s = n & 3;
+                    uint8_t* nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
+                    uint32_t* ddr32 = (uint32_t*)(nib_base + (size_t)e * 16);
+                    ddr32[s] = nib32;
+                } else {
+                    int slot = g;
+                    uint8_t* nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
+                    uint32_t* ddr32 = (uint32_t*)(nib_base + (size_t)n * 16);
+                    ddr32[slot] = nib32;
+                }
             }
         }
     }
@@ -310,20 +327,20 @@ static int run_mock_token_test() {
     // input
     for (int i = 0; i < VECTOR_DIM; ++i) x_batch_buf[i] = (int8_t)((i % 17) - 8);
 
-    unpack_q4k_block_csim(W_buf,  W_buf_up,  FFN_DIM,    WV_BLOCKS_PER_ROW);
+    transpose_q4k_to_urm_csim(W_buf,  W_urm,  FFN_DIM,    WV_BLOCKS_PER_ROW);
     cout << "[DEBUG] First hybrid block bytes 0-19:";
-    for (int i = 0; i < 20; i++) cout << " " << hex << (int)W_buf_up[i];
+    for (int i = 0; i < 20; i++) cout << " " << hex << (int)W_urm[i];
     cout << dec << endl;
-    cout << "[DEBUG] Hybrid sc6[0..3]=" << (int)W_buf_up[4] << "," << (int)W_buf_up[5]
-         << "," << (int)W_buf_up[6] << "," << (int)W_buf_up[7] << endl;
-    cout << "[DEBUG] Hybrid nibble byte 32: " << hex << (int)W_buf_up[32] << dec
-         << " (nibbles=" << ((int)W_buf_up[32]&0xF) << "," << ((int)W_buf_up[32]>>4) << ")" << endl;
-    unpack_q4k_block_csim(V_buf,  V_buf_up,  FFN_DIM,    WV_BLOCKS_PER_ROW);
-    unpack_q4k_block_csim(Wd_q4k, Wd_q4k_up, VECTOR_DIM, DOWN_BLOCKS_PER_ROW);
+    cout << "[DEBUG] Hybrid sc6[0..3]=" << (int)W_urm[4] << "," << (int)W_urm[5]
+         << "," << (int)W_urm[6] << "," << (int)W_urm[7] << endl;
+    cout << "[DEBUG] Hybrid nibble byte 32: " << hex << (int)W_urm[32] << dec
+         << " (nibbles=" << ((int)W_urm[32]&0xF) << "," << ((int)W_urm[32]>>4) << ")" << endl;
+    transpose_q4k_to_urm_csim(V_buf,  V_urm,  FFN_DIM,    WV_BLOCKS_PER_ROW);
+    transpose_q4k_to_urm_csim(Wd_q4k, Wd_urm, VECTOR_DIM, DOWN_BLOCKS_PER_ROW);
 
     // DUT — x_scale=1.0f because x_batch_buf is already INT8 and the mock
     // test wants a direct 1:1 scale (no float→INT8 conversion done here).
-    swiglu(W_buf_up, V_buf_up, Wd_q4k_up, x_batch_buf, out_batch_buf,
+    swiglu(W_urm, V_urm, Wd_urm, x_batch_buf, out_batch_buf,
            /*down_quant_mode=*/0, /*x_scale=*/1.0f);
 
     // reference A,B — mirrors compute_X1/X2 with x_scale=1.0f
@@ -406,8 +423,7 @@ static int run_test(const char*  label,
                     int          batch_size,
                     uint16_t d_W,    uint16_t dmin_W,
                     uint16_t d_V,    uint16_t dmin_V,
-                    uint16_t d_down, uint16_t dmin_down,
-                    bool     q6k_down)
+                    uint16_t d_down, uint16_t dmin_down)
 {
     // ── 1. Fill weight buffers ───────────────────────────────────────────────
     for (int row = 0; row < FFN_DIM; row++)
@@ -422,26 +438,16 @@ static int run_test(const char*  label,
                 V_buf + ((row * WV_BLOCKS_PER_ROW + b) * Q4_K_BYTES),
                 d_V, dmin_V);
 
-    if (!q6k_down) {
-        for (int out = 0; out < VECTOR_DIM; out++)
-            for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++)
-                fill_q4k_block(
-                    Wd_q4k + ((out * DOWN_BLOCKS_PER_ROW + b) * Q4_K_BYTES),
-                    d_down, dmin_down);
-    } else {
-        for (int out = 0; out < VECTOR_DIM; out++)
-            for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++)
-                fill_q6k_block(
-                    Wd_q6k + ((out * DOWN_BLOCKS_PER_ROW + b) * Q6_K_BYTES),
-                    d_down);
-        reformat_q6k_to_fieldsplit(Wd_q6k_fs, Wd_q6k);
-    }
+    for (int out = 0; out < VECTOR_DIM; out++)
+        for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++)
+            fill_q4k_block(
+                Wd_q4k + ((out * DOWN_BLOCKS_PER_ROW + b) * Q4_K_BYTES),
+                d_down, dmin_down);
 
-    // ── 1b. Convert packed Q4_K → unpacked format for the HLS IP ────────────
-    unpack_q4k_block_csim(W_buf, W_buf_up, FFN_DIM, WV_BLOCKS_PER_ROW);
-    unpack_q4k_block_csim(V_buf, V_buf_up, FFN_DIM, WV_BLOCKS_PER_ROW);
-    if (!q6k_down)
-        unpack_q4k_block_csim(Wd_q4k, Wd_q4k_up, VECTOR_DIM, DOWN_BLOCKS_PER_ROW);
+    // ── 1b. Convert packed Q4_K → URM-transposed format for the HLS IP ──────
+    transpose_q4k_to_urm_csim(W_buf, W_urm, FFN_DIM, WV_BLOCKS_PER_ROW);
+    transpose_q4k_to_urm_csim(V_buf, V_urm, FFN_DIM, WV_BLOCKS_PER_ROW);
+    transpose_q4k_to_urm_csim(Wd_q4k, Wd_urm, VECTOR_DIM, DOWN_BLOCKS_PER_ROW);
 
     // ── 2. Quantize x vectors to INT8 ────────────────────────────────────────
     float x_max_abs = 0.f;
@@ -531,26 +537,18 @@ static int run_test(const char*  label,
         // Phase 5: expected[n][out] = gate_int @ W_down[out]  (INT32 / 8-lane FP reference)
         for (int out = 0; out < VECTOR_DIM; out++) {
             expected[n][out] = 0.f;
-            if (!q6k_down) {
-                for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++)
-                    expected[n][out] += dot_q4k_int32_ref(
-                        Wd_q4k + (out * DOWN_BLOCKS_PER_ROW + b) * Q4_K_BYTES,
-                        gate_int, b * 256, gate_scale);
-            } else {
-                for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++)
-                    expected[n][out] += dot_q6k_ref(
-                        Wd_q6k + (out * DOWN_BLOCKS_PER_ROW + b) * Q6_K_BYTES,
-                        gate_int, b * 256, gate_scale);
-            }
+            for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++)
+                expected[n][out] += dot_q4k_int32_ref(
+                    Wd_q4k + (out * DOWN_BLOCKS_PER_ROW + b) * Q4_K_BYTES,
+                    gate_int, b * 256, gate_scale);
         }
     }
 
     // ── 4. Run the IP ────────────────────────────────────────────────────────
     memset(out_batch_buf, 0, sizeof(out_batch_buf));
-    uint8_t* W_down_ptr = q6k_down ? Wd_q6k_fs : Wd_q4k_up;
-    swiglu(W_buf_up, V_buf_up, W_down_ptr,
+    swiglu(W_urm, V_urm, Wd_urm,
            x_batch_buf, out_batch_buf,
-           q6k_down ? 1u : 0u,
+           0u,       // down_quant_mode = 0 (Q4_K only)
            x_scale);
 
     // ── 5. Verify outputs ────────────────────────────────────────────────────
@@ -613,7 +611,7 @@ int main() {
     total_errors += run_test("T1", all_vecs, 1,
         /*d_W=*/0x0800, /*dmin_W=*/0x0000,
         /*d_V=*/0x0800, /*dmin_V=*/0x0000,
-        /*d_down=*/0x0800, /*dmin_down=*/0x0000, false);
+        /*d_down=*/0x0800, /*dmin_down=*/0x0000);
 
     // ── T2: Q4_K W_down, batch=1, subnormal d in W ──────────────────────────
     // 0x00A4 is a subnormal fp16 (~9.8e-6) seen in real LFM2 weights.
@@ -623,7 +621,7 @@ int main() {
     total_errors += run_test("T2", all_vecs, 1,
         /*d_W=*/0x00A4, /*dmin_W=*/0x0000,
         /*d_V=*/0x0800, /*dmin_V=*/0x0000,
-        /*d_down=*/0x0800, /*dmin_down=*/0x0000, false);
+        /*d_down=*/0x0800, /*dmin_down=*/0x0000);
 
     // ── T3: Q4_K W_down, batch=1, subnormal dmin in V ───────────────────────
     // 0x817E = negative subnormal fp16 (~-2.3e-5).
@@ -633,38 +631,19 @@ int main() {
     total_errors += run_test("T3", all_vecs, 1,
         /*d_W=*/0x0800, /*dmin_W=*/0x0000,
         /*d_V=*/0x0800, /*dmin_V=*/0x817E,
-        /*d_down=*/0x0800, /*dmin_down=*/0x0000, false);
+        /*d_down=*/0x0800, /*dmin_down=*/0x0000);
 
-    // ── T4: Q6_K W_down, batch=1, normal fp16 ───────────────────────────────
-    // mode=1 path.  Confirms down_quant_mode selects the Q6_K loop in Phase 5.
-    // d_W/d_V = 0x0800 to keep X1/X2 within X12_SCALE_RANGE.
-    cout << "=== T4: Q6_K down, batch=1, normal fp16 (mode=1) ===\n";
-    total_errors += run_test("T4", all_vecs, 1,
-        /*d_W=*/0x0800, /*dmin_W=*/0x0000,
-        /*d_V=*/0x0800, /*dmin_V=*/0x0000,
-        /*d_down=*/0x0800, /*dmin_down=*/0x0000, true);
-
-    // ── T5: Q6_K W_down, batch=1, subnormal d in W_down ─────────────────────
-    // 0x00A4 subnormal in the Q6_K down-projection path.
-    // Without fp16_to_fp32(), d→0 → entire output is zero.
-    // d_W/d_V = 0x0800 to keep X1/X2 within X12_SCALE_RANGE.
-    cout << "=== T5: Q6_K down, batch=1, subnormal d in W_down (0x00A4) ===\n";
-    total_errors += run_test("T5", all_vecs, 1,
-        /*d_W=*/0x0800, /*dmin_W=*/0x0000,
-        /*d_V=*/0x0800, /*dmin_V=*/0x0000,
-        /*d_down=*/0x00A4, /*dmin_down=*/0x0000, true);
-
-    // ── T6: Q4_K down, batch=2, normal fp16 ─────────────────────────────────
+    // ── T4: Q4_K down, batch=2, normal fp16 ─────────────────────────────────
     // Core batch correctness test.  Two tokens with distinct x vectors are
     // processed in one IP call.  The weight-stationary loop in Phases 2/3/5
     // must produce the same result for each token as the batch=1 case would.
     // A bug in ARRAY_PARTITION or the batch index would corrupt one token.
 
-    // cout << "=== T6: Q4_K down, batch=2, normal fp16 (two distinct x vectors) ===\n";
+    // cout << "=== T4: Q4_K down, batch=2, normal fp16 (two distinct x vectors) ===\n";
     // total_errors += run_test("T6", all_vecs, 2,
     //     /*d_W=*/0x3800, /*dmin_W=*/0x2000,
     //     /*d_V=*/0x3800, /*dmin_V=*/0x2000,
-    //     /*d_down=*/0x3800, /*dmin_down=*/0x2000, false);
+    //     /*d_down=*/0x3800, /*dmin_down=*/0x2000);
 
     // // ── T7: Q4_K down, batch=4, subnormal d in W ─────────────────────────────
     // // Combines the subnormal stress-test (T2) with a batch>1 scenario.
@@ -674,7 +653,7 @@ int main() {
     // total_errors += run_test("T7", all_vecs, 4,
     //     /*d_W=*/0x00A4, /*dmin_W=*/0x2000,
     //     /*d_V=*/0x3800, /*dmin_V=*/0x2000,
-    //     /*d_down=*/0x3800, /*dmin_down=*/0x2000, false);
+    //     /*d_down=*/0x3800, /*dmin_down=*/0x2000);
 
     // // ── T8: Q6_K down, batch=2, normal fp16 ─────────────────────────────────
     // // Batch correctness on the Q6_K Phase 5 path.  Ensures the Q6_K loop

@@ -1,20 +1,20 @@
 Setup
-Worst Negative Slack (WNS): -0.146 ns
+Worst Negative Slack (WNS): -0.097 ns
 
-Total Negative Slack (TNS): -20.980 ns
+Total Negative Slack (TNS): -46.810 ns
 
-Number of Failing Endpoints: 512
+Number of Failing Endpoints: 1427
 
-Total Number of Endpoints: 420153
+Total Number of Endpoints: 339023
 
 Hold
-Worst Hold Slack (WHS): -0.082 ns
+Worst Hold Slack (WHS): 0.010 ns
 
-Total Hold Slack (THS): -2212.144 ns
+Total Hold Slack (THS): 0.000 ns
 
-Number of Failing Endpoints: 86717
+Number of Failing Endpoints: 0
 
-Total Number of Endpoints: 420153
+Total Number of Endpoints: 339023
 
 Pulse Width
 Worst Pulse Width Slack (WPWS): 0.520 ns
@@ -23,6 +23,13 @@ Total Pulse Width Negative Slack (TPWS): 0.000 ns
 
 Number of Failing Endpoints: 0
 
-Total Number of Endpoints: 145694
+Total Number of Endpoints: 126006
 
 Status: Timing constraints are not met.
+
+Resource,Utilization,Available,Utilization %
+LUT,103684,117120,88.53
+FF,117420,234240,50.13
+BRAM,22.50,144,15.63
+URAM,56,64,87.50
+DSP,338,1248,27.08

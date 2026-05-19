@@ -969,4 +969,6 @@ The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typic
 	    If RTL co-sim passes and timing closes, K=4 becomes feasible (~90K LUTs
 	    estimated, 4.1 t/s projected).
 
-	    Pending: RTL co-simulation.
+50. word-major approach fails timing or fails routing. 
+    revert to hybrid and chase increased parallelism. 
+    

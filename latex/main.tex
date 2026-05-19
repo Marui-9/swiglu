@@ -77,14 +77,31 @@ This paper begins by formally defining the objectives of this work on the topic 
 \section{Research question} \label{sec:research_question}
 Conversational AI systems aim to provide rich, context-aware interactions through natural spoken dialogue. Achieving this capability requires models that can process audio input, understand and reason upon user intentions, and generate appropriate responses within strict real-time constraints. At the same time, conversational audio often contains sensitive and biometric information, making local processing desirable from both privacy and reliability perspectives.
 
-Conversational speech interfaces impose a well-established latency budget:
-end-to-end response times below 200\,ms are perceived as instantaneous, while
-delays between 200 and 500\,ms are tolerated in natural turn-taking dialogue;
-beyond 500\,ms, the gap is perceived as a system failure or unresponsiveness
-rather than a conversational pause. This leaves a narrow
-window for the entire pipeline---audio encoding, automatic speech recognition,
-language modelling, and text-to-speech synthesis---to complete on a per-utterance
-basis.
+%Conversational speech interfaces impose a well-established latency budget:
+%end-to-end response times below 200\,ms are perceived as instantaneous, while
+%delays between 200 and 500\,ms are tolerated in natural turn-taking dialogue;
+%beyond 500\,ms, the gap is perceived as a system failure or unresponsiveness
+%rather than a conversational pause. This leaves a narrow
+%window for the entire pipeline---audio encoding, automatic speech recognition,
+%language modelling, and text-to-speech synthesis---to complete on a per-utterance
+%basis.
+Conversational speech interfaces operate within defined latency
+thresholds~\cite{doherty2015flow,defossez2025moshi}: response times of
+100--200\,ms are perceived as instantaneous, delays of 0.5--1\,s are
+categorised as immediate and remain acceptable for sustained dialogue,
+and intervals exceeding 1\,s degrade the perceived interaction quality.
+Natural human turn-taking averages approximately 230\,ms~\cite{defossez2025moshi},
+placing the acceptable machine-response boundary near the transition
+between the instantaneous and immediate bands.
+This leaves a narrow window for the entire pipeline (audio encoding,
+automatic speech recognition, language modelling, and text-to-speech
+synthesis) to complete on a per-utterance basis.
+%Conversational speech interfaces impose a well-established latency budget:
+% end-to-end response times below 200\,ms are perceived as instantaneous,
+% delays of 200--500\,ms are tolerated in natural turn-taking dialogue,
+% 500--800\,ms remains acceptable but introduces noticeable hesitation,
+% and intervals beyond 800\,ms degrade the interaction quality, with pauses
+% above 2\,s perceived as a system failure or unresponsiveness.
 Edge devices operate under strict limits in compute capability, memory footprint,
 and energy consumption, typically drawing between 3 and 10\,W of total board
 power for embedded platforms in the smart-assistant and IoT class. Yet meaningful
@@ -116,33 +133,126 @@ These requirements motivate increased interest in edge-based inference where pro
 Therefore, several methods have been proposed to deploy machine learning models on the edge, operating under limited compute, memory, and energy budgets. From the early work on TinyML, more recent approaches harness model compression techniques such as quantization, pruning and knowledge distillation, as well as Hardware-aware neural architecture design \cite{dnn_compression}.
 Together, these advances form the foundation of modern Edge AI, which seeks to balance model capability with the strict resource constraints of edge platforms.
 \subsection{Speech and Conversational Architectures}
-Standard speech processing follows a modular pipeline structure consisting of various stages, each one processes a stream of audio signals and produces intermediate representations that feed subsequent components \cite{s24165199}. This design enables incremental processing of temporal signals and supports real-time operation, which is essential for interactive speech applications.
-Recent work has explored end-to-end speech models \cite{amini2025lfm2technicalreport} that combine several of these stages into unified neural architectures. These approaches simplify the overall system design and can improve accuracy by jointly optimizing acoustic and linguistic representations. In particular, streaming automatic speech recognition models allow speech to be processed incrementally as audio is received, significantly reducing latency compared to traditional batch-based inference.
-However, conversational interaction introduces strict real-time constraints that limit the computational complexity of speech models.
-For this reason modular pipelines remain common in deployed systems, because they allow individual components to be optimized independently for latency, accuracy, and power consumption.
+%Standard speech processing follows a modular pipeline structure consisting of various stages, each one processes a stream of audio signals and produces intermediate representations that feed subsequent components. This design enables incremental processing of temporal signals and supports real-time operation, which is essential for interactive speech applications.
+%Recent work has explored end-to-end speech models \cite{amini2025lfm2technicalreport} that combine several of these stages into unified neural architectures. These approaches simplify the overall system design and can improve accuracy by jointly optimizing acoustic and linguistic representations. In particular, streaming automatic speech recognition models allow speech to be processed incrementally as audio is received, significantly reducing latency compared to traditional batch-based inference.
+%However, conversational interaction introduces strict real-time constraints that limit the computational complexity of speech models.
+%For this reason modular pipelines remain common in deployed systems, because they allow individual components to be optimized independently for latency, accuracy, and power consumption.
+
+Standard speech processing follows a modular pipeline in which an automatic
+speech recognition (ASR) module converts audio to text, a natural language
+understanding component extracts intent, a language model generates a textual
+response, and a text-to-speech (TTS) engine synthesises the output waveform.
+This decomposition enables each stage to be optimised independently for
+latency, accuracy, and power, and is the dominant architecture in deployed
+conversational systems.
+Typical ASR models range from compact encoder-only architectures
+(Whisper-tiny at 39\,M parameters) to large encoder-decoder designs
+(Whisper-large-v3 at 1.55\,B parameters)~\cite{radford2023whisper}, while
+TTS engines span 10\,M to 500\,M parameters.
+Streaming ASR models allow speech to be transcribed incrementally as audio is
+received, reducing the time to first token compared to batch-based processing.
+The aggregate parameter count across three or four separate models can reach
+several billion, and the per-stage inference latencies sum within the
+end-to-end response budget of 200--500\,ms.
+
+Recent work has explored end-to-end architectures that unify these stages into
+a single neural model.
+LFM2-Audio~\cite{amini2025lfm2technicalreport} exemplifies this trend: a 1.5\,B
+parameter model that jointly handles audio encoding, language modelling, and
+speech synthesis within one framework, eliminating inter-stage latency and
+simplifying the deployment footprint.
+Profiling several conversational models in the GGUF format reveals substantial
+variation in deployment requirements (Fig.~\ref{fig:efficiency}): parameter
+counts span from 500\,M (OuteTTS-0.2-500M-Q4) to 9.4\,B
+(THUDM\_GLM-4-9B-0414-Q4), RAM footprints range from 0.29\,GB
+(LFM2.5-Audio-1.5B-Q4, the lowest among all profiled models) to 2.67\,GB
+(Qwen2-7B-LLM-Q4), and estimated memory bandwidth demand varies from
+3.6\,GB/s to 65\,GB/s.
+Several architectures, including the 7--9\,B parameter class, exceed practical
+memory and bandwidth limits for embedded platforms despite offering strong
+conversational performance.
+In contrast, LFM2.5-Audio-1.5B-Q4 combines the lowest RAM footprint with
+moderate bandwidth requirements (3.9\,GB/s) and a competitive parameter scale
+(1.18\,B), positioning it closest to the resource envelope of embedded
+conversational devices.
+While end-to-end architectures simplify the system design, their computational
+cost remains concentrated in a single large model rather than distributed across
+independently scalable stages, making hardware acceleration of the dominant
+internal kernel an attractive optimisation target.
 
 \subsection{Edge Speech Systems and On-Device Conversational AI}
-The characteristics of speech signals make audio workloads well suited for edge deployment. Many core components of conversational pipelines, including wake-word detection and voice activity detection, can be implemented using lightweight models capable of running continuously on embedded hardware. Conversational interaction also imposes strict latency requirements. For spoken interaction to feel natural to users, end-to-end response times must typically remain below approximately 200 ms, leaving limited time for speech processing, reasoning, and response generation.
+%The characteristics of speech signals make audio workloads well suited for edge deployment. Many core components of conversational pipelines, including wake-word detection and voice activity detection, can be implemented using lightweight models capable of running continuously on embedded hardware. Conversational interaction also imposes strict latency requirements. For spoken interaction to feel natural to users, end-to-end response times must typically remain below approximately 200 ms, leaving limited time for speech processing, reasoning, and response generation.
+%
+%Prototype systems designed for high-speed AI-powered NLP on edge hardware have achieved ultra-low latency for speech-to-text processing directly on edge devices to enable immediate conversational feedback \cite{info16080685} .
+%
+%Edge-cloud hybrid architectures have been proposed to balance local processing speed with deeper cloud-based reasoning, using the Faster-Whisper engine on a Raspberry Pi to handle real-time voice interactions \cite{10.1145/3776942.3776981}.
+%
+%Comparative analyses of phoneme-based and word-based voice recognition across different MCU platforms identify specific platforms that optimize the balance between accuracy and CPU/memory usage for offline scenarios\cite{10711025}.
+%
+%As a result, significant progress has been made in enabling on-device speech processing.
+%Existing work has addressed individual components of conversational pipelines such as streaming ASR and lightweight speech models, as well as general techniques for model quantization and edge deployment.
+%However, comparatively little research examines conversational interaction as an end-to-end systems problem under strict edge resource constraints.
+%Addressing this challenge requires new approaches to model design, streaming inference, and system-level optimization tailored specifically to conversational workloads on embedded hardware.
 
-Prototype systems designed for high-speed AI-powered NLP on edge hardware have achieved ultra-low latency for speech-to-text processing directly on edge devices to enable immediate conversational feedback \cite{info16080685} .
+The characteristics of speech signals make audio workloads well suited for edge
+deployment. Lightweight components such as wake-word detection and voice activity
+detection can run continuously on microcontrollers drawing under 1\,W, while more
+demanding pipeline stages (ASR, language modelling) are typically hosted on
+single-board computers or heterogeneous SoCs in the 3--15\,W range.
+The Raspberry Pi 4B (quad-core Cortex-A72 at 1.5\,GHz, up to 8\,GB RAM) has
+emerged as a common evaluation platform for on-device speech systems, hosting
+engines such as Faster-Whisper for real-time voice interaction
+\cite{10.1145/3776942.3776981}.
+At the lower end of the resource spectrum, comparative studies of phoneme-based
+and word-based recognition across microcontroller-class devices (Cortex-M4/M7
+at 64--480\,MHz, with hundreds of kilobytes of SRAM) identify specific architectures
+that optimise the accuracy-versus-memory trade-off for offline keyword spotting
+\cite{10711025}.
+Prototype systems integrating Vosk or Whisper-based ASR with local NLP
+microservices have demonstrated sub-second speech-to-text latency entirely on edge
+hardware \cite{info16080685}, validating the feasibility of local-only processing
+for conversational audio.
 
-Edge-cloud hybrid architectures have been proposed to balance local processing speed with deeper cloud-based reasoning, using the Faster-Whisper engine on a Raspberry Pi to handle real-time voice interactions \cite{10.1145/3776942.3776981}.
-
-Comparative analyses of phoneme-based and word-based voice recognition across different MCU platforms identify specific platforms that optimize the balance between accuracy and CPU/memory usage for offline scenarios\cite{10711025}.
-
-As a result, significant progress has been made in enabling on-device speech processing. 
-Existing work has addressed individual components of conversational pipelines such as streaming ASR and lightweight speech models, as well as general techniques for model quantization and edge deployment. 
-However, comparatively little research examines conversational interaction as an end-to-end systems problem under strict edge resource constraints.
-Addressing this challenge requires new approaches to model design, streaming inference, and system-level optimization tailored specifically to conversational workloads on embedded hardware.
+Despite this progress, existing work has largely addressed individual pipeline
+components in isolation. Comparatively little research examines conversational
+interaction as an end-to-end systems problem in which the language backbone, the
+ASR front-end, and the TTS output stage must all complete within the latency and
+power budget defined in Section~\ref{sec:research_question}.
+Addressing this challenge requires not only lightweight models but also
+system-level optimisation spanning streaming inference, hardware-software
+partitioning, and selective acceleration of the dominant computational kernels.
 
 
 
 \subsection{Profiling of Speech Models for Edge Deployment}
-To evaluate the feasibility of conversational inference on edge devices, several speech and multimodal models were profiled using a tool called gguf-parser-go \footnote{https://github.com/gpustack/gguf-parser-go}, which allows extraction of structural and resource information from models stored in the GGUF format. The profiling focuses on deployment-relevant metrics including parameter count, unified memory (UMA) footprint, memory bandwidth requirements, and estimated compute throughput.
-The resulting comparison, illustrated in fig. \ref{fig:efficiency}, summarizes the resource characteristics of a representative set of models including LLM-based architectures, speech synthesis systems, and multimodal conversational models. 
-In the visualization, model parameters and memory footprint represent the primary hardware constraints, while bandwidth and compute throughput indicate the expected runtime cost during inference. 
-The results highlight large variations in deployment requirements across the evaluated models. 
-Several architectures exceed practical memory and bandwidth limits for embedded platforms, despite offering strong conversational capabilities. In contrast, LFM2.5-Audio-1.5B \footnote{https://huggingface.co/LiquidAI/LFM2.5-Audio-1.5B} provides an interesting balance between model capacity and resource consumption, combining a relatively small memory footprint with moderate bandwidth requirements while maintaining a parameter scale suitable for conversational tasks.
+%To evaluate the feasibility of conversational inference on edge devices, several speech and multimodal models were profiled using a tool called gguf-parser-go \footnote{https://github.com/gpustack/gguf-parser-go}, which allows extraction of structural and resource information from models stored in the GGUF format. The profiling focuses on deployment-relevant metrics including parameter count, unified memory (UMA) footprint, memory bandwidth requirements, and estimated compute throughput.
+%The resulting comparison, illustrated in fig. \ref{fig:efficiency}, summarizes the resource characteristics of a representative set of models including LLM-based architectures, speech synthesis systems, and multimodal conversational models.
+%In the visualization, model parameters and memory footprint represent the primary hardware constraints, while bandwidth and compute throughput indicate the expected runtime cost during inference.
+%The results highlight large variations in deployment requirements across the evaluated models.
+%Several architectures exceed practical memory and bandwidth limits for embedded platforms, despite offering strong conversational capabilities. In contrast, LFM2.5-Audio-1.5B \footnote{https://huggingface.co/LiquidAI/LFM2.5-Audio-1.5B} provides an interesting balance between model capacity and resource consumption, combining a relatively small memory footprint with moderate bandwidth requirements while maintaining a parameter scale suitable for conversational tasks.
+
+To evaluate the feasibility of conversational inference on edge devices, a
+representative set of speech and multimodal models was profiled using
+gguf-parser-go\footnote{https://github.com/gpustack/gguf-parser-go}, a tool that
+extracts structural and resource information from GGUF-format checkpoints.
+The profiling covers parameter count, unified memory (UMA) footprint, memory
+bandwidth requirements, and estimated compute throughput---the same metrics
+used in a recent large-scale study of 21,039 checkpoints across six workload
+categories~\cite{sym18050766}, which found that audio-language models define the
+lightest deployment envelope (mean 13.41\,GB/s bandwidth, 134\,GFLOPS compute, 826\,MiB UMA)
+and that parameter count alone is an insufficient predictor of edge feasibility.
+%By comparison, conversational models averaged 22.46\,GB/s and 253\,GFLOPS,
+%while vision-language and thinking categories exceeded 100\,GB/s and 1100\,GFLOPS.
+%UMA footprints showed little variation across categories (audio 826\,MiB,
+%conversational and instruct 726--878\,MiB), indicating that memory residency
+%is not the primary differentiator among workload types.
+%Of the 451 audio checkpoints, 351 fell below 4\,B parameters, confirming a wide
+%availability of compact models in the audio domain.
+The resulting comparison, illustrated in Fig.~\ref{fig:efficiency}, reveals wide
+variation in deployment requirements.
+Several architectures exceed practical memory and bandwidth limits for embedded platforms, despite offering strong conversational capabilities. 
+In contrast, LFM2.5-Audio-1.5B \footnote{https://huggingface.co/LiquidAI/LFM2.5-Audio-1.5B} provides an interesting balance between model capacity and resource consumption, combining a relatively small memory footprint with moderate bandwidth requirements while maintaining a parameter scale suitable for conversational tasks.
+
 
 \begin{figure}[!t]
   \centering
@@ -157,13 +267,32 @@ Based on this analysis, LFM2.5 was selected as the primary candidate for subsequ
 \subsection{Related work on the Kria KV260 platform}
 Following the identification of LFM2.5 as a suitable candidate for edge deployment, the next step is to map its computational workload onto an appropriate hardware platform. Field-Programmable Gate Arrays (FPGAs) provide a compelling target for edge AI acceleration due to their ability to exploit fine-grained parallelism, customize dataflow, and operate within tight power and latency budgets.
 
-Recent work on the AMD-Xilinx Kria KV260 demonstrates the feasibility of accelerating transformer models. Several works identify the feed-forward network (FFN) as a major contributor to inference latency and bandwidth consumption, alongside attention mechanisms, and propose hardware accelerators that jointly target both components.
+%Recent work on the AMD-Xilinx Kria KV260 demonstrates the feasibility of accelerating transformer models. Several works identify the feed-forward network (FFN) as a major contributor to inference latency and bandwidth consumption, alongside attention mechanisms, and propose hardware accelerators that jointly target both components.
+Recent work on the AMD-Xilinx Kria KV260 demonstrates the feasibility of
+accelerating transformer models. The three designs surveyed below target
+both feed-forward network (FFN) and self-attention matrix multiplications,
+which together account for the majority of inference latency and bandwidth
+consumption in transformer workloads.
 
-Implementations of lightweight transformer-based architectures highlight that the feed-forward network operates as the primary computational bottleneck \cite{11310944tin}.
+%Implementations of lightweight transformer-based architectures highlight that the feed-forward network operates as the primary computational bottleneck \cite{11310944tin}.
+A 6.6k-parameter Tiny Transformer for ECG arrhythmia detection deployed on the
+KV260 achieved 56.62\,ms total inference latency at 77\,MHz, with the FFN
+contributing 54.9\% of runtime (31.11\,ms) \cite{11310944tin}.
 
-Other work on the platform has focused on accelerating the self-attention projection computations in Transformer-based models \cite{li2025fpgabasedhardware}. This  demonstrates the potential of FPGA-based acceleration, and establishes a foundation for inference on power-constrained edge devices.
+%Other work on the platform has focused on accelerating the self-attention projection computations in Transformer-based models \cite{li2025fpgabasedhardware}. This  demonstrates the potential of FPGA-based acceleration, and establishes a foundation for inference on power-constrained edge devices.
+A tiled matrix multiplication accelerator targeting the Q, K, and V
+self-attention projections of DistilBERT achieved a 7$\times$ speedup over the
+ARM CPU baseline at 100\,MHz and 3.3\,W, delivering 3.12\,GFLOPs of standalone
+GEMM throughput on the KV260 \cite{li2025fpgabasedhardware}.
 
-Efficient data transfer between processing system (PS) and programmable logic (PL) is essential, especially when dealing with integer accelerators focused on data movement \cite{11311069}.
+%Efficient data transfer between processing system (PS) and programmable logic (PL) is essential, especially when dealing with integer accelerators focused on data movement \cite{11311069}.
+A BRAM-banked double-buffered matrix multiplication accelerator on the same
+platform reached 22.83\,GOPs of effective throughput for a
+DistilBERT-scale FFN multiplication (7.31$\times$ over its baseline),
+completing the operation in 13.2\,ms at 100\,MHz. The study identified
+PS-side data handling as the dominant system-level bottleneck---a finding
+consistent with the orchestration overheads observed in the present work
+(Section~\ref{sec:discussion}) \cite{11311069}.
 
 Existing approaches generally focus on accelerating full transformer blocks or large-scale models, where attention and feed-forward computations are treated together as co-dominant workloads. 
 This work targets the minimal set of computational kernels required to achieve conversational-level inference focusing on feed-forward acceleration.

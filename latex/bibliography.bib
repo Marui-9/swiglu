@@ -1,3 +1,47 @@
+@article{sym18050766,
+  author    = {Kordjukovs, Niks and Pau, Danilo Pietro},
+  title     = {Complexity Analysis for Categorized Edge Language Models},
+  journal   = {Symmetry},
+  volume    = {18},
+  number    = {5},
+  pages     = {766},
+  year      = {2026},
+  doi       = {10.3390/sym18050766},
+  url       = {https://doi.org/10.3390/sym18050766}
+}
+
+@article{doherty2015flow,
+  author    = {Doherty, Rina A. and Sorenson, Paul},
+  title     = {Keeping Users in the Flow: The Role of System Response Time in User-Perceived Performance},
+  journal   = {Procedia Manufacturing},
+  volume    = {3},
+  pages     = {4384--4391},
+  year      = {2015},
+  doi       = {10.1016/j.promfg.2015.07.437},
+  url       = {https://doi.org/10.1016/j.promfg.2015.07.437}
+}
+
+@misc{defossez2025moshi,
+  title        = {Moshi: a speech-text foundation model for real-time dialogue},
+  author       = {D\'{e}fossez, Alexandre and others},
+  year         = {2025},
+  eprint       = {2410.00037v2},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.SD},
+  doi          = {10.48550/arXiv.2410.00037},
+  url          = {https://doi.org/10.48550/arXiv.2410.00037}
+}
+
+@misc{radford2023whisper,
+      title={Robust Speech Recognition via Large-Scale Weak Supervision},
+      author={Alec Radford and Jong Wook Kim and Tao Xu and Greg Brockman and Christine McLeavey and Ilya Sutskever},
+      year={2023},
+      eprint={2212.04356},
+      archivePrefix={arXiv},
+      primaryClass={eess.AS},
+      url={https://arxiv.org/abs/2212.04356}
+}
+
 @inproceedings{Amdahl1967ValidityOT,
   author    = {Gene M. Amdahl},
   title     = {Validity of the single processor approach to achieving large scale computing capabilities},
@@ -200,20 +244,6 @@ ISSN = {1424-8220},
 ABSTRACT = {The growth in artificial intelligence and its applications has led to increased data processing and inference requirements. Traditional cloud-based inference solutions are often used but may prove inadequate for applications requiring near-instantaneous response times. This review examines Tiny Machine Learning, also known as TinyML, as an alternative to cloud-based inference. The review focuses on applications where transmission delays make traditional Internet of Things (IoT) approaches impractical, thus necessitating a solution that uses TinyML and on-device inference. This study, which follows the PRISMA guidelines, covers TinyML’s use cases for real-world applications by analyzing experimental studies and synthesizing current research on the characteristics of TinyML experiments, such as machine learning techniques and the hardware used for experiments. This review identifies existing gaps in research as well as the means to address these gaps. The review findings suggest that TinyML has a strong record of real-world usability and offers advantages over cloud-based inference, particularly in environments with bandwidth constraints and use cases that require rapid response times. This review discusses the implications of TinyML’s experimental performance for future research on TinyML applications.},
 DOI = {10.3390/s25103191}
 }
-@Article{s24165199,
-AUTHOR = {Malamas, Nikolaos and Panayiotou, Konstantinos and Karabatea, Apostolia and Tsardoulias, Emmanouil and Symeonidis, Andreas L.},
-TITLE = {A Multilayer Architecture towards the Development and Distribution of Multimodal Interface Applications on the Edge},
-JOURNAL = {Sensors},
-VOLUME = {24},
-YEAR = {2024},
-NUMBER = {16},
-ARTICLE-NUMBER = {5199},
-URL = {https://www.mdpi.com/1424-8220/24/16/5199},
-PubMedID = {39204892},
-ISSN = {1424-8220},
-ABSTRACT = {Today, Smart Assistants (SAs) are supported by significantly improved Natural Language Processing (NLP) and Natural Language Understanding (NLU) engines as well as AI-enabled decision support, enabling efficient information communication, easy appliance/device control, and seamless access to entertainment services, among others. In fact, an increasing number of modern households are being equipped with SAs, which promise to enhance user experience in the context of smart environments through verbal interaction. Currently, the market in SAs is dominated by products manufactured by technology giants that provide well designed off-the-shelf solutions. However, their simple setup and ease of use come with trade-offs, as these SAs abide by proprietary and/or closed-source architectures and offer limited functionality. Their enforced vendor lock-in does not provide (power) users with the ability to build custom conversational applications through their SAs. On the other hand, employing an open-source approach for building and deploying an SA (which comes with a significant overhead) necessitates expertise in multiple domains and fluency in the multimodal technologies used to build the envisioned applications. In this context, this paper proposes a methodology for developing and deploying conversational applications on the edge on top of an open-source software and hardware infrastructure via a multilayer architecture that simplifies low-level complexity and reduces learning overhead. The proposed approach facilitates the rapid development of applications by third-party developers, thereby enabling the establishment of a marketplace of customized applications aimed at the smart assisted living domain, among others. The supporting framework supports application developers, device owners, and ecosystem administrators in building, testing, uploading, and deploying applications, remotely controlling devices, and monitoring device performance. A demonstration of this methodology is presented and discussed focusing on health and assisted living applications for the elderly.},
-DOI = {10.3390/s24165199}
-}
 
 @misc{personaplex_technical,
       title={PersonaPlex: Voice and Role Control for Full Duplex Conversational Speech Models}, 
@@ -369,3 +399,18 @@ DOI = {10.3390/app142411583}
       primaryClass={cs.AR},
       url={https://arxiv.org/abs/2502.10659}, 
 }
+
+@Article{sym18050766,
+AUTHOR = {Kordjukovs, Niks and Pau, Danilo Pietro},
+TITLE = {Complexity Analysis for Categorized Edge Language Models},
+JOURNAL = {Symmetry},
+VOLUME = {18},
+YEAR = {2026},
+NUMBER = {5},
+ARTICLE-NUMBER = {766},
+URL = {https://www.mdpi.com/2073-8994/18/5/766},
+ISSN = {2073-8994},
+ABSTRACT = {Edge generative artificial intelligence (AI) increasingly combines language, perception, reasoning, audio, and action on resource-constrained devices. This paper profiles public GPT-Generated Unified Format (GGUF) checkpoints from the Hugging Face Hub (HFH) across conversational, instruct, thinking, audio, vision-language (VL), and vision-language-action (VLA) categories using a shared parser-based deployment-envelope workflow. The main category-specific run retained 21,039 profiled entries and estimated the minimum memory bandwidth, compute throughput, and unified-memory architecture (UMA) footprint needed to satisfy category-specific target throughput values. The resulting measurement protocol was symmetric, but the deployment envelopes were asymmetric: VL and thinking workloads were the heaviest on the compute–bandwidth axis, VLA formed a smaller elevated multimodal branch, and audio, instruct, and conversational workloads were lighter on average. A unified 10-tokens-per-second (TPS) sensitivity run compressed the compute–bandwidth gaps, showing that service-rate assumptions contributed strongly to cross-category separation. Welch/Games–Howell and Kruskal/Dunn analyses confirmed large category effects for bandwidth and compute in the category-specific regime, but only small memory effects. The results show that edge-model feasibility cannot be inferred from parameter count alone; throughput target, backbone family, modality, and memory budgeting must be considered jointly.},
+DOI = {10.3390/sym18050766}
+}
+
