@@ -17,37 +17,49 @@ LOG="/tmp/cpu_t${THREADS}_${TIMESTAMP}.log"
 echo "=== CPU Only | T=$THREADS | R=$REPEAT ===" | tee "$LOG"
 echo "" >> "$LOG"
 
-# ─── power + RAM logger ─────────────────────────────────────────────
+# ─── power logger ────────────────────────────────────────────────────
 ( while true; do
     ts=$(date +%s)
     stats=$(xmutil xlnx_platformstats -p 2>/dev/null)
     power=$(echo "$stats" | grep -oP 'SOM total power\s*:\s*\K[0-9.]+' || echo "0")
     lpdt=$(echo "$stats"  | grep -oP 'LPD temperature measurement\s*:\s*\K[0-9]+' || echo "0")
     plt=$(echo "$stats"   | grep -oP 'PL temperature\s*:\s*\K[0-9]+' || echo "0")
-    rss=$(awk '/^VmRSS:/ {print $2}' /proc/$$/status 2>/dev/null || echo 0)
-    echo "$ts power=$power rss=$rss lpdt=$lpdt plt=$plt"
+    echo "$ts power=$power lpdt=$lpdt plt=$plt"
     sleep 1
   done ) >> "$LOG" &
-LOGGER_PID=$!
+POWER_PID=$!
 
 # ─── run benchmark ──────────────────────────────────────────────────
 cd "$LLAMA_DIR"
 echo "[$(date +%T)] Running llama-bench (CPU Only)..." | tee -a "$LOG"
 env SWIGLU_DEBUG=0 ./build/bin/llama-bench \
   -m "$MODEL" -p $PROMPT -n $NUM_TOKENS -t $THREADS -r $REPEAT \
-  2>&1 | tee -a "$LOG"
-BENCH_EXIT=${PIPESTATUS[0]}
+  2>&1 | tee -a "$LOG" &
+BENCH_PID=$!
 
-# ─── stop logger ────────────────────────────────────────────────────
-kill $LOGGER_PID 2>/dev/null || true
-wait $LOGGER_PID 2>/dev/null || true
+# ─── RAM logger (polls bench process) ────────────────────────────────
+( while kill -0 $BENCH_PID 2>/dev/null; do
+    ts=$(date +%s)
+    rss=$(awk '/^VmRSS:/ {print $2}' /proc/$BENCH_PID/status 2>/dev/null || echo 0)
+    echo "$ts rss=$rss"
+    sleep 1
+  done ) >> "$LOG" &
+RAM_PID=$!
+
+# ─── wait for bench ──────────────────────────────────────────────────
+wait $BENCH_PID
+BENCH_EXIT=$?
+
+# ─── stop loggers ────────────────────────────────────────────────────
+kill $POWER_PID $RAM_PID 2>/dev/null || true
+wait $POWER_PID $RAM_PID 2>/dev/null || true
 sleep 0.5
 
 # ─── summary ────────────────────────────────────────────────────────
 echo "" | tee -a "$LOG"
 echo "=== Summary CPU T$THREADS ===" | tee -a "$LOG"
 
-TPS_LINE=$(grep -E 't/s.*±' "$LOG" | tail -1 || true)
+TPS_LINE=$(grep '±' "$LOG" | tail -1 || true)
 [ -n "$TPS_LINE" ] && echo "Throughput: $TPS_LINE" | tee -a "$LOG"
 
 POWER_SAMPLES=$(grep -oP 'power=\K[0-9.]+' "$LOG" || true)
@@ -63,7 +75,8 @@ PL_TEMP=$(grep -oP 'plt=\K[0-9]+' "$LOG" | awk '{s+=$1; n++} END {if(n) printf "
 
 RAM_MAX=$(grep -oP 'rss=\K[0-9]+' "$LOG" | awk '{if($1>max) max=$1} END {print max}')
 if [ -n "$RAM_MAX" ] && [ "$RAM_MAX" -gt 0 ]; then
-  echo "Peak RSS: $((RAM_MAX / 1024)) MB" | tee -a "$LOG"
+  RAM_MB=$((RAM_MAX / 1024))
+  echo "Peak RSS: ${RAM_MB} MB" | tee -a "$LOG"
 fi
 
 echo "Log: $LOG" | tee -a "$LOG"

@@ -593,6 +593,10 @@ at ($(out.south west)+(0mm,-6mm)$) {\fcolorbox{red!75!black}{red!18}{\strut\hspa
 \subsection{Experimental Setup}
 
 \textbf{Hardware Platform.} Experiments were conducted on an embedded platform featuring a quad-core CPU running at 1.3\,GHz and an FPGA fabric operating at 250\,MHz. The system is equipped with 4\,GB of shared memory. Power measurements were collected using onboard sensors sampling at runtime via the AMD \texttt{xmutil} toolchain.
+%The four Cortex-A53 cores implement a narrow 64-bit NEON pipeline with in-order
+%execution; Q4\_K inference on this microarchitecture achieves no measurable
+%speedup from SIMD instructions, placing the scalar CPU path near the core's
+%computational ceiling independent of vectorisation.
 
 \textbf{Software Stack.} The inference engine is based on a modified version of \texttt{llama.cpp}, extended to support hardware offloading of the SwiGLU block. Models are executed using Q4\_K quantization format. The FPGA accelerator was synthesized using Vitis high-level synthesis (HLS) toolchain.
 

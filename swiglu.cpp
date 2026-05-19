@@ -39,7 +39,7 @@ typedef ap_fixed<56,38> fxd_accum_t;
 #define URM_WV_NIB_WORDS     (URM_NIB_ELEMS / 4)                            // 64  (4 elem-slices/DDR word)
 #define URM_DOWN_NIB_WORDS   (URM_NIB_ELEMS * URM_DOWN_GROUPS / 4)          // 256 (4 group-slices/DDR word)
 
-// Per-row DDR word totals (must match hybrid's WV_ROW_WORDS=80, DOWN_Q4K_WORDS=320)
+// Per-row DDR word totals (WV: 16 hdr + 64 nib = 80. Down: 64 hdr + 256 nib = 320.)
 #define WV_ROW_WORDS         (URM_WV_HDR_WORDS   + URM_WV_NIB_WORDS)        // 80
 #define DOWN_Q4K_WORDS       (URM_DOWN_HDR_WORDS + URM_DOWN_NIB_WORDS)      // 320
 // ─── INT8 quantisation scale for X1/X2 intermediate caches ───────────────────
@@ -49,8 +49,6 @@ typedef ap_fixed<56,38> fxd_accum_t;
 
 // ─── URAM nibble tile dimensions ──────────────────────────────────────────────
 #define URM_NIB_ELEMS        256
-#define URM_NIB_TILE_DEPTH   256
-
 // ─── fp16_to_fp32 ─────────────────────────────────────────────────────────────
 static float fp16_to_fp32(uint16_t h) {
 #pragma HLS INLINE off
@@ -86,127 +84,137 @@ static inline uint8_t get_byte(const ap_uint<128>* data, int byte_idx) {
 // URAM-transposed load functions
 // ============================================================================
 
-// load_row_wv_urm: load one WV row into headers (registers) + 4 URAM nibble tiles.
-// 4 interleaved tiles for II=1 DDR→URAM load: each DDR word fans out to all
-// 4 tiles simultaneously at the same index (independent write ports → no conflict).
-// Header: 2 DDR words per block (32 bytes). 8 blocks → 16 DDR words.
-// Nibble: 64 DDR words, each = 4 element-slices → 4 URAM tiles, II=1.
-#define URM_WV_TILE_DEPTH  (URM_NIB_ELEMS / 4)   // 64
-static void load_row_wv_urm(const ap_uint<128> *W_wide, int row,
-                             ap_uint<32> t0[URM_WV_TILE_DEPTH],
-                             ap_uint<32> t1[URM_WV_TILE_DEPTH],
-                             ap_uint<32> t2[URM_WV_TILE_DEPTH],
-                             ap_uint<32> t3[URM_WV_TILE_DEPTH],
-                             float   d[WV_BLOCKS_PER_ROW],
-                             float   dmin[WV_BLOCKS_PER_ROW],
-                             int8_t  sc6[WV_BLOCKS_PER_ROW][8],
-                             int8_t  mn6[WV_BLOCKS_PER_ROW][8]) {
+// load_4_rows_wv_urm: one DDR burst → 2 pipeline instances (HDR + NIB).
+// Single header loop (32 blocks) and single nibble loop (256 words)
+// minimize pipeline initialization overhead.  Guaranteed II=1 on nibble writes.
+static void load_4_rows_wv_urm(const ap_uint<128> *W_wide, int row,
+                                ap_uint<128> nib_r0[64], float  d0[8], float  dmin0[8], int8_t sc60[8][8], int8_t mn60[8][8],
+                                ap_uint<128> nib_r1[64], float  d1[8], float  dmin1[8], int8_t sc61[8][8], int8_t mn61[8][8],
+                                ap_uint<128> nib_r2[64], float  d2[8], float  dmin2[8], int8_t sc62[8][8], int8_t mn62[8][8],
+                                ap_uint<128> nib_r3[64], float  d3[8], float  dmin3[8], int8_t sc63[8][8], int8_t mn63[8][8]) {
 #pragma HLS INLINE off
-    // URAM tiles bound in caller (compute_X1); sc6/mn6 are small regs
+    const ap_uint<64> base = (ap_uint<64>)row * WV_ROW_WORDS;
 
-    // ── Load headers: 16 DDR words, blocks 0..7 ──────────────────────────────
-    LOAD_HDR_WV: for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
+    // ── Headers: 32 blocks (4 rows × 8), single pipeline ────────────────────
+    HDR_ALL: for (int b = 0; b < 32; b++) {
         #pragma HLS PIPELINE II=1
-        ap_uint<128> w0 = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + b * 2];
-        ap_uint<128> w1 = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + b * 2 + 1];
+        int r = b >> 3;
+        int blk = b & 7;
+        ap_uint<128> w0 = W_wide[base + (ap_uint<64>)r * 80 + blk * 2];
+        ap_uint<128> w1 = W_wide[base + (ap_uint<64>)r * 80 + blk * 2 + 1];
 
         uint16_t d_raw    = (uint16_t)w0.range(15, 0);
         uint16_t dmin_raw = (uint16_t)w0.range(31, 16);
-        d[b]    = fp16_to_fp32(d_raw);
-        dmin[b] = fp16_to_fp32(dmin_raw);
+        float dv = fp16_to_fp32(d_raw), dmv = fp16_to_fp32(dmin_raw);
+        int8_t sc_tmp[8], mn_tmp[8];
         for (int i = 0; i < 4; i++) {
-            sc6[b][i] = (int8_t)(uint8_t)w0.range(32 + i*8 + 7, 32 + i*8);
-            mn6[b][i] = (int8_t)(uint8_t)w0.range(64 + i*8 + 7, 64 + i*8);
+            sc_tmp[i] = (int8_t)(uint8_t)w0.range(32 + i*8 + 7, 32 + i*8);
+            mn_tmp[i] = (int8_t)(uint8_t)w0.range(64 + i*8 + 7, 64 + i*8);
         }
         for (int i = 4; i < 8; i++) {
             int j = i - 4;
-            sc6[b][i] = (int8_t)(uint8_t)w1.range(j*8 + 7, j*8);
-            mn6[b][i] = (int8_t)(uint8_t)w1.range(32 + j*8 + 7, 32 + j*8);
+            sc_tmp[i] = (int8_t)(uint8_t)w1.range(j*8 + 7, j*8);
+            mn_tmp[i] = (int8_t)(uint8_t)w1.range(32 + j*8 + 7, 32 + j*8);
+        }
+        // Route to correct row (small 4-way mux on write enable)
+        if (r == 0) {
+            d0[blk] = dv; dmin0[blk] = dmv;
+            for (int i = 0; i < 8; i++) { sc60[blk][i] = sc_tmp[i]; mn60[blk][i] = mn_tmp[i]; }
+        } else if (r == 1) {
+            d1[blk] = dv; dmin1[blk] = dmv;
+            for (int i = 0; i < 8; i++) { sc61[blk][i] = sc_tmp[i]; mn61[blk][i] = mn_tmp[i]; }
+        } else if (r == 2) {
+            d2[blk] = dv; dmin2[blk] = dmv;
+            for (int i = 0; i < 8; i++) { sc62[blk][i] = sc_tmp[i]; mn62[blk][i] = mn_tmp[i]; }
+        } else {
+            d3[blk] = dv; dmin3[blk] = dmv;
+            for (int i = 0; i < 8; i++) { sc63[blk][i] = sc_tmp[i]; mn63[blk][i] = mn_tmp[i]; }
         }
     }
 
-    // ── Load nibbles: 64 DDR words → 4 BRAM tiles, II=1 ─────────────────────
-    // BRAM writes are 1-cycle; 4 independent BRAM tiles → no port conflict.
-    // DDR word e: t0[e]=elem[4e], t1[e]=elem[4e+1], t2[e]=elem[4e+2], t3[e]=elem[4e+3]
-    LOAD_NIB_WV: for (int e = 0; e < URM_WV_NIB_WORDS; e++) {
+    // ── Nibbles: 256 words (4 rows × 64), single pipeline, II=1 ────────────
+    // Index i: row = i>>6, e = i&63.  DDR offset = 16 + row*80 + e.
+    NIB_ALL: for (int i = 0; i < 256; i++) {
         #pragma HLS PIPELINE II=1
-        ap_uint<128> ddr = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + URM_WV_HDR_WORDS + e];
-        t0[e] = ddr.range(31,  0);
-        t1[e] = ddr.range(63,  32);
-        t2[e] = ddr.range(95,  64);
-        t3[e] = ddr.range(127, 96);
+        int r = i >> 6;
+        int e = i & 63;
+        ap_uint<128> ddr = W_wide[base + 16 + (ap_uint<64>)r * 80 + e];
+        // Route to correct row's BRAM
+        if      (r == 0) nib_r0[e] = ddr;
+        else if (r == 1) nib_r1[e] = ddr;
+        else if (r == 2) nib_r2[e] = ddr;
+        else             nib_r3[e] = ddr;
     }
 }
 
-// load_row_down_urm: load one output row into headers + nibble URAM tiles.
-// 32 blocks = 4 groups. Headers: 64 DDR words. Nibbles: 256 DDR words.
-// Each nibble DDR word = all 4 groups for one element → 4 URAM writes at II=1.
-static void load_row_down_urm(const ap_uint<128> *Wd_wide, int out_i,
-                               ap_uint<32> nib_g0[URM_NIB_TILE_DEPTH],
-                               ap_uint<32> nib_g1[URM_NIB_TILE_DEPTH],
-                               ap_uint<32> nib_g2[URM_NIB_TILE_DEPTH],
-                               ap_uint<32> nib_g3[URM_NIB_TILE_DEPTH],
-                               float   d[DOWN_BLOCKS_PER_ROW],
-                               float   dmin[DOWN_BLOCKS_PER_ROW],
-                               int8_t  sc6[DOWN_BLOCKS_PER_ROW][8],
-                               int8_t  mn6[DOWN_BLOCKS_PER_ROW][8]) {
+// load_4_rows_down_urm: merged 4-row output load — one 1280-word DDR burst.
+// 4 rows × (64 header + 256 nibble) words.  nib_bram is 128-bit: DDR words
+// stored verbatim (all 4 groups packed), 1 write/cycle → guaranteed II=1.
+static void load_4_rows_down_urm(const ap_uint<128> *Wd_wide, int out_i,
+                                  ap_uint<128> nib_r0[256], float  d0[32], float  dmin0[32], int8_t sc60[32][8], int8_t mn60[32][8],
+                                  ap_uint<128> nib_r1[256], float  d1[32], float  dmin1[32], int8_t sc61[32][8], int8_t mn61[32][8],
+                                  ap_uint<128> nib_r2[256], float  d2[32], float  dmin2[32], int8_t sc62[32][8], int8_t mn62[32][8],
+                                  ap_uint<128> nib_r3[256], float  d3[32], float  dmin3[32], int8_t sc63[32][8], int8_t mn63[32][8]) {
 #pragma HLS INLINE off
-    // URAM tiles bound in caller (compute_output); sc6/mn6 are small regs
+    const ap_uint<64> base = (ap_uint<64>)out_i * DOWN_Q4K_WORDS;
 
-    // ── Load headers: 32 blocks × 2 DDR words = 64 DDR words ────────────────
-    LOAD_HDR_DOWN: for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
+    // ── Headers: 128 blocks (4 rows × 32), single pipeline ──────────────────
+    HDR_ALL_DOWN: for (int b = 0; b < 128; b++) {
         #pragma HLS PIPELINE II=1
-        ap_uint<128> w0 = Wd_wide[(ap_uint<64>)out_i * DOWN_Q4K_WORDS + b * 2];
-        ap_uint<128> w1 = Wd_wide[(ap_uint<64>)out_i * DOWN_Q4K_WORDS + b * 2 + 1];
+        int r = b >> 5;       // row 0..3 (32 blocks each)
+        int blk = b & 31;     // block 0..31 within row
+        ap_uint<128> w0 = Wd_wide[base + (ap_uint<64>)r * 320 + blk * 2];
+        ap_uint<128> w1 = Wd_wide[base + (ap_uint<64>)r * 320 + blk * 2 + 1];
 
-        uint16_t d_raw    = (uint16_t)w0.range(15, 0);
-        uint16_t dmin_raw = (uint16_t)w0.range(31, 16);
-        d[b]    = fp16_to_fp32(d_raw);
-        dmin[b] = fp16_to_fp32(dmin_raw);
+        uint16_t d_raw = (uint16_t)w0.range(15, 0), dmin_raw = (uint16_t)w0.range(31, 16);
+        float dv = fp16_to_fp32(d_raw), dmv = fp16_to_fp32(dmin_raw);
+        int8_t sc_tmp[8], mn_tmp[8];
         for (int i = 0; i < 4; i++) {
-            sc6[b][i] = (int8_t)(uint8_t)w0.range(32 + i*8 + 7, 32 + i*8);
-            mn6[b][i] = (int8_t)(uint8_t)w0.range(64 + i*8 + 7, 64 + i*8);
+            sc_tmp[i] = (int8_t)(uint8_t)w0.range(32 + i*8 + 7, 32 + i*8);
+            mn_tmp[i] = (int8_t)(uint8_t)w0.range(64 + i*8 + 7, 64 + i*8);
         }
         for (int i = 4; i < 8; i++) {
             int j = i - 4;
-            sc6[b][i] = (int8_t)(uint8_t)w1.range(j*8 + 7, j*8);
-            mn6[b][i] = (int8_t)(uint8_t)w1.range(32 + j*8 + 7, 32 + j*8);
+            sc_tmp[i] = (int8_t)(uint8_t)w1.range(j*8 + 7, j*8);
+            mn_tmp[i] = (int8_t)(uint8_t)w1.range(32 + j*8 + 7, 32 + j*8);
         }
+        if (r == 0)      { d0[blk] = dv; dmin0[blk] = dmv; for (int i=0;i<8;i++) {sc60[blk][i]=sc_tmp[i]; mn60[blk][i]=mn_tmp[i];} }
+        else if (r == 1) { d1[blk] = dv; dmin1[blk] = dmv; for (int i=0;i<8;i++) {sc61[blk][i]=sc_tmp[i]; mn61[blk][i]=mn_tmp[i];} }
+        else if (r == 2) { d2[blk] = dv; dmin2[blk] = dmv; for (int i=0;i<8;i++) {sc62[blk][i]=sc_tmp[i]; mn62[blk][i]=mn_tmp[i];} }
+        else             { d3[blk] = dv; dmin3[blk] = dmv; for (int i=0;i<8;i++) {sc63[blk][i]=sc_tmp[i]; mn63[blk][i]=mn_tmp[i];} }
     }
 
-    // ── Load nibbles: 256 DDR words → 4 URAM tiles, one element per word ────
-    LOAD_NIB_DOWN: for (int e = 0; e < URM_NIB_ELEMS; e++) {
+    // ── Nibbles: 1024 words (4 rows × 256), single pipeline, II=1 ──────────
+    NIB_ALL_DOWN: for (int i = 0; i < 1024; i++) {
         #pragma HLS PIPELINE II=1
-        ap_uint<128> ddr = Wd_wide[(ap_uint<64>)out_i * DOWN_Q4K_WORDS + URM_DOWN_HDR_WORDS + e];
-        nib_g0[e] = ddr.range(31,  0);
-        nib_g1[e] = ddr.range(63,  32);
-        nib_g2[e] = ddr.range(95,  64);
-        nib_g3[e] = ddr.range(127, 96);
+        int r = i >> 8;        // row 0..3
+        int e = i & 255;       // element 0..255
+        ap_uint<128> ddr = Wd_wide[base + 64 + (ap_uint<64>)r * 320 + e];
+        if      (r == 0) nib_r0[e] = ddr;
+        else if (r == 1) nib_r1[e] = ddr;
+        else if (r == 2) nib_r2[e] = ddr;
+        else             nib_r3[e] = ddr;
     }
+    #ifndef __SYNTHESIS__
+    printf("[SZ] sizeof(ap128)=%zu  Wd_wide+64 byteoff=%zu  expect=%zu\n",
+        sizeof(ap_uint<128>), (size_t)(Wd_wide + 64) - (size_t)Wd_wide, (size_t)64 * 16);
+#endif
+
 }
 
 // ============================================================================
 // MAC functions — URAM-transposed nibble access, K=4 parallelism
 // ============================================================================
 
-// mac_blocks_wv_k4_urm: 4 rows, 8 blocks, 32 parallel INT32 MAC chains.
-// URAM nibble access: nib_urm[n] → compile-time .range(b*4+3, b*4) → 0 LUT.
-// mac_blocks_wv_k4_urm: K=4, 4 interleaved URAM tiles per row (16 total).
-// Tile t0: elements 0,4,...; t1: 1,5,...; t2: 2,6,...; t3: 3,7,...
-// MAC reads from correct tile based on n&3.  Small 4:1 32-bit mux per row.
+// mac_blocks_wv_k4_urm: 4 rows × 8 blocks, 32 parallel MACs.  K=4.
+// nib_bram[idx] = 128-bit word = 4 element-slices (same as DDR word).
+// Read nib_bram[n>>2], slice the (n&3)-th 32-bit slot → 4:1 mux (~32 LUT/row).
+// Inner .range(b*4+3, b*4) is compile-time → 0 LUT.
 static void mac_blocks_wv_k4_urm(
-    // Row 0 tiles
-    const ap_uint<32> r0t0[URM_WV_TILE_DEPTH], const ap_uint<32> r0t1[URM_WV_TILE_DEPTH],
-    const ap_uint<32> r0t2[URM_WV_TILE_DEPTH], const ap_uint<32> r0t3[URM_WV_TILE_DEPTH],
-    // Row 1 tiles
-    const ap_uint<32> r1t0[URM_WV_TILE_DEPTH], const ap_uint<32> r1t1[URM_WV_TILE_DEPTH],
-    const ap_uint<32> r1t2[URM_WV_TILE_DEPTH], const ap_uint<32> r1t3[URM_WV_TILE_DEPTH],
-    // Row 2 tiles
-    const ap_uint<32> r2t0[URM_WV_TILE_DEPTH], const ap_uint<32> r2t1[URM_WV_TILE_DEPTH],
-    const ap_uint<32> r2t2[URM_WV_TILE_DEPTH], const ap_uint<32> r2t3[URM_WV_TILE_DEPTH],
-    // Row 3 tiles
-    const ap_uint<32> r3t0[URM_WV_TILE_DEPTH], const ap_uint<32> r3t1[URM_WV_TILE_DEPTH],
-    const ap_uint<32> r3t2[URM_WV_TILE_DEPTH], const ap_uint<32> r3t3[URM_WV_TILE_DEPTH],
+    const ap_uint<128> nib_r0[64],
+    const ap_uint<128> nib_r1[64],
+    const ap_uint<128> nib_r2[64],
+    const ap_uint<128> nib_r3[64],
     const float   d0[WV_BLOCKS_PER_ROW], const float dmin0[WV_BLOCKS_PER_ROW],
     const float   d1[WV_BLOCKS_PER_ROW], const float dmin1[WV_BLOCKS_PER_ROW],
     const float   d2[WV_BLOCKS_PER_ROW], const float dmin2[WV_BLOCKS_PER_ROW],
@@ -221,7 +229,6 @@ static void mac_blocks_wv_k4_urm(
 {
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
-// URAM tiles: no partition — stay as single URAM tile (1 read port/cycle)
 #pragma HLS ARRAY_PARTITION variable=x dim=1 complete
 
     int32_t acc_w0[WV_BLOCKS_PER_ROW][4], acc_m0[WV_BLOCKS_PER_ROW][4];
@@ -250,17 +257,22 @@ static void mac_blocks_wv_k4_urm(
 
     MAC_ALL: for (int n = 0; n < 256; n++) {
         #pragma HLS PIPELINE II=1
+        int idx = n >> 2;          // BRAM index (same for 4 consecutive n)
+        int s   = n & 3;           // slice selector (0..3)
         int sub = n >> 5;
         int k   = n & 3;
-        int t   = n & 3;           // tile selector
-        int idx = n >> 2;          // index within tile
 
-        // Read from correct tile per row — 4:1 32-bit mux per row (negligible LUT)
+        // Read 128-bit word, slice the correct 32-bit slot — 4:1 mux
+        ap_uint<128> w0 = nib_r0[idx];
+        ap_uint<128> w1 = nib_r1[idx];
+        ap_uint<128> w2 = nib_r2[idx];
+        ap_uint<128> w3 = nib_r3[idx];
+
         ap_uint<32> wr0, wr1, wr2, wr3;
-        if (t == 0)      { wr0 = r0t0[idx]; wr1 = r1t0[idx]; wr2 = r2t0[idx]; wr3 = r3t0[idx]; }
-        else if (t == 1) { wr0 = r0t1[idx]; wr1 = r1t1[idx]; wr2 = r2t1[idx]; wr3 = r3t1[idx]; }
-        else if (t == 2) { wr0 = r0t2[idx]; wr1 = r1t2[idx]; wr2 = r2t2[idx]; wr3 = r3t2[idx]; }
-        else             { wr0 = r0t3[idx]; wr1 = r1t3[idx]; wr2 = r2t3[idx]; wr3 = r3t3[idx]; }
+        if      (s == 0) { wr0 = w0.range(31,  0);  wr1 = w1.range(31,  0);  wr2 = w2.range(31,  0);  wr3 = w3.range(31,  0);  }
+        else if (s == 1) { wr0 = w0.range(63,  32); wr1 = w1.range(63,  32); wr2 = w2.range(63,  32); wr3 = w3.range(63,  32); }
+        else if (s == 2) { wr0 = w0.range(95,  64); wr1 = w1.range(95,  64); wr2 = w2.range(95,  64); wr3 = w3.range(95,  64); }
+        else             { wr0 = w0.range(127, 96); wr1 = w1.range(127, 96); wr2 = w2.range(127, 96); wr3 = w3.range(127, 96); }
 
         for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
             #pragma HLS UNROLL
@@ -303,34 +315,18 @@ static void mac_blocks_wv_k4_urm(
     *result3 = (float)total3 * x_scale;
 }
 
-// mac_blocks_down_q4k_k4_urm: 32 blocks, 4-groups × 4-rows K=4.
-// 16 URAM nibble tiles (4 groups × 4 rows).  Within each group, 4 rows
-// are UNROLL'd → 32 parallel MACs (8 blocks × 4 rows).  4 groups are
-// sequential → DSPs shared, 1024 MAC cycles/4-row iteration.
-// 4 output results per call (one per row).
+// mac_blocks_down_q4k_k4_urm: 32 blocks, 4-groups × 4-rows, K=4.
+// 4 wide BRAM tiles (128-bit each, one per row).  Each holds all 4 groups.
+// Read nib_rN[n], slice group grp at bits (grp*32+31, grp*32).
+// Groups are sequential → DSPs shared.  4 output results per call.
 static void mac_blocks_down_q4k_k4_urm(
-    // Group 0: 4 rows
-    const ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g0r1[URM_NIB_TILE_DEPTH],
-    const ap_uint<32> g0r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g0r3[URM_NIB_TILE_DEPTH],
-    // Group 1: 4 rows
-    const ap_uint<32> g1r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g1r1[URM_NIB_TILE_DEPTH],
-    const ap_uint<32> g1r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g1r3[URM_NIB_TILE_DEPTH],
-    // Group 2: 4 rows
-    const ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g2r1[URM_NIB_TILE_DEPTH],
-    const ap_uint<32> g2r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g2r3[URM_NIB_TILE_DEPTH],
-    // Group 3: 4 rows
-    const ap_uint<32> g3r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g3r1[URM_NIB_TILE_DEPTH],
-    const ap_uint<32> g3r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g3r3[URM_NIB_TILE_DEPTH],
-    // Headers: 4 rows × 32 blocks
-    const float  d0[DOWN_BLOCKS_PER_ROW], const float  dmin0[DOWN_BLOCKS_PER_ROW],
-    const float  d1[DOWN_BLOCKS_PER_ROW], const float  dmin1[DOWN_BLOCKS_PER_ROW],
-    const float  d2[DOWN_BLOCKS_PER_ROW], const float  dmin2[DOWN_BLOCKS_PER_ROW],
-    const float  d3[DOWN_BLOCKS_PER_ROW], const float  dmin3[DOWN_BLOCKS_PER_ROW],
-    const int8_t sc60[DOWN_BLOCKS_PER_ROW][8], const int8_t mn60[DOWN_BLOCKS_PER_ROW][8],
-    const int8_t sc61[DOWN_BLOCKS_PER_ROW][8], const int8_t mn61[DOWN_BLOCKS_PER_ROW][8],
-    const int8_t sc62[DOWN_BLOCKS_PER_ROW][8], const int8_t mn62[DOWN_BLOCKS_PER_ROW][8],
-    const int8_t sc63[DOWN_BLOCKS_PER_ROW][8], const int8_t mn63[DOWN_BLOCKS_PER_ROW][8],
-    const int8_t gate[DOWN_BLOCKS_PER_ROW][256],
+    const ap_uint<128> nib_r0[256], const ap_uint<128> nib_r1[256],
+    const ap_uint<128> nib_r2[256], const ap_uint<128> nib_r3[256],
+    const float  d0[32], const float  dmin0[32], const float  d1[32], const float  dmin1[32],
+    const float  d2[32], const float  dmin2[32], const float  d3[32], const float  dmin3[32],
+    const int8_t sc60[32][8], const int8_t mn60[32][8], const int8_t sc61[32][8], const int8_t mn61[32][8],
+    const int8_t sc62[32][8], const int8_t mn62[32][8], const int8_t sc63[32][8], const int8_t mn63[32][8],
+    const int8_t gate[32][256],
     float  gate_scale,
     float *result0, float *result1, float *result2, float *result3)
 {
@@ -340,7 +336,6 @@ static void mac_blocks_down_q4k_k4_urm(
 
     fxd_accum_t total0 = 0, total1 = 0, total2 = 0, total3 = 0;
 
-    // 4 groups sequential (share DSPs), 4 rows UNROLL'd per group
     DOWN_GROUPS: for (int grp = 0; grp < 4; grp++) {
         int32_t acc_w0[8][4], acc_m0[8][4];
         int32_t acc_w1[8][4], acc_m1[8][4];
@@ -366,26 +361,34 @@ static void mac_blocks_down_q4k_k4_urm(
             }
         }
 
-        // Select group tiles — 4:1 32-bit mux per row (negligible LUT)
         MAC_GRP: for (int n = 0; n < 256; n++) {
             #pragma HLS PIPELINE II=1
             int sub = n >> 5;
             int k   = n & 3;
 
-            ap_uint<32> w0, w1, w2, w3;
-            if      (grp == 0) { w0 = g0r0[n]; w1 = g0r1[n]; w2 = g0r2[n]; w3 = g0r3[n]; }
-            else if (grp == 1) { w0 = g1r0[n]; w1 = g1r1[n]; w2 = g1r2[n]; w3 = g1r3[n]; }
-            else if (grp == 2) { w0 = g2r0[n]; w1 = g2r1[n]; w2 = g2r2[n]; w3 = g2r3[n]; }
-            else               { w0 = g3r0[n]; w1 = g3r1[n]; w2 = g3r2[n]; w3 = g3r3[n]; }
+            // Read 128-bit word per row, slice group grp's 32-bit slot
+            ap_uint<128> w0 = nib_r0[n], w1 = nib_r1[n], w2 = nib_r2[n], w3 = nib_r3[n];
+            ap_uint<32> wr0, wr1, wr2, wr3;
+            if      (grp == 0) { wr0 = w0.range(31,  0);  wr1 = w1.range(31,  0);  wr2 = w2.range(31,  0);  wr3 = w3.range(31,  0);  }
+            else if (grp == 1) { wr0 = w0.range(63,  32); wr1 = w1.range(63,  32); wr2 = w2.range(63,  32); wr3 = w3.range(63,  32); }
+            else if (grp == 2) { wr0 = w0.range(95,  64); wr1 = w1.range(95,  64); wr2 = w2.range(95,  64); wr3 = w3.range(95,  64); }
+            else               { wr0 = w0.range(127, 96); wr1 = w1.range(127, 96); wr2 = w2.range(127, 96); wr3 = w3.range(127, 96); }
 
             for (int b = 0; b < 8; b++) {
                 #pragma HLS UNROLL
                 int babs = grp * 8 + b;
-                ap_int<8>  gi8  = (ap_int<8>)  gate[babs][n];
-                ap_uint<4> nb0  = (ap_uint<4>) w0.range(b*4+3, b*4);
-                ap_uint<4> nb1  = (ap_uint<4>) w1.range(b*4+3, b*4);
-                ap_uint<4> nb2  = (ap_uint<4>) w2.range(b*4+3, b*4);
-                ap_uint<4> nb3  = (ap_uint<4>) w3.range(b*4+3, b*4);
+                ap_int<8>  gi8 = (ap_int<8>)  gate[babs][n];
+                ap_uint<4> nb0 = (ap_uint<4>) wr0.range(b*4+3, b*4);
+                ap_uint<4> nb1 = (ap_uint<4>) wr1.range(b*4+3, b*4);
+                ap_uint<4> nb2 = (ap_uint<4>) wr2.range(b*4+3, b*4);
+                ap_uint<4> nb3 = (ap_uint<4>) wr3.range(b*4+3, b*4);
+
+#ifndef __SYNTHESIS__
+                if (n == 1 && b == 0 && grp == 0)
+                    printf("[MAC] n=1 g0: wr0=0x%08X wr1=0x%08X wr2=0x%08X wr3=0x%08X  gi8=%d nb0=%d sc60=%d\n",
+                        (unsigned)wr0, (unsigned)wr1, (unsigned)wr2, (unsigned)wr3,
+                        (int)gi8, (int)nb0, (int)sc60[babs][sub]);
+#endif
 
                 acc_w0[b][k] += (int32_t)(gi8 * (ap_int<5>)nb0 * sc60[babs][sub]);
                 acc_m0[b][k] += (int32_t)(gi8 * mn60[babs][sub]);
@@ -409,14 +412,10 @@ static void mac_blocks_down_q4k_k4_urm(
                 sw2 += acc_w2[b][k]; sm2 += acc_m2[b][k];
                 sw3 += acc_w3[b][k]; sm3 += acc_m3[b][k];
             }
-            total0 += (fxd_scale_t)d0[babs]    * (fxd_accum_t)sw0
-                    - (fxd_scale_t)dmin0[babs]  * (fxd_accum_t)sm0;
-            total1 += (fxd_scale_t)d1[babs]    * (fxd_accum_t)sw1
-                    - (fxd_scale_t)dmin1[babs]  * (fxd_accum_t)sm1;
-            total2 += (fxd_scale_t)d2[babs]    * (fxd_accum_t)sw2
-                    - (fxd_scale_t)dmin2[babs]  * (fxd_accum_t)sm2;
-            total3 += (fxd_scale_t)d3[babs]    * (fxd_accum_t)sw3
-                    - (fxd_scale_t)dmin3[babs]  * (fxd_accum_t)sm3;
+            total0 += (fxd_scale_t)d0[babs]    * (fxd_accum_t)sw0 - (fxd_scale_t)dmin0[babs]  * (fxd_accum_t)sm0;
+            total1 += (fxd_scale_t)d1[babs]    * (fxd_accum_t)sw1 - (fxd_scale_t)dmin1[babs]  * (fxd_accum_t)sm1;
+            total2 += (fxd_scale_t)d2[babs]    * (fxd_accum_t)sw2 - (fxd_scale_t)dmin2[babs]  * (fxd_accum_t)sm2;
+            total3 += (fxd_scale_t)d3[babs]    * (fxd_accum_t)sw3 - (fxd_scale_t)dmin3[babs]  * (fxd_accum_t)sm3;
         }
     }
     *result0 = (float)total0 * gate_scale;
@@ -439,27 +438,12 @@ static void compute_X1(
 #pragma HLS ARRAY_PARTITION variable=x_local_1 dim=2 complete
     const ap_uint<128> *W_wide = (const ap_uint<128>*)W;
 
-    // 4 rows × 4 interleaved tiles = 16 URAM tiles
-    #define DECL_URAM_TILES(r) \
-        ap_uint<32> r##t0[URM_WV_TILE_DEPTH], r##t1[URM_WV_TILE_DEPTH]; \
-        ap_uint<32> r##t2[URM_WV_TILE_DEPTH], r##t3[URM_WV_TILE_DEPTH];
-    DECL_URAM_TILES(r0) DECL_URAM_TILES(r1) DECL_URAM_TILES(r2) DECL_URAM_TILES(r3)
-    #pragma HLS BIND_STORAGE variable=r0t0 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r0t1 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r0t2 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r0t3 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r1t0 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r1t1 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r1t2 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r1t3 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r2t0 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r2t1 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r2t2 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r2t3 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r3t0 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r3t1 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r3t2 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r3t3 type=ram_1p impl=bram
+    // 4 rows × 1 wide BRAM each = 4 × 128-bit × 64 deep
+    ap_uint<128> nib_r0[64], nib_r1[64], nib_r2[64], nib_r3[64];
+    #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
 
     float  d0[WV_BLOCKS_PER_ROW], dmin0[WV_BLOCKS_PER_ROW];
     float  d1[WV_BLOCKS_PER_ROW], dmin1[WV_BLOCKS_PER_ROW];
@@ -471,15 +455,15 @@ static void compute_X1(
     int8_t sc63[WV_BLOCKS_PER_ROW][8], mn63[WV_BLOCKS_PER_ROW][8];
 
     COMPUTE_X1: for (int row = 0; row < FFN_DIM; row += 4) {
-        load_row_wv_urm(W_wide, row,     r0t0, r0t1, r0t2, r0t3, d0, dmin0, sc60, mn60);
-        load_row_wv_urm(W_wide, row + 1, r1t0, r1t1, r1t2, r1t3, d1, dmin1, sc61, mn61);
-        load_row_wv_urm(W_wide, row + 2, r2t0, r2t1, r2t2, r2t3, d2, dmin2, sc62, mn62);
-        load_row_wv_urm(W_wide, row + 3, r3t0, r3t1, r3t2, r3t3, d3, dmin3, sc63, mn63);
+        load_4_rows_wv_urm(W_wide, row,
+            nib_r0, d0, dmin0, sc60, mn60,
+            nib_r1, d1, dmin1, sc61, mn61,
+            nib_r2, d2, dmin2, sc62, mn62,
+            nib_r3, d3, dmin3, sc63, mn63);
 
         float r0, r1, r2, r3;
         mac_blocks_wv_k4_urm(
-            r0t0, r0t1, r0t2, r0t3, r1t0, r1t1, r1t2, r1t3,
-            r2t0, r2t1, r2t2, r2t3, r3t0, r3t1, r3t2, r3t3,
+            nib_r0, nib_r1, nib_r2, nib_r3,
             d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
             sc60, mn60, sc61, mn61, sc62, mn62, sc63, mn63,
             x_local_1[0], x_scale, &r0, &r1, &r2, &r3);
@@ -517,26 +501,12 @@ static void compute_X2(
 #pragma HLS ARRAY_PARTITION variable=x_local_2 dim=2 complete
     const ap_uint<128> *V_wide = (const ap_uint<128>*)V;
 
-    #define DECL_URAM_X2(r) \
-        ap_uint<32> r##t0[URM_WV_TILE_DEPTH], r##t1[URM_WV_TILE_DEPTH]; \
-        ap_uint<32> r##t2[URM_WV_TILE_DEPTH], r##t3[URM_WV_TILE_DEPTH];
-    DECL_URAM_X2(r0) DECL_URAM_X2(r1) DECL_URAM_X2(r2) DECL_URAM_X2(r3)
-    #pragma HLS BIND_STORAGE variable=r0t0 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r0t1 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r0t2 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r0t3 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r1t0 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r1t1 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r1t2 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r1t3 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r2t0 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r2t1 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r2t2 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r2t3 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r3t0 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r3t1 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r3t2 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=r3t3 type=ram_1p impl=bram
+    // 4 rows × 1 wide BRAM each = 4 × 128-bit × 64 deep
+    ap_uint<128> nib_r0[64], nib_r1[64], nib_r2[64], nib_r3[64];
+    #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
 
     float  d0[WV_BLOCKS_PER_ROW], dmin0[WV_BLOCKS_PER_ROW];
     float  d1[WV_BLOCKS_PER_ROW], dmin1[WV_BLOCKS_PER_ROW];
@@ -548,15 +518,15 @@ static void compute_X2(
     int8_t sc63[WV_BLOCKS_PER_ROW][8], mn63[WV_BLOCKS_PER_ROW][8];
 
     COMPUTE_X2: for (int row = 0; row < FFN_DIM; row += 4) {
-        load_row_wv_urm(V_wide, row,     r0t0, r0t1, r0t2, r0t3, d0, dmin0, sc60, mn60);
-        load_row_wv_urm(V_wide, row + 1, r1t0, r1t1, r1t2, r1t3, d1, dmin1, sc61, mn61);
-        load_row_wv_urm(V_wide, row + 2, r2t0, r2t1, r2t2, r2t3, d2, dmin2, sc62, mn62);
-        load_row_wv_urm(V_wide, row + 3, r3t0, r3t1, r3t2, r3t3, d3, dmin3, sc63, mn63);
+        load_4_rows_wv_urm(V_wide, row,
+            nib_r0, d0, dmin0, sc60, mn60,
+            nib_r1, d1, dmin1, sc61, mn61,
+            nib_r2, d2, dmin2, sc62, mn62,
+            nib_r3, d3, dmin3, sc63, mn63);
 
         float r0, r1, r2, r3;
         mac_blocks_wv_k4_urm(
-            r0t0, r0t1, r0t2, r0t3, r1t0, r1t1, r1t2, r1t3,
-            r2t0, r2t1, r2t2, r2t3, r3t0, r3t1, r3t2, r3t3,
+            nib_r0, nib_r1, nib_r2, nib_r3,
             d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
             sc60, mn60, sc61, mn61, sc62, mn62, sc63, mn63,
             x_local_2[0], x_scale, &r0, &r1, &r2, &r3);
@@ -642,9 +612,9 @@ static void compute_gate(
 // Phase 5: output = gate @ W_down.T  (Q4_K, K=4, 16 URAM tiles)
 // ============================================================================
 // 4 rows per iteration.  16 URAM nibble tiles (4 groups × 4 rows).
-// Load: 4 sequential calls to load_row_down_urm (one per row).
-// MAC:  4 groups sequential × 4 rows UNROLL'd = 1024 cycles.
-// Total: 1280 (load) + 1024 (MAC) = 2304 cycles/4-rows → 1.18M total.
+// Load: one merged call to load_4_rows_down_urm (1280-word burst).
+// MAC:  4 groups sequential × 4 rows = 1024 cycles.
+// Total: ~600 (load) + 1024 (MAC) = ~1624 cycles/4-rows.
 static void compute_output(
     const uint8_t  *W_down,
     const int8_t   gate_cache[MAX_BATCH][DOWN_BLOCKS_PER_ROW][256],
@@ -662,44 +632,23 @@ static void compute_output(
         float out_local[VECTOR_DIM];
         #pragma HLS BIND_STORAGE variable=out_local type=ram_1p impl=bram
 
-        // 4 groups × 4 rows = 16 URAM nibble tiles, declared outside loop
-        ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], g0r1[URM_NIB_TILE_DEPTH], g0r2[URM_NIB_TILE_DEPTH], g0r3[URM_NIB_TILE_DEPTH];
-        ap_uint<32> g1r0[URM_NIB_TILE_DEPTH], g1r1[URM_NIB_TILE_DEPTH], g1r2[URM_NIB_TILE_DEPTH], g1r3[URM_NIB_TILE_DEPTH];
-        ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], g2r1[URM_NIB_TILE_DEPTH], g2r2[URM_NIB_TILE_DEPTH], g2r3[URM_NIB_TILE_DEPTH];
-        ap_uint<32> g3r0[URM_NIB_TILE_DEPTH], g3r1[URM_NIB_TILE_DEPTH], g3r2[URM_NIB_TILE_DEPTH], g3r3[URM_NIB_TILE_DEPTH];
-        #pragma HLS BIND_STORAGE variable=g0r0 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g0r1 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g0r2 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g0r3 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g1r0 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g1r1 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g1r2 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g1r3 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g2r0 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g2r1 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g2r2 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g2r3 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g3r0 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g3r1 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g3r2 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g3r3 type=ram_1p impl=bram
+        // 4 rows × 1 wide BRAM each = 4 × 128-bit × 256 deep
+        ap_uint<128> nib_r0[256], nib_r1[256], nib_r2[256], nib_r3[256];
+        #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=nib_r1 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
 
-        // Headers: 4 rows × 32 blocks
-        float  d0[DOWN_BLOCKS_PER_ROW], dmin0[DOWN_BLOCKS_PER_ROW];
-        float  d1[DOWN_BLOCKS_PER_ROW], dmin1[DOWN_BLOCKS_PER_ROW];
-        float  d2[DOWN_BLOCKS_PER_ROW], dmin2[DOWN_BLOCKS_PER_ROW];
-        float  d3[DOWN_BLOCKS_PER_ROW], dmin3[DOWN_BLOCKS_PER_ROW];
-        int8_t sc60[DOWN_BLOCKS_PER_ROW][8], mn60[DOWN_BLOCKS_PER_ROW][8];
-        int8_t sc61[DOWN_BLOCKS_PER_ROW][8], mn61[DOWN_BLOCKS_PER_ROW][8];
-        int8_t sc62[DOWN_BLOCKS_PER_ROW][8], mn62[DOWN_BLOCKS_PER_ROW][8];
-        int8_t sc63[DOWN_BLOCKS_PER_ROW][8], mn63[DOWN_BLOCKS_PER_ROW][8];
-        #pragma HLS ARRAY_PARTITION variable=d0    complete
+        float  d0[32], dmin0[32], d1[32], dmin1[32], d2[32], dmin2[32], d3[32], dmin3[32];
+        int8_t sc60[32][8], mn60[32][8], sc61[32][8], mn61[32][8];
+        int8_t sc62[32][8], mn62[32][8], sc63[32][8], mn63[32][8];
+        #pragma HLS ARRAY_PARTITION variable=d0 complete
         #pragma HLS ARRAY_PARTITION variable=dmin0 complete
-        #pragma HLS ARRAY_PARTITION variable=d1    complete
+        #pragma HLS ARRAY_PARTITION variable=d1 complete
         #pragma HLS ARRAY_PARTITION variable=dmin1 complete
-        #pragma HLS ARRAY_PARTITION variable=d2    complete
+        #pragma HLS ARRAY_PARTITION variable=d2 complete
         #pragma HLS ARRAY_PARTITION variable=dmin2 complete
-        #pragma HLS ARRAY_PARTITION variable=d3    complete
+        #pragma HLS ARRAY_PARTITION variable=d3 complete
         #pragma HLS ARRAY_PARTITION variable=dmin3 complete
         #pragma HLS ARRAY_PARTITION variable=sc60  dim=0 complete
         #pragma HLS ARRAY_PARTITION variable=mn60  dim=0 complete
@@ -711,19 +660,22 @@ static void compute_output(
         #pragma HLS ARRAY_PARTITION variable=mn63  dim=0 complete
 
         DOWN_Q4K: for (int out_i = 0; out_i < VECTOR_DIM; out_i += 4) {
-            // Load 4 rows — each populates one group's 4-row URAM tiles
-            load_row_down_urm(W_down_wide, out_i,
-                               g0r0, g1r0, g2r0, g3r0, d0, dmin0, sc60, mn60);
-            load_row_down_urm(W_down_wide, out_i + 1,
-                               g0r1, g1r1, g2r1, g3r1, d1, dmin1, sc61, mn61);
-            load_row_down_urm(W_down_wide, out_i + 2,
-                               g0r2, g1r2, g2r2, g3r2, d2, dmin2, sc62, mn62);
-            load_row_down_urm(W_down_wide, out_i + 3,
-                               g0r3, g1r3, g2r3, g3r3, d3, dmin3, sc63, mn63);
+            load_4_rows_down_urm(W_down_wide, out_i,
+                nib_r0, d0, dmin0, sc60, mn60,
+                nib_r1, d1, dmin1, sc61, mn61,
+                nib_r2, d2, dmin2, sc62, mn62,
+                nib_r3, d3, dmin3, sc63, mn63);
+
+#ifndef __SYNTHESIS__
+            if (out_i == 0)
+                printf("[CO] nib_r0[1]=%08X_%08X_%08X_%08X  d0[0]=%.6f  sc60[0][0]=%d  gate_b0_e1=%d\n",
+                    (unsigned)nib_r0[1].range(127,96), (unsigned)nib_r0[1].range(95,64),
+                    (unsigned)nib_r0[1].range(63,32),  (unsigned)nib_r0[1].range(31,0),
+                    d0[0], (int)sc60[0][0], (int)gate_cache[0][0][1]);
+#endif
 
             mac_blocks_down_q4k_k4_urm(
-                g0r0, g0r1, g0r2, g0r3, g1r0, g1r1, g1r2, g1r3,
-                g2r0, g2r1, g2r2, g2r3, g3r0, g3r1, g3r2, g3r3,
+                nib_r0, nib_r1, nib_r2, nib_r3,
                 d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
                 sc60, mn60, sc61, mn61, sc62, mn62, sc63, mn63,
                 gate_cache[0], gate_scale,
@@ -771,8 +723,8 @@ void swiglu(
     uint32_t       down_quant_mode,
     float          x_scale)
 {
-    // URM DDR layout: WV=80 words/row (1280 B), Down=320 words/row (5120 B)
-    // W/V: 8192 rows × 1280 = 10,485,760 B   W_down: 2048 rows × 5120 = 10,485,760 B
+    // URM DDR: WV=80 words/row (1280 B), Down=320 words/row (5120 B)
+    // W/V: 8192 × 1280 = 10,485,760 B   W_down: 2048 × 5120 = 10,485,760 B
     #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd   offset=slave depth=10485760 max_read_burst_length=256  latency=64 num_read_outstanding=1 max_widen_bitwidth=128

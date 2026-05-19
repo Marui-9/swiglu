@@ -97,7 +97,7 @@ static uint32_t swg_last_prog_mode  = 0;
 
 // Permanent per-layer pre-decode cache.  16 slots, populated on first use.
 // Fits within 512 MB UDMABUF (works with cma=600M — no boot script fix needed).
-// Hybrid per-block: 160 bytes. Per matrix: ~10 MB. Per layer: 30 MB (packed).
+// Per matrix: ~10 MB. Per layer: 30 MB (packed).
 // 16 layers × 30 MB = 480 MB.  Base at 16 MB → max ~496 MB.
 #define SWG_LAYER_BASE         0x01000000U
 #define SWG_LAYER_STRIDE       0x01E00000U   // 30 MB per layer
@@ -182,7 +182,8 @@ static void reformat_q6k_to_fieldsplit(const uint8_t *src, uint8_t *dst, int n_r
 // DDR row layout (same total byte count as 160-byte/block hybrid):
 //   Headers: blocks_per_row * 32 B  — block-major: d(2)+dmin(2)+sc6[8]+mn6[8]+pad(12)
 //   Nibbles: 256 * groups * 4 B       — element-major, groups = blocks_per_row/8
-//     Each 128-bit DDR word packs 4 element-slices (WV) or 4 group-slices (output).
+//     WV:   64 DDR words, each = 4 element-slices × 32 bits (fully packed)
+//     Out: 256 DDR words, each = 4 group-slices   × 32 bits (fully packed)
 //
 // Run once per layer on first use.  Permanently cached in udmabuf.
 static void transpose_q4k_to_urm(const uint8_t *src, uint8_t *dst,
@@ -218,10 +219,10 @@ static void transpose_q4k_to_urm(const uint8_t *src, uint8_t *dst,
         }
 
         // ── Nibbles: element-major, transposed across blocks ────────────────────
-        // WV  (groups=1): 64 DDR words, each = 4 element-slices × 32 bits. HLS fans
-        //     out to 4 interleaved URAM tiles for II=1 load (64 cycles/row).
-        // Out (groups=4): 256 DDR words, each = all 4 groups for ONE element. HLS
-        //     fans out to 4 group URAM tiles for II=1 load (256 cycles/row).
+        // WV  (groups=1):  64 DDR words, each = 4 element-slices × 32 bits.
+        //     HLS fans out to 4 interleaved BRAM tiles.
+        // Out (groups=4): 256 DDR words, each = all 4 groups for ONE element.
+        //     HLS fans out to 4 group BRAM tiles for II=1 load.
         for (int g = 0; g < groups; g++) {
             for (int n = 0; n < 256; n++) {
                 // One 32-bit word: nibbles for blocks g*8 .. g*8+7 at element n
