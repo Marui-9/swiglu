@@ -969,6 +969,41 @@ The Q6K layers (0,1,4,7,10,13,14,15) will become Q4K. Perplexity impact is typic
 	    If RTL co-sim passes and timing closes, K=4 becomes feasible (~90K LUTs
 	    estimated, 4.1 t/s projected).
 
-50. word-major approach fails timing or fails routing. 
-    revert to hybrid and chase increased parallelism. 
-    
+50. word-major approach fails timing or fails routing.
+    revert to hybrid and chase increased parallelism.
+
+51. URAM-transposed K=4 — first attempt synthesizes and runs, but performance
+    falls short of projected 5.0 t/s.  Board result: 2.59 t/s prefill, 2.20 t/s
+    decode at 250 MHz (-t 4).
+
+    Architecture: CPU transposes Q4_K nibbles to element-major DDR format. FPGA
+    load functions write nibbles into URAM tiles (56 of 64 used). MAC extracts
+    nibbles at compile-time .range() positions — zero get_byte() mux, zero nibble
+    shift logic. K=4 throughout (32 MAC chains in WV, 4×4 in output).
+
+    Vivado implementation: 103,684 LUTs (88.5%), 56 URAM (87.5%), 338 DSP (27%).
+    Setup timing closed after HLS re-synthesis at 3.33 ns / 0.1 ns uncertainty
+    + Vivado Exploration directives. Hold clean.
+
+    Why 2.20 t/s instead of 5.0 t/s: HLS synthesis report reveals the LOAD_NIB_WV
+    loop degrades to II=4 (not II=1). Root cause: each 128-bit DDR word fans out
+    to 4 independent URAM tiles simultaneously — HLS cannot schedule 4 parallel
+    URAM writes at II=1.  X1/X2 latency balloons from projected 1.18M to 2.60M
+    cycles.  Output load (also 4 URAM writes, but sequential element indexing)
+    degrades less severely to ~II=2 (1.57M vs 1.18M).
+
+    Per-layer total: ~4.19M cycles (was projected 1.18M).  At 250 MHz with
+    ~125 ms CPU overhead: 393 ms/token → 2.54 t/s theoretical, 2.20 observed.
+
+    Power is lower than hybrid K=2 (4.83 W vs 5.01 W), consistent with URAM
+    replacing LUTRAM-heavy mux trees.
+
+52. URAM-transposed K=4 — II=2 fix for WV nibble load.
+    LOAD_NIB_WV pipeline directive changed from II=1 to II=2.  HLS will schedule
+    2 URAM writes per cycle instead of trying (and failing) to do 4.  The 2-write
+    pattern is proven achievable by the output path's LOAD_NIB_DOWN which already
+    achieves ~II=2 in practice.
+
+    Expected: X1/X2 drops from 2.60M to ~1.55M cycles.  Per layer from 4.19M to
+    ~3.14M.  Estimated decode: ~2.9 t/s at 250 MHz (32% improvement).
+

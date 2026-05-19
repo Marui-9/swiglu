@@ -125,10 +125,11 @@ static void load_row_wv_urm(const ap_uint<128> *W_wide, int row,
         }
     }
 
-    // ── Load nibbles: 64 DDR words → 4 URAM tiles, II=1 ─────────────────────
+    // ── Load nibbles: 64 DDR words → 4 URAM tiles, II=2 ─────────────────────
+    // II=2: 2 URAM writes per cycle avoids the 4-write port conflict that degraded II=4.
     // DDR word e: t0[e]=elem[4e], t1[e]=elem[4e+1], t2[e]=elem[4e+2], t3[e]=elem[4e+3]
     LOAD_NIB_WV: for (int e = 0; e < URM_WV_NIB_WORDS; e++) {
-        #pragma HLS PIPELINE II=1
+        #pragma HLS PIPELINE II=2
         ap_uint<128> ddr = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + URM_WV_HDR_WORDS + e];
         t0[e] = ddr.range(31,  0);
         t1[e] = ddr.range(63,  32);
