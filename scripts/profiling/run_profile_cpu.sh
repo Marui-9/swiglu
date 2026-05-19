@@ -47,7 +47,7 @@ sleep 0.5
 echo "" | tee -a "$LOG"
 echo "=== Summary CPU T$THREADS ===" | tee -a "$LOG"
 
-TPS_LINE=$(grep -E 't/s' "$LOG" | tail -1 || true)
+TPS_LINE=$(grep -E 't/s.*±' "$LOG" | tail -1 || true)
 [ -n "$TPS_LINE" ] && echo "Throughput: $TPS_LINE" | tee -a "$LOG"
 
 POWER_SAMPLES=$(grep -oP 'power=\K[0-9.]+' "$LOG" || true)

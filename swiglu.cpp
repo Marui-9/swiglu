@@ -125,11 +125,11 @@ static void load_row_wv_urm(const ap_uint<128> *W_wide, int row,
         }
     }
 
-    // ── Load nibbles: 64 DDR words → 4 URAM tiles, II=2 ─────────────────────
-    // II=2: 2 URAM writes per cycle avoids the 4-write port conflict that degraded II=4.
+    // ── Load nibbles: 64 DDR words → 4 BRAM tiles, II=1 ─────────────────────
+    // BRAM writes are 1-cycle; 4 independent BRAM tiles → no port conflict.
     // DDR word e: t0[e]=elem[4e], t1[e]=elem[4e+1], t2[e]=elem[4e+2], t3[e]=elem[4e+3]
     LOAD_NIB_WV: for (int e = 0; e < URM_WV_NIB_WORDS; e++) {
-        #pragma HLS PIPELINE II=2
+        #pragma HLS PIPELINE II=1
         ap_uint<128> ddr = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + URM_WV_HDR_WORDS + e];
         t0[e] = ddr.range(31,  0);
         t1[e] = ddr.range(63,  32);
@@ -444,22 +444,22 @@ static void compute_X1(
         ap_uint<32> r##t0[URM_WV_TILE_DEPTH], r##t1[URM_WV_TILE_DEPTH]; \
         ap_uint<32> r##t2[URM_WV_TILE_DEPTH], r##t3[URM_WV_TILE_DEPTH];
     DECL_URAM_TILES(r0) DECL_URAM_TILES(r1) DECL_URAM_TILES(r2) DECL_URAM_TILES(r3)
-    #pragma HLS BIND_STORAGE variable=r0t0 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r0t1 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r0t2 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r0t3 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r1t0 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r1t1 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r1t2 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r1t3 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r2t0 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r2t1 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r2t2 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r2t3 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r3t0 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r3t1 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r3t2 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r3t3 type=ram_1p impl=uram
+    #pragma HLS BIND_STORAGE variable=r0t0 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r0t1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r0t2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r0t3 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r1t0 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r1t1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r1t2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r1t3 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r2t0 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r2t1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r2t2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r2t3 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r3t0 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r3t1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r3t2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r3t3 type=ram_1p impl=bram
 
     float  d0[WV_BLOCKS_PER_ROW], dmin0[WV_BLOCKS_PER_ROW];
     float  d1[WV_BLOCKS_PER_ROW], dmin1[WV_BLOCKS_PER_ROW];
@@ -521,22 +521,22 @@ static void compute_X2(
         ap_uint<32> r##t0[URM_WV_TILE_DEPTH], r##t1[URM_WV_TILE_DEPTH]; \
         ap_uint<32> r##t2[URM_WV_TILE_DEPTH], r##t3[URM_WV_TILE_DEPTH];
     DECL_URAM_X2(r0) DECL_URAM_X2(r1) DECL_URAM_X2(r2) DECL_URAM_X2(r3)
-    #pragma HLS BIND_STORAGE variable=r0t0 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r0t1 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r0t2 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r0t3 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r1t0 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r1t1 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r1t2 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r1t3 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r2t0 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r2t1 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r2t2 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r2t3 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r3t0 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r3t1 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r3t2 type=ram_1p impl=uram
-    #pragma HLS BIND_STORAGE variable=r3t3 type=ram_1p impl=uram
+    #pragma HLS BIND_STORAGE variable=r0t0 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r0t1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r0t2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r0t3 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r1t0 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r1t1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r1t2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r1t3 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r2t0 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r2t1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r2t2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r2t3 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r3t0 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r3t1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r3t2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=r3t3 type=ram_1p impl=bram
 
     float  d0[WV_BLOCKS_PER_ROW], dmin0[WV_BLOCKS_PER_ROW];
     float  d1[WV_BLOCKS_PER_ROW], dmin1[WV_BLOCKS_PER_ROW];
@@ -667,22 +667,22 @@ static void compute_output(
         ap_uint<32> g1r0[URM_NIB_TILE_DEPTH], g1r1[URM_NIB_TILE_DEPTH], g1r2[URM_NIB_TILE_DEPTH], g1r3[URM_NIB_TILE_DEPTH];
         ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], g2r1[URM_NIB_TILE_DEPTH], g2r2[URM_NIB_TILE_DEPTH], g2r3[URM_NIB_TILE_DEPTH];
         ap_uint<32> g3r0[URM_NIB_TILE_DEPTH], g3r1[URM_NIB_TILE_DEPTH], g3r2[URM_NIB_TILE_DEPTH], g3r3[URM_NIB_TILE_DEPTH];
-        #pragma HLS BIND_STORAGE variable=g0r0 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g0r1 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g0r2 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g0r3 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g1r0 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g1r1 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g1r2 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g1r3 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g2r0 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g2r1 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g2r2 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g2r3 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g3r0 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g3r1 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g3r2 type=ram_1p impl=uram
-        #pragma HLS BIND_STORAGE variable=g3r3 type=ram_1p impl=uram
+        #pragma HLS BIND_STORAGE variable=g0r0 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g0r1 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g0r2 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g0r3 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g1r0 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g1r1 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g1r2 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g1r3 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g2r0 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g2r1 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g2r2 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g2r3 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g3r0 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g3r1 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g3r2 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=g3r3 type=ram_1p impl=bram
 
         // Headers: 4 rows × 32 blocks
         float  d0[DOWN_BLOCKS_PER_ROW], dmin0[DOWN_BLOCKS_PER_ROW];
