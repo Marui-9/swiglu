@@ -1,4 +1,4 @@
-\documentclass[manuscript,]{acmart} %authordraft
+\documentclass[manuscript, authordraft]{acmart}
 \AtBeginDocument{% 
   \providecommand\BibTeX{{%
     Bib\TeX}}}
@@ -427,38 +427,44 @@ The results are fused in a gating stage with a SiLU nonlinearity and element-wis
 
 The implementation is organized as a streaming dataflow pipeline where each stage sustains a throughput of one element per cycle ($II=1$). Performance is primarily determined by memory bandwidth and burst efficiency. Data movement is quantified by bytes transferred per token and sustained bandwidth at 250 MHz.
 
-The K=4 designation indicates that four weight rows are processed per iteration of
-each MAC stage, yielding 32 parallel INT32 multiply-accumulate chains (8 blocks
-$\times$ 4 rows) in the projection stages and 32 chains shared across 4 sequential
-groups in the down-projection stage.
-This row parallelism is supported by a CPU-side pre-decoding step: the sub-block
-scales and minima (sc6, mn6) that Q4\_K normally stores interleaved at bit-level
-offsets within each 144-byte block header are unpacked into flat INT8 arrays, and
-the 4-bit nibbles are reordered into element-major 128-bit words for direct BRAM
-storage.
-The FPGA MAC path accesses nibbles via compile-time \texttt{.range()} indexing on
-the 128-bit word, eliminating the runtime multiplexer trees that would otherwise
-dominate LUT consumption.
-A structurally simpler quantisation format such as Q4\_0 (one fp16 block scale per
-32 elements, no sub-block scales, no minimum subtraction) would achieve the same
-effect without CPU-side pre-processing, mapping directly to a single DSP48E2 per
-MAC, but would require requantising the model and a separate perplexity validation
-step.
-The Q4\_K format was retained because the publicly available model is distributed
-in this format.
-
-This format is a product of the model's hardware-in-the-loop co-design process,
-which optimised the architecture and quantisation scheme specifically for CPU-based
-edge inference on Arm NEON processors~\cite{amini2025lfm2technicalreport}; it was
-never intended for FPGA fabric, where its irregular bit-level data layout penalises
-logic utilisation far more than it does on a general-purpose SIMD pipeline.
-Across the full mixed-precision datapath, the estimated accuracy degradation
-relative to the CPU's FP32 reference is dominated by the Q4\_K weight quantisation
-error (approximately 6\%), with the INT8 input quantisation adding under 0.5\% and
-the INT8 intermediate caches contributing at most 1\% additional relative error.
-%Subnormal fp16 scale values are handled via a custom bit-manipulation conversion
-%that avoids the Denormals-As-Zero flushing behaviour of the standard HLS
-%half-precision type.
+The accelerator consumes the model's native Q4\_K weight format directly, preserving
+the accuracy of the pre-quantized model at the cost of additional hardware complexity.
+In Q4\_K, each 256-element weight block packs 4-bit nibbles alongside two fp16
+per-block scales ($d$ and $d_{min}$) and sixteen 6-bit sub-block scale factors
+interleaved at bit-level offsets within a 144-byte block.
+Dequantising a single weight value during the MAC operation therefore requires
+three operands (nibble, sub-block scale, and block scale) extracted from
+non-contiguous regions of the compressed representation.
+On the FPGA, this extraction is implemented via runtime byte-indexing into 128-bit
+word arrays, generating approximately 40 independent multiplexer trees per pipeline
+stage that dominate the design's logic consumption: the output projection stage alone
+accounts for over 58\,000 of the 98\,000 LUTs used by the accelerator core, or
+roughly 51\% of the device's total LUT capacity.
+The triple multiply (INT8 $\times$ INT4 $\times$ UINT6) does not map efficiently to
+the DSP48E2 slice, whose native operation is a single $27 \times 18$-bit product; as
+a result, only 324 of the 1\,248 available DSP slices (26\%) are utilised, while the
+remaining 924 sit idle because they cannot contribute to either the multi-operand MAC
+or the mux logic.
+A structurally simpler format such as Q4\_0 (one fp16 scale per 32 elements, no
+sub-block scales, no minimum subtraction) would reduce each weight decode to an
+INT8 $\times$ INT4 multiply---mapping directly to one DSP48E2 per MAC---and would
+eliminate the mux-tree contribution to LUT consumption without changing the per-row
+DDR traffic (1\,152 bytes for both formats).
+The Q4\_K format was retained because the publicly available model is distributed in
+this format; switching to Q4\_0 would require a separate perplexity validation step.
+This format is a product of the model's hardware-in-the-loop co-design process, which
+optimised the architecture and quantisation scheme specifically for CPU-based edge
+inference on Arm NEON processors~\cite{amini2025lfm2technicalreport}; it was never
+intended for FPGA fabric, where its irregular bit-level data layout penalises logic
+utilisation far more than it does on a general-purpose SIMD pipeline.
+Across the full mixed-precision datapath, the estimated accuracy degradation relative
+to the CPU's FP32 reference is dominated by the Q4\_K weight quantisation error
+(approximately 6\%), with the INT8 input quantisation adding under 0.5\% and the
+INT8 intermediate caches contributing at most 1\% additional relative error.
+The eight layers originally using Q6\_K down-projection weights were requantised to
+Q4\_K (estimated perplexity penalty below 0.1), and subnormal fp16 scale values are
+handled via a custom bit-manipulation conversion that avoids the Denormals-As-Zero
+flushing behaviour of the standard HLS half-precision type.
 
 \subsection*{Stage 1: Load $x$ (INT8)}
 
@@ -483,30 +489,44 @@ bus at \SI{4.00}{GB/s} and completes in 202 cycles (\SI{0.81}{\micro\second}).
 
 Two GEMV operations compute $X_1 = x \cdot W$ and $X_2 = x \cdot V$ in parallel
 on independent AXI ports and BRAM banks.
-Weights are pre-decoded on the CPU into flat INT8 sub-block scales and
-element-major nibble words; the FPGA never handles the interleaved Q4\_K header
-format.
-With $K=4$, four rows are processed per iteration (four sequential 80-word AXI
-bursts of 16 header and 64 nibble words each).
-Nibble extraction uses compile-time \texttt{.range()} indexing, eliminating
-the runtime multiplexer trees that dominated LUT consumption in the earlier
-K=2 design.
-The 32 parallel INT32 MAC chains (8 blocks $\times$ 4 rows) deliver
-\SI{1.62}{Gops/s} (20\% of \SI{8.00}{Gops/s} peak), limited by sequential
-per-row loads that consume 75\% of the 10.40\,ms iteration (948 of 1,270 cycles).
-DDR bandwidth reaches \SI{962}{MB/s} (24\% of the \SI{4.00}{GB/s} peak) across
-the \SI{10.0}{MB} per-matrix transfer.
+Weights are pre-decoded on the CPU into flat INT8 sub-block scales (sc6, mn6)
+and element-major nibble words; the FPGA never handles the interleaved Q4\_K
+header format.
+With $K=4$, four rows are processed per iteration via four sequential
+80-word AXI bursts per iteration (16 header + 64 nibble words each).
+Nibble extraction uses compile-time \texttt{.range()} indexing,
+eliminating the runtime multiplexer trees that dominated LUT consumption
+in the earlier K=2 design.
+
+\begin{itemize}
+    \item \textbf{Timing:} 2,600,961 cycles (\SI{10.40}{ms}) per matrix; X1 and X2 run in parallel.
+    \item \textbf{DDR:} \SI{10.0}{MB} per matrix at \SI{962}{MB/s} (24\% of \SI{4.00}{GB/s} peak).
+    \item \textbf{Arithmetic:} 32 parallel INT32 MAC chains (8 blocks $\times$ 4 rows, K=4);
+          DSP-mapped via \texttt{BIND\_OP}; effective \SI{1.62}{Gops/s}
+          (20\% of \SI{8.00}{Gops/s} peak).
+    \item \textbf{Bottleneck:} Sequential per-row loads (4 calls $\times$ 237 cycles = 948 cycles,
+          75\% of iteration). AXI burst setup overhead keeps the MAC array
+          underutilised despite the expanded parallelism.
+\end{itemize}
 
 \subsection*{Stage 3: Gated Activation and Quantization}
 
-The fused gate operation runs entirely on-chip from the X1\_cache and X2\_cache
-BRAMs using a two-pass scheme over 8,192 elements: the first pass finds the
-maximum absolute value across 8 parallel reduction lanes, the second recomputes
-and requantises to INT8 for storage in the 8-way banked URAM gate\_cache.
-At 16,553 cycles (\SI{66}{\micro\second}) and approximately 65K FP operations
-per pass, the stage contributes under 1\% of per-layer time.
+The fused operation $\text{gate} = \text{SiLU}(X_1) \cdot X_2$ is computed
+on-chip from the X1\_cache and X2\_cache BRAMs using a two-pass scheme.
+The first pass finds the maximum absolute gate value across 8 parallel
+reduction lanes; the second pass recomputes the SiLU-gate product and
+quantises it to INT8 using the per-batch scale.
+The result is written to an 8-way banked URAM gate\_cache for the down
+projection stage.
 
-
+\begin{itemize}
+    \item \textbf{Timing:} 16,553 cycles (\SI{66}{\micro\second}).
+    \item \textbf{DDR:} None---all data on-chip (BRAM read, URAM write).
+    \item \textbf{Arithmetic:} $\approx 65$K FP operations per pass
+          ($\approx \SI{1.0}{GFLOPS}$); sigmoid via 4096-entry BRAM-ROM LUT.
+    \item \textbf{Bottleneck:} Sequential two-pass pipeline over 8,192 elements;
+          negligible relative to total layer time (0.6\%).
+\end{itemize}
 
 %\subsection*{Stage 4: Down Projection}
 %\textbf{Algorithm:} Projects gated activation back to model dimension via $\text{out} = \text{gate} \cdot W_{down}$. $K=2$ processes two rows per iteration; organized in 4 groups of 8 blocks.
@@ -522,20 +542,37 @@ per pass, the stage contributes under 1\% of per-layer time.
 \subsection*{Stage 4: Down Projection}
 
 The gated activation is projected back to model dimension via
-$\text{out} = \text{gate} \cdot W_{down}$ using the same CPU-pre-decoded weight
-format as Stages~2a/2b.
+$\text{out} = \text{gate} \cdot W_{down}$.
+Weights use the same CPU-pre-decoded format as Stages~2a/2b, with four output
+groups packed into each 128-bit DDR word and extracted as 32-bit nibble tiles
+at compile time.
 With $K=4$, four output rows are processed per iteration across 32 blocks
 organised into 4 sequential groups of 8; all four rows are UNROLL'd per group
-to share 32 INT32 MAC chains across 1,024 MAC cycles.
-DDR bandwidth reaches \SI{1.60}{GB/s} (40\% of \SI{4.00}{GB/s} peak) for the
-\SI{10.0}{MB} transfer (320 words per row $\times$ 2,048 rows).
-The stage is compute-bound (MAC 1,024 cycles vs.\ load 476 cycles per row set),
-with the 32-way LUTRAM mux in the header decode and 32-block MAC routing
-consuming approximately 44,000 LUTs.
-Total latency is 1,567,818 cycles (\SI{6.27}{ms}).
+to share the 32 MAC chains.
 
+\begin{itemize}
+    \item \textbf{Timing:} 1,567,818 cycles (\SI{6.27}{ms}).
+    \item \textbf{DDR:} \SI{10.0}{MB} per token at \SI{1.60}{GB/s} (40\% of \SI{4.00}{GB/s} peak);
+          320 words per row $\times$ 2,048 rows, four sequential AXI bursts per iteration.
+    \item \textbf{Arithmetic:} 32 parallel INT32 MAC chains per group (8 blocks $\times$ 4 rows),
+          shared across groups; 4 groups $\times$ 256 cycles = 1,024 MAC cycles per iteration.
+    \item \textbf{Bottleneck:} Compute-bound (MAC 1,024 cycles vs.\ load 476 cycles per row set).
+          The 32-way LUTRAM mux in the header decode and 32-block MAC routing are the
+          primary LUT consumers (approximately 44,000 LUTs).
+\end{itemize}
 
+The DATAFLOW interval is determined by the slowest stage (Stages~2a/2b), giving a
+per-layer steady-state timing of:
 
+\medskip
+{\centering
+Stage 1: 202 cycles (0.81\,\textmu s) \quad$\rightarrow$\quad
+Stages 2a $\parallel$ 2b: 2,600,961 cycles (10.40\,ms) \quad$\rightarrow$\quad
+Stage 3: 16,553 cycles (66\,\textmu s) \quad$\rightarrow$\quad
+Stage 4: 1,567,818 cycles (6.27\,ms)\par
+\medskip
+Total interval = 2,600,962 cycles = 10.40\,ms per layer at 250\,MHz.
+\par}
 
 \begin{figure}[htb!]
 \centering
@@ -552,30 +589,30 @@ Total latency is 1,567,818 cycles (\SI{6.27}{ms}).
 ]
 
 % Stage 1 (centered)
-\node[stageStd] (loadx) {\textbf{Stage 1}\\Load $x$ (INT8)\\202 cy / 0.81\,\textmu s};
+\node[stageStd] (loadx) {\textbf{Stage 1}\\Load $x$ (INT8)};
 
 % Split (tight + symmetric)
 \node[mem, below left=3mm and 2mm of loadx] (x1buf) {$x_1$ bank};
 \node[mem, below right=3mm and 2mm of loadx] (x2buf) {$x_2$ bank};
 
 % Stage 2
-\node[stageWorst, below=7mm of x1buf] (x1) {\textbf{Stage 2a}\\$X_1=xW_{gate}$\\2.60 Million cycles / 10.40\,ms};
-\node[stageWorst, below=7mm of x2buf] (x2) {\textbf{Stage 2b}\\$X_2=xW_{up}$\\2.60 Million cycles / 10.40\,ms};
+\node[stageWorst, below=7mm of x1buf] (x1) {\textbf{Stage 2a}\\$X_1=xW_{gate}$};
+\node[stageWorst, below=7mm of x2buf] (x2) {\textbf{Stage 2b}\\$X_2=xW_{up}$};
 
 % Caches
 \node[mem, below=of x1] (x1cache) {$X_1$};
 \node[mem, below=of x2] (x2cache) {$X_2$};
 
 % Stage 3 (left branch only)
-\node[stageStd, below=7mm of x1cache] (silu) {\textbf{Stage 3}\\SiLU($X_1$)\\16.6 Thousand cycles / 66\,\textmu s};
+\node[stageStd, below=7mm of x1cache] (silu) {\textbf{Stage 3}\\SiLU($X_1$)};
 
 % Stage 4 (CENTERED BETWEEN BRANCHES)
 \node[stageLow, below=10mm of $(silu)!0.5!(x2cache)$] (gate)
-{\textbf{Stage 4}\\gate=SiLU($X_1$)$\cdot X_2$\\16.6 Thousand cycles / 66\,\textmu s};
+{\textbf{Stage 4}\\gate=SiLU($X_1$)$\cdot X_2$};
 
 % Stage 5
 \node[stageStd, below=of gate] (down)
-{\textbf{Stage 5}\\$gate \cdot W_{down}^{T}$\\1.57 Million cycles / 6.27\,ms};
+{\textbf{Stage 5}\\$gate \cdot W_{down}^{T}$};
 
 % Output
 \node[mem, below=of down] (out) {out};
@@ -604,7 +641,7 @@ Total latency is 1,567,818 cycles (\SI{6.27}{ms}).
 at ($(out.south west)+(0mm,-6mm)$) {\fcolorbox{red!75!black}{red!18}{\strut\hspace{0.9em}}~Worst utilization\\
 \fcolorbox{orange!80!black}{orange!22}{\strut\hspace{0.9em}}~Low utilization};
 
-\end{tikzpicture}x`'
+\end{tikzpicture}
 \caption{Compact dataflow of the SwiGLU accelerator.}
 \label{fig:swiglu_compact}
 \end{figure}
@@ -695,7 +732,7 @@ FPGA+CPU to 544\,ms at T2 FPGA+CPU.
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.65\linewidth]{images/utiliz.png}
+  \includegraphics[width=\linewidth]{images/utiliz.png}
   \caption{Utilization of the Kria KV260 on-board resources for the implementation of the feed-forward block accelerator.}
   \label{fig:utilization}
 \end{figure}

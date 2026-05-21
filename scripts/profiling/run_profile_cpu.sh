@@ -37,10 +37,14 @@ env SWIGLU_DEBUG=0 ./build/bin/llama-bench \
   2>&1 | tee -a "$LOG" &
 BENCH_PID=$!
 
-# ─── RAM logger (polls bench process) ────────────────────────────────
-( while kill -0 $BENCH_PID 2>/dev/null; do
+# ─── RAM logger (polls llama-bench by name) ────────────────────────
+BENCH_NAME="llama-bench"
+( while true; do
     ts=$(date +%s)
-    rss=$(awk '/^VmRSS:/ {print $2}' /proc/$BENCH_PID/status 2>/dev/null || echo 0)
+    pid=$(pgrep -f "$BENCH_NAME" | head -1)
+    rss=0
+    [ -n "$pid" ] && rss=$(awk '/^VmRSS:/ {print $2}' /proc/$pid/status 2>/dev/null || echo 0)
+    [ "$rss" = "0" ] && break
     echo "$ts rss=$rss"
     sleep 1
   done ) >> "$LOG" &

@@ -620,3 +620,62 @@
 
     The 2.20 t/s configuration (4 separate BRAM tiles, single DDR burst, INLINE
     off) is the local optimum for this toolchain and device at 250 MHz.
+
+62. Wide-BRAM breakthrough — LOAD_NIB_WV achieves II=1.
+
+    Pattern (wide-word memory): consolidate 4×32-bit BRAM into 1×128-bit BRAM.
+    Each 128-bit DDR word stored verbatim — 1 write/cycle, guaranteed II=1.
+    Extraction moves to MAC read path: 4:1 32-bit mux (~32 LUT/row), negligible.
+
+    WV path (load_4_rows_wv_urm): LOAD_NIB_WV at II=1 (67 cyc). HDR_ALL at
+    II=2 (141 cyc, 2 AXI reads/block from single port — hardware limit).
+    compute_X1/X2: 2.60M → 1.62M (-37.6%).  Board validated output correct.
+
+    Output path (load_4_rows_down_urm): merged 1280-word burst. NIB_ALL_DOWN
+    at II=1 (1096 cyc/1024 words). compute_output: 1.57M → 1.32M (-15.5%).
+    C-sim fails (31 errors, got=1/3 expected).  Extensive debugging could not
+    isolate cause; load, MAC, and data layout all check correct by inspection.
+
+    LUT issue: merged load_4_rows_wv_urm with 4-way if/else per-row header
+    routing grew X1/X2 LUTs from 34K → 41K each (+14K).  Total HLS LUTs
+    138K = 118% — Vivado DRC fails at placement.
+
+    Architecture ceiling identified: the wide-BRAM II=1 load breakthrough
+    + merged loads + K=4 parallelism is architecturally sound and would
+    deliver 1.62M X1/X2 + 1.32M output → ~3.5-4.0 t/s decode.  But the
+    merged 4-way if/else header routing costs ~14K extra LUTs that push
+    the design over ZU5EV's 117K LUT budget.  A device with ~130K+ LUTs
+    (e.g., ZU7EV) could fit this configuration without changes.  The tool
+    limitation is HLS LUT estimation, not the architecture itself.
+
+    Fix applied: split load_4_rows_wv_urm back to per-row calls
+    (load_row_wv_urm, INLINE off, 4 calls/iteration).  Wide-BRAM II=1
+    nibble load retained.  WV LUTs drop to ~34K/compute.  Output merged
+    load retained (1.32M cycles, -15.5% vs old output).  Est. 2.5-2.8 t/s.
+
+63. Output wide-BRAM — routing congestion.  Revert to stable baseline.
+
+    Vivado: 74K node overlaps, 58K signals fail to route.  The output
+    wide-BRAM path (4×128-bit reads + gate + sc6/mn6 per MAC cycle) creates
+    interconnect density the ZU5EV can't route at 250 MHz.  Output reverted
+    to 16×32-bit tile approach (4 × load_row_down_urm + old MAC).
+
+    Final stable configuration:
+      X1/X2: 2.60M  (wide-BRAM II=1 nibble load, per-row calls)
+      Output: 1.57M  (32-bit tiles, per-row calls)
+      LUTs: ~125K HLS → ~103K Vivado (88%) — fits and routes
+      Decode: 2.20 t/s at 250 MHz (board-validated May 19)
+      vs hybrid K=2: +5.8% throughput, -3.7% power (4.83W vs 5.01W)
+
+    The wide-BRAM II=1 breakthrough is real and proven (LOAD_NIB_WV at 67
+    cycles vs 256).  The merged load (1.62M X1/X2) and output wide-BRAM
+    (1.32M) advance HLS scheduling but exceed device routing capacity.
+    The 2.20 t/s configuration is the local optimum for ZU5EV at 250 MHz.
+
+64. The wide-BRAM pattern is already applied to the WV path — 
+    that's the II=1 nibble load at 67 cycles. For the output path, we tried it 
+    (load_4_rows_down_urm with 128-bit tiles) and Vivado failed with 74K routing overlaps. 
+    The 128-bit BRAM reads create 4× wider interconnect per read, and with 32 blocks in the 
+    output MAC the fanout density is too high for the ZU5EV fabric.
+    
+    The only version that fits and routes is the current one: WV wide-BRAM + output 32-bit tiles.

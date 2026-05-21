@@ -1,0 +1,11 @@
+Name     Slack  Levels  Routes  High_Fanout              From                                                       To  Total_Delay  Logic_Delay  Net_Delay  Requirement
+Path 1  -0.099       5       4            8  ...UTPUT_INST/CLK  ...compute_output...reg_reg/DSP_OUTPUT_INST/ALU_OUT[25]        4.008        1.638       2.37        4.0
+Path 2  -0.099       5       4            8  ...UTPUT_INST/CLK  ...compute_output...reg_reg/DSP_OUTPUT_INST/ALU_OUT[26]        4.008        1.638       2.37        4.0
+Path 3  -0.099       5       4            8  ...UTPUT_INST/CLK  ...compute_output...reg_reg/DSP_OUTPUT_INST/ALU_OUT[27]        4.008        1.638       2.37        4.0
+Path 4  -0.099       5       4            8  ...UTPUT_INST/CLK  ...compute_output...reg_reg/DSP_OUTPUT_INST/ALU_OUT[28]        4.008        1.638       2.37        4.0
+Path 5  -0.099       5       4            8  ...UTPUT_INST/CLK  ...compute_output...reg_reg/DSP_OUTPUT_INST/ALU_OUT[29]        4.008        1.638       2.37        4.0
+Path 6  -0.099       5       4            8  ...UTPUT_INST/CLK  ...compute_output...reg_reg/DSP_OUTPUT_INST/ALU_OUT[30]        4.008        1.638       2.37        4.0
+Path 7  -0.099       5       4            8  ...UTPUT_INST/CLK  ...compute_output...reg_reg/DSP_OUTPUT_INST/ALU_OUT[31]        4.008        1.638       2.37        4.0
+Path 8  -0.099       5       4            8  ...UTPUT_INST/CLK  ...compute_output...reg_reg/DSP_OUTPUT_INST/ALU_OUT[32]        4.008        1.638       2.37        4.0
+Path 9  -0.099       5       4            8  ...UTPUT_INST/CLK  ...compute_output...reg_reg/DSP_OUTPUT_INST/ALU_OUT[33]        4.008        1.638       2.37        4.0
+Path 10 -0.099       5       4            8  ...UTPUT_INST/CLK  ...compute_output...reg_reg/DSP_OUTPUT_INST/ALU_OUT[34]        4.008        1.638       2.37        4.0

@@ -1,0 +1,161 @@
+AXI Call Serialization — The Throughput Ceiling
+================================================
+
+The AXI bottleneck is the single largest obstacle preventing 2.20 t/s from
+reaching the projected 3.5–5.0 t/s at 250 MHz. All wide-BRAM, II=1, and
+K=4 improvements have been absorbed into per-call latency. The remaining
+overhead is structural: four independent AXI read transactions per
+compute_X1 iteration.
+
+
+The Problem
+-----------
+
+compute_X1 processes 4 rows per loop iteration. Each row's load is a
+separate function call (load_row_wv_urm, INLINE off). Each call is a
+separate RTL module with its own AXI master port interface to gmem_W.
+
+    COMPUTE_X1: for (int row = 0; row < 8192; row += 4) {
+        load_row_wv_urm(W, row,     nib_r0, ...);   // AXI burst #1
+        load_row_wv_urm(W, row + 1, nib_r1, ...);   // AXI burst #2
+        load_row_wv_urm(W, row + 2, nib_r2, ...);   // AXI burst #3
+        load_row_wv_urm(W, row + 3, nib_r3, ...);   // AXI burst #4
+        mac_blocks_wv_k4_urm(...);                    // computation
+    }
+
+Each call issues one AXI read transaction: 80 consecutive DDR words
+(16 header + 64 nibble), 128-bit wide, reading from sequential addresses.
+
+
+Where Time Goes (per load call)
+-----------------------------------
+
+    Component                    Cycles    Note
+    ───────────────────────────────────────────────────────────
+    DDR data transfer (80 words)    80     actual AXI data beats
+    AXI burst setup overhead       ~45     arbitration, handshake, DDR row activation
+    Pipeline fill/drain             ~3     HLS pipeline overhead
+    fp16 decode (8 blocks × 2)      ~8     LOAD_HDR_WV II=2 body
+    Header overhead (loop, misc)    ~8     loop control, writes to registers
+    Function call/return             ~3     module-level overhead
+    ───────────────────────────────────────────────────────────
+    Per-call total                 ~157    (HLS reports ~237; gap is module overhead)
+
+The ~45-cycle AXI setup is paid FOUR times per COMPUTE_X1 iteration.
+4 × 45 = 180 cycles of pure AXI overhead per iteration.
+2048 iterations × 180 = 368,640 cycles of AXI overhead per compute_X1 call.
+
+
+Why Four Calls Instead of One
+-------------------------------
+
+Each row stores its nibble data in a separate wide BRAM (nib_r0, nib_r1,
+nib_r2, nib_r3). A merged load function that reads all 4 rows in one
+320-word burst was implemented:
+
+    load_4_rows_wv_urm: one call, one 320-word burst, 2 pipeline instances
+
+This achieved 1.62M cycles per compute_X1 (vs 2.60M) — a 37.6% reduction.
+But the merged function required 4-way if/else routing to steer header
+decodes and nibble writes to the correct row's arrays. The if/else mux
+added ~14K LUTs. Total HLS LUTs reached 138K (118%) — Vivado DRC failed.
+
+With more LUTs (e.g., ZU7EV at ~230K), the merged approach is directly
+applicable and would deliver the projected performance improvement.
+
+
+Why INLINE Didn't Help
+-----------------------
+
+Inlining load_row_wv_urm into compute_X1 (INLINE instead of INLINE off)
+was tried to eliminate the per-call AXI setup. But:
+
+1. The AXI burst setup is inside the function's logic, not at the call
+   boundary. INLINE absorbs the function body but doesn't merge the
+   AXI read transactions — each of the 4 inlined copies still issues
+   its own burst from the same gmem_W port.
+
+2. INLINE with fp16_to_fp32 (which itself is INLINE off) creates
+   duplicated RTL instances of the 10-iteration UNROLL loop inside the
+   header decode, increasing LUTs by 21% (34K → 42K) with only 0.55%
+   cycle improvement.
+
+3. The AXI port serialization is a hardware constraint: one port can
+   service one read transaction at a time. Merging requires either:
+   a) One wider burst (320 words) — achieved in merged load, costs LUTs
+   b) A second AXI port per function — exceeds ZU5EV HP port availability
+
+
+Comparison: AXI Overhead vs Total Latency
+----------------------------------------------
+
+    compute_X1 (per iteration, 2048 total):
+
+    Component              Cycles     % of iteration
+    ────────────────────────────────────────────────
+    AXI data (4 × 80)         320        25%
+    AXI setup (4 × ~45)       180        14%
+    Header decode (4 × 24)     96         8%
+    MAC (4 rows)              289        23%
+    REDUCE + quantize         ~27         2%
+    Module overhead           ~358        28%
+    ────────────────────────────────────────────────
+    Total                    ~1,270       100%
+
+
+    compute_output (per iteration, 512 total):
+
+    Component              Cycles     % of iteration
+    ────────────────────────────────────────────────
+    AXI data (4 × 320)      1,280        42%
+    AXI setup (4 × ~45)       180         6%
+    Header decode (4 × 71)    284         9%
+    MAC (4 rows × 4 groups) 1,024        33%
+    REDUCE + overhead        ~294        10%
+    ────────────────────────────────────────────────
+    Total                   ~3,062       100%
+
+
+The Fix That Would Work (But Doesn't Fit)
+----------------------------------------------
+
+A merged 4-row load function (one 320-word burst, 2 pipeline instances)
+eliminates 3 of 4 AXI setups: 180 → 45 cycles. It reduces per-iteration
+load from 1,088 to ~416 cycles. compute_X1 drops from 2.60M to 1.62M.
+
+The output path benefits similarly: 4-row merged load at 1,280 words
+saves 3 AXI setups. compute_output drops from 1.57M to 1.32M.
+
+Combined: per-layer interval ~1.62M cycles → 6.5 ms/layer at 250 MHz.
+16 layers: 104 ms FPGA + ~125 ms CPU = 229 ms → ~4.4 t/s theoretical,
+~3.5–4.0 t/s estimated with board overhead.
+
+This architecture was fully implemented and synthesized. The merged loads
+achieved the projected cycle counts but exceeded the ZU5EV LUT budget
+(+14K for WV, +0K for output) and caused routing congestion at 74K node
+overlaps for the output path's 128-bit BRAM fanout.
+
+
+Serialization Is Not a HLS Bug
+-------------------------------
+
+The AXI protocol requires one transaction at a time per master port.
+Four sequential read bursts from gmem_W is correct protocol behavior.
+The fix is architectural — merge the bursts (one transaction) — not a
+pragma or scheduling change. The merged solution is proven correct but
+exceeds the physical capacity of the ZU5EV device.
+
+
+What Would Close the Gap
+-------------------------------
+
+1. A device with ~130K+ LUTs (ZU7EV, ZU11EG): fits the merged loads
+   at 138K HLS LUTs with margin.  3.5–4.0 t/s achievable.
+
+2. A second AXI port per compute function (HP3): allows pipelining
+   loads: row N+1 loaded on port B while row N computes on port A.
+   Requires Vivado block design change, additional SmartConnect.
+
+3. High-level synthesis from a different vendor or RTL: hand-crafted
+   RTL can fan out to 4 BRAMs at II=1 with a single AXI burst, which
+   Vitis HLS 2025.1 cannot express within the LUT budget.

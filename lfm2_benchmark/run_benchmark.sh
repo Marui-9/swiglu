@@ -5,10 +5,28 @@
 # Searches for llama-bench in common locations.
 # Runs T1--T4, writes one log per thread count.
 # No root, no custom env vars, no external dependencies.
+#
+# The model file is auto-detected from common filenames if not provided.
 
 set -e
 
-MODEL="${1:-./lfm2.5-1.2B-Q4_K.gguf}"
+MODEL="${1:-}"
+if [ -z "$MODEL" ]; then
+  for candidate in \
+    ./lfm2.5-1.2B-Q4_K.gguf \
+    ./LFM2.5-1.2B-Thinking-Q4_K_M.gguf \
+    ./*q4_k_m.gguf \
+    ./*Q4_K_M.gguf \
+    ./*.gguf; do
+    if [ -f "$candidate" ]; then
+      MODEL="$candidate"
+      break
+    fi
+  done
+  if [ -z "$MODEL" ]; then
+    MODEL="./lfm2.5-1.2B-Q4_K.gguf"
+  fi
+fi
 PROMPT=4
 NUM_TOKENS=64
 REPEAT=10

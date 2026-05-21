@@ -6,8 +6,55 @@ Hardware offload of the SwiGLU FFN block from LFM2-1.2B (Liquid AI) onto a Kria 
 (Zynq UltraScale+ ZU5EV). The accelerator is built with Vitis HLS and integrated into
 Vivado, then invoked from llama.cpp by patching `ggml-cpu.c`.
 
-A working predecessor IP (`linear_projection`) is already deployed on the board and serves
-as the reference for all HLS and software driver patterns.
+## Current Status (2026-05-20) — URAM-Transposed K=4, Wide-BRAM WV
+
+**Board result**: 2.20 t/s decode at 250 MHz (-t 4). +5.8% vs hybrid K=2 (2.08 t/s),
++91% vs CPU (1.15 t/s). Power: 4.83 W (-3.7% vs hybrid).
+
+**Architecture**: CPU pre-decodes Q4_K headers (flat sc6/mn6) and transposes nibbles
+to element-major DDR layout. FPGA uses wide-BRAM (128-bit) for WV nibble tiles —
+each 128-bit DDR word stored verbatim, 1 write/cycle, eliminating the get_byte() mux.
+K=4 throughout (32 MAC chains WV, 4 groups × 8 blocks output). Output path uses
+32-bit nibble tiles (proven stable, routes cleanly).
+
+**Key innovation**: Wide-BRAM nibble storage achieves II=1 load (67 cycles vs 256 at
+II=4). Nibble extraction is compile-time .range() — zero LUT. Pre-decode eliminates
+~30K LUTs of get_byte() mux, enabling K=4 within ZU5EV budget.
+
+**LUT budget**: ~125K HLS → ~103K Vivado (88%). Wide-BRAM WV at 34K/compute_X1.
+Output at 44K/compute_output. gate_cache at 6K. Fits with margin.
+
+**Cycle budget @ 250 MHz**:
+  compute_X1 ∥ X2: 2.60M (10.4 ms) ← DATAFLOW bottleneck
+  compute_gate:      16.6K (0.07 ms)
+  compute_output:    1.57M (6.3 ms)
+  Per-layer interval: 2.60M → 10.4 ms
+  16 layers FPGA: 166 ms + ~125 ms CPU = 291 ms → 3.44 t/s theoretical → 2.20 t/s board
+
+**Bottlenecks identified** (see hls_experiments/experiments.txt for full list):
+  1. AXI serialization: 4 sequential load calls per iteration × ~45 cyc AXI setup
+  2. HLS scheduler: 4 memory writes/pipeline stage cannot achieve II=1 (Vitis 2025.1)
+  3. LUT budget: merged loads need ~130K — ZU5EV has 117K. ZU7EV would fit.
+  4. Routing: 128-bit BRAM fanout at 32 blocks creates 74K overlaps in output path
+  5. Amdahl's Law: FFN is 68% of total. CPU overhead ~125 ms/token is fixed.
+     Absolute ceiling: ~3.6 t/s at 250 MHz.
+
+**Key reference files**:
+  hls_experiments/cpu-predecode/architecture.txt   — full architectural description
+  hls_experiments/cpu-predecode/axi_bottleneck.txt — AXI serialization analysis
+  hls_experiments/cpu-predecode/predecode_explained.txt — CPU pre-decode detail
+  hls_experiments/experiments.txt                  — all 14 attempts + root causes
+  hls_experiments/testblock/changelog.txt          — full history (entries 1-63)
+
+**Resources (Vivado post-P&R)**: LUT 103,684 (88.5%), FF 117,420 (50%), BRAM 86.5
+(30%), DSP 338 (27%), URAM 8 (12%).
+
+**Vivado timing**: Closes at 250 MHz with -0.074 ns WNS on DSP fanout paths in
+compute_output. phys_opt_design -hold_fix resolves hold violations.
+
+**Software**: ggml-cpu.c has transpose_q4k_to_urm() for CPU-side pre-decode.
+Permanent 16-slot udmabuf cache (30 MB/layer, 480 MB total, fits 512 MB UDMABUF).
+CMA=600M, no boot script changes needed.
 
 ---
 
@@ -291,10 +338,9 @@ const void  *W_down_data = src0->data;               // W_down
 
 ---
 
-## Current Status (as of 2026-03-27)
+## Historical Status (2026-03-27 — see top of file for current)
 
-**Board is running and functionally correct** (baseline). Per-call time: ~1000–1050ms.
-CPU baseline: ~4 t/s. **Performance goal: beat 4 t/s. Current baseline: ~0.06 t/s.**
+**Historical baseline**. Per-call time: ~1000–1050ms. CPU baseline: ~4 t/s.
 
 `swiglu.cpp` has been fully rewritten with RC5, RC6, RC7 fixes applied. **C-simulation
 must be re-run** to confirm numerical correctness before synthesis.

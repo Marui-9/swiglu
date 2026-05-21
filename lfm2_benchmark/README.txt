@@ -25,12 +25,13 @@ Requirements
      cmake .. -DCMAKE_BUILD_TYPE=Release
      make -j llama-bench
 
-2. The LFM2.5-1.2B-Thinking model in Q4_K_M format
+2. The LFM2.5-1.2B-Thinking model in Q4_K_M (ggml k-quant) format
 
-   Download from HuggingFace:
-   https://huggingface.co/LiquidAI/LFM2.5-1.2B-Thinking
+   Download the .gguf file from HuggingFace:
+   https://huggingface.co/LiquidAI/LFM2.5-1.2B-Thinking-GGUF/blob/main/LFM2.5-1.2B-Thinking-Q4_K_M.gguf
 
-   Place the .gguf file in this folder, or pass its path as an argument.
+   Look for a file with Q4_K_M in its name (e.g., *q4_k_m.gguf).
+   Rename it or pass its path as an argument when running the script.
 
 Instructions
 ------------
@@ -45,7 +46,7 @@ Instructions
      If you skip the argument, it looks for:
        ./lfm2.5-1.2B-Q4_K.gguf
 
-  3. Wait. Each thread count runs 10 repeats of 4 prompt + 64 generated
+  3. Each thread count runs 10 repeats of 4 prompt + 64 generated
      tokens. On a quad-core ARM board this takes ~20--40 minutes total.
 
   4. Send back the four log files:
@@ -55,16 +56,4 @@ Instructions
        lmf2_bench_T3_<timestamp>.log
        lmf2_bench_T4_<timestamp>.log
 
-What it measures
-----------------
 
-  Throughput (tokens/s) for both prefill (4-token prompt) and decode
-  (64-token generation), repeated 10 times per thread count.
-
-  This is a standard CPU-only benchmark. No GPU, no custom kernels,
-  no hardware acceleration — just llama.cpp on CPU.
-
-Questions
----------
-
-  Contact: <your email here>

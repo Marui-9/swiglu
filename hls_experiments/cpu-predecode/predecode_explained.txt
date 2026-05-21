@@ -1,0 +1,155 @@
+CPU Pre-Decode: Q4_K → URAM-Transposed DDR Layout
+====================================================
+
+Why Pre-Decode
+--------------
+
+The raw Q4_K format is designed for CPU SIMD (NEON): nibbles are packed
+4-bit in block-major order, sc6/mn6 are interleaved 6-bit across bytes.
+On FPGA, this requires a get_byte() call per nibble — a 9:1 multiplexer
+on a 128-bit word followed by a 4-bit shift. With 8 blocks processed in
+parallel (element-major access), this consumes ~30K LUTs in mux trees.
+
+The CPU pre-decodes Q4_K into an FPGA-friendly element-major layout,
+eliminating every get_byte() call from the MAC hot path. The FPGA does
+zero nibble extraction — each nibble is at a compile-time fixed bit
+position within a 32-bit word.
+
+Pre-decode runs ONCE per layer on first use. Results are permanently
+cached in udmabuf (shared CPU-FPGA DDR). Subsequent tokens skip it.
+
+
+What Changes
+------------
+
+Raw Q4_K block (144 bytes):
+    [0..1]  d fp16        (block scale)
+    [2..3]  dmin fp16     (block min-subtraction scale)
+    [4..7]  sc6[0..3]     (6-bit scales, lower 6 bits each in bytes 4-7)
+    [8..11] mn6[0..3]     (6-bit mins, lower 6 bits)
+    [12..15] sc6/mn6[4..7] carry bits (upper 2 bits of sc6[4..7] and mn6[4..7]
+             interleaved with lower 4 bits across bytes 12-15)
+    [16..143] nibbles     (256 × 4-bit nibbles, block-major, packed)
+
+After pre-decode, each block contributes 32 bytes of headers + its share
+of transposed nibble data. Per row:
+
+    WV (8 blocks):  256 B (headers) + 1024 B (nibbles) = 1280 B = 80 DDR words
+    Output (32 blocks): 1024 B (headers) + 4096 B (nibbles) = 5120 B = 320 DDR words
+
+Same total byte count as the hybrid format (160 B/block). No buffer growth.
+
+
+Header Decode
+-------------
+
+The interleaved 6-bit sc6/mn6 is decoded to flat INT8. This happens on
+CPU, saving ~1,000 LUTs in FPGA header decode logic.
+
+    // sc6[0..3]: lower 6 bits of bytes 4..7
+    sc6[0] = block[4] & 0x3F;
+    sc6[1] = block[5] & 0x3F;
+    sc6[2] = block[6] & 0x3F;
+    sc6[3] = block[7] & 0x3F;
+
+    // sc6[4..7]: lower 4 bits of bytes 12..15, upper 2 bits from bytes 4..7
+    sc6[4] = (block[12] & 0x0F) | ((block[4] >> 6) << 4);
+    sc6[5] = (block[13] & 0x0F) | ((block[5] >> 6) << 4);
+    sc6[6] = (block[14] & 0x0F) | ((block[6] >> 6) << 4);
+    sc6[7] = (block[15] & 0x0F) | ((block[7] >> 6) << 4);
+
+    // mn6 decoded identically (bytes 8..11 instead of 4..7)
+
+Header per block: 2 B (d) + 2 B (dmin) + 8 B (sc6[8]) + 8 B (mn6[8]) + 12 B (pad)
+= 32 bytes per block.  d/dmin are verbatim copies — the FPGA decodes fp16
+to fp32 in hardware (10-cycle UNROLL for subnormal handling).
+
+
+Nibble Transposition
+--------------------
+
+This is the key transformation. Raw nibbles are block-major: all 256
+nibbles for block 0, then all 256 for block 1, etc. FPGA needs them
+element-major: nibble N for ALL 8 blocks at once (one MAC cycle).
+
+For each element n (0..255) and each group g (0..3):
+
+    1. Extract nibble n from each of the 8 blocks in group g:
+         q_byte = 16 + (n & 31) + ((n & 0xC0) >> 1)  — GGUF nibble address
+         shift  = (n & 32) ? 4 : 0                     — upper/lower nibble
+         nib    = (block[q_byte] >> shift) & 0xF       — 4-bit nibble
+
+    2. Pack into a 32-bit word:
+         nib32 = 0
+         for b = 0..7:
+             nib32 |= (nibble_for_block_b << (b * 4))
+         → bits [3:0] = block 0 nibble, [7:4] = block 1 nibble, ...
+
+    3. Write to DDR layout:
+
+    For WV (1 group of 8 blocks):
+        Pack 4 consecutive element-slices per 128-bit DDR word:
+          DDR word e:  ddr32[0]=elem[4e], ddr32[1]=elem[4e+1],
+                       ddr32[2]=elem[4e+2], ddr32[3]=elem[4e+3]
+        64 DDR words per row (256/4).
+
+    For Output (4 groups of 8 blocks):
+        Pack all 4 groups for ONE element per 128-bit DDR word:
+          DDR word n:  ddr32[g] = nib32 for group g, element n
+                       (g0 at bits [31:0], g1 at [63:32],
+                        g2 at [95:64], g3 at [127:96])
+        256 DDR words per row (one per element).
+
+
+FPGA Load — Why It's Fast
+--------------------------
+
+In the FPGA load function (load_row_wv_urm), each 128-bit DDR word is
+stored verbatim in a wide BRAM (128-bit). One DDR read → one BRAM write.
+Guaranteed II=1 (1 cycle per word). No nibble extraction, no get_byte().
+
+In the MAC, nibble access is a compile-time fixed bit position:
+    ap_uint<32> word = nib_bram[n];          // 1 BRAM read
+    ap_uint<4> nb0  = word.range( 3,  0);     // block 0 — wire, 0 LUT
+    ap_uint<4> nb1  = word.range( 7,  4);     // block 1 — wire, 0 LUT
+    ...
+    ap_uint<4> nb7  = word.range(31, 28);     // block 7 — wire, 0 LUT
+
+No word-index mux, no byte extraction, no nibble shift. The ~30K LUT
+mux tree from the original design is completely eliminated.
+
+
+Performance Impact
+------------------
+
+The pre-decode doesn't directly improve throughput (the mux was
+combinational, not a pipeline stall). It enables K=4 parallelism
+within the LUT budget:
+
+    Without pre-decode: K=4 at ~137K LUTs → doesn't fit ZU5EV (117K)
+    With pre-decode:    K=4 at ~103K LUTs → fits at 88%
+
+The 2.20 t/s is the same throughput whether or not pre-decode was used
+— the bottleneck is AXI call serialization, not LUT count. But without
+pre-decode, K=4 wouldn't fit the device at all.
+
+
+Code Location
+-------------
+
+Function: transpose_q4k_to_urm() in llama-mods/ggml-cpu.c (~line 188)
+
+Called from the SwiGLU driver path (ggml-cpu.c line ~2060):
+    if (!swg_layer_cached[layer]) {
+        transpose_q4k_to_urm(W_gate, udmabuf + W_OFF,  8192, 8);
+        transpose_q4k_to_urm(W_up,   udmabuf + V_OFF,  8192, 8);
+        transpose_q4k_to_urm(W_down, udmabuf + Wd_OFF, 2048, 32);
+        udmabuf_sync_to_device(W_OFF, STRIDE);
+        swg_layer_cached[layer] = true;
+    }
+
+Cache: 16 permanent slots in udmabuf (30 MB each), base at 0x01000000.
+Total: 480 MB + 16 MB base = 496 MB, fits in 512 MB UDMABUF (cma=600M).
+
+First token pays ~10 ms/layer for pre-decode (~160 ms total).
+Subsequent tokens skip it entirely — FPGA reads cached transposed data.

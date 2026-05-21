@@ -1,0 +1,74 @@
+Disabling NEON on ARM Cortex-A53 (KV260) for Q4_K Benchmarks
+==============================================================
+
+Goal: determine whether NEON SIMD instructions provide measurable throughput
+improvement for LFM2.5-1.2B Q4_K inference on the Cortex-A53 cores of the
+KV260.
+
+
+Method
+------
+
+cmake -B build \
+  -DGGML_NATIVE=OFF \
+  -DGGML_CPU_ARM_ARCH=armv8-a \
+  -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release --target llama-bench
+
+GGML_NATIVE=OFF prevents auto-detection of host CPU features.
+GGML_CPU_ARM_ARCH=armv8-a forces the target to base ARMv8-A, suppressing NEON.
+
+Verification that NEON is disabled in the binary:
+
+  objdump -d build/bin/llama-bench | grep -cE 'vld1|vadd|vfma|vdup|vst1'
+  -> 0
+
+  strings build/bin/llama-bench | grep -i neon
+  -> (no output)
+
+  grep -r "NEON\|__ARM_NEON\|arm_neon" build/src/
+  -> (no output)
+
+
+Findings
+--------
+
+All benchmarks run with: -p 4 -n 64 -r 10, model lfm2.5-1.2B-Q4_K.gguf.
+
+  T    Prefill (t/s)    Decode (t/s)
+  1    1.10              0.97
+  2    2.20              1.89
+  3    3.22              2.71
+  4    3.47              2.73
+
+These are within the measurement noise of the NEON-enabled build (T4 NEON:
+3.27 prefill, 2.51 decode). The no-NEON build is marginally faster at
+higher thread counts, not slower.
+
+
+Explanation
+-----------
+
+Cortex-A53 implements a narrow 64-bit NEON pipeline with in-order execution.
+Key limitations:
+
+  - NEON datapath is 64-bit wide (A72/A76 are 128-bit), halving throughput.
+  - In-order pipeline cannot hide load-to-use latency on vld1/vst1.
+  - Single-issue for most NEON arithmetic operations.
+
+Q4_K kernels involve irregular nibble extraction and triple-multiply
+(INT8 x INT4 x UINT6), which stresses the integer pipeline more than the
+NEON floating-point pipeline. The scalar fallback path keeps the integer
+ALUs fed without NEON load stalls, so throughput is effectively identical
+on this microarchitecture.
+
+This result is specific to Cortex-A53. On A72/A76/A78 with wider out-of-order
+NEON pipelines, SIMD provides 3--4x speedup for Q4_K inference.
+
+
+Restoring NEON
+--------------
+
+  rm -rf build
+  cmake -B build -DCMAKE_BUILD_TYPE=Release
+  cmake --build build --config Release --target llama-bench
