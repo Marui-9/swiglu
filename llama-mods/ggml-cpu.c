@@ -92,7 +92,7 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_CTRL_X_HI    0x38  // gmem_x   base hi
 #define SWG_CTRL_OUT_LO  0x40  // gmem_out base lo
 #define SWG_CTRL_OUT_HI  0x44  // gmem_out base hi
-#define SWG_CTRL_MODE    0x4C  // 0=Q4_K (1=Q6_K requires ENABLE_Q6K build)
+#define SWG_CTRL_MODE    0x4C  // 0=Q4_0 (only mode supported)
 #define SWG_CTRL_XSCALE  0x54  // float bits
 
 // Permanent per-layer pre-decode cache.  16 slots, populated on first use.
@@ -104,23 +104,37 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_LAYER_W_OFF(l)     (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x00000000U)
 #define SWG_LAYER_V_OFF(l)     (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x00A00000U)
 #define SWG_LAYER_WD_OFF(l)    (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x01400000U)
-#define WV_BLOCKS_PER_ROW      8
-#define DOWN_BLOCKS_PER_ROW    32
-// ─── URAM-transposed layout constants ─────────────────────────────────────────
-// On-chip URAM stores nibbles element-major: nib_urm[n] = 32-bit word containing
-// nibbles at element n for all 8 blocks in one group. This eliminates the FPGA
-// get_byte() mux entirely — MAC extracts nibbles at compile-time .range() positions.
+// ─── Q4_0 pre-decode layout constants ────────────────────────────────────────
+// Q4_0 block = 2B fp16 d + 16B nibbles (32 values).  64 blocks/WV row, 256/output row.
+// CPU pre-decodes fp16 d → fp32 and transposes nibbles to element-major.
+// FPGA MAC accesses nibbles at compile-time .range() — 0 LUT extraction.
 //
-// DDR row layout (same byte count as hybrid, different nibble order):
-//   Headers: [blocks_per_row][32] — d(2)+dmin(2)+sc6[8]+mn6[8]+pad(12) per block
-//   Nibbles: [256 * groups * 4]    — element-major, 4 groups Ø 32-bit words per elem
-//     DDR word e = {grp3_nib[31:0], grp2_nib[31:0], grp1_nib[31:0], grp0_nib[31:0]}
-//     for element e. grp_k_nib.range(b*4+3, b*4) = nibble for block (k*8+b) at element e.
-#define URM_HDR_BYTES 32     // d(2)+dmin(2)+sc6[8]+mn6[8]+pad(12)
-
-// transposed DDR words per row = header_words + nibble_words
-// headers: blocks_per_row * URM_HDR_BYTES / 16
-// nibbles: 256 * groups * 4 / 16 = 64 * groups, where groups = blocks_per_row / 8
+// DDR WV row (2048 vals = 64 blocks, 8 groups × 8 blocks):
+//   Headers: 64 fp32 d → 256 B = 16 DDR words (block-major, 4 d per DDR word)
+//   Nibbles: 8 groups × 8 DDR words = 64 DDR words (element-major)
+//     Group g, DDR word e: {elem[4e+3]_nib32, elem[4e+2]_nib32, elem[4e+1]_nib32, elem[4e+0]_nib32}
+//     elem[j]_nib32.range(b*4+3,b*4) = nibble for block (g*8+b) at element j within group
+//     Total per row: 16 + 64 = 80 DDR words (1280 B) — same as Q4_K URM
+//
+// DDR output row (8192 vals = 256 blocks, 32 groups, 8 meta-groups of 4 groups):
+//   Headers: 256 fp32 d → 1024 B = 64 DDR words
+//   Nibbles: 8 meta-groups × 32 DDR words = 256 DDR words
+//     Meta-group mg, element n: {g3_nib32, g2_nib32, g1_nib32, g0_nib32}
+//       where gk = group mg*4+k, each nib32 = 8 blocks' nibbles at element n
+//     Total per row: 64 + 256 = 320 DDR words (5120 B) — same as Q4_K URM
+#define Q40_VALS_PER_BLOCK    32
+#define Q40_BLK_BYTES         18
+#define Q40_WV_BLOCKS         64     // 2048/32
+#define Q40_WV_GROUPS         8      // 64/8
+#define Q40_DOWN_BLOCKS       256    // 8192/32
+#define Q40_DOWN_GROUPS       32     // 256/8
+#define Q40_DOWN_MG           8      // 32/4 meta-groups
+#define Q40_WV_HDR_WORDS      16     // 64 fp32 d / 4 per DDR word
+#define Q40_WV_NIB_WORDS      64     // 8 groups × 8 DDR words (4 elem-slices each)
+#define Q40_WV_ROW_WORDS      80
+#define Q40_DOWN_HDR_WORDS    64     // 256 fp32 d / 4 per DDR word
+#define Q40_DOWN_NIB_WORDS    256    // 8 MG × 32 DDR words
+#define Q40_DOWN_ROW_WORDS    320
 
 static bool swg_layer_cached[SWG_NUM_LAYERS];
 
@@ -172,83 +186,126 @@ static void reformat_q6k_to_fieldsplit(const uint8_t *src, uint8_t *dst, int n_r
     }
 }
 
-// transpose_q4k_to_urm: convert Q4_K packed weights to URAM-transposed DDR layout.
+// fp16_to_fp32_ref — software reference matching the FPGA implementation.
+static inline float fp16_to_fp32_ref(uint16_t h) {
+    uint32_t sign = ((uint32_t)(h >> 15)) << 31;
+    uint32_t exp  = (h >> 10) & 0x1F;
+    uint32_t mant = (uint32_t)(h & 0x3FF);
+    uint32_t f32;
+    if (exp == 0 && mant == 0) {
+        f32 = sign;
+    } else if (exp == 0) {
+        uint32_t m = mant, e = 112;
+        for (int i = 0; i < 10; i++) { if (!(m & 0x200)) { m <<= 1; e--; } }
+        f32 = sign | (e << 23) | ((m & 0x1FF) << 14);
+    } else if (exp == 31) {
+        f32 = sign | 0x7F800000 | (mant << 13);
+    } else {
+        f32 = sign | ((exp + 112) << 23) | (mant << 13);
+    }
+    union { uint32_t u; float f; } c; c.u = f32; return c.f;
+}
+
+// transpose_q40_to_urm: convert Q4_0 packed weights to element-major DDR layout.
 //
-// On-chip URAM stores nibbles element-major: one 32-bit word per element contains
-// nibbles for all 8 blocks in a group at that element index.  DDR packs 4 consecutive
-// element-slices per 128-bit word for the WV path, or 4 group-slices per 128-bit word
-// for the output path.
+// Q4_0 block = 2B fp16 d + 16B nibbles (32 values packed, lower nibble first).
+// CPU decodes fp16 d → fp32 and transposes nibbles to element-major so the FPGA
+// MAC extracts nibbles at compile-time .range() — zero LUT.
 //
-// DDR row layout (same total byte count as 160-byte/block hybrid):
-//   Headers: blocks_per_row * 32 B  — block-major: d(2)+dmin(2)+sc6[8]+mn6[8]+pad(12)
-//   Nibbles: 256 * groups * 4 B       — element-major, groups = blocks_per_row/8
-//     WV:   64 DDR words, each = 4 element-slices × 32 bits (fully packed)
-//     Out: 256 DDR words, each = 4 group-slices   × 32 bits (fully packed)
+// WV row (2048 vals = 64 blocks = 8 groups × 8 blocks):
+//   Headers: 64 fp32 d = 256 B = 16 DDR words (block-major, 4 d per word)
+//   Nibbles: 8 groups × 8 DDR words = 64 DDR words
+//     Each DDR word packs 4 element-slices for the same group:
+//       ddr32[0]=elem 4e,  ddr32[1]=elem 4e+1,  ddr32[2]=elem 4e+2,  ddr32[3]=elem 4e+3
+//     Each elem-slice = 32-bit word with nibbles for all 8 blocks at that element.
+//   Total: 80 DDR words (1280 B) per row.
 //
-// Run once per layer on first use.  Permanently cached in udmabuf.
-static void transpose_q4k_to_urm(const uint8_t *src, uint8_t *dst,
+// Output row (8192 vals = 256 blocks = 32 groups = 8 meta-groups of 4):
+//   Headers: 256 fp32 d = 1024 B = 64 DDR words
+//   Nibbles: 8 meta-groups × 32 DDR words = 256 DDR words
+//     Meta-group mg, element n: one 128-bit DDR word packing 4 groups' nib32:
+//       {g3_nib32, g2_nib32, g1_nib32, g0_nib32} where gk = mg*4 + k
+//     FPGA fans out to 4 group BRAM tiles per row.
+//   Total: 320 DDR words (5120 B) per row.
+//
+// Called once per layer on first use.  Permanently cached in udmabuf.
+static void transpose_q40_to_urm(const uint8_t *src, uint8_t *dst,
                                   int n_rows, int blocks_per_row) {
-    const int src_block_bytes = 144;
-    const int groups = blocks_per_row / 8;          // 1 for WV, 4 for W_down
-    const int row_hdr   = blocks_per_row * URM_HDR_BYTES;   // header bytes per row
-    const int row_nib   = 256 * groups * 4;                  // nibble bytes per row
-    const int row_stride = row_hdr + row_nib;
+    const int src_block_bytes = Q40_BLK_BYTES;   // 18
+    const int groups          = blocks_per_row / 8;
+
+    int row_hdr, row_nib, row_stride;
+    if (groups <= 8) {
+        // WV path: 8 groups — 16 hdr words + 64 nib words = 80
+        row_hdr    = blocks_per_row * 4;           // 64 fp32 d = 256 B
+        row_nib    = 32 * groups * 4;              // 32 elem × 8 groups × 4 B
+        row_stride = row_hdr + row_nib;            // 256 + 1024 = 1280 B
+    } else {
+        // Output path: 32 groups — 64 hdr words + 256 nib words = 320
+        row_hdr    = blocks_per_row * 4;           // 256 fp32 d = 1024 B
+        row_nib    = 32 * groups * 4;              // 32 elem × 32 groups × 4 B
+        row_stride = row_hdr + row_nib;            // 1024 + 4096 = 5120 B
+    }
 
     for (int row = 0; row < n_rows; row++) {
-        // ── Headers: block-major, 32 bytes per block ────────────────────────────
+        // ── Headers: fp16 d → fp32, block-major ───────────────────────────────
+        uint8_t *hdr_base = dst + (size_t)row * row_stride;
         for (int b = 0; b < blocks_per_row; b++) {
             const uint8_t *blk = src + ((size_t)row * blocks_per_row + b) * src_block_bytes;
-            uint8_t *hdr = dst + (size_t)row * row_stride + (size_t)b * URM_HDR_BYTES;
-
-            // d/dmin fp16: verbatim copy (bytes 0-3)
-            hdr[0] = blk[0]; hdr[1] = blk[1];
-            hdr[2] = blk[2]; hdr[3] = blk[3];
-
-            // sc6[0..7] and mn6[0..7]: decode interleaved 6-bit → flat INT8
-            for (int i = 0; i < 4; i++) {
-                hdr[4  + i] = blk[4 + i] & 0x3F;
-                hdr[12 + i] = blk[8 + i] & 0x3F;
-            }
-            for (int i = 4; i < 8; i++) {
-                int j = i - 4;
-                hdr[4  + i] = (blk[12 + j] & 0x0F) | (uint8_t)((blk[4 + j] >> 6) << 4);
-                hdr[12 + i] = (blk[12 + j] >> 4)   | (uint8_t)((blk[8 + j] >> 6) << 4);
-            }
-            // Padding: bytes 20-31 = 0
-            memset(hdr + 20, 0, 12);
+            uint16_t d_fp16 = (uint16_t)blk[0] | ((uint16_t)blk[1] << 8);
+            float d_fp32 = fp16_to_fp32_ref(d_fp16);
+            // 4 fp32 d values per DDR word; store at slot b&3 within word b>>2
+            uint32_t *ddr32 = (uint32_t *)(hdr_base + (size_t)(b >> 2) * 16);
+            ddr32[b & 3] = ((union { float f; uint32_t u; }){ .f = d_fp32 }).u;
         }
 
-        // ── Nibbles: element-major, transposed across blocks ────────────────────
-        // WV  (groups=1):  64 DDR words, each = 4 element-slices × 32 bits.
-        //     HLS fans out to 4 interleaved BRAM tiles.
-        // Out (groups=4): 256 DDR words, each = all 4 groups for ONE element.
-        //     HLS fans out to 4 group BRAM tiles for II=1 load.
-        for (int g = 0; g < groups; g++) {
-            for (int n = 0; n < 256; n++) {
-                // One 32-bit word: nibbles for blocks g*8 .. g*8+7 at element n
-                uint32_t nib32 = 0;
-                for (int b = 0; b < 8; b++) {
-                    const uint8_t *blk = src + ((size_t)row * blocks_per_row
-                                                + (size_t)g * 8 + (size_t)b) * src_block_bytes;
-                    int q_byte = 16 + (n & 31) + ((n & 0xC0) >> 1);
-                    int shift  = (n & 32) ? 4 : 0;
-                    uint32_t nib = (blk[q_byte] >> shift) & 0xF;
-                    nib32 |= (nib << (b * 4));
-                }
+        // ── Nibbles: element-major, transposed across blocks ─────────────────
+        uint8_t *nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
 
-                if (groups == 1) {
-                    // WV: pack 4 element-slices per DDR word (elements 4e..4e+3)
-                    int e   = n >> 2;          // DDR word index
+        if (groups <= 8) {
+            // ── WV: 8 groups, pack 4 element-slices per DDR word ─────────────
+            for (int g = 0; g < groups; g++) {
+                for (int n = 0; n < 32; n++) {
+                    uint32_t nib32 = 0;
+                    for (int b = 0; b < 8; b++) {
+                        const uint8_t *blk = src + ((size_t)row * blocks_per_row
+                                                    + (size_t)g * 8 + (size_t)b) * src_block_bytes;
+                        // Q4_0 nibble: byte 2 + n/2, lower nibble for even n
+                        int byte_off = 2 + (n >> 1);
+                        int shift    = (n & 1) * 4;
+                        uint32_t nib = (blk[byte_off] >> shift) & 0xF;
+                        nib32 |= (nib << (b * 4));
+                    }
+                    int e   = n >> 2;          // DDR word index within group
                     int s   = n & 3;           // slot within DDR word
-                    uint8_t *nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
-                    uint32_t *ddr32 = (uint32_t *)(nib_base + (size_t)e * 16);
+                    uint32_t *ddr32 = (uint32_t *)(nib_base
+                        + ((size_t)g * 8 + (size_t)e) * 16);
                     ddr32[s] = nib32;
-                } else {
-                    // Output: one DDR word per element, packing all 4 groups
-                    int slot = g;              // group index (0..3)
-                    uint8_t *nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
-                    uint32_t *ddr32 = (uint32_t *)(nib_base + (size_t)n * 16);
-                    ddr32[slot] = nib32;
+                }
+            }
+        } else {
+            // ── Output: 32 groups, 8 meta-groups of 4 ─────────────────────────
+            for (int mg = 0; mg < Q40_DOWN_MG; mg++) {
+                for (int n = 0; n < 32; n++) {
+                    // One DDR word per element: 4 group-slices
+                    uint32_t nib32[4] = {0, 0, 0, 0};
+                    for (int k = 0; k < 4; k++) {
+                        int g = mg * 4 + k;
+                        for (int b = 0; b < 8; b++) {
+                            const uint8_t *blk = src + ((size_t)row * blocks_per_row
+                                                        + (size_t)g * 8 + (size_t)b) * src_block_bytes;
+                            int byte_off = 2 + (n >> 1);
+                            int shift    = (n & 1) * 4;
+                            uint32_t nib = (blk[byte_off] >> shift) & 0xF;
+                            nib32[k] |= (nib << (b * 4));
+                        }
+                    }
+                    uint32_t *ddr32 = (uint32_t *)(nib_base
+                        + ((size_t)mg * 32 + (size_t)n) * 16);
+                    ddr32[0] = nib32[0];
+                    ddr32[1] = nib32[1];
+                    ddr32[2] = nib32[2];
+                    ddr32[3] = nib32[3];
                 }
             }
         }
@@ -2008,11 +2065,11 @@ static void ggml_compute_forward_swiglu_fused_hw(
     struct ggml_tensor * W_up   = dst->src[2];
     struct ggml_tensor * W_down = dst->src[3];
 
-    // basic guards
+    // basic guards — Q4_0 path only
     if (!x || !W_gate || !W_up || !W_down ||
         x->type != GGML_TYPE_F32 ||
-        W_gate->type != GGML_TYPE_Q4_K || W_up->type != GGML_TYPE_Q4_K ||
-        (W_down->type != GGML_TYPE_Q4_K && W_down->type != GGML_TYPE_Q6_K) ||
+        W_gate->type != GGML_TYPE_Q4_0 || W_up->type != GGML_TYPE_Q4_0 ||
+        W_down->type != GGML_TYPE_Q4_0 ||
         x->ne[0] != 2048 || W_gate->ne[0] != 2048 || W_gate->ne[1] != 8192 ||
         W_up->ne[0]   != 2048 || W_up->ne[1]   != 8192 ||
         W_down->ne[0] != 8192 || W_down->ne[1] != 2048 ||
@@ -2036,13 +2093,13 @@ static void ggml_compute_forward_swiglu_fused_hw(
         GGML_ASSERT(false);
     }
     size_t down_bytes = ggml_nbytes(W_down);
-    uint32_t mode = (down_bytes > 9437184UL) ? 1 : 0; // Q6_K threshold
+    uint32_t mode = 0; // Q4_0 only
     size_t gate_bytes = ggml_nbytes(W_gate);
     size_t up_bytes   = ggml_nbytes(W_up);
 
     if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG] ===== HW call #%d layer=%d mode=%s tokens=%d =====\n",
-                swiglu_call_count, layer, mode ? "Q6_K" : "Q4_K", total_tokens);
+        fprintf(stderr, "[SWG] ===== HW call #%d layer=%d mode=Q4_0 tokens=%d =====\n",
+                swiglu_call_count, layer, total_tokens);
         fprintf(stderr, "[SWG]   W_gate ptr=%p  ne=[%d,%d] type=%d  nbytes=%zu\n",
                 W_gate->data, (int)W_gate->ne[0], (int)W_gate->ne[1], (int)W_gate->type, gate_bytes);
         fprintf(stderr, "[SWG]   W_up   ptr=%p  ne=[%d,%d] type=%d  nbytes=%zu\n",
@@ -2053,26 +2110,20 @@ static void ggml_compute_forward_swiglu_fused_hw(
                 x->data, (int)x->ne[0], (int)x->ne[1], (int)x->type);
     }
 
-    // Pre-decode Q4_K to hybrid format.  Cached permanently per layer.
-    // First token pays ~10 ms/layer (160 ms total). Subsequent tokens skip entirely.
+    // Pre-decode Q4_0 to element-major DDR layout.  Cached permanently per layer.
+    // First token pays ~8 ms/layer (~130 ms total). Subsequent tokens skip entirely.
     if (!swg_layer_cached[layer]) {
         if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   UNPACK layer %d → permanent slot\n", layer);
 
-        transpose_q4k_to_urm((const uint8_t *)W_gate->data,
+        transpose_q40_to_urm((const uint8_t *)W_gate->data,
                               (uint8_t *)udmabuf_vptr + SWG_LAYER_W_OFF(layer),
-                              (int)W_gate->ne[1], WV_BLOCKS_PER_ROW);
-        transpose_q4k_to_urm((const uint8_t *)W_up->data,
+                              (int)W_gate->ne[1], Q40_WV_BLOCKS);
+        transpose_q40_to_urm((const uint8_t *)W_up->data,
                               (uint8_t *)udmabuf_vptr + SWG_LAYER_V_OFF(layer),
-                              (int)W_up->ne[1], WV_BLOCKS_PER_ROW);
-        if (W_down->type == GGML_TYPE_Q6_K) {
-            reformat_q6k_to_fieldsplit((const uint8_t *)W_down->data,
-                                       (uint8_t *)udmabuf_vptr + SWG_LAYER_WD_OFF(layer),
-                                       (int)W_down->ne[1]);
-        } else {
-            transpose_q4k_to_urm((const uint8_t *)W_down->data,
-                                  (uint8_t *)udmabuf_vptr + SWG_LAYER_WD_OFF(layer),
-                                  (int)W_down->ne[1], DOWN_BLOCKS_PER_ROW);
-        }
+                              (int)W_up->ne[1], Q40_WV_BLOCKS);
+        transpose_q40_to_urm((const uint8_t *)W_down->data,
+                              (uint8_t *)udmabuf_vptr + SWG_LAYER_WD_OFF(layer),
+                              (int)W_down->ne[1], Q40_DOWN_BLOCKS);
 
         udmabuf_sync_to_device(SWG_LAYER_W_OFF(layer), SWG_LAYER_STRIDE);
         swg_layer_cached[layer] = true;

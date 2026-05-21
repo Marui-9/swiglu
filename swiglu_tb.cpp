@@ -1,18 +1,9 @@
-// swiglu_tb.cpp — C-simulation testbench for the m_axi / batched swiglu().
+// swiglu_tb.cpp — C-simulation testbench for Q4_0 K=8 merged-load swiglu().
 //
-// Changes from the stream-based testbench:
-//   • No hls::stream, no stream_pkt, no stream_byte helpers.
-//     The new swiglu() takes raw uint8_t* / float* pointers (m_axi in synthesis,
-//     plain pointers in C-sim).
-//   • Weight arrays are global to avoid stack overflow (~40 MB total).
-//   • build_q4k_block / build_q6k_block split into fill_*() + dot_*_ref():
-//     fill once into the weight array, then dot-product with each batch token.
-//   • Tests T1–T5 replicate the original five tests at batch=1.
-//   • Tests T6–T7 verify batch correctness with two distinct input vectors.
-//
-// NOTE: C simulation at full dimensions (FFN_DIM=8192, VECTOR_DIM=2048) is
-// compute-heavy.  Each batch=1 test runs ~50M MACs; batch=N tests run N×.
-// Expect several minutes per batch=1 test case.
+// Tests validate the Q4_0 pre-decode + FPGA IP numerical correctness.
+// All weight data is generated as Q4_0 blocks, transposed to the element-major
+// DDR layout that the HLS IP expects, then processed through swiglu().
+// Reference: brute-force float MAC matching the Q4_0 dequant formula.
 
 #include "swiglu.h"
 #include "sigmoid_lut.h"
@@ -23,48 +14,51 @@
 
 #define VECTOR_DIM         2048
 #define FFN_DIM            8192
-#define Q4_K_BYTES         144
-#define Q6_K_BYTES         210
-#define WV_BLOCKS_PER_ROW  8     // VECTOR_DIM / 256
-#define DOWN_BLOCKS_PER_ROW 32   // FFN_DIM / 256
+#define Q40_BLK_BYTES      18
+#define Q40_VALS_PER_BLOCK 32
+#define Q40_WV_BLOCKS      64
+#define Q40_WV_GROUPS      8
+#define Q40_DOWN_BLOCKS    256
+#define Q40_DOWN_GROUPS    32
+#define Q40_DOWN_MG        8
+#define Q40_WV_ROW_BYTES   1280    // 80 × 16
+#define Q40_DOWN_ROW_BYTES 5120    // 320 × 16
+#define Q40_WV_HDR_WORDS   16
+#define Q40_WV_NIB_WORDS   64
+#define Q40_WV_ROW_WORDS   80
+#define Q40_DOWN_HDR_WORDS 64
+#define Q40_DOWN_NIB_WORDS 256
+#define Q40_DOWN_ROW_WORDS 320
 
-// Must match swiglu.cpp exactly.  The HW quantizes X1/X2 to INT8 with this
-// fixed scale (single-pass, no dynamic range detection).  The reference mirrors
-// this step so the testbench verifies the HLS implementation of the spec.
-// Whether X12_SCALE_RANGE=10 is adequate for real LFM2 inputs is validated
-// separately by board execution (confirmed correct).
-#define X12_INV_SCALE   (127.0f / 10.0f)   // 12.7f  — multiply to quantize
-#define X12_QUANT_SCALE (10.0f  / 127.0f)  // ~0.0787f — multiply to dequant
+#define X12_INV_SCALE   (127.0f / 10.0f)
+#define X12_QUANT_SCALE (10.0f  / 127.0f)
 
 using namespace std;
 
-// ─── Global weight buffers (too large for stack) ─────────────────────────────
-// Raw Q4_K weights for reference computation
-static uint8_t W_buf  [FFN_DIM    * WV_BLOCKS_PER_ROW  * Q4_K_BYTES]; // 9.0 MB
-static uint8_t V_buf  [FFN_DIM    * WV_BLOCKS_PER_ROW  * Q4_K_BYTES]; // 9.0 MB
-static uint8_t Wd_q4k [VECTOR_DIM * DOWN_BLOCKS_PER_ROW * Q4_K_BYTES]; // 9.0 MB
+// ─── Global weight buffers ──────────────────────────────────────────────────
+// Raw Q4_0 weights for reference computation
+static uint8_t W_raw  [FFN_DIM    * Q40_WV_BLOCKS   * Q40_BLK_BYTES]; // 9.0 MB
+static uint8_t V_raw  [FFN_DIM    * Q40_WV_BLOCKS   * Q40_BLK_BYTES]; // 9.0 MB
+static uint8_t Wd_raw [VECTOR_DIM * Q40_DOWN_BLOCKS * Q40_BLK_BYTES]; // 9.0 MB
 
-// URM-transposed weight buffers for the HLS IP
-// WV row: 8*32 + 256*4 = 1280 B.  Down row: 32*32 + 256*16 = 5120 B.
-#define URM_WV_ROW_BYTES   1280
-#define URM_DOWN_ROW_BYTES 5120
-static uint8_t W_urm  [FFN_DIM    * URM_WV_ROW_BYTES];     // 10.0 MB
-static uint8_t V_urm  [FFN_DIM    * URM_WV_ROW_BYTES];     // 10.0 MB
-static uint8_t Wd_urm [VECTOR_DIM * URM_DOWN_ROW_BYTES];   // 10.0 MB
+// Pre-decoded element-major DDR buffers for the HLS IP
+static uint8_t W_urm  [FFN_DIM    * Q40_WV_ROW_BYTES];     // 10.0 MB
+static uint8_t V_urm  [FFN_DIM    * Q40_WV_ROW_BYTES];     // 10.0 MB
+static uint8_t Wd_urm [VECTOR_DIM * Q40_DOWN_ROW_BYTES];   // 10.0 MB
 
-static int8_t x_batch_buf [MAX_BATCH * VECTOR_DIM];
-static float out_batch_buf[MAX_BATCH * VECTOR_DIM];
+static int8_t  x_batch_buf [MAX_BATCH * VECTOR_DIM];
+static float   out_batch_buf[MAX_BATCH * VECTOR_DIM];
 
-// ─── Reference intermediate arrays ───────────────────────────────────────────
+// Reference intermediate arrays
 static float X1_ref  [MAX_BATCH][FFN_DIM];
 static float X2_ref  [MAX_BATCH][FFN_DIM];
 static float gate_ref[MAX_BATCH][FFN_DIM];
 static float expected[MAX_BATCH][VECTOR_DIM];
 
 // ============================================================================
-// fp16_ref — mirrors fp16_to_fp32() in swiglu.cpp exactly.
+// fp16 reference — matches the FPGA fp16_to_fp32 implementation.
 // ============================================================================
-static float fp16_ref(uint16_t h) {
+static float fp16_to_fp32_ref(uint16_t h) {
     uint32_t sign = ((uint32_t)(h >> 15)) << 31;
     uint32_t exp  = (h >> 10) & 0x1F;
     uint32_t mant = (uint32_t)(h & 0x3FF);
@@ -84,592 +78,336 @@ static float fp16_ref(uint16_t h) {
 }
 
 // ============================================================================
-// silu_ref_lut — uses the same LUT the IP uses in C-sim so Phase 4 errors
-// are isolated to the MAC/decode logic rather than the sigmoid approximation.
+// Q4_0 block fill: random d (fp16) and random nibbles.
 // ============================================================================
-static float silu_ref_lut(float z) {
-    init_sigmoid_lut_csim();
-    float scaled = (z + 8.0f) * 256.0f;
-    int idx = (int)scaled;
-    if (idx < 0)    idx = 0;
-    if (idx > 4095) idx = 4095;
-    return z * sigmoid_lut[idx];
-}
-
-// ============================================================================
-// Q4_K helpers
-//
-// Block layout (144 bytes):
-//   [0..1]    d       fp16 LE
-//   [2..3]    dmin    fp16 LE
-//   [4..15]   scales  12 B  (6-bit sc6/mn6, packed)
-//   [16..143] qs      128 B (256 nibbles, GGML planar layout)
-//
-// GGML Q4_K planar nibble layout: within each 64-element chunk c (c=0..3),
-//   elements [c*64 .. c*64+31]  use LOW  nibbles of qs[c*32 .. c*32+31]
-//   elements [c*64+32 .. c*64+63] use HIGH nibbles of qs[c*32 .. c*32+31]
-// Formula: q_byte = 16 + (n & 31) + ((n & 0xC0) >> 1),  shift = (n & 32) ? 4 : 0
-//
-// Test pattern: sc6[i]=5+3i, mn6[i]=1+2i, nibble[n]=n%16.
-// ============================================================================
-static void fill_q4k_block(uint8_t* block, uint16_t d_raw, uint16_t dmin_raw) {
-    block[0] =  d_raw         & 0xFF;
-    block[1] = (d_raw  >>  8) & 0xFF;
-    block[2] =  dmin_raw      & 0xFF;
-    block[3] = (dmin_raw >> 8) & 0xFF;
-
-    uint8_t sc6[8], mn6[8];
-    for (int i = 0; i < 8; i++) {
-        sc6[i] = (uint8_t)(5 + 3 * i);   // 5, 8, 11, 14, 17, 20, 23, 26
-        mn6[i] = (uint8_t)(1 + 2 * i);   // 1, 3,  5,  7,  9, 11, 13, 15
-    }
-    for (int i = 0; i < 4; i++) {
-        block[4  + i] = (uint8_t)((sc6[i] & 0x3F) | ((sc6[i + 4] >> 4) << 6));
-        block[8  + i] = (uint8_t)((mn6[i] & 0x3F) | ((mn6[i + 4] >> 4) << 6));
-        block[12 + i] = (uint8_t)((sc6[i + 4] & 0x0F) | ((mn6[i + 4] & 0x0F) << 4));
-    }
-
-    for (int i = 16; i < Q4_K_BYTES; i++) block[i] = 0;
-    for (int n = 0; n < 256; n++) {
-        uint8_t nib    = (uint8_t)(n & 0xF);
-        int     q_byte = 16 + (n & 31) + ((n & 0xC0) >> 1);
-        int     shift  = (n & 32) ? 4 : 0;
-        block[q_byte] |= (uint8_t)(nib << shift);
+static void fill_q40_block(uint8_t *blk, uint16_t d_fp16, const uint8_t nibbles[32]) {
+    blk[0] = (uint8_t)(d_fp16 & 0xFF);
+    blk[1] = (uint8_t)(d_fp16 >> 8);
+    for (int i = 0; i < 16; i++) {
+        blk[2 + i] = (nibbles[i*2] & 0xF) | ((nibbles[i*2+1] & 0xF) << 4);
     }
 }
 
-// transpose_q4k_to_urm_csim: convert Q4_K → URAM-transposed DDR layout.
-// Matches transpose_q4k_to_urm() in ggml-cpu.c exactly.
-static void transpose_q4k_to_urm_csim(const uint8_t* src, uint8_t* dst,
+// ============================================================================
+// Q4_0 reference dot product: sum over elements of d * (q_i - 8) * x_i
+// ============================================================================
+static float q40_dot_ref(const uint8_t *row_data, const float *x_vec, int n_vals) {
+    int n_blocks = n_vals / Q40_VALS_PER_BLOCK;
+    float sum = 0.f;
+    for (int b = 0; b < n_blocks; b++) {
+        const uint8_t *blk = row_data + (size_t)b * Q40_BLK_BYTES;
+        uint16_t d_fp16 = (uint16_t)blk[0] | ((uint16_t)blk[1] << 8);
+        float d = fp16_to_fp32_ref(d_fp16);
+        float acc = 0.f;
+        for (int j = 0; j < Q40_VALS_PER_BLOCK; j++) {
+            int byte_off = 2 + (j >> 1);
+            int shift = (j & 1) * 4;
+            int q = (blk[byte_off] >> shift) & 0xF;
+            acc += x_vec[b * Q40_VALS_PER_BLOCK + j] * (q - 8);
+        }
+        sum += d * acc;
+    }
+    return sum;
+}
+
+// ============================================================================
+// Pre-decode transpose — matches transpose_q40_to_urm() in ggml-cpu.c exactly.
+// ============================================================================
+static void transpose_q40_to_urm_csim(const uint8_t *src, uint8_t *dst,
                                        int n_rows, int blocks_per_row) {
+    const int src_block_bytes = Q40_BLK_BYTES;
     const int groups = blocks_per_row / 8;
-    const int row_hdr = blocks_per_row * URM_HDR_BYTES;
-    const int row_nib = 256 * groups * 4;
+    const int row_hdr = blocks_per_row * 4;   // fp32 d per row
+    const int row_nib = 32 * groups * 4;
     const int row_stride = row_hdr + row_nib;
 
     for (int row = 0; row < n_rows; row++) {
-        // Headers: block-major, 32 bytes each
+        uint8_t *hdr_base = dst + (size_t)row * row_stride;
         for (int b = 0; b < blocks_per_row; b++) {
-            const uint8_t* blk = src + ((size_t)row * blocks_per_row + b) * Q4_K_BYTES;
-            uint8_t* hdr = dst + (size_t)row * row_stride + (size_t)b * URM_HDR_BYTES;
-            hdr[0] = blk[0]; hdr[1] = blk[1];
-            hdr[2] = blk[2]; hdr[3] = blk[3];
-            for (int i = 0; i < 4; i++) {
-                hdr[4 + i]  = blk[4 + i] & 0x3F;
-                hdr[12 + i] = blk[8 + i] & 0x3F;
-            }
-            for (int i = 4; i < 8; i++) {
-                int j = i - 4;
-                hdr[4 + i]  = (blk[12 + j] & 0x0F) | (uint8_t)((blk[4 + j] >> 6) << 4);
-                hdr[12 + i] = (blk[12 + j] >> 4)   | (uint8_t)((blk[8 + j] >> 6) << 4);
-            }
-            memset(hdr + 20, 0, 12);
+            const uint8_t *blk = src + ((size_t)row * blocks_per_row + b) * src_block_bytes;
+            uint16_t d_fp16 = (uint16_t)blk[0] | ((uint16_t)blk[1] << 8);
+            float d_fp32 = fp16_to_fp32_ref(d_fp16);
+            uint32_t d_bits;
+            memcpy(&d_bits, &d_fp32, 4);
+            uint32_t *ddr32 = (uint32_t *)(hdr_base + (size_t)(b >> 2) * 16);
+            ddr32[b & 3] = d_bits;
         }
 
-        // Nibbles: element-major, transposed across blocks
-        for (int g = 0; g < groups; g++) {
-            for (int n = 0; n < 256; n++) {
-                uint32_t nib32 = 0;
-                for (int b = 0; b < 8; b++) {
-                    const uint8_t* blk = src + ((size_t)row * blocks_per_row
-                                                + (size_t)g * 8 + (size_t)b) * Q4_K_BYTES;
-                    int q_byte = 16 + (n & 31) + ((n & 0xC0) >> 1);
-                    int shift  = (n & 32) ? 4 : 0;
-                    uint32_t nib = (blk[q_byte] >> shift) & 0xF;
-                    nib32 |= (nib << (b * 4));
-                }
-                if (groups == 1) {
+        uint8_t *nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
+
+        if (groups <= 8) {
+            // WV: 8 groups, 4 element-slices per DDR word
+            for (int g = 0; g < groups; g++) {
+                for (int n = 0; n < 32; n++) {
+                    uint32_t nib32 = 0;
+                    for (int b = 0; b < 8; b++) {
+                        const uint8_t *blk = src + ((size_t)row * blocks_per_row
+                                                    + (size_t)g * 8 + (size_t)b) * src_block_bytes;
+                        int byte_off = 2 + (n >> 1);
+                        int shift    = (n & 1) * 4;
+                        uint32_t nib = (blk[byte_off] >> shift) & 0xF;
+                        nib32 |= (nib << (b * 4));
+                    }
                     int e = n >> 2, s = n & 3;
-                    uint8_t* nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
-                    uint32_t* ddr32 = (uint32_t*)(nib_base + (size_t)e * 16);
+                    uint32_t *ddr32 = (uint32_t *)(nib_base
+                        + ((size_t)g * 8 + (size_t)e) * 16);
                     ddr32[s] = nib32;
-                } else {
-                    int slot = g;
-                    uint8_t* nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
-                    uint32_t* ddr32 = (uint32_t*)(nib_base + (size_t)n * 16);
-                    ddr32[slot] = nib32;
+                }
+            }
+        } else {
+            // Output: 32 groups, 8 meta-groups of 4
+            for (int mg = 0; mg < Q40_DOWN_MG; mg++) {
+                for (int n = 0; n < 32; n++) {
+                    uint32_t nib32[4] = {0, 0, 0, 0};
+                    for (int k = 0; k < 4; k++) {
+                        int g = mg * 4 + k;
+                        for (int b = 0; b < 8; b++) {
+                            const uint8_t *blk = src + ((size_t)row * blocks_per_row
+                                                        + (size_t)g * 8 + (size_t)b) * src_block_bytes;
+                            int byte_off = 2 + (n >> 1);
+                            int shift    = (n & 1) * 4;
+                            uint32_t nib = (blk[byte_off] >> shift) & 0xF;
+                            nib32[k] |= (nib << (b * 4));
+                        }
+                    }
+                    uint32_t *ddr32 = (uint32_t *)(nib_base
+                        + ((size_t)mg * 32 + (size_t)n) * 16);
+                    ddr32[0] = nib32[0]; ddr32[1] = nib32[1];
+                    ddr32[2] = nib32[2]; ddr32[3] = nib32[3];
                 }
             }
         }
     }
 }
 
-// dot_q4k_int32_ref: exact INT32 accumulation matching mac_blocks_wv hardware.
-// x_int is INT8; scale (x_scale or gate_scale) is applied at the final reduction.
-static float dot_q4k_int32_ref(const uint8_t* block, const int8_t* x_int, int v_base, float scale) {
-    float d_val    = fp16_ref((uint16_t)(block[0] | ((uint16_t)block[1] << 8)));
-    float dmin_val = fp16_ref((uint16_t)(block[2] | ((uint16_t)block[3] << 8)));
-
-    uint8_t sc6[8], mn6[8];
-    sc6[0] = block[4]  & 0x3F;  sc6[1] = block[5]  & 0x3F;
-    sc6[2] = block[6]  & 0x3F;  sc6[3] = block[7]  & 0x3F;
-    mn6[0] = block[8]  & 0x3F;  mn6[1] = block[9]  & 0x3F;
-    mn6[2] = block[10] & 0x3F;  mn6[3] = block[11] & 0x3F;
-    sc6[4] = (block[12] & 0x0F) | (uint8_t)((block[4]  >> 6) << 4);
-    sc6[5] = (block[13] & 0x0F) | (uint8_t)((block[5]  >> 6) << 4);
-    sc6[6] = (block[14] & 0x0F) | (uint8_t)((block[6]  >> 6) << 4);
-    sc6[7] = (block[15] & 0x0F) | (uint8_t)((block[7]  >> 6) << 4);
-    mn6[4] = (block[12] >> 4)   | (uint8_t)((block[8]  >> 6) << 4);
-    mn6[5] = (block[13] >> 4)   | (uint8_t)((block[9]  >> 6) << 4);
-    mn6[6] = (block[14] >> 4)   | (uint8_t)((block[10] >> 6) << 4);
-    mn6[7] = (block[15] >> 4)   | (uint8_t)((block[11] >> 6) << 4);
-
-    int32_t int_acc_w[8] = {0};
-    int32_t int_acc_m[8] = {0};
-    for (int n = 0; n < 256; n++) {
-        int     sub  = n >> 5;
-        int     k    = n & 7;
-        int32_t nib  = (int32_t)((block[16 + (n & 31) + ((n & 0xC0) >> 1)] >> ((n & 32) ? 4 : 0)) & 0xF);
-        int32_t xi   = (int32_t)x_int[v_base + n];
-        int_acc_w[k] += xi * nib * (int32_t)sc6[sub];
-        int_acc_m[k] += xi       * (int32_t)mn6[sub];
-    }
-    int32_t sw = 0, sm = 0;
-    for (int k = 0; k < 8; k++) { sw += int_acc_w[k]; sm += int_acc_m[k]; }
-    return d_val * (scale * (float)sw) - dmin_val * (scale * (float)sm);
+// ============================================================================
+// Reference SiLU gate
+// ============================================================================
+static float sigmoid_ref(float x) {
+    return 1.0f / (1.0f + expf(-x));
 }
 
 // ============================================================================
-// Q6_K helpers
-//
-// Block layout (210 bytes):
-//   [0..127]   ql      4-bit low nibbles
-//   [128..191] qh      2-bit high pairs
-//   [192..207] scales  int8_t per 16 weights
-//   [208..209] d       fp16 LE
-//
-// Test pattern: mock_q = n%5, mock_sc = (n>>4)&1 ? 2 : -2.
+// Test runner
 // ============================================================================
-static void fill_q6k_block(uint8_t* block, uint16_t d_raw) {
-    memset(block, 0, Q6_K_BYTES);
-    block[208] =  d_raw        & 0xFF;
-    block[209] = (d_raw >> 8)  & 0xFF;
+static int run_test(const char *name, int n_tokens,
+                    float x_scale, bool subnormal_fp16,
+                    float tol_rel, float tol_abs) {
+    cout << "  Test " << name << " ... " << flush;
 
-    for (int n = 0; n < 256; n++) {
-        int     sc_idx   = n >> 4;
-        int8_t  mock_sc  = (int8_t)((sc_idx & 1) ? 2 : -2);
-        block[192 + sc_idx] = (uint8_t)mock_sc;   // same value written repeatedly, OK
-
-        int8_t  mock_q   = (int8_t)(n % 5);
-        uint8_t q_biased = (uint8_t)(mock_q + 32);
-        uint8_t ql       = q_biased & 0x0F;
-        uint8_t qh       = (q_biased >> 4) & 0x03;
-
-        int ql_idx = n >> 1;
-        if (n & 1) block[ql_idx]       |= (uint8_t)(ql << 4);
-        else       block[ql_idx]        = ql;
-
-        int qh_idx = n >> 2;
-        block[128 + qh_idx] |= (uint8_t)(qh << ((n & 3) * 2));
-    }
-}
-
-// reformat_q6k_to_fieldsplit: convert VECTOR_DIM rows from raw GGML Q6_K block layout
-// (each 210-byte block has ql/qh/sc/d interleaved) to the field-split layout that
-// load_row_down_q6k expects:
-//   bytes   0.. 4095: all ql  for blocks 0..31 (32 × 128 bytes)
-//   bytes 4096.. 6143: all qh  for blocks 0..31 (32 × 64  bytes)
-//   bytes 6144.. 6655: all sc  for blocks 0..31 (32 × 16  bytes)
-//   bytes 6656.. 6719: all d   for blocks 0..31 (32 × 2   bytes)
-// Row stride is unchanged: 32 × 210 = 6720 bytes.
-static void reformat_q6k_to_fieldsplit(uint8_t* dst, const uint8_t* src) {
-    for (int out = 0; out < VECTOR_DIM; out++) {
-        uint8_t*       row_dst = dst + (size_t)out * DOWN_BLOCKS_PER_ROW * Q6_K_BYTES;
-        const uint8_t* row_src = src + (size_t)out * DOWN_BLOCKS_PER_ROW * Q6_K_BYTES;
-        uint8_t* ql_dst = row_dst;
-        uint8_t* qh_dst = row_dst + 32 * 128;
-        uint8_t* sc_dst = row_dst + 32 * 128 + 32 * 64;
-        uint8_t* d_dst  = row_dst + 32 * 128 + 32 * 64 + 32 * 16;
-        for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
-            const uint8_t* blk = row_src + b * Q6_K_BYTES;
-            memcpy(ql_dst + b * 128, blk,       128); // ql [0..127]
-            memcpy(qh_dst + b * 64,  blk + 128, 64);  // qh [128..191]
-            memcpy(sc_dst + b * 16,  blk + 192, 16);  // sc [192..207]
-            memcpy(d_dst  + b * 2,   blk + 208, 2);   // d  [208..209]
+    // Build x batch from random float → INT8 quant
+    for (int tok = 0; tok < n_tokens; tok++) {
+        float max_abs = 0.f;
+        for (int j = 0; j < VECTOR_DIM; j++) {
+            // Small x range [-0.01, 0.01] to keep X1/X2 within INT8 quant range
+            // (X12_SCALE_RANGE=10.0) given 64-block Q4_0 accumulation.
+            float v = (float)(rand() % 2001 - 1000) / 100000.f;
+            if (v < 0 ? -v > max_abs : v > max_abs) max_abs = v < 0 ? -v : v;
+            float xf = v / x_scale;
+            int iq = (int)(xf + (xf >= 0.f ? 0.5f : -0.5f));
+            if (iq >  127) iq =  127;
+            if (iq < -128) iq = -128;
+            x_batch_buf[tok * VECTOR_DIM + j] = (int8_t)iq;
         }
     }
-}
 
-// dot_q6k_ref: 8-lane FP32 accumulator matching hardware decode_mac_q6k.
-// x_int is INT8; scale (gate_scale) dequantizes each element inside the loop.
-static float dot_q6k_ref(const uint8_t* block, const int8_t* x_int, int v_base, float scale) {
-    float d = fp16_ref((uint16_t)(block[208] | ((uint16_t)block[209] << 8)));
-    float acc[8] = {0.f, 0.f, 0.f, 0.f, 0.f, 0.f, 0.f, 0.f};
-    for (int n = 0; n < 256; n++) {
-        int     ql_idx = n >> 1;
-        int     qh_idx = n >> 2;
-        int     sc_idx = n >> 4;
-        uint8_t ql     = (n & 1) ? (block[ql_idx] >> 4) : (block[ql_idx] & 0x0F);
-        uint8_t qh     = (block[128 + qh_idx] >> ((n & 3) * 2)) & 0x03;
-        int8_t  q      = (int8_t)((uint8_t)((qh << 4) | ql)) - 32;
-        int8_t  sc     = (int8_t)block[192 + sc_idx];
-        float   v      = (float)x_int[v_base + n] * scale;
-        acc[n & 7]    += v * (float)q * (float)sc;
-    }
-    float sum = 0.f;
-    for (int k = 0; k < 8; k++) sum += acc[k];
-    return d * sum;
-}
-
-// ============================================================================
-// Mock token test: single token, Q4_K down, host ref vs DUT
-// ============================================================================
-static int run_mock_token_test() {
-    // weights — d=0x0800 (fp16 2^-13) keeps X1/X2 within X12_SCALE_RANGE=10
-    // for the x=(i%17)-8 input pattern.  dmin=0 isolates the d-path.
-    for (int row = 0; row < FFN_DIM; ++row) {
-        fill_q4k_block(W_buf + row * WV_BLOCKS_PER_ROW * Q4_K_BYTES, 0x0800, 0x0000);
-        fill_q4k_block(V_buf + row * WV_BLOCKS_PER_ROW * Q4_K_BYTES, 0x0800, 0x0000);
-    }
-    for (int out = 0; out < VECTOR_DIM; ++out) {
-        fill_q4k_block(Wd_q4k + out * DOWN_BLOCKS_PER_ROW * Q4_K_BYTES, 0x0800, 0x0000);
-    }
-    // input
-    for (int i = 0; i < VECTOR_DIM; ++i) x_batch_buf[i] = (int8_t)((i % 17) - 8);
-
-    transpose_q4k_to_urm_csim(W_buf,  W_urm,  FFN_DIM,    WV_BLOCKS_PER_ROW);
-    cout << "[DEBUG] First hybrid block bytes 0-19:";
-    for (int i = 0; i < 20; i++) cout << " " << hex << (int)W_urm[i];
-    cout << dec << endl;
-    cout << "[DEBUG] Hybrid sc6[0..3]=" << (int)W_urm[4] << "," << (int)W_urm[5]
-         << "," << (int)W_urm[6] << "," << (int)W_urm[7] << endl;
-    cout << "[DEBUG] Hybrid nibble byte 32: " << hex << (int)W_urm[32] << dec
-         << " (nibbles=" << ((int)W_urm[32]&0xF) << "," << ((int)W_urm[32]>>4) << ")" << endl;
-    transpose_q4k_to_urm_csim(V_buf,  V_urm,  FFN_DIM,    WV_BLOCKS_PER_ROW);
-    transpose_q4k_to_urm_csim(Wd_q4k, Wd_urm, VECTOR_DIM, DOWN_BLOCKS_PER_ROW);
-
-    // DUT — x_scale=1.0f because x_batch_buf is already INT8 and the mock
-    // test wants a direct 1:1 scale (no float→INT8 conversion done here).
-    swiglu(W_urm, V_urm, Wd_urm, x_batch_buf, out_batch_buf,
-           /*down_quant_mode=*/0, /*x_scale=*/1.0f);
-
-    // reference A,B — mirrors compute_X1/X2 with x_scale=1.0f
-    for (int j = 0; j < FFN_DIM; ++j) {
-        const uint8_t *wblk = W_buf + j * WV_BLOCKS_PER_ROW * Q4_K_BYTES;
-        const uint8_t *vblk = V_buf + j * WV_BLOCKS_PER_ROW * Q4_K_BYTES;
-        float accA = 0.f, accB = 0.f;
-        for (int b = 0; b < WV_BLOCKS_PER_ROW; ++b) {
-            accA += dot_q4k_int32_ref(wblk + b * Q4_K_BYTES, x_batch_buf, b * 256, 1.0f);
-            accB += dot_q4k_int32_ref(vblk + b * Q4_K_BYTES, x_batch_buf, b * 256, 1.0f);
+    // Reference: FP32 brute-force MAC
+    for (int tok = 0; tok < n_tokens; tok++) {
+        // Build full fp32 x vector from INT8 quantized values
+        float x_fp32[VECTOR_DIM];
+        for (int j = 0; j < VECTOR_DIM; j++) {
+            x_fp32[j] = (float)x_batch_buf[tok * VECTOR_DIM + j] * x_scale;
         }
-        X1_ref[0][j] = accA;
-        X2_ref[0][j] = accB;
-    }
-    // Apply hardware X12 quantization/dequantization (mirrors compute_X1/X2 lines 208-212)
-    for (int j = 0; j < FFN_DIM; ++j) {
-        float fq1 = X1_ref[0][j] * X12_INV_SCALE;
-        int   iq1 = (int)(fq1 + (fq1 >= 0.f ? 0.5f : -0.5f));
-        if (iq1 >  127) iq1 =  127;
-        if (iq1 < -128) iq1 = -128;
-        X1_ref[0][j] = (float)(int8_t)iq1 * X12_QUANT_SCALE;
 
-        float fq2 = X2_ref[0][j] * X12_INV_SCALE;
-        int   iq2 = (int)(fq2 + (fq2 >= 0.f ? 0.5f : -0.5f));
-        if (iq2 >  127) iq2 =  127;
-        if (iq2 < -128) iq2 = -128;
-        X2_ref[0][j] = (float)(int8_t)iq2 * X12_QUANT_SCALE;
-    }
-    // gate and scale
-    float max_abs = 0.f;
-    for (int j = 0; j < FFN_DIM; ++j) {
-        float g = silu_ref_lut(X1_ref[0][j]) * X2_ref[0][j];
-        gate_ref[0][j] = g;
-        float a = g >= 0.f ? g : -g;
-        if (a > max_abs) max_abs = a;
-    }
-    float gate_scale = (max_abs > 0.f) ? (max_abs / 127.0f) : 1.0f;
-    float inv_gs = 1.0f / gate_scale;
-    int8_t gate_q[DOWN_BLOCKS_PER_ROW][256];
-    for (int j = 0; j < FFN_DIM; ++j) {
-        float fq = gate_ref[0][j] * inv_gs;
-        int iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
-        if (iq > 127) iq = 127;
-        if (iq < -128) iq = -128;
-        gate_q[j >> 8][j & 255] = (int8_t)iq;
-    }
-    // down
-    for (int o = 0; o < VECTOR_DIM; ++o) {
-        const uint8_t *wd = Wd_q4k + o * DOWN_BLOCKS_PER_ROW * Q4_K_BYTES;
-        float sum = 0.f;
-        for (int b = 0; b < DOWN_BLOCKS_PER_ROW; ++b) {
-            sum += dot_q4k_int32_ref(wd + b * Q4_K_BYTES,
-                                     (const int8_t*)gate_q[b], 0, gate_scale);
+        // X1_ref[r] = dot(W_gate_row_r, x)
+        for (int r = 0; r < FFN_DIM; r++) {
+            X1_ref[tok][r] = q40_dot_ref(W_raw + (size_t)r * Q40_WV_BLOCKS * Q40_BLK_BYTES,
+                                         x_fp32, VECTOR_DIM);
         }
-        expected[0][o] = sum;
+        // X2_ref[r] = dot(W_up_row_r, x)
+        for (int r = 0; r < FFN_DIM; r++) {
+            X2_ref[tok][r] = q40_dot_ref(V_raw + (size_t)r * Q40_WV_BLOCKS * Q40_BLK_BYTES,
+                                         x_fp32, VECTOR_DIM);
+        }
+        // Gate = SiLU(X1) * X2
+        for (int r = 0; r < FFN_DIM; r++) {
+            float silu = X1_ref[tok][r] * sigmoid_ref(X1_ref[tok][r]);
+            gate_ref[tok][r] = silu * X2_ref[tok][r];
+        }
+        // Output[j] = dot(W_down_row_j, gate)
+        for (int j = 0; j < VECTOR_DIM; j++) {
+            expected[tok][j] = q40_dot_ref(Wd_raw + (size_t)j * Q40_DOWN_BLOCKS * Q40_BLK_BYTES,
+                                           gate_ref[tok], FFN_DIM);
+        }
     }
 
+    // Transpose to URM DDR layout
+    transpose_q40_to_urm_csim(W_raw,  W_urm,  FFN_DIM,     Q40_WV_BLOCKS);
+    transpose_q40_to_urm_csim(V_raw,  V_urm,  FFN_DIM,     Q40_WV_BLOCKS);
+    transpose_q40_to_urm_csim(Wd_raw, Wd_urm, VECTOR_DIM,  Q40_DOWN_BLOCKS);
+
+    // Call HLS IP
+    swiglu(W_urm, V_urm, Wd_urm, x_batch_buf, out_batch_buf, 0, x_scale);
+
+    // Compare
     float max_err = 0.f;
-    for (int i = 0; i < VECTOR_DIM; ++i) {
-        float e = fabsf(out_batch_buf[i] - expected[0][i]);
-        if (e > max_err) max_err = e;
-    }
-    std::cout << "Mock token max abs err: " << max_err << std::endl;
-    return (max_err > 1e-3f);
-}
-
-// ============================================================================
-// run_test — fills weight buffers, computes reference, calls swiglu(), checks.
-//
-// x_vecs:     pointer to batch_size × VECTOR_DIM floats (row-major)
-// batch_size: number of tokens (1 ≤ batch_size ≤ MAX_BATCH)
-// d_W/dmin_W: fp16 raw for every W (ffn_gate) block
-// d_V/dmin_V: fp16 raw for every V (ffn_up)   block
-// d_down:     fp16 raw for every W_down block
-// dmin_down:  fp16 raw dmin for Q4_K W_down (ignored when q6k_down=true)
-// q6k_down:   false → mode=0 (Q4_K), true → mode=1 (Q6_K)
-// ============================================================================
-static int run_test(const char*  label,
-                    const float* x_vecs,
-                    int          batch_size,
-                    uint16_t d_W,    uint16_t dmin_W,
-                    uint16_t d_V,    uint16_t dmin_V,
-                    uint16_t d_down, uint16_t dmin_down)
-{
-    // ── 1. Fill weight buffers ───────────────────────────────────────────────
-    for (int row = 0; row < FFN_DIM; row++)
-        for (int b = 0; b < WV_BLOCKS_PER_ROW; b++)
-            fill_q4k_block(
-                W_buf + ((row * WV_BLOCKS_PER_ROW + b) * Q4_K_BYTES),
-                d_W, dmin_W);
-
-    for (int row = 0; row < FFN_DIM; row++)
-        for (int b = 0; b < WV_BLOCKS_PER_ROW; b++)
-            fill_q4k_block(
-                V_buf + ((row * WV_BLOCKS_PER_ROW + b) * Q4_K_BYTES),
-                d_V, dmin_V);
-
-    for (int out = 0; out < VECTOR_DIM; out++)
-        for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++)
-            fill_q4k_block(
-                Wd_q4k + ((out * DOWN_BLOCKS_PER_ROW + b) * Q4_K_BYTES),
-                d_down, dmin_down);
-
-    // ── 1b. Convert packed Q4_K → URM-transposed format for the HLS IP ──────
-    transpose_q4k_to_urm_csim(W_buf, W_urm, FFN_DIM, WV_BLOCKS_PER_ROW);
-    transpose_q4k_to_urm_csim(V_buf, V_urm, FFN_DIM, WV_BLOCKS_PER_ROW);
-    transpose_q4k_to_urm_csim(Wd_q4k, Wd_urm, VECTOR_DIM, DOWN_BLOCKS_PER_ROW);
-
-    // ── 2. Quantize x vectors to INT8 ────────────────────────────────────────
-    float x_max_abs = 0.f;
-    for (int n = 0; n < batch_size; n++)
-        for (int i = 0; i < VECTOR_DIM; i++) {
-            float v = x_vecs[n * VECTOR_DIM + i];
-            if (v < 0.f) v = -v;
-            if (v > x_max_abs) x_max_abs = v;
-        }
-    float x_scale = (x_max_abs > 0.f) ? (x_max_abs / 127.0f) : 1.0f;
-    float x_inv   = 1.0f / x_scale;
-    for (int n = 0; n < batch_size; n++)
-        for (int i = 0; i < VECTOR_DIM; i++) {
-            float fq = x_vecs[n * VECTOR_DIM + i] * x_inv;
-            int   iq = (int)fq;
-            if (iq >  127) iq =  127;
-            if (iq < -128) iq = -128;
-            x_batch_buf[n * VECTOR_DIM + i] = (int8_t)iq;
-        }
-
-    // ── 3. Compute reference outputs for every token in the batch ────────────
-    for (int n = 0; n < batch_size; n++) {
-        const int8_t* x_int = x_batch_buf + n * VECTOR_DIM;
-
-        // Phase 2: X1[n][row] = x_int @ W[row]  (INT32 accumulation, matches hardware)
-        for (int row = 0; row < FFN_DIM; row++) {
-            X1_ref[n][row] = 0.f;
-            for (int b = 0; b < WV_BLOCKS_PER_ROW; b++)
-                X1_ref[n][row] += dot_q4k_int32_ref(
-                    W_buf + (row * WV_BLOCKS_PER_ROW + b) * Q4_K_BYTES,
-                    x_int, b * 256, x_scale);
-        }
-
-        // Phase 3: X2[n][row] = x_int @ V[row]  (INT32 accumulation, matches hardware)
-        for (int row = 0; row < FFN_DIM; row++) {
-            X2_ref[n][row] = 0.f;
-            for (int b = 0; b < WV_BLOCKS_PER_ROW; b++)
-                X2_ref[n][row] += dot_q4k_int32_ref(
-                    V_buf + (row * WV_BLOCKS_PER_ROW + b) * Q4_K_BYTES,
-                    x_int, b * 256, x_scale);
-        }
-
-        // Phase 2b/3b: apply hardware X12 quantization/dequantization to X1 and X2.
-        // compute_X1/X2 store INT8 in X1_cache/X2_cache (line 208-212 in swiglu.cpp).
-        // compute_gate then reads back and multiplies by X12_QUANT_SCALE (lines 263-264).
-        // The reference must mirror this step.
-        for (int j = 0; j < FFN_DIM; j++) {
-            float fq1 = X1_ref[n][j] * X12_INV_SCALE;
-            int   iq1 = (int)(fq1 + (fq1 >= 0.f ? 0.5f : -0.5f));
-            if (iq1 >  127) iq1 =  127;
-            if (iq1 < -128) iq1 = -128;
-            X1_ref[n][j] = (float)(int8_t)iq1 * X12_QUANT_SCALE;
-
-            float fq2 = X2_ref[n][j] * X12_INV_SCALE;
-            int   iq2 = (int)(fq2 + (fq2 >= 0.f ? 0.5f : -0.5f));
-            if (iq2 >  127) iq2 =  127;
-            if (iq2 < -128) iq2 = -128;
-            X2_ref[n][j] = (float)(int8_t)iq2 * X12_QUANT_SCALE;
-        }
-
-        // Phase 4: gate = SiLU_lut(X1) * X2, quantized to INT8 (mirrors compute_gate)
-        float gate_fp[FFN_DIM];
-        int8_t gate_int[FFN_DIM];
-        float gate_max_abs = 0.f;
-
-        // Pass 1: compute FP32 gate and find abs-max
-        for (int j = 0; j < FFN_DIM; j++) {
-            gate_fp[j] = silu_ref_lut(X1_ref[n][j]) * X2_ref[n][j];
-            float abs_val = fabsf(gate_fp[j]);
-            if (abs_val > gate_max_abs) gate_max_abs = abs_val;
-        }
-
-        // Pass 2: quantize to INT8 — hardware uses round-to-nearest (swiglu.cpp line 294):
-        //   int iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
-        // NOT truncation.  Using truncation here causes gate_int = 126 instead of 127
-        // for the max element when fq = 126.999... due to FP rounding.
-        float gate_scale = (gate_max_abs > 0.f) ? (gate_max_abs / 127.0f) : 1.0f;
-        float gate_inv   = 1.0f / gate_scale;
-        for (int j = 0; j < FFN_DIM; j++) {
-            float fq = gate_fp[j] * gate_inv;
-            int   iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
-            if (iq >  127) iq =  127;
-            if (iq < -128) iq = -128;
-            gate_int[j] = (int8_t)iq;
-        }
-
-        // Phase 5: expected[n][out] = gate_int @ W_down[out]  (INT32 / 8-lane FP reference)
-        for (int out = 0; out < VECTOR_DIM; out++) {
-            expected[n][out] = 0.f;
-            for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++)
-                expected[n][out] += dot_q4k_int32_ref(
-                    Wd_q4k + (out * DOWN_BLOCKS_PER_ROW + b) * Q4_K_BYTES,
-                    gate_int, b * 256, gate_scale);
+    for (int tok = 0; tok < n_tokens; tok++) {
+        for (int j = 0; j < VECTOR_DIM; j++) {
+            float err = fabsf(out_batch_buf[tok * VECTOR_DIM + j] - expected[tok][j]);
+            if (err > max_err) max_err = err;
         }
     }
 
-    // ── 4. Run the IP ────────────────────────────────────────────────────────
-    memset(out_batch_buf, 0, sizeof(out_batch_buf));
-    swiglu(W_urm, V_urm, Wd_urm,
-           x_batch_buf, out_batch_buf,
-           0u,       // down_quant_mode = 0 (Q4_K only)
-           x_scale);
-
-    // ── 5. Verify outputs ────────────────────────────────────────────────────
-    // Tolerance: 0.1% relative + absolute floor of 1.0.
-    // The 8-accumulator binary-tree reduction in swiglu.cpp sums in a different
-    // order than the testbench's sequential sum; 1–16 ULP differences are
-    // numerically correct.  A real bug (e.g. DAZ making d=0) produces ~100%
-    // relative error, well outside the 0.1% threshold.
-    int err_cnt = 0;
-    bool truncated = false;
-
-    for (int n = 0; n < batch_size && !truncated; n++) {
-        for (int i = 0; i < VECTOR_DIM; i++) {
-            float actual  = out_batch_buf[n * VECTOR_DIM + i];
-            float exp_val = expected[n][i];
-            float diff    = fabsf(actual - exp_val);
-            float tol     = 1e-3f * (fabsf(exp_val) + 1.0f);
-            if (diff > tol) {
-                cout << label << " [token " << n << " out[" << i << "]]"
-                     << "  exp=" << exp_val << "  got=" << actual
-                     << "  diff=" << diff << "\n";
-                if (++err_cnt >= 10) {
-                    cout << "  (further errors suppressed)\n";
-                    truncated = true;
-                    break;
-                }
-            }
-        }
-    }
-
-    if (err_cnt == 0)
-        cout << label << ": PASSED  (batch=" << batch_size << ")\n";
-    else
-        cout << label << ": FAILED  (batch=" << batch_size
-             << ", " << err_cnt << " error(s))\n";
-    return err_cnt;
-}
-
-// ============================================================================
-int main() {
-    init_sigmoid_lut_csim();
-
-    // ── Shared input vectors ─────────────────────────────────────────────────
-    // vec0: cycling 0.1, 0.2, 0.3, 0.4  (same as old testbench)
-    // vec1: cycling 0.5, -0.5, 0.25, -0.25  (used in batch tests)
-    // vec2: all 1.0 / (i+1) (decaying, hits many SiLU regimes)
-    static float all_vecs[VECTOR_DIM];
-    for (int i = 0; i < VECTOR_DIM; i++) {
-        all_vecs[i] = (float)((i % 4) + 1) * 0.1f;
-    }
-    cout << "=== Mock token sanity ===\n";
-    int total_errors = run_mock_token_test();
-
-    // ── T1: Q4_K W_down, batch=1, all normal fp16 ───────────────────────────
-    // 0x0800 = fp16 2^-13 ≈ 1.22e-4.  Chosen so that X1/X2 ≈ 7.7 for the
-    // all-positive all_vecs pattern, which stays within X12_SCALE_RANGE=10.
-    // dmin=0 (0x0000) isolates the d-path from the dmin-subtraction path.
-    // Baseline: verifies the Q4_K decode path end-to-end.
-    cout << "=== T1: Q4_K down, batch=1, normal fp16 ===\n";
-    total_errors += run_test("T1", all_vecs, 1,
-        /*d_W=*/0x0800, /*dmin_W=*/0x0000,
-        /*d_V=*/0x0800, /*dmin_V=*/0x0000,
-        /*d_down=*/0x0800, /*dmin_down=*/0x0000);
-
-    // ── T2: Q4_K W_down, batch=1, subnormal d in W ──────────────────────────
-    // 0x00A4 is a subnormal fp16 (~9.8e-6) seen in real LFM2 weights.
-    // Catches the DAZ bug: hls_half/ap_fixed flush subnormals to 0 → X1=0 → out=0.
-    // d_V = 0x0800 (small normal) keeps X2 in range; subnormal d_W gives X1 ≈ 0.62.
-    cout << "=== T2: Q4_K down, batch=1, subnormal d in W (0x00A4 ~9.8e-6) ===\n";
-    total_errors += run_test("T2", all_vecs, 1,
-        /*d_W=*/0x00A4, /*dmin_W=*/0x0000,
-        /*d_V=*/0x0800, /*dmin_V=*/0x0000,
-        /*d_down=*/0x0800, /*dmin_down=*/0x0000);
-
-    // ── T3: Q4_K W_down, batch=1, subnormal dmin in V ───────────────────────
-    // 0x817E = negative subnormal fp16 (~-2.3e-5).
-    // Verifies the dmin fp16_to_fp32 path; a wrong dmin→0 shifts all X2 outputs.
-    // d_W and d_V = 0x0800 to keep X1/X2 within X12_SCALE_RANGE.
-    cout << "=== T3: Q4_K down, batch=1, subnormal dmin in V (0x817E) ===\n";
-    total_errors += run_test("T3", all_vecs, 1,
-        /*d_W=*/0x0800, /*dmin_W=*/0x0000,
-        /*d_V=*/0x0800, /*dmin_V=*/0x817E,
-        /*d_down=*/0x0800, /*dmin_down=*/0x0000);
-
-    // ── T4: Q4_K down, batch=2, normal fp16 ─────────────────────────────────
-    // Core batch correctness test.  Two tokens with distinct x vectors are
-    // processed in one IP call.  The weight-stationary loop in Phases 2/3/5
-    // must produce the same result for each token as the batch=1 case would.
-    // A bug in ARRAY_PARTITION or the batch index would corrupt one token.
-
-    // cout << "=== T4: Q4_K down, batch=2, normal fp16 (two distinct x vectors) ===\n";
-    // total_errors += run_test("T6", all_vecs, 2,
-    //     /*d_W=*/0x3800, /*dmin_W=*/0x2000,
-    //     /*d_V=*/0x3800, /*dmin_V=*/0x2000,
-    //     /*d_down=*/0x3800, /*dmin_down=*/0x2000);
-
-    // // ── T7: Q4_K down, batch=4, subnormal d in W ─────────────────────────────
-    // // Combines the subnormal stress-test (T2) with a batch>1 scenario.
-    // // Verifies all four tokens get correct non-zero outputs despite subnormal d.
-    // // NOTE: ~4× simulation time of T2; expect several minutes.
-    // cout << "=== T7: Q4_K down, batch=4, subnormal d in W (0x00A4) ===\n";
-    // total_errors += run_test("T7", all_vecs, 4,
-    //     /*d_W=*/0x00A4, /*dmin_W=*/0x2000,
-    //     /*d_V=*/0x3800, /*dmin_V=*/0x2000,
-    //     /*d_down=*/0x3800, /*dmin_down=*/0x2000);
-
-    // // ── T8: Q6_K down, batch=2, normal fp16 ─────────────────────────────────
-    // // Batch correctness on the Q6_K Phase 5 path.  Ensures the Q6_K loop
-    // // correctly iterates over all batch tokens and does not cross-contaminate.
-    // cout << "=== T8: Q6_K down, batch=2, normal fp16 (mode=1) ===\n";
-    // total_errors += run_test("T8", all_vecs, 2,
-    //     /*d_W=*/0x3800, /*dmin_W=*/0x2000,
-    //     /*d_V=*/0x3800, /*dmin_V=*/0x2000,
-    //     /*d_down=*/0x3800, /*dmin_down=*/0x0000, true);
-
-    cout << "\n";
-    if (total_errors == 0) {
-        cout << "All tests PASSED.\n";
+    cout << "max_err=" << max_err;
+    if (max_err < tol_abs || max_err < tol_rel) {
+        cout << "  PASS" << endl;
         return 0;
     } else {
-        cout << "FAILED: " << total_errors << " error(s) across all tests.\n";
+        cout << "  FAIL (tol abs=" << tol_abs << " rel=" << tol_rel << ")" << endl;
+        return 1;
+    }
+}
+
+// ============================================================================
+// main
+// ============================================================================
+int main() {
+    cout << "swiglu Q4_0 K=8 C-simulation Testbench" << endl;
+    cout << "======================================" << endl;
+
+    // ── Generate weight data ──────────────────────────────────────────────
+    srand(42);
+
+    // Fill Q4_0 weight blocks with random values
+    for (int r = 0; r < FFN_DIM; r++) {
+        for (int b = 0; b < Q40_WV_BLOCKS; b++) {
+            uint8_t nibbles[32];
+            for (int j = 0; j < 32; j++) nibbles[j] = rand() & 0xF;
+            // Realistic fp16 d: exp in [1..10] → values [~6e-5, ~0.06].
+            // This prevents fixed-point accumulator overflow (fxd_accum_t range ±131K)
+            // while still providing meaningful non-zero test values.
+            uint16_t d_fp16 = (uint16_t)((rand() % 10 + 1) << 10) | (uint16_t)(rand() & 0x3FF);
+            fill_q40_block(W_raw + ((size_t)r * Q40_WV_BLOCKS + b) * Q40_BLK_BYTES,
+                          d_fp16, nibbles);
+        }
+    }
+    for (int r = 0; r < FFN_DIM; r++) {
+        for (int b = 0; b < Q40_WV_BLOCKS; b++) {
+            uint8_t nibbles[32];
+            for (int j = 0; j < 32; j++) nibbles[j] = rand() & 0xF;
+            uint16_t d_fp16 = (uint16_t)((rand() % 10 + 1) << 10) | (uint16_t)(rand() & 0x3FF);
+            fill_q40_block(V_raw + ((size_t)r * Q40_WV_BLOCKS + b) * Q40_BLK_BYTES,
+                          d_fp16, nibbles);
+        }
+    }
+    for (int r = 0; r < VECTOR_DIM; r++) {
+        for (int b = 0; b < Q40_DOWN_BLOCKS; b++) {
+            uint8_t nibbles[32];
+            for (int j = 0; j < 32; j++) nibbles[j] = rand() & 0xF;
+            uint16_t d_fp16 = (uint16_t)((rand() % 10 + 1) << 10) | (uint16_t)(rand() & 0x3FF);
+            fill_q40_block(Wd_raw + ((size_t)r * Q40_DOWN_BLOCKS + b) * Q40_BLK_BYTES,
+                          d_fp16, nibbles);
+        }
+    }
+
+    int failures = 0;
+
+    // T1: Normal fp16 scales (exp != 0), x_scale = 0.0001
+    failures += run_test("T1 (normal fp16, x_scale=1e-4)",  1, 1e-4f, false, 0.3f, 1e-3f);
+
+    // T2: Subnormal fp16 scales (exp == 0, mant != 0)
+    // Rebuild weights with subnormal d values
+    for (int r = 0; r < FFN_DIM; r++) {
+        for (int b = 0; b < Q40_WV_BLOCKS; b++) {
+            uint8_t nibbles[32];
+            for (int j = 0; j < 32; j++) nibbles[j] = rand() & 0xF;
+            uint16_t d_fp16 = (uint16_t)(rand() & 0x3FF);  // exp=0, subnormal
+            fill_q40_block(W_raw + ((size_t)r * Q40_WV_BLOCKS + b) * Q40_BLK_BYTES,
+                          d_fp16, nibbles);
+        }
+    }
+    for (int r = 0; r < FFN_DIM; r++) {
+        for (int b = 0; b < Q40_WV_BLOCKS; b++) {
+            uint8_t nibbles[32];
+            for (int j = 0; j < 32; j++) nibbles[j] = rand() & 0xF;
+            uint16_t d_fp16 = (uint16_t)(rand() & 0x3FF);
+            fill_q40_block(V_raw + ((size_t)r * Q40_WV_BLOCKS + b) * Q40_BLK_BYTES,
+                          d_fp16, nibbles);
+        }
+    }
+    for (int r = 0; r < VECTOR_DIM; r++) {
+        for (int b = 0; b < Q40_DOWN_BLOCKS; b++) {
+            uint8_t nibbles[32];
+            for (int j = 0; j < 32; j++) nibbles[j] = rand() & 0xF;
+            uint16_t d_fp16 = (uint16_t)(rand() & 0x3FF);
+            fill_q40_block(Wd_raw + ((size_t)r * Q40_DOWN_BLOCKS + b) * Q40_BLK_BYTES,
+                          d_fp16, nibbles);
+        }
+    }
+    failures += run_test("T2 (subnormal fp16, x_scale=1e-4)", 1, 1e-4f, true, 0.3f, 1e-3f);
+
+    // T3: All-zero weights
+    memset(W_raw,  0, sizeof(W_raw));
+    memset(V_raw,  0, sizeof(V_raw));
+    memset(Wd_raw, 0, sizeof(Wd_raw));
+    failures += run_test("T3 (all-zero weights)",             1, 1e-4f, false, 0.0f, 1e-6f);
+
+    // T4: Single non-zero value
+    memset(W_raw,  0, sizeof(W_raw));
+    memset(V_raw,  0, sizeof(V_raw));
+    memset(Wd_raw, 0, sizeof(Wd_raw));
+    {
+        uint8_t nibbles[32] = {0};
+        nibbles[0] = 5;  // q_0 = 5 → q_0 - 8 = -3
+        fill_q40_block(W_raw, 0x3C00, nibbles);  // d = 1.0 (fp16 0x3C00)
+
+        uint8_t v_nibbles[32] = {0};
+        v_nibbles[0] = 3;  // q_0 = 3 → q_0 - 8 = -5
+        fill_q40_block(V_raw, 0x4000, v_nibbles);  // d = 2.0 (fp16 0x4000)
+
+        uint8_t wd_nibbles[32] = {0};
+        wd_nibbles[0] = 2;  // q_0 = 2 → q_0 - 8 = -6
+        fill_q40_block(Wd_raw, 0x4200, wd_nibbles);  // d = 3.0 (fp16 0x4200)
+    }
+    failures += run_test("T4 (single non-zero)",             1, 1e-4f, false, 0.3f, 1e-3f);
+
+    // T5: Random weights with small x_scale
+    srand(12345);
+    for (int r = 0; r < FFN_DIM; r++) {
+        for (int b = 0; b < Q40_WV_BLOCKS; b++) {
+            uint8_t nibbles[32];
+            for (int j = 0; j < 32; j++) nibbles[j] = rand() & 0xF;
+            uint16_t d_fp16 = (uint16_t)((rand() % 10 + 1) << 10) | (uint16_t)(rand() & 0x3FF);
+            fill_q40_block(W_raw + ((size_t)r * Q40_WV_BLOCKS + b) * Q40_BLK_BYTES,
+                          d_fp16, nibbles);
+        }
+    }
+    for (int r = 0; r < FFN_DIM; r++) {
+        for (int b = 0; b < Q40_WV_BLOCKS; b++) {
+            uint8_t nibbles[32];
+            for (int j = 0; j < 32; j++) nibbles[j] = rand() & 0xF;
+            uint16_t d_fp16 = (uint16_t)((rand() % 10 + 1) << 10) | (uint16_t)(rand() & 0x3FF);
+            fill_q40_block(V_raw + ((size_t)r * Q40_WV_BLOCKS + b) * Q40_BLK_BYTES,
+                          d_fp16, nibbles);
+        }
+    }
+    for (int r = 0; r < VECTOR_DIM; r++) {
+        for (int b = 0; b < Q40_DOWN_BLOCKS; b++) {
+            uint8_t nibbles[32];
+            for (int j = 0; j < 32; j++) nibbles[j] = rand() & 0xF;
+            uint16_t d_fp16 = (uint16_t)((rand() % 10 + 1) << 10) | (uint16_t)(rand() & 0x3FF);
+            fill_q40_block(Wd_raw + ((size_t)r * Q40_DOWN_BLOCKS + b) * Q40_BLK_BYTES,
+                          d_fp16, nibbles);
+        }
+    }
+    failures += run_test("T5 (random, x_scale=1e-3)",        1, 1e-3f, false, 0.3f, 1e-3f);
+
+    cout << "======================================" << endl;
+    if (failures == 0) {
+        cout << "ALL TESTS PASSED" << endl;
+        return 0;
+    } else {
+        cout << failures << " TEST(S) FAILED" << endl;
         return 1;
     }
 }

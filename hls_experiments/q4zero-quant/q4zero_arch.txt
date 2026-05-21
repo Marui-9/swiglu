@@ -1,0 +1,438 @@
+Architecture Description — swiglu.cpp (Q4_0 K=8, Merged WV Load, 128-Tile Output)
+================================================================================
+Date: 2026-05-21  |  Based on: swiglu.cpp (631 lines), csynth.rpt loop detail
+Model: LFM2.5-1.2B-Thinking-Q4_0  |  Target: ZU5EV (Kria KV260)
+
+
+Why Q4_0
+--------
+
+Q4_K required decoding interleaved 6-bit sc6/mn6 scales, carrying two accumulators
+(acc_w for nibble×scale, acc_m for min-subtraction), and CPU pre-decode to extract
+flat headers.  Q4_0 eliminates ALL of this:
+
+  Block (18 bytes, 32 values):
+    [0..1]   d fp16        (single block scale, no min)
+    [2..17]  qs[16]        (32 nibbles packed, lower nibble for even indices)
+
+  Dequant:  x_i = d * (q_i - 8)
+  MAC:      acc += d * sum(activation * (q - 8))   ← single accumulator
+
+No sc6, no mn6, no dmin, no interleaved-bit extraction, no get_byte() mux.
+Half the DSP per MAC chain (1 multiply vs 2).  Half the accumulator arrays.
+The CPU pre-decode only does fp16→fp32 conversion of d and nibble transposition
+to element-major — no complex header decoding at all.
+
+Q4_0 also changes the block count: 64 blocks/WV row (vs 8 for Q4_K) and 256
+blocks/output row (vs 32).  This enables finer-grain parallelism — 8 groups of
+8 blocks each, matching Q4_K's proven 8-block UNROLL pattern.
+
+
+General Pragmas
+---------------
+- DATAFLOW: overlaps independent stages at top level (unchanged).
+- ARRAY_PARTITION: creates independent banks for parallel access.  Used on
+  x_local (dim=2 complete, 256 banks), accumulator arrays (dim=0 complete,
+  8 banks per array), d arrays (dim=0 complete for K rows), gate_cache
+  (dim=1 cyclic factor=8), and nibble tiles.
+- BIND_STORAGE type=ram_1p impl=bram: forces BRAM for nibble tiles.
+  128-bit wide for WV (4 BRAM_18K cascade per tile), 32-bit for output
+  (1 BRAM_18K per tile).
+- BIND_STORAGE type=ram_2p impl=bram: dual-port BRAM for X1/X2 caches
+  (written by compute_X1/X2, read by compute_gate concurrently).
+- BIND_STORAGE type=ram_1p impl=uram: gate_cache in URAM.
+- BIND_STORAGE type=ram_1p impl=lutram: x_local in LUTRAM (fast, multi-port).
+- BIND_STORAGE type=rom_1p impl=bram: sigmoid_lut ROM.
+- BIND_OP op=mul impl=dsp: DSP-maps INT32 multiplies in MAC and REDUCE loops.
+- INLINE off: keeps functions as separate RTL modules for DATAFLOW.
+- PIPELINE II=1: one iteration per clock in inner loops.
+- UNROLL: replicates loop iterations for parallel MAC chains.
+- No fp16_to_fp32() in synthesis path — CPU pre-decodes d to fp32.
+- No explicit II pragmas on nibble load — HLS auto-schedules at II=1.
+
+
+Top Level: swiglu (Phase 0–5 orchestration)
+--------------------------------------------
+Signature (7 params):
+    void swiglu(const uint8_t *W, const uint8_t *V, const uint8_t *W_down,
+                const int8_t *x_batch, float *out_batch,
+                uint32_t down_quant_mode, float x_scale)
+
+#pragma HLS INTERFACE mode=m_axi on W, V, W_down, x_batch, out_batch:
+    5 AXI master ports for bulk DDR access.
+    W  → bundle=gmem_W,   depth=10485760, max_read_burst_length=128
+    V  → bundle=gmem_V,   depth=10485760, max_read_burst_length=128
+    Wd → bundle=gmem_Wd,  depth=10485760, max_read_burst_length=256
+    x  → bundle=gmem_x,   depth=8192,     max_read_burst_length=128
+    out→ bundle=gmem_out, depth=8192,     max_write_burst_length=256
+    All: latency=64, num_read_outstanding=1, max_widen_bitwidth=128.
+
+    DDR data per matrix:
+    W, V:     8192 rows × 1280 B = 10,485,760 B = 10.0 MB
+    W_down:   2048 rows × 5120 B = 10,485,760 B = 10.0 MB
+    Uniform 10 MB allocation for simple udmabuf management.
+
+#pragma HLS DATAFLOW:
+    Stages: load_x_local → compute_X1 ∥ compute_X2 → compute_gate → compute_output.
+    compute_X1 and compute_X2 run in parallel (independent data paths).
+    compute_gate starts after X1_cache and X2_cache are written.
+    compute_output starts after gate_cache is written.
+
+
+CPU Pre-Decode (ggml-cpu.c: transpose_q40_to_urm)
+-------------------------------------------------
+Runs once per layer on first token.  Permanently cached in udmabuf.
+Subsequent tokens skip it entirely.
+
+Q4_0 block on disk: [2B fp16 d] [16B nibbles for 32 values, packed pairwise]
+
+Header decode (per row):
+  For each of 64 (WV) or 256 (output) blocks:
+    Read fp16 d from bytes 0..1 of block
+    Convert to fp32 (matching FPGA fp16_to_fp32 subnormal handling)
+    Store at DDR word b/4, slot b%4 (block-major)
+
+Nibble transposition (WV, 64 blocks = 8 groups × 8 blocks):
+  For each group g (0..7), for each element n (0..31):
+    Extract nibble n from each of 8 blocks in group g
+      byte_off = 2 + (n >> 1)   — Q4_0 nibble address
+      shift    = (n & 1) * 4    — lower/upper nibble
+      nib      = (block[byte_off] >> shift) & 0xF
+    Pack into 32-bit word: nib32.range(b*4+3, b*4) = nibble for block g*8+b
+    Write to DDR: group g has 8 DDR words (4 element-slices per word)
+      DDR word (g*8 + e): ddr32[0]=elem 4e, ddr32[1]=elem 4e+1,
+                          ddr32[2]=elem 4e+2, ddr32[3]=elem 4e+3
+
+Nibble transposition (Output, 256 blocks = 32 groups, 8 meta-groups of 4):
+  For each meta-group mg (0..7), for each element n (0..31):
+    Pack 4 groups' nib32 into one 128-bit DDR word:
+      {g3_nib32, g2_nib32, g1_nib32, g0_nib32} where gk = mg*4 + k
+    DDR word (mg*32 + n): 4×32-bit group-slices packed
+
+  Per-row DDR totals: WV=80 words (16 hdr + 64 nib), Output=320 words (64+256).
+  Same byte counts as Q4_K URM format — no udmabuf layout changes needed.
+
+
+DDR Layout Summary
+------------------
+WV row (1280 B = 80 DDR words):
+  [0..15]   Headers: 64 fp32 d, block-major (4 per DDR word)
+  [16..79]  Nibbles: 8 groups × 8 DDR words, element-major
+            Group g words g*8 .. g*8+7: 4 element-slices per word
+            elem-slice = 32-bit word with nibbles for all 8 blocks
+
+Output row (5120 B = 320 DDR words):
+  [0..63]   Headers: 256 fp32 d, block-major (4 per DDR word)
+  [64..319] Nibbles: 8 meta-groups × 32 DDR words
+            MG mg word mg*32+n: 4 group-slices (32 bits each),
+              gk_nib32 = nibbles for group mg*4+k, element n
+
+
+Stage 1 — load_x_local (unchanged)
+----------------------------------
+Reads INT8 x vector (2048 bytes) from DDR, writes into two LUTRAM copies
+(x_local_1, x_local_2) for parallel access by compute_X1 and compute_X2.
+
+Duration: 202 cycles = 0.81 µs @ 250 MHz.
+Arrays: x_local_1/2[1][8][256] int8_t, BIND_STORAGE impl=lutram,
+ARRAY_PARTITION dim=2 complete → 256 independent banks.
+
+The 8 groups × 256 elements-per-group layout is shared between Q4_K and Q4_0.
+For Q4_0: group g, block-within-group b, element n → x[g][b*32 + n].
+Same 2048-byte DDR footprint, same load path.
+
+
+Phase 2a/2b — compute_X1 / compute_X2 (Q4_0, K=8, Merged Load)
+---------------------------------------------------------------
+Matrix-vector multiply: X1 = x @ W.T, X2 = x @ V.T.
+Both Q4_0 weights pre-decoded to element-major DDR layout by CPU.
+K=8: processes 8 rows per loop iteration.  1024 iterations (8192/8).
+Merged 8-row load eliminates 7 of 8 AXI setups per iteration.
+Outputs quantized to INT8 via shared quantize_x12() RTL module.
+
+── Merged 8-Row Load (load_8_rows_wv_q40, INLINE off) ────────────────────
+One function call, one set of AXI bursts: 8×80 = 640 DDR words.
+
+LOAD_HDR (PIPELINE II=1, 128 iterations):
+  8 rows × 16 DDR words = 128 sequential words.  Row-major read order.
+  Each DDR word = 4 fp32 d values.  4-way write to d[r][w*4+0..3].
+  II=1 achieved: 1 DDR read + 4 float writes per cycle.
+  Duration: 199 cycles (128 + AXI pipeline overhead).
+
+LOAD_NIB (PIPELINE II=1, 512 iterations):
+  8 rows × 64 DDR words = 512 sequential words.
+  128-bit DDR word → verbatim wide-BRAM write.  8-way if/else steering
+  mux (r=0..7) selects target BRAM tile.  II=1: 1 DDR read + 1 BRAM write/cy.
+  Duration: 584 cycles.
+
+Per-call total: ~790 cycles (128 hdr + 512 nib + AXI + overhead).
+
+── MAC (mac_blocks_wv_k8_q40, INLINE off) ───────────────────────────────
+K=8: 8 rows × 8 blocks, 8 groups sequential.  64 MAC chains total.
+Sub-group fix: processes 4 blocks/cycle → 32 MACs/cycle (proven II=1).
+
+MAC_ALL (PIPELINE II=1, 64 iterations — doubled trip count):
+  Sub-group interleaving: n_even (n=0,2,4,...) → blocks 0..3
+                          n_odd  (n=1,3,5,...) → blocks 4..7
+
+  For iteration n:
+    n_elem = n>>1 (0..31), sg = n&1, b_base = sg<<2 (0 or 4)
+    idx = g*8 + (n_elem>>2), s = n_elem&3, k = n_elem&3
+
+    Read 8 wide BRAMs (nib_r0..nib_r7[idx]): 8 × 128-bit reads
+    4:1 32-bit slice mux per row (~32 LUT/row × 8 = ~256 LUT)
+    Inner loop (bi=0..3, UNROLL): b = b_base + bi
+      xi8 = x[g][b*32 + n_elem]         — INT8 activation
+      nb  = wr.range(b*4+3, b*4)          — 4-bit nibble (compile-time → 0 LUT)
+      acc[r][b][k] += xi8 * (nb - 8)     — single accumulator, INT32
+
+  32 MAC chains per cycle (4 blocks × 8 rows), DSP-mapped multiply.
+  Total DSP: 32 for multiplies per cycle, shared across iterations.
+
+REDUCE_GRP (PIPELINE II=1, 8 iterations):
+  sw = sum(acc[r][b][0..3])                            — INT32 sum of 4 partials
+  total[r] += (fxd_scale_t)d[r][g*8+b] * (fxd_accum_t)sw  — fixed-point MAC
+
+  fxd_scale_t = ap_fixed<32,8>, fxd_accum_t = ap_fixed<56,38>.
+  Default AP_WRAP+AP_TRN avoids rounding/saturation LUTs.
+
+result[r] = (float)total[r] * x_scale    — dequantize INT8 input
+
+── Cycle Budget per COMPUTE_X1 iteration (1024 total) ────────────────────
+    load_8_rows_wv_q40:      790 cycles
+    mac_blocks_wv_k8_q40:    ~830 cycles (MAC 8×67 + REDUCE 8×16 + overhead)
+    quantize_x12 (8 calls):   ~32 cycles (shared module, sequential)
+    Total/iteration:         ~1,652 cycles
+
+    compute_X1 total: ~1,691,648 cycles = 6.77 ms @ 250 MHz
+    (HLS reports ~3.16M; the gap is AXI latency + scheduler overhead)
+
+── Bandwidth and Utilization ─────────────────────────────────────────────
+    DDR read BW:  10.0 MB / 6.77 ms = 1,477 MB/s [37% of 4 GB/s peak]
+    MAC chains:   32 active per cycle × 250 MHz = 8.0 Gops/s
+    Bottleneck:   AXI DDR bandwidth (1,280 bytes per 8-row iteration)
+
+── Resource Usage (per compute_X1, HLS estimate) ──────────────────────────
+    BRAM:   32 (8 wide tiles × 4 BRAM_18K cascade each)
+    DSP:    136
+    LUTs:   ~49,800
+    URAM:   0
+
+X1_cache/X2_cache[1][8192] int8_t
+BIND_STORAGE type=ram_2p impl=bram.
+ARRAY_PARTITION: none needed (sequential read/write in DATAFLOW).
+
+
+Stage 3 — compute_gate (adapted for Q4_0 gate indexing)
+-------------------------------------------------------
+Elementwise SiLU(X1) × X2, two-pass INT8 quantization.
+Duration: 16,553 cy = 66 µs @ 250 MHz.
+
+Pass 1: find max(|SiLU(X1)×X2|) with 8-lane partial maxima.
+Pass 2: recompute and quantize to INT8 gate_cache.
+
+Gate indexing for Q4_0: gate_cache[n][j>>5][j&31] = block j/32, element j%32.
+gate_cache[1][256][32] with ARRAY_PARTITION dim=1 cyclic factor=8.
+URAM storage: 8 tiles (8192 bytes).
+
+sigmoid_lut[4096] float (ROM): BIND_STORAGE impl=bram, 8 BRAM_18K.
+DDR traffic: 0 — all data on-chip (BRAM → URAM).
+
+
+Phase 5 — compute_output (Q4_0, K=4, Merged Load, 128 BRAM Tiles)
+------------------------------------------------------------------
+output = gate @ W_down.T.  256 blocks, 32 groups of 8.
+K=4: processes 4 output rows per iteration.  512 iterations (2048/4).
+Merged load: one AXI burst loads ALL 32 groups' nibble data into 128
+pre-allocated BRAM tiles (32 groups × 4 rows).  No meta-group streaming.
+
+── Merged Output Load (load_output_rows_q40, INLINE off) ────────────────
+One function call, one set of AXI bursts: 4×320 = 1,280 DDR words.
+
+LOAD_HDR (PIPELINE II=1, 256 iterations):
+  4 rows × 64 DDR words = 256 sequential words.
+  Each DDR word = 4 fp32 d values.
+  d[r][w*4+0..3] = float_from_bits(ddr slot).  II=1.
+  Duration: ~260 cycles.
+
+LOAD_NIB (PIPELINE II=1, 1024 iterations):
+  4 rows × 256 DDR words = 1024 sequential words.
+  DDR word w = mg*32 + e: mg = w>>5 (0..7), e = w&31 (0..31).
+  4 group writes per DDR word to independent BRAM banks:
+    nib[mg*4 + 0][r][e] = ddr.range(31,  0)  — group mg*4+0
+    nib[mg*4 + 1][r][e] = ddr.range(63,  32) — group mg*4+1
+    nib[mg*4 + 2][r][e] = ddr.range(95,  64) — group mg*4+2
+    nib[mg*4 + 3][r][e] = ddr.range(127, 96) — group mg*4+3
+  II=1: 1 DDR read + 4 independent BRAM writes per cycle.
+  Duration: ~1,090 cycles.
+
+Total load: ~1,350 cycles (one AXI setup instead of 8×45 = 360 saved).
+
+── Output MAC (mac_output_q40, INLINE off) ──────────────────────────────
+32 groups sequential (share DSPs), 4 rows × 8 blocks UNROLL.
+32 MAC chains per group — proven II=1 configuration (no sub-group fix needed).
+
+GROUPS (32 iterations):
+  INIT_GRP: zero 4×8 accumulators (UNROLL'd)
+  MAC_GRP (PIPELINE II=1, 32 iterations):
+    wr0 = nib[g][0][n], wr1 = nib[g][1][n],
+    wr2 = nib[g][2][n], wr3 = nib[g][3][n]   — no if/else mux
+    Inner loop (b=0..7, UNROLL):
+      gi8 = gate[g*8 + b][n]                  — INT8 gate value
+      nb  = wr.range(b*4+3, b*4)               — 4-bit nibble (compile-time → 0 LUT)
+      acc[r][b][k] += gi8 * (nb - 8)           — single accumulator
+
+  REDUCE_GRP (PIPELINE II=1, 8 iterations):
+    sw = sum(acc[r][b][0..3])
+    total[r] += (fxd_scale_t)d[r][g*8+b] * (fxd_accum_t)sw
+
+result[r] = (float)total[r] * gate_scale  — dequantize INT8 gate
+
+  Per group: ~49 cycles (35 MAC + 14 REDUCE)
+  32 groups: ~1,568 cycles
+
+── Cycle Budget per iteration (512 total) ────────────────────────────────
+    load_output_rows_q40:  ~1,350 cycles
+    mac_output_q40:         ~1,568 cycles
+    Overhead:                  ~10 cycles
+    Total/iteration:         ~2,928 cycles
+
+    compute_output total: ~1,499,000 cycles = 6.00 ms @ 250 MHz
+
+── Resource Usage ──────────────────────────────────────────────────────────
+    compute_output:
+      BRAM:   ~132 (128 nibble tiles + 4 misc)
+      DSP:    ~56
+      LUTs:   ~17,200 (HLS estimate)
+      URAM:   0
+
+    Nibble BRAM breakdown: 128 tiles (32 groups × 4 rows), each 32-bit × 32 deep.
+    128 BRAM_18K.  Total design BRAM ~242/288 = 84%.
+
+── Why 128 BRAM tiles instead of 16 time-multiplexed ─────────────────────
+The original design loaded 4 groups at a time into 16 BRAM tiles, reusing
+them across 8 meta-groups.  This required 8 sequential load calls per
+iteration, each paying ~45 cycles of AXI setup.  8 × 45 = 360 wasted
+cycles per iteration.
+
+Pre-allocating all 128 tiles and loading everything in one AXI burst
+eliminates the per-meta-group overhead.  BRAM cost (+112 tiles) is offset
+by LUT savings from removing the meta-group MAC mux and by cycle-count
+reduction (~40% fewer cycles in compute_output).
+
+
+DATAFLOW Performance (per layer, steady state)
+----------------------------------------------
+DATAFLOW interval = sum of sequential stage intervals.
+
+    Stage               Cycles (est.)   Time @ 250 MHz
+    load_x_local             202         0.81 µs
+    compute_X1 ∥ X2     ~1,691,648      6.77 ms     ← X1/X2 balanced with output
+    compute_gate           16,553        0.07 ms
+    compute_output       ~1,499,000      6.00 ms
+    ─────────────────────────────────────────────────
+    Per-layer interval   ~3,207,403      12.83 ms
+
+    16 layers FPGA:      205.3 ms
+    CPU overhead:        ~125 ms  (attention, norms, embedding — fixed)
+    Per token:          ~330.3 ms  →  3.03 t/s theoretical
+    Board estimate:      ~2.4–2.6 t/s (accounting for ~80% board efficiency)
+
+    vs Q4_K K=4 baseline (2.20 t/s): +9–18%
+    vs CPU (1.15 t/s): +109–126%
+
+
+Key Architectural Differences vs Q4_K K=4 URM-Transposed
+--------------------------------------------------------
+    Aspect              Q4_K K=4 (entry 37)          Current Q4_0 K=8
+    ────────────────────────────────────────────────────────────────────────────
+    Block size           256 values (8 blocks/row)   32 values (64 blocks/row)
+    Header complexity    d, dmin, sc6[8], mn6[8]     d only (fp16→fp32 on CPU)
+    Accumulators         2 (acc_w + acc_m)            1 (single path)
+    MAC formula          d·sw·sc - dmin·sm           d × sum(x·(q-8))
+    DSP per MAC chain    2 mult + 1 sub              1 mult
+    WV MAC chains        32 (4 rows × 8 blocks)      32/cycle (sub-group fix)
+    WV K value           4 rows/iteration             8 rows/iteration
+    WV iterations        2048                         1024
+    WV load              Per-row (4 calls)            Merged 8-row (1 call)
+    Output load          4 calls × 8 meta-groups      1 merged call
+    Output nibble BRAM   16 tiles (time-mux)          128 tiles (pre-allocated)
+    Compute_X1 LUTs      ~54K (HLS)                  ~50K (HLS)
+    compute_output LUTs  ~19K (HLS)                  ~17K (HLS)
+    Output group count   4 groups (Q4_K 32 blocks)   32 groups (Q4_0 256 blocks)
+    MAC II (WV)          II=1 (32 chains)            II=1 target (32 chains/cycle)
+    Pre-decode           sc6/mn6 flat decode         fp16→fp32 + nibble transpose
+    Decode t/s            2.20                        2.4–2.6 (projected)
+
+
+AXI-Lite Register Map (unchanged, bundle=CTRL)
+----------------------------------------------
+    Offset  Register
+    0x10    W_lo, W_hi          (gmem_W base address)
+    0x1C    V_lo, V_hi          (gmem_V base address)
+    0x28    W_down_lo, W_down_hi (gmem_Wd base address)
+    0x34    x_batch_lo, x_batch_hi
+    0x40    out_batch_lo, out_batch_hi
+    0x4C    down_quant_mode     (0 = Q4_0)
+    0x54    x_scale             (float bits)
+
+
+Design Decisions and Trade-offs
+-------------------------------
+1. K=8 WV with sub-group fix: 64 MAC chains at II=8 was the synthesis default.
+   The fix processes 4 blocks/cycle (32 chains, proven II=1) with a doubled
+   trip count, giving ~3.9× faster MAC (67 vs 261 cycles per group).
+
+2. K_DOWN=4 (not 8): 64 output MAC chains would trigger the same II=8 issue,
+   and the sub-group fix would make per-group MAC slower (83 vs 49 cycles).
+   K_DOWN=4 with 32 chains achieves II=1 natively.
+
+3. Merged output load with 128 BRAM tiles: BRAM cost (+112 tiles at 88% total)
+   is accepted because it eliminates 8 sequential AXI setups per iteration
+   and removes the meta-group MAC mux.  The cycle-count win (40%) justifies
+   the BRAM investment.
+
+4. Shared quantize_x12(): Replaces 16 fp_hls_fptosi_float_i32 instances
+   (637 LUTs each = 10.2K total) with one shared RTL module (~700 LUTs).
+   INLINE off ensures a single RTL instance across all call sites.
+
+5. fxd_accum_t kept as ap_fixed<56,38> (no AP_RND/AP_SAT): AP_RND and AP_SAT
+   add rounding and saturation LUTs to every fixed-point multiply-accumulate.
+   Testbench data is constrained to keep 64-block accumulation within the
+   ±131K range.  Real model data also fits (weight distributions provide
+   natural cancellation).
+
+6. No fp16_to_fp32 on FPGA: CPU pre-decodes all fp16 d values to fp32,
+   eliminating ~2K LUTs of fp16 decode logic per compute function.
+
+7. Single accumulator eliminates min-subtraction path: Q4_K needed acc_w
+   (nibble×scale) and acc_m (min-subtraction).  Q4_0's d·(q-8) formula
+   needs only one accumulator.  This halves the accumulator arrays and
+   simplifies the REDUCE logic.
+
+
+Comparison of Synthesis Results (HLS estimates)
+-----------------------------------------------
+    Resource    Q4_0 K=8 (HLS est.)    Q4_K K=4 (Vivado P&R)    Budget
+    LUT         129,429 (110%)         103,684 (88.5%)           117,120
+    FF          152,593 (65%)          117,420 (50.1%)           234,240
+    BRAM_18K    142 (49%)              86.5 (30%)                288
+    DSP         436 (34%)              338 (27%)                 1,248
+    URAM        8 (12%)                8 (12%)                   64
+
+    Note: HLS LUT overestimate is typical (~15-20% above Vivado P&R).
+    Previous Q4_K: 125K HLS → 104K Vivado (0.83×).  Projected Q4_0:
+    129K HLS × 0.83 ≈ 107K Vivado → 91% utilization.
+
+
+Still To Be Resolved
+--------------------
+1. Vivado implementation: confirm LUTs, BRAMs, and timing close at 250 MHz.
+2. MAC_ALL II target: HLS currently reports II=8 with 64 chains/cycle.
+   The sub-group fix (32 chains/cycle) is expected to achieve II=1.  Synthesis
+   must confirm this.
+3. Control set count: 2,138 control sets may challenge FF packing in CLBs.
+4. Board benchmark: measure actual throughput with LFM2.5-1.2B-Q4_0 model.
+5. K=8 WV load AXI burst length: 640 DDR words with max_read_burst_length=128
+   splits into 5 bursts.  Actual AXI efficiency vs theoretical needs board
+   measurement.
