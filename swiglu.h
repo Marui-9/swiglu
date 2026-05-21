@@ -33,7 +33,7 @@
 #define Q40_DOWN_ROW_WORDS    320
 
 // ─── MAC parallelism ─────────────────────────────────────────────────────────
-#define K_WV                   8       // 8 WV rows per iteration (64 MAC chains)
+#define K_WV                   4       // 4 WV rows per iteration (32 MAC chains)
 #define K_DOWN                 4       // 4 output rows per iteration
 
 // ─── Nibble tile dimensions ──────────────────────────────────────────────────
