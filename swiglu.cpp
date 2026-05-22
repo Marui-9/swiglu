@@ -35,25 +35,23 @@ static int8_t quantize_x12(float r) {
     return (int8_t)iq;
 }
 
-// Producer: reads DDR group-by-group, pushes to stream
+// Producer: reads DDR group-by-group, d-values inlined with nibbles
 static void load_stream_producer(
     const ap_uint<128> *W_wide,
     int n_rows,
-    hls::stream<ap_uint<128>> str_nib[K_WV],
-    hls::stream<ap_uint<128>> &str_d)
+    hls::stream<ap_uint<128>> str_nib[K_WV])
 {
 #pragma HLS INLINE off
     PRODUCER_LOOP: for (int row = 0; row < n_rows; row += K_WV) {
-        // Send header/d values: K_WV × 16 DDR words
-        LOAD_HDR_STREAM: for (int i = 0; i < K_WV * Q40_WV_HDR_WORDS; i++) {
+        // Send all d-values upfront in one burst: K_WV × 16 DDR words
+        for (int i = 0; i < K_WV * Q40_WV_HDR_WORDS; i++) {
             #pragma HLS PIPELINE II=1
             int r = i / Q40_WV_HDR_WORDS;
             int w = i % Q40_WV_HDR_WORDS;
-            str_d << W_wide[(ap_uint<64>)(row + r) * Q40_WV_ROW_WORDS + w];
+            str_nib[r] << W_wide[(ap_uint<64>)(row + r) * Q40_WV_ROW_WORDS + w];
         }
-
-        // Send nibble data group-by-group: 8 groups × 8 words × K_WV rows
-        LOAD_NIB_STREAM: for (int g = 0; g < Q40_WV_GROUPS; g++) {
+        // Send nibble data group-by-group with UNROLL (matches old throughput)
+        for (int g = 0; g < Q40_WV_GROUPS; g++) {
             for (int w = 0; w < 8; w++) {
                 #pragma HLS PIPELINE II=1
                 for (int r = 0; r < K_WV; r++) {
@@ -69,7 +67,6 @@ static void load_stream_producer(
 // Consumer: reads stream into FF group buffer, MACs one group at a time
 static void mac_stream_consumer(
     hls::stream<ap_uint<128>> str_nib[K_WV],
-    hls::stream<ap_uint<128>> &str_d,
     const int8_t x[Q40_WV_GROUPS][256],
     float x_scale,
     int n_rows,
@@ -97,13 +94,16 @@ static void mac_stream_consumer(
     #pragma HLS ARRAY_PARTITION variable=dsp6 complete
     #pragma HLS ARRAY_PARTITION variable=dsp7 complete
 
+    ap_fixed<32,8> qs = x_scale * X12_INV_SCALE;
+
     CONSUMER_LOOP: for (int row = 0; row < n_rows; row += K_WV) {
-        // Receive d values
-        RECV_HDR: for (int i = 0; i < K_WV * Q40_WV_HDR_WORDS; i++) {
+        // Receive all d-values upfront: K_WV × 16 DDR words
+        for (int i = 0; i < K_WV * Q40_WV_HDR_WORDS; i++) {
             #pragma HLS PIPELINE II=1
-            ap_uint<128> val = str_d.read();
             int r = i / Q40_WV_HDR_WORDS;
             int w = i % Q40_WV_HDR_WORDS;
+            ap_uint<128> val;
+            str_nib[r] >> val;
             d[r][w*4 + 0] = float_from_bits((uint32_t)val.range(31,  0));
             d[r][w*4 + 1] = float_from_bits((uint32_t)val.range(63,  32));
             d[r][w*4 + 2] = float_from_bits((uint32_t)val.range(95,  64));
@@ -115,7 +115,7 @@ static void mac_stream_consumer(
 
         // Process 8 groups
         CONSUMER_GROUPS: for (int g = 0; g < Q40_WV_GROUPS; g++) {
-            // Fill group buffer from stream: 8 words × K_WV rows = 64 reads
+            // Fill group buffer from stream: 8 nibble words × K_WV rows
             FILL_GBUF: for (int w = 0; w < 8; w++) {
                 #pragma HLS PIPELINE II=1
                 for (int r = 0; r < K_WV; r++) {
@@ -139,7 +139,7 @@ static void mac_stream_consumer(
                 int b_base = sg << 1;
                 int e_lo   = n_elem & 15;
                 int n_half = n_elem >> 4;
-                int w_idx  = sg * 2 + n_half;  // which of 8 words in group buffer
+                int w_idx  = sg * 2 + n_half;
 
                 ap_uint<128> w0 = gbuf[0][w_idx], w1 = gbuf[1][w_idx];
                 ap_uint<128> w2 = gbuf[2][w_idx], w3 = gbuf[3][w_idx];
@@ -185,15 +185,17 @@ static void mac_stream_consumer(
             }
         }
 
-        // Quantize and write results
-        X_cache[0][row + 0] = quantize_x12((float)total0 * x_scale);
-        X_cache[0][row + 1] = quantize_x12((float)total1 * x_scale);
-        X_cache[0][row + 2] = quantize_x12((float)total2 * x_scale);
-        X_cache[0][row + 3] = quantize_x12((float)total3 * x_scale);
-        X_cache[0][row + 4] = quantize_x12((float)total4 * x_scale);
-        X_cache[0][row + 5] = quantize_x12((float)total5 * x_scale);
-        X_cache[0][row + 6] = quantize_x12((float)total6 * x_scale);
-        X_cache[0][row + 7] = quantize_x12((float)total7 * x_scale);
+        // Inline fixed-point quantize
+        QUANTIZE_LOOP: for (int r = 0; r < K_WV; r++) {
+            #pragma HLS PIPELINE II=1
+            fxd_accum_t t = (r == 0) ? total0 : (r == 1) ? total1 :
+                            (r == 2) ? total2 : (r == 3) ? total3 :
+                            (r == 4) ? total4 : (r == 5) ? total5 :
+                            (r == 6) ? total6 : total7;
+            ap_fixed<56,38> scaled = t * qs;
+            int val = scaled.to_int() + (scaled >= 0 ? 1 : -1) / 2;
+            X_cache[0][row + r] = (val > 127) ? 127 : (val < -128) ? -128 : (int8_t)val;
+        }
     }
 }
 
@@ -212,13 +214,11 @@ static void compute_X1(
     const ap_uint<128> *W_wide = (const ap_uint<128>*)W;
 
     hls::stream<ap_uint<128>> str_nib[K_WV];
-    hls::stream<ap_uint<128>> str_d("sd1");
-    #pragma HLS STREAM variable=str_nib depth=8
-    #pragma HLS STREAM variable=str_d depth=16
+    #pragma HLS STREAM variable=str_nib depth=10
 
     #pragma HLS DATAFLOW
-    load_stream_producer(W_wide, FFN_DIM, str_nib, str_d);
-    mac_stream_consumer(str_nib, str_d, x_local_1[0], x_scale, FFN_DIM, X1_cache);
+    load_stream_producer(W_wide, FFN_DIM, str_nib);
+    mac_stream_consumer(str_nib, x_local_1[0], x_scale, FFN_DIM, X1_cache);
 }
 
 static void compute_X2(
@@ -232,15 +232,15 @@ static void compute_X2(
     const ap_uint<128> *V_wide = (const ap_uint<128>*)V;
 
     hls::stream<ap_uint<128>> str_nib[K_WV];
-    hls::stream<ap_uint<128>> str_d("sd2");
-    #pragma HLS STREAM variable=str_nib depth=8
-    #pragma HLS STREAM variable=str_d depth=16
+    #pragma HLS STREAM variable=str_nib depth=10
 
     #pragma HLS DATAFLOW
-    load_stream_producer(V_wide, FFN_DIM, str_nib, str_d);
-    mac_stream_consumer(str_nib, str_d, x_local_2[0], x_scale, FFN_DIM, X2_cache);
+    load_stream_producer(V_wide, FFN_DIM, str_nib);
+    mac_stream_consumer(str_nib, x_local_2[0], x_scale, FFN_DIM, X2_cache);
 }
 
+// ============================================================================
+// Q4_0 Output Path — merged load, K_DOWN=8, 32 time-multiplexed BRAM tiles
 // ============================================================================
 // Q4_0 Output Path — merged load, K_DOWN=8, 32 time-multiplexed BRAM tiles
 // ============================================================================
