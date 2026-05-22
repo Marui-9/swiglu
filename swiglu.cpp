@@ -12,6 +12,7 @@
 //   keep 64-block Q4_0 accumulation within the ±131K range.
 typedef ap_fixed<32,8>  fxd_scale_t;
 typedef ap_fixed<56,38> fxd_accum_t;
+typedef ap_int<48>     dsp_acc_t;   // DSP48E2 P register — 48-bit signed accumulation
 
 // ─── Float from uint32_t bits ─────────────────────────────────────────────────
 static inline float float_from_bits(uint32_t u) {
@@ -21,15 +22,38 @@ static inline float float_from_bits(uint32_t u) {
 }
 
 // ============================================================================
-// Q4_0 WV Merged Load — K=6 rows in one AXI burst
+// Q4_0 WV Merged Load — K=8 rows in one AXI burst
 // ============================================================================
 
-// load_4_rows_wv_q40: merged load of 4 WV rows, one AXI burst.
-static void load_4_rows_wv_q40(
+// load_8_rows_wv_q40: merged load of 8 WV rows.  Splits 128-bit DDR words
+// into 4 × 32-bit pre-sliced nibble arrays — eliminates slice mux in MAC_ALL.
+static void load_8_rows_wv_q40(
     const ap_uint<128> *W_wide,
     int base_row,
-    ap_uint<128> nib_r0[64], ap_uint<128> nib_r1[64],
-    ap_uint<128> nib_r2[64], ap_uint<128> nib_r3[64],
+    // Row 0: 4 element-slices
+    ap_uint<32> nib_r0_s0[64], ap_uint<32> nib_r0_s1[64],
+    ap_uint<32> nib_r0_s2[64], ap_uint<32> nib_r0_s3[64],
+    // Row 1
+    ap_uint<32> nib_r1_s0[64], ap_uint<32> nib_r1_s1[64],
+    ap_uint<32> nib_r1_s2[64], ap_uint<32> nib_r1_s3[64],
+    // Row 2
+    ap_uint<32> nib_r2_s0[64], ap_uint<32> nib_r2_s1[64],
+    ap_uint<32> nib_r2_s2[64], ap_uint<32> nib_r2_s3[64],
+    // Row 3
+    ap_uint<32> nib_r3_s0[64], ap_uint<32> nib_r3_s1[64],
+    ap_uint<32> nib_r3_s2[64], ap_uint<32> nib_r3_s3[64],
+    // Row 4
+    ap_uint<32> nib_r4_s0[64], ap_uint<32> nib_r4_s1[64],
+    ap_uint<32> nib_r4_s2[64], ap_uint<32> nib_r4_s3[64],
+    // Row 5
+    ap_uint<32> nib_r5_s0[64], ap_uint<32> nib_r5_s1[64],
+    ap_uint<32> nib_r5_s2[64], ap_uint<32> nib_r5_s3[64],
+    // Row 6
+    ap_uint<32> nib_r6_s0[64], ap_uint<32> nib_r6_s1[64],
+    ap_uint<32> nib_r6_s2[64], ap_uint<32> nib_r6_s3[64],
+    // Row 7
+    ap_uint<32> nib_r7_s0[64], ap_uint<32> nib_r7_s1[64],
+    ap_uint<32> nib_r7_s2[64], ap_uint<32> nib_r7_s3[64],
     float d[K_WV][Q40_WV_BLOCKS])
 {
 #pragma HLS INLINE off
@@ -53,101 +77,180 @@ static void load_4_rows_wv_q40(
         ap_uint<128> ddr = W_wide[(ap_uint<64>)(base_row + r) * Q40_WV_ROW_WORDS
                                     + Q40_WV_HDR_WORDS + e];
 
-        if      (r == 0) nib_r0[e] = ddr;
-        else if (r == 1) nib_r1[e] = ddr;
-        else if (r == 2) nib_r2[e] = ddr;
-        else             nib_r3[e] = ddr;
+        if      (r == 0) {
+            nib_r0_s0[e] = ddr.range(31,  0);  nib_r0_s1[e] = ddr.range(63,  32);
+            nib_r0_s2[e] = ddr.range(95,  64); nib_r0_s3[e] = ddr.range(127, 96);
+        } else if (r == 1) {
+            nib_r1_s0[e] = ddr.range(31,  0);  nib_r1_s1[e] = ddr.range(63,  32);
+            nib_r1_s2[e] = ddr.range(95,  64); nib_r1_s3[e] = ddr.range(127, 96);
+        } else if (r == 2) {
+            nib_r2_s0[e] = ddr.range(31,  0);  nib_r2_s1[e] = ddr.range(63,  32);
+            nib_r2_s2[e] = ddr.range(95,  64); nib_r2_s3[e] = ddr.range(127, 96);
+        } else if (r == 3) {
+            nib_r3_s0[e] = ddr.range(31,  0);  nib_r3_s1[e] = ddr.range(63,  32);
+            nib_r3_s2[e] = ddr.range(95,  64); nib_r3_s3[e] = ddr.range(127, 96);
+        } else if (r == 4) {
+            nib_r4_s0[e] = ddr.range(31,  0);  nib_r4_s1[e] = ddr.range(63,  32);
+            nib_r4_s2[e] = ddr.range(95,  64); nib_r4_s3[e] = ddr.range(127, 96);
+        } else if (r == 5) {
+            nib_r5_s0[e] = ddr.range(31,  0);  nib_r5_s1[e] = ddr.range(63,  32);
+            nib_r5_s2[e] = ddr.range(95,  64); nib_r5_s3[e] = ddr.range(127, 96);
+        } else if (r == 6) {
+            nib_r6_s0[e] = ddr.range(31,  0);  nib_r6_s1[e] = ddr.range(63,  32);
+            nib_r6_s2[e] = ddr.range(95,  64); nib_r6_s3[e] = ddr.range(127, 96);
+        } else {
+            nib_r7_s0[e] = ddr.range(31,  0);  nib_r7_s1[e] = ddr.range(63,  32);
+            nib_r7_s2[e] = ddr.range(95,  64); nib_r7_s3[e] = ddr.range(127, 96);
+        }
     }
 }
 
 // ============================================================================
-// Q4_0 WV MAC — K=4, 32 chains, II=1 native (no sub-group fix needed)
+// Q4_0 WV MAC — K=8, 16 chains, 2-block sub-group, DSP48E2 accumulation
 // ============================================================================
 
-static void mac_blocks_wv_k4_q40(
-    const ap_uint<128> nib_r0[64], const ap_uint<128> nib_r1[64],
-    const ap_uint<128> nib_r2[64], const ap_uint<128> nib_r3[64],
+static void mac_blocks_wv_k8_q40(
+    // Row 0: 4 pre-sliced element arrays
+    const ap_uint<32> nib_r0_s0[64], const ap_uint<32> nib_r0_s1[64],
+    const ap_uint<32> nib_r0_s2[64], const ap_uint<32> nib_r0_s3[64],
+    // Row 1
+    const ap_uint<32> nib_r1_s0[64], const ap_uint<32> nib_r1_s1[64],
+    const ap_uint<32> nib_r1_s2[64], const ap_uint<32> nib_r1_s3[64],
+    // Row 2
+    const ap_uint<32> nib_r2_s0[64], const ap_uint<32> nib_r2_s1[64],
+    const ap_uint<32> nib_r2_s2[64], const ap_uint<32> nib_r2_s3[64],
+    // Row 3
+    const ap_uint<32> nib_r3_s0[64], const ap_uint<32> nib_r3_s1[64],
+    const ap_uint<32> nib_r3_s2[64], const ap_uint<32> nib_r3_s3[64],
+    // Row 4
+    const ap_uint<32> nib_r4_s0[64], const ap_uint<32> nib_r4_s1[64],
+    const ap_uint<32> nib_r4_s2[64], const ap_uint<32> nib_r4_s3[64],
+    // Row 5
+    const ap_uint<32> nib_r5_s0[64], const ap_uint<32> nib_r5_s1[64],
+    const ap_uint<32> nib_r5_s2[64], const ap_uint<32> nib_r5_s3[64],
+    // Row 6
+    const ap_uint<32> nib_r6_s0[64], const ap_uint<32> nib_r6_s1[64],
+    const ap_uint<32> nib_r6_s2[64], const ap_uint<32> nib_r6_s3[64],
+    // Row 7
+    const ap_uint<32> nib_r7_s0[64], const ap_uint<32> nib_r7_s1[64],
+    const ap_uint<32> nib_r7_s2[64], const ap_uint<32> nib_r7_s3[64],
     const float d[K_WV][Q40_WV_BLOCKS],
     const int8_t  x[Q40_WV_GROUPS][256],
     float  x_scale,
-    float *result0, float *result1, float *result2, float *result3)
+    float *result0, float *result1, float *result2, float *result3,
+    float *result4, float *result5, float *result6, float *result7)
 {
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
     fxd_accum_t total0 = 0, total1 = 0, total2 = 0, total3 = 0;
+    fxd_accum_t total4 = 0, total5 = 0, total6 = 0, total7 = 0;
+
+    // 64 DSP accumulators: 8 rows × 8 blocks, one DSP48E2 P register each
+    dsp_acc_t dsp0[8], dsp1[8], dsp2[8], dsp3[8];
+    dsp_acc_t dsp4[8], dsp5[8], dsp6[8], dsp7[8];
+    #pragma HLS ARRAY_PARTITION variable=dsp0 complete
+    #pragma HLS ARRAY_PARTITION variable=dsp1 complete
+    #pragma HLS ARRAY_PARTITION variable=dsp2 complete
+    #pragma HLS ARRAY_PARTITION variable=dsp3 complete
+    #pragma HLS ARRAY_PARTITION variable=dsp4 complete
+    #pragma HLS ARRAY_PARTITION variable=dsp5 complete
+    #pragma HLS ARRAY_PARTITION variable=dsp6 complete
+    #pragma HLS ARRAY_PARTITION variable=dsp7 complete
 
     MAC_GROUPS: for (int g = 0; g < Q40_WV_GROUPS; g++) {
-        int32_t acc0[8][4], acc1[8][4], acc2[8][4], acc3[8][4];
-        #pragma HLS ARRAY_PARTITION variable=acc0 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc1 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc2 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc3 dim=0 complete
-
-        INIT_GRP: for (int b = 0; b < 8; b++) {
-            #pragma HLS UNROLL
-            for (int k = 0; k < 4; k++) {
-                #pragma HLS UNROLL
-                acc0[b][k] = 0; acc1[b][k] = 0;
-                acc2[b][k] = 0; acc3[b][k] = 0;
-            }
+        // Zero DSP accumulators for this group (8 cycles at II=1)
+        ZERO_DSP: for (int b = 0; b < 8; b++) {
+            #pragma HLS PIPELINE II=1
+            dsp0[b] = 0; dsp1[b] = 0; dsp2[b] = 0; dsp3[b] = 0;
+            dsp4[b] = 0; dsp5[b] = 0; dsp6[b] = 0; dsp7[b] = 0;
         }
 
-        MAC_ALL: for (int n = 0; n < 32; n++) {
+        // 2-block sub-group: 8 rows × 2 blocks = 16 DSP MACs/cycle.
+        // 4 sub-groups × 32 elements = 128 iterations.  Target II=1.
+        MAC_ALL: for (int n = 0; n < 128; n++) {
             #pragma HLS PIPELINE II=1
-            int idx = g * 8 + (n >> 2);
-            int s   = n & 3;
-            int k   = n & 3;
+            int n_elem = n >> 2;       // element 0..31
+            int sg     = n & 3;         // sub-group 0..3 → blocks 0-1, 2-3, 4-5, 6-7
+            int b_base = sg << 1;       // 0, 2, 4, or 6
+            int idx    = g * 8 + (n_elem >> 2);
+            int s      = n_elem & 3;
 
-            ap_uint<128> w0 = nib_r0[idx], w1 = nib_r1[idx];
-            ap_uint<128> w2 = nib_r2[idx], w3 = nib_r3[idx];
+            // Read pre-sliced 32-bit BRAMs, mux by element-slice s
+            ap_uint<32> wr0, wr1, wr2, wr3, wr4, wr5, wr6, wr7;
+            if      (s == 0) {
+                wr0 = nib_r0_s0[idx]; wr1 = nib_r1_s0[idx];
+                wr2 = nib_r2_s0[idx]; wr3 = nib_r3_s0[idx];
+                wr4 = nib_r4_s0[idx]; wr5 = nib_r5_s0[idx];
+                wr6 = nib_r6_s0[idx]; wr7 = nib_r7_s0[idx];
+            } else if (s == 1) {
+                wr0 = nib_r0_s1[idx]; wr1 = nib_r1_s1[idx];
+                wr2 = nib_r2_s1[idx]; wr3 = nib_r3_s1[idx];
+                wr4 = nib_r4_s1[idx]; wr5 = nib_r5_s1[idx];
+                wr6 = nib_r6_s1[idx]; wr7 = nib_r7_s1[idx];
+            } else if (s == 2) {
+                wr0 = nib_r0_s2[idx]; wr1 = nib_r1_s2[idx];
+                wr2 = nib_r2_s2[idx]; wr3 = nib_r3_s2[idx];
+                wr4 = nib_r4_s2[idx]; wr5 = nib_r5_s2[idx];
+                wr6 = nib_r6_s2[idx]; wr7 = nib_r7_s2[idx];
+            } else {
+                wr0 = nib_r0_s3[idx]; wr1 = nib_r1_s3[idx];
+                wr2 = nib_r2_s3[idx]; wr3 = nib_r3_s3[idx];
+                wr4 = nib_r4_s3[idx]; wr5 = nib_r5_s3[idx];
+                wr6 = nib_r6_s3[idx]; wr7 = nib_r7_s3[idx];
+            }
 
-            ap_uint<32> wr0, wr1, wr2, wr3;
-            if      (s == 0) { wr0 = w0.range(31,  0);  wr1 = w1.range(31,  0);  wr2 = w2.range(31,  0);  wr3 = w3.range(31,  0);  }
-            else if (s == 1) { wr0 = w0.range(63,  32); wr1 = w1.range(63,  32); wr2 = w2.range(63,  32); wr3 = w3.range(63,  32); }
-            else if (s == 2) { wr0 = w0.range(95,  64); wr1 = w1.range(95,  64); wr2 = w2.range(95,  64); wr3 = w3.range(95,  64); }
-            else             { wr0 = w0.range(127, 96); wr1 = w1.range(127, 96); wr2 = w2.range(127, 96); wr3 = w3.range(127, 96); }
-
-            for (int b = 0; b < 8; b++) {
+            for (int bi = 0; bi < 2; bi++) {
                 #pragma HLS UNROLL
-                ap_int<8>  xi8 = (ap_int<8>)x[g][b * 32 + n];
+                int b = b_base + bi;
+                ap_int<18> xi8 = (ap_int<18>)x[g][b * 32 + n_elem];
                 ap_uint<4> nb0 = wr0.range(b*4+3, b*4);
                 ap_uint<4> nb1 = wr1.range(b*4+3, b*4);
                 ap_uint<4> nb2 = wr2.range(b*4+3, b*4);
                 ap_uint<4> nb3 = wr3.range(b*4+3, b*4);
+                ap_uint<4> nb4 = wr4.range(b*4+3, b*4);
+                ap_uint<4> nb5 = wr5.range(b*4+3, b*4);
+                ap_uint<4> nb6 = wr6.range(b*4+3, b*4);
+                ap_uint<4> nb7 = wr7.range(b*4+3, b*4);
 
-                acc0[b][k] += (int32_t)(xi8 * ((ap_int<5>)nb0 - 8));
-                acc1[b][k] += (int32_t)(xi8 * ((ap_int<5>)nb1 - 8));
-                acc2[b][k] += (int32_t)(xi8 * ((ap_int<5>)nb2 - 8));
-                acc3[b][k] += (int32_t)(xi8 * ((ap_int<5>)nb3 - 8));
+                // Each += maps to DSP48E2 P = P + A×B (internal accumulation)
+                dsp0[b] += xi8 * (ap_int<18>)((ap_int<5>)nb0 - 8);
+                dsp1[b] += xi8 * (ap_int<18>)((ap_int<5>)nb1 - 8);
+                dsp2[b] += xi8 * (ap_int<18>)((ap_int<5>)nb2 - 8);
+                dsp3[b] += xi8 * (ap_int<18>)((ap_int<5>)nb3 - 8);
+                dsp4[b] += xi8 * (ap_int<18>)((ap_int<5>)nb4 - 8);
+                dsp5[b] += xi8 * (ap_int<18>)((ap_int<5>)nb5 - 8);
+                dsp6[b] += xi8 * (ap_int<18>)((ap_int<5>)nb6 - 8);
+                dsp7[b] += xi8 * (ap_int<18>)((ap_int<5>)nb7 - 8);
             }
         }
 
+        // Read DSP accumulators directly — no bank summation needed
         REDUCE_GRP: for (int b = 0; b < 8; b++) {
             #pragma HLS PIPELINE II=1
             int abs_b = g * 8 + b;
-            int32_t sw0 = 0, sw1 = 0, sw2 = 0, sw3 = 0;
-            for (int k = 0; k < 4; k++) {
-                #pragma HLS UNROLL
-                sw0 += acc0[b][k]; sw1 += acc1[b][k];
-                sw2 += acc2[b][k]; sw3 += acc3[b][k];
-            }
-            total0 += (fxd_scale_t)d[0][abs_b] * (fxd_accum_t)sw0;
-            total1 += (fxd_scale_t)d[1][abs_b] * (fxd_accum_t)sw1;
-            total2 += (fxd_scale_t)d[2][abs_b] * (fxd_accum_t)sw2;
-            total3 += (fxd_scale_t)d[3][abs_b] * (fxd_accum_t)sw3;
+            total0 += (fxd_scale_t)d[0][abs_b] * (fxd_accum_t)dsp0[b];
+            total1 += (fxd_scale_t)d[1][abs_b] * (fxd_accum_t)dsp1[b];
+            total2 += (fxd_scale_t)d[2][abs_b] * (fxd_accum_t)dsp2[b];
+            total3 += (fxd_scale_t)d[3][abs_b] * (fxd_accum_t)dsp3[b];
+            total4 += (fxd_scale_t)d[4][abs_b] * (fxd_accum_t)dsp4[b];
+            total5 += (fxd_scale_t)d[5][abs_b] * (fxd_accum_t)dsp5[b];
+            total6 += (fxd_scale_t)d[6][abs_b] * (fxd_accum_t)dsp6[b];
+            total7 += (fxd_scale_t)d[7][abs_b] * (fxd_accum_t)dsp7[b];
         }
     }
 
     *result0 = (float)total0 * x_scale; *result1 = (float)total1 * x_scale;
     *result2 = (float)total2 * x_scale; *result3 = (float)total3 * x_scale;
+    *result4 = (float)total4 * x_scale; *result5 = (float)total5 * x_scale;
+    *result6 = (float)total6 * x_scale; *result7 = (float)total7 * x_scale;
 }
 
 // ============================================================================
-// Q4_0 Output Path — merged load, K=4, 128 pre-allocated BRAM tiles
+// Q4_0 Output Path — merged load, K_DOWN=8, 32 time-multiplexed BRAM tiles
 // ============================================================================
 
-// load_mg_down_q40: per-meta-group merged load.  4 rows × 40 DDR words = 160
-// words in one AXI burst.  16 BRAM tiles (4 groups × 4 rows) filled per call.
+// load_mg_down_q40: per-meta-group merged load.  K_DOWN rows × 40 DDR words in
+// one AXI burst.  32 BRAM tiles (4 groups × K_DOWN rows) filled per call.
 static void load_mg_down_q40(
     const ap_uint<128> *Wd_wide,
     int out_i,
@@ -160,7 +263,16 @@ static void load_mg_down_q40(
     ap_uint<32> g2_r2[Q40_NIB_ELEMS], ap_uint<32> g3_r2[Q40_NIB_ELEMS],
     ap_uint<32> g0_r3[Q40_NIB_ELEMS], ap_uint<32> g1_r3[Q40_NIB_ELEMS],
     ap_uint<32> g2_r3[Q40_NIB_ELEMS], ap_uint<32> g3_r3[Q40_NIB_ELEMS],
-    float d_r0[32], float d_r1[32], float d_r2[32], float d_r3[32])
+    ap_uint<32> g0_r4[Q40_NIB_ELEMS], ap_uint<32> g1_r4[Q40_NIB_ELEMS],
+    ap_uint<32> g2_r4[Q40_NIB_ELEMS], ap_uint<32> g3_r4[Q40_NIB_ELEMS],
+    ap_uint<32> g0_r5[Q40_NIB_ELEMS], ap_uint<32> g1_r5[Q40_NIB_ELEMS],
+    ap_uint<32> g2_r5[Q40_NIB_ELEMS], ap_uint<32> g3_r5[Q40_NIB_ELEMS],
+    ap_uint<32> g0_r6[Q40_NIB_ELEMS], ap_uint<32> g1_r6[Q40_NIB_ELEMS],
+    ap_uint<32> g2_r6[Q40_NIB_ELEMS], ap_uint<32> g3_r6[Q40_NIB_ELEMS],
+    ap_uint<32> g0_r7[Q40_NIB_ELEMS], ap_uint<32> g1_r7[Q40_NIB_ELEMS],
+    ap_uint<32> g2_r7[Q40_NIB_ELEMS], ap_uint<32> g3_r7[Q40_NIB_ELEMS],
+    float d_r0[32], float d_r1[32], float d_r2[32], float d_r3[32],
+    float d_r4[32], float d_r5[32], float d_r6[32], float d_r7[32])
 {
 #pragma HLS INLINE off
 
@@ -182,10 +294,26 @@ static void load_mg_down_q40(
                            d_r2[w*4+1] = float_from_bits((uint32_t)ddr.range(63,32));
                            d_r2[w*4+2] = float_from_bits((uint32_t)ddr.range(95,64));
                            d_r2[w*4+3] = float_from_bits((uint32_t)ddr.range(127,96)); }
-        else             { d_r3[w*4] = float_from_bits((uint32_t)ddr.range(31,0));
+        else if (r == 3) { d_r3[w*4] = float_from_bits((uint32_t)ddr.range(31,0));
                            d_r3[w*4+1] = float_from_bits((uint32_t)ddr.range(63,32));
                            d_r3[w*4+2] = float_from_bits((uint32_t)ddr.range(95,64));
                            d_r3[w*4+3] = float_from_bits((uint32_t)ddr.range(127,96)); }
+        else if (r == 4) { d_r4[w*4] = float_from_bits((uint32_t)ddr.range(31,0));
+                           d_r4[w*4+1] = float_from_bits((uint32_t)ddr.range(63,32));
+                           d_r4[w*4+2] = float_from_bits((uint32_t)ddr.range(95,64));
+                           d_r4[w*4+3] = float_from_bits((uint32_t)ddr.range(127,96)); }
+        else if (r == 5) { d_r5[w*4] = float_from_bits((uint32_t)ddr.range(31,0));
+                           d_r5[w*4+1] = float_from_bits((uint32_t)ddr.range(63,32));
+                           d_r5[w*4+2] = float_from_bits((uint32_t)ddr.range(95,64));
+                           d_r5[w*4+3] = float_from_bits((uint32_t)ddr.range(127,96)); }
+        else if (r == 6) { d_r6[w*4] = float_from_bits((uint32_t)ddr.range(31,0));
+                           d_r6[w*4+1] = float_from_bits((uint32_t)ddr.range(63,32));
+                           d_r6[w*4+2] = float_from_bits((uint32_t)ddr.range(95,64));
+                           d_r6[w*4+3] = float_from_bits((uint32_t)ddr.range(127,96)); }
+        else             { d_r7[w*4] = float_from_bits((uint32_t)ddr.range(31,0));
+                           d_r7[w*4+1] = float_from_bits((uint32_t)ddr.range(63,32));
+                           d_r7[w*4+2] = float_from_bits((uint32_t)ddr.range(95,64));
+                           d_r7[w*4+3] = float_from_bits((uint32_t)ddr.range(127,96)); }
     }
 
     LOAD_MG_NIB: for (int i = 0; i < K_DOWN * 32; i++) {
@@ -204,14 +332,27 @@ static void load_mg_down_q40(
         } else if (r == 2) {
             g0_r2[e] = ddr.range(31,  0);  g1_r2[e] = ddr.range(63,  32);
             g2_r2[e] = ddr.range(95,  64); g3_r2[e] = ddr.range(127, 96);
-        } else {
+        } else if (r == 3) {
             g0_r3[e] = ddr.range(31,  0);  g1_r3[e] = ddr.range(63,  32);
             g2_r3[e] = ddr.range(95,  64); g3_r3[e] = ddr.range(127, 96);
+        } else if (r == 4) {
+            g0_r4[e] = ddr.range(31,  0);  g1_r4[e] = ddr.range(63,  32);
+            g2_r4[e] = ddr.range(95,  64); g3_r4[e] = ddr.range(127, 96);
+        } else if (r == 5) {
+            g0_r5[e] = ddr.range(31,  0);  g1_r5[e] = ddr.range(63,  32);
+            g2_r5[e] = ddr.range(95,  64); g3_r5[e] = ddr.range(127, 96);
+        } else if (r == 6) {
+            g0_r6[e] = ddr.range(31,  0);  g1_r6[e] = ddr.range(63,  32);
+            g2_r6[e] = ddr.range(95,  64); g3_r6[e] = ddr.range(127, 96);
+        } else {
+            g0_r7[e] = ddr.range(31,  0);  g1_r7[e] = ddr.range(63,  32);
+            g2_r7[e] = ddr.range(95,  64); g3_r7[e] = ddr.range(127, 96);
         }
     }
 }
 
 // mac_mg_down_q40: process one meta-group (4 groups) for K_DOWN output rows.
+// DSP48E2 accumulation — no fabric accumulator banking.
 static void mac_mg_down_q40(
     ap_uint<32> g0_r0[Q40_NIB_ELEMS], ap_uint<32> g1_r0[Q40_NIB_ELEMS],
     ap_uint<32> g2_r0[Q40_NIB_ELEMS], ap_uint<32> g3_r0[Q40_NIB_ELEMS],
@@ -221,80 +362,108 @@ static void mac_mg_down_q40(
     ap_uint<32> g2_r2[Q40_NIB_ELEMS], ap_uint<32> g3_r2[Q40_NIB_ELEMS],
     ap_uint<32> g0_r3[Q40_NIB_ELEMS], ap_uint<32> g1_r3[Q40_NIB_ELEMS],
     ap_uint<32> g2_r3[Q40_NIB_ELEMS], ap_uint<32> g3_r3[Q40_NIB_ELEMS],
+    ap_uint<32> g0_r4[Q40_NIB_ELEMS], ap_uint<32> g1_r4[Q40_NIB_ELEMS],
+    ap_uint<32> g2_r4[Q40_NIB_ELEMS], ap_uint<32> g3_r4[Q40_NIB_ELEMS],
+    ap_uint<32> g0_r5[Q40_NIB_ELEMS], ap_uint<32> g1_r5[Q40_NIB_ELEMS],
+    ap_uint<32> g2_r5[Q40_NIB_ELEMS], ap_uint<32> g3_r5[Q40_NIB_ELEMS],
+    ap_uint<32> g0_r6[Q40_NIB_ELEMS], ap_uint<32> g1_r6[Q40_NIB_ELEMS],
+    ap_uint<32> g2_r6[Q40_NIB_ELEMS], ap_uint<32> g3_r6[Q40_NIB_ELEMS],
+    ap_uint<32> g0_r7[Q40_NIB_ELEMS], ap_uint<32> g1_r7[Q40_NIB_ELEMS],
+    ap_uint<32> g2_r7[Q40_NIB_ELEMS], ap_uint<32> g3_r7[Q40_NIB_ELEMS],
     const float d_r0[32], const float d_r1[32],
     const float d_r2[32], const float d_r3[32],
+    const float d_r4[32], const float d_r5[32],
+    const float d_r6[32], const float d_r7[32],
     const int8_t gate[Q40_DOWN_BLOCKS][Q40_NIB_ELEMS],
     int mg,
     fxd_accum_t *total0, fxd_accum_t *total1,
-    fxd_accum_t *total2, fxd_accum_t *total3)
+    fxd_accum_t *total2, fxd_accum_t *total3,
+    fxd_accum_t *total4, fxd_accum_t *total5,
+    fxd_accum_t *total6, fxd_accum_t *total7)
 {
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
 
+    // K_DOWN × 8 DSP accumulators: one DSP48E2 P register per (row, block) pair
+    dsp_acc_t odsp0[8], odsp1[8], odsp2[8], odsp3[8];
+    dsp_acc_t odsp4[8], odsp5[8], odsp6[8], odsp7[8];
+    #pragma HLS ARRAY_PARTITION variable=odsp0 complete
+    #pragma HLS ARRAY_PARTITION variable=odsp1 complete
+    #pragma HLS ARRAY_PARTITION variable=odsp2 complete
+    #pragma HLS ARRAY_PARTITION variable=odsp3 complete
+    #pragma HLS ARRAY_PARTITION variable=odsp4 complete
+    #pragma HLS ARRAY_PARTITION variable=odsp5 complete
+    #pragma HLS ARRAY_PARTITION variable=odsp6 complete
+    #pragma HLS ARRAY_PARTITION variable=odsp7 complete
+
     MG_GROUPS: for (int kg = 0; kg < 4; kg++) {
         int abs_g = mg * 4 + kg;
-        int32_t acc0[8][4], acc1[8][4], acc2[8][4], acc3[8][4];
-        #pragma HLS ARRAY_PARTITION variable=acc0 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc1 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc2 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc3 dim=0 complete
 
-        INIT_MG: for (int b = 0; b < 8; b++) {
-            #pragma HLS UNROLL
-            for (int k = 0; k < 4; k++) {
-                #pragma HLS UNROLL
-                acc0[b][k] = 0; acc1[b][k] = 0;
-                acc2[b][k] = 0; acc3[b][k] = 0;
-            }
+        // Zero DSP accumulators for this group (8 cycles, II=1)
+        ZERO_ODSP: for (int b = 0; b < 8; b++) {
+            #pragma HLS PIPELINE II=1
+            odsp0[b] = 0; odsp1[b] = 0; odsp2[b] = 0; odsp3[b] = 0;
+            odsp4[b] = 0; odsp5[b] = 0; odsp6[b] = 0; odsp7[b] = 0;
         }
 
         MAC_MG: for (int n = 0; n < 32; n++) {
             #pragma HLS PIPELINE II=1
-            int k = n & 3;
-            ap_uint<32> wr0, wr1, wr2, wr3;
+            ap_uint<32> wr0, wr1, wr2, wr3, wr4, wr5, wr6, wr7;
             if (kg == 0) {
                 wr0 = g0_r0[n]; wr1 = g0_r1[n]; wr2 = g0_r2[n]; wr3 = g0_r3[n];
+                wr4 = g0_r4[n]; wr5 = g0_r5[n]; wr6 = g0_r6[n]; wr7 = g0_r7[n];
             } else if (kg == 1) {
                 wr0 = g1_r0[n]; wr1 = g1_r1[n]; wr2 = g1_r2[n]; wr3 = g1_r3[n];
+                wr4 = g1_r4[n]; wr5 = g1_r5[n]; wr6 = g1_r6[n]; wr7 = g1_r7[n];
             } else if (kg == 2) {
                 wr0 = g2_r0[n]; wr1 = g2_r1[n]; wr2 = g2_r2[n]; wr3 = g2_r3[n];
+                wr4 = g2_r4[n]; wr5 = g2_r5[n]; wr6 = g2_r6[n]; wr7 = g2_r7[n];
             } else {
                 wr0 = g3_r0[n]; wr1 = g3_r1[n]; wr2 = g3_r2[n]; wr3 = g3_r3[n];
+                wr4 = g3_r4[n]; wr5 = g3_r5[n]; wr6 = g3_r6[n]; wr7 = g3_r7[n];
             }
             for (int b = 0; b < 8; b++) {
                 #pragma HLS UNROLL
                 int abs_b = abs_g * 8 + b;
-                ap_int<8>  gi8 = (ap_int<8>)gate[abs_b][n];
+                ap_int<18> gi8 = (ap_int<18>)gate[abs_b][n];
                 ap_uint<4> nb0 = wr0.range(b*4+3, b*4);
                 ap_uint<4> nb1 = wr1.range(b*4+3, b*4);
                 ap_uint<4> nb2 = wr2.range(b*4+3, b*4);
                 ap_uint<4> nb3 = wr3.range(b*4+3, b*4);
-                acc0[b][k] += (int32_t)(gi8 * ((ap_int<5>)nb0 - 8));
-                acc1[b][k] += (int32_t)(gi8 * ((ap_int<5>)nb1 - 8));
-                acc2[b][k] += (int32_t)(gi8 * ((ap_int<5>)nb2 - 8));
-                acc3[b][k] += (int32_t)(gi8 * ((ap_int<5>)nb3 - 8));
+                ap_uint<4> nb4 = wr4.range(b*4+3, b*4);
+                ap_uint<4> nb5 = wr5.range(b*4+3, b*4);
+                ap_uint<4> nb6 = wr6.range(b*4+3, b*4);
+                ap_uint<4> nb7 = wr7.range(b*4+3, b*4);
+
+                odsp0[b] += gi8 * (ap_int<18>)((ap_int<5>)nb0 - 8);
+                odsp1[b] += gi8 * (ap_int<18>)((ap_int<5>)nb1 - 8);
+                odsp2[b] += gi8 * (ap_int<18>)((ap_int<5>)nb2 - 8);
+                odsp3[b] += gi8 * (ap_int<18>)((ap_int<5>)nb3 - 8);
+                odsp4[b] += gi8 * (ap_int<18>)((ap_int<5>)nb4 - 8);
+                odsp5[b] += gi8 * (ap_int<18>)((ap_int<5>)nb5 - 8);
+                odsp6[b] += gi8 * (ap_int<18>)((ap_int<5>)nb6 - 8);
+                odsp7[b] += gi8 * (ap_int<18>)((ap_int<5>)nb7 - 8);
             }
         }
 
+        // Read DSP accumulators directly — no bank summation needed
         REDUCE_MG: for (int b = 0; b < 8; b++) {
             #pragma HLS PIPELINE II=1
             int abs_b = abs_g * 8 + b;
-            int32_t sw0 = 0, sw1 = 0, sw2 = 0, sw3 = 0;
-            for (int k = 0; k < 4; k++) {
-                #pragma HLS UNROLL
-                sw0 += acc0[b][k]; sw1 += acc1[b][k];
-                sw2 += acc2[b][k]; sw3 += acc3[b][k];
-            }
-            *total0 += (fxd_scale_t)d_r0[abs_b - mg*32] * (fxd_accum_t)sw0;
-            *total1 += (fxd_scale_t)d_r1[abs_b - mg*32] * (fxd_accum_t)sw1;
-            *total2 += (fxd_scale_t)d_r2[abs_b - mg*32] * (fxd_accum_t)sw2;
-            *total3 += (fxd_scale_t)d_r3[abs_b - mg*32] * (fxd_accum_t)sw3;
+            *total0 += (fxd_scale_t)d_r0[abs_b - mg*32] * (fxd_accum_t)odsp0[b];
+            *total1 += (fxd_scale_t)d_r1[abs_b - mg*32] * (fxd_accum_t)odsp1[b];
+            *total2 += (fxd_scale_t)d_r2[abs_b - mg*32] * (fxd_accum_t)odsp2[b];
+            *total3 += (fxd_scale_t)d_r3[abs_b - mg*32] * (fxd_accum_t)odsp3[b];
+            *total4 += (fxd_scale_t)d_r4[abs_b - mg*32] * (fxd_accum_t)odsp4[b];
+            *total5 += (fxd_scale_t)d_r5[abs_b - mg*32] * (fxd_accum_t)odsp5[b];
+            *total6 += (fxd_scale_t)d_r6[abs_b - mg*32] * (fxd_accum_t)odsp6[b];
+            *total7 += (fxd_scale_t)d_r7[abs_b - mg*32] * (fxd_accum_t)odsp7[b];
         }
     }
 }
 
 // ============================================================================
-// Phase 2 & 3: compute_X1 / compute_X2 — K=4, merged loads
+// Phase 2 & 3: compute_X1 / compute_X2 — K=8, merged loads
 // ============================================================================
 
 static int8_t quantize_x12(float r) {
@@ -316,29 +485,82 @@ static void compute_X1(
 #pragma HLS ARRAY_PARTITION variable=x_local_1 dim=2 complete
     const ap_uint<128> *W_wide = (const ap_uint<128>*)W;
 
-    ap_uint<128> nib_r0[64], nib_r1[64], nib_r2[64], nib_r3[64];
-    #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r1 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
+    ap_uint<32> nib_r0_s0[64], nib_r0_s1[64], nib_r0_s2[64], nib_r0_s3[64];
+    ap_uint<32> nib_r1_s0[64], nib_r1_s1[64], nib_r1_s2[64], nib_r1_s3[64];
+    ap_uint<32> nib_r2_s0[64], nib_r2_s1[64], nib_r2_s2[64], nib_r2_s3[64];
+    ap_uint<32> nib_r3_s0[64], nib_r3_s1[64], nib_r3_s2[64], nib_r3_s3[64];
+    ap_uint<32> nib_r4_s0[64], nib_r4_s1[64], nib_r4_s2[64], nib_r4_s3[64];
+    ap_uint<32> nib_r5_s0[64], nib_r5_s1[64], nib_r5_s2[64], nib_r5_s3[64];
+    ap_uint<32> nib_r6_s0[64], nib_r6_s1[64], nib_r6_s2[64], nib_r6_s3[64];
+    ap_uint<32> nib_r7_s0[64], nib_r7_s1[64], nib_r7_s2[64], nib_r7_s3[64];
+    #pragma HLS BIND_STORAGE variable=nib_r0_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r0_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r0_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r0_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r1_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r1_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r1_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r1_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r2_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r2_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r2_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r2_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r3_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r3_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r3_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r3_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r4_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r4_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r4_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r4_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r5_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r5_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r5_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r5_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r6_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r6_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r6_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r6_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r7_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r7_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r7_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r7_s3 type=ram_1p impl=bram latency=2
 
     float d[K_WV][Q40_WV_BLOCKS];
     #pragma HLS ARRAY_PARTITION variable=d dim=0 complete
 
     COMPUTE_X1: for (int row = 0; row < FFN_DIM; row += K_WV) {
-        load_4_rows_wv_q40(W_wide, row,
-                            nib_r0, nib_r1, nib_r2, nib_r3, d);
+        load_8_rows_wv_q40(W_wide, row,
+                            nib_r0_s0, nib_r0_s1, nib_r0_s2, nib_r0_s3,
+                            nib_r1_s0, nib_r1_s1, nib_r1_s2, nib_r1_s3,
+                            nib_r2_s0, nib_r2_s1, nib_r2_s2, nib_r2_s3,
+                            nib_r3_s0, nib_r3_s1, nib_r3_s2, nib_r3_s3,
+                            nib_r4_s0, nib_r4_s1, nib_r4_s2, nib_r4_s3,
+                            nib_r5_s0, nib_r5_s1, nib_r5_s2, nib_r5_s3,
+                            nib_r6_s0, nib_r6_s1, nib_r6_s2, nib_r6_s3,
+                            nib_r7_s0, nib_r7_s1, nib_r7_s2, nib_r7_s3, d);
 
-        float r0, r1, r2, r3;
-        mac_blocks_wv_k4_q40(
-            nib_r0, nib_r1, nib_r2, nib_r3,
+        float r0, r1, r2, r3, r4, r5, r6, r7;
+        mac_blocks_wv_k8_q40(
+            nib_r0_s0, nib_r0_s1, nib_r0_s2, nib_r0_s3,
+            nib_r1_s0, nib_r1_s1, nib_r1_s2, nib_r1_s3,
+            nib_r2_s0, nib_r2_s1, nib_r2_s2, nib_r2_s3,
+            nib_r3_s0, nib_r3_s1, nib_r3_s2, nib_r3_s3,
+            nib_r4_s0, nib_r4_s1, nib_r4_s2, nib_r4_s3,
+            nib_r5_s0, nib_r5_s1, nib_r5_s2, nib_r5_s3,
+            nib_r6_s0, nib_r6_s1, nib_r6_s2, nib_r6_s3,
+            nib_r7_s0, nib_r7_s1, nib_r7_s2, nib_r7_s3,
             d, x_local_1[0], x_scale,
-            &r0, &r1, &r2, &r3);
+            &r0, &r1, &r2, &r3, &r4, &r5, &r6, &r7);
 
         X1_cache[0][row + 0] = quantize_x12(r0);
         X1_cache[0][row + 1] = quantize_x12(r1);
         X1_cache[0][row + 2] = quantize_x12(r2);
         X1_cache[0][row + 3] = quantize_x12(r3);
+        X1_cache[0][row + 4] = quantize_x12(r4);
+        X1_cache[0][row + 5] = quantize_x12(r5);
+        X1_cache[0][row + 6] = quantize_x12(r6);
+        X1_cache[0][row + 7] = quantize_x12(r7);
     }
 }
 
@@ -352,29 +574,82 @@ static void compute_X2(
 #pragma HLS ARRAY_PARTITION variable=x_local_2 dim=2 complete
     const ap_uint<128> *V_wide = (const ap_uint<128>*)V;
 
-    ap_uint<128> nib_r0[64], nib_r1[64], nib_r2[64], nib_r3[64];
-    #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r1 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
+    ap_uint<32> nib_r0_s0[64], nib_r0_s1[64], nib_r0_s2[64], nib_r0_s3[64];
+    ap_uint<32> nib_r1_s0[64], nib_r1_s1[64], nib_r1_s2[64], nib_r1_s3[64];
+    ap_uint<32> nib_r2_s0[64], nib_r2_s1[64], nib_r2_s2[64], nib_r2_s3[64];
+    ap_uint<32> nib_r3_s0[64], nib_r3_s1[64], nib_r3_s2[64], nib_r3_s3[64];
+    ap_uint<32> nib_r4_s0[64], nib_r4_s1[64], nib_r4_s2[64], nib_r4_s3[64];
+    ap_uint<32> nib_r5_s0[64], nib_r5_s1[64], nib_r5_s2[64], nib_r5_s3[64];
+    ap_uint<32> nib_r6_s0[64], nib_r6_s1[64], nib_r6_s2[64], nib_r6_s3[64];
+    ap_uint<32> nib_r7_s0[64], nib_r7_s1[64], nib_r7_s2[64], nib_r7_s3[64];
+    #pragma HLS BIND_STORAGE variable=nib_r0_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r0_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r0_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r0_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r1_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r1_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r1_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r1_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r2_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r2_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r2_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r2_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r3_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r3_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r3_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r3_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r4_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r4_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r4_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r4_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r5_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r5_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r5_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r5_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r6_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r6_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r6_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r6_s3 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r7_s0 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r7_s1 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r7_s2 type=ram_1p impl=bram latency=2
+    #pragma HLS BIND_STORAGE variable=nib_r7_s3 type=ram_1p impl=bram latency=2
 
     float d[K_WV][Q40_WV_BLOCKS];
     #pragma HLS ARRAY_PARTITION variable=d dim=0 complete
 
     COMPUTE_X2: for (int row = 0; row < FFN_DIM; row += K_WV) {
-        load_4_rows_wv_q40(V_wide, row,
-                            nib_r0, nib_r1, nib_r2, nib_r3, d);
+        load_8_rows_wv_q40(V_wide, row,
+                            nib_r0_s0, nib_r0_s1, nib_r0_s2, nib_r0_s3,
+                            nib_r1_s0, nib_r1_s1, nib_r1_s2, nib_r1_s3,
+                            nib_r2_s0, nib_r2_s1, nib_r2_s2, nib_r2_s3,
+                            nib_r3_s0, nib_r3_s1, nib_r3_s2, nib_r3_s3,
+                            nib_r4_s0, nib_r4_s1, nib_r4_s2, nib_r4_s3,
+                            nib_r5_s0, nib_r5_s1, nib_r5_s2, nib_r5_s3,
+                            nib_r6_s0, nib_r6_s1, nib_r6_s2, nib_r6_s3,
+                            nib_r7_s0, nib_r7_s1, nib_r7_s2, nib_r7_s3, d);
 
-        float r0, r1, r2, r3;
-        mac_blocks_wv_k4_q40(
-            nib_r0, nib_r1, nib_r2, nib_r3,
+        float r0, r1, r2, r3, r4, r5, r6, r7;
+        mac_blocks_wv_k8_q40(
+            nib_r0_s0, nib_r0_s1, nib_r0_s2, nib_r0_s3,
+            nib_r1_s0, nib_r1_s1, nib_r1_s2, nib_r1_s3,
+            nib_r2_s0, nib_r2_s1, nib_r2_s2, nib_r2_s3,
+            nib_r3_s0, nib_r3_s1, nib_r3_s2, nib_r3_s3,
+            nib_r4_s0, nib_r4_s1, nib_r4_s2, nib_r4_s3,
+            nib_r5_s0, nib_r5_s1, nib_r5_s2, nib_r5_s3,
+            nib_r6_s0, nib_r6_s1, nib_r6_s2, nib_r6_s3,
+            nib_r7_s0, nib_r7_s1, nib_r7_s2, nib_r7_s3,
             d, x_local_2[0], x_scale,
-            &r0, &r1, &r2, &r3);
+            &r0, &r1, &r2, &r3, &r4, &r5, &r6, &r7);
 
         X2_cache[0][row + 0] = quantize_x12(r0);
         X2_cache[0][row + 1] = quantize_x12(r1);
         X2_cache[0][row + 2] = quantize_x12(r2);
         X2_cache[0][row + 3] = quantize_x12(r3);
+        X2_cache[0][row + 4] = quantize_x12(r4);
+        X2_cache[0][row + 5] = quantize_x12(r5);
+        X2_cache[0][row + 6] = quantize_x12(r6);
+        X2_cache[0][row + 7] = quantize_x12(r7);
     }
 }
 
@@ -437,7 +712,7 @@ static void compute_gate(
 }
 
 // ============================================================================
-// Phase 5: compute_output — merged load, 128 BRAM tiles, K=4
+// Phase 5: compute_output — merged load, K_DOWN=8, DSP48E2 accumulation
 // ============================================================================
 
 static void compute_output(
@@ -454,7 +729,7 @@ static void compute_output(
     float out_local[VECTOR_DIM];
     #pragma HLS BIND_STORAGE variable=out_local type=ram_1p impl=bram
 
-    // 16 time-multiplexed BRAM tiles: 4 groups × 4 rows, reused across meta-groups
+    // 32 time-multiplexed BRAM tiles: 4 groups × K_DOWN rows, reused across meta-groups
     ap_uint<32> g0_r0[Q40_NIB_ELEMS], g1_r0[Q40_NIB_ELEMS];
     ap_uint<32> g2_r0[Q40_NIB_ELEMS], g3_r0[Q40_NIB_ELEMS];
     ap_uint<32> g0_r1[Q40_NIB_ELEMS], g1_r1[Q40_NIB_ELEMS];
@@ -463,6 +738,14 @@ static void compute_output(
     ap_uint<32> g2_r2[Q40_NIB_ELEMS], g3_r2[Q40_NIB_ELEMS];
     ap_uint<32> g0_r3[Q40_NIB_ELEMS], g1_r3[Q40_NIB_ELEMS];
     ap_uint<32> g2_r3[Q40_NIB_ELEMS], g3_r3[Q40_NIB_ELEMS];
+    ap_uint<32> g0_r4[Q40_NIB_ELEMS], g1_r4[Q40_NIB_ELEMS];
+    ap_uint<32> g2_r4[Q40_NIB_ELEMS], g3_r4[Q40_NIB_ELEMS];
+    ap_uint<32> g0_r5[Q40_NIB_ELEMS], g1_r5[Q40_NIB_ELEMS];
+    ap_uint<32> g2_r5[Q40_NIB_ELEMS], g3_r5[Q40_NIB_ELEMS];
+    ap_uint<32> g0_r6[Q40_NIB_ELEMS], g1_r6[Q40_NIB_ELEMS];
+    ap_uint<32> g2_r6[Q40_NIB_ELEMS], g3_r6[Q40_NIB_ELEMS];
+    ap_uint<32> g0_r7[Q40_NIB_ELEMS], g1_r7[Q40_NIB_ELEMS];
+    ap_uint<32> g2_r7[Q40_NIB_ELEMS], g3_r7[Q40_NIB_ELEMS];
     #pragma HLS BIND_STORAGE variable=g0_r0 type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=g1_r0 type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=g2_r0 type=ram_1p impl=bram
@@ -479,38 +762,75 @@ static void compute_output(
     #pragma HLS BIND_STORAGE variable=g1_r3 type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=g2_r3 type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=g3_r3 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g0_r4 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g1_r4 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g2_r4 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g3_r4 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g0_r5 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g1_r5 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g2_r5 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g3_r5 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g0_r6 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g1_r6 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g2_r6 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g3_r6 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g0_r7 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g1_r7 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g2_r7 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=g3_r7 type=ram_1p impl=bram
 
     DOWN_Q40: for (int out_i = 0; out_i < VECTOR_DIM; out_i += K_DOWN) {
         fxd_accum_t total0 = 0, total1 = 0, total2 = 0, total3 = 0;
+        fxd_accum_t total4 = 0, total5 = 0, total6 = 0, total7 = 0;
 
         META_GROUPS: for (int mg = 0; mg < Q40_DOWN_MG; mg++) {
             float d_r0[32], d_r1[32], d_r2[32], d_r3[32];
+            float d_r4[32], d_r5[32], d_r6[32], d_r7[32];
             #pragma HLS ARRAY_PARTITION variable=d_r0 complete
             #pragma HLS ARRAY_PARTITION variable=d_r1 complete
             #pragma HLS ARRAY_PARTITION variable=d_r2 complete
             #pragma HLS ARRAY_PARTITION variable=d_r3 complete
+            #pragma HLS ARRAY_PARTITION variable=d_r4 complete
+            #pragma HLS ARRAY_PARTITION variable=d_r5 complete
+            #pragma HLS ARRAY_PARTITION variable=d_r6 complete
+            #pragma HLS ARRAY_PARTITION variable=d_r7 complete
 
             load_mg_down_q40(W_down_wide, out_i, mg,
                              g0_r0, g1_r0, g2_r0, g3_r0,
                              g0_r1, g1_r1, g2_r1, g3_r1,
                              g0_r2, g1_r2, g2_r2, g3_r2,
                              g0_r3, g1_r3, g2_r3, g3_r3,
-                             d_r0, d_r1, d_r2, d_r3);
+                             g0_r4, g1_r4, g2_r4, g3_r4,
+                             g0_r5, g1_r5, g2_r5, g3_r5,
+                             g0_r6, g1_r6, g2_r6, g3_r6,
+                             g0_r7, g1_r7, g2_r7, g3_r7,
+                             d_r0, d_r1, d_r2, d_r3,
+                             d_r4, d_r5, d_r6, d_r7);
 
             mac_mg_down_q40(
                 g0_r0, g1_r0, g2_r0, g3_r0,
                 g0_r1, g1_r1, g2_r1, g3_r1,
                 g0_r2, g1_r2, g2_r2, g3_r2,
                 g0_r3, g1_r3, g2_r3, g3_r3,
+                g0_r4, g1_r4, g2_r4, g3_r4,
+                g0_r5, g1_r5, g2_r5, g3_r5,
+                g0_r6, g1_r6, g2_r6, g3_r6,
+                g0_r7, g1_r7, g2_r7, g3_r7,
                 d_r0, d_r1, d_r2, d_r3,
+                d_r4, d_r5, d_r6, d_r7,
                 gate_cache[0], mg,
-                &total0, &total1, &total2, &total3);
+                &total0, &total1, &total2, &total3,
+                &total4, &total5, &total6, &total7);
         }
 
         out_local[out_i]     = (float)total0 * gate_scale;
         out_local[out_i + 1] = (float)total1 * gate_scale;
         out_local[out_i + 2] = (float)total2 * gate_scale;
         out_local[out_i + 3] = (float)total3 * gate_scale;
+        out_local[out_i + 4] = (float)total4 * gate_scale;
+        out_local[out_i + 5] = (float)total5 * gate_scale;
+        out_local[out_i + 6] = (float)total6 * gate_scale;
+        out_local[out_i + 7] = (float)total7 * gate_scale;
     }
     memcpy(out_batch, out_local, VECTOR_DIM * sizeof(float));
 }
