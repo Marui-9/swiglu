@@ -927,3 +927,30 @@
     density doubles (16 parallel DSPs vs 8).  If Vivado router inflates
     beyond 1.32×, design may not close.  But each multiply is a single
     DSP48E2 (no cascade), so routing pressure is linear, not super-linear.
+
+87. K_DOWN=16 implementation attempted and reverted (May 22, 22:48).  Scaled
+    output path from 8→16: 64 BRAM tiles (was 32), 16 d arrays, 16 odsp
+    chains, 16 totals.  DOWN_Q40 iterations halved: 256→128.
+
+    HLS: 92,231 LUTs (+15.4K vs K_DOWN=8), 258 DSP (+96), 222 BRAM (+32).
+    compute_output alone grew from 17,125→32,554 LUTs (+90%).  The near-2×
+    scaling came from REDUCE_MG (8,418→16,762, +99%), MAC_MG (1,602→3,090,
+    +93%), ZERO_ODSP (627→1,203, +92%), and load_mg_down (3,213→5,649, +76%).
+
+    Vivado: 130,831 LUTs (111.7%) — does NOT fit.  The increase of 29.5K
+    Vivado LUTs for 15.4K HLS LUTs is a 1.91× Vivado/HLS ratio on the output
+    path — much worse than the 1.32× baseline.  16-wide REDUCE_MG DSP routing
+    inflates fabric LUTs super-linearly despite single-DSP multiplies.
+
+    Performance also disappointed: per-MG load time doubled (470→790 cyc),
+    eating most of the iteration savings.  compute_output only dropped
+    1.54M→1.10M (−29%, not −48%).  Top-level 4.28M→3.84M (−10%).
+    Net t/s effect roughly neutral vs K_DOWN=8 at 2.84 t/s.
+
+    Root cause of LUT inflation: 16 parallel DSP routes in REDUCE_MG create
+    routing congestion that Vivado resolves with LUT-based pipelining and
+    signal duplication.  The narrow-REDUCE optimization (single DSP per mul)
+    fixes the DSP cascade problem but doesn't address the fabric routing
+    problem of 16 simultaneous DSP inputs.
+
+    Reverted to K_DOWN=8 (101.4K Vivado LUTs, routes and closes timing).
