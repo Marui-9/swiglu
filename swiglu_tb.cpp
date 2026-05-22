@@ -42,8 +42,8 @@ static uint8_t V_raw  [FFN_DIM    * Q40_WV_BLOCKS   * Q40_BLK_BYTES]; // 9.0 MB
 static uint8_t Wd_raw [VECTOR_DIM * Q40_DOWN_BLOCKS * Q40_BLK_BYTES]; // 9.0 MB
 
 // Pre-decoded element-major DDR buffers for the HLS IP
-static uint8_t W_urm  [FFN_DIM    * Q40_WV_ROW_BYTES];     // 10.0 MB
-static uint8_t V_urm  [FFN_DIM    * Q40_WV_ROW_BYTES];     // 10.0 MB
+static uint8_t W_urm  [FFN_DIM_PAD * Q40_WV_ROW_BYTES];     // 10.5 MB
+static uint8_t V_urm  [FFN_DIM_PAD * Q40_WV_ROW_BYTES];     // 10.5 MB
 static uint8_t Wd_urm [VECTOR_DIM * Q40_DOWN_ROW_BYTES];   // 10.0 MB
 
 static int8_t  x_batch_buf [MAX_BATCH * VECTOR_DIM];
@@ -136,22 +136,32 @@ static void transpose_q40_to_urm_csim(const uint8_t *src, uint8_t *dst,
         uint8_t *nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
 
         if (groups <= 8) {
-            // WV: 8 groups, 4 element-slices per DDR word
+            // WV: sub-group-major nibble layout (matches FPGA)
             for (int g = 0; g < groups; g++) {
-                for (int n = 0; n < 32; n++) {
-                    uint32_t nib32 = 0;
-                    for (int b = 0; b < 8; b++) {
-                        const uint8_t *blk = src + ((size_t)row * blocks_per_row
-                                                    + (size_t)g * 8 + (size_t)b) * src_block_bytes;
-                        int byte_off = 2 + (n >> 1);
-                        int shift    = (n & 1) * 4;
-                        uint32_t nib = (blk[byte_off] >> shift) & 0xF;
-                        nib32 |= (nib << (b * 4));
+                for (int sg = 0; sg < 4; sg++) {
+                    int b0 = sg * 2, b1 = sg * 2 + 1;
+                    const uint8_t *blk0 = src + ((size_t)row * blocks_per_row
+                                                + (size_t)g * 8 + (size_t)b0) * src_block_bytes;
+                    const uint8_t *blk1 = src + ((size_t)row * blocks_per_row
+                                                + (size_t)g * 8 + (size_t)b1) * src_block_bytes;
+                    for (int n_half = 0; n_half < 2; n_half++) {
+                        int base_e = n_half * 16;
+                        uint32_t ddr32[4] = {0, 0, 0, 0};
+                        for (int e = 0; e < 16; e++) {
+                            int n = base_e + e;
+                            int byte_off = 2 + (n >> 1);
+                            int shift    = (n & 1) * 4;
+                            uint32_t nb0 = (blk0[byte_off] >> shift) & 0xF;
+                            uint32_t nb1 = (blk1[byte_off] >> shift) & 0xF;
+                            ddr32[e >> 2] |= (nb0 << ((e & 3) * 8));
+                            ddr32[e >> 2] |= (nb1 << ((e & 3) * 8 + 4));
+                        }
+                        int e_idx = sg * 2 + n_half;
+                        uint32_t *ddr = (uint32_t *)(nib_base
+                            + ((size_t)g * 8 + (size_t)e_idx) * 16);
+                        ddr[0] = ddr32[0]; ddr[1] = ddr32[1];
+                        ddr[2] = ddr32[2]; ddr[3] = ddr32[3];
                     }
-                    int e = n >> 2, s = n & 3;
-                    uint32_t *ddr32 = (uint32_t *)(nib_base
-                        + ((size_t)g * 8 + (size_t)e) * 16);
-                    ddr32[s] = nib32;
                 }
             }
         } else {
@@ -177,6 +187,19 @@ static void transpose_q40_to_urm_csim(const uint8_t *src, uint8_t *dst,
                 }
             }
         }
+    }
+
+    // Pad WV matrices to FFN_DIM_PAD (only when n_rows == FFN_DIM)
+    if (n_rows == FFN_DIM && n_rows < FFN_DIM_PAD) {
+    for (int row = n_rows; row < FFN_DIM_PAD; row++) {
+        uint8_t *hdr_base = dst + (size_t)row * row_stride;
+        for (int w = 0; w < row_hdr / 16; w++) {
+            uint32_t *ddr32 = (uint32_t *)(hdr_base + (size_t)w * 16);
+            ddr32[0] = 0; ddr32[1] = 0; ddr32[2] = 0; ddr32[3] = 0;
+        }
+        uint8_t *nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
+        memset(nib_base, 0x88, (size_t)row_nib);
+    }
     }
 }
 

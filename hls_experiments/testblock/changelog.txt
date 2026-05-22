@@ -735,3 +735,125 @@
     DSP48E2 accumulation, II=2 MAC_ALL.  4.81M cycles/layer, 2.30 t/s
     projected board performance.  127K HLS LUTs (108% HLS, ~89% Vivado
     projected).  Next step: Vivado implementation to confirm fit and timing.
+
+77. Streaming load→MAC architecture (May 22).  Replaced BRAM-based nibble
+    storage with hls::stream + FF group buffer.  load_stream_producer reads
+    DDR group-by-group into 8 per-row streams.  mac_stream_consumer fills
+    gbuf[8][8] FF array per group, runs MAC_ALL from FF instead of BRAM.
+    Eliminates BRAM→DSP routing bottleneck, but MAC_ALL II=2 persists —
+    FF→DSP routing at 16 chains still exceeds 4 ns on ZU5EV.
+
+    Initial single-stream version hit FILL_GBUF II=8 (serialized stream
+    reads).  Fixed with 8 independent streams (II=1).  Inline d-values
+    eliminated str_d/RECV_HDR overhead.  Inline fixed-point quantize replaced
+    8 × quantize_x12 calls with single pipelined loop.
+
+    Output double-buffering attempted but reverted — nested DATAFLOW
+    duplicated hardware (254 BRAM, 147K LUTs).  Performance gain (+520K
+    cycles) not worth resource cost.
+
+    Final streaming configuration: K_WV=8, 8-stream producer (812K), consumer
+    at 2,500 iterLat (d-values II=1, FILL_GBUF II=1, MAC_ALL II=2, quantize
+    II=1).  compute_X1 at 2.56M (−21% vs BRAM 3.25M).  Top-level 4.14M
+    (−14% vs BRAM 4.81M).  Board projection 2.55 t/s (+11% vs BRAM 2.30).
+
+    Resources: ~124K HLS LUTs (105%), 360 DSP (28%), 110 BRAM (38%),
+    ~209K FF (89%).  Fits ZU5EV with Vivado margin.  MAC_ALL II=2 is the
+    confirmed ZU5EV fabric ceiling at 16 chains.
+
+78. II=1 consideration (May 22).  Two remaining alternatives to reach MAC_ALL
+    II=1 within the streaming architecture:
+
+    a) 2-block sub-group (16 chains): current approach.  16 FF reads + 16 DSP
+       routes per cycle.  II=2 confirmed across BRAM, FF-gbuf, sub-group-major
+       DDR, and relaxed clock.  Routing congestion from 16 parallel DSP input
+       paths is the hard ceiling on ZU5EV at 250 MHz.
+
+    b) 1-block sub-group (8 chains): 8 FF reads + 8 DSP routes per cycle —
+       half the routing density.  Much more likely to achieve II=1.  Trade:
+       doubles MAC_ALL trip count (256 vs 128), so at II=1 the per-group cycle
+       count is identical (262 vs 260).  No immediate throughput gain at
+       K_WV=8, but proves the streaming FF-based data path can close timing at
+       II=1.  This validates the architecture and enables K_WV expansion (e.g.,
+       K_WV=12) for higher effective MACs/cycle.
+
+    Bottom line: 1-block sub-group is the credible II=1 path.  Same t/s at
+    K_WV=8, but unlocks future scaling.
+
+79. 1-block sub-group implemented and synthesized (May 22, 15:50).  MAC_ALL
+    achieved II=1 at 8 chains!  First time in the entire Q4_0 development.
+    256 iterations, 1-block sub-group, 8 FF reads + 8 DSP routes per cycle.
+    MAC_ALL: interval=1, trip=256, iterLat=5, 259 cycles.
+
+    Resources dropped substantially vs 2-block: LUTs 89K (was 127K), DSPs 282
+    (was 360).  ZERO_DSP went from 3,078 FF to 6 FF — the simpler 1-block
+    structure eliminated per-block overhead.  Top-level 4.13M cycles (same t/s
+    at 2.55 since MAC_ALL cycles unchanged: 259 vs 259).
+
+    t/s unchanged because MAC_ALL at II=1 (262/group) matches II=2 (260/group)
+    — doubled trip count offsets II gain.  But the II=1 breakthrough validates
+    the streaming FF-based data path.
+
+80. Path to 3+ t/s — K_WV expansion with 1-block sub-group (May 22).
+
+    With MAC_ALL II=1 proven at 8 chains, the question is how many chains can
+    sustain II=1.  Each chain adds 1 FF read + 1 DSP route per cycle.
+
+    K_WV=8:  proven II=1 at  8 chains →  8 effective MACs/cycle (2.55 t/s)
+    K_WV=10: likely II=1 at 10 chains → 10 effective (+25%)
+    K_WV=12: target  II=1 at 12 chains → 12 effective (+50%)
+    K_WV=16: known  II=2 at 16 chains →  8 effective (no gain)
+
+    Projections (all with 1-block sub-group):
+
+    | K_WV | Chains | II | Effective | compute_X1 | Layer total | Board t/s |
+    |------|--------|----|-----------|-------------|-------------|-----------|
+    | 8    | 8      | 1  | 8         | 2.56M       | 4.13M       | 2.55      |
+    | 10   | 10     | 1  | 10        | 2.08M       | 3.65M       | 2.79      |
+    | 12   | 12     | 1  | 12        | 1.77M       | 3.34M       | 2.95      |
+    | 12   | 12     | 2  | 6         | regresses   | —           | —          |
+
+    K_WV=12 at II=1 projects to 2.95 t/s — just short of 3.0.  With Vivado
+    placement optimization (typically 3-5% vs HLS) and output double-buffering
+    revisited (BRAM headroom now 23%), 3.0-3.1 t/s is within reach.
+
+    K_WV=16 with 1-block sub-group would be 16 chains at II=? — the same 16
+    chains that failed at II=2 with 2-block sub-group.  With 1-block, the
+    per-iteration nibble extraction is slightly simpler (single nibble per FF
+    word vs two), but the routing density is identical (16 reads + 16 DSP
+    routes).  Likely still II=2.  Not worth the padding complexity.
+
+    Next step: K_WV=12 with 1-block sub-group.  Highest-risk/highest-reward
+    before hitting the 16-chain ceiling.  If II=1: ~2.95 t/s.  If II=2: revert
+    to K_WV=10.
+
+81. K_WV=12 synthesized (May 22, 16:19).  MAC_ALL achieved II=1 at 12 chains!
+    12 FF reads + 12 DSP routes per cycle.  256 iterations, 259 cycles.
+    compute_X1 dropped to 1.75M (−31% vs K_WV=8).  Top-level 3.33M, projecting
+    2.96 t/s.  C-simulation: T4 failed (testbench DDR layout mismatch + buffer
+    overflow from Wd padding), fixed with sub-group-major transpose update,
+    buffer resize, and FFN_DIM-gated padding.
+
+    Vivado implementation (May 22, 17:34): design does NOT fit on ZU5EV.
+    163K LUTs required (140% of 117K), 268K FF (115% of 234K).  The streaming
+    architecture's FF-based gbuf, 12 stream FIFOs, and 12-way DSP routing push
+    FF and LUT counts beyond device limits.  Performance is real but resources
+    don't close.
+
+82. Reverted to BRAM-based architecture with retained improvements (May 22).
+    Streaming removed, BRAM nibble storage restored (load_8_rows_wv_q40,
+    mac_blocks_wv_k8_q40).  Key retained: 1-block sub-group (MAC_ALL II=1,
+    256 iters, 8 chains), inline fixed-point quantize, sub-group-major DDR.
+    Output double-buffering attempted but reverted — nested DATAFLOW duplicated
+    hardware (163K Vivado LUTs).
+
+    Final configuration: K_WV=8, BRAM storage, 1-block sub-group II=1,
+    inline quantize, single-buffered output.  4.27M cycles/layer, 2.50 t/s
+    projected.  HLS LUTs: ~110K (94%), BRAM: 158 (55%), DSP: ~300 (24%).
+    Vivado LUT projection: ~91K (78%) with established 0.83× BRAM ratio.
+
+    The BRAM revert trades the streaming architecture's FF overhead for proven
+    Vivado fit.  Performance ceiling analysis: MAC_ALL II=1 at 8 effective
+    MACs/cycle is the current throughput limit.  Output double-buffering is
+    the nearest available lever (+0.17 t/s) but requires solving the nested
+    DATAFLOW resource duplication.

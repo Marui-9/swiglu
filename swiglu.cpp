@@ -4,7 +4,6 @@
 #include <string.h>
 #include <ap_int.h>
 #include <ap_fixed.h>
-#include <hls_stream.h>
 
 // ─── Fixed-point types for DSP-mapped REDUCE loops ───────────────────────────
 // fxd_scale_t: maps float d values (typically 0.001-6.0), fits DSP48E2 input
@@ -23,66 +22,68 @@ static inline float float_from_bits(uint32_t u) {
 }
 
 // ============================================================================
-// Q4_0 WV Streaming Load→MAC — FF group buffer, no BRAMs, II=1 target
+// Q4_0 WV Merged Load — K_WV=8 rows, one AXI burst, sub-group-major DDR
 // ============================================================================
 
-static int8_t quantize_x12(float r) {
-#pragma HLS INLINE off
-    float fq = r * X12_INV_SCALE;
-    int   iq = (int)(fq + (fq >= 0.f ? 0.5f : -0.5f));
-    if (iq >  127) iq =  127;
-    if (iq < -128) iq = -128;
-    return (int8_t)iq;
-}
-
-// Producer: reads DDR group-by-group, d-values inlined with nibbles
-static void load_stream_producer(
+static void load_8_rows_wv_q40(
     const ap_uint<128> *W_wide,
-    int n_rows,
-    hls::stream<ap_uint<128>> str_nib[K_WV])
+    int base_row,
+    ap_uint<128> nib_r0[64], ap_uint<128> nib_r1[64],
+    ap_uint<128> nib_r2[64], ap_uint<128> nib_r3[64],
+    ap_uint<128> nib_r4[64], ap_uint<128> nib_r5[64],
+    ap_uint<128> nib_r6[64], ap_uint<128> nib_r7[64],
+    float d[K_WV][Q40_WV_BLOCKS])
 {
 #pragma HLS INLINE off
-    PRODUCER_LOOP: for (int row = 0; row < n_rows; row += K_WV) {
-        // Send all d-values upfront in one burst: K_WV × 16 DDR words
-        for (int i = 0; i < K_WV * Q40_WV_HDR_WORDS; i++) {
-            #pragma HLS PIPELINE II=1
-            int r = i / Q40_WV_HDR_WORDS;
-            int w = i % Q40_WV_HDR_WORDS;
-            str_nib[r] << W_wide[(ap_uint<64>)(row + r) * Q40_WV_ROW_WORDS + w];
-        }
-        // Send nibble data group-by-group with UNROLL (matches old throughput)
-        for (int g = 0; g < Q40_WV_GROUPS; g++) {
-            for (int w = 0; w < 8; w++) {
-                #pragma HLS PIPELINE II=1
-                for (int r = 0; r < K_WV; r++) {
-                    #pragma HLS UNROLL
-                    str_nib[r] << W_wide[(ap_uint<64>)(row + r) * Q40_WV_ROW_WORDS
-                                         + Q40_WV_HDR_WORDS + (ap_uint<64>)g * 8 + w];
-                }
-            }
-        }
+
+    LOAD_HDR: for (int i = 0; i < K_WV * Q40_WV_HDR_WORDS; i++) {
+        #pragma HLS PIPELINE II=1
+        int r = i / Q40_WV_HDR_WORDS;
+        int w = i % Q40_WV_HDR_WORDS;
+        ap_uint<128> ddr = W_wide[(ap_uint<64>)(base_row + r) * Q40_WV_ROW_WORDS + w];
+
+        d[r][w*4 + 0] = float_from_bits((uint32_t)ddr.range(31,  0));
+        d[r][w*4 + 1] = float_from_bits((uint32_t)ddr.range(63,  32));
+        d[r][w*4 + 2] = float_from_bits((uint32_t)ddr.range(95,  64));
+        d[r][w*4 + 3] = float_from_bits((uint32_t)ddr.range(127, 96));
+    }
+
+    LOAD_NIB: for (int i = 0; i < K_WV * Q40_WV_NIB_WORDS; i++) {
+        #pragma HLS PIPELINE II=1
+        int r = i / Q40_WV_NIB_WORDS;
+        int e = i % Q40_WV_NIB_WORDS;
+        ap_uint<128> ddr = W_wide[(ap_uint<64>)(base_row + r) * Q40_WV_ROW_WORDS
+                                    + Q40_WV_HDR_WORDS + e];
+
+        if      (r == 0) nib_r0[e] = ddr;
+        else if (r == 1) nib_r1[e] = ddr;
+        else if (r == 2) nib_r2[e] = ddr;
+        else if (r == 3) nib_r3[e] = ddr;
+        else if (r == 4) nib_r4[e] = ddr;
+        else if (r == 5) nib_r5[e] = ddr;
+        else if (r == 6) nib_r6[e] = ddr;
+        else             nib_r7[e] = ddr;
     }
 }
 
-// Consumer: reads stream into FF group buffer, MACs one group at a time
-static void mac_stream_consumer(
-    hls::stream<ap_uint<128>> str_nib[K_WV],
-    const int8_t x[Q40_WV_GROUPS][256],
-    float x_scale,
-    int n_rows,
-    int8_t X_cache[MAX_BATCH][FFN_DIM])
+// ============================================================================
+// Q4_0 WV MAC — K_WV=8, 1-block sub-group, DSP48E2, II=1 target
+// ============================================================================
+
+static void mac_blocks_wv_k8_q40(
+    const ap_uint<128> nib_r0[64], const ap_uint<128> nib_r1[64],
+    const ap_uint<128> nib_r2[64], const ap_uint<128> nib_r3[64],
+    const ap_uint<128> nib_r4[64], const ap_uint<128> nib_r5[64],
+    const ap_uint<128> nib_r6[64], const ap_uint<128> nib_r7[64],
+    const float d[K_WV][Q40_WV_BLOCKS],
+    const int8_t  x[Q40_WV_GROUPS][256],
+    float  x_scale,
+    int8_t X_cache[MAX_BATCH][FFN_DIM],
+    int     base_row)
 {
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
 
-    // Group buffer: K_WV rows × 8 DDR words × 128 bits — FF implementation
-    ap_uint<128> gbuf[K_WV][8];
-    #pragma HLS ARRAY_PARTITION variable=gbuf dim=0 complete
-
-    float d[K_WV][Q40_WV_BLOCKS];
-    #pragma HLS ARRAY_PARTITION variable=d dim=0 complete
-
-    // DSP accumulators
     dsp_acc_t dsp0[8], dsp1[8], dsp2[8], dsp3[8];
     dsp_acc_t dsp4[8], dsp5[8], dsp6[8], dsp7[8];
     #pragma HLS ARRAY_PARTITION variable=dsp0 complete
@@ -95,112 +96,82 @@ static void mac_stream_consumer(
     #pragma HLS ARRAY_PARTITION variable=dsp7 complete
 
     ap_fixed<32,8> qs = x_scale * X12_INV_SCALE;
+    fxd_accum_t total0 = 0, total1 = 0, total2 = 0, total3 = 0;
+    fxd_accum_t total4 = 0, total5 = 0, total6 = 0, total7 = 0;
 
-    CONSUMER_LOOP: for (int row = 0; row < n_rows; row += K_WV) {
-        // Receive all d-values upfront: K_WV × 16 DDR words
-        for (int i = 0; i < K_WV * Q40_WV_HDR_WORDS; i++) {
+    MAC_GROUPS: for (int g = 0; g < Q40_WV_GROUPS; g++) {
+        ZERO_DSP: for (int b = 0; b < 8; b++) {
             #pragma HLS PIPELINE II=1
-            int r = i / Q40_WV_HDR_WORDS;
-            int w = i % Q40_WV_HDR_WORDS;
-            ap_uint<128> val;
-            str_nib[r] >> val;
-            d[r][w*4 + 0] = float_from_bits((uint32_t)val.range(31,  0));
-            d[r][w*4 + 1] = float_from_bits((uint32_t)val.range(63,  32));
-            d[r][w*4 + 2] = float_from_bits((uint32_t)val.range(95,  64));
-            d[r][w*4 + 3] = float_from_bits((uint32_t)val.range(127, 96));
+            dsp0[b] = 0; dsp1[b] = 0; dsp2[b] = 0; dsp3[b] = 0;
+            dsp4[b] = 0; dsp5[b] = 0; dsp6[b] = 0; dsp7[b] = 0;
         }
 
-        fxd_accum_t total0 = 0, total1 = 0, total2 = 0, total3 = 0;
-        fxd_accum_t total4 = 0, total5 = 0, total6 = 0, total7 = 0;
-
-        // Process 8 groups
-        CONSUMER_GROUPS: for (int g = 0; g < Q40_WV_GROUPS; g++) {
-            // Fill group buffer from stream: 8 nibble words × K_WV rows
-            FILL_GBUF: for (int w = 0; w < 8; w++) {
-                #pragma HLS PIPELINE II=1
-                for (int r = 0; r < K_WV; r++) {
-                    #pragma HLS UNROLL
-                    str_nib[r] >> gbuf[r][w];
-                }
-            }
-
-            // Zero DSP accumulators
-            ZERO_DSP: for (int b = 0; b < 8; b++) {
-                #pragma HLS PIPELINE II=1
-                dsp0[b] = 0; dsp1[b] = 0; dsp2[b] = 0; dsp3[b] = 0;
-                dsp4[b] = 0; dsp5[b] = 0; dsp6[b] = 0; dsp7[b] = 0;
-            }
-
-            // MAC_ALL: 128 iterations, 2-block sub-group, reads from gbuf
-            MAC_ALL: for (int n = 0; n < 128; n++) {
-                #pragma HLS PIPELINE II=1
-                int n_elem = n >> 2;
-                int sg     = n & 3;
-                int b_base = sg << 1;
-                int e_lo   = n_elem & 15;
-                int n_half = n_elem >> 4;
-                int w_idx  = sg * 2 + n_half;
-
-                ap_uint<128> w0 = gbuf[0][w_idx], w1 = gbuf[1][w_idx];
-                ap_uint<128> w2 = gbuf[2][w_idx], w3 = gbuf[3][w_idx];
-                ap_uint<128> w4 = gbuf[4][w_idx], w5 = gbuf[5][w_idx];
-                ap_uint<128> w6 = gbuf[6][w_idx], w7 = gbuf[7][w_idx];
-
-                for (int bi = 0; bi < 2; bi++) {
-                    #pragma HLS UNROLL
-                    int b = b_base + bi;
-                    ap_int<18> xi8 = (ap_int<18>)x[g][b * 32 + n_elem];
-                    ap_uint<4> nb0 = w0.range(e_lo*8 + bi*4 + 3, e_lo*8 + bi*4);
-                    ap_uint<4> nb1 = w1.range(e_lo*8 + bi*4 + 3, e_lo*8 + bi*4);
-                    ap_uint<4> nb2 = w2.range(e_lo*8 + bi*4 + 3, e_lo*8 + bi*4);
-                    ap_uint<4> nb3 = w3.range(e_lo*8 + bi*4 + 3, e_lo*8 + bi*4);
-                    ap_uint<4> nb4 = w4.range(e_lo*8 + bi*4 + 3, e_lo*8 + bi*4);
-                    ap_uint<4> nb5 = w5.range(e_lo*8 + bi*4 + 3, e_lo*8 + bi*4);
-                    ap_uint<4> nb6 = w6.range(e_lo*8 + bi*4 + 3, e_lo*8 + bi*4);
-                    ap_uint<4> nb7 = w7.range(e_lo*8 + bi*4 + 3, e_lo*8 + bi*4);
-
-                    dsp0[b] += xi8 * (ap_int<18>)((ap_int<5>)nb0 - 8);
-                    dsp1[b] += xi8 * (ap_int<18>)((ap_int<5>)nb1 - 8);
-                    dsp2[b] += xi8 * (ap_int<18>)((ap_int<5>)nb2 - 8);
-                    dsp3[b] += xi8 * (ap_int<18>)((ap_int<5>)nb3 - 8);
-                    dsp4[b] += xi8 * (ap_int<18>)((ap_int<5>)nb4 - 8);
-                    dsp5[b] += xi8 * (ap_int<18>)((ap_int<5>)nb5 - 8);
-                    dsp6[b] += xi8 * (ap_int<18>)((ap_int<5>)nb6 - 8);
-                    dsp7[b] += xi8 * (ap_int<18>)((ap_int<5>)nb7 - 8);
-                }
-            }
-
-            // Reduce: d × DSP accumulator for each block
-            REDUCE_GRP: for (int b = 0; b < 8; b++) {
-                #pragma HLS PIPELINE II=1
-                int abs_b = g * 8 + b;
-                total0 += (fxd_scale_t)d[0][abs_b] * (fxd_accum_t)dsp0[b];
-                total1 += (fxd_scale_t)d[1][abs_b] * (fxd_accum_t)dsp1[b];
-                total2 += (fxd_scale_t)d[2][abs_b] * (fxd_accum_t)dsp2[b];
-                total3 += (fxd_scale_t)d[3][abs_b] * (fxd_accum_t)dsp3[b];
-                total4 += (fxd_scale_t)d[4][abs_b] * (fxd_accum_t)dsp4[b];
-                total5 += (fxd_scale_t)d[5][abs_b] * (fxd_accum_t)dsp5[b];
-                total6 += (fxd_scale_t)d[6][abs_b] * (fxd_accum_t)dsp6[b];
-                total7 += (fxd_scale_t)d[7][abs_b] * (fxd_accum_t)dsp7[b];
-            }
-        }
-
-        // Inline fixed-point quantize
-        QUANTIZE_LOOP: for (int r = 0; r < K_WV; r++) {
+        // 1-block sub-group: 8 chains/cycle, 256 iterations, target II=1
+        MAC_ALL: for (int n = 0; n < 256; n++) {
             #pragma HLS PIPELINE II=1
-            fxd_accum_t t = (r == 0) ? total0 : (r == 1) ? total1 :
-                            (r == 2) ? total2 : (r == 3) ? total3 :
-                            (r == 4) ? total4 : (r == 5) ? total5 :
-                            (r == 6) ? total6 : total7;
-            ap_fixed<56,38> scaled = t * qs;
-            int val = scaled.to_int() + (scaled >= 0 ? 1 : -1) / 2;
-            X_cache[0][row + r] = (val > 127) ? 127 : (val < -128) ? -128 : (int8_t)val;
+            int n_elem = n >> 3;
+            int sg     = n & 7;
+            int b      = sg;
+            int e_lo   = n_elem & 15;
+            int n_half = n_elem >> 4;
+            int pair   = sg >> 1;
+            int idx    = g * 8 + pair * 2 + n_half;
+
+            ap_uint<128> w0 = nib_r0[idx], w1 = nib_r1[idx];
+            ap_uint<128> w2 = nib_r2[idx], w3 = nib_r3[idx];
+            ap_uint<128> w4 = nib_r4[idx], w5 = nib_r5[idx];
+            ap_uint<128> w6 = nib_r6[idx], w7 = nib_r7[idx];
+
+            ap_int<18> xi8 = (ap_int<18>)x[g][b * 32 + n_elem];
+            int bo = (b & 1) * 4;
+            ap_uint<4> nb0 = w0.range(e_lo*8 + bo + 3, e_lo*8 + bo);
+            ap_uint<4> nb1 = w1.range(e_lo*8 + bo + 3, e_lo*8 + bo);
+            ap_uint<4> nb2 = w2.range(e_lo*8 + bo + 3, e_lo*8 + bo);
+            ap_uint<4> nb3 = w3.range(e_lo*8 + bo + 3, e_lo*8 + bo);
+            ap_uint<4> nb4 = w4.range(e_lo*8 + bo + 3, e_lo*8 + bo);
+            ap_uint<4> nb5 = w5.range(e_lo*8 + bo + 3, e_lo*8 + bo);
+            ap_uint<4> nb6 = w6.range(e_lo*8 + bo + 3, e_lo*8 + bo);
+            ap_uint<4> nb7 = w7.range(e_lo*8 + bo + 3, e_lo*8 + bo);
+
+            dsp0[b] += xi8 * (ap_int<18>)((ap_int<5>)nb0 - 8);
+            dsp1[b] += xi8 * (ap_int<18>)((ap_int<5>)nb1 - 8);
+            dsp2[b] += xi8 * (ap_int<18>)((ap_int<5>)nb2 - 8);
+            dsp3[b] += xi8 * (ap_int<18>)((ap_int<5>)nb3 - 8);
+            dsp4[b] += xi8 * (ap_int<18>)((ap_int<5>)nb4 - 8);
+            dsp5[b] += xi8 * (ap_int<18>)((ap_int<5>)nb5 - 8);
+            dsp6[b] += xi8 * (ap_int<18>)((ap_int<5>)nb6 - 8);
+            dsp7[b] += xi8 * (ap_int<18>)((ap_int<5>)nb7 - 8);
         }
+
+        REDUCE_GRP: for (int b = 0; b < 8; b++) {
+            #pragma HLS PIPELINE II=1
+            int abs_b = g * 8 + b;
+            total0 += (fxd_scale_t)d[0][abs_b] * (fxd_accum_t)dsp0[b];
+            total1 += (fxd_scale_t)d[1][abs_b] * (fxd_accum_t)dsp1[b];
+            total2 += (fxd_scale_t)d[2][abs_b] * (fxd_accum_t)dsp2[b];
+            total3 += (fxd_scale_t)d[3][abs_b] * (fxd_accum_t)dsp3[b];
+            total4 += (fxd_scale_t)d[4][abs_b] * (fxd_accum_t)dsp4[b];
+            total5 += (fxd_scale_t)d[5][abs_b] * (fxd_accum_t)dsp5[b];
+            total6 += (fxd_scale_t)d[6][abs_b] * (fxd_accum_t)dsp6[b];
+            total7 += (fxd_scale_t)d[7][abs_b] * (fxd_accum_t)dsp7[b];
+        }
+    }
+
+    // Inline fixed-point quantize
+    QUANTIZE_LOOP: for (int r = 0; r < K_WV; r++) {
+        #pragma HLS PIPELINE II=1
+        fxd_accum_t t = (r == 0) ? total0 : (r == 1) ? total1 :
+                        (r == 2) ? total2 : (r == 3) ? total3 :
+                        (r == 4) ? total4 : (r == 5) ? total5 :
+                        (r == 6) ? total6 : total7;
+        ap_fixed<56,38> scaled = t * qs;
+        int val = scaled.to_int() + (scaled >= 0 ? 1 : -1) / 2;
+        X_cache[0][base_row + r] = (val > 127) ? 127 : (val < -128) ? -128 : (int8_t)val;
     }
 }
 
 // ============================================================================
-// Phase 2 & 3: compute_X1 / compute_X2 — streaming DATAFLOW wrappers
+// Phase 2 & 3: compute_X1 / compute_X2 — BRAM, K_WV=8, 1-block sub-group
 // ============================================================================
 
 static void compute_X1(
@@ -213,12 +184,30 @@ static void compute_X1(
 #pragma HLS ARRAY_PARTITION variable=x_local_1 dim=2 complete
     const ap_uint<128> *W_wide = (const ap_uint<128>*)W;
 
-    hls::stream<ap_uint<128>> str_nib[K_WV];
-    #pragma HLS STREAM variable=str_nib depth=10
+    ap_uint<128> nib_r0[64], nib_r1[64], nib_r2[64], nib_r3[64];
+    ap_uint<128> nib_r4[64], nib_r5[64], nib_r6[64], nib_r7[64];
+    #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r4 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r5 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r6 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r7 type=ram_1p impl=bram
 
-    #pragma HLS DATAFLOW
-    load_stream_producer(W_wide, FFN_DIM, str_nib);
-    mac_stream_consumer(str_nib, x_local_1[0], x_scale, FFN_DIM, X1_cache);
+    float d[K_WV][Q40_WV_BLOCKS];
+    #pragma HLS ARRAY_PARTITION variable=d dim=0 complete
+
+    COMPUTE_X1: for (int row = 0; row < FFN_DIM; row += K_WV) {
+        load_8_rows_wv_q40(W_wide, row,
+                            nib_r0, nib_r1, nib_r2, nib_r3,
+                            nib_r4, nib_r5, nib_r6, nib_r7, d);
+
+        mac_blocks_wv_k8_q40(
+            nib_r0, nib_r1, nib_r2, nib_r3,
+            nib_r4, nib_r5, nib_r6, nib_r7,
+            d, x_local_1[0], x_scale, X1_cache, row);
+    }
 }
 
 static void compute_X2(
@@ -231,15 +220,32 @@ static void compute_X2(
 #pragma HLS ARRAY_PARTITION variable=x_local_2 dim=2 complete
     const ap_uint<128> *V_wide = (const ap_uint<128>*)V;
 
-    hls::stream<ap_uint<128>> str_nib[K_WV];
-    #pragma HLS STREAM variable=str_nib depth=10
+    ap_uint<128> nib_r0[64], nib_r1[64], nib_r2[64], nib_r3[64];
+    ap_uint<128> nib_r4[64], nib_r5[64], nib_r6[64], nib_r7[64];
+    #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r1 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r4 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r5 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r6 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r7 type=ram_1p impl=bram
 
-    #pragma HLS DATAFLOW
-    load_stream_producer(V_wide, FFN_DIM, str_nib);
-    mac_stream_consumer(str_nib, x_local_2[0], x_scale, FFN_DIM, X2_cache);
+    float d[K_WV][Q40_WV_BLOCKS];
+    #pragma HLS ARRAY_PARTITION variable=d dim=0 complete
+
+    COMPUTE_X2: for (int row = 0; row < FFN_DIM; row += K_WV) {
+        load_8_rows_wv_q40(V_wide, row,
+                            nib_r0, nib_r1, nib_r2, nib_r3,
+                            nib_r4, nib_r5, nib_r6, nib_r7, d);
+
+        mac_blocks_wv_k8_q40(
+            nib_r0, nib_r1, nib_r2, nib_r3,
+            nib_r4, nib_r5, nib_r6, nib_r7,
+            d, x_local_2[0], x_scale, X2_cache, row);
+    }
 }
 
-// ============================================================================
 // Q4_0 Output Path — merged load, K_DOWN=8, 32 time-multiplexed BRAM tiles
 // ============================================================================
 // Q4_0 Output Path — merged load, K_DOWN=8, 32 time-multiplexed BRAM tiles
@@ -684,8 +690,8 @@ void swiglu(
     // Q4_0 DDR layout:
     // W/V:   8192 rows × 1280 B (80 DDR words) = 10,485,760 B
     // W_down: 2048 rows × 5120 B (320 DDR words) = 10,485,760 B
-    #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W    offset=slave depth=10490880 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=10490880 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd   offset=slave depth=10485760 max_read_burst_length=256  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x    offset=slave depth=8192     max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out  offset=slave depth=8192     max_write_burst_length=256 latency=64 num_write_outstanding=1

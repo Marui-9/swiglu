@@ -129,6 +129,7 @@ static uint32_t swg_last_prog_mode  = 0;
 #define Q40_DOWN_BLOCKS       256    // 8192/32
 #define Q40_DOWN_GROUPS       32     // 256/8
 #define Q40_DOWN_MG           8      // 32/4 meta-groups
+#define FFN_DIM_PAD           8196   // 8192 + 4 zero-pad rows for K_WV=12 alignment
 #define Q40_WV_HDR_WORDS      16     // 64 fp32 d / 4 per DDR word
 #define Q40_WV_NIB_WORDS      64     // 8 groups × 8 DDR words (4 elem-slices each)
 #define Q40_WV_ROW_WORDS      80
@@ -319,6 +320,18 @@ static void transpose_q40_to_urm(const uint8_t *src, uint8_t *dst,
         }
     }
 
+    // Pad WV matrices to FFN_DIM_PAD (only when n_rows == FFN_DIM)
+    if (n_rows == FFN_DIM && n_rows < FFN_DIM_PAD) {
+        for (int row = n_rows; row < FFN_DIM_PAD; row++) {
+            uint8_t *hdr_base = dst + (size_t)row * row_stride;
+            for (int w = 0; w < (int)row_hdr / 16; w++) {
+                uint32_t *ddr32 = (uint32_t *)(hdr_base + (size_t)w * 16);
+                ddr32[0] = 0; ddr32[1] = 0; ddr32[2] = 0; ddr32[3] = 0;
+            }
+            uint8_t *nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
+            memset(nib_base, 0x88, (size_t)row_nib);
+        }
+    }
 }
 
 // Find /dev/uioN whose map0 addr matches target
