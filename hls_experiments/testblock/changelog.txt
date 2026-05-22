@@ -679,3 +679,59 @@
     output MAC the fanout density is too high for the ZU5EV fabric.
     
     The only version that fits and routes is the current one: WV wide-BRAM + output 32-bit tiles.
+
+65. Q4_0 branch started (May 21).  Switch from Q4_K_M to Q4_0 quantization.
+    Q4_0 block = 18 bytes (2B fp16 d + 16B nibbles for 32 values).
+    CPU pre-decode: fp16 d → fp32, nibbles transposed to element-major DDR.
+    C-sim: 5 tests pass with constrained testbench data.
+
+66. Q4_0 K=4 fabric synthesis (May 22).  MAC_ALL: II=2, 260 cycles/group
+    with 2-block sub-group fix (8 chains/cycle).  compute_X1: 5.67M cycles.
+    Top: 7.94M cycles, 67K Vivado LUTs (57%).  Board: ~1.58 t/s.
+
+67. K_WV=8 implemented.  8192/8 = 1024 iterations.  16 chains/cycle.
+    Synthesis: compute_X1 at 3.27M (−42% from K=4).  MAC_ALL II=2 persists.
+    4.84M cycles/layer, 19.4 ms → 2.30 t/s.  HLS LUTs: 127K (108%).
+
+68. DSP48E2 accumulation.  Replaced fabric int32_t acc arrays with ap_int<48>
+    dsp_acc DSP accumulators.  Prevented II degradation to 4, II=2 persisted.
+    BRAM→DSP routing at 32 physical reads + 16 DSP routes exceeds 4 ns.
+
+69. K_DOWN=8 output path expansion.  compute_output: 1.56M cycles (−31%).
+    MAC_MG maintains II=1 at 64 chains with pre-sliced 32-bit BRAM tiles.
+
+70. 32-bit pre-sliced nibble BRAMs.  HLS repacked them back to wide memories.
+    No effect on II.  latency=2 BRAM pragma also had no effect.
+
+71. Sub-group-major DDR layout.  CPU pre-decode repacks nibbles so each
+    128-bit DDR word = 1 sub-group (2 blocks) × 16 elements.  Eliminates
+    the 4:1 slice mux in MAC_ALL.  Synthesis: II=2 unchanged — the .range()
+    mux was compile-time wiring, not the bottleneck.  True limit is physical
+    BRAM→DSP routing density.
+
+72. II=1 approaches exhausted at 16 chains.  DSP accumulation, pre-sliced
+    BRAMs, latency=2, sub-group-major DDR, relaxed clock — all failed.
+    MAC_ALL II=2 is the ZU5EV fabric ceiling at 16 chains.
+
+73. Double-buffering attempt.  Ping-pong BRAMs to overlap DDR load with MAC.
+    compute_X1 down to 2.47M (−24%) but nested DATAFLOW exploded resources:
+    390K HLS LUTs (332%), 782 DSP (62%), timing −0.34 ns.  Reverted.
+
+74. K_WV=6 II=1 plan (entry 76 in previous numbering).  Reduce chains 16→12
+    by shrinking from 8 rows to 6.  CPU pads 4 zero rows → 8196 rows,
+    1366 clean iterations.  Target: 12 chains at II=1 → 2.46 t/s.
+
+75. K_WV=6 implemented and synthesized (May 22, 11:24).  MAC_ALL: II=2,
+    same as K_WV=8.  12 chains could not hit II=1.  Even 24 physical BRAM
+    reads + 12 DSP routes exceeds 4 ns.  Per-iteration slightly faster
+    (3,108 vs 3,170) but 33% more iterations (1,366 vs 1,024) causes
+    regression: compute_X1 4.25M vs 3.25M, top 5.82M vs 4.81M (−21%).
+    Timing −0.29 ns.
+
+    K_WV=8 at 2.30 t/s is the local optimum.  K_WV=6 degrades performance.
+    ZU5EV fabric limit: ~8 effective MACs/cycle regardless of configuration.
+
+76. Final architecture settled.  K_WV=8, K_DOWN=8, sub-group-major DDR,
+    DSP48E2 accumulation, II=2 MAC_ALL.  4.81M cycles/layer, 2.30 t/s
+    projected board performance.  127K HLS LUTs (108% HLS, ~89% Vivado
+    projected).  Next step: Vivado implementation to confirm fit and timing.

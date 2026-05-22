@@ -263,24 +263,32 @@ static void transpose_q40_to_urm(const uint8_t *src, uint8_t *dst,
         uint8_t *nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
 
         if (groups <= 8) {
-            // ── WV: 8 groups, pack 4 element-slices per DDR word ─────────────
+            // ── WV: sub-group-major nibble layout ──────────────────────────
             for (int g = 0; g < groups; g++) {
-                for (int n = 0; n < 32; n++) {
-                    uint32_t nib32 = 0;
-                    for (int b = 0; b < 8; b++) {
-                        const uint8_t *blk = src + ((size_t)row * blocks_per_row
-                                                    + (size_t)g * 8 + (size_t)b) * src_block_bytes;
-                        // Q4_0 nibble: byte 2 + n/2, lower nibble for even n
-                        int byte_off = 2 + (n >> 1);
-                        int shift    = (n & 1) * 4;
-                        uint32_t nib = (blk[byte_off] >> shift) & 0xF;
-                        nib32 |= (nib << (b * 4));
+                for (int sg = 0; sg < 4; sg++) {
+                    int b0 = sg * 2, b1 = sg * 2 + 1;
+                    const uint8_t *blk0 = src + ((size_t)row * blocks_per_row
+                                                + (size_t)g * 8 + (size_t)b0) * src_block_bytes;
+                    const uint8_t *blk1 = src + ((size_t)row * blocks_per_row
+                                                + (size_t)g * 8 + (size_t)b1) * src_block_bytes;
+                    for (int n_half = 0; n_half < 2; n_half++) {
+                        int base_e = n_half * 16;
+                        uint32_t ddr32[4] = {0, 0, 0, 0};
+                        for (int e = 0; e < 16; e++) {
+                            int n = base_e + e;
+                            int byte_off = 2 + (n >> 1);
+                            int shift    = (n & 1) * 4;
+                            uint32_t nb0 = (blk0[byte_off] >> shift) & 0xF;
+                            uint32_t nb1 = (blk1[byte_off] >> shift) & 0xF;
+                            ddr32[e >> 2] |= (nb0 << ((e & 3) * 8));
+                            ddr32[e >> 2] |= (nb1 << ((e & 3) * 8 + 4));
+                        }
+                        int e_idx = sg * 2 + n_half;
+                        uint32_t *ddr = (uint32_t *)(nib_base
+                            + ((size_t)g * 8 + (size_t)e_idx) * 16);
+                        ddr[0] = ddr32[0]; ddr[1] = ddr32[1];
+                        ddr[2] = ddr32[2]; ddr[3] = ddr32[3];
                     }
-                    int e   = n >> 2;          // DDR word index within group
-                    int s   = n & 3;           // slot within DDR word
-                    uint32_t *ddr32 = (uint32_t *)(nib_base
-                        + ((size_t)g * 8 + (size_t)e) * 16);
-                    ddr32[s] = nib32;
                 }
             }
         } else {
@@ -310,6 +318,7 @@ static void transpose_q40_to_urm(const uint8_t *src, uint8_t *dst,
             }
         }
     }
+
 }
 
 // Find /dev/uioN whose map0 addr matches target
