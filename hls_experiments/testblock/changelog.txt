@@ -857,3 +857,36 @@
     MACs/cycle is the current throughput limit.  Output double-buffering is
     the nearest available lever (+0.17 t/s) but requires solving the nested
     DATAFLOW resource duplication.
+
+83. K_WV=12 BRAM implementation (May 22, 19:53).  Scaled from K_WV=8→12:
+    load_12_rows_wv_q40 (12 nib_r BRAMs, 960 cyc), mac_blocks_wv_k12_q40
+    (12 DSP chains, 12 totals).  FFN_DIM_PAD=8196 (8192+4 pad rows) for
+    clean 8196/12=683 iterations.  MAC_ALL achieved II=1 at 12 chains:
+    260 cycles, 12 parallel BRAM reads + 12 DSP routes per cycle.
+
+    HLS synthesis: 99,474 LUTs (84%), 338 DSP (27%), 206 BRAM (71%).
+    Top-level 3.96M cycles (−7.3% vs K_WV=8), projecting 2.99 t/s.
+    DSP growth concentrated in REDUCE_GRP: 72 DSPs (12 chains × 6 DSPs
+    per 32b×56b multiply cascade), 15,871 HLS LUTs per instance.
+
+    Vivado: 135,446 LUTs required (115.6%) — does NOT fit.  REDUCE_GRP's
+    multi-DSP cascade routing inflates fabric LUTs significantly.
+
+84. Narrow REDUCE multiply optimization (May 22, 20:33).  Root cause of
+    Vivado overfit: ap_fixed<32,8> × ap_fixed<56,38> in REDUCE_GRP/REDUCE_MG
+    cascades through ~6 DSP48E2s per multiply.  Fix: narrow fxd_scale_t from
+    ap_fixed<32,8> to ap_fixed<18,8> (fits DSP 18-bit B input), cast dsp
+    accumulators to ap_int<27> (fits DSP 27-bit A input).  Single DSP per
+    multiply instead of 6.  QUANTIZE_LOOP reinterprets dsp_acc_t totals via
+    (ap_fixed<48,8>) to preserve 8 implicit fractional bits.  Output path
+    float conversion divides gate_scale by 256.0f.
+
+    HLS result: 84,900 LUTs (−14.6K / 14.7%), 170 DSP (−168 / 49.7%),
+    BRAM unchanged 206.  REDUCE_GRP: 72→12 DSPs, 15,871→14,091 LUTs per
+    instance.  REDUCE_MG: 48→8 DSPs, 9,626→8,418 LUTs.  Top-level cycles
+    unchanged (3.94M).  Zero performance penalty — REDUCE loops stay II=1.
+
+    Vivado: 120,085 LUTs (102.5%) — still ~3K over 117K budget.  Remaining
+    LUTs are distributed across load functions (16.2K HLS), REDUCE blocks
+    (36.6K HLS), and output path (17.1K HLS) — float→fixed conversion and
+    64-bit AXI address computation are the dominant residual consumers.
