@@ -45,4 +45,7 @@ swiglu/logs/
 # Keep only source and config files in swiglu/hls/
 !swiglu/hls/
 !swiglu/hls/*.json
-!swiglu/hls/*.cmdline
+!swiglu/hls/*.cmdlinedocs/gguf/*.gguf
+docs/gguf/*.gguf
+docs/gguf/
+docs/gguf/

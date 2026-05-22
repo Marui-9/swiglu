@@ -890,3 +890,40 @@
     LUTs are distributed across load functions (16.2K HLS), REDUCE blocks
     (36.6K HLS), and output path (17.1K HLS) — float→fixed conversion and
     64-bit AXI address computation are the dominant residual consumers.
+
+85. K_WV=10 with narrow REDUCE (May 22, 21:09).  Mechanical scale-down from
+    K_WV=12: 10 nib_r BRAMs, 10 DSP chains, 10 totals.  FFN_DIM_PAD=8200
+    (8 pad rows), 820 iterations.  MAC_ALL II=1 at 10 chains: 260 cycles,
+    10 parallel BRAM reads + 10 DSP routes per cycle.  Narrow REDUCE
+    optimization retained (fxd_scale_t=18-bit, REDUCE_GRP 10 DSPs × 8 groups).
+
+    HLS: 76,802 LUTs (65%), 162 DSP (12%), 190 BRAM (65%), 155,942 FF (66%),
+    8 URAM (12%).  Top-level 4.28M cycles, 17.1 ms/layer, 2.84 t/s projected.
+
+    Vivado: 101,369 LUTs (86.55%), routes and closes timing.  LUTRAM 4,490
+    (7.80%), FF 153,374 (65.48%), BRAM 86.5 (60.07%), URAM 8 (12.50%),
+    DSP 86 (6.89%).  Vivado/HLS LUT ratio = 1.32× (consistent with BRAM
+    architecture).
+
+86. Resource analysis — spare capacity (May 22).  The narrow-REDUCE
+    optimization collapsed DSP usage from 338→86 (93% free).  LUTRAM at
+    7.8% (x_local_1/2 only — no other small arrays).  URAM at 12.5% (8 of
+    64 blocks, gate_cache uses ~0.3% of URAM bit capacity).  BRAM at 60%
+    (~57 blocks free).  LUTs at 86.55% (~15.8K free).
+
+    The dominant spare resources point to K_DOWN=16 as the next lever.
+    Output path is 1.54M cycles (36% of top-level 4.28M).  Doubling K_DOWN
+    roughly halves output cycles: 1.54M→~0.85M, top-level 4.28M→~3.59M,
+    projecting ~3.08 t/s (+8.5% vs 2.84).
+
+    K_DOWN=16 resource estimate:
+      BRAM: +32 nibble tiles (64 total) → 86.5→118.5 (82.3%)  ✓
+      DSP:  MAC_MG 64→128, REDUCE_MG 8→16, +72 → 86→158 (12.7%)  ✓
+      FF:   output 34.5K→~55K, total 153K→~174K (74.3%)  ✓
+      LUTs: output HLS 17.1K→~28K, total HLS 76.8K→~87.7K
+            Vivado est. 87.7K×1.32 ≈ 115.7K (98.8%)  — tight, ~1.4K margin
+
+    K_DOWN=16 LUT risk: the output path REDUCE_MG and MAC_MG routing
+    density doubles (16 parallel DSPs vs 8).  If Vivado router inflates
+    beyond 1.32×, design may not close.  But each multiply is a single
+    DSP48E2 (no cascade), so routing pressure is linear, not super-linear.
