@@ -954,3 +954,9 @@
     problem of 16 simultaneous DSP inputs.
 
     Reverted to K_DOWN=8 (101.4K Vivado LUTs, routes and closes timing).
+
+88. k_down=8 bitstream available as backup. 
+    new attempt to harness the resource headroom:
+    nstead of 10 parallel DSP routes in REDUCE_GRP (11,755 HLS LUTs), 
+    we have 1 DSP time-multiplexed (~2,000 HLS LUTs). Per instance saving: 
+    ~9,700 HLS → ~12,800 Vivado. Two instances + REDUCE_MG: ~30K Vivado LUTs saved.
