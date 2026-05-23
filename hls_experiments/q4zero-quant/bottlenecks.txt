@@ -1,259 +1,204 @@
-Bottleneck Analysis — Q4_0 K=8 Architecture
-=============================================
-Date: 2026-05-21  |  Based on: csynth.rpt (2026-05-21 13:57), swiglu.cpp (631 lines)
+Bottleneck Analysis — Q4_0 K_WV=12 + Time-Mux REDUCE Architecture
+====================================================================
+Date: 2026-05-23  |  Based on: csynth.rpt (May 23, K_WV=12 run)
+HLS: 81,751 LUTs (69%), 148 DSP (11%), 206 BRAM (71%), 221K FF (94%)
+Vivado: ~109K LUTs (93%), routes and closes timing at 250 MHz
+Top-level: 3.99M cycles, 2.63 t/s projected
 
 
-1. MAC_ALL Initiation Interval = 8 (Synthesis-Confirmed)
-----------------------------------------------------------
-The single largest bottleneck.  The 64 parallel MAC chains (8 rows × 8 blocks)
-cannot initiate a new element every cycle — HLS reports II=8 with iteration
-latency=12.  Impact:
+1. Output Path — 1.54M cycles (38.6% of total, largest single block)
+---------------------------------------------------------------------
+The compute_output phase is serialized after gate and consumes 1.54M cycles.
+Within it, DDR load dominates:
 
-    MAC_ALL:     261 cycles per group × 8 groups = 2,088 cycles (74% of compute_X1)
-    Expected:     35 cycles per group × 8 groups =   280 cycles
+    load_mg_down_q40: 470 cyc/MG × 8 MG = 3,760 cyc/iter  (63% of output iter)
+    mac_mg_down_q40:  273 cyc/MG × 8 MG = 2,184 cyc/iter  (37% of output iter)
 
-    Delta: 1,808 wasted cycles per iteration × 1,024 iterations = 1.85M wasted cycles
+The load is at the AXI bandwidth ceiling (128 bits/cycle, II=1).  Attempted
+fixes:
+  - K_DOWN=16: doubled parallelism, halved iterations (256→128).  Failed
+    Vivado at 130.8K LUTs (111.7%) — REDUCE_MG at 16 parallel DSP routes
+    inflated LUTs super-linearly.
+  - Output time-mux REDUCE: reduced REDUCE_MG from 8 to 1 DSP (8,418→3,187
+    HLS LUTs).  But REDUCE(64 cyc) > MAC_MG(35 cyc) so overlap can't hide
+    REDUCE — output cycles increased 1.54M→1.83M (+19%).  Reverted.
 
-Root cause: 64 parallel operations per cycle exceed what HLS can schedule on
-this device.  Each cycle requires: 8 128-bit BRAM reads + 8 4:1 32-bit muxes
-+ 64 nibble extractions + 64 INT8×INT5 multiplies + 64 INT32 additions + 64
-accumulator read-modify-writes.  Q4_K K=4 achieved II=1 with exactly half the
-operations (32 chains).
-
-Sub-group fix applied (process 4 blocks/cycle, 32 chains, doubled trip count)
-but NOT YET SYNTHESIZED.  If II=1 is achieved:
-    MAC_ALL: ~67 cycles per group × 8 groups = ~536 cycles
-    Savings: 1,552 cycles per iteration → 1.59M cycles per compute_X1
-
-    RISK: II may not reach 1 even with 32 chains.  At II=2, MAC_ALL would be
-    ~100 cycles; at II=4, ~200 cycles.  Each step away from II=1 erodes the
-    performance gain.  Must be verified by re-synthesis.
-
-Secondary risk: the BRAM read + 8-way slice mux + accumulator RMW pattern
-may have a different critical path in Q4_0 than Q4_K due to the 8-row
-structure (vs 4-row in Q4_K).  Q4_K had 4 128-bit BRAM reads; Q4_0 has 8.
+The output path remains the most impactful untapped lever.  A successful
+K_DOWN=16 implementation would save ~340K cycles, pushing t/s to ~2.9.
+This requires solving the REDUCE_MG routing inflation — either a different
+time-mux structure for the output path (where MAC_MG > REDUCE_MG, flipped
+from current) or DSP cascade optimization specific to the output path.
 
 
-2. AXI DDR Latency and Bandwidth
----------------------------------
-Each AXI read transaction pays 64 cycles of latency (m_axi latency=64) before
-the first data beat arrives.  Thereafter, one 128-bit word per cycle (II=1).
+2. DDR Load Bandwidth — Saturated at 128 bits/cycle
+-----------------------------------------------------
+Both WV and output load phases are at the AXI ceiling:
 
-    Merged 8-row WV load (640 DDR words):
-      AXI pipeline fill:   64 cycles (one-time per burst group)
-      Data transfer:      640 cycles
-      Header processing:  ~16 cycles (inline with data)
-      Steering overhead:   ~3 cycles
-      Total:             ~790 cycles (48% of per-iteration budget)
+    WV load:   1,110 cyc/iter × 683 iter = 0.76M cycles (19% of total)
+    Out load:  3,760 cyc/iter × 256 iter = 0.96M cycles (24% of total)
+    Combined:  1.72M cycles (43% of total) spent just moving data from DDR
 
-    Effective DDR bandwidth during load:
-      640 words × 16 bytes / 790 cycles = 12.96 bytes/cycle
-      At 250 MHz: 3.24 GB/s [81% of 4 GB/s peak AXI bandwidth]
+    Effective bandwidth per port: 128 bits/cycle × 250 MHz = 4.0 GB/s peak.
+    Achieved: ~3.9 GB/s (97.5% utilization) during load phases.
 
-    The AXI port is saturated during the load phase but idle during MAC.
-    Overall DDR utilization: 1,280 bytes / 1,652 cycles = 0.77 bytes/cycle
-    = 194 MB/s [4.8% of peak].  The load-then-compute pattern leaves the
-    DDR bus idle 52% of the time.
-
-    Could be improved by: double-buffering loads with MAC (load next rows
-    while computing current rows).  Requires separate BRAM buffers and a
-    second AXI port or interleaved addressing.  Not implemented — would
-    add significant complexity and BRAM cost.
-
-    The max_read_burst_length=128 limits each AXI burst to 128 beats.
-    640 words split into 5 bursts of 128 each.  Each burst re-pays the
-    AXI arbitration overhead (not the full 64-cycle latency, but ~10-15
-    cycles of inter-burst gap).
+The ZU5EV's HP ports are 128-bit max.  Cannot widen.  The ports are idle
+during MAC phases (gmem_Wd idle for 2.43M cycles during X1/X2).  Overlapping
+W_down pre-load with X1/X2 compute could hide some output load latency but
+requires major DATAFLOW restructuring (gate_cache not ready until gate
+completes, so only DDR reads can be pre-loaded, not MAC).
 
 
-3. Sequential Group Processing in MAC
---------------------------------------
-Both WV (8 groups) and output (32 groups) MACs process groups sequentially
-to share DSPs.  This is a resource-sharing trade-off, not a tool limitation.
+3. LUT Budget — 93% Used, the Binding Constraint
+--------------------------------------------------
+Vivado LUTs at ~109K of 117K leaves ~8K headroom.  This is the primary
+resource ceiling.  Every K_WV increase adds ~7K HLS LUTs per instance
+(mostly in load mux + MAC_ALL routing), or ~18K Vivado.  K_WV=16 proved
+II=1 achievable at 16 chains but required 135K Vivado LUTs (−18K over).
 
-    WV:  8 groups × ~83 cycles =  ~664 cycles (40% of per-iteration)
-    Out: 32 groups × ~49 cycles = ~1,568 cycles (54% of per-iteration)
+Where LUTs go (HLS, per compute_X1 instance):
+    load_12_rows:     8,084  (16% — AXI address computation, 12-way mux)
+    MAC_ALL:          2,478  ( 5% — 12 parallel nibble extracts, zero-LUT)
+    REDUCE_GRP:       5,146  (10% — time-muxed, 1 DSP, float→fixed converter)
+    Other MAC infra:  2,615  ( 5% — ZERO_DSP, ping-pong buffers, QUANTIZE)
+    ─────────────────────────
+    Total X1:        26,466  (×2 instances = 52,932)
+    compute_gate:     6,397  (13%)
+    compute_output:  17,125  (34%)
+    load_x_local:       172  (~0%)
 
-    If all groups could run in parallel (512 MAC chains for WV), the MAC
-    would complete in ~35 cycles.  But this would require 512 DSP slices
-    and ~200K LUTs — not feasible on ZU5EV.
+DSPs (12%) and URAM (12.5%) have massive headroom but cannot substitute for
+routing LUTs.  The load function's AXI address computation (64-bit multiply
+for base address calculation) and the 12-way LOAD_NIB demux are the largest
+single LUT consumers that could theoretically be reduced, but no clear path
+to do so within HLS constraints.
 
-    The 8-block-per-group UNROLL is the proven sweet spot (Q4_K used it).
-    More blocks/group → more parallel chains → II degradation.
-    Fewer blocks/group → more groups → more sequential iterations.
-    8 blocks/group is optimal on ZU5EV.
-
-
-4. Q4_0 Block Count (Structural)
----------------------------------
-Q4_0's 32-value block size means 64 blocks/WV row and 256 blocks/output row.
-This is 8× more blocks than Q4_K (which had 256-value super-blocks).
-
-    More blocks = more sequential MAC iterations = longer per-row compute.
-    This is inherent to the Q4_0 format and cannot be changed without
-    switching quantization formats.
-
-    Q4_K: 8 blocks total → 1 group of 8 → ~280 MAC cycles/row
-    Q4_0: 64 blocks total → 8 groups of 8 → ~664 MAC cycles/row (2.4×)
-
-    The benefit: finer granularity means fewer DSPs per group (8 blocks
-    vs Q4_K's 8 super-blocks with complex sc6/mn6 scaling), simpler MAC
-    formula, and single accumulator.  These LUT/DSP savings enable K=8
-    and merged loads that partially offset the higher block count.
+The narrow-REDUCE optimization (fxd_scale_t 32→18 bits) was the biggest LUT
+win in this design: REDUCE_GRP dropped from 11,755→5,146 HLS LUTs per
+instance (−56%), REDUCE_MG from 9,626→8,418 (−13%).  This single change
+enabled K_WV=12 to fit.
 
 
-5. BRAM Count After Output Merged Load (Not Yet Synthesized)
--------------------------------------------------------------
-The current synthesis (142 BRAM_18K) was with the old output path (16
-time-multiplexed nibble tiles).  The new output path pre-allocates 128
-nibble tiles (32 groups × 4 rows), each at 32-bit × 32 deep.
+4. K_WV Scaling Ceiling — II=1 Holds but LUTs Don't
+-----------------------------------------------------
+K_WV=12: MAC_ALL II=1 at 12 chains, 260 cycles, fits Vivado (109K LUTs).
+K_WV=16: MAC_ALL II=1 at 16 chains, 260 cycles, FAILS Vivado (135K LUTs).
 
-    Projected BRAM increase:
-      Old output nibbles:   16 BRAM_18K
-      New output nibbles:  128 BRAM_18K
-      Delta:              +112 BRAM_18K
-      Projected total:     254 BRAM_18K / 288 = 88%
+The fabric can sustain II=1 at 16 parallel BRAM reads + 16 DSP routes at
+250 MHz (confirmed by HLS synthesis).  But the resource cost per additional
+chain (~1,800 HLS LUTs for nibble extraction + load mux + REDUCE routing)
+pushes the design over the LUT budget.
 
-    At 88%, BRAM is tight but should fit.  However, BRAM routing congestion
-    could become an issue.  The Q4_K output path with 16 URAM tiles had
-    74K node overlaps.  128 BRAM tiles distributed across the output path
-    may cause similar routing pressure.
-
-    Mitigation: BRAM placement constraints or physical optimization
-    directives in Vivado (place_design -directive ExtraNetDelay_high).
+K_WV=12 is the practical ZU5EV ceiling for this architecture with current
+optimizations.  A larger device (ZU7EV with 230K LUTs) would enable K_WV=16
+and ~2.82 t/s.
 
 
-6. LUT Budget
---------------
-HLS estimate: 129,429 LUTs (110% of 117,120).  Previous Q4_K experience:
-HLS overestimates by ~15-17% vs Vivado P&R.  Projected Vivado: ~107-110K
-(91-94%).  Fits but with modest margin.
-
-    Per-module LUT breakdown (HLS):
-      compute_X1:         49,823 (42%)
-      compute_X2:         49,823 (42%)
-      compute_output:     17,206 (15%) — OLD design, new will be ~25K
-      compute_gate:        6,397 (5%)
-      load_x_local:          172 (~0%)
-      Top-level glue:     ~6,000 (5%)
-
-    The two compute functions dominate (84% combined).  Any further
-    optimization must target the MAC_ALL and REDUCE_GRP pipelines within
-    compute_X1/X2.
-
-    With the new merged output load (+128 BRAM tiles, +8K LUTs estimated),
-    total HLS LUTs project to ~137K → Vivado ~114-117K (97-100%).  This is
-    uncomfortably close to the 117K ceiling.
-
-    The sub-group fix for MAC_ALL should reduce LUTs there (32 chains/cycle
-    vs 64), partially offsetting the output path increase.  Net effect
-    unknown until re-synthesized.
-
-
-7. DATAFLOW Sequential Staging
--------------------------------
-The 5 DATAFLOW stages are not internally pipelined — each must complete before
-the next begins for a given token.  Total latency = sum of stages.
-
-    load_x:        202 cycles
-    max(X1,X2): ~1,690,000 cycles (with sub-group fix at II=1)
-    gate:        16,553 cycles
-    output:    ~1,500,000 cycles (with merged load)
-    Total:     ~3,207,000 cycles = 12.8 ms/layer
-
-    The pipeline is well-balanced: X1/X2 at 6.8 ms and output at 6.0 ms are
-    within 12% of each other.  Neither is a dominant bottleneck.
-
-    However, the DATAFLOW could overlap adjacent tokens if the stages were
-    double-buffered.  For example, token N's output could overlap with token
-    N+1's X1/X2.  This would reduce per-token latency to max(stage) instead
-    of sum(stage).  But DATAFLOW in Vitis HLS cannot express this pattern
-    without explicit ping-pong buffers and careful handshaking.  Not attempted
-    due to complexity and BRAM cost.
-
-
-8. Fixed-Point Accumulator Range (Potential Silent Error)
-----------------------------------------------------------
-fxd_accum_t = ap_fixed<56,38> has range ±131,072 (18 integer bits, default
-AP_WRAP).  With 64 Q4_0 blocks per row, worst-case accumulation:
-
-    Per-block:  d × sum(x_int8 × (q-8))
-    Worst case: d=6.0, x_int8=127, q-8=7 → 6.0 × 32×127×7 = 170,688
-    64 blocks:  170,688 × 64 = 10.9M → OVERFLOWS ±131K by 83×
-
-    However, this worst case requires all x values at 127 with all q=15
-    and d=6.0 — not representative of real model data.  For realistic data:
-      Typical d: 0.01–0.1 (model weight scales)
-      Typical x_int8: ±10–50 (activations with cancellation)
-      Typical q-8: ±3 (nibbles around center)
-      Per-block: 0.05 × 32 × 30 × 3 ≈ 144
-      64 blocks: 144 × 64 = 9,216 ✓ (within 131K)
-
-    The testbench constrains d values to fp16 exp∈[1,10] (d≤0.06) and
-    x values to ±100 with x_scale=1e-4 to stay within range.  Real models
-    are expected to also fit due to weight/activation distributions.
-
-    RISK: A model with unusually large weight scales (d > 0.3) or very
-    large activations could overflow the accumulator silently (AP_WRAP
-    wraps around, producing garbage).  Adding AP_SAT would clip instead
-    of wrap, but costs ~4K LUTs in REDUCE_GRP logic.  Worth monitoring
-    in board tests with real LFM2.5 data.
-
-
-9. Amdahl's Law Ceiling
--------------------------
-The SwiGLU FFN is only 68% of total token processing time.  CPU overhead
-(attention, layer norms, embedding, sampling) is ~125 ms/token and is
-fixed regardless of FPGA speed.
-
-    Absolute maximum throughput at infinite FPGA speed:
-      1 / 0.125 = 8.0 t/s
-
-    With current projected FPGA time (205 ms for 16 layers):
-      1 / (0.125 + 0.205) = 3.03 t/s theoretical
-
-    Board overhead (interrupt handling, UIO register writes, output copy,
-    udmabuf sync) accounts for ~15-20% additional loss vs theoretical:
-      ~2.4–2.6 t/s board estimate
-
-    Further improvements to FPGA speed yield diminishing returns due to
-    the fixed CPU component.  To reach 3.5 t/s, FPGA time must drop below
-    160 ms (10 ms/layer) — a 22% reduction from current projection.
-
-
-10. Unverified Assumptions (Must Be Confirmed)
+5. Amdahl's Law — CPU Overhead Limits Returns
 -----------------------------------------------
-    a. MAC_ALL II=1 with sub-group fix — NOT SYNTHESIZED
-       If II=2:  +340 cycles/iteration, 1.39M wasted.  Perf drops to ~2.0 t/s.
-       If II=4:  +1,020 cycles/iteration.  Perf drops to ~1.6 t/s.
+The SwiGLU FFN is ~68% of total token processing time.  CPU overhead
+(attention, layer norms, embedding, sampling, driver) is ~125 ms/token.
 
-    b. Output merged load 128 BRAM routing — NOT SYNTHESIZED
-       BRAM count (254) is tight.  Routing congestion at 128 independent
-       nibble tiles may cause timing or placement failures.
+    Current FPGA time:  255 ms (16 layers × 15.96 ms)
+    Total per token:    255 + 125 = 380 ms
+    Throughput:         1 / 0.380 = 2.63 t/s
 
-    c. Vivado LUT count vs HLS estimate — NOT PLACED
-       The HLS→Vivado LUT ratio (0.83× for Q4_K) may differ for Q4_0's
-       different logic structure.  More multiplexers (fewer arithmetic ops)
-       could change the ratio.
+    Theoretical max at infinite FPGA speed:  1 / 0.125 = 8.0 t/s
+    With FPGA at 0 ms:                      8.0 t/s
 
-    d. Board efficiency — NOT MEASURED
-       Q4_0's different DDR access pattern (merged 640-word bursts vs
-       80-word bursts) may change AXI efficiency and interrupt latency.
+    To reach 3.0 t/s:  FPGA ≤ 1000/3.0 − 125 = 208 ms → 13.0 ms/layer
+                       → 3.25M cycles (current: 3.99M, gap: −18.6%)
 
-    e. X12_SCALE_RANGE=10.0 adequacy — NOT VALIDATED ON REAL DATA
-       Q4_0's X1/X2 values could exceed 10.0 with real model weights,
-       causing INT8 saturation in X1/X2 caches.  Q4_K validated this
-       value on real data; Q4_0 has not been tested with LFM2.5 weights.
+    To reach 3.5 t/s:  FPGA ≤ 1000/3.5 − 125 = 161 ms → 10.0 ms/layer
+                       → 2.50M cycles (current: 3.99M, gap: −37%)
+
+Each incremental t/s costs exponentially more in FPGA performance due to
+the fixed CPU component.  Going from 2.63→3.0 requires −740K cycles;
+2.63→3.5 requires −1.49M cycles.  The latter is likely infeasible on ZU5EV.
 
 
-Summary — Bottleneck Ranking by Impact
----------------------------------------
-    Rank  Bottleneck                         Cycles Wasted    Fixable?
+6. DATAFLOW Sequential Staging — No Token Pipelining
+------------------------------------------------------
+The 5 DATAFLOW stages process one token at a time.  Stage N+1 cannot start
+until stage N completes.  Total latency = sum of all stages.
+
+    load_x:          202 cyc
+    max(X1,X2):  2,434,896 cyc   ← bottleneck (61%)
+    gate:           16,553 cyc
+    output:      1,539,407 cyc   ← second largest (39%)
+    Total:       3,991,058 cyc
+
+Token-level pipelining (e.g., token N+1's X1/X2 overlapping with token N's
+output) could reduce per-token latency to max(stage) ≈ 2.43M instead of
+sum(stage) ≈ 3.99M, a 39% reduction.  But this requires double-buffering
+all intermediate storage (X1_cache, X2_cache, gate_cache, out_local) —
+approximately doubling BRAM usage.  Not implemented due to complexity and
+the fact that single-token decode (ne[1]=1) is the only supported mode.
+
+
+7. Fixed-Point Accumulator Range
+----------------------------------
+fxd_accum_t = ap_fixed<56,38> is used only in QUANTIZE_LOOP (12× per MAC
+call) and compute_output float conversion.  The main accumulation is in
+dsp_acc_t = ap_int<48> (DSP48E2 P register), which has range ±140 trillion
+— no overflow risk for real model data.
+
+The narrow REDUCE multiply (ap_int<27> × ap_fixed<18,8> → 45-bit product
+accumulated in 48-bit) has been validated through C-simulation.  T4 max_err
+stays at ~0.63 (INT8 quantization bound), confirming no precision loss from
+the 18-bit d representation vs the original 32-bit.
+
+
+8. Resource Headroom — What Can't Be Used
+-------------------------------------------
+    DSP:    148 of 1,248 (12%)  — math only, can't replace routing LUTs
+    URAM:     8 of    64 (12%)  — deep storage, can't replace pipeline FFs
+    BRAM:  ~190 of   288 (66%)  — storage, used for nibble tiles and caches
+    LUTRAM: ~4.5K of 57.6K (8%) — small distributed RAM, x_local only
+
+The abundant DSPs and URAM are structurally mismatched to the design's
+actual bottleneck: LUT-based routing (nibble muxes, AXI address computation,
+DATAFLOW pipeline registers).  No clear path to trade DSPs/URAM for LUTs
+in the critical paths.
+
+
+9. Attempted Optimizations That Failed
+----------------------------------------
+    a. K_WV=16: MAC_ALL II=1 confirmed, 135K Vivado LUTs (115%).
+       Reverted.  ZU5EV fabric handles 16-chain II=1 but LUT budget can't.
+
+    b. K_DOWN=16: 130.8K Vivado LUTs (112%), REDUCE_MG routing inflation.
+       Reverted.  16 parallel DSP routes in output path cause super-linear
+       LUT growth in Vivado even with single-DSP multiplies.
+
+    c. Output time-mux REDUCE: LUTs saved (8,418→3,187) but +295K cycles.
+       Reverted.  REDUCE(64) > MAC_MG(35); overlap can't hide REDUCE time.
+
+    d. Stream-based producer-consumer: FF bloat (250K, 106%) from hls::stream
+       FIFO.  Replaced with direct ping-pong buffer DATAFLOW (221K FF, 94%).
+
+    e. Output double-buffering: nested DATAFLOW duplicated load_mg hardware,
+       163K Vivado LUTs.  Reverted to single-buffered output.
+
+
+10. Remaining Leverage
+-----------------------
+    Rank  Opportunity                    Cycles Saved    Risk
     ─────────────────────────────────────────────────────────────────────
-    1.    MAC_ALL II=8 (pre-fix)             1.85M/iteration   Yes (sub-group fix, pending synthesis)
-    2.    Output sequential group MAC        1.57M/iteration   No (structural: 256 Q4_0 blocks)
-    3.    AXI DDR latency in merged load     ~200/iteration    Partial (double-buffering, complex)
-    4.    DATAFLOW sequential staging        ~3.2M/layer       No (HLS limitation, would need RTL)
-    5.    Amdahl CPU overhead                ~125 ms/token     No (external to FPGA)
-    6.    BRAM count (post-merge)            254/288 (88%)     Acceptable if routing closes
-    7.    fxd_accum_t range (±131K)          Risk only         Yes (AP_SAT, costs LUTs)
+    1.    K_DOWN=16 (needs REDUCE_MG       ~340K         High — LUT routing
+          routing fix)                                    inflation unsolved
+
+    2.    Overlap W_down DDR pre-load      ~200-400K      High — major
+          with X1/X2 (gmem_Wd idle)                      DATAFLOW restructure
+
+    3.    Token-level pipelining           ~1.5M          Very High — 2×
+          (double-buffer all caches)                      BRAM, complex control
+
+    4.    Larger device (ZU7EV, 230K       ~400K          Low — K_WV=16
+          LUTs) would enable K_WV=16                      drops 512 iters
+
+    5.    Reduce CPU overhead              ~20-30 ms      Medium — driver
+          (interrupt batching, zero-copy)                 optimization
+
+    Items 1-3 are the only on-FPGA levers remaining but each carries
+    significant implementation risk for modest (<10%) gains.  The design is
+    approaching the Pareto frontier for ZU5EV Q4_0 SwiGLU acceleration.
