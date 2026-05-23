@@ -92,7 +92,7 @@ static void mac_blocks_wv_k12_q40(
     const int8_t  x[Q40_WV_GROUPS][256],
     float  x_scale,
     int8_t X_cache[MAX_BATCH][FFN_DIM_PAD],
-    int     base_row)
+    int     base_row, int batch_idx)
 {
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
@@ -201,7 +201,7 @@ static void mac_blocks_wv_k12_q40(
         fxd_accum_t t = (fxd_accum_t)((ap_fixed<48,8>)t_raw);
         ap_fixed<56,38> scaled = t * qs;
         int val = scaled.to_int() + (scaled >= 0 ? 1 : -1) / 2;
-        X_cache[0][base_row + r] = (val > 127) ? 127 : (val < -128) ? -128 : (int8_t)val;
+        X_cache[batch_idx][base_row + r] = (val > 127) ? 127 : (val < -128) ? -128 : (int8_t)val;
     }
 }
 
@@ -213,7 +213,8 @@ static void compute_X1(
     const uint8_t  *W,
     const int8_t   x_local_1[MAX_BATCH][Q40_WV_GROUPS][256],
     float          x_scale,
-    int8_t         X1_cache[MAX_BATCH][FFN_DIM_PAD])
+    int8_t         X1_cache[MAX_BATCH][FFN_DIM_PAD],
+    uint32_t       actual_tokens)
 {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=x_local_1 dim=2 complete
@@ -244,12 +245,12 @@ static void compute_X1(
                             nib_r4, nib_r5, nib_r6, nib_r7,
                             nib_r8, nib_r9, nib_r10, nib_r11, d);
 
-        for (int n = 0; n < MAX_BATCH; n++) {
+        for (int n = 0; n < actual_tokens; n++) {
             mac_blocks_wv_k12_q40(
                 nib_r0, nib_r1, nib_r2, nib_r3,
                 nib_r4, nib_r5, nib_r6, nib_r7,
                 nib_r8, nib_r9, nib_r10, nib_r11,
-                d, x_local_1[n], x_scale, X1_cache, row);
+                d, x_local_1[n], x_scale, X1_cache, row, n);
         }
     }
 }
@@ -258,7 +259,8 @@ static void compute_X2(
     const uint8_t  *V,
     const int8_t   x_local_2[MAX_BATCH][Q40_WV_GROUPS][256],
     float          x_scale,
-    int8_t         X2_cache[MAX_BATCH][FFN_DIM_PAD])
+    int8_t         X2_cache[MAX_BATCH][FFN_DIM_PAD],
+    uint32_t       actual_tokens)
 {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=x_local_2 dim=2 complete
@@ -289,12 +291,12 @@ static void compute_X2(
                             nib_r4, nib_r5, nib_r6, nib_r7,
                             nib_r8, nib_r9, nib_r10, nib_r11, d);
 
-        for (int n = 0; n < MAX_BATCH; n++) {
+        for (int n = 0; n < actual_tokens; n++) {
             mac_blocks_wv_k12_q40(
                 nib_r0, nib_r1, nib_r2, nib_r3,
                 nib_r4, nib_r5, nib_r6, nib_r7,
                 nib_r8, nib_r9, nib_r10, nib_r11,
-                d, x_local_2[n], x_scale, X2_cache, row);
+                d, x_local_2[n], x_scale, X2_cache, row, n);
         }
     }
 }
@@ -525,11 +527,12 @@ static void compute_gate(
     const int8_t X1_cache[MAX_BATCH][FFN_DIM_PAD],
     const int8_t X2_cache[MAX_BATCH][FFN_DIM_PAD],
     int8_t       gate_cache[MAX_BATCH][Q40_DOWN_BLOCKS][Q40_NIB_ELEMS],
-    float        gate_scale_out[MAX_BATCH])
+    float        gate_scale_out[MAX_BATCH],
+    uint32_t     actual_tokens)
 {
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
-    SWISH_GATE: for (int n = 0; n < MAX_BATCH; n++) {
+    SWISH_GATE: for (int n = 0; n < actual_tokens; n++) {
         #pragma HLS UNROLL
         float pmax[8] = {0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f};
         #pragma HLS ARRAY_PARTITION variable=pmax complete
@@ -583,7 +586,8 @@ static void compute_output(
     const uint8_t  *W_down,
     const int8_t   gate_cache[MAX_BATCH][Q40_DOWN_BLOCKS][Q40_NIB_ELEMS],
     const float    gate_scale_array[MAX_BATCH],
-    float         *out_batch)
+    float         *out_batch,
+    uint32_t       actual_tokens)
 {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=gate_cache dim=1 cyclic factor=8
@@ -670,7 +674,7 @@ static void compute_output(
                              d_r0, d_r1, d_r2, d_r3,
                              d_r4, d_r5, d_r6, d_r7);
 
-            for (int n = 0; n < MAX_BATCH; n++) {
+            for (int n = 0; n < actual_tokens; n++) {
                 mac_mg_down_q40(
                     g0_r0, g1_r0, g2_r0, g3_r0,
                     g0_r1, g1_r1, g2_r1, g3_r1,
@@ -688,14 +692,14 @@ static void compute_output(
             }
         }
 
-        for (int n = 0; n < MAX_BATCH; n++) {
+        for (int n = 0; n < actual_tokens; n++) {
             float gs = gate_scale_array[n] / 256.0f;
             for (int r = 0; r < K_DOWN; r++) {
                 out_local[n][out_i + r] = (float)totals[n][r] * gs;
             }
         }
     }
-    for (int n = 0; n < MAX_BATCH; n++)
+    for (int n = 0; n < actual_tokens; n++)
         memcpy(out_batch + n * VECTOR_DIM, out_local[n], VECTOR_DIM * sizeof(float));
 }
 
@@ -738,7 +742,8 @@ void swiglu(
     const int8_t  *x_batch,
     float         *out_batch,
     uint32_t       down_quant_mode,
-    float          x_scale)
+    float          x_scale,
+    uint32_t       actual_tokens)
 {
     // Q4_0 DDR layout:
     // W/V:   8192 rows × 1280 B (80 DDR words) = 10,485,760 B
@@ -756,6 +761,7 @@ void swiglu(
     #pragma HLS INTERFACE mode=s_axilite port=out_batch       bundle=CTRL
     #pragma HLS INTERFACE mode=s_axilite port=down_quant_mode bundle=CTRL
     #pragma HLS INTERFACE mode=s_axilite port=x_scale         bundle=CTRL
+    #pragma HLS INTERFACE mode=s_axilite port=actual_tokens    bundle=CTRL
     #pragma HLS INTERFACE mode=s_axilite port=return          bundle=CTRL
 
     int8_t x_local_1[MAX_BATCH][Q40_WV_GROUPS][256];
@@ -785,8 +791,8 @@ void swiglu(
 
 #pragma HLS DATAFLOW
     load_x_local(x_batch, x_local_1, x_local_2);
-    compute_X1(W, x_local_1, x_scale, X1_cache);
-    compute_X2(V, x_local_2, x_scale, X2_cache);
-    compute_gate(X1_cache, X2_cache, gate_cache, gate_scale);
-    compute_output(W_down, gate_cache, gate_scale, out_batch);
+    compute_X1(W, x_local_1, x_scale, X1_cache, actual_tokens);
+    compute_X2(V, x_local_2, x_scale, X2_cache, actual_tokens);
+    compute_gate(X1_cache, X2_cache, gate_cache, gate_scale, actual_tokens);
+    compute_output(W_down, gate_cache, gate_scale, out_batch, actual_tokens);
 }

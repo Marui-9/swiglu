@@ -94,6 +94,7 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_CTRL_OUT_HI  0x44  // gmem_out base hi
 #define SWG_CTRL_MODE    0x4C  // 0=Q4_0 (only mode supported)
 #define SWG_CTRL_XSCALE  0x54  // float bits
+#define SWG_CTRL_TOKENS  0x58  // uint32_t actual_tokens (1..MAX_BATCH)
 
 // Permanent per-layer pre-decode cache.  16 slots, populated on first use.
 // Fits within 512 MB UDMABUF (works with cma=600M — no boot script fix needed).
@@ -2219,6 +2220,7 @@ static void ggml_compute_forward_swiglu_fused_hw(
         uint32_t xscale_bits;
         memcpy(&xscale_bits, &x_scale, sizeof(float));
         swg_ip_regs[SWG_CTRL_XSCALE / 4] = xscale_bits;
+        swg_ip_regs[SWG_CTRL_TOKENS / 4] = (uint32_t)bsz;
 
         if (swiglu_dbg_enabled) {
             fprintf(stderr, "[SWG]   regs: W=0x%08X|%08X  V=0x%08X|%08X  Wd=0x%08X|%08X\n",

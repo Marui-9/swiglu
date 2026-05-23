@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#define MAX_BATCH 4
+#define MAX_BATCH 4    // HW capacity ceiling; actual_tokens controls runtime batch size
 
 // ─── Q4_0 block constants ───────────────────────────────────────────────────
 // Q4_0 block: 2B fp16 d + 16B nibbles (32 values, lower nibble = even index).
@@ -54,10 +54,11 @@ void swiglu(
     const uint8_t *W,            // Q4_0 pre-decoded [8192 rows × 1280 B]
     const uint8_t *V,            // Q4_0 pre-decoded [8192 rows × 1280 B]
     const uint8_t *W_down,       // Q4_0 pre-decoded [2048 rows × 5120 B]
-    const int8_t  *x_batch,      // INT8 quantized input [2048]
-    float         *out_batch,    // F32 output [2048]
+    const int8_t  *x_batch,      // INT8 quantized input [MAX_BATCH × 2048]
+    float         *out_batch,    // F32 output [MAX_BATCH × 2048]
     uint32_t       down_quant_mode,  // 0=Q4_0
-    float          x_scale       // dequantization scale
+    float          x_scale,      // dequantization scale
+    uint32_t       actual_tokens // 1..MAX_BATCH, tokens to process
 );
 
 #endif
