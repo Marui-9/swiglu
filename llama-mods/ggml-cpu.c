@@ -129,7 +129,7 @@ static uint32_t swg_last_prog_mode  = 0;
 #define Q40_DOWN_BLOCKS       256    // 8192/32
 #define Q40_DOWN_GROUPS       32     // 256/8
 #define Q40_DOWN_MG           8      // 32/4 meta-groups
-#define FFN_DIM_PAD           8200   // 8192 + 8 zero-pad rows for K_WV=10 alignment
+#define FFN_DIM_PAD           8196   // 8192 + 4 zero-pad rows for K_WV=12 alignment
 #define Q40_WV_HDR_WORDS      16     // 64 fp32 d / 4 per DDR word
 #define Q40_WV_NIB_WORDS      64     // 8 groups × 8 DDR words (4 elem-slices each)
 #define Q40_WV_ROW_WORDS      80
@@ -255,9 +255,9 @@ static void transpose_q40_to_urm(const uint8_t *src, uint8_t *dst,
             const uint8_t *blk = src + ((size_t)row * blocks_per_row + b) * src_block_bytes;
             uint16_t d_fp16 = (uint16_t)blk[0] | ((uint16_t)blk[1] << 8);
             float d_fp32 = fp16_to_fp32_ref(d_fp16);
-            // 4 fp32 d values per DDR word; store at slot b&3 within word b>>2
+            int32_t raw = (int32_t)(d_fp32 * 256.0f);
             uint32_t *ddr32 = (uint32_t *)(hdr_base + (size_t)(b >> 2) * 16);
-            ddr32[b & 3] = ((union { float f; uint32_t u; }){ .f = d_fp32 }).u;
+            ddr32[b & 3] = (uint32_t)raw;
         }
 
         // ── Nibbles: element-major, transposed across blocks ─────────────────

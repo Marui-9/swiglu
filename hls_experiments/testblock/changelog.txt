@@ -992,3 +992,100 @@
 
     Reverted to K_WV=12 (81.8K HLS LUTs, 109K Vivado, fits).  K_WV=12 is the
     practical ZU5EV ceiling for this architecture.
+
+91. K_WV=14 attempted (May 23).  MAC_ALL achieved II=1 at 14 chains: 260 cycles,
+    14 parallel BRAM reads + 14 DSP routes.  FFN_DIM_PAD=8204 (12 pad rows),
+    586 iterations.  compute_X1: 2.20M (−9.5% vs K_WV=12).  Top-level: 3.76M
+    cycles, projecting 2.74 t/s (+4.2% vs K_WV=12).
+
+    HLS: 89,710 LUTs (76%), 152 DSP (12%), 222 BRAM (77%), 229K FF (97%).
+    Vivado: 133,610 LUTs (114%) — does NOT fit.  Vivado/HLS LUT ratio inflated
+    to 1.49× (vs 1.32× at K_WV=12), driven by 14-chain routing density pushing
+    the fabric past viable utilization.  The +2 extra chains vs K_WV=12 add ~8K
+    HLS LUTs total (+4K per instance) but Vivado amplifies this to +24K.
+
+    Reverted to K_WV=12.  Between K_WV=12 (fits, 109K) and K_WV=14 (fails,
+    134K), the LUT curve is super-linear beyond 12 chains on ZU5EV.
+
+92. 300 MHz PL clock attempted (May 23).  HLS synthesized at 3.33 ns period
+    successfully.  Vivado implementation failed with CLB overutilization:
+    13,209 CLBs required, 12,540 available.  The tighter timing (3.33 vs 4.0 ns)
+    caused Vivado to insert additional pipeline registers and independent control
+    paths, inflating control sets from 2,188 (250 MHz) to 2,240.  At 4 control
+    sets per CLB max, the FFs couldn't be packed to fill every CLB, causing
+    CLB-level overutilization despite total FF count (191K) being within budget
+    (234K).
+
+    Key lesson: control set density, not absolute FF/LUT count, is the limiting
+    factor for clock scaling on this design.  Each DATAFLOW region, pipeline
+    stage, and reset domain creates a unique control set.  At 250 MHz the design
+    sits just under the CLB packing threshold; at 300 MHz it crosses it.
+
+    Staying at 250 MHz.  K_WV=12 at 250 MHz: 3.99M cycles, 2.63 t/s, proven
+    to route and close timing.  To reach 3.0 t/s at 250 MHz, the remaining
+    viable lever is token-level pipelining (overlap output of token N with
+    X1/X2 of token N+1), which would save ~1.5M cycles without increasing
+    clock frequency or chain count.
+
+93. Token pipelining explored and found infeasible with current HLS DATAFLOW
+    architecture (May 23).  The core idea is sound: while stage 5 (output)
+    processes token 0 using gate_cache[0], stages 1-4 could process token 1
+    using double-buffered x_local[1], X1/X2_cache[1], gate_cache[1].  No
+    resource conflict exists between compute and output phases, and the
+    BRAM cost is manageable (+64 BRAM_18K for double-buffering all caches,
+    from 190→254, 88% of 288).
+
+    Steady-state per-token performance: max(compute_phase 2.45M, output_phase
+    1.54M) = 2.45M cycles → ~3.54 t/s.  A 39% reduction from the current
+    3.99M single-token path.
+
+    The problem: HLS DATAFLOW processes are monolithic.  Each process
+    (load_x, X1, X2, gate, output) must run to full completion before the
+    next process can consume its output.  Token pipelining requires a process
+    to signal partial completion ("gate_cache[0] is ready" while "X1_cache[1]
+    is still being computed"), which violates this model.
+
+    Approaches considered and why they fail:
+      a. Token loop inside each function: DDR load shared, MAC per-token.
+         But each function becomes 2× longer, the DATAFLOW sees monolithic
+         blocks, and no inter-process overlap actually occurs.
+      b. Duplicate the entire 5-stage pipeline: 2 pipelines for 2 tokens,
+         running concurrently in a single DATAFLOW.  Doubles ALL hardware
+         (2× compute_X1, 2× compute_X2, etc.).  LUTs: 109K→~218K Vivado.
+         Does not fit ZU5EV.
+      c. hls::stream between stages: stages produce/consume per-token stream
+         entries.  But each stage is still a single DATAFLOW process; the
+         stream FIFO only enables ordering, not concurrent execution of
+         different tokens across stages.
+      d. HLS pipeline pragma: targets II within a single function, not
+         cross-function DATAFLOW overlap.
+
+    Fundamental issue: The pipeline can't be finer than token granularity
+    because compute_gate needs ALL 8,192 X1 values before pass 1 completes
+    (finding the INT8 quantization scale requires the full max-abs reduction).
+    Gate can't start until compute_X1 fully finishes a token.  So the
+    handshake must be per-token — "token 0 is in the output phase, token 1
+    can now start load/compute."  HLS function-call DATAFLOW has no mechanism
+    for this partial-completion handshake.  Full pipeline duplication is the
+    only way (2× hardware → 218K Vivado LUTs → doesn't fit ZU5EV).
+
+94. Final assessment (May 23).  On ZU5EV with Q4_0 HLS, the design is at the
+    Pareto frontier: K_WV=12 + time-mux REDUCE, 3.99M cycles, 2.63 t/s at
+    250 MHz, 109K Vivado LUTs (93%), routes and closes timing.
+
+    Every attempted push past this point failed due to device limits, not
+    algorithmic oversight:
+      K_WV=14:  MAC_ALL II=1 confirmed, 134K LUTs (114%) — routing inflation
+      K_WV=16:  MAC_ALL II=1 confirmed, 135K LUTs (115%) — same
+      K_DOWN=16: 130K LUTs (112%) — output REDUCE_MG routing
+      300 MHz:   CLB control set congestion (2,240 > 2,188 threshold)
+      Output time-mux REDUCE: REDUCE(64) > MAC_MG(35), cycle regression
+      Token pipelining: HLS DATAFLOW can't express partial-completion handshake
+
+    Remaining paths to 3+ t/s are external to the current ZU5EV HLS design:
+      ZU7EV:       230K LUTs → K_WV=16 + K_DOWN=16 likely fit → ~3.5 t/s
+      Layer norm:   offload 32 reductions/token from CPU → +0.1-0.15 t/s
+      Attention:    separate accelerator, not in SwiGLU IP scope
+
+    The current architecture represents the practical ceiling of what can be
+    achieved with Q4_0 SwiGLU acceleration on ZU5EV using Vitis HLS DATAFLOW.
