@@ -33,7 +33,7 @@
 #define Q40_DOWN_ROW_WORDS    320
 
 // ─── MAC parallelism ─────────────────────────────────────────────────────────
-#define K_WV                  13       // 13 WV rows per iteration (13 MAC chains w/ 1-block sg)
+#define K_WV                  14       // 14 WV rows per iteration (14 MAC chains w/ 1-block sg)
 #define K_DOWN                 8       // 8 output rows per iteration
 
 // ─── Nibble tile dimensions ──────────────────────────────────────────────────
@@ -48,7 +48,7 @@
 // ─── Dimensions ──────────────────────────────────────────────────────────────
 #define VECTOR_DIM            2048
 #define FFN_DIM               8192
-#define FFN_DIM_PAD           8203    // 8192 + 11 pad rows for clean K_WV=13 iterations
+#define FFN_DIM_PAD           8204    // 8192 + 12 pad rows for clean K_WV=14 iterations
 
 void swiglu(
     const uint8_t *W,            // Q4_0 pre-decoded [8192 rows × 1280 B]
