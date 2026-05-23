@@ -66,11 +66,11 @@ static uint32_t swg_last_prog_mode  = 0;
 
 // udmabuf layout (512 MB pool — fits cma=600M, no boot script fix needed)
 #define UDMABUF_SIZE        536870912U
-#define SWG_MAX_BATCH       1    // tokens per IP call (must match HLS MAX_BATCH=1)
+#define SWG_MAX_BATCH       4    // tokens per IP call (must match HLS MAX_BATCH=4)
 #define SWG_MAX_TOKENS     64   // max tokens per fused op (looped in SWG_MAX_BATCH chunks)
 #define SWG_VEC_OFF         0x06C50000U  // x INT8
 #define SWG_OUT_OFF         0x06C60000U  // out F32
-#define SWG_OUTPUT_SIZE     8192U        // 2048 floats
+#define SWG_OUTPUT_SIZE     32768U       // 4 × 2048 floats (MAX_BATCH × VECTOR_DIM × sizeof(float))
 
 // IP CTRL register offsets
 #define SWIGLU_IP_BASE   0xA0000000UL

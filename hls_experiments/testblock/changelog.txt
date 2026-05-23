@@ -1089,3 +1089,73 @@
 
     The current architecture represents the practical ceiling of what can be
     achieved with Q4_0 SwiGLU acceleration on ZU5EV using Vitis HLS DATAFLOW.
+
+95. K_WV=12 parallel REDUCE + CPU-side fxd_scale_t pre-conversion (May 23).
+    Key insight: the float→ap_fixed<18,8> converters in REDUCE_GRP (12 parallel
+    × ~700 LUTs = 8,400 per instance) and REDUCE_MG (8 parallel × ~700 = 5,600)
+    convert the same d values every group.  These values are loaded once from
+    DDR in LOAD_HDR and never change.  Moving the conversion to the CPU during
+    weight pre-decode (fp16→fxd_scale_t raw int32_t) eliminates ~22,400 HLS
+    LUTs (~29K Vivado) from the FPGA.
+
+    CPU change (ggml-cpu.c + swiglu_tb.cpp): transpose_q40_to_urm converts
+    fp16 d → int32_t raw = (int32_t)(d_fp32 × 256.0f).  Stored as uint32_t
+    in DDR, same layout (4 values per 128-bit word).  FPGA change: union
+    bit-cast fxd_from_raw() reinterprets uint32_t → fxd_scale_t.  REDUCE_GRP
+    and REDUCE_MG read d directly — zero conversion, zero LUT cost.
+
+    K_WV=12 parallel structure (no internal DATAFLOW, sequential MAC_GROUPS):
+    load_12_rows (1,110 cyc) + mac_blocks_wv_k12 (2,208 cyc per call, 12 DSP
+    parallel REDUCE, II=1).  683 iterations → compute_X1 = 2.43M.  Top-level:
+    2.43M + 0.017M + 1.54M = 3.99M cycles.
+
+    HLS: 82,634 LUTs (70%), 148 DSP (11%), 206 BRAM (71%), 203K FF (86%).
+    Vivado: 101,182 LUTs (86.39%), 153K FF (65%), 86.5 BRAM (60%), 86 DSP
+    (7%), 8 URAM (12.5%).  Routes and closes timing at 250 MHz with no timing
+    errors.  Control sets: within CLB packing threshold.
+
+    Performance: 3.99M cycles @ 250 MHz → 15.96 ms/layer.  16 layers: 255 ms
+    FPGA + ~125 ms CPU → ~380 ms → 2.63 t/s.  LUT headroom: 15.8K (13.6%).
+
+    Compared to K_WV=10 baseline (entry 85, 101K Vivado at 4.28M cycles):
+    same Vivado LUT budget, 6.8% more throughput from 2 extra MAC chains.
+
+96. URAM nib_r + double-buffer + DATAFLOW load/MAC overlap attempted (May 23).
+    Goal: overlap 1,110-cycle load with 2,347-cycle MAC using double-buffered
+    URAM nib_r arrays (48 URAM per instance, 96 total).  DATAFLOW inside a
+    helper function (load_and_mac_overlap) with alternating ping/pong buffers.
+
+    HLS result: top-level 3,129,560 cycles (−21.6% vs 3,991,061), projecting
+    ~2.92 t/s.  The overlap itself worked — per-iteration dropped to 2,350
+    cycles (was 3,560), compute_X1 ~2.35M (was 2.43M).  MAC_ALL at II=1
+    with URAM latency=3: 261 cycles (was 260).  REDUCE_GRP: 9 cycles II=1.
+
+    Resource catastrophe: LUTs 149K (127%), FF 279K (119%), URAM 104 (162%).
+    Three root causes:
+      1. URAM budget: 48 per instance x 2 + 8 gate_cache = 104 > 64 ZU5EV max.
+         Double-buffered URAM at K_WV=12 physically does not fit the device.
+      2. DATAFLOW hardware duplication: HLS created separate copies of both
+         load_12_rows (8,095 LUTs) and mac_blocks_wv_k12 (11,536 LUTs) for
+         the DATAFLOW region, despite INLINE off on the wrapper.  HLS DATAFLOW
+         fundamentally duplicates hardware for functions called within it.
+      3. FF inflation from DATAFLOW pipeline registers and duplicated state.
+
+    Reverted to K_WV=12 + pre-converted d + BRAM nib_r (101K Vivado, 2.63 t/s).
+    The load/MAC overlap is architecturally correct but HLS DATAFLOW requires 2x
+    hardware to express it — a fundamental tool limitation, not a design flaw.
+
+97. MAX_BATCH=4 enabled (May 23).  Token loops added inside row loops in
+    compute_X1/X2 and inside META_GROUPS in compute_output: load weights once
+    from DDR, MAC for all 4 tokens before next row.  DDR load amortized N-fold.
+    Per-token effective cycles: 3.99M→2.52M (−37%), projecting 3.20 t/s for
+    batched operation.  No DATAFLOW changes, no routing impact, no control set
+    risk — purely sequential time-multiplexing of MAC hardware across tokens.
+
+    Storage scaled with MAX_BATCH: X1/X2 caches +24 BRAM (8→32 BRAM_18K each),
+    out_local +8 BRAM, totals[4][8] array.  URAM unchanged (cyclic partition
+    absorbs batch increase as deeper entries).  LUTs +~4K for loop counters.
+    AXI depths: x_batch 8192→32768, out_batch 8192→32768.
+
+    Single-token decode (MAX_BATCH=1): HLS optimizes trip-count-1 loops to zero
+    overhead.  Same 2.63 t/s, no regression.  Multi-token path usable for prefill
+    (src1->ne[1] > 1) and future speculative decode without A53 draft bottleneck. — a fundamental tool limitation, not a design flaw.

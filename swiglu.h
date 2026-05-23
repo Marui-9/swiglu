@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#define MAX_BATCH 1
+#define MAX_BATCH 4
 
 // ─── Q4_0 block constants ───────────────────────────────────────────────────
 // Q4_0 block: 2B fp16 d + 16B nibbles (32 values, lower nibble = even index).

@@ -86,7 +86,8 @@ static void mac_blocks_wv_k12_q40(
     const ap_uint<128> nib_r2[64], const ap_uint<128> nib_r3[64],
     const ap_uint<128> nib_r4[64], const ap_uint<128> nib_r5[64],
     const ap_uint<128> nib_r6[64], const ap_uint<128> nib_r7[64],
-    const ap_uint<128> nib_r8[64], const ap_uint<128> nib_r9[64],
+    const ap_uint<128> nib_r8[64],  const ap_uint<128> nib_r9[64],
+    const ap_uint<128> nib_r10[64], const ap_uint<128> nib_r11[64],
     const fxd_scale_t d[K_WV][Q40_WV_BLOCKS],
     const int8_t  x[Q40_WV_GROUPS][256],
     float  x_scale,
@@ -243,11 +244,13 @@ static void compute_X1(
                             nib_r4, nib_r5, nib_r6, nib_r7,
                             nib_r8, nib_r9, nib_r10, nib_r11, d);
 
-        mac_blocks_wv_k12_q40(
-            nib_r0, nib_r1, nib_r2, nib_r3,
-            nib_r4, nib_r5, nib_r6, nib_r7,
-            nib_r8, nib_r9, nib_r10, nib_r11,
-            d, x_local_1[0], x_scale, X1_cache, row);
+        for (int n = 0; n < MAX_BATCH; n++) {
+            mac_blocks_wv_k12_q40(
+                nib_r0, nib_r1, nib_r2, nib_r3,
+                nib_r4, nib_r5, nib_r6, nib_r7,
+                nib_r8, nib_r9, nib_r10, nib_r11,
+                d, x_local_1[n], x_scale, X1_cache, row);
+        }
     }
 }
 
@@ -286,11 +289,13 @@ static void compute_X2(
                             nib_r4, nib_r5, nib_r6, nib_r7,
                             nib_r8, nib_r9, nib_r10, nib_r11, d);
 
-        mac_blocks_wv_k12_q40(
-            nib_r0, nib_r1, nib_r2, nib_r3,
-            nib_r4, nib_r5, nib_r6, nib_r7,
-            nib_r8, nib_r9, nib_r10, nib_r11,
-            d, x_local_2[0], x_scale, X2_cache, row);
+        for (int n = 0; n < MAX_BATCH; n++) {
+            mac_blocks_wv_k12_q40(
+                nib_r0, nib_r1, nib_r2, nib_r3,
+                nib_r4, nib_r5, nib_r6, nib_r7,
+                nib_r8, nib_r9, nib_r10, nib_r11,
+                d, x_local_2[n], x_scale, X2_cache, row);
+        }
     }
 }
 
@@ -584,8 +589,7 @@ static void compute_output(
 #pragma HLS ARRAY_PARTITION variable=gate_cache dim=1 cyclic factor=8
 
     const ap_uint<128> *W_down_wide = (const ap_uint<128>*)W_down;
-    float gate_scale = gate_scale_array[0];
-    float out_local[VECTOR_DIM];
+    float out_local[MAX_BATCH][VECTOR_DIM];
     #pragma HLS BIND_STORAGE variable=out_local type=ram_1p impl=bram
 
     // 32 time-multiplexed BRAM tiles: 4 groups × K_DOWN rows, reused across meta-groups
@@ -639,8 +643,8 @@ static void compute_output(
     #pragma HLS BIND_STORAGE variable=g3_r7 type=ram_1p impl=bram
 
     DOWN_Q40: for (int out_i = 0; out_i < VECTOR_DIM; out_i += K_DOWN) {
-        dsp_acc_t total0 = 0, total1 = 0, total2 = 0, total3 = 0;
-        dsp_acc_t total4 = 0, total5 = 0, total6 = 0, total7 = 0;
+        dsp_acc_t totals[MAX_BATCH][K_DOWN] = {{0}};
+        #pragma HLS ARRAY_PARTITION variable=totals dim=0 complete
 
         META_GROUPS: for (int mg = 0; mg < Q40_DOWN_MG; mg++) {
             fxd_scale_t d_r0[32], d_r1[32], d_r2[32], d_r3[32];
@@ -666,33 +670,33 @@ static void compute_output(
                              d_r0, d_r1, d_r2, d_r3,
                              d_r4, d_r5, d_r6, d_r7);
 
-            mac_mg_down_q40(
-                g0_r0, g1_r0, g2_r0, g3_r0,
-                g0_r1, g1_r1, g2_r1, g3_r1,
-                g0_r2, g1_r2, g2_r2, g3_r2,
-                g0_r3, g1_r3, g2_r3, g3_r3,
-                g0_r4, g1_r4, g2_r4, g3_r4,
-                g0_r5, g1_r5, g2_r5, g3_r5,
-                g0_r6, g1_r6, g2_r6, g3_r6,
-                g0_r7, g1_r7, g2_r7, g3_r7,
-                d_r0, d_r1, d_r2, d_r3,
-                d_r4, d_r5, d_r6, d_r7,
-                gate_cache[0], mg,
-                &total0, &total1, &total2, &total3,
-                &total4, &total5, &total6, &total7);
+            for (int n = 0; n < MAX_BATCH; n++) {
+                mac_mg_down_q40(
+                    g0_r0, g1_r0, g2_r0, g3_r0,
+                    g0_r1, g1_r1, g2_r1, g3_r1,
+                    g0_r2, g1_r2, g2_r2, g3_r2,
+                    g0_r3, g1_r3, g2_r3, g3_r3,
+                    g0_r4, g1_r4, g2_r4, g3_r4,
+                    g0_r5, g1_r5, g2_r5, g3_r5,
+                    g0_r6, g1_r6, g2_r6, g3_r6,
+                    g0_r7, g1_r7, g2_r7, g3_r7,
+                    d_r0, d_r1, d_r2, d_r3,
+                    d_r4, d_r5, d_r6, d_r7,
+                    gate_cache[n], mg,
+                    &totals[n][0], &totals[n][1], &totals[n][2], &totals[n][3],
+                    &totals[n][4], &totals[n][5], &totals[n][6], &totals[n][7]);
+            }
         }
 
-        float gs = gate_scale / 256.0f;
-        out_local[out_i]     = (float)total0 * gs;
-        out_local[out_i + 1] = (float)total1 * gs;
-        out_local[out_i + 2] = (float)total2 * gs;
-        out_local[out_i + 3] = (float)total3 * gs;
-        out_local[out_i + 4] = (float)total4 * gs;
-        out_local[out_i + 5] = (float)total5 * gs;
-        out_local[out_i + 6] = (float)total6 * gs;
-        out_local[out_i + 7] = (float)total7 * gs;
+        for (int n = 0; n < MAX_BATCH; n++) {
+            float gs = gate_scale_array[n] / 256.0f;
+            for (int r = 0; r < K_DOWN; r++) {
+                out_local[n][out_i + r] = (float)totals[n][r] * gs;
+            }
+        }
     }
-    memcpy(out_batch, out_local, VECTOR_DIM * sizeof(float));
+    for (int n = 0; n < MAX_BATCH; n++)
+        memcpy(out_batch + n * VECTOR_DIM, out_local[n], VECTOR_DIM * sizeof(float));
 }
 
 // ============================================================================
@@ -742,8 +746,8 @@ void swiglu(
     #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W    offset=slave depth=10490880 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=10490880 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd   offset=slave depth=10485760 max_read_burst_length=256  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x    offset=slave depth=8192     max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out  offset=slave depth=8192     max_write_burst_length=256 latency=64 num_write_outstanding=1
+    #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x    offset=slave depth=32768    max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out  offset=slave depth=32768    max_write_burst_length=256 latency=64 num_write_outstanding=1
 
     #pragma HLS INTERFACE mode=s_axilite port=W               bundle=CTRL
     #pragma HLS INTERFACE mode=s_axilite port=V               bundle=CTRL
