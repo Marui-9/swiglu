@@ -955,8 +955,40 @@
 
     Reverted to K_DOWN=8 (101.4K Vivado LUTs, routes and closes timing).
 
-88. k_down=8 bitstream available as backup. 
+88. k_down=8 bitstream available as backup.
     new attempt to harness the resource headroom:
-    nstead of 10 parallel DSP routes in REDUCE_GRP (11,755 HLS LUTs), 
-    we have 1 DSP time-multiplexed (~2,000 HLS LUTs). Per instance saving: 
+    nstead of 10 parallel DSP routes in REDUCE_GRP (11,755 HLS LUTs),
+    we have 1 DSP time-multiplexed (~2,000 HLS LUTs). Per instance saving:
     ~9,700 HLS → ~12,800 Vivado. Two instances + REDUCE_MG: ~30K Vivado LUTs saved.
+
+89. Time-mux REDUCE_GRP implemented + K_WV=12 (May 23).  REDUCE_GRP restructured
+    as producer-consumer DATAFLOW: mac_one_group_wv (INLINE off, single instance,
+    12 DSP MAC_ALL II=1, 275 cyc) writes to ping-pong dspA/dspB[12][8], consumer
+    reduce_grp_wv (INLINE off, 1 DSP, 96 cyc) reads and scales by d values.
+    REDUCE(96) hidden behind MAC_ALL(275) — zero cycle penalty.  REDUCE_GRP
+    LUTs: 11,755→5,146 (−56%), DSPs: 12→1.  Output path REDUCE_MG kept parallel
+    (time-mux adds cycles since MAC_MG(35) < REDUCE(64) in the output path).
+
+    HLS: 81,751 LUTs (69%), 148 DSP (11%), 206 BRAM (71%), 221K FF (94%).
+    Top-level 3.99M cycles, 2.63 t/s projected.  K_WV=12 MAC_ALL II=1 at 12
+    chains confirmed in BRAM.  Vivado: 109K LUTs (93%), routes and closes timing.
+
+    Output path time-mux attempted and reverted — PACK_D overhead (34 cyc) +
+    REDUCE_MG bottleneck (64 > 35 MAC_MG) pushed compute_output from 1.54M→
+    1.83M (+19%), killing the K_WV=12 gain.  Lesson: time-mux only wins when
+    REDUCE < MAC time (WV path: 96 < 268, works; output: 64 > 35, fails).
+
+90. K_WV=16 with time-mux REDUCE attempted (May 23).  MAC_ALL achieved II=1 at
+    16 chains: 260 cycles, 16 parallel BRAM reads + 16 DSP routes per cycle.
+    Iterations dropped to 512 (8192/16 clean, no padding).  compute_X1: 2.02M
+    (−17% vs K_WV=12).  Top-level: 3.58M cycles, projecting 2.82 t/s.
+
+    HLS: 96,740 LUTs (82%), 156 DSP (12%), 222 BRAM (77%), 254K FF (108%).
+    Vivado: 135K LUTs (115%), 326K slice registers (139%), both over budget.
+    The +4 extra chains add ~7K HLS LUTs per instance (load mux 10.5K, MAC_ALL
+    7.9K, REDUCE 6.5K) and ~25K FF (dspA/dspB[16][8] complete-partitioned
+    registers).  URAM/BRAM can't substitute — FF bloat is in pipeline registers
+    and DSP routing, not deep storage.
+
+    Reverted to K_WV=12 (81.8K HLS LUTs, 109K Vivado, fits).  K_WV=12 is the
+    practical ZU5EV ceiling for this architecture.
