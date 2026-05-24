@@ -130,7 +130,7 @@ static uint32_t swg_last_prog_mode  = 0;
 #define Q40_DOWN_BLOCKS       256    // 8192/32
 #define Q40_DOWN_GROUPS       32     // 256/8
 #define Q40_DOWN_MG           8      // 32/4 meta-groups
-#define FFN_DIM_PAD           8204   // 8192 + 12 zero-pad rows for K_WV=14 alignment
+#define FFN_DIM_PAD           8192   // 8192 / 16 = 512, no padding needed
 #define Q40_WV_HDR_WORDS      16     // 64 fp32 d / 4 per DDR word
 #define Q40_WV_NIB_WORDS      64     // 8 groups × 8 DDR words (4 elem-slices each)
 #define Q40_WV_ROW_WORDS      80

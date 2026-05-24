@@ -1,7 +1,7 @@
 Resource  Utilization  Available  Utilization %
-LUT       100720       117120     86.00%       
-LUTRAM    7653          57600     13.29%       
-FF        140408       234240     59.94%       
-BRAM      126             144     87.50%       
+LUT       107948       117120     92.17%       
+LUTRAM    7652          57600     13.28%       
+FF        151942       234240     64.87%       
+BRAM      132             144     91.67%       
 URAM      32               64     50.00%       
-DSP       98             1248      7.85%
+DSP       102            1248      8.17%

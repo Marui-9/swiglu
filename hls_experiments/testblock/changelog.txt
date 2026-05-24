@@ -1158,4 +1158,40 @@
 
     Single-token decode (MAX_BATCH=1): HLS optimizes trip-count-1 loops to zero
     overhead.  Same 2.63 t/s, no regression.  Multi-token path usable for prefill
-    (src1->ne[1] > 1) and future speculative decode without A53 draft bottleneck. — a fundamental tool limitation, not a design flaw.
+    (src1->ne[1] > 1) and future speculative decode without A53 draft bottleneck.
+
+98. Runtime actual_tokens via AXI-Lite (May 23-24).  MAX_BATCH=4 hardware ceiling
+    but token loops controlled by runtime actual_tokens register (1..4).  COMPUTE_X1
+    is Pipelined: no (blocking function calls), so variable trip count on the inner
+    token loop is legal in HLS.  One bitstream handles both workloads: decode
+    (actual_tokens=1) at 2.63 t/s, prefill (actual_tokens=4) at 3.44 t/s.  register
+    at AXI-Lite offset 0x58, written with bsz per call.  batch_idx parameter added
+    to mac_blocks_wv_k12_q40 fixing X_cache[0] hardcoding bug.
+
+99. K_WV=13 (May 23).  MAC_ALL II=1 at 13 chains: 260 cycles, 13 DSP.  631
+    iterations (8,203/13).  Vivado: 96,840 LUTs (82.7%) — actually LOWER than
+    K_WV=12 (101K) due to favorable routing density.  Decode: ~2.78 t/s.
+    Demonstrated that odd chain counts work fine and the LUT curve is not
+    monotonic — Vivado routing can improve at higher densities.
+
+100. K_WV=14 (May 23).  MAC_ALL II=1 at 14 chains: 260 cycles, 14 DSP.  586
+     iterations (8,204/14).  Vivado: 100,720 LUTs (86.0%).  Same LUT budget
+     as K_WV=12 but +7% decode throughput (2.81 t/s).  The earlier K_WV=14
+     failure (134K Vivado) was with the old time-mux DATAFLOW architecture;
+     parallel REDUCE + CPU pre-converted d + actual_tokens control made it
+     viable on the second attempt.
+
+101. K_WV=16 (May 24).  MAC_ALL II=1 at 16 chains: 260 cycles, 16 DSP — the
+     long-sought ZU5EV ceiling broken.  512 iterations (8,192/16, clean, no
+     padding).  Vivado: 107,948 LUTs (92.2%), 132 BRAM (91.7%), 102 DSP (8.2%).
+     Routes and closes timing at 250 MHz with no violations.
+
+    ESTIMATES
+     Decode: 512 × (1,430 + 2,343) = 1.93M X1 → top ~3.49M → 3.00 t/s.
+     Prefill (actual_tokens=4): 1.38M/token → 3.81 t/s.
+
+     The earlier K_WV=16 failures (135K streaming, 135K BRAM+DATAFLOW) were
+     architecture problems, not fundamental limits.  The combination of parallel
+     REDUCE (no DATAFLOW), CPU pre-converted d values (−29K LUTs), runtime
+     actual_tokens, and Vivado routing improvements at 16-chain density made
+     the difference.  9K LUT headroom remains at 92.2%.

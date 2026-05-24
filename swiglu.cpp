@@ -27,10 +27,10 @@ static inline fxd_scale_t fxd_from_raw(int32_t raw) {
 }
 
 // ============================================================================
-// Q4_0 WV Merged Load — K_WV=14 rows, one AXI burst, sub-group-major DDR
+// Q4_0 WV Merged Load — K_WV=16 rows, one AXI burst, sub-group-major DDR
 // ============================================================================
 
-static void load_14_rows_wv_q40(
+static void load_16_rows_wv_q40(
     const ap_uint<128> *W_wide,
     int base_row,
     ap_uint<128> nib_r0[64],  ap_uint<128> nib_r1[64],
@@ -40,6 +40,7 @@ static void load_14_rows_wv_q40(
     ap_uint<128> nib_r8[64],  ap_uint<128> nib_r9[64],
     ap_uint<128> nib_r10[64], ap_uint<128> nib_r11[64],
     ap_uint<128> nib_r12[64], ap_uint<128> nib_r13[64],
+    ap_uint<128> nib_r14[64], ap_uint<128> nib_r15[64],
     fxd_scale_t d[K_WV][Q40_WV_BLOCKS])
 {
 #pragma HLS INLINE off
@@ -76,15 +77,17 @@ static void load_14_rows_wv_q40(
         else if (r == 10) nib_r10[e] = ddr;
         else if (r == 11) nib_r11[e] = ddr;
         else if (r == 12) nib_r12[e] = ddr;
-        else              nib_r13[e] = ddr;
+        else if (r == 13) nib_r13[e] = ddr;
+        else if (r == 14) nib_r14[e] = ddr;
+        else              nib_r15[e] = ddr;
     }
 }
 
 // ============================================================================
-// Q4_0 WV MAC — K_WV=14, 1-block sub-group, DSP48E2, II=1 target
+// Q4_0 WV MAC — K_WV=16, 1-block sub-group, DSP48E2, II=1 target
 // ============================================================================
 
-static void mac_blocks_wv_k14_q40(
+static void mac_blocks_wv_k16_q40(
     const ap_uint<128> nib_r0[64], const ap_uint<128> nib_r1[64],
     const ap_uint<128> nib_r2[64], const ap_uint<128> nib_r3[64],
     const ap_uint<128> nib_r4[64], const ap_uint<128> nib_r5[64],
@@ -92,6 +95,7 @@ static void mac_blocks_wv_k14_q40(
     const ap_uint<128> nib_r8[64],  const ap_uint<128> nib_r9[64],
     const ap_uint<128> nib_r10[64], const ap_uint<128> nib_r11[64],
     const ap_uint<128> nib_r12[64], const ap_uint<128> nib_r13[64],
+    const ap_uint<128> nib_r14[64], const ap_uint<128> nib_r15[64],
     const fxd_scale_t d[K_WV][Q40_WV_BLOCKS],
     const int8_t  x[Q40_WV_GROUPS][256],
     float  x_scale,
@@ -104,7 +108,7 @@ static void mac_blocks_wv_k14_q40(
     dsp_acc_t dsp0[8], dsp1[8], dsp2[8], dsp3[8];
     dsp_acc_t dsp4[8], dsp5[8], dsp6[8], dsp7[8];
     dsp_acc_t dsp8[8], dsp9[8], dsp10[8], dsp11[8];
-    dsp_acc_t dsp12[8], dsp13[8];
+    dsp_acc_t dsp12[8], dsp13[8], dsp14[8], dsp15[8];
     #pragma HLS ARRAY_PARTITION variable=dsp0 complete
     #pragma HLS ARRAY_PARTITION variable=dsp1 complete
     #pragma HLS ARRAY_PARTITION variable=dsp2 complete
@@ -119,19 +123,21 @@ static void mac_blocks_wv_k14_q40(
     #pragma HLS ARRAY_PARTITION variable=dsp11 complete
     #pragma HLS ARRAY_PARTITION variable=dsp12 complete
     #pragma HLS ARRAY_PARTITION variable=dsp13 complete
+    #pragma HLS ARRAY_PARTITION variable=dsp14 complete
+    #pragma HLS ARRAY_PARTITION variable=dsp15 complete
 
     ap_fixed<32,8> qs = x_scale * X12_INV_SCALE;
     dsp_acc_t total0 = 0, total1 = 0, total2 = 0, total3 = 0;
     dsp_acc_t total4 = 0, total5 = 0, total6 = 0, total7 = 0;
     dsp_acc_t total8 = 0, total9 = 0, total10 = 0, total11 = 0;
-    dsp_acc_t total12 = 0, total13 = 0;
+    dsp_acc_t total12 = 0, total13 = 0, total14 = 0, total15 = 0;
 
     MAC_GROUPS: for (int g = 0; g < Q40_WV_GROUPS; g++) {
         ZERO_DSP: for (int b = 0; b < 8; b++) {
             #pragma HLS PIPELINE II=1
             dsp0[b] = 0; dsp1[b] = 0; dsp2[b] = 0; dsp3[b] = 0;
             dsp4[b] = 0; dsp5[b] = 0; dsp6[b] = 0; dsp7[b] = 0;
-            dsp8[b] = 0; dsp9[b] = 0; dsp10[b] = 0; dsp11[b] = 0; dsp12[b] = 0; dsp13[b] = 0;
+            dsp8[b] = 0; dsp9[b] = 0; dsp10[b] = 0; dsp11[b] = 0; dsp12[b] = 0; dsp13[b] = 0; dsp14[b] = 0; dsp15[b] = 0;
         }
 
         MAC_ALL: for (int n = 0; n < 256; n++) {
@@ -152,6 +158,8 @@ static void mac_blocks_wv_k14_q40(
             ap_uint<128> w10 = nib_r10[idx], w11 = nib_r11[idx];
             ap_uint<128> w12 = nib_r12[idx];
             ap_uint<128> w13 = nib_r13[idx];
+            ap_uint<128> w14 = nib_r14[idx];
+            ap_uint<128> w15 = nib_r15[idx];
 
             ap_int<18> xi8 = (ap_int<18>)x[g][b * 32 + n_elem];
             int bo = (b & 1) * 4;
@@ -169,6 +177,8 @@ static void mac_blocks_wv_k14_q40(
             ap_uint<4> nb11 = w11.range(e_lo*8 + bo + 3, e_lo*8 + bo);
             ap_uint<4> nb12 = w12.range(e_lo*8 + bo + 3, e_lo*8 + bo);
             ap_uint<4> nb13 = w13.range(e_lo*8 + bo + 3, e_lo*8 + bo);
+            ap_uint<4> nb14 = w14.range(e_lo*8 + bo + 3, e_lo*8 + bo);
+            ap_uint<4> nb15 = w15.range(e_lo*8 + bo + 3, e_lo*8 + bo);
 
             dsp0[b]  += xi8 * (ap_int<18>)((ap_int<5>)nb0  - 8);
             dsp1[b]  += xi8 * (ap_int<18>)((ap_int<5>)nb1  - 8);
@@ -184,6 +194,8 @@ static void mac_blocks_wv_k14_q40(
             dsp11[b] += xi8 * (ap_int<18>)((ap_int<5>)nb11 - 8);
             dsp12[b] += xi8 * (ap_int<18>)((ap_int<5>)nb12 - 8);
             dsp13[b] += xi8 * (ap_int<18>)((ap_int<5>)nb13 - 8);
+            dsp14[b] += xi8 * (ap_int<18>)((ap_int<5>)nb14 - 8);
+            dsp15[b] += xi8 * (ap_int<18>)((ap_int<5>)nb15 - 8);
         }
 
         REDUCE_GRP: for (int b = 0; b < 8; b++) {
@@ -203,6 +215,8 @@ static void mac_blocks_wv_k14_q40(
             total11 += (dsp_acc_t)((ap_int<27>)dsp11[b] * d[11][abs_b]);
             total12 += (dsp_acc_t)((ap_int<27>)dsp12[b] * d[12][abs_b]);
             total13 += (dsp_acc_t)((ap_int<27>)dsp13[b] * d[13][abs_b]);
+            total14 += (dsp_acc_t)((ap_int<27>)dsp14[b] * d[14][abs_b]);
+            total15 += (dsp_acc_t)((ap_int<27>)dsp15[b] * d[15][abs_b]);
         }
     }
 
@@ -213,7 +227,7 @@ static void mac_blocks_wv_k14_q40(
                           (r == 4) ? total4 : (r == 5) ? total5 :
                           (r == 6) ? total6 : (r == 7) ? total7 :
                           (r == 8) ? total8 : (r == 9) ? total9 :
-                          (r == 10) ? total10 : (r == 11) ? total11 : (r == 12) ? total12 : total13;
+                          (r == 10) ? total10 : (r == 11) ? total11 : (r == 12) ? total12 : (r == 13) ? total13 : (r == 14) ? total14 : total15;
         fxd_accum_t t = (fxd_accum_t)((ap_fixed<48,8>)t_raw);
         ap_fixed<56,38> scaled = t * qs;
         int val = scaled.to_int() + (scaled >= 0 ? 1 : -1) / 2;
@@ -222,7 +236,7 @@ static void mac_blocks_wv_k14_q40(
 }
 
 // ============================================================================
-// Phase 2 & 3: compute_X1 / compute_X2 — BRAM, K_WV=14, parallel REDUCE, CPU pre-converted d
+// Phase 2 & 3: compute_X1 / compute_X2 — BRAM, K_WV=16, parallel REDUCE, CPU pre-converted d
 // ============================================================================
 
 static void compute_X1(
@@ -239,7 +253,7 @@ static void compute_X1(
     ap_uint<128> nib_r0[64],  nib_r1[64],  nib_r2[64],  nib_r3[64];
     ap_uint<128> nib_r4[64],  nib_r5[64],  nib_r6[64],  nib_r7[64];
     ap_uint<128> nib_r8[64],  nib_r9[64],  nib_r10[64], nib_r11[64];
-    ap_uint<128> nib_r12[64], nib_r13[64];
+    ap_uint<128> nib_r12[64], nib_r13[64], nib_r14[64], nib_r15[64];
     #pragma HLS BIND_STORAGE variable=nib_r0  type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=nib_r1  type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=nib_r2  type=ram_1p impl=bram
@@ -254,22 +268,24 @@ static void compute_X1(
     #pragma HLS BIND_STORAGE variable=nib_r11 type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=nib_r12 type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=nib_r13 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r14 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r15 type=ram_1p impl=bram
 
     fxd_scale_t d[K_WV][Q40_WV_BLOCKS];
     #pragma HLS ARRAY_PARTITION variable=d dim=0 complete
 
     COMPUTE_X1: for (int row = 0; row < FFN_DIM_PAD; row += K_WV) {
-        load_14_rows_wv_q40(W_wide, row,
+        load_16_rows_wv_q40(W_wide, row,
                             nib_r0, nib_r1, nib_r2, nib_r3,
                             nib_r4, nib_r5, nib_r6, nib_r7,
-                            nib_r8, nib_r9, nib_r10, nib_r11, nib_r12, nib_r13, d);
+                            nib_r8, nib_r9, nib_r10, nib_r11, nib_r12, nib_r13, nib_r14, nib_r15, d);
 
         for (int n = 0; n < actual_tokens; n++) {
-            mac_blocks_wv_k14_q40(
+            mac_blocks_wv_k16_q40(
                 nib_r0, nib_r1, nib_r2, nib_r3,
                 nib_r4, nib_r5, nib_r6, nib_r7,
                 nib_r8, nib_r9, nib_r10, nib_r11,
-                nib_r12, nib_r13,
+                nib_r12, nib_r13, nib_r14, nib_r15,
                 d, x_local_1[n], x_scale, X1_cache, row, n);
         }
     }
@@ -289,7 +305,7 @@ static void compute_X2(
     ap_uint<128> nib_r0[64],  nib_r1[64],  nib_r2[64],  nib_r3[64];
     ap_uint<128> nib_r4[64],  nib_r5[64],  nib_r6[64],  nib_r7[64];
     ap_uint<128> nib_r8[64],  nib_r9[64],  nib_r10[64], nib_r11[64];
-    ap_uint<128> nib_r12[64], nib_r13[64];
+    ap_uint<128> nib_r12[64], nib_r13[64], nib_r14[64], nib_r15[64];
     #pragma HLS BIND_STORAGE variable=nib_r0  type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=nib_r1  type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=nib_r2  type=ram_1p impl=bram
@@ -304,22 +320,24 @@ static void compute_X2(
     #pragma HLS BIND_STORAGE variable=nib_r11 type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=nib_r12 type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=nib_r13 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r14 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r15 type=ram_1p impl=bram
 
     fxd_scale_t d[K_WV][Q40_WV_BLOCKS];
     #pragma HLS ARRAY_PARTITION variable=d dim=0 complete
 
     COMPUTE_X2: for (int row = 0; row < FFN_DIM_PAD; row += K_WV) {
-        load_14_rows_wv_q40(V_wide, row,
+        load_16_rows_wv_q40(V_wide, row,
                             nib_r0, nib_r1, nib_r2, nib_r3,
                             nib_r4, nib_r5, nib_r6, nib_r7,
-                            nib_r8, nib_r9, nib_r10, nib_r11, nib_r12, nib_r13, d);
+                            nib_r8, nib_r9, nib_r10, nib_r11, nib_r12, nib_r13, nib_r14, nib_r15, d);
 
         for (int n = 0; n < actual_tokens; n++) {
-            mac_blocks_wv_k14_q40(
+            mac_blocks_wv_k16_q40(
                 nib_r0, nib_r1, nib_r2, nib_r3,
                 nib_r4, nib_r5, nib_r6, nib_r7,
                 nib_r8, nib_r9, nib_r10, nib_r11,
-                nib_r12, nib_r13,
+                nib_r12, nib_r13, nib_r14, nib_r15,
                 d, x_local_2[n], x_scale, X2_cache, row, n);
         }
     }
@@ -772,8 +790,8 @@ void swiglu(
     // Q4_0 DDR layout:
     // W/V:   8192 rows × 1280 B (80 DDR words) = 10,485,760 B
     // W_down: 2048 rows × 5120 B (320 DDR words) = 10,485,760 B
-    #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W    offset=slave depth=10501120 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=10501120 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd   offset=slave depth=10485760 max_read_burst_length=256  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x    offset=slave depth=32768    max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out  offset=slave depth=32768    max_write_burst_length=256 latency=64 num_write_outstanding=1
