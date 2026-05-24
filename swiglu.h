@@ -7,7 +7,7 @@
 
 // ─── Q4_0 block constants ───────────────────────────────────────────────────
 // Q4_0 block: 2B fp16 d + 16B nibbles (32 values, lower nibble = even index).
-// CPU pre-decodes fp16 d → fp32 and transposes nibbles to element-major.
+// CPU pre-decodes fp16 d → fxd_scale_t (int32_t raw) and transposes nibbles to element-major.
 // FPGA MAC extracts nibbles at compile-time .range() — zero LUT.
 #define Q40_VALS_PER_BLOCK    32
 #define Q40_BLK_BYTES         18

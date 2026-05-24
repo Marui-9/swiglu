@@ -15,11 +15,6 @@ typedef ap_fixed<56,38> fxd_accum_t;
 typedef ap_int<48>     dsp_acc_t;   // DSP48E2 P register — 48-bit signed accumulation
 
 // ─── Float from uint32_t bits ─────────────────────────────────────────────────
-static inline float float_from_bits(uint32_t u) {
-    union { uint32_t u; float f; } c;
-    c.u = u;
-    return c.f;
-}
 static inline fxd_scale_t fxd_from_raw(int32_t raw) {
     union { int32_t i; fxd_scale_t f; } u;
     u.i = raw;
@@ -198,6 +193,8 @@ static void mac_blocks_wv_k16_q40(
             dsp15[b] += xi8 * (ap_int<18>)((ap_int<5>)nb15 - 8);
         }
 
+        // ap_int<27> truncation: dsp[b] ≤ ±32K (16 bits), lossless at 27 bits.
+        // 27-bit A-port fits DSP48E2 native multiplier width (single-DSP multiply).
         REDUCE_GRP: for (int b = 0; b < 8; b++) {
             #pragma HLS PIPELINE II=1
             int abs_b = g * 8 + b;
@@ -230,7 +227,8 @@ static void mac_blocks_wv_k16_q40(
                           (r == 10) ? total10 : (r == 11) ? total11 : (r == 12) ? total12 : (r == 13) ? total13 : (r == 14) ? total14 : total15;
         fxd_accum_t t = (fxd_accum_t)((ap_fixed<48,8>)t_raw);
         ap_fixed<56,38> scaled = t * qs;
-        int val = scaled.to_int() + (scaled >= 0 ? 1 : -1) / 2;
+        fxd_accum_t half = (scaled >= 0) ? fxd_accum_t(0.5) : fxd_accum_t(-0.5);
+        int val = (scaled + half).to_int();
         X_cache[batch_idx][base_row + r] = (val > 127) ? 127 : (val < -128) ? -128 : (int8_t)val;
     }
 }
@@ -575,9 +573,12 @@ static void compute_gate(
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
     SWISH_GATE: for (int n = 0; n < actual_tokens; n++) {
-        #pragma HLS UNROLL
-        float pmax[8] = {0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f};
+        float pmax[8];
         #pragma HLS ARRAY_PARTITION variable=pmax complete
+        for (int k = 0; k < 8; k++) {
+            #pragma HLS UNROLL
+            pmax[k] = 0.f;
+        }
 
         GATE_PASS1: for (int j = 0; j < FFN_DIM; j++) {
             #pragma HLS PIPELINE II=1
@@ -632,7 +633,7 @@ static void compute_output(
     uint32_t       actual_tokens)
 {
 #pragma HLS INLINE off
-#pragma HLS ARRAY_PARTITION variable=gate_cache dim=1 cyclic factor=8
+#pragma HLS ARRAY_PARTITION variable=gate_cache dim=2 cyclic factor=8
 
     const ap_uint<128> *W_down_wide = (const ap_uint<128>*)W_down;
     float out_local[MAX_BATCH][VECTOR_DIM];
@@ -689,8 +690,13 @@ static void compute_output(
     #pragma HLS BIND_STORAGE variable=g3_r7 type=ram_1p impl=bram
 
     DOWN_Q40: for (int out_i = 0; out_i < VECTOR_DIM; out_i += K_DOWN) {
-        dsp_acc_t totals[MAX_BATCH][K_DOWN] = {{0}};
+        dsp_acc_t totals[MAX_BATCH][K_DOWN];
         #pragma HLS ARRAY_PARTITION variable=totals dim=0 complete
+        for (int n = 0; n < MAX_BATCH; n++)
+            #pragma HLS UNROLL
+            for (int r = 0; r < K_DOWN; r++)
+                #pragma HLS UNROLL
+                totals[n][r] = 0;
 
         META_GROUPS: for (int mg = 0; mg < Q40_DOWN_MG; mg++) {
             fxd_scale_t d_r0[32], d_r1[32], d_r2[32], d_r3[32];
@@ -794,7 +800,7 @@ void swiglu(
     #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd   offset=slave depth=10485760 max_read_burst_length=256  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x    offset=slave depth=32768    max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out  offset=slave depth=32768    max_write_burst_length=256 latency=64 num_write_outstanding=1
+    #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out  offset=slave depth=32768    max_write_burst_length=256 latency=64 num_write_outstanding=1 max_widen_bitwidth=128
 
     #pragma HLS INTERFACE mode=s_axilite port=W               bundle=CTRL
     #pragma HLS INTERFACE mode=s_axilite port=V               bundle=CTRL
@@ -821,7 +827,7 @@ void swiglu(
 
     int8_t gate_cache[MAX_BATCH][Q40_DOWN_BLOCKS][Q40_NIB_ELEMS];
     #pragma HLS BIND_STORAGE variable=gate_cache type=ram_1p impl=uram
-    #pragma HLS ARRAY_PARTITION variable=gate_cache dim=1 cyclic factor=8
+    #pragma HLS ARRAY_PARTITION variable=gate_cache dim=2 cyclic factor=8
 
     float gate_scale[MAX_BATCH];
 

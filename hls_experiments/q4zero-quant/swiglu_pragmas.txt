@@ -1,0 +1,215 @@
+HLS Pragmas Reference — swiglu.cpp
+====================================
+Per-stage explanation of every #pragma HLS directive.
+
+
+Global Definitions (lines 1-22)
+--------------------------------
+
+#pragma HLS INLINE off
+  Used on: load_16_rows_wv_q40, mac_blocks_wv_k16_q40, compute_X1, compute_X2,
+           load_mg_down_q40, mac_mg_down_q40, compute_gate, compute_output,
+           load_x_local
+  Effect: Prevents HLS from inlining the function body into the caller. Forces
+          a single hardware instance shared across all call sites. Critical
+          for functions called from DATAFLOW regions — without this, HLS
+          duplicates hardware for each call, blowing up LUT/FF usage.
+  Risk if removed: Hardware duplication inside DATAFLOW, 2-3× resource increase.
+
+#pragma HLS BIND_OP op=mul impl=dsp
+  Used on: mac_blocks_wv_k16_q40, mac_mg_down_q40, compute_gate
+  Effect: Forces all multiplication operations in the function to map to DSP48E2
+          slices. Prevents HLS from implementing any multiply in fabric LUTs.
+          Combined with narrow fxd_scale_t (18-bit), each multiply fits in a
+          single DSP48E2 with no cascading.
+  Risk if removed: HLS may choose LUT-based multipliers for smaller operands,
+          consuming routing LUTs that are the design's binding resource.
+
+#pragma HLS ARRAY_PARTITION
+  Used on: Nearly every array in the design.
+  Effect: Splits an array across multiple physical memory banks (BRAM/URAM/FF)
+          to enable parallel access in PIPELINE II=1 loops. Without partitioning,
+          a single-port BRAM can serve only one read/write per cycle, forcing II>1.
+
+  Sub-types by dimension:
+    dim=0 complete — each element of the first dimension in its own bank.
+        Used for totals[K_WV], d_r0..d_r7[32], totals[4][8].
+        Enables all K_WV parallel DSP reads/writes in a single cycle.
+        Note: current code uses flat variables (dsp0..dsp15, total0..total15)
+        rather than 2D arrays. The partitioning concept is identical.
+
+    dim=2 complete — each element of the second dimension in its own bank.
+        Used for x_local_1/2[MAX_BATCH][8][256] (partitions the [8] groups).
+        Enables 8 parallel reads in MAC_ALL (one per group block).
+
+    cyclic factor=8 — distributes elements round-robin across 8 banks.
+        Used for gate_cache[MAX_BATCH][256][32] on dim=2 (the Q40_DOWN_BLOCKS dimension,
+        since Vitis HLS dimension numbering is 1-indexed: dim=0=all, dim=1=batch).
+        Enables 8 parallel URAM reads in MAC_MG (one per block within a group).
+
+#pragma HLS BIND_STORAGE type=ram_1p impl=bram
+  Used on: All nib_r arrays (nib_r0..nib_r15), g0_r0..g3_r7 BRAM tiles,
+           out_local, sigmoid_lut
+  Effect: Forces storage to BRAM_18K blocks. ram_1p = single-port (1 read OR
+          1 write per cycle). Used for arrays with single reader or single writer.
+          BRAM has 1-cycle read latency — critical for II=1 MAC_ALL.
+
+  ram_1p vs ram_2p: ram_2p = true dual-port (2 independent read/write ports).
+      Used for X1_cache/X2_cache — compute_X1 writes while compute_gate reads
+      (different ports, no conflict).
+
+#pragma HLS BIND_STORAGE type=ram_1p impl=lutram
+  Used on: x_local_1, x_local_2
+  Effect: Forces storage to distributed RAM (LUTRAM). These are 2,048-byte arrays
+          with dim=2 complete partition — each element is a single LUT. LUTRAM
+          has 1-cycle read latency and zero BRAM cost.
+  Why not BRAM: The complete partition on dim=2 means each of the 256 elements
+          needs independent access. BRAM can't achieve 256-way parallel read.
+
+#pragma HLS BIND_STORAGE type=ram_1p impl=uram
+  Used on: gate_cache
+  Effect: Forces storage to UltraRAM blocks (288 Kb each, 4K×72). Used for deep
+          storage with dual-port access. Cyclic partition on dim=1 creates 8 URAM
+          banks, enabling 8 parallel reads in MAC_MG.
+  Why URAM: gate_cache is [4][256][32] INT8 = 32KB. Too large for LUTRAM,
+          needs dual-port access for compute_gate (write) and compute_output
+          (read) in DATAFLOW. URAM supports this natively.
+
+#pragma HLS BIND_STORAGE type=rom_1p impl=bram
+  Used on: sigmoid_lut (4,096 × 32-bit float = 16KB)
+  Effect: Forces storage to BRAM as read-only memory. Zero write-port overhead,
+          optimized for pure lookup-table access pattern.
+
+#pragma HLS PIPELINE II=1
+  Used on: LOAD_HDR, LOAD_NIB, LOAD_MG_HDR, LOAD_MG_NIB, ZERO_DSP, MAC_ALL,
+           REDUCE_GRP, REDUCE_MG, MAC_MG, ZERO_ODSP, GATE_PASS1, GATE_PASS2,
+           LOAD_X_VEC, PACK_D, QUANTIZE_LOOP, PUSH, POP (when present)
+  Effect: Tells HLS to initiate a new loop iteration every clock cycle.
+          II=1 means one new iteration starts per cycle — the tightest possible
+          pipeline. This is what enables the design to process 16 MAC operations
+          per cycle in MAC_ALL.
+
+  Why not everywhere: Only applied to innermost loops whose bodies can complete
+          within one cycle at 250 MHz. Outer loops (COMPUTE_X1, MAC_GROUPS,
+          META_GROUPS, DOWN_Q40, MG_GROUPS) are NOT pipelined because they
+          contain blocking function calls — HLS cannot pipeline across call
+          boundaries.
+
+#pragma HLS UNROLL
+  Used on: Inner loops within MAC_MG (block loop, factor=8), pmax reduction,
+           output write loop
+  Effect: Creates N parallel copies of the loop body instead of one sequential
+          instance. Unlike PIPELINE (which overlaps iterations in time), UNROLL
+          creates spatial parallelism — 8 parallel nibble extracts + DSP MACs.
+  Why not everywhere: UNROLL duplicates hardware — each unrolled iteration
+          becomes its own circuit. Used sparingly where spatial parallelism
+          is the only way to achieve throughput (MAC_MG's 8 blocks must all
+          compute simultaneously per cycle).
+
+#pragma HLS DATAFLOW
+  Used at: top-level swiglu() (line 896), load_and_mac_overlap() in some versions
+  Effect: Transforms sequential function calls into concurrent processes.
+          At the top level: load_x_local, compute_X1, compute_X2, compute_gate,
+          compute_output all run as independent hardware processes with dataflow
+          synchronization. X1 and X2 run in parallel (different AXI ports, different
+          output caches). Gate waits for both X1 and X2. Output waits for gate.
+
+  Why the top level is pipelined this way: The stages have sequential data
+          dependencies (x→X1/X2→gate→output) but X1 and X2 have no dependency
+          on each other — they share only read-only weight pointers and have
+          separate input/output buffers. DATAFLOW lets them run concurrently
+          while enforcing the sequential chain for dependent stages.
+
+  Why not used deeper: Internal DATAFLOW (nested inside a top-level DATAFLOW
+          process) causes hardware duplication in Vitis HLS 2025.1. Each DATAFLOW
+          region gets its own copy of called functions. This was the root cause
+          of the 163K LUT output double-buffering failure and the 149K LUT
+          load/MAC overlap failure.
+
+#pragma HLS INTERFACE mode=m_axi
+  Used on: W, V, W_down (read-only), x_batch (read-only), out_batch (write-only)
+  Effect: Maps function parameters to AXI4 memory-master interfaces. Key sub-options:
+
+    offset=slave — AXI address is programmed via AXI-Lite control registers
+    depth=N — hints the AXI controller the max transaction size, optimizing
+              internal FIFO sizing
+    max_read_burst_length=N — max AXI burst length in beats. 128 for weights
+              (matches 128-bit × 128 = 2KB burst). 256 for W_down (larger rows)
+    latency=64 — pipeline depth of the AXI controller. Higher latency = deeper
+              FIFO = more bandwidth at the cost of FF usage
+    num_read_outstanding=1 — only 1 outstanding AXI transaction. Keeps AXI
+              interconnect simple and avoids FIFO bloat
+    max_widen_bitwidth=128 — widens the 8-bit uint8_t* pointer to 128-bit AXI
+              data width. Critical: without this, the AXI bus would be 8 bits wide
+              (1 byte/cycle = 100 MB/s). 128 bits = 16 bytes/cycle = 1.6 GB/s at
+              100 MHz, or 4.0 GB/s at 250 MHz.
+
+#pragma HLS INTERFACE mode=s_axilite
+  Used on: W, V, W_down, x_batch, out_batch (base addresses), down_quant_mode,
+           x_scale, actual_tokens, return (ap_ctrl)
+  Effect: Exposes parameters as memory-mapped registers accessible from the
+          ARM Cortex-A53 via /dev/mem or UIO. The CPU writes addresses, mode,
+          scale, and token count, then asserts ap_start. The IP signals
+          completion via interrupt or ap_done status bit.
+
+#pragma HLS STREAM (historical — not in current design)
+  Used in earlier stream-based time-mux attempts.
+  Effect: Creates a FIFO channel between DATAFLOW producer and consumer.
+          depth=N sets the FIFO size. Removed from current design — stream
+          FIFOs inflated FF usage (250K) and added PUSH/POP overhead.
+
+#pragma HLS DEPENDENCE (historical — not in current design)
+  Used in earlier URAM double-buffer attempts.
+  Effect: Tells HLS to ignore assumed memory dependencies. type=inter false
+          means "these arrays don't alias." Used when HLS incorrectly assumes
+          two differently-named arrays might point to the same memory.
+
+
+Summary — Per-Function Pragma Map
+-----------------------------------
+
+load_16_rows_wv_q40:
+  INLINE off, PIPELINE II=1 (LOAD_HDR), PIPELINE II=1 (LOAD_NIB)
+
+mac_blocks_wv_k16_q40:
+  INLINE off, BIND_OP mul=dsp, ARRAY_PARTITION (dsp0..dsp15 complete),
+  ARRAY_PARTITION (totals complete), PIPELINE II=1 (ZERO_DSP),
+  PIPELINE II=1 (MAC_ALL), PIPELINE II=1 (REDUCE_GRP),
+  PIPELINE II=1 (QUANTIZE_LOOP)
+
+compute_X1 / compute_X2:
+  INLINE off, ARRAY_PARTITION (x_local dim=2 complete),
+  BIND_STORAGE (nib_r0..nib_r15 BRAM ram_1p),
+  ARRAY_PARTITION (d dim=0 complete)
+
+load_mg_down_q40:
+  INLINE off, PIPELINE II=1 (LOAD_MG_HDR), PIPELINE II=1 (LOAD_MG_NIB)
+
+mac_mg_down_q40:
+  INLINE off, BIND_OP mul=dsp, ARRAY_PARTITION (odsp0..odsp7 complete),
+  PIPELINE II=1 (ZERO_ODSP), UNROLL (inner block loop),
+  PIPELINE II=1 (MAC_MG), PIPELINE II=1 (REDUCE_MG)
+
+compute_gate:
+  INLINE off, BIND_OP mul=dsp, UNROLL (pmax loop),
+  PIPELINE II=1 (GATE_PASS1), PIPELINE II=1 (GATE_PASS2)
+  Storage (sigmoid_lut, gate_cache, X1/X2_cache): bound in swiglu() at declaration site
+
+compute_output:
+  INLINE off, ARRAY_PARTITION (gate_cache cyclic 8),
+  BIND_STORAGE (g0_r0..g3_r7 BRAM ram_1p),
+  ARRAY_PARTITION (d_r0..d_r7 complete), ARRAY_PARTITION (totals dim=0 complete),
+  BIND_STORAGE (out_local BRAM ram_1p)
+
+load_x_local:
+  INLINE off, PIPELINE II=1 (LOAD_X_VEC)
+  Storage (x_local_1/2): bound in swiglu() at declaration site
+
+swiglu (top-level):
+  INTERFACE m_axi (W, V, W_down, x_batch, out_batch),
+  INTERFACE s_axilite (all scalar params + return),
+  BIND_STORAGE (x_local_1/2 lutram, X1/X2_cache BRAM ram_2p, gate_cache URAM,
+                sigmoid_lut ROM),
+  ARRAY_PARTITION (x_local_1/2 dim=2 complete),
+  ARRAY_PARTITION (gate_cache dim=2 cyclic factor=8),
+  DATAFLOW

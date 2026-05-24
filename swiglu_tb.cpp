@@ -269,19 +269,22 @@ static int run_test(const char *name, int n_tokens,
     transpose_q40_to_urm_csim(Wd_raw, Wd_urm, VECTOR_DIM,  Q40_DOWN_BLOCKS);
 
     // Call HLS IP
-    swiglu(W_urm, V_urm, Wd_urm, x_batch_buf, out_batch_buf, 0, x_scale);
+    swiglu(W_urm, V_urm, Wd_urm, x_batch_buf, out_batch_buf, 0, x_scale, n_tokens);
 
-    // Compare
-    float max_err = 0.f;
+    // Compare — absolute and relative error
+    float max_abs = 0.f, max_rel = 0.f;
     for (int tok = 0; tok < n_tokens; tok++) {
         for (int j = 0; j < VECTOR_DIM; j++) {
+            float ref = fabsf(expected[tok][j]);
             float err = fabsf(out_batch_buf[tok * VECTOR_DIM + j] - expected[tok][j]);
-            if (err > max_err) max_err = err;
+            if (err > max_abs) max_abs = err;
+            float rel = (ref > 1e-6f) ? err / ref : err;
+            if (rel > max_rel) max_rel = rel;
         }
     }
 
-    cout << "max_err=" << max_err;
-    if (max_err < tol_abs || max_err < tol_rel) {
+    cout << "max_abs=" << max_abs << " max_rel=" << max_rel;
+    if (max_abs < tol_abs && max_rel < tol_rel) {
         cout << "  PASS" << endl;
         return 0;
     } else {
