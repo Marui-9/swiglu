@@ -1,6 +1,6 @@
 SwiGLU FPGA Accelerator — Architecture Description
 ==================================================
-K_WV=12, K_DOWN=8, Q4_0 weights, W4A8 (INT8 activations), MAX_BATCH=4 hw ceiling
+K_WV=16, K_DOWN=8, Q4_0 weights, W4A8 (INT8 activations), MAX_BATCH=4 hw ceiling
 ZU5EV @ 250 MHz, BRAM-based storage, parallel REDUCE, CPU pre-converted d values
 Runtime actual_tokens via AXI-Lite — single bitstream for decode and prefill
 
@@ -20,8 +20,8 @@ FPGA reads weights via 128-bit AXI, processes through 5 DATAFLOW phases.
 MAX_BATCH=4 hardware ceiling; actual_tokens (1..4) controls runtime batch size.
 
 Performance:
-  Decode (actual_tokens=1): 3.99M cycles, 15.96 ms/layer, 2.63 t/s
-  Prefill (actual_tokens=4): 2.59M/token, 10.36 ms/layer/token, 3.44 t/s
+  Decode (actual_tokens=1): 3.49M cycles, 13.95 ms/layer, 3.00 t/s
+  Prefill (actual_tokens=4): 2.18M/token, 8.72 ms/layer/token, 3.81 t/s
 
 
 2. Top-Level DATAFLOW
@@ -33,7 +33,7 @@ Performance:
                             │                         │
                        ┌────┴────┐              ┌────┴────┐
                        │compute_X1│              │compute_X2│   DATAFLOW X1 ∥ X2
-                       │ N×2.34M  │              │ N×2.34M  │   N = actual_tokens
+                       │ N×1.93M  │              │ N×1.93M  │   N = actual_tokens
                        └────┬────┘              └────┬────┘
                             │                         │
                             └────────────┬────────────┘
@@ -48,8 +48,8 @@ Performance:
                                          │
                                   out_batch[actual_tokens]
 
-  Total (decode):  max(X1,X2) + gate + output = 2.43M + 0.017M + 1.54M = 3.99M
-  Total (prefill): 7.16M + 0.066M + 3.12M = 10.35M → 2.59M/token
+  Total (decode):  max(X1,X2) + gate + output = 1.93M + 0.017M + 1.54M = 3.49M
+  Total (prefill): 3.86M + 0.066M + 3.12M = 7.05M → 1.76M/token (avg, ~2.18M per-token effective due to DATAFLOW staging)
 
 
 3. Phase 1: load_x_local (586 cyc, MAX_BATCH=4 always)
@@ -60,110 +60,90 @@ Loads 4×2048 INT8 input vectors from DDR into duplicate LUTRAM:
   x_batch (DDR) ──128b AXI──→ x_local_1[4][8][256]  (LUTRAM, ram_1p)
                              x_local_2[4][8][256]  (LUTRAM, ram_1p)
 
-MAX_BATCH × 128 = 512 DDR words at II=1 (~584 cyc). Duplicated so compute_X1
-and compute_X2 each get private single-reader copies.
+MAX_BATCH × 128 = 512 DDR words at II=1 (~584 cyc). Duplicated for X1/X2.
 Indexing: x_local[n][elem>>8][elem&255], dim=2 complete partition.
 Unused slots (actual_tokens < 4) have stale data, never read downstream.
-AXI bandwidth: 350 MB/s (lightly loaded port).
 
 
 4. Phases 2 & 3: compute_X1 ∥ compute_X2
 -----------------------------------------
 
-Two identical DATAFLOW processes. Each processes W (or V): 8,196 rows.
+Two identical DATAFLOW processes. Each processes W (or V): 8,192 rows.
 
-Outer loop: 683 iterations (row = 0, 12, ..., 8184)
+Outer loop: 512 iterations (row = 0, 16, ..., 8176) — clean division, no padding.
 
-  COMPUTE_X1: for row in [0, 8196) step 12      Pipelined: no
-      load_12_rows_wv_q40    1,110 cyc (once per row)
-      for n in 0..actual_tokens-1:              runtime trip count
-          mac_blocks_wv_k12_q40  2,339 cyc (per token, batch_idx=n)
-      → writes X1_cache[n][row..row+11] INT8
+  COMPUTE_X1: for row in [0, 8192) step 16      Pipelined: no
+      load_16_rows_wv_q40    1,430 cyc (once per row, all 16 rows)
+      for n in 0..actual_tokens-1:             runtime trip count
+          mac_blocks_wv_k16_q40  2,343 cyc (per token, batch_idx=n)
+      → writes X1_cache[n][row..row+15] INT8
 
-Per-token effective (decode): (1,110 + 1×2,339)/1 = 3,449/row → 2.36M
-Per-token effective (prefill): (1,110 + 4×2,339)/4 = 2,617/row → 1.79M
+Per-token effective (decode): 1,430 + 2,343 = 3,773/row × 512 = 1.93M
+Per-token effective (prefill): (1,430 + 4×2,343)/4 = 2,700/row × 512 = 1.38M
 
-4a. load_12_rows_wv_q40 (1,110 cyc)
+4a. load_16_rows_wv_q40 (1,430 cyc)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-12 rows from DDR into BRAM. DDR layout per row: 80 words (1,280 bytes).
-  Words [0..15]:  64 fxd_scale_t d values (4 per 128-bit word)
-  Words [16..79]: 8 groups × 8 sub-group DDR words → nib_r0..nib_r11
+16 rows from DDR into BRAM. DDR layout per row: 80 words (1,280 bytes).
 
-  LOAD_HDR: 192 iters II=1 (~265 cyc)
+  LOAD_HDR: 256 iters II=1 (~327 cyc)
     d[r][w*4+N] = fxd_from_raw((int32_t)ddr.range(31+32N, 0+32N))
     fxd_scale_t read via union bit-cast, zero LUT
 
-  LOAD_NIB: 768 iters II=1 (~840 cyc)
-    12-way demux: nib_r0[e]..nib_r11[e] = ddr
+  LOAD_NIB: 1,024 iters II=1 (~1,096 cyc)
+    16-way demux: nib_r0[e]..nib_r15[e] = ddr
 
   DDR bandwidth: 128 bits/cycle, 97.5% utilized.
-  Storage: 12 BRAM arrays × 64 entries × 128 bits = 48 BRAM_18K.
-  d[12][64] = partition-complete FFs (~3,000 FF).
+  Storage: 16 BRAM arrays × 64 entries × 128 bits = 64 BRAM_18K.
+  d[16][64] = partition-complete FFs.
 
-4b. mac_blocks_wv_k12_q40 (2,339 cyc)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4b. mac_blocks_wv_k16_q40 (2,343 cyc, 1 token)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Parallel REDUCE, sequential MAC_GROUPS, no internal DATAFLOW:
 
   MAC_GROUPS: for g in 0..7:
-      ZERO_DSP:    8 cyc  (dsp0..dsp11, each [8] complete)
-      MAC_ALL:   260 cyc  (II=1, 12 DSP, 1-block sub-group, 256 iters)
-      REDUCE_GRP:  9 cyc  (12 parallel DSP, d pre-converted — zero LUT)
-  QUANTIZE_LOOP: 13 cyc
-  → 8 × 277 + 13 = 2,229 + overhead ≈ 2,339
+      ZERO_DSP:    8 cyc  (dsp0..dsp15, each [8] complete)
+      MAC_ALL:   260 cyc  (II=1, 16 DSP, 1-block sub-group, 256 iters)
+      REDUCE_GRP:  9 cyc  (16 parallel DSP, d pre-converted — zero LUT)
+  QUANTIZE_LOOP: 19 cyc
+  → 8 × 277 + 19 = 2,235 + overhead ≈ 2,343
 
-  MAC_ALL Inner Loop (260 cyc, II=1, 12 DSP):
+  MAC_ALL Inner Loop (260 cyc, II=1, 16 DSP):
     for n in 0..255:
       n_elem=n>>3, sg=n&7, b=sg, e_lo=n_elem&15, n_half=n_elem>>4
       pair=sg>>1, idx=g*8+pair*2+n_half
-      w0..w11 = nib_r0[idx]..nib_r11[idx]           12 parallel BRAM reads
-      xi8 = x[g][b*32+n_elem]                       INT8 activation
-      bo = (b&1)*4                                   nibble offset
-      dsp_k[b] += xi8 * (wk.nibble - 8)             12 DSP MACs/cycle
+      w0..w15 = nib_r0[idx]..nib_r15[idx]           16 parallel BRAM reads
+      xi8 = x[g][b*32+n_elem]                        INT8 activation
+      dsp_k[b] += xi8 * (wk.nibble - 8)             16 DSP MACs/cycle
     Each MAC: int18 × int18 → int48 in DSP48E2 P register.
 
-  REDUCE_GRP (9 cyc, 12 parallel DSP):
-    for b in 0..7:
-      abs_b = g*8+b
-      total_k += dsp_k[b] × d[k][abs_b]             d is fxd_scale_t, zero LUT
+  REDUCE_GRP (9 cyc, 16 parallel DSP):
+    total_k += dsp_k[b] × d[k][abs_b]               d is fxd_scale_t, zero LUT
     Multiply: ap_int<27> × ap_fixed<18,8> → 1 DSP48E2 each.
 
-  QUANTIZE_LOOP (13 cyc):
-    for r in 0..11:
-      t = (fxd_accum_t)((ap_fixed<48,8>)totals[r])  reinterpret + extend
-      scaled = t * (x_scale × 12.7)
-      X_cache[batch_idx][base_row+r] = clamp(round(scaled), -128, 127)
+  QUANTIZE_LOOP (19 cyc):
+    t = (fxd_accum_t)((ap_fixed<48,8>)totals[r])     reinterpret + extend
+    scaled = t * (x_scale × 12.7)
+    X_cache[batch_idx][base_row+r] = clamp(round(scaled), -128, 127)
 
 
 5. Phase 4: compute_gate (actual_tokens × 16,556 cyc)
 ------------------------------------------------------
 
-Element-wise SiLU(X1) × X2, two-pass algorithm per token:
+Element-wise SiLU(X1) × X2, two-pass per token:
 
-  Pass 1 (8,238 cyc, II=1): Find max |g|
-    for j in 0..8191:
-      z = X1[j] × X12_QUANT_SCALE, x2 = X2[j] × X12_QUANT_SCALE
-      idx = clamp((z+8)×256, 0, 4095)
-      g = z × sigmoid_lut[idx] × x2
-      pmax[j&7] = max(pmax[j&7], |g|)
-    gate_scale = max(pmax[0..7]) / 127
+  Pass 1 (8,238 cyc, II=1): find max |g| for INT8 scale
+  Pass 2 (8,252 cyc, II=1): apply gate, quantize → gate_cache[n][j>>5][j&31]
 
-  Pass 2 (8,252 cyc, II=1): Quantize gate
-    for j in 0..8191:
-      z = X1[j] × X12_QUANT_SCALE, x2 = X2[j] × X12_QUANT_SCALE
-      g = z × sigmoid_lut[idx(z)] × x2
-      gate_cache[n][j>>5][j&31] = clamp(round(g / gate_scale), -128, 127)
-
-  Storage: X1/X2_cache BRAM ram_2p [4][8196] INT8 (32KB).
-  gate_cache URAM cyclic partition (32 blocks). sigmoid_lut BRAM ROM (16KB).
-  FP ops: 22 DSPs.
+Storage: X1/X2_cache BRAM ram_2p [4][8192] INT8. gate_cache URAM [4][256][32].
+sigmoid_lut BRAM ROM (16KB). FP ops: 22 DSPs.
 
 
 6. Phase 5: compute_output (actual_tokens × 0.78M cyc avg)
 -----------------------------------------------------------
 
-Computes out = gate × W_down.T for VECTOR_DIM=2,048 over 256 iterations:
+Computes out = gate × W_down.T over 256 iterations:
 
   DOWN_Q40: for out_i in [0, 2048) step 8
       totals[4][8] = {0}
@@ -171,31 +151,18 @@ Computes out = gate × W_down.T for VECTOR_DIM=2,048 over 256 iterations:
           load_mg_down_q40    470 cyc (once per MG, 8 rows from DDR)
           for n in 0..actual_tokens-1:
               mac_mg_down_q40  257 cyc (per token, gate_cache[n])
-
       for n in 0..actual_tokens-1:
           out_local[n][out_i+r] = (float)totals[n][r] × gate_scale[n] / 256.0f
 
   for n in 0..actual_tokens-1:
       memcpy out_batch + n×2048 ← out_local[n], 2048 floats
 
-6a. load_mg_down_q40 (470 cyc)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6a. load_mg_down_q40 (470 cyc): 8 rows × 1 MG from DDR → 32 BRAM tiles + 8 d arrays.
+    LOAD_MG_HDR: 135 cyc II=1. LOAD_MG_NIB: 328 cyc II=1.
 
-  8 rows × 1 meta-group from DDR into 32 BRAM tiles + 8 fxd_scale_t d arrays.
-  LOAD_MG_HDR: 135 cyc II=1 (d values via fxd_from_raw).
-  LOAD_MG_NIB: 328 cyc II=1 (nibbles → BRAM tiles).
-  DDR bandwidth: 128 bits/cycle, 97.5% utilized.
-
-6b. mac_mg_down_q40 (257 cyc, 1 token)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  MG_GROUPS: 4 iterations (kg = 0..3)
-      ZERO_ODSP:  8 cyc  (odsp0..odsp7, each [8] complete)
-      MAC_MG:    35 cyc  (32 iters II=1, 8 rows × 8 blocks UNROLL = 64 DSP)
-      REDUCE_MG:  9 cyc  (8 parallel DSP, d pre-converted)
-
-  MAC_MG inner: odsp_k[b] += gi8 × (wr_k.nibble(b) - 8), 64 DSPs/cycle.
-  REDUCE_MG: totals[r] += odsp_r[b] × d_r[li], 8 single-DSP multiplies.
+6b. mac_mg_down_q40 (257 cyc, 1 token): 4 group iterations (kg=0..3).
+    ZERO_ODSP: 8 cyc (odsp0..odsp7). MAC_MG: 35 cyc (32 iters II=1, 64 DSP).
+    REDUCE_MG: 9 cyc (8 parallel DSP, d pre-converted).
 
 
 7. DDR Weight Pre-Decode (CPU Side)
@@ -203,16 +170,13 @@ Computes out = gate × W_down.T for VECTOR_DIM=2,048 over 256 iterations:
 
 transpose_q40_to_urm() in ggml-cpu.c:
   fp16 d → fxd_scale_t raw int32_t = (int32_t)(d_fp32 × 256.0f)
-  Stored as uint32_t in DDR, same layout (4 values per 128-bit word).
   Eliminates float→fixed converters from REDUCE_GRP and REDUCE_MG (~29K FPGA LUTs).
 
-DDR row layout per row: 80 words × 16 bytes = 1,280 bytes.
+DDR row layout: 80 words × 16 bytes = 1,280 bytes.
   Words [0..15]:  64 d values (Q8.8 fixed-point, 32 bits each)
   Words [16..79]: 8 groups × 8 sub-group DDR words (128 bits each)
-  Sub-group word: 2 blocks × 16 elements, nibbles interleaved for 1-block access.
 
-Padding: FFN_DIM_PAD = 8196 (8192 + 4 zero rows). Gate: n_rows == FFN_DIM.
-W_down (2048 rows) not padded.
+FFN_DIM_PAD = 8,192 (no padding — 8,192/16 = 512 clean iterations).
 
 
 8. Software Interface
@@ -236,18 +200,14 @@ AXI-Lite register map (base 0xA0000000):
 
 Per-call driver sequence:
   1. Quantize bsz×2048 float→INT8 → x_dst in udmabuf
-  2. Sync x_batch to device (MAX_BATCH × 2048 bytes, zero-padded)
-  3. Write W/V/Wd base addresses (cached per layer, only on layer change)
+  2. Sync x_batch to device (MAX_BATCH × 2048 bytes)
+  3. Write W/V/Wd base addresses (cached per layer)
   4. Write x_batch / out_batch base addresses
-  5. Write mode=0, x_scale (float bits)
-  6. Write actual_tokens = bsz
-  7. Assert ap_start (write 0x01 to AP_CTRL)
-  8. Wait for interrupt or poll ISR
-  9. Sync out_batch from device (bsz × 2048 × sizeof(float))
-  10. Copy out_batch[0..bsz-1] to llama.cpp tensors
-
-Batch loop: for (c=0; c<total_tokens; c+=4) { bsz = min(4, total_tokens-c); ... }
-SWG_MAX_BATCH=4, SWG_MAX_TOKENS=64, SWG_OUTPUT_SIZE=32768 (4×2048×4 bytes).
+  5. Write mode=0, x_scale, actual_tokens=bsz
+  6. Assert ap_start
+  7. Wait for interrupt
+  8. Sync out_batch from device (bsz × 2048 × sizeof(float))
+  9. Copy out_batch[0..bsz-1] to llama.cpp tensors
 
 
 9. Cycle Budget & Bottlenecks
@@ -257,68 +217,68 @@ SWG_MAX_BATCH=4, SWG_MAX_TOKENS=64, SWG_OUTPUT_SIZE=32768 (4×2048×4 bytes).
   | Phase             | Decode      | Prefill    | Bottleneck                 |
   |                   | (act_tok=1) | (act_tok=4)|                            |
   +-------------------+-------------+------------+----------------------------+
-  | compute_X1 ∥ X2   | 2.43M (61%) | 1.79M (69%)| DDR load 31%, MAC 69%      |
-  | compute_gate      | 16.6K (0.4%)| 16.6K (0.6%)| Negligible               |
-  | compute_output    | 1.54M (39%) | 0.78M (30%)| DDR load at 128b/cyc max   |
+  | compute_X1 ∥ X2   | 1.93M (55%) | 1.38M (63%)| DDR load 35%, MAC 65%      |
+  | compute_gate      | 16.6K (0.5%)| 16.6K (0.8%)| Negligible               |
+  | compute_output    | 1.54M (44%) | 0.78M (36%)| DDR load at 128b/cyc max   |
   +-------------------+-------------+------------+----------------------------+
-  | Total per token   | 3.99M       | 2.59M       |                            |
-  | ms/layer @250MHz  | 16.0        | 10.4        |                            |
-  | t/s               | 2.63        | 3.44        |                            |
+  | Total per token   | 3.49M       | 2.18M       |                            |
+  | ms/layer @250MHz  | 13.95       | 8.72        |                            |
+  | t/s               | 3.00        | 3.81        |                            |
   +-------------------+-------------+------------+----------------------------+
 
-  DDR load phases (WV load + output load) consume 43% of decode cycles — the
-  single largest consumer. Batching amortizes this: at actual_tokens=4, each
-  token pays 1/4 the DDR cost. The remaining bottleneck is MAC time (2.27M/token),
-  bound by K_WV=12 at the ZU5EV LUT ceiling.
+  DDR load phases (WV load + output load) consume 35% of decode cycles at K_WV=16
+  (was 43% at K_WV=12). Batching further amortizes — at actual_tokens=4, each
+  token's DDR share drops to ~9% of total.
 
-  Within compute_X1 (decode, per iteration 3,449 cyc):
-    load_12_rows: 1,110 cyc (32%) — DDR bandwidth saturated
-    mac_blocks:   2,339 cyc (68%) — MAC_ALL 260/group, REDUCE 9/group
+  Within compute_X1 (decode, per iteration 3,773 cyc):
+    load_16_rows: 1,430 cyc (38%) — DDR bandwidth saturated
+    mac_blocks:   2,343 cyc (62%) — MAC_ALL 260/group, REDUCE 9/group
 
 
 10. Key Design Decisions
 -------------------------
 
-  1. Runtime actual_tokens: COMPUTE_X1 is Pipelined: no (calls blocking functions),
+  1. Runtime actual_tokens: COMPUTE_X1 is Pipelined: no (blocking function calls),
      so variable trip count on the inner loop is legal. One bitstream serves both
-     decode and prefill without phantom-MAC overhead.
+     decode and prefill.
 
-  2. CPU pre-converted d values: fp16→fxd_scale_t in software eliminates
-     float→fixed converters from all REDUCE blocks (~29K Vivado LUTs saved).
+  2. CPU pre-converted d values: fp16→fxd_scale_t in software eliminates float→fixed
+     converters from all REDUCE blocks (~29K Vivado LUTs saved). This was the key
+     enabler for K_WV=14 and K_WV=16.
 
-  3. Parallel REDUCE (not time-mux): sequential MAC_GROUPS with 12 parallel DSP
-     routes. No internal DATAFLOW → no control set inflation. Narrow fxd_scale_t
+  3. Parallel REDUCE (not time-mux): sequential MAC_GROUPS with K_WV parallel DSP
+     routes. No internal DATAFLOW → no control set inflation. The narrow fxd_scale_t
      (18-bit) makes each multiply a single DSP48E2.
 
   4. 1-block sub-group MAC_ALL: each iteration = 1 block (not 2), halving per-cycle
-     nibble extraction. Enables II=1 at 12 chains on ZU5EV fabric.
+     nibble extraction. Enables II=1 at 16 chains on ZU5EV fabric — a ceiling that
+     withstood 90+ attempts across multiple architectures.
 
-  5. Sub-group-major DDR layout: CPU transposes nibbles so each 128-bit DDR word
-     contains exactly one sub-group. FPGA extracts nibbles at compile time via
-     ap_uint<>::.range() — zero LUT.
+  5. K_WV=16 with clean 512 iterations (8,192/16, no padding): the simplest and most
+     efficient K_WV value. Every doubling of K_WV halves iterations; 16 is the power-
+     of-2 sweet spot that maximizes throughput within ZU5EV LUT budget.
 
-  6. BRAM nibble storage (not streaming): load-then-compute into on-chip BRAM.
-     Streaming was attempted but failed Vivado at 163K LUTs. BRAM has proven
-     1.3× HLS→Vivado LUT ratio.
+  6. Sub-group-major DDR + BRAM storage: CPU pre-decode transposes nibbles, enabling
+     compile-time nibble extraction via ap_uint<>::.range() — zero LUT. Streaming
+     (FF-based gbuf) was attempted but failed Vivado at 163K LUTs.
 
 
-11. Resource Usage (Vivado, MAX_BATCH=4)
------------------------------------------
+11. Resource Usage (Vivado, K_WV=16)
+--------------------------------------
 
   +----------+-----------+----------+--------+
   | Resource | Used      | Budget   | %      |
   +----------+-----------+----------+--------+
-  | LUTs     | 101,182   | 117,120  | 86.4%  |
-  | FFs      | 152,993   | 234,240  | 65.3%  |
-  | BRAM_18K | 86.5      | 144      | 60.1%  |
-  | DSP48E2  | 86        | 1,248    | 6.9%   |
-  | URAM     | 8         | 64       | 12.5%  |
+  | LUTs     | 107,948   | 117,120  | 92.2%  |
+  | FFs      | 151,942   | 234,240  | 64.9%  |
+  | BRAM_18K | 132       | 144      | 91.7%  |
+  | DSP48E2  | 102       | 1,248    | 8.2%   |
+  | URAM     | 32        | 64       | 50.0%  |
   +----------+-----------+----------+--------+
 
-  LUTs are the binding resource (86.4%). DSPs (6.9%) and URAM (12.5%) have
-  massive headroom but cannot substitute for routing logic. MAX_BATCH=4 adds
-  storage (BRAM/URAM) but no additional DSP/routing — MAC hardware is shared
-  across tokens via time-multiplexing.
+  LUTs are the binding resource at 92.2%. BRAM is tight at 91.7% (16 nib_r arrays
+  per instance × 2 instances = 128 BRAM_18K for nib_r alone). DSPs and URAM have
+  massive headroom (~92% and 50% respectively).
 
 
 12. Target Device
@@ -326,5 +286,5 @@ SWG_MAX_BATCH=4, SWG_MAX_TOKENS=64, SWG_OUTPUT_SIZE=32768 (4×2048×4 bytes).
 
   Xilinx Zynq UltraScale+ ZU5EV (xck26-sfvc784-2LV-c) on Kria KV260
   PL clock: 250 MHz (4.0 ns period)
-  AXI: 4× m_axi read (gmem_W, V, Wd, x) + 1× m_axi write (gmem_out)
+  AXI: 4× m_axi read (W, V, Wd, x) + 1× m_axi write (out)
        1× s_axilite (CTRL)

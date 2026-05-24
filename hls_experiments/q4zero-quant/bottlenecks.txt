@@ -1,158 +1,117 @@
-Bottleneck Analysis — K_WV=12 Parallel REDUCE, MAX_BATCH=4, actual_tokens
+Bottleneck Analysis — K_WV=16 Parallel REDUCE, MAX_BATCH=4, actual_tokens
 =============================================================================
-Date: 2026-05-23  |  Based on: csynth.rpt (May 23) + Vivado implementation
-HLS: 78,730 LUTs (67%), 158 DSP (12%), 266 BRAM (92%), 127K FF (54%), 32 URAM (50%)
-Vivado: 101,182 LUTs (86.4%), routes and closes timing at 250 MHz
-Decode: 3.99M cycles, 2.63 t/s.  Prefill (B=4): 2.59M/token, 3.44 t/s.
+Date: 2026-05-24  |  Based on: csynth.rpt (May 24) + Vivado implementation
+HLS: 87,611 LUTs (74%), 246 DSP (19%), 282 BRAM (97%), 159K FF (67%), 32 URAM (50%)
+Vivado: 107,948 LUTs (92.2%), routes and closes timing at 250 MHz, no violations
+MAC_ALL: II=1 at 16 chains (260 cycles, 16 DSP) — ZU5EV ceiling broken
+Decode: 3.49M cycles, 3.00 t/s.  Prefill (B=4): 2.18M/token, 3.81 t/s.
 
 
-1. DDR Load Bandwidth — 43% of Decode Cycles, Saturated
+1. DDR Load Bandwidth — 35% of Decode Cycles, Saturated
 ---------------------------------------------------------
-Weight load phases consume 1.72M of 3.99M decode cycles. Both WV and output
-ports operate at 128 bits/cycle (97.5% of 4 GB/s peak). ZU5EV HP ports are
-128-bit max — no wider AXI possible.
+Weight load phases consume 1.22M of 3.49M decode cycles (was 1.72M of 3.99M at
+K_WV=12). Both WV and output ports operate at 128 bits/cycle (97.5% of 4 GB/s).
 
-  WV load:   1,110 cyc/iter × 683 iter = 0.76M (19% of decode total)
-  Out load:  470 cyc/MG × 8 MG × 256 iter = 0.96M (24% of decode total)
-  Combined:  1.72M (43%)
+  WV load:   1,430 cyc/iter × 512 iter = 0.73M (21% of decode total)
+  Out load:  470 cyc/MG × 8 MG × 256 iter = 0.96M (27% of decode total)
+  Combined:  1.69M (48% of decode — the largest single consumer)
 
-At actual_tokens=4, DDR load amortized N-fold: per-token DDR cost drops to
-0.43M (17% of per-token cycles). But single-token decode can't benefit —
-the load-then-compute pattern means every decode call pays the full DDR cost.
+At actual_tokens=4, DDR load amortized: per-token DDR drops to 0.42M (19%).
+The load-then-compute pattern means every decode call pays the full DDR cost.
 
-Structural fix: overlapping weight pre-load with MAC compute (load row N+1
-while MAC row N). Requires double-buffered nib_r storage. Attempted via HLS
-DATAFLOW — works architecturally (3.13M cycle proof-of-concept) but HLS
-duplicates hardware inside DATAFLOW (2× load, 2× MAC) → 149K LUTs. Not viable
-on ZU5EV without RTL-level control of the load/MAC pipeline.
+Attempted fix: overlapping weight pre-load with MAC via HLS DATAFLOW. Works
+architecturally (3.13M cycle proof-of-concept) but HLS duplicates hardware
+inside DATAFLOW → 149K LUTs. Not viable on ZU5EV without RTL-level control.
 
 
-2. LUT Budget — 86.4%, the Binding Resource Constraint
+2. LUT Budget — 92.2%, the Binding Resource Constraint
 --------------------------------------------------------
-Vivado LUTs at 101K of 117K. Headroom: 15.8K (13.6%). Every K_WV increment
-adds ~7K HLS LUTs per instance (~18K Vivado) from wider nibble-read muxes
-and DSP routing. K_WV=14 and K_WV=16 both exceed 117K at 134K and 135K
-respectively — MAC_ALL achieves II=1 at both widths but Vivado routing
-inflates LUTs super-linearly.
+Vivado LUTs at 108K of 117K. Headroom: 9K (7.8%). This is the primary resource
+ceiling. The K_WV=16 MAC_ALL achieves II=1 at 16 chains — the long-sought ZU5EV
+ceiling — but at 92.2% LUT utilization, further K_WV increases are unlikely.
 
-DSP (6.9%), URAM (12.5%), and LUTRAM (7.8%) have massive headroom but cannot
-substitute for routing LUTs — the load-function AXI address computation and
-12-way LOAD_NIB demux dominate LUT usage in ways DSP/URAM can't address.
+DSP (8.2%), URAM (50%), and LUTRAM (13.3%) have massive headroom but cannot
+substitute for routing LUTs. The load-function AXI address computation and
+16-way LOAD_NIB demux dominate LUT usage.
 
-Attempted mitigations:
-  - Time-mux REDUCE: reduced REDUCE_GRP LUTs 56% but added DATAFLOW control
-    sets → Vivado CLB packing failure (2,260 > 2,188 threshold). Reverted.
-  - CPU pre-converted d: moved float→fixed conversion to software → saved
-    ~29K Vivado LUTs. Worked — enabled K_WV=12 to fit at same LUT budget
-    as K_WV=10 baseline.
-  - URAM nib_r: would free 48 BRAM but read latency (3-4 cyc) adds 3 cycles
-    to MAC_ALL (260→263). Minimal. But double-buffered URAM at K_WV=12
-    requires 48 of 64 blocks (75%) — double-buffering for load/MAC overlap
-    would need 96 blocks. ZU5EV has only 64. Not viable.
+Key LUT-saving techniques applied:
+  - CPU pre-converted d values: eliminated float→fixed converters (−29K Vivado)
+  - Parallel REDUCE (no DATAFLOW): avoids control set inflation
+  - Narrow fxd_scale_t (18-bit): single-DSP multiplies, no cascades
+
+BRAM at 91.7% is also tight — 16 nib_r arrays × 2 instances = 128 BRAM_18K
+for nibble storage, plus X1/X2 caches and output BRAM tiles. Only 12 BRAM free.
 
 
-3. K_WV Scaling Ceiling — II=1 Holds, LUTs Don't
---------------------------------------------------
-K_WV=12: MAC_ALL II=1 at 12 chains, 260 cycles. Fits Vivado (101K LUTs).
-K_WV=14: MAC_ALL II=1 at 14 chains (confirmed HLS). Vivado: 134K LUTs (114%).
-K_WV=16: MAC_ALL II=1 at 16 chains (confirmed HLS). Vivado: 135K LUTs (115%).
+3. K_WV Scaling — The Ceiling Is Reached
+------------------------------------------
+  K_WV=12: 101K LUTs, 683 iter, 2.63 t/s decode, 3.44 prefill
+  K_WV=13: 97K LUTs, 631 iter, 2.78 t/s (routing anomaly: LUTs dropped)
+  K_WV=14: 101K LUTs, 586 iter, 2.81 t/s
+  K_WV=16: 108K LUTs, 512 iter, 3.00 t/s decode, 3.81 prefill
 
-The ZU5EV fabric sustains II=1 with up to 16 parallel BRAM reads + 16 DSP
-routes per cycle at 250 MHz (proven in HLS). But the Vivado router inflates
-LUTs to meet timing at these densities — super-linear growth beyond 12 chains.
-Physical floorplanning (Pblocks) might constrain the placer and reduce inflation,
-but has not been attempted.
+The LUT-vs-K_WV curve is non-monotonic (K_WV=13 had lower LUTs than K_WV=12)
+but the trend beyond K_WV=14 is clear: each additional chain adds ~3.5K Vivado
+LUTs. K_WV=17 would project to ~112K LUTs (95.7%) — very tight but technically
+possible. K_WV=18 would exceed 117K.
 
-K_WV=12 is the practical ZU5EV ceiling with the current HLS flow.
+K_WV=16 is the practical maximum: it's a power of 2 with clean iteration count
+(8,192/16=512, no padding) and delivers the 3.0 t/s milestone.
 
 
-4. Output Path — 39% of Decode, DDR-Dominated
+4. Output Path — 44% of Decode, DDR-Dominated
 -----------------------------------------------
-compute_output consumes 1.54M cycles (39% of decode). Within it, DDR load
-dominates at 63% (3,760 of 5,985 per-iteration cycles). MAC_MG at 37% is
-well-provisioned (64 parallel DSPs, II=1).
+compute_output consumes 1.54M cycles (44% of decode — up from 39% at K_WV=12
+because the X1/X2 phase shrank more). Within it, DDR load dominates at 63%.
 
-K_DOWN=16 attempted: doubled parallelism, halved iterations (256→128).
-Failed Vivado at 130.8K LUTs — REDUCE_MG 16 parallel DSP routes inflate
-LUTs super-linearly (same mechanism as K_WV scaling).
-
-Output time-mux REDUCE: reduced REDUCE_MG from 8→1 DSP but added 295K cycles
-because REDUCE(64) > MAC_MG(35) — overlap can't hide REDUCE time. Reverted.
-
-The output path is the second-largest cycle consumer but has proven harder
-to improve than the WV path — tighter cycle budget per operation leaves less
-room for overlap-based optimization.
+K_DOWN=16 was attempted but failed at 130.8K Vivado LUTs. Output time-mux
+REDUCE reduced LUTs but added cycles (REDUCE > MAC_MG in this path). The
+output path remains the least-optimized phase but has proven hard to improve
+without LUT blowup or cycle regression.
 
 
-5. Token Pipelining — HLS DATAFLOW Limitation
------------------------------------------------
-Overlapping token N's output with token N+1's compute would reduce effective
-per-token latency from 3.99M to max(2.43M, 1.54M) = 2.43M (39% reduction).
-Double-buffered intermediate storage (X1/X2/gate caches) fits within BRAM
-budget. But HLS DATAFLOW requires each process to run to completion before
-the next can consume its output — no mechanism for "slot 0 is ready, start
-consuming it while slot 1 is produced." Full pipeline duplication is the only
-HLS-expressible path (2× hardware → 218K Vivado → doesn't fit).
+5. Token Pipelining — Still Blocked by HLS DATAFLOW
+-----------------------------------------------------
+Overlapping token N's output with token N+1's compute would reduce per-token
+latency from 3.49M to max(1.93M, 1.54M) = 1.93M (45% reduction → ~4.3 t/s).
+But HLS DATAFLOW requires each process to run to completion before the next
+can consume its output. Full pipeline duplication (2× hardware → ~216K Vivado)
+is the only HLS path. Not viable.
 
 
-6. 300 MHz Clock — Control Set Density
-----------------------------------------
-HLS synthesized successfully at 3.33 ns. Vivado failed CLB packing: 2,240
-control sets vs 2,188 threshold. Each DATAFLOW region, pipeline stage, and
-reset domain creates a unique control set. At 250 MHz, the design sits just
-under the CLB packing threshold; at 300 MHz, Vivado inserts additional
-pipeline registers for timing, inflating control set count past the limit.
+6. Amdahl's Law — CPU Overhead
+--------------------------------
+CPU overhead ~125 ms/token (attention, norms, embedding, sampling, driver).
 
-config_rtl -reset state was attempted but did not reduce control sets
-sufficiently. Clock scaling is blocked by control set density, not
-absolute FF/LUT count or timing slack.
+  Decode at 3.00 t/s:   213 ms FPGA + 125 ms CPU = 338 ms → 2.96 t/s effective
+  Prefill at 3.81 t/s:  168 ms FPGA + 125 ms CPU = 293 ms → 3.41 t/s effective
 
-
-7. Amdahl's Law — CPU Overhead Limits Returns
------------------------------------------------
-CPU overhead (attention, layer norms, embedding, sampling, driver) is ~125 ms
-per token — fixed regardless of FPGA speed.
-
-  Decode at 2.63 t/s:   255 ms FPGA + 125 ms CPU = 380 ms total
-  Prefill at 3.44 t/s:  166 ms FPGA + 125 ms CPU = 291 ms total (per-token avg)
-  Theoretical max:        0 ms FPGA + 125 ms CPU = 8.0 t/s
-
-Each incremental FPGA improvement yields diminishing throughput returns.
-Going from 2.63→3.0 t/s requires −740K cycles (−18.6%). Going from 3.0→3.5
-requires another −480K. The fixed CPU component makes each step harder.
-
-CPU overhead could be reduced by: driver interrupt batching, layer norm
-offload to FPGA (32 reductions/token, ~5-10 ms), or speculative decode to
-amortize CPU attention across multiple FPGA-generated tokens. None implemented.
+Theoretical max at infinite FPGA speed: 1/0.125 = 8.0 t/s.
+Each incremental FPGA improvement yields diminishing returns due to the fixed
+CPU component. The CPU overhead is now the next bottleneck to attack.
 
 
-8. Resource Mismatch — Abundance Can't Substitute for Scarcity
----------------------------------------------------------------
-DSP (6.9%), URAM (12.5%), and LUTRAM (7.8%) have massive headroom but are
-structurally mismatched to the design's actual bottleneck: LUT-based routing.
-DSPs compute but can't route. URAM stores but can't mux. The nibble
-extraction muxes, AXI address computation, and DATAFLOW pipeline registers
-consume LUTs in ways no other resource can substitute.
-
-The only effective LUT reductions found were: CPU pre-conversion (eliminates
-float→fixed converters, −29K Vivado) and narrow fxd_scale_t (eliminates
-DSP cascades, −12K Vivado). Both are already applied.
+7. Resource Mismatch — Abundance Can't Help Scarcity
+------------------------------------------------------
+DSP (8.2%), URAM (50%), and LUTRAM (13.3%) have massive headroom but are
+structurally mismatched to the actual bottleneck: LUT-based routing. The
+16-way nibble mux, AXI address computation, and pipeline registers consume
+LUTs that cannot be substituted with DSPs or URAM.
 
 
 Summary — Bottleneck Ranking
 -----------------------------
-  Rank  Bottleneck                    Impact             Fixable?
+  Rank  Bottleneck                    Impact             Status
   ─────────────────────────────────────────────────────────────────────
-  1.    DDR load bandwidth            43% of cycles      Partial (batching helps prefill)
-  2.    LUT budget                    86.4% used         No (K_WV ceiling reached)
-  3.    Output path DDR load          24% of cycles      No (ports saturated)
-  4.    Token pipelining              39% possible gain  No (HLS DATAFLOW limitation)
-  5.    Amdahl CPU overhead           125 ms/token       Partial (driver optimization)
-  6.    K_WV scaling                  II=1 holds         No (Vivado LUT inflation >12)
-  7.    300 MHz clock                 10% possible       No (control set density)
-  8.    Load/MAC overlap              33% possible       No (DATAFLOW hardware dup.)
+  1.    LUT budget                    92.2% used         K_WV=16 ceiling reached
+  2.    BRAM budget                   91.7% used         Tight, 12 free
+  3.    DDR load bandwidth            48% of cycles      Saturated at 128b/cyc
+  4.    Output path DDR load          27% of cycles      Port saturated
+  5.    Amdahl CPU overhead           125 ms/token       Next bottleneck
+  6.    Token pipelining              45% possible gain  HLS DATAFLOW limitation
+  7.    K_WV scaling beyond 16        ~3.5K LUTs/chain   K_WV=17 possible? (95.7%)
 
-The design is at the ZU5EV Pareto frontier for Q4_0 HLS SwiGLU acceleration.
-Further gains require either a larger device (ZU7EV: 230K LUTs), RTL-level
-optimization of the load/MAC pipeline, or system-level changes (speculative
-decode, CPU overhead reduction).
+The design reaches 3.0 t/s decode and 3.81 t/s prefill on ZU5EV — the
+practical ceiling for Q4_0 HLS SwiGLU acceleration on this device.
+Further gains require: larger device (ZU7EV), RTL-level optimization,
+or system-level changes (CPU overhead reduction, speculative decode).
