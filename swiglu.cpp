@@ -16,9 +16,9 @@ typedef ap_int<48>     dsp_acc_t;   // DSP48E2 P register — 48-bit signed accu
 
 // ─── Float from uint32_t bits ─────────────────────────────────────────────────
 static inline fxd_scale_t fxd_from_raw(int32_t raw) {
-    union { int32_t i; fxd_scale_t f; } u;
-    u.i = raw;
-    return u.f;
+    fxd_scale_t f;
+    memcpy(&f, &raw, sizeof(raw));
+    return f;
 }
 
 // ============================================================================
@@ -133,7 +133,7 @@ static void mac_blocks_wv_k16_q40(
             dsp0[b] = 0; dsp1[b] = 0; dsp2[b] = 0; dsp3[b] = 0;
             dsp4[b] = 0; dsp5[b] = 0; dsp6[b] = 0; dsp7[b] = 0;
             dsp8[b] = 0; dsp9[b] = 0; dsp10[b] = 0; dsp11[b] = 0; dsp12[b] = 0; dsp13[b] = 0; dsp14[b] = 0; dsp15[b] = 0;
-        }
+        } 
 
         MAC_ALL: for (int n = 0; n < 256; n++) {
             #pragma HLS PIPELINE II=1
@@ -225,7 +225,7 @@ static void mac_blocks_wv_k16_q40(
                           (r == 6) ? total6 : (r == 7) ? total7 :
                           (r == 8) ? total8 : (r == 9) ? total9 :
                           (r == 10) ? total10 : (r == 11) ? total11 : (r == 12) ? total12 : (r == 13) ? total13 : (r == 14) ? total14 : total15;
-        fxd_accum_t t = (fxd_accum_t)((ap_fixed<48,8>)t_raw);
+        fxd_accum_t t = (fxd_accum_t)t_raw;
         ap_fixed<56,38> scaled = t * qs;
         fxd_accum_t half = (scaled >= 0) ? fxd_accum_t(0.5) : fxd_accum_t(-0.5);
         int val = (scaled + half).to_int();
@@ -593,7 +593,8 @@ static void compute_gate(
             if (abs_g > pmax[j & 7]) pmax[j & 7] = abs_g;
         }
 
-        float max_abs = 0.f;
+        float max_abs;
+        max_abs = 0.f;
         for (int k = 0; k < 8; k++) {
             #pragma HLS UNROLL
             if (pmax[k] > max_abs) max_abs = pmax[k];
@@ -692,11 +693,13 @@ static void compute_output(
     DOWN_Q40: for (int out_i = 0; out_i < VECTOR_DIM; out_i += K_DOWN) {
         dsp_acc_t totals[MAX_BATCH][K_DOWN];
         #pragma HLS ARRAY_PARTITION variable=totals dim=0 complete
-        for (int n = 0; n < MAX_BATCH; n++)
+        for (int n = 0; n < MAX_BATCH; n++) {
             #pragma HLS UNROLL
-            for (int r = 0; r < K_DOWN; r++)
+            for (int r = 0; r < K_DOWN; r++) {
                 #pragma HLS UNROLL
                 totals[n][r] = 0;
+            }
+        }
 
         META_GROUPS: for (int mg = 0; mg < Q40_DOWN_MG; mg++) {
             fxd_scale_t d_r0[32], d_r1[32], d_r2[32], d_r3[32];
@@ -741,7 +744,7 @@ static void compute_output(
         }
 
         for (int n = 0; n < actual_tokens; n++) {
-            float gs = gate_scale_array[n] / 256.0f;
+            float gs = gate_scale_array[n];
             for (int r = 0; r < K_DOWN; r++) {
                 out_local[n][out_i + r] = (float)totals[n][r] * gs;
             }

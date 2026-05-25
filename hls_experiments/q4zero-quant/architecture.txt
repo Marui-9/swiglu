@@ -123,7 +123,7 @@ Parallel REDUCE, sequential MAC_GROUPS, no internal DATAFLOW:
     Multiply: ap_int<27> × ap_fixed<18,8> → 1 DSP48E2 each.
 
   QUANTIZE_LOOP (19 cyc):
-    t = (fxd_accum_t)((ap_fixed<48,8>)totals[r])     reinterpret + extend
+    t = (fxd_accum_t)((ap_fixed<48,8>)total_r)       MUX over total0..total15, reinterpret + extend
     scaled = t * (x_scale × 12.7)
     X_cache[batch_idx][base_row+r] = clamp(round(scaled), -128, 127)
 
@@ -169,11 +169,12 @@ Computes out = gate × W_down.T over 256 iterations:
 ------------------------------------
 
 transpose_q40_to_urm() in ggml-cpu.c:
-  fp16 d → fxd_scale_t raw int32_t = (int32_t)(d_fp32 × 256.0f)
+  fp16 d → fxd_scale_t raw int32_t = (int32_t)(d_fp32 × 1024.0f)
+  Factor 1024 = 2^10 matches ap_fixed<18,8> internal scale (10 fractional bits).
   Eliminates float→fixed converters from REDUCE_GRP and REDUCE_MG (~29K FPGA LUTs).
 
 DDR row layout: 80 words × 16 bytes = 1,280 bytes.
-  Words [0..15]:  64 d values (Q8.8 fixed-point, 32 bits each)
+  Words [0..15]:  64 d values (ap_fixed<18,8> = Q8.10, stored in 32-bit slots)
   Words [16..79]: 8 groups × 8 sub-group DDR words (128 bits each)
 
 FFN_DIM_PAD = 8,192 (no padding — 8,192/16 = 512 clean iterations).
@@ -195,7 +196,7 @@ AXI-Lite register map (base 0xA0000000):
   | 0x40-0x44| out_batch base   | gmem_out                          |
   | 0x4C     | down_quant_mode  | 0 = Q4_0 (only mode)              |
   | 0x54     | x_scale          | float bits                        |
-  | 0x58     | actual_tokens    | uint32_t, 1..MAX_BATCH            |
+  | 0x5C     | actual_tokens    | uint32_t, 1..MAX_BATCH            |
   +----------+------------------+-----------------------------------+
 
 Per-call driver sequence:

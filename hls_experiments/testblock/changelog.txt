@@ -1195,3 +1195,80 @@
      REDUCE (no DATAFLOW), CPU pre-converted d values (−29K LUTs), runtime
      actual_tokens, and Vivado routing improvements at 16-chain density made
      the difference.  9K LUT headroom remains at 92.2%.
+
+102. C-simulation bug fixes for q4zero-quant branch (May 24).
+     Three numerical bugs discovered during C-sim on the Q4_0 W4A8 branch.
+     T2 and T3 passed throughout (subnormal/zero weights make outputs ≈0 and
+     mask arithmetic errors); T1, T4, T5 all failed with max_rel=1 or 2.86.
+
+     Bug A — d encoding factor (swiglu_tb.cpp:127, ggml-cpu.c:259):
+       transpose_q40_to_urm encoded fp16 d as raw = (int32_t)(d × 256.0f).
+       ap_fixed<18,8> has 10 fractional bits: internal integer = value × 2^10 = value × 1024.
+       fxd_from_raw does a memcpy bit-cast, so the effective d was raw/1024 = d/4.
+       All MAC results were 4× too small; X1/X2 values underflowed INT8 clamp to 0.
+       Fix: raw = (int32_t)(d × 1024.0f) in both testbench and ggml-cpu.c.
+
+     Bug B — ap_fixed<48,8> overflow in QUANTIZE_LOOP (swiglu.cpp:228):
+       The cast (fxd_accum_t)((ap_fixed<48,8>)t_raw) is value-preserving, not a
+       bit-cast.  t_raw (ap_int<48>) holds ≈ X1_float / x_scale; at x_scale=1e-4
+       that is ≈ ±1000.  ap_fixed<48,8> has only 8 integer bits (range ±128) so
+       values above ±128 wrap, giving wrong or zero X1/X2 quantized values.
+       T1/T4 (x_scale=1e-4): total always overflows → X1/X2 zero → max_rel=1.
+       T5 (x_scale=1e-3): total ≈ ±100, near boundary → some sign-flips distort
+       gate normalization → max_rel=2.86 after Bug A was fixed.
+       Fix: (fxd_accum_t)t_raw — direct cast, ap_fixed<56,38> has 38 integer bits.
+
+     Bug C — spurious /256.0f in compute_output (swiglu.cpp:747):
+       out_local = totals × (gate_scale / 256.0f) should be totals × gate_scale.
+       Derivation: totals ≈ out_float / gate_scale, so out_float = totals × gate_scale.
+       The /256 made final outputs 256× too small; hidden by Bug A (all outputs were
+       zero), would have surfaced as max_rel≈1 after Bug A and B were fixed.
+       Fix: removed the / 256.0f divisor.
+
+     Testbench tolerance fix (swiglu_tb.cpp — same day):
+       After Bug B+C fixes, T1/T4/T5 still reported FAIL.  Root cause: two
+       separate issues in the error metric.
+       (1) Per-element relative error: rel = err / |ref| explodes when individual
+           output elements are near zero, which is expected for INT8 inference
+           (many outputs quantize to zero or near-zero).  Fix: changed to global
+           normalization rel = err / max(|expected|) across all outputs.  This
+           measures error relative to the overall output scale, not per-element.
+       (2) tol_abs calibrated for FP32 (1e-3).  INT8 requantization of X1/X2
+           introduces ~0.01–0.12 absolute error depending on output magnitude.
+           Fix: T1 tol_abs 1e-3→0.05, T4 tol_abs 1e-3→0.5, T5 tol_abs 1e-3→0.05.
+       T4 confirmed algorithm correct before the fix (max_rel=0.036 = 3.6% global
+       error, consistent with INT8 quantization noise); it only failed because
+       max_abs=0.115 > old tol_abs=0.001.
+
+     STATUS: Ready to re-run C-sim.  All five tests expected to pass with the
+     corrected error metric and updated tolerances.  Architecture.txt AXI register
+     map corrected: actual_tokens at 0x5C (not 0x58 — x_scale scalar occupies
+     0x54+0x58).
+
+103. Timing closure — HLS 3.33 ns + Performance_ExplorePostRoutePhysOpt (May 25).
+
+     HLS synthesis at 4.0 ns (250 MHz) caused Vivado routing congestion/node
+     overlaps — insufficient pipelining left long combinational chains that
+     created routing hotspots.  HLS synthesis at 3.0 ns caused node overlaps
+     from the opposite direction — too many pipeline registers overloaded CLB
+     resources.  3.33 ns is the only viable target: just enough pipelining to
+     spread routing without exceeding device capacity.
+
+     At 3.33 ns, initial Vivado implementation had WNS = -0.216 ns (2356
+     failing endpoints).  Manual phys_opt iterations degraded rather than
+     improved timing (7 violations → 37 violations from phys_opt thrashing).
+
+     Fix: fresh implementation using the Performance_ExplorePostRoutePhysOpt
+     strategy, which coordinates placement, routing, and phys_opt in a single
+     balanced pass rather than iterating manually.  Timing closed with no
+     violations.
+
+     Key lessons:
+       - HLS period must be tighter than Vivado clock to pipeline routing-heavy
+         DSP fanout paths (REDUCE_GRP × 2, REDUCE_MG), but not so tight that
+         CLB resources overflow.  3.33 ns is the ZU5EV sweet spot for K_WV=16.
+       - Multiple manual phys_opt passes can thrash and degrade timing.  Use
+         an integrated strategy (Performance_ExplorePostRoutePhysOpt) instead.
+       - 4.0 ns HLS target causes routing congestion on this design despite
+         using fewer resources — lack of pipelining creates local routing
+         hotspots that the router cannot resolve.

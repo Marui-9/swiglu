@@ -256,7 +256,7 @@ static void transpose_q40_to_urm(const uint8_t *src, uint8_t *dst,
             const uint8_t *blk = src + ((size_t)row * blocks_per_row + b) * src_block_bytes;
             uint16_t d_fp16 = (uint16_t)blk[0] | ((uint16_t)blk[1] << 8);
             float d_fp32 = fp16_to_fp32_ref(d_fp16);
-            int32_t raw = (int32_t)(d_fp32 * 256.0f);
+            int32_t raw = (int32_t)(d_fp32 * 1024.0f);
             uint32_t *ddr32 = (uint32_t *)(hdr_base + (size_t)(b >> 2) * 16);
             ddr32[b & 3] = (uint32_t)raw;
         }

@@ -1,0 +1,24 @@
+Design Timing Summary
+
+Setup
+-------------------------------------------------------
+Worst Negative Slack (WNS):   0.026 ns
+Total Negative Slack (TNS):   0.000 ns
+Number of Failing Endpoints:  0
+Total Number of Endpoints:     388799
+
+Hold
+-------------------------------------------------------
+Worst Hold Slack (WHS):       0.010 ns
+Total Hold Slack (THS):       0.000 ns
+Number of Failing Endpoints:  0
+Total Number of Endpoints:     388799
+
+Pulse Width
+-------------------------------------------------------
+Worst Pulse Width Slack (WPWS):          0.520 ns
+Total Pulse Width Negative Slack (TPWS):  0.000 ns
+Number of Failing Endpoints:             0
+Total Number of Endpoints:                162815
+
+All user specified timing constraints are met.

@@ -401,8 +401,8 @@ The proposed accelerator implements the feed-forward block of the LFM2 language 
 $$ \text{FFN}(x) = (\text{SiLU}(x W) \odot (x V)) W_{down} $$
 \begin{subequations}\label{eq:swiglu_stage_set}
 \begin{align}
-X_1 &= x W^{T} \label{eq:swiglu_s2a}\\
-X_2 &= x V^{T} \label{eq:swiglu_s2b}\\
+X_1 &= x W \label{eq:swiglu_s2a}\\
+X_2 &= x V \label{eq:swiglu_s2b}\\
 G   &= \text{SiLU}(X_1)\odot X_2 \label{eq:swiglu_s3}\\
 \text{FFN}(x) &= G W_{down} \label{eq:swiglu_s4}
 \end{align}
@@ -421,7 +421,7 @@ where:
     \item $\odot$ is element-wise multiplication
     \item $\text{SiLU}(z) = z \cdot \sigma(z)$
 \end{itemize}
-The design exposes AXI4 interfaces for weights and activations and an AXI-lite interface for runtime control, including quantization mode and scaling factors. During execution, the input activation vector is loaded and duplicated into local BRAM buffers, enabling parallel computation of the gate and up-projection paths. These are computed as $X_1 = x W^{T}$ and $X_2 = x V^{T}$ using INT8 $\times$ INT4 arithmetic with dequantization to FP32, and stored in URAM caches.
+The design exposes AXI4 interfaces for weights and activations and an AXI-lite interface for runtime control, including quantization mode and scaling factors. During execution, the input activation vector is loaded and duplicated into local BRAM buffers, enabling parallel computation of the gate and up-projection paths. These are computed as $X_1 = x W$ and $X_2 = x V$ using INT8 $\times$ INT4 mixed-precision arithmetic with Q4\_0 weight dequantization, and the results are requantized to INT8 and stored in BRAM caches.
 
 The results are fused in a gating stage with a SiLU nonlinearity and element-wise multiplication, followed by requantization to INT8. The output is then processed by a down-projection in 4-bit quantization. The final result is accumulated in BRAM and written back to memory. The pipeline is organized using HLS dataflow, enabling concurrent execution and efficient use of BRAM and URAM resources.
 
