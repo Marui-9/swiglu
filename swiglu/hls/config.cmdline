@@ -1,3 +1,3 @@
 relativeroot=C:/Users/Jacob/Desktop/Vitis_projects/swiglu
-original_argv=-c --mode hls --config C:\Users\Jacob\Desktop\Vitis_projects\swiglu\hls_config.cfg --work_dir swiglu 
+original_argv=--mode hls --package --config C:\Users\Jacob\Desktop\Vitis_projects\swiglu\hls_config.cfg --work_dir swiglu 
 
