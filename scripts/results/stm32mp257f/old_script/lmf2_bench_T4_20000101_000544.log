@@ -1,0 +1,12 @@
+=== LFM2.5-1.2B  T=4  -p 4 -n 64 -r 10 ===
+warning: asserts enabled, performance may be affected
+warning: debug build, performance may be affected
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+load_backend: failed to find ggml_backend_init in /usr/local/danilo/genAI/llama.cpp/build/bin/libggml-cpu.so
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| lfm2 1.2B Q4_0                 | 661.25 MiB |     1.17 B | CPU        |       4 |             pp4 |          0.16 ± 0.00 |
+| lfm2 1.2B Q4_0                 | 661.25 MiB |     1.17 B | CPU        |       4 |            tg64 |          0.12 ± 0.00 |
+
+build: ca4844062 (7024)

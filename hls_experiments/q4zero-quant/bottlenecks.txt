@@ -1,7 +1,7 @@
 Bottleneck Analysis — K_WV=16 Parallel REDUCE, MAX_BATCH=4, actual_tokens
 =============================================================================
 Date: 2026-05-24  |  Based on: csynth.rpt (May 24) + Vivado implementation
-HLS: 87,611 LUTs (74%), 246 DSP (19%), 282 BRAM (97%), 159K FF (67%), 32 URAM (50%)
+HLS: 87,981 LUTs (75%), 251 DSP (20%), 282 BRAM (97%), 160K FF (68%), 16 URAM (25%)
 Vivado: 107,948 LUTs (92.2%), routes and closes timing at 250 MHz, no violations
 MAC_ALL: II=1 at 16 chains (260 cycles, 16 DSP) — ZU5EV ceiling broken
 Decode: 3.49M cycles, 3.00 t/s.  Prefill (B=4): 2.18M/token, 3.81 t/s.
@@ -83,8 +83,8 @@ is the only HLS path. Not viable.
 --------------------------------
 CPU overhead ~125 ms/token (attention, norms, embedding, sampling, driver).
 
-  Decode at 3.00 t/s:   213 ms FPGA + 125 ms CPU = 338 ms → 2.96 t/s effective
-  Prefill at 3.81 t/s:  168 ms FPGA + 125 ms CPU = 293 ms → 3.41 t/s effective
+  Decode at 3.00 t/s:   223 ms FPGA + 125 ms CPU = 348 ms → 2.87 t/s effective
+  Prefill at 3.81 t/s:  140 ms FPGA + 125 ms CPU = 265 ms → 3.77 t/s effective
 
 Theoretical max at infinite FPGA speed: 1/0.125 = 8.0 t/s.
 Each incremental FPGA improvement yields diminishing returns due to the fixed

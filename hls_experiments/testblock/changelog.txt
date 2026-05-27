@@ -1272,3 +1272,95 @@
        - 4.0 ns HLS target causes routing congestion on this design despite
          using fewer resources — lack of pipelining creates local routing
          hotspots that the router cannot resolve.
+
+104. Register map correction — spurious doubled AXI ports removed (May 26, 2026).
+
+     Root cause of garbage FPGA output (out_cksum=nan, elapsed=~310ms):
+     The ggml-cpu.c register map had been updated for a previous synthesis that
+     had doubled AXI ports (W+W2, V+V2, Wd+Wd2), adding three extra 12-byte
+     register slots.  The 2026-05-26 re-synthesis removed those doubled ports.
+     The AXI memory port list reverted to five ports: gmem_W (HP2), gmem_V (HP0),
+     gmem_Wd (HP1), gmem_x (HP0), gmem_out (HP0) — consistent with vivado_addresses.txt.
+
+     Symptom: devmem2 reads at 0x60 (expected x_scale=0x3F800000) and 0x68
+     (expected actual_tokens) both returned 0x0.  x was being written to 0x40
+     (the out_batch slot), out to 0x4C (mode slot), mode to 0x58 (x_scale slot).
+     FPGA received garbage addresses and mode=0x3F800000 (a float, not 0), producing
+     NaN output on every call.
+
+     Fixes applied to ggml-cpu.c:
+       - Removed SWG_CTRL_WD2_LO (0x34) and SWG_CTRL_WD2_HI (0x38) defines
+       - Removed WD2 register writes from reprogram block
+       - Removed Wd2 line from debug print
+       - Corrected all downstream offsets:
+           X_LO  0x40 → 0x34    X_HI  0x44 → 0x38
+           OUT_LO 0x4C → 0x40   OUT_HI 0x50 → 0x44
+           MODE   0x58 → 0x4C
+           XSCALE 0x60 → 0x54
+           TOKENS 0x68 → 0x5C   (actual_tokens, now confirmed from xswiglu_hw.h)
+
+     docs/xswiglu_hw.h updated to match swiglu/hls/impl/ip/drivers/swiglu_v69_1/src/xswiglu_hw.h
+     (the authoritative Vitis-generated header from the 2026-05-26 synthesis).
+
+     Lesson: always re-verify SWG_CTRL_* defines against xswiglu_hw.h after
+     every re-synthesis.  The number of AXI ports directly determines the
+     register layout; adding or removing a 64-bit pointer port shifts all
+     subsequent register offsets by 0x0C (lo + hi + reserved pad).
+
+105. UIO ISR stale-interrupt chain fixed (2026-05-26)
+
+     After the register-offset fix (entry 104) the IP was computing correct
+     results on some calls but returning all-zeros / elapsed=0ms on others.
+     Root cause: the AXI-Lite ISR is TOW (Toggle-On-Write) — writing 1 to a
+     bit that is already 0 SETS it (fires a spurious interrupt), rather than
+     clearing it.  Three separate unconditional ISR writes were creating a
+     self-sustaining stale-interrupt chain:
+
+     Chain mechanism:
+       1. IP finishes call N.  ISR[0]=1, UIO fires real interrupt.
+       2. Driver reads UIO, writes ISR=0x1 unconditionally → clears ISR[0].
+          Re-arms UIO.  OK so far.
+       3. Before call N+1, ISR[0]=0.  Init code also wrote ISR=0x1
+          unconditionally during UIO setup → SET ISR[0]=1.
+       4. ap_start written.  Immediately UIO fires (ISR[0] was already 1),
+          elapsed=0ms, IP hasn't finished.  Driver reads stale output (zeros).
+       5. Driver writes ISR=0x1 unconditionally to "clear" → ISR[0] was 0
+          (IP still running) → SETS it again → next call also fires instantly.
+          Chain repeats indefinitely.
+
+     Symptoms observed in prints.txt:
+       - AP_CTRL before start = 0x00000201  (bit 9 = interrupt already asserted)
+       - elapsed=0ms on nearly every call
+       - out_cksum=0.000000 on affected calls
+       - irq_count incrementing by 1 per call with no real computation
+
+     Fixes applied to ggml-cpu.c (both Windows copy and USB drive copy):
+
+     (a) Init ISR fix: in the UIO setup block, read ISR first and only write
+         0x1 if ISR[0] is already 1.  Move the conditional clear BEFORE arming
+         GIE/IER, so enabling interrupts cannot immediately fire on a stale bit.
+           uint32_t isr = swg_ip_regs[SWG_CTRL_ISR / 4];
+           if (isr & 0x1) swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;
+           // now safe to arm:
+           swg_ip_regs[SWG_CTRL_GIE / 4] = 0x1;
+           swg_ip_regs[SWG_CTRL_IER / 4] = 0x1;
+
+     (b) Pre-start drain: before each ap_start write, check ISR[0].  If set,
+         conditionally clear it, non-blocking drain the UIO fd, re-arm.  This
+         catches any residual stale state from previous calls or init.
+
+     (c) Poll retry loop: replaced single poll() with for(;;).  After each UIO
+         event, read ISR[0]:
+           - ISR[0]=1 → real ap_done: clear ISR (1→0), re-arm, break.
+           - ISR[0]=0 → stale interrupt (IP still running): re-arm, retry.
+         All ISR writes are now conditional (read-modify-write) everywhere.
+
+     Verified in prints.txt after rebuild:
+       - AP_CTRL before start = 0x0000000E  (ap_done|idle|ready, no interrupt)
+       - <<< UIO interrupt  ISR=0x01 on every call  (real ap_done, not stale)
+       - elapsed=~340ms on every call
+       - Non-zero out_cksum values on every call
+
+     Lesson: ISR is TOW — never write unconditionally.  Always read ISR first;
+     only write 1 to a bit if it is already 1.  An unconditional write to a
+     cleared ISR bit fires a spurious interrupt that poisons the next poll().

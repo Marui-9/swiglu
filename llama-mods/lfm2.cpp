@@ -23,9 +23,9 @@ llm_build_lfm2<iswa>::llm_build_lfm2(const llama_model & model, const llm_graph_
             cur->type == GGML_TYPE_F32 &&
             cur->ne[0] == 2048 && cur->ne[1] >= 1 &&
             model.layers[il].ffn_gate->ne[0] == 2048 && model.layers[il].ffn_gate->ne[1] == 8192 &&
-            model.layers[il].ffn_gate->type == GGML_TYPE_Q4_K &&
-            model.layers[il].ffn_up->type   == GGML_TYPE_Q4_K &&
-            (model.layers[il].ffn_down->type == GGML_TYPE_Q4_K || model.layers[il].ffn_down->type == GGML_TYPE_Q6_K)) {
+            model.layers[il].ffn_gate->type == GGML_TYPE_Q4_0 &&
+            model.layers[il].ffn_up->type   == GGML_TYPE_Q4_0 &&
+            model.layers[il].ffn_down->type == GGML_TYPE_Q4_0) {
             return ggml_swiglu_fused_hw(ctx0,
                 cur,
                 model.layers[il].ffn_gate,

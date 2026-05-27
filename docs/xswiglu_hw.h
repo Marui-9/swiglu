@@ -3,7 +3,9 @@
 // Tool Version Limit: 2025.05
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-// 
+//
+// Copied from swiglu/hls/impl/ip/drivers/swiglu_v69_1/src/xswiglu_hw.h
+// Synthesis date: 2026-05-26. AXI ports: W, V, W_down, x_batch, out_batch (no doubled ports).
 // ==============================================================
 // CTRL
 // 0x00 : Control signals
@@ -30,47 +32,35 @@
 // 0x14 : Data signal of W
 //        bit 31~0 - W[63:32] (Read/Write)
 // 0x18 : reserved
-// 0x1c : Data signal of W2
-//        bit 31~0 - W2[31:0] (Read/Write)
-// 0x20 : Data signal of W2
-//        bit 31~0 - W2[63:32] (Read/Write)
-// 0x24 : reserved
-// 0x28 : Data signal of V
+// 0x1c : Data signal of V
 //        bit 31~0 - V[31:0] (Read/Write)
-// 0x2c : Data signal of V
+// 0x20 : Data signal of V
 //        bit 31~0 - V[63:32] (Read/Write)
-// 0x30 : reserved
-// 0x34 : Data signal of V2
-//        bit 31~0 - V2[31:0] (Read/Write)
-// 0x38 : Data signal of V2
-//        bit 31~0 - V2[63:32] (Read/Write)
-// 0x3c : reserved
-// 0x40 : Data signal of W_down
+// 0x24 : reserved
+// 0x28 : Data signal of W_down
 //        bit 31~0 - W_down[31:0] (Read/Write)
-// 0x44 : Data signal of W_down
+// 0x2c : Data signal of W_down
 //        bit 31~0 - W_down[63:32] (Read/Write)
-// 0x48 : reserved
-// 0x4c : Data signal of W_down2
-//        bit 31~0 - W_down2[31:0] (Read/Write)
-// 0x50 : Data signal of W_down2
-//        bit 31~0 - W_down2[63:32] (Read/Write)
-// 0x54 : reserved
-// 0x58 : Data signal of x_batch
+// 0x30 : reserved
+// 0x34 : Data signal of x_batch
 //        bit 31~0 - x_batch[31:0] (Read/Write)
-// 0x5c : Data signal of x_batch
+// 0x38 : Data signal of x_batch
 //        bit 31~0 - x_batch[63:32] (Read/Write)
-// 0x60 : reserved
-// 0x64 : Data signal of out_batch
+// 0x3c : reserved
+// 0x40 : Data signal of out_batch
 //        bit 31~0 - out_batch[31:0] (Read/Write)
-// 0x68 : Data signal of out_batch
+// 0x44 : Data signal of out_batch
 //        bit 31~0 - out_batch[63:32] (Read/Write)
-// 0x6c : reserved
-// 0x70 : Data signal of down_quant_mode
+// 0x48 : reserved
+// 0x4c : Data signal of down_quant_mode
 //        bit 31~0 - down_quant_mode[31:0] (Read/Write)
-// 0x74 : reserved
-// 0x78 : Data signal of x_scale
+// 0x50 : reserved
+// 0x54 : Data signal of x_scale
 //        bit 31~0 - x_scale[31:0] (Read/Write)
-// 0x7c : reserved
+// 0x58 : reserved
+// 0x5c : Data signal of actual_tokens
+//        bit 31~0 - actual_tokens[31:0] (Read/Write)
+// 0x60 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XSWIGLU_CTRL_ADDR_AP_CTRL              0x00
@@ -79,22 +69,18 @@
 #define XSWIGLU_CTRL_ADDR_ISR                  0x0c
 #define XSWIGLU_CTRL_ADDR_W_DATA               0x10
 #define XSWIGLU_CTRL_BITS_W_DATA               64
-#define XSWIGLU_CTRL_ADDR_W2_DATA              0x1c
-#define XSWIGLU_CTRL_BITS_W2_DATA              64
-#define XSWIGLU_CTRL_ADDR_V_DATA               0x28
+#define XSWIGLU_CTRL_ADDR_V_DATA               0x1c
 #define XSWIGLU_CTRL_BITS_V_DATA               64
-#define XSWIGLU_CTRL_ADDR_V2_DATA              0x34
-#define XSWIGLU_CTRL_BITS_V2_DATA              64
-#define XSWIGLU_CTRL_ADDR_W_DOWN_DATA          0x40
+#define XSWIGLU_CTRL_ADDR_W_DOWN_DATA          0x28
 #define XSWIGLU_CTRL_BITS_W_DOWN_DATA          64
-#define XSWIGLU_CTRL_ADDR_W_DOWN2_DATA         0x4c
-#define XSWIGLU_CTRL_BITS_W_DOWN2_DATA         64
-#define XSWIGLU_CTRL_ADDR_X_BATCH_DATA         0x58
+#define XSWIGLU_CTRL_ADDR_X_BATCH_DATA         0x34
 #define XSWIGLU_CTRL_BITS_X_BATCH_DATA         64
-#define XSWIGLU_CTRL_ADDR_OUT_BATCH_DATA       0x64
+#define XSWIGLU_CTRL_ADDR_OUT_BATCH_DATA       0x40
 #define XSWIGLU_CTRL_BITS_OUT_BATCH_DATA       64
-#define XSWIGLU_CTRL_ADDR_DOWN_QUANT_MODE_DATA 0x70
+#define XSWIGLU_CTRL_ADDR_DOWN_QUANT_MODE_DATA 0x4c
 #define XSWIGLU_CTRL_BITS_DOWN_QUANT_MODE_DATA 32
-#define XSWIGLU_CTRL_ADDR_X_SCALE_DATA         0x78
+#define XSWIGLU_CTRL_ADDR_X_SCALE_DATA         0x54
 #define XSWIGLU_CTRL_BITS_X_SCALE_DATA         32
+#define XSWIGLU_CTRL_ADDR_ACTUAL_TOKENS_DATA   0x5c
+#define XSWIGLU_CTRL_BITS_ACTUAL_TOKENS_DATA   32
 

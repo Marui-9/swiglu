@@ -78,23 +78,22 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_CTRL_GIE     0x04
 #define SWG_CTRL_IER     0x08
 #define SWG_CTRL_ISR     0x0C
-// Register map for parameter order: W, V, W_down, x_batch, out_batch, mode, xscale
-// Each 64-bit pointer occupies 12 bytes (lo + hi + 4-byte reserved pad).
-// Each 32-bit scalar occupies 8 bytes (value + 4-byte reserved pad).
-// MUST be verified against xswiglu_hw.h after every re-synthesis.
+// Register map — verified against xswiglu_hw.h (synthesis 2026-05-26).
+// Ports: W, V, W_down, x_batch, out_batch, down_quant_mode, x_scale, actual_tokens.
+// No W2/V2/Wd2 in this synthesis. MUST be re-verified after every re-synthesis.
 #define SWG_CTRL_W_LO    0x10  // gmem_W   base lo
 #define SWG_CTRL_W_HI    0x14  // gmem_W   base hi
 #define SWG_CTRL_V_LO    0x1C  // gmem_V   base lo
 #define SWG_CTRL_V_HI    0x20  // gmem_V   base hi
 #define SWG_CTRL_WD_LO   0x28  // gmem_Wd  base lo
 #define SWG_CTRL_WD_HI   0x2C  // gmem_Wd  base hi
-#define SWG_CTRL_X_LO    0x34  // gmem_x   base lo
-#define SWG_CTRL_X_HI    0x38  // gmem_x   base hi
-#define SWG_CTRL_OUT_LO  0x40  // gmem_out base lo
-#define SWG_CTRL_OUT_HI  0x44  // gmem_out base hi
-#define SWG_CTRL_MODE    0x4C  // 0=Q4_0 (only mode supported)
-#define SWG_CTRL_XSCALE  0x54  // float bits
-#define SWG_CTRL_TOKENS  0x58  // uint32_t actual_tokens (1..MAX_BATCH)
+#define SWG_CTRL_X_LO    0x34  // x_batch  base lo
+#define SWG_CTRL_X_HI    0x38  // x_batch  base hi
+#define SWG_CTRL_OUT_LO  0x40  // out_batch base lo
+#define SWG_CTRL_OUT_HI  0x44  // out_batch base hi
+#define SWG_CTRL_MODE    0x4C  // down_quant_mode (0=Q4_0)
+#define SWG_CTRL_XSCALE  0x54  // x_scale float bits
+#define SWG_CTRL_TOKENS  0x5C  // actual_tokens uint32_t (1..MAX_BATCH)
 
 // Permanent per-layer pre-decode cache.  16 slots, populated on first use.
 // Fits within 512 MB UDMABUF (works with cma=600M — no boot script fix needed).
@@ -130,6 +129,7 @@ static uint32_t swg_last_prog_mode  = 0;
 #define Q40_DOWN_BLOCKS       256    // 8192/32
 #define Q40_DOWN_GROUPS       32     // 256/8
 #define Q40_DOWN_MG           8      // 32/4 meta-groups
+#define FFN_DIM               8192   // actual FFN intermediate dimension
 #define FFN_DIM_PAD           8192   // 8192 / 16 = 512, no padding needed
 #define Q40_WV_HDR_WORDS      16     // 64 fp32 d / 4 per DDR word
 #define Q40_WV_NIB_WORDS      64     // 8 groups × 8 DDR words (4 elem-slices each)
@@ -366,6 +366,8 @@ static void init_hardware_offload(void) {
         exit(1);
     }
     fclose(fp);
+    fprintf(stderr, "[SWG] init: udmabuf phys_base=0x%016llX  SWG_LAYER_W_OFF(0)=0x%08X\n",
+            (unsigned long long)udmabuf_phys_base, (unsigned int)SWG_LAYER_W_OFF(0));
 
     udmabuf_fd = open("/dev/udmabuf0", O_RDWR);
     if (udmabuf_fd < 0) {
@@ -396,29 +398,23 @@ static void init_swiglu_offload(void) {
         fprintf(stderr, "[SWG_INIT] mmap CTRL registers failed at 0x%08lX\n", (unsigned long)SWIGLU_IP_BASE);
         exit(1);
     }
-    // Correct init sequence to avoid stale-interrupt on call #0.
-    // Wrong prior order (ISR clear → open UIO → drain → GIE/IER arm):
-    // arming GIE/IER with ISR still set causes an immediate hardware IRQ that
-    // arrives after the drain loop → call #0 poll() returns in 0ms with the
-    // IP still running → stale URAM output.
-    // Correct order: open → drain old count → arm GIE/IER → clear ISR →
-    // drain window between arm and clear → re-arm for first real interrupt.
+    // Init sequence: drain → conditional ISR clear → arm GIE/IER → re-arm.
+    // ISR is TOW (Toggle-On-Write): writing 1 to a 0 bit SETS it (fires spurious IRQ).
+    // Must read ISR first and only write 1 if the bit is already 1 (to clear it).
+    // Arming GIE/IER AFTER clearing ISR ensures no stale interrupt on call #0.
     swiglu_uio_fd = open_uio_by_addr(SWIGLU_IP_BASE);
     if (swiglu_uio_fd >= 0) {
         int saved_flags = fcntl(swiglu_uio_fd, F_GETFL, 0);
         fcntl(swiglu_uio_fd, F_SETFL, saved_flags | O_NONBLOCK);
         uint32_t drain;
-        // Drain accumulated UIO counter from prior sessions.
         while (read(swiglu_uio_fd, &drain, sizeof(drain)) > 0) {}
-        // Arm interrupts.
+        // Conditionally clear ISR before arming: only write if ISR[0] is already 1.
+        uint32_t isr = swg_ip_regs[SWG_CTRL_ISR / 4];
+        if (isr & 0x1) swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;
+        // Arm — ISR is now 0, so enabling GIE/IER cannot fire a spurious interrupt.
         swg_ip_regs[SWG_CTRL_GIE / 4] = 0x1;
         swg_ip_regs[SWG_CTRL_IER / 4] = 0x1;
-        // Clear ISR (toggle-on-write) — de-asserts hardware IRQ line.
-        swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;
-        // Drain any interrupt that fired in the GIE-arm → ISR-clear window.
-        while (read(swiglu_uio_fd, &drain, sizeof(drain)) > 0) {}
         fcntl(swiglu_uio_fd, F_SETFL, saved_flags);
-        // Re-arm for first real interrupt.
         uint32_t uio_enable = 1;
         (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
     }
@@ -2096,7 +2092,7 @@ static void ggml_compute_forward_swiglu_fused_hw(
         x->ne[0] != 2048 || W_gate->ne[0] != 2048 || W_gate->ne[1] != 8192 ||
         W_up->ne[0]   != 2048 || W_up->ne[1]   != 8192 ||
         W_down->ne[0] != 8192 || W_down->ne[1] != 2048 ||
-        x->ne[1] < 1  || x->ne[1] > SWG_MAX_TOKENS) {
+        x->ne[1] < 1) {
         fprintf(stderr, "[SWG] unsupported shapes/types in fused hw kernel; aborting to avoid bad output\n");
         GGML_ASSERT(false);
     }
@@ -2203,8 +2199,8 @@ static void ggml_compute_forward_swiglu_fused_hw(
             swg_ip_regs[SWG_CTRL_W_HI  / 4] = (uint32_t)(phys_W >> 32);
             swg_ip_regs[SWG_CTRL_V_LO  / 4] = (uint32_t)phys_V;
             swg_ip_regs[SWG_CTRL_V_HI  / 4] = (uint32_t)(phys_V >> 32);
-            swg_ip_regs[SWG_CTRL_WD_LO / 4] = (uint32_t)phys_Wd;
-            swg_ip_regs[SWG_CTRL_WD_HI / 4] = (uint32_t)(phys_Wd >> 32);
+            swg_ip_regs[SWG_CTRL_WD_LO  / 4] = (uint32_t)phys_Wd;
+            swg_ip_regs[SWG_CTRL_WD_HI  / 4] = (uint32_t)(phys_Wd >> 32);
             swg_last_prog_layer = layer;
             swg_last_prog_mode  = mode;
         }
@@ -2226,11 +2222,26 @@ static void ggml_compute_forward_swiglu_fused_hw(
             fprintf(stderr, "[SWG]   regs: W=0x%08X|%08X  V=0x%08X|%08X  Wd=0x%08X|%08X\n",
                     swg_ip_regs[SWG_CTRL_W_HI/4],  swg_ip_regs[SWG_CTRL_W_LO/4],
                     swg_ip_regs[SWG_CTRL_V_HI/4],  swg_ip_regs[SWG_CTRL_V_LO/4],
-                    swg_ip_regs[SWG_CTRL_WD_HI/4], swg_ip_regs[SWG_CTRL_WD_LO/4]);
+                    swg_ip_regs[SWG_CTRL_WD_HI/4],  swg_ip_regs[SWG_CTRL_WD_LO/4]);
             fprintf(stderr, "[SWG]   regs: x=0x%08X|%08X  out=0x%08X|%08X  mode=%u  xscale_bits=0x%08X (%.6f)\n",
                     swg_ip_regs[SWG_CTRL_X_HI/4],   swg_ip_regs[SWG_CTRL_X_LO/4],
                     swg_ip_regs[SWG_CTRL_OUT_HI/4], swg_ip_regs[SWG_CTRL_OUT_LO/4],
                     swg_ip_regs[SWG_CTRL_MODE/4], xscale_bits, x_scale);
+        }
+
+        // Pre-start: clear any stale ISR and drain UIO before writing ap_start.
+        // ISR is TOW: writing 1 when ISR[0]=0 would SET it and fire a spurious interrupt.
+        // Always read ISR first; only write 1 if bit 0 is already 1.
+        if (swiglu_uio_fd >= 0) {
+            uint32_t isr = swg_ip_regs[SWG_CTRL_ISR / 4];
+            if (isr & 0x1) {
+                swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // conditional clear (1→0)
+                int sf = fcntl(swiglu_uio_fd, F_GETFL, 0);
+                fcntl(swiglu_uio_fd, F_SETFL, sf | O_NONBLOCK);
+                uint32_t d; while (read(swiglu_uio_fd, &d, sizeof(d)) > 0) {}
+                fcntl(swiglu_uio_fd, F_SETFL, sf);
+                uint32_t en = 1; (void)write(swiglu_uio_fd, &en, sizeof(en));
+            }
         }
 
         __asm__ __volatile__("" ::: "memory");
@@ -2245,41 +2256,46 @@ static void ggml_compute_forward_swiglu_fused_hw(
         if (swiglu_uio_fd >= 0) {
             if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   waiting via UIO poll (fd=%d, timeout=7000ms)\n", swiglu_uio_fd);
             struct pollfd pfd = { .fd = swiglu_uio_fd, .events = POLLIN };
-            int pr = poll(&pfd, 1, 7000);
-            clock_gettime(CLOCK_MONOTONIC, &t1);
-            long elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
-            if (pr > 0) {
+            for (;;) {
+                int pr = poll(&pfd, 1, 7000);
+                clock_gettime(CLOCK_MONOTONIC, &t1);
+                long elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
+                if (pr <= 0) {
+                    // UIO timeout — fall back to register poll
+                    if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   poll() timeout after %ldms — register poll\n", elapsed_ms);
+                    int tmo = 7000;
+                    while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) usleep(1000);
+                    clock_gettime(CLOCK_MONOTONIC, &t1);
+                    elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
+                    if ((swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
+                        fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n", swiglu_call_count, layer);
+                        GGML_ASSERT(false);
+                    }
+                    if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   <<< register poll done  AP_CTRL=0x%08X  elapsed=%ldms\n",
+                            swg_ip_regs[SWG_CTRL_AP_CTRL / 4], elapsed_ms);
+                    { uint32_t isr = swg_ip_regs[SWG_CTRL_ISR / 4]; if (isr & 0x1) swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1; }
+                    break;
+                }
                 uint32_t irq_count;
                 (void)read(swiglu_uio_fd, &irq_count, sizeof(irq_count));
+                uint32_t isr = swg_ip_regs[SWG_CTRL_ISR / 4];
                 if (swiglu_dbg_enabled) {
-                    fprintf(stderr, "[SWG]   <<< UIO interrupt  irq_count=%u  elapsed=%ldms\n", irq_count, elapsed_ms);
+                    fprintf(stderr, "[SWG]   <<< UIO interrupt  irq_count=%u  elapsed=%ldms  ISR=0x%02X\n", irq_count, elapsed_ms, isr);
                     fprintf(stderr, "[SWG]   AP_CTRL after done = 0x%08X\n", swg_ip_regs[SWG_CTRL_AP_CTRL / 4]);
                 }
-                swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done bit (TOW)
-                uint32_t uio_enable = 1;
-                (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
-            } else {
-                if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   poll() returned %d after %ldms — falling back to register poll\n", pr, elapsed_ms);
-                int tmo = 7000;
-                while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
-                    usleep(1000);
+                if (isr & 0x1) {
+                    // Real ap_done: clear ISR first (deasserts line), then re-arm.
+                    swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;
+                    uint32_t en = 1; (void)write(swiglu_uio_fd, &en, sizeof(en));
+                    break;
                 }
-                clock_gettime(CLOCK_MONOTONIC, &t1);
-                elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
-                if ((swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
-                    fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n", swiglu_call_count, layer);
-                    GGML_ASSERT(false);
-                }
-                if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   <<< register poll done  AP_CTRL=0x%08X  elapsed=%ldms\n",
-                        swg_ip_regs[SWG_CTRL_AP_CTRL / 4], elapsed_ms);
-                swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done (TOW)
+                // Stale interrupt — ISR[0]=0, ap_done has not fired yet. Re-arm and retry.
+                { uint32_t en = 1; (void)write(swiglu_uio_fd, &en, sizeof(en)); }
             }
         } else {
             if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   no UIO fd — polling AP_CTRL directly\n");
             int tmo = 7000;
-            while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
-                usleep(1000);
-            }
+            while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) usleep(1000);
             clock_gettime(CLOCK_MONOTONIC, &t1);
             long elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
             if ((swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
@@ -2288,7 +2304,7 @@ static void ggml_compute_forward_swiglu_fused_hw(
             }
             if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   <<< register poll done  AP_CTRL=0x%08X  elapsed=%ldms\n",
                     swg_ip_regs[SWG_CTRL_AP_CTRL / 4], elapsed_ms);
-            swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done (TOW)
+            { uint32_t isr = swg_ip_regs[SWG_CTRL_ISR / 4]; if (isr & 0x1) swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1; }
         }
 
         udmabuf_sync_to_cpu(SWG_OUT_OFF, (uint32_t)(bsz * 2048 * sizeof(float)));

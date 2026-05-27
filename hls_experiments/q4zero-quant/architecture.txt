@@ -123,7 +123,7 @@ Parallel REDUCE, sequential MAC_GROUPS, no internal DATAFLOW:
     Multiply: ap_int<27> × ap_fixed<18,8> → 1 DSP48E2 each.
 
   QUANTIZE_LOOP (19 cyc):
-    t = (fxd_accum_t)((ap_fixed<48,8>)total_r)       MUX over total0..total15, reinterpret + extend
+    t = (fxd_accum_t)total_r                          MUX over total0..total15, direct cast to fxd_accum_t
     scaled = t * (x_scale × 12.7)
     X_cache[batch_idx][base_row+r] = clamp(round(scaled), -128, 127)
 
@@ -140,8 +140,8 @@ Storage: X1/X2_cache BRAM ram_2p [4][8192] INT8. gate_cache URAM [4][256][32].
 sigmoid_lut BRAM ROM (16KB). FP ops: 22 DSPs.
 
 
-6. Phase 5: compute_output (actual_tokens × 0.78M cyc avg)
------------------------------------------------------------
+6. Phase 5: compute_output (1.54M decode, 0.78M/token prefill)
+--------------------------------------------------------------
 
 Computes out = gate × W_down.T over 256 iterations:
 
@@ -152,7 +152,7 @@ Computes out = gate × W_down.T over 256 iterations:
           for n in 0..actual_tokens-1:
               mac_mg_down_q40  257 cyc (per token, gate_cache[n])
       for n in 0..actual_tokens-1:
-          out_local[n][out_i+r] = (float)totals[n][r] × gate_scale[n] / 256.0f
+          out_local[n][out_i+r] = (float)totals[n][r] × gate_scale[n]
 
   for n in 0..actual_tokens-1:
       memcpy out_batch + n×2048 ← out_local[n], 2048 floats

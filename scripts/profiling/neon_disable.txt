@@ -62,8 +62,25 @@ NEON floating-point pipeline. The scalar fallback path keeps the integer
 ALUs fed without NEON load stalls, so throughput is effectively identical
 on this microarchitecture.
 
+The deeper reason NEON provides no benefit here is that inference is
+memory-bandwidth bound, not compute bound, on the A53. The KV260 has a
+256 KB L2 and no L3. A 1.2B Q4_K model's weight matrices do not fit in
+any cache level — every inference call streams weights from DRAM. At
+~4 GB/s peak DDR bandwidth, the bottleneck is load latency regardless of
+how fast the multiply executes. NEON and scalar code stall on the same
+memory latency; NEON just stalls with wider registers that go unused.
+
+No-NEON marginally faster at high thread counts (anomaly explained):
+The NEON code path in ggml uses more registers and wider stack spills,
+increasing pressure on the 32 KB L1D cache. Scalar code has a smaller
+working set per loop iteration, yielding slightly better L1 hit rates
+on the hot loops (scale/min lookups in Q4_K dequantize). The T4 result
+(NEON: 3.27 prefill, 2.51 decode vs no-NEON: 3.47, 2.73) is consistent
+with a mild L1 regression from NEON rather than measurement noise.
+
 This result is specific to Cortex-A53. On A72/A76/A78 with wider out-of-order
-NEON pipelines, SIMD provides 3--4x speedup for Q4_K inference.
+NEON pipelines and larger L2/L3 caches, SIMD provides 3--4x speedup for
+Q4_K inference.
 
 
 Restoring NEON
