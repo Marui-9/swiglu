@@ -1,92 +1,54 @@
-[100%] Linking CXX executable ../../bin/llama-bench
-[100%] Built target llama-bench
-ubuntu@kria:~/llama.cpp$ ./run_profile_accel.sh 2
-=== FPGA+CPU | T=2 | R=10 ===
-[13:00:21] Running llama-bench (FPGA+CPU)...
-[SWG] init: udmabuf phys_base=0x0000000055100000  SWG_LAYER_W_OFF(0)=0x01000000
-[SWG] ===== HW call #0 layer=0 mode=Q4_0 tokens=12 =====
-[SWG]   W_gate ptr=0xfffff75338040  ne=[2048,8192] type=2  nbytes=9437184
-[SWG]   W_up   ptr=0xfffff76538040  ne=[2048,8192] type=2  nbytes=9437184
-[SWG]   W_down ptr=0xfffff75c38040  ne=[8192,2048] type=2  nbytes=9437184
-[SWG]   x      ptr=0xfffff6d04a180  ne=[2048,12] type=0
-[SWG]   UNPACK layer 0 -> permanent slot
-[SWG]   phys W=0x0000000056100000  V=0x0000000056B00000  Wd=0x0000000057500000
-[SWG]   phys x=0x000000005BD50000  out=0x000000005BD60000
-[SWG]   AP_CTRL before start = 0x0000000E
-[SWG]   token chunk c=0 bsz=4  max_abs=2.0057  x_scale=0.015793
-[SWG]   x[0..3] (INT8): -9 2 1 2
-[SWG]   reprogram W/V/Wd: YES (last_layer=-1 last_mode=0)
-[SWG]   regs: W=0x00000000|56100000  V=0x00000000|56B00000  Wd=0x00000000|57500000
-[SWG]   regs: x=0x00000000|5BD50000  out=0x00000000|5BD60000  mode=0  xscale_bits=0x3C816003 (0.015793)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=1  elapsed=343ms  ISR=0x01
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): -0.0124  0.0248  -0.0496  -0.0124
-[SWG]   out_cksum (sum of 8192 floats): 8.639913
-[SWG]   token chunk c=4 bsz=4  max_abs=1.6575  x_scale=0.013051
-[SWG]   x[0..3] (INT8): -5 5 0 4
-[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=0 last_mode=0)
-[SWG]   regs: W=0x00000000|56100000  V=0x00000000|56B00000  Wd=0x00000000|57500000
-[SWG]   regs: x=0x00000000|5BD50000  out=0x00000000|5BD60000  mode=0  xscale_bits=0x3C55D4C6 (0.013051)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=2  elapsed=343ms  ISR=0x01
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): -0.0372  -0.0186  0.0744  0.0372
-[SWG]   out_cksum (sum of 8192 floats): 3.532819
-[SWG]   token chunk c=8 bsz=4  max_abs=1.6916  x_scale=0.013320
-[SWG]   x[0..3] (INT8): 5 -5 -4 -7
-[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=0 last_mode=0)
-[SWG]   regs: W=0x00000000|56100000  V=0x00000000|56B00000  Wd=0x00000000|57500000
-[SWG]   regs: x=0x00000000|5BD50000  out=0x00000000|5BD60000  mode=0  xscale_bits=0x3C5A3B56 (0.013320)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=3  elapsed=339ms  ISR=0x01
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): 0.0310  0.0124  -0.0124  -0.0744
-[SWG]   out_cksum (sum of 8192 floats): 2.008128
-[SWG]   ===== call #0 done =====
-[SWG] ===== HW call #1 layer=1 mode=Q4_0 tokens=12 =====
-[SWG]   W_gate ptr=0xfffff77742040  ne=[2048,8192] type=2  nbytes=9437184
-
-[SWG] <<< UIO interrupt  irq_count=4384  elapsed=322ms  ISR=0x01
-[SWG] AP_CTRL after done = 0x0000020E
-[SWG] out[0..3] (F32): -0.0620  0.0496  0.0000  -0.0992
-[SWG] out_cksum (sum of 2048 floats): -3.842715
-[SWG] ===== call #4053 done =====
-[SWG] ===== HW call #4054 layer=6 mode=Q4_0 tokens=1 =====
-[SWG]   W_gate ptr=0xffff824a8440  ne=[2048,8192] type=2  nbytes=9437184
-[SWG]   W_up   ptr=0xffff836a8440  ne=[2048,8192] type=2  nbytes=9437184
-[SWG]   W_down ptr=0xffff82da8440  ne=[8192,2048] type=2  nbytes=9437184
-[SWG]   x      ptr=0xaaaafffc4c60  ne=[2048,1] type=0
-[SWG]   phys W=0x0000000061500000  V=0x0000000061F00000  Wd=0x0000000062900000
-[SWG]   phys x=0x000000005BD50000  out=0x000000005BD60000
+[SWG]   UNPACK layer 4 -> permanent slot
+[SWG]   phys W=0x000000005C100000  V=0x000000005CB00000  Wd=0x000000005D500000
+[SWG]   phys x=0x000000005A550000  out=0x000000005A560000
 [SWG]   AP_CTRL before start = 0x00000004
-[SWG]   token chunk c=0 bsz=1  max_abs=0.7222  x_scale=0.005687
-[SWG]   x[0..3] (INT8): -25 -15 12 -21
-[SWG]   reprogram W/V/Wd: YES (last_layer=5 last_mode=0)
-[SWG]   regs: W=0x00000000|61500000  V=0x00000000|61F00000  Wd=0x00000000|62900000
-[SWG]   regs: x=0x00000000|5BD50000  out=0x00000000|5BD60000  mode=0  xscale_bits=0x3BBA587C (0.005687)
+[SWG]   token chunk c=0 bsz=4  max_abs=0.7281  x_scale=0.005733
+[SWG]   x[0..3] (INT8): -34 -38 -17 6
+[SWG]   reprogram W/V/Wd: YES (last_layer=3 last_mode=0)
+[SWG]   regs: W=0x00000000|5C100000  V=0x00000000|5CB00000  Wd=0x00000000|5D500000
+[SWG]   regs: x=0x00000000|5A550000  out=0x00000000|5A560000  mode=0  xscale_bits=0x3BBBDC9C (0.005733)
 [SWG]   >>> writing ap_start
 [SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=4385  elapsed=327ms  ISR=0x01
+[SWG]   <<< UIO interrupt  irq_count=13  elapsed=38ms  ISR=0x01
 [SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): 0.0372  -0.0496  0.0496  0.1240
-[SWG]   out_cksum (sum of 2048 floats): 2.107296
-[SWG] ===== call #4054 done =====
-[SWG] ===== HW call #4055 layer=7 mode=Q4_0 tokens=1 =====
-[SWG]   W_gate ptr=0xffff848b2440  ne=[2048,8192] type=2  nbytes=9437184
-[SWG]   W_up   ptr=0xffff85ab2440  ne=[2048,8192] type=2  nbytes=9437184
-[SWG]   W_down ptr=0xffff851b2440  ne=[8192,2048] type=2  nbytes=9437184
-[SWG]   x      ptr=0xaaaafffc0c60  ne=[2048,1] type=0
-[SWG]   phys W=0x0000000063300000  V=0x0000000063D00000  Wd=0x0000000064700000
-[SWG]   phys x=0x000000005BD50000  out=0x000000005BD60000
+[SWG]   out[0..3] (F32): -1.4938  29.7608  27.1095  -19.7861
+[SWG]   out_cksum (sum of 8192 floats): 4668.630859
+[SWG]   token chunk c=4 bsz=4  max_abs=0.7057  x_scale=0.005557
+[SWG]   x[0..3] (INT8): -29 43 -18 -51
+[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=4 last_mode=0)
+[SWG]   regs: W=0x00000000|5C100000  V=0x00000000|5CB00000  Wd=0x00000000|5D500000
+[SWG]   regs: x=0x00000000|5A550000  out=0x00000000|5A560000  mode=0  xscale_bits=0x3BB615C3 (0.005557)
+[SWG]   >>> writing ap_start
+[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
+[SWG]   <<< UIO interrupt  irq_count=14  elapsed=37ms  ISR=0x01
+[SWG]   AP_CTRL after done = 0x0000020E
+[SWG]   out[0..3] (F32): 56.2280  -52.2787  116.8321  86.4439
+[SWG]   out_cksum (sum of 8192 floats): 10081.119141
+[SWG]   token chunk c=8 bsz=4  max_abs=0.7132  x_scale=0.005616
+[SWG]   x[0..3] (INT8): 1 78 42 -7
+[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=4 last_mode=0)
+[SWG]   regs: W=0x00000000|5C100000  V=0x00000000|5CB00000  Wd=0x00000000|5D500000
+[SWG]   regs: x=0x00000000|5A550000  out=0x00000000|5A560000  mode=0  xscale_bits=0x3BB806B0 (0.005616)
+[SWG]   >>> writing ap_start
+[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
+[SWG]   <<< UIO interrupt  irq_count=15  elapsed=37ms  ISR=0x01
+[SWG]   AP_CTRL after done = 0x0000020E
+[SWG]   out[0..3] (F32): 41.4536  30.8885  82.0561  -30.7966
+[SWG]   out_cksum (sum of 8192 floats): -4595.351562
+[SWG]   ===== call #4 done =====
+[SWG] ===== HW call #5 layer=5 mode=Q4_0 tokens=12 =====
+[SWG]   W_gate ptr=0xfffff6fd14240  ne=[2048,8192] type=2  nbytes=9437184
+[SWG]   W_up   ptr=0xfffff70f14240  ne=[2048,8192] type=2  nbytes=9437184
+[SWG]   W_down ptr=0xfffff70614240  ne=[8192,2048] type=2  nbytes=9437184
+[SWG]   x      ptr=0xfffff5c95a180  ne=[2048,12] type=0
+[SWG]   UNPACK layer 5 -> permanent slot
+[SWG]   phys W=0x000000005DF00000  V=0x000000005E900000  Wd=0x000000005F300000
+[SWG]   phys x=0x000000005A550000  out=0x000000005A560000
 [SWG]   AP_CTRL before start = 0x00000004
-[SWG]   token chunk c=0 bsz=1  max_abs=0.6886  x_scale=0.005422
-[SWG]   x[0..3] (INT8): -16 -24 18 2
-[SWG]   reprogram W/V/Wd: YES (last_layer=6 last_mode=0)
-[SWG]   regs: W=0x00000000|63300000  V=0x00000000|63D00000  Wd=0x00000000|64700000
-[SWG]   regs: x=0x00000000|5BD50000  out=0x00000000|5BD60000  mode=0  xscale_bits=0x3BB1A9AA (0.005422)
+[SWG]   token chunk c=0 bsz=4  max_abs=0.6951  x_scale=0.005474
+[SWG]   x[0..3] (INT8): -32 -26 -9 -1
+[SWG]   reprogram W/V/Wd: YES (last_layer=4 last_mode=0)
+[SWG]   regs: W=0x00000000|5DF00000  V=0x00000000|5E900000  Wd=0x00000000|5F300000
+[SWG]   regs: x=0x00000000|5A550000  out=0x00000000|5A560000  mode=0  xscale_bits=0x3BB35B0D (0.005474)
 [SWG]   >>> writing ap_start
 [SWG]   waiting via UIO poll (fd=8, timeout=7000ms)

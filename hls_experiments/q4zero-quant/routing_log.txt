@@ -1,0 +1,213 @@
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.346 . Memory (MB): peak = 6563.492 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.308 . Memory (MB): peak = 6563.492 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 6563.492 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:22 ; elapsed = 00:00:08 . Memory (MB): peak = 6563.492 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Jacob/Desktop/Vivado_projects/kria_accel/kria_accel.runs/impl_1/design_1_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:26 ; elapsed = 00:00:13 . Memory (MB): peak = 6563.492 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xck26'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 5d81473e ConstDB: 0 ShapeSum: 878db880 RouteDB: 6fdc74ba
+Nodegraph reading from file.  Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.530 . Memory (MB): peak = 6563.492 ; gain = 0.000
+Post Restoration Checksum: NetGraph: 376b4fd1 | NumContArr: 6f3147f2 | Constraints: cdc4a6a | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 17621dcca
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:31 . Memory (MB): peak = 6563.492 ; gain = 0.000
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 17621dcca
+
+Time (s): cpu = 00:00:53 ; elapsed = 00:00:32 . Memory (MB): peak = 6563.492 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 17621dcca
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:32 . Memory (MB): peak = 6563.492 ; gain = 0.000
+
+Phase 2.3 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.3 Global Clock Net Routing | Checksum: 19e26bb8f
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:36 . Memory (MB): peak = 6563.492 ; gain = 0.000
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 1ae09ab8d
+
+Time (s): cpu = 00:01:26 ; elapsed = 00:00:52 . Memory (MB): peak = 6563.492 ; gain = 0.000
+
+Phase 2.5 Soft Constraint Pins - Fast Budgeting
+Phase 2.5 Soft Constraint Pins - Fast Budgeting | Checksum: e3535764
+
+Time (s): cpu = 00:02:23 ; elapsed = 00:01:28 . Memory (MB): peak = 6722.891 ; gain = 159.398
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 204137
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 187500
+  Number of Partially Routed Nets     = 16637
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 141b64b7a
+
+Time (s): cpu = 00:02:28 ; elapsed = 00:01:32 . Memory (MB): peak = 6722.891 ; gain = 159.398
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 141b64b7a
+
+Time (s): cpu = 00:02:29 ; elapsed = 00:01:32 . Memory (MB): peak = 6722.891 ; gain = 159.398
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 238f7f1d1
+
+Time (s): cpu = 00:06:01 ; elapsed = 00:03:34 . Memory (MB): peak = 6722.891 ; gain = 159.398
+
+Phase 4.2 Update Timing
+Phase 4.2 Update Timing | Checksum: 256ddbe27
+
+Time (s): cpu = 00:06:21 ; elapsed = 00:03:46 . Memory (MB): peak = 6722.891 ; gain = 159.398
+Phase 4 Initial Routing | Checksum: 210d4df10
+
+Time (s): cpu = 00:06:57 ; elapsed = 00:04:09 . Memory (MB): peak = 6724.082 ; gain = 160.590
+
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+|           |___________________|___________________|___________________|
+| Direction | Size   | % Tiles  | Size   | % Tiles  | Size   | % Tiles  |
+|___________|________|__________|________|__________|________|__________|
+|      NORTH|   32x32|     18.41|   16x16|      9.16|   64x64|     37.44|
+|___________|________|__________|________|__________|________|__________|
+|      SOUTH|   64x64|     26.95|   32x32|     19.66|   64x64|     39.69|
+|___________|________|__________|________|__________|________|__________|
+|       EAST|   32x32|     19.76|   16x16|      8.83|   64x64|     46.19|
+|___________|________|__________|________|__________|________|__________|
+|       WEST|   64x64|     20.25|   32x32|      8.88|   64x64|     48.46|
+|___________|________|__________|________|__________|________|__________|
+Congestion Report
+GLOBAL Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+NORTH
+	INT_X10Y102->INT_X41Y149 (CLEM_X10Y102->CLEL_R_X41Y149)
+	INT_X16Y128->INT_X31Y143 (CMT_L_X16Y120->CLEL_R_X31Y143)
+	INT_X32Y128->INT_X42Y143 (CLEM_X32Y128->GTH_QUAD_RIGHT_X42Y120)
+	INT_X0Y16->INT_X15Y31 (VCU_VCU_FT_X0Y0->CLEL_R_X15Y31)
+	INT_X0Y15->INT_X15Y30 (VCU_VCU_FT_X0Y0->CLEL_R_X15Y30)
+SOUTH
+	INT_X5Y120->INT_X36Y183 (CLEM_X5Y120->CLEL_R_X36Y183)
+	INT_X0Y144->INT_X31Y175 (PSS_ALTO_X0Y60->CLEL_R_X31Y175)
+	INT_X32Y144->INT_X42Y175 (CLEM_X32Y144->GTH_QUAD_RIGHT_X42Y120)
+	INT_X0Y143->INT_X31Y174 (PSS_ALTO_X0Y60->CLEL_R_X31Y174)
+	INT_X0Y142->INT_X31Y173 (PSS_ALTO_X0Y60->CLEL_R_X31Y173)
+EAST
+	INT_X16Y16->INT_X31Y111 (CMT_L_X16Y0->CLEL_R_X31Y111)
+	INT_X16Y176->INT_X31Y191 (XIPHY_BYTE_L_X16Y165->CLEL_R_X31Y191)
+	INT_X16Y96->INT_X31Y111 (XIPHY_BYTE_L_X16Y90->CLEL_R_X31Y111)
+	INT_X16Y80->INT_X31Y95 (CMT_L_X16Y60->CLEL_R_X31Y95)
+	INT_X16Y48->INT_X31Y63 (CMT_L_X16Y0->CLEL_R_X31Y63)
+WEST
+	INT_X5Y108->INT_X36Y171 (CLEM_X5Y108->CLEL_R_X36Y171)
+	INT_X1Y127->INT_X32Y158 (CLEM_X1Y127->CLEL_R_X32Y158)
+	INT_X1Y126->INT_X32Y157 (CLEM_X1Y126->CLEL_R_X32Y157)
+	INT_X1Y125->INT_X32Y156 (CLEM_X1Y125->CLEL_R_X32Y156)
+	INT_X1Y124->INT_X32Y155 (CLEM_X1Y124->CLEL_R_X32Y155)
+LONG Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+NORTH
+	INT_X9Y120->INT_X20Y139 (CLEM_X9Y120->DSP_X20Y135)
+	INT_X0Y16->INT_X7Y23 (VCU_VCU_FT_X0Y0->HDIO_BOT_RIGHT_X7Y0)
+	INT_X0Y15->INT_X7Y22 (VCU_VCU_FT_X0Y0->HDIO_BOT_RIGHT_X7Y0)
+	INT_X8Y127->INT_X15Y134 (INT_X8Y127->CLEL_R_X15Y134)
+	INT_X0Y14->INT_X7Y21 (VCU_VCU_FT_X0Y0->HDIO_BOT_RIGHT_X7Y0)
+SOUTH
+	INT_X4Y133->INT_X35Y180 (CLEM_X4Y133->CLEL_R_X35Y180)
+	INT_X0Y141->INT_X31Y172 (PSS_ALTO_X0Y60->CLEL_R_X31Y172)
+	INT_X0Y140->INT_X31Y171 (PSS_ALTO_X0Y60->CLEL_R_X31Y171)
+	INT_X0Y139->INT_X31Y170 (PSS_ALTO_X0Y60->CLEL_R_X31Y170)
+	INT_X0Y138->INT_X31Y169 (PSS_ALTO_X0Y60->CLEL_R_X31Y169)
+EAST
+	INT_X16Y47->INT_X31Y62 (CMT_L_X16Y0->CLEL_R_X31Y62)
+	INT_X16Y48->INT_X31Y63 (CMT_L_X16Y0->CLEL_R_X31Y63)
+	INT_X16Y50->INT_X31Y65 (CMT_L_X16Y0->CLEL_R_X31Y65)
+	INT_X16Y49->INT_X31Y64 (CMT_L_X16Y0->CLEL_R_X31Y64)
+WEST
+	INT_X21Y116->INT_X36Y187 (CLEM_X21Y116->CLEL_R_X36Y187)
+	INT_X20Y128->INT_X35Y143 (CLEM_X20Y128->CLEL_R_X35Y143)
+	INT_X20Y127->INT_X35Y142 (CLEM_X20Y127->CLEL_R_X35Y142)
+	INT_X20Y126->INT_X35Y141 (CLEM_X20Y126->CLEL_R_X35Y141)
+	INT_X20Y125->INT_X35Y140 (CLEM_X20Y125->CLEL_R_X35Y140)
+SHORT Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+NORTH
+	INT_X8Y12->INT_X39Y171 (INT_X8Y12->CLEL_R_X39Y171)
+	INT_X0Y112->INT_X31Y143 (PSS_ALTO_X0Y60->CLEL_R_X31Y143)
+	INT_X32Y112->INT_X42Y143 (CLEM_X32Y112->GTH_QUAD_RIGHT_X42Y120)
+	INT_X0Y16->INT_X31Y47 (VCU_VCU_FT_X0Y0->CLEL_R_X31Y47)
+	INT_X0Y111->INT_X31Y142 (PSS_ALTO_X0Y60->CLEL_R_X31Y142)
+SOUTH
+	INT_X1Y23->INT_X32Y214 (CLEM_X1Y23->CLEL_R_X32Y214)
+	INT_X0Y144->INT_X31Y175 (PSS_ALTO_X0Y60->CLEL_R_X31Y175)
+	INT_X32Y144->INT_X42Y175 (CLEM_X32Y144->GTH_QUAD_RIGHT_X42Y120)
+	INT_X32Y80->INT_X42Y111 (CLEM_X32Y80->GTH_QUAD_RIGHT_X42Y60)
+	INT_X32Y48->INT_X42Y79 (CLEM_X32Y48->GTH_QUAD_RIGHT_X42Y60)
+EAST
+	INT_X0Y10->INT_X31Y233 (VCU_VCU_FT_X0Y0->CLEL_R_X31Y233)
+	INT_X0Y176->INT_X31Y207 (PSS_ALTO_X0Y60->CLEL_R_X31Y207)
+	INT_X0Y144->INT_X31Y175 (PSS_ALTO_X0Y60->CLEL_R_X31Y175)
+	INT_X32Y144->INT_X42Y175 (CLEM_X32Y144->GTH_QUAD_RIGHT_X42Y120)
+	INT_X32Y112->INT_X42Y143 (CLEM_X32Y112->GTH_QUAD_RIGHT_X42Y120)
+WEST
+	INT_X3Y8->INT_X34Y231 (CLEM_X3Y8->INT_X34Y231)
+	INT_X0Y144->INT_X31Y175 (PSS_ALTO_X0Y60->CLEL_R_X31Y175)
+	INT_X32Y144->INT_X42Y175 (CLEM_X32Y144->GTH_QUAD_RIGHT_X42Y120)
+	INT_X0Y112->INT_X31Y143 (PSS_ALTO_X0Y60->CLEL_R_X31Y143)
+	INT_X32Y112->INT_X42Y143 (CLEM_X32Y112->GTH_QUAD_RIGHT_X42Y120)
+
+
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+Phase 5.1 Global Iteration 0 | Checksum: 210d4df10
+
+Time (s): cpu = 00:07:08 ; elapsed = 00:04:14 . Memory (MB): peak = 6724.082 ; gain = 160.590
+
+Phase 5.2 Global Iteration 1
+ Number of Nodes with overlaps = 352973
+ Number of Nodes with overlaps = 217510
+ Number of Nodes with overlaps = 145439
+ Number of Nodes with overlaps = 107636
+ Number of Nodes with overlaps = 91237
+ Number of Nodes with overlaps = 91237
+Phase 5.2 Global Iteration 1 | Checksum: 1df7d1d89
+
+Time (s): cpu = 01:52:32 ; elapsed = 01:05:17 . Memory (MB): peak = 6773.980 ; gain = 210.488
+
+Phase 5.3 Global Iteration 2
+ Number of Nodes with overlaps = 405054
+ Number of Nodes with overlaps = 300245
+ Number of Nodes with overlaps = 224728
+ Number of Nodes with overlaps = 180188
+Phase 5.3 Global Iteration 2 | Checksum: deeaf12c
+
+Time (s): cpu = 03:22:35 ; elapsed = 01:56:53 . Memory (MB): peak = 6780.152 ; gain = 216.660
+
+Phase 5.4 Global Iteration 3
+ Number of Nodes with overlaps = 460655
+ Number of Nodes with overlaps = 378171
+ Number of Nodes with overlaps = 325628

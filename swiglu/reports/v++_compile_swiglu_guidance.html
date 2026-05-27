@@ -3407,7 +3407,7 @@ window.onload = function () { addSorting(); }
 <center><h1>Design Guidance Report</h1></center><center><table class="header" border="0">
 <tr><td><b>Copyright</b></td><td>Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.</td></tr>
 <tr><td><b>Tool Version</b></td><td>xcd v.2025.1 (win64) Build 0 </td></tr>
-<tr><td><b>Date</b></td><td>Wed May 27 09:01:47 2026</td></tr>
+<tr><td><b>Date</b></td><td>Wed May 27 12:56:01 2026</td></tr>
 <tr><td><b>Host</b></td><td>marui-machine running 64-bit major release  (build 9200)</td></tr>
 <tr><td><b>Command</b></td><td>C:/Xilinx/2025.1/Vitis/bin/unwrapped/win64.o/v++.exe  -c --mode hls --config C:\Users\Jacob\Desktop\Vitis_projects\swiglu\hls_config.cfg --work_dir swiglu </td></tr>
 </table></center><br>
@@ -3434,13 +3434,13 @@ window.onload = function () { addSorting(); }
 <th align="left" width="380">Resolution</th>
 </tr>
 <tr>
-<td align="left">17</td>
+<td align="left">8</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'REDUCE_MG'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'ZERO_DSP'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3456,57 +3456,35 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">5</td>
-<td align="left">Kernel</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.swiglu.Kernel</td>
-<td align="left">Unable to schedule the whole 71 cycles bus request operation ('empty', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=735">swiglu.cpp</a>) on port 'gmem_x' (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=735">swiglu.cpp</a>) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Multiple burst reads of length 40 and bit width 128 in loop 'LOAD_ROW'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=380">swiglu.cpp</a>) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=380">swiglu.cpp</a>)
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Multiple burst writes of variable length and bit width 32 in loop 'VITIS_LOOP_718_6'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=718">swiglu.cpp</a>) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=718">swiglu.cpp</a>)
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">6</td>
+<td align="left">11</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'LOAD_X_BATCH_LOAD_X_VEC'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'QUANTIZE_LOOP'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">10</td>
+<td align="left">13</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'REDUCE_GRP'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 62, loop 'GATE_PASS2'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Multiple burst reads of length 1280 and bit width 128 in loop 'LOAD_ROWS'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=48">swiglu.cpp</a>) has been inferred on bundle 'gmem_V'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=48">swiglu.cpp</a>)
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3517,18 +3495,73 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 5, loop 'VITIS_LOOP_718_6_L'
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 5, loop 'VITIS_LOOP_726_6_L'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">16</td>
+<td align="left">1</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Multiple burst reads of length 512 and bit width 128 in loop 'LOAD_X_BATCH'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=743">swiglu.cpp</a>) has been inferred on bundle 'gmem_x'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=743">swiglu.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Multiple burst writes of variable length and bit width 32 in loop 'VITIS_LOOP_726_6'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=726">swiglu.cpp</a>) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=726">swiglu.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.swiglu.Interface</td>
+<td align="left">Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">19</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
 <td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'MAC_MG'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 14, loop 'VITIS_LOOP_719_4_VITIS_LOOP_721_5'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 6, loop 'MAC_ALL'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3555,68 +3588,46 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">11</td>
+<td align="left">17</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'QUANTIZE_LOOP'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'REDUCE_MG'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">1</td>
+<td align="left">3</td>
 <td align="left">Interface</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Interface Related</td>
 <td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Multiple burst reads of length 512 and bit width 128 in loop 'LOAD_X_BATCH'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=735">swiglu.cpp</a>) has been inferred on bundle 'gmem_x'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=735">swiglu.cpp</a>)
+<td align="left">Multiple burst reads of length 40 and bit width 128 in loop 'LOAD_ROW'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=388">swiglu.cpp</a>) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=388">swiglu.cpp</a>)
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">23</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.swiglu.Interface</td>
-<td align="left">Multiple burst reads of length 1280 and bit width 128 in loop 'LOAD_ROWS'(<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=48">swiglu.cpp</a>) has been inferred on bundle 'gmem_V'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=48">swiglu.cpp</a>)
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">14</td>
+<td align="left">10</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 75, loop 'LOAD_ROWS_LOAD_ROW'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'REDUCE_GRP'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">9</td>
+<td align="left">12</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'MAC_ALL'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 47, loop 'GATE_PASS1'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3632,13 +3643,13 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">13</td>
+<td align="left">14</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 62, loop 'GATE_PASS2'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 75, loop 'LOAD_ROWS_LOAD_ROW'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3654,13 +3665,35 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">8</td>
+<td align="left">5</td>
+<td align="left">Kernel</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.swiglu.Kernel</td>
+<td align="left">Unable to schedule the whole 71 cycles bus request operation ('empty', <a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=743">swiglu.cpp</a>) on port 'gmem_x' (<a href="file:///C:/Users/Jacob/Desktop/Vitis_projects/swiglu\swiglu.cpp#line=743">swiglu.cpp</a>) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">16</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'ZERO_DSP'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'MAC_MG'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.swiglu.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'LOAD_X_BATCH_LOAD_X_VEC'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3672,39 +3705,6 @@ window.onload = function () { addSorting(); }
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.swiglu.Throughput</td>
 <td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'ZERO_ODSP'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">19</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'MAC_MG'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">21</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 14, loop 'VITIS_LOOP_711_4_VITIS_LOOP_713_5'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">12</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.swiglu.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 47, loop 'GATE_PASS1'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2025.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>

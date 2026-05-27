@@ -82,10 +82,10 @@ static void load_16_rows_wv_q40(
 // ============================================================================
 
 static void mac_blocks_wv_k16_q40(
-    const ap_uint<128> nib_r0[64], const ap_uint<128> nib_r1[64],
-    const ap_uint<128> nib_r2[64], const ap_uint<128> nib_r3[64],
-    const ap_uint<128> nib_r4[64], const ap_uint<128> nib_r5[64],
-    const ap_uint<128> nib_r6[64], const ap_uint<128> nib_r7[64],
+    const ap_uint<128> nib_r0[64],  const ap_uint<128> nib_r1[64],
+    const ap_uint<128> nib_r2[64],  const ap_uint<128> nib_r3[64],
+    const ap_uint<128> nib_r4[64],  const ap_uint<128> nib_r5[64],
+    const ap_uint<128> nib_r6[64],  const ap_uint<128> nib_r7[64],
     const ap_uint<128> nib_r8[64],  const ap_uint<128> nib_r9[64],
     const ap_uint<128> nib_r10[64], const ap_uint<128> nib_r11[64],
     const ap_uint<128> nib_r12[64], const ap_uint<128> nib_r13[64],
@@ -99,20 +99,20 @@ static void mac_blocks_wv_k16_q40(
 #pragma HLS INLINE off
 #pragma HLS BIND_OP op=mul impl=dsp
 
-    dsp_acc_t dsp0[8], dsp1[8], dsp2[8], dsp3[8];
-    dsp_acc_t dsp4[8], dsp5[8], dsp6[8], dsp7[8];
-    dsp_acc_t dsp8[8], dsp9[8], dsp10[8], dsp11[8];
+    dsp_acc_t dsp0[8],  dsp1[8],  dsp2[8],  dsp3[8];
+    dsp_acc_t dsp4[8],  dsp5[8],  dsp6[8],  dsp7[8];
+    dsp_acc_t dsp8[8],  dsp9[8],  dsp10[8], dsp11[8];
     dsp_acc_t dsp12[8], dsp13[8], dsp14[8], dsp15[8];
-    #pragma HLS ARRAY_PARTITION variable=dsp0 complete
-    #pragma HLS ARRAY_PARTITION variable=dsp1 complete
-    #pragma HLS ARRAY_PARTITION variable=dsp2 complete
-    #pragma HLS ARRAY_PARTITION variable=dsp3 complete
-    #pragma HLS ARRAY_PARTITION variable=dsp4 complete
-    #pragma HLS ARRAY_PARTITION variable=dsp5 complete
-    #pragma HLS ARRAY_PARTITION variable=dsp6 complete
-    #pragma HLS ARRAY_PARTITION variable=dsp7 complete
-    #pragma HLS ARRAY_PARTITION variable=dsp8 complete
-    #pragma HLS ARRAY_PARTITION variable=dsp9 complete
+    #pragma HLS ARRAY_PARTITION variable=dsp0  complete
+    #pragma HLS ARRAY_PARTITION variable=dsp1  complete
+    #pragma HLS ARRAY_PARTITION variable=dsp2  complete
+    #pragma HLS ARRAY_PARTITION variable=dsp3  complete
+    #pragma HLS ARRAY_PARTITION variable=dsp4  complete
+    #pragma HLS ARRAY_PARTITION variable=dsp5  complete
+    #pragma HLS ARRAY_PARTITION variable=dsp6  complete
+    #pragma HLS ARRAY_PARTITION variable=dsp7  complete
+    #pragma HLS ARRAY_PARTITION variable=dsp8  complete
+    #pragma HLS ARRAY_PARTITION variable=dsp9  complete
     #pragma HLS ARRAY_PARTITION variable=dsp10 complete
     #pragma HLS ARRAY_PARTITION variable=dsp11 complete
     #pragma HLS ARRAY_PARTITION variable=dsp12 complete
@@ -121,18 +121,19 @@ static void mac_blocks_wv_k16_q40(
     #pragma HLS ARRAY_PARTITION variable=dsp15 complete
 
     ap_fixed<32,8> qs = x_scale * X12_INV_SCALE;
-    dsp_acc_t total0 = 0, total1 = 0, total2 = 0, total3 = 0;
-    dsp_acc_t total4 = 0, total5 = 0, total6 = 0, total7 = 0;
-    dsp_acc_t total8 = 0, total9 = 0, total10 = 0, total11 = 0;
+    dsp_acc_t total0  = 0, total1  = 0, total2  = 0, total3  = 0;
+    dsp_acc_t total4  = 0, total5  = 0, total6  = 0, total7  = 0;
+    dsp_acc_t total8  = 0, total9  = 0, total10 = 0, total11 = 0;
     dsp_acc_t total12 = 0, total13 = 0, total14 = 0, total15 = 0;
 
     MAC_GROUPS: for (int g = 0; g < Q40_WV_GROUPS; g++) {
         ZERO_DSP: for (int b = 0; b < 8; b++) {
             #pragma HLS PIPELINE II=1
-            dsp0[b] = 0; dsp1[b] = 0; dsp2[b] = 0; dsp3[b] = 0;
-            dsp4[b] = 0; dsp5[b] = 0; dsp6[b] = 0; dsp7[b] = 0;
-            dsp8[b] = 0; dsp9[b] = 0; dsp10[b] = 0; dsp11[b] = 0; dsp12[b] = 0; dsp13[b] = 0; dsp14[b] = 0; dsp15[b] = 0;
-        } 
+            dsp0[b]  = 0; dsp1[b]  = 0; dsp2[b]  = 0; dsp3[b]  = 0;
+            dsp4[b]  = 0; dsp5[b]  = 0; dsp6[b]  = 0; dsp7[b]  = 0;
+            dsp8[b]  = 0; dsp9[b]  = 0; dsp10[b] = 0; dsp11[b] = 0;
+            dsp12[b] = 0; dsp13[b] = 0; dsp14[b] = 0; dsp15[b] = 0;
+        }
 
         MAC_ALL: for (int n = 0; n < 256; n++) {
             #pragma HLS PIPELINE II=1
@@ -150,10 +151,8 @@ static void mac_blocks_wv_k16_q40(
             ap_uint<128> w6  = nib_r6[idx],  w7  = nib_r7[idx];
             ap_uint<128> w8  = nib_r8[idx],  w9  = nib_r9[idx];
             ap_uint<128> w10 = nib_r10[idx], w11 = nib_r11[idx];
-            ap_uint<128> w12 = nib_r12[idx];
-            ap_uint<128> w13 = nib_r13[idx];
-            ap_uint<128> w14 = nib_r14[idx];
-            ap_uint<128> w15 = nib_r15[idx];
+            ap_uint<128> w12 = nib_r12[idx], w13 = nib_r13[idx];
+            ap_uint<128> w14 = nib_r14[idx], w15 = nib_r15[idx];
 
             ap_int<18> xi8 = (ap_int<18>)x[g][b * 32 + n_elem];
             int bo = (b & 1) * 4;
@@ -218,12 +217,15 @@ static void mac_blocks_wv_k16_q40(
 
     QUANTIZE_LOOP: for (int r = 0; r < K_WV; r++) {
         #pragma HLS PIPELINE II=1
-        dsp_acc_t t_raw = (r == 0) ? total0 : (r == 1) ? total1 :
-                          (r == 2) ? total2 : (r == 3) ? total3 :
-                          (r == 4) ? total4 : (r == 5) ? total5 :
-                          (r == 6) ? total6 : (r == 7) ? total7 :
-                          (r == 8) ? total8 : (r == 9) ? total9 :
-                          (r == 10) ? total10 : (r == 11) ? total11 : (r == 12) ? total12 : (r == 13) ? total13 : (r == 14) ? total14 : total15;
+        dsp_acc_t t_raw =
+            (r ==  0) ? total0  : (r ==  1) ? total1  :
+            (r ==  2) ? total2  : (r ==  3) ? total3  :
+            (r ==  4) ? total4  : (r ==  5) ? total5  :
+            (r ==  6) ? total6  : (r ==  7) ? total7  :
+            (r ==  8) ? total8  : (r ==  9) ? total9  :
+            (r == 10) ? total10 : (r == 11) ? total11 :
+            (r == 12) ? total12 : (r == 13) ? total13 :
+            (r == 14) ? total14 : total15;
         fxd_accum_t t = (fxd_accum_t)t_raw;
         ap_fixed<56,38> scaled = t * qs;
         fxd_accum_t half = (scaled >= 0) ? fxd_accum_t(0.5) : fxd_accum_t(-0.5);
@@ -233,7 +235,7 @@ static void mac_blocks_wv_k16_q40(
 }
 
 // ============================================================================
-// Phase 2 & 3: compute_X1 / compute_X2 — BRAM, K_WV=16, parallel REDUCE, CPU pre-converted d
+// Phase 2 & 3: compute_X1 / compute_X2 — BRAM nib tiles, K_WV=16, parallel REDUCE
 // ============================================================================
 
 static void compute_X1(
@@ -251,37 +253,40 @@ static void compute_X1(
     ap_uint<128> nib_r4[64],  nib_r5[64],  nib_r6[64],  nib_r7[64];
     ap_uint<128> nib_r8[64],  nib_r9[64],  nib_r10[64], nib_r11[64];
     ap_uint<128> nib_r12[64], nib_r13[64], nib_r14[64], nib_r15[64];
-    #pragma HLS BIND_STORAGE variable=nib_r0  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r1  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r2  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r3  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r4  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r5  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r6  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r7  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r8  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r9  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r10 type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r11 type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r12 type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r13 type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r14 type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r15 type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r0  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r1  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r2  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r3  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r4  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r5  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r6  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r7  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r8  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r9  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r10 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r11 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r12 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r13 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r14 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r15 type=ram_1p impl=bram
 
     fxd_scale_t d[K_WV][Q40_WV_BLOCKS];
-    #pragma HLS ARRAY_PARTITION variable=d dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=d dim=1 complete
+    #pragma HLS ARRAY_PARTITION variable=d dim=2 factor=4 cyclic
+    #pragma HLS BIND_STORAGE variable=d type=ram_1p impl=lutram
 
     COMPUTE_X1: for (int row = 0; row < FFN_DIM_PAD; row += K_WV) {
         load_16_rows_wv_q40(W_wide, row,
-                            nib_r0, nib_r1, nib_r2, nib_r3,
-                            nib_r4, nib_r5, nib_r6, nib_r7,
-                            nib_r8, nib_r9, nib_r10, nib_r11, nib_r12, nib_r13, nib_r14, nib_r15, d);
+                            nib_r0,  nib_r1,  nib_r2,  nib_r3,
+                            nib_r4,  nib_r5,  nib_r6,  nib_r7,
+                            nib_r8,  nib_r9,  nib_r10, nib_r11,
+                            nib_r12, nib_r13, nib_r14, nib_r15, d);
 
         for (int n = 0; n < actual_tokens; n++) {
             mac_blocks_wv_k16_q40(
-                nib_r0, nib_r1, nib_r2, nib_r3,
-                nib_r4, nib_r5, nib_r6, nib_r7,
-                nib_r8, nib_r9, nib_r10, nib_r11,
+                nib_r0,  nib_r1,  nib_r2,  nib_r3,
+                nib_r4,  nib_r5,  nib_r6,  nib_r7,
+                nib_r8,  nib_r9,  nib_r10, nib_r11,
                 nib_r12, nib_r13, nib_r14, nib_r15,
                 d, x_local_1[n], x_scale, X1_cache, row, n);
         }
@@ -303,37 +308,40 @@ static void compute_X2(
     ap_uint<128> nib_r4[64],  nib_r5[64],  nib_r6[64],  nib_r7[64];
     ap_uint<128> nib_r8[64],  nib_r9[64],  nib_r10[64], nib_r11[64];
     ap_uint<128> nib_r12[64], nib_r13[64], nib_r14[64], nib_r15[64];
-    #pragma HLS BIND_STORAGE variable=nib_r0  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r1  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r2  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r3  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r4  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r5  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r6  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r7  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r8  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r9  type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r10 type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r11 type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r12 type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r13 type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r14 type=ram_1p impl=lutram
-    #pragma HLS BIND_STORAGE variable=nib_r15 type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r0  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r1  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r2  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r3  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r4  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r5  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r6  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r7  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r8  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r9  type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r10 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r11 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r12 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r13 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r14 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r15 type=ram_1p impl=bram
 
     fxd_scale_t d[K_WV][Q40_WV_BLOCKS];
-    #pragma HLS ARRAY_PARTITION variable=d dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=d dim=1 complete
+    #pragma HLS ARRAY_PARTITION variable=d dim=2 factor=4 cyclic
+    #pragma HLS BIND_STORAGE variable=d type=ram_1p impl=lutram
 
     COMPUTE_X2: for (int row = 0; row < FFN_DIM_PAD; row += K_WV) {
         load_16_rows_wv_q40(V_wide, row,
-                            nib_r0, nib_r1, nib_r2, nib_r3,
-                            nib_r4, nib_r5, nib_r6, nib_r7,
-                            nib_r8, nib_r9, nib_r10, nib_r11, nib_r12, nib_r13, nib_r14, nib_r15, d);
+                            nib_r0,  nib_r1,  nib_r2,  nib_r3,
+                            nib_r4,  nib_r5,  nib_r6,  nib_r7,
+                            nib_r8,  nib_r9,  nib_r10, nib_r11,
+                            nib_r12, nib_r13, nib_r14, nib_r15, d);
 
         for (int n = 0; n < actual_tokens; n++) {
             mac_blocks_wv_k16_q40(
-                nib_r0, nib_r1, nib_r2, nib_r3,
-                nib_r4, nib_r5, nib_r6, nib_r7,
-                nib_r8, nib_r9, nib_r10, nib_r11,
+                nib_r0,  nib_r1,  nib_r2,  nib_r3,
+                nib_r4,  nib_r5,  nib_r6,  nib_r7,
+                nib_r8,  nib_r9,  nib_r10, nib_r11,
                 nib_r12, nib_r13, nib_r14, nib_r15,
                 d, x_local_2[n], x_scale, X2_cache, row, n);
         }
