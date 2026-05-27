@@ -152,18 +152,22 @@ static void transpose_q4k_to_urm_csim(const uint8_t* src, uint8_t* dst,
         for (int b = 0; b < blocks_per_row; b++) {
             const uint8_t* blk = src + ((size_t)row * blocks_per_row + b) * Q4_K_BYTES;
             uint8_t* hdr = dst + (size_t)row * row_stride + (size_t)b * URM_HDR_BYTES;
-            hdr[0] = blk[0]; hdr[1] = blk[1];
-            hdr[2] = blk[2]; hdr[3] = blk[3];
+            float d_fp32 = fp16_ref(blk[0] | ((uint16_t)blk[1] << 8));
+            int32_t d_raw = (int32_t)(d_fp32 * 256.0f);
+            memcpy(hdr, &d_raw, 4);
+            float dmin_fp32 = fp16_ref(blk[2] | ((uint16_t)blk[3] << 8));
+            int32_t dmin_raw = (int32_t)(dmin_fp32 * 256.0f);
+            memcpy(hdr + 4, &dmin_raw, 4);
             for (int i = 0; i < 4; i++) {
-                hdr[4 + i]  = blk[4 + i] & 0x3F;
-                hdr[12 + i] = blk[8 + i] & 0x3F;
+                hdr[8 + i]  = blk[4 + i] & 0x3F;
+                hdr[16 + i] = blk[8 + i] & 0x3F;
             }
             for (int i = 4; i < 8; i++) {
                 int j = i - 4;
-                hdr[4 + i]  = (blk[12 + j] & 0x0F) | (uint8_t)((blk[4 + j] >> 6) << 4);
-                hdr[12 + i] = (blk[12 + j] >> 4)   | (uint8_t)((blk[8 + j] >> 6) << 4);
+                hdr[8 + i]  = (blk[12 + j] & 0x0F) | (uint8_t)((blk[4 + j] >> 6) << 4);
+                hdr[16 + i] = (blk[12 + j] >> 4)   | (uint8_t)((blk[8 + j] >> 6) << 4);
             }
-            memset(hdr + 20, 0, 12);
+            memset(hdr + 24, 0, 8);
         }
 
         // Nibbles: element-major, transposed across blocks

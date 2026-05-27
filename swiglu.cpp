@@ -5,8 +5,16 @@
 #include <ap_int.h>
 #include <ap_fixed.h>
 // ─── Fixed-point types for DSP-mapped REDUCE loops ───────────────────────────
-typedef ap_fixed<32,8>  fxd_scale_t;
+typedef ap_fixed<18,8>  fxd_scale_t;   // fits DSP48E2 18-bit B input
 typedef ap_fixed<56,38> fxd_accum_t;
+typedef ap_int<48>      dsp_acc_t;
+
+// ─── fxd_from_raw — union bit-cast: int32_t → ap_fixed<18,8> ─────────────────
+static inline fxd_scale_t fxd_from_raw(int32_t raw) {
+    union { int32_t i; fxd_scale_t f; } u;
+    u.i = raw;
+    return u.f;
+}
 
 // ─── Dimensions ──────────────────────────────────────────────────────────────
 #define VECTOR_DIM           2048
@@ -91,8 +99,8 @@ static inline uint8_t get_byte(const ap_uint<128>* data, int byte_idx) {
 // stored verbatim, 1 write/cycle → guaranteed II=1.  Extraction moves to MAC.
 static void load_row_wv_urm(const ap_uint<128> *W_wide, int row,
                              ap_uint<128> nib_bram[64],
-                             float   d[WV_BLOCKS_PER_ROW],
-                             float   dmin[WV_BLOCKS_PER_ROW],
+                             fxd_scale_t d[WV_BLOCKS_PER_ROW],
+                             fxd_scale_t dmin[WV_BLOCKS_PER_ROW],
                              int8_t  sc6[WV_BLOCKS_PER_ROW][8],
                              int8_t  mn6[WV_BLOCKS_PER_ROW][8]) {
 #pragma HLS INLINE off
@@ -101,16 +109,13 @@ static void load_row_wv_urm(const ap_uint<128> *W_wide, int row,
         #pragma HLS PIPELINE II=1
         ap_uint<128> w0 = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + b * 2];
         ap_uint<128> w1 = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + b * 2 + 1];
-        uint16_t d_raw = (uint16_t)w0.range(15, 0), dmin_raw = (uint16_t)w0.range(31, 16);
-        d[b] = fp16_to_fp32(d_raw); dmin[b] = fp16_to_fp32(dmin_raw);
-        for (int i = 0; i < 4; i++) {
-            sc6[b][i] = (int8_t)(uint8_t)w0.range(32 + i*8 + 7, 32 + i*8);
-            mn6[b][i] = (int8_t)(uint8_t)w0.range(64 + i*8 + 7, 64 + i*8);
+        d[b]    = fxd_from_raw((int32_t)w0.range(31, 0));
+        dmin[b] = fxd_from_raw((int32_t)w0.range(63, 32));
+        for (int i = 0; i < 8; i++) {
+            sc6[b][i] = (int8_t)(uint8_t)w0.range(64 + i*8 + 7, 64 + i*8);
         }
-        for (int i = 4; i < 8; i++) {
-            int j = i - 4;
-            sc6[b][i] = (int8_t)(uint8_t)w1.range(j*8 + 7, j*8);
-            mn6[b][i] = (int8_t)(uint8_t)w1.range(32 + j*8 + 7, 32 + j*8);
+        for (int i = 0; i < 8; i++) {
+            mn6[b][i] = (int8_t)(uint8_t)w1.range(i*8 + 7, i*8);
         }
     }
 
@@ -129,8 +134,8 @@ static void load_row_down_urm(const ap_uint<128> *Wd_wide, int out_i,
                                ap_uint<32> nib_g1[URM_NIB_TILE_DEPTH],
                                ap_uint<32> nib_g2[URM_NIB_TILE_DEPTH],
                                ap_uint<32> nib_g3[URM_NIB_TILE_DEPTH],
-                               float   d[DOWN_BLOCKS_PER_ROW],
-                               float   dmin[DOWN_BLOCKS_PER_ROW],
+                               fxd_scale_t d[DOWN_BLOCKS_PER_ROW],
+                               fxd_scale_t dmin[DOWN_BLOCKS_PER_ROW],
                                int8_t  sc6[DOWN_BLOCKS_PER_ROW][8],
                                int8_t  mn6[DOWN_BLOCKS_PER_ROW][8]) {
 #pragma HLS INLINE off
@@ -180,10 +185,10 @@ static void mac_blocks_wv_k4_urm(
     const ap_uint<128> nib_r1[64],
     const ap_uint<128> nib_r2[64],
     const ap_uint<128> nib_r3[64],
-    const float   d0[WV_BLOCKS_PER_ROW], const float dmin0[WV_BLOCKS_PER_ROW],
-    const float   d1[WV_BLOCKS_PER_ROW], const float dmin1[WV_BLOCKS_PER_ROW],
-    const float   d2[WV_BLOCKS_PER_ROW], const float dmin2[WV_BLOCKS_PER_ROW],
-    const float   d3[WV_BLOCKS_PER_ROW], const float dmin3[WV_BLOCKS_PER_ROW],
+    const fxd_scale_t d0[WV_BLOCKS_PER_ROW], const fxd_scale_t dmin0[WV_BLOCKS_PER_ROW],
+    const fxd_scale_t d1[WV_BLOCKS_PER_ROW], const fxd_scale_t dmin1[WV_BLOCKS_PER_ROW],
+    const fxd_scale_t d2[WV_BLOCKS_PER_ROW], const fxd_scale_t dmin2[WV_BLOCKS_PER_ROW],
+    const fxd_scale_t d3[WV_BLOCKS_PER_ROW], const fxd_scale_t dmin3[WV_BLOCKS_PER_ROW],
     const int8_t  sc60[WV_BLOCKS_PER_ROW][8], const int8_t mn60[WV_BLOCKS_PER_ROW][8],
     const int8_t  sc61[WV_BLOCKS_PER_ROW][8], const int8_t mn61[WV_BLOCKS_PER_ROW][8],
     const int8_t  sc62[WV_BLOCKS_PER_ROW][8], const int8_t mn62[WV_BLOCKS_PER_ROW][8],
@@ -269,10 +274,10 @@ static void mac_blocks_wv_k4_urm(
             sw2 += acc_w2[b][k]; sm2 += acc_m2[b][k];
             sw3 += acc_w3[b][k]; sm3 += acc_m3[b][k];
         }
-        total0 += (fxd_scale_t)d0[b] * (fxd_accum_t)sw0 - (fxd_scale_t)dmin0[b] * (fxd_accum_t)sm0;
-        total1 += (fxd_scale_t)d1[b] * (fxd_accum_t)sw1 - (fxd_scale_t)dmin1[b] * (fxd_accum_t)sm1;
-        total2 += (fxd_scale_t)d2[b] * (fxd_accum_t)sw2 - (fxd_scale_t)dmin2[b] * (fxd_accum_t)sm2;
-        total3 += (fxd_scale_t)d3[b] * (fxd_accum_t)sw3 - (fxd_scale_t)dmin3[b] * (fxd_accum_t)sm3;
+        total0 += d0[b] * (fxd_accum_t)sw0 - dmin0[b] * (fxd_accum_t)sm0;
+        total1 += d1[b] * (fxd_accum_t)sw1 - dmin1[b] * (fxd_accum_t)sm1;
+        total2 += d2[b] * (fxd_accum_t)sw2 - dmin2[b] * (fxd_accum_t)sm2;
+        total3 += d3[b] * (fxd_accum_t)sw3 - dmin3[b] * (fxd_accum_t)sm3;
     }
     *result0 = (float)total0 * x_scale;
     *result1 = (float)total1 * x_scale;
@@ -299,10 +304,10 @@ static void mac_blocks_down_q4k_k4_urm(
     const ap_uint<32> g3r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g3r1[URM_NIB_TILE_DEPTH],
     const ap_uint<32> g3r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g3r3[URM_NIB_TILE_DEPTH],
     // Headers: 4 rows × 32 blocks
-    const float  d0[DOWN_BLOCKS_PER_ROW], const float  dmin0[DOWN_BLOCKS_PER_ROW],
-    const float  d1[DOWN_BLOCKS_PER_ROW], const float  dmin1[DOWN_BLOCKS_PER_ROW],
-    const float  d2[DOWN_BLOCKS_PER_ROW], const float  dmin2[DOWN_BLOCKS_PER_ROW],
-    const float  d3[DOWN_BLOCKS_PER_ROW], const float  dmin3[DOWN_BLOCKS_PER_ROW],
+    const fxd_scale_t d0[DOWN_BLOCKS_PER_ROW], const fxd_scale_t dmin0[DOWN_BLOCKS_PER_ROW],
+    const fxd_scale_t d1[DOWN_BLOCKS_PER_ROW], const fxd_scale_t dmin1[DOWN_BLOCKS_PER_ROW],
+    const fxd_scale_t d2[DOWN_BLOCKS_PER_ROW], const fxd_scale_t dmin2[DOWN_BLOCKS_PER_ROW],
+    const fxd_scale_t d3[DOWN_BLOCKS_PER_ROW], const fxd_scale_t dmin3[DOWN_BLOCKS_PER_ROW],
     const int8_t sc60[DOWN_BLOCKS_PER_ROW][8], const int8_t mn60[DOWN_BLOCKS_PER_ROW][8],
     const int8_t sc61[DOWN_BLOCKS_PER_ROW][8], const int8_t mn61[DOWN_BLOCKS_PER_ROW][8],
     const int8_t sc62[DOWN_BLOCKS_PER_ROW][8], const int8_t mn62[DOWN_BLOCKS_PER_ROW][8],
@@ -386,14 +391,14 @@ static void mac_blocks_down_q4k_k4_urm(
                 sw2 += acc_w2[b][k]; sm2 += acc_m2[b][k];
                 sw3 += acc_w3[b][k]; sm3 += acc_m3[b][k];
             }
-            total0 += (fxd_scale_t)d0[babs]    * (fxd_accum_t)sw0
-                    - (fxd_scale_t)dmin0[babs]  * (fxd_accum_t)sm0;
-            total1 += (fxd_scale_t)d1[babs]    * (fxd_accum_t)sw1
-                    - (fxd_scale_t)dmin1[babs]  * (fxd_accum_t)sm1;
-            total2 += (fxd_scale_t)d2[babs]    * (fxd_accum_t)sw2
-                    - (fxd_scale_t)dmin2[babs]  * (fxd_accum_t)sm2;
-            total3 += (fxd_scale_t)d3[babs]    * (fxd_accum_t)sw3
-                    - (fxd_scale_t)dmin3[babs]  * (fxd_accum_t)sm3;
+            total0 += d0[babs]    * (fxd_accum_t)sw0
+                    - dmin0[babs]  * (fxd_accum_t)sm0;
+            total1 += d1[babs]    * (fxd_accum_t)sw1
+                    - dmin1[babs]  * (fxd_accum_t)sm1;
+            total2 += d2[babs]    * (fxd_accum_t)sw2
+                    - dmin2[babs]  * (fxd_accum_t)sm2;
+            total3 += d3[babs]    * (fxd_accum_t)sw3
+                    - dmin3[babs]  * (fxd_accum_t)sm3;
         }
     }
     *result0 = (float)total0 * gate_scale;
@@ -424,7 +429,7 @@ static void compute_X1(
     #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
 
-    float  d0[WV_BLOCKS_PER_ROW], dmin0[WV_BLOCKS_PER_ROW];
+    fxd_scale_t d0[WV_BLOCKS_PER_ROW], dmin0[WV_BLOCKS_PER_ROW];
     float  d1[WV_BLOCKS_PER_ROW], dmin1[WV_BLOCKS_PER_ROW];
     float  d2[WV_BLOCKS_PER_ROW], dmin2[WV_BLOCKS_PER_ROW];
     float  d3[WV_BLOCKS_PER_ROW], dmin3[WV_BLOCKS_PER_ROW];
@@ -486,7 +491,7 @@ static void compute_X2(
     #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
     #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
 
-    float  d0[WV_BLOCKS_PER_ROW], dmin0[WV_BLOCKS_PER_ROW];
+    fxd_scale_t d0[WV_BLOCKS_PER_ROW], dmin0[WV_BLOCKS_PER_ROW];
     float  d1[WV_BLOCKS_PER_ROW], dmin1[WV_BLOCKS_PER_ROW];
     float  d2[WV_BLOCKS_PER_ROW], dmin2[WV_BLOCKS_PER_ROW];
     float  d3[WV_BLOCKS_PER_ROW], dmin3[WV_BLOCKS_PER_ROW];

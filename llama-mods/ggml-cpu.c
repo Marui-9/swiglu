@@ -200,22 +200,26 @@ static void transpose_q4k_to_urm(const uint8_t *src, uint8_t *dst,
             const uint8_t *blk = src + ((size_t)row * blocks_per_row + b) * src_block_bytes;
             uint8_t *hdr = dst + (size_t)row * row_stride + (size_t)b * URM_HDR_BYTES;
 
-            // d/dmin fp16: verbatim copy (bytes 0-3)
-            hdr[0] = blk[0]; hdr[1] = blk[1];
-            hdr[2] = blk[2]; hdr[3] = blk[3];
+            // d/dmin: fp16 → fxd_scale_t raw int32_t (4 bytes each)
+            float d_fp32 = fp16_to_fp32(blk[0] | ((uint16_t)blk[1] << 8));
+            int32_t d_raw = (int32_t)(d_fp32 * 256.0f);
+            memcpy(hdr, &d_raw, 4);
+            float dmin_fp32 = fp16_to_fp32(blk[2] | ((uint16_t)blk[3] << 8));
+            int32_t dmin_raw = (int32_t)(dmin_fp32 * 256.0f);
+            memcpy(hdr + 4, &dmin_raw, 4);
 
             // sc6[0..7] and mn6[0..7]: decode interleaved 6-bit → flat INT8
             for (int i = 0; i < 4; i++) {
-                hdr[4  + i] = blk[4 + i] & 0x3F;
-                hdr[12 + i] = blk[8 + i] & 0x3F;
+                hdr[8  + i] = blk[4 + i] & 0x3F;
+                hdr[16 + i] = blk[8 + i] & 0x3F;
             }
             for (int i = 4; i < 8; i++) {
                 int j = i - 4;
-                hdr[4  + i] = (blk[12 + j] & 0x0F) | (uint8_t)((blk[4 + j] >> 6) << 4);
-                hdr[12 + i] = (blk[12 + j] >> 4)   | (uint8_t)((blk[8 + j] >> 6) << 4);
+                hdr[8  + i] = (blk[12 + j] & 0x0F) | (uint8_t)((blk[4 + j] >> 6) << 4);
+                hdr[16 + i] = (blk[12 + j] >> 4)   | (uint8_t)((blk[8 + j] >> 6) << 4);
             }
-            // Padding: bytes 20-31 = 0
-            memset(hdr + 20, 0, 12);
+            // Padding: bytes 24-31 = 0
+            memset(hdr + 24, 0, 8);
         }
 
         // ── Nibbles: element-major, transposed across blocks ────────────────────
