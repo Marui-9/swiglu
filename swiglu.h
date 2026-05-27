@@ -28,9 +28,13 @@
 #define Q40_WV_NIB_WORDS      64       // 8 groups × 8 DDR words (4 elem-slices each)
 #define Q40_WV_ROW_WORDS      80
 
-#define Q40_DOWN_HDR_WORDS    64       // 256 fp32 d / 4 per DDR word
-#define Q40_DOWN_NIB_WORDS    256      // 8 MG × 32 DDR words
-#define Q40_DOWN_ROW_WORDS    320
+// Output DDR layout: interleaved per meta-group — [HDR(8w) | NIB(32w)] × 8 MGs
+// HDR: 32 d-values = 8 DDR words.  NIB: 32 elements = 32 DDR words.
+// One 40-beat AXI burst per row loads one MG's header+nibbles contiguously.
+#define Q40_DOWN_MG_HDR_WORDS  8       // d-values for one MG: 32 / 4 per DDR word
+#define Q40_DOWN_MG_NIB_WORDS  32      // nibble elements for one MG
+#define Q40_DOWN_MG_WORDS      40      // Q40_DOWN_MG_HDR_WORDS + Q40_DOWN_MG_NIB_WORDS
+#define Q40_DOWN_ROW_WORDS    320      // 8 MGs × 40 = 320 (unchanged total)
 
 // ─── MAC parallelism ─────────────────────────────────────────────────────────
 #define K_WV                  16       // 16 WV rows per iteration (16 MAC chains w/ 1-block sg)

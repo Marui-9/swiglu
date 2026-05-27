@@ -134,8 +134,9 @@ static uint32_t swg_last_prog_mode  = 0;
 #define Q40_WV_HDR_WORDS      16     // 64 fp32 d / 4 per DDR word
 #define Q40_WV_NIB_WORDS      64     // 8 groups × 8 DDR words (4 elem-slices each)
 #define Q40_WV_ROW_WORDS      80
-#define Q40_DOWN_HDR_WORDS    64     // 256 fp32 d / 4 per DDR word
-#define Q40_DOWN_NIB_WORDS    256    // 8 MG × 32 DDR words
+#define Q40_DOWN_MG_HDR_WORDS  8     // d-values for one MG: 32 / 4 per DDR word
+#define Q40_DOWN_MG_NIB_WORDS  32    // nibble elements for one MG
+#define Q40_DOWN_MG_WORDS      40    // Q40_DOWN_MG_HDR_WORDS + Q40_DOWN_MG_NIB_WORDS
 #define Q40_DOWN_ROW_WORDS    320
 
 static bool swg_layer_cached[SWG_NUM_LAYERS];
@@ -215,20 +216,17 @@ static inline float fp16_to_fp32_ref(uint16_t h) {
 // MAC extracts nibbles at compile-time .range() — zero LUT.
 //
 // WV row (2048 vals = 64 blocks = 8 groups × 8 blocks):
-//   Headers: 64 fp32 d = 256 B = 16 DDR words (block-major, 4 d per word)
-//   Nibbles: 8 groups × 8 DDR words = 64 DDR words
-//     Each DDR word packs 4 element-slices for the same group:
-//       ddr32[0]=elem 4e,  ddr32[1]=elem 4e+1,  ddr32[2]=elem 4e+2,  ddr32[3]=elem 4e+3
-//     Each elem-slice = 32-bit word with nibbles for all 8 blocks at that element.
-//   Total: 80 DDR words (1280 B) per row.
+//   [HDR(16w) | NIB(64w)] = 80 DDR words = 1280 B per row
+//   HDR: 64 fp32 d, block-major (4 d per 128-bit word)
+//   NIB: 8 groups × 8 DDR words; each DDR word = 4 element-slices (ddr32[0..3])
+//     Each elem-slice = 32-bit with nibbles for all 8 blocks at that element.
 //
-// Output row (8192 vals = 256 blocks = 32 groups = 8 meta-groups of 4):
-//   Headers: 256 fp32 d = 1024 B = 64 DDR words
-//   Nibbles: 8 meta-groups × 32 DDR words = 256 DDR words
-//     Meta-group mg, element n: one 128-bit DDR word packing 4 groups' nib32:
-//       {g3_nib32, g2_nib32, g1_nib32, g0_nib32} where gk = mg*4 + k
-//     FPGA fans out to 4 group BRAM tiles per row.
-//   Total: 320 DDR words (5120 B) per row.
+// Output row (8192 vals = 256 blocks = 32 groups = 8 meta-groups):
+//   Interleaved: [HDR(8w)|NIB(32w)] × 8 MGs = 320 DDR words = 5120 B per row
+//   Per MG: 32 blocks → HDR 8 words (fp32 d) + 32 elements → NIB 32 words
+//     HDR word w = d-values for blocks [w*4 .. w*4+3] of this MG
+//     NIB word n = {g3_nib32, g2_nib32, g1_nib32, g0_nib32} at element n
+//   One 40-beat AXI burst covers one MG's HDR+NIB contiguously.
 //
 // Called once per layer on first use.  Permanently cached in udmabuf.
 static void transpose_q40_to_urm(const uint8_t *src, uint8_t *dst,
@@ -238,34 +236,30 @@ static void transpose_q40_to_urm(const uint8_t *src, uint8_t *dst,
 
     int row_hdr, row_nib, row_stride;
     if (groups <= 8) {
-        // WV path: 8 groups — 16 hdr words + 64 nib words = 80
+        // WV path: [HDR | NIB] flat layout
         row_hdr    = blocks_per_row * 4;           // 64 fp32 d = 256 B
-        row_nib    = 32 * groups * 4;              // 32 elem × 8 groups × 4 B
-        row_stride = row_hdr + row_nib;            // 256 + 1024 = 1280 B
+        row_nib    = 32 * groups * 4;              // 32 elem × 8 groups × 4 B = 1024 B
+        row_stride = row_hdr + row_nib;            // 1280 B
     } else {
-        // Output path: 32 groups — 64 hdr words + 256 nib words = 320
-        row_hdr    = blocks_per_row * 4;           // 256 fp32 d = 1024 B
-        row_nib    = 32 * groups * 4;              // 32 elem × 32 groups × 4 B
-        row_stride = row_hdr + row_nib;            // 1024 + 4096 = 5120 B
+        // Output path: interleaved per-MG — row_hdr/row_nib unused (padding skipped for output)
+        row_hdr    = 0;
+        row_nib    = 0;
+        row_stride = Q40_DOWN_MG * Q40_DOWN_MG_WORDS * 16;  // 8×40×16 = 5120 B
     }
 
     for (int row = 0; row < n_rows; row++) {
-        // ── Headers: fp16 d → fp32, block-major ───────────────────────────────
-        uint8_t *hdr_base = dst + (size_t)row * row_stride;
-        for (int b = 0; b < blocks_per_row; b++) {
-            const uint8_t *blk = src + ((size_t)row * blocks_per_row + b) * src_block_bytes;
-            uint16_t d_fp16 = (uint16_t)blk[0] | ((uint16_t)blk[1] << 8);
-            float d_fp32 = fp16_to_fp32_ref(d_fp16);
-            int32_t raw = (int32_t)(d_fp32 * 1024.0f);
-            uint32_t *ddr32 = (uint32_t *)(hdr_base + (size_t)(b >> 2) * 16);
-            ddr32[b & 3] = (uint32_t)raw;
-        }
-
-        // ── Nibbles: element-major, transposed across blocks ─────────────────
-        uint8_t *nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
-
         if (groups <= 8) {
-            // ── WV: sub-group-major nibble layout ──────────────────────────
+            // ── WV: headers at row start, nibbles contiguous after ──────────
+            uint8_t *hdr_base = dst + (size_t)row * row_stride;
+            for (int b = 0; b < blocks_per_row; b++) {
+                const uint8_t *blk = src + ((size_t)row * blocks_per_row + b) * src_block_bytes;
+                uint16_t d_fp16 = (uint16_t)blk[0] | ((uint16_t)blk[1] << 8);
+                float d_fp32 = fp16_to_fp32_ref(d_fp16);
+                int32_t raw = (int32_t)(d_fp32 * 1024.0f);
+                uint32_t *ddr32 = (uint32_t *)(hdr_base + (size_t)(b >> 2) * 16);
+                ddr32[b & 3] = (uint32_t)raw;
+            }
+            uint8_t *nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
             for (int g = 0; g < groups; g++) {
                 for (int sg = 0; sg < 4; sg++) {
                     int b0 = sg * 2, b1 = sg * 2 + 1;
@@ -294,10 +288,24 @@ static void transpose_q40_to_urm(const uint8_t *src, uint8_t *dst,
                 }
             }
         } else {
-            // ── Output: 32 groups, 8 meta-groups of 4 ─────────────────────────
+            // ── Output: interleaved [HDR(8w)|NIB(32w)] per meta-group ────────
+            uint8_t *row_base = dst + (size_t)row * row_stride;
             for (int mg = 0; mg < Q40_DOWN_MG; mg++) {
+                uint8_t *mg_base = row_base + (size_t)mg * (Q40_DOWN_MG_WORDS * 16);
+                // HDR: 32 blocks for this MG → 8 DDR words (fp32 d, block-major)
+                for (int b = 0; b < 32; b++) {
+                    int abs_b = mg * 32 + b;
+                    const uint8_t *blk = src + ((size_t)row * blocks_per_row
+                                                + (size_t)abs_b) * src_block_bytes;
+                    uint16_t d_fp16 = (uint16_t)blk[0] | ((uint16_t)blk[1] << 8);
+                    float d_fp32 = fp16_to_fp32_ref(d_fp16);
+                    int32_t raw = (int32_t)(d_fp32 * 1024.0f);
+                    uint32_t *ddr32 = (uint32_t *)(mg_base + (size_t)(b >> 2) * 16);
+                    ddr32[b & 3] = (uint32_t)raw;
+                }
+                // NIB: 32 elements, 4 group-slices each → 32 DDR words
+                uint8_t *nib_base_mg = mg_base + (size_t)Q40_DOWN_MG_HDR_WORDS * 16;
                 for (int n = 0; n < 32; n++) {
-                    // One DDR word per element: 4 group-slices
                     uint32_t nib32[4] = {0, 0, 0, 0};
                     for (int k = 0; k < 4; k++) {
                         int g = mg * 4 + k;
@@ -310,8 +318,7 @@ static void transpose_q40_to_urm(const uint8_t *src, uint8_t *dst,
                             nib32[k] |= (nib << (b * 4));
                         }
                     }
-                    uint32_t *ddr32 = (uint32_t *)(nib_base
-                        + ((size_t)mg * 32 + (size_t)n) * 16);
+                    uint32_t *ddr32 = (uint32_t *)(nib_base_mg + (size_t)n * 16);
                     ddr32[0] = nib32[0];
                     ddr32[1] = nib32[1];
                     ddr32[2] = nib32[2];
@@ -321,7 +328,7 @@ static void transpose_q40_to_urm(const uint8_t *src, uint8_t *dst,
         }
     }
 
-    // Pad WV matrices to FFN_DIM_PAD (only when n_rows == FFN_DIM)
+    // Pad WV matrices to FFN_DIM_PAD (only applies when n_rows == FFN_DIM; output skipped)
     if (n_rows == FFN_DIM && n_rows < FFN_DIM_PAD) {
         for (int row = n_rows; row < FFN_DIM_PAD; row++) {
             uint8_t *hdr_base = dst + (size_t)row * row_stride;

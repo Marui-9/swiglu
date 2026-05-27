@@ -40,41 +40,40 @@ static void load_16_rows_wv_q40(
 {
 #pragma HLS INLINE off
 
-    LOAD_HDR: for (int i = 0; i < K_WV * Q40_WV_HDR_WORDS; i++) {
-        #pragma HLS PIPELINE II=1
-        int r = i / Q40_WV_HDR_WORDS;
-        int w = i % Q40_WV_HDR_WORDS;
-        ap_uint<128> ddr = W_wide[(ap_uint<64>)(base_row + r) * Q40_WV_ROW_WORDS + w];
-
-        d[r][w*4 + 0] = fxd_from_raw((int32_t)ddr.range(31,  0));
-        d[r][w*4 + 1] = fxd_from_raw((int32_t)ddr.range(63,  32));
-        d[r][w*4 + 2] = fxd_from_raw((int32_t)ddr.range(95,  64));
-        d[r][w*4 + 3] = fxd_from_raw((int32_t)ddr.range(127, 96));
-    }
-
-    LOAD_NIB: for (int i = 0; i < K_WV * Q40_WV_NIB_WORDS; i++) {
-        #pragma HLS PIPELINE II=1
-        int r = i / Q40_WV_NIB_WORDS;
-        int e = i % Q40_WV_NIB_WORDS;
-        ap_uint<128> ddr = W_wide[(ap_uint<64>)(base_row + r) * Q40_WV_ROW_WORDS
-                                    + Q40_WV_HDR_WORDS + e];
-
-        if      (r == 0)  nib_r0[e]  = ddr;
-        else if (r == 1)  nib_r1[e]  = ddr;
-        else if (r == 2)  nib_r2[e]  = ddr;
-        else if (r == 3)  nib_r3[e]  = ddr;
-        else if (r == 4)  nib_r4[e]  = ddr;
-        else if (r == 5)  nib_r5[e]  = ddr;
-        else if (r == 6)  nib_r6[e]  = ddr;
-        else if (r == 7)  nib_r7[e]  = ddr;
-        else if (r == 8)  nib_r8[e]  = ddr;
-        else if (r == 9)  nib_r9[e]  = ddr;
-        else if (r == 10) nib_r10[e] = ddr;
-        else if (r == 11) nib_r11[e] = ddr;
-        else if (r == 12) nib_r12[e] = ddr;
-        else if (r == 13) nib_r13[e] = ddr;
-        else if (r == 14) nib_r14[e] = ddr;
-        else              nib_r15[e] = ddr;
+    // Nested loop: outer r keeps r constant so the inner LOAD_ROW address
+    // (base_row+r)*ROW_WORDS + w is linear in w → HLS infers one 80-beat AXI
+    // burst per row.  HDR (w<16) and NIB (w>=16) are contiguous within each row
+    // so a single inner loop covers both, halving burst-initiation overhead vs
+    // two separate loops.
+    LOAD_ROWS: for (int r = 0; r < K_WV; r++) {
+        LOAD_ROW: for (int w = 0; w < Q40_WV_ROW_WORDS; w++) {
+            #pragma HLS PIPELINE II=1
+            ap_uint<128> ddr = W_wide[(ap_uint<64>)(base_row + r) * Q40_WV_ROW_WORDS + w];
+            if (w < Q40_WV_HDR_WORDS) {
+                d[r][w*4 + 0] = fxd_from_raw((int32_t)ddr.range(31,  0));
+                d[r][w*4 + 1] = fxd_from_raw((int32_t)ddr.range(63,  32));
+                d[r][w*4 + 2] = fxd_from_raw((int32_t)ddr.range(95,  64));
+                d[r][w*4 + 3] = fxd_from_raw((int32_t)ddr.range(127, 96));
+            } else {
+                int e = w - Q40_WV_HDR_WORDS;
+                if      (r == 0)  nib_r0[e]  = ddr;
+                else if (r == 1)  nib_r1[e]  = ddr;
+                else if (r == 2)  nib_r2[e]  = ddr;
+                else if (r == 3)  nib_r3[e]  = ddr;
+                else if (r == 4)  nib_r4[e]  = ddr;
+                else if (r == 5)  nib_r5[e]  = ddr;
+                else if (r == 6)  nib_r6[e]  = ddr;
+                else if (r == 7)  nib_r7[e]  = ddr;
+                else if (r == 8)  nib_r8[e]  = ddr;
+                else if (r == 9)  nib_r9[e]  = ddr;
+                else if (r == 10) nib_r10[e] = ddr;
+                else if (r == 11) nib_r11[e] = ddr;
+                else if (r == 12) nib_r12[e] = ddr;
+                else if (r == 13) nib_r13[e] = ddr;
+                else if (r == 14) nib_r14[e] = ddr;
+                else              nib_r15[e] = ddr;
+            }
+        }
     }
 }
 
@@ -252,22 +251,22 @@ static void compute_X1(
     ap_uint<128> nib_r4[64],  nib_r5[64],  nib_r6[64],  nib_r7[64];
     ap_uint<128> nib_r8[64],  nib_r9[64],  nib_r10[64], nib_r11[64];
     ap_uint<128> nib_r12[64], nib_r13[64], nib_r14[64], nib_r15[64];
-    #pragma HLS BIND_STORAGE variable=nib_r0  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r1  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r2  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r3  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r4  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r5  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r6  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r7  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r8  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r9  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r10 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r11 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r12 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r13 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r14 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r15 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r0  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r1  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r2  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r3  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r4  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r5  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r6  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r7  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r8  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r9  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r10 type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r11 type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r12 type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r13 type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r14 type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r15 type=ram_1p impl=lutram
 
     fxd_scale_t d[K_WV][Q40_WV_BLOCKS];
     #pragma HLS ARRAY_PARTITION variable=d dim=0 complete
@@ -304,22 +303,22 @@ static void compute_X2(
     ap_uint<128> nib_r4[64],  nib_r5[64],  nib_r6[64],  nib_r7[64];
     ap_uint<128> nib_r8[64],  nib_r9[64],  nib_r10[64], nib_r11[64];
     ap_uint<128> nib_r12[64], nib_r13[64], nib_r14[64], nib_r15[64];
-    #pragma HLS BIND_STORAGE variable=nib_r0  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r1  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r2  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r3  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r4  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r5  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r6  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r7  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r8  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r9  type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r10 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r11 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r12 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r13 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r14 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r15 type=ram_1p impl=bram
+    #pragma HLS BIND_STORAGE variable=nib_r0  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r1  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r2  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r3  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r4  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r5  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r6  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r7  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r8  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r9  type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r10 type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r11 type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r12 type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r13 type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r14 type=ram_1p impl=lutram
+    #pragma HLS BIND_STORAGE variable=nib_r15 type=ram_1p impl=lutram
 
     fxd_scale_t d[K_WV][Q40_WV_BLOCKS];
     #pragma HLS ARRAY_PARTITION variable=d dim=0 complete
@@ -373,77 +372,43 @@ static void load_mg_down_q40(
 {
 #pragma HLS INLINE off
 
-    LOAD_MG_HDR: for (int i = 0; i < K_DOWN * 8; i++) {
-        #pragma HLS PIPELINE II=1
-        int r = i / 8;
-        int w = i % 8;
-        ap_uint<128> ddr = Wd_wide[(ap_uint<64>)(out_i + r) * Q40_DOWN_ROW_WORDS
-                                    + (ap_uint<64>)mg * 8 + w];
-        if      (r == 0) { d_r0[w*4] = fxd_from_raw((int32_t)ddr.range(31,0));
-                           d_r0[w*4+1] = fxd_from_raw((int32_t)ddr.range(63,32));
-                           d_r0[w*4+2] = fxd_from_raw((int32_t)ddr.range(95,64));
-                           d_r0[w*4+3] = fxd_from_raw((int32_t)ddr.range(127,96)); }
-        else if (r == 1) { d_r1[w*4] = fxd_from_raw((int32_t)ddr.range(31,0));
-                           d_r1[w*4+1] = fxd_from_raw((int32_t)ddr.range(63,32));
-                           d_r1[w*4+2] = fxd_from_raw((int32_t)ddr.range(95,64));
-                           d_r1[w*4+3] = fxd_from_raw((int32_t)ddr.range(127,96)); }
-        else if (r == 2) { d_r2[w*4] = fxd_from_raw((int32_t)ddr.range(31,0));
-                           d_r2[w*4+1] = fxd_from_raw((int32_t)ddr.range(63,32));
-                           d_r2[w*4+2] = fxd_from_raw((int32_t)ddr.range(95,64));
-                           d_r2[w*4+3] = fxd_from_raw((int32_t)ddr.range(127,96)); }
-        else if (r == 3) { d_r3[w*4] = fxd_from_raw((int32_t)ddr.range(31,0));
-                           d_r3[w*4+1] = fxd_from_raw((int32_t)ddr.range(63,32));
-                           d_r3[w*4+2] = fxd_from_raw((int32_t)ddr.range(95,64));
-                           d_r3[w*4+3] = fxd_from_raw((int32_t)ddr.range(127,96)); }
-        else if (r == 4) { d_r4[w*4] = fxd_from_raw((int32_t)ddr.range(31,0));
-                           d_r4[w*4+1] = fxd_from_raw((int32_t)ddr.range(63,32));
-                           d_r4[w*4+2] = fxd_from_raw((int32_t)ddr.range(95,64));
-                           d_r4[w*4+3] = fxd_from_raw((int32_t)ddr.range(127,96)); }
-        else if (r == 5) { d_r5[w*4] = fxd_from_raw((int32_t)ddr.range(31,0));
-                           d_r5[w*4+1] = fxd_from_raw((int32_t)ddr.range(63,32));
-                           d_r5[w*4+2] = fxd_from_raw((int32_t)ddr.range(95,64));
-                           d_r5[w*4+3] = fxd_from_raw((int32_t)ddr.range(127,96)); }
-        else if (r == 6) { d_r6[w*4] = fxd_from_raw((int32_t)ddr.range(31,0));
-                           d_r6[w*4+1] = fxd_from_raw((int32_t)ddr.range(63,32));
-                           d_r6[w*4+2] = fxd_from_raw((int32_t)ddr.range(95,64));
-                           d_r6[w*4+3] = fxd_from_raw((int32_t)ddr.range(127,96)); }
-        else             { d_r7[w*4] = fxd_from_raw((int32_t)ddr.range(31,0));
-                           d_r7[w*4+1] = fxd_from_raw((int32_t)ddr.range(63,32));
-                           d_r7[w*4+2] = fxd_from_raw((int32_t)ddr.range(95,64));
-                           d_r7[w*4+3] = fxd_from_raw((int32_t)ddr.range(127,96)); }
-    }
-
-    LOAD_MG_NIB: for (int i = 0; i < K_DOWN * 32; i++) {
-        #pragma HLS PIPELINE II=1
-        int r = i / 32;
-        int e = i % 32;
-        ap_uint<128> ddr = Wd_wide[(ap_uint<64>)(out_i + r) * Q40_DOWN_ROW_WORDS
-                                    + Q40_DOWN_HDR_WORDS
-                                    + (ap_uint<64>)mg * 32 + e];
-        if (r == 0) {
-            g0_r0[e] = ddr.range(31,  0);  g1_r0[e] = ddr.range(63,  32);
-            g2_r0[e] = ddr.range(95,  64); g3_r0[e] = ddr.range(127, 96);
-        } else if (r == 1) {
-            g0_r1[e] = ddr.range(31,  0);  g1_r1[e] = ddr.range(63,  32);
-            g2_r1[e] = ddr.range(95,  64); g3_r1[e] = ddr.range(127, 96);
-        } else if (r == 2) {
-            g0_r2[e] = ddr.range(31,  0);  g1_r2[e] = ddr.range(63,  32);
-            g2_r2[e] = ddr.range(95,  64); g3_r2[e] = ddr.range(127, 96);
-        } else if (r == 3) {
-            g0_r3[e] = ddr.range(31,  0);  g1_r3[e] = ddr.range(63,  32);
-            g2_r3[e] = ddr.range(95,  64); g3_r3[e] = ddr.range(127, 96);
-        } else if (r == 4) {
-            g0_r4[e] = ddr.range(31,  0);  g1_r4[e] = ddr.range(63,  32);
-            g2_r4[e] = ddr.range(95,  64); g3_r4[e] = ddr.range(127, 96);
-        } else if (r == 5) {
-            g0_r5[e] = ddr.range(31,  0);  g1_r5[e] = ddr.range(63,  32);
-            g2_r5[e] = ddr.range(95,  64); g3_r5[e] = ddr.range(127, 96);
-        } else if (r == 6) {
-            g0_r6[e] = ddr.range(31,  0);  g1_r6[e] = ddr.range(63,  32);
-            g2_r6[e] = ddr.range(95,  64); g3_r6[e] = ddr.range(127, 96);
-        } else {
-            g0_r7[e] = ddr.range(31,  0);  g1_r7[e] = ddr.range(63,  32);
-            g2_r7[e] = ddr.range(95,  64); g3_r7[e] = ddr.range(127, 96);
+    // Interleaved DDR layout: [HDR(8w) | NIB(32w)] per MG per row.
+    // mg*40 + w is linear for fixed mg → one 40-beat AXI burst per row.
+    // HDR and NIB are now contiguous within each MG slot, so a single inner
+    // loop covers both (w<8 → header, w>=8 → nibble).
+    LOAD_ROWS: for (int r = 0; r < K_DOWN; r++) {
+        LOAD_ROW: for (int w = 0; w < Q40_DOWN_MG_WORDS; w++) {
+            #pragma HLS PIPELINE II=1
+            ap_uint<128> ddr = Wd_wide[(ap_uint<64>)(out_i + r) * Q40_DOWN_ROW_WORDS
+                                        + (ap_uint<64>)mg * Q40_DOWN_MG_WORDS + w];
+            if (w < Q40_DOWN_MG_HDR_WORDS) {
+                fxd_scale_t v0 = fxd_from_raw((int32_t)ddr.range(31,  0));
+                fxd_scale_t v1 = fxd_from_raw((int32_t)ddr.range(63,  32));
+                fxd_scale_t v2 = fxd_from_raw((int32_t)ddr.range(95,  64));
+                fxd_scale_t v3 = fxd_from_raw((int32_t)ddr.range(127, 96));
+                if      (r == 0) { d_r0[w*4]=v0; d_r0[w*4+1]=v1; d_r0[w*4+2]=v2; d_r0[w*4+3]=v3; }
+                else if (r == 1) { d_r1[w*4]=v0; d_r1[w*4+1]=v1; d_r1[w*4+2]=v2; d_r1[w*4+3]=v3; }
+                else if (r == 2) { d_r2[w*4]=v0; d_r2[w*4+1]=v1; d_r2[w*4+2]=v2; d_r2[w*4+3]=v3; }
+                else if (r == 3) { d_r3[w*4]=v0; d_r3[w*4+1]=v1; d_r3[w*4+2]=v2; d_r3[w*4+3]=v3; }
+                else if (r == 4) { d_r4[w*4]=v0; d_r4[w*4+1]=v1; d_r4[w*4+2]=v2; d_r4[w*4+3]=v3; }
+                else if (r == 5) { d_r5[w*4]=v0; d_r5[w*4+1]=v1; d_r5[w*4+2]=v2; d_r5[w*4+3]=v3; }
+                else if (r == 6) { d_r6[w*4]=v0; d_r6[w*4+1]=v1; d_r6[w*4+2]=v2; d_r6[w*4+3]=v3; }
+                else             { d_r7[w*4]=v0; d_r7[w*4+1]=v1; d_r7[w*4+2]=v2; d_r7[w*4+3]=v3; }
+            } else {
+                int e = w - Q40_DOWN_MG_HDR_WORDS;
+                ap_uint<32> v0 = ddr.range(31,  0);
+                ap_uint<32> v1 = ddr.range(63,  32);
+                ap_uint<32> v2 = ddr.range(95,  64);
+                ap_uint<32> v3 = ddr.range(127, 96);
+                if      (r == 0) { g0_r0[e]=v0; g1_r0[e]=v1; g2_r0[e]=v2; g3_r0[e]=v3; }
+                else if (r == 1) { g0_r1[e]=v0; g1_r1[e]=v1; g2_r1[e]=v2; g3_r1[e]=v3; }
+                else if (r == 2) { g0_r2[e]=v0; g1_r2[e]=v1; g2_r2[e]=v2; g3_r2[e]=v3; }
+                else if (r == 3) { g0_r3[e]=v0; g1_r3[e]=v1; g2_r3[e]=v2; g3_r3[e]=v3; }
+                else if (r == 4) { g0_r4[e]=v0; g1_r4[e]=v1; g2_r4[e]=v2; g3_r4[e]=v3; }
+                else if (r == 5) { g0_r5[e]=v0; g1_r5[e]=v1; g2_r5[e]=v2; g3_r5[e]=v3; }
+                else if (r == 6) { g0_r6[e]=v0; g1_r6[e]=v1; g2_r6[e]=v2; g3_r6[e]=v3; }
+                else             { g0_r7[e]=v0; g1_r7[e]=v1; g2_r7[e]=v2; g3_r7[e]=v3; }
+            }
         }
     }
 }
@@ -799,11 +764,11 @@ void swiglu(
     // Q4_0 DDR layout:
     // W/V:   8192 rows × 1280 B (80 DDR words) = 10,485,760 B
     // W_down: 2048 rows × 5120 B (320 DDR words) = 10,485,760 B
-    #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=2 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=2 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd   offset=slave depth=10485760 max_read_burst_length=256  latency=64 num_read_outstanding=2 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x    offset=slave depth=32768    max_read_burst_length=128  latency=64 num_read_outstanding=2 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out  offset=slave depth=32768    max_write_burst_length=256 latency=64 num_write_outstanding=2 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd   offset=slave depth=10485760 max_read_burst_length=256  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x    offset=slave depth=32768    max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out  offset=slave depth=32768    max_write_burst_length=256 latency=64 num_write_outstanding=1 max_widen_bitwidth=128
 
     #pragma HLS INTERFACE mode=s_axilite port=W               bundle=CTRL
     #pragma HLS INTERFACE mode=s_axilite port=V               bundle=CTRL
