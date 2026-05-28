@@ -1,11 +1,11 @@
-Name     Slack    Levels High... From                                          To                                                   Total Delay Logic Delay Net Delay Requirement Source Clock Destination
-Path 1   -0.742        2    1025 design_1_i/swiglu_0/U0...0_iter6_reg_replica/C design_1_i/swiglu_0/U0/...2_11_fu_2410_reg[8]/CE          3.786       0.310     3.476         3.4 clk_pl_0     clk_pl_0
-Path 2   -0.742        2    1025 design_1_i/swiglu_0/U0...0_iter6_reg_replica/C design_1_i/swiglu_0/U0...w2_7_fu_2426_reg[7]/CE           3.787       0.310     3.477         3.4 clk_pl_0     clk_pl_0
-Path 3   -0.740        2    1025 design_1_i/swiglu_0/U0...0_iter6_reg_replica/C design_1_i/swiglu_0/U0...w2_3_fu_2442_reg[7]/CE           3.781       0.310     3.471         3.4 clk_pl_0     clk_pl_0
-Path 4   -0.740        2    1025 design_1_i/swiglu_0/U0...0_iter6_reg_replica/C design_1_i/swiglu_0/U0...w2_7_fu_2426_reg[0]/CE           3.781       0.310     3.471         3.4 clk_pl_0     clk_pl_0
-Path 5   -0.740        2    1025 design_1_i/swiglu_0/U0...0_iter6_reg_replica/C design_1_i/swiglu_0/U0...w2_7_fu_2426_reg[8]/CE           3.781       0.310     3.471         3.4 clk_pl_0     clk_pl_0
-Path 6   -0.740        2    1025 design_1_i/swiglu_0/U0...0_iter6_reg_replica/C design_1_i/swiglu_0/U0/...3_7_fu_2170_reg[19]/CE          3.795       0.310     3.485         3.4 clk_pl_0     clk_pl_0
-Path 7   -0.739        2    1025 design_1_i/swiglu_0/U0...0_iter6_reg_replica/C design_1_i/swiglu_0/U0/...15_fu_2138_reg[11]/CE         3.795       0.310     3.485         3.4 clk_pl_0     clk_pl_0
-Path 8   -0.739        2    1025 design_1_i/swiglu_0/U0...0_iter6_reg_replica/C design_1_i/swiglu_0/U0/...3_3_fu_2186_reg[17]/CE          3.795       0.310     3.485         3.4 clk_pl_0     clk_pl_0
-Path 9   -0.736        2    1025 design_1_i/swiglu_0/U0...0_iter6_reg_replica/C design_1_i/swiglu_0/U0/...3_11_fu_2154_reg[6]/CE          3.758       0.310     3.448         3.4 clk_pl_0     clk_pl_0
-Path 10  -0.736        2    1025 design_1_i/swiglu_0/U0...0_iter6_reg_replica/C design_1_i/swiglu_0/U0/...3_7_fu_2170_reg[31]/CE          3.758       0.310     3.448         3.4 clk_pl_0     clk_pl_0
+Name     Slack    Levels Hi... From                                                 To                                                                        Total Delay Logic Delay Net Delay
+Path 1   -0.660        9    29 design_1_i/swiglu_0/U0/com..._fu_7056/b_fu_646_reg[1]/C design_1_i/swiglu_0/U0/compute_X2_U0/g...DUCE_fu_7056/sw1_1_reg_5084_reg[28]/D       3.806       1.357     2.449
+Path 2   -0.660        9    29 design_1_i/swiglu_0/U0/com..._fu_7056/b_fu_646_reg[1]/C design_1_i/swiglu_0/U0/compute_X2_U0/g...DUCE_fu_7056/sw1_1_reg_5084_reg[27]/D       3.803       1.352     2.451
+Path 3   -0.660        3    17 design_1_i/swiglu_0/U0/gat...core_U/ram_reg_uram_0/CLK    design_1_i/swiglu_0/U0/compute_output_U...82/empty_397_fu_2762[16]_i_2_psdsp_5/D   3.805       2.359     1.446
+Path 4   -0.660        8    33 design_1_i/swiglu_0/U0/com...g_26453_reg[2]_replica_1/C   design_1_i/swiglu_0/U0/compute_X1_U0/gr...LL_fu_5508/empty_310_fu_2926_reg[23]/D  4.017       1.486     2.531
+Path 5   -0.658        0   129 design_1_i/swiglu_0/U0/g...mem/mem_reg_0/CLKARDCLK       design_1_i/swiglu_0/U0/compute_output_...down_urm_fu_4821/mn6_20_5_reg_reg[5]/D   3.877       1.221     2.656
+Path 6   -0.658        3    13 design_1_i/swiglu_0/U0/gat...core_U/ram_reg_uram_0/CLK    design_1_i/swiglu_0/U0/compute_output_U...82/empty_351_fu_2578[16]_i_2_psdsp_8/D   3.661       2.172     1.489
+Path 7   -0.657        1   129 design_1_i/swiglu_0/U0/g...mem/mem_reg_0/CLKARDCLK       design_1_i/swiglu_0/U0/compute_output_U0/sc61_10_fu_2754_reg[3]/D                 3.794       1.331     2.463
+Path 8   -0.656        1   129 design_1_i/swiglu_0/U0/g...mem/mem_reg_0/CLKARDCLK       design_1_i/swiglu_0/U0/compute_output_U0/mn61_220_fu_4618_reg[5]/D                3.876       1.347     2.529
+Path 9   -0.656        1    66 design_1_i/swiglu_0/U0/g...mem/mem_reg_0/CLKARDCLK       design_1_i/swiglu_0/U0/compute_output_U0/sc61_20_fu_2794_reg[0]/D                 3.818       1.432     2.386
+Path 10  -0.655       10    72 design_1_i/swiglu_0/U0/com...8/xi8_4_reg_26378_reg[1]/C   design_1_i/swiglu_0/U0/compute_X1_U0/gr...LL_fu_5508/empty_198_fu_2478_reg[19]/D  3.833       1.314     2.519
