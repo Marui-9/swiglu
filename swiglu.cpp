@@ -364,8 +364,9 @@ static void mac_blocks_wv_k4_urm(
 // 16 URAM nibble tiles (4 groups × 4 rows).  Within each group, 4 rows
 // are UNROLL'd → 32 parallel MACs (8 blocks × 4 rows).  4 groups are
 // sequential → DSPs shared, 1024 MAC cycles/4-row iteration.
-// CE mux fix: data-mux pattern replaces CE-gated acc writes to eliminate
-// high-fanout k[r] register driving accumulator clock-enable pins.
+// Direct CE accumulation: acc[b][k[r]] += c routes k[r] to FF clock-enable
+// pins (placed locally by Vivado) rather than data-path muxes (which create
+// 64-fanout nets causing 2.4-3.0 ns net delay at 250 MHz).
 static void mac_blocks_down_q4k_k4_urm(
     // Group 0: 4 rows
     const ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g0r1[URM_NIB_TILE_DEPTH],
@@ -458,17 +459,10 @@ static void mac_blocks_down_q4k_k4_urm(
                 int32_t cm2 = (int32_t)(gi8 * mn62[babs][sub[2]]);
                 int32_t cw3 = (int32_t)(gi8 * (ap_int<5>)nb3 * sc63[babs][sub[3]]);
                 int32_t cm3 = (int32_t)(gi8 * mn63[babs][sub[3]]);
-                for (int ki = 0; ki < 4; ki++) {
-                    #pragma HLS UNROLL
-                    acc_w0[b][ki] += (ki == k[0]) ? cw0 : 0;
-                    acc_m0[b][ki] += (ki == k[0]) ? cm0 : 0;
-                    acc_w1[b][ki] += (ki == k[1]) ? cw1 : 0;
-                    acc_m1[b][ki] += (ki == k[1]) ? cm1 : 0;
-                    acc_w2[b][ki] += (ki == k[2]) ? cw2 : 0;
-                    acc_m2[b][ki] += (ki == k[2]) ? cm2 : 0;
-                    acc_w3[b][ki] += (ki == k[3]) ? cw3 : 0;
-                    acc_m3[b][ki] += (ki == k[3]) ? cm3 : 0;
-                }
+                acc_w0[b][k[0]] += cw0;  acc_m0[b][k[0]] += cm0;
+                acc_w1[b][k[1]] += cw1;  acc_m1[b][k[1]] += cm1;
+                acc_w2[b][k[2]] += cw2;  acc_m2[b][k[2]] += cm2;
+                acc_w3[b][k[3]] += cw3;  acc_m3[b][k[3]] += cm3;
             }
         }
 

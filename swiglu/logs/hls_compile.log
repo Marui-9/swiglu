@@ -19,219 +19,236 @@ INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1465] Applying config ini 'part=xck26-sfvc784-2LV-c' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(1)
 INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
-INFO: [HLS 200-1465] Applying config ini 'clock=3.33ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(7)
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.33ns.
+INFO: [HLS 200-1465] Applying config ini 'clock=4ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(7)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
 INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=0.90ns' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(16)
 INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.9ns.
 INFO: [HLS 200-1465] Applying config ini 'cosim.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(10)
-INFO: [HLS 200-1465] Applying config ini 'package.ip.version=161.1' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(17)
+INFO: [HLS 200-1465] Applying config ini 'package.ip.version=164.1' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(17)
 INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(5)
 INFO: [HLS 200-1465] Applying config ini 'vivado.flow=impl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(15)
 INFO: [HLS 200-1465] Applying config ini 'vivado.rtl=vhdl' from C:/Users/Jacob/Desktop/Vitis_projects/swiglu/hls_config.cfg(14)
 INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/vitis-comp.json
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.883 seconds; current allocated memory: 179.578 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.788 seconds; current allocated memory: 179.898 MB.
 INFO: [HLS 200-10] Analyzing design file 'swiglu.cpp' ... 
 WARNING: [HLS 207-910] 'URM_WV_GROUPS' macro redefined (swiglu.cpp:32:9)
 INFO: [HLS 207-71] previous definition is here (./swiglu.h:12:9)
 WARNING: [HLS 207-910] 'URM_DOWN_GROUPS' macro redefined (swiglu.cpp:33:9)
 INFO: [HLS 207-71] previous definition is here (./swiglu.h:13:9)
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.086 seconds; current allocated memory: 184.422 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.083 seconds; current allocated memory: 184.859 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 59,859 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 14,587 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 11,071 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 10,885 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 10,500 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 33,274 instructions in the design after the 'Array/Struct' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 28,713 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 28,713 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 28,713 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 28,800 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 28,743 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 28,722 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 43,072 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 35,646 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 35,728 instructions in the design after the 'HW Transforms' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 30,145 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 214-291] Loop 'VITIS_LOOP_350_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:350:20)
-INFO: [HLS 214-291] Loop 'VITIS_LOOP_362_3' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:362:31)
-INFO: [HLS 214-291] Loop 'VITIS_LOOP_147_1' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:147:27)
-INFO: [HLS 214-291] Loop 'VITIS_LOOP_151_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:151:27)
-INFO: [HLS 214-291] Loop 'VITIS_LOOP_240_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:240:27)
-INFO: [HLS 214-291] Loop 'VITIS_LOOP_105_1' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:105:27)
-INFO: [HLS 214-291] Loop 'VITIS_LOOP_109_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:109:27)
+INFO: [HLS 200-1995] There were 50,949 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 17,327 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 11,301 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 11,153 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 10,740 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 31,082 instructions in the design after the 'Array/Struct' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 25,615 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 25,615 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 25,615 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 26,194 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 26,151 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 25,618 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 40,864 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 34,054 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 34,094 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 28,467 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Jacob/Desktop/Vitis_projects/swiglu/swiglu/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_433_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:433:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_445_3' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:445:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_145_1' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:145:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_149_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:149:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_307_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:307:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_327_3' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:327:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_216_6' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:216:35)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_224_10' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:224:43)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_223_9' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:223:54)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_222_8' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:222:54)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_221_7' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:221:49)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_205_1' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:205:35)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_213_5' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:213:68)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_212_4' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:212:80)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_211_3' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:211:80)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_210_2' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:210:75)
 INFO: [HLS 214-291] Loop 'VITIS_LOOP_63_1' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:63:26)
-INFO: [HLS 214-291] Loop 'VITIS_LOOP_700_1' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:700:31)
-INFO: [HLS 214-186] Unrolling loop 'INIT_GRP' (swiglu.cpp:332:12) in function 'mac_blocks_down_q4k_k4_urm' completely with a factor of 8 (swiglu.cpp:311:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_334_1' (swiglu.cpp:334:20) in function 'mac_blocks_down_q4k_k4_urm' completely with a factor of 4 (swiglu.cpp:311:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_350_2' (swiglu.cpp:350:20) in function 'mac_blocks_down_q4k_k4_urm' completely with a factor of 4 (swiglu.cpp:311:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_362_3' (swiglu.cpp:362:31) in function 'mac_blocks_down_q4k_k4_urm' completely with a factor of 8 (swiglu.cpp:311:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_386_4' (swiglu.cpp:386:31) in function 'mac_blocks_down_q4k_k4_urm' completely with a factor of 4 (swiglu.cpp:311:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_147_1' (swiglu.cpp:147:27) in function 'load_row_down_urm' completely with a factor of 4 (swiglu.cpp:134:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_151_2' (swiglu.cpp:151:27) in function 'load_row_down_urm' completely with a factor of 4 (swiglu.cpp:134:0)
-INFO: [HLS 214-186] Unrolling loop 'SWISH_GATE' (swiglu.cpp:542:14) in function 'compute_gate' completely with a factor of 1 (swiglu.cpp:540:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_561_1' (swiglu.cpp:561:27) in function 'compute_gate' completely with a factor of 8 (swiglu.cpp:540:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_263_3' (swiglu.cpp:263:27) in function 'mac_blocks_wv_k4_urm' completely with a factor of 4 (swiglu.cpp:193:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_240_2' (swiglu.cpp:240:27) in function 'mac_blocks_wv_k4_urm' completely with a factor of 8 (swiglu.cpp:193:0)
-INFO: [HLS 214-186] Unrolling loop 'INIT' (swiglu.cpp:210:8) in function 'mac_blocks_wv_k4_urm' completely with a factor of 8 (swiglu.cpp:193:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_212_1' (swiglu.cpp:212:20) in function 'mac_blocks_wv_k4_urm' completely with a factor of 4 (swiglu.cpp:193:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_105_1' (swiglu.cpp:105:27) in function 'load_row_wv_urm' completely with a factor of 4 (swiglu.cpp:96:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_109_2' (swiglu.cpp:109:27) in function 'load_row_wv_urm' completely with a factor of 4 (swiglu.cpp:96:0)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_787_1' is marked as complete unroll implied by the pipeline pragma (swiglu.cpp:787:31)
+INFO: [HLS 214-186] Unrolling loop 'INIT_GRP' (swiglu.cpp:416:12) in function 'mac_blocks_down_q4k_k4_urm' completely with a factor of 8 (swiglu.cpp:395:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_418_1' (swiglu.cpp:418:20) in function 'mac_blocks_down_q4k_k4_urm' completely with a factor of 4 (swiglu.cpp:395:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_433_2' (swiglu.cpp:433:20) in function 'mac_blocks_down_q4k_k4_urm' completely with a factor of 4 (swiglu.cpp:395:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_445_3' (swiglu.cpp:445:31) in function 'mac_blocks_down_q4k_k4_urm' completely with a factor of 8 (swiglu.cpp:395:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_473_4' (swiglu.cpp:473:31) in function 'mac_blocks_down_q4k_k4_urm' completely with a factor of 4 (swiglu.cpp:395:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_145_1' (swiglu.cpp:145:27) in function 'load_row_down_urm' completely with a factor of 4 (swiglu.cpp:132:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_149_2' (swiglu.cpp:149:27) in function 'load_row_down_urm' completely with a factor of 4 (swiglu.cpp:132:0)
+INFO: [HLS 214-186] Unrolling loop 'SWISH_GATE' (swiglu.cpp:629:14) in function 'compute_gate' completely with a factor of 1 (swiglu.cpp:627:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_648_1' (swiglu.cpp:648:27) in function 'compute_gate' completely with a factor of 8 (swiglu.cpp:627:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_345_4' (swiglu.cpp:345:27) in function 'mac_blocks_wv_k4_urm' completely with a factor of 4 (swiglu.cpp:260:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_307_2' (swiglu.cpp:307:27) in function 'mac_blocks_wv_k4_urm' completely with a factor of 8 (swiglu.cpp:260:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_327_3' (swiglu.cpp:327:31) in function 'mac_blocks_wv_k4_urm' completely with a factor of 4 (swiglu.cpp:260:0)
+INFO: [HLS 214-186] Unrolling loop 'INIT' (swiglu.cpp:277:8) in function 'mac_blocks_wv_k4_urm' completely with a factor of 8 (swiglu.cpp:260:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_279_1' (swiglu.cpp:279:20) in function 'mac_blocks_wv_k4_urm' completely with a factor of 4 (swiglu.cpp:260:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_216_6' (swiglu.cpp:216:35) in function 'load_4rows_wv_urm' completely with a factor of 4 (swiglu.cpp:182:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_224_10' (swiglu.cpp:224:43) in function 'load_4rows_wv_urm' completely with a factor of 4 (swiglu.cpp:182:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_223_9' (swiglu.cpp:223:54) in function 'load_4rows_wv_urm' completely with a factor of 4 (swiglu.cpp:182:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_222_8' (swiglu.cpp:222:54) in function 'load_4rows_wv_urm' completely with a factor of 4 (swiglu.cpp:182:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_221_7' (swiglu.cpp:221:49) in function 'load_4rows_wv_urm' completely with a factor of 4 (swiglu.cpp:182:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_205_1' (swiglu.cpp:205:35) in function 'load_4rows_wv_urm' completely with a factor of 4 (swiglu.cpp:182:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_213_5' (swiglu.cpp:213:68) in function 'load_4rows_wv_urm' completely with a factor of 4 (swiglu.cpp:182:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_212_4' (swiglu.cpp:212:80) in function 'load_4rows_wv_urm' completely with a factor of 4 (swiglu.cpp:182:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_211_3' (swiglu.cpp:211:80) in function 'load_4rows_wv_urm' completely with a factor of 4 (swiglu.cpp:182:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_210_2' (swiglu.cpp:210:75) in function 'load_4rows_wv_urm' completely with a factor of 4 (swiglu.cpp:182:0)
 INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_63_1' (swiglu.cpp:63:26) in function 'fp16_to_fp32' completely with a factor of 10 (swiglu.cpp:53:0)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_700_1' (swiglu.cpp:700:31) in function 'load_x_local' completely with a factor of 16 (swiglu.cpp:691:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_787_1' (swiglu.cpp:787:31) in function 'load_x_local' completely with a factor of 16 (swiglu.cpp:778:0)
 INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
 INFO: [HLS 214-178] Inlining function 'fp_struct<float>::mantissa() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
 INFO: [HLS 214-178] Inlining function 'fp_struct<float>::expv() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
 INFO: [HLS 214-178] Inlining function 'fp_struct<float>::__signbit() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
 INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' into 'int generic_cast_IEEE754<int, float>(float, bool)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:116:0)
 INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, float>(float, bool)' into '__hls_fptosi_float_i32' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51:0)
-WARNING: [HLS 214-464] Skipping array undecay on variable length array 'x_batch'. (swiglu.cpp:722:0)
-INFO: [HLS 214-248] Applying array_partition to 'acc_w0': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:197:10)
-INFO: [HLS 214-248] Applying array_partition to 'acc_m0': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:197:24)
-INFO: [HLS 214-248] Applying array_partition to 'acc_w1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:198:13)
-INFO: [HLS 214-248] Applying array_partition to 'acc_m1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:198:27)
-INFO: [HLS 214-248] Applying array_partition to 'acc_w2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:199:13)
-INFO: [HLS 214-248] Applying array_partition to 'acc_m2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:199:27)
-INFO: [HLS 214-248] Applying array_partition to 'acc_w3': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:200:13)
-INFO: [HLS 214-248] Applying array_partition to 'acc_m3': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:200:27)
-INFO: [HLS 214-248] Applying array_partition to 'pmax': Complete partitioning on dimension 1. (swiglu.cpp:544:8)
-INFO: [HLS 214-248] Applying array_partition to 'acc_w0': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:319:17)
-INFO: [HLS 214-248] Applying array_partition to 'acc_m0': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:319:31)
-INFO: [HLS 214-248] Applying array_partition to 'acc_w1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:320:17)
-INFO: [HLS 214-248] Applying array_partition to 'acc_m1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:320:31)
-INFO: [HLS 214-248] Applying array_partition to 'acc_w2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:321:17)
-INFO: [HLS 214-248] Applying array_partition to 'acc_m2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:321:31)
-INFO: [HLS 214-248] Applying array_partition to 'acc_w3': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:322:17)
-INFO: [HLS 214-248] Applying array_partition to 'acc_m3': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:322:31)
-INFO: [HLS 214-248] Applying array_partition to 'd0': Complete partitioning on dimension 1. (swiglu.cpp:637:8)
-INFO: [HLS 214-248] Applying array_partition to 'dmin0': Complete partitioning on dimension 1. (swiglu.cpp:637:16)
-INFO: [HLS 214-248] Applying array_partition to 'd1': Complete partitioning on dimension 1. (swiglu.cpp:638:15)
-INFO: [HLS 214-248] Applying array_partition to 'dmin1': Complete partitioning on dimension 1. (swiglu.cpp:638:23)
-INFO: [HLS 214-248] Applying array_partition to 'd2': Complete partitioning on dimension 1. (swiglu.cpp:639:15)
-INFO: [HLS 214-248] Applying array_partition to 'dmin2': Complete partitioning on dimension 1. (swiglu.cpp:639:23)
-INFO: [HLS 214-248] Applying array_partition to 'd3': Complete partitioning on dimension 1. (swiglu.cpp:640:15)
-INFO: [HLS 214-248] Applying array_partition to 'dmin3': Complete partitioning on dimension 1. (swiglu.cpp:640:23)
-INFO: [HLS 214-248] Applying array_partition to 'sc60': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:641:16)
-INFO: [HLS 214-248] Applying array_partition to 'mn60': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:641:29)
-INFO: [HLS 214-248] Applying array_partition to 'sc61': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:642:16)
-INFO: [HLS 214-248] Applying array_partition to 'mn61': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:642:29)
-INFO: [HLS 214-248] Applying array_partition to 'sc62': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:643:16)
-INFO: [HLS 214-248] Applying array_partition to 'mn62': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:643:29)
-INFO: [HLS 214-248] Applying array_partition to 'sc63': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:644:16)
-INFO: [HLS 214-248] Applying array_partition to 'mn63': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:644:29)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:740:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:744:9)
-INFO: [HLS 214-248] Applying array_partition to 'gate_cache': Complete partitioning on dimension 1. Cyclic partitioning with factor 8 on dimension 2. (swiglu.cpp:753:9)
-INFO: [HLS 214-376] automatically set the pipeline for Loop< REDUCE_GRP> at swiglu.cpp:382:21 
-INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at swiglu.cpp:682:9 
+WARNING: [HLS 214-464] Skipping array undecay on variable length array 'x_batch'. (swiglu.cpp:809:0)
+INFO: [HLS 214-248] Applying array_partition to 'acc_w0': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:264:10)
+INFO: [HLS 214-248] Applying array_partition to 'acc_m0': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:264:24)
+INFO: [HLS 214-248] Applying array_partition to 'acc_w1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:265:13)
+INFO: [HLS 214-248] Applying array_partition to 'acc_m1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:265:27)
+INFO: [HLS 214-248] Applying array_partition to 'acc_w2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:266:13)
+INFO: [HLS 214-248] Applying array_partition to 'acc_m2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:266:27)
+INFO: [HLS 214-248] Applying array_partition to 'acc_w3': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:267:13)
+INFO: [HLS 214-248] Applying array_partition to 'acc_m3': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:267:27)
+INFO: [HLS 214-248] Applying array_partition to 'pmax': Complete partitioning on dimension 1. (swiglu.cpp:631:8)
+INFO: [HLS 214-248] Applying array_partition to 'acc_w0': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:403:17)
+INFO: [HLS 214-248] Applying array_partition to 'acc_m0': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:403:31)
+INFO: [HLS 214-248] Applying array_partition to 'acc_w1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:404:17)
+INFO: [HLS 214-248] Applying array_partition to 'acc_m1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:404:31)
+INFO: [HLS 214-248] Applying array_partition to 'acc_w2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:405:17)
+INFO: [HLS 214-248] Applying array_partition to 'acc_m2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:405:31)
+INFO: [HLS 214-248] Applying array_partition to 'acc_w3': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:406:17)
+INFO: [HLS 214-248] Applying array_partition to 'acc_m3': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:406:31)
+INFO: [HLS 214-248] Applying array_partition to 'd0': Complete partitioning on dimension 1. (swiglu.cpp:724:8)
+INFO: [HLS 214-248] Applying array_partition to 'dmin0': Complete partitioning on dimension 1. (swiglu.cpp:724:16)
+INFO: [HLS 214-248] Applying array_partition to 'd1': Complete partitioning on dimension 1. (swiglu.cpp:725:15)
+INFO: [HLS 214-248] Applying array_partition to 'dmin1': Complete partitioning on dimension 1. (swiglu.cpp:725:23)
+INFO: [HLS 214-248] Applying array_partition to 'd2': Complete partitioning on dimension 1. (swiglu.cpp:726:15)
+INFO: [HLS 214-248] Applying array_partition to 'dmin2': Complete partitioning on dimension 1. (swiglu.cpp:726:23)
+INFO: [HLS 214-248] Applying array_partition to 'd3': Complete partitioning on dimension 1. (swiglu.cpp:727:15)
+INFO: [HLS 214-248] Applying array_partition to 'dmin3': Complete partitioning on dimension 1. (swiglu.cpp:727:23)
+INFO: [HLS 214-248] Applying array_partition to 'sc60': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:728:16)
+INFO: [HLS 214-248] Applying array_partition to 'mn60': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:728:29)
+INFO: [HLS 214-248] Applying array_partition to 'sc61': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:729:16)
+INFO: [HLS 214-248] Applying array_partition to 'mn61': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:729:29)
+INFO: [HLS 214-248] Applying array_partition to 'sc62': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:730:16)
+INFO: [HLS 214-248] Applying array_partition to 'mn62': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:730:29)
+INFO: [HLS 214-248] Applying array_partition to 'sc63': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:731:16)
+INFO: [HLS 214-248] Applying array_partition to 'mn63': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:731:29)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:827:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:831:9)
+INFO: [HLS 214-248] Applying array_partition to 'gate_cache': Complete partitioning on dimension 1. Cyclic partitioning with factor 8 on dimension 2. (swiglu.cpp:840:9)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< REDUCE_GRP> at swiglu.cpp:469:21 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at swiglu.cpp:769:9 
 INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at  
-INFO: [HLS 214-376] automatically set the pipeline for Loop< REDUCE> at swiglu.cpp:260:13 
-INFO: [HLS 214-449] Automatically partitioning array 'gate_scale' dimension 1 completely based on constant index. (swiglu.cpp:757:8)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mn60' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'mn60' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'sc60' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'sc60' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mn61' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'mn61' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'sc61' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'sc61' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mn62' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'mn62' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'sc62' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'sc62' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mn63' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'mn63' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'sc63' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'sc63' due to pipeline pragma (swiglu.cpp:100:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_0' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_1' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_2' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_3' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_4' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_5' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_6' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_7' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_0' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_1' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_2' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_3' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_4' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_5' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_6' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_7' due to pipeline pragma (swiglu.cpp:698:9)
-INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'gate_scale' due to pipeline pragma (swiglu.cpp:757:8)
-INFO: [HLS 214-248] Applying array_partition to 'sc60': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:431:12)
-INFO: [HLS 214-248] Applying array_partition to 'mn60': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:431:24)
-INFO: [HLS 214-248] Applying array_partition to 'sc61': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:432:12)
-INFO: [HLS 214-248] Applying array_partition to 'mn61': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:432:24)
-INFO: [HLS 214-248] Applying array_partition to 'sc62': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:433:12)
-INFO: [HLS 214-248] Applying array_partition to 'mn62': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:433:24)
-INFO: [HLS 214-248] Applying array_partition to 'sc63': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:434:12)
-INFO: [HLS 214-248] Applying array_partition to 'mn63': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:434:24)
-INFO: [HLS 214-248] Applying array_partition to 'sc60': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:493:12)
-INFO: [HLS 214-248] Applying array_partition to 'mn60': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:493:24)
-INFO: [HLS 214-248] Applying array_partition to 'sc61': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:494:12)
-INFO: [HLS 214-248] Applying array_partition to 'mn61': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:494:24)
-INFO: [HLS 214-248] Applying array_partition to 'sc62': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:495:12)
-INFO: [HLS 214-248] Applying array_partition to 'mn62': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:495:24)
-INFO: [HLS 214-248] Applying array_partition to 'sc63': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:496:12)
-INFO: [HLS 214-248] Applying array_partition to 'mn63': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:496:24)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_1_0': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:740:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_1_1': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:740:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_1_2': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:740:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_1_3': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:740:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_1_4': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:740:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_1_5': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:740:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_1_6': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:740:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_1_7': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:740:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_2_0': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:744:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_2_1': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:744:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_2_2': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:744:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_2_3': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:744:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_2_4': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:744:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_2_5': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:744:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_2_6': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:744:9)
-INFO: [HLS 214-248] Applying array_partition to 'x_local_2_7': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:744:9)
-INFO: [HLS 214-248] Applying array_partition to 'gate_scale': Complete partitioning on dimension 1. (swiglu.cpp:757:8)
-INFO: [HLS 214-115] Multiple burst reads of length 128 and bit width 128 in loop 'LOAD_X_VEC'(swiglu.cpp:697:21) has been inferred on bundle 'gmem_x'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:697:21)
-INFO: [HLS 214-115] Multiple burst reads of length 16 and bit width 128 in loop 'LOAD_HDR_WV'(swiglu.cpp:99:15) has been inferred on bundle 'gmem_V'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:99:15)
-INFO: [HLS 214-115] Multiple burst reads of length 64 and bit width 128 in loop 'LOAD_NIB_WV'(swiglu.cpp:117:18) has been inferred on bundle 'gmem_V'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:117:18)
-INFO: [HLS 214-115] Multiple burst reads of length 64 and bit width 128 in loop 'LOAD_HDR_DOWN'(swiglu.cpp:138:17) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:138:17)
-INFO: [HLS 214-115] Multiple burst reads of length 256 and bit width 128 in loop 'LOAD_NIB_DOWN'(swiglu.cpp:159:20) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:159:20)
-INFO: [HLS 214-115] Multiple burst writes of length 2048 and bit width 32 in loop 'anonymous'(swiglu.cpp:682:9) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:682:9)
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 73.44 seconds; current allocated memory: 192.188 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.005 seconds; current allocated memory: 192.188 MB.
+INFO: [HLS 214-376] automatically set the pipeline for Loop< REDUCE> at swiglu.cpp:342:13 
+INFO: [HLS 214-449] Automatically partitioning array 'gate_scale' dimension 1 completely based on constant index. (swiglu.cpp:844:8)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mn60' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'mn60' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'sc60' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'sc60' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mn61' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'mn61' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'sc61' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'sc61' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mn62' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'mn62' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'sc62' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'sc62' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mn63' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'mn63' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'sc63' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'sc63' due to pipeline pragma (swiglu.cpp:187:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_0' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_1' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_2' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_3' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_4' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_5' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_6' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_1_7' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_0' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_1' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_2' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_3' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_4' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_5' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_6' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'x_local_2_7' due to pipeline pragma (swiglu.cpp:785:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'gate_scale' due to pipeline pragma (swiglu.cpp:844:8)
+INFO: [HLS 214-248] Applying array_partition to 'sc60': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:518:12)
+INFO: [HLS 214-248] Applying array_partition to 'mn60': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:518:24)
+INFO: [HLS 214-248] Applying array_partition to 'sc61': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:519:12)
+INFO: [HLS 214-248] Applying array_partition to 'mn61': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:519:24)
+INFO: [HLS 214-248] Applying array_partition to 'sc62': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:520:12)
+INFO: [HLS 214-248] Applying array_partition to 'mn62': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:520:24)
+INFO: [HLS 214-248] Applying array_partition to 'sc63': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:521:12)
+INFO: [HLS 214-248] Applying array_partition to 'mn63': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:521:24)
+INFO: [HLS 214-248] Applying array_partition to 'sc60': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:580:12)
+INFO: [HLS 214-248] Applying array_partition to 'mn60': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:580:24)
+INFO: [HLS 214-248] Applying array_partition to 'sc61': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:581:12)
+INFO: [HLS 214-248] Applying array_partition to 'mn61': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:581:24)
+INFO: [HLS 214-248] Applying array_partition to 'sc62': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:582:12)
+INFO: [HLS 214-248] Applying array_partition to 'mn62': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:582:24)
+INFO: [HLS 214-248] Applying array_partition to 'sc63': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:583:12)
+INFO: [HLS 214-248] Applying array_partition to 'mn63': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (swiglu.cpp:583:24)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_0': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:827:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_1': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:827:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_2': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:827:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_3': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:827:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_4': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:827:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_5': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:827:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_6': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:827:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_1_7': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:827:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_0': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:831:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_1': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:831:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_2': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:831:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_3': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:831:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_4': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:831:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_5': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:831:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_6': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:831:9)
+INFO: [HLS 214-248] Applying array_partition to 'x_local_2_7': Cyclic partitioning with factor 16 on dimension 1. (swiglu.cpp:831:9)
+INFO: [HLS 214-248] Applying array_partition to 'gate_scale': Complete partitioning on dimension 1. (swiglu.cpp:844:8)
+INFO: [HLS 214-115] Multiple burst reads of length 128 and bit width 128 in loop 'LOAD_X_VEC'(swiglu.cpp:784:21) has been inferred on bundle 'gmem_x'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:784:21)
+INFO: [HLS 214-115] Multiple burst reads of length 320 and bit width 128 in loop 'LOAD_4R'(swiglu.cpp:186:11) has been inferred on bundle 'gmem_V'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:186:11)
+INFO: [HLS 214-115] Multiple burst reads of length 64 and bit width 128 in loop 'LOAD_HDR_DOWN'(swiglu.cpp:136:17) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:136:17)
+INFO: [HLS 214-115] Multiple burst reads of length 256 and bit width 128 in loop 'LOAD_NIB_DOWN'(swiglu.cpp:157:20) has been inferred on bundle 'gmem_Wd'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:157:20)
+INFO: [HLS 214-115] Multiple burst writes of length 2048 and bit width 32 in loop 'anonymous'(swiglu.cpp:769:9) has been inferred on bundle 'gmem_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (swiglu.cpp:769:9)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 49.388 seconds; current allocated memory: 192.621 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.003 seconds; current allocated memory: 192.625 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 10 seconds. CPU system time: 0 seconds. Elapsed time: 9.856 seconds; current allocated memory: 234.359 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 9 seconds. CPU system time: 0 seconds. Elapsed time: 8.548 seconds; current allocated memory: 232.898 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'compute_X1' (swiglu.cpp:451) automatically.
-INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'compute_X2' (swiglu.cpp:512) automatically.
-INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'compute_gate' (swiglu.cpp:552) automatically.
-WARNING: [SYNCHK 200-23] swiglu.cpp:275: variable-indexed range selection may cause suboptimal QoR.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'compute_X1' (swiglu.cpp:538) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'compute_X2' (swiglu.cpp:599) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'compute_gate' (swiglu.cpp:639) automatically.
+WARNING: [SYNCHK 200-23] swiglu.cpp:357: variable-indexed range selection may cause suboptimal QoR.
 INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 12 seconds. CPU system time: 0 seconds. Elapsed time: 12.225 seconds; current allocated memory: 259.750 MB.
-INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'compute_X1' (swiglu.cpp:451) automatically.
-INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'compute_X2' (swiglu.cpp:512) automatically.
-INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'compute_gate' (swiglu.cpp:552) automatically.
-INFO: [XFORM 203-712] Applying dataflow to function 'swiglu' (swiglu.cpp:714:9), detected/extracted 5 process function(s): 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 12 seconds. CPU system time: 1 seconds. Elapsed time: 12.11 seconds; current allocated memory: 258.715 MB.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'compute_X1' (swiglu.cpp:538) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'compute_X2' (swiglu.cpp:599) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'compute_gate' (swiglu.cpp:639) automatically.
+INFO: [XFORM 203-712] Applying dataflow to function 'swiglu' (swiglu.cpp:801:9), detected/extracted 5 process function(s): 
 	 'load_x_local'
 	 'compute_X1'
 	 'compute_X2'
 	 'compute_gate'
 	 'compute_output'.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (swiglu.cpp:260:31) to (swiglu.cpp:260:13) in function 'mac_blocks_wv_k4_urm'... converting 25 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (swiglu.cpp:275:23) to (swiglu.cpp:279:1) in function 'mac_blocks_wv_k4_urm'... converting 37 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (swiglu.cpp:382:39) to (swiglu.cpp:382:21) in function 'mac_blocks_down_q4k_k4_urm'... converting 25 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (swiglu.cpp:399:23) to (swiglu.cpp:403:1) in function 'mac_blocks_down_q4k_k4_urm'... converting 37 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (swiglu.cpp:342:31) to (swiglu.cpp:342:13) in function 'mac_blocks_wv_k4_urm'... converting 25 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (swiglu.cpp:357:23) to (swiglu.cpp:361:1) in function 'mac_blocks_wv_k4_urm'... converting 37 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (swiglu.cpp:469:39) to (swiglu.cpp:469:21) in function 'mac_blocks_down_q4k_k4_urm'... converting 25 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (swiglu.cpp:486:23) to (swiglu.cpp:490:1) in function 'mac_blocks_down_q4k_k4_urm'... converting 37 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (swiglu.cpp:187:9) to (swiglu.cpp:198:13) in function 'load_4rows_wv_urm'... converting 6 basic blocks.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (swiglu.cpp:54:9) to (swiglu.cpp:73:50) in function 'fp16_to_fp32'... converting 6 basic blocks.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'compute_gate'... converting 3 basic blocks.
-INFO: [XFORM 203-11] Balancing expressions in function 'mac_blocks_wv_k4_urm' (swiglu.cpp:186)...24 expression(s) balanced.
-INFO: [XFORM 203-11] Balancing expressions in function 'mac_blocks_down_q4k_k4_urm' (swiglu.cpp:315:18)...24 expression(s) balanced.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 35 seconds. CPU system time: 1 seconds. Elapsed time: 35.602 seconds; current allocated memory: 305.586 MB.
+INFO: [XFORM 203-11] Balancing expressions in function 'mac_blocks_down_q4k_k4_urm' (swiglu.cpp:399:18)...24 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 27 seconds. CPU system time: 0 seconds. Elapsed time: 27.316 seconds; current allocated memory: 306.262 MB.
 WARNING: [HLS 200-1449] Process compute_X1 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
 WARNING: [HLS 200-1449] Process compute_X2 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
 WARNING: [HLS 200-1449] Process compute_output has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 12 seconds. CPU system time: 0 seconds. Elapsed time: 12.06 seconds; current allocated memory: 587.102 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 22 seconds. CPU system time: 0 seconds. Elapsed time: 22.059 seconds; current allocated memory: 586.922 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'swiglu' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -239,227 +256,147 @@ INFO: [HLS 200-42] -- Implementing module 'load_x_local'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'LOAD_X_VEC'.
-INFO: [HLS 200-876] Unable to schedule the whole 71 cycles bus request operation ('empty', swiglu.cpp:697) on port 'gmem_x' (swiglu.cpp:697) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
+INFO: [HLS 200-876] Unable to schedule the whole 71 cycles bus request operation ('empty', swiglu.cpp:784) on port 'gmem_x' (swiglu.cpp:784) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
 Resolution: For help on HLS 200-876 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-876.html
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'LOAD_X_VEC'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.369 seconds; current allocated memory: 614.707 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 4.302 seconds; current allocated memory: 614.957 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.103 seconds; current allocated memory: 615.832 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.201 seconds; current allocated memory: 616.074 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'fp16_to_fp32' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'fp16_to_fp32'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, function 'fp16_to_fp32'
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, function 'fp16_to_fp32'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.137 seconds; current allocated memory: 615.945 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.248 seconds; current allocated memory: 616.184 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.023 seconds; current allocated memory: 615.949 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.037 seconds; current allocated memory: 616.188 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'load_row_wv_urm_Pipeline_LOAD_HDR_WV' 
+INFO: [HLS 200-42] -- Implementing module 'load_4rows_wv_urm_Pipeline_LOAD_4R' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'LOAD_HDR_WV'.
-WARNING: [HLS 200-880] The II Violation in module 'load_row_wv_urm_Pipeline_LOAD_HDR_WV' (loop 'LOAD_HDR_WV'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('w1', swiglu.cpp:101) on port 'gmem_V' (swiglu.cpp:101) and bus read operation ('w0', swiglu.cpp:101) on port 'gmem_V' (swiglu.cpp:101).
-Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 9, loop 'LOAD_HDR_WV'
+INFO: [SCHED 204-61] Pipelining loop 'LOAD_4R'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'LOAD_4R'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 616.246 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.284 seconds; current allocated memory: 625.066 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.037 seconds; current allocated memory: 616.258 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.35 seconds; current allocated memory: 625.078 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'load_row_wv_urm_Pipeline_LOAD_NIB_WV' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'LOAD_NIB_WV'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_NIB_WV'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.047 seconds; current allocated memory: 616.266 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.016 seconds; current allocated memory: 616.266 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'load_row_wv_urm' 
+INFO: [HLS 200-42] -- Implementing module 'load_4rows_wv_urm' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.034 seconds; current allocated memory: 616.281 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.352 seconds; current allocated memory: 625.082 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.035 seconds; current allocated memory: 616.309 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.081 seconds; current allocated memory: 625.355 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'mac_blocks_wv_k4_urm_Pipeline_MAC_ALL' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_39) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_38) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_37) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_36) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_35) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_34) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_33) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_32) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_39) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_38) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_37) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_36) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_35) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_34) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_33) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_32) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_39) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_38) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_37) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_36) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_35) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_34) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_33) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_32) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_39) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_38) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_37) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_36) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_35) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_34) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_33) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_32) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_39) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_38) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_37) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_36) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_35) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_34) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_33) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_32) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_39) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_38) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_37) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_36) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_35) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_34) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_33) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_32) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_39) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_38) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_37) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_36) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_35) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_34) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_33) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_32) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_39) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_38) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_37) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_36) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_35) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_34) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_33) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_32) to 3 in order to utilize available DSP registers.
 INFO: [SCHED 204-61] Pipelining loop 'MAC_ALL'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 7, loop 'MAC_ALL'
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'MAC_ALL'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 4.012 seconds; current allocated memory: 635.707 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 2.57 seconds; current allocated memory: 663.270 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.43 seconds; current allocated memory: 635.730 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.833 seconds; current allocated memory: 663.324 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'mac_blocks_wv_k4_urm_Pipeline_REDUCE' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'REDUCE'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 32, loop 'REDUCE'
-WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 29, loop 'REDUCE'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 0.900 ns, effective delay budget: 3.100 ns).
 Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
 WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_wv_k4_urm_Pipeline_REDUCE' consists of the following:
-	'sitofp' operation 32 bit ('conv1', swiglu.cpp:270) [609]  (3.239 ns)
+	'sitofp' operation 32 bit ('conv1', swiglu.cpp:352) [654]  (3.239 ns)
 
 Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.567 seconds; current allocated memory: 635.840 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.149 seconds; current allocated memory: 663.449 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.083 seconds; current allocated memory: 635.918 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.153 seconds; current allocated memory: 663.449 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'mac_blocks_wv_k4_urm' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.555 seconds; current allocated memory: 643.988 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.961 seconds; current allocated memory: 664.160 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.223 seconds; current allocated memory: 646.742 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.385 seconds; current allocated memory: 664.207 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_X1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.664 seconds; current allocated memory: 656.211 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.212 seconds; current allocated memory: 671.539 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.235 seconds; current allocated memory: 656.566 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.403 seconds; current allocated memory: 671.945 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_X2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.672 seconds; current allocated memory: 665.832 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.141 seconds; current allocated memory: 680.191 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.243 seconds; current allocated memory: 666.027 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.441 seconds; current allocated memory: 680.492 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_gate_Pipeline_GATE_PASS1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'GATE_PASS1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 62, loop 'GATE_PASS1'
-WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 53, loop 'GATE_PASS1'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 0.900 ns, effective delay budget: 3.100 ns).
 Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
 WARNING: [HLS 200-1016] The critical path in module 'compute_gate_Pipeline_GATE_PASS1' consists of the following:
-	'sitofp' operation 32 bit ('conv', swiglu.cpp:549) [48]  (3.239 ns)
+	'sitofp' operation 32 bit ('conv', swiglu.cpp:636) [48]  (3.239 ns)
 
 Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.258 seconds; current allocated memory: 666.719 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.449 seconds; current allocated memory: 681.371 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.037 seconds; current allocated memory: 667.688 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 682.289 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_gate_Pipeline_GATE_PASS2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -473,49 +410,49 @@ WARNING: [HLS 200-2042] Usage of URAM can potentially cause worse II as Vitis HL
 WARNING: [HLS 200-2042] Usage of URAM can potentially cause worse II as Vitis HLS does not exploit read-first mode for URAMs. Consider using BRAMs instead.
 WARNING: [HLS 200-2042] Usage of URAM can potentially cause worse II as Vitis HLS does not exploit read-first mode for URAMs. Consider using BRAMs instead.
 INFO: [SCHED 204-61] Pipelining loop 'GATE_PASS2'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 81, loop 'GATE_PASS2'
-WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 68, loop 'GATE_PASS2'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 0.900 ns, effective delay budget: 3.100 ns).
 Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
 WARNING: [HLS 200-1016] The critical path in module 'compute_gate_Pipeline_GATE_PASS2' consists of the following:
-	'sitofp' operation 32 bit ('conv7', swiglu.cpp:571) [42]  (3.239 ns)
+	'sitofp' operation 32 bit ('conv7', swiglu.cpp:658) [42]  (3.239 ns)
 
 Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.069 seconds; current allocated memory: 668.445 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.572 seconds; current allocated memory: 683.516 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.033 seconds; current allocated memory: 668.645 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 683.938 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_gate' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 669.613 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.108 seconds; current allocated memory: 685.234 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.826 seconds; current allocated memory: 670.062 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 685.312 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'load_row_down_urm_Pipeline_LOAD_HDR_DOWN' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'LOAD_HDR_DOWN'.
-WARNING: [HLS 200-880] The II Violation in module 'load_row_down_urm_Pipeline_LOAD_HDR_DOWN' (loop 'LOAD_HDR_DOWN'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('w1', swiglu.cpp:140) on port 'gmem_Wd' (swiglu.cpp:140) and bus read operation ('w0', swiglu.cpp:140) on port 'gmem_Wd' (swiglu.cpp:140).
+WARNING: [HLS 200-880] The II Violation in module 'load_row_down_urm_Pipeline_LOAD_HDR_DOWN' (loop 'LOAD_HDR_DOWN'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('w1', swiglu.cpp:138) on port 'gmem_Wd' (swiglu.cpp:138) and bus read operation ('w0', swiglu.cpp:138) on port 'gmem_Wd' (swiglu.cpp:138).
 Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 9, loop 'LOAD_HDR_DOWN'
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 8, loop 'LOAD_HDR_DOWN'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.487 seconds; current allocated memory: 676.180 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.789 seconds; current allocated memory: 691.160 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.107 seconds; current allocated memory: 677.500 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.205 seconds; current allocated memory: 691.742 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'load_row_down_urm_Pipeline_LOAD_NIB_DOWN' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -527,93 +464,93 @@ WARNING: [HLS 200-2042] Usage of URAM can potentially cause worse II as Vitis HL
 INFO: [SCHED 204-61] Pipelining loop 'LOAD_NIB_DOWN'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'LOAD_NIB_DOWN'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.121 seconds; current allocated memory: 677.789 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 692.020 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.018 seconds; current allocated memory: 677.789 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.028 seconds; current allocated memory: 692.020 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'load_row_down_urm' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.036 seconds; current allocated memory: 678.301 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 692.375 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.245 seconds; current allocated memory: 679.875 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.099 seconds; current allocated memory: 694.160 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q4k_k4_urm_Pipeline_MAC_GRP' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_78) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_77) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_76) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_75) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_74) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_73) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_72) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_71) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_78) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_77) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_76) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_75) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_74) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_73) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_72) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_71) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_78) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_77) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_76) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_75) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_74) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_73) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_72) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_71) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_78) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_77) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_76) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_75) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_74) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_73) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_72) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_71) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_78) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_77) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_76) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_75) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_74) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_73) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_72) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_71) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_78) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_77) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_76) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_75) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_74) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_73) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_72) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_71) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_78) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_77) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_76) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_75) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_74) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_73) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_72) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_71) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_78) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_77) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_76) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_75) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_74) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_73) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_72) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_71) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_68) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_64) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m3_63) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_68) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_64) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w3_63) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_68) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_64) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m2_63) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_68) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_64) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w2_63) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_68) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_64) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m1_63) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_68) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_64) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w1_63) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_68) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_64) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_m0_63) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_68) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_64) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=acc_w0_63) to 3 in order to utilize available DSP registers.
 WARNING: [HLS 200-2042] Usage of URAM can potentially cause worse II as Vitis HLS does not exploit read-first mode for URAMs. Consider using BRAMs instead.
 WARNING: [HLS 200-2042] Usage of URAM can potentially cause worse II as Vitis HLS does not exploit read-first mode for URAMs. Consider using BRAMs instead.
 WARNING: [HLS 200-2042] Usage of URAM can potentially cause worse II as Vitis HLS does not exploit read-first mode for URAMs. Consider using BRAMs instead.
@@ -639,47 +576,47 @@ WARNING: [HLS 200-2042] Usage of URAM can potentially cause worse II as Vitis HL
 WARNING: [HLS 200-2042] Usage of URAM can potentially cause worse II as Vitis HLS does not exploit read-first mode for URAMs. Consider using BRAMs instead.
 WARNING: [HLS 200-2042] Usage of URAM can potentially cause worse II as Vitis HLS does not exploit read-first mode for URAMs. Consider using BRAMs instead.
 INFO: [SCHED 204-61] Pipelining loop 'MAC_GRP'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'MAC_GRP'
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 6, loop 'MAC_GRP'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 4.519 seconds; current allocated memory: 715.949 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 5.269 seconds; current allocated memory: 730.250 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.729 seconds; current allocated memory: 716.117 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.299 seconds; current allocated memory: 730.250 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q4k_k4_urm_Pipeline_REDUCE_GRP' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'REDUCE_GRP'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 32, loop 'REDUCE_GRP'
-WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 3.330 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.430 ns).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 29, loop 'REDUCE_GRP'
+WARNING: [HLS 200-871] Estimated clock period (3.239 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 0.900 ns, effective delay budget: 3.100 ns).
 Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
 WARNING: [HLS 200-1016] The critical path in module 'mac_blocks_down_q4k_k4_urm_Pipeline_REDUCE_GRP' consists of the following:
-	'sitofp' operation 32 bit ('conv8', swiglu.cpp:393) [1107]  (3.239 ns)
+	'sitofp' operation 32 bit ('conv8', swiglu.cpp:480) [1107]  (3.239 ns)
 
 Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.936 seconds; current allocated memory: 721.633 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.575 seconds; current allocated memory: 734.844 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.123 seconds; current allocated memory: 721.945 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.217 seconds; current allocated memory: 735.227 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'mac_blocks_down_q4k_k4_urm' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.079 seconds; current allocated memory: 746.559 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.919 seconds; current allocated memory: 758.766 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.721 seconds; current allocated memory: 747.910 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.266 seconds; current allocated memory: 761.816 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_output_Pipeline_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -687,175 +624,158 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'Loop 1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.532 seconds; current allocated memory: 749.965 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.097 seconds; current allocated memory: 763.855 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.018 seconds; current allocated memory: 749.965 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.031 seconds; current allocated memory: 763.855 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_output' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 9 seconds. CPU system time: 0 seconds. Elapsed time: 9.194 seconds; current allocated memory: 782.855 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 15 seconds. CPU system time: 0 seconds. Elapsed time: 15.043 seconds; current allocated memory: 795.578 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 WARNING: [BIND 205-102] The specified resource core for memory 'out_local' will be ignored if a simpler one can be used.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.772 seconds; current allocated memory: 782.918 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.13 seconds; current allocated memory: 795.578 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'swiglu' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.808 seconds; current allocated memory: 782.965 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.382 seconds; current allocated memory: 795.719 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.167 seconds; current allocated memory: 782.969 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.269 seconds; current allocated memory: 796.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'load_x_local' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'load_x_local' pipeline 'LOAD_X_VEC' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'load_x_local'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.53 seconds; current allocated memory: 793.211 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.888 seconds; current allocated memory: 806.570 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'fp16_to_fp32' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_32_1_0': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'fp16_to_fp32'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.61 seconds; current allocated memory: 810.398 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.073 seconds; current allocated memory: 822.656 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'load_row_wv_urm_Pipeline_LOAD_HDR_WV' 
+INFO: [HLS 200-10] -- Generating RTL for module 'load_4rows_wv_urm_Pipeline_LOAD_4R' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'load_row_wv_urm_Pipeline_LOAD_HDR_WV' pipeline 'LOAD_HDR_WV' pipeline type 'loop pipeline'
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_HDR_WV/m_axi_gmem_V_0_ARVALID' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_HDR_WV/m_axi_gmem_V_0_ARADDR' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_HDR_WV/m_axi_gmem_V_0_ARID' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_HDR_WV/m_axi_gmem_V_0_ARLEN' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_HDR_WV/m_axi_gmem_V_0_ARSIZE' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_HDR_WV/m_axi_gmem_V_0_ARBURST' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_HDR_WV/m_axi_gmem_V_0_ARLOCK' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_HDR_WV/m_axi_gmem_V_0_ARCACHE' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_HDR_WV/m_axi_gmem_V_0_ARPROT' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_HDR_WV/m_axi_gmem_V_0_ARQOS' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_HDR_WV/m_axi_gmem_V_0_ARREGION' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_HDR_WV/m_axi_gmem_V_0_ARUSER' to 0.
-INFO: [RTGEN 206-100] Finished creating RTL model for 'load_row_wv_urm_Pipeline_LOAD_HDR_WV'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.149 seconds; current allocated memory: 810.398 MB.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'load_4rows_wv_urm_Pipeline_LOAD_4R' pipeline 'LOAD_4R' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_4rows_wv_urm_Pipeline_LOAD_4R/m_axi_gmem_V_0_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_4rows_wv_urm_Pipeline_LOAD_4R/m_axi_gmem_V_0_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_4rows_wv_urm_Pipeline_LOAD_4R/m_axi_gmem_V_0_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_4rows_wv_urm_Pipeline_LOAD_4R/m_axi_gmem_V_0_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_4rows_wv_urm_Pipeline_LOAD_4R/m_axi_gmem_V_0_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_4rows_wv_urm_Pipeline_LOAD_4R/m_axi_gmem_V_0_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_4rows_wv_urm_Pipeline_LOAD_4R/m_axi_gmem_V_0_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_4rows_wv_urm_Pipeline_LOAD_4R/m_axi_gmem_V_0_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_4rows_wv_urm_Pipeline_LOAD_4R/m_axi_gmem_V_0_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_4rows_wv_urm_Pipeline_LOAD_4R/m_axi_gmem_V_0_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_4rows_wv_urm_Pipeline_LOAD_4R/m_axi_gmem_V_0_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'load_4rows_wv_urm_Pipeline_LOAD_4R/m_axi_gmem_V_0_ARUSER' to 0.
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_4rows_wv_urm_Pipeline_LOAD_4R'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.83 seconds; current allocated memory: 826.684 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'load_row_wv_urm_Pipeline_LOAD_NIB_WV' 
+INFO: [HLS 200-10] -- Generating RTL for module 'load_4rows_wv_urm' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'load_row_wv_urm_Pipeline_LOAD_NIB_WV' pipeline 'LOAD_NIB_WV' pipeline type 'loop pipeline'
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_NIB_WV/m_axi_gmem_V_0_ARVALID' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_NIB_WV/m_axi_gmem_V_0_ARADDR' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_NIB_WV/m_axi_gmem_V_0_ARID' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_NIB_WV/m_axi_gmem_V_0_ARLEN' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_NIB_WV/m_axi_gmem_V_0_ARSIZE' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_NIB_WV/m_axi_gmem_V_0_ARBURST' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_NIB_WV/m_axi_gmem_V_0_ARLOCK' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_NIB_WV/m_axi_gmem_V_0_ARCACHE' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_NIB_WV/m_axi_gmem_V_0_ARPROT' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_NIB_WV/m_axi_gmem_V_0_ARQOS' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_NIB_WV/m_axi_gmem_V_0_ARREGION' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_wv_urm_Pipeline_LOAD_NIB_WV/m_axi_gmem_V_0_ARUSER' to 0.
-INFO: [RTGEN 206-100] Finished creating RTL model for 'load_row_wv_urm_Pipeline_LOAD_NIB_WV'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.229 seconds; current allocated memory: 813.156 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'load_row_wv_urm' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Finished creating RTL model for 'load_row_wv_urm'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 814.785 MB.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_4rows_wv_urm'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.883 seconds; current allocated memory: 851.457 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_wv_k4_urm_Pipeline_MAC_ALL' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_wv_k4_urm_Pipeline_MAC_ALL' pipeline 'MAC_ALL' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-104] Estimated max fanout for 'mac_blocks_wv_k4_urm_Pipeline_MAC_ALL' is 8846 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
-INFO: [RTGEN 206-100] Generating core module 'mac_muladd_12s_8s_32s_32_4_1': 32 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_32s_32_4_1': 32 instance(s).
+INFO: [RTGEN 206-104] Estimated max fanout for 'mac_blocks_wv_k4_urm_Pipeline_MAC_ALL' is 8104 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'mul_12s_8s_19_1_1': 32 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_8s_4ns_12_1_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_8s_16_1_1': 32 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_8_1_1': 64 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_33_4_8_1_1': 8 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_2_32_1_1': 64 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_wv_k4_urm_Pipeline_MAC_ALL'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 1 seconds. Elapsed time: 2.518 seconds; current allocated memory: 847.371 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.202 seconds; current allocated memory: 887.242 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_wv_k4_urm_Pipeline_REDUCE' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_wv_k4_urm_Pipeline_REDUCE' pipeline 'REDUCE' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_6_max_dsp_1': 8 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_2_no_dsp_1': 4 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_11_full_dsp_1': 4 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'sitofp_32ns_32_7_no_dsp_1': 8 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_10_full_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_24_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_27_1_1': 16 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_48_1_1': 4 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_wv_k4_urm_Pipeline_REDUCE'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 4.201 seconds; current allocated memory: 911.477 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 1 seconds. Elapsed time: 4.174 seconds; current allocated memory: 964.055 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_wv_k4_urm' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'bitselect_1ns_48ns_6ns_1_1_1': 4 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'ctlz_48_48_1_1': 4 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_6_max_dsp_1': 4 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_wv_k4_urm'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.364 seconds; current allocated memory: 919.328 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.268 seconds; current allocated memory: 965.789 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_X1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_11_full_dsp_1': 4 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_3_no_dsp_1': 4 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_10_full_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_6_max_dsp_1': 4 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_X1'.
 INFO: [RTMG 210-278] Implementing memory 'swiglu_compute_X1_nib_r0_RAM_1P_BRAM_1R1W' using block RAMs.
 INFO: [RTMG 210-278] Implementing memory 'swiglu_compute_X1_d0_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.527 seconds; current allocated memory: 949.363 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.435 seconds; current allocated memory: 997.414 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_X2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_11_full_dsp_1': 4 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_3_no_dsp_1': 4 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_10_full_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_6_max_dsp_1': 4 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_X2'.
 INFO: [RTMG 210-278] Implementing memory 'swiglu_compute_X2_d0_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.526 seconds; current allocated memory: 979.945 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.388 seconds; current allocated memory: 1.006 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_gate_Pipeline_GATE_PASS1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_gate_Pipeline_GATE_PASS1' pipeline 'GATE_PASS1' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_11_full_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_3_no_dsp_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_10_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_6_max_dsp_1': 5 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 2 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_gate_Pipeline_GATE_PASS1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 2.375 seconds; current allocated memory: 1007.465 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.172 seconds; current allocated memory: 1.032 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_gate_Pipeline_GATE_PASS2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_gate_Pipeline_GATE_PASS2' pipeline 'GATE_PASS2' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_11_full_dsp_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_3_no_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_10_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_6_max_dsp_1': 6 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 2 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_gate_Pipeline_GATE_PASS2'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.508 seconds; current allocated memory: 1010.086 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.472 seconds; current allocated memory: 1.037 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_gate' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_11_full_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_3_no_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_30_no_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_10_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_16_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_6_max_dsp_1': 5 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sitofp_32s_32_7_no_dsp_1': 2 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_gate'.
 INFO: [RTMG 210-279] Implementing memory 'swiglu_compute_gate_sigmoid_lut_ROM_1P_BRAM_1R' using block ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.529 seconds; current allocated memory: 1015.914 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.487 seconds; current allocated memory: 1.041 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'load_row_down_urm_Pipeline_LOAD_HDR_DOWN' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -873,7 +793,7 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_urm_Pipeline_L
 WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_urm_Pipeline_LOAD_HDR_DOWN/m_axi_gmem_Wd_0_ARREGION' to 0.
 WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_urm_Pipeline_LOAD_HDR_DOWN/m_axi_gmem_Wd_0_ARUSER' to 0.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'load_row_down_urm_Pipeline_LOAD_HDR_DOWN'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 0.626 seconds; current allocated memory: 1023.934 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.716 seconds; current allocated memory: 1.047 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'load_row_down_urm_Pipeline_LOAD_NIB_DOWN' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -891,17 +811,17 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_urm_Pipeline_L
 WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_urm_Pipeline_LOAD_NIB_DOWN/m_axi_gmem_Wd_0_ARREGION' to 0.
 WARNING: [RTGEN 206-101] Setting dangling out port 'load_row_down_urm_Pipeline_LOAD_NIB_DOWN/m_axi_gmem_Wd_0_ARUSER' to 0.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'load_row_down_urm_Pipeline_LOAD_NIB_DOWN'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.529 seconds; current allocated memory: 1.021 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.216 seconds; current allocated memory: 1.067 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'load_row_down_urm' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'load_row_down_urm'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.51 seconds; current allocated memory: 1.021 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.47 seconds; current allocated memory: 1.067 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q4k_k4_urm_Pipeline_MAC_GRP' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_down_q4k_k4_urm_Pipeline_MAC_GRP' pipeline 'MAC_GRP' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-104] Estimated max fanout for 'mac_blocks_down_q4k_k4_urm_Pipeline_MAC_GRP' is 9298 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-104] Estimated max fanout for 'mac_blocks_down_q4k_k4_urm_Pipeline_MAC_GRP' is 8202 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
 INFO: [RTGEN 206-100] Generating core module 'mac_muladd_12s_8s_32s_32_4_1': 32 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_32s_32_4_1': 32 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_8s_4ns_12_1_1': 32 instance(s).
@@ -909,28 +829,28 @@ INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_8_1_1': 256 instanc
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_2_32_1_1': 64 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_2_8_1_1': 64 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q4k_k4_urm_Pipeline_MAC_GRP'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 12 seconds. CPU system time: 1 seconds. Elapsed time: 12.335 seconds; current allocated memory: 1.083 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 16 seconds. CPU system time: 0 seconds. Elapsed time: 15.898 seconds; current allocated memory: 1.128 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q4k_k4_urm_Pipeline_REDUCE_GRP' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mac_blocks_down_q4k_k4_urm_Pipeline_REDUCE_GRP' pipeline 'REDUCE_GRP' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_6_max_dsp_1': 8 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_2_no_dsp_1': 4 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_11_full_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_10_full_dsp_1': 4 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sitofp_32ns_32_7_no_dsp_1': 8 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 32 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_65_5_32_1_1': 8 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_48_1_1': 4 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q4k_k4_urm_Pipeline_REDUCE_GRP'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 3.174 seconds; current allocated memory: 1.180 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4 seconds. CPU system time: 2 seconds. Elapsed time: 5.477 seconds; current allocated memory: 1.229 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'mac_blocks_down_q4k_k4_urm' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'bitselect_1ns_48ns_6ns_1_1_1': 4 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'ctlz_48_48_1_1': 4 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_7_max_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_6_max_dsp_1': 4 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'mac_blocks_down_q4k_k4_urm'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.139 seconds; current allocated memory: 1.200 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.962 seconds; current allocated memory: 1.244 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_output_Pipeline_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -949,14 +869,14 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_
 WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_AWUSER' to 0.
 WARNING: [RTGEN 206-101] Setting dangling out port 'compute_output_Pipeline_1/m_axi_gmem_out_0_BREADY' to 0.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_output_Pipeline_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.342 seconds; current allocated memory: 1.272 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.331 seconds; current allocated memory: 1.316 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_output' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_output'.
 INFO: [RTMG 210-278] Implementing memory 'swiglu_compute_output_out_local_RAM_1P_BRAM_1R1W' using block RAMs.
 INFO: [RTMG 210-278] Implementing memory 'swiglu_compute_output_g0r0_RAM_1P_URAM_1R1W' using ultra RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.636 seconds; current allocated memory: 1.276 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.16 seconds; current allocated memory: 1.320 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'swiglu' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -983,13 +903,13 @@ INFO: [RTMG 210-278] Implementing memory 'swiglu_X1_cache_RAM_2P_BRAM_1R1W_memco
 INFO: [HLS 200-741] Implementing PIPO swiglu_gate_cache_RAM_1P_URAM_1R1W using a single memory for all blocks
 INFO: [RTMG 210-278] Implementing memory 'swiglu_gate_cache_RAM_1P_URAM_1R1W_memcore' using ultra RAMs.
 INFO: [RTMG 210-285] Implementing FIFO 'gate_scale_U(swiglu_fifo_w32_d2_S)' using Shift Registers.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 2.797 seconds; current allocated memory: 1.364 GB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.983 seconds; current allocated memory: 1.402 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 2 seconds. Elapsed time: 4.947 seconds; current allocated memory: 1.408 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 3.604 seconds; current allocated memory: 1.450 GB.
 INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 1.743 seconds; current allocated memory: 1.448 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 3 seconds. CPU system time: 1 seconds. Elapsed time: 3.584 seconds; current allocated memory: 1.501 GB.
 INFO: [VHDL 208-304] Generating VHDL RTL for swiglu.
 INFO: [VLOG 209-307] Generating Verilog RTL for swiglu.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 308.74 MHz
-INFO: [HLS 200-112] Total CPU user time: 132 seconds. Total CPU system time: 12 seconds. Total elapsed time: 230.993 seconds; peak allocated memory: 1.448 GB.
-INFO: [v++ 60-791] Total elapsed time: 0h 3m 54s
+INFO: [HLS 200-112] Total CPU user time: 168 seconds. Total CPU system time: 16 seconds. Total elapsed time: 241.177 seconds; peak allocated memory: 1.501 GB.
+INFO: [v++ 60-791] Total elapsed time: 0h 4m 5s
