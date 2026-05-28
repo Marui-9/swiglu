@@ -9,7 +9,7 @@
 \acmDOI{}
 \acmConference[HiPEAC '27]{HiPEAC 2027}{Glasgow, United Kingdom}{}
 
-\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsmath,amsfonts}
 \usepackage{multirow}
 \usepackage{algorithm}
 \usepackage{algorithmic}
@@ -324,7 +324,7 @@ This paper makes four contributions.
 To address the research question of enabling conversational-quality inference within the constraints of edge devices, this work adopts a systems-driven methodology that combines model profiling with targeted hardware acceleration. Rather than attempting to accelerate the entire conversational pipeline, the approach focuses on identifying the computational bottlenecks of the language backbone that powers the selected speech model and mapping the most demanding operations to dedicated hardware.
 
 The starting point of the approach is the LFM2-Audio architecture, whose conversational capabilities are supported by a 1.2B-parameter language backbone. To understand its execution characteristics on embedded hardware, the inference engine in llama.cpp was modified to instrument the execution of individual architectural blocks. This profiling allows the collection of fine-grained timing information for each major component of the model during inference.
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \caption{LFM2.5-1.2B CPU Execution Profile}
 \begin{tabular}{lrr}
@@ -674,7 +674,7 @@ The baseline corresponds to CPU Only execution of the same model using identical
 
 This section compares CPU Only and FPGA+CPU execution across thread counts (T1--T4) using throughput and performance-per-watt. Table~\ref{tab:short_results} reports the main quantitative results, while Fig.~\ref{fig:utilization} provides a view of efficiency trends and hardware resource usage.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \scriptsize
 \caption{CPU Only versus FPGA+CPU across thread counts.}
@@ -708,16 +708,16 @@ FPGA+CPU to 544\,ms at T2 FPGA+CPU.
 
 \subsection{Comparison with STM32MP257F-DK}
 To contextualise the KV260 results against a different ARM-class edge platform,
-the same model (Q4\_K\_M\_M) was benchmarked on the STMicroelectronics
+the same model (Q4\_K\_M) was benchmarked on the STMicroelectronics
 STM32MP257F-DK, which integrates two Cortex-A35 cores running at up to 1.5\,GHz.
 The A35 is an in-order ARMv8-A microarchitecture optimised for area and power
 efficiency, with a 128-bit NEON unit and a 512\,KB shared L2 cache across both cores.
 Table~\ref{tab:stm32_results} reports prefill and decode throughput at T1 and T2.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \scriptsize
-\caption{STM32MP257F-DK (2$\times$ Cortex-A35) throughput, Q4\_K\_M\_M model.}
+\caption{STM32MP257F-DK (2$\times$ Cortex-A35) throughput, Q4\_K\_M model.}
 \label{tab:stm32_results}
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{c c c}
@@ -772,7 +772,7 @@ Direct comparison with a recent deployment of a 6.6k-parameter Tiny Transformer 
 A Self-Attention accelerator on the KV260 highlights differing architectural trade-offs \cite{li2025fpgabasedhardware}. While our design uses mixed precision (INT8 activations, 4-bit weights) at 250 MHz and consuming 4.8–6.0 W, the attention-focused design processes DistilBERT-scale matrices using symmetric INT8 quantization at 100 MHz and approximately 3.3 W. Furthermore, whereas LFM2.5 heavily saturates logic, the attention accelerator prioritises arithmetic and memory fabric, consuming 60\% LUT, 83\% DSP, 88\% BRAM, and 43\% FF.
 Another comparable study conducted using the KV260 for matrix multiplication acceleration reports similar severe processing system (PS) bottlenecks \cite{11311069}. In the BRAM-banked matrix multiplication implementation the effective system throughput of 13.52 GOPs amounts to 59\% utilization of the peak 22.83 GOPs. Our isolated FPGA accelerator operates between 39\% (stages 2a/2b) and 54\% (stage 4) of its maximum capacity, when computing the feedforward block kernel due to memory bandwidth starvation. This disparity reflects the architectural focus: the BRAM-banked design consumes 83.72\% LUT and 83.17\% DSP to sustain an unrolled $32{\times}32$ INT8 multiplier array, whereas the LFM2.5 SwiGLU design utilizes only 26\% of DSP slices to process a mixed precision vector-matrix dataflow.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \caption{KV260 accelerator design comparison.}
 \label{tab:kv260_comparison}
@@ -825,6 +825,10 @@ Third, the KV260's ZU5EV fabric cannot route the simultaneous 128-bit BRAM reads
 gate-cache lookups, and sub-block-scale accesses demanded by a fully-unrolled output
 MAC array at 250\,MHz---the interconnect density exceeds the device's routing
 capacity.
+A migration to the ZU7EV---the next device in the same Zynq UltraScale+ family,
+offering approximately 230\,K LUTs on the same processor-fabric interface---would
+provide sufficient headroom to route the fully-unrolled output MAC array and to merge
+the load calls that currently serialise the AXI path.
 Taken together, these ceilings bound the achievable throughput at approximately
 3.6\,t/s under the Amdahl's Law limit (Section~\ref{subsec:cpuexec}), of which the
 deployed design attains 61\%.
