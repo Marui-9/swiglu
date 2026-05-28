@@ -7,9 +7,9 @@ set -e
 
 THREADS=${1:-4}
 REPEAT=${2:-10}
-PROMPT=4
+PROMPT=12
 NUM_TOKENS=64
-MODEL="$HOME/lfm2.5-1.2B-Q4_K.gguf"
+MODEL="$HOME/lfm2.5-1.2B-Q4_K_M.gguf"
 LLAMA_DIR="$HOME/llama.cpp"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 LOG="/tmp/accel_t${THREADS}_${TIMESTAMP}.log"
