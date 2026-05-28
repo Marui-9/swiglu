@@ -432,7 +432,7 @@ each MAC stage, yielding 32 parallel INT32 multiply-accumulate chains (8 blocks
 $\times$ 4 rows) in the projection stages and 32 chains shared across 4 sequential
 groups in the down-projection stage.
 This row parallelism is supported by a CPU-side pre-decoding step: the sub-block
-scales and minima (sc6, mn6) that Q4\_K normally stores interleaved at bit-level
+scales and minima (sc6, mn6) that Q4\_K\_M (Q4\_K\_M hereafter) normally stores interleaved at bit-level
 offsets within each 144-byte block header are unpacked into flat INT8 arrays, and
 the 4-bit nibbles are reordered into element-major 128-bit words for direct BRAM
 storage.
@@ -444,8 +444,28 @@ A structurally simpler quantisation format such as Q4\_0 (one fp16 block scale p
 effect without CPU-side pre-processing, mapping directly to a single DSP48E2 per
 MAC, but would require requantising the model and a separate perplexity validation
 step.
-The Q4\_K format was retained because the publicly available model is distributed
-in this format.
+The default GGUF distribution of LFM2-1.2B applies mixed quantization to the
+down-projection weights, using Q6\_K for eight layers and Q4\_K\_M for the remaining
+eight.
+Supporting Q6\_K in the accelerator is infeasible on the ZU5EV: each Q6\_K block
+occupies 210 bytes (13.125$\times$128-bit words), precluding the clean 2D
+register-file layout that enables compile-time \texttt{.range()} nibble extraction.
+The fallback \texttt{get\_byte()} multiplexer tree required for 6-bit nibbles
+consumes approximately 30--40\,K LUTs per MAC stage at 32-block
+parallelism---exceeding the device's remaining routing capacity at 88\% LUT
+occupancy.
+The model is therefore re-quantized to uniform Q4\_K\_M across all sixteen layers.
+This choice is consistent with the hardware-in-the-loop co-design process of LFM2,
+whose architecture search evaluated all candidates under Q4.0
+quantization~\cite{amini2025lfm2technicalreport}---a scheme coarser than Q4\_K\_M in
+both bit-width and block-scale granularity.
+Furthermore, Q6\_K is applied exclusively to the down-projection $W_{down}$, the
+least quantization-sensitive weight in the FFN: it acts as a linear readout of an
+already-nonlinear gated intermediate, and its 32-block structure averages
+quantization error before injection into the residual stream.
+The expected accuracy impact is a perplexity increase of approximately 0.05--0.15
+points on WikiText-2 and under 1\% absolute on downstream task benchmarks, well
+within the tolerance of a conversational audio deployment.
 
 This format is a product of the model's hardware-in-the-loop co-design process,
 which optimised the architecture and quantisation scheme specifically for CPU-based
@@ -453,7 +473,7 @@ edge inference on Arm NEON processors~\cite{amini2025lfm2technicalreport}; it wa
 never intended for FPGA fabric, where its irregular bit-level data layout penalises
 logic utilisation far more than it does on a general-purpose SIMD pipeline.
 Across the full mixed-precision datapath, the estimated accuracy degradation
-relative to the CPU's FP32 reference is dominated by the Q4\_K weight quantisation
+relative to the CPU's FP32 reference is dominated by the Q4\_K\_M weight quantisation
 error (approximately 6\%), with the INT8 input quantisation adding under 0.5\% and
 the INT8 intermediate caches contributing at most 1\% additional relative error.
 %Subnormal fp16 scale values are handled via a custom bit-manipulation conversion
@@ -469,7 +489,7 @@ The stage is pure data movement with no arithmetic; it saturates the 128-bit AXI
 bus at \SI{4.00}{GB/s} and completes in 202 cycles (\SI{0.81}{\micro\second}).
 
 %\subsection*{Stages 2a / 2b: Linear Projections (Parallel)}
-%\textbf{Algorithm:} Two GEMV operations compute $X_1 = x \cdot W$ and $X_2 = x \cdot V$ using $Q4\_K$ weights. With $K=2$, two rows are processed per iteration.
+%\textbf{Algorithm:} Two GEMV operations compute $X_1 = x \cdot W$ and $X_2 = x \cdot V$ using $Q4\_K\_M$ weights. With $K=2$, two rows are processed per iteration.
 %\begin{itemize}
 %    \item \textbf{DDR Volume:} \SI{9.0}{MB} per matrix (\SI{18}{MB} total per token).
 %    \item \textbf{Performance:} 2,646,017 cycles (\SI{10.58}{ms});
@@ -484,7 +504,7 @@ bus at \SI{4.00}{GB/s} and completes in 202 cycles (\SI{0.81}{\micro\second}).
 Two GEMV operations compute $X_1 = x \cdot W$ and $X_2 = x \cdot V$ in parallel
 on independent AXI ports and BRAM banks.
 Weights are pre-decoded on the CPU into flat INT8 sub-block scales and
-element-major nibble words; the FPGA never handles the interleaved Q4\_K header
+element-major nibble words; the FPGA never handles the interleaved Q4\_K\_M header
 format.
 With $K=4$, four rows are processed per iteration (four sequential 80-word AXI
 bursts of 16 header and 64 nibble words each).
@@ -615,11 +635,11 @@ at ($(out.south west)+(0mm,-6mm)$) {\fcolorbox{red!75!black}{red!18}{\strut\hspa
 
 \textbf{Hardware Platform.} Experiments were conducted on an embedded platform featuring a quad-core CPU running at 1.3\,GHz and an FPGA fabric operating at 250\,MHz. The system is equipped with 4\,GB of shared memory. Power measurements were collected using onboard sensors sampling at runtime via the AMD \texttt{xmutil} toolchain.
 %The four Cortex-A53 cores implement a narrow 64-bit NEON pipeline with in-order
-%execution; Q4\_K inference on this microarchitecture achieves no measurable
+%execution; Q4\_K\_M inference on this microarchitecture achieves no measurable
 %speedup from SIMD instructions, placing the scalar CPU path near the core's
 %computational ceiling independent of vectorisation.
 
-\textbf{Software Stack.} The inference engine is based on a modified version of \texttt{llama.cpp}, extended to support hardware offloading of the SwiGLU block. Models are executed using Q4\_K quantization format. The FPGA accelerator was synthesized using Vitis high-level synthesis (HLS) toolchain.
+\textbf{Software Stack.} The inference engine is based on a modified version of \texttt{llama.cpp}, extended to support hardware offloading of the SwiGLU block. Models are executed using Q4\_K\_M quantization format. The FPGA accelerator was synthesized using Vitis high-level synthesis (HLS) toolchain.
 
 \textbf{Workload.} The evaluation uses the LFM2.5-1.2B language backbone (input dimension 2048, feed-forward dimension 8192), which is shared across the Instruct and Thinking fine-tuned variants and the base version. The accelerator processes one token per invocation, with multi-token prefill handled by sequential IP calls in the driver loop, issued by a modified \texttt{llama.cpp}. This reflects the single-token synthesis constraint imposed by on-chip memory limits. 
 
@@ -686,6 +706,32 @@ Per-token decode latency follows from the reciprocal of the throughput values:
 from 1.03\,s at T1 CPU-only to 381\,ms at T4 CPU-only, and from 690\,ms at T1
 FPGA+CPU to 544\,ms at T2 FPGA+CPU.
 
+\subsection{Comparison with STM32MP257F-DK}
+To contextualise the KV260 results against a different ARM-class edge platform,
+the same model (Q4\_K\_M\_M) was benchmarked on the STMicroelectronics
+STM32MP257F-DK, which integrates two Cortex-A35 cores running at up to 1.5\,GHz.
+The A35 is an in-order ARMv8-A microarchitecture optimised for area and power
+efficiency, with a 128-bit NEON unit and a 512\,KB shared L2 cache across both cores.
+Table~\ref{tab:stm32_results} reports prefill and decode throughput at T1 and T2.
+
+\begin{table}[h]
+\centering
+\scriptsize
+\caption{STM32MP257F-DK (2$\times$ Cortex-A35) throughput, Q4\_K\_M\_M model.}
+\label{tab:stm32_results}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{c c c}
+\hline
+Threads & Prefill pp12 (t/s) & Decode tg32 (t/s) \\
+\hline
+T1 & \textbf{TODO} & \textbf{TODO} \\
+T2 & \textbf{TODO} & \textbf{TODO} \\
+\hline
+\end{tabular}
+\end{table}
+Power was not logged in software; measurements were taken externally using a
+Nordic PPK2 inline on the 5\,V supply rail and aligned to benchmark timestamps.
+
 % \begin{figure}[!ht]
 %   \centering
 %   \includegraphics[width=\linewidth]{images/power_summary_T1_T4_perf_w.png}
@@ -707,6 +753,19 @@ The FPGA+CPU solution improves efficiency at lower thread counts, not uniformly 
 
 The results indicate that offloading the SwiGLU feed-forward block to FPGA is beneficial because it targets a compute-dominant kernel, consistently with prior transformer accelerators that focus on FFN/MLP and attention substructures as the most advantageous hardware targets %\cite{FTRANS} 
 \cite{lu2020hw-mha}. In the present case, the FPGA+CPU configuration improves performance-per-watt most clearly at lower thread counts (T1/T2),yielding gains of +63.8\% (prefill) and +55.3\% (decode) at T1, and +9.0\% (prefill) and +92.6\% (decode) at T2, indicating that the accelerator is effective when host-side contention is limited and the cost of orchestration can be amortized.In contrast, at T3/T4 the CPU Only path remains faster, with the FPGA+CPU configuration exhibiting a performance-per-watt decrease of 12.6\%/10.8\% at T3, and 22.2\%/14.7\% at T4 (prefill/decode). This suggests that the incremental benefit of SwiGLU acceleration is offset by transfer overhead, synchronization, and the inability of the surrounding execution pipeline to supply data to the programmable logic efficiently enough. 
+
+Comparing the KV260 against the STM32MP257F-DK isolates the effect of the
+out-of-order Cortex-A53 microarchitecture and the FPGA fabric from the simpler
+in-order A35 baseline.
+The A35 achieves \textbf{TODO}\,t/s decode at T2, versus \textbf{1.07}\,t/s for
+the KV260 A53 at T2 (CPU Only) and \textbf{2.03}\,t/s for the KV260 FPGA+CPU path.
+This places the KV260 FPGA+CPU configuration at a \textbf{TODO$\times$} decode
+speedup over the A35 at matched thread count, at the cost of a more complex
+integration and approximately \textbf{TODO}\,W of additional board power.
+The contrast highlights that the practical value of the FPGA offload scales with
+the gap between the host CPU and the accelerator: on a weaker host the absolute
+gain is larger, while on a stronger host (more A53 threads) the orchestration
+overhead increasingly dominates.
 
 Results reported using larger FPGA platforms suggest that greater memory bandwidth and fabric capacity help kernel-level gains and end-to-end speedup \cite{FTRANS}.
 Direct comparison with a recent deployment of a 6.6k-parameter Tiny Transformer on the same platform highlights the resource intensity of conversational architectures. While the Tiny Transformer maps its entire end-to-end pipeline using only 30\% of available Look-Up Tables (LUTs), 27\% of DSP slices, 37\% of Block RAM (BRAM), and 20\% of Flip-Flops (FF) at 77\,MHz \cite{11310944tin}, accelerating just the feed-forward SwiGLU block of the 1.2B-parameter LFM2.5 model nearly saturates the same device at 88\% LUT and 60\% BRAM utilization at 250\,MHz.

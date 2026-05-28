@@ -4,9 +4,8 @@
 #include <string.h>
 #include <ap_int.h>
 #include <ap_fixed.h>
-// ─── Fixed-point types for DSP-mapped REDUCE loops ───────────────────────────
-typedef ap_fixed<32,8>  fxd_scale_t;
-typedef ap_fixed<56,38> fxd_accum_t;
+// fxd_accum_t: 48-bit fixed-point accumulator fits exactly in one DSP48E2 P register
+typedef ap_fixed<48,38> fxd_accum_t;
 
 // ─── Dimensions ──────────────────────────────────────────────────────────────
 #define VECTOR_DIM           2048
@@ -193,7 +192,6 @@ static void mac_blocks_wv_k4_urm(
     float *result0, float *result1, float *result2, float *result3)
 {
 #pragma HLS INLINE off
-#pragma HLS BIND_OP op=mul impl=dsp
 #pragma HLS ARRAY_PARTITION variable=x dim=1 complete
 
     int32_t acc_w0[WV_BLOCKS_PER_ROW][4], acc_m0[WV_BLOCKS_PER_ROW][4];
@@ -269,10 +267,10 @@ static void mac_blocks_wv_k4_urm(
             sw2 += acc_w2[b][k]; sm2 += acc_m2[b][k];
             sw3 += acc_w3[b][k]; sm3 += acc_m3[b][k];
         }
-        total0 += (fxd_scale_t)d0[b] * (fxd_accum_t)sw0 - (fxd_scale_t)dmin0[b] * (fxd_accum_t)sm0;
-        total1 += (fxd_scale_t)d1[b] * (fxd_accum_t)sw1 - (fxd_scale_t)dmin1[b] * (fxd_accum_t)sm1;
-        total2 += (fxd_scale_t)d2[b] * (fxd_accum_t)sw2 - (fxd_scale_t)dmin2[b] * (fxd_accum_t)sm2;
-        total3 += (fxd_scale_t)d3[b] * (fxd_accum_t)sw3 - (fxd_scale_t)dmin3[b] * (fxd_accum_t)sm3;
+        total0 += (fxd_accum_t)(d0[b]    * (float)sw0 - dmin0[b] * (float)sm0);
+        total1 += (fxd_accum_t)(d1[b]    * (float)sw1 - dmin1[b] * (float)sm1);
+        total2 += (fxd_accum_t)(d2[b]    * (float)sw2 - dmin2[b] * (float)sm2);
+        total3 += (fxd_accum_t)(d3[b]    * (float)sw3 - dmin3[b] * (float)sm3);
     }
     *result0 = (float)total0 * x_scale;
     *result1 = (float)total1 * x_scale;
@@ -312,7 +310,6 @@ static void mac_blocks_down_q4k_k4_urm(
     float *result0, float *result1, float *result2, float *result3)
 {
 #pragma HLS INLINE off
-#pragma HLS BIND_OP op=mul impl=dsp
 #pragma HLS ARRAY_PARTITION variable=gate dim=1 complete
 
     fxd_accum_t total0 = 0, total1 = 0, total2 = 0, total3 = 0;
@@ -346,8 +343,15 @@ static void mac_blocks_down_q4k_k4_urm(
         // Select group tiles — 4:1 32-bit mux per row (negligible LUT)
         MAC_GRP: for (int n = 0; n < 256; n++) {
             #pragma HLS PIPELINE II=1
-            int sub = n >> 5;
-            int k   = n & 3;
+            // Per-row copies of index regs to limit fanout across 4 row paths
+            int sub[4], k[4];
+            #pragma HLS ARRAY_PARTITION variable=sub complete
+            #pragma HLS ARRAY_PARTITION variable=k complete
+            for (int r = 0; r < 4; r++) {
+                #pragma HLS UNROLL
+                sub[r] = n >> 5;
+                k[r]   = n & 3;
+            }
 
             ap_uint<32> w0, w1, w2, w3;
             if      (grp == 0) { w0 = g0r0[n]; w1 = g0r1[n]; w2 = g0r2[n]; w3 = g0r3[n]; }
@@ -364,14 +368,14 @@ static void mac_blocks_down_q4k_k4_urm(
                 ap_uint<4> nb2  = (ap_uint<4>) w2.range(b*4+3, b*4);
                 ap_uint<4> nb3  = (ap_uint<4>) w3.range(b*4+3, b*4);
 
-                acc_w0[b][k] += (int32_t)(gi8 * (ap_int<5>)nb0 * sc60[babs][sub]);
-                acc_m0[b][k] += (int32_t)(gi8 * mn60[babs][sub]);
-                acc_w1[b][k] += (int32_t)(gi8 * (ap_int<5>)nb1 * sc61[babs][sub]);
-                acc_m1[b][k] += (int32_t)(gi8 * mn61[babs][sub]);
-                acc_w2[b][k] += (int32_t)(gi8 * (ap_int<5>)nb2 * sc62[babs][sub]);
-                acc_m2[b][k] += (int32_t)(gi8 * mn62[babs][sub]);
-                acc_w3[b][k] += (int32_t)(gi8 * (ap_int<5>)nb3 * sc63[babs][sub]);
-                acc_m3[b][k] += (int32_t)(gi8 * mn63[babs][sub]);
+                acc_w0[b][k[0]] += (int32_t)(gi8 * (ap_int<5>)nb0 * sc60[babs][sub[0]]);
+                acc_m0[b][k[0]] += (int32_t)(gi8 * mn60[babs][sub[0]]);
+                acc_w1[b][k[1]] += (int32_t)(gi8 * (ap_int<5>)nb1 * sc61[babs][sub[1]]);
+                acc_m1[b][k[1]] += (int32_t)(gi8 * mn61[babs][sub[1]]);
+                acc_w2[b][k[2]] += (int32_t)(gi8 * (ap_int<5>)nb2 * sc62[babs][sub[2]]);
+                acc_m2[b][k[2]] += (int32_t)(gi8 * mn62[babs][sub[2]]);
+                acc_w3[b][k[3]] += (int32_t)(gi8 * (ap_int<5>)nb3 * sc63[babs][sub[3]]);
+                acc_m3[b][k[3]] += (int32_t)(gi8 * mn63[babs][sub[3]]);
             }
         }
 
@@ -386,14 +390,10 @@ static void mac_blocks_down_q4k_k4_urm(
                 sw2 += acc_w2[b][k]; sm2 += acc_m2[b][k];
                 sw3 += acc_w3[b][k]; sm3 += acc_m3[b][k];
             }
-            total0 += (fxd_scale_t)d0[babs]    * (fxd_accum_t)sw0
-                    - (fxd_scale_t)dmin0[babs]  * (fxd_accum_t)sm0;
-            total1 += (fxd_scale_t)d1[babs]    * (fxd_accum_t)sw1
-                    - (fxd_scale_t)dmin1[babs]  * (fxd_accum_t)sm1;
-            total2 += (fxd_scale_t)d2[babs]    * (fxd_accum_t)sw2
-                    - (fxd_scale_t)dmin2[babs]  * (fxd_accum_t)sm2;
-            total3 += (fxd_scale_t)d3[babs]    * (fxd_accum_t)sw3
-                    - (fxd_scale_t)dmin3[babs]  * (fxd_accum_t)sm3;
+            total0 += (fxd_accum_t)(d0[babs]    * (float)sw0 - dmin0[babs] * (float)sm0);
+            total1 += (fxd_accum_t)(d1[babs]    * (float)sw1 - dmin1[babs] * (float)sm1);
+            total2 += (fxd_accum_t)(d2[babs]    * (float)sw2 - dmin2[babs] * (float)sm2);
+            total3 += (fxd_accum_t)(d3[babs]    * (float)sw3 - dmin3[babs] * (float)sm3);
         }
     }
     *result0 = (float)total0 * gate_scale;
@@ -539,7 +539,6 @@ static void compute_gate(
     float        gate_scale_out[MAX_BATCH])
 {
 #pragma HLS INLINE off
-#pragma HLS BIND_OP op=mul impl=dsp
     SWISH_GATE: for (int n = 0; n < MAX_BATCH; n++) {
         #pragma HLS UNROLL
         float pmax[8] = {0.f,0.f,0.f,0.f,0.f,0.f,0.f,0.f};
@@ -603,7 +602,10 @@ static void compute_output(
 #pragma HLS ARRAY_PARTITION variable=gate_cache dim=2 cyclic factor=8
 
     const ap_uint<128> *W_down_wide = (const ap_uint<128>*)W_down;
-    float gate_scale = gate_scale_array[0];
+    float gate_scale_buf[1];
+    #pragma HLS BIND_STORAGE variable=gate_scale_buf type=ram_1p impl=lutram
+    gate_scale_buf[0] = gate_scale_array[0];
+    float gate_scale = gate_scale_buf[0];
 
     if (down_quant_mode == 0) {
         float out_local[VECTOR_DIM];

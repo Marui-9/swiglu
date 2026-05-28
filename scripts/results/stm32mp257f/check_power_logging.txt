@@ -1,0 +1,27 @@
+ If the driver exposes current readings, you can poll them from the script with no external hardware at all.
+
+To check what's available once you're logged into the board:
+
+
+# Check hwmon entries
+cat /sys/class/hwmon/hwmon*/name
+ls /sys/class/hwmon/hwmon*/
+
+# Check IIO devices
+ls /sys/bus/iio/devices/
+cat /sys/bus/iio/devices/iio:device*/name 2>/dev/null
+
+# Check if ST's PMIC driver exposes power supply class
+ls /sys/class/power_supply/
+
+# List PMIC I2C device
+find /sys/bus/i2c/devices -name "stpmic*" 2>/dev/null
+If any of those expose a curr1_input or in1_input (voltage) value, you can build a logger identical in structure to the KV260 power loop — poll every second, compute P = V × I, log alongside the benchmark.
+
+Other options if the STPMIC25 driver doesn't expose current:
+
+Option	Accuracy	Effort
+STPMIC25 sysfs (software)	Good per-rail	Zero hardware
+USB-C inline power meter (e.g. UM25C)	Whole-board, ~1 Hz	Cheap, manual read
+Nordic PPK2 inline	Whole-board, 100 kHz	Best, but external wiring
+I'd check the sysfs approach first — if it works it's the cleanest and lets you log power directly in the script the same way the KV260 scripts do. 
