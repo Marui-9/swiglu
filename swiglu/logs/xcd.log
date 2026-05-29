@@ -10233,3 +10233,35 @@
 05/28/26 20:58:54: Socket received request to stop server.
 05/28/26 20:58:54: Dispatch Server: do_await_stop
 05/28/26 20:58:54: SERVER: destructor for server bound to port 59622
+05/28/26 21:08:29: Running xcd server. This server was built by gradle.
+05/28/26 21:08:29: Server was asked to start on port: '56797'
+05/28/26 21:08:29: Server is using token UUID: 'f30391ec-8668-4b61-9137-43c4d6bd8e36'
+05/28/26 21:08:29: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+05/28/26 21:08:29: Attempting to start server on port '56797'
+05/28/26 21:08:29: Running Dispatch Server
+05/28/26 21:08:29: Version 2.2.0
+05/28/26 21:08:38: Running xcd server. This server was built by gradle.
+05/28/26 21:08:38: Server was asked to start on port: '56799'
+05/28/26 21:08:38: Server is using token UUID: '746299a5-738b-43e3-9d01-4e339675b987'
+05/28/26 21:08:38: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+05/28/26 21:08:38: Attempting to start server on port '56799'
+05/28/26 21:08:38: Running Dispatch Server
+05/28/26 21:08:38: Version 2.2.0
+05/28/26 21:08:40: Dispatch Server: Accepted socket connection from client
+05/28/26 21:08:40: Starting Socket connection
+05/28/26 21:08:40: EXCHANGE_TOKEN received, server token: 746299a5-738b-43e3-9d01-4e339675b987, passed token: 746299a5-738b-43e3-9d01-4e339675b987
+05/28/26 21:08:40: DISPATCH_HANDLER: Adding handler from function makeHandler in library xv_system_diagram
+05/28/26 21:08:40: SESSION_MGR: creating session with session uuid: 'ff4bf2ff-a6ec-491e-a731-25f2e0b4cb4f' and name 'v++_compile_swiglu'
+05/28/26 21:08:40: KERNEL_SVC: creating session with uuid: 'ff4bf2ff-a6ec-491e-a731-25f2e0b4cb4f' and name 'v++_compile_swiglu'
+05/28/26 21:08:40: GUIDANCE_SMGR: creating guidance session with uuid: 'ff4bf2ff-a6ec-491e-a731-25f2e0b4cb4f' and name 'v++_compile_swiglu'
+05/28/26 21:08:40: SYSTEM_DIAGRAM: creating session with uuid: 'ff4bf2ff-a6ec-491e-a731-25f2e0b4cb4f' and name 'v++_compile_swiglu'
+05/28/26 21:08:43: Dispatch Server: Accepted socket connection from client
+05/28/26 21:08:43: Starting Socket connection
+05/28/26 21:12:56: SESSION_MGR: closing session for UUID 'ff4bf2ff-a6ec-491e-a731-25f2e0b4cb4f' with name 'v++_compile_swiglu'
+05/28/26 21:12:56: KERNEL_SVC: closing session for UUID 'ff4bf2ff-a6ec-491e-a731-25f2e0b4cb4f' with name 'v++_compile_swiglu'
+05/28/26 21:12:56: GUIDANCE_SMGR: closing session for UUID 'ff4bf2ff-a6ec-491e-a731-25f2e0b4cb4f' with name 'v++_compile_swiglu'
+05/28/26 21:12:56: SYSTEM_DIAGRAM: closing session for UUID 'ff4bf2ff-a6ec-491e-a731-25f2e0b4cb4f' with name 'v++_compile_swiglu'
+05/28/26 21:12:56: STOP_SERVER received, server token: 746299a5-738b-43e3-9d01-4e339675b987, passed token: 746299a5-738b-43e3-9d01-4e339675b987
+05/28/26 21:12:56: Socket received request to stop server.
+05/28/26 21:12:56: Dispatch Server: do_await_stop
+05/28/26 21:12:56: SERVER: destructor for server bound to port 56799

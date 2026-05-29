@@ -7,7 +7,7 @@ ACCEL_DIR=/home/ubuntu/Desktop/accel
 LLAMA_SRC=/home/ubuntu/llama.cpp
 FW_DIR=/lib/firmware/xilinx/kria-accel
 UDMABUF_KO=/home/ubuntu/udmabuf/u-dma-buf.ko
-UDMABUF_SIZE=671088640
+UDMABUF_SIZE=536870912   # 512 MB — matches ggml-cpu.c UDMABUF_SIZE; fits within CMA=600M
 
 echo "[0] set env vars LLAMA_SWIHW=1 & SWIGLU_DEBUG=1"
 export LLAMA_SWIHW=1
@@ -36,7 +36,7 @@ sudo xmutil loadapp kria-accel
 echo "[7] Insert u-dma-buf (CMA must cover size)"
 cd
 sudo rmmod u-dma-buf 2>/dev/null || true
-cd ~/udmabuf && sudo insmod u-dma-buf.ko udmabuf0=671088640 || true
+cd ~/udmabuf && sudo insmod u-dma-buf.ko udmabuf0=${UDMABUF_SIZE}
 grep cma /proc/cmdline
 cat /sys/class/u-dma-buf/udmabuf0/phys_addr
 cat /sys/class/u-dma-buf/udmabuf0/size
