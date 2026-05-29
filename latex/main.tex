@@ -754,13 +754,15 @@ Table~\ref{tab:stm32_results} reports prefill and decode throughput at T1 and T2
 \hline
 Threads & Prefill pp12 (t/s) & Decode tg32 (t/s) \\
 \hline
-T1 & \textbf{TODO} & \textbf{TODO} \\
-T2 & \textbf{TODO} & \textbf{TODO} \\
+T1 & 0.83 & 0.67 \\
+T2 & 1.61 & 1.28 \\
 \hline
 \end{tabular}
 \end{table}
-Power was not logged in software; measurements were taken externally using a
-Nordic PPK2 inline on the 5\,V supply rail and aligned to benchmark timestamps.
+Power was not logged in software; it is estimated from SoC datasheet
+characterization tables (DS14284 Rev~5, Table~22--26) at 1.5\,GHz, board PMIC
+voltage rails from UM3385~\S7.5.3, a background LPDDR4 model, and the
+measured benchmark throughput for DRAM activity (T1: 0.62\,W; T2: 0.80\,W).
 
 % \begin{figure}[!ht]
 %   \centering
@@ -787,11 +789,12 @@ The results indicate that offloading the SwiGLU feed-forward block to FPGA is be
 Comparing the KV260 against the STM32MP257F-DK isolates the effect of the
 out-of-order Cortex-A53 microarchitecture and the FPGA fabric from the simpler
 in-order A35 baseline.
-The A35 achieves \textbf{TODO}\,t/s decode at T2, versus \textbf{1.07}\,t/s for
+The A35 achieves \textbf{1.28}\,t/s decode at T2, versus \textbf{1.07}\,t/s for
 the KV260 A53 at T2 (CPU Only) and \textbf{2.03}\,t/s for the KV260 FPGA+CPU path.
-This places the KV260 FPGA+CPU configuration at a \textbf{TODO$\times$} decode
+This places the KV260 FPGA+CPU configuration at a \textbf{1.6$\times$} decode
 speedup over the A35 at matched thread count, at the cost of a more complex
-integration and approximately \textbf{TODO}\,W of additional board power.
+integration and approximately \textbf{4.0}\,W of additional board power
+(4.83\,W FPGA+CPU versus 0.80\,W for the STM32 at T2).
 The contrast highlights that the practical value of the FPGA offload scales with
 the gap between the host CPU and the accelerator: on a weaker host the absolute
 gain is larger, while on a stronger host (more A53 threads) the orchestration

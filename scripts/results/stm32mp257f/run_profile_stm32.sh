@@ -12,7 +12,7 @@ set -e
 REPEAT=${1:-5}
 PROMPT=12
 NUM_TOKENS=32
-MODEL="$HOME/lfm2.5-1.2B-Q4_K_M.gguf"
+MODEL="$HOME/LFM2.5-1.2B-Thinking-Q4_K_M.gguf"
 LLAMA_DIR="$HOME/llama.cpp"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 LOG="/tmp/stm32_${TIMESTAMP}.log"

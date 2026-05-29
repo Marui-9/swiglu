@@ -1,0 +1,284 @@
+================================================================================
+  POWER CONSUMPTION ANALYSIS — STM32MP257F-DK RUNNING LFM2 1.2B Q4_K_M
+  llama.cpp CPU Benchmark: 1-thread vs 2-thread execution
+================================================================================
+ 
+HARDWARE CONTEXT
+----------------
+Board       : STM32MP257F-DK Discovery Kit (UM3385 Rev 2, April 2025)
+SoC         : STM32MP257FAK3 — dual Arm Cortex-A35 @ 1.5 GHz
+PMIC        : STPMIC25APQR (on-board power management)
+DRAM        : 32 Gbit (4 GB) LPDDR4, VDD2_DDR = 1.2 V
+Power input : 5 V via USB Type-C (CN21), max 3 A / 15 W (UM3385 §7.5.2)
+ 
+MODEL CONTEXT
+-------------
+Model       : LFM2 1.2B, quantization Q4_K_M (Medium)
+Size on disk: 694.76 MiB = 728.6 MB
+Parameters  : 1.17 B
+ 
+BENCHMARK RESULTS
+-----------------
+  T1 — 1 thread (core P0 only):
+    Prefill  (pp12) :  0.83 ± 0.00 tok/s
+    Decode   (tg32) :  0.67 ± 0.00 tok/s
+ 
+  T2 — 2 threads (cores P0 & P1):
+    Prefill  (pp12) :  1.61 ± 0.00 tok/s
+    Decode   (tg32) :  1.28 ± 0.00 tok/s
+ 
+Assumption: CPUs are at 100% utilization during the benchmark. No GPU is used.
+The decode (tg32) phase is the sustained steady-state and is used as the primary
+reference for power estimation. Prefill yields nearly identical power (see Step 4).
+ 
+================================================================================
+  STEP-BY-STEP DERIVATION
+================================================================================
+ 
+STEP 1 — MEMORY BANDWIDTH FROM BENCHMARK RESULTS
+-------------------------------------------------
+In autoregressive decode (token generation), each generated token requires
+reading the full set of model weights once from DRAM. Therefore:
+ 
+  BW = tok/s  x  model_size_bytes
+ 
+  model_size = 694.76 MiB = 728.6 MB = 0.7286 GB
+ 
+  Phase            T1                          T2
+  -------          --------------------------  --------------------------
+  Prefill (pp12)   0.83 x 728.6 = 605 MB/s    1.61 x 728.6 = 1173 MB/s
+  Decode  (tg32)   0.67 x 728.6 = 488 MB/s    1.28 x 728.6 =  933 MB/s
+ 
+LPDDR4 peak bandwidth (32-bit bus, LPDDR4-3200) ≈ 25 GB/s.
+ 
+  LPDDR4 utilization:
+    Decode T1 :  488 MB/s  /  25,000 MB/s  =  1.9%
+    Decode T2 :  933 MB/s  /  25,000 MB/s  =  3.7%
+ 
+KEY FINDING: Utilization is under 5% in all cases. LPDDR4 power is therefore
+background-dominated. The active (bandwidth-proportional) component is small
+enough to treat as negligible within the estimation uncertainty (see Step 4).
+ 
+ 
+STEP 2 — OPERATING VOLTAGES (STPMIC25 CONFIGURATION)
+------------------------------------------------------
+Voltages are set by the STPMIC25 non-volatile memory on the DK board and are
+specified in the user manual (UM3385 §7.5.3). These take precedence over the
+generic datasheet defaults, which assume VDDCPU = 0.80 V. At 1.5 GHz the PMIC
+is programmed to a higher voltage for timing margin.
+ 
+  Rail             PMIC output  Voltage    Powers
+  ---------------  -----------  ---------  -----------------------------------
+  VDDCPU           BUCK1        0.91 V     Cortex-A35 CPU cores
+  VDDCORE          BUCK2        0.82 V     Interconnect, L2 cache, peripherals
+  VDD / VDDIO      BUCK4        3.3 V      I/O ring
+  VDDA18 / 1V8     BUCK5        1.8 V      PLLs, analog blocks (always-on)
+  VDD2_DDR         BUCK6        1.2 V      LPDDR4 array and I/O
+  3V3 (periph.)    BUCK7        3.3 V      Board peripherals
+ 
+ 
+STEP 3 — SOC RAIL CURRENTS FROM DATASHEET CHARACTERIZATION TABLES
+------------------------------------------------------------------
+Source: STM32MP257 datasheet DS14284 Rev 5.
+All values: T_j = 25 °C, typical, CPU1 clock = 1500 MHz, AXI = 600 MHz, no GPU.
+All values are from characterization, not production-tested (DS14284 §6.3.5).
+ 
+IDDCPU — Table 23, condition "all peripherals enabled":
+  This condition best represents a running OpenSTLinux system where peripheral
+  clocks and drivers are initialized, even if no peripheral I/O is occurring.
+ 
+  Condition                 Current (typ)
+  ------------------------  -------------
+  CRun P0 only  (1 thread)  130 mA
+  CRun P0 & P1  (2 threads) 245 mA
+ 
+IDDCORE — Table 22, condition "all peripherals disabled":
+  VDDCORE powers the shared fabric: interconnect, L2 cache, DDR controller,
+  and peripheral blocks. During a CPU-only inference benchmark, no peripheral
+  I/O is active. "Peripherals disabled" is therefore the appropriate condition
+  for the switching activity on this rail. The DDR controller activity is
+  captured separately in the DRAM power term (Step 4).
+ 
+  Condition                 Current (typ)
+  ------------------------  -------------
+  1 core,  1500 MHz, no GPU  49 mA
+  2 cores, 1500 MHz, no GPU  97 mA
+ 
+IDD (VDD = 3.3 V) — Table 25:
+  2.7 mA (minimal I/O switching during CPU benchmark)
+ 
+IDDA18 (VDDA18 = 1.8 V) — Table 26:
+  3.85 mA (T1, 1 core)  /  4.35 mA (T2, 2 cores)
+ 
+SoC power per rail  (P = V x I):
+ 
+  Rail       Voltage   Current T1   Power T1   Current T2   Power T2
+  ---------  --------  -----------  ---------  -----------  ---------
+  VDDCPU     0.91 V    130 mA       118 mW     245 mA       223 mW
+  VDDCORE    0.82 V     49 mA        40 mW      97 mA        80 mW
+  VDD        3.3 V       2.7 mA       9 mW       2.7 mA       9 mW
+  VDDA18     1.8 V       3.85 mA      7 mW       4.35 mA      8 mW
+  ---------  --------  -----------  ---------  -----------  ---------
+  P_SoC      —          —           174 mW      —           320 mW
+ 
+The dominant term is VDDCPU (118/223 mW), representing 68%/70% of SoC power.
+The second core adds 105 mW on VDDCPU + 40 mW on VDDCORE = 145 mW SoC delta.
+ 
+ 
+STEP 4 — LPDDR4 POWER
+----------------------
+Model:
+ 
+  P_DRAM = P_bg  +  alpha x BW
+ 
+  P_bg   : background power at VDD2_DDR = 1.2 V (active-standby, DDR
+            controller running, DRAM in bank-idle state)  ≈  150 mW
+  alpha  : LPDDR4 active read coefficient  ≈  17 mW / (GB/s)
+            (derived from LPDDR4 peak active power ~350 mW above background
+             at ~20 GB/s peak bandwidth: 350/20 ≈ 17 mW per GB/s)
+ 
+  Decode phase (primary):
+    P_DRAM T1  =  150  +  17 x 0.488  =  150 + 8   ≈  158 mW  →  160 mW
+    P_DRAM T2  =  150  +  17 x 0.933  =  150 + 16  ≈  166 mW  →  170 mW
+ 
+  Prefill phase (for completeness):
+    P_DRAM T1  =  150  +  17 x 0.605  =  150 + 10  ≈  160 mW
+    P_DRAM T2  =  150  +  17 x 1.173  =  150 + 20  ≈  170 mW
+ 
+The active term (8–20 mW) is below the estimation uncertainty of P_bg. Prefill
+and decode DRAM power are identical within rounding. The DRAM power is
+effectively constant across both thread counts and both benchmark phases.
+ 
+Conservative statement for a paper:
+  P_DRAM ≈ 150 mW ± 20 mW (background-dominated at < 5% LPDDR4 utilization).
+ 
+ 
+STEP 5 — BOARD PERIPHERAL POWER (CONSTANT, T1 = T2)
+----------------------------------------------------
+Hardware components initialized by OpenSTLinux and powered during the
+benchmark, but performing no active I/O:
+ 
+  Component                                      Estimated power
+  ---------------------------------------------  ---------------
+  GigE PHY (idle, no link traffic)                100 mW
+  STLINK-V3EC (USB connected, debug interface)      50 mW
+  Wi-Fi / BT module (Murata LBEE5KL1YN, idle)      40 mW
+  eMMC 64 Gbit (idle, boot device)                 15 mW
+  -------------------------------------------------------
+  P_perif                                          205 mW
+ 
+This term is identical for T1 and T2 and does not depend on thread count.
+ 
+ 
+STEP 6 — PMIC CONVERSION LOSSES (STPMIC25 BUCK CONVERTERS)
+-----------------------------------------------------------
+The 5 V input is converted to all supply voltages by the STPMIC25 buck
+regulators. At the operating load levels (light-to-moderate), typical buck
+efficiency:
+ 
+  eta_SoC_DRAM  =  0.86  (BUCK1, BUCK2, BUCK6 — SoC and DRAM rails)
+  eta_perif     =  0.88  (BUCK7 — 3V3 peripherals rail)
+ 
+  Loss formula:  P_loss = P_out x (1/eta - 1)
+ 
+  SoC + DRAM rails:
+    T1:  (174 + 160) x (1/0.86 - 1)  =  334 x 0.163  =  54 mW
+    T2:  (320 + 170) x (1/0.86 - 1)  =  490 x 0.163  =  80 mW
+ 
+  Peripherals rail (same for T1 and T2):
+    205 x (1/0.88 - 1)  =  205 x 0.136  =  28 mW
+ 
+  Total PMIC loss:
+    T1 :  54 + 28  =  82 mW
+    T2 :  80 + 28  = 108 mW
+ 
+ 
+STEP 7 — TOTAL BOARD POWER AT 5 V INPUT
+----------------------------------------
+ 
+  P_board  =  P_SoC  +  P_DRAM  +  P_perif  +  P_loss
+ 
+  Component             T1         T2         Delta (T2 - T1)
+  ------------------    ---------  ---------  ---------------
+  P_SoC                 174 mW     320 mW     +146 mW
+  P_DRAM                160 mW     170 mW     + 10 mW
+  P_perif               205 mW     205 mW       —
+  P_loss (PMIC)          82 mW     108 mW     + 26 mW
+  ------------------    ---------  ---------  ---------------
+  P_board (total)       621 mW     803 mW     +182 mW
+  ------------------    ---------  ---------  ---------------
+  Input current @ 5 V   0.124 A    0.161 A
+ 
+  Rounded for reporting:
+ 
+    ┌─────────────────────────────────────────────────────────┐
+    │  T1  (1 thread, 0.67 tok/s decode)  :   0.62 W         │
+    │  T2  (2 threads, 1.28 tok/s decode) :   0.80 W         │
+    └─────────────────────────────────────────────────────────┘
+ 
+Both values are well within the board's 5 V / 3 A (15 W) supply budget
+specified in UM3385 §7.5.2, confirming normal operating conditions.
+ 
+ 
+================================================================================
+  DECOMPOSITION OF THE T2 - T1 POWER DELTA  (+182 mW)
+================================================================================
+ 
+The additional cost of engaging the second Cortex-A35 core decomposes as:
+ 
+  Source                                         Contribution
+  --------------------------------------------   ------------
+  VDDCPU: (245 - 130) mA x 0.91 V               +105 mW
+  VDDCORE: (97 - 49) mA x 0.82 V                + 39 mW
+  VDDA18: (4.35 - 3.85) mA x 1.8 V             +  1 mW
+  SoC subtotal                                   +145 mW
+  DRAM (higher bandwidth at T2)                  + 10 mW
+  PMIC losses on incremental SoC+DRAM load       + 27 mW
+  --------------------------------------------   ------------
+  Total delta                                    +182 mW
+ 
+The second core delivers a throughput gain of +0.61 tok/s decode
+(1.28 - 0.67) for an energy cost of +182 mW, yielding a marginal
+power-throughput efficiency of:
+ 
+  0.61 tok/s / 0.182 W  =  3.35 tok/s per watt (for the incremental core)
+ 
+Compared to the single-thread baseline:
+  T1 efficiency:  0.67 tok/s / 0.621 W  =  1.08 tok/s per W
+  T2 efficiency:  1.28 tok/s / 0.803 W  =  1.59 tok/s per W
+ 
+Adding the second thread improves throughput per watt by 47%.
+ 
+ 
+================================================================================
+  SOURCES AND ASSUMPTIONS SUMMARY
+================================================================================
+ 
+  Fact / value                            Source
+  --------------------------------------  ---------------------------------
+  VDDCPU = 0.91 V at 1.5 GHz             UM3385 Rev 2 §7.5.3 (STPMIC25)
+  VDDCORE = 0.82 V                        UM3385 Rev 2 §7.5.3
+  VDD2_DDR = 1.2 V                        UM3385 Rev 2 §7.5.3
+  IDDCPU (130 mA / 245 mA)               DS14284 Rev 5, Table 23
+  IDDCORE (49 mA / 97 mA)                DS14284 Rev 5, Table 22
+  IDD (2.7 mA)                            DS14284 Rev 5, Table 25
+  IDDA18 (3.85 / 4.35 mA)               DS14284 Rev 5, Table 26
+  All DS values: T_j = 25 °C, typical    DS14284 §6.3.5 (characterization)
+  LPDDR4 background power ≈ 150 mW       LPDDR4 JEDEC spec, active-standby
+  alpha ≈ 17 mW/(GB/s)                   Derived from LPDDR4 active power curve
+  PMIC efficiency eta = 0.86             STPMIC25 datasheet (buck at this load)
+  Peripheral power estimates             Component datasheets (PHY, STLINK, BT)
+  Benchmark results                      llama.cpp output, measured on board
+  100% CPU utilization during benchmark  User assumption; consistent with
+                                         "CRun" datasheet condition
+ 
+  Limitations:
+  - Datasheet values are characterization estimates, not production-measured.
+  - Junction temperature assumed at 25 °C (ambient lab conditions).
+    At higher T_j (e.g., 85 °C), currents and total power increase
+    significantly (see DS14284 Tables 22-26 for temperature scaling).
+  - LPDDR4 background power depends on DDR controller power-management
+    policy in the OpenSTLinux kernel; 150 mW is a conservative estimate
+    for active-standby with the controller running.
+  - Peripheral idle power values are estimated from component datasheets
+    and may vary by ±30%.
