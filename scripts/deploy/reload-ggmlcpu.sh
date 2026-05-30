@@ -12,5 +12,5 @@ cp -v "${PATCH_DIR}/ggml-cpu.c" "${LLAMA_SRC}/ggml/src/ggml-cpu/ggml-cpu.c"
 echo "[2] Rebuild llama-bench"
 
 cd "${LLAMA_SRC}"
-rm build/CmakeCache.txt
+rm -f build/CMakeCache.txt
 cmake --build build --config Release --target llama-bench -j4

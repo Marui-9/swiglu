@@ -2167,54 +2167,27 @@ static void ggml_compute_forward_swiglu_fused_hw(
         swg_ip_regs[SWG_CTRL_AP_CTRL / 4] = 0x01;
         __asm__ __volatile__("" ::: "memory");
 
-        if (swiglu_uio_fd >= 0) {
-            if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   waiting via UIO poll (fd=%d, timeout=7000ms)\n", swiglu_uio_fd);
-            struct pollfd pfd = { .fd = swiglu_uio_fd, .events = POLLIN };
-            int pr = poll(&pfd, 1, 7000);
-            clock_gettime(CLOCK_MONOTONIC, &t1);
-            long elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
-            if (pr > 0) {
-                uint32_t irq_count;
-                (void)read(swiglu_uio_fd, &irq_count, sizeof(irq_count));
-                if (swiglu_dbg_enabled) {
-                    fprintf(stderr, "[SWG]   <<< UIO interrupt  irq_count=%u  elapsed=%ldms\n", irq_count, elapsed_ms);
-                    fprintf(stderr, "[SWG]   AP_CTRL after done = 0x%08X\n", swg_ip_regs[SWG_CTRL_AP_CTRL / 4]);
-                }
-                swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done bit (TOW)
-                uint32_t uio_enable = 1;
-                (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
-            } else {
-                if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   poll() returned %d after %ldms — falling back to register poll\n", pr, elapsed_ms);
-                int tmo = 7000;
-                while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
-                    usleep(1000);
-                }
-                clock_gettime(CLOCK_MONOTONIC, &t1);
-                elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
-                if ((swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
-                    fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n", swiglu_call_count, layer);
-                    GGML_ASSERT(false);
-                }
-                if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   <<< register poll done  AP_CTRL=0x%08X  elapsed=%ldms\n",
-                        swg_ip_regs[SWG_CTRL_AP_CTRL / 4], elapsed_ms);
-                swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done (TOW)
-            }
-        } else {
-            if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   no UIO fd — polling AP_CTRL directly\n");
-            int tmo = 7000;
-            while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
-                usleep(1000);
-            }
-            clock_gettime(CLOCK_MONOTONIC, &t1);
-            long elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
-            if ((swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
-                fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n", swiglu_call_count, layer);
-                GGML_ASSERT(false);
-            }
-            if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   <<< register poll done  AP_CTRL=0x%08X  elapsed=%ldms\n",
-                    swg_ip_regs[SWG_CTRL_AP_CTRL / 4], elapsed_ms);
-            swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done (TOW)
+        // Tight register polling: eliminates ~7.5 ms/call UIO interrupt latency.
+        // Threads 1-N are parked at the ggml barrier during this window so the
+        // spinning core does not impair other inference threads.
+        if (swiglu_dbg_enabled)
+            fprintf(stderr, "[SWG]   waiting via tight register poll\n");
+        uint32_t ap_ctrl;
+        int tmo = 70000000;  // safety timeout (~7 s at ~100 ns/AXI read)
+        do {
+            ap_ctrl = swg_ip_regs[SWG_CTRL_AP_CTRL / 4];
+        } while ((ap_ctrl & 0x2) == 0 && --tmo > 0);
+        clock_gettime(CLOCK_MONOTONIC, &t1);
+        long elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
+        if ((ap_ctrl & 0x2) == 0) {
+            fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n",
+                    swiglu_call_count, layer);
+            GGML_ASSERT(false);
         }
+        if (swiglu_dbg_enabled)
+            fprintf(stderr, "[SWG]   <<< poll done  AP_CTRL=0x%08X  elapsed=%ldms\n",
+                    ap_ctrl, elapsed_ms);
+        swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done (TOW)
 
         udmabuf_sync_to_cpu(SWG_OUT_OFF, (uint32_t)(bsz * 2048 * sizeof(float)));
         if (swiglu_dbg_enabled) {

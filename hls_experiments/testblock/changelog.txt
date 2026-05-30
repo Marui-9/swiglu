@@ -770,3 +770,44 @@
     llama-quantize silently promotes some tensors back to Q6_K.
     Update model path in run_profile_accel.sh and run_profile_cpu.sh:
       MODEL="$HOME/lfm2.5-1.2B-Q4_K_pure.gguf"
+
+66. Hardware validated, main.tex updated.
+
+67. Replaced UIO interrupt wait with tight register polling in ggml-cpu.c.
+
+    Problem: each FPGA call incurred ~7.5 ms of interrupt delivery latency on top
+    of the 6.49 ms FPGA compute time, for a total of ~14 ms/call.  Across 16 layers
+    per token this adds ~120 ms of addressable overhead (bottlenecks.txt §5).
+    At T4, with all four A53 cores busy running inference threads, the UIO interrupt
+    handler had to preempt one of those threads to deliver the ap_done signal;
+    scheduler contention inflated per-call latency to 5–20 ms and caused the T4
+    FPGA+CPU decode (1.46 t/s) to fall below both T3 FPGA+CPU (2.05 t/s) and
+    T4 CPU-only (2.31 t/s).
+
+    Old mechanism (llama-mods/ggml-cpu.c, ~48 lines):
+        poll(uio_fd, POLLIN, 7000ms)  — deschedules the calling thread.
+        Linux wakes the thread only after: FPGA asserts interrupt line → GIC fires
+        hardirq → UIO handler calls wake_up() → scheduler reschedules the thread.
+        Fallback on poll() timeout: usleep(1000) loop (1 ms sleep between checks).
+
+    New mechanism (single path, ~20 lines):
+        do { ap_ctrl = swg_ip_regs[AP_CTRL]; } while (!(ap_ctrl & 0x2) && --tmo);
+        Thread stays TASK_RUNNING and spins on the memory-mapped AP_CTRL register.
+        Response latency after ap_done goes high: ~100–200 ns (one AXI-Lite read).
+        Safety timeout: tmo = 70,000,000 iterations (~7 s at ~100 ns/read).
+
+    Why spinning is safe here: during the FPGA execution window (6.49 ms/layer),
+    threads 1–N are already parked at the ggml barrier waiting for thread 0 to
+    finish the FPGA call.  The spinning core does not displace any useful work.
+    No bitstream change required.
+
+    Expected gain (from bottlenecks.txt §5, §7):
+        T2 decode: 2.21 t/s → ~3.4 t/s  (estimated; not yet benchmarked)
+        T4 regression (1.46 t/s) expected to recover to near T3 FPGA+CPU level.
+
+    ISR clear (swg_ip_regs[ISR] = 0x1) is retained after each call to reset the
+    ap_done latch for the next invocation.  UIO fd init is retained (harmless;
+    used for device discovery) but the interrupt is never consumed.
+
+68. Did not work: the tight polling fix gives marginal gains and deteriorates
+efficiency. Worse than interrupt. 

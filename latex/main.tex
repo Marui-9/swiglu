@@ -20,6 +20,7 @@
 \usetikzlibrary{arrows.meta, positioning, fit, calc}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{enumitem}
 
 \title{Tiny Acceleration of Liquid Foundation Models}
 
@@ -53,9 +54,9 @@
 
 \begin{abstract}
 
-Edge conversational AI has recently shifted from cloud-centric deployment to on-device execution because of latency, privacy, and power constraints; however, transformer backbones remain challenging to run in real time on embedded hardware.
-This work presents a systems-driven approach to enabling conversational audio inference on resource-constrained edge devices. This is achieved through a custom FPGA accelerator for the LFM2.5-1.2B-Thinking model by Liquid AI designed to offload the heaviest part of inference to reduce latency and improve performance per watt. The proposed implementation enables a comprehensive evaluation of the interaction between computation and data movement in transformer feed-forward layers under edge constraints. Results show a significant improvement in performance per watt while maintaining compatibility with existing inference frameworks. In single-threaded execution the FPGA+CPU path reached performance-per-watt gains of +57\% (prefill) and +44\% (decode) over the CPU baseline.
-These findings demonstrate that selectively accelerating feed-forward components provides an effective pathway toward conversational-level performance on embedded platforms. 
+Edge conversational AI has recently shifted from cloud-centric deployment to on-device execution because of latency, privacy, and power constraints; however, approaches leveraging transformer backbones remain challenging to run in real time on embedded hardware.
+This work presents a systems-driven approach to enable conversational audio inference on resource-constrained edge devices. This is achieved through a custom FPGA accelerator designed for the LFM2.5-1.2B-Thinking model provided by Liquid.AI and designed to offload the heaviest part of the inference workload to reduce latency and improve performance per watt. The proposed implementation underwent to a comprehensive evaluation of the interaction between computation and data movement in transformer feed-forward layers under edge constraints. Results show a significant improvement in performance per watt while maintaining compatibility with existing inference frameworks. In single-threaded execution the FPGA+CPU architecture provided performance-per-watt gains of +57\% (prefill) and +44\% (decode) over the CPU baseline.
+These findings demonstrate that selectively accelerating feed-forward layers provides an effective approach toward conversational-level performance on embedded edge platforms. 
 
 
 \end{abstract}
@@ -95,14 +96,14 @@ These findings demonstrate that selectively accelerating feed-forward components
 \ccsdesc[300]{Computer systems organization~Embedded systems}
 
 \section{Introduction}\label{introd}
-The rapid growth of intelligent sensing devices is shifting AI from power hungry data centers and cloud-centric systems to low power edge platforms where perceptual AI, generation, reasoning, and control occur near the data source under challenging latency, energy, and privacy constraints \cite{reddi2025generative}. 
+The rapid growth of intelligent sensing devices is shifting AI from power hungry data centers and supercomputing systems to low power edge platforms where perceptual AI, text generation, reasoning, and control occur near the data source under challenging latency, energy, and privacy constraints \cite{reddi2025generative}. 
 
-Within the domain of perceptual AI, TinyML was the initial step for edge intelligence, which demonstrated inference was feasible on microcontrollers (MCUs) using hyper-parameterized CNN and RNN models \cite{10177729} \cite{mi13060851}. Since then, the edge evolved to embrace Generative Edge AI. Modern Edge AI is built on heterogeneously quantized Transformer architectures, including small language models (SLMs), which seek to retain useful generative and reasoning capabilities under tight resource (memory and computation) budgets \cite{technologies12060081, electronics14173468}. Techniques such as deep quantization, pruning, knowledge distillation, and hardware-aware neural architecture design have become central to reconciling model accuracy with deployability \cite{s25103191}.
+Within the domain of perceptual AI, TinyML was the initial step to achieve edge intelligence. It has been demonstrated that inference workload was feasible on microcontrollers (MCUs) using moderately-parameterized CNN and RNN models \cite{10177729} \cite{mi13060851}. Since 2024, the edge evolved to embrace Generative Edge AI. Modern Edge AI is built on heterogeneously quantized Transformer architectures, including small language models (SLMs), which seek to retain useful generative and reasoning capabilities under tight resource (memory and computation) budgets \cite{technologies12060081, electronics14173468}. Techniques such as deep quantization, pruning, knowledge distillation, and hardware-aware neural architecture design have become central to reconciling model accuracy with edge deployability \cite{s25103191}.
 Delivering real-time responsiveness requires tight integration of models, algorithms, and low power hardware. 
 
-In this landscape, conversational audio emerges because it is a profound human need \cite{Seltzer2012} and also a desirable target for edge deployment. Conversational systems impose stringent real-time constraints that benefit from the elimination of network latency. Unlike vision workloads, audio pipelines can be implemented as modular stages like wake-word detection and automatic speech recognition. These components typically operate on low-dimensional temporal features and can be aggressively quantized without prohibitive quality loss. Furthermore, conversational audio frequently contains biometric identifiers and sensitive spoken information, making local processing desirable from both privacy and regulatory perspectives.
+In this landscape, conversational audio emerges because it is a profound human need \cite{Seltzer2012} and also a desirable target for edge deployment. Mutual recognition of rules through speeches allow humans to assert claiming rights and avoid physical confrontation. Vocalizations are hardwired to release Oxytocin – the trust and bonding hormone. The interactive conversations physically build the brain by stimulating the Broca’s area. Furthermore, conversational systems impose stringent real-time constraints that benefit from the elimination of network latency. Unlike vision workloads, audio pipelines can be implemented as modular stages like wake-word detection (WWD) and automatic speech recognition (ASR). These components typically operate on low-dimensional temporal features and can be aggressively quantized without prohibitive quality loss. Moreover, conversational audio frequently contains biometric identifiers and sensitive spoken information, making local processing desirable from both privacy and regulatory perspectives.
 
-This paper begins by formally defining the objectives of this work on the topic of conversational systems on edge devices in Section~\ref{sec:research_question}. To contextualize this research, Section~\ref{sec:sota} provides an overview of the state of the art in modern AI architectures, edge AI systems, and embedded speech processing. Section~\ref{sec:contribution} outlines the specific findings and contributions of this paper. Next, it details the proposed methodology for achieving conversational-quality inference under strict compute and memory budgets in Section~\ref{sec:approach}. Section~\ref{sec:experiments} presents the experimental setup and evaluates the achieved performance. Finally, Section~\ref{sec:discussion} analyzes the broader implications and limitations of this paper's findings. Section~\ref{sec:conclusion} concludes the paper.
+This paper begins by formally defining the objectives of the proposed work on the topic of conversational systems on edge devices in Section~\ref{sec:research_question}. To contextualize this research, Section~\ref{sec:sota} provides an overview of the state of the art in modern AI architectures, edge AI systems, and embedded speech processing. Section~\ref{sec:contribution} outlines the specific findings and contributions of this paper. Next, it details the proposed methodology for achieving conversational-quality inference under strict compute and memory budgets in Section~\ref{sec:approach}. Section~\ref{sec:experiments} presents the experimental setup and evaluates the achieved performance. Finally, Section~\ref{sec:discussion} analyzes the broader implications and limitations of this paper's findings. Section~\ref{sec:conclusion} concludes the paper.
 
 \section{Research question} \label{sec:research_question}
 Conversational AI systems aim to provide rich, context-aware interactions through natural spoken dialogue. Achieving this capability requires models that can process audio input, understand and reason upon user intentions, and generate appropriate responses within strict real-time constraints. At the same time, conversational audio often contains sensitive and biometric information, making local processing desirable from both privacy and reliability perspectives.
@@ -124,7 +125,7 @@ Natural human turn-taking averages approximately 230\,ms~\cite{defossez2025moshi
 placing the acceptable machine-response boundary near the transition
 between the instantaneous and immediate bands.
 This leaves a narrow window for the entire pipeline (audio encoding,
-automatic speech recognition, language modelling, and text-to-speech
+ASR, language modeling, and text-to-speech TTS
 synthesis) to complete on a per-utterance basis.
 %Conversational speech interfaces impose a well-established latency budget:
 % end-to-end response times below 200\,ms are perceived as instantaneous,
@@ -133,33 +134,32 @@ synthesis) to complete on a per-utterance basis.
 % and intervals beyond 800\,ms degrade the interaction quality, with pauses
 % above 2\,s perceived as a system failure or unresponsiveness.
 Edge devices operate under strict limits in compute capability, memory footprint,
-and energy consumption, typically drawing between 3 and 10\,W of total board
-power for embedded platforms in the smart-assistant and IoT class. Yet meaningful
+and energy consumption, typically drawing between 3 and 10\,W of power for embedded platforms in the smart-assistant and IoT category. Yet meaningful
 conversational interaction relies on resource-intensive transformer-based language
 models whose autoregressive decoding generates one token at a time, with each
-token requiring tens to hundreds of millions of multiply-accumulate operations.
+token requiring tens to hundreds of billions of multiply-accumulate operations \cite{pope2022efficiently}.
 
 A viable edge deployment must therefore satisfy three constraints simultaneously:
-(i)~per-token generation latency within the 200--500\,ms window such that the
-aggregate pipeline remains under the end-to-end budget,
-(ii)~total system power in the single-digit-watt range compatible with embedded
-and battery-backed operation, and
-(iii)~local-only execution that preserves the privacy of conversational data
-without reliance on cloud offload.
-The central question is whether a combination of model quantisation and selective
+\begin{itemize}[label=(\roman*)]
+    \item per-token generation latency within the 200--500\,ms window such that the aggregated pipeline remains under the end-to-end budget,
+    \item total system power in the single-digit-watt range compatible with embedded and battery-backed operation,
+    \item local-only execution that preserves the privacy of conversational data without reliance on cloud offload.
+\end{itemize}
+
+The central question this work poses to itself is whether a combination of model quantization and selective
 hardware acceleration can bring a competitive conversational model within these
 constraints on a resource-limited edge platform.
 
 \section{State of the Art} \label{sec:sota}
 
 \subsection{Evolution of Modern AI Models}
-Recent years have seen rapid progress in AI driven by hyper-parameterized neural topologies trained on trillion-token datasets. Transformer-based models have become the dominant paradigm across multiple modalities \cite{10433480}.
-In vision, transformer architectures and diffusion models have enabled high-capacity systems capable of image understanding and generation \cite{10902142}. In language, large language models have demonstrated strong reasoning, chain-of-thought capabilities, dialogue, and code generation \cite{10.1145-3747588}. Similarly, speech research has increasingly adopted end-to-end neural architectures that unify acoustic modeling, language modeling, and decoding within a single end-to-end framework \cite{app142411583}.
+Recent years have seen rapid progress in AI driven by hyper-parameterized neural topologies trained on tens of trillion-token datasets. Transformer-based models have become the dominant paradigm across multiple modalities \cite{10433480}.
+In vision, transformer architectures and diffusion models have enabled high-capacity systems to achieve image understanding and generation \cite{10902142}. Large language models (LLM) have demonstrated strong reasoning, chain-of-thought (CoT) capabilities, dialogue, and code generation \cite{10.1145-3747588}. Similarly, research on speech has increasingly adopted end-to-end neural architectures that unify acoustic modeling, language modeling, and decoding within a single end-to-end framework \cite{app142411583}.
 As these models become more capable, they are increasingly integrated into systems that interact with users and the physical world in real-time. 
 
 \subsection{Real-time and Edge AI Systems}
-Recent research has focused on integrating AI models into systems that respond to continuous streams of sensory input. Vision–Language–Action (VLA) architectures exemplify this trend by integrating visual-audio-tactile perception with language-based reasoning and control policies \cite{huang2026tactilevla} \cite{huang2026tafvlatactileforcealignmentvisionlanguageaction} \cite{bi2025vlatouchenhancingvisionlanguageactionmodels}. Applications such as conversational assistants, robotics, and augmented interfaces require real-time inference with strict latency constraints and reliable operation in dynamic environments.
-These requirements motivate increased interest in edge-based inference where processing occurs close to the sensing element, eliminating cloud delay concerns.
+Recent research has focused on integrating AI models into systems that respond to continuous streams of sensory input. Vision–Language–Action (VLA) architectures exemplify this trend by integrating visual-audio-tactile perception with language-based reasoning and control policies \cite{huang2026tactilevla} \cite{huang2026tafvlatactileforcealignmentvisionlanguageaction} \cite{bi2025vlatouchenhancingvisionlanguageactionmodels}. Applications such as conversational assistants, robotics, and augmented interfaces require real-time inference with strict latency constraints and reliable operation in time varying environments.
+These requirements motivated increased interest in edge-based inference where processing occurs close to the sensing element, eliminating cloud delay concerns.
 Therefore, several methods have been proposed to deploy machine learning models on the edge, operating under limited compute, memory, and energy budgets. From the early work on TinyML, more recent approaches harness model compression techniques such as quantization, pruning and knowledge distillation, as well as Hardware-aware neural architecture design \cite{dnn_compression}.
 Together, these advances form the foundation of modern Edge AI, which seeks to balance model capability with the strict resource constraints of edge platforms.
 \subsection{Speech and Conversational Architectures}
@@ -168,11 +168,10 @@ Together, these advances form the foundation of modern Edge AI, which seeks to b
 %However, conversational interaction introduces strict real-time constraints that limit the computational complexity of speech models.
 %For this reason modular pipelines remain common in deployed systems, because they allow individual components to be optimized independently for latency, accuracy, and power consumption.
 
-Standard speech processing follows a modular pipeline in which an automatic
-speech recognition (ASR) module converts audio to text, a natural language
+De-facto standard speech processing follows a modular pipeline in which an ASR module converts audio to text, a natural language
 understanding component extracts intent, a language model generates a textual
-response, and a text-to-speech (TTS) engine synthesises the output waveform.
-This decomposition enables each stage to be optimised independently for
+response, and a TTS engine synthesizes the output waveform.
+This decomposition enables each stage to be optimized independently for
 latency, accuracy, and power, and is the dominant architecture in deployed
 conversational systems.
 Typical ASR models range from compact encoder-only architectures
@@ -180,18 +179,18 @@ Typical ASR models range from compact encoder-only architectures
 (Whisper-large-v3 at 1.55\,B parameters)~\cite{radford2023whisper}, while
 TTS engines span 10\,M to 500\,M parameters.
 Streaming ASR models allow speech to be transcribed incrementally as audio is
-received, reducing the time to first token compared to batch-based processing.
-The aggregate parameter count across three or four separate models can reach
+received, reducing the time to first token (TTFT) compared to batch-based processing.
+The aggregate parameter count across three or four separate models can achieve 
 several billion, and the per-stage inference latencies sum within the
 end-to-end response budget of 200--500\,ms.
 
 Recent work has explored end-to-end architectures that unify these stages into
 a single neural model.
-LFM2-Audio~\cite{amini2025lfm2technicalreport} exemplifies this trend: a 1.5\,B
+LFM2-Audio~\cite{amini2025lfm2technicalreport} represents well this trend: a 1.5\,B
 parameter model that jointly handles audio encoding, language modelling, and
 speech synthesis within one framework, eliminating inter-stage latency and
-simplifying the deployment footprint.
-Profiling several conversational models in the GGUF format reveals substantial
+easing the deployment footprint.
+Profiling several conversational models in the GGUF format targeting a unified memory architecture (UMA) reveals substantial
 variation in deployment requirements (Fig.~\ref{fig:efficiency}): parameter
 counts span from 500\,M (OuteTTS-0.2-500M-Q4) to 9.4\,B
 (THUDM\_GLM-4-9B-0414-Q4), RAM footprints range from 0.29\,GB
@@ -203,7 +202,7 @@ memory and bandwidth limits for embedded platforms despite offering strong
 conversational performance.
 In contrast, LFM2.5-Audio-1.5B-Q4 combines the lowest RAM footprint with
 moderate bandwidth requirements (3.9\,GB/s) and a competitive parameter scale
-(1.18\,B), positioning it closest to the resource envelope of embedded
+(1.18\,B), positioning it closest to the desired resource envelope of embedded
 conversational devices.
 While end-to-end architectures simplify the system design, their computational
 cost remains concentrated in a single large model rather than distributed across
@@ -225,8 +224,8 @@ internal kernel an attractive optimisation target.
 %Addressing this challenge requires new approaches to model design, streaming inference, and system-level optimization tailored specifically to conversational workloads on embedded hardware.
 
 The characteristics of speech signals make audio workloads well suited for edge
-deployment. Lightweight components such as wake-word detection and voice activity
-detection can run continuously on microcontrollers drawing under 1\,W, while more
+deployment. Lightweight components such as WWD and voice activity
+detection can run continuously on MCUs burning power under 1\,W, while more
 demanding pipeline stages (ASR, language modelling) are typically hosted on
 single-board computers or heterogeneous SoCs in the 3--15\,W range.
 The Raspberry Pi 4B (quad-core Cortex-A72 at 1.5\,GHz, up to 8\,GB RAM) has
@@ -234,8 +233,8 @@ emerged as a common evaluation platform for on-device speech systems, hosting
 engines such as Faster-Whisper for real-time voice interaction
 \cite{10.1145/3776942.3776981}.
 At the lower end of the resource spectrum, comparative studies of phoneme-based
-and word-based recognition across microcontroller-class devices (Cortex-M4/M7
-at 64--480\,MHz, with hundreds of kilobytes of SRAM) identify specific architectures
+and word-based recognition across MCU-class devices (Cortex-M4/M7
+at 64--480\,MHz, with hundreds of kilobytes, KiB, of SRAM) identify specific architectures
 that optimise the accuracy-versus-memory trade-off for offline keyword spotting
 \cite{10711025}.
 Prototype systems integrating Vosk or Whisper-based ASR with local NLP
@@ -243,10 +242,10 @@ microservices have demonstrated sub-second speech-to-text latency entirely on ed
 hardware \cite{info16080685}, validating the feasibility of local-only processing
 for conversational audio.
 
-Despite this progress, existing work has largely addressed individual pipeline
+Despite these progresses, existing works have largely addressed individual pipeline
 components in isolation. Comparatively little research examines conversational
 interaction as an end-to-end systems problem in which the language backbone, the
-ASR front-end, and the TTS output stage must all complete within the latency and
+ASR front-end, and the TTS output stage shall all complete within the latency and
 power budget defined in Section~\ref{sec:research_question}.
 Addressing this challenge requires not only lightweight models but also
 system-level optimisation spanning streaming inference, hardware-software
@@ -264,13 +263,12 @@ partitioning, and selective acceleration of the dominant computational kernels.
 To evaluate the feasibility of conversational inference on edge devices, a
 representative set of speech and multimodal models was profiled using
 gguf-parser-go\footnote{https://github.com/gpustack/gguf-parser-go}, a tool that
-extracts structural and resource information from GGUF-format checkpoints.
-The profiling covers parameter count, unified memory (UMA) footprint, memory
-bandwidth requirements, and estimated compute throughput, the same metrics
+extracts structural and resource information from GGUF-format checkpoints. The target computing architecture is UMA.
+The profiling covers parameter count, memory footprint, memory
+bandwidth requirements, and estimated compute throughput. These are the same metrics
 used in a recent large-scale study of 21,039 checkpoints across six workload
 categories~\cite{sym18050766}, which found that audio-language models define the
-lightest deployment envelope (mean 13.41\,GB/s bandwidth, 134\,GFLOPS compute, 826\,MiB UMA)
-and that parameter count alone is an insufficient predictor of edge feasibility.
+lightest deployment envelope (mean 13.41\,GB/s bandwidth, 134\,GFLOPS compute, 826\,MiB UMA). One observation was that parameter count alone is an insufficient predictor of edge feasibility.
 %By comparison, conversational models averaged 22.46\,GB/s and 253\,GFLOPS,
 %while vision-language and thinking categories exceeded 100\,GB/s and 1100\,GFLOPS.
 %UMA footprints showed little variation across categories (audio 826\,MiB,
@@ -281,7 +279,7 @@ and that parameter count alone is an insufficient predictor of edge feasibility.
 The resulting comparison, illustrated in Fig.~\ref{fig:efficiency}, reveals wide
 variation in deployment requirements.
 Several architectures exceed practical memory and bandwidth limits for embedded platforms, despite offering strong conversational capabilities. 
-In contrast, LFM2.5-Audio-1.5B \footnote{https://huggingface.co/LiquidAI/LFM2.5-Audio-1.5B} provides an interesting balance between model capacity and resource consumption, combining a relatively small memory footprint with moderate bandwidth requirements while maintaining a parameter scale suitable for conversational tasks.
+In contrast, LFM2.5-Audio-1.5B \footnote{https://huggingface.co/LiquidAI/LFM2.5-Audio-1.5B} provided an interesting balance between model accuracy and resource consumption, combining a relatively small memory footprint with moderate bandwidth requirements while maintaining a parameter scale suitable for conversational tasks.
 
 
 \begin{figure}[!t]
@@ -292,17 +290,16 @@ In contrast, LFM2.5-Audio-1.5B \footnote{https://huggingface.co/LiquidAI/LFM2.5-
 \end{figure}
 
 
-Based on this analysis, LFM2.5 was selected as the primary candidate for subsequent experiments by this work, as it lies closest to the efficiency–capability trade-off required for conversational inference under edge resource constraints.
+Based on this analysis, LFM2.5 was chosen as the primary candidate for subsequent hardware and software studies by this work, as it lies closest to the efficiency–capability trade-off required for conversational inference under edge resource constraints.
 
 \subsection{Related work on the Kria KV260 platform}
-Following the identification of LFM2.5 as a suitable candidate for edge deployment, the next step is to map its computational workload onto an appropriate hardware platform. Field-Programmable Gate Arrays (FPGAs) provide a compelling target for edge AI acceleration due to their ability to exploit fine-grained parallelism, customize dataflow, and operate within tight power and latency budgets.
+Following the identification of LFM2.5 as a suitable candidate for edge deployment, the next step was to map its computational workload onto an appropriate hardware platform. Field-Programmable Gate Arrays (FPGAs) provide a compelling and flexible target for edge AI acceleration due to their ability to exploit fine-grained parallelism, customize dataflow, and operate within tight power and latency budgets.
 
 %Recent work on the AMD-Xilinx Kria KV260 demonstrates the feasibility of accelerating transformer models. Several works identify the feed-forward network (FFN) as a major contributor to inference latency and bandwidth consumption, alongside attention mechanisms, and propose hardware accelerators that jointly target both components.
-Recent work on the AMD-Xilinx Kria KV260 demonstrates the feasibility of
+Recent work on the AMD-Xilinx Kria KV260 demonstrated the feasibility of
 accelerating transformer models. The three designs surveyed below target
 both feed-forward network (FFN) and self-attention matrix multiplications,
-which together account for the majority of inference latency and bandwidth
-consumption in transformer workloads.
+which together accounted for the greater part of the inference latency and bandwidth consumption in transformer workloads.
 
 %Implementations of lightweight transformer-based architectures highlight that the feed-forward network operates as the primary computational bottleneck \cite{11310944tin}.
 A 6.6k-parameter Tiny Transformer for ECG arrhythmia detection deployed on the
@@ -328,12 +325,12 @@ Existing approaches generally focus on accelerating full transformer blocks or l
 This work targets the minimal set of computational kernels required to achieve conversational-level inference focusing on feed-forward acceleration.
 The profiling results presented in Section~\ref{subsec:cpuexec} show that, for small models such as LFM2.5-1.2B, the execution cost is overwhelmingly dominated by feed-forward components, with attention contributing a comparatively smaller fraction of the total runtime. 
 
-This shift in computational balance motivates a different design perspective, where the feed-forward path becomes the primary target for acceleration.
+This shift in computational balance motivated a different design perspective, where the feed-forward path becomes the primary target for acceleration.
 Furthermore, the LFM2-1.2B variant operates using quantized weights without bias terms, simplifying the arithmetic structure of the model and making it particularly well suited for efficient FPGA implementation.
 %+coprocessing
 
-\section{Contribution}\label{sec:contribution}
-This paper makes four contributions.
+\section{Contributions}\label{sec:contribution}
+This paper provides five contributions.
 
 \begin{enumerate}
     \item \textbf{System-level bottleneck identification for edge conversational inference.}
@@ -347,13 +344,16 @@ This paper makes four contributions.
 
     \item \textbf{Quantitative efficiency/performance trade-off across thread regimes.}
     CPU Only versus FPGA+CPU measurements across thread counts (T1--T4) are reported using throughput, latency, power, energy per token, and performance per watt. Results show clear efficiency benefits at low and moderate CPU thread counts, while high-thread regimes remain constrained by data movement and orchestration overheads.
+
+    \item \textbf{Comparative analysis against edge MPU.}
+    STM32MP2, low power dual core ARM A35 running at 1.5GHz has been benchmarked against the FPGA+CPU implementations both in term of latency and energy consumption.
 \end{enumerate}
 
-\section{Proposed approach} \label{sec:approach}
-\subsection{Profiling of CPU execution} \label{subsec:cpuexec}
-To address the research question of enabling conversational-quality inference within the constraints of edge devices, this work adopts a systems-driven methodology that combines model profiling with targeted hardware acceleration. Rather than attempting to accelerate the entire conversational pipeline, the approach focuses on identifying the computational bottlenecks of the language backbone that powers the selected speech model and mapping the most demanding operations to dedicated hardware.
+\section{Proposed implementations} \label{sec:approach}
+\subsection{Profiling under CPU execution} \label{subsec:cpuexec}
+To address the research question of enabling conversational-quality inference within the constraints of edge devices, this work adopts a systems-driven top-down methodology that combines model profiling with targeted hardware acceleration. Rather than attempting to accelerate the entire conversational pipeline, the approach focuses on identifying the computational bottlenecks of the language backbone that powers the selected speech model and mapping the most demanding operations to dedicated hardware.
 
-The starting point of the approach is the LFM2-Audio architecture, whose conversational capabilities are supported by a 1.2B-parameter language backbone. To understand its execution characteristics on embedded hardware, the inference engine in llama.cpp was modified to instrument the execution of individual architectural blocks. This profiling allows the collection of fine-grained timing information for each major component of the model during inference.
+The starting point of the approach is the LFM2-Audio architecture, whose conversational capabilities are supported by a 1.2B-parameter language backbone. To understand its execution characteristics on embedded hardware, the inference engine implemented by llama.cpp was modified to instrument the execution of individual architectural blocks. This profiling allows the collection of fine-grained timing information for each major component of the model during inference.
 \begin{table}[htbp]
 \centering
 \caption{LFM2.5-1.2B CPU Execution Profile}
@@ -380,7 +380,7 @@ These results indicate that the performance of the model is primarily determined
 Amdahl's Law~\cite{Amdahl1967ValidityOT} bounds the theoretical benefit of this strategy: with the feed-forward
 SwiGLU block accounting for approximately 68\% of total execution time, the
 maximum achievable system speedup is limited to $1/(1-0.68) \approx 3.1\times$,
-even if the accelerated portion were to execute instantaneously. In practice, the
+even if the accelerated portion was to execute instantaneously. In practice, the
 non-SwiGLU overhead was independently measured at approximately 126\,ms per token
 by substituting a pass-through IP for the accelerator, confirming that the
 remaining operations (attention, normalisation, and residual additions) set a hard
@@ -389,12 +389,12 @@ throughput ceiling near 8 tokens per second on this platform.
 Based on this analysis, the proposed system focuses on offloading the most computationally intensive components of the model to FPGA-based accelerators while leaving control logic and lightweight operations on the CPU. This selective acceleration strategy enables significant reduction of inference latency at low thread counts without requiring full hardware implementation of the entire model. 
 
 \subsection{Orchestration of the computation handoff}
-Following the identification of the dominant computational bottlenecks, the llama.cpp inference engine was extended with a hardware offloading mechanism that intercepts the execution of the feed-forward SwiGLU block and orchestrates a handoff to a custom accelerator implemented in the FPGA fabric.
+Following the identification of the dominant computational bottlenecks, the llama.cpp inference engine was extended with a hardware offloading mechanism that intercepts the execution of the feed-forward SwiGLU block and orchestrates a handoff to a custom designed accelerator implemented in the FPGA fabric.
 Inference is executed using a modified \texttt{llama.cpp} CPU backend. Model weights are loaded from GGUF, and for each token a GGML computation graph is built (attention, norms, FFN). The graph is executed node-by-node via \texttt{ggml\_graph\_compute}, which dispatches each operation to CPU kernels by default.
 
 To accelerate the dominant FFN block, the LFM2 builder replaces the standard SwiGLU sequence with a fused operator (\texttt{ggml\_swiglu\_fused\_hw}) when the environment variable \texttt{LLAMA\_SWIHW=1} and tensor shapes and types match the accelerator interface. The layer index is stored in the node to retrieve the correct weights.
 At execution time, this fused node triggers a custom kernel that manages CPU–FPGA interaction. Weights are cached once per layer in a physically contiguous DMA-coherent buffer (udmabuf) accessible by both the CPU and the FPGA, and are never re-transferred after the first use. The current activation vector is quantized from FP32 to INT8 on the CPU. %with the scaling factor computed from its maximum absolute value % 
-The CPU programs the accelerator via memory-mapped registers, asserts a start signal, and sleeps until an interrupt from the FPGA fabric is received to signal completion. The FPGA computes the full SwiGLU block in a pipelined dataflow and writes the FP32 result back to the DMA buffer, from which the CPU copies it into the GGML output tensor. All other operations remain on CPU. If conditions are not met at graph-build time or \texttt{LLAMA\_SWIHW} is set to 0, execution falls back to the standard CPU path.
+The CPU programs the accelerator via memory-mapped registers, asserts a start signal, and sleeps until an interrupt from the FPGA fabric is received to signal completion. The FPGA computes the full SwiGLU block in a pipelined dataflow and writes the FP32 result back to the DMA buffer, from which the CPU copies it into the GGML output tensor. All other layer operations remain on CPU. If conditions are not met at graph-build time or \texttt{LLAMA\_SWIHW} is set to 0, execution falls back to the standard CPU path.
 
 \begin{algorithm}[htb!]
 \caption{LFM2 Inference Execution}
@@ -426,7 +426,10 @@ The CPU programs the accelerator via memory-mapped registers, asserts a start si
 
 \subsection{FPGA accelerator}
 The proposed accelerator implements the feed-forward block of the LFM2 language backbone. 
-$$ \text{FFN}(x) = (\text{SiLU}(x W) \odot (x V)) W_{down} $$
+\begin{equation}
+\text{FFN}(x) = (\text{SiLU}(x W) \odot (x V)) W_{down}
+\label{eq:ffn}
+\end{equation} 
 \begin{subequations}\label{eq:swiglu_stage_set}
 \begin{align}
 X_1 &= x W^{T} \label{eq:swiglu_s2a}\\
@@ -526,18 +529,17 @@ The stage is pure data movement with no arithmetic and completes in 202 cycles (
 
 \subsection*{Stages 2a / 2b: Linear Projections (Parallel)}
 
-Two GEMV operations compute $X_1 = x \cdot W$ and $X_2 = x \cdot V$ in parallel
+Two GEMV operations compute $X_1$ and $X_2$ (Eqs.~\eqref{eq:swiglu_s2a}--\eqref{eq:swiglu_s2b}) in parallel
 on independent AXI ports and BRAM banks.
 Weights are pre-decoded on the CPU into flat INT8 sub-block scales and
 element-major nibble words; the FPGA never handles the interleaved Q4\_K header
 format.
 With $K=4$, four rows are processed per outer iteration via a single merged
 320-word AXI burst covering all four rows simultaneously (16 header $+$ 64 nibble
-words per row, $\times$\,4 rows = 320 total), eliminating three burst-setup overheads per iteration compared
-to the previous four-call design.
+words per row, $\times$\,4 rows = 320 total), eliminating the burst-setup overheads per iteration compared
+to a design with multiple calls.
 Nibble extraction uses compile-time \texttt{.range()} indexing on wide 128-bit
-BRAM tiles, eliminating the runtime multiplexer trees that dominated LUT
-consumption in the earlier K=2 design.
+BRAM tiles, eliminating the runtime multiplexer trees that would otherwise dominate LUT consumption.
 The 32 parallel INT32 MAC chains (8 blocks $\times$ 4 rows) deliver
 \SI{2.76}{Gops/s} (34.5\% of \SI{8.00}{Gops/s} peak); the merged burst reduces
 load time from 948 to 401 cycles per iteration (53\% of the 750-cycle iteration).
@@ -547,7 +549,7 @@ Each stage completes in 1,536,001 cycles (\SI{6.14}{ms}).
 
 \subsection*{Stages 3--4: Gated Activation and Quantization (Sub-stages A and B)}
 
-The fused gate operation runs entirely on-chip from the X1\_cache and X2\_cache
+The fused gate operation (Eq.~\eqref{eq:swiglu_s3}) runs entirely on-chip from the X1\_cache and X2\_cache
 BRAMs using a two-pass scheme over 8,192 elements: the first pass finds the
 maximum absolute value across 8 parallel reduction lanes, the second recomputes
 and requantises to INT8 for storage in the 8-way banked URAM gate\_cache.
@@ -569,22 +571,31 @@ per pass, the stage contributes under 1\% of per-layer time.
 
 \subsection*{Stage 5: Down Projection}
 
-The gated activation is projected back to model dimension via
+The gated activation is projected back to model dimension (Eq.~\eqref{eq:swiglu_s4}) via
 $\text{out} = \text{gate} \cdot W_{down}$ using the same CPU-pre-decoded weight
 format as Stages~2a/2b.
 With $K=4$, four output rows are processed per iteration across 32 blocks
 organised into 4 sequential groups of 8; all four rows are \texttt{UNROLL}ed per group
 to deliver 32 parallel INT32 MAC chains per group.
-Unlike the merged single burst of Stages~2a/2b, the output path issues four
-sequential per-row AXI bursts of 320 words each; these loads account for 60\%
-of the per-iteration budget (1,908 of 3,165 cycles), making the stage load-bound.
-Output nibbles are stored in 32-bit tiles (4 groups $\times$ 4 rows) rather than
-128-bit tiles, avoiding routing congestion from wide-BRAM fanout to 32 blocks
-at 87\% LUT occupancy.
+Unlike Stages~2a/2b, which merge all four rows into a single 320-word burst,
+Stage~5 issues four sequential per-row AXI bursts of 320 words each.
+The merged strategy is not applicable here: $W_{down}$ has 32 blocks per row
+(versus 8 in $W$/$V$), so the per-row nibble buffer is 256 words rather than 64.
+Routing 128-bit BRAM outputs to 32 parallel MAC chains — instead of 8 — at
+87\% LUT occupancy causes interconnect congestion that the ZU5EV fabric cannot
+route at 250\,MHz.
+To stay within routing budget, nibbles are stored in 32-bit tiles
+(4 groups $\times$ 4 rows) rather than 128-bit tiles; this narrower layout
+reduces fanout to 32 blocks but also precludes the contiguous multi-row memory
+mapping that enables burst merging in Stages~2a/2b.
+(BRAM occupancy at 32\% leaves headroom; the constraint is routing, not storage.)
+These loads account for 60\% of the per-iteration budget (1,908 of 3,165 cycles),
+making the stage load-bound.
 DDR bandwidth reaches \SI{1.54}{GB/s} (38\% of \SI{4.00}{GB/s} peak) across
 the \SI{10.0}{MB} transfer.
 Total latency is 1,622,602 cycles (\SI{6.49}{ms}), which sets the DATAFLOW
 pipeline interval.
+
 
 
 
@@ -597,8 +608,8 @@ pipeline interval.
     node distance=5mm,
     block/.style={draw, rounded corners, thick, align=center, minimum height=6mm, text width=2.6cm},
     stageWorst/.style={block, fill=red!18, draw=red!60!black},
-    stageLow/.style={block, fill=orange!22, draw=orange!70!black},
-    stageStd/.style={block, fill=gray!10, draw=black},
+    stageLow/.style={block, fill=yellow!40, draw=yellow!60!black},
+    stageStd/.style={block, fill=gray!15, draw=gray!60},
     mem/.style={draw, thick, align=center, minimum height=5mm, text width=2.4cm, fill=gray!10},
     line/.style={-Latex, thick}
 ]
@@ -611,8 +622,8 @@ pipeline interval.
 \node[mem, below right=3mm and 2mm of loadx] (x2buf) {$x_2$ bank};
 
 % Stage 2
-\node[stageLow, below=7mm of x1buf] (x1) {\textbf{Stage 2a}\\$X_1=xW_{gate}$\\1.54 Million cycles / 6.14\,ms};
-\node[stageLow, below=7mm of x2buf] (x2) {\textbf{Stage 2b}\\$X_2=xW_{up}$\\1.54 Million cycles / 6.14\,ms};
+\node[stageWorst, below=7mm of x1buf] (x1) {\textbf{Stage 2a}\\$X_1=xW_{gate}$\\1.54 Million cycles / 6.14\,ms};
+\node[stageWorst, below=7mm of x2buf] (x2) {\textbf{Stage 2b}\\$X_2=xW_{up}$\\1.54 Million cycles / 6.14\,ms};
 
 % Caches
 \node[mem, below=of x1] (x1cache) {$X_1$};
@@ -626,7 +637,7 @@ pipeline interval.
 {\textbf{Stage 4} {\scriptsize(sub-stage B)}\\gate=SiLU($X_1$)$\cdot X_2$\\{\scriptsize$\approx$8.6K cy / 34\,\textmu s}};
 
 % Stage 5
-\node[stageWorst, below=of gate] (down)
+\node[stageLow, below=of gate] (down)
 {\textbf{Stage 5}\\$gate \cdot W_{down}^{T}$\\1.62 Million cycles / 6.49\,ms};
 
 % Output
@@ -653,19 +664,20 @@ pipeline interval.
 
 % Legend
 \node[draw, rounded corners, fill=white, align=left, anchor=north west, font=\scriptsize]
-at ($(out.south west)+(0mm,-6mm)$) {\fcolorbox{red!75!black}{red!18}{\strut\hspace{0.9em}}~Worst utilization\\
-\fcolorbox{orange!80!black}{orange!22}{\strut\hspace{0.9em}}~Low utilization};
+at ($(out.south west)+(0mm,-6mm)$) {
+\fcolorbox{gray!60}{gray!15}{\strut\hspace{0.9em}}~Not bandwidth or compute bound\\
+\fcolorbox{yellow!60!black}{yellow!40}{\strut\hspace{0.9em}}~35--40\% utilization, load bound.\\
+\fcolorbox{red!75!black}{red!18}{\strut\hspace{0.9em}}~$<$35\% utilization, compute boutnd.};
 
 \end{tikzpicture}
 \caption{Compact dataflow of the SwiGLU accelerator.}
 \label{fig:swiglu_compact}
 \end{figure}
-
 \section{Experiments} \label{sec:experiments}
 
 \subsection{Experimental Setup}
 
-\textbf{Hardware Platform.} Experiments were conducted on an embedded platform featuring a quad-core CPU running at 1.3\,GHz and an FPGA fabric operating at 250\,MHz. The system is equipped with 4\,GB of shared memory. Power measurements were collected using onboard sensors sampling at runtime via the AMD \texttt{xmutil} toolchain.
+\textbf{Hardware Platform.} Experiments were conducted on the Processing System (PL) of the Kria KV260, an embedded UMA platform featuring a quad-core CPU running at 1.3\,GHz and an FPGA fabric operating at 250\,MHz. The system is equipped with 4\,GB of shared memory. Power measurements were collected using onboard sensors sampling at runtime via the AMD \texttt{xmutil} toolchain.
 %The four Cortex-A53 cores implement a narrow 64-bit NEON pipeline with in-order
 %execution; Q4\_K\_M inference on this microarchitecture achieves no measurable
 %speedup from SIMD instructions, placing the scalar CPU path near the core's
@@ -673,7 +685,7 @@ at ($(out.south west)+(0mm,-6mm)$) {\fcolorbox{red!75!black}{red!18}{\strut\hspa
 
 \textbf{Software Stack.} The inference engine is based on a modified version of \texttt{llama.cpp}, extended to support hardware offloading of the SwiGLU block. Models are executed using Q4\_K quantization format. The FPGA accelerator was synthesized using Vitis high-level synthesis (HLS) toolchain.
 
-\textbf{Workload.} The evaluation uses the LFM2.5-1.2B language backbone (input dimension 2048, feed-forward dimension 8192), which is shared across the Instruct and Thinking fine-tuned variants and the base version. The accelerator processes one token per invocation, with multi-token prefill handled by sequential IP calls in the driver loop, issued by a modified \texttt{llama.cpp}. This reflects the single-token synthesis constraint imposed by on-chip memory limits.
+\textbf{Workload.} The evaluation uses the LFM2.5-1.2B language backbone (input dimension 2048, feed-forward dimension 8192), which is shared across the Instruct and Thinking fine-tuned variants and the base version. The accelerator processes one token per invocation, with multi-token prefill handled by sequential IP calls in the driver loop, issued by the modified \texttt{llama.cpp}. This reflects the single-token synthesis constraint imposed by on-chip memory limits.
 
 \textbf{Baseline.} The baseline corresponds to CPU Only execution of the same model using identical quantization settings and inference pipeline. In the accelerated configuration, only the SwiGLU block is offloaded to the FPGA, while all remaining operations are executed on the CPU.
 
@@ -683,7 +695,7 @@ The evaluation captures both performance and efficiency through a set of directl
 measured and derived quantities.
 Throughput, expressed in tokens per second, is measured separately for the prefill
 and decode phases using \texttt{llama-bench} with a fixed workload of 4 prompt tokens and
-64 generated tokens, repeated over 10 runs to obtain stable averages.
+64 generated tokens, repeated over 10 runs to obtain stable numbers.
 Power consumption is recorded concurrently via the onboard telemetry interface
 (\texttt{xmutil platformstats}, an integrated system monitoring utility on the
 KV260 platform), which samples the system-on-module total power at 1\,Hz throughout
@@ -715,7 +727,7 @@ Bold marks the preferable value per metric within each KV260 thread-count pair.}
 \hline
 Threads & Mode & Prefill (t/s) & Decode (t/s) & Power (W) & Prefill (t/s/W) & Decode (t/s/W) \\
 \hline
-\multicolumn{7}{\textit{KV260 (4$\times$ Cortex-A53, CPU Only: Q4\_K\_M \textbar{} FPGA+CPU: Q4\_K, 250\,MHz FPGA fabric, power from onboard telemetry\textsuperscript{a})}} \\
+\multicolumn{7}{c}{\itshape {KV260 (4$\times$ Cortex-A53, CPU Only: Q4\_K\_M \textbar{} FPGA+CPU: Q4\_K, 250\,MHz FPGA fabric, power from onboard telemetry)}} \\
 \hline
 T1 & CPU Only & 1.09 & 0.88 & 3.96 & 0.275 & 0.222 \\
 T1 & FPGA+CPU & \textbf{2.20} & \textbf{1.63} & 5.10 & \textbf{0.431} & \textbf{0.320} \\
@@ -731,21 +743,21 @@ T4 & FPGA+CPU & 2.85 & 1.46 & 5.13 & 0.556 & 0.285 \\
 \hline
 \multicolumn{7}{c}{\textit{STM32MP257F-DK (2$\times$ Cortex-A35, Q4\_K\_M, power analytically estimated\textsuperscript{b})}} \\
 \hline
-T1 & CPU Only & 0.83 & 0.67\textsuperscript{c} & 0.62 & 1.339 & 1.081 \\
-T2 & CPU Only & 1.61 & 1.28\textsuperscript{c} & 0.80 & 2.013 & 1.600 \\
+T1 & CPU Only & 0.83 & 0.67 & 0.62 & 1.339 & 1.081 \\
+T2 & CPU Only & 1.61 & 1.28 & 0.80 & 2.013 & 1.600 \\
 \hline
 \end{tabular}
 
 \par\vspace{4pt}
 {\footnotesize
-\textsuperscript{a}xmutil platformstats, 1\,Hz sampling concurrent with benchmark.
+
 \textsuperscript{b}Derived from STM32MP257 datasheet characterization~\cite{ds14284} (Tables~22--26) and PMIC rail voltages~\cite{um3385} (\S7.5.3); see Section~\ref{subsec:stm32comparison} for full derivation.
 }
 
 \end{table}
 Table~\ref{tab:short_results} reports the measured throughput and performance-per-watt values; their interpretation is discussed in Section~\ref{sec:discussion}.
 Peak resident memory is approximately 728\,MB for CPU execution (the GGUF model
-is memory-mapped and demand-paged; measured peak RSS 728\,MB across all thread
+is memory-mapped and demand-paged; measured peak Resident Set Size 728\,MB across all thread
 counts) and approximately 1.4\,GB for the FPGA+CPU path (same 728\,MB process
 RSS plus a 640\,MB CMA-allocated udmabuf DMA buffer that does not appear in RSS).
 Per-token decode latency (reciprocal of decode throughput) ranges from
@@ -769,23 +781,16 @@ is visible here as a latency increase relative to T3).
 
 \subsection{Comparison with STM32MP257F-DK}\label{subsec:stm32comparison}
 To contextualise the KV260 results against a different ARM-class edge platform,
-the standard LFM2-1.2B Q4\_K\_M distribution (8 of 16 down-projection layers at Q6\_K, the remainder at Q4\_K) was benchmarked on the STMicroelectronics
-STM32MP257F-DK, which integrates two Cortex-A35 cores running at up to 1.5\,GHz.
+the standard LFM2-1.2B Q4\_K\_M distribution (8 of 16 down-projection layers at Q6\_K, the remainder at Q4\_K) was benchmarked on the STM32MP257F-DK, which integrates on chip two Cortex-A35 cores running at up to 1.5\,GHz.
 Results are reported alongside the KV260 data in Table~\ref{tab:short_results}.
-Total board power consumption is derived analytically as the sum of four terms.
-(i)~SoC rail power: datasheet characterization currents~\cite{ds14284}
-(Tables~22--26, $T_j = 25\,^\circ$C) multiplied by the PMIC output voltages
-programmed in the board user manual~\cite{um3385} (\S7.5.3, VDDCPU~$=$~0.91\,V, VDDCORE~$=$~0.82\,V);
-this yields 174\,mW at T1 and 320\,mW at T2.
-(ii)~LPDDR4 power: background-dominated at fewer than 5\% utilization
-($\approx$150\,mW independent of thread count).
-(iii)~Board peripheral idle power (GigE PHY, STLINK, Wi-Fi module,
-eMMC): $\approx$205\,mW, constant across T1 and T2.
-(iv)~PMIC buck conversion losses at the operating load, assuming
-$\eta = 0.86$ for SoC/DRAM rails and $\eta = 0.88$ for the 3.3\,V
-peripheral rail.
-Summing all terms gives total board input power of 0.62\,W (T1) and 0.80\,W (T2).
-
+Total board power consumption is derived analytically as the sum of four terms:
+\begin{itemize}[label=(\roman*)]
+    \item \textbf{SoC rail power}: datasheet characterization currents~\cite{ds14284} (Tables~22--26, $T_j = 25\,^\circ\text{C}$) multiplied by the PMIC output voltages programmed in the board user manual~\cite{um3385} (\S7.5.3, $V_{\text{DDCPU}} = 0.91\,\text{V}$, $V_{\text{DDCORE}} = 0.82\,\text{V}$); this yields $174\,\text{mW}$ at T1 and $320\,\text{mW}$ at T2,
+    \item \textbf{LPDDR4 power}: background-dominated at fewer than 5\% utilization ($\approx 150\,\text{mW}$ independent of thread count),
+    \item \textbf{Board peripheral idle power} (GigE PHY, STLINK, Wi-Fi module, eMMC): $\approx 205\,\text{mW}$, constant across T1 and T2,
+    \item \textbf{PMIC buck conversion losses} at the operating load, assuming $\eta = 0.86$ for SoC/DRAM rails and $\eta = 0.88$ for the $3.3\,\text{V}$ peripheral rail.
+\end{itemize}
+Summing all terms gives total board input power of $0.62\,\text{W}$ (T1) and $0.80\,\text{W}$ (T2).
 
 
 \section{Discussion} \label{sec:discussion}
@@ -802,7 +807,7 @@ The accelerator is effective when host-side contention is limited and the cost o
 
 Comparing the KV260 against the STM32MP257F-DK isolates the effect of the
 wider Cortex-A53 pipeline and FPGA fabric from the Cortex-A35 baseline.
-The A35 achieves \textbf{1.28}\,t/s decode at T2, versus \textbf{1.66}\,t/s for
+The A35 achieves 1.28,t/s decode at T2, versus 1.66,t/s for
 the KV260 A53 at T2 (CPU Only) and \textbf{2.21}\,t/s for the KV260 FPGA+CPU path.
 This places the KV260 FPGA+CPU configuration at a \textbf{1.7$\times$} decode
 speedup over the A35 at matched thread count, at the cost of a more complex
@@ -813,15 +818,15 @@ KV260 in both CPU Only (0.391\,t/s/W) and FPGA+CPU (0.429\,t/s/W) modes by
 a factor of approximately 3.7$\times$, confirming that the platform comparison
 is about absolute throughput, not energy efficiency.
 At T2, the A35 decode latency is 781\,ms per token, higher than all KV260
-configurations that enter the acceptable band, and approaching the 1\,s threshold
+configurations that enter the acceptable range, and approaching the 1\,s threshold
 beyond which audio inference quality degrades noticeably.
 Section~\ref{sec:research_question} defined a per-token generation latency target
 of 200--500\,ms for the language model component.
-Of the eight KV260 configurations, four enter this band: T3 and T4 CPU Only
+Of the eight KV260 configurations, four enter this range: T3 and T4 CPU Only
 (424 and 433\,ms) and T2 and T3 FPGA+CPU (452 and 488\,ms).
 No configuration reaches the 200\,ms instantaneous threshold.
 The FPGA+CPU path achieves sub-500\,ms decode with only two active CPU threads,
-whereas CPU Only requires three or four to enter the same latency band.
+whereas CPU Only requires three or four to enter the same latency range.
 This thread advantage matters in practice: a full conversational pipeline must
 concurrently run ASR and TTS stages that compete for the same A53 cores, so
 reducing the language model's thread demand directly widens the scheduling
@@ -829,7 +834,7 @@ budget for the surrounding stages.
 At the same time, the 452\,ms LM-only latency at T2 FPGA+CPU is already a
 significant fraction of the 500\,ms budget, leaving little headroom for ASR
 and TTS; meeting the 0.5\,s aggregate target in a streaming pipeline will
-require either a faster platform or accepting the ``immediate'' perceptual band
+require either a faster platform or accepting the ``immediate'' perceptual range
 (0.5--1\,s) defined in Section~\ref{sec:research_question}.
 
 The contrast highlights that the practical value of the FPGA offload scales with
@@ -839,8 +844,8 @@ overhead increasingly dominates.
 
 Results reported using larger FPGA platforms suggest that greater memory bandwidth and fabric capacity help kernel-level gains and end-to-end speedup \cite{FTRANS}.
 Direct comparison with a recent deployment of a 6.6k-parameter Tiny Transformer on the same platform highlights the resource intensity of conversational architectures. While the Tiny Transformer maps its entire end-to-end pipeline using only 30\% of available Look-Up Tables (LUTs), 27\% of DSP slices, 37\% of Block RAM (BRAM), and 20\% of Flip-Flops (FF) at 77\,MHz \cite{11310944tin}, accelerating just the feed-forward SwiGLU block of the 1.2B-parameter LFM2.5 model nearly saturates the same device at 87\% LUT and 32\% BRAM utilization at 250\,MHz.
-A Self-Attention accelerator on the KV260 highlights differing architectural trade-offs \cite{li2025fpgabasedhardware}. While our design uses mixed precision (INT8 activations, 4-bit weights) at 250 MHz and consuming 4.8–6.0 W, the attention-focused design processes DistilBERT-scale matrices using symmetric INT8 quantization at 100 MHz and approximately 3.3 W. Furthermore, whereas LFM2.5 heavily saturates logic, the attention accelerator prioritises arithmetic and memory fabric, consuming 60\% LUT, 83\% DSP, 88\% BRAM, and 43\% FF.
-Another comparable study conducted using the KV260 for matrix multiplication acceleration reports similar severe processing system (PS) bottlenecks \cite{11311069}. In the BRAM-banked matrix multiplication implementation the effective system throughput of 13.52 GOPs amounts to 59\% utilization of the peak 22.83 GOPs. Our isolated FPGA accelerator achieves 34--41\% of peak capacity when computing the feedforward block kernel: stages~2a/2b sustain 34.5\% compute utilization (2.76\,GOPs/s) and 41\% DDR bandwidth (1.63\,GB/s); stage~4 is load-bound at 38\% DDR bandwidth (1.54\,GB/s), due to memory bandwidth starvation. This disparity reflects the architectural focus: the BRAM-banked design consumes 83.72\% LUT and 83.17\% DSP to sustain an unrolled $32{\times}32$ INT8 multiplier array, whereas the LFM2.5 SwiGLU design utilizes only 20\% of DSP slices to process a mixed precision vector-matrix dataflow.
+A Self-Attention accelerator on the KV260 highlights differing architectural trade-offs \cite{li2025fpgabasedhardware}. While the proposed design uses mixed precision (INT8 activations, 4-bit weights) at 250 MHz and consuming 4.8–6.0 W, the attention-focused design processes DistilBERT-scale matrices using symmetric INT8 quantization at 100 MHz and approximately 3.3 W. Furthermore, whereas LFM2.5 heavily saturates logic, the attention accelerator prioritizes arithmetic and memory fabric, consuming 60\% LUT, 83\% DSP, 88\% BRAM, and 43\% FF.
+Another comparable study conducted using the KV260 for matrix multiplication acceleration reports similar severe processing system (PS) bottlenecks \cite{11311069}. In the BRAM-banked matrix multiplication implementation the effective system throughput of 13.52 GOPs amounts to 59\% utilization of the peak 22.83 GOPs. The proposed isolated FPGA accelerator achieves 34--41\% of peak capacity when computing the feedforward block kernel: stages~2a/2b sustain 34.5\% compute utilization (2.76\,GOPs/s) and 41\% DDR bandwidth (1.63\,GB/s); stage~4 is load-bound at 38\% DDR bandwidth (1.54\,GB/s), due to memory bandwidth starvation. This disparity reflects the architectural focus: the BRAM-banked design consumes 83.72\% LUT and 83.17\% DSP to sustain an unrolled $32{\times}32$ INT8 multiplier array, whereas the LFM2.5 SwiGLU design utilizes only 20\% of DSP slices to process a mixed precision vector-matrix dataflow.
 
 \begin{table}[htbp]
 \centering
@@ -859,7 +864,8 @@ Precision & float32 & INT8 & INT8 & INT8 / INT4 \\
 Clock (MHz) & 77 & 100 & 100 & 250 \\
 \hline
 Ops/cycle (INT8 MAC) & --- & 1024 & 1024 & 32 \\
-Compute (GOPs/s)      & --- & 3.12 & 22.83 & 2.58--2.76\textsuperscript{a} \\
+Compute Throughput (GOPs/s)      & --- & 3.12\textsuperscript{c} & 22.83\textsuperscript{c} & 8.00\textsuperscript{a} \\
+Effective system throughput (GOPs/s) & --- & 2.85 & 13.52 & 2.58\textsuperscript{b} \\
 \hline
 LUT (\%)          & 30 & 60 & 84 & 87 \\
 DSP (\%)          & 27 & 83 & 83 & 20 \\
@@ -872,15 +878,16 @@ Power (W)         & --- & 3.3 & --- & 4.8--6.0 \\
 \end{tabular}
 
 \par\vspace{4pt}
-{\footnotesize \textsuperscript{a}Sustained rate across all three FFN projections plus the
-gate operation; the other works time a single $(64,768){\times}(768,3072)$
-matrix multiply in isolation. Stage-level peak: 8.00\,GOPs/s (stages~2a/2b, 32 parallel chains); 2.00\,GOPs/s (stage~4, 8 chains per group).}
+{\footnotesize
+\textsuperscript{a}32 parallel INT32 MAC chains (8 blocks $\times$ 4 rows) at 250\,MHz.
+\textsuperscript{b}Stage~5 (down projection).
+\textsuperscript{c}Evaluation uses an FFN matrix multiplication case with dimensions $(64,768)\times(768,3072)$.}
 
 \end{table}
 
 Extending hardware acceleration beyond the SwiGLU block to the Final Linear Projection and Gated Short Convolution yields diminishing returns, as they account for only 10.96\% and 10.44\% of total execution time, respectively. Furthermore, simultaneous acceleration is physically infeasible on the KV260 platform, as the SwiGLU kernel alone leaves insufficient resources for additional hardware mapping.
-Eleven distinct architectural variants were synthesised and evaluated during
-development, systematically varying nibble storage width, BRAM banking strategy,
+various distinct architectural variants were synthesised and evaluated during
+development, systematically testing nibble storage width, BRAM banking strategy,
 AXI burst organisation, and function inlining.
 Three fundamental ceilings emerged from these experiments.
 First, AXI burst serialisation limits the load path: one contiguous burst at
