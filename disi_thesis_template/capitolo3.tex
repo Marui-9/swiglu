@@ -1,0 +1,400 @@
+\chapter{Experiments and Discussion}
+\label{cha:experiments}
+
+\section{Experimental Setup}
+\label{sec:setup}
+
+\textbf{Hardware Platform.} Experiments were conducted on the Processing System (PS) of
+the Kria KV260, an embedded UMA platform featuring a quad-core CPU running at 1.3\,GHz
+and an FPGA fabric operating at 250\,MHz. The system is equipped with 4\,GB of shared
+memory. Power measurements were collected using onboard sensors sampling at runtime via
+the AMD \texttt{xmutil} toolchain.
+
+\textbf{Software Stack.} The inference engine is based on a modified version of
+\texttt{llama.cpp}, extended to support hardware offloading of the MatMul + SwiGLU
+block. Models are executed using the Q4\_K quantization format. The FPGA accelerator was
+synthesized using the Vitis high-level synthesis (HLS) toolchain and integrated in the
+Vivado Design Suite.
+
+\textbf{Workload.} The evaluation uses the LFM2.5-1.2B language backbone (input
+dimension 2048, feed-forward dimension 8192), which is shared across the Instruct and
+Thinking fine-tuned variants and the base version. The accelerator processes one token
+per invocation, with multi-token prefill handled by sequential IP calls in the driver
+loop, issued by the modified \texttt{llama.cpp}. This reflects the single-token
+synthesis constraint imposed by on-chip memory limits.
+
+\textbf{Baseline.} The baseline corresponds to CPU Only execution of the same model
+through an identical inference pipeline. In the accelerated configuration, only the
+MatMul + SwiGLU block is offloaded to the FPGA, while all remaining operations are
+executed on the CPU. Both configurations are produced by the same modified
+\texttt{llama.cpp} binary, with the offload enabled or disabled at runtime through the
+\texttt{LLAMA\_SWIHW} environment variable (\texttt{1} for FPGA+CPU, \texttt{0} for
+CPU Only), without recompilation. The CPU Only baseline uses the standard Q4\_K\_M
+distribution, whereas the FPGA+CPU path uses the uniformly re-quantized Q4\_K model that
+the accelerator requires (Table~\ref{tab:short_results}).
+
+\section{Evaluation Metrics}
+\label{sec:metrics}
+
+The evaluation captures both performance and efficiency through a set of directly
+measured and derived quantities. Throughput, expressed in tokens per second, is measured
+separately for the prefill and decode phases using \texttt{llama-bench} with a fixed
+workload of 12 prompt tokens and 64 generated tokens, repeated over 10 runs to obtain
+stable numbers. Power consumption is recorded concurrently via the onboard telemetry
+interface (\texttt{xmutil platformstats}, an integrated system monitoring utility on the
+KV260 platform), which samples the system-on-module total power at 1\,Hz throughout each
+benchmark session. From these two measurements, performance per watt (tokens/s/W) is
+derived as the ratio of throughput to mean power, providing a joint view of speed and
+energy efficiency across operating points. FPGA resource utilization, reported in terms
+of look-up tables (LUT), flip-flops (FF), block RAM (BRAM), ultra RAM (URAM), and DSP
+slices, is taken from the post-place-and-route reports produced by the Vivado
+implementation flow and quantifies how closely the accelerator design approaches the
+physical limits of the target device. Together, these metrics characterize the
+trade-off space between throughput, efficiency, and resource utilization that governs
+the feasibility of edge deployment.
+
+\section{Results}
+\label{sec:results}
+
+This section compares CPU Only and FPGA+CPU execution across thread counts (T1--T4)
+using throughput and performance-per-watt. Table~\ref{tab:short_results} reports the
+main quantitative results, while Fig.~\ref{fig:utilization} provides hardware resource
+usage.
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\caption{Throughput and efficiency across platforms and thread counts. Bold marks the
+preferable value per metric within each KV260 thread-count pair.}
+\label{tab:short_results}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{c c c c c c c}
+\hline
+Threads & Mode & Prefill (t/s) & Decode (t/s) & Power (W) & Prefill (t/s/W) & Decode (t/s/W) \\
+\hline
+\multicolumn{7}{c}{\itshape {KV260 (4$\times$ Cortex-A53, CPU Only: Q4\_K\_M \textbar{} FPGA+CPU: Q4\_K, 250\,MHz FPGA fabric)}} \\
+\hline
+T1 & CPU Only & 1.09 & 0.88 & 3.96 & 0.275 & 0.222 \\
+T1 & FPGA+CPU & \textbf{2.20} & \textbf{1.63} & 5.10 & \textbf{0.431} & \textbf{0.320} \\
+\hline
+T2 & CPU Only & 2.17 & 1.66 & 4.25 & 0.511 & 0.391 \\
+T2 & FPGA+CPU & \textbf{2.90} & \textbf{2.21} & 5.15 & \textbf{0.563} & \textbf{0.429} \\
+\hline
+T3 & CPU Only & \textbf{3.16} & \textbf{2.36} & \textbf{4.41} & \textbf{0.717} & \textbf{0.535} \\
+T3 & FPGA+CPU & 3.06 & 2.05 & 5.14 & 0.595 & 0.399 \\
+\hline
+T4 & CPU Only & \textbf{3.52} & \textbf{2.31} & \textbf{4.28} & \textbf{0.822} & \textbf{0.540} \\
+T4 & FPGA+CPU & 2.85 & 1.46 & 5.13 & 0.556 & 0.285 \\
+\hline
+\multicolumn{7}{c}{\textit{STM32MP257F-DK (2$\times$ Cortex-A35, Q4\_K\_M, power analytically estimated\textsuperscript{b})}} \\
+\hline
+T1 & CPU Only & 0.83 & 0.67 & 0.62 & 1.339 & 1.081 \\
+T2 & CPU Only & 1.61 & 1.28 & 0.80 & 2.013 & 1.600 \\
+\hline
+\end{tabular}
+
+\par\vspace{4pt}
+{\footnotesize
+\textsuperscript{b}Derived from STM32MP257 datasheet characterization~\cite{ds14284}
+(Tables~22--26) and PMIC rail voltages~\cite{um3385} (\S7.5.3); see
+Section~\ref{subsec:stm32comparison} for full derivation.}
+\end{table}
+
+Peak resident memory is approximately 728\,MB for CPU execution (the GGUF model is
+memory-mapped and demand-paged; measured peak Resident Set Size 728\,MB across all
+thread counts) and approximately 1.4\,GB for the FPGA+CPU path (the same 728\,MB process
+RSS plus a 640\,MB CMA-allocated udmabuf DMA buffer that does not appear in RSS).
+Per-token decode latency (the reciprocal of decode throughput) ranges from 1136\,ms at
+T1 CPU Only down to 424\,ms at T3 and 433\,ms at T4; for FPGA+CPU it is 613\,ms at T1,
+452\,ms at T2, 488\,ms at T3, and 685\,ms at T4.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.65\linewidth]{utilization_final.png}
+  \caption{Utilization of the Kria KV260 on-board resources for the implementation of the feed-forward block accelerator.}
+  \label{fig:utilization}
+\end{figure}
+
+\section{Comparison with STM32MP257F-DK}
+\label{subsec:stm32comparison}
+
+To contextualize the KV260 results against a different Arm-class edge platform, the
+standard LFM2.5-1.2B Q4\_K\_M distribution (8 of 16 down-projection layers at Q6\_K, the
+remainder at Q4\_K) was benchmarked on the STM32MP257F-DK, which integrates on chip two
+Cortex-A35 cores running at up to 1.5\,GHz. Results are reported alongside the KV260 data
+in Table~\ref{tab:short_results}. Total board power consumption is derived analytically
+as the sum of four terms:
+\begin{enumerate}[label=(\roman*)]
+    \item \textbf{SoC rail power}: datasheet characterization currents~\cite{ds14284} (Tables~22--26, $T_j = 25\,^\circ\text{C}$) multiplied by the PMIC output voltages programmed in the board user manual~\cite{um3385} (\S7.5.3, $V_{\text{DDCPU}} = 0.91\,\text{V}$, $V_{\text{DDCORE}} = 0.82\,\text{V}$); this yields $174\,\text{mW}$ at T1 and $320\,\text{mW}$ at T2,
+    \item \textbf{LPDDR4 power}: background-dominated at fewer than 5\% utilization ($\approx 150\,\text{mW}$ independent of thread count),
+    \item \textbf{Board peripheral idle power} (GigE PHY, STLINK, Wi-Fi module, eMMC): $\approx 205\,\text{mW}$, constant across T1 and T2,
+    \item \textbf{PMIC buck conversion losses} at the operating load, assuming $\eta = 0.86$ for the SoC/DRAM rails and $\eta = 0.88$ for the $3.3\,\text{V}$ peripheral rail.
+\end{enumerate}
+Summing all terms gives a total board input power of $0.62\,\text{W}$ (T1) and
+$0.80\,\text{W}$ (T2).
+
+\section{Discussion}
+\label{sec:discussion}
+
+The FPGA+CPU solution improves efficiency at lower thread counts but not uniformly. At
+T1, performance-per-watt improves by +57\% (prefill) and +44\% (decode) versus CPU Only,
+with board power rising from 3.96\,W (CPU) to 5.10\,W (FPGA+CPU). At T2, the gains narrow
+to +10\% for both phases (4.25\,W versus 5.15\,W). At T3 and T4, CPU Only is superior:
+FPGA+CPU is lower by 17\%/25\% at T3 and 32\%/47\% at T4 (prefill/decode). At T4,
+FPGA+CPU decode degrades further to 1.46\,t/s (below the T3 value of 2.05\,t/s), because
+all four A53 threads compete with the UIO interrupt handler for scheduler time,
+increasing per-token round-trip latency. These trends are consistent with end-to-end
+throughput being constrained more by orchestration and memory movement than by
+arithmetic scaling alone.
+
+The results indicate that offloading the MatMul + SwiGLU feed-forward block to the FPGA
+is beneficial because it targets a runtime-dominant kernel, consistently with prior
+transformer accelerators that focus on FFN/MLP and attention substructures as the most
+advantageous hardware targets~\cite{lu2020hw-mha}. The accelerator is effective when
+host-side contention is limited and the cost of orchestration can be amortized
+(T1--T2); at higher thread counts (T3--T4), the incremental benefit is offset by
+transfer overhead and synchronization, and the CPU alone can supply and process the
+residual stream more efficiently.
+
+Comparing the KV260 against the STM32MP257F-DK isolates the effect of the wider
+Cortex-A53 pipeline and FPGA fabric from the Cortex-A35 baseline. The A35 achieves
+1.28\,t/s decode at T2, versus 1.66\,t/s for the KV260 A53 at T2 (CPU Only) and
+\textbf{2.21}\,t/s for the KV260 FPGA+CPU path. This places the KV260 FPGA+CPU
+configuration at a \textbf{1.7$\times$} decode speedup over the A35 at matched thread
+count, at the cost of a more complex integration and approximately \textbf{4.4}\,W of
+additional board power (5.15\,W FPGA+CPU versus 0.80\,W for the STM32 at T2). The
+STM32's 3.7$\times$ efficiency advantage (1.60\,t/s/W decode versus 0.429\,t/s/W for the
+KV260 FPGA+CPU) confirms that the accelerator is justified by its latency margin: the
+1.7$\times$ decode speedup brings the system within the 452\,ms real-time window that
+the A35 at 781\,ms per token cannot reach.
+
+Section~\ref{sec:research_question} defined a per-token generation latency target of
+200--500\,ms for the language model component. Of the eight KV260 configurations, four
+enter this range: T3 and T4 CPU Only (424 and 433\,ms) and T2 and T3 FPGA+CPU (452 and
+488\,ms). No configuration reaches the 200\,ms instantaneous threshold. The FPGA+CPU path
+achieves sub-500\,ms decode with only two active CPU threads, whereas CPU Only requires
+three or four to enter the same latency range. This thread advantage matters in practice:
+a full conversational pipeline must concurrently run ASR and TTS stages that compete for
+the same A53 cores, so reducing the language model's thread demand directly widens the
+scheduling budget for the surrounding stages. At the same time, the 452\,ms LM-only
+latency at T2 FPGA+CPU is already a significant fraction of the 500\,ms budget, leaving
+little headroom for ASR and TTS; meeting the 0.5\,s aggregate target in a streaming
+pipeline will require either a faster platform or accepting the ``immediate'' perceptual
+range (0.5--1\,s) defined in Section~\ref{sec:research_question}.
+
+The contrast highlights that the practical value of the FPGA offload scales with the gap
+between the host CPU and the accelerator: on a weaker host the absolute gain is larger,
+while on a stronger host (more A53 threads) the orchestration overhead increasingly
+dominates. Table~\ref{tab:kv260_comparison} places this design within the space of
+published KV260 accelerators; unlike compute-intensive matrix-multiply designs that
+saturate DSP slices, the MatMul + SwiGLU kernel saturates routing fabric (87\% LUT,
+20\% DSP), reflecting a load-dominated rather than arithmetic-dominated workload.
+
+\begin{table}[H]
+\centering
+\caption{KV260 accelerator design comparison.}
+\label{tab:kv260_comparison}
+\setlength{\tabcolsep}{2.5pt}
+\footnotesize
+\begin{tabular}{l c c c c}
+\hline
+ & \textbf{Tiny Transf.} & \textbf{Self-Attn.} & \textbf{MatMul Accel.} & \textbf{This Work} \\
+ & \cite{11310944tin} & \cite{li2025fpgabasedhardware} & \cite{11311069} & \\
+\hline
+Accelerated function & Full E2E pipeline & Q/K/V projections & Matrix mult. & MatMul + SwiGLU \\
+Model / matrix size & 6.6k params. & DistilBERT & DistilBERT & LFM2.5 1.2B \\
+Model size (params)  & 6.6k & 66M & 66M & 1.2B \\
+Precision & float32 & INT8 & INT8 & INT8 / INT4 \\
+Clock (MHz) & 77 & 100 & 100 & 250 \\
+\hline
+Ops/cycle (INT8 MAC) & --- & 1024 & 1024 & 32 \\
+Pure compute throughput (GOPS)\textsuperscript{d}      & --- & 3.12\textsuperscript{c} & 22.83\textsuperscript{c} & 8.00\textsuperscript{a} \\
+Effective system throughput (GOPS)\textsuperscript{e} & --- & 2.85 & 13.52 & 2.58\textsuperscript{b} \\
+\hline
+LUT (\%)          & 30 & 60 & 84 & 87 \\
+DSP (\%)          & 27 & 83 & 83 & 20 \\
+BRAM (\%)         & 37 & 88 & 71 & 32 \\
+FF (\%)           & 20 & 43 & 44 & 50 \\
+URAM (\%)         & --- & --- & --- & 13 \\
+\hline
+Power (W)         & --- & 3.3 & --- & 4.8--6.0 \\
+\hline
+\end{tabular}
+
+\par\vspace{4pt}
+{\footnotesize
+\textsuperscript{a}32 parallel INT32 MAC chains (8 blocks $\times$ 4 rows) at 250\,MHz.
+\textsuperscript{b}Stage~5 (down projection).
+\textsuperscript{c}Evaluation uses an FFN matrix multiplication case with dimensions $(64,768)\times(768,3072)$.
+\textsuperscript{d}Hardware-only peak; excludes memory transfer and host CPU overhead.
+\textsuperscript{e}Includes all system-level effects: memory transfer, host CPU communication, and orchestration.}
+\end{table}
+
+Results reported using larger FPGA platforms suggest that greater memory bandwidth and
+fabric capacity help kernel-level gains and end-to-end speedup~\cite{FTRANS}. Direct
+comparison with the 6.6k-parameter Tiny Transformer on the same platform highlights the
+resource intensity of conversational architectures. While the Tiny Transformer maps its
+entire end-to-end pipeline at low resource utilization across all fabric categories
+(Table~\ref{tab:kv260_comparison}), accelerating just the feed-forward MatMul + SwiGLU
+block of the 1.2B-parameter LFM2.5 model nearly saturates the same device at 87\% LUT and
+32\% BRAM utilization at 250\,MHz. Critically, the Tiny Transformer's small parameter
+count is not merely a resource advantage~\cite{11310944tin}: by fitting the entire
+pipeline on chip, it eliminates off-chip weight fetching entirely, allowing execution to
+remain compute-bound and sustain near-peak arithmetic throughput, a regime that larger
+models cannot achieve on the same device. The Self-Attention
+accelerator~\cite{li2025fpgabasedhardware} highlights differing architectural trade-offs:
+its two-level tiling strategy keeps both matrix operands within on-chip BRAM across the
+Q, K, and V projections, allowing a fully-unrolled $32\times32$ MAC array to sustain 1024
+concurrent INT8 operations per cycle without off-chip bandwidth pressure, reaching 91\%
+effective utilization of peak throughput. This is achievable because the DistilBERT-scale
+projection matrices fit within the on-chip tiling footprint. The LFM2.5 SwiGLU weights,
+by contrast, total approximately 30\,MB per layer across the three Q4\_K projections,
+far beyond the ZU5EV's combined on-chip capacity of roughly 3.4\,MB (block, ultra, and
+distributed RAM combined), which makes DDR streaming unavoidable and places the design in a
+memory-bandwidth-limited regime regardless of MAC array width or tiling strategy. A
+comparable BRAM-banked matrix multiplication study~\cite{11311069} reports similar severe
+PS-side bottlenecks, reaching only 59\% of its peak throughput; the present work reaches
+34--41\% of peak capacity, reflecting its higher per-token weight volume. The contrast in
+DSP usage (83\% versus 20\%) reflects an operand-width mismatch rather than a deliberate
+design choice: the MatMul + SwiGLU kernel's core MAC operation multiplies a 4-bit nibble
+weight by an INT8 activation, yielding a 12-bit product too narrow to use a DSP48E2 slice
+efficiently. The DSP48E2 is optimized for $18\times27$-bit multiplications, so HLS maps
+the narrow multiply-accumulate operations to LUT-based logic instead; the 20\% DSP usage
+in this work arises entirely from the FP32 scale and minimum-factor accumulation paths,
+not from the dominant weight--activation inner loop.
+
+Extending hardware acceleration beyond the MatMul + SwiGLU block to the Final Linear
+Projection and Gated Short Convolution yields diminishing returns, as they account for
+only 10.96\% and 10.44\% of total execution time, respectively. Furthermore, simultaneous
+acceleration is physically infeasible on the KV260, as the MatMul + SwiGLU kernel alone
+leaves insufficient resources for additional hardware mapping. To characterize the
+attainable design space, roughly a dozen distinct architectural variants were synthesized
+and evaluated during development, systematically varying the nibble storage width, the
+BRAM banking strategy, the AXI burst organization, and the use of function inlining and
+stream decoupling. Table~\ref{tab:design_space} summarizes the most informative attempts.
+Their consistency is itself the main finding: three independent ceilings emerged, and
+every variant that attacked one of them converged on the same wall.
+
+\begin{table}[H]
+\centering
+\caption{Representative architectural variants explored during development and the ceiling
+each one revealed.}
+\label{tab:design_space}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lll}
+\hline
+\textbf{Strategy} & \textbf{Result} & \textbf{Ceiling revealed} \\ \hline
+Wide-BRAM nibble storage (gate/up) & $II=1$ load, 67 cycles/row; enables $K=4$ within budget & final choice \\
+URAM $\rightarrow$ BRAM swap & No change & Four-write limit is operation-count, not latency \\
+Cyclic-4 banking (proves independence) & No change & Four-write limit, not bank aliasing \\
+Stream-decoupled dataflow & No change & Four-write fanout, not the AXI engine \\
+Merged 4-row burst (gate/up) & $-38\%$ cycles but $+14$K LUT $\rightarrow$ 138K (118\%) & AXI/LUT budget: place-and-route fails \\
+Wide-BRAM output load & $-15\%$ cycles, 74K routing overlaps & ZU5EV routing capacity \\
+Full output-MAC unroll & $+102\%$ LUT, negligible speedup & ZU5EV routing/LUT capacity \\
+\hline
+\end{tabular}}
+\end{table}
+
+The first ceiling is AXI burst serialization. Each DDR burst pays a fixed setup overhead
+of approximately 45 cycles on the ZU5EV's HP-port interconnect before data begins to flow,
+so a single contiguous burst at an initiation interval above one outperforms several
+parallel bursts at $II=1$. A merged load that fetches all four rows of Stages~2a/2b in one
+320-word burst does reduce the projection-stage cycle count by 38\%, but the four-way
+header-routing logic it requires adds about 14\,K LUTs, pushing the design to 138\,K
+(118\% of the device) and failing place-and-route. The single-burst organization is
+therefore retained, and the down-projection, whose rows are four times longer, cannot
+apply the merge at all.
+
+The second ceiling is the HLS scheduler's refusal to issue four memory writes in one
+pipeline stage. Because the down-projection stores its nibbles in narrow 32-bit tiles
+rather than the wide-BRAM layout used elsewhere (Section~\ref{subsec:predecode}), each
+128-bit DDR word must be split and written into four separate single-port buffers within
+the same cycle. Vitis HLS will not schedule four writes per cycle, and, crucially,
+this is a limit on the \emph{number} of memory operations, not a physical port conflict: a
+cyclic partitioning that proves the four banks are mutually independent does not help, and
+swapping the buffers between BRAM and URAM changes nothing. The gate and up projections
+escape the limit by storing each pre-decoded 128-bit word verbatim, a single write per
+cycle; the down-projection cannot, because its 32 blocks per row (the 8192-element
+contraction dimension divided by the 256-weight Q4\_K block) demand 32 simultaneous block,
+header, and scale reads in the MAC, a density the ZU5EV fabric cannot route in the
+wide-BRAM form.
+
+That routing density is the third ceiling. A fully-unrolled output MAC array, fed by
+wide-BRAM reads, gate-cache lookups, and sub-block-scale accesses, exceeds the device's
+routable interconnect at 250\,MHz: the wide-BRAM output variant reaches its target cycle
+count in synthesis but leaves more than 74,000 unresolved routing-node overlaps in
+implementation. A migration to the ZU7EV (the next device in the same Zynq UltraScale+
+family, with approximately 230\,K LUTs on the same processor--fabric interface) would
+provide the headroom to route the fully-unrolled array and to merge the load calls that
+currently serialize the AXI path.
+
+Taken together, these ceilings bound the achievable throughput at approximately 3.6\,t/s,
+well within the Amdahl ceiling of $\sim$8\,t/s established in
+Section~\ref{subsec:cpuexec}; the deployed design attains 61\% of this 3.6\,t/s design
+ceiling. They reflect the structural mismatch between a memory-bandwidth-limited workload
+and a device optimized for logic-dense, compute-bound kernels.
+
+Table~\ref{tab:operating_points} consolidates the latency compliance, efficiency
+outcome, and dominant limiting factor for each operating point discussed above, while
+Table~\ref{tab:design_constraints} summarizes the architectural constraints that bound
+the throughput ceiling independent of thread count.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{Operating-point summary: per-token decode latency, real-time budget
+compliance, efficiency outcome, and dominant limiting factor per operating point.
+Efficiency for the KV260 rows is decode t/s/W relative to CPU Only at the same thread
+count; for the STM32 it is relative to KV260 FPGA+CPU at
+T2\protect\textsuperscript{a}.}
+\label{tab:operating_points}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{c c r c r p{2.8cm}}
+\hline
+Threads & Mode & Latency (ms) & $<$500\,ms & Efficiency & Limiting factor \\
+\hline
+\multicolumn{6}{c}{\itshape KV260 (4$\times$ Cortex-A53)} \\
+\hline
+T1 & CPU Only  & 1136 & No           & baseline  & --- \\
+T1 & FPGA+CPU  & 613  & No           & +44\%     & Single-thread CPU throughput ceiling \\
+T2 & CPU Only  & 602  & No           & baseline  & --- \\
+T2 & FPGA+CPU  & \textbf{452}  & \textbf{Yes} & +10\%  & AXI burst serialization \\
+T3 & CPU Only  & \textbf{424}  & \textbf{Yes} & baseline  & --- \\
+T3 & FPGA+CPU  & \textbf{488}  & \textbf{Yes} & $-$25\%   & CPU parallelism offsets FPGA \\
+T4 & CPU Only  & \textbf{433}  & \textbf{Yes} & baseline  & --- \\
+T4 & FPGA+CPU  & 685  & No           & $-$47\%   & UIO interrupt contention \\
+\hline
+\multicolumn{6}{c}{\itshape STM32MP257F-DK (2$\times$ Cortex-A35)} \\
+\hline
+T2 & CPU Only  & 781  & No           & $3.7{\times}$ more efficient\textsuperscript{a} & A35 core throughput \\
+\hline
+\end{tabular}
+\par\vspace{4pt}
+{\footnotesize\textsuperscript{a}Decode t/s/W relative to KV260 FPGA+CPU T2: 1.60 vs.\ 0.429\,t/s/W.}
+\end{table}
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Design-level architectural constraints that bound the throughput ceiling
+independent of thread count.}
+\label{tab:design_constraints}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{p{8.3cm} c p{5.4cm}}
+\hline
+\textbf{Constraint} & \textbf{Stage} & \textbf{Ceiling impact} \\
+\hline
+Per-burst AXI setup overhead ($\approx$45 cycles) makes many short bursts slower than
+fewer large ones; a merged burst mitigates it in Stages~2a/2b but is infeasible in
+Stage~5 & 2a, 2b, 5 & DDR utilization capped at 38--41\% of peak \\
+\hline
+The memory scheduler cannot write to four nibble-storage banks within the same pipeline
+clock cycle, regardless of storage technology or partitioning strategy & 5 & Stage~5 is
+load-bound; down-projection floored at 1.62M cycles \\
+\hline
+The ZU5EV routing fabric cannot simultaneously carry the 128-bit weight reads,
+gate-cache lookups, and scale-factor accesses of a fully-unrolled output MAC array at
+250\,MHz & 5 & Prevents the fully-unrolled output MAC array \\
+\hline
+\end{tabular}
+\end{table}

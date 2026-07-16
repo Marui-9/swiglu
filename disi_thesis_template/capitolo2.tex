@@ -1,0 +1,629 @@
+\chapter{System Design and FPGA Accelerator}
+\label{cha:design}
+
+This chapter describes the proposed methodology. Section~\ref{sec:background} first
+introduces the two architectural notions on which the rest of the chapter relies: the
+SwiGLU feed-forward block and the LFM2 hybrid backbone. Section~\ref{subsec:cpuexec}
+then identifies the dominant computational kernel through fine-grained profiling,
+Section~\ref{sec:orchestration} details the CPU--FPGA orchestration that offloads that
+kernel, and Section~\ref{sec:fpga} presents the design of the FPGA accelerator itself.
+
+\section{Background}
+\label{sec:background}
+
+\subsection{The Feed-Forward Block and SwiGLU}
+\label{subsec:swiglu_bg}
+Modern transformer language models alternate two kinds of sub-layer within each block:
+a token-mixing operator (self-attention or, in LFM2, a short convolution) and a
+position-wise feed-forward network (FFN). The FFN is applied independently to every
+token's hidden vector and is responsible for most of a model's parameters and
+arithmetic. A classic FFN expands the $d$-dimensional hidden vector to a larger
+intermediate dimension $d_{\text{ff}}$ through one linear projection, applies a
+pointwise nonlinearity, and projects back to $d$ through a second projection. Gated
+Linear Unit (GLU) variants replace the single expansion with two parallel projections
+combined by an element-wise gate, which improves quality at an equal parameter budget
+and has become standard in recent large language models. LFM2 uses the SwiGLU variant.
+
+SwiGLU combines a SiLU-gated branch with a linear branch. The SiLU (also called Swish)
+activation is $\text{SiLU}(z) = z\,\sigma(z)$, where $\sigma$ is the logistic sigmoid;
+it is a smooth, non-monotonic function that acts as a soft gate, passing large positive
+activations while suppressing negative ones. Given the input activation $x \in
+\mathbb{R}^{d}$ (here $d = 2048$), SwiGLU computes a gate projection $X_1 = x W^{T}$ and
+an up projection $X_2 = x V^{T}$, both mapping to the intermediate dimension
+$d_{\text{ff}}$ (here $8192$); it applies SiLU to the gate, multiplies the two branches
+element-wise, and projects the result back to $d$ with the down projection $W_{down}$:
+\begin{equation}
+\text{FFN}(x) = (\text{SiLU}(x W^{T}) \odot (x V^{T})) W_{down}^{T}
+\label{eq:ffn}
+\end{equation}
+where $\odot$ denotes element-wise multiplication. LFM2 applies no bias terms in the
+FFN, which simplifies the arithmetic and is exploited by the hardware design in
+Section~\ref{sec:fpga}.
+
+The cost of this expressiveness is that SwiGLU uses three large weight matrices ($W$ and
+$V$ of size $d \times d_{\text{ff}}$ and $W_{down}$ of size $d_{\text{ff}} \times d$)
+rather than the two of a classic FFN. At $d = 2048$ and $d_{\text{ff}} = 8192$ each
+matrix holds $2048 \times 8192 \approx 16.8$\,M weights, so a single block's FFN
+contains roughly $50$\,M parameters and dominates both the storage footprint and the
+multiply-accumulate count of the block. This is what makes the feed-forward path the
+natural acceleration target identified in Section~\ref{subsec:cpuexec}.
+
+\subsection{The LFM2 Hybrid Backbone}
+\label{subsec:lfm2_bg}
+LFM2 is a family of edge-first language models from Liquid AI, designed through a
+hardware-in-the-loop architecture search that targets CPU latency and memory directly
+rather than parameter count alone~\cite{amini2025lfm2technicalreport}. The resulting
+backbone is a minimal hybrid: most blocks use an inexpensive gated short convolution
+for token mixing, and only a small minority use grouped-query attention
+(GQA)~\cite{ainslie2023gqa} to recover long-range modeling. This combination delivers up to roughly $2\times$ faster
+prefill and decode on CPUs than similarly sized attention-only models, which is what
+makes LFM2 a credible starting point for edge deployment.
+
+The 1.2-billion-parameter backbone used in this work has the hyperparameters listed in
+Table~\ref{tab:lfm2_dims}. It comprises 16 transformer blocks over a hidden dimension
+of 2048, of which 10 are gated short-convolution blocks and 6 are GQA blocks; every
+block, regardless of its mixer, contains a SwiGLU FFN that expands to a feed-forward
+dimension of 8192.
+
+\begin{table}[htbp]
+\centering
+\caption{Hyperparameters of the LFM2-1.2B language backbone.}
+\label{tab:lfm2_dims}
+\begin{tabular}{lr}
+\hline
+\textbf{Hyperparameter} & \textbf{Value} \\ \hline
+Total parameters & 1.2\,B \\
+Transformer blocks & 16 \\
+Hidden dimension ($d_{\text{model}}$) & 2048 \\
+Feed-forward dimension ($d_{\text{ff}}$) & 8192 \\
+Gated short-convolution blocks & 10 \\
+Grouped-query attention blocks & 6 \\
+Attention heads / KV groups / head dim & 32 / 8 / 64 \\
+Convolution kernel size ($k$) & 3 \\
+Normalization & pre-norm RMSNorm \\
+Positional encoding & RoPE (attention blocks) \\ \hline
+\end{tabular}
+\end{table}
+
+Internally, each block follows the pre-norm residual structure illustrated in
+Figure~\ref{fig:lfm2_block}: the hidden state is normalized with RMSNorm, passed
+through the sequence mixer, and added back to the residual stream; it is then
+normalized again, passed through the SwiGLU FFN, and added back. The sequence mixer is
+either a gated short convolution (a depthwise causal convolution of kernel size
+$k = 3$ surrounded by input-dependent multiplicative gating, which provides cheap local
+mixing with favourable cache behaviour on CPUs) or grouped-query attention, which
+shares key and value projections across groups of query heads (here 32 query heads over
+8 key/value groups) to reduce key--value cache traffic, augmented with rotary position
+embeddings and query--key normalization.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.9\linewidth]{lfm2_architecture.png}
+\caption{LFM2 architecture, reproduced from the LFM2 technical
+report~\cite{amini2025lfm2technicalreport}. Each block alternates a sequence-mixing
+operator (a gated short convolution or grouped-query attention) with a SwiGLU
+feed-forward block, both wrapped in pre-norm residual connections. The architecture
+supports both dense and mixture-of-experts (MoE) variants, and the MoE experts are
+themselves SwiGLU blocks. This work uses the dense 1.2B variant and offloads the SwiGLU
+feed-forward block to the FPGA.}
+\label{fig:lfm2_block}
+\end{figure}
+
+Two properties of this structure shape the rest of the chapter. First, because a SwiGLU
+FFN appears in all 16 blocks, the feed-forward path aggregates to the single largest
+share of per-token computation, as the profiling in Section~\ref{subsec:cpuexec}
+confirms. Second, the FFNs are never adjacent: consecutive feed-forward blocks are
+always separated by a full sequence mixer and two normalization and residual steps. In
+the heterogeneous design of Section~\ref{sec:orchestration}, those intervening operators
+remain on the CPU, so the accelerator cannot chain one FFN directly into the next;
+instead, every generated token incurs sixteen separate CPU--FPGA handoffs, one per
+block.
+
+\section{Profiling under CPU Execution}
+\label{subsec:cpuexec}
+
+To address the research question of enabling conversational-quality inference within
+the constraints of edge devices, this work adopts a systems-driven, top-down
+methodology that combines model profiling with targeted hardware acceleration. Rather
+than attempting to accelerate the entire conversational pipeline, the approach focuses
+on identifying the computational bottlenecks of the language backbone that powers the
+selected speech model and mapping the most demanding operations to dedicated hardware.
+
+The starting point of the approach is the LFM2-Audio architecture, whose
+conversational capabilities are supported by a 1.2\,B-parameter language backbone. To
+understand its execution characteristics on embedded hardware, the inference engine
+implemented by llama.cpp was modified to instrument the execution of individual
+architectural blocks. This profiling allows the collection of fine-grained timing
+information for each major component of the model during inference.
+
+\begin{table}[htbp]
+\centering
+\caption{LFM2.5-1.2B CPU execution profile.}
+\label{tab:cpu_profile}
+\begin{tabular}{lrr}
+\hline
+\textbf{Architectural Block} & \textbf{Time ($\mu$s)} & \textbf{\% of Total} \\ \hline
+MatMul + SwiGLU & 10,136,836 & 68.08\% \\
+Final Linear Projection & 1,631,552 & 10.96\% \\
+Gated Short Convolution & 1,555,396 & 10.44\% \\
+GQA Attention (MatMul) & 1,318,155 & 8.85\% \\
+Unmapped Nodes & 174,103 & 1.17\% \\
+Memory Ops \& KV Cache & 28,330 & 0.19\% \\
+RMSNorm / LayerNorm & 27,328 & 0.18\% \\
+Residual Connections \& Addition & 11,446 & 0.08\% \\
+Input Embedding Lookup & 4,006 & 0.03\% \\
+Positional Encodings (RoPE) & 1,840 & 0.01\% \\ \hline
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:cpu_profile} summarizes the resulting execution profile on a quad-core
+Arm\textregistered{} Cortex\textregistered{}-A53 platform. These results indicate that
+the performance of the model is primarily determined by a small set of dense linear
+algebra operations. In particular, the feed-forward MatMul + SwiGLU blocks represent
+the principal computational bottleneck, followed by the projection layers and
+attention-related matrix multiplications. Since these operations exhibit regular and
+predictable memory access patterns, they are well suited for hardware acceleration via
+spatial architectures that can exploit custom dataflow and data reuse.
+
+Amdahl's Law~\cite{Amdahl1967ValidityOT} bounds the theoretical benefit of this
+strategy: with the feed-forward MatMul + SwiGLU block (Eq.~\eqref{eq:ffn}) accounting
+for approximately 68\% of total execution time, the maximum achievable system speedup
+is limited to $1/(1-0.68) \approx 3.1\times$, even if the accelerated portion were to
+execute instantaneously. In practice, the non-FFN overhead was independently measured
+at approximately 126\,ms per token by substituting a pass-through IP for the
+accelerator, confirming that the remaining operations (attention, normalization, and
+residual additions) set a hard throughput ceiling near 8 tokens per second on this
+platform.
+
+Based on this analysis, the proposed system focuses on offloading the most
+computationally intensive component of the model to an FPGA-based accelerator while
+leaving control logic and lightweight operations on the CPU. This selective
+acceleration strategy enables significant reduction of inference latency at low thread
+counts without requiring full hardware implementation of the entire model.
+
+\section{Orchestration of the Computation Handoff}
+\label{sec:orchestration}
+
+Following the identification of the dominant computational bottleneck, the llama.cpp
+inference engine was extended with a hardware offloading mechanism that intercepts the
+execution of the feed-forward MatMul + SwiGLU block and orchestrates a handoff to a
+custom accelerator implemented in the FPGA fabric. Inference is executed using a
+modified \texttt{llama.cpp} CPU backend. Model weights are loaded from GGUF, and for
+each token a GGML computation graph is built (attention, norms, FFN). The graph is
+executed node-by-node via \texttt{ggml\_graph\_compute}, which dispatches each
+operation to CPU kernels by default.
+
+To accelerate the dominant FFN block, the LFM2 builder replaces the standard FFN
+sequence with a fused operator (\texttt{ggml\_swiglu\_fused\_hw}) when the environment
+variable \texttt{LLAMA\_SWIHW=1} and the tensor shapes and types match the accelerator
+interface. The layer index is stored in the node to retrieve the correct weights. At
+execution time, this fused node triggers a custom kernel that manages CPU--FPGA
+interaction. Weights are cached once per layer in a physically contiguous,
+DMA-coherent buffer (udmabuf) accessible by both the CPU and the FPGA, and are never
+re-transferred after the first use. The current activation vector is quantized from
+FP32 to INT8 on the CPU. The CPU programs the accelerator via memory-mapped registers,
+asserts a start signal, and sleeps until an interrupt from the FPGA fabric signals
+completion. The FPGA computes the full MatMul + SwiGLU block in a pipelined dataflow
+and writes the FP32 result back to the DMA buffer, from which the CPU copies it into
+the GGML output tensor. All other layer operations remain on the CPU. If conditions
+are not met at graph-build time or \texttt{LLAMA\_SWIHW} is set to 0, execution falls
+back to the standard CPU path.
+
+\begin{algorithm}[htb!]
+\caption{LFM2.5 Inference Execution}
+\label{alg:inference}
+\begin{algorithmic}[1]
+\STATE load\_model(GGUF)
+\FOR{each token}
+    \STATE $graph \leftarrow$ build\_ggml\_graph(token)
+    \FOR{each node in $graph$}
+        \IF{node.op == SWIGLU\_FUSED\_HW and enabled}
+            \STATE // CPU--FPGA handoff
+            \IF{not $weights\_cached[layer]$}
+                \STATE Copy $W_{gate}, W_{up}, W_{down} \rightarrow shared\_mem$
+                \STATE Mark cached
+            \ENDIF
+            \STATE $x_{int8}, x_{scale} =$ quantize($x$)
+            \STATE Write $x_{int8} \rightarrow shared\_mem$
+            \STATE program\_fpga($W_{addrs}, x_{addr}, out_{addr}, mode, x_{scale}$) \COMMENT{write AXI-Lite ctrl regs}
+            \STATE start\_fpga()
+            \STATE wait\_for\_interrupt()
+            \STATE $out =$ read\_output($shared\_mem$)
+        \ELSE
+            \STATE $out =$ cpu\_kernel(node)
+        \ENDIF
+    \ENDFOR
+    \STATE \COMMENT{graph execution complete; proceed to next token}
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+Although Algorithm~\ref{alg:inference} expresses the offload as a single conditional
+inside the per-node loop, its effect over a full token is dictated by the block
+structure of Section~\ref{subsec:lfm2_bg}. The computation graph of one token contains
+sixteen SwiGLU FFN nodes, one per transformer block, and the driver intercepts every
+one of them. The offload is therefore not a single event but a sequence of sixteen
+separate, synchronous CPU--FPGA handoffs per generated token.
+
+These handoffs cannot be fused or chained on the FPGA, because consecutive FFNs are
+never adjacent in the graph. The output of the FFN in block $N$ is consumed by the
+residual addition, the RMSNorm, and the sequence mixer of block $N{+}1$, all of which
+execute on the CPU; only their result becomes the input activation of the FFN in block
+$N{+}1$. The accelerator thus has no way to advance from one FFN to the next on its own:
+the CPU lies on the critical path between every pair of feed-forward blocks. As a
+consequence the two devices strictly alternate: while the FPGA evaluates one FFN the CPU
+is idle waiting on the completion interrupt, and while the CPU computes a block's mixer
+and normalizations the FPGA is idle, so neither device overlaps the other within a token.
+Figure~\ref{fig:handoff_mechanism} details the protocol of a single handoff.
+
+\begin{figure}[htb!]
+\centering
+\begin{tikzpicture}[
+  font=\scriptsize, >=Latex,
+  head/.style={draw, rounded corners, fill=gray!12, minimum width=2.4cm, minimum height=8mm, align=center},
+  cpuhead/.style={head, fill=blue!10},
+  fpgahead/.style={head, fill=red!18, draw=red!60!black},
+  life/.style={dashed, gray},
+  msg/.style={-Latex, thick},
+  comp/.style={draw, fill=red!10, align=center, minimum width=2.4cm, minimum height=8mm}
+]
+\def\xc{0}\def\xd{4.6}\def\xf{9.2}
+% lifeline headers
+\node[cpuhead]  (cpu)  at (\xc,0) {\textbf{CPU} (llama.cpp)};
+\node[head]     (ddr)  at (\xd,0) {\textbf{udmabuf} (shared DDR)};
+\node[fpgahead] (fpga) at (\xf,0) {\textbf{SwiGLU IP} (FPGA)};
+% lifelines
+\draw[life] (cpu)  -- (\xc,-6.3);
+\draw[life] (ddr)  -- (\xd,-6.3);
+\draw[life] (fpga) -- (\xf,-6.3);
+% CPU blocked activation bar
+\fill[blue!10, draw=blue!40] (\xc-0.12,-2.1) rectangle (\xc+0.12,-5.0);
+\node[rotate=90, font=\tiny, text=blue!50!black] at (\xc-0.5,-3.55) {blocked};
+% messages
+\draw[msg] (\xc,-0.9) -- node[above]{(1) write $x$ (INT8)} (\xd,-0.9);
+\draw[msg] (\xc,-1.5) -- node[above]{(2) program control registers (AXI-Lite)} (\xf,-1.5);
+\draw[msg] (\xc,-2.0) -- node[above]{(3) assert \texttt{ap\_start}} (\xf,-2.0);
+\draw[msg] (\xf,-2.7) -- node[above]{(4) read $x$ and cached weights (AXI4)} (\xd,-2.7);
+\node[comp] at (\xf,-3.3) {(5) compute 5-stage FFN};
+\draw[msg] (\xf,-4.3) -- node[above]{(6) write out (FP32)   } (\xd,-4.3);
+\draw[msg] (\xf,-5.0) -- node[above]{(7) interrupt (\texttt{ap\_done})} (\xc,-5.0);
+\draw[msg] (\xc,-5.7) -- node[above]{(8) read out} (\xd,-5.7);
+% execution-flow indicator (time runs downward)
+\draw[-Latex, thick, gray] (-1.8,-0.6) -- (-1.8,-6.0);
+\node[rotate=90, font={\scriptsize\itshape}, text=gray] at (-2.1,-3.3) {execution flow};
+\end{tikzpicture}
+\caption{Protocol of a single CPU--FPGA handoff. The CPU quantizes the activation and
+writes it to the shared udmabuf buffer, programs the IP's AXI-Lite control registers,
+asserts \texttt{ap\_start} and blocks; the FPGA burst-reads the activation and the cached
+weights, evaluates the five-stage SwiGLU pipeline, writes the result back, and raises a
+completion interrupt that releases the CPU to copy the output. This sequence repeats
+sixteen times per generated token.}
+\label{fig:handoff_mechanism}
+\end{figure}
+
+Each of the sixteen handoffs carries a fixed overhead that is independent of the work it
+guards: the input activation is quantized to INT8, the AXI-Lite control registers are
+programmed, the shared buffer is synchronized for the device, the calling thread blocks
+until the completion interrupt, and the result is copied back into the GGML tensor. This
+cost is paid sixteen times per token and does not amortize with sequence length the way
+the arithmetic of a batched matrix multiply would, since decode generates one token at a
+time. It is the principal component of the $\approx 126$\,ms of non-FFN per-token
+overhead measured in Section~\ref{subsec:cpuexec}, which fixes the Amdahl ceiling near
+8 tokens per second. The synchronous, blocking nature of the handoff also explains the
+behaviour at high thread counts (Section~\ref{sec:discussion}): when all four cores are
+busy, the blocking wait competes with the interrupt handler for scheduler time and the
+per-token round-trip latency grows, so the FPGA path can fall below the CPU-only
+baseline. Overlapping FPGA execution with independent CPU work would require an
+asynchronous, pipelined handoff in place of the node-by-node, barrier-synchronized
+execution used here; this direction, and the compatibility trade-off it entails, is
+discussed in Chapter~\ref{cha:conclusioni}.
+
+\section{FPGA Accelerator}
+\label{sec:fpga}
+
+The proposed accelerator implements the SwiGLU feed-forward block of the LFM2.5 language
+backbone,
+\begin{equation}
+\text{FFN}(x) = \big(\text{SiLU}(x W^{T}) \odot (x V^{T})\big)\, W_{down}^{T},
+\label{eq:ffn_hw}
+\end{equation}
+which the five-stage dataflow pipeline evaluates through the decomposition:
+\begin{subequations}\label{eq:swiglu_stage_set}
+\begin{align}
+X_1 &= x W^{T} \label{eq:swiglu_s2a}\\
+X_2 &= x V^{T} \label{eq:swiglu_s2b}\\
+G   &= \text{SiLU}(X_1)\odot X_2 \label{eq:swiglu_s3}\\
+\text{FFN}(x) &= G W_{down}^{T} \label{eq:swiglu_s4}
+\end{align}
+\end{subequations}
+where $x$ is the input activation, $W$ is the gating projection, $V$ is the expansion
+projection, and $W_{down}$ is the output projection; $\odot$ is element-wise
+multiplication and $\text{SiLU}(z) = z \cdot \sigma(z)$. Equation~\eqref{eq:swiglu_s2a}
+is computed in Stage~2a (gate projection), Eq.~\eqref{eq:swiglu_s2b} in Stage~2b (up
+projection), Eq.~\eqref{eq:swiglu_s3} in Stages~3--4 (gated activation: SiLU sub-stage
+A, element-wise multiply sub-stage B), and Eq.~\eqref{eq:swiglu_s4} in Stage~5 (down
+projection).
+
+The design exposes AXI4 interfaces for weights and activations, and an AXI-Lite
+interface for runtime control (quantization mode and per-token scaling factors). The
+five-stage pipeline is organized as an HLS dataflow (Fig.~\ref{fig:swiglu_compact})
+targeting an initiation interval $II=1$ throughout; end-to-end latency is therefore
+determined by memory bandwidth and burst efficiency rather than arithmetic capacity.
+
+\begin{figure}[htb!]
+\centering
+\begin{tikzpicture}[
+    font=\scriptsize,
+    >=Latex,
+    node distance=5mm,
+    block/.style={draw, rounded corners, thick, align=center, minimum height=6mm, text width=2.6cm},
+    stageWorst/.style={block, fill=red!18, draw=red!60!black},
+    stageLow/.style={block, fill=yellow!40, draw=yellow!60!black},
+    stageStd/.style={block, fill=gray!15, draw=gray!60},
+    mem/.style={draw, thick, align=center, minimum height=5mm, text width=2.4cm, fill=gray!10},
+    line/.style={-Latex, thick}
+]
+
+\node[stageStd] (loadx) {\textbf{Stage 1}\\Load $x$ (INT8)\\202 cy / 0.81\,\textmu s};
+
+\node[mem, below left=3mm and 2mm of loadx] (x1buf) {$x_1$ bank};
+\node[mem, below right=3mm and 2mm of loadx] (x2buf) {$x_2$ bank};
+
+\node[stageLow, below=7mm of x1buf] (x1) {\textbf{Stage 2a}\\$X_1=xW_{gate}^{T}$\\1.54 Million cycles / 6.14\,ms};
+\node[stageLow, below=7mm of x2buf] (x2) {\textbf{Stage 2b}\\$X_2=xW_{up}^{T}$\\1.54 Million cycles / 6.14\,ms};
+
+\node[mem, below=of x1] (x1cache) {$X_1$};
+\node[mem, below=of x2] (x2cache) {$X_2$};
+
+\node[stageStd, below=7mm of x1cache] (silu) {\textbf{Stage 3} {\scriptsize(sub-stage A)}\\SiLU($X_1$)\\{\scriptsize$\approx$8.0K cy / 32\,\textmu s}};
+
+\node[stageStd, below=10mm of $(silu)!0.5!(x2cache)$] (gate)
+{\textbf{Stage 4} {\scriptsize(sub-stage B)}\\gate=SiLU($X_1$)$\cdot X_2$\\{\scriptsize$\approx$8.6K cy / 34\,\textmu s}};
+
+\node[stageWorst, below=of gate] (down)
+{\textbf{Stage 5}\\$gate \cdot W_{down}^{T}$\\1.62 Million cycles / 6.49\,ms};
+
+\node[mem, below=of down] (out) {out};
+
+\draw[line] (loadx) -- (x1buf);
+\draw[line] (loadx) -- (x2buf);
+\draw[line] (x1buf) -- (x1);
+\draw[line] (x2buf) -- (x2);
+\draw[line] (x1) -- (x1cache);
+\draw[line] (x2) -- (x2cache);
+\draw[line] (x1cache) -- (silu);
+\draw[line] (silu.south) |- (gate.west);
+\draw[line] (x2cache.south) |- (gate.east);
+\draw[line] (gate) -- (down);
+\draw[line] (down) -- (out);
+
+\node[draw, rounded corners, fill=white, align=left, anchor=north, font=\scriptsize]
+at ($(out.south)+(0mm,-6mm)$) {
+\fcolorbox{gray!60}{gray!15}{\strut\hspace{0.9em}}~Negligible DDR traffic, not load-bound\\
+\fcolorbox{yellow!60!black}{yellow!40}{\strut\hspace{0.9em}}~$\geq$40\% DDR bandwidth utilization, load-bound\\
+\fcolorbox{red!75!black}{red!18}{\strut\hspace{0.9em}}~$<$40\% DDR bandwidth utilization, load-bound, DATAFLOW bottleneck};
+
+\end{tikzpicture}
+\caption{Compact dataflow of the MatMul + SwiGLU accelerator.}
+\label{fig:swiglu_compact}
+\end{figure}
+
+\subsection{HLS Realization}
+\label{subsec:hls}
+
+The accelerator is written in C++ and compiled to register-transfer-level hardware by
+Vitis HLS. Its functional behaviour is expressed in ordinary loops and arithmetic, while
+the mapping to hardware (interface protocols, on-chip memories, parallelism, and
+pipelining) is steered by directives, or pragmas, that annotate the code without altering
+its result. Listing~\ref{lst:hls} shows the top-level function, which both defines the
+IP's external interface and launches the five pipeline stages.
+
+\begin{lstlisting}[style=hls, float=htb, caption={Condensed top-level HLS function: the external interface and the five-stage dataflow. Repeated \texttt{m\_axi} and \texttt{s\_axilite} lines are collapsed for clarity.}, label=lst:hls]
+void swiglu(const uint8_t *W, const uint8_t *V, const uint8_t *W_down,
+            const int8_t *x_batch, float *out_batch,
+            uint32_t down_quant_mode, float x_scale) {
+  // weight/activation pointers become 128-bit AXI4 master ports to DDR
+  #pragma HLS INTERFACE m_axi port=W bundle=gmem_W max_widen_bitwidth=128
+  // ... V, W_down, x_batch, out_batch likewise ...
+  // scalar arguments become memory-mapped control registers
+  #pragma HLS INTERFACE s_axilite port=x_scale bundle=CTRL
+  // ... addresses, down_quant_mode, ap_ctrl likewise ...
+
+  int8_t X1_cache[FFN_DIM];
+  #pragma HLS BIND_STORAGE    variable=X1_cache   type=ram_2p impl=bram
+  int8_t gate_cache[DOWN_BLOCKS][256];
+  #pragma HLS BIND_STORAGE    variable=gate_cache type=ram_1p impl=uram
+  #pragma HLS ARRAY_PARTITION variable=gate_cache dim=2 cyclic factor=8
+
+  #pragma HLS DATAFLOW                          // stages run as overlapping processes
+  load_x_local(x_batch, x_local_1, x_local_2);
+  compute_X1(W, x_local_1, x_scale, X1_cache);   // Stage 2a
+  compute_X2(V, x_local_2, x_scale, X2_cache);   // Stage 2b
+  compute_gate(X1_cache, X2_cache, gate_cache);  // Stages 3-4
+  compute_output(W_down, gate_cache, out_batch); // Stage 5
+}
+\end{lstlisting}
+
+Four kinds of directive appear. The \texttt{m\_axi} pragmas turn the weight and
+activation pointers into AXI4 master ports. Since HLS by default infers the bus width
+from the \texttt{uint8\_t} element type, giving an 8-bit bus, the
+\texttt{max\_widen\_bitwidth=128} option is what widens each port to 128 bits, the width
+of the device's PS--PL high-performance interface, and raises its achievable DDR
+bandwidth roughly sixteen-fold relative to the 8-bit default. Widening the port further brings no benefit, since it cannot exceed that 128-bit interface width. 
+The \texttt{s\_axilite} pragmas expose the
+scalar arguments (the weight and buffer addresses, the quantization mode, the per-token
+scale, and the \texttt{ap\_ctrl} start/done handshake) as the memory-mapped control
+registers that the driver programs during the handoff of
+Section~\ref{sec:orchestration}. The \texttt{BIND\_STORAGE} directives pin each on-chip
+array to a specific primitive, LUTRAM, BRAM, or URAM, so that the design fits the
+ZU5EV's mixed memory budget; \texttt{X1\_cache} is a dual-port (\texttt{ram\_2p}) BRAM
+because it is written by \texttt{compute\_X1} and read by \texttt{compute\_gate}
+concurrently. \texttt{ARRAY\_PARTITION} with \texttt{cyclic factor=8} splits the gate
+cache into eight URAM banks so that eight blocks can be read in a single cycle, feeding
+the parallel multiply-accumulate chains. A larger factor would only add banks that the
+multiply-accumulate stage never reads in the same cycle; eight matches the eight-block
+width of the rest of the pipeline. Finally, \texttt{DATAFLOW} instructs the tool to
+run the five stage functions as concurrent, overlapping processes rather than in
+sequence: this is what realizes the pipeline of Figure~\ref{fig:swiglu_compact}, with the
+two projection stages executing in parallel.
+
+The remaining directives operate inside the stage functions: each accumulation loop is
+pipelined at an initiation interval of one (\texttt{PIPELINE II=1}) with the block loop
+unrolled (\texttt{UNROLL}), so the partitioned weight and activation banks are consumed in
+parallel. This is the mechanism behind the 32 multiply-accumulate chains detailed in the
+following subsections.
+
+\subsection{Quantization}
+
+Q4\_K is preferred over the structurally simpler Q4\_0 format (one fp16 block scale per
+32 elements, no sub-block scales) on quality grounds: its 6-bit sub-group scales
+provide $16\times$ finer scale resolution per block, keeping quantization fidelity
+above the Q4\_0 baseline that Liquid AI themselves use for all LFM2 inference
+benchmarks~\cite{amini2025lfm2technicalreport}. The default GGUF distribution of
+LFM2.5-1.2B applies mixed quantization to the down-projection weights, using Q6\_K for
+eight layers and Q4\_K for the remaining eight (the Q4\_K\_M strategy). Supporting
+Q6\_K in the accelerator is infeasible on the ZU5EV: each Q6\_K block occupies 210
+bytes ($13.125\times$128-bit words), precluding the clean 2D register-file layout that
+enables compile-time \texttt{.range()} nibble extraction. The fallback
+\texttt{get\_byte()} multiplexer tree required for 6-bit nibbles consumes approximately
+30--40\,K LUTs per MAC stage at 32-block parallelism, exceeding the device's remaining
+routing capacity at 87\% LUT occupancy. The model is therefore re-quantized to uniform
+Q4\_K across all sixteen layers using
+\texttt{llama-quantize -{-}allow-requantize -{-}pure} from an F16\_Q8\_0 source. This
+choice is consistent with the hardware-in-the-loop co-design process of LFM2, whose
+architecture search and published inference benchmarks evaluated all candidates under
+Q4\_0 quantization~\cite{amini2025lfm2technicalreport}, a scheme coarser than Q4\_K in
+both bit-width and block-scale granularity. Furthermore, Q6\_K is applied exclusively
+to the down-projection $W_{down}$, the least quantization-sensitive weight in the FFN:
+it acts as a linear readout of an already-nonlinear gated intermediate, and its
+32-block structure averages quantization error before injection into the residual
+stream. Across the full mixed-precision datapath, accuracy degradation relative to the
+CPU's FP32 reference is estimated from quantization error bounds: the dominant
+contribution is Q4\_K weight error (approximately 6\% relative to the FP32 dynamic
+range), with INT8 input quantization adding under 0.5\% and INT8 intermediate cache
+quantization contributing at most 1\%. These are order-of-magnitude bounds, not direct
+measurements on this model; the impact on task-level accuracy is expected to be within
+the tolerance of a conversational audio deployment.
+
+\subsection{CPU-Side Weight Pre-Decoding}
+\label{subsec:predecode}
+
+The $K=4$ designation indicates that four weight rows are processed per iteration of each
+MAC stage, yielding 32 parallel INT32 multiply-accumulate chains (8 blocks $\times$ 4
+rows) in the projection stages and 32 chains shared across 4 sequential groups in the
+down-projection stage. Sustaining this degree of parallelism within the device's LUT
+budget is made possible by a pre-decoding step that runs on the CPU, once per layer,
+before the weights are ever seen by the accelerator.
+
+The difficulty stems from the Q4\_K storage format, which is designed for CPU SIMD
+execution rather than for an FPGA datapath. Each 144-byte block encodes 256 weights as
+shown in Table~\ref{tab:q4k_block}: two fp16 block-level scales ($d$ and $dmin$), eight
+6-bit sub-block scales and eight 6-bit minima (\texttt{sc6}, \texttt{mn6}) packed at
+bit-level offsets that straddle byte boundaries, and 256 four-bit nibbles stored in
+block-major order. Decoding this layout inside the MAC pipeline would require, for every
+nibble, a \texttt{get\_byte()} access, a nine-to-one multiplexer on the 128-bit word
+followed by a four-bit shift. With eight blocks decoded in parallel, these multiplexer
+trees alone consume on the order of 30\,K LUTs, which is incompatible with the $K=4$
+design on the ZU5EV.
+
+\begin{table}[htbp]
+\centering
+\caption{Layout of a 144-byte Q4\_K block (256 weights).}
+\label{tab:q4k_block}
+\begin{tabular}{lll}
+\hline
+\textbf{Bytes} & \textbf{Size} & \textbf{Field} \\ \hline
+0--1    & 2\,B   & $d$ (fp16 block scale) \\
+2--3    & 2\,B   & $dmin$ (fp16 min-subtraction scale) \\
+4--11   & 8\,B   & \texttt{sc6}/\texttt{mn6} sub-block scales and minima (low 6 bits) \\
+12--15  & 4\,B   & \texttt{sc6}/\texttt{mn6} high-order bits (interleaved) \\
+16--143 & 128\,B & 256 packed 4-bit nibbles (block-major) \\ \hline
+\end{tabular}
+\end{table}
+
+The pre-decoding step performs two transformations that move all of this irregular bit
+manipulation off the critical path and onto the CPU. First, the interleaved 6-bit
+\texttt{sc6} and \texttt{mn6} fields are unpacked into flat INT8 arrays, so the FPGA reads
+each sub-block scale as a plain byte. Second, and more importantly, the nibbles are
+transposed from the block-major order in which Q4\_K stores them into an element-major
+order, illustrated in Figure~\ref{fig:predecode}: instead of all 256 nibbles of block~0
+followed by all 256 of block~1, the pre-decoded layout places the nibble of a given
+element for all eight blocks side by side in a single 128-bit word. The fp16 scales $d$
+and $dmin$ are copied verbatim and converted to fp32 in hardware by a custom
+bit-manipulation routine that preserves subnormal values rather than flushing them to
+zero.
+
+\begin{figure}[htb!]
+\centering
+\begin{tikzpicture}[
+  font=\scriptsize, >=Latex,
+  raw/.style={draw, rounded corners, fill=gray!12, align=center, text width=4.0cm, minimum height=14mm},
+  pre/.style={draw, rounded corners, fill=blue!10, align=center, text width=4.4cm, minimum height=14mm}
+]
+\node[raw] (a) {Raw Q4\_K (block-major):\\all 256 nibbles of block~0,\\then block~1, \dots, block~7};
+\node[pre, right=2.6cm of a] (b) {Pre-decoded (element-major):\\one 128-bit word per element\\holds that element's nibble\\for all 8 blocks ($b_0\dots b_7$)};
+\draw[-Latex, thick] (a) -- node[above, align=center]{CPU pre-decode\\(once / layer)} (b);
+\end{tikzpicture}
+\caption{Weight pre-decoding rearranges the block-major Q4\_K nibbles into an
+element-major layout, so each 128-bit memory word holds one element's nibble for all
+eight blocks and can be consumed by the parallel MAC chains in a single cycle.}
+\label{fig:predecode}
+\end{figure}
+
+After this rearrangement the FPGA load is trivial: each 128-bit DDR word is written
+verbatim into a wide (128-bit) BRAM tile, one read and one write per cycle, achieving an
+initiation interval of one with no decode logic at all. In the MAC, the eight nibbles of a
+word are addressed by compile-time \texttt{.range()} slices, which synthesize to wires and
+cost zero LUTs. Eliminating the multiplexer trees is what brings the $K=4$ implementation
+from roughly 137\,K LUTs (which does not fit the ZU5EV's 117\,K) down to roughly
+103\,K, leaving margin for routing; the implemented design occupies 87\% of the LUTs
+(Section~\ref{sec:results}). The pre-decode itself costs about
+10\,ms per layer on the first token; its output is cached permanently in the shared
+udmabuf buffer, so every subsequent token reads the transposed weights directly and pays
+nothing.
+
+\subsection{Stage 1: Load $x$ (INT8)}
+The 2048-element INT8 input vector is burst-loaded from DDR in $128\times$128-bit AXI
+words and duplicated into two identically partitioned LUTRAM buffers, enabling
+concurrent access by Stages~2a and~2b without serialization. The stage is pure data
+movement with no arithmetic and completes in 202 cycles (0.81\,$\mu$s).
+
+\subsection{Stages 2a / 2b: Linear Projections (Parallel)}
+Two GEMV operations compute $X_1$ and $X_2$
+(Eqs.~\eqref{eq:swiglu_s2a}--\eqref{eq:swiglu_s2b}) in parallel on independent AXI ports
+and BRAM banks. Weights are pre-decoded on the CPU into flat INT8 sub-block scales and
+element-major nibble words; the FPGA never handles the interleaved Q4\_K header format.
+With $K=4$, four rows are processed per outer iteration via a single merged 320-word AXI
+burst covering all four rows simultaneously (16 header + 64 nibble words per row,
+$\times\,4$ rows = 320 total), eliminating the per-iteration burst-setup overheads of a
+design with multiple calls. Nibble extraction uses compile-time \texttt{.range()}
+indexing on wide 128-bit BRAM tiles. The 32 parallel INT32 MAC chains (8 blocks $\times$
+4 rows) deliver 2.76\,GOPS (34.5\% of the 8.00\,GOPS peak); the merged burst reduces
+load time from 948 to 401 cycles per iteration, representing 53\% of the total
+per-iteration cycle budget. DDR bandwidth reaches 1.63\,GB/s (41\% of the 4.00\,GB/s
+peak) across the 10.0\,MB per-matrix transfer. Each stage completes in 1,536,001 cycles
+(6.14\,ms).
+
+\subsection{Stages 3--4: Gated Activation and Quantization}
+The fused gate operation (Eq.~\eqref{eq:swiglu_s3}) runs entirely on-chip from the
+$X_1$ and $X_2$ caches using a two-pass scheme over 8,192 elements: the first pass finds
+the maximum absolute value across 8 parallel reduction lanes, and the second recomputes
+and requantizes to INT8 for storage in the 8-way banked URAM gate cache. At 16,622
+cycles (66\,$\mu$s) and approximately 65K FP operations per pass, the stage contributes
+under 1\% of per-layer time.
+
+\subsection{Stage 5: Down Projection}
+The gated activation is projected back to model dimension (Eq.~\eqref{eq:swiglu_s4}) via
+$\text{out} = \text{gate} \cdot W_{down}^{T}$ using the same CPU-pre-decoded weight
+format as Stages~2a/2b. With $K=4$, four output rows are processed per iteration across
+32 blocks organized into 4 sequential groups of 8; all four rows are unrolled per group
+to deliver 32 parallel INT32 MAC chains per group. Unlike Stages~2a/2b, which merge all
+four rows into a single 320-word burst, Stage~5 issues four sequential per-row AXI bursts
+of 320 words each. The merged strategy is not applicable here: $W_{down}$ has 32 blocks
+per row (versus 8 in $W$/$V$), so each row's nibble buffer is 256 words rather than 64.
+Consequently, nibbles are stored in narrower 32-bit tiles (4 groups $\times$ 4 rows)
+rather than 128-bit tiles. This tile layout also precludes the contiguous multi-row
+memory mapping that enables burst merging in Stages~2a/2b. These loads account for 60\%
+of the per-iteration budget (1,908 of 3,165 cycles), making the stage load-bound. DDR
+bandwidth reaches 1.54\,GB/s (38\% of the 4.00\,GB/s peak) across the 10.0\,MB transfer.
+Total latency is 1,622,602 cycles (6.49\,ms), which sets the dataflow pipeline interval.

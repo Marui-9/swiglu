@@ -1,0 +1,197 @@
+\relax 
+\providecommand\babel@aux[2]{}
+\@nameuse{bbl@beforestart}
+\babel@aux{english}{}
+\newlabel{sommario}{{}{2}{}{}{}}
+\@writefile{toc}{\contentsline {chapter}{Abstract}{2}{}\protected@file@percent }
+\citation{reddi2025generative}
+\citation{10177729}
+\citation{mi13060851}
+\citation{technologies12060081}
+\citation{electronics14173468}
+\citation{s25103191}
+\citation{doherty2015flow}
+\citation{defossez2025moshi}
+\citation{defossez2025moshi}
+\citation{pope2022efficiently}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction and Background}{3}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{cha:intro}{{1}{3}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Introduction}{3}{}\protected@file@percent }
+\newlabel{sec:introduction}{{1.1}{3}{Introduction}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Research Question}{3}{}\protected@file@percent }
+\newlabel{sec:research_question}{{1.2}{3}{Research Question}{}{}}
+\citation{10433480}
+\citation{10902142}
+\citation{10.1145-3747588}
+\citation{app142411583}
+\citation{huang2026tactilevla}
+\citation{huang2026tafvlatactileforcealignmentvisionlanguageaction}
+\citation{bi2025vlatouchenhancingvisionlanguageactionmodels}
+\citation{dnn_compression}
+\citation{radford2023whisper}
+\citation{amini2025lfm2technicalreport}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}State of the Art}{4}{}\protected@file@percent }
+\newlabel{sec:sota}{{1.3}{4}{State of the Art}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Evolution of Modern AI Models}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Real-time and Edge AI Systems}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.3}Speech and Conversational Architectures}{4}{}\protected@file@percent }
+\citation{10.1145/3776942.3776981}
+\citation{10711025}
+\citation{info16080685}
+\citation{sym18050766}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.4}Edge Speech Systems and On-Device Conversational AI}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.5}Profiling of Speech Models for Edge Deployment}{5}{}\protected@file@percent }
+\newlabel{subsec:profiling}{{1.3.5}{5}{Profiling of Speech Models for Edge Deployment}{}{}}
+\citation{11310944tin}
+\citation{li2025fpgabasedhardware}
+\citation{11311069}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Model throughput (TOPS) as a function of resource requirements. Models with the highest throughput at the lowest resource cost appear toward the bottom left.}}{6}{}\protected@file@percent }
+\newlabel{fig:efficiency}{{1.1}{6}{Profiling of Speech Models for Edge Deployment}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.6}Related Work on the Kria KV260 Platform}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Contributions}{7}{}\protected@file@percent }
+\newlabel{sec:contribution}{{1.4}{7}{Contributions}{}{}}
+\citation{amini2025lfm2technicalreport}
+\citation{ainslie2023gqa}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}System Design and FPGA Accelerator}{8}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{cha:design}{{2}{8}{Contributions}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Background}{8}{}\protected@file@percent }
+\newlabel{sec:background}{{2.1}{8}{Background}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}The Feed-Forward Block and SwiGLU}{8}{}\protected@file@percent }
+\newlabel{subsec:swiglu_bg}{{2.1.1}{8}{The Feed-Forward Block and SwiGLU}{}{}}
+\newlabel{eq:ffn}{{2.1}{8}{The Feed-Forward Block and SwiGLU}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}The LFM2 Hybrid Backbone}{8}{}\protected@file@percent }
+\newlabel{subsec:lfm2_bg}{{2.1.2}{8}{The LFM2 Hybrid Backbone}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Hyperparameters of the LFM2-1.2B language backbone.}}{9}{}\protected@file@percent }
+\newlabel{tab:lfm2_dims}{{2.1}{9}{The LFM2 Hybrid Backbone}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Structure of a single LFM2 transformer block. Each of the 16 blocks applies a sequence mixer (a gated short convolution in 10 blocks, grouped-query attention in 6) followed by a SwiGLU feed-forward network, both wrapped in pre-norm residual connections. Only the SwiGLU FFN is offloaded to the FPGA.}}{9}{}\protected@file@percent }
+\newlabel{fig:lfm2_block}{{2.1}{9}{The LFM2 Hybrid Backbone}{}{}}
+\citation{Amdahl1967ValidityOT}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Profiling under CPU Execution}{10}{}\protected@file@percent }
+\newlabel{subsec:cpuexec}{{2.2}{10}{Profiling under CPU Execution}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces LFM2.5-1.2B CPU execution profile.}}{10}{}\protected@file@percent }
+\newlabel{tab:cpu_profile}{{2.2}{10}{Profiling under CPU Execution}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Orchestration of the Computation Handoff}{11}{}\protected@file@percent }
+\newlabel{sec:orchestration}{{2.3}{11}{Orchestration of the Computation Handoff}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces LFM2.5 Inference Execution}}{11}{}\protected@file@percent }
+\newlabel{alg:inference}{{1}{11}{Orchestration of the Computation Handoff}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Protocol of a single CPU--FPGA handoff. The CPU quantizes the activation and writes it to the shared udmabuf buffer, programs the IP's AXI-Lite control registers, asserts \texttt  {ap\_start} and blocks; the FPGA burst-reads the activation and the cached weights, evaluates the five-stage SwiGLU pipeline, writes the result back, and raises a completion interrupt that releases the CPU to copy the output. This sequence repeats sixteen times per generated token.}}{12}{}\protected@file@percent }
+\newlabel{fig:handoff_mechanism}{{2.2}{12}{Orchestration of the Computation Handoff}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}FPGA Accelerator}{12}{}\protected@file@percent }
+\newlabel{sec:fpga}{{2.4}{12}{FPGA Accelerator}{}{}}
+\newlabel{eq:ffn_hw}{{2.2}{12}{FPGA Accelerator}{}{}}
+\newlabel{eq:swiglu_stage_set}{{2.3}{12}{FPGA Accelerator}{}{}}
+\newlabel{eq:swiglu_s2a}{{2.3a}{12}{FPGA Accelerator}{}{}}
+\newlabel{eq:swiglu_s2b}{{2.3b}{12}{FPGA Accelerator}{}{}}
+\newlabel{eq:swiglu_s3}{{2.3c}{12}{FPGA Accelerator}{}{}}
+\newlabel{eq:swiglu_s4}{{2.3d}{12}{FPGA Accelerator}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Compact dataflow of the MatMul + SwiGLU accelerator.}}{13}{}\protected@file@percent }
+\newlabel{fig:swiglu_compact}{{2.3}{13}{FPGA Accelerator}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}HLS Realization}{13}{}\protected@file@percent }
+\newlabel{subsec:hls}{{2.4.1}{13}{HLS Realization}{}{}}
+\citation{amini2025lfm2technicalreport}
+\citation{amini2025lfm2technicalreport}
+\newlabel{lst:hls}{{2.1}{14}{HLS Realization}{}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.1}Abridged top-level HLS function: the external interface and the five-stage dataflow. Repeated \texttt  {m\_axi} and \texttt  {s\_axilite} lines are collapsed for clarity.}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Quantization}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}CPU-Side Weight Pre-Decoding}{15}{}\protected@file@percent }
+\newlabel{subsec:predecode}{{2.4.3}{15}{CPU-Side Weight Pre-Decoding}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Layout of a 144-byte Q4\_K block (256 weights).}}{15}{}\protected@file@percent }
+\newlabel{tab:q4k_block}{{2.3}{15}{CPU-Side Weight Pre-Decoding}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Weight pre-decoding rearranges the block-major Q4\_K nibbles into an element-major layout, so each 128-bit memory word holds one element's nibble for all eight blocks and can be consumed by the parallel MAC chains in a single cycle.}}{15}{}\protected@file@percent }
+\newlabel{fig:predecode}{{2.4}{15}{CPU-Side Weight Pre-Decoding}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.4}Stage 1: Load $x$ (INT8)}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.5}Stages 2a / 2b: Linear Projections (Parallel)}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.6}Stages 3--4: Gated Activation and Quantization}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.7}Stage 5: Down Projection}{16}{}\protected@file@percent }
+\citation{ds14284}
+\citation{um3385}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Experiments and Discussion}{17}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{cha:experiments}{{3}{17}{Stage 5: Down Projection}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Experimental Setup}{17}{}\protected@file@percent }
+\newlabel{sec:setup}{{3.1}{17}{Experimental Setup}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Evaluation Metrics}{17}{}\protected@file@percent }
+\newlabel{sec:metrics}{{3.2}{17}{Evaluation Metrics}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Results}{17}{}\protected@file@percent }
+\newlabel{sec:results}{{3.3}{17}{Results}{}{}}
+\citation{ds14284}
+\citation{um3385}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Throughput and efficiency across platforms and thread counts. Bold marks the preferable value per metric within each KV260 thread-count pair.}}{18}{}\protected@file@percent }
+\newlabel{tab:short_results}{{3.1}{18}{Results}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Utilization of the Kria KV260 on-board resources for the implementation of the feed-forward block accelerator.}}{18}{}\protected@file@percent }
+\newlabel{fig:utilization}{{3.1}{18}{Results}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Comparison with STM32MP257F-DK}{18}{}\protected@file@percent }
+\newlabel{subsec:stm32comparison}{{3.4}{18}{Comparison with STM32MP257F-DK}{}{}}
+\citation{lu2020hw-mha}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Discussion}{19}{}\protected@file@percent }
+\newlabel{sec:discussion}{{3.5}{19}{Discussion}{}{}}
+\citation{11310944tin}
+\citation{li2025fpgabasedhardware}
+\citation{11311069}
+\citation{FTRANS}
+\citation{11310944tin}
+\citation{li2025fpgabasedhardware}
+\citation{11311069}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces KV260 accelerator design comparison.}}{20}{}\protected@file@percent }
+\newlabel{tab:kv260_comparison}{{3.2}{20}{Discussion}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Representative architectural variants explored during development and the ceiling each one revealed.}}{21}{}\protected@file@percent }
+\newlabel{tab:design_space}{{3.3}{21}{Discussion}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Operating-point summary: per-token decode latency, real-time budget compliance, efficiency outcome, and dominant limiting factor per operating point. Efficiency for the KV260 rows is decode t/s/W relative to CPU Only at the same thread count; for the STM32 it is relative to KV260 FPGA+CPU at T2\textsuperscript {a}.}}{22}{}\protected@file@percent }
+\newlabel{tab:operating_points}{{3.4}{22}{Discussion}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Design-level architectural constraints that bound the throughput ceiling independent of thread count.}}{22}{}\protected@file@percent }
+\newlabel{tab:design_constraints}{{3.5}{22}{Discussion}{}{}}
+\citation{amini2025lfm2technicalreport}
+\citation{FlightLLM}
+\citation{cano}
+\citation{Li2025Pushing}
+\bibstyle{plain}
+\bibdata{biblio}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusions and Future Work}{23}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{cha:conclusioni}{{4}{23}{Discussion}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Conclusions}{23}{}\protected@file@percent }
+\newlabel{sec:conclusion}{{4.1}{23}{Conclusions}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Future Work}{23}{}\protected@file@percent }
+\newlabel{sec:future}{{4.2}{23}{Future Work}{}{}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{24}{}\protected@file@percent }
+\bibcite{10177729}{1}
+\bibcite{mi13060851}{2}
+\bibcite{Amdahl1967ValidityOT}{3}
+\bibcite{amini2025lfm2technicalreport}{4}
+\bibcite{bi2025vlatouchenhancingvisionlanguageactionmodels}{5}
+\bibcite{10.1145/3776942.3776981}{6}
+\bibcite{defossez2025moshi}{7}
+\bibcite{info16080685}{8}
+\bibcite{doherty2015flow}{9}
+\bibcite{11310944tin}{10}
+\bibcite{app142411583}{11}
+\bibcite{dnn_compression}{12}
+\bibcite{cano}{13}
+\bibcite{10902142}{14}
+\bibcite{s25103191}{15}
+\bibcite{huang2026tactilevla}{16}
+\bibcite{electronics14173468}{17}
+\bibcite{huang2026tafvlatactileforcealignmentvisionlanguageaction}{18}
+\bibcite{10.1145-3747588}{19}
+\bibcite{technologies12060081}{20}
+\bibcite{sym18050766}{21}
+\bibcite{10711025}{22}
+\bibcite{FTRANS}{23}
+\bibcite{Li2025Pushing}{24}
+\bibcite{li2025fpgabasedhardware}{25}
+\bibcite{lu2020hw-mha}{26}
+\bibcite{pope2022efficiently}{27}
+\bibcite{radford2023whisper}{28}
+\bibcite{10433480}{29}
+\bibcite{reddi2025generative}{30}
+\bibcite{ds14284}{31}
+\bibcite{um3385}{32}
+\bibcite{11311069}{33}
+\bibcite{FlightLLM}{34}
+\gdef \@abspage@last{29}

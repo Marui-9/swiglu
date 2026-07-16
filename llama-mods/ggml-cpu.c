@@ -2037,27 +2037,9 @@ static void ggml_compute_forward_swiglu_fused_hw(
     }
     size_t down_bytes = ggml_nbytes(W_down);
     uint32_t mode = (down_bytes > 9437184UL) ? 1 : 0; // Q6_K threshold
-    size_t gate_bytes = ggml_nbytes(W_gate);
-    size_t up_bytes   = ggml_nbytes(W_up);
-
-    if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG] ===== HW call #%d layer=%d mode=%s tokens=%d =====\n",
-                swiglu_call_count, layer, mode ? "Q6_K" : "Q4_K", total_tokens);
-        fprintf(stderr, "[SWG]   W_gate ptr=%p  ne=[%d,%d] type=%d  nbytes=%zu\n",
-                W_gate->data, (int)W_gate->ne[0], (int)W_gate->ne[1], (int)W_gate->type, gate_bytes);
-        fprintf(stderr, "[SWG]   W_up   ptr=%p  ne=[%d,%d] type=%d  nbytes=%zu\n",
-                W_up->data,   (int)W_up->ne[0],   (int)W_up->ne[1],   (int)W_up->type,   up_bytes);
-        fprintf(stderr, "[SWG]   W_down ptr=%p  ne=[%d,%d] type=%d  nbytes=%zu\n",
-                W_down->data, (int)W_down->ne[0], (int)W_down->ne[1], (int)W_down->type, down_bytes);
-        fprintf(stderr, "[SWG]   x      ptr=%p  ne=[%d,%d] type=%d\n",
-                x->data, (int)x->ne[0], (int)x->ne[1], (int)x->type);
-    }
-
     // Pre-decode Q4_K to hybrid format.  Cached permanently per layer.
     // First token pays ~10 ms/layer (160 ms total). Subsequent tokens skip entirely.
     if (!swg_layer_cached[layer]) {
-        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   UNPACK layer %d → permanent slot\n", layer);
-
         transpose_q4k_to_urm((const uint8_t *)W_gate->data,
                               (uint8_t *)udmabuf_vptr + SWG_LAYER_W_OFF(layer),
                               (int)W_gate->ne[1], WV_BLOCKS_PER_ROW);
@@ -2085,20 +2067,13 @@ static void ggml_compute_forward_swiglu_fused_hw(
     uint64_t phys_x_base   = udmabuf_phys_base + SWG_VEC_OFF;
     uint64_t phys_out_base = udmabuf_phys_base + SWG_OUT_OFF;
 
-    if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG]   phys W=0x%016llX  V=0x%016llX  Wd=0x%016llX\n",
-                (unsigned long long)phys_W, (unsigned long long)phys_V, (unsigned long long)phys_Wd);
-        fprintf(stderr, "[SWG]   phys x=0x%016llX  out=0x%016llX\n",
-                (unsigned long long)phys_x_base, (unsigned long long)phys_out_base);
-        fprintf(stderr, "[SWG]   AP_CTRL before start = 0x%08X\n",
-                swg_ip_regs[SWG_CTRL_AP_CTRL / 4]);
-    }
-
     for (int c = 0; c < total_tokens; c += SWG_MAX_BATCH) {
         int bsz = (c + SWG_MAX_BATCH <= total_tokens) ? SWG_MAX_BATCH : (total_tokens - c);
 
         const float *x_chunk = (const float *)x->data + (size_t)c * 2048;
         int8_t *x_dst = (int8_t*)((char*)udmabuf_vptr + SWG_VEC_OFF);
+        struct timespec t_q0, t_q1, t_p0, t_p1, t_m0, t_m1;
+        clock_gettime(CLOCK_MONOTONIC, &t_q0);      // activation quantize: start
         float max_abs = 0.f;
         for (int i = 0; i < bsz * 2048; ++i) {
             float v = x_chunk[i];
@@ -2114,16 +2089,10 @@ static void ggml_compute_forward_swiglu_fused_hw(
             if (iq < -128) iq = -128;
             x_dst[i] = (int8_t)iq;
         }
-        if (swiglu_dbg_enabled) {
-            fprintf(stderr, "[SWG]   token chunk c=%d bsz=%d  max_abs=%.4f  x_scale=%.6f\n",
-                    c, bsz, max_abs, x_scale);
-            fprintf(stderr, "[SWG]   x[0..3] (INT8): %d %d %d %d\n",
-                    (int)x_dst[0], (int)x_dst[1], (int)x_dst[2], (int)x_dst[3]);
-        }
+        clock_gettime(CLOCK_MONOTONIC, &t_q1);      // activation quantize: end
 
         bool need_prog_wvw = (layer != swg_last_prog_layer) || (mode != swg_last_prog_mode);
-        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   reprogram W/V/Wd: %s (last_layer=%d last_mode=%u)\n",
-                need_prog_wvw ? "YES" : "NO (cached)", swg_last_prog_layer, swg_last_prog_mode);
+        clock_gettime(CLOCK_MONOTONIC, &t_p0);      // register programming: start
         if (need_prog_wvw) {
             swg_ip_regs[SWG_CTRL_W_LO  / 4] = (uint32_t)phys_W;
             swg_ip_regs[SWG_CTRL_W_HI  / 4] = (uint32_t)(phys_W >> 32);
@@ -2146,66 +2115,83 @@ static void ggml_compute_forward_swiglu_fused_hw(
         uint32_t xscale_bits;
         memcpy(&xscale_bits, &x_scale, sizeof(float));
         swg_ip_regs[SWG_CTRL_XSCALE / 4] = xscale_bits;
-
-        if (swiglu_dbg_enabled) {
-            fprintf(stderr, "[SWG]   regs: W=0x%08X|%08X  V=0x%08X|%08X  Wd=0x%08X|%08X\n",
-                    swg_ip_regs[SWG_CTRL_W_HI/4],  swg_ip_regs[SWG_CTRL_W_LO/4],
-                    swg_ip_regs[SWG_CTRL_V_HI/4],  swg_ip_regs[SWG_CTRL_V_LO/4],
-                    swg_ip_regs[SWG_CTRL_WD_HI/4], swg_ip_regs[SWG_CTRL_WD_LO/4]);
-            fprintf(stderr, "[SWG]   regs: x=0x%08X|%08X  out=0x%08X|%08X  mode=%u  xscale_bits=0x%08X (%.6f)\n",
-                    swg_ip_regs[SWG_CTRL_X_HI/4],   swg_ip_regs[SWG_CTRL_X_LO/4],
-                    swg_ip_regs[SWG_CTRL_OUT_HI/4], swg_ip_regs[SWG_CTRL_OUT_LO/4],
-                    swg_ip_regs[SWG_CTRL_MODE/4], xscale_bits, x_scale);
-        }
+        clock_gettime(CLOCK_MONOTONIC, &t_p1);      // register programming: end
 
         __asm__ __volatile__("" ::: "memory");
+        struct timespec t_sd0, t_sd1, t_hw0, t_hw1, t_sc0, t_sc1;
+        clock_gettime(CLOCK_MONOTONIC, &t_sd0);
         udmabuf_sync_to_device(SWG_VEC_OFF, (uint32_t)(bsz * 2048));
+        clock_gettime(CLOCK_MONOTONIC, &t_sd1);
 
-        struct timespec t0, t1;
-        clock_gettime(CLOCK_MONOTONIC, &t0);
-        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   >>> writing ap_start\n");
-        swg_ip_regs[SWG_CTRL_AP_CTRL / 4] = 0x01;
+        // Launch the IP and block on its completion interrupt (ap_done) via the
+        // UIO device, instead of spinning on the AP_CTRL register. The calling
+        // thread yields the core while the FPGA runs (lower power) at the cost of
+        // interrupt-delivery latency. The UIO fd is armed in the init path; after
+        // each completion we clear the IP's ISR (deasserting the line) and re-arm.
+        clock_gettime(CLOCK_MONOTONIC, &t_hw0);
+        swg_ip_regs[SWG_CTRL_AP_CTRL / 4] = 0x01;   // ap_start
         __asm__ __volatile__("" ::: "memory");
 
-        // Tight register polling: eliminates ~7.5 ms/call UIO interrupt latency.
-        // Threads 1-N are parked at the ggml barrier during this window so the
-        // spinning core does not impair other inference threads.
-        if (swiglu_dbg_enabled)
-            fprintf(stderr, "[SWG]   waiting via tight register poll\n");
-        uint32_t ap_ctrl;
-        int tmo = 70000000;  // safety timeout (~7 s at ~100 ns/AXI read)
-        do {
-            ap_ctrl = swg_ip_regs[SWG_CTRL_AP_CTRL / 4];
-        } while ((ap_ctrl & 0x2) == 0 && --tmo > 0);
-        clock_gettime(CLOCK_MONOTONIC, &t1);
-        long elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
-        if ((ap_ctrl & 0x2) == 0) {
-            fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n",
-                    swiglu_call_count, layer);
+        uint32_t irq_count = 0;
+        ssize_t nread = read(swiglu_uio_fd, &irq_count, sizeof(irq_count)); // blocks until IRQ
+        clock_gettime(CLOCK_MONOTONIC, &t_hw1);
+
+        swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;         // clear ap_done (TOW), deassert IRQ line
+        uint32_t uio_reenable = 1;
+        (void)write(swiglu_uio_fd, &uio_reenable, sizeof(uio_reenable)); // re-arm UIO for next call
+
+        uint32_t ap_ctrl = swg_ip_regs[SWG_CTRL_AP_CTRL / 4];
+        if (nread != (ssize_t)sizeof(irq_count) || (ap_ctrl & 0x2) == 0) {
+            fprintf(stderr, "[SWG] ERROR: IP completion not signalled "
+                    "(call #%d layer=%d nread=%zd AP_CTRL=0x%08X)\n",
+                    swiglu_call_count, layer, nread, ap_ctrl);
             GGML_ASSERT(false);
         }
-        if (swiglu_dbg_enabled)
-            fprintf(stderr, "[SWG]   <<< poll done  AP_CTRL=0x%08X  elapsed=%ldms\n",
-                    ap_ctrl, elapsed_ms);
-        swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done (TOW)
 
+        clock_gettime(CLOCK_MONOTONIC, &t_sc0);
         udmabuf_sync_to_cpu(SWG_OUT_OFF, (uint32_t)(bsz * 2048 * sizeof(float)));
-        if (swiglu_dbg_enabled) {
-            const float *out_check = (const float *)((char*)udmabuf_vptr + SWG_OUT_OFF);
-            fprintf(stderr, "[SWG]   out[0..3] (F32): %.4f  %.4f  %.4f  %.4f\n",
-                    out_check[0], out_check[1], out_check[2], out_check[3]);
-            float cksum = 0.f;
-            for (int i = 0; i < (int)(bsz * 2048); i++) cksum += out_check[i];
-            fprintf(stderr, "[SWG]   out_cksum (sum of %d floats): %.6f\n",
-                    (int)(bsz * 2048), cksum);
-        }
+        clock_gettime(CLOCK_MONOTONIC, &t_sc1);
+
+        clock_gettime(CLOCK_MONOTONIC, &t_m0);      // output memcpy: start
         memcpy((char*)dst->data + (size_t)c * 2048 * sizeof(float),
                (char*)udmabuf_vptr + SWG_OUT_OFF,
                (size_t)bsz * 2048 * sizeof(float));
+        clock_gettime(CLOCK_MONOTONIC, &t_m1);      // output memcpy: end
+
+        // --- Precise per-token latency breakdown --------------------------------
+        // Per-call durations of every CPU/FPGA stage, accumulated over the 16 FFN
+        // layers of one decode token. The offload op has n_tasks==1, so this runs
+        // single-threaded and the static accumulators are race-free. The FFN-path
+        // total is quant + program + syncs + FPGA + memcpy; the non-FFN remainder
+        // is (externally measured token latency) minus this total.
+        double us_q  = (t_q1.tv_sec  - t_q0.tv_sec)  * 1e6 + (t_q1.tv_nsec  - t_q0.tv_nsec)  / 1e3;
+        double us_p  = (t_p1.tv_sec  - t_p0.tv_sec)  * 1e6 + (t_p1.tv_nsec  - t_p0.tv_nsec)  / 1e3;
+        double us_sd = (t_sd1.tv_sec - t_sd0.tv_sec) * 1e6 + (t_sd1.tv_nsec - t_sd0.tv_nsec) / 1e3;
+        double ms_hw = (t_hw1.tv_sec - t_hw0.tv_sec) * 1e3 + (t_hw1.tv_nsec - t_hw0.tv_nsec) / 1e6;
+        double us_sc = (t_sc1.tv_sec - t_sc0.tv_sec) * 1e6 + (t_sc1.tv_nsec - t_sc0.tv_nsec) / 1e3;
+        double us_m  = (t_m1.tv_sec  - t_m0.tv_sec)  * 1e6 + (t_m1.tv_nsec  - t_m0.tv_nsec)  / 1e3;
+
+        static double acc_q, acc_p, acc_sd, acc_hw, acc_sc, acc_m;
+        static int    acc_calls, token_idx;
+        acc_q  += us_q;  acc_p  += us_p;  acc_sd += us_sd;
+        acc_hw += ms_hw; acc_sc += us_sc; acc_m  += us_m;
+        acc_calls++;
+
+        // One decode token = 16 offloaded FFN layers; roll up and reset each token.
+        if (acc_calls == 16) {
+            double ffn_ms = acc_q/1e3 + acc_p/1e3 + acc_sd/1e3 + acc_hw + acc_sc/1e3 + acc_m/1e3;
+            if (swiglu_dbg_enabled)
+                fprintf(stderr,
+                        "[SWG] ==== TOKEN #%d (16 layers, ms): quant=%.2f program=%.2f "
+                        "sync_dev=%.2f fpga=%.2f sync_cpu=%.2f memcpy=%.2f | FFN-path total=%.2f ====\n",
+                        token_idx, acc_q/1e3, acc_p/1e3, acc_sd/1e3, acc_hw, acc_sc/1e3, acc_m/1e3, ffn_ms);
+            token_idx++;
+            acc_q = acc_p = acc_sd = acc_hw = acc_sc = acc_m = 0.0;
+            acc_calls = 0;
+        }
     }
 
     swiglu_call_count++;
-    if (swiglu_dbg_enabled) fprintf(stderr, "[SWG] ===== call #%d done =====\n", swiglu_call_count - 1);
 }
 
 static void ggml_compute_forward(struct ggml_compute_params * params, struct ggml_tensor * tensor) {
