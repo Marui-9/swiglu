@@ -121,15 +121,20 @@ static void load_row_wv_urm(const ap_uint<128> *W_wide, int row,
 // load_row_down_urm: load one output row into headers + nibble BRAM tiles.
 // 32 blocks = 4 groups. Headers: 64 DDR words. Nibbles: 256 DDR words.
 // Each nibble DDR word = all 4 groups for one element → 4 BRAM writes at II=1.
+// Sub-scales are packed 8-per-word (ap_uint<64>, byte i = sub-block i): a
+// PIPO channel of 32 words is ~40 dataflow channels instead of ~1150
+// element-channels (complete-partitioned int8 arrays exploded to ~77K LUT /
+// ~114K FF of handshake logic as dataflow channels).  The MAC un-packs with
+// a byte mux; banking by block (cyclic 8) keeps 8 reads/cycle conflict-free.
 static void load_row_down_urm(const ap_uint<128> *Wd_wide, int out_i,
                                ap_uint<32> nib_g0[URM_NIB_TILE_DEPTH],
                                ap_uint<32> nib_g1[URM_NIB_TILE_DEPTH],
                                ap_uint<32> nib_g2[URM_NIB_TILE_DEPTH],
                                ap_uint<32> nib_g3[URM_NIB_TILE_DEPTH],
-                               float   d[DOWN_BLOCKS_PER_ROW],
-                               float   dmin[DOWN_BLOCKS_PER_ROW],
-                               int8_t  sc6[DOWN_BLOCKS_PER_ROW][8],
-                               int8_t  mn6[DOWN_BLOCKS_PER_ROW][8]) {
+                               float      d[DOWN_BLOCKS_PER_ROW],
+                               float      dmin[DOWN_BLOCKS_PER_ROW],
+                               ap_uint<64> sc6w[DOWN_BLOCKS_PER_ROW],
+                               ap_uint<64> mn6w[DOWN_BLOCKS_PER_ROW]) {
 #pragma HLS INLINE off
 
     // ── Load headers: 32 blocks × 2 DDR words = 64 DDR words ────────────────
@@ -142,15 +147,9 @@ static void load_row_down_urm(const ap_uint<128> *Wd_wide, int out_i,
         uint16_t dmin_raw = (uint16_t)w0.range(31, 16);
         d[b]    = fp16_to_fp32(d_raw);
         dmin[b] = fp16_to_fp32(dmin_raw);
-        for (int i = 0; i < 4; i++) {
-            sc6[b][i] = (int8_t)(uint8_t)w0.range(32 + i*8 + 7, 32 + i*8);
-            mn6[b][i] = (int8_t)(uint8_t)w0.range(64 + i*8 + 7, 64 + i*8);
-        }
-        for (int i = 4; i < 8; i++) {
-            int j = i - 4;
-            sc6[b][i] = (int8_t)(uint8_t)w1.range(j*8 + 7, j*8);
-            mn6[b][i] = (int8_t)(uint8_t)w1.range(32 + j*8 + 7, 32 + j*8);
-        }
+        // byte i of sc6w = sub-scale i: lo 4 from w0[63:32], hi 4 from w1[31:0]
+        sc6w[b] = (w1.range(31, 0),  w0.range(63, 32));
+        mn6w[b] = (w1.range(63, 32), w0.range(95, 64));
     }
 
     // ── Load nibbles: 256 DDR words → 4 BRAM tiles, one element per word ────
@@ -360,58 +359,43 @@ static void mac_blocks_wv_k4_urm(
     *result3 = (float)total3 * x_scale;
 }
 
-// mac_blocks_down_q4k_k4_urm: 32 blocks, 4-groups × 4-rows K=4.
-// 16 URAM nibble tiles (4 groups × 4 rows).  Within each group, 4 rows
-// are UNROLL'd → 32 parallel MACs (8 blocks × 4 rows).  4 groups are
-// sequential → DSPs shared, 1024 MAC cycles/4-row iteration.
-// Direct CE accumulation: acc[b][k[r]] += c routes k[r] to FF clock-enable
-// pins (placed locally by Vivado) rather than data-path muxes (which create
-// 64-fanout nets causing 2.4-3.0 ns net delay at 250 MHz).
-static void mac_blocks_down_q4k_k4_urm(
-    // Group 0: 4 rows
+
+
+// mac_blocks_down_q4k_k2_urm: 32 blocks, 4-groups × 2-rows K=2.
+// 8 nibble tiles (4 groups × 2 rows).  Within each group, 2 rows are
+// UNROLL'd → 16 parallel MACs (8 blocks × 2 rows).  4 groups sequential →
+// 1024 MAC cycles/2-row iteration.  Derived from the K=4 version (rows 2/3
+// deleted): with the loop-body DATAFLOW overlap in compute_output the load
+// (~954 cy) and MAC (~1024 cy) are balanced, so the wider K=4 array would
+// idle ~46% even when overlapped — K=2 frees its LUTs instead.
+// Direct CE accumulation idiom preserved (exists for timing closure).
+static void mac_blocks_down_q4k_k2_urm(
     const ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g0r1[URM_NIB_TILE_DEPTH],
-    const ap_uint<32> g0r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g0r3[URM_NIB_TILE_DEPTH],
-    // Group 1: 4 rows
     const ap_uint<32> g1r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g1r1[URM_NIB_TILE_DEPTH],
-    const ap_uint<32> g1r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g1r3[URM_NIB_TILE_DEPTH],
-    // Group 2: 4 rows
     const ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g2r1[URM_NIB_TILE_DEPTH],
-    const ap_uint<32> g2r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g2r3[URM_NIB_TILE_DEPTH],
-    // Group 3: 4 rows
     const ap_uint<32> g3r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g3r1[URM_NIB_TILE_DEPTH],
-    const ap_uint<32> g3r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g3r3[URM_NIB_TILE_DEPTH],
-    // Headers: 4 rows × 32 blocks
+    // Headers: 2 rows × 32 blocks (sub-scales packed 8-per-word)
     const float  d0[DOWN_BLOCKS_PER_ROW], const float  dmin0[DOWN_BLOCKS_PER_ROW],
     const float  d1[DOWN_BLOCKS_PER_ROW], const float  dmin1[DOWN_BLOCKS_PER_ROW],
-    const float  d2[DOWN_BLOCKS_PER_ROW], const float  dmin2[DOWN_BLOCKS_PER_ROW],
-    const float  d3[DOWN_BLOCKS_PER_ROW], const float  dmin3[DOWN_BLOCKS_PER_ROW],
-    const int8_t sc60[DOWN_BLOCKS_PER_ROW][8], const int8_t mn60[DOWN_BLOCKS_PER_ROW][8],
-    const int8_t sc61[DOWN_BLOCKS_PER_ROW][8], const int8_t mn61[DOWN_BLOCKS_PER_ROW][8],
-    const int8_t sc62[DOWN_BLOCKS_PER_ROW][8], const int8_t mn62[DOWN_BLOCKS_PER_ROW][8],
-    const int8_t sc63[DOWN_BLOCKS_PER_ROW][8], const int8_t mn63[DOWN_BLOCKS_PER_ROW][8],
+    const ap_uint<64> sc6w0[DOWN_BLOCKS_PER_ROW], const ap_uint<64> mn6w0[DOWN_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w1[DOWN_BLOCKS_PER_ROW], const ap_uint<64> mn6w1[DOWN_BLOCKS_PER_ROW],
     const int8_t gate[DOWN_BLOCKS_PER_ROW][256],
     float  gate_scale,
-    float *result0, float *result1, float *result2, float *result3)
+    float *result0, float *result1)
 {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=gate dim=1 complete
 
-    fxd_accum_t total0 = 0, total1 = 0, total2 = 0, total3 = 0;
+    fxd_accum_t total0 = 0, total1 = 0;
 
-    // 4 groups sequential (share DSPs), 4 rows UNROLL'd per group
+    // 4 groups sequential (share DSPs), 2 rows UNROLL'd per group
     DOWN_GROUPS: for (int grp = 0; grp < 4; grp++) {
         int32_t acc_w0[8][4], acc_m0[8][4];
         int32_t acc_w1[8][4], acc_m1[8][4];
-        int32_t acc_w2[8][4], acc_m2[8][4];
-        int32_t acc_w3[8][4], acc_m3[8][4];
         #pragma HLS ARRAY_PARTITION variable=acc_w0 dim=0 complete
         #pragma HLS ARRAY_PARTITION variable=acc_m0 dim=0 complete
         #pragma HLS ARRAY_PARTITION variable=acc_w1 dim=0 complete
         #pragma HLS ARRAY_PARTITION variable=acc_m1 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc_w2 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc_m2 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc_w3 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc_m3 dim=0 complete
 
         INIT_GRP: for (int b = 0; b < 8; b++) {
             #pragma HLS UNROLL
@@ -419,28 +403,26 @@ static void mac_blocks_down_q4k_k4_urm(
                 #pragma HLS UNROLL
                 acc_w0[b][k] = 0; acc_m0[b][k] = 0;
                 acc_w1[b][k] = 0; acc_m1[b][k] = 0;
-                acc_w2[b][k] = 0; acc_m2[b][k] = 0;
-                acc_w3[b][k] = 0; acc_m3[b][k] = 0;
             }
         }
 
         MAC_GRP: for (int n = 0; n < 256; n++) {
             #pragma HLS PIPELINE II=1
-            // Per-row copies of index regs to limit fanout across 4 row paths
-            int sub[4], k[4];
+            // Per-row copies of index regs to limit fanout across 2 row paths
+            int sub[2], k[2];
             #pragma HLS ARRAY_PARTITION variable=sub complete
             #pragma HLS ARRAY_PARTITION variable=k complete
-            for (int r = 0; r < 4; r++) {
+            for (int r = 0; r < 2; r++) {
                 #pragma HLS UNROLL
                 sub[r] = n >> 5;
                 k[r]   = n & 3;
             }
 
-            ap_uint<32> w0, w1, w2, w3;
-            if      (grp == 0) { w0 = g0r0[n]; w1 = g0r1[n]; w2 = g0r2[n]; w3 = g0r3[n]; }
-            else if (grp == 1) { w0 = g1r0[n]; w1 = g1r1[n]; w2 = g1r2[n]; w3 = g1r3[n]; }
-            else if (grp == 2) { w0 = g2r0[n]; w1 = g2r1[n]; w2 = g2r2[n]; w3 = g2r3[n]; }
-            else               { w0 = g3r0[n]; w1 = g3r1[n]; w2 = g3r2[n]; w3 = g3r3[n]; }
+            ap_uint<32> w0, w1;
+            if      (grp == 0) { w0 = g0r0[n]; w1 = g0r1[n]; }
+            else if (grp == 1) { w0 = g1r0[n]; w1 = g1r1[n]; }
+            else if (grp == 2) { w0 = g2r0[n]; w1 = g2r1[n]; }
+            else               { w0 = g3r0[n]; w1 = g3r1[n]; }
 
             for (int b = 0; b < 8; b++) {
                 #pragma HLS UNROLL
@@ -448,47 +430,78 @@ static void mac_blocks_down_q4k_k4_urm(
                 ap_int<8>  gi8  = (ap_int<8>)  gate[babs][n];
                 ap_uint<4> nb0  = (ap_uint<4>) w0.range(b*4+3, b*4);
                 ap_uint<4> nb1  = (ap_uint<4>) w1.range(b*4+3, b*4);
-                ap_uint<4> nb2  = (ap_uint<4>) w2.range(b*4+3, b*4);
-                ap_uint<4> nb3  = (ap_uint<4>) w3.range(b*4+3, b*4);
+                // un-pack this sub-block's scale/min byte (8:1 byte mux)
+                int8_t s0 = (int8_t)(uint8_t)(sc6w0[babs] >> (sub[0] * 8));
+                int8_t m0 = (int8_t)(uint8_t)(mn6w0[babs] >> (sub[0] * 8));
+                int8_t s1 = (int8_t)(uint8_t)(sc6w1[babs] >> (sub[1] * 8));
+                int8_t m1 = (int8_t)(uint8_t)(mn6w1[babs] >> (sub[1] * 8));
 
-                int32_t cw0 = (int32_t)(gi8 * (ap_int<5>)nb0 * sc60[babs][sub[0]]);
-                int32_t cm0 = (int32_t)(gi8 * mn60[babs][sub[0]]);
-                int32_t cw1 = (int32_t)(gi8 * (ap_int<5>)nb1 * sc61[babs][sub[1]]);
-                int32_t cm1 = (int32_t)(gi8 * mn61[babs][sub[1]]);
-                int32_t cw2 = (int32_t)(gi8 * (ap_int<5>)nb2 * sc62[babs][sub[2]]);
-                int32_t cm2 = (int32_t)(gi8 * mn62[babs][sub[2]]);
-                int32_t cw3 = (int32_t)(gi8 * (ap_int<5>)nb3 * sc63[babs][sub[3]]);
-                int32_t cm3 = (int32_t)(gi8 * mn63[babs][sub[3]]);
+                int32_t cw0 = (int32_t)(gi8 * (ap_int<5>)nb0 * s0);
+                int32_t cm0 = (int32_t)(gi8 * m0);
+                int32_t cw1 = (int32_t)(gi8 * (ap_int<5>)nb1 * s1);
+                int32_t cm1 = (int32_t)(gi8 * m1);
                 acc_w0[b][k[0]] += cw0;  acc_m0[b][k[0]] += cm0;
                 acc_w1[b][k[1]] += cw1;  acc_m1[b][k[1]] += cm1;
-                acc_w2[b][k[2]] += cw2;  acc_m2[b][k[2]] += cm2;
-                acc_w3[b][k[3]] += cw3;  acc_m3[b][k[3]] += cm3;
             }
         }
 
         REDUCE_GRP: for (int b = 0; b < 8; b++) {
             int babs = grp * 8 + b;
             int32_t sw0 = 0, sm0 = 0, sw1 = 0, sm1 = 0;
-            int32_t sw2 = 0, sm2 = 0, sw3 = 0, sm3 = 0;
             for (int k = 0; k < 4; k++) {
                 #pragma HLS UNROLL
                 sw0 += acc_w0[b][k]; sm0 += acc_m0[b][k];
                 sw1 += acc_w1[b][k]; sm1 += acc_m1[b][k];
-                sw2 += acc_w2[b][k]; sm2 += acc_m2[b][k];
-                sw3 += acc_w3[b][k]; sm3 += acc_m3[b][k];
             }
-            total0 += (fxd_accum_t)(d0[babs]    * (float)sw0 - dmin0[babs] * (float)sm0);
-            total1 += (fxd_accum_t)(d1[babs]    * (float)sw1 - dmin1[babs] * (float)sm1);
-            total2 += (fxd_accum_t)(d2[babs]    * (float)sw2 - dmin2[babs] * (float)sm2);
-            total3 += (fxd_accum_t)(d3[babs]    * (float)sw3 - dmin3[babs] * (float)sm3);
+            total0 += (fxd_accum_t)(d0[babs] * (float)sw0 - dmin0[babs] * (float)sm0);
+            total1 += (fxd_accum_t)(d1[babs] * (float)sw1 - dmin1[babs] * (float)sm1);
         }
     }
     *result0 = (float)total0 * gate_scale;
     *result1 = (float)total1 * gate_scale;
-    *result2 = (float)total2 * gate_scale;
-    *result3 = (float)total3 * gate_scale;
 }
 
+// load_2rows_down: DATAFLOW producer — fills 2 rows' nibble tiles + headers.
+// Two sequential per-row bursts (the 4-way group split of the down layout
+// precludes a merged multi-row burst; see load_row_down_urm).
+static void load_2rows_down(
+    const ap_uint<128> *Wd_wide, int out_i,
+    ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], ap_uint<32> g1r0[URM_NIB_TILE_DEPTH],
+    ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], ap_uint<32> g3r0[URM_NIB_TILE_DEPTH],
+    ap_uint<32> g0r1[URM_NIB_TILE_DEPTH], ap_uint<32> g1r1[URM_NIB_TILE_DEPTH],
+    ap_uint<32> g2r1[URM_NIB_TILE_DEPTH], ap_uint<32> g3r1[URM_NIB_TILE_DEPTH],
+    float d0[DOWN_BLOCKS_PER_ROW], float dmin0[DOWN_BLOCKS_PER_ROW],
+    float d1[DOWN_BLOCKS_PER_ROW], float dmin1[DOWN_BLOCKS_PER_ROW],
+    ap_uint<64> sc6w0[DOWN_BLOCKS_PER_ROW], ap_uint<64> mn6w0[DOWN_BLOCKS_PER_ROW],
+    ap_uint<64> sc6w1[DOWN_BLOCKS_PER_ROW], ap_uint<64> mn6w1[DOWN_BLOCKS_PER_ROW])
+{
+#pragma HLS INLINE off
+    load_row_down_urm(Wd_wide, out_i,     g0r0, g1r0, g2r0, g3r0, d0, dmin0, sc6w0, mn6w0);
+    load_row_down_urm(Wd_wide, out_i + 1, g0r1, g1r1, g2r1, g3r1, d1, dmin1, sc6w1, mn6w1);
+}
+
+// mac_write_down: DATAFLOW consumer — K=2 MAC + write 2 results to out_local.
+static void mac_write_down(
+    const ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g0r1[URM_NIB_TILE_DEPTH],
+    const ap_uint<32> g1r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g1r1[URM_NIB_TILE_DEPTH],
+    const ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g2r1[URM_NIB_TILE_DEPTH],
+    const ap_uint<32> g3r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g3r1[URM_NIB_TILE_DEPTH],
+    const float  d0[DOWN_BLOCKS_PER_ROW], const float  dmin0[DOWN_BLOCKS_PER_ROW],
+    const float  d1[DOWN_BLOCKS_PER_ROW], const float  dmin1[DOWN_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w0[DOWN_BLOCKS_PER_ROW], const ap_uint<64> mn6w0[DOWN_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w1[DOWN_BLOCKS_PER_ROW], const ap_uint<64> mn6w1[DOWN_BLOCKS_PER_ROW],
+    const int8_t gate[DOWN_BLOCKS_PER_ROW][256],
+    float gate_scale,
+    float out_local[VECTOR_DIM], int out_i)
+{
+#pragma HLS INLINE off
+    float r0, r1;
+    mac_blocks_down_q4k_k2_urm(g0r0, g0r1, g1r0, g1r1, g2r0, g2r1, g3r0, g3r1,
+                               d0, dmin0, d1, dmin1, sc6w0, mn6w0, sc6w1, mn6w1,
+                               gate, gate_scale, &r0, &r1);
+    out_local[out_i]     = r0;
+    out_local[out_i + 1] = r1;
+}
 
 // ============================================================================
 // Phase 2 & 3: X1 = x @ W.T  and  X2 = x @ V.T  (Q4_K, K=4, URAM)
@@ -672,12 +685,13 @@ static void compute_gate(
 }
 
 // ============================================================================
-// Phase 5: output = gate @ W_down.T  (Q4_K, K=4, 16 URAM tiles)
+// Phase 5: output = gate @ W_down.T  (Q4_K, K=2, 8 BRAM tiles, overlapped)
 // ============================================================================
-// 4 rows per iteration.  16 URAM nibble tiles (4 groups × 4 rows).
-// Load: 4 sequential calls to load_row_down_urm (one per row).
-// MAC:  4 groups sequential × 4 rows UNROLL'd = 1024 cycles.
-// Total: 1280 (load) + 1024 (MAC) = 2304 cycles/4-rows → 1.57M total.
+// 2 rows per iteration, loop-body DATAFLOW: load_2rows_down (producer) and
+// mac_write_down (consumer) run concurrently on PIPO-doubled tiles, so
+// iteration N's load hides behind iteration N-1's MAC.
+// Load: ~954 cy/2 rows.  MAC: 4 groups sequential × 2 rows UNROLL'd = 1024 cy.
+// Overlapped: max(954, 1024) ≈ 1024 cy/2-rows × 1024 iters → ~1.05M total.
 static void compute_output(
     const uint8_t  *W_down,
     const int8_t   gate_cache[MAX_BATCH][DOWN_BLOCKS_PER_ROW][256],
@@ -698,73 +712,49 @@ static void compute_output(
         float out_local[VECTOR_DIM];
         #pragma HLS BIND_STORAGE variable=out_local type=ram_1p impl=bram
 
-        // 4 groups × 4 rows = 16 BRAM nibble tiles, declared outside loop
-        ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], g0r1[URM_NIB_TILE_DEPTH], g0r2[URM_NIB_TILE_DEPTH], g0r3[URM_NIB_TILE_DEPTH];
-        ap_uint<32> g1r0[URM_NIB_TILE_DEPTH], g1r1[URM_NIB_TILE_DEPTH], g1r2[URM_NIB_TILE_DEPTH], g1r3[URM_NIB_TILE_DEPTH];
-        ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], g2r1[URM_NIB_TILE_DEPTH], g2r2[URM_NIB_TILE_DEPTH], g2r3[URM_NIB_TILE_DEPTH];
-        ap_uint<32> g3r0[URM_NIB_TILE_DEPTH], g3r1[URM_NIB_TILE_DEPTH], g3r2[URM_NIB_TILE_DEPTH], g3r3[URM_NIB_TILE_DEPTH];
-        #pragma HLS BIND_STORAGE variable=g0r0 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g0r1 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g0r2 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g0r3 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g1r0 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g1r1 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g1r2 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g1r3 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g2r0 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g2r1 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g2r2 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g2r3 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g3r0 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g3r1 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g3r2 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g3r3 type=ram_1p impl=bram
+        // K=2 rows/iteration + loop-body DATAFLOW.  The tile/header arrays
+        // declared inside the body become ping-pong (PIPO) channels between
+        // load_2rows_down (producer) and mac_write_down (consumer), so
+        // iteration N's DDR load overlaps iteration N-1's MAC:
+        // per-iteration time -> max(load ~954, MAC ~1024) instead of the sum.
+        DOWN_Q4K: for (int out_i = 0; out_i < VECTOR_DIM; out_i += 2) {
+            #pragma HLS DATAFLOW
+            // 4 groups × 2 rows = 8 BRAM nibble tiles (PIPO-doubled by HLS)
+            ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], g0r1[URM_NIB_TILE_DEPTH];
+            ap_uint<32> g1r0[URM_NIB_TILE_DEPTH], g1r1[URM_NIB_TILE_DEPTH];
+            ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], g2r1[URM_NIB_TILE_DEPTH];
+            ap_uint<32> g3r0[URM_NIB_TILE_DEPTH], g3r1[URM_NIB_TILE_DEPTH];
+            #pragma HLS BIND_STORAGE variable=g0r0 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g0r1 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g1r0 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g1r1 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g2r0 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g2r1 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g3r0 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g3r1 type=ram_1p impl=bram
 
-        // Headers: 4 rows × 32 blocks
-        float  d0[DOWN_BLOCKS_PER_ROW], dmin0[DOWN_BLOCKS_PER_ROW];
-        float  d1[DOWN_BLOCKS_PER_ROW], dmin1[DOWN_BLOCKS_PER_ROW];
-        float  d2[DOWN_BLOCKS_PER_ROW], dmin2[DOWN_BLOCKS_PER_ROW];
-        float  d3[DOWN_BLOCKS_PER_ROW], dmin3[DOWN_BLOCKS_PER_ROW];
-        int8_t sc60[DOWN_BLOCKS_PER_ROW][8], mn60[DOWN_BLOCKS_PER_ROW][8];
-        int8_t sc61[DOWN_BLOCKS_PER_ROW][8], mn61[DOWN_BLOCKS_PER_ROW][8];
-        int8_t sc62[DOWN_BLOCKS_PER_ROW][8], mn62[DOWN_BLOCKS_PER_ROW][8];
-        int8_t sc63[DOWN_BLOCKS_PER_ROW][8], mn63[DOWN_BLOCKS_PER_ROW][8];
-        #pragma HLS ARRAY_PARTITION variable=d0    complete
-        #pragma HLS ARRAY_PARTITION variable=dmin0 complete
-        #pragma HLS ARRAY_PARTITION variable=d1    complete
-        #pragma HLS ARRAY_PARTITION variable=dmin1 complete
-        #pragma HLS ARRAY_PARTITION variable=d2    complete
-        #pragma HLS ARRAY_PARTITION variable=dmin2 complete
-        #pragma HLS ARRAY_PARTITION variable=d3    complete
-        #pragma HLS ARRAY_PARTITION variable=dmin3 complete
-        #pragma HLS ARRAY_PARTITION variable=sc60  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=mn60  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=sc61  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=mn61  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=sc62  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=mn62  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=sc63  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=mn63  dim=0 complete
+            // Headers: 2 rows × 32 blocks.  Sub-scales packed 8-per-word so
+            // each array is ~8 PIPO channels (banked by block for the MAC's
+            // 8 reads/cycle), not 256 element-channels.  d/dmin are read
+            // sequentially in the reduce, so they need no partitioning.
+            float  d0[DOWN_BLOCKS_PER_ROW], dmin0[DOWN_BLOCKS_PER_ROW];
+            float  d1[DOWN_BLOCKS_PER_ROW], dmin1[DOWN_BLOCKS_PER_ROW];
+            ap_uint<64> sc6w0[DOWN_BLOCKS_PER_ROW], mn6w0[DOWN_BLOCKS_PER_ROW];
+            ap_uint<64> sc6w1[DOWN_BLOCKS_PER_ROW], mn6w1[DOWN_BLOCKS_PER_ROW];
+            #pragma HLS ARRAY_PARTITION variable=sc6w0 dim=1 cyclic factor=8
+            #pragma HLS ARRAY_PARTITION variable=mn6w0 dim=1 cyclic factor=8
+            #pragma HLS ARRAY_PARTITION variable=sc6w1 dim=1 cyclic factor=8
+            #pragma HLS ARRAY_PARTITION variable=mn6w1 dim=1 cyclic factor=8
 
-        DOWN_Q4K: for (int out_i = 0; out_i < VECTOR_DIM; out_i += 4) {
-            // Load 4 rows — each populates one group's 4-row URAM tiles
-            load_row_down_urm(W_down_wide, out_i,
-                               g0r0, g1r0, g2r0, g3r0, d0, dmin0, sc60, mn60);
-            load_row_down_urm(W_down_wide, out_i + 1,
-                               g0r1, g1r1, g2r1, g3r1, d1, dmin1, sc61, mn61);
-            load_row_down_urm(W_down_wide, out_i + 2,
-                               g0r2, g1r2, g2r2, g3r2, d2, dmin2, sc62, mn62);
-            load_row_down_urm(W_down_wide, out_i + 3,
-                               g0r3, g1r3, g2r3, g3r3, d3, dmin3, sc63, mn63);
-
-            mac_blocks_down_q4k_k4_urm(
-                g0r0, g0r1, g0r2, g0r3, g1r0, g1r1, g1r2, g1r3,
-                g2r0, g2r1, g2r2, g2r3, g3r0, g3r1, g3r2, g3r3,
-                d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
-                sc60, mn60, sc61, mn61, sc62, mn62, sc63, mn63,
-                gate_cache[0], gate_scale,
-                &out_local[out_i], &out_local[out_i + 1],
-                &out_local[out_i + 2], &out_local[out_i + 3]);
+            load_2rows_down(W_down_wide, out_i,
+                            g0r0, g1r0, g2r0, g3r0,
+                            g0r1, g1r1, g2r1, g3r1,
+                            d0, dmin0, d1, dmin1,
+                            sc6w0, mn6w0, sc6w1, mn6w1);
+            mac_write_down(g0r0, g0r1, g1r0, g1r1, g2r0, g2r1, g3r0, g3r1,
+                           d0, dmin0, d1, dmin1, sc6w0, mn6w0, sc6w1, mn6w1,
+                           gate_cache[0], gate_scale,
+                           out_local, out_i);
         }
         memcpy(out_batch, out_local, VECTOR_DIM * sizeof(float));
     }
