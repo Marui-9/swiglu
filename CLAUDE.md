@@ -6,7 +6,54 @@ Hardware offload of the SwiGLU FFN block from LFM2-1.2B (Liquid AI) onto a Kria 
 (Zynq UltraScale+ ZU5EV). The accelerator is built with Vitis HLS and integrated into
 Vivado, then invoked from llama.cpp by patching `ggml-cpu.c`.
 
-## Current Status (2026-05-20) — URAM-Transposed K=4, Wide-BRAM WV
+## Current Status (2026-07-16) — Load/Compute Overlap (csynth-verified, pre-Vivado)
+
+**Shipped board result** (previous design, still the last measured number): decode
+**2.21 t/s / 452 ms** at T2, 250 MHz (`scripts/results/latest_benchmarks/accel_t2_q4k.log`,
+interrupt build). Per-token split measured directly: **224 ms FPGA + 227 ms non-FFN CPU +
+1.3 ms handoff** — i.e. ~50/50, and the host↔device handoff is <0.3% (see
+`thesis/latest_findings.md`).
+
+**In flight**: three commits (`6c27523`, `d4942c8`, `4493272`) implement load/compute
+overlap; `c35a36d` removes the vestigial Q6_K path. C-sim PASS + csynth-gated at each step.
+**Not yet through Vivado — no board number yet.**
+
+| csynth (Vitis 2025.1) | Before      | After       |
+|-----------------------|-------------|-------------|
+| compute_X1 ∥ X2       | 1,536,001 cy (6.14 ms) | **713,107 cy (2.85 ms)** |
+| compute_output        | 1,622,602 cy (6.49 ms) | **1,282,062 cy (4.27 ms)** |
+| Full call latency     | 3,175,430 cy (12.70 ms) | **2,011,996 cy (8.05 ms)** |
+| LUT estimate / DSP    | 148,042 / 286 | **145,719 / 238** |
+
+How: loop-body `DATAFLOW` in each stage — producer (load) and consumer (MAC) run
+concurrently on HLS-generated PIPO buffers, so per-iteration time is **max(load, MAC)**
+instead of the sum. Stage 5 also dropped to **K=2** (16 lanes): even overlapped, K=4 would
+idle ~46% there (load 958 vs MAC 1250 cy), so halving it funded the buffers. Stages 2a/2b
+keep **K=4** (load 401 vs MAC 356 is balanced; halving would make compute the bound).
+
+**Projected**: ~150 ms FPGA/token → ~378 ms → **~2.6 t/s (+20%)**. Unproven until routed.
+
+**Next**: Vivado impl with `set_clock_uncertainty -setup 0.300` on the PL clock (over-
+constrain to buy real margin — the shipped design closed at only **−0.074 ns WNS**). Do not
+re-run HLS at a relaxed clock: `hls_config.cfg` already targets 3.33 ns / 300 MHz, which is
+stricter than the 250 MHz board clock and is itself margin. 200 MHz fallback still yields
+~2.54 t/s (+15%).
+
+### Two HLS lessons from this work (each cost ~+70K LUT before being caught)
+1. **Complete-partitioned arrays as DATAFLOW channels explode**: an `int8 sc6[32][8]`
+   crossing a dataflow boundary becomes ~1,150 per-element channels (+77K LUT / +114K FF of
+   handshake). Fix: pack sub-scales 8-per-`ap_uint<64>` word (~40 channels).
+2. **Variable shifts synthesize a barrel shifter per site**: `x >> (sub*8)` cost ~160 LUT ×
+   96 sites (+16K). Fix: fully-unrolled compile-time `.range()` unpack into partitioned
+   locals (pure wiring), then indexed reads = 8:1 byte muxes.
+
+---
+
+## Previous Status (2026-05-20) — URAM-Transposed K=4, Wide-BRAM WV
+
+NOTE: the cycle budget below is **two generations stale** (pre-merged-burst): it predates
+both the 320-word merged WV burst documented in the thesis (X1/X2 = 6.14 ms, not 10.4) and
+the overlap above. Trust the csynth table at the top.
 
 **Board result**: 2.20 t/s decode at 250 MHz (-t 4). +5.8% vs hybrid K=2 (2.08 t/s),
 +91% vs CPU (1.15 t/s). Power: 4.83 W (-3.7% vs hybrid).
@@ -84,10 +131,15 @@ CMA=600M, no boot script changes needed.
 | ffn_dim       | 8192   | FFN intermediate dimension       |
 | num_layers    | 16     | Transformer blocks                |
 
-Weight quantization per layer (all 16 blocks):
+Weight quantization per layer (all 16 blocks) — **all-Q4_K by design**:
 - `ffn_gate.weight` (W): Q4_K — all 16 layers
 - `ffn_up.weight`   (V): Q4_K — all 16 layers
-- `ffn_down.weight` (W_down): Q6_K on layers 0,1,4,7,10,13,14,15; Q4_K on 2,3,5,6,8,9,11,12
+- `ffn_down.weight` (W_down): **Q4_K — all 16 layers**
+
+The stock Q4_K_M quantization puts Q6_K on `ffn_down` for some layers; the GGUF used here
+has those **converted to Q4_K to simplify the hardware**, so the accelerator carries no
+Q6_K datapath. Confirmed on board: all 10,432 observed `W_down` tensors were `type=12`
+(Q4_K), `mode=0`. The whole stack now enforces this (see "Q4_K only" below).
 
 ---
 
@@ -123,13 +175,18 @@ All five source files are complete. **C-simulation must be re-run** after the lo
   accumulator gives II≈5. Eight accumulators (each visited every 8 cycles > 5) → II=1.
   Q4_K needs TWO such arrays (acc_w for nibble path, acc_m for min-subtraction path).
 
-- **Pair-processing**: Each READ_PAIR reads exactly N words for 2 blocks (72 for Q4_K,
-  105 for Q6_K) with no loop-carried state. Conditional stream reads create dependencies
-  that prevent II=1.
+- **Q4_K only (2026-07-16)**: the Q6_K datapath is **removed** from the whole stack. The
+  model is all-Q4_K (above), and Q6_K's 210-byte block (13.125 × 128-bit words) admits no
+  clean 2D tile layout. Enforced at three levels: `lfm2.cpp` only emits the fused op for
+  Q4_K `ffn_down` (else CPU fallback); `ggml-cpu.c` asserts on any other type and pins
+  `mode = 0`; `swiglu.cpp` has no Q6_K decode logic. Historical notes below that describe
+  Q6K loops/`decode_mac_q6k`/`mac_blocks_down_q6k` refer to superseded designs.
+  **`down_quant_mode` and its `if (mode == 0)` guard must stay** even though mode is always
+  0: it is the only reference to that argument, and an unreferenced scalar port would be
+  optimized away, shifting `x_scale`'s AXI-Lite offset (0x54) and breaking the driver map.
 
-- **Phase 5 branching**: Two completely separate loops (Q4K and Q6K) selected by
-  `down_quant_mode` AXI-Lite register. This avoids runtime branching inside a pipelined
-  stream-read loop where the word count differs (72 vs 105).
+- **Pair-processing**: Each READ_PAIR reads exactly N words for 2 blocks with no
+  loop-carried state. Conditional stream reads create dependencies that prevent II=1.
 
 - **Three separate URAM arrays**: X1, X2, gate must be separate to avoid read/write port
   conflicts during Phase 4 (X1 and X2 read simultaneously while gate is written).
@@ -290,9 +347,11 @@ Once loaded on first use, weights are never re-copied — only the 8 KB x vector
 ### Trigger Condition and Batch Guard
 
 ```c
-// Outer condition — matches ffn_down MUL_MAT only
+// Outer condition — matches ffn_down MUL_MAT only.
+// NOTE: superseded by the fused-op path (ggml_swiglu_fused_hw emitted in lfm2.cpp);
+// and Q4_K only now — GGML_TYPE_Q6_K is no longer accepted anywhere.
 if (src0->ne[0] == 8192 && src0->ne[1] == 2048 &&
-    (src0->type == GGML_TYPE_Q4_K || src0->type == GGML_TYPE_Q6_K) &&
+    src0->type == GGML_TYPE_Q4_K &&
     src1->type == GGML_TYPE_F32) {
 
     if (ith == 0) {
