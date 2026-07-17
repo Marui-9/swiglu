@@ -25,7 +25,10 @@ llm_build_lfm2<iswa>::llm_build_lfm2(const llama_model & model, const llm_graph_
             model.layers[il].ffn_gate->ne[0] == 2048 && model.layers[il].ffn_gate->ne[1] == 8192 &&
             model.layers[il].ffn_gate->type == GGML_TYPE_Q4_K &&
             model.layers[il].ffn_up->type   == GGML_TYPE_Q4_K &&
-            (model.layers[il].ffn_down->type == GGML_TYPE_Q4_K || model.layers[il].ffn_down->type == GGML_TYPE_Q6_K)) {
+            // Q4_K only: the accelerator has no Q6_K datapath (the model is
+            // quantized all-Q4_K by design).  Any other type falls back to the
+            // standard CPU path rather than reaching the IP.
+            model.layers[il].ffn_down->type == GGML_TYPE_Q4_K) {
             return ggml_swiglu_fused_hw(ctx0,
                 cur,
                 model.layers[il].ffn_gate,

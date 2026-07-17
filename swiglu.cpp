@@ -73,50 +73,16 @@ static float fp16_to_fp32(uint16_t h) {
     union { uint32_t u; float f; } c; c.u = f32; return c.f;
 }
 
-// ─── Byte extractor for 128-bit packed data (Q6K path only) ───────────────────
-static inline uint8_t get_byte(const ap_uint<128>* data, int byte_idx) {
-#pragma HLS INLINE
-    return (uint8_t)data[byte_idx >> 4].range((byte_idx & 0xF) * 8 + 7,
-                                               (byte_idx & 0xF) * 8);
-}
-
 // ============================================================================
 // URAM-transposed load functions
 // ============================================================================
-
-// load_row_wv_urm: load one WV row.  nib_bram is 128-bit wide — each DDR word
-// stored verbatim, 1 write/cycle → guaranteed II=1.  Extraction moves to MAC.
-static void load_row_wv_urm(const ap_uint<128> *W_wide, int row,
-                             ap_uint<128> nib_bram[64],
-                             float   d[WV_BLOCKS_PER_ROW],
-                             float   dmin[WV_BLOCKS_PER_ROW],
-                             int8_t  sc6[WV_BLOCKS_PER_ROW][8],
-                             int8_t  mn6[WV_BLOCKS_PER_ROW][8]) {
-#pragma HLS INLINE off
-    // ── Headers: 16 DDR words, blocks 0..7 ──────────────────────────────────
-    LOAD_HDR_WV: for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
-        #pragma HLS PIPELINE II=1
-        ap_uint<128> w0 = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + b * 2];
-        ap_uint<128> w1 = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + b * 2 + 1];
-        uint16_t d_raw = (uint16_t)w0.range(15, 0), dmin_raw = (uint16_t)w0.range(31, 16);
-        d[b] = fp16_to_fp32(d_raw); dmin[b] = fp16_to_fp32(dmin_raw);
-        for (int i = 0; i < 4; i++) {
-            sc6[b][i] = (int8_t)(uint8_t)w0.range(32 + i*8 + 7, 32 + i*8);
-            mn6[b][i] = (int8_t)(uint8_t)w0.range(64 + i*8 + 7, 64 + i*8);
-        }
-        for (int i = 4; i < 8; i++) {
-            int j = i - 4;
-            sc6[b][i] = (int8_t)(uint8_t)w1.range(j*8 + 7, j*8);
-            mn6[b][i] = (int8_t)(uint8_t)w1.range(32 + j*8 + 7, 32 + j*8);
-        }
-    }
-
-    // ── Nibbles: 1 DDR word → 1 BRAM entry, 1 write/cycle, II=1 ──────────
-    LOAD_NIB_WV: for (int e = 0; e < 64; e++) {
-        #pragma HLS PIPELINE II=1
-        nib_bram[e] = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + URM_WV_HDR_WORDS + e];
-    }
-}
+// Q4_K only.  The Q6_K datapath (and its get_byte() 9:1 multiplexer tree) was
+// removed: the model is quantized all-Q4_K by design, and Q6_K's 210-byte
+// block (13.125 x 128-bit words) does not admit the clean 2D tile layout that
+// makes compile-time .range() nibble extraction free.  The single-row WV loader
+// was likewise dropped when load_4rows_wv_urm subsumed it (merged 320-word
+// burst).  Software mirrors this: the graph builder and driver both accept
+// Q4_K W_down only.
 
 // load_row_down_urm: load one output row into headers + nibble BRAM tiles.
 // 32 blocks = 4 groups. Headers: 64 DDR words. Nibbles: 256 DDR words.
@@ -785,6 +751,11 @@ static void compute_output(
     gate_scale_buf[0] = gate_scale_array[0];
     float gate_scale = gate_scale_buf[0];
 
+    // Guard retained deliberately, though mode is always 0: it is the only
+    // remaining use of down_quant_mode, and an unreferenced scalar argument
+    // would be optimized away — shifting x_scale's AXI-Lite offset (0x54) and
+    // silently breaking the driver's register map.  The driver rejects any
+    // non-Q4_K W_down, so the false branch is unreachable.
     if (down_quant_mode == 0) {
         float out_local[VECTOR_DIM];
         #pragma HLS BIND_STORAGE variable=out_local type=ram_1p impl=bram
