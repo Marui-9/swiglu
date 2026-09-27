@@ -1,0 +1,40 @@
+\chapter*{Abstract} % senza numerazione
+\label{sommario}
+
+\addcontentsline{toc}{chapter}{Abstract} % da aggiungere comunque all'indice
+
+Conversational artificial intelligence on edge devices must satisfy three
+constraints at once: a per-token generation latency low enough for natural
+spoken dialogue, a single-digit-watt power envelope, and local-only execution
+for privacy. Meeting these constraints with a modern transformer-based language
+model on hardware with limited resources is non-trivial, because such models require significant compute, memory, and power.
+
+
+This thesis investigates whether a combination of aggressive quantization and
+selective hardware acceleration can bring a competitive conversational model
+within the edge envelope. The target model is the 1.2-billion-parameter language
+backbone of Liquid AI's LFM2.5-Audio, an end-to-end speech model co-designed for
+efficient CPU inference. Fine-grained profiling of the model on a quad-core
+Arm Cortex-A53 shows that a single kernel, the MatMul + SwiGLU feed-forward
+block, accounts for about 68\% of the per-token runtime. This result motivates a
+heterogeneous design in which only that dominant kernel is offloaded to a custom
+FPGA accelerator on the AMD-Xilinx Kria KV260, while attention, normalization,
+the gated short convolution, and the final projection remain on the CPU.
+
+The accelerator is implemented in Vitis HLS as a five-stage dataflow pipeline
+operating on 4-bit (Q4\_K) weights and 8-bit activations, and is integrated into
+the \texttt{llama.cpp}/\texttt{ggml} inference stack through a fused hardware
+operator with permanent per-layer weight caching, interrupt-driven
+synchronization, and transparent fallback to CPU execution. The design is
+analysed at stage granularity, showing that performance is bound by off-chip
+memory bandwidth rather than arithmetic capacity, and that it operates near the
+device's logic and routing limits (87\% LUT occupancy).
+
+The work includes the model profiling, the
+software integration in \texttt{llama.cpp}, the FPGA accelerator design and
+characterization, a throughput/efficiency study across CPU thread counts
+(T1--T4), and a comparison against an STM32MP257F-DK edge MPU. The accelerated
+path improves performance-per-watt by up to 57\% (prefill) and 44\% (decode) at
+low thread counts and enables sub-500\,ms decode latency with only two active
+CPU threads, while the analysis quantifies the memory-bandwidth, orchestration,
+and routing constraints that bound the attainable throughput.

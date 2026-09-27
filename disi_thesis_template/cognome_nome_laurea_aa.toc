@@ -1,0 +1,37 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Abstract}{2}{}%
+\contentsline {chapter}{\numberline {1}Introduction and Background}{3}{}%
+\contentsline {section}{\numberline {1.1}Introduction}{3}{}%
+\contentsline {section}{\numberline {1.2}Research Question}{3}{}%
+\contentsline {section}{\numberline {1.3}State of the Art}{4}{}%
+\contentsline {subsection}{\numberline {1.3.1}Evolution of Modern AI Models}{4}{}%
+\contentsline {subsection}{\numberline {1.3.2}Real-time and Edge AI Systems}{4}{}%
+\contentsline {subsection}{\numberline {1.3.3}Speech and Conversational Architectures}{4}{}%
+\contentsline {subsection}{\numberline {1.3.4}Edge Speech Systems and On-Device Conversational AI}{5}{}%
+\contentsline {subsection}{\numberline {1.3.5}Profiling of Speech Models for Edge Deployment}{5}{}%
+\contentsline {subsection}{\numberline {1.3.6}Related Work on the Kria KV260 Platform}{6}{}%
+\contentsline {section}{\numberline {1.4}Contributions}{7}{}%
+\contentsline {chapter}{\numberline {2}System Design and FPGA Accelerator}{8}{}%
+\contentsline {section}{\numberline {2.1}Background}{8}{}%
+\contentsline {subsection}{\numberline {2.1.1}The Feed-Forward Block and SwiGLU}{8}{}%
+\contentsline {subsection}{\numberline {2.1.2}The LFM2 Hybrid Backbone}{8}{}%
+\contentsline {section}{\numberline {2.2}Profiling under CPU Execution}{10}{}%
+\contentsline {section}{\numberline {2.3}Orchestration of the Computation Handoff}{11}{}%
+\contentsline {section}{\numberline {2.4}FPGA Accelerator}{12}{}%
+\contentsline {subsection}{\numberline {2.4.1}HLS Realization}{13}{}%
+\contentsline {subsection}{\numberline {2.4.2}Quantization}{14}{}%
+\contentsline {subsection}{\numberline {2.4.3}CPU-Side Weight Pre-Decoding}{15}{}%
+\contentsline {subsection}{\numberline {2.4.4}Stage 1: Load $x$ (INT8)}{16}{}%
+\contentsline {subsection}{\numberline {2.4.5}Stages 2a / 2b: Linear Projections (Parallel)}{16}{}%
+\contentsline {subsection}{\numberline {2.4.6}Stages 3--4: Gated Activation and Quantization}{16}{}%
+\contentsline {subsection}{\numberline {2.4.7}Stage 5: Down Projection}{16}{}%
+\contentsline {chapter}{\numberline {3}Experiments and Discussion}{17}{}%
+\contentsline {section}{\numberline {3.1}Experimental Setup}{17}{}%
+\contentsline {section}{\numberline {3.2}Evaluation Metrics}{17}{}%
+\contentsline {section}{\numberline {3.3}Results}{17}{}%
+\contentsline {section}{\numberline {3.4}Comparison with STM32MP257F-DK}{18}{}%
+\contentsline {section}{\numberline {3.5}Discussion}{19}{}%
+\contentsline {chapter}{\numberline {4}Conclusions and Future Work}{23}{}%
+\contentsline {section}{\numberline {4.1}Conclusions}{23}{}%
+\contentsline {section}{\numberline {4.2}Future Work}{23}{}%
+\contentsline {chapter}{Bibliography}{24}{}%

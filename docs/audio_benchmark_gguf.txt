@@ -1,0 +1,33 @@
+SPEECH TO SPEECH AI BENCHMARK @ 200MS LATENCY - DATA SUMMARY
+from audio_benchmark_valori_reali.png
+AXIS AND COLOR MAPPING
+X-Axis: Model Parameters [Billion]
+Y-Axis: RAM UMA Usage [GB]
+Color Scale: TOPS (Performance Indicator), scaling from lowest (~0.0) to highest (~0.8). Bubble size visually correlates with the TOPS metric.
+
+EXTRACTED DATA POINTS
+
+Model                          | Parameters (B) | RAM (GB) | Context | Bandwidth (GBPS) | TOPS
+----------------------------------------------------------------------------------------------
+OuteTTS-0.2-500M-Q4            | 0.50           | 0.71     | 4096    | 3.6              | 0.03
+Neutts-air-Q8                  | 0.75           | 0.91     | 2048    | 4.3              | 0.02
+LFM2.5-Audio-1.5B-Q4           | 1.18           | 0.29     | 4096    | 3.9              | 0.05
+OuteTTS-0.3-1B-Q4              | 1.18           | 0.76     | 4096    | 15.0             | 0.20
+granite-4.0-micro-Q4           | 3.40           | 0.45     | 8192    | 12.0             | 0.13
+orpheus-3b-0.1-ft-q4           | 3.78           | 1.12     | 4096    | 21.0             | 0.20
+Qwen2-7B-LLM-Q4                | 7.75           | 2.67     | 4096    | 65.0             | 0.80
+Meta-Llama-3.1-8B-Instruct-Q4  | 8.03           | 1.50     | 8192    | 45.0             | 0.60
+granite-3.3-8b-instruct-Q4     | 8.03           | 1.79     | 8192    | 51.0             | 0.71
+MiniCPM-o-4 5-Q4               | 8.20           | 1.58     | 8192    | 48.0             | 0.60
+THUDM_GLM-4-9B-0414-Q4         | 9.40           | 0.83     | 4096    | 34.0             | 0.40
+
+OBSERVED TRENDS
+
+1. Parameter Scale Correlation: Models with higher parameter counts (7.75B - 9.40B) display higher GBPS (34.0 - 65.0) and higher TOPS (0.4 - 0.8) compared to sub-4B models.
+
+2. Resource Extremes:
+   - Maximum Performance & Load: Qwen2-7B-LLM-Q4 achieves the highest TOPS (0.8) and GBPS (65.0), but requires the highest RAM usage (2.67 GB).
+   - Minimum Memory: LFM2.5-Audio-1.5B-Q4 operates with the lowest RAM footprint (0.29 GB).
+   - Minimum Performance: Neutts-air-Q8 registers the lowest TOPS (0.02) and smallest context window (2048).
+
+3. Efficiency Outlier: THUDM_GLM-4-9B-0414-Q4 possesses the highest parameter count (9.40B) but maintains a relatively low RAM usage (0.83 GB) compared to its 7B-8B counterparts, albeit with a lower TOPS (0.4) than other models in its size tier.

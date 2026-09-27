@@ -1,0 +1,66 @@
+\chapter{Conclusions and Future Work}
+\label{cha:conclusioni}
+
+\section{Conclusions}
+\label{sec:conclusion}
+
+This work presented a selective FPGA offload strategy for LFM2.5-1.2B, a model
+co-designed for CPU inference~\cite{amini2025lfm2technicalreport}, targeting the MatMul +
+SwiGLU feed-forward block to enable conversational audio inference pipelines on
+resource-constrained edge platforms. The implementation integrates with the existing
+llama.cpp/ggml flow and demonstrates measurable energy-efficiency gains, especially at low
+and moderate thread counts, while preserving framework compatibility. Although the FPGA
+path does not consistently exceed CPU Only throughput at higher thread counts, the results
+clarify the limiting factors: practical on-device performance is jointly determined by
+compute parallelism, weight/data movement, and host-device orchestration. Importantly, the
+design already operates near the usable logic and routing budget of the target FPGA, so
+further gains are less likely to come from naive parallel replication and more likely from
+memory-path restructuring, overlap of transfers with compute, and tighter stage-level
+balancing (notably in Stages~2a/2b and~5). Overall, the study confirms that selective
+feed-forward acceleration is a viable and energy-effective step toward conversational-level
+edge inference, and provides a concrete roadmap for the next optimizations in
+LFM2.5-Audio-1.5B deployment.
+
+\section{Future Work}
+\label{sec:future}
+
+The deployed design attains 61\% of the 3.6\,t/s design ceiling, with the gap attributed to
+three quantified system-level constraints. Addressing these constraints defines the roadmap
+for future work.
+
+The design exhibits memory-bound behavior, achieving 38--41\% of peak DDR bandwidth at
+34--35\% sustained compute utilization across the projection stages. This is consistent with
+known bottlenecks in autoregressive decoding, where bandwidth utilization typically reaches
+only 29--43\% even on higher-end platforms~\cite{FlightLLM}. Closing this performance gap
+requires improved data movement strategies. Future work will therefore focus on
+memory-centric optimizations, including tiling, double-buffering, and layout restructuring,
+targeting higher sustained bandwidth utilization.
+
+At the system level, host--accelerator overhead limits scalability. In the current design,
+each generated token incurs a fixed synchronous handoff: the CPU programs the accelerator's
+AXI-Lite control registers, issues a start signal, and blocks until a UIO interrupt is
+delivered, a per-token overhead that does not amortize with sequence length and grows under
+host-side scheduler pressure at higher thread counts. In contrast, other co-designed
+frameworks achieve more stable scaling through tighter compiler--runtime
+integration~\cite{cano}. Future work will investigate asynchronous execution and pipelined
+scheduling to reduce synchronization overhead and improve utilization.
+
+Extending hardware coverage beyond the MatMul + SwiGLU block to additional kernels is also a
+key direction for improving end-to-end performance. This will require additional compute
+fabric on the FPGA. Importantly, the design already effectively utilizes the available
+resources on the KV260, and remaining inefficiencies stem primarily from memory and
+system-level constraints, rather than insufficient optimization effort. Similar work pushing
+the same platform to its limit required complex operator fusion and custom data arrangements
+to maximize memory bandwidth~\cite{Li2025Pushing}.
+
+Although the low DSP utilization (20\%) might suggest that mapping the 4-bit $\times$ INT8
+inner product to DSP48E2 slices could free LUT fabric, this substitution was evaluated during
+development and found to increase routing pressure: wider DSP fanout paths introduced
+additional timing-critical nets that impeded timing closure at 250\,MHz. The DSP slice savings
+were therefore insufficient to offset the routing overhead at the current operating point, and
+the LUT-based multiply-accumulate path was retained.
+
+Overall, future improvements will require co-optimization of data movement, scheduling, and
+numerical representation, as well as evaluation on platforms with higher bandwidth and
+resources, bridging the gap between lightweight selective acceleration and more general
+co-design frameworks.

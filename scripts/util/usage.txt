@@ -1,0 +1,32 @@
+Run all commands from repo root (`.../swiglu`).
+
+─── Profiling ──────────────────────────────────────────────────────────
+
+  ./scripts/profiling/run_profile_cpu.sh <threads> [repeat]
+  sudo ./scripts/profiling/run_profile_accel.sh <threads> [repeat]
+
+
+─── Parse power logs ───────────────────────────────────────────────────
+
+  python scripts/profiling/parse_power_logs.py scripts/results/power_cpu_T1.log
+  python scripts/profiling/parse_power_logs.py scripts/results/power_accel_T1.log
+  python scripts/profiling/parse_power_logs.py --power-cpu scripts/results/power_cpu_T1.log --power-accel scripts/results/power_accel_T1.log
+
+
+─── Plotting ───────────────────────────────────────────────────────────
+
+  python scripts/plotting/plot_power_summary.py --input scripts/results/power_summary_T1_T4.csv --output scripts/results/power_summary_T1_T4_avg.png
+  python scripts/plotting/plot_raw_performance.py --input scripts/results/power_summary_T1_T4.csv --output scripts/results/power_summary_T1_T4_raw_perf.png
+  python scripts/plotting/plot_perf_per_watt.py --input scripts/results/power_summary_T1_T4.csv --output scripts/results/power_summary_T1_T4_perf_w.png
+
+
+─── Analysis ───────────────────────────────────────────────────────────
+
+  python scripts/analysis/analyze_throughput.py
+
+
+─── Deploy ─────────────────────────────────────────────────────────────
+
+  ./scripts/deploy/deploy-fabric.sh
+  ./scripts/deploy/reload-full-llama.sh
+  ./scripts/deploy/reload-ggmlcpu.sh

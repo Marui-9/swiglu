@@ -1,213 +1,81 @@
-$ sudo env LLAMA_SWIHW=1 SWIGLU_DEBUG=1 ./bin/llama-bench -m ~/lfm2.5-1.2B-Q4_K.gguf -p 4 -n 32 -t 4 -r 1
-| model                          |       size |     params | backend    | threads |            test |                  t/s |
-| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
-[SWG] ===== HW call #0 layer=0 mode=Q4_K tokens=4 =====
-[SWG]   W_gate ptr=0xffff71e78040  ne=[2048,8192] type=12  nbytes=9437184
-[SWG]   W_up   ptr=0xffff73078040  ne=[2048,8192] type=12  nbytes=9437184
-[SWG]   W_down ptr=0xffff72778040  ne=[8192,2048] type=12  nbytes=9437184
-[SWG]   x      ptr=0xaaaae09c2b60  ne=[2048,4] type=0
-[SWG]   COPY W  layer 0 (9437184 bytes) → udmabuf+0x06D00000
-[SWG]   COPY V  layer 0 (9437184 bytes) → udmabuf+0x0FD00000
-[SWG]   COPY Wd layer 0 (9437184 bytes) → udmabuf+0x18D00000
-[SWG]   phys W=0x0000000041400000  V=0x000000004A400000  Wd=0x0000000053400000
-[SWG]   phys x=0x0000000041350000  out=0x0000000041360000
-[SWG]   AP_CTRL before start = 0x00000204
-[SWG]   token chunk c=0 bsz=1  max_abs=2.0855  x_scale=0.016421
-[SWG]   x[0..3] (INT8): -12 3 0 2
-[SWG]   reprogram W/V/Wd: YES (last_layer=-1 last_mode=0)
-[SWG]   regs: W=0x00000000|41400000  V=0x00000000|4A400000  Wd=0x00000000|53400000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3C868621 (0.016421)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=2  elapsed=0ms
-[SWG]   AP_CTRL after done = 0x00000201
-[SWG]   out[0..3] (F32): 0.0000  0.0000  0.0000  0.0000
-[SWG]   out_cksum (sum of 2048 floats): 0.000000
-[SWG]   token chunk c=1 bsz=1  max_abs=0.8285  x_scale=0.006523
-[SWG]   x[0..3] (INT8): 42 -10 41 -9
-[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=0 last_mode=0)
-[SWG]   regs: W=0x00000000|41400000  V=0x00000000|4A400000  Wd=0x00000000|53400000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3BD5C0F6 (0.006523)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=3  elapsed=19ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): -0.0038  -0.0065  -0.0029  -0.0024
-[SWG]   out_cksum (sum of 2048 floats): -0.256080
-[SWG]   token chunk c=2 bsz=1  max_abs=0.8083  x_scale=0.006365
-[SWG]   x[0..3] (INT8): 37 -22 28 -20
-[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=0 last_mode=0)
-[SWG]   regs: W=0x00000000|41400000  V=0x00000000|4A400000  Wd=0x00000000|53400000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3BD09063 (0.006365)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=4  elapsed=19ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): -0.0133  0.0078  -0.0093  0.0212
-[SWG]   out_cksum (sum of 2048 floats): -0.349467
-[SWG]   token chunk c=3 bsz=1  max_abs=1.1328  x_scale=0.008920
-[SWG]   x[0..3] (INT8): 9 -37 24 -21
-[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=0 last_mode=0)
-[SWG]   regs: W=0x00000000|41400000  V=0x00000000|4A400000  Wd=0x00000000|53400000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3C122482 (0.008920)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=5  elapsed=19ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): 0.0003  0.0243  -0.0125  0.0218
-[SWG]   out_cksum (sum of 2048 floats): -0.466842
-[SWG] ===== call #0 done =====
-[SWG] ===== HW call #1 layer=1 mode=Q4_K tokens=4 =====
-[SWG]   W_gate ptr=0xffff74282040  ne=[2048,8192] type=12  nbytes=9437184
-[SWG]   W_up   ptr=0xffff75482040  ne=[2048,8192] type=12  nbytes=9437184
-[SWG]   W_down ptr=0xffff74b82040  ne=[8192,2048] type=12  nbytes=9437184
-[SWG]   x      ptr=0xaaaae09beb60  ne=[2048,4] type=0
-[SWG]   COPY W  layer 1 (9437184 bytes) → udmabuf+0x07600000
-[SWG]   COPY V  layer 1 (9437184 bytes) → udmabuf+0x10600000
-[SWG]   COPY Wd layer 1 (9437184 bytes) → udmabuf+0x19B00000
-[SWG]   phys W=0x0000000041D00000  V=0x000000004AD00000  Wd=0x0000000054200000
-[SWG]   phys x=0x0000000041350000  out=0x0000000041360000
-[SWG]   AP_CTRL before start = 0x00000004
-[SWG]   token chunk c=0 bsz=1  max_abs=2.6742  x_scale=0.021056
-[SWG]   x[0..3] (INT8): -8 2 0 1
-[SWG]   reprogram W/V/Wd: YES (last_layer=0 last_mode=0)
-[SWG]   regs: W=0x00000000|41D00000  V=0x00000000|4AD00000  Wd=0x00000000|54200000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3CAC7E55 (0.021056)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=6  elapsed=19ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): 0.0007  0.0066  -0.0008  -0.0022
-[SWG]   out_cksum (sum of 2048 floats): -0.191449
-[SWG]   token chunk c=1 bsz=1  max_abs=1.7812  x_scale=0.014025
-[SWG]   x[0..3] (INT8): 16 -7 17 -8
-[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=1 last_mode=0)
-[SWG]   regs: W=0x00000000|41D00000  V=0x00000000|4AD00000  Wd=0x00000000|54200000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3C65C86E (0.014025)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=7  elapsed=19ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): -0.0045  -0.0031  -0.0112  0.0075
-[SWG]   out_cksum (sum of 2048 floats): -0.169729
-[SWG]   token chunk c=2 bsz=1  max_abs=1.1100  x_scale=0.008740
-
-$ sudo env LLAMA_SWIHW=1 SWIGLU_DEBUG=1 ./bin/llama-bench -m ~/lfm2.5-1.2B-Q4_K.gguf -p 4 -n 32 -t 4 -r 1
-| model                          |       size |     params | backend    | threads |            test |                  t/s |
-| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
-[SWG] ===== HW call #0 layer=0 mode=Q4_K tokens=4 =====
-[SWG]   W_gate ptr=0xffff662f8040  ne=[2048,8192] type=12  nbytes=9437184
-[SWG]   W_up   ptr=0xffff674f8040  ne=[2048,8192] type=12  nbytes=9437184
-[SWG]   W_down ptr=0xffff66bf8040  ne=[8192,2048] type=12  nbytes=9437184
-[SWG]   x      ptr=0xaaaad4287b60  ne=[2048,4] type=0
-[SWG]   COPY W  layer 0 (9437184 bytes) → udmabuf+0x06D00000
-[SWG]   COPY V  layer 0 (9437184 bytes) → udmabuf+0x0FD00000
-[SWG]   COPY Wd layer 0 (9437184 bytes) → udmabuf+0x18D00000
-[SWG]   phys W=0x0000000041400000  V=0x000000004A400000  Wd=0x0000000053400000
-[SWG]   phys x=0x0000000041350000  out=0x0000000041360000
-[SWG]   AP_CTRL before start = 0x0000000E
-[SWG]   token chunk c=0 bsz=1  max_abs=2.0855  x_scale=0.016421
-[SWG]   x[0..3] (INT8): -12 3 0 2
-[SWG]   reprogram W/V/Wd: YES (last_layer=-1 last_mode=0)
-[SWG]   regs: W=0x00000000|41400000  V=0x00000000|4A400000  Wd=0x00000000|53400000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3C868621 (0.016421)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=30  elapsed=20ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): -0.0038  -0.0065  -0.0029  -0.0024
-[SWG]   out_cksum (sum of 2048 floats): -0.256080
-[SWG]   token chunk c=1 bsz=1  max_abs=0.8285  x_scale=0.006523
-[SWG]   x[0..3] (INT8): 42 -10 41 -9
-[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=0 last_mode=0)
-[SWG]   regs: W=0x00000000|41400000  V=0x00000000|4A400000  Wd=0x00000000|53400000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3BD5C0F6 (0.006523)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=31  elapsed=19ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): -0.0178  0.0057  -0.0106  -0.0009
-[SWG]   out_cksum (sum of 2048 floats): 0.186213
-[SWG]   token chunk c=2 bsz=1  max_abs=0.8083  x_scale=0.006365
-[SWG]   x[0..3] (INT8): 37 -22 28 -20
-[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=0 last_mode=0)
-[SWG]   regs: W=0x00000000|41400000  V=0x00000000|4A400000  Wd=0x00000000|53400000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3BD09063 (0.006365)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=32  elapsed=19ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): -0.0133  0.0078  -0.0093  0.0212
-[SWG]   out_cksum (sum of 2048 floats): -0.349467
-[SWG]   token chunk c=3 bsz=1  max_abs=1.1328  x_scale=0.008920
-[SWG]   x[0..3] (INT8): 9 -37 24 -21
-[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=0 last_mode=0)
-[SWG]   regs: W=0x00000000|41400000  V=0x00000000|4A400000  Wd=0x00000000|53400000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3C122482 (0.008920)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=33  elapsed=19ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): 0.0003  0.0243  -0.0125  0.0218
-[SWG]   out_cksum (sum of 2048 floats): -0.466842
-[SWG] ===== call #0 done =====
-[SWG] ===== HW call #1 layer=1 mode=Q4_K tokens=4 =====
-[SWG]   W_gate ptr=0xffff68702040  ne=[2048,8192] type=12  nbytes=9437184
-[SWG]   W_up   ptr=0xffff69902040  ne=[2048,8192] type=12  nbytes=9437184
-[SWG]   W_down ptr=0xffff69002040  ne=[8192,2048] type=12  nbytes=9437184
-[SWG]   x      ptr=0xaaaad4283b60  ne=[2048,4] type=0
-[SWG]   COPY W  layer 1 (9437184 bytes) → udmabuf+0x07600000
-[SWG]   COPY V  layer 1 (9437184 bytes) → udmabuf+0x10600000
-[SWG]   COPY Wd layer 1 (9437184 bytes) → udmabuf+0x19B00000
-[SWG]   phys W=0x0000000041D00000  V=0x000000004AD00000  Wd=0x0000000054200000
-[SWG]   phys x=0x0000000041350000  out=0x0000000041360000
-[SWG]   AP_CTRL before start = 0x00000004
-[SWG]   token chunk c=0 bsz=1  max_abs=4.0599  x_scale=0.031967
-[SWG]   x[0..3] (INT8): -4 -3 -6 -2
-[SWG]   reprogram W/V/Wd: YES (last_layer=0 last_mode=0)
-[SWG]   regs: W=0x00000000|41D00000  V=0x00000000|4AD00000  Wd=0x00000000|54200000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3D02F031 (0.031967)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=34  elapsed=19ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): 0.0040  0.0207  -0.0043  0.0101
-[SWG]   out_cksum (sum of 2048 floats): -0.548040
-[SWG]   token chunk c=1 bsz=1  max_abs=3.3858  x_scale=0.026660
-[SWG]   x[0..3] (INT8): 9 3 -1 -3
-[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=1 last_mode=0)
-[SWG]   regs: W=0x00000000|41D00000  V=0x00000000|4AD00000  Wd=0x00000000|54200000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3CDA652A (0.026660)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=35  elapsed=19ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): -0.0112  0.0141  -0.0063  -0.0033
-[SWG]   out_cksum (sum of 2048 floats): -0.203100
-[SWG]   token chunk c=2 bsz=1  max_abs=1.1154  x_scale=0.008782
-[SWG]   x[0..3] (INT8): 17 -15 19 19
-[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=1 last_mode=0)
-[SWG]   regs: W=0x00000000|41D00000  V=0x00000000|4AD00000  Wd=0x00000000|54200000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3C0FE395 (0.008782)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=36  elapsed=19ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): -0.0115  0.0096  -0.0025  -0.0034
-[SWG]   out_cksum (sum of 2048 floats): 0.143409
-[SWG]   token chunk c=3 bsz=1  max_abs=1.6799  x_scale=0.013228
-[SWG]   x[0..3] (INT8): 15 -9 12 7
-[SWG]   reprogram W/V/Wd: NO (cached) (last_layer=1 last_mode=0)
-[SWG]   regs: W=0x00000000|41D00000  V=0x00000000|4AD00000  Wd=0x00000000|54200000
-[SWG]   regs: x=0x00000000|41350000  out=0x00000000|41360000  mode=0  xscale_bits=0x3C58B8CA (0.013228)
-[SWG]   >>> writing ap_start
-[SWG]   waiting via UIO poll (fd=8, timeout=7000ms)
-[SWG]   <<< UIO interrupt  irq_count=37  elapsed=19ms
-[SWG]   AP_CTRL after done = 0x0000020E
-[SWG]   out[0..3] (F32): -0.0132  -0.0010  -0.0072  -0.0089
-[SWG]   out_cksum (sum of 2048 floats): -0.183193
-[SWG] ===== call #1 done =====
-[SWG
-
-
-
+=== FPGA+CPU | T=4 | R=10 ===
+[12:50:55] Running llama-bench (FPGA+CPU)...
+[SWG] ==== TOKEN #0 (16 layers, ms): quant=0.49 program=0.00 sync_dev=0.39 fpga=222.89 sync_cpu=0.51 memcpy=0.12 | FFN-path total=224.39 ====
+[SWG] ==== TOKEN #1 (16 layers, ms): quant=0.43 program=0.00 sync_dev=0.24 fpga=224.17 sync_cpu=0.55 memcpy=0.09 | FFN-path total=225.49 ====
+[SWG] ==== TOKEN #2 (16 layers, ms): quant=0.44 program=0.00 sync_dev=0.22 fpga=223.24 sync_cpu=0.43 memcpy=0.10 | FFN-path total=224.43 ====
+[SWG] ==== TOKEN #3 (16 layers, ms): quant=0.42 program=0.00 sync_dev=0.25 fpga=222.87 sync_cpu=0.42 memcpy=0.09 | FFN-path total=224.05 ====
+[SWG] ==== TOKEN #4 (16 layers, ms): quant=0.44 program=0.00 sync_dev=0.28 fpga=225.52 sync_cpu=0.53 memcpy=0.10 | FFN-path total=226.87 ====
+[SWG] ==== TOKEN #5 (16 layers, ms): quant=0.47 program=0.00 sync_dev=0.27 fpga=222.31 sync_cpu=0.37 memcpy=0.09 | FFN-path total=223.51 ====
+[SWG] ==== TOKEN #6 (16 layers, ms): quant=0.43 program=0.00 sync_dev=0.32 fpga=222.89 sync_cpu=0.57 memcpy=0.08 | FFN-path total=224.29 ====
+[SWG] ==== TOKEN #7 (16 layers, ms): quant=0.42 program=0.00 sync_dev=0.35 fpga=224.28 sync_cpu=0.44 memcpy=0.09 | FFN-path total=225.59 ====
+[SWG] ==== TOKEN #8 (16 layers, ms): quant=0.45 program=0.00 sync_dev=0.26 fpga=224.16 sync_cpu=0.56 memcpy=0.09 | FFN-path total=225.52 ====
+[SWG] ==== TOKEN #9 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.21 fpga=221.96 sync_cpu=0.27 memcpy=0.07 | FFN-path total=222.92 ====
+[SWG] ==== TOKEN #10 (16 layers, ms): quant=0.44 program=0.00 sync_dev=0.22 fpga=223.04 sync_cpu=0.37 memcpy=0.08 | FFN-path total=224.16 ====
+[SWG] ==== TOKEN #11 (16 layers, ms): quant=0.44 program=0.00 sync_dev=0.29 fpga=223.81 sync_cpu=0.51 memcpy=0.08 | FFN-path total=225.13 ====
+[SWG] ==== TOKEN #12 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.29 fpga=222.66 sync_cpu=0.28 memcpy=0.07 | FFN-path total=223.71 ====
+[SWG] ==== TOKEN #13 (16 layers, ms): quant=0.57 program=0.00 sync_dev=0.30 fpga=223.54 sync_cpu=0.38 memcpy=0.08 | FFN-path total=224.88 ====
+[SWG] ==== TOKEN #14 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.32 fpga=225.76 sync_cpu=0.74 memcpy=0.14 | FFN-path total=227.37 ====
+[SWG] ==== TOKEN #15 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.33 fpga=229.38 sync_cpu=0.52 memcpy=0.10 | FFN-path total=231.74 ====
+[SWG] ==== TOKEN #16 (16 layers, ms): quant=0.43 program=0.00 sync_dev=0.27 fpga=223.50 sync_cpu=0.38 memcpy=0.08 | FFN-path total=224.66 ====
+[SWG] ==== TOKEN #17 (16 layers, ms): quant=0.42 program=0.00 sync_dev=0.37 fpga=223.90 sync_cpu=0.40 memcpy=0.08 | FFN-path total=225.17 ====
+[SWG] ==== TOKEN #18 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.30 fpga=224.04 sync_cpu=0.49 memcpy=0.09 | FFN-path total=225.33 ====
+[SWG] ==== TOKEN #19 (16 layers, ms): quant=0.50 program=0.00 sync_dev=0.49 fpga=225.35 sync_cpu=0.73 memcpy=0.10 | FFN-path total=227.17 ====
+[SWG] ==== TOKEN #20 (16 layers, ms): quant=0.44 program=0.00 sync_dev=0.31 fpga=223.24 sync_cpu=0.47 memcpy=0.08 | FFN-path total=224.54 ====
+[SWG] ==== TOKEN #21 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.31 fpga=223.78 sync_cpu=0.41 memcpy=0.08 | FFN-path total=224.99 ====
+[SWG] ==== TOKEN #22 (16 layers, ms): quant=0.50 program=0.00 sync_dev=0.38 fpga=223.65 sync_cpu=0.61 memcpy=0.10 | FFN-path total=225.25 ====
+[SWG] ==== TOKEN #23 (16 layers, ms): quant=0.48 program=0.00 sync_dev=0.31 fpga=225.93 sync_cpu=0.72 memcpy=0.10 | FFN-path total=227.54 ====
+[SWG] ==== TOKEN #24 (16 layers, ms): quant=0.49 program=0.00 sync_dev=0.51 fpga=225.29 sync_cpu=0.57 memcpy=0.14 | FFN-path total=227.00 ====
+[SWG] ==== TOKEN #25 (16 layers, ms): quant=0.47 program=0.00 sync_dev=0.29 fpga=223.24 sync_cpu=0.40 memcpy=0.08 | FFN-path total=224.47 ====
+[SWG] ==== TOKEN #26 (16 layers, ms): quant=0.53 program=0.00 sync_dev=0.45 fpga=223.80 sync_cpu=0.47 memcpy=0.08 | FFN-path total=225.33 ====
+[SWG] ==== TOKEN #27 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.45 fpga=224.95 sync_cpu=0.64 memcpy=0.10 | FFN-path total=226.55 ====
+[SWG] ==== TOKEN #28 (16 layers, ms): quant=0.45 program=0.00 sync_dev=0.53 fpga=226.23 sync_cpu=0.68 memcpy=0.12 | FFN-path total=228.01 ====
+[SWG] ==== TOKEN #29 (16 layers, ms): quant=0.45 program=0.00 sync_dev=0.29 fpga=223.76 sync_cpu=0.42 memcpy=0.10 | FFN-path total=225.03 ====
+[SWG] ==== TOKEN #30 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.42 fpga=223.48 sync_cpu=0.41 memcpy=0.08 | FFN-path total=224.78 ====
+[SWG] ==== TOKEN #31 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.27 fpga=223.87 sync_cpu=0.48 memcpy=0.09 | FFN-path total=225.11 ====
+[SWG] ==== TOKEN #32 (16 layers, ms): quant=0.42 program=0.00 sync_dev=0.30 fpga=225.36 sync_cpu=0.71 memcpy=0.11 | FFN-path total=226.90 ====
+[SWG] ==== TOKEN #33 (16 layers, ms): quant=0.49 program=0.00 sync_dev=0.34 fpga=223.78 sync_cpu=0.35 memcpy=0.08 | FFN-path total=225.04 ====
+[SWG] ==== TOKEN #34 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.40 fpga=223.89 sync_cpu=0.50 memcpy=0.08 | FFN-path total=225.29 ====
+[SWG] ==== TOKEN #35 (16 layers, ms): quant=0.43 program=0.00 sync_dev=0.31 fpga=224.09 sync_cpu=0.51 memcpy=0.08 | FFN-path total=225.42 ====
+[SWG] ==== TOKEN #36 (16 layers, ms): quant=0.56 program=0.00 sync_dev=0.45 fpga=225.81 sync_cpu=0.89 memcpy=0.10 | FFN-path total=227.81 ====
+.......
+[SWG] ==== TOKEN #83 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.28 fpga=225.08 sync_cpu=0.47 memcpy=0.11 | FFN-path total=226.35 ====
+[SWG] ==== TOKEN #84 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.29 fpga=223.82 sync_cpu=0.38 memcpy=0.10 | FFN-path total=224.98 ====
+[SWG] ==== TOKEN #85 (16 layers, ms): quant=0.48 program=0.00 sync_dev=0.61 fpga=223.84 sync_cpu=0.77 memcpy=0.18 | FFN-path total=225.88 ====
+[SWG] ==== TOKEN #86 (16 layers, ms): quant=0.44 program=0.00 sync_dev=0.29 fpga=224.89 sync_cpu=0.56 memcpy=0.13 | FFN-path total=226.31 ====
+[SWG] ==== TOKEN #87 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.25 fpga=224.80 sync_cpu=0.56 memcpy=0.15 | FFN-path total=226.21 ====
+[SWG] ==== TOKEN #88 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.25 fpga=223.84 sync_cpu=0.32 memcpy=0.08 | FFN-path total=224.89 ====
+[SWG] ==== TOKEN #89 (16 layers, ms): quant=0.50 program=0.00 sync_dev=0.29 fpga=223.70 sync_cpu=0.34 memcpy=0.08 | FFN-path total=224.80 ====
+[SWG] ==== TOKEN #90 (16 layers, ms): quant=0.47 program=0.02 sync_dev=0.56 fpga=225.26 sync_cpu=0.56 memcpy=0.09 | FFN-path total=226.32 ====
+[SWG] ==== TOKEN #91 (16 layers, ms): quant=0.44 program=0.00 sync_dev=0.41 fpga=224.34 sync_cpu=0.46 memcpy=0.08 | FFN-path total=225.74 ====
+[SWG] ==== TOKEN #92 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.32 fpga=222.86 sync_cpu=0.26 memcpy=0.07 | FFN-path total=223.93 ====
+[SWG] ==== TOKEN #93 (16 layers, ms): quant=0.45 program=0.00 sync_dev=0.34 fpga=226.35 sync_cpu=0.70 memcpy=0.10 | FFN-path total=227.95 ====
+[SWG] ==== TOKEN #94 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.33 fpga=225.35 sync_cpu=0.60 memcpy=0.10 | FFN-path total=226.79 ====
+[SWG] ==== TOKEN #95 (16 layers, ms): quant=0.44 program=0.00 sync_dev=0.34 fpga=222.90 sync_cpu=0.27 memcpy=0.07 | FFN-path total=224.11 ====
+[SWG] ==== TOKEN #96 (16 layers, ms): quant=0.45 program=0.00 sync_dev=0.38 fpga=224.98 sync_cpu=0.50 memcpy=0.14 | FFN-path total=226.41 ====
+[SWG] ==== TOKEN #97 (16 layers, ms): quant=0.45 program=0.00 sync_dev=0.42 fpga=224.57 sync_cpu=0.57 memcpy=0.09 | FFN-path total=226.10 ====
+[SWG] ==== TOKEN #98 (16 layers, ms): quant=0.52 program=0.00 sync_dev=0.63 fpga=229.61 sync_cpu=0.74 memcpy=0.42 | FFN-path total=231.93 ====
+[SWG] ==== TOKEN #99 (16 layers, ms): quant=0.43 program=0.00 sync_dev=0.30 fpga=223.72 sync_cpu=0.44 memcpy=0.08 | FFN-path total=224.97 ====
+[SWG] ==== TOKEN #100 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.26 fpga=223.43 sync_cpu=0.35 memcpy=0.08 | FFN-path total=224.53 ====
+[SWG] ==== TOKEN #101 (16 layers, ms): quant=0.45 program=0.00 sync_dev=0.35 fpga=224.19 sync_cpu=0.53 memcpy=0.08 | FFN-path total=225.61 ====
+[SWG] ==== TOKEN #102 (16 layers, ms): quant=0.52 program=0.00 sync_dev=0.38 fpga=226.35 sync_cpu=0.74 memcpy=0.14 | FFN-path total=228.14 ====
+[SWG] ==== TOKEN #103 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.26 fpga=224.25 sync_cpu=0.35 memcpy=0.08 | FFN-path total=225.35 ====
+[SWG] ==== TOKEN #104 (16 layers, ms): quant=0.48 program=0.00 sync_dev=0.29 fpga=223.12 sync_cpu=0.32 memcpy=0.10 | FFN-path total=224.31 ====
+[SWG] ==== TOKEN #105 (16 layers, ms): quant=0.45 program=0.00 sync_dev=0.34 fpga=225.60 sync_cpu=0.55 memcpy=0.13 | FFN-path total=227.07 ====
+[SWG] ==== TOKEN #106 (16 layers, ms): quant=0.43 program=0.00 sync_dev=0.28 fpga=224.82 sync_cpu=0.50 memcpy=0.09 | FFN-path total=226.13 ====
+[SWG] ==== TOKEN #107 (16 layers, ms): quant=0.50 program=0.00 sync_dev=0.34 fpga=223.22 sync_cpu=0.43 memcpy=0.08 | FFN-path total=224.58 ====
+[SWG] ==== TOKEN #108 (16 layers, ms): quant=0.44 program=0.00 sync_dev=0.28 fpga=224.15 sync_cpu=0.41 memcpy=0.09 | FFN-path total=225.37 ====
+[SWG] ==== TOKEN #109 (16 layers, ms): quant=0.48 program=0.00 sync_dev=0.59 fpga=225.56 sync_cpu=0.67 memcpy=0.17 | FFN-path total=227.48 ====
+[SWG] ==== TOKEN #110 (16 layers, ms): quant=0.43 program=0.00 sync_dev=0.47 fpga=224.92 sync_cpu=0.58 memcpy=0.09 | FFN-path total=226.49 ====
+[SWG] ==== TOKEN #111 (16 layers, ms): quant=0.42 program=0.00 sync_dev=0.28 fpga=224.24 sync_cpu=0.40 memcpy=0.09 | FFN-path total=225.43 ====
+[SWG] ==== TOKEN #112 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.28 fpga=223.46 sync_cpu=0.41 memcpy=0.09 | FFN-path total=224.66 ====
+[SWG] ==== TOKEN #113 (16 layers, ms): quant=0.42 program=0.00 sync_dev=0.36 fpga=224.05 sync_cpu=0.53 memcpy=0.08 | FFN-path total=225.45 ====
+[SWG] ==== TOKEN #114 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.29 fpga=224.60 sync_cpu=0.55 memcpy=0.09 | FFN-path total=225.94 ====
+[SWG] ==== TOKEN #115 (16 layers, ms): quant=0.43 program=0.00 sync_dev=0.28 fpga=224.82 sync_cpu=0.46 memcpy=0.09 | FFN-path total=226.06 ====
+[SWG] ==== TOKEN #116 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.31 fpga=223.24 sync_cpu=0.38 memcpy=0.08 | FFN-path total=224.41 ====
+[SWG] ==== TOKEN #117 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.26 fpga=223.91 sync_cpu=0.42 memcpy=0.08 | FFN-path total=225.09 ====
+[SWG] ==== TOKEN #118 (16 layers, ms): quant=0.46 program=0.00 sync_dev=0.38 fpga=228.22 sync_cpu=0.79 memcpy=0.11 | FFN-path total=229.96 ====
+[SWG] ==== TOKEN #119 (16 layers, ms): quant=0.47 program=0.00 sync_dev=0.49 fpga=223.44 sync_cpu=0.43 memcpy=0.10 | FFN-path total=224.94 ====
+[SWG] ==== TOKEN #120 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.26 fpga=223.24 sync_cpu=0.30 memcpy=0.07 | FFN-path total=224.28 ====
+[SWG] ==== TOKEN #121 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.25 fpga=223.40 sync_cpu=0.32 memcpy=0.07 | FFN-path total=224.45 ====
+[SWG] ==== TOKEN #122 (16 layers, ms): quant=0.69 program=0.02 sync_dev=0.38 fpga=225.32 sync_cpu=0.83 memcpy=0.10 | FFN-path total=227.34 ====
+[SWG] ==== TOKEN #123 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.32 fpga=225.51 sync_cpu=0.58 memcpy=0.10 | FFN-path total=226.92 ====

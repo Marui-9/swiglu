@@ -1,0 +1,254 @@
+Quantization Strategy and Accuracy Budget for the SwiGLU FPGA Accelerator
+=======================================================================
+Date: 2026-05-16
+Status: Reference document — consolidates all quantization-related findings from
+        the project documentation.
+
+
+1. Overview
+-----------
+The accelerator uses a W4A8 datapath: weights are stored in Q4_K format (4-bit
+nibbles with per-block fp16 scales and 6-bit sub-block scales), while activations
+are quantised to INT8 on the CPU before transfer and intermediate caches use INT8
+with a fixed dequantisation scale. Output is accumulated in FP32 to match the CPU
+reference path. The Q6_K down-projection path is eliminated from the synthesis
+target; all 16 layers use Q4_K for the down-projection weights.
+
+
+2. INT8 Input Quantisation (PS Side)
+-------------------------------------
+The input activation x (FP32, 2048 elements) is quantised to INT8 on the CPU
+using a per-token symmetric scheme before being written to the shared DMA buffer:
+
+    x_scale   = max(|x[i]|) / 127.0
+    x_int8[i] = clamp(round(x[i] / x_scale), -128, 127)
+
+The scale factor is programmed into the IP via the AXI-Lite CTRL register so the
+accelerator can recover FP32 magnitude at the final reduction step. Perplexity
+degradation from this per-token symmetric quantisation is typically less than
+0.5%.
+
+Source: README.md
+
+
+3. INT8 X1 / X2 Intermediate Cache
+-----------------------------------
+The X1_cache and X2_cache arrays (holding the gate and up projection results) are
+stored as INT8 with a fixed dequantisation scale rather than FP32:
+
+    X12_SCALE_RANGE = 10.0f           (covers |X1|, |X2| <= 10 for LFM2)
+    X12_INV_SCALE   = 127.0 / 10.0 = 12.7f     (FP32 -> INT8)
+    X12_QUANT_SCALE = 10.0  / 127.0 ~= 0.0787f (INT8 -> FP32)
+
+Quantisation error at the extremes:
+
+    +-0.5 LSB = +-(10/127)/2 ~= +-0.039  (absolute)
+    Relative at |X1| = 10:  0.04/10 = 0.4%
+    Relative at |X1| =  1:  0.04/1  = 4.0%
+
+This is negligible versus the existing ~6% relative error from Q4_K weight
+quantisation. The INT8 X1/X2 cache adds at most 1% to the total relative error
+budget. Total expected relative error relative to a full-FP32 CPU reference
+stays below 8%.
+
+Fixed scale was chosen over a dynamic two-pass scheme because the latter would
+require either buffering 8192 FP32 values (32 KB, negating the memory saving) or
+re-reading W and V over AXI (an extra 18 MB per call).
+
+Source: docs/integer_transition.txt
+
+
+4. Eliminated Q6_K Down-Projection Path
+----------------------------------------
+The original LFM2-1.2B GGUF file has 8 of 16 layers using Q6_K for the
+down-projection weights (ffn_down). The HLS synthesis target excludes the Q6_K
+path (#ifdef ENABLE_Q6K not defined) because:
+
+- Q6_K blocks are 210 bytes (vs 144 for Q4_K), increasing DDR traffic by 46%
+  and requiring a separate decode path with different nibble/scale extraction
+- The Q6_K extraction loop was load-bound at 6,656 cycles/row (vs 288 for Q4_K)
+- Eliminating Q6_K saved significant LUT/BRAM resources (row_buf, ql/qh/sc
+  buffer arrays) and removed a 5.4M-cycle DATAFLOW bottleneck
+
+The 8 Q6_K layers were requantised to Q4_K_M using llama-quantize:
+
+    ./llama-quantize lfm2-1.2b-f16.gguf lfm2-1.2b-Q4_K_M.gguf Q4_K_M
+
+Perplexity impact is estimated at approximately 0.1 ppl for LFM2 at this model
+size. The Q6_K decode code is preserved under #ifdef ENABLE_Q6K for C-simulation
+validation of the full interface but excluded from the synthesis netlist.
+
+Source: hls_experiments/testblock/changelog.txt (entries 14, 29, 31, 41)
+
+
+5. FP32 Locations That Cannot Be Avoided
+-----------------------------------------
+Three locations in the HLS kernel require FP32 arithmetic and cannot be
+eliminated:
+
+Location                        Why FP32                                       Avoidable?
+------------------------------------------------------------------------------------------
+REDUCE_WV (compute_X1 / X2)     Q4_K dequant: d/dmin are fp16 in GGUF format   No
+compute_gate                    SiLU is non-linear by definition               No
+REDUCE_DOWN (compute_output)    Q4_K dequant of W_down (same fp16 d/dmin)      No
+
+The per-block scale factors d and dmin are stored as fp16 in the GGUF
+quantisation format. They have arbitrary magnitude and include subnormal values
+that cannot be represented in fixed-point without knowing their range in
+advance. The SiLU activation function (z * sigmoid(z)) is non-linear and
+requires FP32 for the sigmoid lookup and multiply.
+
+The dominant LUT cost in synthesis comes not from these FP32 operations but from
+the Q4_K nibble extraction mux trees in the MAC pipeline and the UNPACK header
+decode logic.
+
+Source: docs/floats_explanation.txt
+
+
+6. Subnormal fp16 Handling (Preventing the DAZ Bug)
+----------------------------------------------------
+The Q4_K and Q6_K block formats store per-block scale factors (d, dmin) as fp16.
+Real LFM2 weights contain subnormal fp16 values (e.g., d = 0x00A4 ~ 9.78 x 10^-6).
+
+The standard HLS half-precision type (hls_half) flushes subnormal fp16 values to
+zero during synthesis (Denormals-As-Zero, DAZ). If d or dmin is silently zeroed,
+the entire block's output becomes zero — a catastrophic error that would make
+the accelerator produce incorrect results for layers containing subnormal scales.
+
+The fix is a custom fp16_to_fp32() function implemented entirely via uint32_t
+bit manipulation, which correctly handles:
+- Normal fp16 values (exp != 0, exp != 31): rebias exponent from 15 to 127
+- Subnormal fp16 values (exp == 0, mant != 0): normalise with leading-zero
+  detection loop and adjust exponent accordingly
+- Zero (exp == 0, mant == 0): return signed zero
+- Infinity / NaN (exp == 31): propagate correctly
+
+The ap_fixed<32,8> type was also rejected because its minimum representable
+value (1.53 x 10^-5) is larger than typical subnormal d values (9.78 x 10^-6),
+meaning they would round to zero.
+
+This is a critical correctness issue: the CPU ggml reference uses IEEE 754 fp32
+throughout and does not truncate subnormals. The accelerator must match.
+
+Source: docs/floats_explanation.txt,
+        hls_experiments/testblock/changelog.txt (entry 16),
+        hls_experiments/linear_projection/linear_projection.cpp (fp16_to_fp32)
+
+
+7. C-Simulation Verification
+-----------------------------
+The HLS C-simulation testbench (swiglu_tb.cpp) validates numerical correctness
+with five test cases (T1-T5):
+
+  T1: Q4_K down-path, normal fp16 d values (baseline)
+  T2: Q4_K down-path, subnormal d in W (0x00A4 ~ 9.78 x 10^-6)
+  T3: Q4_K down-path, negative subnormal dmin in V (0x817E)
+  T4: Q6_K down-path, normal fp16 (mode=1, C-sim only)
+  T5: Q6_K down-path, subnormal d in W_down (0x00A4)
+
+Tolerance: 0.1% relative + 1.0 absolute floor. This accounts for 1-16 ULP
+differences arising from the 8-accumulator binary-tree reduction order (which
+differs from the sequential reference sum). A real bug (e.g., DAZ making
+d = 0) produces approximately 100% relative error, well outside the threshold.
+
+All five tests pass on the final hybrid pre-decode implementation (April 2026).
+
+Source: swiglu_tb.cpp,
+        hls_experiments/testblock/changelog.txt (entry 46)
+
+
+8. Consideration of Q4_0 as an Alternative Quantisation Format
+---------------------------------------------------------------
+The Q4_0 format (used by the LFM2 technical report for benchmarking) differs
+from Q4_K in several ways that are relevant to FPGA implementation.
+
+Q4_0 block format (32 elements):
+    [16 bytes nibbles] [2 bytes d (fp16)]
+    Weight = nibble_value x d
+    Total: 18 bytes per block
+
+Q4_K block format (256 elements):
+    [128 bytes nibbles] [4 bytes d/dmin (fp16)] [12 bytes sc6/mn6 interleaved]
+    Weight = nibble_value x sc6[sub] x d - mn6[sub] x dmin
+    Total: 144 bytes per block
+
+Per-row byte count is identical: 8 x 144 (Q4_K) = 64 x 18 (Q4_0) = 1152 bytes
+per W/V row. Total MAC operations are identical (2048 INT8 x INT4 multiplies
+per row). DDR bandwidth is unchanged.
+
+What Q4_0 would simplify for the FPGA:
+
+  a) No triple multiply. Q4_K requires INT8 x INT4 x UINT6, which cannot map
+     to a single DSP48E2 (27 x 18 multiplier). Q4_0 requires only INT8 x INT4,
+     a clean 18 x 18 signed multiply that maps to one DSP48E2 per MAC. The
+     1248 DSPs currently 84% idle would be fully usable.
+
+  b) No nibble extraction mux trees. Q4_K needs approximately 40 get_byte()
+     calls per block for interleaved sc6/mn6 decode at bit-level offsets.
+     Q4_0 reads one fp16 scale per 32-element block with no interleaving
+     and no 6-bit sub-block fields. The mux logic consuming approximately
+     50% of the FPGA's LUTs would be eliminated.
+
+  c) No dmin subtraction path. Q4_0 has a single scale per block, removing
+     the second set of accumulators (int_acc_m) and the subtraction in
+     REDUCE, halving the accumulator array count.
+
+What Q4_0 would complicate:
+
+  a) 8x more blocks per row: W/V goes from 8 to 64 blocks/row, W_down from
+     32 to 256 blocks/row. The MAC unroll structure would need restructuring.
+
+  b) Accuracy penalty: Q4_K was designed to improve over Q4_0 specifically
+     by adding sub-block scales and minimum subtraction. The perplexity
+     degradation from switching to Q4_0 would need measurement via
+     llama-perplexity.
+
+  c) Model requantisation: the existing LFM2 GGUF files use Q4_K_M. A Q4_0
+     version would need to be produced with llama-quantize.
+
+This has not been evaluated experimentally. The Q4_K format is the stable
+target for the current design; Q4_0 exploration would be a separate
+investigation.
+
+Source: hls_experiments/testblock/changelog.txt (entries 13, 22, 29, 41, 43),
+        docs/floats_explanation.txt,
+        docs/integer_transition.txt
+
+
+9. Why an All-Integer Activation Path Was Rejected
+---------------------------------------------------
+An all-integer activation path (INT8 from input to output) would eliminate the
+remaining FP32 operations but was rejected for two reasons:
+
+  a) The SiLU non-linearity is non-linear by definition and requires FP32
+     for the sigmoid lookup and multiply. An INT8 sigmoid LUT would introduce
+     additional quantisation error (approximately 0.4%) that compounds
+     differently from other error sources.
+
+  b) The GGUF format stores per-block scales d and dmin as fp16. These have
+     arbitrary magnitude (including subnormals) and cannot be faithfully
+     represented in a fixed integer range. Eliminating the FP32 dequantisation
+     at REDUCE would require knowing the full range of d values for every
+     layer in advance.
+
+The three FP32 locations (REDUCE, compute_gate, final output multiply) are all
+irreducible given the GGUF format and the mathematical definition of SiLU.
+
+Source: docs/floats_explanation.txt,
+        docs/integer_transition.txt
+
+
+10. Summary of Accuracy Budget
+------------------------------
+Component                             Estimated Degradation        Source
+-----------------------------------------------------------------------------
+Per-token INT8 input quantisation      < 0.5% perplexity            README.md
+INT8 X1/X2 cache (fixed scale)         <= 1% relative error        integer_transition.txt
+Q4_K weight quantisation error          ~ 6% relative error         integer_transition.txt
+Q6_K layers requantised to Q4_K         ~ 0.1 ppl                   changelog.txt
+Subnormal fp16 rounding (DAZ)           prevented (custom fp16)     linear_projection.cpp
+C-sim numerical tolerance               0.1% relative + 1.0 abs     swiglu_tb.cpp
+
+Total relative error vs FP32 CPU reference: expected < 8%, dominated by the
+existing Q4_K weight quantisation error. All C-simulation tests pass with the
+stated tolerance.

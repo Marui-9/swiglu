@@ -1,0 +1,32 @@
+Name     Slack    Levels High... From                                                   To                                                             Total Delay Logic Delay Net Delay
+Path 1   -0.023        5     8   design_1_i/swiglu_0/U0/compute_...U/p_reg_reg/DSP_OUTPUT_INST/CLK design_1_i/swiglu_0/U0/compute_ou...g_reg/DSP_OUTPUT_INST/ALU_OUT[10]       3.932       1.692     2.240
+Path 2   -0.023        5     8   design_1_i/swiglu_0/U0/compute_...U/p_reg_reg/DSP_OUTPUT_INST/CLK design_1_i/swiglu_0/U0/compute_ou...g_reg/DSP_OUTPUT_INST/ALU_OUT[11]       3.932       1.692     2.240
+Path 3   -0.023        5     8   design_1_i/swiglu_0/U0/compute_...U/p_reg_reg/DSP_OUTPUT_INST/CLK design_1_i/swiglu_0/U0/compute_ou...g_reg/DSP_OUTPUT_INST/ALU_OUT[12]       3.932       1.692     2.240
+Path 4   -0.023        5     8   design_1_i/swiglu_0/U0/compute_...U/p_reg_reg/DSP_OUTPUT_INST/CLK design_1_i/swiglu_0/U0/compute_ou...g_reg/DSP_OUTPUT_INST/ALU_OUT[13]       3.932       1.692     2.240
+Path 5   -0.023        5     8   design_1_i/swiglu_0/U0/compute_...U/p_reg_reg/DSP_OUTPUT_INST/CLK design_1_i/swiglu_0/U0/compute_ou...g_reg/DSP_OUTPUT_INST/ALU_OUT[14]       3.932       1.692     2.240
+Path 6   -0.023        5     8   design_1_i/swiglu_0/U0/compute_...U/p_reg_reg/DSP_OUTPUT_INST/CLK design_1_i/swiglu_0/U0/compute_ou...g_reg/DSP_OUTPUT_INST/ALU_OUT[15]       3.932       1.692     2.240
+Path 7   -0.023        5     8   design_1_i/swiglu_0/U0/compute_...U/p_reg_reg/DSP_OUTPUT_INST/CLK design_1_i/swiglu_0/U0/compute_ou...g_reg/DSP_OUTPUT_INST/ALU_OUT[16]       3.932       1.692     2.240
+Path 8   -0.023        5     8   design_1_i/swiglu_0/U0/compute_...U/p_reg_reg/DSP_OUTPUT_INST/CLK design_1_i/swiglu_0/U0/compute_ou...g_reg/DSP_OUTPUT_INST/ALU_OUT[17]       3.932       1.692     2.240
+Path 9   -0.023        5     8   design_1_i/swiglu_0/U0/compute_...U/p_reg_reg/DSP_OUTPUT_INST/CLK design_1_i/swiglu_0/U0/compute_ou...g_reg/DSP_OUTPUT_INST/ALU_OUT[18]       3.932       1.692     2.240
+Path 10  -0.023        5     8   design_1_i/swiglu_0/U0/compute_...U/p_reg_reg/DSP_OUTPUT_INST/CLK design_1_i/swiglu_0/U0/compute_ou...g_reg/DSP_OUTPUT_INST/ALU_OUT[19]       3.932       1.692     2.240
+
+
+Setup
+  Worst Negative Slack (WNS):  -0.023 ns
+  Total Negative Slack (TNS):  -1.699 ns
+  Number of Failing Endpoints: 150
+  Total Number of Endpoints:   308989
+
+Hold
+  Worst Hold Slack (WHS):      0.010 ns
+  Total Hold Slack (THS):      0.000 ns
+  Number of Failing Endpoints: 0
+  Total Number of Endpoints:   308989
+
+Pulse Width
+  Worst Pulse Width Slack (WPWS):            0.520 ns
+  Total Pulse Width Negative Slack (TPWS):   0.000 ns
+  Number of Failing Endpoints:               0
+  Total Number of Endpoints:                 125449
+
+Timing constraints are not met.

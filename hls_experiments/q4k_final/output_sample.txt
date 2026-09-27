@@ -1,0 +1,54 @@
+[SWG] AP_CTRL after done = 0x0000020E
+[SWG] out[0..3] (F32): 3085.1907  3213.1086  2823.6355  3361.5505
+[SWG] out_cksum (sum of 2048 floats): 6460872.500000
+[SWG] token chunk c=4 bsz=1  max_abs=0.5339  x_scale=0.004204
+[SWG] x[0..3] (INT8): 70 70 60 62
+[SWG] reprogram W/V/Wd: NO (cached) (last_layer=11 last_mode=0)
+[SWG] regs: W=0x00000000|6AB00000  V=0x00000000|6B500000  Wd=0x00000000|6BF00000
+[SWG] regs: x=0x00000000|5BD50000  out=0x00000000|5BD60000  mode=0  xscale_bits=0x3B89C43D (0.004204)
+[SWG] >>> writing ap_start
+[SWG] waiting via UIO poll (fd=8, timeout=7000ms)
+[SWG] <<< UIO interrupt  irq_count=2323  elapsed=14ms
+[SWG] AP_CTRL after done = 0x0000020E
+[SWG] out[0..3] (F32): 3084.1599  3211.7466  2822.3738  3360.4490
+[SWG] out_cksum (sum of 2048 floats): 6458491.500000
+[SWG] token chunk c=5 bsz=1  max_abs=0.5626  x_scale=0.004430
+[SWG] x[0..3] (INT8): 67 66 57 59
+[SWG] reprogram W/V/Wd: NO (cached) (last_layer=11 last_mode=0)
+[SWG] regs: W=0x00000000|6AB00000  V=0x00000000|6B500000  Wd=0x00000000|6BF00000
+[SWG] regs: x=0x00000000|5BD50000  out=0x00000000|5BD60000  mode=0  xscale_bits=0x3B912A91 (0.004430)
+[SWG] >>> writing ap_start
+[SWG] waiting via UIO poll (fd=8, timeout=7000ms)
+[SWG] <<< UIO interrupt  irq_count=2324  elapsed=14ms
+[SWG] AP_CTRL after done = 0x0000020E
+[SWG] out[0..3] (F32): 3084.3347  3212.2681  2822.7566  3360.6631
+[SWG] out_cksum (sum of 2048 floats): 6459165.000000
+[SWG] token chunk c=6 bsz=1  max_abs=0.4470  x_scale=0.003519
+[SWG] x[0..3] (INT8): 84 84 71 74
+[SWG] reprogram W/V/Wd: NO (cached) (last_layer=11 last_mode=0)
+[SWG] regs: W=0x00000000|6AB00000  V=0x00000000|6B500000  Wd=0x00000000|6BF00000
+[SWG] regs: x=0x00000000|5BD50000  out=0x00000000|5BD60000  mode=0  xscale_bits=0x3B66A69F (0.003519)
+[SWG] >>> writing ap_start
+[SWG] waiting via UIO poll (fd=8, timeout=7000ms)
+[SWG] <<< UIO interrupt  irq_count=2325  elapsed=14ms
+[SWG] AP_CTRL after done = 0x0000020E
+[SWG] out[0..3] (F32): 3078.5747  3205.0203  2817.0588  3353.8652
+[SWG] out_cksum (sum of 2048 floats): 6446443.000000
+[SWG] token chunk c=7 bsz=1  max_abs=0.4472  x_scale=0.003521
+[SWG] x[0..3] (INT8): 84 84 71 74
+[SWG] reprogram W/V/Wd: NO (cached) (last_layer=11 last_mode=0)
+[SWG] regs: W=0x00000000|6AB00000  V=0x00000000|6B500000  Wd=0x00000000|6BF00000
+[SWG] regs: x=0x00000000|5BD50000  out=0x00000000|5BD60000  mode=0  xscale_bits=0x3B66C5E3 (0.003521)
+[SWG] >>> writing ap_start
+[SWG] waiting via UIO poll (fd=8, timeout=7000ms)
+[SWG] <<< UIO interrupt  irq_count=2326  elapsed=13ms
+[SWG] AP_CTRL after done = 0x0000020E
+[SWG] out[0..3] (F32): 3078.9797  3205.5371  2817.2722  3354.2029
+[SWG] out_cksum (sum of 2048 floats): 6447044.000000
+[SWG] token chunk c=8 bsz=1  max_abs=0.5629  x_scale=0.004432
+[SWG] x[0..3] (INT8): 67 66 57 59
+[SWG] reprogram W/V/Wd: NO (cached) (last_layer=11 last_mode=0)
+[SWG] regs: W=0x00000000|6AB00000  V=0x00000000|6B500000  Wd=0x00000000|6BF00000
+[SWG] regs: x=0x00000000|5BD50000  out=0x00000000|5BD60000  mode=0  xscale_bits=0x3B913A8F (0.004432)
+[SWG] >>> writing ap_start
+[SWG] waiting via UIO poll (fd=8, timeout=7000ms)

@@ -1,0 +1,145 @@
+Performance Improvement Attempts — URAM-Transposed SwiGLU K=4
+==============================================================
+
+Goal: improve decode throughput beyond 2.08 t/s (hybrid K=2 baseline at 250 MHz).
+Final result: 2.20 t/s (+5.8%) at 4.83 W (-3.7% vs 5.01 W hybrid).
+
+Each attempt below targeted the nibble load bottleneck — the 4-write DDR→BRAM fanout
+that limits HLS pipeline initiation interval (II).  All were synthesized and measured.
+
+
+ATTEMPTS THAT FIT AND ARE IN THE FINAL DESIGN
+----------------------------------------------
+
+1. Wide-BRAM nibble storage (entry 62)
+   Change: 4×32-bit BRAM tiles → 1×128-bit BRAM tile.  DDR word stored verbatim.
+   Result: LOAD_NIB_WV achieves II=1 at 67 cycles (was ~256 at II=4).
+   LUT impact: neutral (~34K per compute_X1).
+   Status: APPLIED to WV path.  Board-validated at 2.20 t/s.
+
+2. 128-bit nibble read in MAC (entry 62)
+   Change: MAC reads 128-bit word, slices correct 32-bit element at n&3.
+   Result: ~128 extra LUTs for 4:1 mux.  Zero impact on throughput.
+   Status: APPLIED to WV path.  Board-validated.
+
+
+ATTEMPTS THAT FAILED — II DEGRADATION OR AXI OVERHEAD
+-----------------------------------------------------
+
+3. URAM→BRAM swap (entry 53)
+   Hypothesis: URAM write latency (2-3 cyc) causes II=4.  BRAM (1 cyc) would fix it.
+   Result: Zero change.  The bottleneck is parallel operation COUNT, not latency.
+   Reason: HLS scheduler cannot issue 4 memory writes per pipeline stage regardless
+           of storage technology.  Both URAM and BRAM are single-port (ram_1p).
+
+4. Explicit II=2 pragma (entry 52)
+   Hypothesis: Force HLS to schedule 2 writes per cycle instead of auto-selecting.
+   Result: X1/X2 worsened to 3.12M (+20%).  Pipeline buffering overhead > savings.
+   Reason: HLS adds pipeline registers to hold DDR data across 2 cycles, costing
+           more than the II reduction saves.
+
+5. Two-pass DDR re-read (entry 54, attempted twice with INLINE off and on)
+   Hypothesis: Two separate loops, each writing 2 tiles at II=1, re-reading DDR.
+   Result: X1/X2 ballooned to 3.73-3.75M (+44%).
+   Reason: Two 64-word AXI bursts cost more than one burst at II=4.  The m_axi
+           port serializes the second burst behind the first.  AXI setup overhead
+           (~45 cycles/burst) dominates.
+
+6. INLINE on load function (entry 55)
+   Hypothesis: Eliminate per-call AXI burst setup overhead by inlining into caller.
+   Result: -0.55% improvement (negligible).  LUTs +21% (34K→42K).
+   Reason: Function call overhead was minimal.  Bottleneck is inside the loop body,
+           not the call boundary.
+
+7. 2-slice DDR layout — interleaved (entry 57)
+   Hypothesis: 128 DDR words/row, each writing 2 tiles instead of 4.  II=1 per word.
+   Result: X1/X2 at 3.13M (+20%).
+   Reason: if/else conditional in loop body prevented II=1.  A stride-2 access
+           pattern (alternating even/odd) also prevented burst inference.
+
+8. 2-slice DDR layout — block-separated (entry 58)
+   Hypothesis: Two contiguous bursts (words 0..63 for t0/t1, words 64..127 for
+           t2/t3).  No conditionals, each burst sequential.
+   Result: X1/X2 at 3.75M (+44%, worst result).
+   Reason: Two back-to-back AXI bursts still cost more than one at II=4.
+
+9. Cyclic-4 partition + INLINE (entry 60)
+   Hypothesis: Partition nib_bram cyclic factor=4 so HLS proves 4 writes target
+           4 distinct banks.  INLINE to expose partition to scheduler.
+   Result: X1/X2 at 2.59M (-0.55%).  Same as INLINE alone.
+   Reason: HLS scheduler still counts 4 memory operations per cycle.  Bank
+           independence proof does not override operation count limit.
+
+10. Stream-decoupled DATAFLOW (entry 59)
+    Hypothesis: Producer (AXI→FIFO) at II=1, consumer (FIFO→BRAM) decoupled.
+    Result: X1/X2 unchanged at 2.60M.
+    Reason: Consumer alone still cannot schedule 4 BRAM writes at II=1.  The
+            AXI state machine was never the bottleneck — pure 4-write fanout is.
+
+11. fp16_to_fp32 INLINE (entry 62 follow-up)
+    Hypothesis: INLINE the fp16 decode to enable II=1 in HDR_ALL header loop.
+    Result: AXI bus conflict warning.  Two DDR reads per header block cannot
+            share one port at II=1.  II=2 is a hardware limit, not fp16 latency.
+
+
+ATTEMPTS THAT FAILED — DEVICE CAPACITY
+--------------------------------------
+
+12. Merged 4-row WV load (entry 62)
+    Hypothesis: One function, one 320-word AXI burst, 2 pipeline instances
+            (HDR_ALL + NIB_ALL with if/else routing).  Saves 3 AXI setups.
+    Result: X1/X2 at 1.62M (-37.6%), but LUTs +14K (34K→41K per compute_X1).
+            Total HLS LUTs 138K = 118% → Vivado DRC fails.
+    Reason: 4-way if/else header routing per iteration costs ~14K extra LUTs.
+            ZU5EV's 117K LUT budget cannot fit K=4 with merged loads.
+
+13. Wide-BRAM output load (entry 62)
+    Hypothesis: Same wide-BRAM pattern applied to output path.  4×128-bit tiles
+            instead of 16×32-bit.  Merged 1280-word burst, 2 pipeline instances.
+    Result: X1/X2 unchanged.  Output: 1.57M → 1.32M (-15.5%).  But Vivado routing
+            fails with 74,247 node overlaps, 58,522 unrouted signals.
+    Reason: 4×128-bit BRAM reads + 32 gate reads + 32 sc6/mn6 reads per MAC cycle
+            creates interconnect density ZU5EV fabric cannot route at 250 MHz.
+
+14. UNROLL output MAC groups (entry 56)
+    Hypothesis: UNROLL the 4 sequential group iterations for 4× MAC throughput.
+    Result: Output: -1.8% cycles, LUTs +102% (44K→89K), DSPs +155% (124→316).
+    Reason: Output bottleneck is the 320-cycle nibble load, not the 1024-cycle MAC.
+
+
+FUNDAMENTAL CEILINGS IDENTIFIED
+-------------------------------
+
+A. HLS scheduler: 4 memory writes per pipeline stage cannot achieve II=1 in
+   Vitis HLS 2025.1.  Not fixable with pragmas, partitioning, INLINE, BRAM
+   technology, or stream decoupling.  10 distinct architectures all converge
+   to the same result.  This is a tool limitation; hand-crafted RTL could
+   fan out to 4 BRAMs at II=1.
+
+B. AXI burst serialization: One DDR burst at II=4 beats multiple bursts at
+   II=1.  AXI setup overhead (~45 cycles/burst) dominates per-cycle II savings.
+   Every multi-burst approach (two-pass, two-burst, block-separated) performed
+   worse than the original single-burst design.
+
+C. LUT budget: K=4 merged loads need ~130K+ LUTs.  ZU5EV has 117K.  The merged
+   load (entry 62) achieves 1.62M X1/X2 in HLS but cannot fit the device.
+   A ZU7EV (~230K LUTs) could fit it.
+
+D. Routing congestion: 128-bit BRAM reads × 32 blocks in the output MAC create
+   interconnect density beyond ZU5EV routing capacity at 250 MHz.
+
+E. Amdahl's Law: FPGA accelerates FFN (~68% of total).  Non-SwiGLU CPU overhead
+   (~125 ms/token) is fixed.  Absolute ceiling at 250 MHz: ~3.6 t/s.
+   Current 2.20 t/s achieves 61% of theoretical maximum.
+
+
+FINAL CONFIGURATION
+-------------------
+
+WV path:  wide-BRAM (128-bit), per-row calls (load_row_wv_urm × 4), II=1 nibble load
+Output:   32-bit tiles (16 total), per-row calls (load_row_down_urm × 4)
+MAC:      K=4 (32 chains WV, 4 groups × 8 blocks output)
+Clock:    250 MHz (3.33 ns HLS target, 0.1 ns uncertainty)
+LUTs:     ~125K HLS → ~103K Vivado (88%)
+Power:    4.83 W
+Decode:   2.20 t/s (+5.8% vs hybrid K=2, +91% vs CPU)

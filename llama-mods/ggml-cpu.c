@@ -61,27 +61,15 @@ static int swiglu_call_count = 0;
 static int swiglu_dbg_enabled = -1;
 
 #define SWG_NUM_LAYERS 16
-static bool swg_layer_W_loaded [SWG_NUM_LAYERS];
-static bool swg_layer_V_loaded [SWG_NUM_LAYERS];
-static bool swg_layer_Wd_loaded[SWG_NUM_LAYERS];
 static int      swg_last_prog_layer = -1;
 static uint32_t swg_last_prog_mode  = 0;
 
-// udmabuf layout (640 MB pool)
-#define UDMABUF_SIZE        671088640U
+// udmabuf layout (512 MB pool — fits cma=600M, no boot script fix needed)
+#define UDMABUF_SIZE        536870912U
 #define SWG_MAX_BATCH       1    // tokens per IP call (must match HLS MAX_BATCH=1)
 #define SWG_MAX_TOKENS     64   // max tokens per fused op (looped in SWG_MAX_BATCH chunks)
 #define SWG_VEC_OFF         0x06C50000U  // x INT8
 #define SWG_OUT_OFF         0x06C60000U  // out F32
-#define SWG_LAYER_W_BASE    0x06D00000U  // gate
-#define SWG_LAYER_V_BASE    0x0FD00000U  // up
-#define SWG_LAYER_WD_BASE   0x18D00000U  // down
-#define SWG_LAYER_W_STRIDE  0x00900000U  // Q4_K size
-#define SWG_LAYER_V_STRIDE  0x00900000U
-#define SWG_LAYER_WD_STRIDE 0x00E00000U  // padded for Q6_K
-#define SWG_LAYER_W_OFF(i)  (SWG_LAYER_W_BASE  + (uint32_t)(i) * SWG_LAYER_W_STRIDE)
-#define SWG_LAYER_V_OFF(i)  (SWG_LAYER_V_BASE  + (uint32_t)(i) * SWG_LAYER_V_STRIDE)
-#define SWG_LAYER_WD_OFF(i) (SWG_LAYER_WD_BASE + (uint32_t)(i) * SWG_LAYER_WD_STRIDE)
 #define SWG_OUTPUT_SIZE     8192U        // 2048 floats
 
 // IP CTRL register offsets
@@ -106,6 +94,35 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_CTRL_OUT_HI  0x44  // gmem_out base hi
 #define SWG_CTRL_MODE    0x4C  // 0=Q4_K (1=Q6_K requires ENABLE_Q6K build)
 #define SWG_CTRL_XSCALE  0x54  // float bits
+
+// Permanent per-layer pre-decode cache.  16 slots, populated on first use.
+// Fits within 512 MB UDMABUF (works with cma=600M — no boot script fix needed).
+// Per matrix: ~10 MB. Per layer: 30 MB (packed).
+// 16 layers × 30 MB = 480 MB.  Base at 16 MB → max ~496 MB.
+#define SWG_LAYER_BASE         0x01000000U
+#define SWG_LAYER_STRIDE       0x01E00000U   // 30 MB per layer
+#define SWG_LAYER_W_OFF(l)     (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x00000000U)
+#define SWG_LAYER_V_OFF(l)     (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x00A00000U)
+#define SWG_LAYER_WD_OFF(l)    (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x01400000U)
+#define WV_BLOCKS_PER_ROW      8
+#define DOWN_BLOCKS_PER_ROW    32
+// ─── URAM-transposed layout constants ─────────────────────────────────────────
+// On-chip URAM stores nibbles element-major: nib_urm[n] = 32-bit word containing
+// nibbles at element n for all 8 blocks in one group. This eliminates the FPGA
+// get_byte() mux entirely — MAC extracts nibbles at compile-time .range() positions.
+//
+// DDR row layout (same byte count as hybrid, different nibble order):
+//   Headers: [blocks_per_row][32] — d(2)+dmin(2)+sc6[8]+mn6[8]+pad(12) per block
+//   Nibbles: [256 * groups * 4]    — element-major, 4 groups Ø 32-bit words per elem
+//     DDR word e = {grp3_nib[31:0], grp2_nib[31:0], grp1_nib[31:0], grp0_nib[31:0]}
+//     for element e. grp_k_nib.range(b*4+3, b*4) = nibble for block (k*8+b) at element e.
+#define URM_HDR_BYTES 32     // d(2)+dmin(2)+sc6[8]+mn6[8]+pad(12)
+
+// transposed DDR words per row = header_words + nibble_words
+// headers: blocks_per_row * URM_HDR_BYTES / 16
+// nibbles: 256 * groups * 4 / 16 = 64 * groups, where groups = blocks_per_row / 8
+
+static bool swg_layer_cached[SWG_NUM_LAYERS];
 
 static void udmabuf_sync_to_device(uint32_t offset, uint32_t size) {
     if (sync_offset_fd >= 0 && sync_size_fd >= 0) {
@@ -151,6 +168,89 @@ static void reformat_q6k_to_fieldsplit(const uint8_t *src, uint8_t *dst, int n_r
             memcpy(dst_qh + b * 64,  blk + 128,  64);
             memcpy(dst_sc + b * 16,  blk + 192,  16);
             memcpy(dst_d  + b * 2,   blk + 208,   2);
+        }
+    }
+}
+
+// transpose_q4k_to_urm: convert Q4_K packed weights to URAM-transposed DDR layout.
+//
+// On-chip URAM stores nibbles element-major: one 32-bit word per element contains
+// nibbles for all 8 blocks in a group at that element index.  DDR packs 4 consecutive
+// element-slices per 128-bit word for the WV path, or 4 group-slices per 128-bit word
+// for the output path.
+//
+// DDR row layout (same total byte count as 160-byte/block hybrid):
+//   Headers: blocks_per_row * 32 B  — block-major: d(2)+dmin(2)+sc6[8]+mn6[8]+pad(12)
+//   Nibbles: 256 * groups * 4 B       — element-major, groups = blocks_per_row/8
+//     WV:   64 DDR words, each = 4 element-slices × 32 bits (fully packed)
+//     Out: 256 DDR words, each = 4 group-slices   × 32 bits (fully packed)
+//
+// Run once per layer on first use.  Permanently cached in udmabuf.
+static void transpose_q4k_to_urm(const uint8_t *src, uint8_t *dst,
+                                  int n_rows, int blocks_per_row) {
+    const int src_block_bytes = 144;
+    const int groups = blocks_per_row / 8;          // 1 for WV, 4 for W_down
+    const int row_hdr   = blocks_per_row * URM_HDR_BYTES;   // header bytes per row
+    const int row_nib   = 256 * groups * 4;                  // nibble bytes per row
+    const int row_stride = row_hdr + row_nib;
+
+    for (int row = 0; row < n_rows; row++) {
+        // ── Headers: block-major, 32 bytes per block ────────────────────────────
+        for (int b = 0; b < blocks_per_row; b++) {
+            const uint8_t *blk = src + ((size_t)row * blocks_per_row + b) * src_block_bytes;
+            uint8_t *hdr = dst + (size_t)row * row_stride + (size_t)b * URM_HDR_BYTES;
+
+            // d/dmin fp16: verbatim copy (bytes 0-3)
+            hdr[0] = blk[0]; hdr[1] = blk[1];
+            hdr[2] = blk[2]; hdr[3] = blk[3];
+
+            // sc6[0..7] and mn6[0..7]: decode interleaved 6-bit → flat INT8
+            for (int i = 0; i < 4; i++) {
+                hdr[4  + i] = blk[4 + i] & 0x3F;
+                hdr[12 + i] = blk[8 + i] & 0x3F;
+            }
+            for (int i = 4; i < 8; i++) {
+                int j = i - 4;
+                hdr[4  + i] = (blk[12 + j] & 0x0F) | (uint8_t)((blk[4 + j] >> 6) << 4);
+                hdr[12 + i] = (blk[12 + j] >> 4)   | (uint8_t)((blk[8 + j] >> 6) << 4);
+            }
+            // Padding: bytes 20-31 = 0
+            memset(hdr + 20, 0, 12);
+        }
+
+        // ── Nibbles: element-major, transposed across blocks ────────────────────
+        // WV  (groups=1):  64 DDR words, each = 4 element-slices × 32 bits.
+        //     HLS fans out to 4 interleaved BRAM tiles.
+        // Out (groups=4): 256 DDR words, each = all 4 groups for ONE element.
+        //     HLS fans out to 4 group BRAM tiles for II=1 load.
+        for (int g = 0; g < groups; g++) {
+            for (int n = 0; n < 256; n++) {
+                // One 32-bit word: nibbles for blocks g*8 .. g*8+7 at element n
+                uint32_t nib32 = 0;
+                for (int b = 0; b < 8; b++) {
+                    const uint8_t *blk = src + ((size_t)row * blocks_per_row
+                                                + (size_t)g * 8 + (size_t)b) * src_block_bytes;
+                    int q_byte = 16 + (n & 31) + ((n & 0xC0) >> 1);
+                    int shift  = (n & 32) ? 4 : 0;
+                    uint32_t nib = (blk[q_byte] >> shift) & 0xF;
+                    nib32 |= (nib << (b * 4));
+                }
+
+                if (groups == 1) {
+                    // WV: pack 4 element-slices per DDR word (elements 4e..4e+3)
+                    int e   = n >> 2;          // DDR word index
+                    int s   = n & 3;           // slot within DDR word
+                    uint8_t *nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
+                    uint32_t *ddr32 = (uint32_t *)(nib_base + (size_t)e * 16);
+                    ddr32[s] = nib32;
+                } else {
+                    // Output: one DDR word per element, packing all 4 groups
+                    int slot = g;              // group index (0..3)
+                    uint8_t *nib_base = dst + (size_t)row * row_stride + (size_t)row_hdr;
+                    uint32_t *ddr32 = (uint32_t *)(nib_base + (size_t)n * 16);
+                    ddr32[slot] = nib32;
+                }
+            }
         }
     }
 }
@@ -1937,58 +2037,28 @@ static void ggml_compute_forward_swiglu_fused_hw(
     }
     size_t down_bytes = ggml_nbytes(W_down);
     uint32_t mode = (down_bytes > 9437184UL) ? 1 : 0; // Q6_K threshold
-    size_t gate_bytes = ggml_nbytes(W_gate);
-    size_t up_bytes   = ggml_nbytes(W_up);
-
-    if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG] ===== HW call #%d layer=%d mode=%s tokens=%d =====\n",
-                swiglu_call_count, layer, mode ? "Q6_K" : "Q4_K", total_tokens);
-        fprintf(stderr, "[SWG]   W_gate ptr=%p  ne=[%d,%d] type=%d  nbytes=%zu\n",
-                W_gate->data, (int)W_gate->ne[0], (int)W_gate->ne[1], (int)W_gate->type, gate_bytes);
-        fprintf(stderr, "[SWG]   W_up   ptr=%p  ne=[%d,%d] type=%d  nbytes=%zu\n",
-                W_up->data,   (int)W_up->ne[0],   (int)W_up->ne[1],   (int)W_up->type,   up_bytes);
-        fprintf(stderr, "[SWG]   W_down ptr=%p  ne=[%d,%d] type=%d  nbytes=%zu\n",
-                W_down->data, (int)W_down->ne[0], (int)W_down->ne[1], (int)W_down->type, down_bytes);
-        fprintf(stderr, "[SWG]   x      ptr=%p  ne=[%d,%d] type=%d\n",
-                x->data, (int)x->ne[0], (int)x->ne[1], (int)x->type);
-    }
-
-    bool copied_W = false, copied_V = false, copied_Wd = false;
-    if (!swg_layer_W_loaded[layer]) {
-        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   COPY W  layer %d (%zu bytes) → udmabuf+0x%08X\n", layer, gate_bytes, SWG_LAYER_W_OFF(layer));
-        memcpy((char*)udmabuf_vptr + SWG_LAYER_W_OFF(layer), W_gate->data, gate_bytes);
-        swg_layer_W_loaded[layer] = true;
-        copied_W = true;
-    } else if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG]   W  layer %d: already cached\n", layer);
-    }
-    if (!swg_layer_V_loaded[layer]) {
-        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   COPY V  layer %d (%zu bytes) → udmabuf+0x%08X\n", layer, up_bytes, SWG_LAYER_V_OFF(layer));
-        memcpy((char*)udmabuf_vptr + SWG_LAYER_V_OFF(layer), W_up->data, up_bytes);
-        swg_layer_V_loaded[layer] = true;
-        copied_V = true;
-    } else if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG]   V  layer %d: already cached\n", layer);
-    }
-    if (!swg_layer_Wd_loaded[layer]) {
-        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   COPY Wd layer %d (%zu bytes) → udmabuf+0x%08X\n", layer, down_bytes, SWG_LAYER_WD_OFF(layer));
+    // Pre-decode Q4_K to hybrid format.  Cached permanently per layer.
+    // First token pays ~10 ms/layer (160 ms total). Subsequent tokens skip entirely.
+    if (!swg_layer_cached[layer]) {
+        transpose_q4k_to_urm((const uint8_t *)W_gate->data,
+                              (uint8_t *)udmabuf_vptr + SWG_LAYER_W_OFF(layer),
+                              (int)W_gate->ne[1], WV_BLOCKS_PER_ROW);
+        transpose_q4k_to_urm((const uint8_t *)W_up->data,
+                              (uint8_t *)udmabuf_vptr + SWG_LAYER_V_OFF(layer),
+                              (int)W_up->ne[1], WV_BLOCKS_PER_ROW);
         if (W_down->type == GGML_TYPE_Q6_K) {
-            // Reformat from GGUF interleaved blocks to field-split layout so the
-            // FPGA can burst ql/qh/sc/d directly without the 6656-cycle extraction loop.
             reformat_q6k_to_fieldsplit((const uint8_t *)W_down->data,
                                        (uint8_t *)udmabuf_vptr + SWG_LAYER_WD_OFF(layer),
-                                       (int)W_down->ne[1]);  // ne[1] = 2048 rows
+                                       (int)W_down->ne[1]);
         } else {
-            memcpy((char*)udmabuf_vptr + SWG_LAYER_WD_OFF(layer), W_down->data, down_bytes);
+            transpose_q4k_to_urm((const uint8_t *)W_down->data,
+                                  (uint8_t *)udmabuf_vptr + SWG_LAYER_WD_OFF(layer),
+                                  (int)W_down->ne[1], DOWN_BLOCKS_PER_ROW);
         }
-        swg_layer_Wd_loaded[layer] = true;
-        copied_Wd = true;
-    } else if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG]   Wd layer %d: already cached\n", layer);
+
+        udmabuf_sync_to_device(SWG_LAYER_W_OFF(layer), SWG_LAYER_STRIDE);
+        swg_layer_cached[layer] = true;
     }
-    if (copied_W)  udmabuf_sync_to_device(SWG_LAYER_W_OFF(layer),  (uint32_t)gate_bytes);
-    if (copied_V)  udmabuf_sync_to_device(SWG_LAYER_V_OFF(layer),  (uint32_t)up_bytes);
-    if (copied_Wd) udmabuf_sync_to_device(SWG_LAYER_WD_OFF(layer), (uint32_t)down_bytes);
 
     uint64_t phys_W  = udmabuf_phys_base + SWG_LAYER_W_OFF(layer);
     uint64_t phys_V  = udmabuf_phys_base + SWG_LAYER_V_OFF(layer);
@@ -1997,20 +2067,13 @@ static void ggml_compute_forward_swiglu_fused_hw(
     uint64_t phys_x_base   = udmabuf_phys_base + SWG_VEC_OFF;
     uint64_t phys_out_base = udmabuf_phys_base + SWG_OUT_OFF;
 
-    if (swiglu_dbg_enabled) {
-        fprintf(stderr, "[SWG]   phys W=0x%016llX  V=0x%016llX  Wd=0x%016llX\n",
-                (unsigned long long)phys_W, (unsigned long long)phys_V, (unsigned long long)phys_Wd);
-        fprintf(stderr, "[SWG]   phys x=0x%016llX  out=0x%016llX\n",
-                (unsigned long long)phys_x_base, (unsigned long long)phys_out_base);
-        fprintf(stderr, "[SWG]   AP_CTRL before start = 0x%08X\n",
-                swg_ip_regs[SWG_CTRL_AP_CTRL / 4]);
-    }
-
     for (int c = 0; c < total_tokens; c += SWG_MAX_BATCH) {
         int bsz = (c + SWG_MAX_BATCH <= total_tokens) ? SWG_MAX_BATCH : (total_tokens - c);
 
         const float *x_chunk = (const float *)x->data + (size_t)c * 2048;
         int8_t *x_dst = (int8_t*)((char*)udmabuf_vptr + SWG_VEC_OFF);
+        struct timespec t_q0, t_q1, t_p0, t_p1, t_m0, t_m1;
+        clock_gettime(CLOCK_MONOTONIC, &t_q0);      // activation quantize: start
         float max_abs = 0.f;
         for (int i = 0; i < bsz * 2048; ++i) {
             float v = x_chunk[i];
@@ -2026,16 +2089,10 @@ static void ggml_compute_forward_swiglu_fused_hw(
             if (iq < -128) iq = -128;
             x_dst[i] = (int8_t)iq;
         }
-        if (swiglu_dbg_enabled) {
-            fprintf(stderr, "[SWG]   token chunk c=%d bsz=%d  max_abs=%.4f  x_scale=%.6f\n",
-                    c, bsz, max_abs, x_scale);
-            fprintf(stderr, "[SWG]   x[0..3] (INT8): %d %d %d %d\n",
-                    (int)x_dst[0], (int)x_dst[1], (int)x_dst[2], (int)x_dst[3]);
-        }
+        clock_gettime(CLOCK_MONOTONIC, &t_q1);      // activation quantize: end
 
         bool need_prog_wvw = (layer != swg_last_prog_layer) || (mode != swg_last_prog_mode);
-        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   reprogram W/V/Wd: %s (last_layer=%d last_mode=%u)\n",
-                need_prog_wvw ? "YES" : "NO (cached)", swg_last_prog_layer, swg_last_prog_mode);
+        clock_gettime(CLOCK_MONOTONIC, &t_p0);      // register programming: start
         if (need_prog_wvw) {
             swg_ip_regs[SWG_CTRL_W_LO  / 4] = (uint32_t)phys_W;
             swg_ip_regs[SWG_CTRL_W_HI  / 4] = (uint32_t)(phys_W >> 32);
@@ -2058,93 +2115,83 @@ static void ggml_compute_forward_swiglu_fused_hw(
         uint32_t xscale_bits;
         memcpy(&xscale_bits, &x_scale, sizeof(float));
         swg_ip_regs[SWG_CTRL_XSCALE / 4] = xscale_bits;
-
-        if (swiglu_dbg_enabled) {
-            fprintf(stderr, "[SWG]   regs: W=0x%08X|%08X  V=0x%08X|%08X  Wd=0x%08X|%08X\n",
-                    swg_ip_regs[SWG_CTRL_W_HI/4],  swg_ip_regs[SWG_CTRL_W_LO/4],
-                    swg_ip_regs[SWG_CTRL_V_HI/4],  swg_ip_regs[SWG_CTRL_V_LO/4],
-                    swg_ip_regs[SWG_CTRL_WD_HI/4], swg_ip_regs[SWG_CTRL_WD_LO/4]);
-            fprintf(stderr, "[SWG]   regs: x=0x%08X|%08X  out=0x%08X|%08X  mode=%u  xscale_bits=0x%08X (%.6f)\n",
-                    swg_ip_regs[SWG_CTRL_X_HI/4],   swg_ip_regs[SWG_CTRL_X_LO/4],
-                    swg_ip_regs[SWG_CTRL_OUT_HI/4], swg_ip_regs[SWG_CTRL_OUT_LO/4],
-                    swg_ip_regs[SWG_CTRL_MODE/4], xscale_bits, x_scale);
-        }
+        clock_gettime(CLOCK_MONOTONIC, &t_p1);      // register programming: end
 
         __asm__ __volatile__("" ::: "memory");
+        struct timespec t_sd0, t_sd1, t_hw0, t_hw1, t_sc0, t_sc1;
+        clock_gettime(CLOCK_MONOTONIC, &t_sd0);
         udmabuf_sync_to_device(SWG_VEC_OFF, (uint32_t)(bsz * 2048));
+        clock_gettime(CLOCK_MONOTONIC, &t_sd1);
 
-        struct timespec t0, t1;
-        clock_gettime(CLOCK_MONOTONIC, &t0);
-        if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   >>> writing ap_start\n");
-        swg_ip_regs[SWG_CTRL_AP_CTRL / 4] = 0x01;
+        // Launch the IP and block on its completion interrupt (ap_done) via the
+        // UIO device, instead of spinning on the AP_CTRL register. The calling
+        // thread yields the core while the FPGA runs (lower power) at the cost of
+        // interrupt-delivery latency. The UIO fd is armed in the init path; after
+        // each completion we clear the IP's ISR (deasserting the line) and re-arm.
+        clock_gettime(CLOCK_MONOTONIC, &t_hw0);
+        swg_ip_regs[SWG_CTRL_AP_CTRL / 4] = 0x01;   // ap_start
         __asm__ __volatile__("" ::: "memory");
 
-        if (swiglu_uio_fd >= 0) {
-            if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   waiting via UIO poll (fd=%d, timeout=7000ms)\n", swiglu_uio_fd);
-            struct pollfd pfd = { .fd = swiglu_uio_fd, .events = POLLIN };
-            int pr = poll(&pfd, 1, 7000);
-            clock_gettime(CLOCK_MONOTONIC, &t1);
-            long elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
-            if (pr > 0) {
-                uint32_t irq_count;
-                (void)read(swiglu_uio_fd, &irq_count, sizeof(irq_count));
-                if (swiglu_dbg_enabled) {
-                    fprintf(stderr, "[SWG]   <<< UIO interrupt  irq_count=%u  elapsed=%ldms\n", irq_count, elapsed_ms);
-                    fprintf(stderr, "[SWG]   AP_CTRL after done = 0x%08X\n", swg_ip_regs[SWG_CTRL_AP_CTRL / 4]);
-                }
-                swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done bit (TOW)
-                uint32_t uio_enable = 1;
-                (void)write(swiglu_uio_fd, &uio_enable, sizeof(uio_enable));
-            } else {
-                if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   poll() returned %d after %ldms — falling back to register poll\n", pr, elapsed_ms);
-                int tmo = 7000;
-                while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
-                    usleep(1000);
-                }
-                clock_gettime(CLOCK_MONOTONIC, &t1);
-                elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
-                if ((swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
-                    fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n", swiglu_call_count, layer);
-                    GGML_ASSERT(false);
-                }
-                if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   <<< register poll done  AP_CTRL=0x%08X  elapsed=%ldms\n",
-                        swg_ip_regs[SWG_CTRL_AP_CTRL / 4], elapsed_ms);
-                swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done (TOW)
-            }
-        } else {
-            if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   no UIO fd — polling AP_CTRL directly\n");
-            int tmo = 7000;
-            while (tmo-- > 0 && (swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
-                usleep(1000);
-            }
-            clock_gettime(CLOCK_MONOTONIC, &t1);
-            long elapsed_ms = (t1.tv_sec - t0.tv_sec) * 1000 + (t1.tv_nsec - t0.tv_nsec) / 1000000;
-            if ((swg_ip_regs[SWG_CTRL_AP_CTRL / 4] & 0x2) == 0) {
-                fprintf(stderr, "[SWG] TIMEOUT: IP did not complete (call #%d layer=%d)\n", swiglu_call_count, layer);
-                GGML_ASSERT(false);
-            }
-            if (swiglu_dbg_enabled) fprintf(stderr, "[SWG]   <<< register poll done  AP_CTRL=0x%08X  elapsed=%ldms\n",
-                    swg_ip_regs[SWG_CTRL_AP_CTRL / 4], elapsed_ms);
-            swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;  // clear ap_done (TOW)
+        uint32_t irq_count = 0;
+        ssize_t nread = read(swiglu_uio_fd, &irq_count, sizeof(irq_count)); // blocks until IRQ
+        clock_gettime(CLOCK_MONOTONIC, &t_hw1);
+
+        swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;         // clear ap_done (TOW), deassert IRQ line
+        uint32_t uio_reenable = 1;
+        (void)write(swiglu_uio_fd, &uio_reenable, sizeof(uio_reenable)); // re-arm UIO for next call
+
+        uint32_t ap_ctrl = swg_ip_regs[SWG_CTRL_AP_CTRL / 4];
+        if (nread != (ssize_t)sizeof(irq_count) || (ap_ctrl & 0x2) == 0) {
+            fprintf(stderr, "[SWG] ERROR: IP completion not signalled "
+                    "(call #%d layer=%d nread=%zd AP_CTRL=0x%08X)\n",
+                    swiglu_call_count, layer, nread, ap_ctrl);
+            GGML_ASSERT(false);
         }
 
+        clock_gettime(CLOCK_MONOTONIC, &t_sc0);
         udmabuf_sync_to_cpu(SWG_OUT_OFF, (uint32_t)(bsz * 2048 * sizeof(float)));
-        if (swiglu_dbg_enabled) {
-            const float *out_check = (const float *)((char*)udmabuf_vptr + SWG_OUT_OFF);
-            fprintf(stderr, "[SWG]   out[0..3] (F32): %.4f  %.4f  %.4f  %.4f\n",
-                    out_check[0], out_check[1], out_check[2], out_check[3]);
-            float cksum = 0.f;
-            for (int i = 0; i < (int)(bsz * 2048); i++) cksum += out_check[i];
-            fprintf(stderr, "[SWG]   out_cksum (sum of %d floats): %.6f\n",
-                    (int)(bsz * 2048), cksum);
-        }
+        clock_gettime(CLOCK_MONOTONIC, &t_sc1);
+
+        clock_gettime(CLOCK_MONOTONIC, &t_m0);      // output memcpy: start
         memcpy((char*)dst->data + (size_t)c * 2048 * sizeof(float),
                (char*)udmabuf_vptr + SWG_OUT_OFF,
                (size_t)bsz * 2048 * sizeof(float));
+        clock_gettime(CLOCK_MONOTONIC, &t_m1);      // output memcpy: end
+
+        // --- Precise per-token latency breakdown --------------------------------
+        // Per-call durations of every CPU/FPGA stage, accumulated over the 16 FFN
+        // layers of one decode token. The offload op has n_tasks==1, so this runs
+        // single-threaded and the static accumulators are race-free. The FFN-path
+        // total is quant + program + syncs + FPGA + memcpy; the non-FFN remainder
+        // is (externally measured token latency) minus this total.
+        double us_q  = (t_q1.tv_sec  - t_q0.tv_sec)  * 1e6 + (t_q1.tv_nsec  - t_q0.tv_nsec)  / 1e3;
+        double us_p  = (t_p1.tv_sec  - t_p0.tv_sec)  * 1e6 + (t_p1.tv_nsec  - t_p0.tv_nsec)  / 1e3;
+        double us_sd = (t_sd1.tv_sec - t_sd0.tv_sec) * 1e6 + (t_sd1.tv_nsec - t_sd0.tv_nsec) / 1e3;
+        double ms_hw = (t_hw1.tv_sec - t_hw0.tv_sec) * 1e3 + (t_hw1.tv_nsec - t_hw0.tv_nsec) / 1e6;
+        double us_sc = (t_sc1.tv_sec - t_sc0.tv_sec) * 1e6 + (t_sc1.tv_nsec - t_sc0.tv_nsec) / 1e3;
+        double us_m  = (t_m1.tv_sec  - t_m0.tv_sec)  * 1e6 + (t_m1.tv_nsec  - t_m0.tv_nsec)  / 1e3;
+
+        static double acc_q, acc_p, acc_sd, acc_hw, acc_sc, acc_m;
+        static int    acc_calls, token_idx;
+        acc_q  += us_q;  acc_p  += us_p;  acc_sd += us_sd;
+        acc_hw += ms_hw; acc_sc += us_sc; acc_m  += us_m;
+        acc_calls++;
+
+        // One decode token = 16 offloaded FFN layers; roll up and reset each token.
+        if (acc_calls == 16) {
+            double ffn_ms = acc_q/1e3 + acc_p/1e3 + acc_sd/1e3 + acc_hw + acc_sc/1e3 + acc_m/1e3;
+            if (swiglu_dbg_enabled)
+                fprintf(stderr,
+                        "[SWG] ==== TOKEN #%d (16 layers, ms): quant=%.2f program=%.2f "
+                        "sync_dev=%.2f fpga=%.2f sync_cpu=%.2f memcpy=%.2f | FFN-path total=%.2f ====\n",
+                        token_idx, acc_q/1e3, acc_p/1e3, acc_sd/1e3, acc_hw, acc_sc/1e3, acc_m/1e3, ffn_ms);
+            token_idx++;
+            acc_q = acc_p = acc_sd = acc_hw = acc_sc = acc_m = 0.0;
+            acc_calls = 0;
+        }
     }
 
     swiglu_call_count++;
-    if (swiglu_dbg_enabled) fprintf(stderr, "[SWG] ===== call #%d done =====\n", swiglu_call_count - 1);
 }
 
 static void ggml_compute_forward(struct ggml_compute_params * params, struct ggml_tensor * tensor) {

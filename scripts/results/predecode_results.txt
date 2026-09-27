@@ -1,0 +1,33 @@
+all benchmarks were run with flags: -p 4 -n 64 -t 4 -r 10
+CPU baseline: 2.15 t/s prefill, 1.15 t/s decode (from power_results_T4.txt CPU run)
+
+[ACCEL — hybrid pre-decode + permanent layer cache, 250 MHz]
+Power: mean=5013.22 mW, stdev=191.01 mW, min=4400.00 mW, max=6010.00 mW, n=245
+Average power: 5.0132 W
+Duration: 342.00 s
+Total energy: 1714.5144 J  (0.476254 Wh)
+LPD temp: mean=28.28 C, stdev=0.71 C, min=27.00 C, max=30.00 C, n=245
+FPD temp: mean=27.53 C, stdev=0.86 C, min=25.00 C, max=30.00 C, n=245
+PL temp: mean=27.13 C, stdev=0.82 C, min=25.00 C, max=29.00 C, n=245
+
+Derived metrics (using measured mean power and provided throughput):
+
+| Mode | Phase | Throughput (tokens/s) | Latency/token (us) | Power (W) | Energy/token (J/token) | Perf/W (tokens/s/W) |
+|---|---|---:|---:|---:|---:|---:|
+| ACCEL | Prefill | 2.49 | 401606 | 5.0132 | 2.0133 | 0.4967 |
+| ACCEL | Decode | 2.08 | 480769 | 5.0132 | 2.4102 | 0.4149 |
+
+Throughput inputs used:
+- ACCEL: prefill 2.49 t/s, decode 2.08 t/s
+
+Comparison vs. CPU (same flags, from power_results_T4.txt):
+- CPU prefill: 2.15 t/s, CPU decode: 1.15 t/s
+- ACCEL vs CPU prefill: +0.34 t/s (+15.8%)
+- ACCEL vs CPU decode: +0.93 t/s (+80.9%)
+
+The 2.08 t/s decode is unchanged from step 37. The permanent cache was expected to save
+~160 ms/token but didn't improve throughput. This indicates the "171 ms overhead" from
+entry 38 is largely CPU attention/norms (~126 ms/token from testblock CLAUDE.md), NOT
+pre-decode time. The FPGA FFN is only ~68% of total compute per Amdahl's Law. The
+permanent cache eliminates an estimated ~10-15 ms of actual driver pre-decode overhead
+per token — measurable but insufficient to move the 2.08 t/s number at current FPGA clock.

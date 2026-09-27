@@ -1,0 +1,405 @@
+Architecture Description — swiglu.cpp (Q4K-Final: Merged-Burst WV Load, 32-bit Output Tiles)
+================================================================================
+Date: 2026-05-28  |  Based on: swiglu.cpp (859 lines), csynth.rpt (Vitis 2025.1)
+Board: KV260 (ZU5EV) @ 250 MHz, LFM2-1.2B Q4_K uniform, udmabuf weight cache
+
+
+General Pragmas
+----------------------------------------------------------
+- DATAFLOW: top-level; overlaps LOAD_X → (X1 ∥ X2) → GATE → OUTPUT.
+- INLINE off: all load/MAC/gate functions kept as separate HLS modules.
+- BIND_STORAGE type=ram_1p impl=bram: WV nibble tiles (128-bit, 4 BRAM_18K cascade each).
+- BIND_STORAGE type=ram_2p impl=bram: X1_cache, X2_cache (written by one process,
+  read by the next; DATAFLOW requires two-port).
+- BIND_STORAGE type=ram_s2p impl=uram: gate_cache (URAM, read and written in same region).
+- BIND_STORAGE type=ram_1p impl=lutram: x_local_1, x_local_2 (INT8, 2048 elements,
+  duplicated so each compute_X process has its own copy).
+- ARRAY_PARTITION dim=2 complete: x_local_1/2 [1][8][256] — 256 independent banks.
+- ARRAY_PARTITION dim=2 cyclic factor=8: gate_cache [1][32][256].
+- BIND_OP op=mul impl=dsp: all INT32 multiply paths in MAC kernels.
+- UNROLL: block dimension in MAC loops (8 blocks in WV, 8 blocks per group in output).
+- PIPELINE II=1: inner element loops (LOAD_4R, MAC_ALL, MAC_GRP, GATE_PASS1/2,
+  LOAD_NIB_DOWN).
+- fp16_to_fp32: INLINE off; called inside LOAD_4R (2 calls/block, 4-cycle latency each).
+
+
+Top Level: swiglu
+----------------------------------------------------------
+Signature (7 params, unchanged from cpu-predecode design):
+    void swiglu(const uint8_t *W, const uint8_t *V, const uint8_t *W_down,
+                const int8_t *x_batch, float *out_batch,
+                uint32_t down_quant_mode, float x_scale)
+
+AXI master interfaces (from csynth.rpt HW Interfaces section):
+    gmem_W   READ  8→128-bit  latency=64  max_read_burst=128  outstanding=1
+    gmem_V   READ  8→128-bit  latency=64  max_read_burst=128  outstanding=1
+    gmem_Wd  READ  8→128-bit  latency=64  max_read_burst=256  outstanding=1
+    gmem_x   READ  8→128-bit  latency=64  max_read_burst=128  outstanding=1
+    gmem_out WRITE 32→32-bit  latency=64  max_write_burst=256 outstanding=16
+
+All pointer arguments are uint8_t* / int8_t* in C; HLS widens to 128-bit AXI bus
+via max_widen_bitwidth=128 (except out_batch which is float*, 32-bit natural).
+
+DDR layout (URAM-transposed, CPU pre-decoded by transpose_q4k_to_urm()):
+    W / V per row (8192 rows):
+        Header:  16 × 128-bit words  (2 words/block × 8 blocks; contains fp16 d/dmin
+                 + flat INT8 sc6[8] and mn6[8] pre-decoded from Q4_K sc6/mn6 bit fields)
+        Nibbles: 64 × 128-bit words  (element-major: word e holds 4-bit nibbles for
+                 element e>>2 of all 8 blocks, packed as 8×4 = 32 bits × 4 slices)
+        Row total: 80 × 128-bit words = 1280 bytes
+    W_down per row (2048 rows):
+        Header: 64 × 128-bit words  (2 words/block × 32 blocks)
+        Nibbles: 256 × 128-bit words (same element-major layout; 4 groups × 8 blocks
+                 packed as g0 bits[31:0], g1 bits[63:32], g2 bits[95:64], g3 bits[127:96])
+        Row total: 320 × 128-bit words = 5120 bytes
+
+DATAFLOW stages:
+    load_x_local → compute_X1 ∥ compute_X2 → compute_gate → compute_output
+
+
+Stage 0 — load_x_local
+----------------------------------------------------------
+    Reads INT8 x vector (2048 bytes) from DDR.
+    Writes to both x_local_1 and x_local_2 (LUTRAM, each [1][8][256]) so that
+    compute_X1 and compute_X2 can read independently without port contention.
+
+    LOAD_X_VEC (PIPELINE II=1, 128 iterations, 128-bit bus):
+        Reads 16 INT8 elements per word; distributes across LUTRAM banks.
+        16 parallel writes per cycle (dim=2 complete → 256 banks).
+
+    Duration: 202 cycles = 0.81 µs @ 250 MHz.
+    DDR → LUTRAM: 2048 bytes in 128 burst words.
+
+
+Stage 1 — compute_X1 / compute_X2 (identical, parallel in DATAFLOW)
+----------------------------------------------------------
+    Matrix-vector multiply: X1 = x @ W.T,  X2 = x @ V.T.
+    Processes 4 output rows per COMPUTE_X1/X2 loop iteration.
+    Loop count: 2048 iterations (8192 rows / 4 per iter).
+    Each iteration calls load_4rows_wv_urm then mac_blocks_wv_k4_urm.
+
+    ── load_4rows_wv_urm (INLINE off) ───────────────────────────────────────────
+
+    KEY CHANGE vs cpu-predecode design: a single merged burst loads all 4 rows
+    in one AXI transaction (320 words) rather than 4 separate 80-word bursts.
+    This eliminates 3 of 4 AXI burst-setup overheads (~45 cy each) per iteration.
+
+    LOAD_4R (PIPELINE II=1, 320 iterations):
+        Reads consecutive 128-bit words from gmem_W (or gmem_V).
+        Offset within word: position 0..79 = row 0, 80..159 = row 1, etc.
+        For header words (e mod 80 < 16): decodes fp16 d/dmin via fp16_to_fp32
+            (INLINE off, 4-cycle latency, 2 instances pipelined inside LOAD_4R).
+            Stores flat INT8 sc6[row][block][8], mn6[row][block][8].
+        For nibble words (e mod 80 >= 16): writes verbatim to wide BRAM:
+            nib_rN[e - 16 - row*80]  where N = row (0..3).
+            One 128-bit DDR read → one 128-bit BRAM write at II=1.
+
+    LOAD_4R loop: 326 cycles for 320 iterations (6 pipeline overhead).
+    load_4rows_wv_urm total: 401 cycles (includes function call overhead + AXI ramp).
+
+    Nibble BRAM tiles: ap_uint<128> nib_r0..r3[64] — 4 per compute_X instance.
+    BIND_STORAGE impl=bram → 4 BRAM_18K cascade per tile (128-bit wide).
+    4 tiles × 4 BRAM_18K = 16 BRAM_18K per compute_X1.  Same for X2.
+
+    ── mac_blocks_wv_k4_urm (INLINE off) ────────────────────────────────────────
+
+    Processes 4 rows simultaneously.  8 blocks, 256 elements per block.
+    Accumulation pattern: data-mux (not conditional-enable).
+
+    MAC_ALL (PIPELINE II=1, 256 iterations):
+        idx = n >> 2,  s = n & 3      (word index and 32-bit slice)
+
+        Row reads (4 reads per cycle from 4 independent BRAMs):
+            w0 = nib_r0[idx]          — 128-bit (row 0)
+            w1 = nib_r1[idx]          — 128-bit (row 1)
+            w2 = nib_r2[idx]          — 128-bit (row 2)
+            w3 = nib_r3[idx]          — 128-bit (row 3)
+
+        Slice mux (4:1 per row, ~32 LUT each):
+            wr0 = w0.range(s*32+31, s*32)    — 32-bit word for row 0
+            wr1, wr2, wr3 similarly.
+
+        Inner block loop (b = 0..7, UNROLL):
+            xi8  = x_local[0][b][n & 255]   — INT8 activation
+            nb0  = wr0.range(b*4+3, b*4)    — 4-bit nibble, compile-time → 0 LUT
+            nb1..nb3 similarly.
+
+            Data-mux accumulation (k = n & 3):
+                for ki in 0..3 (UNROLL):
+                    acc_w0[b][ki] += (ki == k) ? (xi8 * nb0 * sc0[b][n>>5]) : 0
+                    acc_m0[b][ki] += (ki == k) ? (xi8 * mn0[b][n>>5])       : 0
+                    (repeated for rows 1-3: acc_w1..w3, acc_m1..m3)
+            All 4 accumulators updated every cycle; mux eliminates conditional
+            branch from pipelined loop body, preserving II=1.
+
+        32 parallel INT32 MAC chains: 8 blocks × 4 rows.
+        DSP count: 64 multipliers (2 per chain: sc-path and mn-path).
+        MAC_ALL duration: 259 cycles (256 iter + 3 pipeline drain).
+
+    REDUCE (PIPELINE II=1, 8 iterations):
+        sw = acc_w0[b][0]+[1]+[2]+[3],  sm = acc_m0[b][0]+[1]+[2]+[3]
+        total += fxd_scale_t(d[b]) * fxd_accum_t(sw)
+               - fxd_scale_t(dmin[b]) * fxd_accum_t(sm)
+        fxd_accum_t = ap_fixed<48,38> (fits DSP48E2 P register).
+        REDUCE duration: 38 cycles.
+
+    Quantize output (4 results per call):
+        result_N = float(total_N) * x_scale
+        iq_N = clamp(round(result_N * 12.7f), -128, 127)
+        X1_cache[0][row + N] = int8_t(iq_N)    N = 0..3
+
+    mac_blocks_wv_k4_urm total: 315 cycles.
+
+    X1_cache / X2_cache: int8_t [1][8192]
+    BIND_STORAGE type=ram_2p impl=bram (two-port for DATAFLOW concurrent access).
+
+    ── Cycle Budget per COMPUTE_X1 iteration (2048 iterations total) ────────────
+        load_4rows_wv_urm:           401 cycles
+        mac_blocks_wv_k4_urm:        315 cycles
+        Overhead (loop control, etc): 34 cycles
+        Total per iteration:         750 cycles
+        compute_X1 total:          1,536,001 cycles = 6.14 ms @ 250 MHz
+
+    vs cpu-predecode design (4 × load_row_wv_urm, ~948 cy/iter):
+        Merged burst saves ~198 cy/iter × 2048 = ~405K cycles (~21% faster).
+
+    ── Bandwidth and Utilization ─────────────────────────────────────────────────
+        DDR data: 8192 rows × 1280 B = 10.0 MB
+        Time: 6.14 ms → BW = 1,629 MB/s  [41% of 4 GB/s peak]
+        MAC peak: 32 INT32 chains × 250 MHz = 8.0 Gops/s
+        MAC active fraction: 259 cy / 750 cy = 34.5% → 2.76 Gops/s effective
+
+    ── Resource Usage ───────────────────────────────────────────────────────────
+        compute_X1 (each):
+            BRAM:  16  (4 wide tiles × 4 BRAM_18K each)
+            DSP:   84  (64 MAC + 20 REDUCE)
+            FF:    31,619
+            LUT:   46,238
+
+
+Stage 2 — compute_gate
+----------------------------------------------------------
+    Elementwise SiLU(X1) * X2, quantize result to INT8 gate_cache.
+    Two-pass: pass 1 finds max absolute value; pass 2 quantizes.
+    Duration: 16,622 cycles = 66 µs @ 250 MHz. Negligible vs X1/X2 and output.
+
+    GATE_PASS1 (PIPELINE II=1, 8192 iterations):
+        silu = x1 / (1 + exp(-x1))  via sigmoid_lut (BRAM ROM, 4096 entries).
+        pmax[j & 7] = max(pmax[j & 7], |silu * x2|)   — 8-lane partial maxima.
+        Duration: 8252 cycles.
+
+    GATE_PASS2 (PIPELINE II=1, 8192 iterations):
+        Recompute silu * x2, scale by 127/max_val, clamp, store to gate_cache.
+        gate_cache[0][j >> 8][j & 255] = int8_t(quantized).
+        Duration: 8271 cycles.
+
+    sigmoid_lut[4096] float: BIND_STORAGE impl=bram, 8 BRAM_18K.
+    gate_cache[1][32][256] int8_t: BIND_STORAGE impl=uram (8 URAM tiles).
+        ARRAY_PARTITION dim=2 cyclic factor=8.
+    DDR traffic: 0 — all on-chip BRAM/URAM.
+
+
+Stage 3 — compute_output
+----------------------------------------------------------
+    output = gate @ W_down.T   (INT8 gate × Q4_K W_down → float output).
+    32 blocks, organized as 4 groups of 8.  Processes 4 output rows per iteration.
+    Loop count: 512 iterations (2048 rows / 4 per iter).
+
+    ── load_row_down_urm (INLINE off, called 4× per DOWN_Q4K iteration) ────────
+
+    Note: output path retains per-row loads (not merged), because each row's
+    320-word burst is 4× larger than W/V rows and the 4-group 32-bit tile fanout
+    layout makes merging structurally different from the WV case.
+
+    LOAD_HDR_DOWN (PIPELINE II=2, 32 iterations):
+        Reads 2 DDR words per block (64 words total); decodes fp16 d/dmin.
+        II=2: two AXI reads per block from a single port (hardware bandwidth limit).
+        Duration: 70 cycles (II=2 × 32 iter + overhead).
+
+    LOAD_NIB_DOWN (PIPELINE II=1, 256 iterations):
+        Each 128-bit DDR word fans out to 4 32-bit tiles:
+            nib_g0[e] = ddr.range( 31,  0)   — group 0
+            nib_g1[e] = ddr.range( 63, 32)   — group 1
+            nib_g2[e] = ddr.range( 95, 64)   — group 2
+            nib_g3[e] = ddr.range(127, 96)   — group 3
+        4 BRAM writes per DDR read; HLS auto-schedules at achievable II.
+        32-bit tiles avoid 128-bit fanout routing (74K overlaps observed in prior design).
+        Duration: 257 cycles.
+
+    load_row_down_urm total: 477 cycles (LOAD_HDR + LOAD_NIB + overhead).
+    4 calls per DOWN_Q4K iteration: 1,908 cycles.
+
+    Nibble tiles: 16 × ap_uint<32>[256]  (4 groups × 4 rows: g0r0 .. g3r3).
+    BIND_STORAGE impl=bram → 1 BRAM_18K each (32-bit × 256 entries).
+
+    ── mac_blocks_down_q4k_k4_urm (INLINE off) ──────────────────────────────────
+
+    Processes 4 rows simultaneously.  32 blocks, 4 groups of 8, 256 elements/block.
+    Direct CE accumulation pattern (vs data-mux in WV MAC).
+
+    DOWN_GROUPS (4 iterations, sequential):
+        Each group processes 8 blocks for all 4 rows in parallel.
+
+        MAC_GRP (PIPELINE II=1, 256 iterations):
+            Reads 16 tiles per cycle (4 groups × 4 rows), though only current
+            group tiles are used; others idle (simplifies address generation).
+
+            Inner block loop (b = 0..7, UNROLL):
+                babs = grp * 8 + b
+                gi8  = gate_cache[0][babs >> 3][babs & 255... wait: gate[babs][n]]
+                                   — INT8 gate value
+                nb0  = g0r0[n].range(b*4+3, b*4)   — 4-bit nibble (0 LUT)
+                nb1..nb3  similarly for rows 1-3.
+
+                Direct CE accumulation (k0 = n & 3 stored as register):
+                    acc_w0[b][k0] += gi8 * nb0 * sc[babs][n>>5]
+                    acc_m0[b][k0] += gi8 * mn[babs][n>>5]
+                    (repeated for rows 1-3)
+                CE avoids 4-element inner loop vs data-mux, reduces FF count.
+
+            MAC_GRP duration: 262 cycles (256 iter + 6 pipeline drain).
+
+        REDUCE_GRP (PIPELINE II=1, 8 iterations):
+            Same fxd_scale_t × fxd_accum_t reduce as WV path.
+            Duration: 38 cycles.
+
+        DOWN_GROUPS per-group cycle: ~308 cycles.
+
+    mac_blocks_down_q4k_k4_urm total: 1,243 cycles  (4 × 308 + overhead).
+
+    ── Cycle Budget per DOWN_Q4K iteration (512 iterations total) ───────────────
+        load_row_down_urm × 4:    1,908 cycles
+        mac_blocks_down:          1,243 cycles
+        Overhead:                    14 cycles
+        Total per iteration:       3,165 cycles
+        DOWN_Q4K total:         1,620,480 cycles
+        compute_output total:   1,622,602 cycles = 6.49 ms @ 250 MHz
+
+    Output write (Loop 1, PIPELINE II=1, 2048 iter): 2,051 cycles — reads out_local,
+    writes to gmem_out.
+
+    ── Resource Usage ───────────────────────────────────────────────────────────
+        compute_output:
+            BRAM:  20  (16 nibble tiles × 1 BRAM_18K + 4 AXI FIFO/misc)
+            DSP:   96  (64 MAC + 20 REDUCE × 4 groups reused = 96 actual)
+            FF:    51,889
+            LUT:   42,838
+
+
+DATAFLOW Performance (per layer, steady state)
+----------------------------------------------------------
+    DATAFLOW interval = max(stage intervals).
+
+    Stage                  Cycles       Time @ 250 MHz
+    load_x_local               202        0.00 ms
+    compute_X1 ∥ X2      1,536,001        6.14 ms
+    compute_gate              16,622       0.07 ms
+    compute_output         1,622,602       6.49 ms    ← DATAFLOW BOTTLENECK
+    ────────────────────────────────────────────────────
+    Per-layer interval     1,622,603       6.49 ms
+
+    compute_output is the bottleneck, not compute_X1/X2.
+    This is a structural change from the cpu-predecode design where compute_X1
+    was bottleneck at 2,600,961 cycles; merged-burst reduced X1 to 1,536,001 cycles
+    but output path remained at 1,622,602, flipping the bottleneck.
+
+    16 layers FPGA (compute only): 103.9 ms
+    16 layers FPGA (incl. UIO):   16 × 14 ms = 224 ms  (7.5 ms/call interrupt overhead)
+    CPU non-FFN (T1, measured):   ~389 ms  (613 ms − 224 ms; attention, norms, projections)
+    Board T1 decode:               613 ms  →  1.63 t/s
+    Board T2 decode:               452 ms  →  2.21 t/s  (best operating point)
+
+    The 125 ms CPU non-SwiGLU floor is empirically measured: a testblock (passthrough
+    IP, zero compute) yields 8.02 t/s decode → 1000/8.02 = 124.7 ms (changelog entry 11).
+    The ~4.4 t/s figure assumes polling driver (0 interrupt overhead) at multi-thread;
+    see bottlenecks.txt §7 for the full Amdahl analysis.
+
+
+Board Benchmark Results (KV260, 250 MHz, Q4_K uniform, tg64)
+----------------------------------------------------------
+    (from scripts/results/latest_benchmarks/, benchmarked 2026-05-28)
+
+    Threads   Mode        Prefill (t/s)   Decode (t/s)   Power (W)
+    ─────────────────────────────────────────────────────────────
+    T1        CPU Only        1.09            0.88          3.96
+    T1        FPGA+CPU        2.20            1.63          5.10
+    ─────────────────────────────────────────────────────────────
+    T2        CPU Only        2.17            1.66          4.25
+    T2        FPGA+CPU        2.90            2.21          5.15
+    ─────────────────────────────────────────────────────────────
+    T3        CPU Only        3.16            2.36          4.41
+    T3        FPGA+CPU        3.06            2.05          5.14
+    ─────────────────────────────────────────────────────────────
+    T4        CPU Only        3.52            2.31          4.28
+    T4        FPGA+CPU        2.85            1.46          5.13
+    ─────────────────────────────────────────────────────────────
+
+    FPGA vs CPU (t/s/W):
+        T1: prefill +57%,  decode +44%   ← FPGA wins on both throughput and efficiency
+        T2: prefill +10%,  decode +10%   ← marginal gains, crossover regime
+        T3: prefill −17%,  decode −25%   ← CPU wins
+        T4: prefill −32%,  decode −47%   ← CPU clearly wins
+
+    T4 decode regression (1.46 < T3 2.05): all 4 A53 cores busy competing with
+    UIO interrupt handler; per-token FPGA round-trip latency increases due to
+    scheduling jitter on the interrupt-handling core.
+
+    Power: xmutil onboard telemetry (board total). FPGA+CPU overhead over CPU
+    is approximately +1.14 W at T1, +0.90 W at T2.
+
+
+Resource Summary (HLS → Vivado post-P&R)
+----------------------------------------------------------
+    Resource     HLS Estimate      Vivado (post-P&R)    Budget       Note
+    LUT          148,042 (126%)    103,684  (88.5%)     117,120      HLS over-estimates;
+                                                                     Vivado optimizes ~30%
+    FF           128,960  (55%)    117,420  (50.1%)     234,240
+    BRAM_18K     110      (38%)         86.5 (30%)          288
+    DSP          286      (22%)        338   (27%)        1,248      Vivado adds DSPs
+    URAM         8        (12%)          8   (12%)           64      gate_cache only
+
+    Per-module HLS LUT breakdown (from csynth.rpt):
+        compute_X1:     46,238
+        compute_X2:     46,238
+        compute_gate:    6,548
+        compute_output: 42,838
+        Other:           6,180
+        Total:         148,042
+
+    Vivado timing: WNS = −0.074 ns on DSP fanout paths in compute_output.
+    phys_opt_design -hold_fix resolves all hold violations.
+    Routes cleanly at 250 MHz; 32-bit output tiles eliminate prior 128-bit fanout
+    routing congestion (74K overlaps observed with wide-BRAM in output path).
+
+
+Key Architectural Differences vs cpu-predecode Design
+----------------------------------------------------------
+    Aspect                  cpu-predecode (architecture.txt)  q4k_final (this file)
+    ──────────────────────────────────────────────────────────────────────────────────
+    WV load strategy        4 × load_row_wv_urm               1 × load_4rows_wv_urm
+                            (~948 cy/iter, 4 AXI bursts)      (401 cy/iter, 1 AXI burst)
+    WV nibble write         1 write/word (II=1, 67 cy/row)    1 write/word (II=1, 326 cy/4rows)
+    compute_X1 cycles       2,600,961                         1,536,001  (−41%)
+    DATAFLOW bottleneck     compute_X1 (10.40 ms)             compute_output (6.49 ms)
+    Per-layer interval      2,600,962 cycles                  1,622,603 cycles
+    WV MAC accumulation     data-mux (same)                   data-mux (same)
+    Down MAC accumulation   CE direct (same)                  CE direct (same)
+    Output nibble tiles     32-bit (same)                     32-bit (same)
+    HLS LUT estimate        125,813                           148,042  (more unrolling)
+    Vivado LUT              103,684                           103,684  (same post-P&R)
+    Theoretical t/s         3.44                              4.4
+    Board T1 decode         2.20 t/s                         2.20 t/s  (same — limited by
+                                                                         output path + overhead)
+
+
+AXI-Lite Register Map (bundle=CTRL, same as all prior designs)
+----------------------------------------------------------
+    Offset   Register
+    0x00     AP_CTRL         (AP_START, AP_DONE, AP_IDLE, AP_READY, INTERRUPT)
+    0x10     W_1 / 0x14 W_2  (gmem_W base address, 64-bit split)
+    0x1C     V_1 / 0x20 V_2  (gmem_V base address)
+    0x28     W_down_1 / 0x2C W_down_2
+    0x34     x_batch_1 / 0x38 x_batch_2
+    0x40     out_batch_1 / 0x44 out_batch_2
+    0x4C     down_quant_mode  (0 = Q4_K; Q6_K path not used in this design)
+    0x54     x_scale          (float bits, INT8 dequant scale)

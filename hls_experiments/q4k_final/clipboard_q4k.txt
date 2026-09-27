@@ -1,0 +1,60 @@
+ubuntu@kria:~/llama.cpp$ ./deploy-fabric.sh 
+[0] set env vars LLAMA_SWIHW=1 & SWIGLU_DEBUG=1
+[1] Copy bit/dtsi sources
+'/media/ubuntu/462C-969E/kria/design_1_wrapper.bit.bin' -> '/home/ubuntu/Desktop/accel/design_1_wrapper.bit.bin'
+'/media/ubuntu/462C-969E/kria/pl.dtsi' -> '/home/ubuntu/Desktop/accel/pl.dtsi'
+[2] Build DTBO
+[3] Deploy firmware assets
+'design_1_wrapper.bit.bin' -> '/lib/firmware/xilinx/kria-accel/design_1_wrapper.bit.bin'
+'design_1_wrapper.dtbo' -> '/lib/firmware/xilinx/kria-accel/design_1_wrapper.dtbo'
+'shell.json' -> '/lib/firmware/xilinx/kria-accel/shell.json'
+[4] Ensure configfs mounted
+mount: /sys/kernel/config: none already mounted on /run/credentials/systemd-sysusers.service.
+[5] Unload any existing app/overlay
+remove from slot 0 returns: 0 (Ok)
+[6] Load app (programs bit & dtbo from shell.json)
+kria-accel: loaded to slot 0
+[7] Insert u-dma-buf (CMA must cover size)
+ root=LABEL=writable rootwait earlycon console=ttyPS1,115200 console=tty1 clk_ignore_unused uio_pdrv_genirq.of_id=generic-uio xilinx_tsn_ep.st_pcp=4 cma=1000M quiet splash cma=600M
+0x0000000055100000
+536870912
+[8] UIO sanity check
+0x00000000ffa00000
+0x00000000fd0b0000
+0x00000000fd490000
+0x00000000ffa10000
+0x00000000a0000000
+xilinx_apm
+xilinx_apm
+xilinx_apm
+xilinx_apm
+swiglu@a0000000
+[9] PL clock:
+249999998
+ubuntu@kria:~/llama.cpp$ ./run_accel_q4k.sh 
+=== FPGA+CPU | T=4 | R=10 ===
+[12:54:29] Running llama-bench (FPGA+CPU)...
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| lfm2 1.2B Q4_K - Medium        | 694.76 MiB |     1.17 B | CPU        |       4 |            pp12 |          3.46 ± 0.07 |
+^C
+
+ubuntu@kria:~/llama.cpp$ ./deploy-fabric.sh 
+[0] set env vars LLAMA_SWIHW=1 & SWIGLU_DEBUG=1
+[1] Copy bit/dtsi sources
+'/media/ubuntu/462C-969E/kria/design_1_wrapper.bit.bin' -> '/home/ubuntu/Desktop/accel/design_1_wrapper.bit.bin'
+'/media/ubuntu/462C-969E/kria/pl.dtsi' -> '/home/ubuntu/Desktop/accel/pl.dtsi'
+[2] Build DTBO
+[3] Deploy firmware assets
+'design_1_wrapper.bit.bin' -> '/lib/firmware/xilinx/kria-accel/design_1_wrapper.bit.bin'
+'design_1_wrapper.dtbo' -> '/lib/firmware/xilinx/kria-accel/design_1_wrapper.dtbo'
+'shell.json' -> '/lib/firmware/xilinx/kria-accel/shell.json'
+[4] Ensure configfs mounted
+mount: /sys/kernel/config: none already mounted on /run/credentials/systemd-sysusers.service.
+[5] Unload any existing app/overlay
+remove from slot 0 returns: 0 (Ok)
+[6] Load app (programs bit & dtbo from shell.json)
+kria-accel: loaded to slot 0
+[7] Insert u-dma-buf (CMA must cover size)
+ root=LABEL=writable rootwait earlycon console=ttyPS1,115200 console=tty1 clk_ignore_unused uio_pdrv_genirq.of_id=generic-uio xilinx_tsn_ep.st_pcp=4 cma=1000M quiet splash cma=600M
+cat: /sys/class/u-dma-buf/udmabuf0/phys_addr: No such file or directory

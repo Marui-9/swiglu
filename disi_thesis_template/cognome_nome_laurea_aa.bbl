@@ -1,0 +1,210 @@
+\begin{thebibliography}{10}
+
+\bibitem{10177729}
+Youssef Abadade, Anas Temouden, Hatim Bamoumen, Nabil Benamar, Yousra Chtouki,
+  and Abdelhakim~Senhaji Hafid.
+\newblock A comprehensive survey on tinyml.
+\newblock {\em IEEE Access}, 11:96892--96922, 2023.
+
+\bibitem{mi13060851}
+Norah~N. Alajlan and Dina~M. Ibrahim.
+\newblock Tinyml: Enabling of inference deep learning models on ultra-low-power
+  iot edge devices for ai applications.
+\newblock {\em Micromachines}, 13(6), 2022.
+
+\bibitem{Amdahl1967ValidityOT}
+Gene~M. Amdahl.
+\newblock Validity of the single processor approach to achieving large scale
+  computing capabilities.
+\newblock In {\em Proceedings of the April 18-20, 1967, spring joint computer
+  conference}, volume~30 of {\em AFIPS '67 (Spring)}, pages 483--485, New York,
+  NY, USA, 1967. ACM.
+
+\bibitem{amini2025lfm2technicalreport}
+Alexander Amini, Anna Banaszak, Harold Benoit, Arthur Böök, Tarek Dakhran,
+  Song Duong, Alfred Eng, Fernando Fernandes, Marc Härkönen, Anne Harrington,
+  Ramin Hasani, Saniya Karwa, Yuri Khrustalev, Maxime Labonne, Mathias Lechner,
+  Valentine Lechner, Simon Lee, Zetian Li, Noel Loo, Jacob Marks, Edoardo
+  Mosca, Samuel~J. Paech, Paul Pak, Rom~N. Parnichkun, Alex Quach, Ryan Rogers,
+  Daniela Rus, Nayan Saxena, Bettina Schlager, Tim Seyde, Jimmy T.~H. Smith,
+  Aditya Tadimeti, and Neehal Tumma.
+\newblock Lfm2 technical report, 2025.
+
+\bibitem{bi2025vlatouchenhancingvisionlanguageactionmodels}
+Jianxin Bi, Kevin~Yuchen Ma, Ce~Hao, Mike~Zheng Shou, and Harold Soh.
+\newblock Vla-touch: Enhancing vision-language-action models with dual-level
+  tactile feedback, 2025.
+
+\bibitem{10.1145/3776942.3776981}
+Longfei Chen and Yunyuan Dong.
+\newblock An intelligent voice interaction system based on raspberry pi and
+  faster-whisper: Design and implementation of edge-cloud hybrid architecture.
+\newblock In {\em Proceedings of the 2025 11th Annual International Conference
+  on Network and Information Systems for Computers}, ICNISC '25, page 61–65,
+  New York, NY, USA, 2025. Association for Computing Machinery.
+
+\bibitem{defossez2025moshi}
+Alexandre D\'{e}fossez et~al.
+\newblock Moshi: a speech-text foundation model for real-time dialogue, 2025.
+
+\bibitem{info16080685}
+Stefano Di~Leo, Luca De~Cicco, and Saverio Mascolo.
+\newblock Real-time speech-to-text on edge: A prototype system for ultra-low
+  latency communication with ai-powered nlp.
+\newblock {\em Information}, 16(8), 2025.
+
+\bibitem{doherty2015flow}
+Rina~A. Doherty and Paul Sorenson.
+\newblock Keeping users in the flow: The role of system response time in
+  user-perceived performance.
+\newblock {\em Procedia Manufacturing}, 3:4384--4391, 2015.
+
+\bibitem{11310944tin}
+Mostafa Elsharkawy, Tee~Hui Teo, and I-Chyn Wei.
+\newblock Fpga implementation of tiny transformer using high-level-synthesis
+  for biomedical applications.
+\newblock In {\em 2025 IEEE 18th International Symposium on Embedded
+  Multicore/Many-core Systems-on-Chip (MCSoC)}, pages 706--709, 2025.
+
+\bibitem{app142411583}
+Junhao Geng, Dongyao Jia, Zihao He, Nengkai Wu, and Ziqi Li.
+\newblock Enhanced conformer-based speech recognition via model fusion and
+  adaptive decoding with dynamic rescoring.
+\newblock {\em Applied Sciences}, 14(24), 2024.
+
+\bibitem{dnn_compression}
+Xue Geng, Zhe Wang, Chunyun Chen, Qing Xu, Kaixin Xu, Chao Jin, Manas Gupta,
+  Xulei Yang, Zhenghua Chen, Mohamed~M. Sabry~Aly, Jie Lin, Min Wu, and Xiaoli
+  Li.
+\newblock From algorithm to hardware: A survey on efficient and safe deployment
+  of deep neural networks.
+\newblock {\em IEEE Transactions on Neural Networks and Learning Systems},
+  36(4):5837--5857, 2025.
+
+\bibitem{cano}
+J.~Haris, R.~Saha, W.~Hu, and J.~Cano.
+\newblock Designing efficient llm accelerators for edge devices, 2024.
+
+\bibitem{10902142}
+Chunming He, Yuqi Shen, Chengyu Fang, Fengyang Xiao, Longxiang Tang, Yulun
+  Zhang, Wangmeng Zuo, Zhenhua Guo, and Xiu Li.
+\newblock Diffusion models in low-level vision: A survey.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  47(6):4630--4651, 2025.
+
+\bibitem{s25103191}
+Soroush Heydari and Qusay~H. Mahmoud.
+\newblock Tiny machine learning and on-device inference: A survey of
+  applications, challenges, and future directions.
+\newblock {\em Sensors}, 25(10), 2025.
+
+\bibitem{huang2026tactilevla}
+Jialei Huang, Shuo Wang, Fanqi Lin, Yihang Hu, Chuan Wen, and Yang Gao.
+\newblock Tactile-{VLA}: Unlocking vision-language-action model's physical
+  knowledge for tactile generalization, 2026.
+\newblock OpenReview.
+
+\bibitem{electronics14173468}
+Xiaoyuan Huang, Hongcheng Wang, Shiyin Qin, and Su-Kit Tang.
+\newblock Embedded artificial intelligence: A comprehensive literature review.
+\newblock {\em Electronics}, 14(17), 2025.
+
+\bibitem{huang2026tafvlatactileforcealignmentvisionlanguageaction}
+Yuzhe Huang, Pei Lin, Wanlin Li, Daohan Li, Jiajun Li, Jiaming Jiang, Chenxi
+  Xiao, and Ziyuan Jiao.
+\newblock Taf-vla: Tactile-force alignment in vision-language-action models for
+  force-aware manipulation, 2026.
+
+\bibitem{10.1145-3747588}
+Juyong Jiang, Fan Wang, Jiasi Shen, Sungju Kim, and Sunghun Kim.
+\newblock A survey on large language models for code generation.
+\newblock {\em ACM Trans. Softw. Eng. Methodol.}, 35(2), January 2026.
+
+\bibitem{technologies12060081}
+Oumayma Jouini, Kaouthar Sethom, Abdallah Namoun, Nasser Aljohani,
+  Meshari~Huwaytim Alanazi, and Mohammad~N. Alanazi.
+\newblock A survey of machine learning in edge computing: Techniques,
+  frameworks, applications, issues, and research directions.
+\newblock {\em Technologies}, 12(6), 2024.
+
+\bibitem{sym18050766}
+Niks Kordjukovs and Danilo~Pietro Pau.
+\newblock Complexity analysis for categorized edge language models.
+\newblock {\em Symmetry}, 18(5), 2026.
+
+\bibitem{10711025}
+Yunus Koç, Ahmet~Ayberk Tarçın, and Doğukan Köse.
+\newblock Evaluation of voice recognition platforms and methods for edge ai
+  devices.
+\newblock In {\em 2024 8th International Artificial Intelligence and Data
+  Processing Symposium (IDAP)}, pages 1--6, 2024.
+
+\bibitem{FTRANS}
+Bingbing Li, Santosh Pandey, Haowen Fang, Yanjun Lyv, Ji~Li, Jieyang Chen, Mimi
+  Xie, Lipeng Wan, Hang Liu, and Caiwen Ding.
+\newblock Ftrans: Energy-efficient acceleration of transformers using fpga,
+  2020.
+
+\bibitem{Li2025Pushing}
+Jindong Li, Tenglong Li, Guobin Shen, Dongcheng Zhao, Qian Zhang, and Yi~Zeng.
+\newblock Pushing up to the limit of memory bandwidth and capacity utilization
+  for efficient llm decoding on embedded fpga, 2025.
+
+\bibitem{li2025fpgabasedhardware}
+Richie Li and Sicheng Chen.
+\newblock Design and implementation of an fpga-based hardware accelerator for
+  transformer, 2025.
+
+\bibitem{lu2020hw-mha}
+Siyuan Lu, Meiqi Wang, Shuang Liang, Jun Lin, and Zhongfeng Wang.
+\newblock Hardware accelerator for multi-head attention and position-wise
+  feed-forward in the transformer, 2020.
+
+\bibitem{pope2022efficiently}
+Reiner Pope, Sholto Douglas, Aakanksha Chowdhery, Jacob Devlin, James Bradbury,
+  Anselm Levskaya, Jonathan Heek, Kefan Xiao, Shivani Agrawal, and Jeff Dean.
+\newblock Efficiently scaling transformer inference.
+\newblock In {\em Proceedings of Machine Learning and Systems}, volume~5, 2023.
+
+\bibitem{radford2023whisper}
+Alec Radford, Jong~Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and
+  Ilya Sutskever.
+\newblock Robust speech recognition via large-scale weak supervision, 2023.
+
+\bibitem{10433480}
+Mohaimenul Azam~Khan Raiaan, Md. Saddam~Hossain Mukta, Kaniz Fatema,
+  Nur~Mohammad Fahad, Sadman Sakib, Most Marufatul~Jannat Mim, Jubaer Ahmad,
+  Mohammed~Eunus Ali, and Sami Azam.
+\newblock A review on large language models: Architectures, applications,
+  taxonomies, open issues and challenges.
+\newblock {\em IEEE Access}, 12:26839--26874, 2024.
+
+\bibitem{reddi2025generative}
+Vijay~Janapa Reddi.
+\newblock Generative ai at the edge: Challenges and opportunities.
+\newblock {\em Acmqueue}, 2025.
+
+\bibitem{ds14284}
+STMicroelectronics.
+\newblock {\em {STM32MP257} Datasheet ({DS14284} Rev.~5)}, 2025.
+
+\bibitem{um3385}
+STMicroelectronics.
+\newblock {\em {STM32MP257F-DK} Discovery Kit User Manual ({UM3385} Rev.~2)},
+  2025.
+
+\bibitem{11311069}
+Xinghang Tan and Tee~Hui Teo.
+\newblock Design and implementation of a bram-banked double-buffered matrix
+  multiplication accelerator for transformer models on edge fpgas.
+\newblock In {\em 2025 IEEE 18th International Symposium on Embedded
+  Multicore/Many-core Systems-on-Chip (MCSoC)}, pages 582--585, 2025.
+
+\bibitem{FlightLLM}
+Shulin Zeng, Jun Liu, Guohao Dai, Xinhao Yang, Tianyu Fu, Hongyi Wang, Wenheng
+  Ma, Hanbo Sun, Shiyao Li, Zixiao Huang, Yadong Dai, Jintao Li, Zehao Wang,
+  Ruoyu Zhang, Kairui Wen, Xuefei Ning, and Yu~Wang.
+\newblock Flightllm: Efficient large language model inference with a complete
+  mapping flow on fpgas, 2024.
+
+\end{thebibliography}

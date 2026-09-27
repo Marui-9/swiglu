@@ -1,0 +1,345 @@
+Bottlenecks and Limitations — q4k_final Architecture
+================================================================================
+Date: 2026-05-29  |  Based on: csynth.rpt, architecture.txt, board benchmarks
+Clock: 250 MHz (4 ns period)  |  Target: ZU5EV (117K LUT, 1248 DSP, 288 BRAM_18K)
+
+
+================================================================================
+SUMMARY TABLE
+================================================================================
+
+  #   Bottleneck                              Impact            Fixable?
+  ─────────────────────────────────────────────────────────────────────────────
+  1   compute_output is DATAFLOW bottleneck   6.49 ms/layer     Partially
+  2   Sequential load_row_down_urm × 4        1,908/3,165 cy    Yes (merge)
+  3   DOWN_GROUPS sequential (DSP sharing)    1,232/1,243 cy    Yes (unroll)
+  4   No load-MAC overlap in X1/X2            401 cy wasted     Yes (ping-pong)
+  5   UIO interrupt latency                   ~120 ms/token     Hard
+  6   T4 scheduling contention                −47% decode       Hard
+  7   Amdahl ceiling (testblock-measured)      8.02 t/s cap     No
+  8   LUT headroom (88.5% post-P&R)           No unroll margin  Constrains
+  9   Timing margin (WNS −0.074 ns Vivado)    250 MHz ceiling   Constrains
+  10  LOAD_HDR_DOWN II=2                      Minor             Yes
+
+
+================================================================================
+1.  COMPUTE_OUTPUT IS THE DATAFLOW BOTTLENECK
+================================================================================
+
+compute_X1 ∥ X2 : 1,536,001 cycles = 6.14 ms
+compute_output  : 1,622,602 cycles = 6.49 ms  ← sets DATAFLOW interval
+
+The merged-burst WV load (load_4rows_wv_urm) reduced compute_X1/X2 by 41%
+relative to the cpu-predecode design (2,600,961 → 1,536,001 cycles), but the
+output path did not receive an equivalent optimization.  The bottleneck flipped
+from X1/X2 to compute_output.
+
+Margin between the two stages:
+    compute_output − compute_X1 = 86,601 cycles = 346 µs per layer
+
+Any optimization to compute_X1/X2 alone yields zero throughput improvement
+until compute_output is brought below 1,536,001 cycles.  Conversely, optimizing
+compute_output below 1,536,001 cycles would flip the bottleneck back to X1/X2
+and require X1/X2 to be improved in the same pass.
+
+
+================================================================================
+2.  SEQUENTIAL LOAD CALLS IN COMPUTE_OUTPUT
+================================================================================
+
+Per DOWN_Q4K iteration (512 total):
+    load_row_down_urm × 4 :  4 × 477 = 1,908 cycles   (60.3%)
+    mac_blocks_down       :  1,243 cycles               (39.3%)
+    Overhead              :     14 cycles
+
+Loads account for 60% of iteration time.  Each call opens a separate AXI burst
+for one 320-word row; the three redundant burst-setup overheads cost ~135 cycles
+per iteration (~45 cy × 3 extra initiations).
+
+The WV path solved the analogous problem with load_4rows_wv_urm: a single merged
+burst of 320 words covering 4 rows reduced WV load from ~948 cy to 401 cy
+(−58%).  The same approach applied to the output path would merge 4 × 320 words
+= 1,280 words into one burst.
+
+Estimated merged-burst output load: ~1,286 cy (1,280 iter at II=1 + overhead).
+New iteration time: 1,286 + 1,243 + 14 ≈ 2,543 cy.
+New compute_output: 2,543 × 512 ≈ 1,302K cycles = 5.21 ms.
+New DATAFLOW bottleneck: compute_X1/X2 at 1,536K cycles.
+
+Obstacle: the output nibble layout packs 4 groups into each 128-bit DDR word,
+requiring 16 simultaneous BRAM tile writes (4 groups × 4 rows) when merging
+4 rows.  HLS may not schedule 16 concurrent BRAM writes at II=1, falling back
+to II=4 or higher.  Requires implementation and synthesis verification.
+
+
+================================================================================
+3.  DOWN_GROUPS SEQUENTIAL EXECUTION (DSP TIME-MULTIPLEXING)
+================================================================================
+
+mac_blocks_down_q4k_k4_urm processes 32 blocks as 4 sequential groups of 8.
+This time-multiplexes the DSP pipelines to stay within budget:
+
+    4 groups × ~308 cy = 1,232 cycles MAC time (99% of mac_blocks_down total)
+
+Full unroll of DOWN_GROUPS would replicate the DSP pipelines 4×:
+    Additional DSPs needed:  3 × 96 = 288
+    New total DSPs:          338 + 288 = 626  (50% of 1,248 budget → fits)
+    New mac_blocks_down:     ~315 cycles (one MAC_GRP pass)
+    New iteration time:      1,908 (load) + 315 (mac) + 14 ≈ 2,237 cy
+    New compute_output:      2,237 × 512 ≈ 1,145K cycles = 4.58 ms
+
+If fix 2 (merged output load) is applied alone (fix 3 is infeasible on ZU5EV; see §8):
+    Iteration: 2,543 cy → compute_output: 1,302K cycles = 5.21 ms
+    New DATAFLOW bottleneck: compute_X1/X2 at 1,536K cycles = 6.14 ms/layer
+    Board impact at T2 (best operating point):
+        FPGA calls (with polling): 16 × 6.14 ms = 98.2 ms
+        CPU non-FFN T2: ~228 ms
+        Total: ~326 ms → ~3.1 t/s
+
+Note: the additional DSP usage would bring total DSPs from 338 to ~626.  Vivado
+currently adds ~52 DSPs beyond HLS estimate (286 HLS → 338 Vivado), so the
+actual Vivado count may be higher.  Must verify post-P&R does not exceed 1,248.
+
+
+================================================================================
+4.  NO LOAD-MAC OVERLAP IN COMPUTE_X1/X2 (MISSING DOUBLE-BUFFER)
+================================================================================
+
+Within each COMPUTE_X1 iteration:
+    load_4rows_wv_urm    : 401 cycles  (53.5%)
+    mac_blocks_wv_k4_urm : 315 cycles  (42.0%)
+    Overhead             :  34 cycles
+
+Load and MAC execute sequentially: BRAM tiles (nib_r0..r3) are written by load
+then read by MAC.  A double-buffered (ping-pong) BRAM scheme would allow the
+next iteration's load to overlap with the current iteration's MAC:
+
+    Iter N:   [load → nib_A]  [MAC ← nib_A]
+    Iter N+1:                 [load → nib_B]  [MAC ← nib_B]
+    Overlap:  load of N+1 runs during MAC of N (both 320 cy wide, almost equal)
+
+Effective iteration time under perfect overlap: max(401, 315) = 401 cycles.
+New compute_X1: 401 × 2048 ≈ 821K cycles = 3.28 ms.
+
+This would bring compute_X1/X2 below the current compute_output (1,622K),
+making compute_output (even without output-path fixes) the sole bottleneck.
+
+Resource cost: doubles the WV nibble BRAM — 16 BRAM_18K per compute_X → 32 per
+compute_X.  Two instances (X1 + X2) = 64 additional BRAM_18K.
+Current total BRAM_18K: 86.5.  New: ~150.5 (52% of 288 budget → fits).
+
+HLS DATAFLOW does not support intra-process double-buffering directly; requires
+explicit ping-pong array indexing with conditional bank selection in C++, or
+restructuring compute_X1 to expose load and MAC as sub-dataflow processes.
+
+
+================================================================================
+5.  UIO INTERRUPT LATENCY
+================================================================================
+
+Each FPGA call takes 14 ms end-to-end from ap_start write to UIO interrupt
+received (from output_sample.txt).  This includes FPGA compute (6.49 ms) and
+interrupt delivery latency (~7.5 ms from kernel interrupt handler to user space).
+
+    16 FPGA calls × 14 ms    = 224 ms   total FPGA call time
+    of which: compute         = 103.9 ms (useful work)
+              interrupt        = ~120 ms  (addressable overhead)
+
+Interrupt overhead contribution to total token time depends on thread count:
+
+    Thread  Total    FPGA calls  CPU non-FFN  Interrupt share
+    ──────────────────────────────────────────────────────────
+    T1      613 ms   ~336 ms*    ~278 ms†     ~232 ms  (38%)
+    T2      452 ms   ~259 ms*    ~193 ms†     ~155 ms  (34%)
+    T4      685 ms   ~560 ms*    ~125 ms‡     ~432 ms  (63%)
+
+    * Derived: Total − CPU non-FFN.
+    † Estimated as (1 − FFN_fraction) × CPU_total; FFN fraction ≈ 68%.
+    ‡ Measured via testblock (see §7).  T4 is inflated by scheduling contention (§6).
+
+The T1 row implies ~21 ms/call vs 14 ms observed in output_sample.txt.  The
+discrepancy likely reflects that the 14 ms sample was taken at a different load
+point, or that some CPU non-FFN work overlaps with driver overhead in practice.
+
+A busy-wait polling driver (mmapped AP_CTRL) eliminates the ~7.5 ms interrupt
+delivery latency per call.  Best estimate for T2 with polling:
+    103.9 ms (FPGA) + 193 ms (CPU non-FFN T2) ≈ 297 ms → ~3.4 t/s
+
+
+================================================================================
+6.  T4 SCHEDULING CONTENTION (UIO INTERRUPT HANDLER vs CPU THREADS)
+================================================================================
+
+T4 FPGA decode:  1.46 t/s
+T3 FPGA decode:  2.05 t/s  (T4 FPGA is worse than T3 FPGA)
+T4 CPU decode:   2.31 t/s  (T4 FPGA is worse than T4 CPU)
+
+With all 4 A53 cores at 100% utilization running llama.cpp threads, the UIO
+interrupt handler must preempt one of the inference threads to deliver the FPGA
+completion interrupt.  This creates two effects:
+
+(a) Increased interrupt latency: the inference thread may be mid-NEON instruction
+    when the interrupt fires; the OS must wait for the current instruction window
+    to close before preempting → interrupt round-trip grows from 14 ms to higher.
+
+(b) Inference thread stall: the preempted thread loses a scheduling quantum,
+    slowing the CPU-side FFN work and the non-SwiGLU layers that rely on all 4
+    threads.
+
+Result: FPGA+CPU T4 performance falls below both FPGA+CPU T3 and CPU-only T4.
+The accelerator imposes a negative return at T4.  The FPGA+CPU sweet spot is T1
+(+44% decode t/s/W) to T2 (+10% decode t/s/W).
+
+Fix requires either (a) reserving one core for interrupt handling (reducing
+inference to 3 threads) or (b) using a dedicated interrupt core via IRQ affinity
+and cpuset isolation.  Neither is implemented in the current driver.
+
+
+================================================================================
+7.  AMDAHL CEILING — MEASURED VIA TESTBLOCK
+================================================================================
+
+The CPU non-SwiGLU floor was measured empirically using a testblock: an IP
+that passes inputs directly to outputs with essentially zero compute time,
+replacing the real swiglu IP while the full driver and CPU inference path runs.
+
+    Testblock decode:   8.02 t/s  (changelog.txt entry 11; decode-only entry 3: 7.95 t/s)
+    CPU-only reference: ~2.89 t/s (matching thread count, changelog entry 3)
+    Speedup:            7.95 / 2.89 = 2.75×
+    Amdahl ideal (68%): 1 / (1 − 0.68) = 3.125×
+    Communication loss: (3.125 − 2.75) / 3.125 ≈ 12% to driver + AXI + interrupt
+
+    CPU non-SwiGLU floor:  1000 / 8.02 = 124.7 ms ≈ 125 ms  (measured)
+
+This is the hard ceiling at the testblock thread count (matching ~2.89 t/s CPU,
+approximately T3/T4 in the current benchmark table).  Single-thread ceiling is
+lower: with CPU T1 = 0.88 t/s and 68% FFN fraction, non-FFN at T1 ≈ 278 ms →
+ceiling ≈ 3.6 t/s (confirmed in changelog entry 62).
+
+    Amdahl ceiling (multi-thread, empirical):  8.02 t/s
+    Amdahl ceiling (T1, single-thread):        ~3.6 t/s
+    Current best decode (T2):                  2.21 t/s  (28% of multi-thread ceiling)
+    With polling driver at T2 (est.):          ~3.4 t/s  (42% of multi-thread ceiling)
+
+To approach 8 t/s the FPGA must complete each of the 16 FFN layers fast enough
+that its contribution is negligible — requiring per-layer time well under 7.86 ms
+(= 125 ms / 16, the driver round-trip overhead budget from the testblock).
+At 6.49 ms/layer compute + current ~7.5–14 ms interrupt latency, this is not
+met.  A polling driver bringing interrupt overhead to ~0 would leave 6.49 ms
+compute per call: total = 103.9 + 125 = 229 ms → ~4.4 t/s at multi-thread, still
+well below the 8.02 t/s ceiling because the FPGA compute itself (103.9 ms) is
+now the dominant term after driver overhead is eliminated.
+
+
+================================================================================
+8.  LUT HEADROOM AT 88.5% — LIMITS FUTURE UNROLLING
+================================================================================
+
+Vivado post-P&R: 103,684 LUT / 117,120 = 88.5%.
+Headroom: ~13,436 LUT.
+
+HLS LUT estimate was 148,042 (126%) — Vivado optimized away ~44K LUT.  This
+optimization is not predictable; adding more parallel structures could inflate
+the post-P&R count without proportional reduction.
+
+The 13K LUT headroom rules out most unrolling strategies for compute_output
+without first reducing LUT pressure elsewhere:
+
+  - Full DOWN_GROUPS unroll adds 3 parallel MAC_GRP instances: from csynth,
+    one MAC_GRP = 20,736 LUT and one REDUCE_GRP = 8,382 LUT.  Three additional
+    parallel instances: +3 × (20,736 + 8,382) = +87K HLS LUT.  Overall HLS LUT
+    goes from 148K to ~235K, and even with Vivado's ~30% reduction (~164K) this
+    exceeds the 117K budget.  Infeasible on ZU5EV regardless of DSP headroom.
+  - Ping-pong BRAM for WV (§4) costs BRAM not LUT — feasible.
+  - Any new header decode path (e.g., restructured HDR merging) adds decode mux
+    LUT at LOAD_HDR_DOWN, already 7,207 LUT for the current 4-call design.
+
+A ZU7EV (230K LUT) would remove this constraint entirely: fits full DOWN_GROUPS
+unroll with 50% LUT utilization margin.
+
+
+================================================================================
+9.  TIMING MARGIN — 250 MHZ CEILING
+================================================================================
+
+HLS csynth.rpt: −0.81 ns slack on mac_blocks_wv_k4_urm, mac_blocks_down,
+compute_gate, compute_output (all Timing-class violations at HLS level).
+Vivado post-P&R WNS: −0.074 ns (DSP fanout paths in compute_output).
+
+The design closes at 250 MHz only after phys_opt_design -hold_fix.  WNS is
+negative at 250 MHz; there is no margin to increase the clock to 300 MHz
+without redesigning the critical paths.
+
+The critical path is DSP48E2 fanout in the accumulator reduce chain of
+compute_output.  Potential mitigations:
+  - Insert pipeline register between REDUCE_GRP stages (adds 8 cy latency per
+    group, negligible vs 308 cy group time).
+  - Switch REDUCE to iterative sum rather than PIPELINE II=1 (already the case;
+    DSP P-register cascade is the constraint).
+  - Target 266 MHz (3.75 ns): requires −0.074 / (4.0 − 3.75) = 0.3 ns timing
+    improvement.  May be achievable with retiming pragma on accumulate paths.
+
+At 300 MHz (if timing were met): per-layer interval reduces proportionally.
+    1,622,603 × 3.33 ns = 5.40 ms/layer vs 6.49 ms at 250 MHz.
+    16 layers: 86.6 ms.  With polling at T2 (best operating point):
+        86.6 ms FPGA + 228 ms CPU non-FFN = 315 ms → ~3.2 t/s  (+6% vs 250 MHz)
+    Modest gain because the FPGA compute (86.6 ms) is not the dominant term.
+
+
+================================================================================
+10.  LOAD_HDR_DOWN II=2 (MINOR)
+================================================================================
+
+LOAD_HDR_DOWN in load_row_down_urm achieves only II=2 (32 iter × II=2 = 70 cy)
+because two 128-bit AXI reads are needed per block to cover the 256-bit header
+region, and both are issued from the same AXI port in sequence.
+
+This contrasts with LOAD_4R in the WV path, which achieves II=1 by interleaving
+header reads with nibble reads across 320 contiguous words, relying on the
+contiguous burst to hide per-word latency.
+
+Impact: 70 cy vs a theoretical 36 cy at II=1 (32 iter): 34 cy wasted per call,
+× 4 calls × 512 iterations = 69,632 cycles total.  This is ~4% of the current
+compute_output interval — noticeable but not the primary limiter.
+
+Fix: restructure the DDR header layout to require only one 128-bit read per
+block (128-bit header vs current 256-bit), or merge header and nibble loads into
+a flat stride-1 LOAD loop (same approach used in load_4rows_wv_urm).
+
+
+================================================================================
+PRIORITIZED FIX LIST
+================================================================================
+
+  Priority  Fix                                   Gain (t/s, theory)  Risk
+  ────────────────────────────────────────────────────────────────────────────
+  1         Polling-mode UIO driver (§5)           ~3.4 t/s T2 board    Low
+              Eliminates ~7.5 ms/call interrupt latency; T2 best case
+              No hardware change; driver-only
+
+  2         IRQ affinity / core isolation (§6)      T4 regression fixed  Low
+              taskset/cpuset to reserve core 3 for interrupt handler
+              No hardware change; fixes T4 FPGA < T3 FPGA regression
+
+  3         Merge load_row_down_urm × 4 (§2)       ~3.1 t/s T2 board*  Medium
+              Reduces compute_output from 6.49 ms to 5.21 ms/layer
+              Requires 16 concurrent BRAM writes; synthesis verification needed
+
+  4         Ping-pong BRAM for WV (§4)             marginal after fix 3 Medium
+              Reduces compute_X1/X2 from 6.14 ms to 3.28 ms/layer
+              Only useful once compute_output is no longer the bottleneck
+              Costs 64 BRAM_18K; needs explicit ping-pong in HLS
+
+  5         Full DOWN_GROUPS unroll (§3)            infeasible ZU5EV    N/A
+              +87K HLS LUT → ~235K estimated → exceeds 117K budget
+              Feasible on ZU7EV (230K LUT)
+
+  6         Timing fix for 300 MHz (§9)             ~3.2 t/s T2 board*  High
+              Requires pipeline registers or retiming on DSP paths
+              Only +6% gain over 250 MHz; low priority
+
+    * estimates assume polling driver also applied (fix 1)
+
+Fixes 1 and 2 require no bitstream changes and should be attempted first.
+Fix 3 requires HLS re-synthesis and Vivado place-and-route.
+Fix 4 only matters after fix 3; fix 5 requires a larger device.

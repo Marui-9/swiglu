@@ -1,0 +1,47 @@
+$ xmutil xlnx_platformstats
+CPU Utilization
+CPU0	:     0.000000%
+CPU1	:     0.000000%
+CPU2	:     0.000000%
+CPU3	:     9.708738%
+
+RAM Utilization
+MemTotal      :     4004540 kB
+MemFree	      :     737496 kB
+MemAvailable  :     2118964 kB
+
+Swap Mem Utilization
+SwapTotal    :    0 kB
+SwapFree     :    0 kB
+
+Power Utilization
+SOM total power                                         :     4080 mW
+SOM total current                                       :     803 mA
+SOM total voltage                                       :     5077 mV
+
+AMS CTRL
+System PLLs voltage measurement, VCC_PSLL   		:     1196 mV
+PL internal voltage measurement, VCC_PSBATT 		:     715 mV
+Voltage measurement for six DDR I/O PLLs, VCC_PSDDR_PLL :     1790 mV
+VCC_PSINTFP_DDR voltage measurement         		:     838 mV
+
+PS Sysmon
+LPD temperature measurement 		    		:     28 C
+FPD temperature measurement (REMOTE)  		    	:     28 C
+VCC PS FPD voltage measurement (supply 2)   		:     835 mV
+PS IO Bank 500 voltage measurement (supply 6)		:     1778 mV
+VCC PS GTR voltage   					:     850 mV
+VTT PS GTR voltage    					:     1793 mV
+
+PL Sysmon
+PL temperature    					:     28 C
+
+CMA Mem Utilization
+CmaTotal   :     1024000 kB
+CmaFree    :     112900 kB
+
+CPU Frequency
+CPU0	:    1333.333008 MHz
+CPU1	:    1333.333008 MHz
+CPU2	:    1333.333008 MHz
+CPU3	:    1333.333008 MHz

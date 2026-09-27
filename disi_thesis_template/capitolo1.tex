@@ -1,0 +1,282 @@
+\chapter{Introduction and Background}
+\label{cha:intro}
+
+\section{Introduction}
+\label{sec:introduction}
+
+The rapid growth of intelligent sensing devices is shifting AI from power-hungry
+data centers and supercomputing systems to low-power edge platforms, where
+perceptual AI, text generation, reasoning, and control occur near the data source
+under challenging latency, energy, and privacy constraints~\cite{reddi2025generative}.
+
+Within the domain of perceptual AI, TinyML was the initial step toward edge
+intelligence. It has been demonstrated that inference workloads are feasible on
+microcontrollers (MCUs) using moderately parameterized CNN and RNN
+models~\cite{10177729,mi13060851}. Since 2024, the edge has evolved to embrace
+Generative Edge AI. Modern Edge AI is built on heterogeneously quantized
+Transformer architectures, including small language models (SLMs), which seek to
+retain useful generative and reasoning capabilities under tight resource (memory
+and computation) budgets~\cite{technologies12060081,electronics14173468}.
+Techniques such as deep quantization, pruning, knowledge distillation, and
+hardware-aware neural architecture design have become central to reconciling model
+accuracy with edge deployability~\cite{s25103191}. Delivering real-time
+responsiveness requires tight integration of models, algorithms, and low-power
+hardware.
+
+In this landscape, conversational audio is a natural target for edge deployment:
+its pipeline decomposes into independently optimizable modular stages, its temporal
+features operate at comparatively low dimensionality, and its biometric content
+makes local processing preferable from both privacy and regulatory perspectives.
+Conversational systems impose stringent real-time constraints that benefit from the
+elimination of network latency, and their modular structure allows individual
+stages to be aggressively quantized without prohibitive quality loss.
+
+This thesis first defines the objectives of the proposed work on conversational
+systems for edge devices in Section~\ref{sec:research_question}. Section~\ref{sec:sota}
+provides an overview of the state of the art in modern AI architectures, edge AI
+systems, and embedded speech processing. Section~\ref{sec:contribution} outlines the
+specific findings and contributions of this work. The methodology for achieving
+conversational-quality inference under strict compute and memory budgets is detailed
+in Chapter~\ref{cha:design}, while Chapter~\ref{cha:experiments} presents the
+experimental setup, the evaluation, and the discussion of the broader implications
+and limitations of the findings. Chapter~\ref{cha:conclusioni} concludes the work
+and outlines future directions.
+
+\section{Research Question}
+\label{sec:research_question}
+
+Conversational AI systems aim to provide rich, context-aware interactions through
+natural spoken dialogue. Achieving this capability requires models that can process
+audio input, understand and reason upon user intentions, and generate appropriate
+responses within strict real-time constraints. At the same time, conversational
+audio often contains sensitive and biometric information, making local processing
+desirable from both privacy and reliability perspectives.
+
+Conversational speech interfaces operate within defined latency
+thresholds~\cite{doherty2015flow,defossez2025moshi}: response times of
+100--200\,ms are perceived as instantaneous, delays of 0.5--1\,s are categorized as
+immediate and remain acceptable for sustained dialogue, and intervals exceeding
+1\,s degrade the perceived interaction quality. Natural human turn-taking averages
+approximately 230\,ms~\cite{defossez2025moshi}, placing the acceptable
+machine-response boundary near the transition between the instantaneous and
+immediate bands. This leaves a narrow window for the entire pipeline (audio
+encoding, ASR, language modeling, and text-to-speech synthesis) to complete on a
+per-utterance basis.
+
+Edge devices operate under strict limits in compute capability, memory footprint,
+and energy consumption, typically drawing between 3 and 10\,W of power for embedded
+platforms in the smart-assistant and IoT category. Yet meaningful conversational
+interaction relies on resource-intensive transformer-based language models whose
+autoregressive decoding generates one token at a time, with each token requiring
+tens to hundreds of billions of multiply-accumulate operations~\cite{pope2022efficiently}.
+
+A viable edge deployment must therefore satisfy three constraints simultaneously:
+\begin{enumerate}[label=(\roman*)]
+    \item per-token generation latency within the 200--500\,ms window such that the aggregated pipeline remains under the end-to-end budget,
+    \item total system power in the single-digit-watt range compatible with embedded and battery-backed operation,
+    \item local-only execution that preserves the privacy of conversational data without reliance on cloud offload.
+\end{enumerate}
+
+The central question this work poses is whether a combination of model quantization
+and selective hardware acceleration can bring a competitive conversational model
+within these constraints on a resource-limited edge platform.
+
+\section{State of the Art}
+\label{sec:sota}
+
+\subsection{Evolution of Modern AI Models}
+Recent years have seen rapid progress in AI driven by hyper-parameterized neural
+topologies trained on tens of trillion-token datasets. Transformer-based models
+have become the dominant paradigm across multiple modalities~\cite{10433480}. In
+vision, transformer architectures and diffusion models have enabled high-capacity
+systems to achieve image understanding and generation~\cite{10902142}. Large
+language models (LLMs) have demonstrated strong reasoning, chain-of-thought (CoT)
+capabilities, dialogue, and code generation~\cite{10.1145-3747588}. Similarly,
+research on speech has increasingly adopted end-to-end neural architectures that
+unify acoustic modeling, language modeling, and decoding within a single
+framework~\cite{app142411583}. As these models become more capable, they are
+increasingly integrated into systems that interact with users and the physical
+world in real time.
+
+\subsection{Real-time and Edge AI Systems}
+Recent research has focused on integrating AI models into systems that respond to
+continuous streams of sensory input. Vision--Language--Action (VLA) architectures
+exemplify this trend by integrating visual-audio-tactile perception with
+language-based reasoning and control
+policies~\cite{huang2026tactilevla,huang2026tafvlatactileforcealignmentvisionlanguageaction,bi2025vlatouchenhancingvisionlanguageactionmodels}.
+Applications such as conversational assistants, robotics, and augmented interfaces
+require real-time inference with strict latency constraints and reliable operation
+in time-varying environments. These requirements motivated increased interest in
+edge-based inference, where processing occurs close to the sensing element,
+eliminating cloud delay concerns. Several methods have therefore been proposed to
+deploy machine learning models on the edge, operating under limited compute, memory,
+and energy budgets. From the early work on TinyML, more recent approaches harness
+model compression techniques such as quantization, pruning, and knowledge
+distillation, as well as hardware-aware neural architecture
+design~\cite{dnn_compression}. Together, these advances form the foundation of
+modern Edge AI, which seeks to balance model capability with the strict resource
+constraints of edge platforms.
+
+\subsection{Speech and Conversational Architectures}
+De-facto standard speech processing follows a modular pipeline in which an ASR
+module converts audio to text, a natural language understanding component extracts
+intent, a language model generates a textual response, and a TTS engine synthesizes
+the output waveform. This decomposition enables each stage to be optimized
+independently for latency, accuracy, and power, and is the dominant architecture in
+deployed conversational systems. Typical ASR models range from compact encoder-only
+architectures (Whisper-tiny at 39\,M parameters) to large encoder-decoder designs
+(Whisper-large-v3 at 1.55\,B parameters)~\cite{radford2023whisper}, while TTS
+engines span 10\,M to 500\,M parameters. Streaming ASR models allow speech to be
+transcribed incrementally as audio is received, reducing the time to first token
+(TTFT) compared to batch-based processing. The aggregate parameter count across
+three or four separate models can reach several billion, and the per-stage inference
+latencies sum within the end-to-end response budget of 200--500\,ms.
+
+Recent work has explored end-to-end architectures that unify these stages into a
+single neural model. LFM2-Audio~\cite{amini2025lfm2technicalreport} represents this
+trend well: a 1.5\,B-parameter model that jointly handles audio encoding, language
+modeling, and speech synthesis within one framework, eliminating inter-stage latency
+and easing the deployment footprint. LFM2.5 denotes a subsequent release of the same
+architecture with updated weights; the 1.2\,B language backbone used in this work is
+architecturally identical across both releases. The deployment requirements of such
+models vary substantially; a quantitative profiling of representative checkpoints,
+presented in Section~\ref{subsec:profiling}, motivates the specific model choice
+adopted in this work. While end-to-end architectures simplify the system design,
+their computational cost remains concentrated in a single large model rather than
+distributed across independently scalable stages, making hardware acceleration of the
+dominant internal kernel an attractive optimization target.
+
+\subsection{Edge Speech Systems and On-Device Conversational AI}
+The characteristics of speech signals make audio workloads well suited for edge
+deployment. Lightweight components such as wake-word detection and voice activity
+detection can run continuously on MCUs burning power under 1\,W, while more demanding
+pipeline stages (ASR, language modeling) are typically hosted on single-board
+computers or heterogeneous SoCs in the 3--15\,W range. The Raspberry Pi 4B
+(quad-core Cortex-A72 at 1.5\,GHz, up to 8\,GB RAM) has emerged as a common
+evaluation platform for on-device speech systems, hosting engines such as
+Faster-Whisper for real-time voice interaction~\cite{10.1145/3776942.3776981}. At the
+lower end of the resource spectrum, comparative studies of phoneme-based and
+word-based recognition across MCU-class devices (Cortex-M4/M7 at 64--480\,MHz, with
+hundreds of kilobytes of SRAM) identify specific architectures that optimize the
+accuracy-versus-memory trade-off for offline keyword spotting~\cite{10711025}.
+Prototype systems integrating Vosk or Whisper-based ASR with local NLP microservices
+have demonstrated sub-second speech-to-text latency entirely on edge
+hardware~\cite{info16080685}, validating the feasibility of local-only processing for
+conversational audio.
+
+Despite this progress, existing works have largely addressed individual pipeline
+components in isolation. Comparatively little research examines conversational
+interaction as an end-to-end systems problem in which the language backbone, the ASR
+front-end, and the TTS output stage must all complete within the latency and power
+budget defined in Section~\ref{sec:research_question}. Addressing this challenge
+requires not only lightweight models but also system-level optimization spanning
+streaming inference, hardware-software partitioning, and selective acceleration of
+the dominant computational kernels.
+
+\subsection{Profiling of Speech Models for Edge Deployment}
+\label{subsec:profiling}
+To evaluate the feasibility of conversational inference on edge devices, a
+representative set of speech and multimodal models was profiled using
+gguf-parser-go\footnote{\texttt{https://github.com/gpustack/gguf-parser-go}}, a tool
+that extracts structural and resource information from GGUF-format checkpoints. The
+profiling covers parameter count, memory footprint, memory bandwidth requirements,
+and estimated compute throughput. These are the same metrics used in a recent
+large-scale study of 21,039 checkpoints across six workload
+categories~\cite{sym18050766}, which found that audio-language models define the
+lightest deployment envelope (mean 13.41\,GB/s bandwidth, 134\,GFLOPS compute,
+826\,MiB UMA). One observation was that parameter count alone is an insufficient
+predictor of edge feasibility. The resulting comparison, illustrated in
+Fig.~\ref{fig:efficiency}, reveals wide variation in deployment requirements:
+parameter counts span from 500\,M (OuteTTS-0.2-500M-Q4) to 9.4\,B
+(THUDM\_GLM-4-9B-0414-Q4), RAM footprints range from 0.29\,GB (LFM2.5-Audio-1.5B-Q4,
+the lowest among all profiled models) to 2.67\,GB (Qwen2-7B-LLM-Q4), and estimated
+memory bandwidth demand varies from 3.6\,GB/s to 65\,GB/s. Several architectures,
+including the 7--9\,B parameter class, exceed practical memory and bandwidth limits
+for embedded platforms despite offering strong conversational capabilities. In
+contrast,
+LFM2.5-Audio-1.5B\footnote{\texttt{https://huggingface.co/LiquidAI/LFM2.5-Audio-1.5B}}
+combines the lowest RAM footprint with moderate bandwidth requirements (3.9\,GB/s) and
+a competitive parameter scale (1.18\,B), positioning it closest to the desired
+resource envelope of embedded conversational devices.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{audio_benchmark_valori_reali.png}
+  \caption{Model throughput (TOPS) as a function of resource requirements. Models with the highest throughput at the lowest resource cost appear toward the bottom left.}
+  \label{fig:efficiency}
+\end{figure}
+
+Based on this analysis, LFM2.5 was chosen as the primary candidate for the subsequent
+hardware and software studies, as it lies closest to the efficiency--capability
+trade-off required for conversational inference under edge resource constraints.
+
+\subsection{Related Work on the Kria KV260 Platform}
+Following the identification of LFM2.5 as a suitable candidate for edge deployment,
+the next step was to map its computational workload onto an appropriate hardware
+platform. Field-Programmable Gate Arrays (FPGAs) provide a compelling and flexible
+target for edge AI acceleration due to their ability to exploit fine-grained
+parallelism, customize dataflow, and operate within tight power and latency budgets.
+
+Recent work on the AMD-Xilinx Kria KV260 demonstrated the feasibility of
+accelerating transformer models. The three designs surveyed below target both
+feed-forward network (FFN) and self-attention matrix multiplications, which together
+accounted for the greater part of the inference latency and bandwidth consumption in
+transformer workloads. A 6.6k-parameter Tiny Transformer for ECG arrhythmia
+detection deployed on the KV260 achieved 56.62\,ms total inference latency at
+77\,MHz, with the FFN contributing 54.9\% of runtime (31.11\,ms)~\cite{11310944tin}.
+A tiled matrix multiplication accelerator targeting the Q, K, and V self-attention
+projections of DistilBERT achieved a $7\times$ speedup over the Arm CPU baseline at
+100\,MHz and 3.3\,W, delivering 3.12\,GFLOPS of standalone GEMM throughput on the
+KV260~\cite{li2025fpgabasedhardware}. A BRAM-banked double-buffered matrix
+multiplication accelerator on the same platform reached a peak compute throughput of
+22.83\,GOPS for a DistilBERT-scale FFN multiplication ($7.31\times$ over its
+baseline), completing the operation in 13.2\,ms at 100\,MHz. The study identified
+PS-side data handling as the dominant system-level bottleneck, a finding consistent
+with the orchestration overheads observed in the present work
+(Section~\ref{sec:discussion})~\cite{11311069}.
+
+Existing approaches generally focus on accelerating full transformer blocks or
+large-scale models, where attention and feed-forward computations are treated
+together as co-dominant workloads. This work targets the minimal set of computational
+kernels required to achieve conversational-level inference, focusing on feed-forward
+acceleration. The profiling results presented in Section~\ref{subsec:cpuexec} show
+that, for small models such as LFM2.5-1.2B, the execution cost is overwhelmingly
+dominated by feed-forward components, with attention contributing a comparatively
+smaller fraction of the total runtime. This shift in computational balance motivated a
+different design perspective, in which the feed-forward path becomes the primary
+target for acceleration. Furthermore, the LFM2.5-1.2B variant operates using quantized
+weights without bias terms, simplifying the arithmetic structure of the model and
+making it particularly well suited for efficient FPGA implementation.
+
+\section{Contributions}
+\label{sec:contribution}
+This work provides five contributions.
+
+\begin{enumerate}
+    \item \textbf{System-level bottleneck identification for edge conversational inference.}
+    Fine-grained profiling of LFM2.5-1.2B on an Arm-based edge platform shows that
+    feed-forward MatMul + SwiGLU computation dominates runtime, motivating selective
+    acceleration instead of full-model hardware mapping.
+
+    \item \textbf{A practical CPU--FPGA offload integration in the llama.cpp/ggml stack.}
+    A fused FFN hardware operator is implemented with graph-level interception,
+    layer-aware weight caching, interrupt-driven synchronization, and fallback
+    compatibility with standard CPU execution.
+
+    \item \textbf{A resource-aware FPGA design and characterization.}
+    The accelerator is implemented as a staged dataflow pipeline and analyzed at
+    stage granularity, highlighting where execution is limited by memory transfer
+    across all projection stages, including the down-projection. The design operates
+    near device limits (e.g., high LUT occupancy), exposing realistic scaling
+    constraints on KV260-class platforms.
+
+    \item \textbf{Quantitative efficiency/performance trade-off across thread regimes.}
+    CPU Only versus FPGA+CPU measurements across thread counts (T1--T4) are reported
+    using throughput, latency, power, and performance per watt. Results show clear
+    efficiency benefits at low and moderate CPU thread counts, while high-thread
+    regimes remain constrained by data movement and orchestration overheads.
+
+    \item \textbf{Comparative analysis against an edge MPU.}
+    The STM32MP2, a low-power dual-core Arm A35 running at 1.5\,GHz, is benchmarked
+    against the FPGA+CPU implementation in terms of latency and energy consumption.
+\end{enumerate}
