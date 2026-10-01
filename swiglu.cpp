@@ -73,63 +73,34 @@ static float fp16_to_fp32(uint16_t h) {
     union { uint32_t u; float f; } c; c.u = f32; return c.f;
 }
 
-// ─── Byte extractor for 128-bit packed data (Q6K path only) ───────────────────
-static inline uint8_t get_byte(const ap_uint<128>* data, int byte_idx) {
-#pragma HLS INLINE
-    return (uint8_t)data[byte_idx >> 4].range((byte_idx & 0xF) * 8 + 7,
-                                               (byte_idx & 0xF) * 8);
-}
-
 // ============================================================================
 // URAM-transposed load functions
 // ============================================================================
-
-// load_row_wv_urm: load one WV row.  nib_bram is 128-bit wide — each DDR word
-// stored verbatim, 1 write/cycle → guaranteed II=1.  Extraction moves to MAC.
-static void load_row_wv_urm(const ap_uint<128> *W_wide, int row,
-                             ap_uint<128> nib_bram[64],
-                             float   d[WV_BLOCKS_PER_ROW],
-                             float   dmin[WV_BLOCKS_PER_ROW],
-                             int8_t  sc6[WV_BLOCKS_PER_ROW][8],
-                             int8_t  mn6[WV_BLOCKS_PER_ROW][8]) {
-#pragma HLS INLINE off
-    // ── Headers: 16 DDR words, blocks 0..7 ──────────────────────────────────
-    LOAD_HDR_WV: for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
-        #pragma HLS PIPELINE II=1
-        ap_uint<128> w0 = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + b * 2];
-        ap_uint<128> w1 = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + b * 2 + 1];
-        uint16_t d_raw = (uint16_t)w0.range(15, 0), dmin_raw = (uint16_t)w0.range(31, 16);
-        d[b] = fp16_to_fp32(d_raw); dmin[b] = fp16_to_fp32(dmin_raw);
-        for (int i = 0; i < 4; i++) {
-            sc6[b][i] = (int8_t)(uint8_t)w0.range(32 + i*8 + 7, 32 + i*8);
-            mn6[b][i] = (int8_t)(uint8_t)w0.range(64 + i*8 + 7, 64 + i*8);
-        }
-        for (int i = 4; i < 8; i++) {
-            int j = i - 4;
-            sc6[b][i] = (int8_t)(uint8_t)w1.range(j*8 + 7, j*8);
-            mn6[b][i] = (int8_t)(uint8_t)w1.range(32 + j*8 + 7, 32 + j*8);
-        }
-    }
-
-    // ── Nibbles: 1 DDR word → 1 BRAM entry, 1 write/cycle, II=1 ──────────
-    LOAD_NIB_WV: for (int e = 0; e < 64; e++) {
-        #pragma HLS PIPELINE II=1
-        nib_bram[e] = W_wide[(ap_uint<64>)row * WV_ROW_WORDS + URM_WV_HDR_WORDS + e];
-    }
-}
+// Q4_K only.  The Q6_K datapath (and its get_byte() 9:1 multiplexer tree) was
+// removed: the model is quantized all-Q4_K by design, and Q6_K's 210-byte
+// block (13.125 x 128-bit words) does not admit the clean 2D tile layout that
+// makes compile-time .range() nibble extraction free.  The single-row WV loader
+// was likewise dropped when load_4rows_wv_urm subsumed it (merged 320-word
+// burst).  Software mirrors this: the graph builder and driver both accept
+// Q4_K W_down only.
 
 // load_row_down_urm: load one output row into headers + nibble BRAM tiles.
 // 32 blocks = 4 groups. Headers: 64 DDR words. Nibbles: 256 DDR words.
 // Each nibble DDR word = all 4 groups for one element → 4 BRAM writes at II=1.
+// Sub-scales are packed 8-per-word (ap_uint<64>, byte i = sub-block i): a
+// PIPO channel of 32 words is ~40 dataflow channels instead of ~1150
+// element-channels (complete-partitioned int8 arrays exploded to ~77K LUT /
+// ~114K FF of handshake logic as dataflow channels).  The MAC un-packs with
+// a byte mux; banking by block (cyclic 8) keeps 8 reads/cycle conflict-free.
 static void load_row_down_urm(const ap_uint<128> *Wd_wide, int out_i,
                                ap_uint<32> nib_g0[URM_NIB_TILE_DEPTH],
                                ap_uint<32> nib_g1[URM_NIB_TILE_DEPTH],
                                ap_uint<32> nib_g2[URM_NIB_TILE_DEPTH],
                                ap_uint<32> nib_g3[URM_NIB_TILE_DEPTH],
-                               float   d[DOWN_BLOCKS_PER_ROW],
-                               float   dmin[DOWN_BLOCKS_PER_ROW],
-                               int8_t  sc6[DOWN_BLOCKS_PER_ROW][8],
-                               int8_t  mn6[DOWN_BLOCKS_PER_ROW][8]) {
+                               float      d[DOWN_BLOCKS_PER_ROW],
+                               float      dmin[DOWN_BLOCKS_PER_ROW],
+                               ap_uint<64> sc6w[DOWN_BLOCKS_PER_ROW],
+                               ap_uint<64> mn6w[DOWN_BLOCKS_PER_ROW]) {
 #pragma HLS INLINE off
 
     // ── Load headers: 32 blocks × 2 DDR words = 64 DDR words ────────────────
@@ -142,15 +113,9 @@ static void load_row_down_urm(const ap_uint<128> *Wd_wide, int out_i,
         uint16_t dmin_raw = (uint16_t)w0.range(31, 16);
         d[b]    = fp16_to_fp32(d_raw);
         dmin[b] = fp16_to_fp32(dmin_raw);
-        for (int i = 0; i < 4; i++) {
-            sc6[b][i] = (int8_t)(uint8_t)w0.range(32 + i*8 + 7, 32 + i*8);
-            mn6[b][i] = (int8_t)(uint8_t)w0.range(64 + i*8 + 7, 64 + i*8);
-        }
-        for (int i = 4; i < 8; i++) {
-            int j = i - 4;
-            sc6[b][i] = (int8_t)(uint8_t)w1.range(j*8 + 7, j*8);
-            mn6[b][i] = (int8_t)(uint8_t)w1.range(32 + j*8 + 7, 32 + j*8);
-        }
+        // byte i of sc6w = sub-scale i: lo 4 from w0[63:32], hi 4 from w1[31:0]
+        sc6w[b] = (w1.range(31, 0),  w0.range(63, 32));
+        mn6w[b] = (w1.range(63, 32), w0.range(95, 64));
     }
 
     // ── Load nibbles: 256 DDR words → 4 BRAM tiles, one element per word ────
@@ -175,10 +140,10 @@ static void load_4rows_wv_urm(
     float   d1[WV_BLOCKS_PER_ROW], float   dmin1[WV_BLOCKS_PER_ROW],
     float   d2[WV_BLOCKS_PER_ROW], float   dmin2[WV_BLOCKS_PER_ROW],
     float   d3[WV_BLOCKS_PER_ROW], float   dmin3[WV_BLOCKS_PER_ROW],
-    int8_t  sc60[WV_BLOCKS_PER_ROW][8], int8_t mn60[WV_BLOCKS_PER_ROW][8],
-    int8_t  sc61[WV_BLOCKS_PER_ROW][8], int8_t mn61[WV_BLOCKS_PER_ROW][8],
-    int8_t  sc62[WV_BLOCKS_PER_ROW][8], int8_t mn62[WV_BLOCKS_PER_ROW][8],
-    int8_t  sc63[WV_BLOCKS_PER_ROW][8], int8_t mn63[WV_BLOCKS_PER_ROW][8])
+    ap_uint<64> sc6w0[WV_BLOCKS_PER_ROW], ap_uint<64> mn6w0[WV_BLOCKS_PER_ROW],
+    ap_uint<64> sc6w1[WV_BLOCKS_PER_ROW], ap_uint<64> mn6w1[WV_BLOCKS_PER_ROW],
+    ap_uint<64> sc6w2[WV_BLOCKS_PER_ROW], ap_uint<64> mn6w2[WV_BLOCKS_PER_ROW],
+    ap_uint<64> sc6w3[WV_BLOCKS_PER_ROW], ap_uint<64> mn6w3[WV_BLOCKS_PER_ROW])
 {
 #pragma HLS INLINE off
     // Row r: words [r*80, r*80+79] — headers [0..15], nibbles [16..79].
@@ -199,29 +164,23 @@ static void load_4rows_wv_urm(
             int b  = pos >> 1;
             int hw = pos & 1;
             if (hw == 0) {
+                // hdr word 0: d, dmin, sc6/mn6 sub-blocks 0-3 (packed lo half)
                 float df    = fp16_to_fp32((uint16_t)w.range(15, 0));
                 float dminf = fp16_to_fp32((uint16_t)w.range(31, 16));
-                int8_t sc_lo[4], mn_lo[4];
-                for (int k = 0; k < 4; k++) {
-                    #pragma HLS UNROLL
-                    sc_lo[k] = (int8_t)(uint8_t)w.range(32 + k*8 + 7, 32 + k*8);
-                    mn_lo[k] = (int8_t)(uint8_t)w.range(64 + k*8 + 7, 64 + k*8);
-                }
-                if      (r == 0) { d0[b]=df; dmin0[b]=dminf; for(int k=0;k<4;k++){sc60[b][k]=sc_lo[k]; mn60[b][k]=mn_lo[k];} }
-                else if (r == 1) { d1[b]=df; dmin1[b]=dminf; for(int k=0;k<4;k++){sc61[b][k]=sc_lo[k]; mn61[b][k]=mn_lo[k];} }
-                else if (r == 2) { d2[b]=df; dmin2[b]=dminf; for(int k=0;k<4;k++){sc62[b][k]=sc_lo[k]; mn62[b][k]=mn_lo[k];} }
-                else             { d3[b]=df; dmin3[b]=dminf; for(int k=0;k<4;k++){sc63[b][k]=sc_lo[k]; mn63[b][k]=mn_lo[k];} }
+                ap_uint<32> sc_lo = w.range(63, 32);
+                ap_uint<32> mn_lo = w.range(95, 64);
+                if      (r == 0) { d0[b]=df; dmin0[b]=dminf; sc6w0[b].range(31,0)=sc_lo; mn6w0[b].range(31,0)=mn_lo; }
+                else if (r == 1) { d1[b]=df; dmin1[b]=dminf; sc6w1[b].range(31,0)=sc_lo; mn6w1[b].range(31,0)=mn_lo; }
+                else if (r == 2) { d2[b]=df; dmin2[b]=dminf; sc6w2[b].range(31,0)=sc_lo; mn6w2[b].range(31,0)=mn_lo; }
+                else             { d3[b]=df; dmin3[b]=dminf; sc6w3[b].range(31,0)=sc_lo; mn6w3[b].range(31,0)=mn_lo; }
             } else {
-                int8_t sc_hi[4], mn_hi[4];
-                for (int k = 0; k < 4; k++) {
-                    #pragma HLS UNROLL
-                    sc_hi[k] = (int8_t)(uint8_t)w.range(     k*8 + 7,      k*8);
-                    mn_hi[k] = (int8_t)(uint8_t)w.range(32 + k*8 + 7, 32 + k*8);
-                }
-                if      (r == 0) { for(int k=0;k<4;k++){sc60[b][k+4]=sc_hi[k]; mn60[b][k+4]=mn_hi[k];} }
-                else if (r == 1) { for(int k=0;k<4;k++){sc61[b][k+4]=sc_hi[k]; mn61[b][k+4]=mn_hi[k];} }
-                else if (r == 2) { for(int k=0;k<4;k++){sc62[b][k+4]=sc_hi[k]; mn62[b][k+4]=mn_hi[k];} }
-                else             { for(int k=0;k<4;k++){sc63[b][k+4]=sc_hi[k]; mn63[b][k+4]=mn_hi[k];} }
+                // hdr word 1: sc6/mn6 sub-blocks 4-7 (packed hi half)
+                ap_uint<32> sc_hi = w.range(31, 0);
+                ap_uint<32> mn_hi = w.range(63, 32);
+                if      (r == 0) { sc6w0[b].range(63,32)=sc_hi; mn6w0[b].range(63,32)=mn_hi; }
+                else if (r == 1) { sc6w1[b].range(63,32)=sc_hi; mn6w1[b].range(63,32)=mn_hi; }
+                else if (r == 2) { sc6w2[b].range(63,32)=sc_hi; mn6w2[b].range(63,32)=mn_hi; }
+                else             { sc6w3[b].range(63,32)=sc_hi; mn6w3[b].range(63,32)=mn_hi; }
             }
         } else {
             int nidx = pos - URM_WV_HDR_WORDS;
@@ -250,16 +209,47 @@ static void mac_blocks_wv_k4_urm(
     const float   d1[WV_BLOCKS_PER_ROW], const float dmin1[WV_BLOCKS_PER_ROW],
     const float   d2[WV_BLOCKS_PER_ROW], const float dmin2[WV_BLOCKS_PER_ROW],
     const float   d3[WV_BLOCKS_PER_ROW], const float dmin3[WV_BLOCKS_PER_ROW],
-    const int8_t  sc60[WV_BLOCKS_PER_ROW][8], const int8_t mn60[WV_BLOCKS_PER_ROW][8],
-    const int8_t  sc61[WV_BLOCKS_PER_ROW][8], const int8_t mn61[WV_BLOCKS_PER_ROW][8],
-    const int8_t  sc62[WV_BLOCKS_PER_ROW][8], const int8_t mn62[WV_BLOCKS_PER_ROW][8],
-    const int8_t  sc63[WV_BLOCKS_PER_ROW][8], const int8_t mn63[WV_BLOCKS_PER_ROW][8],
+    const ap_uint<64> sc6w0[WV_BLOCKS_PER_ROW], const ap_uint<64> mn6w0[WV_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w1[WV_BLOCKS_PER_ROW], const ap_uint<64> mn6w1[WV_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w2[WV_BLOCKS_PER_ROW], const ap_uint<64> mn6w2[WV_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w3[WV_BLOCKS_PER_ROW], const ap_uint<64> mn6w3[WV_BLOCKS_PER_ROW],
     const int8_t  x[WV_BLOCKS_PER_ROW][256],
     float  x_scale,
     float *result0, float *result1, float *result2, float *result3)
 {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=x dim=1 complete
+
+    // Un-pack the sub-scale words once into fully partitioned locals with
+    // compile-time .range() (pure wiring).  Indexed reads below then cost an
+    // 8:1 byte mux each; a variable shift on the 64-bit word would synthesize
+    // a barrel shifter per site (~160 LUT x 64 sites ~ +10K LUT measured).
+    int8_t sc0[WV_BLOCKS_PER_ROW][8], mn0[WV_BLOCKS_PER_ROW][8];
+    int8_t sc1[WV_BLOCKS_PER_ROW][8], mn1[WV_BLOCKS_PER_ROW][8];
+    int8_t sc2[WV_BLOCKS_PER_ROW][8], mn2[WV_BLOCKS_PER_ROW][8];
+    int8_t sc3[WV_BLOCKS_PER_ROW][8], mn3[WV_BLOCKS_PER_ROW][8];
+    #pragma HLS ARRAY_PARTITION variable=sc0 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=mn0 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=sc1 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=mn1 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=sc2 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=mn2 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=sc3 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=mn3 dim=0 complete
+    UNPACK_SC: for (int b = 0; b < WV_BLOCKS_PER_ROW; b++) {
+        #pragma HLS UNROLL
+        for (int i = 0; i < 8; i++) {
+            #pragma HLS UNROLL
+            sc0[b][i] = (int8_t)(uint8_t)sc6w0[b].range(i*8+7, i*8);
+            mn0[b][i] = (int8_t)(uint8_t)mn6w0[b].range(i*8+7, i*8);
+            sc1[b][i] = (int8_t)(uint8_t)sc6w1[b].range(i*8+7, i*8);
+            mn1[b][i] = (int8_t)(uint8_t)mn6w1[b].range(i*8+7, i*8);
+            sc2[b][i] = (int8_t)(uint8_t)sc6w2[b].range(i*8+7, i*8);
+            mn2[b][i] = (int8_t)(uint8_t)mn6w2[b].range(i*8+7, i*8);
+            sc3[b][i] = (int8_t)(uint8_t)sc6w3[b].range(i*8+7, i*8);
+            mn3[b][i] = (int8_t)(uint8_t)mn6w3[b].range(i*8+7, i*8);
+        }
+    }
 
     int32_t acc_w0[WV_BLOCKS_PER_ROW][4], acc_m0[WV_BLOCKS_PER_ROW][4];
     int32_t acc_w1[WV_BLOCKS_PER_ROW][4], acc_m1[WV_BLOCKS_PER_ROW][4];
@@ -311,19 +301,28 @@ static void mac_blocks_wv_k4_urm(
             ap_uint<4> nb1 = (ap_uint<4>) wr1.range(b*4+3, b*4);
             ap_uint<4> nb2 = (ap_uint<4>) wr2.range(b*4+3, b*4);
             ap_uint<4> nb3 = (ap_uint<4>) wr3.range(b*4+3, b*4);
+            // this sub-block's scale/min byte (8:1 byte mux on partitioned regs)
+            int8_t s0 = sc0[b][sub];
+            int8_t m0 = mn0[b][sub];
+            int8_t s1 = sc1[b][sub];
+            int8_t m1 = mn1[b][sub];
+            int8_t s2 = sc2[b][sub];
+            int8_t m2 = mn2[b][sub];
+            int8_t s3 = sc3[b][sub];
+            int8_t m3 = mn3[b][sub];
 
             // Compute contributions once, then distribute via data mux across all
             // 4 k-slots.  Replaces CE-gated writes (high-fanout iter counter → 1024
             // CE pins) with local 2:1 muxes before each adder — eliminates the
             // iter6_reg fanout that prevented timing closure.
-            int32_t cw0 = (int32_t)(xi8 * (ap_int<5>)nb0 * sc60[b][sub]);
-            int32_t cm0 = (int32_t)(xi8 * mn60[b][sub]);
-            int32_t cw1 = (int32_t)(xi8 * (ap_int<5>)nb1 * sc61[b][sub]);
-            int32_t cm1 = (int32_t)(xi8 * mn61[b][sub]);
-            int32_t cw2 = (int32_t)(xi8 * (ap_int<5>)nb2 * sc62[b][sub]);
-            int32_t cm2 = (int32_t)(xi8 * mn62[b][sub]);
-            int32_t cw3 = (int32_t)(xi8 * (ap_int<5>)nb3 * sc63[b][sub]);
-            int32_t cm3 = (int32_t)(xi8 * mn63[b][sub]);
+            int32_t cw0 = (int32_t)(xi8 * (ap_int<5>)nb0 * s0);
+            int32_t cm0 = (int32_t)(xi8 * m0);
+            int32_t cw1 = (int32_t)(xi8 * (ap_int<5>)nb1 * s1);
+            int32_t cm1 = (int32_t)(xi8 * m1);
+            int32_t cw2 = (int32_t)(xi8 * (ap_int<5>)nb2 * s2);
+            int32_t cm2 = (int32_t)(xi8 * m2);
+            int32_t cw3 = (int32_t)(xi8 * (ap_int<5>)nb3 * s3);
+            int32_t cm3 = (int32_t)(xi8 * m3);
             for (int ki = 0; ki < 4; ki++) {
                 #pragma HLS UNROLL
                 acc_w0[b][ki] += (ki == k) ? cw0 : 0;
@@ -360,58 +359,62 @@ static void mac_blocks_wv_k4_urm(
     *result3 = (float)total3 * x_scale;
 }
 
-// mac_blocks_down_q4k_k4_urm: 32 blocks, 4-groups × 4-rows K=4.
-// 16 URAM nibble tiles (4 groups × 4 rows).  Within each group, 4 rows
-// are UNROLL'd → 32 parallel MACs (8 blocks × 4 rows).  4 groups are
-// sequential → DSPs shared, 1024 MAC cycles/4-row iteration.
-// Direct CE accumulation: acc[b][k[r]] += c routes k[r] to FF clock-enable
-// pins (placed locally by Vivado) rather than data-path muxes (which create
-// 64-fanout nets causing 2.4-3.0 ns net delay at 250 MHz).
-static void mac_blocks_down_q4k_k4_urm(
-    // Group 0: 4 rows
+
+
+// mac_blocks_down_q4k_k2_urm: 32 blocks, 4-groups × 2-rows K=2.
+// 8 nibble tiles (4 groups × 2 rows).  Within each group, 2 rows are
+// UNROLL'd → 16 parallel MACs (8 blocks × 2 rows).  4 groups sequential →
+// 1024 MAC cycles/2-row iteration.  Derived from the K=4 version (rows 2/3
+// deleted): with the loop-body DATAFLOW overlap in compute_output the load
+// (~954 cy) and MAC (~1024 cy) are balanced, so the wider K=4 array would
+// idle ~46% even when overlapped — K=2 frees its LUTs instead.
+// Direct CE accumulation idiom preserved (exists for timing closure).
+static void mac_blocks_down_q4k_k2_urm(
     const ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g0r1[URM_NIB_TILE_DEPTH],
-    const ap_uint<32> g0r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g0r3[URM_NIB_TILE_DEPTH],
-    // Group 1: 4 rows
     const ap_uint<32> g1r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g1r1[URM_NIB_TILE_DEPTH],
-    const ap_uint<32> g1r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g1r3[URM_NIB_TILE_DEPTH],
-    // Group 2: 4 rows
     const ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g2r1[URM_NIB_TILE_DEPTH],
-    const ap_uint<32> g2r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g2r3[URM_NIB_TILE_DEPTH],
-    // Group 3: 4 rows
     const ap_uint<32> g3r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g3r1[URM_NIB_TILE_DEPTH],
-    const ap_uint<32> g3r2[URM_NIB_TILE_DEPTH], const ap_uint<32> g3r3[URM_NIB_TILE_DEPTH],
-    // Headers: 4 rows × 32 blocks
+    // Headers: 2 rows × 32 blocks (sub-scales packed 8-per-word)
     const float  d0[DOWN_BLOCKS_PER_ROW], const float  dmin0[DOWN_BLOCKS_PER_ROW],
     const float  d1[DOWN_BLOCKS_PER_ROW], const float  dmin1[DOWN_BLOCKS_PER_ROW],
-    const float  d2[DOWN_BLOCKS_PER_ROW], const float  dmin2[DOWN_BLOCKS_PER_ROW],
-    const float  d3[DOWN_BLOCKS_PER_ROW], const float  dmin3[DOWN_BLOCKS_PER_ROW],
-    const int8_t sc60[DOWN_BLOCKS_PER_ROW][8], const int8_t mn60[DOWN_BLOCKS_PER_ROW][8],
-    const int8_t sc61[DOWN_BLOCKS_PER_ROW][8], const int8_t mn61[DOWN_BLOCKS_PER_ROW][8],
-    const int8_t sc62[DOWN_BLOCKS_PER_ROW][8], const int8_t mn62[DOWN_BLOCKS_PER_ROW][8],
-    const int8_t sc63[DOWN_BLOCKS_PER_ROW][8], const int8_t mn63[DOWN_BLOCKS_PER_ROW][8],
+    const ap_uint<64> sc6w0[DOWN_BLOCKS_PER_ROW], const ap_uint<64> mn6w0[DOWN_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w1[DOWN_BLOCKS_PER_ROW], const ap_uint<64> mn6w1[DOWN_BLOCKS_PER_ROW],
     const int8_t gate[DOWN_BLOCKS_PER_ROW][256],
     float  gate_scale,
-    float *result0, float *result1, float *result2, float *result3)
+    float *result0, float *result1)
 {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=gate dim=1 complete
 
-    fxd_accum_t total0 = 0, total1 = 0, total2 = 0, total3 = 0;
+    // Un-pack sub-scale words once (compile-time .range(), pure wiring) —
+    // variable shifts would build a barrel shifter per site; see WV MAC note.
+    int8_t sc0[DOWN_BLOCKS_PER_ROW][8], mn0[DOWN_BLOCKS_PER_ROW][8];
+    int8_t sc1[DOWN_BLOCKS_PER_ROW][8], mn1[DOWN_BLOCKS_PER_ROW][8];
+    #pragma HLS ARRAY_PARTITION variable=sc0 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=mn0 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=sc1 dim=0 complete
+    #pragma HLS ARRAY_PARTITION variable=mn1 dim=0 complete
+    UNPACK_SC: for (int b = 0; b < DOWN_BLOCKS_PER_ROW; b++) {
+        #pragma HLS UNROLL
+        for (int i = 0; i < 8; i++) {
+            #pragma HLS UNROLL
+            sc0[b][i] = (int8_t)(uint8_t)sc6w0[b].range(i*8+7, i*8);
+            mn0[b][i] = (int8_t)(uint8_t)mn6w0[b].range(i*8+7, i*8);
+            sc1[b][i] = (int8_t)(uint8_t)sc6w1[b].range(i*8+7, i*8);
+            mn1[b][i] = (int8_t)(uint8_t)mn6w1[b].range(i*8+7, i*8);
+        }
+    }
 
-    // 4 groups sequential (share DSPs), 4 rows UNROLL'd per group
+    fxd_accum_t total0 = 0, total1 = 0;
+
+    // 4 groups sequential (share DSPs), 2 rows UNROLL'd per group
     DOWN_GROUPS: for (int grp = 0; grp < 4; grp++) {
         int32_t acc_w0[8][4], acc_m0[8][4];
         int32_t acc_w1[8][4], acc_m1[8][4];
-        int32_t acc_w2[8][4], acc_m2[8][4];
-        int32_t acc_w3[8][4], acc_m3[8][4];
         #pragma HLS ARRAY_PARTITION variable=acc_w0 dim=0 complete
         #pragma HLS ARRAY_PARTITION variable=acc_m0 dim=0 complete
         #pragma HLS ARRAY_PARTITION variable=acc_w1 dim=0 complete
         #pragma HLS ARRAY_PARTITION variable=acc_m1 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc_w2 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc_m2 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc_w3 dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=acc_m3 dim=0 complete
 
         INIT_GRP: for (int b = 0; b < 8; b++) {
             #pragma HLS UNROLL
@@ -419,28 +422,26 @@ static void mac_blocks_down_q4k_k4_urm(
                 #pragma HLS UNROLL
                 acc_w0[b][k] = 0; acc_m0[b][k] = 0;
                 acc_w1[b][k] = 0; acc_m1[b][k] = 0;
-                acc_w2[b][k] = 0; acc_m2[b][k] = 0;
-                acc_w3[b][k] = 0; acc_m3[b][k] = 0;
             }
         }
 
         MAC_GRP: for (int n = 0; n < 256; n++) {
             #pragma HLS PIPELINE II=1
-            // Per-row copies of index regs to limit fanout across 4 row paths
-            int sub[4], k[4];
+            // Per-row copies of index regs to limit fanout across 2 row paths
+            int sub[2], k[2];
             #pragma HLS ARRAY_PARTITION variable=sub complete
             #pragma HLS ARRAY_PARTITION variable=k complete
-            for (int r = 0; r < 4; r++) {
+            for (int r = 0; r < 2; r++) {
                 #pragma HLS UNROLL
                 sub[r] = n >> 5;
                 k[r]   = n & 3;
             }
 
-            ap_uint<32> w0, w1, w2, w3;
-            if      (grp == 0) { w0 = g0r0[n]; w1 = g0r1[n]; w2 = g0r2[n]; w3 = g0r3[n]; }
-            else if (grp == 1) { w0 = g1r0[n]; w1 = g1r1[n]; w2 = g1r2[n]; w3 = g1r3[n]; }
-            else if (grp == 2) { w0 = g2r0[n]; w1 = g2r1[n]; w2 = g2r2[n]; w3 = g2r3[n]; }
-            else               { w0 = g3r0[n]; w1 = g3r1[n]; w2 = g3r2[n]; w3 = g3r3[n]; }
+            ap_uint<32> w0, w1;
+            if      (grp == 0) { w0 = g0r0[n]; w1 = g0r1[n]; }
+            else if (grp == 1) { w0 = g1r0[n]; w1 = g1r1[n]; }
+            else if (grp == 2) { w0 = g2r0[n]; w1 = g2r1[n]; }
+            else               { w0 = g3r0[n]; w1 = g3r1[n]; }
 
             for (int b = 0; b < 8; b++) {
                 #pragma HLS UNROLL
@@ -448,51 +449,128 @@ static void mac_blocks_down_q4k_k4_urm(
                 ap_int<8>  gi8  = (ap_int<8>)  gate[babs][n];
                 ap_uint<4> nb0  = (ap_uint<4>) w0.range(b*4+3, b*4);
                 ap_uint<4> nb1  = (ap_uint<4>) w1.range(b*4+3, b*4);
-                ap_uint<4> nb2  = (ap_uint<4>) w2.range(b*4+3, b*4);
-                ap_uint<4> nb3  = (ap_uint<4>) w3.range(b*4+3, b*4);
+                // this sub-block's scale/min byte (8:1 byte mux on partitioned regs)
+                int8_t s0 = sc0[babs][sub[0]];
+                int8_t m0 = mn0[babs][sub[0]];
+                int8_t s1 = sc1[babs][sub[1]];
+                int8_t m1 = mn1[babs][sub[1]];
 
-                int32_t cw0 = (int32_t)(gi8 * (ap_int<5>)nb0 * sc60[babs][sub[0]]);
-                int32_t cm0 = (int32_t)(gi8 * mn60[babs][sub[0]]);
-                int32_t cw1 = (int32_t)(gi8 * (ap_int<5>)nb1 * sc61[babs][sub[1]]);
-                int32_t cm1 = (int32_t)(gi8 * mn61[babs][sub[1]]);
-                int32_t cw2 = (int32_t)(gi8 * (ap_int<5>)nb2 * sc62[babs][sub[2]]);
-                int32_t cm2 = (int32_t)(gi8 * mn62[babs][sub[2]]);
-                int32_t cw3 = (int32_t)(gi8 * (ap_int<5>)nb3 * sc63[babs][sub[3]]);
-                int32_t cm3 = (int32_t)(gi8 * mn63[babs][sub[3]]);
+                int32_t cw0 = (int32_t)(gi8 * (ap_int<5>)nb0 * s0);
+                int32_t cm0 = (int32_t)(gi8 * m0);
+                int32_t cw1 = (int32_t)(gi8 * (ap_int<5>)nb1 * s1);
+                int32_t cm1 = (int32_t)(gi8 * m1);
                 acc_w0[b][k[0]] += cw0;  acc_m0[b][k[0]] += cm0;
                 acc_w1[b][k[1]] += cw1;  acc_m1[b][k[1]] += cm1;
-                acc_w2[b][k[2]] += cw2;  acc_m2[b][k[2]] += cm2;
-                acc_w3[b][k[3]] += cw3;  acc_m3[b][k[3]] += cm3;
             }
         }
 
         REDUCE_GRP: for (int b = 0; b < 8; b++) {
             int babs = grp * 8 + b;
             int32_t sw0 = 0, sm0 = 0, sw1 = 0, sm1 = 0;
-            int32_t sw2 = 0, sm2 = 0, sw3 = 0, sm3 = 0;
             for (int k = 0; k < 4; k++) {
                 #pragma HLS UNROLL
                 sw0 += acc_w0[b][k]; sm0 += acc_m0[b][k];
                 sw1 += acc_w1[b][k]; sm1 += acc_m1[b][k];
-                sw2 += acc_w2[b][k]; sm2 += acc_m2[b][k];
-                sw3 += acc_w3[b][k]; sm3 += acc_m3[b][k];
             }
-            total0 += (fxd_accum_t)(d0[babs]    * (float)sw0 - dmin0[babs] * (float)sm0);
-            total1 += (fxd_accum_t)(d1[babs]    * (float)sw1 - dmin1[babs] * (float)sm1);
-            total2 += (fxd_accum_t)(d2[babs]    * (float)sw2 - dmin2[babs] * (float)sm2);
-            total3 += (fxd_accum_t)(d3[babs]    * (float)sw3 - dmin3[babs] * (float)sm3);
+            total0 += (fxd_accum_t)(d0[babs] * (float)sw0 - dmin0[babs] * (float)sm0);
+            total1 += (fxd_accum_t)(d1[babs] * (float)sw1 - dmin1[babs] * (float)sm1);
         }
     }
     *result0 = (float)total0 * gate_scale;
     *result1 = (float)total1 * gate_scale;
-    *result2 = (float)total2 * gate_scale;
-    *result3 = (float)total3 * gate_scale;
 }
 
+// load_2rows_down: DATAFLOW producer — fills 2 rows' nibble tiles + headers.
+// Two sequential per-row bursts (the 4-way group split of the down layout
+// precludes a merged multi-row burst; see load_row_down_urm).
+static void load_2rows_down(
+    const ap_uint<128> *Wd_wide, int out_i,
+    ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], ap_uint<32> g1r0[URM_NIB_TILE_DEPTH],
+    ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], ap_uint<32> g3r0[URM_NIB_TILE_DEPTH],
+    ap_uint<32> g0r1[URM_NIB_TILE_DEPTH], ap_uint<32> g1r1[URM_NIB_TILE_DEPTH],
+    ap_uint<32> g2r1[URM_NIB_TILE_DEPTH], ap_uint<32> g3r1[URM_NIB_TILE_DEPTH],
+    float d0[DOWN_BLOCKS_PER_ROW], float dmin0[DOWN_BLOCKS_PER_ROW],
+    float d1[DOWN_BLOCKS_PER_ROW], float dmin1[DOWN_BLOCKS_PER_ROW],
+    ap_uint<64> sc6w0[DOWN_BLOCKS_PER_ROW], ap_uint<64> mn6w0[DOWN_BLOCKS_PER_ROW],
+    ap_uint<64> sc6w1[DOWN_BLOCKS_PER_ROW], ap_uint<64> mn6w1[DOWN_BLOCKS_PER_ROW])
+{
+#pragma HLS INLINE off
+    load_row_down_urm(Wd_wide, out_i,     g0r0, g1r0, g2r0, g3r0, d0, dmin0, sc6w0, mn6w0);
+    load_row_down_urm(Wd_wide, out_i + 1, g0r1, g1r1, g2r1, g3r1, d1, dmin1, sc6w1, mn6w1);
+}
+
+// mac_write_down: DATAFLOW consumer — K=2 MAC + write 2 results to out_local.
+static void mac_write_down(
+    const ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g0r1[URM_NIB_TILE_DEPTH],
+    const ap_uint<32> g1r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g1r1[URM_NIB_TILE_DEPTH],
+    const ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g2r1[URM_NIB_TILE_DEPTH],
+    const ap_uint<32> g3r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g3r1[URM_NIB_TILE_DEPTH],
+    const float  d0[DOWN_BLOCKS_PER_ROW], const float  dmin0[DOWN_BLOCKS_PER_ROW],
+    const float  d1[DOWN_BLOCKS_PER_ROW], const float  dmin1[DOWN_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w0[DOWN_BLOCKS_PER_ROW], const ap_uint<64> mn6w0[DOWN_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w1[DOWN_BLOCKS_PER_ROW], const ap_uint<64> mn6w1[DOWN_BLOCKS_PER_ROW],
+    const int8_t gate[DOWN_BLOCKS_PER_ROW][256],
+    float gate_scale,
+    float out_local[VECTOR_DIM], int out_i)
+{
+#pragma HLS INLINE off
+    float r0, r1;
+    mac_blocks_down_q4k_k2_urm(g0r0, g0r1, g1r0, g1r1, g2r0, g2r1, g3r0, g3r1,
+                               d0, dmin0, d1, dmin1, sc6w0, mn6w0, sc6w1, mn6w1,
+                               gate, gate_scale, &r0, &r1);
+    out_local[out_i]     = r0;
+    out_local[out_i + 1] = r1;
+}
 
 // ============================================================================
 // Phase 2 & 3: X1 = x @ W.T  and  X2 = x @ V.T  (Q4_K, K=4, URAM)
 // ============================================================================
+
+// mac_quant_wv: DATAFLOW consumer — K=4 MAC + quantize 4 results to INT8.
+static void mac_quant_wv(
+    const ap_uint<128> nib_r0[64], const ap_uint<128> nib_r1[64],
+    const ap_uint<128> nib_r2[64], const ap_uint<128> nib_r3[64],
+    const float d0[WV_BLOCKS_PER_ROW], const float dmin0[WV_BLOCKS_PER_ROW],
+    const float d1[WV_BLOCKS_PER_ROW], const float dmin1[WV_BLOCKS_PER_ROW],
+    const float d2[WV_BLOCKS_PER_ROW], const float dmin2[WV_BLOCKS_PER_ROW],
+    const float d3[WV_BLOCKS_PER_ROW], const float dmin3[WV_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w0[WV_BLOCKS_PER_ROW], const ap_uint<64> mn6w0[WV_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w1[WV_BLOCKS_PER_ROW], const ap_uint<64> mn6w1[WV_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w2[WV_BLOCKS_PER_ROW], const ap_uint<64> mn6w2[WV_BLOCKS_PER_ROW],
+    const ap_uint<64> sc6w3[WV_BLOCKS_PER_ROW], const ap_uint<64> mn6w3[WV_BLOCKS_PER_ROW],
+    const int8_t x[WV_BLOCKS_PER_ROW][256],
+    float x_scale,
+    int8_t Xc[FFN_DIM], int row)
+{
+#pragma HLS INLINE off
+    float r0, r1, r2, r3;
+    mac_blocks_wv_k4_urm(
+        nib_r0, nib_r1, nib_r2, nib_r3,
+        d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
+        sc6w0, mn6w0, sc6w1, mn6w1, sc6w2, mn6w2, sc6w3, mn6w3,
+        x, x_scale, &r0, &r1, &r2, &r3);
+
+    // Quantize 4 results to INT8
+    float fq0 = r0 * X12_INV_SCALE;
+    int   iq0 = (int)(fq0 + (fq0 >= 0.f ? 0.5f : -0.5f));
+    if (iq0 >  127) iq0 =  127; if (iq0 < -128) iq0 = -128;
+    Xc[row]     = (int8_t)iq0;
+
+    float fq1 = r1 * X12_INV_SCALE;
+    int   iq1 = (int)(fq1 + (fq1 >= 0.f ? 0.5f : -0.5f));
+    if (iq1 >  127) iq1 =  127; if (iq1 < -128) iq1 = -128;
+    Xc[row + 1] = (int8_t)iq1;
+
+    float fq2 = r2 * X12_INV_SCALE;
+    int   iq2 = (int)(fq2 + (fq2 >= 0.f ? 0.5f : -0.5f));
+    if (iq2 >  127) iq2 =  127; if (iq2 < -128) iq2 = -128;
+    Xc[row + 2] = (int8_t)iq2;
+
+    float fq3 = r3 * X12_INV_SCALE;
+    int   iq3 = (int)(fq3 + (fq3 >= 0.f ? 0.5f : -0.5f));
+    if (iq3 >  127) iq3 =  127; if (iq3 < -128) iq3 = -128;
+    Xc[row + 3] = (int8_t)iq3;
+}
 
 static void compute_X1(
     const uint8_t  *W,
@@ -504,55 +582,47 @@ static void compute_X1(
 #pragma HLS ARRAY_PARTITION variable=x_local_1 dim=2 complete
     const ap_uint<128> *W_wide = (const ap_uint<128>*)W;
 
-    // 4 rows × 1 wide BRAM each = 4 × 128-bit × 64 deep
-    ap_uint<128> nib_r0[64], nib_r1[64], nib_r2[64], nib_r3[64];
-    #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r1 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
-
-    float  d0[WV_BLOCKS_PER_ROW], dmin0[WV_BLOCKS_PER_ROW];
-    float  d1[WV_BLOCKS_PER_ROW], dmin1[WV_BLOCKS_PER_ROW];
-    float  d2[WV_BLOCKS_PER_ROW], dmin2[WV_BLOCKS_PER_ROW];
-    float  d3[WV_BLOCKS_PER_ROW], dmin3[WV_BLOCKS_PER_ROW];
-    int8_t sc60[WV_BLOCKS_PER_ROW][8], mn60[WV_BLOCKS_PER_ROW][8];
-    int8_t sc61[WV_BLOCKS_PER_ROW][8], mn61[WV_BLOCKS_PER_ROW][8];
-    int8_t sc62[WV_BLOCKS_PER_ROW][8], mn62[WV_BLOCKS_PER_ROW][8];
-    int8_t sc63[WV_BLOCKS_PER_ROW][8], mn63[WV_BLOCKS_PER_ROW][8];
-
+    // Loop-body DATAFLOW: the tile/header buffers declared in the body become
+    // PIPO channels between load_4rows_wv_urm (producer) and mac_quant_wv
+    // (consumer), so iteration N's 320-word burst overlaps iteration N-1's
+    // MAC: per-iteration time -> max(load ~401, MAC ~356) instead of the sum.
     COMPUTE_X1: for (int row = 0; row < FFN_DIM; row += 4) {
+        #pragma HLS DATAFLOW
+        // 4 rows × 1 wide BRAM each = 4 × 128-bit × 64 deep (PIPO-doubled)
+        ap_uint<128> nib_r0[64], nib_r1[64], nib_r2[64], nib_r3[64];
+        #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=nib_r1 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
+
+        // Headers: sub-scales packed 8-per-word (see load_row_down_urm note);
+        // banked per block for the MAC's 8 reads/cycle.  d/dmin are read
+        // sequentially in the reduce, so they need no partitioning.
+        float  d0[WV_BLOCKS_PER_ROW], dmin0[WV_BLOCKS_PER_ROW];
+        float  d1[WV_BLOCKS_PER_ROW], dmin1[WV_BLOCKS_PER_ROW];
+        float  d2[WV_BLOCKS_PER_ROW], dmin2[WV_BLOCKS_PER_ROW];
+        float  d3[WV_BLOCKS_PER_ROW], dmin3[WV_BLOCKS_PER_ROW];
+        ap_uint<64> sc6w0[WV_BLOCKS_PER_ROW], mn6w0[WV_BLOCKS_PER_ROW];
+        ap_uint<64> sc6w1[WV_BLOCKS_PER_ROW], mn6w1[WV_BLOCKS_PER_ROW];
+        ap_uint<64> sc6w2[WV_BLOCKS_PER_ROW], mn6w2[WV_BLOCKS_PER_ROW];
+        ap_uint<64> sc6w3[WV_BLOCKS_PER_ROW], mn6w3[WV_BLOCKS_PER_ROW];
+        #pragma HLS ARRAY_PARTITION variable=sc6w0 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=mn6w0 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=sc6w1 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=mn6w1 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=sc6w2 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=mn6w2 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=sc6w3 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=mn6w3 dim=1 complete
+
         load_4rows_wv_urm(W_wide, row,
                           nib_r0, nib_r1, nib_r2, nib_r3,
                           d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
-                          sc60, mn60, sc61, mn61, sc62, mn62, sc63, mn63);
-
-        float r0, r1, r2, r3;
-        mac_blocks_wv_k4_urm(
-            nib_r0, nib_r1, nib_r2, nib_r3,
-            d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
-            sc60, mn60, sc61, mn61, sc62, mn62, sc63, mn63,
-            x_local_1[0], x_scale, &r0, &r1, &r2, &r3);
-
-        // Quantize 4 results to INT8
-        float fq0 = r0 * X12_INV_SCALE;
-        int   iq0 = (int)(fq0 + (fq0 >= 0.f ? 0.5f : -0.5f));
-        if (iq0 >  127) iq0 =  127; if (iq0 < -128) iq0 = -128;
-        X1_cache[0][row]     = (int8_t)iq0;
-
-        float fq1 = r1 * X12_INV_SCALE;
-        int   iq1 = (int)(fq1 + (fq1 >= 0.f ? 0.5f : -0.5f));
-        if (iq1 >  127) iq1 =  127; if (iq1 < -128) iq1 = -128;
-        X1_cache[0][row + 1] = (int8_t)iq1;
-
-        float fq2 = r2 * X12_INV_SCALE;
-        int   iq2 = (int)(fq2 + (fq2 >= 0.f ? 0.5f : -0.5f));
-        if (iq2 >  127) iq2 =  127; if (iq2 < -128) iq2 = -128;
-        X1_cache[0][row + 2] = (int8_t)iq2;
-
-        float fq3 = r3 * X12_INV_SCALE;
-        int   iq3 = (int)(fq3 + (fq3 >= 0.f ? 0.5f : -0.5f));
-        if (iq3 >  127) iq3 =  127; if (iq3 < -128) iq3 = -128;
-        X1_cache[0][row + 3] = (int8_t)iq3;
+                          sc6w0, mn6w0, sc6w1, mn6w1, sc6w2, mn6w2, sc6w3, mn6w3);
+        mac_quant_wv(nib_r0, nib_r1, nib_r2, nib_r3,
+                     d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
+                     sc6w0, mn6w0, sc6w1, mn6w1, sc6w2, mn6w2, sc6w3, mn6w3,
+                     x_local_1[0], x_scale, X1_cache[0], row);
     }
 }
 
@@ -566,54 +636,40 @@ static void compute_X2(
 #pragma HLS ARRAY_PARTITION variable=x_local_2 dim=2 complete
     const ap_uint<128> *V_wide = (const ap_uint<128>*)V;
 
-    // 4 rows × 1 wide BRAM each = 4 × 128-bit × 64 deep
-    ap_uint<128> nib_r0[64], nib_r1[64], nib_r2[64], nib_r3[64];
-    #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r1 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
-    #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
-
-    float  d0[WV_BLOCKS_PER_ROW], dmin0[WV_BLOCKS_PER_ROW];
-    float  d1[WV_BLOCKS_PER_ROW], dmin1[WV_BLOCKS_PER_ROW];
-    float  d2[WV_BLOCKS_PER_ROW], dmin2[WV_BLOCKS_PER_ROW];
-    float  d3[WV_BLOCKS_PER_ROW], dmin3[WV_BLOCKS_PER_ROW];
-    int8_t sc60[WV_BLOCKS_PER_ROW][8], mn60[WV_BLOCKS_PER_ROW][8];
-    int8_t sc61[WV_BLOCKS_PER_ROW][8], mn61[WV_BLOCKS_PER_ROW][8];
-    int8_t sc62[WV_BLOCKS_PER_ROW][8], mn62[WV_BLOCKS_PER_ROW][8];
-    int8_t sc63[WV_BLOCKS_PER_ROW][8], mn63[WV_BLOCKS_PER_ROW][8];
-
+    // Loop-body DATAFLOW — see COMPUTE_X1.
     COMPUTE_X2: for (int row = 0; row < FFN_DIM; row += 4) {
+        #pragma HLS DATAFLOW
+        ap_uint<128> nib_r0[64], nib_r1[64], nib_r2[64], nib_r3[64];
+        #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=nib_r1 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=nib_r2 type=ram_1p impl=bram
+        #pragma HLS BIND_STORAGE variable=nib_r3 type=ram_1p impl=bram
+
+        float  d0[WV_BLOCKS_PER_ROW], dmin0[WV_BLOCKS_PER_ROW];
+        float  d1[WV_BLOCKS_PER_ROW], dmin1[WV_BLOCKS_PER_ROW];
+        float  d2[WV_BLOCKS_PER_ROW], dmin2[WV_BLOCKS_PER_ROW];
+        float  d3[WV_BLOCKS_PER_ROW], dmin3[WV_BLOCKS_PER_ROW];
+        ap_uint<64> sc6w0[WV_BLOCKS_PER_ROW], mn6w0[WV_BLOCKS_PER_ROW];
+        ap_uint<64> sc6w1[WV_BLOCKS_PER_ROW], mn6w1[WV_BLOCKS_PER_ROW];
+        ap_uint<64> sc6w2[WV_BLOCKS_PER_ROW], mn6w2[WV_BLOCKS_PER_ROW];
+        ap_uint<64> sc6w3[WV_BLOCKS_PER_ROW], mn6w3[WV_BLOCKS_PER_ROW];
+        #pragma HLS ARRAY_PARTITION variable=sc6w0 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=mn6w0 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=sc6w1 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=mn6w1 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=sc6w2 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=mn6w2 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=sc6w3 dim=1 complete
+        #pragma HLS ARRAY_PARTITION variable=mn6w3 dim=1 complete
+
         load_4rows_wv_urm(V_wide, row,
                           nib_r0, nib_r1, nib_r2, nib_r3,
                           d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
-                          sc60, mn60, sc61, mn61, sc62, mn62, sc63, mn63);
-
-        float r0, r1, r2, r3;
-        mac_blocks_wv_k4_urm(
-            nib_r0, nib_r1, nib_r2, nib_r3,
-            d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
-            sc60, mn60, sc61, mn61, sc62, mn62, sc63, mn63,
-            x_local_2[0], x_scale, &r0, &r1, &r2, &r3);
-
-        float fq0 = r0 * X12_INV_SCALE;
-        int   iq0 = (int)(fq0 + (fq0 >= 0.f ? 0.5f : -0.5f));
-        if (iq0 >  127) iq0 =  127; if (iq0 < -128) iq0 = -128;
-        X2_cache[0][row]     = (int8_t)iq0;
-
-        float fq1 = r1 * X12_INV_SCALE;
-        int   iq1 = (int)(fq1 + (fq1 >= 0.f ? 0.5f : -0.5f));
-        if (iq1 >  127) iq1 =  127; if (iq1 < -128) iq1 = -128;
-        X2_cache[0][row + 1] = (int8_t)iq1;
-
-        float fq2 = r2 * X12_INV_SCALE;
-        int   iq2 = (int)(fq2 + (fq2 >= 0.f ? 0.5f : -0.5f));
-        if (iq2 >  127) iq2 =  127; if (iq2 < -128) iq2 = -128;
-        X2_cache[0][row + 2] = (int8_t)iq2;
-
-        float fq3 = r3 * X12_INV_SCALE;
-        int   iq3 = (int)(fq3 + (fq3 >= 0.f ? 0.5f : -0.5f));
-        if (iq3 >  127) iq3 =  127; if (iq3 < -128) iq3 = -128;
-        X2_cache[0][row + 3] = (int8_t)iq3;
+                          sc6w0, mn6w0, sc6w1, mn6w1, sc6w2, mn6w2, sc6w3, mn6w3);
+        mac_quant_wv(nib_r0, nib_r1, nib_r2, nib_r3,
+                     d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
+                     sc6w0, mn6w0, sc6w1, mn6w1, sc6w2, mn6w2, sc6w3, mn6w3,
+                     x_local_2[0], x_scale, X2_cache[0], row);
     }
 }
 
@@ -672,12 +728,13 @@ static void compute_gate(
 }
 
 // ============================================================================
-// Phase 5: output = gate @ W_down.T  (Q4_K, K=4, 16 URAM tiles)
+// Phase 5: output = gate @ W_down.T  (Q4_K, K=2, 8 BRAM tiles, overlapped)
 // ============================================================================
-// 4 rows per iteration.  16 URAM nibble tiles (4 groups × 4 rows).
-// Load: 4 sequential calls to load_row_down_urm (one per row).
-// MAC:  4 groups sequential × 4 rows UNROLL'd = 1024 cycles.
-// Total: 1280 (load) + 1024 (MAC) = 2304 cycles/4-rows → 1.57M total.
+// 2 rows per iteration, loop-body DATAFLOW: load_2rows_down (producer) and
+// mac_write_down (consumer) run concurrently on PIPO-doubled tiles, so
+// iteration N's load hides behind iteration N-1's MAC.
+// Load: ~954 cy/2 rows.  MAC: 4 groups sequential × 2 rows UNROLL'd = 1024 cy.
+// Overlapped: max(954, 1024) ≈ 1024 cy/2-rows × 1024 iters → ~1.05M total.
 static void compute_output(
     const uint8_t  *W_down,
     const int8_t   gate_cache[MAX_BATCH][DOWN_BLOCKS_PER_ROW][256],
@@ -694,77 +751,58 @@ static void compute_output(
     gate_scale_buf[0] = gate_scale_array[0];
     float gate_scale = gate_scale_buf[0];
 
+    // Guard retained deliberately, though mode is always 0: it is the only
+    // remaining use of down_quant_mode, and an unreferenced scalar argument
+    // would be optimized away — shifting x_scale's AXI-Lite offset (0x54) and
+    // silently breaking the driver's register map.  The driver rejects any
+    // non-Q4_K W_down, so the false branch is unreachable.
     if (down_quant_mode == 0) {
         float out_local[VECTOR_DIM];
         #pragma HLS BIND_STORAGE variable=out_local type=ram_1p impl=bram
 
-        // 4 groups × 4 rows = 16 BRAM nibble tiles, declared outside loop
-        ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], g0r1[URM_NIB_TILE_DEPTH], g0r2[URM_NIB_TILE_DEPTH], g0r3[URM_NIB_TILE_DEPTH];
-        ap_uint<32> g1r0[URM_NIB_TILE_DEPTH], g1r1[URM_NIB_TILE_DEPTH], g1r2[URM_NIB_TILE_DEPTH], g1r3[URM_NIB_TILE_DEPTH];
-        ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], g2r1[URM_NIB_TILE_DEPTH], g2r2[URM_NIB_TILE_DEPTH], g2r3[URM_NIB_TILE_DEPTH];
-        ap_uint<32> g3r0[URM_NIB_TILE_DEPTH], g3r1[URM_NIB_TILE_DEPTH], g3r2[URM_NIB_TILE_DEPTH], g3r3[URM_NIB_TILE_DEPTH];
-        #pragma HLS BIND_STORAGE variable=g0r0 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g0r1 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g0r2 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g0r3 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g1r0 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g1r1 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g1r2 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g1r3 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g2r0 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g2r1 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g2r2 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g2r3 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g3r0 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g3r1 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g3r2 type=ram_1p impl=bram
-        #pragma HLS BIND_STORAGE variable=g3r3 type=ram_1p impl=bram
+        // K=2 rows/iteration + loop-body DATAFLOW.  The tile/header arrays
+        // declared inside the body become ping-pong (PIPO) channels between
+        // load_2rows_down (producer) and mac_write_down (consumer), so
+        // iteration N's DDR load overlaps iteration N-1's MAC:
+        // per-iteration time -> max(load ~954, MAC ~1024) instead of the sum.
+        DOWN_Q4K: for (int out_i = 0; out_i < VECTOR_DIM; out_i += 2) {
+            #pragma HLS DATAFLOW
+            // 4 groups × 2 rows = 8 BRAM nibble tiles (PIPO-doubled by HLS)
+            ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], g0r1[URM_NIB_TILE_DEPTH];
+            ap_uint<32> g1r0[URM_NIB_TILE_DEPTH], g1r1[URM_NIB_TILE_DEPTH];
+            ap_uint<32> g2r0[URM_NIB_TILE_DEPTH], g2r1[URM_NIB_TILE_DEPTH];
+            ap_uint<32> g3r0[URM_NIB_TILE_DEPTH], g3r1[URM_NIB_TILE_DEPTH];
+            #pragma HLS BIND_STORAGE variable=g0r0 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g0r1 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g1r0 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g1r1 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g2r0 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g2r1 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g3r0 type=ram_1p impl=bram
+            #pragma HLS BIND_STORAGE variable=g3r1 type=ram_1p impl=bram
 
-        // Headers: 4 rows × 32 blocks
-        float  d0[DOWN_BLOCKS_PER_ROW], dmin0[DOWN_BLOCKS_PER_ROW];
-        float  d1[DOWN_BLOCKS_PER_ROW], dmin1[DOWN_BLOCKS_PER_ROW];
-        float  d2[DOWN_BLOCKS_PER_ROW], dmin2[DOWN_BLOCKS_PER_ROW];
-        float  d3[DOWN_BLOCKS_PER_ROW], dmin3[DOWN_BLOCKS_PER_ROW];
-        int8_t sc60[DOWN_BLOCKS_PER_ROW][8], mn60[DOWN_BLOCKS_PER_ROW][8];
-        int8_t sc61[DOWN_BLOCKS_PER_ROW][8], mn61[DOWN_BLOCKS_PER_ROW][8];
-        int8_t sc62[DOWN_BLOCKS_PER_ROW][8], mn62[DOWN_BLOCKS_PER_ROW][8];
-        int8_t sc63[DOWN_BLOCKS_PER_ROW][8], mn63[DOWN_BLOCKS_PER_ROW][8];
-        #pragma HLS ARRAY_PARTITION variable=d0    complete
-        #pragma HLS ARRAY_PARTITION variable=dmin0 complete
-        #pragma HLS ARRAY_PARTITION variable=d1    complete
-        #pragma HLS ARRAY_PARTITION variable=dmin1 complete
-        #pragma HLS ARRAY_PARTITION variable=d2    complete
-        #pragma HLS ARRAY_PARTITION variable=dmin2 complete
-        #pragma HLS ARRAY_PARTITION variable=d3    complete
-        #pragma HLS ARRAY_PARTITION variable=dmin3 complete
-        #pragma HLS ARRAY_PARTITION variable=sc60  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=mn60  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=sc61  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=mn61  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=sc62  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=mn62  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=sc63  dim=0 complete
-        #pragma HLS ARRAY_PARTITION variable=mn63  dim=0 complete
+            // Headers: 2 rows × 32 blocks.  Sub-scales packed 8-per-word so
+            // each array is ~8 PIPO channels (banked by block for the MAC's
+            // 8 reads/cycle), not 256 element-channels.  d/dmin are read
+            // sequentially in the reduce, so they need no partitioning.
+            float  d0[DOWN_BLOCKS_PER_ROW], dmin0[DOWN_BLOCKS_PER_ROW];
+            float  d1[DOWN_BLOCKS_PER_ROW], dmin1[DOWN_BLOCKS_PER_ROW];
+            ap_uint<64> sc6w0[DOWN_BLOCKS_PER_ROW], mn6w0[DOWN_BLOCKS_PER_ROW];
+            ap_uint<64> sc6w1[DOWN_BLOCKS_PER_ROW], mn6w1[DOWN_BLOCKS_PER_ROW];
+            #pragma HLS ARRAY_PARTITION variable=sc6w0 dim=1 cyclic factor=8
+            #pragma HLS ARRAY_PARTITION variable=mn6w0 dim=1 cyclic factor=8
+            #pragma HLS ARRAY_PARTITION variable=sc6w1 dim=1 cyclic factor=8
+            #pragma HLS ARRAY_PARTITION variable=mn6w1 dim=1 cyclic factor=8
 
-        DOWN_Q4K: for (int out_i = 0; out_i < VECTOR_DIM; out_i += 4) {
-            // Load 4 rows — each populates one group's 4-row URAM tiles
-            load_row_down_urm(W_down_wide, out_i,
-                               g0r0, g1r0, g2r0, g3r0, d0, dmin0, sc60, mn60);
-            load_row_down_urm(W_down_wide, out_i + 1,
-                               g0r1, g1r1, g2r1, g3r1, d1, dmin1, sc61, mn61);
-            load_row_down_urm(W_down_wide, out_i + 2,
-                               g0r2, g1r2, g2r2, g3r2, d2, dmin2, sc62, mn62);
-            load_row_down_urm(W_down_wide, out_i + 3,
-                               g0r3, g1r3, g2r3, g3r3, d3, dmin3, sc63, mn63);
-
-            mac_blocks_down_q4k_k4_urm(
-                g0r0, g0r1, g0r2, g0r3, g1r0, g1r1, g1r2, g1r3,
-                g2r0, g2r1, g2r2, g2r3, g3r0, g3r1, g3r2, g3r3,
-                d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
-                sc60, mn60, sc61, mn61, sc62, mn62, sc63, mn63,
-                gate_cache[0], gate_scale,
-                &out_local[out_i], &out_local[out_i + 1],
-                &out_local[out_i + 2], &out_local[out_i + 3]);
+            load_2rows_down(W_down_wide, out_i,
+                            g0r0, g1r0, g2r0, g3r0,
+                            g0r1, g1r1, g2r1, g3r1,
+                            d0, dmin0, d1, dmin1,
+                            sc6w0, mn6w0, sc6w1, mn6w1);
+            mac_write_down(g0r0, g0r1, g1r0, g1r1, g2r0, g2r1, g3r0, g3r1,
+                           d0, dmin0, d1, dmin1, sc6w0, mn6w0, sc6w1, mn6w1,
+                           gate_cache[0], gate_scale,
+                           out_local, out_i);
         }
         memcpy(out_batch, out_local, VECTOR_DIM * sizeof(float));
     }
@@ -809,9 +847,9 @@ void swiglu(
 {
     // URM DDR layout: WV=80 words/row (1280 B), Down=320 words/row (5120 B)
     // W/V: 8192 rows × 1280 = 10,485,760 B   W_down: 2048 rows × 5120 = 10,485,760 B
-    #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
-    #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd   offset=slave depth=10485760 max_read_burst_length=256  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=W         bundle=gmem_W    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=4 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=V         bundle=gmem_V    offset=slave depth=10485760 max_read_burst_length=128  latency=64 num_read_outstanding=4 max_widen_bitwidth=128
+    #pragma HLS INTERFACE mode=m_axi port=W_down    bundle=gmem_Wd   offset=slave depth=10485760 max_read_burst_length=256  latency=64 num_read_outstanding=4 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=x_batch   bundle=gmem_x    offset=slave depth=8192     max_read_burst_length=128  latency=64 num_read_outstanding=1 max_widen_bitwidth=128
     #pragma HLS INTERFACE mode=m_axi port=out_batch bundle=gmem_out  offset=slave depth=8192     max_write_burst_length=256 latency=64 num_write_outstanding=1
 

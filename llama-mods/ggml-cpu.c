@@ -92,7 +92,7 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_CTRL_X_HI    0x38  // gmem_x   base hi
 #define SWG_CTRL_OUT_LO  0x40  // gmem_out base lo
 #define SWG_CTRL_OUT_HI  0x44  // gmem_out base hi
-#define SWG_CTRL_MODE    0x4C  // 0=Q4_K (1=Q6_K requires ENABLE_Q6K build)
+#define SWG_CTRL_MODE    0x4C  // always 0 (Q4_K); IP has no Q6_K datapath
 #define SWG_CTRL_XSCALE  0x54  // float bits
 
 // Permanent per-layer pre-decode cache.  16 slots, populated on first use.
@@ -146,30 +146,6 @@ static void udmabuf_sync_to_cpu(uint32_t offset, uint32_t size) {
         (void)write(sync_size_fd, buf, n);
     }
     if (sync_cpu_fd >= 0) (void)write(sync_cpu_fd, "1", 1);
-}
-
-// Reformat Q6_K weight row from GGUF interleaved layout to field-split layout.
-// GGUF interleaved: [row0: blk0(210B) blk1(210B) ... blk31(210B)] [row1: ...]
-//   Each block: 128 ql | 64 qh | 16 sc | 2 d  (total 210 bytes)
-// Field-split: [row0: 32×128 ql | 32×64 qh | 32×16 sc | 32×2 d] [row1: ...]
-//   Offsets:   ql@0(4096B)  qh@4096(2048B)  sc@6144(512B)  d@6656(64B)
-// Row stride is 6720 bytes in both layouts — udmabuf slot size unchanged.
-// Called once per layer on first token; CPU overhead is ~2048×32 memcpy = negligible.
-static void reformat_q6k_to_fieldsplit(const uint8_t *src, uint8_t *dst, int n_rows) {
-    for (int row = 0; row < n_rows; row++) {
-        const uint8_t *src_row = src + (size_t)row * 6720;
-        uint8_t *dst_ql = dst + (size_t)row * 6720;
-        uint8_t *dst_qh = dst_ql + 4096;
-        uint8_t *dst_sc = dst_qh + 2048;
-        uint8_t *dst_d  = dst_sc +  512;
-        for (int b = 0; b < 32; b++) {
-            const uint8_t *blk = src_row + b * 210;
-            memcpy(dst_ql + b * 128, blk,       128);
-            memcpy(dst_qh + b * 64,  blk + 128,  64);
-            memcpy(dst_sc + b * 16,  blk + 192,  16);
-            memcpy(dst_d  + b * 2,   blk + 208,   2);
-        }
-    }
 }
 
 // transpose_q4k_to_urm: convert Q4_K packed weights to URAM-transposed DDR layout.
@@ -2012,7 +1988,10 @@ static void ggml_compute_forward_swiglu_fused_hw(
     if (!x || !W_gate || !W_up || !W_down ||
         x->type != GGML_TYPE_F32 ||
         W_gate->type != GGML_TYPE_Q4_K || W_up->type != GGML_TYPE_Q4_K ||
-        (W_down->type != GGML_TYPE_Q4_K && W_down->type != GGML_TYPE_Q6_K) ||
+        // Q4_K only — the IP has no Q6_K datapath.  The graph builder already
+        // withholds the fused op for other types, so reaching here means a
+        // mismatch: abort rather than let the IP return an unwritten buffer.
+        W_down->type != GGML_TYPE_Q4_K ||
         x->ne[0] != 2048 || W_gate->ne[0] != 2048 || W_gate->ne[1] != 8192 ||
         W_up->ne[0]   != 2048 || W_up->ne[1]   != 8192 ||
         W_down->ne[0] != 8192 || W_down->ne[1] != 2048 ||
@@ -2035,8 +2014,10 @@ static void ggml_compute_forward_swiglu_fused_hw(
         fprintf(stderr, "[SWG] invalid layer id %d in op_params\n", layer);
         GGML_ASSERT(false);
     }
-    size_t down_bytes = ggml_nbytes(W_down);
-    uint32_t mode = (down_bytes > 9437184UL) ? 1 : 0; // Q6_K threshold
+    // down_quant_mode is always 0 (Q4_K): the Q6_K datapath was removed from the
+    // accelerator, and the type guard above rejects anything else.  The register
+    // is still programmed so the IP's AXI-Lite map stays as built.
+    const uint32_t mode = 0;
     // Pre-decode Q4_K to hybrid format.  Cached permanently per layer.
     // First token pays ~10 ms/layer (160 ms total). Subsequent tokens skip entirely.
     if (!swg_layer_cached[layer]) {
@@ -2046,15 +2027,9 @@ static void ggml_compute_forward_swiglu_fused_hw(
         transpose_q4k_to_urm((const uint8_t *)W_up->data,
                               (uint8_t *)udmabuf_vptr + SWG_LAYER_V_OFF(layer),
                               (int)W_up->ne[1], WV_BLOCKS_PER_ROW);
-        if (W_down->type == GGML_TYPE_Q6_K) {
-            reformat_q6k_to_fieldsplit((const uint8_t *)W_down->data,
-                                       (uint8_t *)udmabuf_vptr + SWG_LAYER_WD_OFF(layer),
-                                       (int)W_down->ne[1]);
-        } else {
-            transpose_q4k_to_urm((const uint8_t *)W_down->data,
-                                  (uint8_t *)udmabuf_vptr + SWG_LAYER_WD_OFF(layer),
-                                  (int)W_down->ne[1], DOWN_BLOCKS_PER_ROW);
-        }
+        transpose_q4k_to_urm((const uint8_t *)W_down->data,
+                              (uint8_t *)udmabuf_vptr + SWG_LAYER_WD_OFF(layer),
+                              (int)W_down->ne[1], DOWN_BLOCKS_PER_ROW);
 
         udmabuf_sync_to_device(SWG_LAYER_W_OFF(layer), SWG_LAYER_STRIDE);
         swg_layer_cached[layer] = true;

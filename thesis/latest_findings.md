@@ -255,7 +255,49 @@ Poll vs interrupt (§2.3, Fig. 2.2, T4): the benchmarks are the interrupt build;
 variant is correctly presented as the rejected, less power-efficient option (only 2–38 ms/token
 faster). The abstract's "sub-500 ms decode latency with two threads" (452 ms) is correct.
 
-## Potential performance levers (not yet attempted)
+## IMPLEMENTED (2026-07-16): Lever 1 executed — csynth-verified, pending Vivado + board
+
+Lever 1 (load/compute overlap) plus the Stage-5 compute trade were implemented in
+`swiglu.cpp` as three commits on `cpu-predecode` (`6c27523`, `d4942c8`, `4493272`),
+each gated by C-sim (all tests PASS) + csynth (Vitis 2025.1):
+
+| Metric (csynth)        | Baseline            | Final               | Δ      |
+|------------------------|---------------------|---------------------|--------|
+| compute_X1/X2          | 1,536,001 cy / 6.14 ms | **713,107 cy / 2.85 ms** | −54% |
+| compute_output         | 1,622,602 cy / 6.49 ms | **1,282,062 cy / 4.27 ms** | −21% |
+| Full-call latency      | 3,175,430 cy / 12.70 ms | **2,011,996 cy / 8.05 ms** | **−37%** |
+| Top LUT estimate       | 148,042             | **145,719**         | −2.3K  |
+| DSP                    | 286                 | 238                 | −48    |
+| BRAM / FF              | 110 / 129K          | 150 (52%) / 143K (61%) | ok  |
+
+What was done:
+1. **CP1** — `num_read_outstanding` 1→4 on W/V/W_down (LUT-free in estimate; benefit is
+   board-side DDR-latency hiding, not visible to the static model).
+2. **CP2** — Stage 5: K=2 rows/iteration (16 MAC lanes) + loop-body `DATAFLOW`
+   (`load_2rows_down` producer ∥ `mac_write_down` consumer on PIPO buffers).
+   II = 1251 = max(load 958, MAC 1250): load fully hidden, MAC-bound.
+3. **CP3** — Stages 2a/2b: same producer/consumer overlap, K=4 preserved.
+   II = 348 = max(load 320, MAC 347): near-perfectly balanced.
+
+Two HLS lessons learned (both cost ~+70K LUT before being fixed):
+- **Complete-partitioned arrays as DATAFLOW channels explode** into per-element channels
+  (~1,150 channels ≈ +77K LUT / +114K FF). Fix: pack sub-scales 8-per-`ap_uint<64>` word;
+  ~40 channels, ~350 LUT region overhead.
+- **Variable shifts (`>> (sub*8)`) synthesize a 64-bit barrel shifter per site**
+  (~160 LUT × 96 sites ≈ +16K). Fix: fully-unrolled compile-time `.range()` unpack into
+  partitioned locals (pure wiring), then 8:1 byte-mux indexed reads.
+
+**Projected board impact** (using the measured 1.3 ms/call overhead): per-call ≈ 9.4 ms →
+FPGA/token ≈ 150 ms (from 224) → decode ≈ 227 + 150 + 1.3 ≈ **378 ms ≈ 2.6 t/s (+20%)**.
+NOT yet validated: the calibrated estimate→route ratio puts the design at ~102K LUT
+(~87%, same as the shipped design); HLS slack −0.82 matches the baseline's −0.81, so the
+usual Vivado timing-closure work (phys_opt) is expected, not guaranteed.
+
+**Remaining steps (user-driven):** Vivado impl + timing closure at 250 MHz → bitstream →
+board deploy → `SWIGLU_DEBUG=1` run (expect `fpga` ≈ 150 ms/token in the `[SWG] TOKEN`
+line) → llama-bench T1/T2 re-benchmark + power.
+
+## Potential performance levers (analysis that motivated the above)
 
 Framing: the token is a ~50/50 FPGA / non-FFN split, serially dependent, so single-user
 decode latency is bounded by **memory bandwidth + the LUT budget + the serial CPU half** —
@@ -302,6 +344,43 @@ DSPs would free the LUT headroom that blocks double-buffering (and a K=8 widenin
   result-unpacking logic (extract + sign-correct two products from the 48-bit field) and must
   still close timing. Re-evaluate specifically as "free enough LUTs to fit double-buffering,"
   aware the earlier DSP experiment died on routing.
+
+#### Lever 1 refinement — trade excess Stage-5 compute for the overlap (verified against code)
+With overlap, stage time becomes max(load, compute) per iteration. The verified per-iteration
+budgets (thesis §2.4 / csynth-derived) show where compute is excess:
+
+| Stage      | Load/iter | Compute/iter | Overlapped bound | MAC idle even after overlap |
+|------------|-----------|--------------|------------------|------------------------------|
+| 2a/2b      | 401 cy    | ~356 cy      | load (401)       | ~11%                         |
+| **5**      | **1,908 cy** | **~1,024 cy** | **load (1,908)** | **~46%**                  |
+
+- **Stage 5 carries excess compute hardware**: even perfectly overlapped, its 32 MAC lanes
+  would idle ~46%, and it is the biggest LUT block (~44K). **Halving its MAC width** (16
+  lanes, e.g. 8 sequential groups instead of 4) makes compute 2,048 cy/iter; overlapped bound
+  = max(1,908, 2,048) = 2,048 — only ~7% slower than full-width overlap, still 6.49 → ~4.2 ms,
+  and frees a large slice of the 44K block (plausibly ~10–15K LUTs; synthesis must confirm).
+  Added to the ~13K free, this **funds the ping-pong buffers + DATAFLOW control** — Stage 5
+  pays for its own overlap.
+- **Do NOT cut Stages 2a/2b**: their load/compute is nearly balanced (401 vs 356); halving
+  MACs there would make compute the bound (~700 cy) and cost ~1.6 ms/stage. Keep K=4.
+- **The FP units cannot be removed, only moved**: they apply the Q4_K per-block fp16 scales,
+  mandated by the weight format (blocks in different scales cannot be summed as integers).
+  Relocation options are DSP packing or fixed-point dequant — both re-enter the 250 MHz
+  timing territory that sank the earlier DSP experiment; treat as last-resort LUT sources.
+
+**Resulting design point (pre-synthesis estimate):** 2a/2b K=4 + overlap ≈ 3.3 ms; Stage 5
+half-width + overlap ≈ 4.2 ms; per call ≈ 8.5 ms (vs 14); per token ≈ 138 ms FPGA + 227 ms
+CPU ≈ **366 ms → ~2.7 t/s (+24%)**. Sanity anchor: the hybrid K=2 design already ran
+correctly at 2.08 t/s, so reduced lane count is a validated point in the design space; the
+new element is only the overlap.
+
+**Order of attack:**
+1. `num_read_outstanding` 1 → 4 (pragma-only; attacks the ~75%-of-peak load phase; watch
+   LUTRAM FIFO growth — the reason it was dialled down before).
+2. Stage 5: halve MAC width + producer/consumer DATAFLOW split (self-funding, targets the
+   bottleneck stage).
+3. Stages 2a/2b overlap with remaining LUTs (K=4 preserved).
+4. DSP packing / fixed-point dequant only if the budget still doesn't close.
 
 ### Lever 2 — Fix the high-thread-count handoff contention (host software)
 - **Evidence:** T4 decode regresses to 1.46 t/s (685 ms), *worse* than T2 (452 ms), although
