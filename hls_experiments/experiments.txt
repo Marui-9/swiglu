@@ -4,6 +4,10 @@ Performance Improvement Attempts — URAM-Transposed SwiGLU K=4
 Goal: improve decode throughput beyond 2.08 t/s (hybrid K=2 baseline at 250 MHz).
 Final result: 2.20 t/s (+5.8%) at 4.83 W (-3.7% vs 5.01 W hybrid).
 
+NOTE (2026-10-03): historical record of the May 2026 K=4 work. Two of the ceilings below
+were overturned by the next design, q4k_final: C (merged loads cannot fit) and E (the
+125 ms CPU floor). See the corrections at those items.
+
 Each attempt below targeted the nibble load bottleneck — the 4-write DDR→BRAM fanout
 that limits HLS pipeline initiation interval (II).  All were synthesized and measured.
 
@@ -124,13 +128,19 @@ B. AXI burst serialization: One DDR burst at II=4 beats multiple bursts at
 C. LUT budget: K=4 merged loads need ~130K+ LUTs.  ZU5EV has 117K.  The merged
    load (entry 62) achieves 1.62M X1/X2 in HLS but cannot fit the device.
    A ZU7EV (~230K LUTs) could fit it.
+   CORRECTION: q4k_final shipped a merged 4-row WV load (load_4rows_wv_urm): 148,042
+   HLS LUT → 101,639 routed (86.78%), compute_X1 1,536,001 cy (q4k_final/csynth.rpt,
+   utilization.txt). An HLS estimate over 100% did not mean it could not fit.
 
 D. Routing congestion: 128-bit BRAM reads × 32 blocks in the output MAC create
    interconnect density beyond ZU5EV routing capacity at 250 MHz.
 
 E. Amdahl's Law: FPGA accelerates FFN (~68% of total).  Non-SwiGLU CPU overhead
    (~125 ms/token) is fixed.  Absolute ceiling at 250 MHz: ~3.6 t/s.
-   Current 2.20 t/s achieves 61% of theoretical maximum.
+   CORRECTION: 125 ms is the testblock floor (changelog entry 11, an older build) and
+   does not combine with later measurements. Measured non-FFN CPU time at T2 is ~227
+   ms/token (thesis/latest_findings.md), so the zero-FFN ceiling is ≈ 4.4 t/s
+   (derived). See q4k_final/bottlenecks.txt §6.
 
 
 FINAL CONFIGURATION

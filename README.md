@@ -1,368 +1,294 @@
 # SwiGLU FPGA Accelerator
 
-Hardware offload of the SwiGLU feed-forward network (FFN) block from the
-[LFM2-1.2B](https://www.liquid.ai/) transformer model onto a Kria KV260
-(Zynq UltraScale+ ZU5EV). Built with Vitis HLS, integrated into Vivado, and
-invoked from llama.cpp by patching `ggml-cpu.c`.
+Offloads the SwiGLU feed-forward block of [LFM2.5-1.2B](https://www.liquid.ai/) (Liquid AI)
+from the ARM cores of a Kria KV260 (Zynq UltraScale+ ZU5EV) to the programmable logic.
+The IP is written in Vitis HLS 2025.1, integrated in Vivado, and called from llama.cpp
+through a custom fused ggml op.
+
+```
+out[2048] = W_down · ( SiLU(W_gate · x) ⊙ (W_up · x) )     x: 2048, hidden: 8192
+```
+
+One call computes one layer's FFN for one token. LFM2.5-1.2B has 16 layers, so a decode
+token makes 16 calls.
+
+> **Read [Known bugs](#known-bugs) first.** The host and the IP disagree on the weight
+> header layout, and the x/out buffers overlap a weight slot. Both affect the shipped board
+> results' numerical output, not their timing.
 
 ---
 
-## Operation
+## Status
 
-```
-X1     = x  @ W_gate.T       (gate projection,  2048 → 8192)
-X2     = x  @ W_up.T         (up   projection,  2048 → 8192)
-gate   = SiLU(X1) × X2       (element-wise gated activation)
-output = gate @ W_down.T     (down projection,  8192 → 2048)
-```
+| Design | Where | Status |
+|---|---|---|
+| **q4k_final** | `hls_experiments/q4k_final/` | Routed, on the board, measured. Source of every board number below. |
+| **rebuild** (load/compute overlap) | `swiglu.cpp` on branch `rebuild` | C-sim PASS, csynth only. Not through Vivado, no board number. |
 
-All three weight matrices are stored in GGML quantized format (Q4\_K or Q6\_K)
-in DDR memory and streamed in over 128-bit AXI4 burst transfers. The input
-vector `x` is INT8-quantized by the PS driver before each DMA transfer.
+### Board results — q4k_final, 250 MHz
 
----
+Decode throughput and average SOM power, llama-bench `-p 12 -n 64 -r 10`, interrupt build
+(`scripts/results/latest_benchmarks/{accel,cpu}_t<N>_q4k.log`):
 
-## Model Dimensions
+| Threads | FPGA + CPU | Power | CPU only | Power |
+|---|---|---|---|---|
+| 1 | 1.63 t/s | 5.10 W | 0.88 t/s | 3.96 W |
+| 2 | **2.21 t/s** | 5.15 W | 1.66 t/s | 4.25 W |
+| 3 | 2.05 t/s | 5.14 W | **2.36 t/s** | 4.41 W |
+| 4 | 1.46 t/s | 5.13 W | 2.31 t/s | 4.28 W |
 
-| Symbol          | Value | Meaning                              |
-|-----------------|-------|--------------------------------------|
-| `VECTOR_DIM`    | 2048  | Input / output vector length         |
-| `FFN_DIM`       | 8192  | Intermediate (gate / up) length      |
-| Layers          | 16    | Transformer blocks in LFM2-1.2B      |
-| W\_gate, W\_up  | Q4\_K | All 16 layers                        |
-| W\_down         | Q6\_K | Layers 0,1,4,7,10,13,14,15           |
-| W\_down         | Q4\_K | Layers 2,3,5,6,8,9,11,12             |
+- The best CPU-only configuration (3 threads) is faster than the best FPGA + CPU one
+  (2 threads). The fused op runs on one thread (`n_tasks = 1`). The other threads wait at
+  the ggml barrier while the FPGA works, so extra threads only speed up the non-FFN part.
+- The two columns ran different GGUFs: the accelerator needs the all-Q4_K requantization
+  (628.25 MiB), while the CPU runs used the stock Q4_K_M (694.76 MiB). See
+  `docs/quantization_info.txt`.
+- At 2 threads a token takes 452 ms: ~224 ms FPGA (14.0 ms per call), ~227 ms non-FFN CPU
+  work, ~1.3 ms host↔device handoff (`thesis/latest_findings.md`, from `SWIGLU_DEBUG`
+  timings).
+- A polling build (`*_pollfix.log`) reaches 2.22 t/s at 2 threads but draws 5.85 W.
 
----
+Implementation (`hls_experiments/q4k_final/utilization.txt`, `timing.txt`):
 
-## W4A8 Quantization
+| LUT | FF | BRAM36 | URAM | DSP | WNS / TNS / WHS |
+|---|---|---|---|---|---|
+| 101,639 (86.78%) | 116,975 | 46.5 | 8 | 254 | −0.023 / −1.699 / +0.010 ns |
 
-The accelerator uses a **W4A8** (4-bit weights, 8-bit activations)
-mixed-precision datapath.
+The bitstream runs at 250 MHz with that small negative setup slack.
 
-### Input quantization (PS side)
+### Rebuild design — csynth (Vitis HLS 2025.1, 3.33 ns target)
 
-The `ggml-cpu.c` driver dynamically quantizes the FP32 activation vector to
-INT8 before each DMA transfer:
+Each MAC stage overlaps its weight load with the MACs (loop-body `DATAFLOW` with ping-pong
+buffers), so an iteration costs max(load, MAC) instead of their sum. The down stage
+drops to K=2 rows per pass to pay for the buffers.
 
-```
-x_scale   = max(|x[i]|) / 127.0
-x_int8[i] = clamp(round(x[i] / x_scale), -128, 127)
-```
+| | q4k_final | rebuild |
+|---|---|---|
+| compute_X1 ∥ compute_X2 | 1,536,001 cy | **713,107 cy** |
+| compute_output | 1,622,602 cy | **1,282,062 cy** |
+| Full call latency | 3,175,430 cy (12.70 ms @ 250 MHz) | **2,011,996 cy (8.05 ms)** |
+| LUT estimate / DSP | 148,042 / 286 | 145,719 / 238 |
 
-`x_scale` is written to the `CTRL` register so the accelerator recovers FP32
-magnitudes at the final reduction step. Perplexity degradation from this
-per-token symmetric quantization is typically less than 0.5%.
-
-### Gate quantization (PL side, Phase 4)
-
-After Phase 4 computes `gate = SiLU(X1) × X2` in FP32, `compute_gate`
-immediately requantizes the 8192-element result to INT8:
-
-```
-gate_scale   = max(|gate[j]|) / 127.0
-gate_int8[j] = clamp(round(gate[j] / gate_scale), -128, 127)
-```
-
-This reduces `gate_cache` BRAM from 32 KB (FP32) to 8 KB (INT8) and enables
-the Phase 5 MAC loop to use INT32 accumulators — a 16× reduction in LUT cost
-per pipeline that makes full 32-block unrolling feasible within the ZU5EV
-budget. Model weights in DDR are not altered.
-
-### FP32 dequantization in the MACs (swiglu.cpp)
-- **Q4_K (Phases 2/3, gate/up):** each block carries FP16 `d` (scale) and `dmin`
-  (offset). Integer sums `sw`/`sm` are scaled as `d * (x_scale * sw) - dmin * (x_scale * sm)`
-  to recover FP32.
-- **Gate path:** `gate_scale` (Phase 4) rescales INT8 gate back to FP32 during the
-  down-projection MACs.
-- **Q6_K (Phase 5B):** per-block FP16 `d` plus INT4/INT2 encoded weights and per-nibble
-  scales; `decode_mac_q6k` emits FP32 accumulation using `gate_scale` to dequantize
-  the INT8 gate vector.
-
-### Why INT32 accumulators?
-
-FP32 adders have ~5 cycle pipeline latency; a single FP32 accumulator gives
-II ≈ 5. INT32 adders are 1 cycle, giving II = 1 unconditionally. This is what
-enables parallel multi-block unrolling in Phases 2, 3, and 5.
+Both csynth LUT estimates exceed the device (117,120). q4k_final's still routed at
+101,639, but whether the rebuild fits is open until Vivado runs. `CLAUDE.md` projects
+~2.6 t/s at 2 threads; this is unproven. Stage-by-stage detail:
+`docs/swiglu_description.md`.
 
 ---
 
-## Five Execution Phases
+## How it works
 
-| Phase | Operation                           | Key loop                  | Cycles (est.) |
-|-------|-------------------------------------|---------------------------|---------------|
-| 1     | Load x into dual BRAMs              | 128 iter, II=1            | ~128          |
-| 2     | X1 = x @ W\_gate.T (Q4\_K)         | 8192 rows × 330 cyc/row   | ~2.71 M       |
-| 3     | X2 = x @ W\_up.T (Q4\_K)           | 8192 rows × 330 cyc/row   | ~2.71 M ∥ P2 |
-| 4     | gate = SiLU(X1)×X2, quantize INT8  | 2× 8192 iter, II=1        | ~16.4 K       |
-| 5A    | output = gate @ W\_down.T (Q4\_K)  | 2048 rows × 800 cyc/row   | ~1.64 M       |
-| 5B    | output = gate @ W\_down.T (Q6\_K)  | 2048 rows × 1445 cyc/row  | ~2.96 M       |
+### Datapath (W4A8)
 
-Phases 2 and 3 run **in parallel** (separate `W`/`V` AXI ports, separate
-`x_local` BRAM copies). `compute_gate` begins streaming results before Phases
-2/3 complete via `FIFO depth=16` channels.
+| Data | Format | Scale |
+|---|---|---|
+| Weights W_gate, W_up, W_down | Q4_K (4-bit, fp16 d/dmin per 256 elements, 6-bit sub-scales) | per block |
+| x | INT8 | host: max\|x\|/127 → `XSCALE` register |
+| X1 = W_gate·x, X2 = W_up·x | INT8 on chip | fixed ±10 (unverified, see `docs/integer_transition.txt`) |
+| gate = SiLU(X1)·X2 | INT8 on chip | per token: max\|gate\|/127, two passes |
+| out | FP32 | written to DDR |
 
-**Estimated end-to-end latency @ 250 MHz:**
+The MACs accumulate in INT32. Per block, the reduce `d·Σw − dmin·Σm` runs in float
+(`ap_fixed<48,38>` accumulation). `fp16_to_fp32()` decodes d/dmin with integer bit
+manipulation because real LFM2 scales include fp16 subnormals. Where float remains and why:
+`docs/floats_explanation.txt`.
 
-| Down path | Total cycles | Time / token |
-|-----------|-------------|--------------|
-| Q4\_K     | ~4.37 M     | ~17.5 ms     |
-| Q6\_K     | ~5.69 M     | ~22.8 ms     |
-
-The design is compute-limited rather than DDR-bandwidth-limited. Total DDR
-reads per token: ~28.3 MB (Q4\_K path) or ~32.6 MB (Q6\_K path).
-
----
-
-## AXI Interface
-
-### AXI4 Master Ports (`DATA_WIDTH=128`, 16-byte bus)
-
-| Port        | Bundle     | Dir   | Purpose                               |
-|-------------|------------|-------|---------------------------------------|
-| `W`         | `gmem_W`   | Read  | W\_gate weight matrix (Q4\_K, ~9 MB) |
-| `V`         | `gmem_V`   | Read  | W\_up weight matrix   (Q4\_K, ~9 MB) |
-| `W_down`    | `gmem_Wd`  | Read  | W\_down matrix (Q4\_K or Q6\_K)      |
-| `x_batch`   | `gmem_x`   | Read  | INT8 input vector (2048 bytes)        |
-| `out_batch` | `gmem_out` | Write | FP32 output vector (2048 × 4 bytes)  |
-
-Without `DATA_WIDTH=128`, HLS infers an 8-bit bus from `uint8_t*` pointers,
-limiting bandwidth to ~100 MB/s at 100 MHz. The 128-bit override gives ~1.6 GB/s.
-
-### AXI4-Lite Slave (`CTRL` bundle, base address `0xA0020000`)
-
-| Register          | Notes                                              |
-|-------------------|----------------------------------------------------|
-| `W`               | Physical DDR base address of W\_gate               |
-| `V`               | Physical DDR base address of W\_up                 |
-| `W_down`          | Physical DDR base address of W\_down               |
-| `x_batch`         | Physical DDR base address of INT8 input buffer     |
-| `out_batch`       | Physical DDR base address of FP32 output buffer    |
-| `down_quant_mode` | 0 = Q4\_K, 1 = Q6\_K for the down projection      |
-| `x_scale`         | FP32 activation dequantization scale               |
-
----
-
-## Vivado Block Design
-
-### Confirmed Addresses
-
-| Peripheral                | Base Address  |
-|---------------------------|---------------|
-| `axi_dma_0` S\_AXI\_LITE  | `0xA0000000`  |
-| `linear_projection_0`     | `0xA0010000`  |
-| `swiglu_0` s\_axi\_CTRL   | `0xA0020000`  |
-
-### Connections
+Top-level DATAFLOW:
 
 ```
-zynq_ultra_ps_e_0
-  M_AXI_HPM0_FPD  → axi_smc S00_AXI
-  S_AXI_HP0_FPD   → smartconnect_0 M00_AXI
-  pl_ps_irq       → xlconcat dout
-
-axi_smc (AXI-Lite control SmartConnect)
-  M00_AXI → linear_projection_0 s_axi_CTRL
-  M01_AXI → axi_dma_0 S_AXI_LITE
-  M02_AXI → swiglu_0 s_axi_CTRL
-
-swiglu_0
-  s_axi_CTRL     → axi_smc M02_AXI
-  interrupt      → xlconcat In3
-  m_axi_gmem_V   → smartconnect_0 S04_AXI
-  m_axi_gmem_W   → smartconnect_0 S05_AXI
-  m_axi_gmem_Wd  → smartconnect_0 S06_AXI
-  m_axi_gmem_out → smartconnect_0 S03_AXI
-  m_axi_gmem_x   → smartconnect_0 S07_AXI
-
-smartconnect_0
-  S00_AXI → axi_dma_0 M_AXI_SG
-  S01_AXI → axi_dma_0 M_AXI_MM2S
-  S02_AXI → axi_dma_0 M_AXI_S2MM
-  M01_AXI → zynq_ultra_ps_e_0 S_AXI_HP1_FPD
-  M02_AXI → zynq_ultra_ps_e_0 S_AXI_HP2_FPD
-
-axi_dma_0 (linear_projection DMA, reused for weight loading)
-  S_AXIS_S2MM  ← linear_projection_0 out_stream
-  mm2s_introut → xlconcat In0
-  s2mm_introut → xlconcat In1
-
-linear_projection_0
-  in_stream → axi_dma_0 M_AXIS_MM2S
-  interrupt → xlconcat In2
+load_x_local → compute_X1 ∥ compute_X2 → compute_gate → compute_output
+   (x → 2 copies)   (W_gate, W_up, 32 MAC lanes each)   (SiLU LUT)   (W_down)
 ```
 
-HP1 and HP2 carry the memory bandwidth for `swiglu_0`'s five m\_axi ports
-through `smartconnect_0`. In the Address Editor, exclude HP1\_DDR\_HIGH and
-HP2\_DDR\_HIGH from `axi_dma_0`'s address spaces to prevent overlap errors —
-`axi_dma_0` only needs HP0\_DDR\_LOW (`0x0_0000_0000`).
+### Weight layout ("URM")
+
+On the first call for each layer, the host converts that layer's three Q4_K matrices
+(`transpose_q4k_to_urm()`, `llama-mods/ggml-cpu.c`):
+
+- Headers are unpacked: d and dmin, plus sc6/mn6 at one byte each, in 32 bytes per block.
+- Nibbles are transposed to element-major order, so a 32-bit slice holds element n of
+  8 blocks and the IP picks each nibble out with a compile-time bit range.
+
+The result is stored once per layer:
+
+| Matrix | Row | Words per row (128-bit) | Size |
+|---|---|---|---|
+| W_gate, W_up | 8 blocks | 80 (16 header + 64 nibble) | 10,485,760 B each |
+| W_down | 32 blocks | 320 (64 header + 256 nibble) | 10,485,760 B |
+
+### Interfaces
+
+| m_axi port | Bundle | HP port | Max burst | Data |
+|---|---|---|---|---|
+| `W` | gmem_W | HP2 (smartconnect_3) | 128 | W_gate, URM |
+| `V` | gmem_V | HP0 (smartconnect_0) | 128 | W_up, URM |
+| `W_down` | gmem_Wd | HP1 (smartconnect_1) | 256 | W_down, URM |
+| `x_batch` | gmem_x | HP0 | 128 | INT8 x, 2 KB |
+| `out_batch` | gmem_out | HP0 | 256 (write) | FP32 out, 8 KB |
+
+All ports are 128 bits wide. W and V are on separate HP ports so X1 and X2 can stream at
+the same time (`docs/connections.txt`).
+
+AXI-Lite `CTRL` at **0xA0000000** (the only PL peripheral; `docs/vivado_addresses.txt`):
+
+| Offset | Register | Offset | Register |
+|---|---|---|---|
+| 0x00 | AP_CTRL (start/done/idle/ready) | 0x28 | W_down address |
+| 0x04 | GIE | 0x34 | x address |
+| 0x08 | IER | 0x40 | out address |
+| 0x0C | ISR | 0x4C | MODE (always 0 = Q4_K) |
+| 0x10 | W address | 0x54 | XSCALE (float bits) |
+| 0x1C | V address | | |
+
+`down_quant_mode` (MODE) is always 0, but it must stay in the signature and stay
+referenced in `swiglu.cpp`. Otherwise HLS drops it and XSCALE moves off 0x54. Full map and
+handshake: `docs/code_stages.txt`.
+
+Interrupt: `swiglu_0` → xlconcat In0 → GIC SPI 121 → `interrupts = <0 89 4>` in `pl.dtsi`.
+The driver finds its UIO device by physical address, not by number.
+
+### llama.cpp integration
+
+Modified files are in `llama-mods/` (`docs/offload.txt`):
+
+- **`ggml.h`, `ggml.c`:** define `GGML_OP_SWIGLU_FUSED_HW` and its builder
+  `ggml_swiglu_fused_hw(ctx, x, w_gate, w_up, w_down, layer_id)`.
+- **`lfm2.cpp`:** emits the fused op instead of `build_ffn()` when three conditions hold:
+  - `LLAMA_SWIHW=1` is set in the environment;
+  - x is F32 with 2048 elements per token;
+  - all three FFN weights are Q4_K.
+- **`ggml-cpu.c`:** runs the op on one thread. Per call it:
+  1. Converts the layer's weights into its permanent udmabuf slot (first call only).
+  2. Quantizes x to INT8.
+  3. Programs the registers and starts the IP.
+  4. Sleeps in a blocking UIO `read()` until the interrupt.
+  5. Copies out the result.
+
+  Prefill loops over the tokens one IP call at a time, up to 64 per ubatch.
+  `SWIGLU_DEBUG=1` prints a per-token breakdown to stderr (quantize, syncs, FPGA, copy,
+  summed over the 16 layers; sample in `docs/output.txt`).
+
+udmabuf: 512 MiB; 16 permanent layer slots of 30 MiB at `0x01000000 + layer × 0x01E00000`
+(`docs/udmabuf_info.txt`).
 
 ---
 
-## Key HLS Design Decisions
+## Running it
 
-### Loop Inversion (Phases 2, 3, 5-Q4K)
+On the board (paths in the scripts are the board's):
 
-The block dimension (N blocks) is placed **inside** a `PIPELINE II=1` element
-loop (256 iterations) with `UNROLL`. This forces HLS to synthesize N
-independent MAC pipelines in parallel. The naive alternative — unrolling the
-block loop over sequential function calls — produces N FSM states sharing a
-common functional unit pool, executing one block at a time.
+1. **Program the PL and load u-dma-buf:** `scripts/deploy/deploy-fabric.sh`
+   - Copies the bitstream and `pl.dtsi` from the mounted transfer drive and builds the
+     DT overlay.
+   - Loads the overlay with `xmutil loadapp kria-accel`.
+   - Inserts `u-dma-buf.ko udmabuf0=536870912`, which needs a CMA pool of at least
+     512 MiB. The stock `cma=600M` is enough.
+   - Prints the UIO map and the PL clock as a sanity check.
+2. **Rebuild llama.cpp with the patches:** `scripts/deploy/reload-full-llama.sh` copies
+   `llama-mods/` into `~/llama.cpp` and builds `llama-bench`. `reload-ggmlcpu.sh` rebuilds
+   after a driver-only change.
+3. **Benchmark with power logging:**
+   - `sudo scripts/profiling/run_profile_accel.sh <threads> [repeat]` (sets
+     `LLAMA_SWIHW=1 SWIGLU_DEBUG=1`)
+   - `scripts/profiling/run_profile_cpu.sh <threads> [repeat]` (CPU baseline)
 
-### 2D Row Buffer Layout (`rb[blocks][words]`)
+   See `docs/power_profiling.txt` and `scripts/util/usage.txt`.
 
-`rb[b][w]` with `dim=1 complete` gives each block a trivially distinct BRAM
-bank. A flat `rb[b × Q4_K_WORDS + w]` with block partitioning requires HLS
-alias analysis to prove distinct banks for the stride-9 addressing — which can
-fail and serialize MAC instances. `Q4_K_WORDS = 9` (non-power-of-2) makes the
-nested layout mandatory; a flat loop using `i/9` requires hardware integer
-dividers that destroy II=1.
-
-### Dual `x_local` Copies
-
-`x_local_1` and `x_local_2` are separate `ram_1p` BRAMs written identically
-by `load_x_local`. If a single array were shared, HLS inserts a
-`Block_entry_x_local_rd_proc` serializer module that broadcasts to both
-consumers sequentially, eliminating the Phase 2/3 parallelism.
-
-### No Inner DATAFLOW
-
-`#pragma HLS DATAFLOW` on inner loops (row loops in `compute_X1`, `compute_X2`,
-`compute_output`) causes HLS to model all pointer arguments as scalar FIFO
-channel values rather than m\_axi bus ports, silently dropping all read m\_axi
-ports. Only the single outer `#pragma HLS DATAFLOW` in `swiglu()` is present.
-
-### No Pointer Casts at DATAFLOW Call Sites
-
-Casting pointer arguments at DATAFLOW call sites (e.g.
-`compute_X1((const ap_uint<128>*)W, ...)`) breaks HLS's dependency trace
-between the top-level m\_axi pragma and the memory burst inferencer inside the
-sub-task. This was confirmed by `W_read_ap_vld` handshake signals in synthesis
-reports — HLS was treating `W` as a FIFO channel value. Pointers are passed
-directly at call sites and cast to `ap_uint<128>*` inside each `INLINE off`
-sub-function boundary.
-
-### `fp16_to_fp32` — Manual Bit Manipulation
-
-Weight scale factors `d` and `dmin` in Q4\_K/Q6\_K blocks are stored as FP16.
-The conversion uses manual `uint32_t` bit manipulation rather than `hls_half`
-or `ap_fixed<16,5>`. Both HLS types silently flush subnormal FP16 values to
-zero at synthesis (DAZ — Denormals Are Zero). Real LFM2-1.2B weights contain
-subnormal scale fields; using `hls_half` would zero those blocks' contributions
-and produce all-zero outputs.
-
-### Sigmoid LUT for SiLU
-
-`σ(z) = 1/(1+exp(-z))` is computed via a 4096-entry FP32 ROM covering
-`[-8, +8]` (step ≈ 0.0039). The LUT replaces a transcendental hardware unit,
-saving DSPs. At C-simulation it is computed at runtime via `expf()`; at
-synthesis it is a `rom_1p` BRAM.
-
-### Separate Q4K / Q6K Phase 5 Loops
-
-Two completely separate output loops avoid a runtime conditional inside a
-pipelined stream-read loop. Q4\_K reads 288 words/row; Q6\_K reads 420
-words/row. A combined conditional loop would prevent II=1 due to
-variable-length loop-carried dependencies.
-
-### Q6\_K Cannot Use Loop Inversion
-
-Q6\_K blocks are 210 bytes = 13.125 × 128-bit words — a non-integer stride.
-A clean `rb[32][14]` 2D layout would break byte offsets in the decoder. The
-Q6\_K path uses a 1D `rb[420]` with `ARRAY_PARTITION complete` and
-`UNROLL factor=8`.
+HLS: the Vitis component is `swiglu/` (`vitis-comp.json`, `hls_config.cfg`: part
+xck26-sfvc784-2LV-c, 3.33 ns clock, 0.90 ns uncertainty). The C-sim testbench is
+`swiglu_tb.cpp`, and the latest synthesis report is `swiglu/reports/hls_compile.rpt`.
 
 ---
 
-## Q4\_K Nibble Layout
+## Known bugs
 
-GGML's Q4\_K encoder stores 256 weights in four 64-element **planar** chunks —
-not byte-interleaved. Within each chunk, the first 32 elements use the **low**
-nibbles of 32 bytes; the next 32 elements use the **high** nibbles of those
-same bytes.
+### 1. Host and IP disagree on the 32-byte block header
 
-The correct extraction formula (all power-of-2, no division):
+`transpose_q4k_to_urm()` in `llama-mods/ggml-cpu.c` writes:
 
-```cpp
-int q_byte = 16 + (n & 31) + ((n & 0xC0) >> 1);
-int shift   = (n & 32) ? 4 : 0;
-int nib     = (qs[q_byte] >> shift) & 0xF;
+```
+bytes 0-1 d | 2-3 dmin | 4-11 sc6[0..7] | 12-19 mn6[0..7] | 20-31 zero
 ```
 
-The naive interleaved formula (`byte = 16 + n/2`, `shift = (n&1)*4`) is
-accidentally correct only for `n=0`. All other elements read the wrong nibble.
-This bug was masked because all 256 nibbles remain in range [0, 15] and produce
-activations of plausible magnitude — the model generates incoherent text rather
-than NaN or zero. The testbench was also internally inconsistent: both the
-fill function and reference decoder used the same wrong formula, so all tests
-passed regardless.
+`swiglu.cpp` reads (`load_4rows_wv_urm`, `load_row_down_urm`):
+
+```
+bytes 0-1 d | 2-3 dmin | 4-7 sc6[0..3] | 8-11 mn6[0..3] | 16-19 sc6[4..7] | 20-23 mn6[4..7]
+```
+
+So only d, dmin and sc6[0..3] arrive intact. The IP reads three fields from the wrong bytes:
+
+| IP field | Bytes it reads | What the host put there |
+|---|---|---|
+| mn6[0..3] | 8–11 | sc6[4..7] |
+| sc6[4..7] | 16–19 | mn6[4..7] |
+| mn6[4..7] | 20–23 | zero padding |
+
+This hits every block of every matrix: sub-blocks 0–3 (elements 0–127) use the wrong
+mins, and sub-blocks 4–7 (elements 128–255) use the wrong scales and zero mins.
+
+- **Why C-sim passes:** `swiglu_tb.cpp` has its own transposer, which writes the layout
+  the IP reads. `test_transposer.c` checks only nibble positions and d.
+- **Evidence:** a one-off harness fed real-format Q4_K blocks through each transposer into
+  the C model of `swiglu()` and compared X1 with a float reference. Testbench layout:
+  cosine similarity 0.996. Host layout: cosine similarity −0.196. The harness is not in the
+  repository.
+- **Since when:** both layouts date from commit 3727506 (2026-05-19), and the shipped
+  `hls_experiments/q4k_final/swiglu_copy.cpp` reads the same bytes as today's code. The
+  board numbers above therefore measure the right amount of work, but the values the
+  accelerator produced were wrong. No board run has compared the accelerator's output with
+  the CPU path.
+- **Fix without re-synthesis:** change the host transposer to write the IP's layout (the
+  testbench's `transpose_q4k_to_urm_csim` is a reference). Then compare the fused op's
+  output with `build_ffn()` on the board for at least one layer.
+
+### 2. x and out buffers overlap layer 3's weight slot
+
+`SWG_VEC_OFF = 0x06C50000` (x, 2 KB) and `SWG_OUT_OFF = 0x06C60000` (out, 8 KB) both lie
+inside layer 3's W_gate region (0x06A00000–0x073FFFFF). Every call therefore overwrites
+W_gate rows 1894–1895 and 1945–1951 of layer 3 (9 of 8,192 rows) with x and out data,
+after that layer has been cached.
+
+- **Fix:** move both buffers to the unused 16 MiB below `SWG_LAYER_BASE` (0x00000000 –
+  0x00FFFFFF). Add a static check that no region overlaps a layer slot.
 
 ---
 
-## Correctness Verification
+## Repository map
 
-| Check | Result |
+```
+swiglu.cpp, swiglu.h      HLS IP (rebuild design)
+swiglu_tb.cpp             C-sim testbench (mock token + 4 Q4_K tests)
+sigmoid_lut.h             SiLU sigmoid LUT (4096 entries over [-8, 8))
+hls_config.cfg            HLS solution config
+swiglu/                   Vitis HLS component; reports/hls_compile.rpt
+pl.dtsi                   device-tree overlay (UIO node, interrupt, HP AFI widths)
+llama-mods/               modified llama.cpp files (ggml.h, ggml.c, ggml-cpu.c, lfm2.cpp)
+docs/                     detailed documentation (below)
+hls_experiments/
+  q4k_final/              shipped design: source copy, csynth, utilization, timing
+  testblock/changelog.txt optimization diary, entries 1-68
+  experiments.txt         the failed attempts and their root causes
+  cpu-predecode/ ...      earlier designs and their notes
+scripts/                  deploy, profiling, plotting, results (latest_benchmarks/)
+cpu_profiling/            per-op CPU profile of LFM2.5 decode (FFN share 68%)
+lfm2_benchmark/           standalone CPU benchmark package
+thesis/, latex/           thesis material
+```
+
+Documents in `docs/`:
+
+| File | Contents |
 |---|---|
-| `fp16_to_fp32`: zero, subnormal, Inf/NaN, normal | ✓ |
-| Q4\_K nibble extraction (planar GGML layout) | ✓ |
-| Q4\_K scale header unpacking (12-byte, 6-bit fields) | ✓ |
-| Q4\_K reduction: `d×x_scale×sw − dmin×x_scale×sm` | ✓ |
-| Q6\_K decode: ql/qh/scales/d offsets, no off-by-one at b=31 | ✓ |
-| `compute_gate` FIFO sequential access on X1\_cache/X2\_cache | ✓ |
-| `gate_cache` 3D indexing `[n][j>>8][j&255]` | ✓ |
-| `compute_output` runtime Q4K/Q6K branch, no inner DATAFLOW | ✓ |
-
----
-
-## Memory Architecture
-
-| Variable      | Shape          | Storage              | Size   | Purpose                              |
-|---------------|----------------|----------------------|--------|--------------------------------------|
-| `x_local_1`   | `[1][8][256]`  | LUTRAM ram\_1p       | 2 KB   | x copy for compute\_X1 (8-bank)     |
-| `x_local_2`   | `[1][8][256]`  | LUTRAM ram\_1p       | 2 KB   | x copy for compute\_X2 (8-bank)     |
-| `X1_cache`    | `[1][8192]`    | URAM ram\_2p         | 32 KB  | DATAFLOW channel, depth=16           |
-| `X2_cache`    | `[1][8192]`    | URAM ram\_2p         | 32 KB  | DATAFLOW channel, depth=16           |
-| `gate_cache`  | `[1][32][256]` | URAM ram\_2p         | 8 KB   | INT8 quantized gate (32-bank)        |
-| `gate_scale`  | `[1]`          | Register             | 4 B    | DATAFLOW scalar channel              |
-| `sigmoid_lut` | `[4096]`       | LUTRAM rom\_1p       | 16 KB  | σ(x) over [-8, +8]                  |
-| `row_buf` WV  | `[8][9]`       | LUTRAM ram\_1p + partition | 1152 B | Per-row Q4\_K buffer (gate/up)      |
-| `row_buf` Q4K | `[32][9]`      | LUTRAM ram\_1p + partition | 4608 B | Per-row Q4\_K buffer (down)         |
-| `row_buf` Q6K | `[420]`        | LUTRAM ram\_1p (cyclic)    | 6720 B | Per-row Q6\_K buffer (down)         |
-| `out_local`   | `[2048]`       | LUTRAM ram\_1p       | 8 KB   | Output staging before memcpy         |
-
----
-
-## File Map
-
-```
-swiglu/
-├── swiglu.h               HLS top-level interface
-├── swiglu.cpp             HLS implementation (W4A8 integer datapath)
-├── swiglu_tb.cpp          HLS C-simulation testbench
-├── sigmoid_lut.h          4096-entry σ(x) LUT (csim init + synthesis ROM)
-├── sigmoid_lut_gen.py     Python script to regenerate sigmoid_lut.h
-├── ggml-cpu.c             llama.cpp backend driver (board-validated)
-├── pl.dtsi                Device tree overlay
-├── hls_config.cfg         Vitis HLS solution configuration
-└── docs/
-    ├── swiglu_description.md      Full implementation description
-    ├── codex.txt                  Cycle model and performance estimates
-    ├── swiglu_correctness.txt     Correctness and optimization checklist
-    ├── ggml_nibble_fix.txt        Q4_K planar nibble layout explanation
-    ├── quantization_fp32toin8.txt W4A8 quantization accuracy analysis
-    ├── connections&addresses.txt  Vivado block design connections + addresses
-    ├── quantization.txt           GGUF quantization format reference
-    ├── output.txt                 Board execution log
-    └── LFM2_technical_report.pdf  Model architecture reference
-```
-
----
-
-## Board Configuration
-
-- **Device**: Kria KV260 (Zynq UltraScale+ ZU5EV)
-- **PL clock target**: 250–300 MHz (set PL CLK0 in Zynq PS Clock Configuration)
-- **CMA allocation**: `cma=1024M` in `/boot/firmware/boot.scr.uimg`
-  (required for the 640 MB udmabuf)
-- **udmabuf size**: 671,088,640 bytes (640 MB)
-  — permanent per-layer weight cache for all 16 layers (~512 MB weights + overhead)
+| `swiglu_description.md` | `swiglu.cpp` stage by stage, with csynth cycles |
+| `code_stages.txt` | one call end to end: registers, handshake, driver stages, cache syncs |
+| `offload.txt` | how the fused op is wired into llama.cpp |
+| `quantization_info.txt` | W4A8, the all-Q4_K model, fp16 subnormals, what accuracy is (not) measured |
+| `floats_explanation.txt` | where float remains in the IP and why |
+| `integer_transition.txt` | INT8 X1/X2 caches and the unverified ±10 range |
+| `connections.txt`, `vivado_addresses.txt` | block design and address map |
+| `udmabuf_info.txt` | buffer size, layout, CMA |
+| `power_profiling.txt` | how power was measured and the results |
+| `inheritance.txt` | lessons learned, by project phase |
+| `output.txt` | board log of the fused op with `SWIGLU_DEBUG=1` |
+| `gguf-dump_*.txt` | tensor types of the stock Q4_K_M and the all-Q4_K model |

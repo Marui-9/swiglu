@@ -1,0 +1,747 @@
+FPGA Accelerator Lessons Learned — LFM2.5 SwiGLU on KV260
+===========================================================
+Date: 2026-06-02 (revised 2026-10-03)
+Project: SwiGLU FFN accelerator (Vitis HLS 2025.1, Vivado 2025.1, Zynq UltraScale+ ZU5EV)
+Board result (q4k_final bitstream, 250 MHz): 2.21 t/s decode at 2 threads, 5.15 W,
+  vs 1.66 t/s / 4.25 W CPU-only at 2 threads (scripts/results/latest_benchmarks/).
+  CPU-only at 3 threads (2.36 t/s) beats every FPGA+CPU configuration (see 5.5).
+
+Revision note (2026-10-03): the first version quoted the URAM-transposed design of May 19
+(2.20 t/s at -t 4, 103,684 LUT, WNS −0.074 ns), a CPU baseline from an older CPU build
+(1.15 t/s), and several projections no measurement supports. Numbers below are from the
+shipped q4k_final design unless marked otherwise, and each cites its source; derived
+figures say so. Lessons from the earlier linear_projection design (AXI DMA) are collected
+in a separate section — the SwiGLU IP has no DMA.
+
+This document condenses the lessons learned, from the first empty module to the
+optimization diary (hls_experiments/testblock/changelog.txt, entries 1-68; "entry N" below),
+into a practical guide for someone starting a new FPGA acceleration project for a neural
+network model. It is organized by project phase, not by implementation detail.
+
+================================================================================
+PHASE 0 — BEFORE WRITING A SINGLE LINE OF HLS
+================================================================================
+
+0.1 Profile the CPU baseline first, completely
+----------------------------------------------
+Instrument the exact operation you intend to accelerate before touching HLS. A per-node
+ggml profile of CPU decode (cpu_profiling/result.txt) put the SwiGLU FFN matmuls at 68.08%
+of summed node time, which sets the Amdahl ceiling immediately:
+max speedup = 1/(1−0.68) ≈ 3.1×.
+
+The non-FFN work (attention, short convolutions, norms, lm_head) does not shrink when the
+FPGA gets faster. On the shipped design at 2 threads it is ~227 ms of the 452 ms token
+(thesis/latest_findings.md), so even a zero-time FFN would cap decode at ~4.4 t/s
+(derived: 1 / 0.228 s).
+
+Rule: compute Amdahl's ceiling before writing any HLS. If the ceiling is below your
+target, the target is wrong — change the model, the operator coverage, or the
+expectations.
+
+0.2 Build a testblock (pass-through IP) before your real IP
+-----------------------------------------------------------
+A testblock is a minimal HLS IP that copies its input to output without computation.
+It has all the same AXI master ports, burst lengths, and HP port connections as your
+real IP, but the loops do nothing. Deploy it as if it were the real IP.
+
+Why: the testblock isolates the non-accelerated floor (everything except the FFN, plus
+driver overhead) from your accelerator's contribution. Here it gave 7.95 t/s decode against
+2.89 t/s CPU-only at the time (entry 3; 8.02 t/s in entry 11), i.e. ~126 ms/token outside
+the FFN.
+
+The testblock also validates your driver, interrupt handling, udmabuf setup, AXI-Lite
+register map, and block design connections — all separately from the correctness of
+your computation. Debugging these in isolation saves weeks.
+
+0.3 Quantify the non-FFN floor — and re-measure it
+--------------------------------------------------
+The testblock floor (~126 ms/token) came from an earlier CPU build, and its thread count was
+not recorded. The shipped design, measured at 2 threads, spends ~227 ms/token outside the
+FFN. A floor measured under different conditions is not a constant you can subtract:
+re-measure it with the same llama.cpp build, thread count and GGUF as the benchmark you
+compare against.
+
+If your testblock result is already close to your CPU baseline, the operation you
+are accelerating is NOT the bottleneck. Go back to step 0.1.
+
+0.4 Understand the weight format COMPLETELY before designing any MAC logic
+--------------------------------------------------------------------------
+The weight quantization format determines almost everything: LUT cost, DSP usage,
+bandwidth, whether loop inversion works, and whether CPU pre-decode is worthwhile.
+
+For this project, Q4_K format caused:
+  - A triple product per MAC: INT8 × INT4 × UINT6. A DSP48E2 is a two-operand unit
+    (27×18 multiply + 48-bit accumulate); HLS reported "Unable to bind DSP" until the MAC
+    was split into a two-operand multiply plus a separate accumulate (entries 32-33). The
+    design stays LUT-bound with most DSPs unused: q4k_final routed at 86.78% LUT with 254
+    of 1,248 DSPs (20%) (hls_experiments/q4k_final/utilization.txt).
+  - Nibble extraction muxes (get_byte(), 9:1 on 128-bit words) were the dominant LUT
+    consumer until the CPU started transposing nibbles to element-major order
+    (entries 45-46, 51; see 2.3).
+  - A non-power-of-2 block size: 144 B = 9 × 128-bit words (Q6_K: 210 B = 13.125 words),
+    see 1.10.
+  - 6-bit sc6/mn6 values packed across 12 bytes per block need bit-level extraction.
+
+If you have a choice of weight format:
+  Q4_0:  INT8×INT4 maps to one DSP48E2 multiply; one fp16 scale per 32 weights, so 64
+         blocks per 2048-element row instead of 8. Not evaluated in hardware or for
+         accuracy here (CPU-only speed: latest_benchmarks/cpu_t<N>_q0.log).
+  Q4_K:  the model's default; the triple product and header decode cost LUTs.
+  Q8_0:  INT8×INT8 maps directly to a DSP and decodes trivially, but carries ~1.9× the
+         bytes of Q4_K (34 B per 32 weights vs 144 B per 256).
+
+The per-block scale factors d and dmin are fp16 and include subnormals (the testbench uses
+d = 0x00A4 ≈ 9.78×10⁻⁶). See 1.1.
+
+================================================================================
+PHASE 1 — HLS IP DESIGN: CORRECTNESS BEFORE PERFORMANCE
+================================================================================
+
+1.1 CRITICAL: decode fp16 fields with integer bit manipulation (DAZ bug)
+-----------------------------------------------------------------------
+Q4_K (and Q6_K) blocks store d and dmin as fp16, and real LFM2 weights include subnormal
+values. hls_half flushed subnormals to zero in synthesis (Denormals-As-Zero) earlier in
+this project, and ap_fixed<16,5> cannot represent them at all (its LSB is
+2^-11 ≈ 4.9×10⁻⁴). If d is silently zeroed, the whole block's contribution is zero.
+
+Fix: implement fp16_to_fp32() entirely via uint32_t bit manipulation (swiglu.cpp:53):
+  - Normal fp16 (exp != 0, exp != 31): rebias exponent from 15 to 127
+  - Subnormal fp16 (exp == 0, mant != 0): normalise with a leading-one search
+  - Zero: return signed zero
+  - Infinity/NaN: propagate
+
+Do not use hls_half for these fields, not even "just for loading".
+
+1.2 AXI bus width, burst length and depth on byte-array ports
+--------------------------------------------------------------
+HLS infers AXI bus width from the pointer type: a uint8_t* port gets an 8-bit bus, one
+byte per cycle. Evidence from early synthesis: pipeline intervals matched byte counts
+exactly (1153 cycles for 1152 bytes). Widen it — the weight ports use
+max_widen_bitwidth=128, 16× the bytes per beat.
+
+Raise max_read_burst_length from its default of 16 (entry 16 raised it to 256). Current
+values (swiglu.cpp:850-852): 128 on W and V, 256 on W_down, num_read_outstanding=4.
+In the URM layout a W/V row is 80 words (read 4 rows = 320 words at a time) and a W_down
+row is 320 words.
+
+Set depth= to the FULL matrix size (now 10485760 bytes), not one row. In entry 16, a depth
+smaller than the actual read made HLS split compute_X1's 2.7M-cycle read into two
+non-burst transactions separated by a 3,600-cycle gap — ~85% of the bandwidth loss at
+the time.
+
+1.3 Separate AXI bundles for concurrently read matrices → separate HP ports
+---------------------------------------------------------------------------
+Give each weight matrix that is read concurrently its own m_axi bundle, and connect the
+bundles to different HP ports through separate SmartConnects. Shipped mapping
+(docs/connections.txt):
+  gmem_W   → smartconnect_3 → HP2   (W_gate, compute_X1)
+  gmem_V   → smartconnect_0 → HP0   (W_up,   compute_X2)
+  gmem_Wd  → smartconnect_1 → HP1   (W_down, compute_output)
+  gmem_x, gmem_out → smartconnect_0 → HP0   (2 KB in, 8 KB out per call)
+
+compute_X1 and compute_X2 run concurrently, so W and V must not share a port: a shared
+SmartConnect serializes the two streams and defeats the DATAFLOW parallelism. One 128-bit
+port at 250 MHz carries at most 4.0 GB/s (16 B × 250 MHz). The KV260's achievable DDR
+bandwidth was not measured in this project.
+
+1.4 Accumulator count for PIPELINE II=1
+-----------------------------------------
+The number of partial accumulators determines whether a pipelined loop achieves II=1.
+
+  FP32 adder latency: ~5 cycles → need ≥5 independent accumulators → use 8 (power of 2)
+  INT32 adder latency: ≤4 cycles → need ≥4 independent accumulators → use 4
+
+Pattern: acc[N_acc], indexed by (loop_var & (N_acc-1)). Each accumulator is revisited
+every N_acc iterations, which is ≥ adder latency → no read-after-write hazard → II=1.
+The shipped MACs are INT32 with 4 slots per block (n & 3).
+
+With a SINGLE accumulator: the adder's write latency creates a read-after-write conflict
+→ II ≈ 5 (FP32) or ≈ 4 (INT32). Throughput drops 5× or 4× for no reason.
+
+Apply ARRAY_PARTITION dim=0 complete to accumulator arrays so all elements are independent
+registers. Without this, HLS may infer a shared BRAM port and serialise accumulator accesses.
+
+1.5 Loop inversion for parallel MAC chains
+-----------------------------------------
+This is the single most impactful HLS optimization for matrix-vector multiply.
+
+WRONG (UNROLL on outer loop):
+    for (int b = 0; b < N_blocks; b++) {    // UNROLL — does NOT create parallel hardware
+        for (int n = 0; n < 256; n++) {
+            #pragma HLS PIPELINE II=1
+            acc[b] += mac(b, n);
+        }
+    }
+HLS unrolls the b loop but creates N_blocks sequential FSM states with a shared pool of
+FP functional units (grp_fu_*). Only one MAC instance runs at a time.
+
+CORRECT (element dimension outermost with PIPELINE, block dimension innermost with UNROLL):
+    for (int n = 0; n < 256; n++) {         // PIPELINE II=1 on this loop
+        #pragma HLS PIPELINE II=1
+        for (int b = 0; b < N_blocks; b++) { // UNROLL — all blocks in same pipeline stage
+            #pragma HLS UNROLL
+            acc[b][n & 3] += mac(b, n);
+        }
+    }
+All N_blocks MACs now exist in the same pipeline stage. HLS must allocate N_blocks
+independent FP/INT pipelines (sharing is physically impossible). Result: ~270 cycles/row
+for 8 blocks vs 2611 cycles sequential — ~9.7× speedup.
+
+This works because the element (n) loop is the iteration space of the pipeline; the
+block (b) loop is unrolled inside it, creating N_blocks parallel datapaths that all
+compute simultaneously for the same n.
+
+1.6 2D/3D array layout for BRAM bank isolation
+-----------------------------------------------
+A 1D array with block partition (e.g., rb[N_blocks * stride]) relies on HLS alias
+analysis to prove distinct bank assignments. With non-power-of-2 strides or complex
+indexing (e.g., b*9 for Q4_K), alias analysis fails, HLS assumes port contention, and the
+MAC instances serialise.
+
+Fix: use an explicit 2D layout rb[N_blocks][stride] with ARRAY_PARTITION dim=1 complete.
+Each block's bank assignment is trivially unambiguous (b is the first index → each b
+maps to a distinct bank).
+
+gate_cache is [MAX_BATCH][DOWN_BLOCKS_PER_ROW = 32][256] with ARRAY_PARTITION dim=2
+cyclic factor=8 (swiglu.cpp:880): 8 URAM banks, block b in bank b % 8. The down MAC
+processes blocks g·8 … g·8+7 together, so the 8 blocks it reads in one cycle are always
+in 8 different banks.
+
+1.7 BRAM depth threshold — arrays with depth ≥ 17 auto-infer BRAM
+------------------------------------------------------------------
+HLS inferred BRAM (not LUTRAM) for arrays with depth ≥ 17 regardless of BIND_STORAGE
+pragmas (entry 42). This is observed toolchain behavior, not a documented rule.
+
+The full-unpack-to-INT8 attempt (entry 42) made BRAM explode from 190 to 638 BRAM_18K
+(221% of the device) when the rb arrays grew from 9 to 18 words deep.
+
+Rule: keep scratch buffers (row_buf, temp arrays) at ≤ 16 elements deep if you want them
+in LUTRAM. For 17+ elements, use BIND_STORAGE impl=bram explicitly and plan BRAM budget.
+
+1.8 DATAFLOW: duplicate shared arrays; no shared BRAM readers
+-------------------------------------------------------------
+If two DATAFLOW processes (e.g., compute_X1 and compute_X2) both read the same local
+array (e.g., x_local), HLS inserts a Block_entry_x_local_rd_proc serialiser module that
+broadcasts the array sequentially. This DOUBLES compute_X1 latency (confirmed:
+Block_entry = 2× compute_X1 in the csynth report).
+
+Fix: create two copies — x_local_1 and x_local_2 — written by the producer (load_x_local)
+and each read by exactly one consumer, each bound as ram_1p. The DATAFLOW channel becomes
+a simple buffer, not a serialiser.
+
+General rule for DATAFLOW: each intermediate array should have exactly one writer and
+one reader. Any deviation (multiple readers, or circular dependency) requires explicit
+ping-pong buffers or causes HLS to insert serialisers.
+
+1.9 Group structure for large block counts
+-----------------------------------------
+If N_blocks is large (e.g., 32 for the down-projection), fully unrolling all 32 blocks
+inside PIPELINE II=1 creates 32 parallel pipelines per row — may exceed the LUT budget.
+
+Pattern: 4 groups × 8 blocks:
+    for (int grp = 0; grp < 4; grp++) {           // sequential, time-multiplexes MACs
+        for (int n = 0; n < 256; n++) {            // PIPELINE II=1
+            #pragma HLS PIPELINE II=1
+            for (int b = 0; b < 8; b++) {          // UNROLL (8 blocks)
+                #pragma HLS UNROLL
+                int babs = grp * 8 + b;
+                acc[b][n & 3] += mac(babs, n);
+            }
+        }
+        reduce_group(grp, ...);
+    }
+Cost: 4× cycle count vs full unroll, but 4× fewer MAC lanes per row. q4k_final runs
+this for K=4 rows at once: 8 blocks × 4 rows = 32 lanes in the down MAC
+(q4k_final/architecture.txt). The rebuild drops that stage to K=2 (16 lanes) to fund the
+load/compute overlap buffers (CLAUDE.md).
+
+Partial UNROLL (factor=K, where K < N) inside PIPELINE II=1 is invalid — it leaves N/K
+residual sequential iterations. HLS either errors or silently degrades. Use the explicit
+group loop as shown above.
+
+1.10 Non-integer strides: nested loops required
+-----------------------------------------------
+Q4_K block = 144 bytes = 9 × 128-bit words. Using i/9 or i%9 in a flat pipelined loop
+requires hardware integer dividers → II >> 1.
+
+Fix: use nested loops rb[b][w] (b=0..N_blocks, w=0..8) with flat AXI address b*9+w.
+HLS handles constant-multiplied linear expressions cleanly without dividers. The array
+rb[N_blocks][9] is the natural 2D structure (also needed for bank isolation — see 1.6).
+(The URM layout now used avoids the issue: its 32-byte header is 2 words per block.)
+
+Q6_K blocks are 210 bytes = 13.125 × 128-bit words, a non-integer stride that admits no
+clean 2D layout. Rather than carry a slow, non-inverted Q6_K path, the project requantized
+the model to all-Q4_K and removed Q6_K from the stack (docs/quantization_info.txt).
+
+================================================================================
+PHASE 2 — HLS IP DESIGN: MEMORY ARCHITECTURE
+================================================================================
+
+2.1 Wide-BRAM for II=1 memory writes
+------------------------------------
+When a pipelined loop writes to 4 independent BRAM tiles in one cycle, Vitis HLS 2025.1
+did not schedule the 4 writes at II=1; the nibble load degraded to ~II=4 (256 cycles for
+64 words). Ten variants failed to fix it (entries 52-58, second entry 61):
+  - URAM → BRAM (write latency is not the issue — the write count is)
+  - Explicit II=2 pragma (pipeline buffering made it worse: 3.12M vs 2.60M cycles)
+  - Two-pass DDR re-read, two bursts (the second burst costs more than it saves)
+  - INLINE, cyclic partition, stream-decoupled DATAFLOW
+
+This is a TOOL LIMITATION, not a hardware limitation: physical BRAMs have independent
+write ports, and hand-written RTL could fan out to 4 BRAMs at II=1.
+
+The fix: consolidate 4×32-bit BRAMs into 1×128-bit BRAM. Store each 128-bit DDR word
+verbatim (one write per word, II=1) and move the extraction to the MAC read path:
+    ap_uint<128> w   = nib_r0[n >> 2];         // 1 BRAM read = 4 elements
+    ap_uint<32>  wr  = w.range(32*s + 31, 32*s); // s = n & 3: a 4:1 32-bit mux
+    ap_uint<4>   nb0 = wr.range( 3,  0);        // block 0 — wire, 0 LUT
+    ap_uint<4>   nb7 = wr.range(31, 28);        // block 7 — wire, 0 LUT
+(swiglu.cpp writes the 4:1 select as an if/else on s.)
+
+Result: LOAD_NIB_WV went to II=1, 67 cycles instead of 256 (second entry 62). On its
+own this did not shorten compute_X1/X2 (still 2.60M cycles with 4 per-row load calls);
+the gain appeared once the four row loads were merged into one burst (2.2).
+
+Limitation: the same pattern in the output path (128-bit reads feeding 32 blocks) failed
+to route — 74K node overlaps, 58K unrouted signals (entry 63). The output path keeps
+32-bit tiles (g0r0 … g3r1, 32-bit × 256, swiglu/reports/hls_compile.rpt).
+
+2.2 AXI burst consolidation: one long burst beats many short bursts
+-------------------------------------------------------------------
+Every AXI transaction pays a fixed setup cost (arbitration, DDR row activation, handshake;
+the changelog estimates ~45 cycles, entries 59-60). It is paid regardless of length.
+
+Every attempt to split one burst into two was slower (measured in csynth):
+  - Two-pass re-read (entry 54): 3.73-3.75M cycles, +44%
+  - Block-separated two bursts (entry 58): 3.75M cycles, +44% (worst result)
+  - One burst at II=4 beat two bursts at II=1 (entry 59)
+
+The reverse worked. Merging the four per-row W/V loads into one 320-word burst
+(load_4rows_wv_urm, entry 60) took compute_X1/X2 from 2.60M to 1.54M cycles (−41%;
+q4k_final csynth: 1,536,001). This shipped on ZU5EV. An earlier attempt (second entry 62)
+that merged the WV loads AND switched the output path to 128-bit tiles had failed
+placement; the output path, not the merge, was what did not fit (entry 63).
+
+Rule: always prefer one longer burst over multiple shorter bursts.
+
+2.3 CPU pre-decode: reformat weights on the ARM once, cache them
+-----------------------------------------------------------------
+Q4_K is laid out for CPU SIMD: nibbles block-major, 6-bit sc6/mn6 packed across 12 bytes.
+The FPGA wants the nibbles of all 8 blocks for one element side by side.
+transpose_q4k_to_urm() (llama-mods/ggml-cpu.c:165) does this once per layer:
+  - headers: d and dmin copied, sc6/mn6 unpacked to one byte each (32-byte header/block)
+  - nibbles: transposed to element-major, so one 32-bit slice holds element n of 8 blocks
+    and the MAC extracts each nibble with a compile-time .range() (zero LUT)
+
+What it bought, measured: pre-decoding the headers alone (hybrid design, entry 45) saved
+only ~1.6% LUT, because the get_byte() nibble mux stayed the dominant consumer. The nibble
+transpose (entry 51) removed that mux and let K=4 fit (103,684 LUT routed then; q4k_final
+101,639).
+
+The conversion runs once per layer on first use (~10 ms/layer, entry 47) and the result
+stays in a permanent udmabuf slot (4.7).
+
+Test the host transposer and the HLS reader against each other. The testbench has its own
+transposer, which matches what swiglu.cpp reads; the host transposer writes sc6[0..7] at
+header bytes 4-11 and mn6[0..7] at 12-19, which is not what the IP reads (README.md,
+"Known bugs"). Both layouts date from 2026-05-19, and C-sim passed throughout.
+
+2.4 Memory type selection guide
+--------------------------------
+Type        Used here for
+LUTRAM      x_local_1/2 (64 banks × 32 bytes each), gate_scale_buf, small scratch
+BRAM_18K    nibble tiles, X1/X2 caches, out_local, sigmoid_lut ROM
+URAM        gate_cache (8 KB, 8 banks)
+
+Decision rules:
+- Use ram_1p (single-port) when the array has exactly one reader OR one writer
+  in each phase. Using ram_2p unnecessarily doubles the port count.
+- X1_cache/X2_cache are ram_2p (written by compute_X1/X2, read by compute_gate).
+- Use rom_1p for LUTs (sigmoid_lut): HLS infers ROM from const/static arrays,
+  but explicit binding avoids LUTRAM inference for large ROMs.
+- Do NOT use ram_t2p (true dual-port) unless you need simultaneous read AND write
+  from two independent access patterns. It uses more BRAM resources.
+- Count DATAFLOW channels twice: a PIPO channel is double-buffered. In the current report a
+  128-bit × 64 nibble tile (both buffers) is 4 BRAM_18K, and each 8 KB X1/X2 cache is 8.
+- Vivado reports BRAM in 36 Kb tiles (KV260: 144 tiles = 288 BRAM_18K); csynth reports
+  BRAM_18K. q4k_final: 110 BRAM_18K in csynth, 46.5 tiles after implementation.
+
+2.5 INT8 intermediate caches: what is and isn't known about accuracy
+--------------------------------------------------------------------
+Storing X1_cache/X2_cache as INT8 instead of FP32 shrinks each from 32 KB (one URAM) to
+8 KB of BRAM.
+
+Fixed scale: X12_SCALE_RANGE = 10.0, step 10/127 ≈ 0.079, so ±0.039 rounding error
+(0.4% relative at |X| = 10, 4% at |X| = 1). The ±10 range has never been measured on LFM2
+activations; values beyond it clip (docs/integer_transition.txt).
+
+The fixed scale avoids a dynamic two-pass scheme, which would need either 8192 floats of
+buffering per cache (cancelling the saving) or a second read of W and V (~2 × 10 MB more
+DDR traffic per call).
+
+Float that remains (docs/floats_explanation.txt):
+  1. Per-block reduce in both MACs: d·Σw − dmin·Σm, then × x_scale or × gate_scale.
+     d/dmin are fp16 of arbitrary magnitude; no fixed-point range covers them.
+  2. compute_gate: dequantize, SiLU (nonlinear), dynamic gate scale.
+  3. mac_quant_wv: × 12.7, round, clamp to INT8.
+
+Accuracy checked so far: only the C-sim tolerance |got − expected| ≤ 1e-3·(|expected| + 1),
+on synthetic data (a mock-token test plus four Q4_K tests). No perplexity measurement and
+no on-board comparison with the CPU path exist (docs/quantization_info.txt, section 7).
+
+================================================================================
+PHASE 3 — VIVADO INTEGRATION
+================================================================================
+
+3.1 AXI-Lite register offsets shift when the top-level signature changes
+-----------------------------------------------------------------------
+Adding, removing, or reordering top-level arguments reallocates the AXI-Lite register
+map; an experimental version with extra W2/V2 ports (removed in entry 29) shifted every
+offset from W_down onward. A scalar argument the body never reads is optimized away and
+shifts the offsets after it: down_quant_mode (MODE, 0x4C) is always 0 but stays referenced
+so that x_scale stays at 0x54.
+
+After every re-synthesis, compare the generated xswiglu_hw.h (in the exported IP's driver
+sources) with the SWG_CTRL_* defines in ggml-cpu.c. Wrong offsets produce silently wrong
+results — writes land in the wrong registers.
+
+3.2 Interrupt wiring: always use xlconcat between IP and PS
+------------------------------------------------------------
+Do NOT connect IP interrupt lines directly to the PS IRQ input. Vivado can visually
+accept this connection but the interrupt index/mapping is ambiguous across regenerations
+(entry 2). Route interrupts through xlconcat → zynq_ultra_ps_e_0 pl_ps_irq0. Here:
+swiglu_0 interrupt → xlconcat In0 → GIC SPI 121 → `interrupts = <0 89 4>` in pl.dtsi.
+
+The UIO driver on Linux uses the physical base address of the IP to discover which
+/dev/uio* device to open. Never hardcode /dev/uio0. Use open_uio_by_addr() to scan
+all UIO devices and match by physical address from the kernel.
+
+3.3 HP port AFI width configuration in pl.dtsi
+-----------------------------------------------
+After connecting new HP ports (HP1, HP2) in Vivado, verify the config-afi entries in
+pl.dtsi: they set the fabric-side width of each AXI interface. Take the values from the
+exported design (psu_init.tcl in the XSA) rather than writing them by hand; a port left at
+the wrong width caps bandwidth regardless of the HLS pragma. The current pl.dtsi sets
+indices 0-13 to 0 and 14/15 to 0xa00/0x200.
+
+================================================================================
+PHASE 4 — SOFTWARE DRIVER (ggml-cpu.c or equivalent)
+================================================================================
+
+4.1 Cache coherency: flush before the FPGA reads, invalidate before the CPU reads
+---------------------------------------------------------------------------------
+On non-coherent paths:
+  - Before the FPGA reads a udmabuf region: write back dirty CPU cache lines
+  - After the FPGA writes a region: invalidate the CPU's stale lines before reading
+The driver uses the udmabuf sync interface: the whole 30 MiB weight slot once when a layer
+is first converted, then per call only the INT8 x region (sync_to_device, 2 KB per
+token) and the output region (sync_to_cpu, 8 KB). An earlier driver flushed the entire
+480 MB weight cache every token (entry 39). Sync only what changed.
+
+4.2 Permanent weight cache: one udmabuf slot per layer, filled on first use
+---------------------------------------------------------------------------
+For models with many layers sharing the same weight shapes, convert each layer's weights
+once into a permanent udmabuf slot. Here: 16 slots × 30 MiB (W, V and W_down at 10 MiB
+each in the URM layout) = 480 MiB inside a 512 MiB udmabuf (docs/udmabuf_info.txt).
+After the first token only the 2 KB INT8 x vector changes per call.
+
+The cache is indexed by layer index (from op_params[0] in the fused op), not
+swiglu_call_count % 16 (see 6.3).
+
+Lay out every region of the buffer in one table and assert that none overlap. The x and
+out regions (SWG_VEC_OFF 0x06C50000, SWG_OUT_OFF 0x06C60000) still sit inside layer 3's W
+slot (README.md, "Known bugs").
+
+4.3 Prefill: guard it or loop it
+--------------------------------
+The fused op is emitted for prefill (ne[1] > 1 tokens) as well as decode (ne[1] == 1).
+The IP is synthesized for MAX_BATCH = 1. The first driver used a guard
+(if (src1->ne[1] != 1) goto cpu_compute_fallback;). The current driver instead loops over
+the tokens of the ubatch, one IP call each, and asserts if a ubatch has more than
+SWG_MAX_TOKENS = 64 tokens (ggml-cpu.c:1998). Either way, never hand a multi-token batch
+to a single-token IP.
+
+4.4 Fused GLU op: graph is shallower than you expect
+----------------------------------------------------
+llama.cpp uses GGML_OP_GLU (fused silu×up operation) in recent versions — NOT separate
+SILU and MUL nodes. The graph structure is:
+    dst (MUL_MAT ffn_down) → src[1] = GLU op
+    GLU op → src[0] = MUL_MAT(W_gate, x),  src[1] = MUL_MAT(W_up, x)
+
+If you write a graph walk assuming SILU → gate → MUL → up, you will walk one level too
+deep and access wrong tensors. Always log the actual op names at runtime before committing
+to a graph-walk strategy. (The current integration avoids the walk altogether: the fused op
+is emitted at graph-build time, see 6.1.)
+
+================================================================================
+PHASE 5 — PERFORMANCE DEBUGGING
+================================================================================
+
+5.1 Compare board time with the csynth latency, not the DATAFLOW interval
+-------------------------------------------------------------------------
+For one token, swiglu() is called once per layer, and the DATAFLOW pipeline fills and
+drains on every call. A call therefore costs the latency of the whole chain
+(X1 ∥ X2 → gate → output), not the interval of its slowest stage.
+
+q4k_final: csynth latency 3,175,430 cycles = 12.70 ms at 250 MHz; interval 1,622,603
+cycles = 6.49 ms. Board, measured with SWIGLU_DEBUG: 14.0 ms per call (224 ms per token at
+2 threads). Board/latency = 1.10; board/interval = 2.16 (thesis/latest_findings.md).
+
+The earlier reading — a constant "1.5-2× gap" between HLS and board — compared the board
+with the interval. Acting on it, entry 67 replaced the interrupt wait with register
+polling to recover a supposed ~7.5 ms of interrupt latency per call. The polling build
+gained 0.01 t/s at T2 (2.22 vs 2.21) and drew 0.70 W more (5.85 vs 5.15 W; entry 68,
+latest_benchmarks/accel_t<N>_pollfix.log).
+
+5.2 Timing closure at 250 MHz
+-----------------------------
+HLS target: 3.33 ns (300 MHz) with 0.90 ns uncertainty (hls_config.cfg), stricter than the
+250 MHz board clock. q4k_final closed at WNS −0.023 ns, TNS −1.699 ns, WHS +0.010 ns
+(hls_experiments/q4k_final/timing.txt). The steps that got it there (first entries 61-62):
+  - In the down MAC, the mux pattern `acc[b][ki] += (ki == k[r]) ? c : 0` routed k[r]
+    through 64 data-path comparators. Reverting to `acc[b][k[r]] += c` lets k[r] drive
+    local clock enables instead: WNS −0.347 → −0.162 ns. (The WV MAC went the other
+    way: there, CE-gated writes put the iteration counter on 1024 CE pins, so it uses the
+    data mux. Pick the pattern by which net has the fan-out.)
+  - Performance_ExtraTimingOpt strategy (Performance_NetDelay_high spread placement at
+    88% LUT and worsened congestion), then phys_opt_design AggressiveFanoutOpt +
+    AggressiveExplore: → −0.120 ns.
+  - Output nibble tiles moved from URAM to BRAM (URAM columns sit far from the DSP
+    columns): → −0.023 ns, 150 failing endpoints, all DSP→DSP cascade paths.
+  - phys_opt_design -hold_fix for hold (q4k_final/bottlenecks.txt).
+The bitstream runs with that small negative slack. For the rebuild, CLAUDE.md plans to
+over-constrain the PL clock in Vivado (set_clock_uncertainty -setup 0.300) to get real
+margin.
+
+5.3 Routing congestion at high LUT utilization
+----------------------------------------------
+At ≥85% LUT utilization, routing congestion appears as node overlaps in the router log.
+Symptoms: implementation runs for hours and fails with unrouted signals.
+
+Fixes in order of impact:
+  1. Reduce LUT count (eliminate mux trees, consolidate burst loads)
+  2. Move LUTRAM to BRAM (frees LUTs and routing)
+  3. Keep memories that feed DSPs in BRAM, not URAM (5.2)
+  4. Pick the implementation strategy for the density: ExtraNetDelay_high caused a LUT
+     blow-up (entry 35) and NetDelay_high worsened congestion at 88% LUT (first entry 62)
+  5. Lower the clock target
+
+The 128-bit wide-BRAM output path (32 blocks) failed with 74K node overlaps and 58K
+unrouted signals (entry 63). Directives did not fix it; the design went back to 32-bit
+output tiles.
+
+5.4 Driver overhead: measure it, then remove it
+-----------------------------------------------
+In the hybrid design (entries 38-39, 2.08 t/s) driver overhead was 33.1 ms/token, mostly
+16 × (sync + UIO wait) plus a full flush of the 480 MB weight cache every token. Since
+then the weight base addresses are written only when the layer changes, the weight cache
+is synced once per layer, and each call syncs only the 2 KB x and 8 KB output regions.
+Measured on q4k_final at T2: ~1.3 ms per token for the whole host↔device handoff
+(quantize x, syncs, registers, copy-out), <0.3% of the token (thesis/latest_findings.md).
+
+5.5 The Amdahl ceiling is real, and threads matter
+--------------------------------------------------
+If the accelerated operation is fraction F of total time: max speedup = 1 / (1 − F).
+At F = 0.68: ceiling = 3.1×.
+
+Measured decode, 250 MHz, q4k_final (latest_benchmarks/, r=10):
+   threads   FPGA+CPU    CPU-only
+   T1        1.63 t/s    0.88 t/s
+   T2        2.21 t/s    1.66 t/s
+   T3        2.05 t/s    2.36 t/s
+   T4        1.46 t/s    2.31 t/s
+The fused op runs single-threaded (n_tasks = 1): while the FPGA works, the other threads
+wait at the ggml barrier, so extra threads only speed up the non-FFN part, and beyond T2
+the FPGA+CPU build gets slower. The best CPU-only configuration (T3) beats the best
+FPGA+CPU one (T2). Caveat: the CPU runs used the stock Q4_K_M GGUF (694.76 MiB) and the
+FPGA runs the all-Q4_K one (628.25 MiB).
+
+At T2 the token splits ~50/50: 224 ms FPGA, 227 ms non-FFN CPU, 1.3 ms handoff. Derived
+from that split: halving the FPGA time gives at most ~2.9 t/s; removing it entirely,
+~4.4 t/s.
+
+If the FPGA is bounded by a tool limitation (HLS write fanout, routing) rather than by
+bandwidth, the options are: accept the result, use a larger device, write RTL by hand,
+or change the model or the operator coverage.
+
+================================================================================
+PHASE 6 — GGML / LLAMA.CPP INTEGRATION PATTERN
+================================================================================
+
+6.1 Register a custom op: ggml.h → ggml.c → ggml-cpu.c
+-------------------------------------------------------
+(Line numbers: the copies in llama-mods/, see docs/offload.txt.)
+
+Step 1 (ggml.h:474): add to enum ggml_op:
+    GGML_OP_YOUR_FUSED_HW,  // e.g., after GGML_OP_NONE
+
+Step 2 (ggml.h:808): declare builder:
+    GGML_API struct ggml_tensor * ggml_your_fused_hw(
+        struct ggml_context * ctx, struct ggml_tensor * x,
+        struct ggml_tensor * w_gate, struct ggml_tensor * w_up,
+        struct ggml_tensor * w_down, int32_t layer_id);
+
+Step 3 (ggml.c:957): add op name to GGML_OP_NAME array (must match op enum order):
+    "YOUR_FUSED_HW",   // at the position corresponding to the enum value
+
+Step 4 (ggml.c:2925): implement builder — wires graph node, does NOT touch hardware:
+    result->op = GGML_OP_YOUR_FUSED_HW;
+    result->src[0] = x; result->src[1] = w_gate;
+    result->src[2] = w_up; result->src[3] = w_down;
+    ggml_set_op_params_i32(result, 0, layer_id);  // pass layer index
+
+Step 5 (ggml-cpu.c:2681, n_tasks switch):
+    case GGML_OP_YOUR_FUSED_HW: n_tasks = 1; break;
+
+Step 6 (ggml-cpu.c:2186, compute_forward switch):
+    case GGML_OP_YOUR_FUSED_HW:
+        ggml_compute_forward_your_fused_hw(params, tensor); break;
+
+Step 7 (model file, here lfm2.cpp): emit the fused op at graph-build time when the shapes
+and types match. Add an environment variable guard (LLAMA_SWIHW=1) so the CPU path stays
+available.
+
+6.2 Validate incrementally — never test everything at once
+----------------------------------------------------------
+1. Build-only: stub returning CPU fallback. Verify wiring compiles.
+2. Init smoke test: run minimal inference, log physical/virtual addresses. Assert
+   init paths don't crash.
+3. Single-token functional: compare the fused op's output with the CPU build_ffn() for one
+   layer and one token, on real weights and activations. Large errors at this point mean
+   catastrophic bugs (wrong register map, DAZ in fp16, wrong buffer layout). No such
+   comparison is recorded for the URM-layout design, and the header-layout mismatch
+   (2.3) went unnoticed.
+4. Cache check: two tokens same layer — weight copies skipped on second call.
+5. Timeout path: the current driver has none. read() on the UIO fd blocks until the
+   interrupt arrives, and a missing completion asserts. A poll() timeout with a CPU
+   fallback is still worth adding.
+6. Full benchmark: after steps 1-5 pass, run llama-bench.
+
+6.3 The fused op receives layer_id in op_params, not from call count
+--------------------------------------------------------------------
+The layer index selects the weight cache slot (one of 16). Do NOT infer it from a
+module-level swiglu_call_count % 16 counter — it misaligns as soon as the number of calls
+per token changes (prefill, graph reordering, skipped layers). Store il (the layer loop
+variable) in op_params[0] at graph-build time:
+    ggml_set_op_params_i32(result, 0, il);
+Read it in the driver (ggml-cpu.c:2012):
+    int layer = ggml_get_op_params_i32(dst, 0);
+
+================================================================================
+LESSONS FROM THE EARLIER linear_projection DESIGN (AXI DMA)
+================================================================================
+linear_projection fed its IP through an AXI DMA in scatter-gather mode. The SwiGLU IP reads
+DDR through its own m_axi masters, so none of these apply to it, but they apply to any
+design that uses AXI DMA:
+  - Scatter-Gather is not the IP default (Direct Register is). Enable "Enable Scatter
+    Gather Engine" explicitly. Symptom: S2MM_DMASR bit 2 (SGIncld) = 0; MM2S "completes"
+    instantly with length 0 and S2MM reports DMAIntErr.
+  - Write ap_start BEFORE MM2S TAILDESC. If the IP's TREADY is low when TAILDESC is
+    written, MM2S stalls permanently.
+  - Clear the STATUS field of every descriptor before reusing the ring (SGSlvErr).
+  - Soft-reset both channels before programming CURDESC for each call (otherwise S2MM
+    DMAIntErr on the second call).
+  - IRQThreshold must be ≥ 1 in DMACR bits [23:16]: MM2S_DMACR = S2MM_DMACR = 0x00011001.
+  - TAILDESC = phys_base + last_idx × 64, not (last_idx + 1) × 64.
+
+================================================================================
+QUICK REFERENCE — CRITICAL BUGS IN ORDER OF DISCOVERY
+================================================================================
+
+Hardware/HLS:
+  1.  DAZ bug: never use hls_half or ap_fixed<16,5> for fp16 fields. Use uint32_t bit
+      manipulation.
+  2.  8-bit AXI default: set max_widen_bitwidth=128 on byte-array AXI ports.
+  3.  DATAFLOW shared BRAM: duplicate shared arrays (one reader per copy). Otherwise a
+      serialiser block doubles latency.
+  4.  BRAM depth ≥17 auto-inference: arrays more than 16 deep were bound to BRAM
+      regardless of BIND_STORAGE pragmas.
+  5.  UNROLL alone on outer loop does not create parallel hardware: use loop inversion.
+  6.  1D array with block partition fails alias analysis: use explicit 2D layout.
+  7.  Partial UNROLL inside PIPELINE II=1 is invalid: use explicit group loop.
+  8.  Q4_K_WORDS=9 requires nested loops: flat i/9 requires hardware dividers → II >> 1.
+  9.  4 parallel memory writes per stage don't reach II=1 in Vitis HLS 2025.1: use one
+      wide BRAM and slice on read.
+  10. One long burst beats many short bursts.
+  11. Compare board time with the csynth latency of one call, not the DATAFLOW interval.
+  12. AXI interface depth pragma must cover the full matrix, not one row.
+  13. Merging the 4 per-row W/V loads into one 320-word burst: X1/X2 2.60M → 1.54M cycles.
+      Shipped on ZU5EV.
+  14. csynth LUT estimates over-predict: q4k_final was 148,042 in csynth (126%) and
+      101,639 routed (86.78%).
+
+Driver:
+  15. Hardcoded /dev/uio0: always use open_uio_by_addr() to match by physical address.
+  16. Test the host weight transposer against the HLS reader, not each against its own
+      model (README.md, "Known bugs").
+  17. Assert that udmabuf regions do not overlap (README.md, "Known bugs").
+  (AXI DMA lessons from linear_projection: see the section above.)
+
+Vivado/Block Design:
+  18. xlconcat required: direct IP interrupt to PS is ambiguous. Always use xlconcat.
+  19. HP port AFI width: verify config-afi in pl.dtsi matches HP ports used in design.
+  20. Register offsets shift: check the generated xswiglu_hw.h after every HLS re-export.
+
+llama.cpp integration:
+  21. Fused GLU op: recent llama.cpp uses GGML_OP_GLU (not separate SILU + MUL).
+      Graph is one level shallower than expected. Log actual op names before walking.
+  22. Prefill: a MAX_BATCH=1 IP needs either a decode-only guard or a per-token loop in the
+      driver (the current driver loops, up to 64 tokens per ubatch).
+  23. layer_id from op_params: not from call count modulo num_layers.
+  24. Interrupt re-arm: after the UIO read() returns, clear the IP's ISR and write 1 to the
+      UIO fd to re-arm it before the next IP invocation.
+
+================================================================================
+ESTIMATING PERFORMANCE AT DESIGN TIME
+================================================================================
+
+  t/s ≈ 1 / (T_cpu + N_layers × L_call + T_handoff)
+
+  L_call:    csynth LATENCY of one call (the whole DATAFLOW chain), not its interval
+  T_cpu:     non-FFN CPU time per token, measured with the same build, threads and model
+  T_handoff: driver time per token (quantize, syncs, registers, copy-out)
+
+Check against q4k_final at T2:
+  T_cpu 227 ms; L_call 12.70 ms (3,175,430 cycles at 250 MHz); T_handoff ~1.3 ms
+  predicted: 1 / (0.227 + 16 × 0.0127 + 0.0013) s = 1 / 0.4315 s ≈ 2.32 t/s
+  measured:  2.21 t/s (the board call takes 14.0 ms, 10% above the csynth latency)
+
+The rebuild's csynth latency is 2,011,996 cycles (8.05 ms at 250 MHz); CLAUDE.md projects
+~2.6 t/s from it. No board number exists yet.
+
+================================================================================
+DEVICE NOTES
+================================================================================
+
+ZU5EV (KV260): 117,120 LUT, 234,240 FF, 144 BRAM36 (288 BRAM_18K), 64 URAM, 1,248 DSP
+(available columns of hls_experiments/q4k_final/utilization.txt and architecture.txt).
+  - q4k_final (K=4 in both MAC stages, merged 320-word W/V load) routes at 86.78% LUT.
+  - The output path with 128-bit wide-BRAM reads did not route (entry 63).
+  - csynth's LUT total is a poor predictor of fit (quick reference 14).
+Larger devices (e.g., ZU7EV) were not tried. The changelog's throughput estimates for them
+have no measurement behind them. If you have a choice, synthesize and implement on the
+candidate part before committing to it.
+
+================================================================================
+SUMMARY OF KEY ARCHITECTURAL DECISIONS
+================================================================================
+
+Decision                 Choice made                        Alternative
+─────────────────────────────────────────────────────────────────────────────────────────
+Weight format            Q4_K, model requantized all-Q4_K   Q4_0 (simpler decode; not evaluated)
+MAC parallelism          K=4 rows (q4k_final); rebuild:     K=2 (hybrid baseline)
+                         K=4 W/V, K=2 down
+Nibble storage           W/V: 128-bit BRAM; down: 32-bit     128-bit down tiles (did not route)
+W/V load                 one 320-word burst per 4 rows      4 per-row bursts (2.60M vs 1.54M cy)
+Header decode            CPU pre-decode                     On-FPGA get_byte() muxes
+Q6_K layers              Requantize to Q4_K                 Keep Q6_K (46% more bytes/block,
+                                                            no clean tile layout)
+Intermediate caches      INT8                               FP32 (4× the memory)
+AXI bus width            128-bit                            8-bit default (16× slower)
+DATAFLOW structure       5 processes, X1 ∥ X2               Sequential (no overlap)
+Clock                    250 MHz (HLS at 3.33 ns)           100 MHz
+Driver weight cache      Permanent per-layer slot           Per-call re-conversion
+                                                            (~10 ms/layer, entry 47)
+
+Each row was either tried and measured (changelog.txt) or reasoned out. The accuracy
+side of these choices (INT8 caches, the ±10 range, Q4_K vs Q4_0) has not been measured.

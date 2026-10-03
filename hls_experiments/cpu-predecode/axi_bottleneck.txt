@@ -1,6 +1,15 @@
 AXI Call Serialization — The Throughput Ceiling
 ================================================
 
+NOTE (2026-10-03): the main conclusion here, that a merged 4-row WV load cannot fit the
+ZU5EV, was overturned. q4k_final shipped exactly that load (load_4rows_wv_urm):
+  - 148,042 HLS LUT → 101,639 routed (86.78%);
+  - compute_X1 1,536,001 cy (q4k_final/csynth.rpt, utilization.txt).
+Its board decode was 2.21 t/s at T2, not the 3.5-4.4 t/s projected below. The projection
+used the 6.5 ms DATAFLOW interval and a 125 ms CPU floor. In fact decode pays the full
+per-call latency (12.70 ms in q4k_final), and non-FFN CPU time at T2 is ~227 ms/token
+(thesis/latest_findings.md). See q4k_final/bottlenecks.txt.
+
 The AXI bottleneck is the single largest obstacle preventing 2.20 t/s from
 reaching the projected 3.5–5.0 t/s at 250 MHz. All wide-BRAM, II=1, and
 K=4 improvements have been absorbed into per-call latency. The remaining
@@ -127,6 +136,7 @@ The output path benefits similarly: 4-row merged load at 1,280 words
 saves 3 AXI setups. compute_output drops from 1.57M to 1.32M.
 
 Combined: per-layer interval ~1.62M cycles → 6.5 ms/layer at 250 MHz.
+[Superseded: see the note at the top of this file.]
 16 layers: 104 ms FPGA + ~125 ms CPU = 229 ms → ~4.4 t/s theoretical,
 ~3.5–4.0 t/s estimated with board overhead.
 

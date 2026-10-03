@@ -1,254 +1,76 @@
- 
-FILES AND EXECUTION PROCESS OF LLAMA.cpp
+How the offload is wired into llama.cpp
+(revised 2026-10-03; line numbers refer to the copies in llama-mods/. The earlier version
+also held the K=2 W2/V2 extra-port plan, which never shipped — the IP has five m_axi
+ports — and a pre-implementation plan that has since been carried out.)
 
- ggml.h -> no execution logic, tensor structs, enums for ops, builder prototypes, declarations
- ggml.c -> contains graph building helpers: it constructs the compute graph and returns
-            tensors representing nodes.
- ggml-cpu.c -> executor of cpu backend: threads setup, graph planning, ggml_compute_forward 
-            switch that dispatches the per-op kernels. Here are the functions called by the graph runner.
-            the offload logic (UIO mmap, reg programming, IRQ wait, copy out) must live here in a kernel.
+FILES AND EXECUTION PROCESS OF llama.cpp
 
+ ggml.h     -> no execution logic: tensor structs, the enum of ops, builder prototypes.
+ ggml.c     -> graph-building helpers: each builder creates a tensor node with its op and
+               inputs wired and returns it.
+ ggml-cpu.c -> executor of the CPU backend: thread setup, graph planning, and the
+               ggml_compute_forward switch that dispatches per-op kernels. The offload
+               logic (udmabuf mmap, register programming, IRQ wait, copy out) lives here.
 
-ggml != llama.cpp:
-llama.cpp builds the model graph using ggml ops.
-Your custom fused op (e.g. ggml_swiglu_fused_hw) is defined/executed in the ggml CPU backend (ggml.c / ggml-cpu.c in your modified tree).
-When that op runs, backend code prepares buffers/registers and starts the FPGA IP.
-swiglu.cpp is the HLS kernel/IP implementation that actually computes the feed-forward block in hardware.
-So: ggml orchestrates and dispatches; swiglu.cpp computes on FPGA.
+ggml != llama.cpp: llama.cpp builds the model graph out of ggml ops. The fused op
+(ggml_swiglu_fused_hw) is defined in ggml.c and executed in ggml-cpu.c; when it runs, the
+backend prepares buffers and registers and starts the FPGA IP. swiglu.cpp is the HLS IP
+that computes the FFN block. So: ggml orchestrates and dispatches; swiglu.cpp computes.
 
 End-to-end flow (CPU backend):
+1. The model is loaded from GGUF; llama.cpp calls ggml builder functions to construct a
+   compute graph of tensors.
+2. ggml_graph_compute (ggml-cpu.c:3726) plans the graph and starts the threadpool.
+3. Each worker runs ggml_graph_compute_thread (ggml-cpu.c:3451), visiting nodes in
+   topological order. For each node, ggml_compute_forward (ggml-cpu.c:2172) — a large
+   switch on tensor->op — calls the op's kernel. Threads meet at a barrier after each node.
+4. Per-op parallelism is chosen beforehand in ggml_get_n_tasks (ggml-cpu.c:2670). Heavy
+   ops (MUL_MAT, GLU) use n_threads and split rows by ith/nth; the fused op uses 1.
 
-1. Model is loaded from GGUF; llama.cpp (or the app) calls ggml factory functions (in ggml.c) to 
-    build a compute graph of tensors with op and inputs wired.
-2. ggml_graph_compute (in ggml-cpu.c) plans the graph, spins a threadpool.
-3. Each node is visited in topological order; for each node, ggml_compute_forward switch picks the kernel.
-4. The selected kernel executes (CPU math or your FPGA offload) and writes results to the node’s tensor 
-    data. Threads sync at a barrier before the next node.
------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+THE FUSED OP — WHAT WAS ADDED
 
-Note that ggml-cpu.c has a massive switch case statement at line 1686:
-its purpose is to build a GGML compute graph of the model, so that 
-execution can jump between estabilished kernels (functions)
-[ggml-cpu.c:1698–2058]  see swiglu_algorythm.txt for block specifics
+1. ggml.h:474   GGML_OP_SWIGLU_FUSED_HW added to enum ggml_op.
+   ggml.h:808   declaration:
+       GGML_API struct ggml_tensor * ggml_swiglu_fused_hw(struct ggml_context * ctx,
+                       struct ggml_tensor * x,      struct ggml_tensor * w_gate,
+                       struct ggml_tensor * w_up,   struct ggml_tensor * w_down,
+                       int32_t layer_id);
 
-Each worker runs ggml_graph_compute_thread (ggml-cpu.c:2952–3007), 
-itegrating graph nodes in topological order. After each node, all threads hit 
-ggml_barrier so dependencies are respected.
-    For the current node, ggml_compute_forward dispatches to the 
-    op-specific kernel (ggml-cpu.c:1698–2058).
-Per‑op parallelism: before execution, ggml chooses n_tasks for that op 
-    (ggml-cpu.c:2200–2268); many heavy ops (e.g., MUL_MAT, GLU/SwiGLU) use n_threads.
-    Inside each kernel, loops are partitioned by ith/nth from ggml_compute_params. 
-    Example: ggml_compute_forward_mul_mat tiles rows/cols and each thread processes 
-    a slice based on ith (ggml-cpu.c:1235+). So multiple threads run the same node 
-    concurrently on disjoint chunks, then synchronize at the barrier before moving 
-    to the next node.
+2. ggml.c:957   "SWIGLU_FUSED_HW" added to the GGML_OP_NAME array (for logging).
 
- ggml_graph_compute [ggml-cpu.c:3238–3294] builds the sequence of functions 
- to be executed, starts threads and then each thread calls 
- ggml_compute_forward, which makes the thread do whatever operation is needed. 
+3. ggml.c:2925  builder. It does NOT call the FPGA; it only creates the node:
+       asserts x->ne[0] == w_down->ne[1], w_gate->ne[0] == w_up->ne[0],
+               w_gate->ne[1] == w_down->ne[0]
+       result = new F32 tensor [w_down->ne[1], x->ne[1], x->ne[2], x->ne[3]]
+       result->op = GGML_OP_SWIGLU_FUSED_HW; src[0..3] = x, w_gate, w_up, w_down
+       op_params[0] = layer_id   (selects the layer's udmabuf weight slot)
 
-----------------------------------------------------------------------------------------------------------
+4. ggml-cpu.c:2681  case GGML_OP_SWIGLU_FUSED_HW: n_tasks = 1.
+   The kernel is single-threaded; the other CPU threads idle while the FPGA runs.
+   ggml-cpu.c:2186  case GGML_OP_SWIGLU_FUSED_HW: reads SWIGLU_DEBUG once, then calls
+   ggml_compute_forward_swiglu_fused_hw (ggml-cpu.c:1971). What that function does, step
+   by step, is in docs/code_stages.txt.
 
- TO ORCHESTRATE THE OFFLOAD
-1. add GGML_OP_SWIGLU_FUSED_HW in ggml/include/ggml.h/
-    inside enum ggml_op after line 471.
-            added GGML_OP_SWIGLU_FUSED_HW at line 474.
-    added function declaration as one of the struct ggml_tensor
-            added ggml_swiglu_fused_hw at line 808.
-      GGML_API struct ggml_tensor * ggml_swiglu_fused_hw(struct ggml_context * ctx,
-                                          struct ggml_tensor  * x,
-                                          struct ggml_tensor  * w_gate,
-                                          struct ggml_tensor  * w_up,
-                                          struct ggml_tensor  * w_down,
-                                          int32_t               layer_id);
+5. lfm2.cpp:18-41, inside the build_dense_feed_forward lambda — the only call site. The
+   insertion is LFM2-specific on purpose, not inside the generic build_ffn(), so no other
+   architecture can be routed to the hardware. The fused op is emitted when:
+       LLAMA_SWIHW=1 in the environment
+       x is F32 with ne[0] == 2048 and ne[1] >= 1     (decode AND prefill)
+       ffn_gate is [2048, 8192]; ffn_gate, ffn_up and ffn_down are all Q4_K
+   Otherwise the standard build_ffn() CPU path is used. The layer index il is passed as
+   layer_id.
 
-2. add a string in ggml/src/ggml.c in function ggml_op_name for logging.
-    inside (array of pointers to char) GGML_OP_NAME line 952.   
-            added SWIGLU_FUSED_HW at line 955.
-3. in ggml.c, add a function for building the graph node alongside others.
-    This function does NOT call the FPGA — it only wires the compute graph node.
-    The FPGA call lives in ggml-cpu.c and is dispatched at execution time.
-            added ggml_swiglu_fused_hw at line 2925.
-                struct ggml_tensor * ggml_swiglu_fused_hw(
-                struct ggml_context * ctx,
-                struct ggml_tensor  * x,
-                struct ggml_tensor  * w_gate,
-                struct ggml_tensor  * w_up,
-                struct ggml_tensor  * w_down,
-                int32_t               layer_id) {
+----------------------------------------------------------------------------------------------
+BATCH / PREFILL
 
-                    GGML_ASSERT(x->ne[0] == w_down->ne[1]);      // n_embd: x input dim == w_down output dim
-                    GGML_ASSERT(w_gate->ne[0] == w_up->ne[0]);   // gate and up share same input dim
-                    GGML_ASSERT(w_gate->ne[1] == w_down->ne[0]); // ffn_dim: gate/up output == w_down input
+"Batch" (ggml's second dimension, ne[1]) is the number of tokens processed together: 1 for
+decode, >1 for prefill. x is [2048, n_tokens]. The IP has MAX_BATCH = 1, so the driver
+loops over the tokens of a ubatch, one IP call each, and asserts if a ubatch has more than
+SWG_MAX_TOKENS = 64 tokens. There is no CPU fallback for prefill inside the op.
 
-                    const int64_t ne[4] = { w_down->ne[1], x->ne[1], x->ne[2], x->ne[3] };
-                    struct ggml_tensor * result = ggml_new_tensor(ctx, GGML_TYPE_F32, 4, ne);
-
-                    result->op     = GGML_OP_SWIGLU_FUSED_HW;
-                    result->src[0] = x;
-                    result->src[1] = w_gate;
-                    result->src[2] = w_up;
-                    result->src[3] = w_down;
-
-                    ggml_set_op_params_i32(result, 0, layer_id);  // layer index for weight cache slot
-
-                    return result;
-                }
-
-            n_tasks is set to 1 in the ggml_get_n_tasks switch (ggml-cpu.c ~line 2191):
-            the offload kernel is single-threaded (all other CPU threads idle during FPGA execution).
-  4. modified ggml-cpu.c to also have the operation inside switch for
-     at line 2191 (inside the ggml_get_n_tasks switch)
-                        case GGML_OP_SWIGLU_FUSED_HW: {
-                            n_tasks = 1;      // or n_threads if you want host-side parallel work
-                        } break;
-     at line 1700 (inside the ggml_compute_forward switch)
-                        case GGML_OP_SWIGLU_FUSED_HW: {
-                            ggml_compute_forward_swiglu_fused_hw(params, tensor);
-                        } break;
-
-
-"batch" (or "second dimension") = number of tokens processed together 
-                                    (at the same time)
-in ggml the second dimension (ne[1]) is 1 for decode=generation
-and >1 (many tokens in parallel) for prefill=prompt. For the LFM2 MLP, x 
-is shaped [2048, n_tokens].
-
-To truly overlap FPGA with other work you’d need a larger scheduler change 
-(asynchronous node completion / dependency tracking), which ggml doesn’t provide today. 
-A lighter alternative is to overlap inside the kernel (double-buffer x/out and let the 
-same thread enqueue next chunk while FPGA processes previous), but graph-level parallel 
-overlap isn’t available without deeper changes.
-
-
-
-
-----------------------------------------------------------------------------------------------------------
-K=2 PORT CHANGES (2026-04-06)
-----------------------------------------------------------------------------------------------------------
-
-Two new AXI master ports were added to the HLS IP to enable K=2 row parallelism in
-compute_X1 and compute_X2. These ports read the same physical weight buffers as W and V
-but are used to fetch odd-numbered rows concurrently with even rows.
-
-New ports:
-  W2  (bundle=gmem_W2)  — second read port for ffn_gate weights; same physical address as W
-  V2  (bundle=gmem_V2)  — second read port for ffn_up   weights; same physical address as V
-
-Why two ports are needed:
-  In mac_blocks_wv_k2, both rb0 (even row) and rb1 (odd row) are loaded sequentially
-  (load_row_wv W row, then load_row_wv W2 row+1) before a single 256-cycle MAC loop
-  processes both rows in parallel (16 MAC chains instead of 8).
-  HLS requires distinct m_axi bundles to generate independent AXI master interfaces.
-  Without separate bundles, HLS would serialize all accesses on one port and the
-  pipeline structure would be identical to K=1 with no throughput gain.
-
-Vivado block design:
-  No new HP ports are available (HP0-HP3 all in use). W2 and V2 are connected to
-  existing smartconnects:
-    gmem_W2 → smartconnect on HP3  (same as gmem_W — adds a second slave port)
-    gmem_V2 → smartconnect on HP0  (same as gmem_V, gmem_out, gmem_x)
-  The loads are sequential within each row pair, so there is no actual simultaneous
-  contention on the shared HP port.
-
-ggml-cpu.c register programming:
-  W2 and V2 are programmed with the SAME physical address as W and V respectively.
-  The IP computes row offsets internally:
-    even row:  base + row       * WV_ROW_WORDS  (via W  / V  port)
-    odd  row:  base + (row+1)   * WV_ROW_WORDS  (via W2 / V2 port)
-  So both W_LO/HI and W2_LO/HI receive phys_W; both V_LO/HI and V2_LO/HI receive phys_V.
-
-CRITICAL — register address verification required:
-  Adding W2 and V2 shifts ALL register addresses that follow W in the AXI-Lite map.
-  The xswiglu_hw.h in docs/ is from the OLD K=1 synthesis and does NOT contain W2/V2.
-  After re-synthesizing and exporting the K=2 IP, locate the new:
-    swiglu/hls/impl/ip/drivers/swiglu_v1_0/src/xswiglu_hw.h
-  and verify every SWG_CTRL_* define in ggml-cpu.c matches.
-
-  Predicted K=2 register map (based on HLS sequential allocation, 12 bytes per 64-bit port):
-    0x10 / 0x14  W        (unchanged)
-    0x1C / 0x20  W2       ← new
-    0x28 / 0x2C  V        (was 0x1C/0x20)
-    0x34 / 0x38  V2       ← new
-    0x40 / 0x44  W_down   (was 0x28/0x2C)
-    0x4C / 0x50  W_down2  (was 0x34/0x38)
-    0x58 / 0x5C  x_batch  (was 0x40/0x44)
-    0x64 / 0x68  out_batch (was 0x4C/0x50)
-    0x70         down_quant_mode (was 0x58)
-    0x78         x_scale  (was 0x60)
-
-  If the actual xswiglu_hw.h differs from these predicted values, update the
-  SWG_CTRL_* defines in ggml-cpu.c before deploying the new bitstream.
-
-----------------------------------------------------------------------------------------------------------
-
-plan
-
-Copy over only the m_axi/UDMABUF/UIO pieces: static state, address/offset defines, init_hardware_offload(), init_swiglu_offload(), weight-cache flags.
-Drop legacy AXI-DMA descriptor setup if your fused IP is pure m_axi (less surface to debug).
-Skeleton fused kernel
-
-Add ggml_compute_forward_swiglu_fused_hw with these steps (all blocking/synchronous):
-Validate shapes/types (hidden=2048, W/V/Wd dims, Q4_K/Q6_K weights, F32 x). If ne[1] > 1 and FPGA doesn’t support batch, jump to CPU fallback.
-Lazy init: call init_hardware_offload() + init_swiglu_offload() once.
-Determine layer index from op_params[0] (set at graph-build time by ggml_swiglu_fused_hw
-  via the layer_id argument, which lfm2.cpp passes as il). Mode (Q4_K/Q6_K) inferred
-  from ggml_nbytes(W_down): >9 MB → Q6_K.
-Weight cache: copy W, V, Wd into their udmabuf slots only if not yet loaded for that layer.
-Quantize/copy x → SWG_VEC_OFF; compute x_scale; write to udmabuf.
-Program CTRL regs (W/V/Wd/x/out, mode, xscale).
-Start: write ap_start.
-Wait: poll(swiglu_uio_fd, ...), read() to ack, re-arm interrupt.
-Copy out: memcpy from SWG_OUT_OFF to dst->data (or alias if safe).
-Scheduler hooks
-
-ggml-cpu.c n_tasks switch (around 2200): case GGML_OP_SWIGLU_FUSED_HW: n_tasks = 1; break;
-ggml_compute_forward dispatch switch (around 1700): call ggml_compute_forward_swiglu_fused_hw.
-Ensure the op enum/name/factory are already in ggml.h/ggml.c.
-Validation steps (incremental)
-
-Build-only: compile with fused op stub returning CPU fallback to verify wiring.
-Init smoke test: run a tiny model decode; assert init paths don’t crash; log physical/virtual addresses.
-Single-token functional: compare FPGA output vs CPU SwiGLU for one layer/one token; fail hard on >1e-3 diff.
-Cache check: run two tokens through same layer; confirm weight copies are skipped on second call.
-Timeout/error path: add a poll timeout; on timeout, log and fall back to CPU to avoid hangs.
-Optional batch: if hardware supports batch, test ne[1]=N path; else keep guard and CPU fallback.
-
-Where it can fail in the current logic:
-
-Graph construction: llama.cpp builds the FFN as separate W/V/silu/mul/W_down ops. 
-There’s no call to ggml_swiglu_fused_hw, and the GGUF loader doesn’t rewrite nodes to the fused op. 
-Result: no GGML_OP_SWIGLU_FUSED_HW tensors in the graph.
-Fallback guard inside fused kernel: even if a node existed, the fused kernel early‑returns for any 
-shape/type mismatch (x must be F32, gate/up Q4_K, down Q4_K/Q6_K, exact 2048/8192 dims). 
-The standard Q4_K_M and Q6_K models satisfy this, so the main blocker is the missing node.
-Dispatch unreachable: Because the graph has no fused op, ggml_compute_forward never hits that case, 
-so your new debug log doesn’t print.
-
-The specific entry for LFM2 must be changed. Not inside the generic build_ffn(). 
-Otherwise risk routing mismatched architectures through the hardware path.
- src/models/lfm2.cpp line 19
-            static int use_hw = -1;
-    if (use_hw < 0) { const char *e = getenv("LLAMA_SWIHW"); use_hw = (e && e[0]=='1') ? 1 : 0; }
-
-    if (use_hw &&
-        cur->type == GGML_TYPE_F32 &&
-        cur->ne[0] == 2048 && cur->ne[1] == 1 &&
-        model.layers[il].ffn_gate->ne[0] == 2048 && model.layers[il].ffn_gate->ne[1] == 8192 &&
-        model.layers[il].ffn_gate->type == GGML_TYPE_Q4_K &&
-        model.layers[il].ffn_up->type   == GGML_TYPE_Q4_K &&
-        (model.layers[il].ffn_down->type == GGML_TYPE_Q4_K || model.layers[il].ffn_down->type == GGML_TYPE_Q6_K)) {
-
-        // optional debug:
-        // fprintf(stderr, "[SWG] fuse layer %d\n", il);
-
-        return ggml_swiglu_fused_hw(ctx0,
-            cur,
-            model.layers[il].ffn_gate,
-            model.layers[il].ffn_up,
-            model.layers[il].ffn_down,
-            (int32_t)il);   // il is the lambda parameter (layer loop index 0..15)
-                             // → stored in op_params[0] → used by driver for weight cache slot
-    }
-
+OVERLAP WITH OTHER CPU WORK
+The ggml scheduler is synchronous: a node completes before its dependents start, and there
+is no asynchronous node completion. Overlapping the FPGA with the rest of the layer (e.g.
+attention of the next token) would need scheduler changes. A lighter option is overlap
+inside the kernel (double-buffer x/out across tokens), which only helps prefill.

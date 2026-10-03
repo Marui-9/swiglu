@@ -1,7 +1,10 @@
 Architecture Description — swiglu.cpp (Q4K-Final: Merged-Burst WV Load, 32-bit Output Tiles)
 ================================================================================
 Date: 2026-05-28  |  Based on: swiglu.cpp (859 lines), csynth.rpt (Vitis 2025.1)
-Board: KV260 (ZU5EV) @ 250 MHz, LFM2-1.2B Q4_K uniform, udmabuf weight cache
+Board: KV260 (ZU5EV) @ 250 MHz, LFM2.5-1.2B all-Q4_K, udmabuf weight cache
+Corrected 2026-10-03 (branch rebuild): routed resources/timing, per-call time, benchmark
+notes. Read bottlenecks.txt's correction note for the interval-vs-latency error.
+KNOWN BUGS that also affected this design's board runs: README.md, "Known bugs".
 
 
 General Pragmas
@@ -160,8 +163,9 @@ Stage 1 — compute_X1 / compute_X2 (identical, parallel in DATAFLOW)
         Total per iteration:         750 cycles
         compute_X1 total:          1,536,001 cycles = 6.14 ms @ 250 MHz
 
-    vs cpu-predecode design (4 × load_row_wv_urm, ~948 cy/iter):
-        Merged burst saves ~198 cy/iter × 2048 = ~405K cycles (~21% faster).
+    vs cpu-predecode design (4 × load_row_wv_urm, ~948 cy/iter, ~1,270 cy/iter total):
+        2,600,961 → 1,536,001 cy = 520 cy/iter × 2048 fewer (−41%). The load alone went
+        948 → 401 cy (derived from the two architecture.txt cycle budgets).
 
     ── Bandwidth and Utilization ─────────────────────────────────────────────────
         DDR data: 8192 rows × 1280 B = 10.0 MB
@@ -246,8 +250,7 @@ Stage 3 — compute_output
 
             Inner block loop (b = 0..7, UNROLL):
                 babs = grp * 8 + b
-                gi8  = gate_cache[0][babs >> 3][babs & 255... wait: gate[babs][n]]
-                                   — INT8 gate value
+                gi8  = gate[babs][n]               — INT8 gate value
                 nb0  = g0r0[n].range(b*4+3, b*4)   — 4-bit nibble (0 LUT)
                 nb1..nb3  similarly for rows 1-3.
 
@@ -281,7 +284,8 @@ Stage 3 — compute_output
     ── Resource Usage ───────────────────────────────────────────────────────────
         compute_output:
             BRAM:  20  (16 nibble tiles × 1 BRAM_18K + 4 AXI FIFO/misc)
-            DSP:   96  (64 MAC + 20 REDUCE × 4 groups reused = 96 actual)
+            DSP:   96  (all in mac_blocks_down_q4k_k4_urm: MAC_GRP 64 + REDUCE_GRP 20
+                         + 12 elsewhere in the function; groups share them)
             FF:    51,889
             LUT:   42,838
 
@@ -303,16 +307,20 @@ DATAFLOW Performance (per layer, steady state)
     was bottleneck at 2,600,961 cycles; merged-burst reduced X1 to 1,536,001 cycles
     but output path remained at 1,622,602, flipping the bottleneck.
 
-    16 layers FPGA (compute only): 103.9 ms
-    16 layers FPGA (incl. UIO):   16 × 14 ms = 224 ms  (7.5 ms/call interrupt overhead)
-    CPU non-FFN (T1, measured):   ~389 ms  (613 ms − 224 ms; attention, norms, projections)
-    Board T1 decode:               613 ms  →  1.63 t/s
-    Board T2 decode:               452 ms  →  2.21 t/s  (best operating point)
+    The interval only applies when calls stream back to back. Decode makes one call per
+    layer per token, so each call pays the full latency: 3,175,430 cy = 12.70 ms
+    (≈ the sum of the four stages).
 
-    The 125 ms CPU non-SwiGLU floor is empirically measured: a testblock (passthrough
-    IP, zero compute) yields 8.02 t/s decode → 1000/8.02 = 124.7 ms (changelog entry 11).
-    The ~4.4 t/s figure assumes polling driver (0 interrupt overhead) at multi-thread;
-    see bottlenecks.txt §7 for the full Amdahl analysis.
+    16 layers, csynth latency:     16 × 12.70 = 203 ms
+    16 layers, board (`fpga`):     16 × 14.0  = 224 ms  (measured at T2; 1.10 × csynth)
+    Board T2 token:                224 FPGA + 227 non-FFN CPU + 1.3 handoff ≈ 452 ms
+                                   → 2.21 t/s (best operating point;
+                                   thesis/latest_findings.md)
+    Board T1 token:                613 ms → 1.63 t/s; non-FFN ≈ 613 − 224 = 389 ms (derived)
+
+    The first version put the 14 − 6.49 = 7.5 ms gap down to interrupt delivery and
+    projected ~4.4 t/s with polling. Both were wrong: the gap is the latency/interval
+    difference, and polling measured 2.22 t/s at T2 (bottlenecks.txt, correction note).
 
 
 Board Benchmark Results (KV260, 250 MHz, Q4_K uniform, tg64)
@@ -340,9 +348,12 @@ Board Benchmark Results (KV260, 250 MHz, Q4_K uniform, tg64)
         T3: prefill −17%,  decode −25%   ← CPU wins
         T4: prefill −32%,  decode −47%   ← CPU clearly wins
 
-    T4 decode regression (1.46 < T3 2.05): all 4 A53 cores busy competing with
-    UIO interrupt handler; per-token FPGA round-trip latency increases due to
-    scheduling jitter on the interrupt-handling core.
+    T4 decode regression (1.46 < T3 2.05): cause not measured. Working hypothesis:
+    scheduler contention around the synchronous FPGA wait at 4 threads
+    (bottlenecks.txt §5).
+
+    Caveat: the CPU-only runs used a different GGUF (694.76 MiB) from the FPGA+CPU runs
+    (628.25 MiB; the all-Q4_K conversion), so the rows are not the same model file.
 
     Power: xmutil onboard telemetry (board total). FPGA+CPU overhead over CPU
     is approximately +1.14 W at T1, +0.90 W at T2.
@@ -350,13 +361,14 @@ Board Benchmark Results (KV260, 250 MHz, Q4_K uniform, tg64)
 
 Resource Summary (HLS → Vivado post-P&R)
 ----------------------------------------------------------
-    Resource     HLS Estimate      Vivado (post-P&R)    Budget       Note
-    LUT          148,042 (126%)    103,684  (88.5%)     117,120      HLS over-estimates;
-                                                                     Vivado optimizes ~30%
-    FF           128,960  (55%)    117,420  (50.1%)     234,240
-    BRAM_18K     110      (38%)         86.5 (30%)          288
-    DSP          286      (22%)        338   (27%)        1,248      Vivado adds DSPs
-    URAM         8        (12%)          8   (12%)           64      gate_cache only
+    (HLS column: csynth.rpt. Vivado column: utilization.txt.)
+    Resource     HLS Estimate        Vivado (post-P&R)       Available
+    LUT          148,042   (126%)    101,639   (86.78%)      117,120   routed ≈ 0.69 × estimate
+    LUTRAM             —               4,716    (8.19%)       57,600
+    FF           128,960    (55%)    116,975   (49.94%)      234,240
+    BRAM         110 BRAM_18K (38%)   46.5 BRAM36 (32.29%)    144 BRAM36 (= 288 BRAM_18K)
+    DSP          286        (22%)        254   (20.35%)        1,248   routed below estimate
+    URAM           8        (12%)          8   (12.50%)           64   gate_cache only
 
     Per-module HLS LUT breakdown (from csynth.rpt):
         compute_X1:     46,238
@@ -366,10 +378,12 @@ Resource Summary (HLS → Vivado post-P&R)
         Other:           6,180
         Total:         148,042
 
-    Vivado timing: WNS = −0.074 ns on DSP fanout paths in compute_output.
-    phys_opt_design -hold_fix resolves all hold violations.
-    Routes cleanly at 250 MHz; 32-bit output tiles eliminate prior 128-bit fanout
-    routing congestion (74K overlaps observed with wide-BRAM in output path).
+    Vivado timing at 250 MHz (timing.txt): WNS −0.023 ns, TNS −1.699 ns, 150 failing
+    setup endpoints, all DSP→DSP inside compute_output (DSP_OUTPUT_INST/CLK →
+    ALU_OUT[10..19]). WHS +0.010 ns, no hold failures (phys_opt_design -hold_fix).
+    Exported with setup failing by 23 ps; ran correctly on the board (changelog, first
+    entry 62). Routes at 250 MHz; 32-bit output tiles avoid the 128-bit output-path
+    congestion seen earlier (74K node overlaps, changelog second entry 63).
 
 
 Key Architectural Differences vs cpu-predecode Design
@@ -385,11 +399,17 @@ Key Architectural Differences vs cpu-predecode Design
     WV MAC accumulation     data-mux (same)                   data-mux (same)
     Down MAC accumulation   CE direct (same)                  CE direct (same)
     Output nibble tiles     32-bit (same)                     32-bit (same)
-    HLS LUT estimate        125,813                           148,042  (more unrolling)
-    Vivado LUT              103,684                           103,684  (same post-P&R)
-    Theoretical t/s         3.44                              4.4
-    Board T1 decode         2.20 t/s                         2.20 t/s  (same — limited by
-                                                                         output path + overhead)
+    HLS LUT estimate        ~125K (changelog 2nd entry 63)¹   148,042  (more unrolling)
+    Vivado LUT              ~103K (changelog second entry 63) 101,639  (utilization.txt)
+    Full-call latency       4,185,534 cy (16.74 ms)²          3,175,430 cy (12.70 ms)
+    Board decode, best      2.20 t/s (T4, May 2026)           2.21 t/s (T2)
+
+    ¹ No report in the repo shows the shipped cpu-predecode configuration as a whole.
+      cpu-predecode/csynth.rpt (May 20) has the merged output load that never routed
+      (140,510 LUT); hls_csynth-cpu-predecode.rpt (May 19) has 139,365 LUT. The
+      125,813 in cpu-predecode/architecture.txt is not in either.
+    ² Derived: sum of the csynth stages 202 + 2,600,961 (X1, csynth.rpt May 20) +
+      16,553 (gate) + 1,567,818 (per-row output, hls_csynth-cpu-predecode.rpt May 19).
 
 
 AXI-Lite Register Map (bundle=CTRL, same as all prior designs)

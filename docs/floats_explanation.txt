@@ -1,64 +1,31 @@
-What's actually integer (W4A8)
-mac_blocks_wv (used for both X1 and X2 phases):
+Where floating point remains in swiglu.cpp, and why
+(revised 2026-10-03 against swiglu.cpp on branch `rebuild`; the earlier version described
+the FP32-activation, 8-accumulator and Q6_K designs)
 
-Inner hot loop: INT8 × INT4 × UINT6 → INT32 — pure integer MACs
-8 partial int32_t accumulators per block — no FP adder latency constraints
-FP32 only appears once per block: d[b] * (x_scale * (float)sw) —
-a single multiply to apply the fp16 per-block scale
+WHAT IS INTEGER (W4A8)
+Both MAC arrays — mac_blocks_wv_k4_urm (X1, X2) and mac_blocks_down_q4k_k2_urm (output) —
+run the per-element hot loop in pure integer arithmetic:
+   acc_w += act_int8 × nibble(uint4) × sc6(6-bit)     → INT32
+   acc_m += act_int8 × mn6(6-bit)                     → INT32
+with 4 accumulator slots per block (selected by n & 3). The activations entering the IP and
+crossing between stages are INT8: x (host-quantized), X1/X2 (fixed ±10 scale), gate
+(per-token max-abs scale).
 
-Why FP32 can't be avoided there
-Q4_K stores two fp16 values per 256-element block: d (scale) and dmin
-(minimum-subtraction scale). The final result for each block is:
-  result = d × (x_scale × Σ(xi × qi × sci)) − dmin × (x_scale × Σ(xi × mni))
-The d and dmin are fp16 with arbitrary magnitude — you can't represent them
-faithfully in a fixed integer range. So one FP32 multiply per block (not per
-element) is unavoidable.
+WHERE FLOAT IS USED (three places)
+1. Per-block reduce in both MACs (REDUCE / REDUCE_GRP):
+      total += d[b]·Σw − dmin[b]·Σm      (float multiplies, ap_fixed<48,38> accumulate)
+      result = total × x_scale  (or × gate_scale)
+   This happens once per 256-element block, not per element. d and dmin are fp16 in the
+   Q4_K format with arbitrary magnitude (often subnormal), so they cannot be folded into a
+   fixed integer range without changing the quantization scheme.
+2. compute_gate: dequantize X1/X2 (× 10/127), SiLU via z·sigmoid_lut[idx]·x2, then the
+   max-abs scan and requantization of the gate to INT8. SiLU is nonlinear and the gate
+   scale is data-dependent. This is the smallest float user (compute_gate: 6,557 LUT in
+   swiglu/reports/hls_compile.rpt).
+3. mac_quant_wv: X1/X2 result × 12.7, round and clamp to INT8.
 
-Why you see fp16 → fp32 conversions
-Q4_K/Q6_K blocks store their per-block scales (d, dmin) in fp16. The kernel
-reads those fp16 headers and widens them to fp32 before applying them to the
-integer MAC sums. That's the "passage" between fp16 and fp32 in swiglu.cpp:
-the per-block metadata is fp16, but all arithmetic and the final output must
-be fp32 to match the CPU reference.
-
-Why activations stay FP32 throughout
-Neural networks are trained in FP32/BF16, then the weights are quantized for
-storage. The activations (the tensors flowing between layers) remain FP32
-throughout. You can confirm this in two ways:
-
-In lfm2.cpp:
-  cur = ggml_add(ctx0, cur, ffn_out);   // residual add expects F32
-And in the ggml.c builder:
-  result = ggml_new_tensor(ctx, GGML_TYPE_F32, 4, ne);
-
-The next layer's build_norm (RMSnorm) and the residual add both consume FP32.
-The rule in llama.cpp is: weight tensors are quantized, activation tensors
-are always FP32. The GGUF dump confirms this — every F32 entry is a norm
-weight (small, cheap), every Q4_K/Q6_K is a projection weight.
-
-Bottom line
-Floats are used inside swiglu.cpp for accuracy and to match what the CPU ggml
-path does — even though integers are cheaper to compute. Only the weights
-(W_gate, W_up, W_down) are stored quantized; activations (x, gate values,
-output) stay FP32 end-to-end because the rest of the pipeline expects FP32.
-Attempting an all-integer activation path would require a different
-quantization/activation scheme and revalidation of the entire inference stack.
-
-
-These aren't for the nonlinearity—they're actually part of the Q4K dequantization that happens during the W/V projection phases. The compute_gate function does have FP32 SiLU computation with the sigmoid lookup table, plus necessary dequantization of the inputs before applying the nonlinearity and max tracking for gate quantization. Then there's another FP32 reduction in the down projection that also involves Q4K dequantization scaling.
-
-Looking at the broader picture, FP32 isn't just being used for the nonlinearity itself—it's also handling Q4K and Q6K dequantization reductions where INT32 MAC results get converted to FP32 and scaled, plus the gate quantization step that tracks max values. Now I'm reviewing the swiglu.cpp file to verify all the K=2 changes are applied consistently across the modified functions—checking that the MAC blocks use K=2 throughout, the loop steps match, and the quantization logic aligns with the reduction factor.
-
-FP32 remains in three distinct places, not just the nonlinearity:
-
-Location	                    Why FP32	                                                            Avoidable?
-REDUCE_WV_K2 (compute_X1/X2)	Q4_K dequant: d[kr][b] * x_scale * sw - dmin[kr][b] * x_scale * sm      No — d/dmin are stored as fp16 in the GGUF weight format
-compute_gate	                INT8 dequant of X1/X2, then SiLU (z * sigmoid_lut[idx] * x2),           No — sigmoid is non-linear; must stay FP32
-                                then gate quantisation
-REDUCE_DOWN_Q4K / REDUCE_Q6K    Q4_K / Q6_K dequant of W_down: 
-(compute_output)	             d[b] * gate_scale * sw - dmin[b] * gate_scale * sm                 	No — same fp16 scale factors in GGUF
-
-The SiLU itself (compute_gate, 9K LUTs) is actually the smallest FP user. The dominant LUT cost in the previous synthesis came from the FP reduction trees inside REDUCE_WV_K2 
-(compute_X1/X2) and REDUCE_DOWN_Q4K/REDUCE_Q6K (compute_output) — these are Q4K/Q6K dequantisation steps that are equally unavoidable since the weight scale factors are fp16.
-
-The three FP locations are all irreducible: the GGUF format mandates fp16 scale factors, and SiLU is non-linear by definition.
+THE BOUNDARY WITH llama.cpp IS FP32
+Activation tensors in llama.cpp are FP32. The fused op's input x and its output are FP32
+tensors; the residual add in lfm2.cpp and the next layer's RMSNorm consume FP32. So the
+driver quantizes x to INT8 (max-abs / 127) before the call, and the IP writes FP32 results.
+Only the weights stay quantized in DDR.

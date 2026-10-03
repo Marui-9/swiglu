@@ -1,176 +1,161 @@
-1. The AXI-Lite CTRL interface
-When Vitis HLS synthesizes a function with #pragma HLS INTERFACE mode=s_axilite port=return bundle=CTRL, it generates a register file inside the IP. This register file sits on a 4KB AXI-Lite slave port (s_axi_CTRL). The PS (ARM CPU) is the master — it reads and writes these registers over the interconnect exactly like memory-mapped I/O.
+How one FFN call moves between ggml-cpu.c and the swiglu IP
+(revised 2026-10-03 against llama-mods/ggml-cpu.c and swiglu.cpp on branch `rebuild`;
+line numbers refer to llama-mods/ggml-cpu.c)
 
-The standard control block at the top of the register file is the ap_ctrl_hs protocol:
+1. The AXI-Lite CTRL interface
+`#pragma HLS INTERFACE mode=s_axilite port=return bundle=CTRL` makes Vitis HLS generate a
+register file inside the IP, exposed as a 64 KB AXI-Lite slave at SWIGLU_IP_BASE =
+0xA0000000 (Vivado Address Editor, docs/vivado_addresses.txt).
+
+The control block at the top of the register file is the ap_ctrl_hs protocol:
 
 Offset 0x00  AP_CTRL   [bit 0] ap_start  — write 1 to launch
-                        [bit 1] ap_done   — reads 1 when finished
-                        [bit 2] ap_idle   — reads 1 when idle/ready
-                        [bit 3] ap_ready  — same as ap_idle in ap_ctrl_hs
+                        [bit 1] ap_done   — reads 1 when finished (clear-on-read)
+                        [bit 2] ap_idle
+                        [bit 3] ap_ready
 Offset 0x04  GIE       [bit 0] global interrupt enable
 Offset 0x08  IER       [bit 0] enable ap_done interrupt
 Offset 0x0C  ISR       [bit 0] ap_done interrupt status (Toggle-On-Write to clear)
-Every other s_axilite port in the function signature gets its own register slot starting at 0x10, in argument order. Each pointer argument uses 12 bytes (LO, HI, reserved). Each scalar argument uses 8 bytes (value, reserved).
 
-2. Argument register layout (derived from swiglu.cpp function signature)
-The swiglu() function signature determines the register map exactly:
+Every other s_axilite argument gets its own slot from 0x10, in argument order. A pointer
+takes 12 bytes (LO, HI, reserved); a 32-bit scalar takes 8 bytes (value, reserved).
+
+2. Argument register layout
+Authoritative source: the S_AXILITE table in swiglu/reports/hls_compile.rpt.
 
   void swiglu(
-      const uint8_t *W,           // pointer → 0x10 (LO), 0x14 (HI), 0x18 (reserved)
-      const uint8_t *V,           // pointer → 0x1C (LO), 0x20 (HI), 0x24 (reserved)
-      const uint8_t *W_down,      // pointer → 0x28 (LO), 0x2C (HI), 0x30 (reserved)
-      const int8_t  *x_batch,     // pointer → 0x34 (LO), 0x38 (HI), 0x3C (reserved)
-      float         *out_batch,   // pointer → 0x40 (LO), 0x44 (HI), 0x48 (reserved)
-      uint32_t       down_quant_mode, // scalar → 0x4C (value), 0x50 (reserved)
-      float          x_scale)     // scalar → 0x54 (value), 0x58 (reserved)
+      const uint8_t *W,           // 0x10 (LO), 0x14 (HI)
+      const uint8_t *V,           // 0x1C (LO), 0x20 (HI)
+      const uint8_t *W_down,      // 0x28 (LO), 0x2C (HI)
+      const int8_t  *x_batch,     // 0x34 (LO), 0x38 (HI)
+      float         *out_batch,   // 0x40 (LO), 0x44 (HI)
+      uint32_t       down_quant_mode, // 0x4C
+      float          x_scale)     // 0x54
 
-Driver defines in ggml-cpu.c:
+Driver defines in ggml-cpu.c (lines 77-96):
   SWG_CTRL_W_LO/HI   0x10/0x14
   SWG_CTRL_V_LO/HI   0x1C/0x20
   SWG_CTRL_WD_LO/HI  0x28/0x2C
   SWG_CTRL_X_LO/HI   0x34/0x38
   SWG_CTRL_OUT_LO/HI 0x40/0x44
-  SWG_CTRL_MODE       0x4C   (0=Q4_K, 1=Q6_K)
-  SWG_CTRL_XSCALE     0x54   (float bits, written via memcpy to avoid aliasing UB)
+  SWG_CTRL_MODE      0x4C   always 0 (Q4_K); the IP has no Q6_K datapath
+  SWG_CTRL_XSCALE    0x54   float bits, written via memcpy to avoid aliasing UB
 
-NOTE: The pl.dtsi comment block incorrectly lists "batch_size" and "down_quant_mode" at
-these offsets. The comment is stale; the driver and swiglu.cpp are correct.
+down_quant_mode must stay in the signature and stay referenced (swiglu.cpp keeps an
+`if (down_quant_mode == 0)` guard). If HLS optimized the unused scalar away, x_scale would
+move off 0x54 and the driver's register map would silently break.
 
 3. What happens when ap_start is written
 
 driver writes 0x1 → AP_CTRL (offset 0x00)
 
-Inside the IP, the HLS-generated state machine transitions from idle to running:
-- It reads all argument registers (W, V, W_down, x_batch, out_batch, mode, x_scale) in
-  one shot — captured into internal registers. The argument registers are not re-read
-  after this point, so the driver could overwrite them mid-run (irrelevant here since
-  it waits for completion).
-- It begins executing the DATAFLOW pipeline:
+The HLS state machine latches all argument registers and starts the top-level DATAFLOW:
     load_x_local → compute_X1 ∥ compute_X2 → compute_gate → compute_output
-- The m_axi masters start issuing AXI4 read transactions to DDR through HP0/HP1/HP2
-  using the physical addresses captured from the argument registers.
+The m_axi masters issue AXI4 reads to DDR through HP0/HP1/HP2 using the latched
+physical addresses (port map in docs/connections.txt).
 
 4. Data movement — m_axi ports
-Each m_axi port is an independent AXI4 full master on the PL side. For reads:
+Each m_axi port is an independent AXI4 master. For reads:
 
   IP issues ARADDR (physical address from register), ARLEN (burst length), ARSIZE=4 (128-bit)
   SmartConnect routes it → S_AXI_HPx_FPD → DDR controller → DDR
-  DDR returns RDATA in bursts of 128 bits
-  IP stores into internal BRAM/URAM (row_buf, X1_cache, etc.)
+  DDR returns RDATA in 128-bit beats
+  IP stores into on-chip BRAM tiles (nibble tiles, header arrays, x_local)
 
 For the write (out_batch):
-  IP issues AWADDR, WDATA (computed float results)
+  IP issues AWADDR, WDATA (2048 FP32 results)
   SmartConnect routes → S_AXI_HP0_FPD → DDR
   DDR writes into the udmabuf physical region at phys_out
 
-The CPU never sees this data move — it happens entirely on the AXI fabric between PL and
-DDR. The CPU's udmabuf virtual mapping and the IP's physical address point to the same
-DDR pages.
+The CPU's udmabuf virtual mapping and the IP's physical address point to the same DDR
+pages; the transfer itself never touches the CPU.
 
 5. Completion signalling
-When the last AXI write completes (out_batch fully written to DDR), the HLS state machine:
-- Sets ap_done = 1 in AP_CTRL (bit 1)
-- Sets ap_idle = 1 in AP_CTRL (bit 2)
-- If IER bit 0 is set (it is — the driver writes it at init): asserts the interrupt
-  output port high
+When the last AXI write completes, the HLS state machine sets ap_done and ap_idle in
+AP_CTRL and, because GIE and IER bit 0 are set at init, raises the interrupt output.
 
 The interrupt wire goes:
-  swiglu_0 interrupt pin → xlconcat In4 → pl_ps_irq0[4] → GIC SPI 125 → Linux UIO driver
-  (DT offset 93: <0 93 4> in pl.dtsi)
-  Note: In3/SPI 124/offset 92 is axi_dma_1 s2mm_introut — a common mix-up.
-Linux's UIO driver increments an internal counter and wakes any poll() waiting on /dev/uioN.
+  swiglu_0 interrupt → xlconcat In0 → pl_ps_irq0[0] → GIC SPI 121 → Linux UIO
+  (DT offset 89: `interrupts = <0 89 4>` in pl.dtsi)
+The UIO driver increments its event counter and wakes the reader blocked on /dev/uioN.
 
-6. Driver receive path
+6. Driver receive path (lines 2106-2124)
 
-  poll(&pfd, 1, 7000)        // blocks until UIO wakes it (or 7s timeout)
-  read(swiglu_uio_fd, ...)   // reads+clears UIO interrupt counter
-  swg_ip_regs[ISR/4] = 0x1  // clears ap_done bit in IP (TOW — toggle-on-write)
-  write(swiglu_uio_fd, 1)    // re-arms UIO for next interrupt
+  swg_ip_regs[AP_CTRL/4] = 0x1            // ap_start
+  read(swiglu_uio_fd, &irq_count, 4)      // blocks until the IRQ; no timeout
+  swg_ip_regs[ISR/4] = 0x1                // clear ap_done (TOW), deassert IRQ line
+  write(swiglu_uio_fd, 1)                 // re-arm UIO for the next call
+  check: read() returned 4 bytes AND AP_CTRL bit 1 (ap_done) is set, else GGML_ASSERT
 
-After the ISR clear, ap_done in AP_CTRL goes back to 0. The IP is now idle and ready
-for the next ap_start.
-
-Two fallback paths exist (both poll AP_CTRL bit 1 directly):
-- Poll timeout (poll() returns 0): spins on ap_done bit, clears ISR, but does NOT
-  re-arm UIO. Next call's poll() will time out again and fall into this path. Not a
-  hang — just slower. The TIMEOUT error path aborts via GGML_ASSERT(false) if ap_done
-  never sets within the fallback window.
-- No UIO (swiglu_uio_fd < 0): same polling loop, clears ISR.
+There is no polling fallback any more. If the UIO device was not found at init
+(swiglu_uio_fd < 0), the first read() fails and the call aborts. If the IP never
+finishes, read() blocks forever.
 
 7. Getting the results back to the CPU — cache coherency
-The IP's m_axi write and the CPU's memcpy go through different cache domains. The IP
-writes through HP0, bypassing CPU cache. Without explicit coherency operations the CPU
-would read stale (old or zero) data.
+The IP writes through HP0, bypassing the CPU caches, so the driver must manage coherency
+through the u-dma-buf sysfs attributes:
+  /sys/class/u-dma-buf/udmabuf0/sync_for_device  — flush CPU cache → DDR (before the IP reads)
+  /sys/class/u-dma-buf/udmabuf0/sync_for_cpu     — invalidate CPU cache (before the CPU reads)
 
-Two sysfs attributes control cache coherency for the udmabuf region:
-  /sys/class/u-dma-buf/udmabuf0/sync_for_device  — flush CPU cache → DDR (before IP reads)
-  /sys/class/u-dma-buf/udmabuf0/sync_for_cpu     — invalidate CPU cache (before CPU reads)
+Range-limited sync (avoids flushing the whole 512 MiB buffer):
+  write the byte offset into sync_offset, the byte count into sync_size,
+  then write "1" to sync_for_device or sync_for_cpu.
 
-Range-limited sync (avoids flushing the full 640 MB):
-  Write sync_offset (byte offset into udmabuf) to sync_offset sysfs attribute
-  Write sync_size   (byte count)               to sync_size   sysfs attribute
-  Then write "1" to sync_for_device or sync_for_cpu
-
-The driver opens four fds at init: sync_device_fd, sync_cpu_fd, sync_offset_fd,
-sync_size_fd. Two helpers encapsulate the three-write sequence:
-  udmabuf_sync_to_device(offset, size)
-  udmabuf_sync_to_cpu(offset, size)
+udmabuf_sync_to_device(offset, size) and udmabuf_sync_to_cpu(offset, size) (lines 127,
+139) wrap this three-write sequence.
 
 ----------------------------------------------------------------------------------------------
 
-Stage 1 — Init: udmabuf (ggml-cpu.c ~line 148)
-phys_addr read from /sys/class/u-dma-buf/udmabuf0/phys_addr with %llx. Correct.
-/dev/udmabuf0 opened O_RDWR. Correct.
-sync_device_fd, sync_cpu_fd, sync_offset_fd, sync_size_fd all opened. Correct.
-mmap with UDMABUF_SIZE = 671088640 (640 MB). Correct.
+Stage 1 — Init: udmabuf (init_hardware_offload, line 253)
+phys_addr read from /sys/class/u-dma-buf/udmabuf0/phys_addr.
+/dev/udmabuf0 opened O_RDWR; the four sync fds opened.
+mmap of UDMABUF_SIZE = 536870912 (512 MiB).
 
-Stage 2 — Init: IP registers (ggml-cpu.c ~line 178)
-/dev/mem opened O_RDWR | O_SYNC — O_SYNC prevents kernel buffering of register writes.
-mmap at SWIGLU_IP_BASE = 0xA0000000, size 0x10000. Correct.
-UIO opened first via open_uio_by_addr(SWIGLU_IP_BASE), THEN GIE/IER enabled. Correct
-(prevents losing the first interrupt if it fires before UIO fd is ready).
-UIO re-armed with write(..., 1) at init. Correct.
+Stage 2 — Init: IP registers (init_swiglu_offload, line 283)
+/dev/mem opened O_RDWR | O_SYNC, CTRL mapped at 0xA0000000, size 0x10000.
+UIO found via open_uio_by_addr(SWIGLU_IP_BASE). Order: drain the old UIO count →
+arm GIE/IER → clear ISR → drain again → re-arm UIO. Arming with ISR still set would fire
+an immediate stale interrupt and make call #0 return before the IP finished.
 
-Stage 3 — Weight caching (ggml-cpu.c ~line 1908)
-gate_bytes, up_bytes, down_bytes via ggml_nbytes(). Correct.
-layer index read from op_params[0] via ggml_get_op_params_i32(dst, 0), written at
-  graph-build time by ggml_swiglu_fused_hw() which receives il from lfm2.cpp. Correct.
-swg_layer_W/V/Wd_loaded[layer] flags prevent re-copy after first load. Correct.
-Three conditional copies each set a copied_W/V/Wd bool; three targeted flushes fire
-  only when the corresponding copy happened:
-    if (copied_W)  udmabuf_sync_to_device(SWG_LAYER_W_OFF(layer),  gate_bytes);
-    if (copied_V)  udmabuf_sync_to_device(SWG_LAYER_V_OFF(layer),  up_bytes);
-    if (copied_Wd) udmabuf_sync_to_device(SWG_LAYER_WD_OFF(layer), down_bytes);
-  W, V, Wd sit in three separate regions (~150 MB apart); targeted flushes avoid
-  scanning the ~300 MB gap that a single range flush would cross. After all 16 layers
-  are cached (warmup), zero flushes run per decode token. Correct.
+Stage 3 — Layer id and shape guard (line 1971)
+The layer index comes from op_params[0], written at graph-build time by
+ggml_swiglu_fused_hw(), which receives il from lfm2.cpp.
+Any type other than Q4_K for W_gate/W_up/W_down, any shape mismatch, or more than
+SWG_MAX_TOKENS = 64 tokens in the ubatch → GGML_ASSERT (no CPU fallback inside the op;
+lfm2.cpp only emits the op for all-Q4_K layers).
 
-Stage 4 — x quantization (ggml-cpu.c ~line 1924)
-x_dst correctly points to udmabuf_vptr + SWG_VEC_OFF. Correct.
-Two-pass: max_abs scan then quantize with rounding and clamp to [-128, 127]. Correct.
-x_scale = max_abs / 127.0f; fallback to 1.0f when max_abs == 0. Correct.
+Stage 4 — Weight pre-decode, once per layer (line 2023)
+On the first call for a layer, transpose_q4k_to_urm() (line 165) converts W_gate, W_up
+and W_down from GGML Q4_K blocks into the URM layout the IP expects. It writes them to the
+layer's permanent slot:
+  slot base = 0x01000000 + layer × 0x01E00000 (30 MiB)
+  W at +0x0000000, V at +0x0A00000, W_down at +0x1400000 (each 10,485,760 B)
+One udmabuf_sync_to_device() over the whole 30 MiB slot follows. swg_layer_cached[layer]
+prevents a second conversion, so after the first token no flushes or copies of weights
+happen.
+KNOWN BUG: the 32-byte header this function writes does not match what swiglu.cpp reads
+(see README.md, "Known bugs").
 
-Stage 5 — Register programming (ggml-cpu.c ~line 1942)
-W/V/Wd addresses only re-written when layer or mode changes (caching optimization). Correct.
-x and out addresses written every call. Correct.
-x_scale transmitted as raw float bits via memcpy(&xscale_bits, &x_scale, 4). Correct —
-avoids aliasing UB that a direct cast would cause.
-Compiler barrier __asm__ volatile("" ::: "memory") before ap_start. Correct.
+Stage 5 — x quantization (line 2052)
+Two passes over the 2048 floats: max_abs scan, then round-half-away and clamp to
+[-128, 127] into udmabuf_vptr + SWG_VEC_OFF.
+x_scale = max_abs / 127.0f; 1.0f when max_abs == 0.
 
-Stage 6 — Cache flush then ap_start (ggml-cpu.c ~line 1967)
-udmabuf_sync_to_device(SWG_VEC_OFF, bsz * 2048) flushes exactly the INT8 x vector
-(2048 bytes for bsz=1) to DDR immediately before ap_start. Correct.
-ap_start written at line 1968 right after. Correct.
+Stage 6 — Register programming (line 2069)
+W/V/W_down addresses are rewritten only when the layer changes.
+x and out addresses, MODE (= 0) and x_scale (raw float bits via memcpy) are written every
+call. A compiler barrier precedes ap_start.
 
-Stage 7 — Wait for completion (ggml-cpu.c ~line 1971)
-UIO path: poll() 7s timeout, read clears UIO counter, ISR cleared (TOW), UIO re-armed.
-Poll timeout fallback: polls ap_done bit for up to 7s, ISR cleared after; UIO not
-  re-armed (subsequent calls fall into this path until UIO issue resolves). Not a hang.
-No-UIO path: same polling loop, ISR cleared.
-All three paths clear ISR. Correct.
+Stage 7 — Flush x, start, wait (lines 2098-2124)
+udmabuf_sync_to_device(SWG_VEC_OFF, bsz × 2048) flushes the INT8 x vector, then ap_start,
+then the blocking UIO read described in section 6.
 
-Stage 8 — Output copy (ggml-cpu.c ~line 2003)
-udmabuf_sync_to_cpu(SWG_OUT_OFF, bsz * 2048 * sizeof(float)) invalidates CPU cache
-over the 8192-byte output region before the memcpy. Correct.
-memcpy from udmabuf_vptr + SWG_OUT_OFF to dst->data. Correct.
-Size: bsz * 2048 * sizeof(float) = 8192 bytes for bsz=1. Correct.
+Stage 8 — Output copy (lines 2127-2134)
+udmabuf_sync_to_cpu(SWG_OUT_OFF, 8192) invalidates the output region, then memcpy into
+dst->data at token offset c.
+
+Prefill: the op loops over the ubatch one token at a time (SWG_MAX_BATCH = 1), repeating
+stages 5-8 per token. There is no CPU fallback for prefill.
+KNOWN BUG: SWG_VEC_OFF (0x06C50000) and SWG_OUT_OFF (0x06C60000) lie inside layer 3's W
+slot (0x06A00000-0x073FFFFF), so every call overwrites part of layer 3's cached W_gate
+(see README.md, "Known bugs").

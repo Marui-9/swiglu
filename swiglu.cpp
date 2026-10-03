@@ -22,13 +22,18 @@ typedef ap_fixed<48,38> fxd_accum_t;
 
 // ─── URAM-transposed layout constants ─────────────────────────────────────────
 // CPU pre-decodes Q4_K headers to flat sc6/mn6 and transposes nibbles:
-//   on-chip URAM: nib_urm[n] = 32-bit word with nibbles for all 8 blocks
-//   at element n in one group.  MAC extracts at compile-time .range() — 0 LUT.
+//   a 32-bit slice holds the nibbles of all 8 blocks of one group at element n,
+//   so the MAC extracts each with a compile-time .range() — 0 LUT. (On chip the
+//   tiles are BRAM: 128-bit x 64 for W/V, 32-bit x 256 per group for W_down.)
 // DDR row format (same total byte count as 160-byte/block hybrid):
-//   Headers: blocks_per_row * 32 B  — block-major, d+dmin+sc6[8]+mn6[8]+pad
+//   Headers: blocks_per_row * 32 B  — block-major, as read by the load functions:
+//            bytes 0-1 d, 2-3 dmin, 4-7 sc6[0..3], 8-11 mn6[0..3],
+//            16-19 sc6[4..7], 20-23 mn6[4..7]
+//            KNOWN BUG: the host transposer (ggml-cpu.c) writes sc6[0..7] at 4-11 and
+//            mn6[0..7] at 12-19 instead — see README.md, "Known bugs".
 //   Nibbles: 256 * groups * 4 B     — element-major, 4 element-slices per DDR word
 
-#define URM_HDR_BYTES        32     // d(2)+dmin(2)+sc6[8]+mn6[8]+pad(12)
+#define URM_HDR_BYTES        32     // 2 DDR words per block header
 #define URM_WV_GROUPS        (WV_BLOCKS_PER_ROW   / 8)   // 1
 #define URM_DOWN_GROUPS      (DOWN_BLOCKS_PER_ROW / 8)   // 4
 
@@ -364,10 +369,9 @@ static void mac_blocks_wv_k4_urm(
 // mac_blocks_down_q4k_k2_urm: 32 blocks, 4-groups × 2-rows K=2.
 // 8 nibble tiles (4 groups × 2 rows).  Within each group, 2 rows are
 // UNROLL'd → 16 parallel MACs (8 blocks × 2 rows).  4 groups sequential →
-// 1024 MAC cycles/2-row iteration.  Derived from the K=4 version (rows 2/3
-// deleted): with the loop-body DATAFLOW overlap in compute_output the load
-// (~954 cy) and MAC (~1024 cy) are balanced, so the wider K=4 array would
-// idle ~46% even when overlapped — K=2 frees its LUTs instead.
+// 1245 cy per 2-row iteration (csynth).  Derived from the K=4 version (rows
+// 2/3 deleted): K=4's 4-row load (~1908 cy) is longer than its MAC (1243 cy),
+// so the wider array would idle even when overlapped — K=2 frees its LUTs.
 // Direct CE accumulation idiom preserved (exists for timing closure).
 static void mac_blocks_down_q4k_k2_urm(
     const ap_uint<32> g0r0[URM_NIB_TILE_DEPTH], const ap_uint<32> g0r1[URM_NIB_TILE_DEPTH],
@@ -585,7 +589,8 @@ static void compute_X1(
     // Loop-body DATAFLOW: the tile/header buffers declared in the body become
     // PIPO channels between load_4rows_wv_urm (producer) and mac_quant_wv
     // (consumer), so iteration N's 320-word burst overlaps iteration N-1's
-    // MAC: per-iteration time -> max(load ~401, MAC ~356) instead of the sum.
+    // MAC: per-iteration time -> max(load II 320, MAC 347) = 348 cy (csynth)
+    // instead of the sum.
     COMPUTE_X1: for (int row = 0; row < FFN_DIM; row += 4) {
         #pragma HLS DATAFLOW
         // 4 rows × 1 wide BRAM each = 4 × 128-bit × 64 deep (PIPO-doubled)
@@ -733,8 +738,9 @@ static void compute_gate(
 // 2 rows per iteration, loop-body DATAFLOW: load_2rows_down (producer) and
 // mac_write_down (consumer) run concurrently on PIPO-doubled tiles, so
 // iteration N's load hides behind iteration N-1's MAC.
-// Load: ~954 cy/2 rows.  MAC: 4 groups sequential × 2 rows UNROLL'd = 1024 cy.
-// Overlapped: max(954, 1024) ≈ 1024 cy/2-rows × 1024 iters → ~1.05M total.
+// csynth: load 960 cy/2 rows.  MAC: 4 groups sequential × 2 rows UNROLL'd =
+// 1248 cy.  Overlapped: 1249 cy/2-rows × 1024 iters, plus the 2051-cy
+// output write → 1,282,062 cy total.
 static void compute_output(
     const uint8_t  *W_down,
     const int8_t   gate_cache[MAX_BATCH][DOWN_BLOCKS_PER_ROW][256],
@@ -764,7 +770,7 @@ static void compute_output(
         // declared inside the body become ping-pong (PIPO) channels between
         // load_2rows_down (producer) and mac_write_down (consumer), so
         // iteration N's DDR load overlaps iteration N-1's MAC:
-        // per-iteration time -> max(load ~954, MAC ~1024) instead of the sum.
+        // per-iteration time -> max(load 960, MAC 1248) instead of the sum.
         DOWN_Q4K: for (int out_i = 0; out_i < VECTOR_DIM; out_i += 2) {
             #pragma HLS DATAFLOW
             // 4 groups × 2 rows = 8 BRAM nibble tiles (PIPO-doubled by HLS)

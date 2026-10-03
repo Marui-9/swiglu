@@ -1,57 +1,170 @@
-# swiglu.cpp: Stage-by-Stage Description (Vitis HLS)
+# swiglu.cpp — stage-by-stage description
 
-This summarizes the fused SwiGLU IP implementation, mapping each algorithm step (see `docs/swiglu_algorythm.txt`) to the code in `swiglu.cpp` and the key HLS pragmas.
+Revised 2026-10-03 against `swiglu.cpp` on branch `rebuild` (load/compute overlap design,
+commits 6c27523 → c35a36d). Cycle counts come from `swiglu/reports/hls_compile.rpt`
+(Vitis HLS 2025.1, xck26, 3.33 ns target, 0.90 ns uncertainty). That report was generated on
+2026-07-16 15:09, *before* c35a36d removed the dead Q6_K helpers. Those functions had no
+callers, so the numbers should be unchanged, but csynth has not been re-run since.
 
-## Stage 0 — Interfaces & Top-Level DATAFLOW
-- File: `swiglu.cpp`, function `swiglu` (bottom of file).
-- Purpose: Declare AXI ports, set up local buffers, and launch DATAFLOW tasks.
-- Key pragmas:
-  - `#pragma HLS INTERFACE mode=m_axi` on W, V, W_down, x_batch, out_batch (bundles gmem_W/V/Wd/x/out). Depths set for MAX_BATCH=4 (8192 elems for x/out).
-  - `#pragma HLS INTERFACE mode=s_axilite` for control args and return.
-  - `#pragma HLS DATAFLOW` to overlap sub-functions.
-  - Local buffers: `x_local_1/2` (LUTRAM, dim2 partition complete), `X1_cache/X2_cache` (BRAM 2-port), `gate_cache` (URAM 2-port, dim2 cyclic factor=8), `gate_scale` (small array), `sigmoid_lut` (ROM LUTRAM).
+This design has **not been through Vivado or measured on the board**. The board-measured
+design is `hls_experiments/q4k_final/` (see README.md).
 
-## Stage 1 — Load x (INT8) into on-chip banks
-- Function: `load_x_local`
-- Purpose: Burst-read x_batch (INT8) and distribute into two banked copies for parallel W/V projections.
-- Key pragmas: `INLINE off`; `ARRAY_PARTITION dim=2 complete` on x_local; inner loop `PIPELINE II=1`; 128-bit wide reads via `ap_uint<128>` casting.
+## What the IP computes
 
-## Stage 2 — Linear projections A = x·W_gate, B = x·V (INT8×Q4_K)
-- Functions: `compute_X1`, `compute_X2` using `load_row_wv` + `mac_blocks_wv_k2`.
-- load_row_wv: `ARRAY_PARTITION rb dim=1 complete`, `PIPELINE II=1` to stream one Q4_K row (8 blocks) per cycle.
-- mac_blocks_wv_k2: processes 2 rows at a time (K=2) to fit LUT budget; DSP-bound multiplies (`BIND_OP op=mul impl=dsp`); unroll factors: b-loop complete, kr-loop complete; inner MAC loop `PIPELINE II=1`, `LATENCY min=2`; reduction balanced with `BALANCE` and small unroll.
-- Outputs: X1_cache, X2_cache as INT8 with fixed scale (X12_QUANT_SCALE) applied at reduction.
+One decode token of the LFM2.5-1.2B FFN, all weights Q4_K:
 
-## Stage 3 — Swish + gate (SiLU(A) * B), quantize gate to INT8
-- Function: `compute_gate`
-- Two-pass per token (n): pass1 finds max |SiLU(A)*B| (pipeline II=1); pass2 recomputes and quantizes to INT8 with per-token `gate_scale`. Arrays are partitioned for bandwidth; gate_cache stored in URAM (dim=2 cyclic factor=8).
+    out[2048] = W_down · ( SiLU(W_gate · x) ⊙ (W_up · x) )
 
-## Stage 4 — Down projection: gate @ W_down.T (Q4_K or Q6_K)
-- Function: `compute_output`
-- Q4_K path: `load_row_down_q4k` (cyclic factor=4) + `mac_blocks_down_q4k` (UNROLL factor=6, PIPELINE II=1, LATENCY min=2, DSP multiplies). Reduction balanced with `BALANCE` and unroll factor=6.
-- Q6_K path: uses decoded nibble/scale buffers, similar pipeline with balanced reduction.
-- `out_batch` written as VECTOR_DIM floats; top-level DATAFLOW handles copying to the m_axi port.
+using a W4A8 integer datapath (Q4_K weights × INT8 activations, INT32 accumulation).
 
-## Stage 5 — Top-level swiglu DATAFLOW schedule
-- In `swiglu`: the DATAFLOW region calls, in order: `load_x_local` → `compute_X1` → `compute_X2` → `compute_gate` → `compute_output`. Buffers are sized for `MAX_BATCH` (currently 4); control still passes a single `x_scale` scalar—future batch-aware support would pass per-token scales.
+| Data | Format | Where the scale comes from |
+|---|---|---|
+| x (input) | INT8 | `x_scale` register; host computes max\|x\|/127 |
+| X1 = W_gate·x, X2 = W_up·x | INT8 | fixed: ±10.0 → ±127 (`X12_SCALE_RANGE`). Values outside ±10 clip |
+| gate = SiLU(X1)·X2 | INT8 | per token: max\|gate\|/127, computed on chip in two passes |
+| out | FP32 | written straight to `out_batch` |
 
-## Batch and scaling notes
-- MAX_BATCH is set to 4 (see `swiglu.h`); m_axi depths updated accordingly. Kernel currently uses a single x_scale scalar and processes tokens sequentially inside the DATAFLOW; driver guards keep batch=1 until HLS is updated for per-token scales.
-- Weight formats: W_gate/W_up are Q4_K; W_down is Q4_K or Q6_K. Activations and outputs are FP32; scales (d, dmin) are fp16 decoded to FP32.
+Q4_K `d`/`dmin` are fp16 and are widened with `fp16_to_fp32()`, a bit-manipulation function
+that keeps subnormals. `hls_half` and `ap_fixed<16,..>` flush subnormals to zero, and real
+LFM2 `d`/`dmin` values are often subnormal.
 
-## Resource/throughput highlights
-- X1/X2: K=2 row parallelism reduces LUT use while keeping II=1 on MACs.
-- Down Q4_K: block UNROLL=6 to balance timing/resource vs throughput; Q6_K reduction unroll=2.
-- Gate/output buffers in URAM/BRAM to fit ZU5EV limits; partitioning aligns with unroll factors.
+## DDR weight layout ("URM"), produced by the host
 
+The host (`transpose_q4k_to_urm()` in `llama-mods/ggml-cpu.c`) converts every GGML Q4_K row
+into this layout once per layer.
 
-# HLS Implementation and Parallel Computation (summary-style)
-- **Data reuse & local buffering:** Two banked copies of x (`x_local_1/2`) sit in LUTRAM; weight rows are streamed a row at a time into small on-chip row buffers (`row_buf`) for W/V and Q4/Q6 down paths. Gate/X1/X2 caches live in URAM/BRAM for reuse across MAC/reduction stages.
-- **Parallel MACs:** W/V projections use K=2 row parallelism with full block unroll (8 blocks) and `PIPELINE II=1`; down-projection Q4_K uses block `UNROLL factor=6`, Q6_K uses factor=2 on reductions to meet timing. Multipliers are bound to DSPs; adders are balanced with `BALANCE` pragmas.
-- **Pipelining:** All inner MAC loops are `PIPELINE II=1` with `LATENCY min=2` to allow a decode→MAC register stage. Top-level `DATAFLOW` overlaps load_x → X1 → X2 → gate → output.
-- **Memory partitioning:** Extensive `ARRAY_PARTITION` (complete or cyclic) matches unroll factors, eliminating banking conflicts; caches are explicitly bound (`BIND_STORAGE`) to URAM/BRAM/LUTRAM to stay within ZU5EV resource limits.
+- **WV row** (W_gate / W_up, 8 blocks): 80 × 128-bit words = 1280 B.
+  - Words 0-15: 8 block headers of 2 words each.
+  - Words 16-79: 64 nibble words. Each word holds 4 consecutive elements, one 32-bit
+    slice per element. Each slice holds 8 nibbles, one per block (block b in bits
+    [4b+3:4b]).
+- **Down row** (W_down, 32 blocks = 4 groups of 8): 320 words = 5120 B.
+  - Words 0-63: 32 headers.
+  - Words 64-319: 256 nibble words. Each word is one element, with 32-bit slice g holding
+    group g's 8 nibbles.
+- Each matrix totals 10,485,760 B, which is also the m_axi `depth`.
 
-# AXI Interface and Integration
-- Five AXI4 m_axi ports: W, V, W_down (all read), x_batch (read), out_batch (write), each on its own bundle; burst length up to 256 beats, widened to 128 bits. Depths sized for MAX_BATCH=4 (8192 elements for x/out).
-- AXI4-Lite CTRL registers: pointers for W/V/Wd/x/out, mode (Q4_K/Q6_K), x_scale, ap_start/done/irq. Global interrupt enable supports UIO-driven completion on the PS.
-- The IP is integrated via SmartConnect to HP ports; host programs phys addresses and starts the core. Weight reuse is host-managed: weights are copied once per layer into fixed udmabuf slots; subsequent calls re-use cached weights.
+**Header as `swiglu.cpp` reads it** (`load_4rows_wv_urm`, `load_row_down_urm`):
+
+| Word | Bits | Field |
+|---|---|---|
+| word 0 | [15:0] | d (fp16) |
+| word 0 | [31:16] | dmin (fp16) |
+| word 0 | [63:32] | sc6[0..3] (one byte each) |
+| word 0 | [95:64] | mn6[0..3] |
+| word 1 | [31:0] | sc6[4..7] |
+| word 1 | [63:32] | mn6[4..7] |
+
+sc6/mn6 are the 6-bit sub-block scales and mins, already unpacked from Q4_K's 12-byte
+packed form.
+
+> **Known bug:** the host writes sc6[0..7] contiguously at bytes 4-11 and mn6[0..7] at
+> bytes 12-19. That does not match the table above. See README.md, "Known bugs".
+
+## Top level (`swiglu`)
+
+- **Interfaces:** five m_axi masters, each in its own bundle:
+  - `gmem_W`, `gmem_V` (max burst 128) and `gmem_Wd` (max burst 256), all with
+    `num_read_outstanding=4`.
+  - `gmem_x` and `gmem_out` (outstanding 1).
+  - All are widened to 128 bits.
+  - Every argument plus `return` is on the `CTRL` AXI-Lite bundle. The register map is in
+    docs/code_stages.txt.
+- **Top-level DATAFLOW:** `load_x_local → compute_X1 ∥ compute_X2 → compute_gate →
+  compute_output`. X1 and X2 overlap because each has its own copy of x (`x_local_1`,
+  `x_local_2`). One shared copy made HLS insert a serializing broadcast process.
+- **On-chip buffers:**
+
+| Buffer | Shape | Storage |
+|---|---|---|
+| `x_local_1`, `x_local_2` | [1][8][256] INT8, dim 2 complete | LUTRAM |
+| `X1_cache`, `X2_cache` | [1][8192] INT8 | BRAM ram_2p |
+| `gate_cache` | [1][32][256] INT8, dim 2 cyclic 8 | URAM (the design's 8 URAM) |
+| `sigmoid_lut` | 4096 floats | BRAM ROM |
+
+## Stage 1 — `load_x_local` (202 cycles)
+
+Reads 128 × 128-bit words (2048 INT8) and writes every byte into both `x_local` copies.
+
+## Stages 2a/2b — `compute_X1` / `compute_X2` (713,107 cycles each, run in parallel)
+
+`COMPUTE_X1: for row += 4` with **loop-body `#pragma HLS DATAFLOW`**. The tile and header
+arrays declared inside the loop body become ping-pong (PIPO) buffers between two processes:
+
+- **Producer `load_4rows_wv_urm`** (latency 400, interval 320 cycles): one linear 320-word
+  burst for 4 rows. The
+  row is decoded by comparison, not division by 80. Headers go into `d`, `dmin`, and the
+  packed `sc6w`/`mn6w` (`ap_uint<64>`, 8 sub-scales per word). Nibble words are stored
+  verbatim into four 128-bit × 64 BRAM tiles.
+- **Consumer `mac_quant_wv`** (347 cycles) → `mac_blocks_wv_k4_urm`:
+  - Unpacks the sub-scale words with compile-time `.range()` into fully partitioned int8
+    arrays.
+  - Then `MAC_ALL: n = 0..255, PIPELINE II=1`, with 8 blocks × 4 rows unrolled, giving
+    **32 parallel MAC lanes**.
+  - Per element: `acc_w += x·nibble·sc6`, `acc_m += x·mn6`, in INT32.
+  - Each accumulator is split into 4 slots indexed by `n & 3`, so each slot is updated
+    every 4 cycles. The contribution is muxed into the selected slot rather than using a
+    clock-enabled write, because that cut the fan-out of the iteration counter.
+  - **Reduce:** for each block, `d·Σw − dmin·Σm` in float, accumulated in
+    `ap_fixed<48,38>`, then multiplied by `x_scale`.
+  - Finally, `mac_quant_wv` quantizes the 4 results to INT8 with the fixed ±10 scale.
+- Per iteration: the larger of the two process intervals, max(320, 347) → 348 cycles
+  (MAC-bound), instead of the sum. Over 2048 iterations this gives 713,107 cycles
+  (2.85 ms @ 250 MHz).
+
+## Stage 3 — `compute_gate` (16,622 cycles)
+
+Two pipelined passes over 8192 elements:
+
+- **PASS1:** dequantize X1/X2. Compute `SiLU(z)·x2` as `z · sigmoid_lut[(z+8)·256] · x2`,
+  where the LUT covers [-8, 8) and the index is clamped. Track max|g| in 8 partial maxima.
+- **PASS2:** recompute g and quantize with `gate_scale = max/127`. Write to
+  `gate_cache[j>>8][j&255]`.
+
+## Stage 4 — `compute_output` (1,282,062 cycles)
+
+`DOWN_Q4K: for out_i += 2` (K=2), also with loop-body DATAFLOW:
+
+- **Producer `load_2rows_down`** (960 cycles): two `load_row_down_urm` calls. Each is 64
+  header words followed by 256 nibble words, and each nibble word is split into the 4
+  group tiles (32-bit × 256 BRAM).
+  - The rows are not merged into one burst. The source comment says the 4-way group split
+    precludes it; the one merged attempt (128-bit tiles) failed C-sim and did not route
+    (changelog.txt, second entries 62-63).
+- **Consumer `mac_write_down`** (1248 cycles) → `mac_blocks_down_q4k_k2_urm`:
+  - `DOWN_GROUPS: grp 0..3` runs sequentially. Each group is `MAC_GRP: n = 0..255,
+    PIPELINE II=1` with 8 blocks × 2 rows unrolled, giving **16 parallel MAC lanes**.
+  - Same INT32 accumulate / float reduce scheme as stage 2, scaled by `gate_scale`.
+  - Results go to `out_local[2048]` (BRAM), which is `memcpy`'d to `out_batch` at the end.
+- Per iteration: max(960, 1248) → 1,249 cycles (MAC-bound). 1024 iterations plus the
+  2,051-cycle output write give 1,282,062 cycles (5.13 ms @ 250 MHz).
+- `if (down_quant_mode == 0)` wraps the whole stage. Mode is always 0, but the guard is the
+  only reference to the argument and must stay. Otherwise HLS drops the port and
+  `x_scale` moves off 0x54.
+
+## Totals (csynth)
+
+| | Cycles | @ 250 MHz |
+|---|---|---|
+| Full call | 2,011,996 | 8.05 ms |
+| Resources | LUT 145,719 (124%), FF 143,249, DSP 238, BRAM 150, URAM 8 | |
+
+The LUT estimate is over 100% of the device. The shipped q4k_final design was estimated at
+about 148K by csynth and routed at 101,639 (86.8%), so this level of csynth overestimate
+has been seen before. Whether this design fits is still an open question until Vivado
+runs.
+
+## Why the code looks the way it does
+
+- **Loop inversion:** the 256-element loop is outermost with II=1, and blocks/rows are
+  unrolled inside it. Only this structure makes HLS build independent MAC pipelines.
+  Unrolling an outer loop around function calls just time-shares one pool of operators.
+- **2D arrays `[blocks][…]` with dim-1 partition:** gives each block its own bank without
+  relying on HLS alias analysis.
+- **Sub-scales packed 8 per `ap_uint<64>`:** a complete-partitioned `int8[32][8]` that
+  crosses a DATAFLOW boundary turns into roughly 1,150 handshake channels (about +77K LUT).
+- **Compile-time `.range()` unpacking:** a variable shift (`>> (sub*8)`) builds one barrel
+  shifter per site.
+- **Stage 5 at K=2, stages 2a/2b at K=4:** with overlap, a K=4 down array would sit idle
+  about half the time waiting on its 4-group load. The WV load (400) and MAC (347) are
+  balanced at K=4.

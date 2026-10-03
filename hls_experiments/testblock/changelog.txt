@@ -1,3 +1,27 @@
+READ FIRST (added 2026-10-03, branch rebuild)
+================================================================================
+This is a raw working log, kept as written. Known problems with it:
+
+  - Numbering: entries 61-62 appear twice. The first pair (after entry 60) covers
+    q4k_final timing closure. The second run, 61-64, covers the May 2026 wide-BRAM work
+    and comes before entry 60 in time.
+  - Projections in entries 51, 60, the first 62, the second 62 and 67 use the DATAFLOW
+    interval and/or the testblock's ~125 ms CPU floor (entries 3 and 11, an older build).
+    Decode makes one call per layer per token, so it pays the full per-call latency.
+    Non-FFN CPU time measured at T2 is ~227 ms/token (thesis/latest_findings.md). Treat
+    those t/s projections as wrong, not just optimistic.
+  - Entry 67's premise (~7.5 ms of interrupt latency per call) was wrong. Entry 68 and
+    scripts/results/latest_benchmarks/*_pollfix.log show polling at 2.22 t/s (T2),
+    against the predicted ~3.4.
+  - The 1.15 t/s CPU decode in the first entry 62 has no log. latest_benchmarks
+    measures CPU-only decode at 1.66 t/s (T2) to 2.36 t/s (T3).
+  - Entry 37 gives 2.4 t/s decode; entry 47 says 2.08 t/s "unchanged from step 37".
+  - Entry 65 says to point the profiling scripts at the Q4_K_pure GGUF.
+    scripts/profiling/run_profile_{cpu,accel}.sh as committed both load
+    lfm2.5-1.2B-Q4_K_M.gguf.
+  - Corrected analysis: hls_experiments/q4k_final/bottlenecks.txt.
+================================================================================
+
 1. empty module (same    7 params with bundle=CTRL, ports need to be read to actually be instantiated):
 2. it was not working because the interrupt line was connected directly to zynq Block
     instead of using a xlconcat in between. Xlconcat is the standard and it is mirrored in the pl.dtsi line

@@ -2,6 +2,12 @@ Architecture Description — swiglu.cpp (URAM-Transposed K=4, Wide-BRAM WV)
 ================================================================================
 Date: 2026-05-20  |  Based on: swiglu.cpp (769 lines), csynth.rpt loop detail
 
+HISTORICAL (note added 2026-10-03): this design was superseded by q4k_final (the
+board-measured design, hls_experiments/q4k_final/) and then by the rebuild (swiglu.cpp at
+the repo root). The per-token section and the resource summary below were corrected:
+the original mixed in numbers from other designs and used the DATAFLOW interval where
+decode pays the latency.
+
 
 General Pragmas (where they appear, updated for wide-BRAM)
 ----------------------------------------------------------
@@ -263,38 +269,56 @@ DATAFLOW Performance (per layer, steady state)
     ──────────────────────────────────────────────────
     Per-layer interval  2,600,962       10.40 ms
 
-    16 layers FPGA:     166.5 ms
-    CPU overhead:       ~125 ms  (attention, norms, embedding — fixed)
-    Per token:          ~291 ms  →  3.44 t/s theoretical
-    Board measurement:  2.20 t/s  (454 ms/token)
-    Board/theory gap:   ~1.56× (AXI/DDR latency, interrupt handling, output copy)
+    CORRECTION (2026-10-03): the interval only applies when calls stream back to back.
+    Decode makes one call per layer per token, so each call pays the full latency:
+        202 + 2,600,961 + 16,553 + 1,567,818 = 4,185,534 cy = 16.74 ms   (derived)
+        16 layers: ~268 ms of FPGA time per token
+    The original lines here (16 × 10.40 = 166.5 ms FPGA + ~125 ms CPU → 3.44 t/s
+    "theoretical", 1.56× board gap) used the interval and the testblock's 125 ms floor
+    (changelog entry 11, an older build). Neither applies; see
+    q4k_final/bottlenecks.txt §1 and §6.
 
-    Board overhead breakdown (from analyze_throughput.py, decode):
-        SwiGLU IP calls:    258.4 ms  (84.4% of FPGA time)
-        Driver overhead:     33.1 ms  (10.8% — sync, UIO, register writes)
-        Output copy:         14.6 ms  (4.8%)
+    Board measurement:  2.20 t/s  (454 ms/token; -t 4, changelog second entry 63)
+
+    The overhead breakdown previously quoted here (SwiGLU IP calls 258.4 ms, driver
+    33.1 ms, output copy 14.6 ms per token) was measured on the hybrid K=2 design at
+    2.08 t/s (changelog entry 38), not on this one. Its 16.15 ms per IP call matches
+    a per-call latency model, not the interval.
 
     vs hybrid K=2 baseline: +5.8% throughput (2.20 vs 2.08 t/s)
-    vs CPU: +91% (2.20 vs 1.15 t/s)
+    vs CPU: the "+91% (2.20 vs 1.15 t/s)" given here is unsupported. 1.15 t/s appears
+    only in a changelog projection (first entry 62), with no log. latest_benchmarks
+    measures CPU-only decode at 2.31 t/s at T4 (different GGUF, 694.76 MiB).
     Power: 4.83 W vs 5.01 W hybrid (-3.7%)
 
 
 Resource Summary (HLS estimates → Vivado)
 ----------------------------------------------
-    Resource    HLS Estimate    Vivado (post-P&R)    Budget     Note
-    LUT         125,813         103,684 (88.5%)      117,120    Fits with margin
-    FF          115,608         117,420 (50.1%)      234,240
-    BRAM_18K    110             86.5   (30%)           288      Wide-BRAM: 128-bit tiles cascade 4 BRAM_18K
-    DSP         434             338    (27%)          1,248
-    URAM        8               8      (12%)            64      gate_cache only
+    CORRECTED 2026-10-03. No report in this folder covers the shipped configuration
+    (per-row wide-BRAM WV loads + per-row 32-bit output tiles) as a whole. The original
+    table mixed three designs. What the reports here actually show:
 
-    Per-module HLS LUTs:
-        compute_X1_U0:     34,000
-        compute_X2_U0:     34,000
-        compute_gate_U0:    6,400
-        compute_output_U0: 44,000
-        Other:              ~7,400
-        Total:             125,800
+    HLS (csynth, Vitis 2025.1, 3.33 ns target):
+        compute_X1/X2   33,998 LUT each, 144 DSP, 2,600,961 cy   csynth.rpt (May 20)
+        compute_output  44,354 LUT, 124 DSP, 1,567,818 cy         hls_csynth-cpu-predecode.rpt
+                                                                  (May 19)
+        compute_gate     6,397 LUT, 22 DSP, 16,553 cy             both
+        Whole-run totals: 140,510 LUT (May 20) and 139,365 LUT (May 19); DSP 434,
+        BRAM_18K 110 and URAM 8 in both. Neither run is the shipped combination:
+          - May 20's output stage is the merged 128-bit variant that failed C-sim and
+            did not route (changelog second entries 62-63);
+          - May 19's X1/X2 are 41,218 LUT each, not the 34K of the per-row load.
+        The 125,813-LUT total given here before is in neither report; changelog second
+        entry 63 says "~125K HLS".
+
+    Vivado: the routed report for this design is not in the repo. Changelog second
+    entry 63 records "~103K Vivado (88%)". The figures previously given here came from
+    other designs:
+        103,684 LUT, 117,420 FF, 338 DSP   URAM K=4, changelog entry 51
+                                           (timing_cpu-predecode.txt; 56 URAM, not 8)
+        86.5 BRAM                          hybrid K=2, changelog entry 45
+                                           (utilization-cpu-predecode.txt). That is
+                                           86.5 BRAM36 tiles = 60% of 144, not 30%.
 
     DDR bandwidth (per compute_X1, single port):
         Peak AXI BW: 128-bit × 250 MHz = 4.0 GB/s
@@ -303,7 +327,7 @@ Resource Summary (HLS estimates → Vivado)
 
 Key Architectural Differences vs Hybrid K=2
 ----------------------------------------------
-    Aspect              Hybrid K=2 (entry 37)          Current K=4 URAM-Transposed
+    Aspect              Hybrid K=2 (entries 45, 47)    Current K=4 URAM-Transposed
     ────────────────────────────────────────────────────────────────────────────
     Nibble storage      32-bit tiles (rb[8][9])       128-bit wide BRAM (nib_bram[64])
     Nibble extraction   get_byte() + shift            compile-time .range() — 0 LUT
@@ -312,7 +336,7 @@ Key Architectural Differences vs Hybrid K=2
     DDR nibble words    72/row (packed Q4_K)          64/row (element-major slices)
     MAC parallelism     16 chains (K=2)               32 chains (K=4)
     MAC nibble access   4:1 tile mux per row          4:1 slice mux per row (~32 LUT)
-    LUTs                103K                          104K (similar)
+    LUTs (Vivado)       103,202 (entry 45)            ~103K (changelog 2nd entry 63)
     Decode t/s          2.08                          2.20 (+5.8%)
 
 
