@@ -13,11 +13,14 @@ CURRENT SETUP
   phys_addr 0x55100000, size 536870912.
 
 What lives in the buffer (offsets from llama-mods/ggml-cpu.c):
+  0x00000000                    x (INT8, 2048 B)
+  0x00010000                    out (FP32, 8192 B)
   0x01000000 + l × 0x01E00000   layer l slot (l = 0..15), 30 MiB each:
                                 W at +0, V at +0xA00000, W_down at +0x1400000
-  0x06C50000                    x (INT8, 2048 B)    ← overlaps layer 3's W slot (bug)
-  0x06C60000                    out (FP32, 8192 B)  ← overlaps layer 3's W slot (bug)
   Layer 15 ends at 0x1F000000 (496 MiB).
+_Static_asserts next to the defines fail the build if any two regions overlap. Until
+2026-10-04, x and out sat at 0x06C50000 and 0x06C60000, inside layer 3's W slot
+(README.md, "Driver bugs").
 
 CMA
 The stock Kria boot script (/boot/firmware/boot.scr.uimg) sets cma=1000M and then

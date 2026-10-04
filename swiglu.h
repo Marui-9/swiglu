@@ -7,7 +7,7 @@
 
 // URAM-transposed DDR layout (matches swiglu.cpp)
 // Headers: blocks_per_row * 32 B — block-major; byte layout in swiglu.cpp
-//          (the host writes a different one: README.md, "Known bugs")
+//          (written by transpose_q4k_to_urm() in ggml-cpu.c)
 // Nibbles: 256 * groups * 4 B — element-major, packed 4 elem-slices per 128-bit DDR word
 #define URM_HDR_BYTES 32
 #define URM_WV_GROUPS   1

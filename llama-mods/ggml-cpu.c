@@ -68,8 +68,10 @@ static uint32_t swg_last_prog_mode  = 0;
 #define UDMABUF_SIZE        536870912U
 #define SWG_MAX_BATCH       1    // tokens per IP call (must match HLS MAX_BATCH=1)
 #define SWG_MAX_TOKENS     64   // max tokens per fused op (looped in SWG_MAX_BATCH chunks)
-#define SWG_VEC_OFF         0x06C50000U  // x INT8
-#define SWG_OUT_OFF         0x06C60000U  // out F32
+// x and out sit in the 16 MiB below SWG_LAYER_BASE, which nothing else uses.
+// (They were at 0x06C50000/0x06C60000, inside layer 3's W slot.)
+#define SWG_VEC_OFF         0x00000000U  // x INT8,  SWG_MAX_BATCH × 2048 B
+#define SWG_OUT_OFF         0x00010000U  // out F32, SWG_MAX_BATCH × SWG_OUTPUT_SIZE
 #define SWG_OUTPUT_SIZE     8192U        // 2048 floats
 
 // IP CTRL register offsets
@@ -104,6 +106,19 @@ static uint32_t swg_last_prog_mode  = 0;
 #define SWG_LAYER_W_OFF(l)     (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x00000000U)
 #define SWG_LAYER_V_OFF(l)     (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x00A00000U)
 #define SWG_LAYER_WD_OFF(l)    (SWG_LAYER_BASE + (uint32_t)(l) * SWG_LAYER_STRIDE + 0x01400000U)
+#define SWG_MATRIX_BYTES       10485760U     // one URM matrix: 8192 × 1280 B = 2048 × 5120 B
+
+// udmabuf map, in address order; every region must end before the next begins:
+//   x (SWG_VEC_OFF) | out (SWG_OUT_OFF) | 16 layer slots of W, V, W_down | end
+_Static_assert(SWG_VEC_OFF + SWG_MAX_BATCH * 2048U <= SWG_OUT_OFF, "udmabuf: x overlaps out");
+_Static_assert(SWG_OUT_OFF + SWG_MAX_BATCH * SWG_OUTPUT_SIZE <= SWG_LAYER_W_OFF(0),
+               "udmabuf: out overlaps layer 0");
+_Static_assert(SWG_LAYER_W_OFF(0) + SWG_MATRIX_BYTES <= SWG_LAYER_V_OFF(0), "udmabuf: W overlaps V");
+_Static_assert(SWG_LAYER_V_OFF(0) + SWG_MATRIX_BYTES <= SWG_LAYER_WD_OFF(0), "udmabuf: V overlaps W_down");
+_Static_assert(SWG_LAYER_WD_OFF(0) + SWG_MATRIX_BYTES <= SWG_LAYER_W_OFF(1),
+               "udmabuf: W_down overlaps the next layer");
+_Static_assert(SWG_LAYER_W_OFF(SWG_NUM_LAYERS) <= UDMABUF_SIZE, "udmabuf: layer slots exceed the pool");
+
 #define WV_BLOCKS_PER_ROW      8
 #define DOWN_BLOCKS_PER_ROW    32
 // ─── URAM-transposed layout constants ─────────────────────────────────────────
@@ -112,11 +127,11 @@ static uint32_t swg_last_prog_mode  = 0;
 // get_byte() mux entirely — MAC extracts nibbles at compile-time .range() positions.
 //
 // DDR row layout (same byte count as hybrid, different nibble order):
-//   Headers: [blocks_per_row][32] — d(2)+dmin(2)+sc6[8]+mn6[8]+pad(12) per block
+//   Headers: [blocks_per_row][32] — see transpose_q4k_to_urm for the byte layout
 //   Nibbles: [256 * groups * 4]    — element-major, 4 groups Ø 32-bit words per elem
 //     DDR word e = {grp3_nib[31:0], grp2_nib[31:0], grp1_nib[31:0], grp0_nib[31:0]}
 //     for element e. grp_k_nib.range(b*4+3, b*4) = nibble for block (k*8+b) at element e.
-#define URM_HDR_BYTES 32     // d(2)+dmin(2)+sc6[8]+mn6[8]+pad(12)
+#define URM_HDR_BYTES 32     // d, dmin, sc6/mn6 split over 2 DDR words, pad
 
 // transposed DDR words per row = header_words + nibble_words
 // headers: blocks_per_row * URM_HDR_BYTES / 16
@@ -156,7 +171,9 @@ static void udmabuf_sync_to_cpu(uint32_t offset, uint32_t size) {
 // for the output path.
 //
 // DDR row layout (same total byte count as 160-byte/block hybrid):
-//   Headers: blocks_per_row * 32 B  — block-major: d(2)+dmin(2)+sc6[8]+mn6[8]+pad(12)
+//   Headers: blocks_per_row * 32 B  — block-major, 2 DDR words per block:
+//            bytes 0-1 d, 2-3 dmin, 4-7 sc6[0..3], 8-11 mn6[0..3],
+//            16-19 sc6[4..7], 20-23 mn6[4..7], rest zero
 //   Nibbles: 256 * groups * 4 B       — element-major, groups = blocks_per_row/8
 //     WV:   64 DDR words, each = 4 element-slices × 32 bits (fully packed)
 //     Out: 256 DDR words, each = 4 group-slices   × 32 bits (fully packed)
@@ -180,18 +197,31 @@ static void transpose_q4k_to_urm(const uint8_t *src, uint8_t *dst,
             hdr[0] = blk[0]; hdr[1] = blk[1];
             hdr[2] = blk[2]; hdr[3] = blk[3];
 
-            // sc6[0..7] and mn6[0..7]: decode interleaved 6-bit → flat INT8
+            // sc6[0..7] and mn6[0..7]: decode the 12-byte packed 6-bit form
+            // (same as ggml's get_scale_min_k4)
+            uint8_t sc6[8], mn6[8];
             for (int i = 0; i < 4; i++) {
-                hdr[4  + i] = blk[4 + i] & 0x3F;
-                hdr[12 + i] = blk[8 + i] & 0x3F;
+                sc6[i] = blk[4 + i] & 0x3F;
+                mn6[i] = blk[8 + i] & 0x3F;
             }
             for (int i = 4; i < 8; i++) {
                 int j = i - 4;
-                hdr[4  + i] = (blk[12 + j] & 0x0F) | (uint8_t)((blk[4 + j] >> 6) << 4);
-                hdr[12 + i] = (blk[12 + j] >> 4)   | (uint8_t)((blk[8 + j] >> 6) << 4);
+                sc6[i] = (blk[12 + j] & 0x0F) | (uint8_t)((blk[4 + j] >> 6) << 4);
+                mn6[i] = (blk[12 + j] >> 4)   | (uint8_t)((blk[8 + j] >> 6) << 4);
             }
-            // Padding: bytes 20-31 = 0
-            memset(hdr + 20, 0, 12);
+
+            // Split across the two 128-bit header words, as swiglu.cpp reads them
+            // (load_4rows_wv_urm, load_row_down_urm):
+            //   word 0: bytes 4-7 sc6[0..3], 8-11 mn6[0..3], 12-15 pad
+            //   word 1: bytes 16-19 sc6[4..7], 20-23 mn6[4..7], 24-31 pad
+            for (int i = 0; i < 4; i++) {
+                hdr[4  + i] = sc6[i];
+                hdr[8  + i] = mn6[i];
+                hdr[16 + i] = sc6[4 + i];
+                hdr[20 + i] = mn6[4 + i];
+            }
+            memset(hdr + 12, 0, 4);
+            memset(hdr + 24, 0, 8);
         }
 
         // ── Nibbles: element-major, transposed across blocks ────────────────────

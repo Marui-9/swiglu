@@ -16,7 +16,7 @@ why: docs/floats_explanation.txt.
 
 2. INT8 input x (host side)
 ---------------------------
-llama-mods/ggml-cpu.c:2052-2066, once per token (one IP call per token):
+llama-mods/ggml-cpu.c:2082-2096, once per token (one IP call per token):
 
     x_scale   = max|x[i]| / 127            (1.0 if x is all zero)
     x_int8[i] = clamp(round_half_away(x[i] / x_scale), -128, 127)
@@ -81,9 +81,9 @@ A mock-token sanity test plus four Q4_K tests:
 Pass criterion per output: |got − expected| ≤ 1e-3 · (|expected| + 1).
 
 The testbench builds its URM data with its own transposer
-(transpose_q4k_to_urm_csim), whose header layout matches what swiglu.cpp reads. The host
-transposer in ggml-cpu.c writes a different header layout (README.md, "Known bugs"), so
-C-sim cannot catch that mismatch.
+(transpose_q4k_to_urm_csim), whose header layout matches what swiglu.cpp reads, so C-sim
+cannot see a host-side layout error. The host transposer in ggml-cpu.c wrote a different
+header layout until 2026-10-04 (README.md, "Driver bugs").
 
 
 7. Accuracy: what has and has not been measured

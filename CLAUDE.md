@@ -67,24 +67,30 @@ csynth at each step. **Not yet through Vivado, no board number.**
 - Do not re-run HLS at a relaxed clock: `hls_config.cfg` already targets 3.33 ns / 300 MHz
   with 0.90 ns uncertainty, stricter than the 250 MHz board clock.
 
-### Known bugs (details and evidence: README.md, "Known bugs")
+### Driver bugs, fixed 2026-10-04 (details and evidence: README.md, "Driver bugs")
 
-1. **Header layout mismatch.** `transpose_q4k_to_urm()` (ggml-cpu.c) writes sc6[0..7] at
-   header bytes 4-11 and mn6[0..7] at 12-19.
+Both fixes are in `llama-mods/ggml-cpu.c` only, so no re-synthesis is needed and they also
+work with the q4k_final bitstream. **The fixed driver has not been run on the board.** All
+board numbers in this file were measured with the old driver: valid timing, wrong values.
+
+1. **Header layout mismatch.** The old `transpose_q4k_to_urm()` wrote sc6[0..7] at header
+   bytes 4-11 and mn6[0..7] at 12-19.
    - `swiglu.cpp` reads sc6[0..3] at 4-7, mn6[0..3] at 8-11, sc6[4..7] at 16-19 and mn6[4..7]
-     at 20-23.
-   - The testbench's own transposer matches the IP, so C-sim cannot see it.
-   - Both layouts date from 3727506 (2026-05-19), and q4k_final reads the same bytes. The
-     shipped board runs therefore computed wrong values, though at valid timing.
-   - Fixing the host side needs no re-synthesis and works with the q4k_final bitstream.
-2. **x/out overlap layer 3.** `SWG_VEC_OFF` 0x06C50000 and `SWG_OUT_OFF` 0x06C60000 lie
+     at 20-23. The host now writes exactly that layout.
+   - The testbench's own transposer matches the IP, so C-sim could not see the bug.
+   - Both layouts date from 3727506 (2026-05-19), and q4k_final reads the same bytes.
+   - C model check (scratch harness): output cosine vs a float reference went −0.196 → 0.996,
+     and the host buffers are byte-identical to the testbench's.
+2. **x/out overlapped layer 3.** `SWG_VEC_OFF` 0x06C50000 and `SWG_OUT_OFF` 0x06C60000 lay
    inside layer 3's W slot (0x06A00000-0x073FFFFF), corrupting 9 of its 8,192 W_gate rows
-   on every call. The 16 MiB below 0x01000000 is unused.
+   on every call.
+   - They are now at 0x00000000 and 0x00010000, below `SWG_LAYER_BASE`.
+   - `_Static_assert`s check the whole udmabuf map for overlaps.
 
 ### Open items
 
-- Fix bugs 1 and 2, then compare the fused op with `build_ffn()` on the board. No on-board
-  output comparison exists yet.
+- Run the fixed driver on the board and compare the fused op with `build_ffn()`. No
+  on-board output comparison exists yet.
 - Run Vivado implementation and take a board measurement of the rebuild.
 - Measure the X1/X2 range: the fixed ±10 INT8 scale (`X12_SCALE_RANGE`) has never been
   checked against real activations.
@@ -189,6 +195,7 @@ The driver finds its UIO device by physical address (`open_uio_by_addr`).
 
 - `UDMABUF_SIZE` is 512 MiB, which fits the board's effective `cma=600M` without boot
   edits (docs/udmabuf_info.txt).
+- **Activation buffers:** x at `SWG_VEC_OFF` 0x00000000, out at `SWG_OUT_OFF` 0x00010000.
 - **Layer slots:** `SWG_LAYER_BASE` 0x01000000 + layer × 0x01E00000 (30 MiB each).
   - W at +0, V at +0xA00000, W_down at +0x1400000.
   - Each slot is converted and synced once on its layer's first call (`swg_layer_cached[]`).
@@ -211,8 +218,8 @@ The driver finds its UIO device by physical address (`open_uio_by_addr`).
 - **ggml.h:** enum at :474; `ggml_swiglu_fused_hw(ctx, x, w_gate, w_up, w_down, layer_id)`
   declared at :808.
 - **ggml.c:** op name at :957; builder at :2925.
-- **ggml-cpu.c:** `n_tasks = 1` at :2681; dispatch at :2186; kernel at :1971; transposer
-  at :165.
+- **ggml-cpu.c:** `n_tasks = 1` at :2711; dispatch at :2216; kernel at :2001; transposer
+  at :182.
 - **lfm2.cpp:** emits the op inside `build_dense_feed_forward`, LFM2-only on purpose.
 
 ### Board flow

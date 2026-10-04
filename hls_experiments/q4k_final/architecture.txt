@@ -4,7 +4,8 @@ Date: 2026-05-28  |  Based on: swiglu.cpp (859 lines), csynth.rpt (Vitis 2025.1)
 Board: KV260 (ZU5EV) @ 250 MHz, LFM2.5-1.2B all-Q4_K, udmabuf weight cache
 Corrected 2026-10-03 (branch rebuild): routed resources/timing, per-call time, benchmark
 notes. Read bottlenecks.txt's correction note for the interval-vs-latency error.
-KNOWN BUGS that also affected this design's board runs: README.md, "Known bugs".
+Two driver bugs (fixed 2026-10-04) also affected this design's board runs: README.md,
+"Driver bugs".
 
 
 General Pragmas

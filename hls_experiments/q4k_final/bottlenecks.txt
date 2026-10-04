@@ -244,9 +244,11 @@ no longer costs time.
 WHAT IS LEFT
 ================================================================================
 
-See CLAUDE.md ("Known bugs" and the open items). In order:
-  1. Fix the two correctness bugs in README.md, "Known bugs" (host header layout;
-     x/out buffers inside layer 3's W slot). They affect the shipped results too.
+See CLAUDE.md ("Driver bugs" and the open items). In order:
+  1. Run the fixed driver on the board and compare the fused op with build_ffn(). The
+     two correctness bugs in README.md, "Driver bugs" (host header layout; x/out buffers
+     inside layer 3's W slot) were fixed in the driver on 2026-10-04. They affected the
+     shipped results: valid timing, wrong values.
   2. Take the rebuild through Vivado and onto the board. ~2.6 t/s at T2 is a derived
      projection.
   3. Host side: the T4 contention (§5).

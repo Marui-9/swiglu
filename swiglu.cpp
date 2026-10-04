@@ -29,8 +29,8 @@ typedef ap_fixed<48,38> fxd_accum_t;
 //   Headers: blocks_per_row * 32 B  — block-major, as read by the load functions:
 //            bytes 0-1 d, 2-3 dmin, 4-7 sc6[0..3], 8-11 mn6[0..3],
 //            16-19 sc6[4..7], 20-23 mn6[4..7]
-//            KNOWN BUG: the host transposer (ggml-cpu.c) writes sc6[0..7] at 4-11 and
-//            mn6[0..7] at 12-19 instead — see README.md, "Known bugs".
+//            The host transposer (ggml-cpu.c) has written this layout since 2026-10-04;
+//            before that it did not match (README.md, "Driver bugs").
 //   Nibbles: 256 * groups * 4 B     — element-major, 4 element-slices per DDR word
 
 #define URM_HDR_BYTES        32     // 2 DDR words per block header

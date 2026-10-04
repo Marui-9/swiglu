@@ -32,7 +32,7 @@ Authoritative source: the S_AXILITE table in swiglu/reports/hls_compile.rpt.
       uint32_t       down_quant_mode, // 0x4C
       float          x_scale)     // 0x54
 
-Driver defines in ggml-cpu.c (lines 77-96):
+Driver defines in ggml-cpu.c (lines 79-98):
   SWG_CTRL_W_LO/HI   0x10/0x14
   SWG_CTRL_V_LO/HI   0x1C/0x20
   SWG_CTRL_WD_LO/HI  0x28/0x2C
@@ -79,7 +79,7 @@ The interrupt wire goes:
   (DT offset 89: `interrupts = <0 89 4>` in pl.dtsi)
 The UIO driver increments its event counter and wakes the reader blocked on /dev/uioN.
 
-6. Driver receive path (lines 2106-2124)
+6. Driver receive path (lines 2136-2154)
 
   swg_ip_regs[AP_CTRL/4] = 0x1            // ap_start
   read(swiglu_uio_fd, &irq_count, 4)      // blocks until the IRQ; no timeout
@@ -101,31 +101,31 @@ Range-limited sync (avoids flushing the whole 512 MiB buffer):
   write the byte offset into sync_offset, the byte count into sync_size,
   then write "1" to sync_for_device or sync_for_cpu.
 
-udmabuf_sync_to_device(offset, size) and udmabuf_sync_to_cpu(offset, size) (lines 127,
-139) wrap this three-write sequence.
+udmabuf_sync_to_device(offset, size) and udmabuf_sync_to_cpu(offset, size) (lines 142,
+154) wrap this three-write sequence.
 
 ----------------------------------------------------------------------------------------------
 
-Stage 1 — Init: udmabuf (init_hardware_offload, line 253)
+Stage 1 — Init: udmabuf (init_hardware_offload, line 283)
 phys_addr read from /sys/class/u-dma-buf/udmabuf0/phys_addr.
 /dev/udmabuf0 opened O_RDWR; the four sync fds opened.
 mmap of UDMABUF_SIZE = 536870912 (512 MiB).
 
-Stage 2 — Init: IP registers (init_swiglu_offload, line 283)
+Stage 2 — Init: IP registers (init_swiglu_offload, line 313)
 /dev/mem opened O_RDWR | O_SYNC, CTRL mapped at 0xA0000000, size 0x10000.
 UIO found via open_uio_by_addr(SWIGLU_IP_BASE). Order: drain the old UIO count →
 arm GIE/IER → clear ISR → drain again → re-arm UIO. Arming with ISR still set would fire
 an immediate stale interrupt and make call #0 return before the IP finished.
 
-Stage 3 — Layer id and shape guard (line 1971)
+Stage 3 — Layer id and shape guard (line 2001)
 The layer index comes from op_params[0], written at graph-build time by
 ggml_swiglu_fused_hw(), which receives il from lfm2.cpp.
 Any type other than Q4_K for W_gate/W_up/W_down, any shape mismatch, or more than
 SWG_MAX_TOKENS = 64 tokens in the ubatch → GGML_ASSERT (no CPU fallback inside the op;
 lfm2.cpp only emits the op for all-Q4_K layers).
 
-Stage 4 — Weight pre-decode, once per layer (line 2023)
-On the first call for a layer, transpose_q4k_to_urm() (line 165) converts W_gate, W_up
+Stage 4 — Weight pre-decode, once per layer (line 2053)
+On the first call for a layer, transpose_q4k_to_urm() (line 182) converts W_gate, W_up
 and W_down from GGML Q4_K blocks into the URM layout the IP expects. It writes them to the
 layer's permanent slot:
   slot base = 0x01000000 + layer × 0x01E00000 (30 MiB)
@@ -133,29 +133,32 @@ layer's permanent slot:
 One udmabuf_sync_to_device() over the whole 30 MiB slot follows. swg_layer_cached[layer]
 prevents a second conversion, so after the first token no flushes or copies of weights
 happen.
-KNOWN BUG: the 32-byte header this function writes does not match what swiglu.cpp reads
-(see README.md, "Known bugs").
+Each block's 32-byte header is split over two DDR words exactly as swiglu.cpp reads it:
+bytes 0-1 d, 2-3 dmin, 4-7 sc6[0..3], 8-11 mn6[0..3], 16-19 sc6[4..7], 20-23 mn6[4..7],
+the rest zero. Fixed 2026-10-04; until then the host wrote a different layout (see
+README.md, "Driver bugs").
 
-Stage 5 — x quantization (line 2052)
+Stage 5 — x quantization (line 2082)
 Two passes over the 2048 floats: max_abs scan, then round-half-away and clamp to
 [-128, 127] into udmabuf_vptr + SWG_VEC_OFF.
 x_scale = max_abs / 127.0f; 1.0f when max_abs == 0.
 
-Stage 6 — Register programming (line 2069)
+Stage 6 — Register programming (line 2099)
 W/V/W_down addresses are rewritten only when the layer changes.
 x and out addresses, MODE (= 0) and x_scale (raw float bits via memcpy) are written every
 call. A compiler barrier precedes ap_start.
 
-Stage 7 — Flush x, start, wait (lines 2098-2124)
+Stage 7 — Flush x, start, wait (lines 2128-2154)
 udmabuf_sync_to_device(SWG_VEC_OFF, bsz × 2048) flushes the INT8 x vector, then ap_start,
 then the blocking UIO read described in section 6.
 
-Stage 8 — Output copy (lines 2127-2134)
+Stage 8 — Output copy (lines 2157-2164)
 udmabuf_sync_to_cpu(SWG_OUT_OFF, 8192) invalidates the output region, then memcpy into
 dst->data at token offset c.
 
 Prefill: the op loops over the ubatch one token at a time (SWG_MAX_BATCH = 1), repeating
 stages 5-8 per token. There is no CPU fallback for prefill.
-KNOWN BUG: SWG_VEC_OFF (0x06C50000) and SWG_OUT_OFF (0x06C60000) lie inside layer 3's W
-slot (0x06A00000-0x073FFFFF), so every call overwrites part of layer 3's cached W_gate
-(see README.md, "Known bugs").
+x lives at SWG_VEC_OFF = 0x00000000 and out at SWG_OUT_OFF = 0x00010000, in the 16 MiB
+below the first layer slot. _Static_asserts next to the defines fail the build if any two
+regions overlap. Fixed 2026-10-04; until then x and out sat at 0x06C50000/0x06C60000, inside
+layer 3's W slot (see README.md, "Driver bugs").

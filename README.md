@@ -12,9 +12,11 @@ out[2048] = W_down · ( SiLU(W_gate · x) ⊙ (W_up · x) )     x: 2048, hidden:
 One call computes one layer's FFN for one token. LFM2.5-1.2B has 16 layers, so a decode
 token makes 16 calls.
 
-> **Read [Known bugs](#known-bugs) first.** The host and the IP disagree on the weight
-> header layout, and the x/out buffers overlap a weight slot. Both affect the shipped board
-> results' numerical output, not their timing.
+> **Read [Driver bugs](#driver-bugs-fixed-2026-10-04) first.** Until 2026-10-04 the host
+> wrote the weight headers in a layout the IP does not read, and the x/out buffers overlapped
+> a weight slot. Both are now fixed in `llama-mods/ggml-cpu.c`, but every board result below
+> was measured with the old driver. Its timing is valid; its numerical output was wrong.
+> The fixed driver has not yet run on the board.
 
 ---
 
@@ -105,7 +107,8 @@ load_x_local → compute_X1 ∥ compute_X2 → compute_gate → compute_output
 On the first call for each layer, the host converts that layer's three Q4_K matrices
 (`transpose_q4k_to_urm()`, `llama-mods/ggml-cpu.c`):
 
-- Headers are unpacked: d and dmin, plus sc6/mn6 at one byte each, in 32 bytes per block.
+- Headers are unpacked: d and dmin, plus sc6/mn6 at one byte each, in 32 bytes per block
+  (layout under [Driver bugs](#driver-bugs-fixed-2026-10-04), bug 1).
 - Nibbles are transposed to element-major order, so a 32-bit slice holds element n of
   8 blocks and the IP picks each nibble out with a compile-time bit range.
 
@@ -200,57 +203,73 @@ xck26-sfvc784-2LV-c, 3.33 ns clock, 0.90 ns uncertainty). The C-sim testbench is
 
 ---
 
-## Known bugs
+## Driver bugs (fixed 2026-10-04)
 
-### 1. Host and IP disagree on the 32-byte block header
+Both bugs were in `llama-mods/ggml-cpu.c`. The fixes need no re-synthesis and apply to the
+q4k_final bitstream as well as the rebuild. **The fixed driver has not been run on the
+board yet.** Every board result in this README was measured with the old driver.
 
-`transpose_q4k_to_urm()` in `llama-mods/ggml-cpu.c` writes:
+### 1. Host and IP disagreed on the 32-byte block header
+
+Before the fix, `transpose_q4k_to_urm()` wrote:
 
 ```
 bytes 0-1 d | 2-3 dmin | 4-11 sc6[0..7] | 12-19 mn6[0..7] | 20-31 zero
 ```
 
-`swiglu.cpp` reads (`load_4rows_wv_urm`, `load_row_down_urm`):
+`swiglu.cpp` reads this layout (`load_4rows_wv_urm`, `load_row_down_urm`), and the host now
+writes it:
 
 ```
 bytes 0-1 d | 2-3 dmin | 4-7 sc6[0..3] | 8-11 mn6[0..3] | 16-19 sc6[4..7] | 20-23 mn6[4..7]
 ```
 
-So only d, dmin and sc6[0..3] arrive intact. The IP reads three fields from the wrong bytes:
+With the old host layout, only d, dmin and sc6[0..3] arrived intact. The IP read three
+fields from the wrong bytes:
 
-| IP field | Bytes it reads | What the host put there |
+| IP field | Bytes it reads | What the old host put there |
 |---|---|---|
 | mn6[0..3] | 8–11 | sc6[4..7] |
 | sc6[4..7] | 16–19 | mn6[4..7] |
 | mn6[4..7] | 20–23 | zero padding |
 
-This hits every block of every matrix: sub-blocks 0–3 (elements 0–127) use the wrong
-mins, and sub-blocks 4–7 (elements 128–255) use the wrong scales and zero mins.
+This hit every block of every matrix: sub-blocks 0–3 (elements 0–127) used the wrong mins,
+and sub-blocks 4–7 (elements 128–255) used the wrong scales and zero mins.
 
-- **Why C-sim passes:** `swiglu_tb.cpp` has its own transposer, which writes the layout
+- **Why C-sim passed:** `swiglu_tb.cpp` has its own transposer, which writes the layout
   the IP reads. `test_transposer.c` checks only nibble positions and d.
-- **Evidence:** a one-off harness fed real-format Q4_K blocks through each transposer into
-  the C model of `swiglu()` and compared X1 with a float reference. Testbench layout:
-  cosine similarity 0.996. Host layout: cosine similarity −0.196. The harness is not in the
-  repository.
-- **Since when:** both layouts date from commit 3727506 (2026-05-19), and the shipped
+- **Evidence:** a harness (not in the repository) feeds random real-format Q4_K blocks
+  through each transposer into the C model of `swiglu()`, and compares the output with a
+  float reference that uses ggml's Q4_K dequantization.
+
+  | Transposer | Cosine similarity |
+  |---|---|
+  | Testbench | 0.996 |
+  | Old host | −0.196 |
+  | Fixed host | 0.996 |
+
+  The fixed host transposer's buffers are byte-identical to the testbench's, padding
+  included.
+- **Since when:** both layouts date from commit 3727506 (2026-05-19). The shipped
   `hls_experiments/q4k_final/swiglu_copy.cpp` reads the same bytes as today's code. The
   board numbers above therefore measure the right amount of work, but the values the
-  accelerator produced were wrong. No board run has compared the accelerator's output with
-  the CPU path.
-- **Fix without re-synthesis:** change the host transposer to write the IP's layout (the
-  testbench's `transpose_q4k_to_urm_csim` is a reference). Then compare the fused op's
-  output with `build_ffn()` on the board for at least one layer.
+  accelerator produced were wrong.
+- **Still to do:** no board run has compared the accelerator's output with the CPU path.
+  Compare the fused op's output with `build_ffn()` on the board for at least one layer.
 
-### 2. x and out buffers overlap layer 3's weight slot
+### 2. x and out buffers overlapped layer 3's weight slot
 
-`SWG_VEC_OFF = 0x06C50000` (x, 2 KB) and `SWG_OUT_OFF = 0x06C60000` (out, 8 KB) both lie
-inside layer 3's W_gate region (0x06A00000–0x073FFFFF). Every call therefore overwrites
-W_gate rows 1894–1895 and 1945–1951 of layer 3 (9 of 8,192 rows) with x and out data,
-after that layer has been cached.
+`SWG_VEC_OFF` was 0x06C50000 (x, 2 KB) and `SWG_OUT_OFF` was 0x06C60000 (out, 8 KB). Both
+lay inside layer 3's W_gate region (0x06A00000–0x073FFFFF). After that layer had been
+cached, every call overwrote W_gate rows 1894–1895 and 1945–1951 of layer 3 (9 of 8,192
+rows) with x and out data.
 
-- **Fix:** move both buffers to the unused 16 MiB below `SWG_LAYER_BASE` (0x00000000 –
-  0x00FFFFFF). Add a static check that no region overlaps a layer slot.
+- **Fix:** x is now at 0x00000000 and out at 0x00010000, in the 16 MiB below
+  `SWG_LAYER_BASE` that nothing else uses.
+- `_Static_assert`s next to the layout macros check two things at compile time:
+  - x, out and the W/V/W_down regions of the layer slots do not overlap;
+  - the 16 slots fit in the 512 MiB pool.
+- The old offsets fail the check ("out overlaps layer 0").
 
 ---
 

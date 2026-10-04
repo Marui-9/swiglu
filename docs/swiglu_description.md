@@ -58,8 +58,9 @@ into this layout once per layer.
 sc6/mn6 are the 6-bit sub-block scales and mins, already unpacked from Q4_K's 12-byte
 packed form.
 
-> **Known bug:** the host writes sc6[0..7] contiguously at bytes 4-11 and mn6[0..7] at
-> bytes 12-19. That does not match the table above. See README.md, "Known bugs".
+> **Fixed 2026-10-04:** until then the host wrote sc6[0..7] contiguously at bytes 4-11 and
+> mn6[0..7] at bytes 12-19, which does not match the table above. The host now writes the
+> table's layout. See README.md, "Driver bugs".
 
 ## Top level (`swiglu`)
 

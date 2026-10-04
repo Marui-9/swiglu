@@ -20,11 +20,11 @@ that computes the FFN block. So: ggml orchestrates and dispatches; swiglu.cpp co
 End-to-end flow (CPU backend):
 1. The model is loaded from GGUF; llama.cpp calls ggml builder functions to construct a
    compute graph of tensors.
-2. ggml_graph_compute (ggml-cpu.c:3726) plans the graph and starts the threadpool.
-3. Each worker runs ggml_graph_compute_thread (ggml-cpu.c:3451), visiting nodes in
-   topological order. For each node, ggml_compute_forward (ggml-cpu.c:2172) — a large
+2. ggml_graph_compute (ggml-cpu.c:3756) plans the graph and starts the threadpool.
+3. Each worker runs ggml_graph_compute_thread (ggml-cpu.c:3481), visiting nodes in
+   topological order. For each node, ggml_compute_forward (ggml-cpu.c:2202) — a large
    switch on tensor->op — calls the op's kernel. Threads meet at a barrier after each node.
-4. Per-op parallelism is chosen beforehand in ggml_get_n_tasks (ggml-cpu.c:2670). Heavy
+4. Per-op parallelism is chosen beforehand in ggml_get_n_tasks (ggml-cpu.c:2700). Heavy
    ops (MUL_MAT, GLU) use n_threads and split rows by ith/nth; the fused op uses 1.
 
 ----------------------------------------------------------------------------------------------
@@ -46,10 +46,10 @@ THE FUSED OP — WHAT WAS ADDED
        result->op = GGML_OP_SWIGLU_FUSED_HW; src[0..3] = x, w_gate, w_up, w_down
        op_params[0] = layer_id   (selects the layer's udmabuf weight slot)
 
-4. ggml-cpu.c:2681  case GGML_OP_SWIGLU_FUSED_HW: n_tasks = 1.
+4. ggml-cpu.c:2711  case GGML_OP_SWIGLU_FUSED_HW: n_tasks = 1.
    The kernel is single-threaded; the other CPU threads idle while the FPGA runs.
-   ggml-cpu.c:2186  case GGML_OP_SWIGLU_FUSED_HW: reads SWIGLU_DEBUG once, then calls
-   ggml_compute_forward_swiglu_fused_hw (ggml-cpu.c:1971). What that function does, step
+   ggml-cpu.c:2216  case GGML_OP_SWIGLU_FUSED_HW: reads SWIGLU_DEBUG once, then calls
+   ggml_compute_forward_swiglu_fused_hw (ggml-cpu.c:2001). What that function does, step
    by step, is in docs/code_stages.txt.
 
 5. lfm2.cpp:18-41, inside the build_dense_feed_forward lambda — the only call site. The

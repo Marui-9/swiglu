@@ -328,7 +328,7 @@ Rule: always prefer one longer burst over multiple shorter bursts.
 -----------------------------------------------------------------
 Q4_K is laid out for CPU SIMD: nibbles block-major, 6-bit sc6/mn6 packed across 12 bytes.
 The FPGA wants the nibbles of all 8 blocks for one element side by side.
-transpose_q4k_to_urm() (llama-mods/ggml-cpu.c:165) does this once per layer:
+transpose_q4k_to_urm() (llama-mods/ggml-cpu.c:182) does this once per layer:
   - headers: d and dmin copied, sc6/mn6 unpacked to one byte each (32-byte header/block)
   - nibbles: transposed to element-major, so one 32-bit slice holds element n of 8 blocks
     and the MAC extracts each nibble with a compile-time .range() (zero LUT)
@@ -342,9 +342,9 @@ The conversion runs once per layer on first use (~10 ms/layer, entry 47) and the
 stays in a permanent udmabuf slot (4.7).
 
 Test the host transposer and the HLS reader against each other. The testbench has its own
-transposer, which matches what swiglu.cpp reads; the host transposer writes sc6[0..7] at
-header bytes 4-11 and mn6[0..7] at 12-19, which is not what the IP reads (README.md,
-"Known bugs"). Both layouts date from 2026-05-19, and C-sim passed throughout.
+transposer, which matches what swiglu.cpp reads. From 2026-05-19 to 2026-10-04 the host
+transposer wrote sc6[0..7] at header bytes 4-11 and mn6[0..7] at 12-19, which is not what
+the IP reads, and C-sim passed throughout (README.md, "Driver bugs").
 
 2.4 Memory type selection guide
 --------------------------------
@@ -448,9 +448,10 @@ After the first token only the 2 KB INT8 x vector changes per call.
 The cache is indexed by layer index (from op_params[0] in the fused op), not
 swiglu_call_count % 16 (see 6.3).
 
-Lay out every region of the buffer in one table and assert that none overlap. The x and
-out regions (SWG_VEC_OFF 0x06C50000, SWG_OUT_OFF 0x06C60000) still sit inside layer 3's W
-slot (README.md, "Known bugs").
+Lay out every region of the buffer in one table and assert that none overlap. Until
+2026-10-04 the x and out regions (then 0x06C50000 and 0x06C60000) sat inside layer 3's W
+slot; they now sit below the layer slots, guarded by _Static_asserts (README.md,
+"Driver bugs").
 
 4.3 Prefill: guard it or loop it
 --------------------------------
@@ -458,7 +459,7 @@ The fused op is emitted for prefill (ne[1] > 1 tokens) as well as decode (ne[1] 
 The IP is synthesized for MAX_BATCH = 1. The first driver used a guard
 (if (src1->ne[1] != 1) goto cpu_compute_fallback;). The current driver instead loops over
 the tokens of the ubatch, one IP call each, and asserts if a ubatch has more than
-SWG_MAX_TOKENS = 64 tokens (ggml-cpu.c:1998). Either way, never hand a multi-token batch
+SWG_MAX_TOKENS = 64 tokens (ggml-cpu.c:2028). Either way, never hand a multi-token batch
 to a single-token IP.
 
 4.4 Fused GLU op: graph is shallower than you expect
@@ -590,10 +591,10 @@ Step 4 (ggml.c:2925): implement builder — wires graph node, does NOT touch har
     result->src[2] = w_up; result->src[3] = w_down;
     ggml_set_op_params_i32(result, 0, layer_id);  // pass layer index
 
-Step 5 (ggml-cpu.c:2681, n_tasks switch):
+Step 5 (ggml-cpu.c:2711, n_tasks switch):
     case GGML_OP_YOUR_FUSED_HW: n_tasks = 1; break;
 
-Step 6 (ggml-cpu.c:2186, compute_forward switch):
+Step 6 (ggml-cpu.c:2216, compute_forward switch):
     case GGML_OP_YOUR_FUSED_HW:
         ggml_compute_forward_your_fused_hw(params, tensor); break;
 
@@ -624,7 +625,7 @@ module-level swiglu_call_count % 16 counter — it misaligns as soon as the numb
 per token changes (prefill, graph reordering, skipped layers). Store il (the layer loop
 variable) in op_params[0] at graph-build time:
     ggml_set_op_params_i32(result, 0, il);
-Read it in the driver (ggml-cpu.c:2012):
+Read it in the driver (ggml-cpu.c:2042):
     int layer = ggml_get_op_params_i32(dst, 0);
 
 ================================================================================
@@ -673,8 +674,8 @@ Hardware/HLS:
 Driver:
   15. Hardcoded /dev/uio0: always use open_uio_by_addr() to match by physical address.
   16. Test the host weight transposer against the HLS reader, not each against its own
-      model (README.md, "Known bugs").
-  17. Assert that udmabuf regions do not overlap (README.md, "Known bugs").
+      model (README.md, "Driver bugs").
+  17. Assert that udmabuf regions do not overlap (README.md, "Driver bugs").
   (AXI DMA lessons from linear_projection: see the section above.)
 
 Vivado/Block Design:
