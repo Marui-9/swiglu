@@ -46,10 +46,14 @@ typedef ap_fixed<48,38> fxd_accum_t;
 // Per-row DDR word totals (WV: 16 hdr + 64 nib = 80. Down: 64 hdr + 256 nib = 320.)
 #define WV_ROW_WORDS         (URM_WV_HDR_WORDS   + URM_WV_NIB_WORDS)        // 80
 #define DOWN_Q4K_WORDS       (URM_DOWN_HDR_WORDS + URM_DOWN_NIB_WORDS)      // 320
-// ─── INT8 quantisation scale for X1/X2 intermediate caches ───────────────────
-#define X12_SCALE_RANGE  10.0f
-#define X12_INV_SCALE    (127.0f / X12_SCALE_RANGE)   // 12.7f
-#define X12_QUANT_SCALE  (X12_SCALE_RANGE / 127.0f)   // ~0.0787f
+// ─── INT16 quantisation of the X1/X2 intermediate caches ─────────────────────
+// Fixed range ±32. On the board, gate·x stayed within |4.24| and up·x within
+// |1.80| (rms 0.11-0.44); the former INT8 ±10 range rounded up to 2,347 of 8,192
+// gate·x values to zero per layer (scripts/results/fixed_driver_20261023/).
+#define X12_SCALE_RANGE  32.0f
+#define X12_QMAX         32767
+#define X12_INV_SCALE    ((float)X12_QMAX / X12_SCALE_RANGE)   // ~1023.97f
+#define X12_QUANT_SCALE  (X12_SCALE_RANGE / (float)X12_QMAX)   // ~9.77e-4f
 
 // ─── URAM nibble tile dimensions ──────────────────────────────────────────────
 #define URM_NIB_ELEMS        256
@@ -530,7 +534,7 @@ static void mac_write_down(
 // Phase 2 & 3: X1 = x @ W.T  and  X2 = x @ V.T  (Q4_K, K=4, URAM)
 // ============================================================================
 
-// mac_quant_wv: DATAFLOW consumer — K=4 MAC + quantize 4 results to INT8.
+// mac_quant_wv: DATAFLOW consumer — K=4 MAC + quantize 4 results to INT16.
 static void mac_quant_wv(
     const ap_uint<128> nib_r0[64], const ap_uint<128> nib_r1[64],
     const ap_uint<128> nib_r2[64], const ap_uint<128> nib_r3[64],
@@ -544,7 +548,7 @@ static void mac_quant_wv(
     const ap_uint<64> sc6w3[WV_BLOCKS_PER_ROW], const ap_uint<64> mn6w3[WV_BLOCKS_PER_ROW],
     const int8_t x[WV_BLOCKS_PER_ROW][256],
     float x_scale,
-    int8_t Xc[FFN_DIM], int row)
+    int16_t Xc[FFN_DIM], int row)
 {
 #pragma HLS INLINE off
     float r0, r1, r2, r3;
@@ -554,33 +558,33 @@ static void mac_quant_wv(
         sc6w0, mn6w0, sc6w1, mn6w1, sc6w2, mn6w2, sc6w3, mn6w3,
         x, x_scale, &r0, &r1, &r2, &r3);
 
-    // Quantize 4 results to INT8
+    // Quantize 4 results to INT16
     float fq0 = r0 * X12_INV_SCALE;
     int   iq0 = (int)(fq0 + (fq0 >= 0.f ? 0.5f : -0.5f));
-    if (iq0 >  127) iq0 =  127; if (iq0 < -128) iq0 = -128;
-    Xc[row]     = (int8_t)iq0;
+    if (iq0 > X12_QMAX) iq0 = X12_QMAX; if (iq0 < -X12_QMAX) iq0 = -X12_QMAX;
+    Xc[row]     = (int16_t)iq0;
 
     float fq1 = r1 * X12_INV_SCALE;
     int   iq1 = (int)(fq1 + (fq1 >= 0.f ? 0.5f : -0.5f));
-    if (iq1 >  127) iq1 =  127; if (iq1 < -128) iq1 = -128;
-    Xc[row + 1] = (int8_t)iq1;
+    if (iq1 > X12_QMAX) iq1 = X12_QMAX; if (iq1 < -X12_QMAX) iq1 = -X12_QMAX;
+    Xc[row + 1] = (int16_t)iq1;
 
     float fq2 = r2 * X12_INV_SCALE;
     int   iq2 = (int)(fq2 + (fq2 >= 0.f ? 0.5f : -0.5f));
-    if (iq2 >  127) iq2 =  127; if (iq2 < -128) iq2 = -128;
-    Xc[row + 2] = (int8_t)iq2;
+    if (iq2 > X12_QMAX) iq2 = X12_QMAX; if (iq2 < -X12_QMAX) iq2 = -X12_QMAX;
+    Xc[row + 2] = (int16_t)iq2;
 
     float fq3 = r3 * X12_INV_SCALE;
     int   iq3 = (int)(fq3 + (fq3 >= 0.f ? 0.5f : -0.5f));
-    if (iq3 >  127) iq3 =  127; if (iq3 < -128) iq3 = -128;
-    Xc[row + 3] = (int8_t)iq3;
+    if (iq3 > X12_QMAX) iq3 = X12_QMAX; if (iq3 < -X12_QMAX) iq3 = -X12_QMAX;
+    Xc[row + 3] = (int16_t)iq3;
 }
 
 static void compute_X1(
     const uint8_t  *W,
     const int8_t   x_local_1[MAX_BATCH][WV_BLOCKS_PER_ROW][256],
     float          x_scale,
-    int8_t         X1_cache[MAX_BATCH][FFN_DIM])
+    int16_t        X1_cache[MAX_BATCH][FFN_DIM])
 {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=x_local_1 dim=2 complete
@@ -591,8 +595,22 @@ static void compute_X1(
     // (consumer), so iteration N's 320-word burst overlaps iteration N-1's
     // MAC: per-iteration time -> max(load II 320, MAC 347) = 348 cy (csynth)
     // instead of the sum.
+    //
+    // The overlap needs every caller variable the body touches to be STABLE
+    // (as HLS infers for DOWN_Q4K) and the result to go to a local array that
+    // is copied out after the loop (as out_local in compute_output).  Without
+    // them HLS synchronizes each body instance on W/x_local_1/x_scale/X1_cache
+    // and the iterations serialize: cosim 746 cy/iteration, load then MAC, the
+    // 745 cy/iteration measured on the board, while csynth still reports 348.
+    // With them cosim gives 344 cy/iteration.  STABLE on X1_cache itself is
+    // wrong: cosim then reads stale X1 values.
+    int16_t X1_loc[FFN_DIM];
+    #pragma HLS BIND_STORAGE variable=X1_loc type=ram_1p impl=bram
     COMPUTE_X1: for (int row = 0; row < FFN_DIM; row += 4) {
         #pragma HLS DATAFLOW
+        #pragma HLS STABLE variable=W
+        #pragma HLS STABLE variable=x_local_1
+        #pragma HLS STABLE variable=x_scale
         // 4 rows × 1 wide BRAM each = 4 × 128-bit × 64 deep (PIPO-doubled)
         ap_uint<128> nib_r0[64], nib_r1[64], nib_r2[64], nib_r3[64];
         #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
@@ -627,7 +645,11 @@ static void compute_X1(
         mac_quant_wv(nib_r0, nib_r1, nib_r2, nib_r3,
                      d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
                      sc6w0, mn6w0, sc6w1, mn6w1, sc6w2, mn6w2, sc6w3, mn6w3,
-                     x_local_1[0], x_scale, X1_cache[0], row);
+                     x_local_1[0], x_scale, X1_loc, row);
+    }
+    COPY_X1: for (int i = 0; i < FFN_DIM; i++) {
+        #pragma HLS PIPELINE II=1
+        X1_cache[0][i] = X1_loc[i];
     }
 }
 
@@ -635,15 +657,20 @@ static void compute_X2(
     const uint8_t  *V,
     const int8_t   x_local_2[MAX_BATCH][WV_BLOCKS_PER_ROW][256],
     float          x_scale,
-    int8_t         X2_cache[MAX_BATCH][FFN_DIM])
+    int16_t        X2_cache[MAX_BATCH][FFN_DIM])
 {
 #pragma HLS INLINE off
 #pragma HLS ARRAY_PARTITION variable=x_local_2 dim=2 complete
     const ap_uint<128> *V_wide = (const ap_uint<128>*)V;
 
-    // Loop-body DATAFLOW — see COMPUTE_X1.
+    // Loop-body DATAFLOW — see COMPUTE_X1, including the STABLE/X2_loc note.
+    int16_t X2_loc[FFN_DIM];
+    #pragma HLS BIND_STORAGE variable=X2_loc type=ram_1p impl=bram
     COMPUTE_X2: for (int row = 0; row < FFN_DIM; row += 4) {
         #pragma HLS DATAFLOW
+        #pragma HLS STABLE variable=V
+        #pragma HLS STABLE variable=x_local_2
+        #pragma HLS STABLE variable=x_scale
         ap_uint<128> nib_r0[64], nib_r1[64], nib_r2[64], nib_r3[64];
         #pragma HLS BIND_STORAGE variable=nib_r0 type=ram_1p impl=bram
         #pragma HLS BIND_STORAGE variable=nib_r1 type=ram_1p impl=bram
@@ -674,15 +701,19 @@ static void compute_X2(
         mac_quant_wv(nib_r0, nib_r1, nib_r2, nib_r3,
                      d0, dmin0, d1, dmin1, d2, dmin2, d3, dmin3,
                      sc6w0, mn6w0, sc6w1, mn6w1, sc6w2, mn6w2, sc6w3, mn6w3,
-                     x_local_2[0], x_scale, X2_cache[0], row);
+                     x_local_2[0], x_scale, X2_loc, row);
+    }
+    COPY_X2: for (int i = 0; i < FFN_DIM; i++) {
+        #pragma HLS PIPELINE II=1
+        X2_cache[0][i] = X2_loc[i];
     }
 }
 
 // ─── Phase 4: gate[n][b][elem] = SiLU(X1[n][j]) × X2[n][j], quantized to INT8 ──
 // (unchanged from hybrid K=2)
 static void compute_gate(
-    const int8_t X1_cache[MAX_BATCH][FFN_DIM],
-    const int8_t X2_cache[MAX_BATCH][FFN_DIM],
+    const int16_t X1_cache[MAX_BATCH][FFN_DIM],
+    const int16_t X2_cache[MAX_BATCH][FFN_DIM],
     int8_t       gate_cache[MAX_BATCH][DOWN_BLOCKS_PER_ROW][256],
     float        gate_scale_out[MAX_BATCH])
 {
@@ -876,8 +907,8 @@ void swiglu(
     #pragma HLS BIND_STORAGE variable=x_local_2 type=ram_1p impl=lutram
     #pragma HLS ARRAY_PARTITION variable=x_local_2 dim=2 complete
 
-    int8_t X1_cache[MAX_BATCH][FFN_DIM];
-    int8_t X2_cache[MAX_BATCH][FFN_DIM];
+    int16_t X1_cache[MAX_BATCH][FFN_DIM];
+    int16_t X2_cache[MAX_BATCH][FFN_DIM];
     #pragma HLS BIND_STORAGE variable=X1_cache type=ram_2p impl=bram
     #pragma HLS BIND_STORAGE variable=X2_cache type=ram_2p impl=bram
 

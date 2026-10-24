@@ -46,3 +46,6 @@ swiglu/logs/
 !swiglu/hls/
 !swiglu/hls/*.json
 !swiglu/hls/*.cmdline
+# Overleaf working copy of the thesis (source of truth: disi_thesis_template/)
+/latex/tesi_corrected/
+/latex/tesi_corrected.zip

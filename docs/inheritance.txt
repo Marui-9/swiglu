@@ -31,7 +31,7 @@ max speedup = 1/(1−0.68) ≈ 3.1×.
 
 The non-FFN work (attention, short convolutions, norms, lm_head) does not shrink when the
 FPGA gets faster. On the shipped design at 2 threads it is ~227 ms of the 452 ms token
-(thesis/latest_findings.md), so even a zero-time FFN would cap decode at ~4.4 t/s
+(latest_findings.md), so even a zero-time FFN would cap decode at ~4.4 t/s
 (derived: 1 / 0.228 s).
 
 Rule: compute Amdahl's ceiling before writing any HLS. If the ceiling is below your
@@ -363,17 +363,27 @@ Decision rules:
   from two independent access patterns. It uses more BRAM resources.
 - Count DATAFLOW channels twice: a PIPO channel is double-buffered. In the current report a
   128-bit × 64 nibble tile (both buffers) is 4 BRAM_18K, and each 8 KB X1/X2 cache is 8.
+  Widening the caches to INT16 (16 KB each) raised the total from 150 to 166 BRAM_18K,
+  i.e. +8 per cache (derived; hls_experiments/rebuild_x16/csynth*.rpt).
 - Vivado reports BRAM in 36 Kb tiles (KV260: 144 tiles = 288 BRAM_18K); csynth reports
   BRAM_18K. q4k_final: 110 BRAM_18K in csynth, 46.5 tiles after implementation.
 
-2.5 INT8 intermediate caches: what is and isn't known about accuracy
---------------------------------------------------------------------
+2.5 Integer intermediate caches: INT8 ±10, measured, then INT16 ±32
+------------------------------------------------------------------
 Storing X1_cache/X2_cache as INT8 instead of FP32 shrinks each from 32 KB (one URAM) to
 8 KB of BRAM.
 
-Fixed scale: X12_SCALE_RANGE = 10.0, step 10/127 ≈ 0.079, so ±0.039 rounding error
-(0.4% relative at |X| = 10, 4% at |X| = 1). The ±10 range has never been measured on LFM2
-activations; values beyond it clip (docs/integer_transition.txt).
+INT8 fixed scale: X12_SCALE_RANGE = 10.0, step 10/127 ≈ 0.079, so ±0.039 rounding error
+(0.4% relative at |X| = 10, 4% at |X| = 1). The ±10 range was an unmeasured assumption.
+
+Lesson (2026-10-23, scripts/results/fixed_driver_20261023/): the range was not the problem,
+the step was. Real |gate·x| ≤ 4.24 and |up·x| ≤ 1.80, so most values used a few of the 255
+levels. 801–2,347 of 8,192 gate·x values per layer rounded to 0, and the per-layer cosine
+vs float was 0.9569–0.9944. Measure activation statistics before you pick a fixed
+quantization range, and check resolution as well as overflow.
+
+Current design: INT16 over ±32 (step ≈ 9.8e-4), still single-pass. Each cache is 16 KB of
+BRAM (docs/integer_transition.txt, "RESOLUTION"; hls_experiments/rebuild_x16/).
 
 The fixed scale avoids a dynamic two-pass scheme, which would need either 8192 floats of
 buffering per cache (cancelling the saving) or a second read of W and V (~2 × 10 MB more
@@ -383,11 +393,12 @@ Float that remains (docs/floats_explanation.txt):
   1. Per-block reduce in both MACs: d·Σw − dmin·Σm, then × x_scale or × gate_scale.
      d/dmin are fp16 of arbitrary magnitude; no fixed-point range covers them.
   2. compute_gate: dequantize, SiLU (nonlinear), dynamic gate scale.
-  3. mac_quant_wv: × 12.7, round, clamp to INT8.
+  3. mac_quant_wv: × 32767/32, round, clamp to INT16 (was × 12.7 to INT8).
 
-Accuracy checked so far: only the C-sim tolerance |got − expected| ≤ 1e-3·(|expected| + 1),
-on synthetic data (a mock-token test plus four Q4_K tests). No perplexity measurement and
-no on-board comparison with the CPU path exist (docs/quantization_info.txt, section 7).
+Accuracy checked: the C-sim tolerance |got − expected| ≤ 1e-3·(|expected| + 1) on synthetic
+data (a mock-token test plus four Q4_K tests). The INT8 ±10 IP and the INT16 ±32 IP were both
+checked on the board against the CPU path on 2026-10-23 (docs/quantization_info.txt,
+section 7): mean KLD 0.384800 → 0.030154.
 
 ================================================================================
 PHASE 3 — VIVADO INTEGRATION
@@ -459,7 +470,7 @@ The fused op is emitted for prefill (ne[1] > 1 tokens) as well as decode (ne[1] 
 The IP is synthesized for MAX_BATCH = 1. The first driver used a guard
 (if (src1->ne[1] != 1) goto cpu_compute_fallback;). The current driver instead loops over
 the tokens of the ubatch, one IP call each, and asserts if a ubatch has more than
-SWG_MAX_TOKENS = 64 tokens (ggml-cpu.c:2028). Either way, never hand a multi-token batch
+SWG_MAX_TOKENS = 64 tokens (ggml-cpu.c:2031). Either way, never hand a multi-token batch
 to a single-token IP.
 
 4.4 Fused GLU op: graph is shallower than you expect
@@ -486,7 +497,7 @@ drains on every call. A call therefore costs the latency of the whole chain
 
 q4k_final: csynth latency 3,175,430 cycles = 12.70 ms at 250 MHz; interval 1,622,603
 cycles = 6.49 ms. Board, measured with SWIGLU_DEBUG: 14.0 ms per call (224 ms per token at
-2 threads). Board/latency = 1.10; board/interval = 2.16 (thesis/latest_findings.md).
+2 threads). Board/latency = 1.10; board/interval = 2.16 (latest_findings.md).
 
 The earlier reading — a constant "1.5-2× gap" between HLS and board — compared the board
 with the interval. Acting on it, entry 67 replaced the interrupt wait with register
@@ -538,7 +549,7 @@ In the hybrid design (entries 38-39, 2.08 t/s) driver overhead was 33.1 ms/token
 then the weight base addresses are written only when the layer changes, the weight cache
 is synced once per layer, and each call syncs only the 2 KB x and 8 KB output regions.
 Measured on q4k_final at T2: ~1.3 ms per token for the whole host↔device handoff
-(quantize x, syncs, registers, copy-out), <0.3% of the token (thesis/latest_findings.md).
+(quantize x, syncs, registers, copy-out), <0.3% of the token (latest_findings.md).
 
 5.5 The Amdahl ceiling is real, and threads matter
 --------------------------------------------------
@@ -591,10 +602,10 @@ Step 4 (ggml.c:2925): implement builder — wires graph node, does NOT touch har
     result->src[2] = w_up; result->src[3] = w_down;
     ggml_set_op_params_i32(result, 0, layer_id);  // pass layer index
 
-Step 5 (ggml-cpu.c:2711, n_tasks switch):
+Step 5 (ggml-cpu.c:2715, n_tasks switch):
     case GGML_OP_YOUR_FUSED_HW: n_tasks = 1; break;
 
-Step 6 (ggml-cpu.c:2216, compute_forward switch):
+Step 6 (ggml-cpu.c:2220, compute_forward switch):
     case GGML_OP_YOUR_FUSED_HW:
         ggml_compute_forward_your_fused_hw(params, tensor); break;
 
@@ -625,7 +636,7 @@ module-level swiglu_call_count % 16 counter — it misaligns as soon as the numb
 per token changes (prefill, graph reordering, skipped layers). Store il (the layer loop
 variable) in op_params[0] at graph-build time:
     ggml_set_op_params_i32(result, 0, il);
-Read it in the driver (ggml-cpu.c:2042):
+Read it in the driver (ggml-cpu.c:2045):
     int layer = ggml_get_op_params_i32(dst, 0);
 
 ================================================================================
@@ -690,7 +701,9 @@ llama.cpp integration:
       driver (the current driver loops, up to 64 tokens per ubatch).
   23. layer_id from op_params: not from call count modulo num_layers.
   24. Interrupt re-arm: after the UIO read() returns, clear the IP's ISR and write 1 to the
-      UIO fd to re-arm it before the next IP invocation.
+      UIO fd to re-arm it before the next IP invocation. ISR is toggle-on-write: write back
+      only the bits read as set, because writing 1 to a clear bit raises a stale interrupt
+      (README.md, "Driver bugs", bug 3).
 
 ================================================================================
 ESTIMATING PERFORMANCE AT DESIGN TIME
@@ -707,8 +720,21 @@ Check against q4k_final at T2:
   predicted: 1 / (0.227 + 16 × 0.0127 + 0.0013) s = 1 / 0.4315 s ≈ 2.32 t/s
   measured:  2.21 t/s (the board call takes 14.0 ms, 10% above the csynth latency)
 
-The rebuild's csynth latency is 2,011,996 cycles (8.05 ms at 250 MHz); CLAUDE.md projects
-~2.6 t/s from it. No board number exists yet.
+The rebuild's csynth latency is 2,011,996 cycles (8.05 ms at 250 MHz); CLAUDE.md projected
+~2.6 t/s from it. Measured as rebuild_x16 on 2026-10-23
+(scripts/results/rebuild_x16_20261023/bench/): 2.53 t/s at T2. The board call takes
+11.34 ms, 41% above the csynth latency (derived), and the rest of the graph takes ~212 ms per
+token (derived), so the 10% factor did not carry over.
+
+The 41% was not DDR contention: HLS had serialized the loop-body DATAFLOW of compute_X1/X2
+while csynth still reported the overlapped interval (CLAUDE.md, HLS lesson 3). With the fix
+(rebuild_s2fix, csynth latency 2,020,192 cycles = 8.08 ms) the formula holds again at T2
+(scripts/results/rebuild_s2fix_final_20261024/):
+  T_cpu 211.3 ms; L_call 8.08 ms; T_handoff ~1.65 ms
+  predicted: 1 / (0.2113 + 16 × 0.00808 + 0.00165) s = 1 / 0.3423 s ≈ 2.92 t/s (derived)
+  measured:  2.92 t/s (the board call takes 8.09 ms, 1.00× the csynth latency)
+So L_call is the csynth latency only once a cosim dataflow profile has confirmed that each
+loop-body DATAFLOW really overlaps.
 
 ================================================================================
 DEVICE NOTES
@@ -737,12 +763,15 @@ W/V load                 one 320-word burst per 4 rows      4 per-row bursts (2.
 Header decode            CPU pre-decode                     On-FPGA get_byte() muxes
 Q6_K layers              Requantize to Q4_K                 Keep Q6_K (46% more bytes/block,
                                                             no clean tile layout)
-Intermediate caches      INT8                               FP32 (4× the memory)
+Intermediate caches      X1/X2 INT16 ±32 (was INT8 ±10),    FP32 (2× the INT16 memory);
+                         gate INT8 per-token scale          per-token X1/X2 scale (extra pass)
 AXI bus width            128-bit                            8-bit default (16× slower)
 DATAFLOW structure       5 processes, X1 ∥ X2               Sequential (no overlap)
 Clock                    250 MHz (HLS at 3.33 ns)           100 MHz
 Driver weight cache      Permanent per-layer slot           Per-call re-conversion
                                                             (~10 ms/layer, entry 47)
 
-Each row was either tried and measured (changelog.txt) or reasoned out. The accuracy
-side of these choices (INT8 caches, the ±10 range, Q4_K vs Q4_0) has not been measured.
+Each row was either tried and measured (changelog.txt) or reasoned out. On accuracy, the
+INT8 ±10 caches were measured on the board on 2026-10-23, which led to INT16; the INT16
+caches were measured the same day (scripts/results/rebuild_x16_20261023/). Q4_K vs Q4_0
+has not been measured.

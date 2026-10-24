@@ -16,7 +16,7 @@ why: docs/floats_explanation.txt.
 
 2. INT8 input x (host side)
 ---------------------------
-llama-mods/ggml-cpu.c:2082-2096, once per token (one IP call per token):
+llama-mods/ggml-cpu.c:2085-2099, once per token (one IP call per token):
 
     x_scale   = max|x[i]| / 127            (1.0 if x is all zero)
     x_int8[i] = clamp(round_half_away(x[i] / x_scale), -128, 127)
@@ -25,11 +25,16 @@ x_scale is written to the XSCALE register (0x54) and multiplies each per-block r
 IP's reduce step.
 
 
-3. INT8 X1 / X2 (on chip, fixed scale)
---------------------------------------
-X1 = W_gate·x and X2 = W_up·x are stored as INT8 with a fixed range of ±10
-(X12_INV_SCALE = 12.7). Values beyond ±10 clip. That bound has no measurement behind it:
-see docs/integer_transition.txt for the rationale and the open question.
+3. INT16 X1 / X2 (on chip, fixed scale)
+---------------------------------------
+X1 = W_gate·x and X2 = W_up·x are stored as INT16 with a fixed range of ±32
+(X12_QMAX = 32767, X12_INV_SCALE = 32767/32). Values beyond ±32 clip.
+
+Until 2026-10-23 they were INT8 over ±10 (X12_INV_SCALE = 12.7), as in q4k_final. On the
+board that step (≈0.079) rounded 801–2,347 of 8,192 gate·x values per layer to zero, even
+though the measured |gate·x| stays ≤ 4.24 and |up·x| ≤ 1.80. The full record, the
+measurements and the reason for INT16 over a per-token scale are in
+docs/integer_transition.txt.
 
 The gate SiLU(X1)·X2 is requantized per token with a dynamic scale (max|gate|/127),
 computed on chip in two passes.
@@ -50,7 +55,11 @@ The model used with the accelerator was requantized from Q8_0
 
 --pure stops llama-quantize from promoting tensors back to Q6_K. Requantizing from the
 Q4_K_M file failed with NaN in blk.4.ffn_gate.weight, and plain requantization from Q8_0 is
-refused without --allow-requantize. The result is dumped in
+refused without --allow-requantize. (2026-10-24: the Thinking Q4_K_M,
+LFM2.5-1.2B-Thinking-Q4_K_M.gguf, md5 d3cbb0bc..., turned out to be corrupt from blk.4 on,
+with NaN and ±3e38 norm weights and PPL 65536; see
+scripts/results/kld_ref_20261024/README.md. The non-Thinking Q4_K_M behind the failure
+above is no longer at hand, so whether it had the same fault is not verified.) The result is dumped in
 docs/gguf-dump_LFM25_Q4K_all.txt: 93 Q4_K + 55 F32 tensors, no Q6_K. Its general.file_type
 is still 15 (Q4_K_M), which is why llama-bench labels it "Q4_K - Medium" (628.25 MiB).
 
@@ -88,13 +97,40 @@ header layout until 2026-10-04 (README.md, "Driver bugs").
 
 7. Accuracy: what has and has not been measured
 -----------------------------------------------
-Measured: only the C-sim tolerance above, on synthetic weights and activations.
-Not measured anywhere in the repository:
-  - perplexity of the all-Q4_K model vs the stock Q4_K_M
-  - accelerator output vs the CPU path on real activations
-  - the range of X1/X2 (the ±10 assumption)
-Before citing an accuracy figure, run llama-perplexity on both GGUFs (CPU only) and compare
-the fused op's output against build_ffn() on the same tokens.
+Measured:
+  - The C-sim tolerance above, on synthetic weights and activations.
+  - 2026-10-23, q4k_final bitstream (INT8 ±10 X1/X2) with the fixed driver
+    (scripts/results/fixed_driver_20261023/, README.md "Accuracy"):
+      - accelerator output vs build_ffn() per layer, cosine 0.9569–0.9944;
+      - the X1/X2 range: |gate·x| ≤ 4.24, |up·x| ≤ 1.80;
+      - wikitext-2 PPL HW/CPU 1.081368 ± 0.041650, mean KLD 0.384800, on the same
+        all-Q4_K GGUF.
+  - 2026-10-23, rebuild_x16 bitstream (INT16 ±32 X1/X2), same GGUF, driver and commands
+    (scripts/results/rebuild_x16_20261023/):
+      - accelerator output vs build_ffn() per layer (token 2), cosine 0.9930 min / 0.9984
+        mean; the IP matches its INT16 emulation at ≥ 0.99980;
+      - max |gate·x| 4.27, max |up·x| 2.17 over all logged calls, inside ±32;
+      - wikitext-2 PPL HW/CPU 1.034376 ± 0.011605, mean KLD 0.030154.
+  - 2026-10-24, rebuild_s2fix bitstream (rebuild_x16 + Stage 2 STABLE fix), same GGUF,
+    driver and commands (scripts/results/rebuild_s2fix_final_20261024/): every per-chunk and
+    summary value of the KLD run is identical to rebuild_x16's.
+  - 2026-10-24, on the PC (scripts/results/kld_ref_20261024/): Q4_K_M (default recipe,
+    quantized from the f16/q8_0 GGUF) vs the f16/q8_0 reference, wikitext-2, 24 × 256:
+    PPL ratio 1.184104 ± 0.015283, mean KLD 0.153433 ± 0.003147, same top token
+    77.264 %.
+  - 2026-10-24, on the board (same reference logits, 24 × 256, -t 4, rebuild_s2fix
+    bitstream; runs 2-5 of scripts/analysis/kld_ref.sh):
+      - allQ4Kffn on the CPU vs f16/q8_0: PPL ratio 1.173772 ± 0.015587, mean KLD
+        0.166073 ± 0.003399, same top token 75.951 %;
+      - allQ4Kffn through the IP vs f16/q8_0: PPL ratio 1.222886 ± 0.018259, mean KLD
+        0.210197 ± 0.004346, same top token 73.852 %;
+      - IP vs CPU on allQ4Kffn, 24 chunks: PPL ratio 1.045784 ± 0.006337, mean KLD
+        0.034755 ± 0.000749, same top token 88.091 %. At chunk 6 it equals the 6-chunk
+        run above (KLD 0.03015).
+    So Q4_K on every ffn_down costs KLD +0.013 over the default Q4_K_M mix, and the IP's
+    INT8 x/h stages add +0.044 on top of the CPU path (derived).
+Not measured:
+  - The stock Thinking Q4_K_M GGUF cannot be measured: it is corrupt (above).
 
 
 8. Q4_0 as an alternative (not evaluated in hardware)
@@ -109,4 +145,5 @@ blocks per row (64 per WV row, 256 per down row), each with its own fp16 scale, 
 per-block float reduce runs 8× as often; the tile layout would also change.
 
 The only Q4_0 data is CPU-only: scripts/results/latest_benchmarks/cpu_t<N>_q0.log (661.25
-MiB model; T2 decode 1.62 t/s vs 1.66 t/s for the stock Q4_K_M).
+MiB model; T2 decode 1.62 t/s vs 1.66 t/s for the stock Q4_K_M, very likely the corrupt
+copy of section 4; its timing stands, its output was never checked).

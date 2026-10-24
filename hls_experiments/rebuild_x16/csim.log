@@ -1,0 +1,21 @@
+INFO: [SIM 2] *************** CSIM start ***************
+   Compiling ../../../../swiglu_tb.cpp in debug mode
+   Compiling ../../../../swiglu.cpp in debug mode
+   Generating csim.exe
+=== Mock token sanity ===
+[DEBUG] Header bytes 0-23: 0 8 0 0 5 8 b e 1 3 5 7 0 0 0 0 11 14 17 1a 9 b d f 
+[DEBUG] sc6[0..3]=5,8,11,14  mn6[0..3]=1,3,5,7
+[DEBUG] sc6[4..7]=17,20,23,26  mn6[4..7]=9,11,13,15
+Mock token max abs err: 0
+=== T1: Q4_K, normal fp16, dmin=0 ===
+T1: PASSED
+=== T2: Q4_K, subnormal d in W (0x00A4 ~9.8e-6) ===
+T2: PASSED
+=== T3: Q4_K, subnormal dmin in V (0x817E) ===
+T3: PASSED
+=== T4: Q4_K, non-zero dmin in W and V ===
+T4: PASSED
+
+All tests PASSED.
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

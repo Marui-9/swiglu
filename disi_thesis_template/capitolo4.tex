@@ -8,59 +8,79 @@ This work presented a selective FPGA offload strategy for LFM2.5-1.2B, a model
 co-designed for CPU inference~\cite{amini2025lfm2technicalreport}, targeting the MatMul +
 SwiGLU feed-forward block to enable conversational audio inference pipelines on
 resource-constrained edge platforms. The implementation integrates with the existing
-llama.cpp/ggml flow and demonstrates measurable energy-efficiency gains, especially at low
-and moderate thread counts, while preserving framework compatibility. Although the FPGA
-path does not consistently exceed CPU Only throughput at higher thread counts, the results
-clarify the limiting factors: practical on-device performance is jointly determined by
-compute parallelism, weight/data movement, and host-device orchestration. Importantly, the
-design already operates near the usable logic and routing budget of the target FPGA, so
-further gains are less likely to come from naive parallel replication and more likely from
-memory-path restructuring, overlap of transfers with compute, and tighter stage-level
-balancing (notably in Stages~2a/2b and~5). Overall, the study confirms that selective
-feed-forward acceleration is a viable and energy-effective step toward conversational-level
-edge inference, and provides a concrete roadmap for the next optimizations in
-LFM2.5-Audio-1.5B deployment.
+llama.cpp/ggml flow through a fused operator, and is faster than CPU Only execution of
+the same model at every thread count: 2.09$\times$ in decode at one thread, and 3.53
+against 2.69\,t/s when the best configuration of each path is compared. It also uses less
+energy per decoded token at every thread count, and reaches sub-500\,ms decode latency
+with two CPU threads instead of three.
+
+These speeds are reported together with their accuracy. Validating the output against
+the CPU path exposed three driver bugs that throughput measurements alone had not
+revealed, and a fixed INT8 range for the intermediate products that cost a mean KL
+divergence of 0.385. With the bugs fixed and the intermediate products widened to INT16,
+the accelerated model scores a mean KL divergence of 0.030 and a perplexity ratio of
+1.034 against CPU Only.
+
+At the architectural level, overlapping the weight loads with the MAC arrays turned both
+projection stages from load-bound into MAC-bound, and cut the csynth call latency from
+3.18M to 2.02M cycles. On the board the overlap of Stages~2a/2b took effect only after
+the loop-body synchronization that HLS had inserted was removed; a call now takes
+8.09\,ms, within 1\% of its csynth latency, against 11.34\,ms before. The design
+operates near the usable logic and routing budget of the ZU5EV (86.7\% LUT) and near the
+bandwidth of its HP ports in Stages~2a/2b, so further gains are less likely to come
+from parallel replication than from reducing the CPU work outside the offloaded
+block. Overall, the study confirms that selective feed-forward acceleration is
+a viable step toward conversational-level edge inference, and provides a concrete
+roadmap for the next optimizations in LFM2.5-Audio-1.5B deployment.
 
 \section{Future Work}
 \label{sec:future}
 
-The deployed design attains 61\% of the 3.6\,t/s design ceiling, with the gap attributed to
-three quantified system-level constraints. Addressing these constraints defines the roadmap
-for future work.
+\textbf{Memory bandwidth.} On the board, the gate-weight port of Stages~2a/2b reads at
+3.68\,GB/s, 92\% of the 4.0\,GB/s peak of a 128-bit port at 250\,MHz, and Stage~5 is
+bound by its 16-lane MAC array. Memory-bound behaviour is typical of autoregressive
+decoding~\cite{FlightLLM}, and the IP has reached that regime: a faster Stage~2 needs
+more or wider ports into the DDR, and a faster Stage~5 needs the wider output array that
+does not route on the ZU5EV. The DDR controller's performance monitor, which located the
+board/csynth gap of the first overlapped build, is the tool to check any such change.
 
-The design exhibits memory-bound behavior, achieving 38--41\% of peak DDR bandwidth at
-34--35\% sustained compute utilization across the projection stages. This is consistent with
-known bottlenecks in autoregressive decoding, where bandwidth utilization typically reaches
-only 29--43\% even on higher-end platforms~\cite{FlightLLM}. Closing this performance gap
-requires improved data movement strategies. Future work will therefore focus on
-memory-centric optimizations, including tiling, double-buffering, and layout restructuring,
-targeting higher sustained bandwidth utilization.
+\textbf{Numerical representation.} With INT16 $X_1$/$X_2$, the remaining difference from
+the CPU output comes from the INT8 quantization of the input $x$ and of the gated
+activation $h$ (per-layer cosine 0.9930 at worst). Wider $x$ and $h$, or a per-token
+scale for $X_1$/$X_2$ instead of the fixed $\pm 32$ range, are the next steps; the
+latter needs a second pass over $X_1$/$X_2$ and was therefore not taken. Against an
+f16/Q8\_0 version of the same model (24 chunks of wikitext-2), the uniform Q4\_K format
+scores a mean KL divergence of 0.166 on the CPU, against 0.153 for the default Q4\_K\_M
+recipe that keeps eight down projections in Q6\_K, and the accelerator raises it to 0.210
+(Table~\ref{tab:accuracy_ref}). The INT8 $x$ and $h$ thus add 0.044 to what the 4-bit
+weights already cost (derived).
 
-At the system level, host--accelerator overhead limits scalability. In the current design,
-each generated token incurs a fixed synchronous handoff: the CPU programs the accelerator's
-AXI-Lite control registers, issues a start signal, and blocks until a UIO interrupt is
-delivered, a per-token overhead that does not amortize with sequence length and grows under
-host-side scheduler pressure at higher thread counts. In contrast, other co-designed
-frameworks achieve more stable scaling through tighter compiler--runtime
-integration~\cite{cano}. Future work will investigate asynchronous execution and pipelined
-scheduling to reduce synchronization overhead and improve utilization.
+\textbf{CPU work outside the offloaded block.} At two threads, the non-offloaded part of
+the graph takes about 211\,ms per token, more than the 131\,ms of the offloaded
+feed-forward path, and it caps decode at about 4.7\,t/s even with an instantaneous
+accelerator. Each feed-forward call blocks the graph until the UIO interrupt arrives.
+Within one token this cannot be hidden, because each layer's output feeds the next, but
+it could be with independent work, such as several concurrent sequences. Other
+co-designed frameworks achieve more stable scaling through tighter compiler--runtime
+integration~\cite{cano}. Future work will investigate asynchronous execution and
+pipelined scheduling along these lines.
 
-Extending hardware coverage beyond the MatMul + SwiGLU block to additional kernels is also a
-key direction for improving end-to-end performance. This will require additional compute
-fabric on the FPGA. Importantly, the design already effectively utilizes the available
-resources on the KV260, and remaining inefficiencies stem primarily from memory and
-system-level constraints, rather than insufficient optimization effort. Similar work pushing
-the same platform to its limit required complex operator fusion and custom data arrangements
-to maximize memory bandwidth~\cite{Li2025Pushing}.
+\textbf{Hardware coverage and platform.} Extending the offload to the final linear
+projection and the gated short convolution would attack the CPU share directly, but the
+feed-forward block alone already uses 86.7\% of the LUTs, and timing closes with only
+$+0.145$\,ns of slack. Similar work pushing the same platform to its limit required
+complex operator fusion and custom data arrangements to maximize memory
+bandwidth~\cite{Li2025Pushing}. A larger device of the same family, such as the ZU7EV,
+would provide room for a wider output MAC array, which does not route on the ZU5EV, and
+for further kernels.
 
-Although the low DSP utilization (20\%) might suggest that mapping the 4-bit $\times$ INT8
-inner product to DSP48E2 slices could free LUT fabric, this substitution was evaluated during
-development and found to increase routing pressure: wider DSP fanout paths introduced
-additional timing-critical nets that impeded timing closure at 250\,MHz. The DSP slice savings
-were therefore insufficient to offset the routing overhead at the current operating point, and
-the LUT-based multiply-accumulate path was retained.
+\textbf{DSP usage.} The design uses 19\% of the DSP slices. One multiply per MAC lane
+already maps to a DSP48E2, so the low figure reflects the small number of lanes rather
+than a missed mapping. More lanes in Stages~2a/2b would wait on the same port bandwidth.
+In Stage~5, the lane count was halved to fund the overlap buffers, so restoring it
+depends on making the four-row load shorter than the MAC, not on DSP availability.
 
-Overall, future improvements will require co-optimization of data movement, scheduling, and
-numerical representation, as well as evaluation on platforms with higher bandwidth and
-resources, bridging the gap between lightweight selective acceleration and more general
-co-design frameworks.
+Overall, future improvements will require co-optimization of data movement, scheduling,
+and numerical representation, as well as evaluation on platforms with higher bandwidth
+and resources, bridging the gap between lightweight selective acceleration and more
+general co-design frameworks.

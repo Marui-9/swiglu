@@ -139,7 +139,7 @@ E. Amdahl's Law: FPGA accelerates FFN (~68% of total).  Non-SwiGLU CPU overhead
    (~125 ms/token) is fixed.  Absolute ceiling at 250 MHz: ~3.6 t/s.
    CORRECTION: 125 ms is the testblock floor (changelog entry 11, an older build) and
    does not combine with later measurements. Measured non-FFN CPU time at T2 is ~227
-   ms/token (thesis/latest_findings.md), so the zero-FFN ceiling is ≈ 4.4 t/s
+   ms/token (latest_findings.md), so the zero-FFN ceiling is ≈ 4.4 t/s
    (derived). See q4k_final/bottlenecks.txt §6.
 
 

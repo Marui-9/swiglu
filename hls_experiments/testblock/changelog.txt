@@ -8,7 +8,7 @@ This is a raw working log, kept as written. Known problems with it:
   - Projections in entries 51, 60, the first 62, the second 62 and 67 use the DATAFLOW
     interval and/or the testblock's ~125 ms CPU floor (entries 3 and 11, an older build).
     Decode makes one call per layer per token, so it pays the full per-call latency.
-    Non-FFN CPU time measured at T2 is ~227 ms/token (thesis/latest_findings.md). Treat
+    Non-FFN CPU time measured at T2 is ~227 ms/token (latest_findings.md). Treat
     those t/s projections as wrong, not just optimistic.
   - Entry 67's premise (~7.5 ms of interrupt latency per call) was wrong. Entry 68 and
     scripts/results/latest_benchmarks/*_pollfix.log show polling at 2.22 t/s (T2),
@@ -835,3 +835,28 @@ This is a raw working log, kept as written. Known problems with it:
 
 68. Did not work: the tight polling fix gives marginal gains and deteriorates
 efficiency. Worse than interrupt. 
+69. Load/compute overlap on branch rebuild (2026-07-16/17; csynth only).
+    6c27523 outstanding 4 on the weight ports; d4942c8 Stage 5 K=2 + loop-body DATAFLOW;
+    4493272 Stages 2a/2b loop-body DATAFLOW (K=4); c35a36d removes the Q6_K path.
+    csynth latency 3,175,430 → 2,011,996 cy (12.70 → 8.05 ms at 250 MHz), DSP 286 → 238
+    (swiglu/reports/hls_compile.rpt).
+
+70. Driver bugs fixed (2026-10-04, 17105b4; ggml-cpu.c only): host Q4_K header layout,
+    x/out buffers inside layer 3's W slot; on the board 2026-10-23 also the ISR
+    toggle-on-write at init. Earlier board results had valid timing, wrong values
+    (README.md, "Driver bugs"). With the fixed driver q4k_final scores mean KLD 0.384800
+    vs CPU (scripts/results/fixed_driver_20261023/); the cause is the INT8 ±10 X1/X2.
+
+71. rebuild_x16 (2026-10-23): rebuild + X1/X2 INT16 over ±32. Routed (Vitis/Vivado
+    2025.2) at 250 MHz, WNS +0.248 ns. Board: mean KLD 0.030154, 2.98 t/s at T3, but
+    11.34 ms per call against 8.05 ms csynth (1.41×).
+    (hls_experiments/rebuild_x16/, scripts/results/rebuild_x16_20261023/.)
+
+72. rebuild_s2fix (2026-10-24): the 1.41× was compute_X1/X2 running load and MAC back to
+    back (745 cy/iter on the board, 746 in cosim, 348 in csynth). HLS synchronized each
+    body instance on the caller variables it touched. Fix: #pragma HLS STABLE on
+    W/V, x_local, x_scale and a local X1_loc/X2_loc copied out after the loop.
+    csynth 2,020,192 cy (8.08 ms); routed LUT 101,522 (86.68 %), WNS +0.145 ns at 4.000 ns.
+    Board: 8.09 ms per call (1.00× csynth), same KLD as rebuild_x16, decode
+    1.94 / 2.92 / 3.53 / 3.24 t/s at T1-T4 vs CPU-only 0.93 / 1.76 / 2.54 / 2.69.
+    (hls_experiments/rebuild_s2fix/, scripts/results/rebuild_s2fix_final_20261024/.)

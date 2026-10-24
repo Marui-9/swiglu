@@ -1,13 +1,16 @@
 # swiglu.cpp — stage-by-stage description
 
-Revised 2026-10-03 against `swiglu.cpp` on branch `rebuild` (load/compute overlap design,
-commits 6c27523 → c35a36d). Cycle counts come from `swiglu/reports/hls_compile.rpt`
-(Vitis HLS 2025.1, xck26, 3.33 ns target, 0.90 ns uncertainty). That report was generated on
-2026-07-16 15:09, *before* c35a36d removed the dead Q6_K helpers. Those functions had no
-callers, so the numbers should be unchanged, but csynth has not been re-run since.
+Revised 2026-10-24 against `swiglu.cpp` on branch `rebuild`: the load/compute overlap
+design (commits 6c27523 → c35a36d), plus two uncommitted changes:
+- INT16 ±32 X1/X2 (2026-10-23);
+- the Stage 2 STABLE fix (2026-10-24).
 
-This design has **not been through Vivado or measured on the board**. The board-measured
-design is `hls_experiments/q4k_final/` (see README.md).
+Cycle counts come from `hls_experiments/rebuild_s2fix/csynth.rpt` (Vitis HLS 2025.2,
+xck26, 3.33 ns target, 0.90 ns uncertainty). Only compute_X1/X2 differ from the 2025.1
+report `swiglu/reports/hls_compile.rpt`.
+
+The current source is routed and measured on the board as `hls_experiments/rebuild_s2fix/`
+(see README.md).
 
 ## What the IP computes
 
@@ -20,7 +23,7 @@ using a W4A8 integer datapath (Q4_K weights × INT8 activations, INT32 accumulat
 | Data | Format | Where the scale comes from |
 |---|---|---|
 | x (input) | INT8 | `x_scale` register; host computes max\|x\|/127 |
-| X1 = W_gate·x, X2 = W_up·x | INT8 | fixed: ±10.0 → ±127 (`X12_SCALE_RANGE`). Values outside ±10 clip |
+| X1 = W_gate·x, X2 = W_up·x | INT16 | fixed: ±32.0 → ±32767 (`X12_SCALE_RANGE`, `X12_QMAX`). Values outside ±32 clip. INT8 ±10 until 2026-10-23 (see `integer_transition.txt`) |
 | gate = SiLU(X1)·X2 | INT8 | per token: max\|gate\|/127, computed on chip in two passes |
 | out | FP32 | written straight to `out_batch` |
 
@@ -79,7 +82,7 @@ packed form.
 | Buffer | Shape | Storage |
 |---|---|---|
 | `x_local_1`, `x_local_2` | [1][8][256] INT8, dim 2 complete | LUTRAM |
-| `X1_cache`, `X2_cache` | [1][8192] INT8 | BRAM ram_2p |
+| `X1_cache`, `X2_cache` | [1][8192] INT16 | BRAM ram_2p |
 | `gate_cache` | [1][32][256] INT8, dim 2 cyclic 8 | URAM (the design's 8 URAM) |
 | `sigmoid_lut` | 4096 floats | BRAM ROM |
 
@@ -87,10 +90,16 @@ packed form.
 
 Reads 128 × 128-bit words (2048 INT8) and writes every byte into both `x_local` copies.
 
-## Stages 2a/2b — `compute_X1` / `compute_X2` (713,107 cycles each, run in parallel)
+## Stages 2a/2b — `compute_X1` / `compute_X2` (721,303 cycles each, run in parallel)
 
 `COMPUTE_X1: for row += 4` with **loop-body `#pragma HLS DATAFLOW`**. The tile and header
-arrays declared inside the loop body become ping-pong (PIPO) buffers between two processes:
+arrays declared inside the loop body become ping-pong (PIPO) buffers between two processes.
+For the two to overlap, the loop body also needs two things (added 2026-10-24; details
+below):
+- `#pragma HLS STABLE` on W (V), x_local_1 (x_local_2) and x_scale;
+- a local result array `X1_loc` (`X2_loc`).
+
+The two processes are:
 
 - **Producer `load_4rows_wv_urm`** (latency 400, interval 320 cycles): one linear 320-word
   burst for 4 rows. The
@@ -108,10 +117,28 @@ arrays declared inside the loop body become ping-pong (PIPO) buffers between two
     clock-enabled write, because that cut the fan-out of the iteration counter.
   - **Reduce:** for each block, `d·Σw − dmin·Σm` in float, accumulated in
     `ap_fixed<48,38>`, then multiplied by `x_scale`.
-  - Finally, `mac_quant_wv` quantizes the 4 results to INT8 with the fixed ±10 scale.
+  - Finally, `mac_quant_wv` quantizes the 4 results to INT16 with the fixed ±32 scale
+    (round-half-away, clamp ±32767).
+  - The results go to the local `X1_loc[8192]` (`ram_1p` BRAM). After the loop, `COPY_X1`
+    (II=1, 8,193 cycles) copies it to `X1_cache`.
 - Per iteration: the larger of the two process intervals, max(320, 347) → 348 cycles
-  (MAC-bound), instead of the sum. Over 2048 iterations this gives 713,107 cycles
-  (2.85 ms @ 250 MHz).
+  (MAC-bound), instead of the sum. Over 2048 iterations the loop takes 713,107 cycles;
+  with the copy, compute_X1 takes 721,303 (2.89 ms @ 250 MHz;
+  `hls_experiments/rebuild_s2fix/csynth.rpt`).
+- **Without STABLE and the local array, the iterations serialize, though csynth does not
+  show it.**
+  - HLS synchronizes each loop-body instance on the caller variables it touches (W,
+    x_local_1, x_scale, X1_cache). The next load then waits for the previous MAC to
+    finish.
+  - Cosim of a cut-down harness gives 746 cycles per iteration: load 401 plus MAC 343.
+    The board's APM trace gives 745 for the same source (rebuild_x16). csynth reports an
+    interval of 348 in both versions.
+  - With the fix, cosim gives 344 cycles per iteration and the board trace 348
+    (`hls_experiments/rebuild_s2fix/README.md`).
+  - Stage 4's `DOWN_Q4K` has the same structure. There HLS infers `stable` for its inputs,
+    and the results already go to the local `out_local`, so it was never affected.
+  - STABLE on `X1_cache` itself also overlaps, but in cosim it reads stale values (16 of
+    256 outputs mismatch).
 
 ## Stage 3 — `compute_gate` (16,622 cycles)
 
@@ -147,13 +174,16 @@ Two pipelined passes over 8192 elements:
 
 | | Cycles | @ 250 MHz |
 |---|---|---|
-| Full call | 2,011,996 | 8.05 ms |
-| Resources | LUT 145,719 (124%), FF 143,249, DSP 238, BRAM 150, URAM 8 | |
+| Full call | 2,020,192 | 8.08 ms |
+| Resources | LUT 146,123 (124%), FF 144,043, DSP 238, BRAM 182, URAM 8 | |
 
-The LUT estimate is over 100% of the device. The shipped q4k_final design was estimated at
-about 148K by csynth and routed at 101,639 (86.8%), so this level of csynth overestimate
-has been seen before. Whether this design fits is still an open question until Vivado
-runs.
+These are Vitis HLS 2025.2 figures for the current source
+(`hls_experiments/rebuild_s2fix/csynth.rpt`). Before the Stage 2 fix the full call was
+2,011,996 cycles with BRAM 150 (INT8 X1/X2) or 166 (INT16).
+
+The LUT estimate is over 100% of the device. The design routed at 101,522 LUT (86.68%)
+and meets 250 MHz with +0.145 ns of setup slack (`hls_experiments/rebuild_s2fix/`).
+On the board a call takes 8.017 ms (APM, standalone), within 1% of the csynth latency.
 
 ## Why the code looks the way it does
 

@@ -79,11 +79,11 @@ The interrupt wire goes:
   (DT offset 89: `interrupts = <0 89 4>` in pl.dtsi)
 The UIO driver increments its event counter and wakes the reader blocked on /dev/uioN.
 
-6. Driver receive path (lines 2136-2154)
+6. Driver receive path (lines 2139-2158)
 
   swg_ip_regs[AP_CTRL/4] = 0x1            // ap_start
   read(swiglu_uio_fd, &irq_count, 4)      // blocks until the IRQ; no timeout
-  swg_ip_regs[ISR/4] = 0x1                // clear ap_done (TOW), deassert IRQ line
+  isr = swg_ip_regs[ISR/4]; if (isr) swg_ip_regs[ISR/4] = isr   // clear (TOW), deassert IRQ
   write(swiglu_uio_fd, 1)                 // re-arm UIO for the next call
   check: read() returned 4 bytes AND AP_CTRL bit 1 (ap_done) is set, else GGML_ASSERT
 
@@ -116,15 +116,18 @@ Stage 2 — Init: IP registers (init_swiglu_offload, line 313)
 UIO found via open_uio_by_addr(SWIGLU_IP_BASE). Order: drain the old UIO count →
 arm GIE/IER → clear ISR → drain again → re-arm UIO. Arming with ISR still set would fire
 an immediate stale interrupt and make call #0 return before the IP finished.
+ISR is toggle-on-write, so "clear" means writing back the bits read as set. An
+unconditional write of 1 to a clear ISR sets it and causes exactly that stale interrupt
+(README.md, "Driver bugs", bug 3).
 
-Stage 3 — Layer id and shape guard (line 2001)
+Stage 3 — Layer id and shape guard (line 2004)
 The layer index comes from op_params[0], written at graph-build time by
 ggml_swiglu_fused_hw(), which receives il from lfm2.cpp.
 Any type other than Q4_K for W_gate/W_up/W_down, any shape mismatch, or more than
 SWG_MAX_TOKENS = 64 tokens in the ubatch → GGML_ASSERT (no CPU fallback inside the op;
 lfm2.cpp only emits the op for all-Q4_K layers).
 
-Stage 4 — Weight pre-decode, once per layer (line 2053)
+Stage 4 — Weight pre-decode, once per layer (line 2056)
 On the first call for a layer, transpose_q4k_to_urm() (line 182) converts W_gate, W_up
 and W_down from GGML Q4_K blocks into the URM layout the IP expects. It writes them to the
 layer's permanent slot:
@@ -138,21 +141,21 @@ bytes 0-1 d, 2-3 dmin, 4-7 sc6[0..3], 8-11 mn6[0..3], 16-19 sc6[4..7], 20-23 mn6
 the rest zero. Fixed 2026-10-04; until then the host wrote a different layout (see
 README.md, "Driver bugs").
 
-Stage 5 — x quantization (line 2082)
+Stage 5 — x quantization (line 2085)
 Two passes over the 2048 floats: max_abs scan, then round-half-away and clamp to
 [-128, 127] into udmabuf_vptr + SWG_VEC_OFF.
 x_scale = max_abs / 127.0f; 1.0f when max_abs == 0.
 
-Stage 6 — Register programming (line 2099)
+Stage 6 — Register programming (line 2102)
 W/V/W_down addresses are rewritten only when the layer changes.
 x and out addresses, MODE (= 0) and x_scale (raw float bits via memcpy) are written every
 call. A compiler barrier precedes ap_start.
 
-Stage 7 — Flush x, start, wait (lines 2128-2154)
+Stage 7 — Flush x, start, wait (lines 2131-2158)
 udmabuf_sync_to_device(SWG_VEC_OFF, bsz × 2048) flushes the INT8 x vector, then ap_start,
 then the blocking UIO read described in section 6.
 
-Stage 8 — Output copy (lines 2157-2164)
+Stage 8 — Output copy (lines 2161-2168)
 udmabuf_sync_to_cpu(SWG_OUT_OFF, 8192) invalidates the output region, then memcpy into
 dst->data at token offset c.
 

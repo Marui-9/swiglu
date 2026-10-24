@@ -8,8 +8,9 @@ run the per-element hot loop in pure integer arithmetic:
    acc_w += act_int8 × nibble(uint4) × sc6(6-bit)     → INT32
    acc_m += act_int8 × mn6(6-bit)                     → INT32
 with 4 accumulator slots per block (selected by n & 3). The activations entering the IP and
-crossing between stages are INT8: x (host-quantized), X1/X2 (fixed ±10 scale), gate
-(per-token max-abs scale).
+crossing between stages are integer: x INT8 (host-quantized), X1/X2 INT16 (fixed ±32 scale;
+INT8 ±10 until 2026-10-23, see docs/integer_transition.txt), gate INT8 (per-token max-abs
+scale).
 
 WHERE FLOAT IS USED (three places)
 1. Per-block reduce in both MACs (REDUCE / REDUCE_GRP):
@@ -18,11 +19,11 @@ WHERE FLOAT IS USED (three places)
    This happens once per 256-element block, not per element. d and dmin are fp16 in the
    Q4_K format with arbitrary magnitude (often subnormal), so they cannot be folded into a
    fixed integer range without changing the quantization scheme.
-2. compute_gate: dequantize X1/X2 (× 10/127), SiLU via z·sigmoid_lut[idx]·x2, then the
+2. compute_gate: dequantize X1/X2 (× 32/32767), SiLU via z·sigmoid_lut[idx]·x2, then the
    max-abs scan and requantization of the gate to INT8. SiLU is nonlinear and the gate
    scale is data-dependent. This is the smallest float user (compute_gate: 6,557 LUT in
    swiglu/reports/hls_compile.rpt).
-3. mac_quant_wv: X1/X2 result × 12.7, round and clamp to INT8.
+3. mac_quant_wv: X1/X2 result × 32767/32, round and clamp to INT16 (±32767).
 
 THE BOUNDARY WITH llama.cpp IS FP32
 Activation tensors in llama.cpp are FP32. The fused op's input x and its output are FP32

@@ -8,7 +8,7 @@ ZU5EV, was overturned. q4k_final shipped exactly that load (load_4rows_wv_urm):
 Its board decode was 2.21 t/s at T2, not the 3.5-4.4 t/s projected below. The projection
 used the 6.5 ms DATAFLOW interval and a 125 ms CPU floor. In fact decode pays the full
 per-call latency (12.70 ms in q4k_final), and non-FFN CPU time at T2 is ~227 ms/token
-(thesis/latest_findings.md). See q4k_final/bottlenecks.txt.
+(latest_findings.md). See q4k_final/bottlenecks.txt.
 
 The AXI bottleneck is the single largest obstacle preventing 2.20 t/s from
 reaching the projected 3.5–5.0 t/s at 250 MHz. All wide-BRAM, II=1, and

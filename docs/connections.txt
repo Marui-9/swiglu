@@ -1,4 +1,6 @@
-Vivado block design connections — swiglu_0 (current q4k_final bitstream)
+Vivado block design connections — swiglu_0 (q4k_final, rebuild_x16 and rebuild_s2fix)
+rebuild_x16 and rebuild_s2fix were built from a script with exactly these connections
+(hls_experiments/rebuild_s2fix/build_bd.tcl).
 Addresses: docs/vivado_addresses.txt (swiglu) and hls_experiments/testblock/addresses.txt
 (testblock).
 
@@ -12,8 +14,7 @@ zynq_ultra_ps_e_0
 axi_smc (AXI-Lite control)
 - M00_AXI → swiglu_0 s_axi_CTRL
   (an earlier revision of this file also listed M02_AXI, left over from the 4-peripheral
-  DMA design; the M00 entry is the one updated with the testblock. The port index does
-  not affect the address map — confirm in the .bd if it matters.)
+  DMA design. build_bd.tcl uses M00_AXI; the port index does not affect the address map.)
 
 swiglu_0 / testblock
 - s_axi_CTRL     ← axi_smc M00_AXI

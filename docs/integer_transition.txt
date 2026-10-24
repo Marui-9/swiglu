@@ -1,7 +1,20 @@
-INT8 X1/X2 intermediate caches — design record
-(written 2026-04-02 as a step-by-step patch plan. That plan is implemented in swiglu.cpp,
-and its line-number instructions no longer apply; condensed 2026-10-03 to the rationale
-and the open question.)
+X1/X2 intermediate caches — design record
+(written 2026-04-02 as a step-by-step patch plan for INT8 caches. That plan was implemented
+in swiglu.cpp, and its line-number instructions no longer apply; condensed 2026-10-03 to the
+rationale and the open question. The open question was answered on the board on 2026-10-23
+and the caches were widened to INT16: see "RESOLUTION" at the end.)
+
+CURRENT STATE (2026-10-24, swiglu.cpp on branch rebuild, uncommitted; same in rebuild_s2fix)
+  X1_cache, X2_cache: int16_t[1][8192], BRAM ram_2p
+  X12_SCALE_RANGE = 32.0f
+  X12_QMAX        = 32767
+  X12_INV_SCALE   = 32767/32 ≈ 1023.97   mac_quant_wv: round-half-away, clamp to ±32767
+  X12_QUANT_SCALE = 32/32767 ≈ 9.77e-4   compute_gate: dequantize before SiLU
+Routed and timed as hls_experiments/rebuild_x16/. Board accuracy (2026-10-23):
+scripts/results/rebuild_x16_20261023/, summarized under RESOLUTION below.
+
+------------------------------------------------------------------------------------------
+HISTORY: THE INT8 ±10 DESIGN (q4k_final and the INT8 rebuild)
 
 WHAT CHANGED
 X1_cache and X2_cache went from float[1][8192] (32 KB each, one URAM each) to
@@ -9,7 +22,7 @@ int8_t[1][8192] (8 KB each, BRAM ram_2p). gate_cache was already INT8 in URAM. T
 2 URAM blocks and removed the wide URAM read ports that fed compute_gate. The IP's
 external interface did not change (INT8 x in, FP32 out, same registers).
 
-In the current code:
+In that code:
   X12_SCALE_RANGE = 10.0f
   X12_INV_SCALE   = 127/10 = 12.7     mac_quant_wv: round-half-away, clamp to [-128, 127]
   X12_QUANT_SCALE = 10/127 ≈ 0.0787   compute_gate: dequantize before SiLU
@@ -22,10 +35,47 @@ traffic per call). A fixed scale is single-pass with no extra traffic.
 Quantization step: 10/127 ≈ 0.079, so ±0.039 rounding error — 0.4% relative at |X1| = 10,
 4% at |X1| = 1.
 
-OPEN QUESTION — THE ±10 BOUND IS UNVERIFIED
+OPEN QUESTION (as of 2026-10-03) — THE ±10 BOUND IS UNVERIFIED
 The original plan stated that LFM2 X1/X2 activations satisfy |X1|, |X2| ≤ 10 "from the
 model's activation statistics", but no statistics, script or log backing this exists in
 the repository. Values beyond ±10 are silently clamped to ±127, which would distort SiLU
 for large pre-activations. Before relying on this scale in the rebuild, measure the real
 per-layer max |W_gate·x| and |W_up·x| on CPU (e.g. a ggml callback over a few hundred
 tokens) and choose the range from that data.
+
+------------------------------------------------------------------------------------------
+RESOLUTION (2026-10-23)
+
+Measured (scripts/results/fixed_driver_20261023/verify_per_layer_variants.log; one decode
+token, all 16 layers, q4k_final bitstream with the fixed driver):
+  - The bound was not exceeded; the scale was too coarse. max |gate·x| = 4.24 and
+    max |up·x| = 1.80, with rms 0.11–0.44.
+  - With a step of 0.079, 801–2,347 of the 8,192 gate·x values per layer rounded to 0.
+  - Cosine vs float build_ffn(): IP as built 0.9569 min / 0.9765 mean.
+    X1/X2 unquantized (x and h still INT8): 0.9950 / 0.9986.
+    X1/X2 per-token max/127: 0.9948 / 0.9983.
+    X1/X2 fixed ±4 INT8: 0.9919 / 0.9949.
+  - Board PPL ratio HW/CPU 1.081368 ± 0.041650, mean KLD 0.384800 (ppl_*.log there).
+
+Fix chosen: keep a fixed, single-pass scale but widen to INT16 over ±32.
+  - Step 32/32767 ≈ 9.8e-4, about 80× finer than 10/127 (derived).
+  - ±32 leaves ~7.5× headroom over the largest measured |gate·x| (derived: 32/4.24), so
+    tokens other than the one measured are unlikely to clip.
+  - A per-token scale would have needed a max pass before quantizing (see "WHY A FIXED
+    SCALE" above); INT16 avoids that.
+  - Cost (hls_experiments/rebuild_x16/csynth.rpt vs csynth_base_2025.2.rpt): BRAM_18K
+    150 → 166; latency 2,011,996 cy unchanged; DSP 238 unchanged. Each cache is now 16 KB.
+  - Routed at 250 MHz: WNS +0.248 ns at 4.000 ns (hls_experiments/rebuild_x16/README.md).
+
+Board result (scripts/results/rebuild_x16_20261023/; same GGUF, -t 2 and commands):
+  - per-layer cos vs float (token 2, 16 layers): 0.9930 min / 0.9984 mean (INT8: 0.9569 /
+    0.9765). The IP matches its INT16 emulation at ≥ 0.99980.
+  - gate·x values below half a step: 10–38 per layer (INT8: 801–2,347).
+  - Emulating INT16 X1/X2 alone gives cosine 1.0000; the rest is x and h INT8.
+  - wikitext-2 PPL HW/CPU 1.034376 ± 0.011605 (INT8: 1.081368); mean KLD 0.030154
+    (INT8: 0.384800); same top token 87.795 % (INT8: 63.255 %).
+
+Later (2026-10-24): rebuild_s2fix (hls_experiments/rebuild_s2fix/) keeps this INT16 format.
+compute_X1/X2 now write a local X1_loc/X2_loc that is copied into X1_cache/X2_cache after
+the loop (the STABLE fix). Its board KLD run gives the same values as rebuild_x16 at every
+chunk (scripts/results/rebuild_s2fix_final_20261024/README.md, "Accuracy").

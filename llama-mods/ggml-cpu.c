@@ -339,8 +339,11 @@ static void init_swiglu_offload(void) {
         // Arm interrupts.
         swg_ip_regs[SWG_CTRL_GIE / 4] = 0x1;
         swg_ip_regs[SWG_CTRL_IER / 4] = 0x1;
-        // Clear ISR (toggle-on-write) — de-asserts hardware IRQ line.
-        swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;
+        // Clear ISR, de-asserting the IRQ line. ISR is toggle-on-write: writing 1
+        // to a clear bit SETS it, so write back only the bits that are set
+        // (a fresh bitstream has ISR = 0).
+        uint32_t isr = swg_ip_regs[SWG_CTRL_ISR / 4];
+        if (isr) swg_ip_regs[SWG_CTRL_ISR / 4] = isr;
         // Drain any interrupt that fired in the GIE-arm → ISR-clear window.
         while (read(swiglu_uio_fd, &drain, sizeof(drain)) > 0) {}
         fcntl(swiglu_uio_fd, F_SETFL, saved_flags);
@@ -2141,7 +2144,8 @@ static void ggml_compute_forward_swiglu_fused_hw(
         ssize_t nread = read(swiglu_uio_fd, &irq_count, sizeof(irq_count)); // blocks until IRQ
         clock_gettime(CLOCK_MONOTONIC, &t_hw1);
 
-        swg_ip_regs[SWG_CTRL_ISR / 4] = 0x1;         // clear ap_done (TOW), deassert IRQ line
+        uint32_t isr = swg_ip_regs[SWG_CTRL_ISR / 4];
+        if (isr) swg_ip_regs[SWG_CTRL_ISR / 4] = isr; // clear (TOW: only set bits), deassert IRQ line
         uint32_t uio_reenable = 1;
         (void)write(swiglu_uio_fd, &uio_reenable, sizeof(uio_reenable)); // re-arm UIO for next call
 

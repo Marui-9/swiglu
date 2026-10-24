@@ -316,7 +316,7 @@ DATAFLOW Performance (per layer, steady state)
     16 layers, board (`fpga`):     16 × 14.0  = 224 ms  (measured at T2; 1.10 × csynth)
     Board T2 token:                224 FPGA + 227 non-FFN CPU + 1.3 handoff ≈ 452 ms
                                    → 2.21 t/s (best operating point;
-                                   thesis/latest_findings.md)
+                                   latest_findings.md)
     Board T1 token:                613 ms → 1.63 t/s; non-FFN ≈ 613 − 224 = 389 ms (derived)
 
     The first version put the 14 − 6.49 = 7.5 ms gap down to interrupt delivery and

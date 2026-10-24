@@ -1,0 +1,11 @@
+entry_proc_U0                                                            n=1     interval 4294967295  latency      0  first: 32-32
+load_x_local_U0                                                          n=1     interval 4294967295  latency    203  first: 32-235
+compute_X1_U0                                                            n=1     interval 4294967295  latency  11545  first: 236-11781
+compute_X1_U0.grp_dataflow_parent_loop_proc263_fu_379.dataflow_in_loop_COMPUTE_X1_1_U0 n=32    interval    345  latency    782  first: 237-985 564-1329 891-1673
+compute_X1_U0.grp_dataflow_parent_loop_proc263_fu_379.dataflow_in_loop_COMPUTE_X1_1_U0.load_4rows_wv_urm264_U0 n=32    interval    345  latency    439  first: 237-641 564-986 891-1330
+compute_X1_U0.grp_dataflow_parent_loop_proc263_fu_379.dataflow_in_loop_COMPUTE_X1_1_U0.mac_quant_wv_2265_U0 n=32    interval    344  latency    344  first: 642-985 986-1329 1330-1673
+compute_X2_U0                                                            n=1     interval 4294967295  latency  11545  first: 236-11781
+compute_X2_U0.grp_dataflow_parent_loop_proc_fu_379.dataflow_in_loop_COMPUTE_X2_1_U0 n=32    interval    345  latency    782  first: 237-985 564-1329 891-1673
+compute_X2_U0.grp_dataflow_parent_loop_proc_fu_379.dataflow_in_loop_COMPUTE_X2_1_U0.load_4rows_wv_urm_1266_U0 n=32    interval    345  latency    439  first: 237-641 564-986 891-1330
+compute_X2_U0.grp_dataflow_parent_loop_proc_fu_379.dataflow_in_loop_COMPUTE_X2_1_U0.mac_quant_wv267_U0 n=32    interval    344  latency    344  first: 642-985 986-1329 1330-1673
+store_X_U0                                                               n=1     interval 4294967295  latency  19462  first: 11782-31244

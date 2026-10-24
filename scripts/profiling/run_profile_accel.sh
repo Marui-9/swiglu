@@ -9,10 +9,10 @@ THREADS=${1:-4}
 REPEAT=${2:-10}
 PROMPT=12
 NUM_TOKENS=64
-MODEL="$HOME/lfm2.5-1.2B-Q4_K_M.gguf"
+MODEL="${MODEL:-$HOME/LFM2.5-1.2B-Thinking-Q4_K_M-allQ4Kffn.gguf}"
 LLAMA_DIR="$HOME/llama.cpp"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-LOG="/tmp/accel_t${THREADS}_${TIMESTAMP}.log"
+LOG="${LOG_DIR:-/tmp}/accel_t${THREADS}_${TIMESTAMP}.log"
 
 echo "=== FPGA+CPU | T=$THREADS | R=$REPEAT ===" | tee "$LOG"
 echo "" >> "$LOG"
@@ -37,15 +37,21 @@ sudo env LLAMA_SWIHW=1 SWIGLU_DEBUG=1 ./build/bin/llama-bench \
   2>&1 | tee -a "$LOG" &
 BENCH_PID=$!
 
-# ─── RAM logger (sudo needed: bench process owned by root) ────────────
+# ─── RAM logger: VmRSS and VmHWM (kernel peak RSS) of llama-bench ─────
+# pgrep -x matches the process name exactly, so it skips the sudo wrapper.
 BENCH_NAME="llama-bench"
-( while true; do
+( pid=""
+  for i in $(seq 1 50); do
+    pid=$(pgrep -x "$BENCH_NAME" | head -1)
+    [ -n "$pid" ] && break
+    sleep 0.2
+  done
+  while [ -n "$pid" ] && [ -e /proc/$pid ]; do
     ts=$(date +%s)
-    pid=$(pgrep -f "$BENCH_NAME" | head -1)
-    rss=0
-    [ -n "$pid" ] && rss=$(sudo awk '/^VmRSS:/ {print $2}' /proc/$pid/status 2>/dev/null || echo 0)
-    [ "$rss" = "0" ] && break
-    echo "$ts rss=$rss"
+    mem=$(sudo awk '/^VmRSS:/ {r=$2} /^VmHWM:/ {h=$2} END {print r, h}' /proc/$pid/status 2>/dev/null) || break
+    [ -z "$mem" ] && break
+    set -- $mem
+    echo "$ts rss=$1 hwm=$2"
     sleep 1
   done ) >> "$LOG" &
 RAM_PID=$!
@@ -87,10 +93,10 @@ LPD_TEMP=$(grep -oP 'lpdt=\K[0-9]+' "$LOG" | awk '{s+=$1; n++} END {if(n) printf
 PL_TEMP=$(grep -oP 'plt=\K[0-9]+' "$LOG" | awk '{s+=$1; n++} END {if(n) printf "%.0f", s/n}')
 [ -n "$LPD_TEMP" ] && echo "Avg temp (C): LPD=$LPD_TEMP  PL=$PL_TEMP" | tee -a "$LOG"
 
-RAM_MAX=$(grep -oP 'rss=\K[0-9]+' "$LOG" | awk '{if($1>max) max=$1} END {print max}')
+RAM_MAX=$(grep -oP 'hwm=\K[0-9]+' "$LOG" | awk '{if($1>max) max=$1} END {print max}')
 if [ -n "$RAM_MAX" ] && [ "$RAM_MAX" -gt 0 ]; then
   RAM_MB=$((RAM_MAX / 1024))
-  echo "Peak RSS: ${RAM_MB} MB  (+ 640 MB udmabuf)" | tee -a "$LOG"
+  echo "Peak RSS (VmHWM): ${RAM_MB} MB  (+ 512 MiB udmabuf, not in RSS)" | tee -a "$LOG"
 fi
 
 echo "Log: $LOG" | tee -a "$LOG"

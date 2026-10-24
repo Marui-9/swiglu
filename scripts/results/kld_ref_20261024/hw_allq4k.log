@@ -1,0 +1,217 @@
+build: 0 (unknown) with GNU 11.4.0 for Linux aarch64
+common_init_result: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on
+llama_params_fit_impl: no devices with dedicated memory found
+llama_params_fit: successfully fit params to free device memory
+llama_params_fit: fitting params to free memory took 0.99 seconds
+llama_model_loader: loaded meta data with 40 key-value pairs and 148 tensors from /home/ubuntu/LFM2.5-1.2B-Thinking-Q4_K_M-allQ4Kffn.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = lfm2
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = LFM2.5-1.2B-Thinking
+llama_model_loader: - kv   3:                         general.size_label str              = 1.2B
+llama_model_loader: - kv   4:                            general.license str              = other
+llama_model_loader: - kv   5:                       general.license.name str              = lfm1.0
+llama_model_loader: - kv   6:                       general.license.link str              = LICENSE
+llama_model_loader: - kv   7:                   general.base_model.count u32              = 1
+llama_model_loader: - kv   8:                  general.base_model.0.name str              = LFM2.5 1.2B Base
+llama_model_loader: - kv   9:          general.base_model.0.organization str              = LiquidAI
+llama_model_loader: - kv  10:              general.base_model.0.repo_url str              = https://huggingface.co/LiquidAI/LFM2....
+llama_model_loader: - kv  11:                               general.tags arr[str,4]       = ["liquid", "lfm2.5", "edge", "text-ge...
+llama_model_loader: - kv  12:                          general.languages arr[str,8]       = ["en", "ar", "zh", "fr", "de", "ja", ...
+llama_model_loader: - kv  13:                           lfm2.block_count u32              = 16
+llama_model_loader: - kv  14:                        lfm2.context_length u32              = 128000
+llama_model_loader: - kv  15:                      lfm2.embedding_length u32              = 2048
+llama_model_loader: - kv  16:                   lfm2.feed_forward_length u32              = 8192
+llama_model_loader: - kv  17:                  lfm2.attention.head_count u32              = 32
+llama_model_loader: - kv  18:               lfm2.attention.head_count_kv arr[i32,16]      = [0, 0, 8, 0, 0, 8, 0, 0, 8, 0, 8, 0, ...
+llama_model_loader: - kv  19:                        lfm2.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv  20:      lfm2.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  21:                            lfm2.vocab_size u32              = 65536
+llama_model_loader: - kv  22:                     lfm2.shortconv.l_cache u32              = 3
+llama_model_loader: - kv  23:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  24:                         tokenizer.ggml.pre str              = lfm2
+llama_model_loader: - kv  25:                      tokenizer.ggml.tokens arr[str,65536]   = ["<|pad|>", "<|startoftext|>", "<|end...
+llama_model_loader: - kv  26:                  tokenizer.ggml.token_type arr[i32,65536]   = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
+llama_model_loader: - kv  27:                      tokenizer.ggml.merges arr[str,63683]   = ["Ċ Ċ", "Ċ ĊĊ", "ĊĊ Ċ", "Ċ �...
+llama_model_loader: - kv  28:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  29:                tokenizer.ggml.eos_token_id u32              = 7
+llama_model_loader: - kv  30:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  31:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  32:               tokenizer.ggml.add_sep_token bool             = false
+llama_model_loader: - kv  33:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  34:                    tokenizer.chat_template str              = {{- bos_token -}}\n{%- set keep_past_t...
+llama_model_loader: - kv  35:                       general.quantized_by str              = Mungert
+llama_model_loader: - kv  36:                           general.repo_url str              = https://huggingface.co/mungert
+llama_model_loader: - kv  37:                        general.sponsor_url str              = https://readyforquantum.com
+llama_model_loader: - kv  38:               general.quantization_version u32              = 2
+llama_model_loader: - kv  39:                          general.file_type u32              = 15
+llama_model_loader: - type  f32:   55 tensors
+llama_model_loader: - type q4_K:   90 tensors
+llama_model_loader: - type q6_K:    3 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 661.76 MiB (4.74 BPW) 
+load: 0 unused tokens
+load: printing all EOG tokens:
+load:   - 2 ('<|endoftext|>')
+load:   - 7 ('<|im_end|>')
+load: special tokens cache size = 509
+load: token to piece cache size = 0.3759 MB
+print_info: arch                  = lfm2
+print_info: vocab_only            = 0
+print_info: no_alloc              = 0
+print_info: n_ctx_train           = 128000
+print_info: n_embd                = 2048
+print_info: n_embd_inp            = 2048
+print_info: n_layer               = 16
+print_info: n_head                = 32
+print_info: n_head_kv             = [0, 0, 8, 0, 0, 8, 0, 0, 8, 0, 8, 0, 8, 0, 8, 0]
+print_info: n_rot                 = 64
+print_info: n_swa                 = 0
+print_info: is_swa_any            = 0
+print_info: n_embd_head_k         = 64
+print_info: n_embd_head_v         = 64
+print_info: n_gqa                 = [0, 0, 4, 0, 0, 4, 0, 0, 4, 0, 4, 0, 4, 0, 4, 0]
+print_info: n_embd_k_gqa          = [0, 0, 512, 0, 0, 512, 0, 0, 512, 0, 512, 0, 512, 0, 512, 0]
+print_info: n_embd_v_gqa          = [0, 0, 512, 0, 0, 512, 0, 0, 512, 0, 512, 0, 512, 0, 512, 0]
+print_info: f_norm_eps            = 0.0e+00
+print_info: f_norm_rms_eps        = 1.0e-05
+print_info: f_clamp_kqv           = 0.0e+00
+print_info: f_max_alibi_bias      = 0.0e+00
+print_info: f_logit_scale         = 0.0e+00
+print_info: f_attn_scale          = 0.0e+00
+print_info: n_ff                  = 8192
+print_info: n_expert              = 0
+print_info: n_expert_used         = 0
+print_info: n_expert_groups       = 0
+print_info: n_group_used          = 0
+print_info: causal attn           = 1
+print_info: pooling type          = 0
+print_info: rope type             = 2
+print_info: rope scaling          = linear
+print_info: freq_base_train       = 1000000.0
+print_info: freq_scale_train      = 1
+print_info: n_ctx_orig_yarn       = 128000
+print_info: rope_yarn_log_mul     = 0.0000
+print_info: rope_finetuned        = unknown
+print_info: model type            = 1.2B
+print_info: model params          = 1.17 B
+print_info: general.name          = LFM2.5-1.2B-Thinking
+print_info: vocab type            = BPE
+print_info: n_vocab               = 65536
+print_info: n_merges              = 63683
+print_info: BOS token             = 1 '<|startoftext|>'
+print_info: EOS token             = 7 '<|im_end|>'
+print_info: EOT token             = 2 '<|endoftext|>'
+print_info: PAD token             = 0 '<|pad|>'
+print_info: LF token              = 708 'Ċ'
+print_info: EOG token             = 2 '<|endoftext|>'
+print_info: EOG token             = 7 '<|im_end|>'
+print_info: max token length      = 30
+load_tensors: loading model tensors, this can take a while... (mmap = true, direct_io = false)
+load_tensors:   CPU_Mapped model buffer size =   661.76 MiB
+.....................................................................
+common_init_result: added <|endoftext|> logit bias = -inf
+common_init_result: added <|im_end|> logit bias = -inf
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 256
+llama_context: n_ctx_seq     = 256
+llama_context: n_batch       = 256
+llama_context: n_ubatch      = 64
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = auto
+llama_context: kv_unified    = false
+llama_context: freq_base     = 1000000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_seq (256) < n_ctx_train (128000) -- the full capacity of the model will not be utilized
+llama_context:        CPU  output buffer size =     0.25 MiB
+llama_kv_cache:        CPU KV buffer size =     3.00 MiB
+llama_kv_cache: size =    3.00 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    1.50 MiB, V (f16):    1.50 MiB
+llama_memory_recurrent:        CPU RS buffer size =     0.16 MiB
+llama_memory_recurrent: size =    0.16 MiB (     1 cells,  16 layers,  1 seqs), R (f32):    0.16 MiB, S (f32):    0.00 MiB
+sched_reserve: reserving ...
+sched_reserve: Flash Attention was auto, set to enabled
+sched_reserve:        CPU compute buffer size =    17.56 MiB
+sched_reserve: graph nodes  = 501
+sched_reserve: graph splits = 1
+sched_reserve: reserve took 8.35 ms, sched copies = 1
+common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+
+system_info: n_threads = 4 (n_threads_batch = 4) / 4 | CPU : NEON = 1 | ARM_FMA = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+kl_divergence: computing over 24 chunks, n_ctx=256, batch_size=256, n_seq=1
+kl_divergence: 50.99 seconds per pass - ETA 20.38 minutes
+
+chunk             PPL               ln(PPL(Q)/PPL(base))          KL Divergence              Δp RMS            Same top p
+   1      49.4900 ±   15.3066       0.33358 ±    0.08652       0.21282 ±    0.02590     9.359 ±  1.050 %    74.016 ±  3.907 %
+   2      46.5213 ±    9.9672       0.32217 ±    0.05844       0.21057 ±    0.01555     9.199 ±  0.756 %    72.835 ±  2.797 %
+   3      55.1944 ±    9.8192       0.31791 ±    0.04419       0.21028 ±    0.01177     9.617 ±  0.634 %    72.966 ±  2.278 %
+   4      53.9558 ±    8.3576       0.30655 ±    0.03997       0.21012 ±    0.01128     8.993 ±  0.537 %    74.213 ±  1.943 %
+   5      52.6004 ±    7.2843       0.31427 ±    0.03517       0.20880 ±    0.00978     8.675 ±  0.460 %    72.913 ±  1.765 %
+   6      51.7869 ±    6.4500       0.30084 ±    0.03139       0.21083 ±    0.00863     9.292 ±  0.577 %    72.310 ±  1.622 %
+   7      53.8193 ±    6.1894       0.25051 ±    0.02907       0.20392 ±    0.00764     8.861 ±  0.523 %    72.778 ±  1.494 %
+   8      51.4674 ±    5.5241       0.23910 ±    0.02777       0.21258 ±    0.00735     9.063 ±  0.479 %    72.736 ±  1.398 %
+   9      48.6844 ±    4.8925       0.22607 ±    0.02537       0.20740 ±    0.00668     9.208 ±  0.448 %    72.878 ±  1.316 %
+  10      45.2657 ±    4.2710       0.19525 ±    0.02331       0.19572 ±    0.00613     8.907 ±  0.420 %    73.465 ±  1.239 %
+  11      47.9659 ±    4.4029       0.19867 ±    0.02245       0.19184 ±    0.00568     8.981 ±  0.406 %    73.729 ±  1.178 %
+  12      48.8331 ±    4.2896       0.20677 ±    0.02148       0.19234 ±    0.00552     8.830 ±  0.386 %    73.885 ±  1.126 %
+  13      51.0973 ±    4.3807       0.22129 ±    0.02052       0.19675 ±    0.00534     8.750 ±  0.367 %    74.016 ±  1.080 %
+  14      52.9622 ±    4.4199       0.22897 ±    0.02002       0.20316 ±    0.00526     8.841 ±  0.355 %    73.678 ±  1.045 %
+  15      54.0594 ±    4.3896       0.22920 ±    0.01939       0.20889 ±    0.00524     8.825 ±  0.340 %    73.491 ±  1.012 %
+  16      53.7976 ±    4.2557       0.21367 ±    0.01848       0.20498 ±    0.00496     8.745 ±  0.325 %    73.720 ±  0.977 %
+  17      55.0805 ±    4.2352       0.21789 ±    0.01776       0.20593 ±    0.00479     8.604 ±  0.312 %    73.414 ±  0.951 %
+  18      57.1031 ±    4.2847       0.22184 ±    0.01741       0.21289 ±    0.00485     8.616 ±  0.308 %    73.272 ±  0.926 %
+  19      57.8062 ±    4.2247       0.22046 ±    0.01713       0.21861 ±    0.00490     8.720 ±  0.301 %    73.104 ±  0.903 %
+  20      58.3040 ±    4.1672       0.22224 ±    0.01661       0.21659 ±    0.00473     8.849 ±  0.314 %    73.386 ±  0.877 %
+  21      59.1374 ±    4.1312       0.21373 ±    0.01609       0.21350 ±    0.00454     8.816 ±  0.305 %    73.453 ±  0.855 %
+  22      59.2827 ±    4.0706       0.20965 ±    0.01571       0.21272 ±    0.00446     8.920 ±  0.317 %    73.586 ±  0.834 %
+  23      57.6825 ±    3.8613       0.20413 ±    0.01531       0.21169 ±    0.00448     9.027 ±  0.334 %    73.845 ±  0.813 %
+  24      57.4875 ±    3.7567       0.20121 ±    0.01493       0.21020 ±    0.00435     9.000 ±  0.325 %    73.852 ±  0.796 %
+
+====== Perplexity statistics ======
+Mean PPL(Q)                   :  57.487477 ±   3.756746
+Mean PPL(base)                :  47.009676 ±   2.996108
+Cor(ln(PPL(Q)), ln(PPL(base))):  97.35%
+Mean ln(PPL(Q)/PPL(base))     :   0.201214 ±   0.014931
+Mean PPL(Q)/PPL(base)         :   1.222886 ±   0.018259
+Mean PPL(Q)-PPL(base)         :  10.477801 ±   1.083512
+
+====== KL divergence statistics ======
+Mean    KLD:   0.210197 ±   0.004346
+Maximum KLD:   3.177529
+99.9%   KLD:   2.304966
+99.0%   KLD:   1.120911
+95.0%   KLD:   0.629285
+90.0%   KLD:   0.441741
+Median  KLD:   0.148852
+10.0%   KLD:   0.022588
+ 5.0%   KLD:   0.008587
+ 1.0%   KLD:   0.000754
+ 0.1%   KLD:   0.000087
+Minimum KLD:   0.000018
+
+====== Token probability statistics ======
+Mean    Δp: -1.495 ± 0.161 %
+Maximum Δp: 49.647%
+99.9%   Δp: 35.963%
+99.0%   Δp: 21.809%
+95.0%   Δp:  9.439%
+90.0%   Δp:  4.887%
+75.0%   Δp:  0.284%
+Median  Δp: -0.022%
+25.0%   Δp: -2.125%
+10.0%   Δp: -9.562%
+ 5.0%   Δp: -17.202%
+ 1.0%   Δp: -35.477%
+ 0.1%   Δp: -66.837%
+Minimum Δp: -81.010%
+RMS Δp    :  9.000 ± 0.325 %
+Same top p: 73.852 ± 0.796 %
+
+llama_perf_context_print:        load time =    4449.67 ms
+llama_perf_context_print: prompt eval time = 1170166.43 ms /  6144 tokens (  190.46 ms per token,     5.25 tokens per second)
+llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_perf_context_print:       total time = 1225150.37 ms /  6145 tokens
+llama_perf_context_print:    graphs reused =         24
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - Host               |                  682 =   661 +       3 +      17                |

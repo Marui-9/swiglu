@@ -22,19 +22,24 @@ FPGA accelerator on the AMD-Xilinx Kria KV260, while attention, normalization,
 the gated short convolution, and the final projection remain on the CPU.
 
 The accelerator is implemented in Vitis HLS as a five-stage dataflow pipeline
-operating on 4-bit (Q4\_K) weights and 8-bit activations, and is integrated into
-the \texttt{llama.cpp}/\texttt{ggml} inference stack through a fused hardware
-operator with permanent per-layer weight caching, interrupt-driven
-synchronization, and transparent fallback to CPU execution. The design is
-analysed at stage granularity, showing that performance is bound by off-chip
-memory bandwidth rather than arithmetic capacity, and that it operates near the
-device's logic and routing limits (87\% LUT occupancy).
+operating on 4-bit (Q4\_K) weights, 8-bit activations and 16-bit gate and up
+projections, and is integrated into the \texttt{llama.cpp}/\texttt{ggml} inference
+stack through a fused hardware operator with permanent per-layer weight caching
+and interrupt-driven synchronization. The design is analysed at stage
+granularity: overlapping the weight loads with the MAC arrays makes both
+projection stages compute-bound, with the weight streams close to the bandwidth
+of their memory ports, and the design operates near the device's logic and
+routing limits (86.7\% LUT occupancy).
 
 The work includes the model profiling, the
 software integration in \texttt{llama.cpp}, the FPGA accelerator design and
-characterization, a throughput/efficiency study across CPU thread counts
-(T1--T4), and a comparison against an STM32MP257F-DK edge MPU. The accelerated
-path improves performance-per-watt by up to 57\% (prefill) and 44\% (decode) at
-low thread counts and enables sub-500\,ms decode latency with only two active
-CPU threads, while the analysis quantifies the memory-bandwidth, orchestration,
-and routing constraints that bound the attainable throughput.
+characterization, a numerical validation of the hardware output, a
+throughput/efficiency study across CPU thread counts (T1--T4), and a comparison
+against an STM32MP257F-DK edge MPU. On the same model file, the accelerated path
+is faster than CPU-only execution at every thread count, from 2.09$\times$ in
+decode at one thread to 3.53 against 2.69 tokens per second for the best
+configuration of each path. It uses less energy per decoded token throughout
+and reaches sub-500\,ms decode latency with two CPU threads. Its output stays
+close to the CPU reference, with a mean KL divergence of 0.030 and a perplexity
+ratio of 1.034. The analysis quantifies the memory-bandwidth, orchestration and
+routing constraints that bound the attainable throughput.

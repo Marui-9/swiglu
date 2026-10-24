@@ -1,8 +1,8 @@
 Bottlenecks and Limitations — q4k_final Architecture
 ================================================================================
-Written 2026-05-29; corrected 2026-10-03 (branch rebuild).
+Written 2026-05-29; corrected 2026-10-03 (branch rebuild); rebuild_s2fix column 2026-10-24.
 Sources: q4k_final/csynth.rpt (Vitis 2025.1, 2026-05-28), utilization.txt and timing.txt
-(routed design), scripts/results/latest_benchmarks/*.log, thesis/latest_findings.md (the
+(routed design), scripts/results/latest_benchmarks/*.log, latest_findings.md (the
 measured T2 per-token split), swiglu/reports/hls_compile.rpt (rebuild csynth).
 Board clock 250 MHz (4 ns). The csynth target is 3.33 ns, so csynth slack is not a 250 MHz
 figure.
@@ -37,17 +37,22 @@ load and 300 MHz.
 SUMMARY
 ================================================================================
 
-  #  Item                                        q4k_final           rebuild (csynth only)
+  #  Item                                        q4k_final           rebuild_s2fix (board, 2026-10-24)
   ───────────────────────────────────────────────────────────────────────────────────────
-  1  Per-call latency = sum of the stages        12.70 ms            8.05 ms
+  1  Per-call latency = sum of the stages        12.70 ms            8.08 ms csynth, 8.09 ms board
   2  Sequential row loads in compute_output      1,908 of 3,165 cy   hidden by overlap (K=2)
   3  DOWN_GROUPS run sequentially                1,232 of 1,243 cy   unchanged (LUT-bound)
-  4  No load/MAC overlap in compute_X1/X2        6.14 ms             2.85 ms
-  5  T4 decode regression (host side)            1.46 t/s            not addressed
-  6  Non-FFN CPU time (Amdahl)                   ~227 ms at T2       not addressed
-  7  LUT headroom                                86.78% routed       145,719 estimated
-  8  Timing margin at 250 MHz                    WNS −0.023 ns       not routed yet
+  4  No load/MAC overlap in compute_X1/X2        6.14 ms             2.85 ms (APM: 2.847 ms)
+  5  T4 decode regression (host side)            1.46 t/s            3.24 t/s at T4 < 3.53 at T3
+  6  Non-FFN CPU time (Amdahl)                   ~227 ms at T2       211.3 ms at T2
+  7  LUT headroom                                86.78% routed       86.68% routed (101,522)
+  8  Timing margin at 250 MHz                    WNS −0.023 ns       WNS +0.145 ns
   9  LOAD_HDR_DOWN at II=2                       ~4% of stage 5      hidden by overlap
+
+  rebuild_s2fix sources: hls_experiments/rebuild_s2fix/{csynth.rpt,utilization.txt,
+  timing_4.000ns.txt}, scripts/results/rebuild_s2fix_final_20261024/ (APM, bench). Row 4 needed
+  the STABLE fix: rebuild_x16 had the overlapped csynth interval but ran 6.10 ms on the
+  board (CLAUDE.md, HLS lesson 3).
 
 
 ================================================================================
@@ -153,7 +158,7 @@ Corrections to the first version:
 FPGA time per token is fixed at ~224 ms. The rest of the T4 token is therefore ~460 ms,
 against ~227 ms at T2 (derived).
 
-The cause has not been measured. The working hypothesis (thesis/latest_findings.md) is
+The cause has not been measured. The working hypothesis (latest_findings.md) is
 scheduler contention at 4 threads. Thread 0 blocks for each FPGA call while the other
 threads park at the ggml barrier.
 
@@ -170,7 +175,7 @@ Untested fixes:
 6.  NON-FFN CPU TIME (AMDAHL)
 ================================================================================
 
-Measured T2 token (thesis/latest_findings.md):
+Measured T2 token (latest_findings.md):
     224 ms FPGA + 227 ms non-FFN CPU + 1.3 ms handoff ≈ 452 ms → 2.21 t/s
 
 Derived limits at T2:
@@ -201,7 +206,8 @@ Per-module estimates (csynth):
     compute_output  42,838
       of which load_row_down_urm 7,207
 
-The rebuild is estimated at 145,719 LUT. Whether it fits will only be known from Vivado.
+The rebuild was estimated at 145,719 LUT. Routed: 99,151 (84.66 %) as rebuild_x16 and
+101,522 (86.68 %) as rebuild_s2fix (hls_experiments/rebuild_s2fix/README.md).
 
 
 ================================================================================
@@ -224,6 +230,10 @@ with phys_opt_design -hold_fix.
 
 Plan for the rebuild (CLAUDE.md): set_clock_uncertainty -setup 0.300 on the PL clock in
 Vivado to buy real margin. Do not relax the HLS clock.
+
+Done (hls_experiments/rebuild_s2fix/README.md): implemented with the +0.300 ns margin,
+re-timed at 4.000 ns without it: WNS +0.145 ns, TNS 0, WHS +0.010 ns. With the margin the
+routed design shows −0.155 ns over 408 endpoints.
 
 
 ================================================================================
@@ -249,6 +259,10 @@ See CLAUDE.md ("Driver bugs" and the open items). In order:
      two correctness bugs in README.md, "Driver bugs" (host header layout; x/out buffers
      inside layer 3's W slot) were fixed in the driver on 2026-10-04. They affected the
      shipped results: valid timing, wrong values.
+     (Done 2026-10-23: scripts/results/fixed_driver_20261023/.)
   2. Take the rebuild through Vivado and onto the board. ~2.6 t/s at T2 is a derived
-     projection.
+     projection. (Done 2026-10-23 as rebuild_x16, with INT16 X1/X2: 2.53 t/s at T2,
+     2.98 t/s at T3; scripts/results/rebuild_x16_20261023/bench/. Board/csynth was 1.41;
+     the cause was the Stage 2 serialization, fixed as rebuild_s2fix on 2026-10-24: 2.92 t/s
+     at T2, 3.53 t/s at T3, 8.09 ms/call; scripts/results/rebuild_s2fix_final_20261024/.)
   3. Host side: the T4 contention (§5).
