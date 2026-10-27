@@ -27,8 +27,8 @@ projections, and is integrated into the \texttt{llama.cpp}/\texttt{ggml} inferen
 stack through a fused hardware operator with permanent per-layer weight caching
 and interrupt-driven synchronization. The design is analysed at stage
 granularity: overlapping the weight loads with the MAC arrays makes both
-projection stages compute-bound, with the weight streams close to the bandwidth
-of their memory ports, and the design operates near the device's logic and
+projection stages compute-bound, with the gate and up weight streams close to the
+bandwidth of their memory ports, and the design operates near the device's logic and
 routing limits (86.7\% LUT occupancy).
 
 The work includes the model profiling, the
@@ -37,7 +37,7 @@ characterization, a numerical validation of the hardware output, a
 throughput/efficiency study across CPU thread counts (T1--T4), and a comparison
 against an STM32MP257F-DK edge MPU. On the same model file, the accelerated path
 is faster than CPU-only execution at every thread count, from 2.09$\times$ in
-decode at one thread to 3.53 against 2.69 tokens per second for the best
+decode at one thread to 3.53 against 2.68 tokens per second for the best
 configuration of each path. It uses less energy per decoded token throughout
 and reaches sub-500\,ms decode latency with two CPU threads. Its output stays
 close to the CPU reference, with a mean KL divergence of 0.030 and a perplexity

@@ -10,7 +10,7 @@ SwiGLU feed-forward block to enable conversational audio inference pipelines on
 resource-constrained edge platforms. The implementation integrates with the existing
 llama.cpp/ggml flow through a fused operator, and is faster than CPU Only execution of
 the same model at every thread count: 2.09$\times$ in decode at one thread, and 3.53
-against 2.69\,t/s when the best configuration of each path is compared. It also uses less
+against 2.68\,t/s when the best configuration of each path is compared. It also uses less
 energy per decoded token at every thread count, and reaches sub-500\,ms decode latency
 with two CPU threads instead of three.
 
@@ -39,8 +39,10 @@ roadmap for the next optimizations in LFM2.5-Audio-1.5B deployment.
 \textbf{Memory bandwidth.} On the board, the gate-weight port of Stages~2a/2b reads at
 3.68\,GB/s, 92\% of the 4.0\,GB/s peak of a 128-bit port at 250\,MHz, and Stage~5 is
 bound by its 16-lane MAC array. Memory-bound behaviour is typical of autoregressive
-decoding~\cite{FlightLLM}, and the IP has reached that regime: a faster Stage~2 needs
-more or wider ports into the DDR, and a faster Stage~5 needs the wider output array that
+decoding~\cite{FlightLLM}, and Stages~2a/2b are close to that regime: their MAC still
+sets the pace, but a MAC more than about 8\% faster would wait on the port (derived from
+the 320-cycle load and 347-cycle MAC), so a faster Stage~2 needs more or wider ports into
+the DDR, and a faster Stage~5 needs the wider output array that
 does not route on the ZU5EV. The DDR controller's performance monitor, which located the
 board/csynth gap of the first overlapped build, is the tool to check any such change.
 

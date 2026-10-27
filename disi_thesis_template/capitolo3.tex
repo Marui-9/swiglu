@@ -18,7 +18,9 @@ load/compute overlap, INT16 intermediate activations $X_1$/$X_2$ over a fixed $\
 range, and the \texttt{STABLE} fix of Section~\ref{subsec:stage2}, synthesized and
 implemented with Vitis HLS and Vivado 2025.2 (routed with WNS $+0.145$\,ns at a
 4.000\,ns clock constraint). An unrelated idle service on the
-board was stopped before the measurements.
+board was stopped before the measurements. The CPU Only runs were made in a separate
+boot in which the accelerator was never loaded, so that the configured fabric does not
+add to their power (Section~\ref{sec:results}).
 
 \textbf{Workload.} The evaluation uses the LFM2.5-1.2B language backbone (input
 dimension 2048, feed-forward dimension 8192). The accelerator processes one token per
@@ -82,17 +84,17 @@ Threads & Mode & Prefill (t/s) & Decode (t/s) & Power (W) & Prefill (t/s/W) & De
 \hline
 \multicolumn{7}{c}{\itshape {KV260 (4$\times$ Cortex-A53; both modes on the same all-Q4\_K FFN GGUF; 250\,MHz FPGA fabric)}} \\
 \hline
-T1 & CPU Only\textsuperscript{a} & 1.15 & 0.93 & \textbf{4.28} & 0.269 & 0.217 \\
+T1 & CPU Only\textsuperscript{a} & 1.15 & 0.93 & \textbf{3.62} & 0.318 & 0.257 \\
 T1 & FPGA+CPU & \textbf{2.88} & \textbf{1.94} & 4.48 & \textbf{0.643} & \textbf{0.433} \\
 \hline
-T2 & CPU Only\textsuperscript{a} & 2.28 & 1.76 & \textbf{4.60} & 0.496 & 0.383 \\
+T2 & CPU Only\textsuperscript{a} & 2.28 & 1.77 & \textbf{3.96} & 0.576 & 0.447 \\
 T2 & FPGA+CPU & \textbf{4.20} & \textbf{2.92} & 4.78 & \textbf{0.879} & \textbf{0.611} \\
 \hline
-T3 & CPU Only & 3.36 & 2.54 & \textbf{4.86} & 0.691 & 0.523 \\
+T3 & CPU Only\textsuperscript{a} & 3.38 & 2.56 & \textbf{4.27} & 0.792 & 0.600 \\
 T3 & FPGA+CPU & \textbf{4.92} & \textbf{3.53} & 4.92 & \textbf{1.000} & \textbf{0.717} \\
 \hline
-T4 & CPU Only & 4.00 & 2.69 & 4.76 & 0.840 & 0.565 \\
-T4 & FPGA+CPU & \textbf{5.11} & \textbf{3.24} & \textbf{4.71} & \textbf{1.085} & \textbf{0.688} \\
+T4 & CPU Only\textsuperscript{a} & 3.98 & 2.68 & \textbf{4.17} & 0.954 & 0.643 \\
+T4 & FPGA+CPU & \textbf{5.11} & \textbf{3.24} & 4.71 & \textbf{1.085} & \textbf{0.688} \\
 \hline
 \multicolumn{7}{c}{\textit{STM32MP257F-DK (2$\times$ Cortex-A35, stock Q4\_K\_M, power analytically estimated\textsuperscript{b})}} \\
 \hline
@@ -103,35 +105,41 @@ T2 & CPU Only & 1.61 & 1.28 & 0.80 & 2.013 & 1.600 \\
 
 \par\vspace{4pt}
 {\footnotesize
-\textsuperscript{a}Measured in the session of the previous bitstream; CPU Only does not
-use the FPGA, and at T3 and T4 the two sessions agree to within 0.04\,t/s.
+\textsuperscript{a}Measured in a separate boot in which the accelerator was never
+loaded; the PL holds the board's default design at 100\,MHz.
 \textsuperscript{b}Derived from STM32MP257 datasheet characterization~\cite{ds14284}
 (Tables~22--26) and PMIC rail voltages~\cite{um3385} (\S7.5.3); see
 Section~\ref{subsec:stm32comparison} for full derivation.}
 \end{table}
 
 The FPGA+CPU path is faster than CPU Only at every thread count. The decode speedup is
-2.09$\times$ at T1, 1.66$\times$ at T2, 1.39$\times$ at T3 and 1.20$\times$ at T4
+2.09$\times$ at T1, 1.65$\times$ at T2, 1.38$\times$ at T3 and 1.21$\times$ at T4
 (derived). The fastest configuration overall is FPGA+CPU at T3, with 3.53\,t/s against
-2.69\,t/s for the best CPU Only configuration (T4), a 1.31$\times$ gain (derived). The
-CPU Only values at T1 and T2 were measured in the session of the previous bitstream,
-which was identical except for Stage~2; at T3 and T4 CPU Only was measured in both
-sessions, giving 2.54 and 2.65\,t/s then and 2.54 and 2.69\,t/s now. A further CPU Only
-pass in the earlier session, with the accelerator overlay removed through
-\texttt{xmutil unloadapp}, gave 0.93, 1.77, 2.55 and 2.70\,t/s at T1--T4. That command
-does not blank the PL, so it is not a blank-fabric measurement; idle module power was
-3.91\,W with the overlay loaded and 3.92\,W without it.
+2.68\,t/s for the best CPU Only configuration (T4), a 1.32$\times$ gain (derived).
 
-Board power differs little between the two modes: 4.48--4.92\,W for FPGA+CPU and
-4.28--4.86\,W for CPU Only. FPGA+CPU draws slightly more at T1--T3 and slightly less at
-T4. The energy per decoded token is 2.31, 1.64, 1.39 and 1.45\,J for FPGA+CPU at
-T1--T4, against 4.60, 2.61, 1.91 and 1.77\,J for CPU Only (derived).
+\textbf{CPU Only baseline and the PL state.} The board's firmware manager configures a
+default design in the PL at every boot, so the fabric is never blank. CPU Only was
+therefore measured in a boot in which the accelerator was never loaded. In that boot
+the idle module power is 3.27\,W with the default design (100\,MHz) and 3.94\,W once
+the accelerator is loaded, with the IP idle at 250\,MHz: the configured accelerator
+costs about 0.66\,W even when no call runs (derived). Earlier CPU Only runs, made with
+the accelerator loaded or removed through \texttt{xmutil unloadapp} (which does not
+blank the PL), gave the same throughput (0.93, 1.76--1.77, 2.54--2.55 and
+2.65--2.70\,t/s at T1--T4) but 0.59--0.66\,W more power (derived).
+
+FPGA+CPU draws more power than CPU Only at every thread count: 4.48--4.92\,W against
+3.62--4.27\,W, a difference of 0.54--0.86\,W (derived), of the same order as the
+0.66\,W that the configured accelerator costs at idle. Its higher throughput more than compensates: the energy per decoded token is
+2.31, 1.64, 1.39 and 1.45\,J for FPGA+CPU at T1--T4, against 3.89, 2.24, 1.67 and
+1.56\,J for CPU Only, 41\%, 27\%, 16\% and 7\% less (derived). Best against best,
+FPGA+CPU at T3 uses 11\% less energy per token than CPU Only at T4, which is also the
+most efficient CPU Only configuration (derived).
 
 Peak resident memory (VmHWM) is 694\,MiB for both modes: the GGUF model is memory-mapped
 and demand-paged. The FPGA+CPU path additionally holds a 512\,MiB CMA-backed
 \texttt{udmabuf} region for the pre-decoded weights and the activation buffers, which
 is not counted in RSS. Per-token decode latency (derived as the reciprocal of decode
-throughput) is 1075, 568, 394 and 372\,ms for CPU Only at T1--T4, and 515, 342, 283 and
+throughput) is 1075, 565, 391 and 373\,ms for CPU Only at T1--T4, and 515, 342, 283 and
 309\,ms for FPGA+CPU.
 
 \textbf{Where the time goes.} The driver's instrumentation reports 129.5--129.6\,ms of
@@ -143,7 +151,7 @@ takes 342.5\,ms, of which 131.2\,ms is the offloaded feed-forward path and about
 path from the decode latency at the other thread counts leaves about 384, 152 and
 178\,ms of CPU work at T1, T3 and T4 (derived): the CPU part stops improving beyond
 three threads and gets slower at four, as the FPGA+CPU drop from 3.53 to 3.24\,t/s
-shows; CPU Only gains only from 2.54 to 2.69\,t/s over the same step.
+shows; CPU Only gains only from 2.56 to 2.68\,t/s over the same step.
 
 The measured 8.09\,ms per call matches the csynth latency of 8.08\,ms (2,020,192 cycles
 at 250\,MHz, derived), and a standalone call outside \texttt{llama.cpp} takes 8.017\,ms
@@ -288,11 +296,15 @@ $0.80\,\text{W}$ (T2).
 
 With load/compute overlap and the corrected datapath, the FPGA+CPU path is preferable
 to CPU Only at every thread count, in throughput and in efficiency. Decode t/s/W
-improves by 99\%, 60\%, 37\% and 22\% at T1--T4, and prefill t/s/W by 139\%, 77\%, 45\%
-and 29\% (derived). The gain shrinks as threads are added because the offloaded part is
+improves by 69\%, 37\%, 20\% and 7\% at T1--T4, and prefill t/s/W by 102\%, 53\%, 26\%
+and 14\% (derived). The gain shrinks as threads are added because the offloaded part is
 fixed at about 131\,ms per token, while the CPU's share of the work keeps getting faster
 up to T3: at T1 the FPGA replaces the slowest part of a single-threaded token, while at
-T4 the decode gain is down to 1.20$\times$.
+T4 the decode gain is down to 1.21$\times$. The efficiency gain is smaller than the
+speedup at every thread count because FPGA+CPU draws 0.54--0.86\,W more than CPU Only
+(derived), of the same order as the 0.66\,W idle cost of the configured accelerator,
+which is paid also during the 54\% of a T3 token in which the IP is idle (derived from
+129.5 of 283.3\,ms).
 The FPGA+CPU path also slows from T3 to T4 (3.53 to 3.24\,t/s) while its FPGA time is
 unchanged, so the loss is on the CPU side; the cause has not been measured.
 
@@ -305,7 +317,7 @@ path (derived), and the two do not overlap, because the driver blocks the graph 
 
 Comparing the KV260 against the STM32MP257F-DK isolates the effect of the wider
 Cortex-A53 pipeline and FPGA fabric from the Cortex-A35 baseline. The A35 achieves
-1.28\,t/s decode at T2, versus 1.76\,t/s for the KV260 A53 at T2 (CPU Only) and
+1.28\,t/s decode at T2, versus 1.77\,t/s for the KV260 A53 at T2 (CPU Only) and
 \textbf{2.92}\,t/s for the KV260 FPGA+CPU path, a \textbf{2.28$\times$} decode speedup
 at matched thread count (derived), at the cost of a more complex integration and about
 \textbf{4.0}\,W of additional board power (4.78\,W versus an estimated 0.80\,W). The
@@ -316,7 +328,7 @@ it brings the language model to 342\,ms per token with two threads, while the A3
 
 Section~\ref{sec:research_question} defined a per-token generation latency target of
 200--500\,ms for the language model component. Of the eight KV260 configurations, five
-enter this range: T3 and T4 CPU Only (394 and 372\,ms) and T2, T3 and T4 FPGA+CPU (342,
+enter this range: T3 and T4 CPU Only (391 and 373\,ms) and T2, T3 and T4 FPGA+CPU (342,
 283 and 309\,ms); FPGA+CPU at T1 misses it narrowly (515\,ms). No configuration reaches the 200\,ms instantaneous threshold. The
 FPGA+CPU path reaches sub-500\,ms decode with two active CPU threads, whereas CPU Only
 needs three. This thread advantage matters in practice: a full conversational pipeline
@@ -333,8 +345,8 @@ between the host CPU and the accelerator: on a weaker host the absolute gain is 
 while on a stronger host (more A53 threads) the CPU closes the gap.
 Table~\ref{tab:kv260_comparison} places this design within the space of published KV260
 accelerators; unlike compute-intensive matrix-multiply designs that saturate DSP slices,
-the MatMul + SwiGLU kernel is bounded by DDR bandwidth and by LUT and routing capacity
-(86.7\% LUT, 19\% DSP).
+the MatMul + SwiGLU kernel is bounded by the DDR port bandwidth in Stages~2a/2b and by
+the LUT and routing capacity that caps the Stage~5 MAC array (86.7\% LUT, 19\% DSP).
 
 \begin{table}[H]
 \centering
@@ -512,14 +524,14 @@ Threads & Mode & Latency (ms) & $<$500\,ms & J/token & Efficiency & Limiting fac
 \hline
 \multicolumn{7}{c}{\itshape KV260 (4$\times$ Cortex-A53)} \\
 \hline
-T1 & CPU Only  & 1075 & No           & 4.60 & baseline  & --- \\
-T1 & FPGA+CPU  & 515  & No           & 2.31 & +99\%     & Single-thread non-FFN CPU work ($\approx$384\,ms) \\
-T2 & CPU Only  & 568  & No           & 2.61 & baseline  & --- \\
-T2 & FPGA+CPU  & \textbf{342}  & \textbf{Yes} & 1.64 & +60\%  & Non-FFN CPU work ($\approx$211\,ms), serial with the FPGA call \\
-T3 & CPU Only  & \textbf{394}  & \textbf{Yes} & 1.91 & baseline  & --- \\
-T3 & FPGA+CPU  & \textbf{283}  & \textbf{Yes} & 1.39 & +37\%     & Non-FFN CPU work ($\approx$152\,ms) and FPGA time (130\,ms) \\
-T4 & CPU Only  & \textbf{372}  & \textbf{Yes} & 1.77 & baseline  & --- \\
-T4 & FPGA+CPU  & \textbf{309}  & \textbf{Yes} & 1.45 & +22\%     & CPU part slower than at T3 \\
+T1 & CPU Only  & 1075 & No           & 3.89 & baseline  & --- \\
+T1 & FPGA+CPU  & 515  & No           & 2.31 & +69\%     & Single-thread non-FFN CPU work ($\approx$384\,ms) \\
+T2 & CPU Only  & 565  & No           & 2.24 & baseline  & --- \\
+T2 & FPGA+CPU  & \textbf{342}  & \textbf{Yes} & 1.64 & +37\%  & Non-FFN CPU work ($\approx$211\,ms), serial with the FPGA call \\
+T3 & CPU Only  & \textbf{391}  & \textbf{Yes} & 1.67 & baseline  & --- \\
+T3 & FPGA+CPU  & \textbf{283}  & \textbf{Yes} & 1.39 & +20\%     & Non-FFN CPU work ($\approx$152\,ms) and FPGA time (130\,ms) \\
+T4 & CPU Only  & \textbf{373}  & \textbf{Yes} & 1.56 & baseline  & --- \\
+T4 & FPGA+CPU  & \textbf{309}  & \textbf{Yes} & 1.45 & +7\%      & CPU part slower than at T3; 0.54\,W more power than CPU Only \\
 \hline
 \multicolumn{7}{c}{\itshape STM32MP257F-DK (2$\times$ Cortex-A35)} \\
 \hline
