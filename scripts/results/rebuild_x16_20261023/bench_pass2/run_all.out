@@ -1,0 +1,332 @@
+[15:14:03] state before:
+                      kria-accel            XRT_FLAT                      kria-accel            XRT_FLAT               (0+0)                  -1
+                      swiglu-x16            XRT_FLAT                      swiglu-x16            XRT_FLAT               (0+0)                  0,
+=== FPGA+CPU | T=3 | R=3 ===
+[15:14:04] Running llama-bench (FPGA+CPU)...
+[SWG] ==== TOKEN #0 (16 layers, ms): quant=0.43 program=0.00 sync_dev=0.23 fpga=181.08 sync_cpu=0.36 memcpy=0.08 | FFN-path total=182.17 ====
+[SWG] ==== TOKEN #1 (16 layers, ms): quant=0.43 program=0.00 sync_dev=0.25 fpga=181.56 sync_cpu=0.50 memcpy=0.09 | FFN-path total=182.83 ====
+[SWG] ==== TOKEN #2 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.21 fpga=181.24 sync_cpu=0.24 memcpy=0.06 | FFN-path total=182.16 ====
+[SWG] ==== TOKEN #3 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.22 fpga=181.01 sync_cpu=0.32 memcpy=0.06 | FFN-path total=182.01 ====
+[SWG] ==== TOKEN #4 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.23 fpga=181.52 sync_cpu=0.42 memcpy=0.08 | FFN-path total=182.65 ====
+[SWG] ==== TOKEN #5 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.20 fpga=181.00 sync_cpu=0.25 memcpy=0.06 | FFN-path total=181.91 ====
+[SWG] ==== TOKEN #6 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.25 fpga=181.83 sync_cpu=0.55 memcpy=0.09 | FFN-path total=183.14 ====
+[SWG] ==== TOKEN #7 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.24 fpga=181.43 sync_cpu=0.35 memcpy=0.07 | FFN-path total=182.50 ====
+[SWG] ==== TOKEN #8 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.21 fpga=181.39 sync_cpu=0.24 memcpy=0.06 | FFN-path total=182.31 ====
+[SWG] ==== TOKEN #9 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.27 fpga=181.58 sync_cpu=0.49 memcpy=0.12 | FFN-path total=182.86 ====
+[SWG] ==== TOKEN #10 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.20 fpga=181.03 sync_cpu=0.25 memcpy=0.06 | FFN-path total=181.96 ====
+[SWG] ==== TOKEN #11 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.25 fpga=181.31 sync_cpu=0.35 memcpy=0.07 | FFN-path total=182.39 ====
+[SWG] ==== TOKEN #12 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.35 fpga=182.03 sync_cpu=0.65 memcpy=0.10 | FFN-path total=183.55 ====
+[SWG] ==== TOKEN #13 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.28 fpga=181.58 sync_cpu=0.46 memcpy=0.09 | FFN-path total=182.81 ====
+[SWG] ==== TOKEN #14 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.24 fpga=180.94 sync_cpu=0.26 memcpy=0.06 | FFN-path total=181.92 ====
+[SWG] ==== TOKEN #15 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.28 fpga=180.58 sync_cpu=0.24 memcpy=0.06 | FFN-path total=181.56 ====
+[SWG] ==== TOKEN #16 (16 layers, ms): quant=0.39 program=0.00 sync_dev=0.25 fpga=180.85 sync_cpu=0.25 memcpy=0.06 | FFN-path total=181.79 ====
+[SWG] ==== TOKEN #17 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.27 fpga=181.63 sync_cpu=0.52 memcpy=0.08 | FFN-path total=182.92 ====
+[SWG] ==== TOKEN #18 (16 layers, ms): quant=0.42 program=0.00 sync_dev=0.33 fpga=181.56 sync_cpu=0.55 memcpy=0.09 | FFN-path total=182.95 ====
+[SWG] ==== TOKEN #19 (16 layers, ms): quant=0.39 program=0.00 sync_dev=0.24 fpga=180.90 sync_cpu=0.25 memcpy=0.06 | FFN-path total=181.86 ====
+[SWG] ==== TOKEN #20 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.24 fpga=180.88 sync_cpu=0.25 memcpy=0.06 | FFN-path total=181.83 ====
+[SWG] ==== TOKEN #21 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.31 fpga=181.14 sync_cpu=0.36 memcpy=0.10 | FFN-path total=182.31 ====
+[SWG] ==== TOKEN #22 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.31 fpga=181.92 sync_cpu=0.40 memcpy=0.07 | FFN-path total=183.10 ====
+[SWG] ==== TOKEN #23 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.29 fpga=182.07 sync_cpu=0.63 memcpy=0.10 | FFN-path total=183.51 ====
+[SWG] ==== TOKEN #24 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.28 fpga=181.00 sync_cpu=0.30 memcpy=0.07 | FFN-path total=182.04 ====
+[SWG] ==== TOKEN #25 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.26 fpga=180.52 sync_cpu=0.29 memcpy=0.07 | FFN-path total=181.54 ====
+[SWG] ==== TOKEN #26 (16 layers, ms): quant=0.39 program=0.00 sync_dev=0.24 fpga=181.01 sync_cpu=0.25 memcpy=0.06 | FFN-path total=181.96 ====
+[SWG] ==== TOKEN #27 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.30 fpga=181.03 sync_cpu=0.30 memcpy=0.06 | FFN-path total=182.10 ====
+[SWG] ==== TOKEN #28 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.29 fpga=182.04 sync_cpu=0.62 memcpy=0.09 | FFN-path total=183.45 ====
+[SWG] ==== TOKEN #29 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.27 fpga=181.22 sync_cpu=0.40 memcpy=0.08 | FFN-path total=182.37 ====
+[SWG] ==== TOKEN #30 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.28 fpga=180.78 sync_cpu=0.26 memcpy=0.06 | FFN-path total=181.78 ====
+[SWG] ==== TOKEN #31 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.24 fpga=180.98 sync_cpu=0.25 memcpy=0.06 | FFN-path total=181.94 ====
+[SWG] ==== TOKEN #32 (16 layers, ms): quant=0.39 program=0.00 sync_dev=0.25 fpga=181.03 sync_cpu=0.25 memcpy=0.06 | FFN-path total=181.99 ====
+[SWG] ==== TOKEN #33 (16 layers, ms): quant=0.43 program=0.00 sync_dev=0.37 fpga=181.33 sync_cpu=0.52 memcpy=0.09 | FFN-path total=182.74 ====
+[SWG] ==== TOKEN #34 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.28 fpga=181.12 sync_cpu=0.42 memcpy=0.08 | FFN-path total=182.30 ====
+[SWG] ==== TOKEN #35 (16 layers, ms): quant=0.39 program=0.00 sync_dev=0.27 fpga=180.32 sync_cpu=0.23 memcpy=0.07 | FFN-path total=181.28 ====
+[SWG] ==== TOKEN #36 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.28 fpga=180.72 sync_cpu=0.26 memcpy=0.06 | FFN-path total=181.73 ====
+[SWG] ==== TOKEN #37 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.25 fpga=181.33 sync_cpu=0.28 memcpy=0.07 | FFN-path total=182.33 ====
+[SWG] ==== TOKEN #38 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.26 fpga=181.66 sync_cpu=0.42 memcpy=0.07 | FFN-path total=182.82 ====
+[SWG] ==== TOKEN #39 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.34 fpga=181.46 sync_cpu=0.58 memcpy=0.09 | FFN-path total=182.89 ====
+[SWG] ==== TOKEN #40 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.24 fpga=181.39 sync_cpu=0.26 memcpy=0.06 | FFN-path total=182.35 ====
+[SWG] ==== TOKEN #41 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.27 fpga=181.25 sync_cpu=0.38 memcpy=0.07 | FFN-path total=182.37 ====
+[SWG] ==== TOKEN #42 (16 layers, ms): quant=0.39 program=0.00 sync_dev=0.28 fpga=181.39 sync_cpu=0.27 memcpy=0.06 | FFN-path total=182.40 ====
+[SWG] ==== TOKEN #43 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.25 fpga=181.38 sync_cpu=0.34 memcpy=0.07 | FFN-path total=182.44 ====
+[SWG] ==== TOKEN #44 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.29 fpga=181.34 sync_cpu=0.55 memcpy=0.08 | FFN-path total=182.68 ====
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       3 |            pp12 |          4.00 ± 0.00 |
+[SWG] ==== TOKEN #45 (16 layers, ms): quant=0.41 program=0.00 sync_dev=0.74 fpga=181.30 sync_cpu=0.39 memcpy=0.07 | FFN-path total=182.92 ====
+[SWG] ==== TOKEN #46 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.88 fpga=180.77 sync_cpu=0.29 memcpy=0.07 | FFN-path total=182.41 ====
+[SWG] ==== TOKEN #47 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.24 sync_cpu=0.32 memcpy=0.07 | FFN-path total=182.90 ====
+[SWG] ==== TOKEN #48 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.41 sync_cpu=0.57 memcpy=0.09 | FFN-path total=183.32 ====
+[SWG] ==== TOKEN #49 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.52 sync_cpu=0.40 memcpy=0.08 | FFN-path total=183.25 ====
+[SWG] ==== TOKEN #50 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.85 fpga=181.64 sync_cpu=0.30 memcpy=0.07 | FFN-path total=183.26 ====
+[SWG] ==== TOKEN #51 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.80 fpga=181.12 sync_cpu=0.37 memcpy=0.07 | FFN-path total=182.77 ====
+[SWG] ==== TOKEN #52 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.87 fpga=181.60 sync_cpu=0.55 memcpy=0.09 | FFN-path total=183.52 ====
+[SWG] ==== TOKEN #53 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.84 fpga=181.24 sync_cpu=0.48 memcpy=0.08 | FFN-path total=183.06 ====
+[SWG] ==== TOKEN #54 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.82 fpga=181.88 sync_cpu=0.38 memcpy=0.08 | FFN-path total=183.57 ====
+[SWG] ==== TOKEN #55 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.29 sync_cpu=0.31 memcpy=0.07 | FFN-path total=182.91 ====
+[SWG] ==== TOKEN #56 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.91 sync_cpu=0.43 memcpy=0.08 | FFN-path total=183.67 ====
+[SWG] ==== TOKEN #57 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.88 fpga=181.73 sync_cpu=0.61 memcpy=0.09 | FFN-path total=183.72 ====
+[SWG] ==== TOKEN #58 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.82 fpga=181.08 sync_cpu=0.36 memcpy=0.07 | FFN-path total=182.74 ====
+[SWG] ==== TOKEN #59 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.87 fpga=180.98 sync_cpu=0.31 memcpy=0.07 | FFN-path total=182.65 ====
+[SWG] ==== TOKEN #60 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.87 fpga=181.20 sync_cpu=0.32 memcpy=0.07 | FFN-path total=182.86 ====
+[SWG] ==== TOKEN #61 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.79 fpga=181.45 sync_cpu=0.62 memcpy=0.09 | FFN-path total=183.36 ====
+[SWG] ==== TOKEN #62 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.87 fpga=181.49 sync_cpu=0.41 memcpy=0.08 | FFN-path total=183.26 ====
+[SWG] ==== TOKEN #63 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.20 sync_cpu=0.35 memcpy=0.07 | FFN-path total=182.88 ====
+[SWG] ==== TOKEN #64 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.30 sync_cpu=0.37 memcpy=0.07 | FFN-path total=182.99 ====
+[SWG] ==== TOKEN #65 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.90 sync_cpu=0.57 memcpy=0.09 | FFN-path total=183.81 ====
+[SWG] ==== TOKEN #66 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.96 fpga=181.22 sync_cpu=0.45 memcpy=0.08 | FFN-path total=183.12 ====
+[SWG] ==== TOKEN #67 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.92 fpga=181.02 sync_cpu=0.38 memcpy=0.07 | FFN-path total=182.79 ====
+[SWG] ==== TOKEN #68 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=180.83 sync_cpu=0.30 memcpy=0.07 | FFN-path total=182.46 ====
+[SWG] ==== TOKEN #69 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.87 fpga=181.34 sync_cpu=0.50 memcpy=0.08 | FFN-path total=183.20 ====
+[SWG] ==== TOKEN #70 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.79 fpga=181.30 sync_cpu=0.58 memcpy=0.12 | FFN-path total=183.19 ====
+[SWG] ==== TOKEN #71 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.94 fpga=181.59 sync_cpu=0.36 memcpy=0.08 | FFN-path total=183.37 ====
+[SWG] ==== TOKEN #72 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.35 sync_cpu=0.30 memcpy=0.07 | FFN-path total=182.98 ====
+[SWG] ==== TOKEN #73 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.83 fpga=181.57 sync_cpu=0.38 memcpy=0.08 | FFN-path total=183.26 ====
+[SWG] ==== TOKEN #74 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.93 fpga=182.35 sync_cpu=0.66 memcpy=0.10 | FFN-path total=184.44 ====
+[SWG] ==== TOKEN #75 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.11 sync_cpu=0.33 memcpy=0.07 | FFN-path total=182.77 ====
+[SWG] ==== TOKEN #76 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.53 sync_cpu=0.34 memcpy=0.07 | FFN-path total=183.20 ====
+[SWG] ==== TOKEN #77 (16 layers, ms): quant=0.45 program=0.01 sync_dev=0.91 fpga=181.14 sync_cpu=0.32 memcpy=0.07 | FFN-path total=182.90 ====
+[SWG] ==== TOKEN #78 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.79 fpga=181.94 sync_cpu=0.62 memcpy=0.09 | FFN-path total=183.84 ====
+[SWG] ==== TOKEN #79 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.90 fpga=181.58 sync_cpu=0.40 memcpy=0.08 | FFN-path total=183.37 ====
+[SWG] ==== TOKEN #80 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.83 fpga=181.49 sync_cpu=0.36 memcpy=0.07 | FFN-path total=183.15 ====
+[SWG] ==== TOKEN #81 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.52 sync_cpu=0.32 memcpy=0.07 | FFN-path total=183.18 ====
+[SWG] ==== TOKEN #82 (16 layers, ms): quant=0.44 program=0.01 sync_dev=0.82 fpga=181.72 sync_cpu=0.55 memcpy=0.09 | FFN-path total=183.63 ====
+[SWG] ==== TOKEN #83 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.83 fpga=181.67 sync_cpu=0.53 memcpy=0.09 | FFN-path total=183.51 ====
+[SWG] ==== TOKEN #84 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.87 fpga=181.71 sync_cpu=0.31 memcpy=0.07 | FFN-path total=183.36 ====
+[SWG] ==== TOKEN #85 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.88 fpga=181.32 sync_cpu=0.29 memcpy=0.07 | FFN-path total=182.96 ====
+[SWG] ==== TOKEN #86 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.83 fpga=181.35 sync_cpu=0.47 memcpy=0.08 | FFN-path total=183.13 ====
+[SWG] ==== TOKEN #87 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.82 fpga=181.71 sync_cpu=0.56 memcpy=0.09 | FFN-path total=183.58 ====
+[SWG] ==== TOKEN #88 (16 layers, ms): quant=0.45 program=0.01 sync_dev=0.87 fpga=181.48 sync_cpu=0.34 memcpy=0.07 | FFN-path total=183.21 ====
+[SWG] ==== TOKEN #89 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.48 sync_cpu=0.33 memcpy=0.07 | FFN-path total=183.13 ====
+[SWG] ==== TOKEN #90 (16 layers, ms): quant=0.46 program=0.01 sync_dev=0.81 fpga=181.61 sync_cpu=0.44 memcpy=0.08 | FFN-path total=183.40 ====
+[SWG] ==== TOKEN #91 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=182.14 sync_cpu=0.69 memcpy=0.09 | FFN-path total=184.17 ====
+[SWG] ==== TOKEN #92 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.31 sync_cpu=0.32 memcpy=0.07 | FFN-path total=182.96 ====
+[SWG] ==== TOKEN #93 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.90 fpga=181.47 sync_cpu=0.34 memcpy=0.07 | FFN-path total=183.18 ====
+[SWG] ==== TOKEN #94 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.88 fpga=181.26 sync_cpu=0.34 memcpy=0.07 | FFN-path total=182.96 ====
+[SWG] ==== TOKEN #95 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.81 fpga=181.72 sync_cpu=0.60 memcpy=0.09 | FFN-path total=183.62 ====
+[SWG] ==== TOKEN #96 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.40 sync_cpu=0.43 memcpy=0.08 | FFN-path total=183.17 ====
+[SWG] ==== TOKEN #97 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.87 fpga=181.32 sync_cpu=0.32 memcpy=0.07 | FFN-path total=182.98 ====
+[SWG] ==== TOKEN #98 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.87 fpga=181.30 sync_cpu=0.34 memcpy=0.07 | FFN-path total=182.99 ====
+[SWG] ==== TOKEN #99 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.80 fpga=181.39 sync_cpu=0.53 memcpy=0.09 | FFN-path total=183.22 ====
+[SWG] ==== TOKEN #100 (16 layers, ms): quant=0.50 program=0.00 sync_dev=0.85 fpga=181.42 sync_cpu=0.50 memcpy=0.08 | FFN-path total=183.35 ====
+[SWG] ==== TOKEN #101 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.21 sync_cpu=0.33 memcpy=0.07 | FFN-path total=182.86 ====
+[SWG] ==== TOKEN #102 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.09 sync_cpu=0.38 memcpy=0.08 | FFN-path total=182.79 ====
+[SWG] ==== TOKEN #103 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.20 sync_cpu=0.42 memcpy=0.08 | FFN-path total=182.96 ====
+[SWG] ==== TOKEN #104 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.70 sync_cpu=0.62 memcpy=0.13 | FFN-path total=183.71 ====
+[SWG] ==== TOKEN #105 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=180.96 sync_cpu=0.31 memcpy=0.07 | FFN-path total=182.60 ====
+[SWG] ==== TOKEN #106 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.91 fpga=180.65 sync_cpu=0.38 memcpy=0.07 | FFN-path total=182.41 ====
+[SWG] ==== TOKEN #107 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.19 sync_cpu=0.35 memcpy=0.07 | FFN-path total=182.87 ====
+[SWG] ==== TOKEN #108 (16 layers, ms): quant=0.45 program=0.01 sync_dev=0.84 fpga=181.69 sync_cpu=0.65 memcpy=0.13 | FFN-path total=183.76 ====
+[SWG] ==== TOKEN #109 (16 layers, ms): quant=0.51 program=0.00 sync_dev=0.85 fpga=180.95 sync_cpu=0.41 memcpy=0.08 | FFN-path total=182.81 ====
+[SWG] ==== TOKEN #110 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.89 fpga=181.28 sync_cpu=0.32 memcpy=0.07 | FFN-path total=182.97 ====
+[SWG] ==== TOKEN #111 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.24 sync_cpu=0.33 memcpy=0.07 | FFN-path total=182.89 ====
+[SWG] ==== TOKEN #112 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.81 fpga=181.18 sync_cpu=0.51 memcpy=0.08 | FFN-path total=182.99 ====
+[SWG] ==== TOKEN #113 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=180.94 sync_cpu=0.40 memcpy=0.08 | FFN-path total=182.67 ====
+[SWG] ==== TOKEN #114 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.03 sync_cpu=0.31 memcpy=0.07 | FFN-path total=182.67 ====
+[SWG] ==== TOKEN #115 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.32 sync_cpu=0.38 memcpy=0.08 | FFN-path total=183.02 ====
+[SWG] ==== TOKEN #116 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.82 fpga=181.78 sync_cpu=0.60 memcpy=0.09 | FFN-path total=183.69 ====
+[SWG] ==== TOKEN #117 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.95 sync_cpu=0.57 memcpy=0.09 | FFN-path total=183.86 ====
+[SWG] ==== TOKEN #118 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.83 fpga=181.47 sync_cpu=0.40 memcpy=0.08 | FFN-path total=183.19 ====
+[SWG] ==== TOKEN #119 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.89 fpga=181.18 sync_cpu=0.31 memcpy=0.07 | FFN-path total=182.85 ====
+[SWG] ==== TOKEN #120 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.83 fpga=181.20 sync_cpu=0.42 memcpy=0.08 | FFN-path total=182.93 ====
+[SWG] ==== TOKEN #121 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.83 fpga=181.58 sync_cpu=0.65 memcpy=0.10 | FFN-path total=183.56 ====
+[SWG] ==== TOKEN #122 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=180.72 sync_cpu=0.32 memcpy=0.07 | FFN-path total=182.38 ====
+[SWG] ==== TOKEN #123 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=180.84 sync_cpu=0.31 memcpy=0.07 | FFN-path total=182.48 ====
+[SWG] ==== TOKEN #124 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=180.95 sync_cpu=0.36 memcpy=0.07 | FFN-path total=182.64 ====
+[SWG] ==== TOKEN #125 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.80 fpga=181.52 sync_cpu=0.69 memcpy=0.09 | FFN-path total=183.51 ====
+[SWG] ==== TOKEN #126 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.31 sync_cpu=0.40 memcpy=0.08 | FFN-path total=183.06 ====
+[SWG] ==== TOKEN #127 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.82 fpga=181.35 sync_cpu=0.35 memcpy=0.07 | FFN-path total=183.00 ====
+[SWG] ==== TOKEN #128 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.81 fpga=180.99 sync_cpu=0.34 memcpy=0.07 | FFN-path total=182.62 ====
+[SWG] ==== TOKEN #129 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.90 sync_cpu=0.56 memcpy=0.09 | FFN-path total=183.80 ====
+[SWG] ==== TOKEN #130 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.85 fpga=181.55 sync_cpu=0.44 memcpy=0.08 | FFN-path total=183.32 ====
+[SWG] ==== TOKEN #131 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.93 fpga=181.68 sync_cpu=0.38 memcpy=0.08 | FFN-path total=183.48 ====
+[SWG] ==== TOKEN #132 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.35 sync_cpu=0.33 memcpy=0.07 | FFN-path total=183.01 ====
+[SWG] ==== TOKEN #133 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.97 fpga=181.24 sync_cpu=0.47 memcpy=0.08 | FFN-path total=183.17 ====
+[SWG] ==== TOKEN #134 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.72 sync_cpu=0.61 memcpy=0.10 | FFN-path total=183.68 ====
+[SWG] ==== TOKEN #135 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.86 fpga=180.64 sync_cpu=0.29 memcpy=0.07 | FFN-path total=182.27 ====
+[SWG] ==== TOKEN #136 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=180.79 sync_cpu=0.31 memcpy=0.07 | FFN-path total=182.43 ====
+[SWG] ==== TOKEN #137 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.49 sync_cpu=0.38 memcpy=0.08 | FFN-path total=183.19 ====
+[SWG] ==== TOKEN #138 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.81 fpga=181.36 sync_cpu=0.72 memcpy=0.09 | FFN-path total=183.39 ====
+[SWG] ==== TOKEN #139 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.77 fpga=181.03 sync_cpu=0.48 memcpy=0.09 | FFN-path total=182.78 ====
+[SWG] ==== TOKEN #140 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.82 fpga=181.16 sync_cpu=0.41 memcpy=0.08 | FFN-path total=182.88 ====
+[SWG] ==== TOKEN #141 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.88 fpga=181.50 sync_cpu=0.39 memcpy=0.07 | FFN-path total=183.25 ====
+[SWG] ==== TOKEN #142 (16 layers, ms): quant=0.45 program=0.00 sync_dev=0.83 fpga=181.74 sync_cpu=0.64 memcpy=0.09 | FFN-path total=183.77 ====
+[SWG] ==== TOKEN #143 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.89 fpga=181.32 sync_cpu=0.36 memcpy=0.07 | FFN-path total=183.05 ====
+[SWG] ==== TOKEN #144 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.85 fpga=181.46 sync_cpu=0.38 memcpy=0.08 | FFN-path total=183.17 ====
+[SWG] ==== TOKEN #145 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.88 fpga=181.65 sync_cpu=0.31 memcpy=0.07 | FFN-path total=183.31 ====
+[SWG] ==== TOKEN #146 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.82 fpga=181.21 sync_cpu=0.56 memcpy=0.09 | FFN-path total=183.09 ====
+[SWG] ==== TOKEN #147 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.54 sync_cpu=0.46 memcpy=0.08 | FFN-path total=183.33 ====
+[SWG] ==== TOKEN #148 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.76 sync_cpu=0.33 memcpy=0.07 | FFN-path total=183.43 ====
+[SWG] ==== TOKEN #149 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.60 sync_cpu=0.32 memcpy=0.07 | FFN-path total=183.25 ====
+[SWG] ==== TOKEN #150 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.85 fpga=181.78 sync_cpu=0.54 memcpy=0.09 | FFN-path total=183.66 ====
+[SWG] ==== TOKEN #151 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.26 sync_cpu=0.46 memcpy=0.08 | FFN-path total=183.06 ====
+[SWG] ==== TOKEN #152 (16 layers, ms): quant=0.44 program=0.00 sync_dev=0.86 fpga=181.58 sync_cpu=0.31 memcpy=0.07 | FFN-path total=183.26 ====
+[SWG] ==== TOKEN #153 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.82 fpga=181.70 sync_cpu=0.36 memcpy=0.09 | FFN-path total=183.36 ====
+[SWG] ==== TOKEN #154 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.80 fpga=181.85 sync_cpu=0.51 memcpy=0.08 | FFN-path total=183.64 ====
+[SWG] ==== TOKEN #155 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.88 fpga=181.62 sync_cpu=0.57 memcpy=0.09 | FFN-path total=183.56 ====
+[SWG] ==== TOKEN #156 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.07 sync_cpu=0.34 memcpy=0.07 | FFN-path total=182.73 ====
+[SWG] ==== TOKEN #157 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.60 sync_cpu=0.33 memcpy=0.09 | FFN-path total=183.28 ====
+[SWG] ==== TOKEN #158 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.68 sync_cpu=0.36 memcpy=0.08 | FFN-path total=183.37 ====
+[SWG] ==== TOKEN #159 (16 layers, ms): quant=0.50 program=0.00 sync_dev=0.83 fpga=181.77 sync_cpu=0.64 memcpy=0.09 | FFN-path total=183.83 ====
+[SWG] ==== TOKEN #160 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.26 sync_cpu=0.43 memcpy=0.08 | FFN-path total=183.02 ====
+[SWG] ==== TOKEN #161 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.90 fpga=181.34 sync_cpu=0.32 memcpy=0.07 | FFN-path total=183.04 ====
+[SWG] ==== TOKEN #162 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.17 sync_cpu=0.36 memcpy=0.07 | FFN-path total=182.86 ====
+[SWG] ==== TOKEN #163 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.81 fpga=181.73 sync_cpu=0.58 memcpy=0.09 | FFN-path total=183.62 ====
+[SWG] ==== TOKEN #164 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.83 fpga=181.23 sync_cpu=0.40 memcpy=0.07 | FFN-path total=182.94 ====
+[SWG] ==== TOKEN #165 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.30 sync_cpu=0.30 memcpy=0.07 | FFN-path total=182.93 ====
+[SWG] ==== TOKEN #166 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.82 fpga=181.47 sync_cpu=0.37 memcpy=0.08 | FFN-path total=183.15 ====
+[SWG] ==== TOKEN #167 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.80 fpga=181.01 sync_cpu=0.48 memcpy=0.08 | FFN-path total=182.78 ====
+[SWG] ==== TOKEN #168 (16 layers, ms): quant=0.40 program=0.00 sync_dev=1.03 fpga=181.44 sync_cpu=0.54 memcpy=0.09 | FFN-path total=183.50 ====
+[SWG] ==== TOKEN #169 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.82 fpga=181.00 sync_cpu=0.37 memcpy=0.07 | FFN-path total=182.66 ====
+[SWG] ==== TOKEN #170 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.53 sync_cpu=0.32 memcpy=0.09 | FFN-path total=183.18 ====
+[SWG] ==== TOKEN #171 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.83 fpga=181.39 sync_cpu=0.39 memcpy=0.08 | FFN-path total=183.09 ====
+[SWG] ==== TOKEN #172 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.83 fpga=181.82 sync_cpu=0.64 memcpy=0.09 | FFN-path total=183.79 ====
+[SWG] ==== TOKEN #173 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.80 fpga=181.26 sync_cpu=0.37 memcpy=0.08 | FFN-path total=182.91 ====
+[SWG] ==== TOKEN #174 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.84 fpga=181.05 sync_cpu=0.32 memcpy=0.07 | FFN-path total=182.68 ====
+[SWG] ==== TOKEN #175 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=180.97 sync_cpu=0.31 memcpy=0.07 | FFN-path total=182.62 ====
+[SWG] ==== TOKEN #176 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.80 fpga=181.28 sync_cpu=0.58 memcpy=0.09 | FFN-path total=183.15 ====
+[SWG] ==== TOKEN #177 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.87 fpga=181.94 sync_cpu=0.43 memcpy=0.08 | FFN-path total=183.72 ====
+[SWG] ==== TOKEN #178 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.65 sync_cpu=0.31 memcpy=0.07 | FFN-path total=183.27 ====
+[SWG] ==== TOKEN #179 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.83 fpga=181.07 sync_cpu=0.37 memcpy=0.07 | FFN-path total=182.75 ====
+[SWG] ==== TOKEN #180 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.83 fpga=181.27 sync_cpu=0.53 memcpy=0.09 | FFN-path total=183.12 ====
+[SWG] ==== TOKEN #181 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.85 fpga=181.40 sync_cpu=0.46 memcpy=0.08 | FFN-path total=183.19 ====
+[SWG] ==== TOKEN #182 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.10 sync_cpu=0.37 memcpy=0.07 | FFN-path total=182.79 ====
+[SWG] ==== TOKEN #183 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.23 sync_cpu=0.33 memcpy=0.07 | FFN-path total=182.89 ====
+[SWG] ==== TOKEN #184 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.82 fpga=181.23 sync_cpu=0.48 memcpy=0.08 | FFN-path total=183.02 ====
+[SWG] ==== TOKEN #185 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.89 fpga=182.40 sync_cpu=0.63 memcpy=0.09 | FFN-path total=184.42 ====
+[SWG] ==== TOKEN #186 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.10 sync_cpu=0.32 memcpy=0.07 | FFN-path total=182.75 ====
+[SWG] ==== TOKEN #187 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.45 sync_cpu=0.32 memcpy=0.07 | FFN-path total=183.10 ====
+[SWG] ==== TOKEN #188 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.47 sync_cpu=0.41 memcpy=0.08 | FFN-path total=183.21 ====
+[SWG] ==== TOKEN #189 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.83 fpga=182.01 sync_cpu=0.59 memcpy=0.13 | FFN-path total=183.97 ====
+[SWG] ==== TOKEN #190 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.25 sync_cpu=0.33 memcpy=0.07 | FFN-path total=182.90 ====
+[SWG] ==== TOKEN #191 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.87 fpga=181.06 sync_cpu=0.31 memcpy=0.07 | FFN-path total=182.72 ====
+[SWG] ==== TOKEN #192 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.28 sync_cpu=0.34 memcpy=0.07 | FFN-path total=182.94 ====
+[SWG] ==== TOKEN #193 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.81 fpga=181.70 sync_cpu=0.61 memcpy=0.09 | FFN-path total=183.61 ====
+[SWG] ==== TOKEN #194 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.87 fpga=181.53 sync_cpu=0.40 memcpy=0.08 | FFN-path total=183.28 ====
+[SWG] ==== TOKEN #195 (16 layers, ms): quant=0.45 program=0.00 sync_dev=0.81 fpga=181.41 sync_cpu=0.36 memcpy=0.07 | FFN-path total=183.11 ====
+[SWG] ==== TOKEN #196 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.87 fpga=181.49 sync_cpu=0.32 memcpy=0.07 | FFN-path total=183.15 ====
+[SWG] ==== TOKEN #197 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.82 fpga=181.34 sync_cpu=0.56 memcpy=0.08 | FFN-path total=183.21 ====
+[SWG] ==== TOKEN #198 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.82 fpga=181.42 sync_cpu=0.48 memcpy=0.09 | FFN-path total=183.22 ====
+[SWG] ==== TOKEN #199 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.33 sync_cpu=0.33 memcpy=0.07 | FFN-path total=182.98 ====
+[SWG] ==== TOKEN #200 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.65 sync_cpu=0.35 memcpy=0.07 | FFN-path total=183.33 ====
+[SWG] ==== TOKEN #201 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.83 fpga=181.79 sync_cpu=0.49 memcpy=0.08 | FFN-path total=183.59 ====
+[SWG] ==== TOKEN #202 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.83 fpga=181.36 sync_cpu=0.60 memcpy=0.09 | FFN-path total=183.29 ====
+[SWG] ==== TOKEN #203 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.41 sync_cpu=0.34 memcpy=0.07 | FFN-path total=183.08 ====
+[SWG] ==== TOKEN #204 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.52 sync_cpu=0.38 memcpy=0.07 | FFN-path total=183.24 ====
+[SWG] ==== TOKEN #205 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.71 sync_cpu=0.43 memcpy=0.08 | FFN-path total=183.46 ====
+[SWG] ==== TOKEN #206 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.95 fpga=182.15 sync_cpu=0.66 memcpy=0.10 | FFN-path total=184.27 ====
+[SWG] ==== TOKEN #207 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.85 fpga=181.39 sync_cpu=0.30 memcpy=0.07 | FFN-path total=183.02 ====
+[SWG] ==== TOKEN #208 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.89 fpga=180.90 sync_cpu=0.36 memcpy=0.07 | FFN-path total=182.62 ====
+[SWG] ==== TOKEN #209 (16 layers, ms): quant=0.44 program=0.00 sync_dev=0.87 fpga=181.38 sync_cpu=0.32 memcpy=0.07 | FFN-path total=183.09 ====
+[SWG] ==== TOKEN #210 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.82 fpga=181.42 sync_cpu=0.63 memcpy=0.09 | FFN-path total=183.36 ====
+[SWG] ==== TOKEN #211 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.91 fpga=181.35 sync_cpu=0.42 memcpy=0.08 | FFN-path total=183.17 ====
+[SWG] ==== TOKEN #212 (16 layers, ms): quant=0.45 program=0.00 sync_dev=0.86 fpga=181.40 sync_cpu=0.31 memcpy=0.07 | FFN-path total=183.09 ====
+[SWG] ==== TOKEN #213 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.60 sync_cpu=0.33 memcpy=0.07 | FFN-path total=183.26 ====
+[SWG] ==== TOKEN #214 (16 layers, ms): quant=0.46 program=0.00 sync_dev=0.79 fpga=181.51 sync_cpu=0.57 memcpy=0.09 | FFN-path total=183.43 ====
+[SWG] ==== TOKEN #215 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.95 fpga=181.73 sync_cpu=0.42 memcpy=0.08 | FFN-path total=183.58 ====
+[SWG] ==== TOKEN #216 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.59 sync_cpu=0.33 memcpy=0.07 | FFN-path total=183.25 ====
+[SWG] ==== TOKEN #217 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.32 sync_cpu=0.35 memcpy=0.07 | FFN-path total=183.00 ====
+[SWG] ==== TOKEN #218 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.81 fpga=181.77 sync_cpu=0.56 memcpy=0.09 | FFN-path total=183.63 ====
+[SWG] ==== TOKEN #219 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.86 fpga=181.53 sync_cpu=0.50 memcpy=0.09 | FFN-path total=183.38 ====
+[SWG] ==== TOKEN #220 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.83 fpga=180.88 sync_cpu=0.38 memcpy=0.07 | FFN-path total=182.58 ====
+[SWG] ==== TOKEN #221 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.08 sync_cpu=0.31 memcpy=0.07 | FFN-path total=182.72 ====
+[SWG] ==== TOKEN #222 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.26 sync_cpu=0.43 memcpy=0.08 | FFN-path total=183.03 ====
+[SWG] ==== TOKEN #223 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.93 fpga=181.71 sync_cpu=0.63 memcpy=0.10 | FFN-path total=183.77 ====
+[SWG] ==== TOKEN #224 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.40 sync_cpu=0.34 memcpy=0.07 | FFN-path total=183.06 ====
+[SWG] ==== TOKEN #225 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.89 fpga=181.94 sync_cpu=0.34 memcpy=0.07 | FFN-path total=183.65 ====
+[SWG] ==== TOKEN #226 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.90 fpga=181.28 sync_cpu=0.32 memcpy=0.07 | FFN-path total=182.97 ====
+[SWG] ==== TOKEN #227 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.83 fpga=181.68 sync_cpu=0.62 memcpy=0.10 | FFN-path total=183.63 ====
+[SWG] ==== TOKEN #228 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.85 fpga=181.23 sync_cpu=0.37 memcpy=0.08 | FFN-path total=182.94 ====
+[SWG] ==== TOKEN #229 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.85 fpga=180.92 sync_cpu=0.35 memcpy=0.07 | FFN-path total=182.60 ====
+[SWG] ==== TOKEN #230 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.87 fpga=181.08 sync_cpu=0.35 memcpy=0.07 | FFN-path total=182.77 ====
+[SWG] ==== TOKEN #231 (16 layers, ms): quant=0.42 program=0.00 sync_dev=0.83 fpga=181.25 sync_cpu=0.57 memcpy=0.09 | FFN-path total=183.15 ====
+[SWG] ==== TOKEN #232 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.84 fpga=181.32 sync_cpu=0.41 memcpy=0.07 | FFN-path total=183.04 ====
+[SWG] ==== TOKEN #233 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.81 fpga=181.63 sync_cpu=0.35 memcpy=0.07 | FFN-path total=183.27 ====
+[SWG] ==== TOKEN #234 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.91 fpga=181.58 sync_cpu=0.32 memcpy=0.07 | FFN-path total=183.29 ====
+[SWG] ==== TOKEN #235 (16 layers, ms): quant=0.40 program=0.01 sync_dev=0.83 fpga=181.54 sync_cpu=0.55 memcpy=0.08 | FFN-path total=183.41 ====
+[SWG] ==== TOKEN #236 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.82 fpga=181.42 sync_cpu=0.51 memcpy=0.08 | FFN-path total=183.24 ====
+[SWG] ==== TOKEN #237 (16 layers, ms): quant=0.40 program=0.00 sync_dev=0.86 fpga=181.14 sync_cpu=0.32 memcpy=0.07 | FFN-path total=182.80 ====
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       3 |            tg64 |          3.01 ± 0.01 |
+
+build: unknown (0)
+
+=== Summary FPGA+CPU T3 ===
+Throughput: | lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       3 |            tg64 |          3.01 ± 0.01 |
+Avg power: 4.75 W  (4752.1 mW, 58 samples)
+Avg temp (C): LPD=25  PL=23
+Peak RSS (VmHWM): 694 MB  (+ 512 MiB udmabuf, not in RSS)
+Log: /home/ubuntu/bench16b/accel_t3_20261023_151404.log
+[15:15:46] unloading PL
+remove from slot 0 returns: 0 (Ok)
+                      kria-accel            XRT_FLAT                      kria-accel            XRT_FLAT               (0+0)                  -1
+                      swiglu-x16            XRT_FLAT                      swiglu-x16            XRT_FLAT               (0+0)                  -1
+/dev/uio0
+/dev/uio1
+/dev/uio2
+/dev/uio3
+no swiglu uio
+=== CPU Only | T=1 | R=10 ===
+[15:16:07] Running llama-bench (CPU Only)...
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       1 |            pp12 |          1.15 ± 0.00 |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       1 |            tg64 |          0.93 ± 0.00 |
+
+build: unknown (0)
+
+=== Summary CPU T1 ===
+Throughput: | lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       1 |            tg64 |          0.93 ± 0.00 |
+Avg power: 4.25 W  (4259.8 mW, 577 samples)
+Avg temp (C): LPD=25  PL=24
+Peak RSS (VmHWM): 694 MB
+Log: /home/ubuntu/bench16b/cpu_t1_20261023_151607.log
+=== CPU Only | T=2 | R=10 ===
+[15:29:57] Running llama-bench (CPU Only)...
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       2 |            pp12 |          2.28 ± 0.00 |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       2 |            tg64 |          1.77 ± 0.00 |
+
+build: unknown (0)
+
+=== Summary CPU T2 ===
+Throughput: | lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       2 |            tg64 |          1.77 ± 0.00 |
+Avg power: 4.57 W  (4577.5 mW, 295 samples)
+Avg temp (C): LPD=25  PL=24
+Peak RSS (VmHWM): 694 MB
+Log: /home/ubuntu/bench16b/cpu_t2_20261023_152957.log
+=== CPU Only | T=3 | R=10 ===
+[15:37:20] Running llama-bench (CPU Only)...
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       3 |            pp12 |          3.38 ± 0.00 |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       3 |            tg64 |          2.55 ± 0.03 |
+
+build: unknown (0)
+
+=== Summary CPU T3 ===
+Throughput: | lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       3 |            tg64 |          2.55 ± 0.03 |
+Avg power: 4.88 W  (4882.0 mW, 199 samples)
+Avg temp (C): LPD=26  PL=24
+Peak RSS (VmHWM): 694 MB
+Log: /home/ubuntu/bench16b/cpu_t3_20261023_153720.log
+=== CPU Only | T=4 | R=10 ===
+[15:42:33] Running llama-bench (CPU Only)...
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       4 |            pp12 |          3.96 ± 0.03 |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       4 |            tg64 |          2.70 ± 0.06 |
+
+build: unknown (0)
+
+=== Summary CPU T4 ===
+Throughput: | lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       4 |            tg64 |          2.70 ± 0.06 |
+Avg power: 4.78 W  (4780.5 mW, 186 samples)
+Avg temp (C): LPD=26  PL=24
+Peak RSS (VmHWM): 694 MB
+Log: /home/ubuntu/bench16b/cpu_t4_20261023_154233.log
+[15:47:27] reloading swiglu-x16
+swiglu-x16: loaded to slot 0
+                      kria-accel            XRT_FLAT                      kria-accel            XRT_FLAT               (0+0)                  -1
+                      swiglu-x16            XRT_FLAT                      swiglu-x16            XRT_FLAT               (0+0)                  0,
+/sys/class/uio/uio4/name:swiglu
+crw------- 1 root root 507, 0 Oct 23 10:53 /dev/udmabuf0
+ALL_DONE

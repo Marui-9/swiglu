@@ -8,9 +8,9 @@ Run all commands from repo root (`.../swiglu`).
 
 ─── Parse power logs ───────────────────────────────────────────────────
 
-  python scripts/profiling/parse_power_logs.py scripts/results/power_cpu_T1.log
-  python scripts/profiling/parse_power_logs.py scripts/results/power_accel_T1.log
-  python scripts/profiling/parse_power_logs.py --power-cpu scripts/results/power_cpu_T1.log --power-accel scripts/results/power_accel_T1.log
+  python scripts/profiling/parse_power_logs.py scripts/results/old/power_cpu_T1.log
+  python scripts/profiling/parse_power_logs.py scripts/results/old/power_accel_T1.log
+  python scripts/profiling/parse_power_logs.py --power-cpu scripts/results/old/power_cpu_T1.log --power-accel scripts/results/old/power_accel_T1.log
 
 
 ─── Plotting ───────────────────────────────────────────────────────────

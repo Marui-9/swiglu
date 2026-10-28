@@ -1,0 +1,14 @@
+db8b9dad946efe9935b71a7c82684fa7  /home/ubuntu/ref_f16q8.kld
+7c0137fc034ddbc56a296bce31b4f7fb  /home/ubuntu/wiki.test.raw
+2e1c6368a0e5ed7ce6cfe2006cdd9d6b  /home/ubuntu/LFM2.5-1.2B-Thinking-Q4_K_M-allQ4Kffn.gguf
+411bda217443954ec412ddb82f08502c  /home/ubuntu/llama.cpp/ggml/src/ggml-cpu/ggml-cpu.c
+Sat Oct 24 09:50:56 UTC 2026
+run2_exit=0
+Sat Oct 24 10:15:48 UTC 2026
+run3_exit=0
+Sat Oct 24 10:36:19 UTC 2026
+run4_exit=0
+Sat Oct 24 11:01:02 UTC 2026
+run5_exit=0
+Sat Oct 24 11:21:32 UTC 2026
+29fad3475c9cc821f6823cca6b5ff227  cpu_allq4k24.kld

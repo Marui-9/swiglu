@@ -1,0 +1,14 @@
+calls=49 layer=0  time/call: mean 8017.4 us  min 8014.7  max 8019.5
+APM global clock: 533.32 cycles/us
+  S3_rd_bytes        10487808 per call
+  S4_rd_bytes        20971520 per call
+  S3_rd_txn             40968 per call
+  S4_rd_txn             81920 per call
+  S3_rd_lat           4220947 per call
+  S4_rd_lat           7612231 per call
+  S1_rd_bytes           11832 per call
+  S2_rd_bytes           10648 per call
+  S3_wr_bytes            8192 per call
+  S0_rd_bytes               0 per call
+  S3 mean rd latency 103.0 APM cy/txn, bytes/txn 256
+  S4 mean rd latency 92.9 APM cy/txn, bytes/txn 256

@@ -1,0 +1,13 @@
+# rebuild_x16 (swiglu-x16), layer 0
+samples 9458, mean spacing 1.19 us, last sample 11257.9 us
+Stage 2a/2b (S4 0 -> 10485760 B): 2.7 -> 6104.5 us = 6.102 ms, S4 1.72 GB/s, 745 cy/iteration
+gap (compute_gate): 0.089 ms
+Stage 5 (S4 > 10485760 B -> end of call): 6193.4 -> 11257.9 us = 5.064 ms, 1236 cy/iteration; last W_down byte at 11241.5 us, S4 2.08 GB/s
+S3 at end of Stage 2: 11056640 B; CPU (S1+S2) during call: 182720 B
+
+# q4k_final (kria-accel), layer 0, --s5-iters 512
+samples 11323, mean spacing 1.22 us, last sample 13809.6 us
+Stage 2a/2b (S4 0 -> 10485760 B): 2.0 -> 6838.3 us = 6.836 ms, S4 1.53 GB/s, 835 cy/iteration
+gap (compute_gate): 0.300 ms
+Stage 5 (S4 > 10485760 B -> end of call): 7138.2 -> 13809.6 us = 6.671 ms, 3258 cy/iteration; last W_down byte at 13794.0 us, S4 1.58 GB/s
+S3 at end of Stage 2: 10141216 B; CPU (S1+S2) during call: 543712 B

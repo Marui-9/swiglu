@@ -1,0 +1,11 @@
+entry_proc_U0                                                            n=1     interval 4294967295  latency      0  first: 32-32
+load_x_local_U0                                                          n=1     interval 4294967295  latency    203  first: 32-235
+compute_X1_U0                                                            n=1     interval 4294967295  latency  23871  first: 236-24107
+compute_X1_U0.dataflow_in_loop_COMPUTE_X1_1_U0                           n=32    interval    746  latency    745  first: 236-981 982-1727 1728-2473
+compute_X1_U0.dataflow_in_loop_COMPUTE_X1_1_U0.load_4rows_wv_urm9_U0     n=32    interval    746  latency    401  first: 236-637 982-1383 1728-2129
+compute_X1_U0.dataflow_in_loop_COMPUTE_X1_1_U0.mac_quant_wv_210_U0       n=32    interval    746  latency    343  first: 638-981 1384-1727 2130-2473
+compute_X2_U0                                                            n=1     interval 4294967295  latency  23871  first: 236-24107
+compute_X2_U0.dataflow_in_loop_COMPUTE_X2_1_U0                           n=32    interval    746  latency    745  first: 236-981 982-1727 1728-2473
+compute_X2_U0.dataflow_in_loop_COMPUTE_X2_1_U0.load_4rows_wv_urm_111_U0  n=32    interval    746  latency    401  first: 236-637 982-1383 1728-2129
+compute_X2_U0.dataflow_in_loop_COMPUTE_X2_1_U0.mac_quant_wv12_U0         n=32    interval    746  latency    343  first: 638-981 1384-1727 2130-2473
+store_X_U0                                                               n=1     interval 4294967295  latency  19462  first: 24108-43570

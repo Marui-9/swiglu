@@ -1,0 +1,44 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Fri Oct 23 13:29:23 2026
+| Host         : marui-machine running 64-bit Ubuntu"
+VERSION_ID="24.04 24.04.4 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+| Command      : report_utilization -hierarchical -hierarchical_depth 3 -file explore_util_hier.txt
+| Design       : design_1_wrapper
+| Device       : xck26-sfvc784-2LV-c
+| Speed File   : -2LV
+| Design State : Physopt postRoute
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++--------------------+------------------------------------------+------------+------------+---------+------+--------+--------+--------+------+------------+
+|      Instance      |                  Module                  | Total LUTs | Logic LUTs | LUTRAMs | SRLs |   FFs  | RAMB36 | RAMB18 | URAM | DSP Blocks |
++--------------------+------------------------------------------+------------+------------+---------+------+--------+--------+--------+------+------------+
+| design_1_wrapper   |                                    (top) |      99151 |      90041 |    7438 | 1672 | 139945 |     48 |      9 |    8 |        238 |
+|   design_1_i       |                                 design_1 |      99151 |      90041 |    7438 | 1672 | 139945 |     48 |      9 |    8 |        238 |
+|     swiglu_0       |                      design_1_swiglu_0_0 |      94798 |      86727 |    6432 | 1639 | 132586 |     48 |      9 |    8 |        238 |
+|       inst         |               design_1_swiglu_0_0_swiglu |      94798 |      86727 |    6432 | 1639 | 132586 |     48 |      9 |    8 |        238 |
+|     axi_smc        |                       design_1_axi_smc_0 |        743 |        742 |       0 |    1 |    806 |      0 |      0 |    0 |          0 |
+|       inst         |               design_1_axi_smc_0_bd_afc3 |        743 |        742 |       0 |    1 |    806 |      0 |      0 |    0 |          0 |
+|     rst_ps8_0_250M |                design_1_rst_ps8_0_250M_0 |         16 |         15 |       0 |    1 |    110 |      0 |      0 |    0 |          0 |
+|       (U0)         | design_1_rst_ps8_0_250M_0_proc_sys_reset |          0 |          0 |       0 |    0 |     78 |      0 |      0 |    0 |          0 |
+|     smartconnect_0 |                design_1_smartconnect_0_0 |       2924 |       2169 |     734 |   21 |   5473 |      0 |      0 |    0 |          0 |
+|       inst         |        design_1_smartconnect_0_0_bd_48ac |       2924 |       2169 |     734 |   21 |   5473 |      0 |      0 |    0 |          0 |
+|     smartconnect_1 |                design_1_smartconnect_1_0 |        339 |        198 |     136 |    5 |    487 |      0 |      0 |    0 |          0 |
+|       inst         |        design_1_smartconnect_1_0_bd_88fd |        339 |        198 |     136 |    5 |    487 |      0 |      0 |    0 |          0 |
+|     smartconnect_3 |                design_1_smartconnect_3_0 |        340 |        199 |     136 |    5 |    483 |      0 |      0 |    0 |          0 |
+|       inst         |        design_1_smartconnect_3_0_bd_485c |        340 |        199 |     136 |    5 |    483 |      0 |      0 |    0 |          0 |
++--------------------+------------------------------------------+------------+------------+---------+------+--------+--------+--------+------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

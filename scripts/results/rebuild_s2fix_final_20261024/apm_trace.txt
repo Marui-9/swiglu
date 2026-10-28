@@ -1,0 +1,15 @@
+calls=4 layer=0  time/call: mean 8017.7 us  min 8016.6  max 8019.1
+APM global clock: 533.32 cycles/us
+  S3_rd_bytes        10487808 per call
+  S4_rd_bytes        20971520 per call
+  S3_rd_txn             40968 per call
+  S4_rd_txn             81920 per call
+  S3_rd_lat           4228968 per call
+  S4_rd_lat           7631910 per call
+  S1_rd_bytes           43853 per call
+  S2_rd_bytes           28480 per call
+  S3_wr_bytes            8192 per call
+  S0_rd_bytes               0 per call
+  S3 mean rd latency 103.2 APM cy/txn, bytes/txn 256
+  S4 mean rd latency 93.2 APM cy/txn, bytes/txn 256
+trace: 6587 samples -> /home/ubuntu/s2fix/apm_trace.csv

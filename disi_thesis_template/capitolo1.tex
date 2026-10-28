@@ -231,9 +231,10 @@ KV260~\cite{li2025fpgabasedhardware}. A BRAM-banked double-buffered matrix
 multiplication accelerator on the same platform reached a peak compute throughput of
 22.83\,GOPS for a DistilBERT-scale FFN multiplication ($7.31\times$ over its
 baseline), completing the operation in 13.2\,ms at 100\,MHz. The study identified
-PS-side data handling as the dominant system-level bottleneck, a finding consistent
-with the orchestration overheads observed in the present work
-(Section~\ref{sec:discussion})~\cite{11311069}.
+PS-side data handling as the dominant system-level bottleneck~\cite{11311069}. In the
+present work the handoff itself is small (under 2\,ms per token), but the CPU work that
+remains outside the accelerator becomes the largest share of each token
+(Section~\ref{sec:discussion}).
 
 Existing approaches generally focus on accelerating full transformer blocks or
 large-scale models, where attention and feed-forward computations are treated
@@ -250,7 +251,7 @@ making it particularly well suited for efficient FPGA implementation.
 
 \section{Contributions}
 \label{sec:contribution}
-This work provides five contributions.
+This work provides six contributions.
 
 \begin{enumerate}
     \item \textbf{System-level bottleneck identification for edge conversational inference.}
@@ -259,24 +260,31 @@ This work provides five contributions.
     acceleration instead of full-model hardware mapping.
 
     \item \textbf{A practical CPU--FPGA offload integration in the llama.cpp/ggml stack.}
-    A fused FFN hardware operator is implemented with graph-level interception,
-    layer-aware weight caching, interrupt-driven synchronization, and fallback
-    compatibility with standard CPU execution.
+    A fused FFN hardware operator is emitted when the graph is built, only when all
+    three projections are Q4\_K, with layer-aware weight caching and interrupt-driven
+    synchronization. The same binary runs CPU-only when the offload is disabled.
 
     \item \textbf{A resource-aware FPGA design and characterization.}
     The accelerator is implemented as a staged dataflow pipeline and analyzed at
-    stage granularity, highlighting where execution is limited by memory transfer
-    across all projection stages, including the down-projection. The design operates
-    near device limits (e.g., high LUT occupancy), exposing realistic scaling
-    constraints on KV260-class platforms.
+    stage granularity. Loop-level overlap of the weight loads with the MAC arrays
+    makes every projection stage MAC-bound, with the gate and up weight streams near
+    the bandwidth of their ports. The design operates near device limits (86.7\% LUT
+    after routing), exposing realistic scaling constraints on KV260-class platforms.
 
     \item \textbf{Quantitative efficiency/performance trade-off across thread regimes.}
     CPU Only versus FPGA+CPU measurements across thread counts (T1--T4) are reported
-    using throughput, latency, power, and performance per watt. Results show clear
-    efficiency benefits at low and moderate CPU thread counts, while high-thread
-    regimes remain constrained by data movement and orchestration overheads.
+    using throughput, latency, power, energy per token, and performance per watt, with
+    both paths running the same model file. The accelerated path is faster and more
+    efficient at every thread count; the decode speedup shrinks from 2.09$\times$ at
+    one thread to 1.21$\times$ at four, as the CPU closes the gap.
 
     \item \textbf{Comparative analysis against an edge MPU.}
     The STM32MP2, a low-power dual-core Arm A35 running at 1.5\,GHz, is benchmarked
     against the FPGA+CPU implementation in terms of latency and energy consumption.
+
+    \item \textbf{Numerical validation of the hardware output.}
+    A per-layer comparison against the float CPU path and a C emulation of the
+    integer datapath located three driver bugs and an undersized intermediate range.
+    After the fixes, the accelerated model's mean KL divergence from CPU Only falls
+    from 0.385 to 0.030 (perplexity ratio 1.034).
 \end{enumerate}

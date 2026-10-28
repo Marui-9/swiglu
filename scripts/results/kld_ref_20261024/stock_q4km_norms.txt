@@ -1,0 +1,36 @@
+d3cbb0bcb26a1830f4679a1ae8e8c754  /run/media/marui/462C-969E/misc/LFM2.5-1.2B-Thinking-Q4_K_M.gguf
+76ede564d46121ffe9c4e7cf6c54c293  /run/media/marui/462C-969E/misc/LFM2.5-1.2B-Thinking-Q4_K_M-fromf16q8.gguf
+== stock Q4_K_M, ffn_norm (scripts/analysis/gguf_norms.py)
+blk.0.ffn_norm.weight        n= 2048 mean=+0.1821 min=-0.2539 max=+0.3359 nan=0 first=+0.1846
+blk.1.ffn_norm.weight        n= 2048 mean=+0.1768 min=-0.2373 max=+0.2949 nan=0 first=+0.1816
+blk.2.ffn_norm.weight        n= 2048 mean=+0.1596 min=-0.1748 max=+0.2314 nan=0 first=+0.1660
+blk.3.ffn_norm.weight        n= 2048 mean=+0.1700 min=-0.1030 max=+0.2051 nan=0 first=+0.1836
+blk.4.ffn_norm.weight        n= 2048 mean=+nan min=-303026561993242081690135827065295863808.0000 max=+323784107324268896145434466659938074624.0000 nan=8 first=-0.0000
+blk.5.ffn_norm.weight        n= 2048 mean=+nan min=-213856895282109463231612435722449977344.0000 max=+324593801398056274480428864878527119360.0000 nan=7 first=+0.0000
+blk.6.ffn_norm.weight        n= 2048 mean=+nan min=-318400871861725291691532930907111424000.0000 max=+223360684797321337397172671099292352512.0000 nan=9 first=-0.0000
+blk.7.ffn_norm.weight        n= 2048 mean=+nan min=-320221867160760345965535763022072512512.0000 max=+328502221728679951371123500201342402560.0000 nan=9 first=-48989184389766167854863727986737152.0000
+blk.8.ffn_norm.weight        n= 2048 mean=+nan min=-327619450133090616067591620036369842176.0000 max=+334005123407885100680526324736756547584.0000 nan=8 first=-907690066837504.0000
+blk.9.ffn_norm.weight        n= 2048 mean=+nan min=-261915902578685267087792056066654601216.0000 max=+237113111781848541573118832992021643264.0000 nan=9 first=+76901449624345527713792.0000
+blk.10.ffn_norm.weight       n= 2048 mean=+nan min=-321947900218031103118613674106512474112.0000 max=+227723025454874738671955245905888673792.0000 nan=6 first=+1637286063456124928.0000
+blk.11.ffn_norm.weight       n= 2048 mean=+nan min=-304708480809624896460041652878188740608.0000 max=+286364440809384612526840616450326003712.0000 nan=7 first=+54962303649356236370806258532352.0000
+blk.12.ffn_norm.weight       n= 2048 mean=+nan min=-319612908094820308212727170749461168128.0000 max=+280635228003821917878847388485062492160.0000 nan=6 first=-1.1156
+blk.13.ffn_norm.weight       n= 2048 mean=+nan min=-328820270193674813215041417048758419456.0000 max=+332228992798893323901501263941640126464.0000 nan=7 first=-0.0000
+blk.14.ffn_norm.weight       n= 2048 mean=+nan min=-301526312719679174932217296782171832320.0000 max=+326808133466534945598963306037677916160.0000 nan=6 first=+0.0000
+blk.15.ffn_norm.weight       n= 2048 mean=+nan min=-203788078400159060831381877819281768448.0000 max=+334981031828374404454644970679634493440.0000 nan=11 first=-1600730531669547540090454016.0000
+== Q4_K_M-fromf16q8, ffn_norm
+blk.0.ffn_norm.weight        n= 2048 mean=+0.1821 min=-0.2539 max=+0.3359 nan=0 first=+0.1846
+blk.1.ffn_norm.weight        n= 2048 mean=+0.1768 min=-0.2373 max=+0.2949 nan=0 first=+0.1816
+blk.2.ffn_norm.weight        n= 2048 mean=+0.1596 min=-0.1748 max=+0.2314 nan=0 first=+0.1660
+blk.3.ffn_norm.weight        n= 2048 mean=+0.1700 min=-0.1030 max=+0.2051 nan=0 first=+0.1836
+blk.4.ffn_norm.weight        n= 2048 mean=+0.1681 min=+0.0000 max=+0.2275 nan=0 first=+0.1816
+blk.5.ffn_norm.weight        n= 2048 mean=+0.1630 min=-0.1055 max=+0.2324 nan=0 first=+0.1816
+blk.6.ffn_norm.weight        n= 2048 mean=+0.1803 min=-0.0894 max=+0.2773 nan=0 first=+0.2070
+blk.7.ffn_norm.weight        n= 2048 mean=+0.1751 min=-0.0977 max=+0.2988 nan=0 first=+0.2002
+blk.8.ffn_norm.weight        n= 2048 mean=+0.1803 min=-0.1279 max=+0.2754 nan=0 first=+0.2070
+blk.9.ffn_norm.weight        n= 2048 mean=+0.2008 min=-0.0000 max=+0.2832 nan=0 first=+0.2217
+blk.10.ffn_norm.weight       n= 2048 mean=+0.2337 min=-0.2354 max=+0.3984 nan=0 first=+0.2490
+blk.11.ffn_norm.weight       n= 2048 mean=+0.2760 min=-0.0000 max=+0.3398 nan=0 first=+0.2871
+blk.12.ffn_norm.weight       n= 2048 mean=+0.3256 min=+0.0664 max=+0.4238 nan=0 first=+0.3535
+blk.13.ffn_norm.weight       n= 2048 mean=+0.4127 min=+0.0618 max=+0.5703 nan=0 first=+0.4277
+blk.14.ffn_norm.weight       n= 2048 mean=+0.4007 min=-0.2871 max=+0.5117 nan=0 first=+0.4141
+blk.15.ffn_norm.weight       n= 2048 mean=+0.4245 min=-0.4219 max=+0.5352 nan=0 first=+0.4512

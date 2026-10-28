@@ -1,0 +1,87 @@
+== state: boot_default  2026-10-25T07:46:09+00:00
+active app: k26-starter-kits
+fpga0: operating
+pl0_ref rate=99999999 enable=1
+ollama.listener  enabled  inactive  -
+loadavg: 0.22 0.75 0.69 1/412 4435
+settled after 0s, loadavg 0.22 0.75 0.69 1/412 4438
+idle boot_default: n=60 mean=3270.2 mW min=3240 max=3330
+=== CPU Only | T=1 | R=10 ===
+[07:47:33] Running llama-bench (CPU Only)...
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       1 |            pp12 |          1.15 ± 0.00 |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       1 |            tg64 |          0.93 ± 0.00 |
+
+build: unknown (0)
+
+=== Summary CPU T1 ===
+Throughput: | lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       1 |            tg64 |          0.93 ± 0.00 |
+Avg power: 3.62 W  (3621.8 mW, 609 samples)
+Avg temp (C): LPD=29  PL=28
+Peak RSS (VmHWM): 695 MB
+Log: /home/ubuntu/cpu_noload/cpu_t1_20261025_074733.log
+=== CPU Only | T=2 | R=10 ===
+[08:02:06] Running llama-bench (CPU Only)...
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       2 |            pp12 |          2.28 ± 0.00 |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       2 |            tg64 |          1.77 ± 0.00 |
+
+build: unknown (0)
+
+=== Summary CPU T2 ===
+Throughput: | lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       2 |            tg64 |          1.77 ± 0.00 |
+Avg power: 3.96 W  (3964.9 mW, 296 samples)
+Avg temp (C): LPD=30  PL=28
+Peak RSS (VmHWM): 694 MB
+Log: /home/ubuntu/cpu_noload/cpu_t2_20261025_080206.log
+=== CPU Only | T=3 | R=10 ===
+[08:09:29] Running llama-bench (CPU Only)...
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       3 |            pp12 |          3.38 ± 0.01 |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       3 |            tg64 |          2.56 ± 0.03 |
+
+build: unknown (0)
+
+=== Summary CPU T3 ===
+Throughput: | lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       3 |            tg64 |          2.56 ± 0.03 |
+Avg power: 4.26 W  (4267.5 mW, 199 samples)
+Avg temp (C): LPD=31  PL=29
+Peak RSS (VmHWM): 694 MB
+Log: /home/ubuntu/cpu_noload/cpu_t3_20261025_080929.log
+=== CPU Only | T=4 | R=10 ===
+[08:14:42] Running llama-bench (CPU Only)...
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       4 |            pp12 |          3.98 ± 0.07 |
+| lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       4 |            tg64 |          2.68 ± 0.05 |
+
+build: unknown (0)
+
+=== Summary CPU T4 ===
+Throughput: | lfm2 1.2B Q4_K - Medium        | 661.76 MiB |     1.17 B | CPU        |       4 |            tg64 |          2.68 ± 0.05 |
+Avg power: 4.17 W  (4172.0 mW, 186 samples)
+Avg temp (C): LPD=31  PL=29
+Peak RSS (VmHWM): 694 MB
+Log: /home/ubuntu/cpu_noload/cpu_t4_20261025_081442.log
+== state: after_bench  2026-10-25T08:19:37+00:00
+active app: k26-starter-kits
+fpga0: operating
+pl0_ref rate=99999999 enable=1
+ollama.listener  enabled  inactive  -
+loadavg: 3.04 3.48 2.61 1/409 33857
+settled after 145s, loadavg 0.29 2.15 2.23 1/410 34255
+idle boot_default_after: n=60 mean=3285.2 mW min=3250 max=3610
+remove from slot 0 returns: 0 (Ok)
+swiglu-s2fix: loaded to slot 0
+== state: s2fix_loaded  2026-10-25T08:23:57+00:00
+active app: swiglu-s2fix
+fpga0: operating
+pl0_ref rate=249999998 enable=2
+ollama.listener  enabled  inactive  -
+loadavg: 0.23 1.55 2.00 2/416 34799
+settled after 0s, loadavg 0.23 1.55 2.00 2/416 34802
+idle s2fix_loaded: n=60 mean=3942.2 mW min=3900 max=4260
+ALL_DONE

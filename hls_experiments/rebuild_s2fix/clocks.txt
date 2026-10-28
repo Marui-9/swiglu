@@ -1,0 +1,51 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date              : Sat Oct 24 08:55:14 2026
+| Host              : marui-machine running 64-bit Ubuntu"
+VERSION_ID="24.04 24.04.4 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+| Command           : report_clocks -file s2fix_clocks.txt
+| Design            : design_1_wrapper
+| Device            : xck26-sfvc784
+| Speed File        : -2LV  PRODUCTION 1.30 05-15-2022
+| Design State      : Physopt postRoute
+| Temperature Grade : C
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Report
+
+
+Attributes
+  P: Propagated
+  G: Generated
+  A: Auto-derived
+  R: Renamed
+  V: Virtual
+  I: Inverted
+  S: Pin phase-shifted with Latency mode
+
+Clock     Period(ns)  Waveform(ns)   Attributes  Sources
+clk_pl_0  4.000       {0.000 2.000}  P           {design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]}
+clk_pl_1  10.526      {0.000 5.263}  P           {design_1_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[1]}
+
+
+====================================================
+Generated Clocks
+====================================================
+
+
+
+====================================================
+User Uncertainty
+====================================================
+
+From Clock  To Clock  Setup(ns)  Hold(ns)  Edges
+clk_pl_0    clk_pl_0  0.300                rf -> rf
+
+
+====================================================
+User Jitter
+====================================================
+
+

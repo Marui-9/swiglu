@@ -29,8 +29,9 @@
 #define WV_BLOCKS_PER_ROW   8       // VECTOR_DIM / 256
 #define DOWN_BLOCKS_PER_ROW 32      // FFN_DIM / 256
 
-#define X12_INV_SCALE   (127.0f / 10.0f)   // 12.7f  — quantize to INT8
-#define X12_QUANT_SCALE (10.0f  / 127.0f)  // ~0.0787f — dequantize
+#define X12_QMAX        32767              // X1/X2 are INT16, fixed range ±32 (swiglu.cpp)
+#define X12_INV_SCALE   ((float)X12_QMAX / 32.0f)   // quantize to INT16
+#define X12_QUANT_SCALE (32.0f / (float)X12_QMAX)   // dequantize
 
 using namespace std;
 
@@ -314,13 +315,13 @@ static int run_mock_token_test() {
         }
         float fq1 = accA * X12_INV_SCALE;
         int   iq1 = (int)(fq1 + (fq1 >= 0.f ? 0.5f : -0.5f));
-        if (iq1 >  127) iq1 =  127; if (iq1 < -128) iq1 = -128;
-        X1_ref[0][j] = (float)(int8_t)iq1 * X12_QUANT_SCALE;
+        if (iq1 > X12_QMAX) iq1 = X12_QMAX; if (iq1 < -X12_QMAX) iq1 = -X12_QMAX;
+        X1_ref[0][j] = (float)(int16_t)iq1 * X12_QUANT_SCALE;
 
         float fq2 = accB * X12_INV_SCALE;
         int   iq2 = (int)(fq2 + (fq2 >= 0.f ? 0.5f : -0.5f));
-        if (iq2 >  127) iq2 =  127; if (iq2 < -128) iq2 = -128;
-        X2_ref[0][j] = (float)(int8_t)iq2 * X12_QUANT_SCALE;
+        if (iq2 > X12_QMAX) iq2 = X12_QMAX; if (iq2 < -X12_QMAX) iq2 = -X12_QMAX;
+        X2_ref[0][j] = (float)(int16_t)iq2 * X12_QUANT_SCALE;
     }
 
     float gate_fp[FFN_DIM]; float gate_max = 0.f;
@@ -416,13 +417,13 @@ static int run_test(const char  *label,
         // Apply hardware X12 quantize → dequantize (mirrors compute_X1/X2)
         float fq1 = accA * X12_INV_SCALE;
         int   iq1 = (int)(fq1 + (fq1 >= 0.f ? 0.5f : -0.5f));
-        if (iq1 >  127) iq1 =  127; if (iq1 < -128) iq1 = -128;
-        X1_ref[0][row] = (float)(int8_t)iq1 * X12_QUANT_SCALE;
+        if (iq1 > X12_QMAX) iq1 = X12_QMAX; if (iq1 < -X12_QMAX) iq1 = -X12_QMAX;
+        X1_ref[0][row] = (float)(int16_t)iq1 * X12_QUANT_SCALE;
 
         float fq2 = accB * X12_INV_SCALE;
         int   iq2 = (int)(fq2 + (fq2 >= 0.f ? 0.5f : -0.5f));
-        if (iq2 >  127) iq2 =  127; if (iq2 < -128) iq2 = -128;
-        X2_ref[0][row] = (float)(int8_t)iq2 * X12_QUANT_SCALE;
+        if (iq2 > X12_QMAX) iq2 = X12_QMAX; if (iq2 < -X12_QMAX) iq2 = -X12_QMAX;
+        X2_ref[0][row] = (float)(int16_t)iq2 * X12_QUANT_SCALE;
     }
 
     // Gate: two-pass (mirrors compute_gate)

@@ -1,0 +1,104 @@
+--- llama-mods/ggml-cpu.c	2026-10-23 12:57:07.232342736 +0200
++++ llama-mods/ggml-cpu.c (SWIGLU_VERIFY)	2026-10-23 13:34:47.300328180 +0200
+@@ -2000,6 +2000,84 @@
+ 
+ /////////////////////////////////
+ 
++// ---- SWIGLU_VERIFY (scratch, board-only): compare the IP with a float reference ----
++static double swv_cos(const float *a, const float *b, int n) {
++    double ab = 0, aa = 0, bb = 0;
++    for (int i = 0; i < n; i++) { ab += (double)a[i]*b[i]; aa += (double)a[i]*a[i]; bb += (double)b[i]*b[i]; }
++    return ab / (sqrt(aa) * sqrt(bb) + 1e-30);
++}
++static double swv_relerr(const float *a, const float *ref, int n) {
++    double d = 0, r = 0;
++    for (int i = 0; i < n; i++) { double e = (double)a[i] - ref[i]; d += e*e; r += (double)ref[i]*ref[i]; }
++    return sqrt(d / (r + 1e-30));
++}
++static void swv_matvec(const struct ggml_tensor *W, const float *v, float *out, int rows, int cols, float *rowbuf) {
++    ggml_to_float_t to_float = ggml_get_type_traits(W->type)->to_float;
++    for (int r = 0; r < rows; r++) {
++        to_float((const char *)W->data + (size_t)r * W->nb[1], rowbuf, cols);
++        double s = 0; for (int k = 0; k < cols; k++) s += (double)rowbuf[k] * v[k];
++        out[r] = (float)s;
++    }
++}
++static int8_t swv_q8(float v, float inv) {
++    float f = v * inv; int q = (int)(f + (f >= 0.f ? 0.5f : -0.5f));
++    if (q > 127) q = 127; if (q < -128) q = -128; return (int8_t)q;
++}
++static void swiglu_verify(const float *x, const struct ggml_tensor *Wg, const struct ggml_tensor *Wu,
++                          const struct ggml_tensor *Wd, const float *y_hw, int layer, int tok, float x_scale) {
++    static float *g, *u, *h, *y_ref, *xq, *gq, *uq, *he, *y_emu, *rowbuf;
++    if (!g) {
++        g = malloc(8192*4); u = malloc(8192*4); h = malloc(8192*4); gq = malloc(8192*4); uq = malloc(8192*4);
++        he = malloc(8192*4); y_ref = malloc(2048*4); y_emu = malloc(2048*4); xq = malloc(2048*4); rowbuf = malloc(8192*4);
++    }
++    // float reference = build_ffn: down(silu(gate x) * up x)
++    swv_matvec(Wg, x, g, 8192, 2048, rowbuf);
++    swv_matvec(Wu, x, u, 8192, 2048, rowbuf);
++    for (int j = 0; j < 8192; j++) h[j] = g[j] / (1.f + expf(-g[j])) * u[j];
++    swv_matvec(Wd, h, y_ref, 2048, 8192, rowbuf);
++    // emulation variants. Stages: x INT8 (max/127) -> X1/X2 INT8 (range R; R<=0: per-token max/127)
++    // -> h = silu(X1)*X2 -> h INT8 (max/127). Each flag turns one stage off (float).
++    float inv = 1.f / x_scale;
++    for (int i = 0; i < 2048; i++) xq[i] = swv_q8(x[i], inv) * x_scale;
++    swv_matvec(Wg, xq, gq, 8192, 2048, rowbuf);
++    swv_matvec(Wu, xq, uq, 8192, 2048, rowbuf);
++    struct { const char *name; int qx, q12, qh; float R; } var[] = {
++        {"ip(+-10)", 1, 1, 1, 10.f}, {"x-only", 1, 0, 0, 0}, {"X12-only", 0, 1, 0, 10.f}, {"h-only", 0, 0, 1, 0},
++        {"ip,R=4", 1, 1, 1, 4.f}, {"ip,dyn", 1, 1, 1, -1.f}, {"x+h", 1, 0, 1, 0}};
++    char line[512]; int n = 0;
++    float cos_ip = 0;
++    for (int v = 0; v < (int)(sizeof var / sizeof var[0]); v++) {
++        const float *G = var[v].qx ? gq : g, *U = var[v].qx ? uq : u;
++        float sg = var[v].R / 127.f, su = sg;
++        if (var[v].R < 0) {
++            float mg = 0, mu = 0;
++            for (int j = 0; j < 8192; j++) { mg = fmaxf(mg, fabsf(G[j])); mu = fmaxf(mu, fabsf(U[j])); }
++            sg = mg > 0 ? mg / 127.f : 1.f; su = mu > 0 ? mu / 127.f : 1.f;
++        }
++        float gmax = 0;
++        for (int j = 0; j < 8192; j++) {
++            float z = G[j], w = U[j];
++            if (var[v].q12) { z = swv_q8(z, 1.f/sg) * sg; w = swv_q8(w, 1.f/su) * su; }
++            he[j] = z / (1.f + expf(-z)) * w; gmax = fmaxf(gmax, fabsf(he[j]));
++        }
++        if (var[v].qh) { float gs = gmax > 0 ? gmax / 127.f : 1.f; for (int j = 0; j < 8192; j++) he[j] = swv_q8(he[j], 1.f/gs) * gs; }
++        swv_matvec(Wd, he, y_emu, 2048, 8192, rowbuf);
++        if (v == 0) cos_ip = swv_cos(y_hw, y_emu, 2048);
++        n += snprintf(line + n, sizeof line - n, " %s=%.4f", var[v].name, swv_cos(y_emu, y_ref, 2048));
++    }
++    const float s12 = 10.0f / 127.0f;
++    // statistics of the intermediates
++    double g2 = 0, u2 = 0; float gm = 0, um = 0; int gc = 0, uc = 0, gsmall = 0;
++    for (int j = 0; j < 8192; j++) {
++        g2 += (double)g[j]*g[j]; u2 += (double)u[j]*u[j];
++        if (fabsf(g[j]) > gm) gm = fabsf(g[j]); if (fabsf(u[j]) > um) um = fabsf(u[j]);
++        gc += fabsf(g[j]) > 10.f; uc += fabsf(u[j]) > 10.f; gsmall += fabsf(g[j]) < s12 / 2;
++    }
++    fprintf(stderr, "[SWV] tok=%d L%02d cos(hw,ref)=%.4f cos(hw,emu_ip)=%.5f | cos(emu,ref):%s | "
++            "gate.x rms=%.3f max=%.2f | up.x rms=%.3f max=%.2f | |gate.x|<half-step:%d\n",
++            tok, layer, swv_cos(y_hw, y_ref, 2048), cos_ip, line, sqrt(g2/8192), gm, sqrt(u2/8192), um, gsmall);
++}
++
+ // SwiGLU fused hardware offload kernel
+ static void ggml_compute_forward_swiglu_fused_hw(
+         const struct ggml_compute_params * params,
+@@ -2166,6 +2244,16 @@
+                (char*)udmabuf_vptr + SWG_OUT_OFF,
+                (size_t)bsz * 2048 * sizeof(float));
+         clock_gettime(CLOCK_MONOTONIC, &t_m1);      // output memcpy: end
++        {
++            // decode tokens only (ne[1] == 1); counts a token at each layer-15 call
++            static int swv_on = -1, swv_tok = 0;
++            if (swv_on < 0) { const char *e = getenv("SWIGLU_VERIFY"); swv_on = e ? atoi(e) : 0; }
++            if (swv_on > 0 && swv_tok < swv_on && x->ne[1] == 1) {
++                swiglu_verify(x_chunk, W_gate, W_up, W_down, (const float *)((char*)dst->data + (size_t)c * 2048 * sizeof(float)),
++                              layer, swv_tok, x_scale);
++                if (layer == SWG_NUM_LAYERS - 1) swv_tok++;
++            }
++        }
+ 
+         // --- Precise per-token latency breakdown --------------------------------
+         // Per-call durations of every CPU/FPGA stage, accumulated over the 16 FFN

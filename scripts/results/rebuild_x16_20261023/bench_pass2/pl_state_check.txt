@@ -1,0 +1,24 @@
+# 2026-10-23 ~15:52 UTC, after bench_pass2 finished. Commands:
+#   cat /sys/class/fpga_manager/fpga0/state; /sys/kernel/debug/clk/pl0_ref/{clk_rate,clk_enable_count,clk_prepare_count}
+#   xmutil xlnx_platformstats -p | grep "SOM total power"   (board idle)
+# around `xmutil unloadapp` and `xmutil loadapp swiglu-x16`.
+-- loaded
+operating
+clk_rate=249999998
+clk_enable_count=2
+clk_prepare_count=2
+SOM total power                                         :     3910 mW
+-- unloaded
+operating
+clk_rate=249999998
+clk_enable_count=1
+clk_prepare_count=1
+SOM total power                                         :     3920 mW
+swiglu-x16: loaded to slot 0
+-- reloaded
+operating
+clk_rate=249999998
+clk_enable_count=2
+clk_prepare_count=2
+SOM total power                                         :     3900 mW
+/sys/class/uio/uio4/name:swiglu
