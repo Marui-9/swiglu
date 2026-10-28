@@ -98,7 +98,7 @@ Replacement: `LFM2.5-1.2B-Thinking-Q4_K_M-fromf16q8.gguf` (md5
   wikitext-2 test (`wiki.test.raw`, md5 7c0137fc034ddbc56a296bce31b4f7fb), `-c 256
   --chunks 24`. It prints "Final estimate: PPL = 47.1429 +/- 3.01439".
   - The saved logits (`ref_f16q8.kld`, md5 db8b9dad946efe9935b71a7c82684fa7, 400 MB) are
-    not in the repo. They are on the host in `~/Desktop/swiglu_hls_work/kld/`, with
+    not tracked by git. They are in `data/kld/` (git-ignored, see `data/README.md`), with
     run 4's `cpu_allq4k24.kld` (md5 29fad3475c9cc821f6823cca6b5ff227); the board copies
     were deleted after the md5 check.
 - **Q4_K_M** (`pc_q4km_vs_ref.log`): same arguments with `-b 256 -ub 64`, scored with
